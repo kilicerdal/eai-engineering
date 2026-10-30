@@ -363,34 +363,101 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="border-y border-white/5 bg-white/[0.02] py-24">
+      <section
+        id="about"
+        className="border-y border-white/5 bg-white/[0.02] py-24 md:py-28"
+      >
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 md:grid-cols-2">
-            <div>
-              <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
+          <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+
+            <div className="lg:sticky lg:top-28">
+              <p className="mb-5 text-sm font-bold uppercase tracking-[0.25em] text-cyan-400">
                 ABOUT ME
               </p>
-              <h2 className="text-4xl font-bold">
-                Quality Engineering Meets Artificial Intelligence
+
+              <h2 className="max-w-lg text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
+                Quality Engineering Meets{" "}
+                <span className="text-cyan-400">
+                  Artificial Intelligence
+                </span>
               </h2>
+
+              <div className="mt-8 h-1 w-20 rounded-full bg-cyan-400" />
+
+              <div className="mt-10 rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-6">
+                <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
+                  Professional Highlights
+                </p>
+
+                <div className="space-y-5">
+                  {[
+                    ["9+ Years", "Software Quality Engineering"],
+                    ["AWS Certified", "Developer Associate & Cloud Practitioner"],
+                    ["Enterprise Automation", "UI, API & CI/CD Engineering"],
+                    ["AI Engineering", "Generative AI & Intelligent Testing"],
+                    ["eAI Engineering", "Founder"],
+                  ].map(([title, description]) => (
+                    <div key={title} className="border-l-2 border-cyan-400/40 pl-4">
+                      <p className="font-semibold text-white">{title}</p>
+                      <p className="mt-1 text-sm text-slate-400">{description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-5 leading-8 text-slate-400">
+            <div className="space-y-7 text-base leading-8 text-slate-300 md:text-[17px] md:leading-9">
+
               <p>
-                I specialize in designing scalable test automation
-                frameworks for complex enterprise applications across
-                financial services, healthcare, and cloud platforms.
+                I am a Senior Software Development Engineer in Test (SDET)
+                and AI Automation Engineer with over nine years of experience
+                designing, developing, and optimizing sophisticated automation
+                solutions across financial services, healthcare, and enterprise
+                technology environments. My professional journey has been
+                driven by a commitment to engineering excellence, software
+                reliability, and the continuous evolution of modern quality
+                assurance practices.
               </p>
+
               <p>
-                My expertise spans UI automation, API and microservices
-                testing, database validation, AWS cloud technologies,
-                and continuous integration.
+                My technical expertise encompasses test automation architecture,
+                API and microservices testing, cloud-native applications,
+                database validation, and continuous integration and delivery.
+                Working with technologies such as Java, Python, TypeScript,
+                Playwright, Selenium, REST Assured, and AWS, I specialize in
+                building scalable, maintainable automation frameworks that
+                improve testing efficiency, strengthen system reliability,
+                and support complex enterprise software ecosystems.
               </p>
+
               <p>
-                I am actively developing AI-powered engineering projects
-                that explore how language models and intelligent agents
-                can improve software testing and developer productivity.
+                As artificial intelligence reshapes the software engineering
+                landscape, my focus has expanded toward integrating Generative
+                AI, large language models, and intelligent automation into
+                traditional engineering workflows. I believe the future of
+                software quality lies in combining established engineering
+                principles with AI-driven capabilities that can accelerate
+                test development, improve defect detection, streamline
+                root-cause analysis, and enable more proactive approaches
+                to software reliability.
               </p>
+
+              <p>
+                I founded{" "}
+                <span className="font-semibold text-white">
+                  eAI Engineering — INTELLIGENCE ENGINEERED
+                </span>{" "}
+                to bring this vision into practice. Through hands-on
+                engineering projects, AI-powered development tools, and
+                cloud-based solutions, I explore how emerging technologies
+                can transform software testing and developer productivity.
+                My objective is to bridge the gap between conventional
+                automation and intelligent engineering, creating practical,
+                scalable solutions that deliver measurable value while
+                continuously pushing the boundaries of what modern quality
+                engineering can achieve.
+              </p>
+
             </div>
           </div>
         </div>
