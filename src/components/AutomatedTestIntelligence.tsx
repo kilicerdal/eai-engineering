@@ -11,6 +11,13 @@ type TestMetrics = {
   duration: number;
   updatedAt: string;
   runUrl: string;
+  repositories: {
+    repository: string;
+    total: number;
+    passed: number;
+    failed: number;
+    runUrl: string;
+  }[];
 };
 
 export default function AutomatedTestIntelligence() {
@@ -94,7 +101,7 @@ export default function AutomatedTestIntelligence() {
           </div>
 
           <p className="mt-5 text-sm text-slate-400">
-            Source: Playwright GitHub Actions · Chromium + Firefox
+            Source: Verified GitHub Actions · Playwright + Healthcare
             · Duration: {(metrics.duration / 1000).toFixed(1)}s
             · Flaky: {metrics.flaky}
           </p>
@@ -103,6 +110,30 @@ export default function AutomatedTestIntelligence() {
             Latest published test report:{" "}
             {new Date(metrics.updatedAt).toLocaleString("en-US")}
           </p>
+
+          <div className="mt-5 space-y-3">
+            {metrics.repositories.map((repo) => (
+              <div
+                key={repo.repository}
+                className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/10 bg-slate-950 p-4"
+              >
+                <div>
+                  <p className="font-semibold text-white">{repo.repository}</p>
+                  <p className="text-sm text-slate-400">
+                    {repo.passed}/{repo.total} passed · {repo.failed} failed
+                  </p>
+                </div>
+                <a
+                  href={repo.runUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-cyan-400 hover:underline"
+                >
+                  View CI Evidence ↗
+                </a>
+              </div>
+            ))}
+          </div>
 
           <a
             href={metrics.runUrl}
