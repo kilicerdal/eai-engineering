@@ -22,7 +22,7 @@ export async function GET() {
     const results = await Promise.all(
       repositories.map(async (repo) => {
         const response = await fetch(
-          `https://api.github.com/repos/kilicerdal/${repo}/actions/runs?per_page=5`,
+          `https://api.github.com/repos/kilicerdal/${repo}/actions/runs?per_page=30`,
           {
             headers: {
               Accept: "application/vnd.github+json",
