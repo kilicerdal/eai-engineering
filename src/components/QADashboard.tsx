@@ -1,3 +1,4 @@
+import AutomatedTestIntelligence from "@/components/AutomatedTestIntelligence";
 import RepositoryHealth from "./RepositoryHealth";
 import CIHealthOverview from "./CIHealthOverview";
 import GitHubFailureInvestigator from "@/components/GitHubFailureInvestigator";
@@ -120,6 +121,8 @@ export default function QADashboard() {
             {ciLoading ? "Refreshing..." : "↻ Refresh CI Data"}
           </button>
         </div>
+
+        <AutomatedTestIntelligence />
 
         <CIHealthOverview
           runs={ciRuns}
