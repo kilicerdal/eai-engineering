@@ -132,3 +132,5 @@
 .eai-study-studio .exam-reflection{font-size:13px;line-height:1.9;margin:25px 0;padding:20px;background:#f4efe5;border-radius:8px;overflow-wrap:anywhere;}
 .eai-study-studio .exam-reflection p{margin:12px 0;}.eai-study-studio .exam-reflection h2,.eai-study-studio .exam-reflection h3{font:600 16px var(--font-geist-sans),sans-serif;margin:18px 0 10px;}.eai-study-studio .exam-reflection ul,.eai-study-studio .exam-reflection ol{padding-left:20px;list-style:revert;}
 @media(max-width:800px){.eai-study-studio .exam-notebook-grid{grid-template-columns:1fr;}}
+
+.eai-study-studio .exam-reflection .katex-display{overflow-x:auto;overflow-y:hidden;padding:6px 0;max-width:100%;}

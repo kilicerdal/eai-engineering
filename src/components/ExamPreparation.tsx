@@ -2,6 +2,10 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
+import { normalizeStudyMath } from "@/lib/study-markdown";
 import { buildExamGoal, differentQuestionPrompt, examProfiles, mistakeReviewPrompt, nextMistakeReview, normalizeMistakes, type Mistake } from "@/lib/study-exams";
 import { readStudyStream } from "@/lib/study-stream";
 const KEY="eai-exam-mistakes-v1";
@@ -35,7 +39,7 @@ export default function ExamPreparation(){
   <div className="exam-entries">{[...mistakes].sort((a,b)=>a.reviewAt-b.reviewAt).map(m=><button key={m.id} aria-pressed={active===m.id} disabled={busy} onClick={()=>setActive(m.id)}><strong>{m.exam} · {m.reviewAt<=now?"Ready to revisit":`Review ${new Date(m.reviewAt).toLocaleDateString()}`}</strong><span>{m.question}</span></button>)}</div></div>
   <div className="goal-panel">{entry?<><p className="studio-eyebrow">{entry.exam} · PRACTICE REFLECTION</p><h3>{entry.question}</h3><p className="goal-overview"><strong>Your answer:</strong> {entry.answer}</p>{entry.expected&&<p className="goal-helper">Your supplied answer key: {entry.expected}</p>}
   <div className="goal-actions"><button className="goal-primary" disabled={busy} onClick={()=>void explain(entry)}>{busy?"Reviewing your reasoning…":entry.reflection?"Review my reasoning again":"Help me understand this mistake"}</button>{busy&&<button onClick={()=>abort.current?.abort()}>Cancel review</button>}</div>
-  {(draft||entry.reflection)&&<div className="exam-reflection" aria-live="polite"><ReactMarkdown skipHtml components={{a:({children})=><span>{children}</span>,img:()=>null}}>{draft||entry.reflection}</ReactMarkdown></div>}
+  {(draft||entry.reflection)&&<div className="exam-reflection" aria-live="polite"><ReactMarkdown skipHtml remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={{a:({children})=><span>{children}</span>,img:()=>null}}>{normalizeStudyMath(draft||entry.reflection)}</ReactMarkdown></div>}
   <details><summary>Edit my learning notes</summary><label className="goal-label">My learning notes<textarea aria-label="My learning notes" rows={5} maxLength={14000} value={entry.reflection} disabled={busy} onChange={e=>setMistakes(items=>items.map(m=>m.id===entry.id?{...m,reflection:e.target.value}:m))}/></label></details>
   <div className="goal-actions"><button disabled={busy} onClick={()=>retry(entry)}>Try a different question ↗</button><button disabled={busy} onClick={()=>{setMistakes(items=>items.map(m=>m.id===entry.id?nextMistakeReview(m,Date.now()):m));setNow(Date.now());}}>I reviewed this · schedule again</button><button disabled={busy} onClick={()=>{setMistakes(items=>items.filter(m=>m.id!==entry.id));setActive(mistakes.find(m=>m.id!==entry.id)?.id||"");}}>Remove entry</button></div><p className="goal-helper">Reviews are suggested after 1, 3, 7, then 14 days, based on your own review marks. Return here to see what is due; no notifications or mastery scores are created. AI feedback can be wrong—check your source or answer key.</p></>:<><h3>A mistake is a starting point.</h3><p className="goal-overview">Save an attempt to inspect the reasoning, identify a missing idea, and revisit it with a different question.</p><p className="goal-helper">Up to 50 entries, saved in this browser. Clearing browser data removes them; account sync is not available.</p></>}</div></div></div>
   {error&&<p className="goal-error" role="alert">{error}</p>}
