@@ -42,9 +42,9 @@ const modes: { id: Mode; label: string }[] = [
 
 const suggestions: Record<Mode, string[]> = {
   general: [
-    "What can you help me with?",
-    "Explain AI agents",
-    "Tell me about Erdal's experience",
+    "Help me develop an idea",
+    "Help me review my code",
+    "Help me solve an engineering problem",
   ],
   coding: [
     "Write a Playwright TypeScript login test",
@@ -81,7 +81,7 @@ const suggestions: Record<Mode, string[]> = {
 const welcomeMessage: Message = {
   role: "assistant",
   content:
-    "Hello! I'm **eAI**. Choose an AI mode or ask me anything about coding, automation testing, AWS, generative AI, or Erdal's professional background.",
+    "**What would you like to explore?** Bring an idea, a question, or a challenge. I can help with coding, testing, cloud engineering, and applied AI.",
 };
 
 function createConversation(mode: Mode = "general"): Conversation {
@@ -114,7 +114,7 @@ function CodeBlock({
   }
 
   return (
-    <div className="my-4 overflow-hidden rounded-xl border border-white/10 bg-[#0d1117]">
+    <div className="atlas-chat-code my-4 overflow-hidden rounded-xl border border-white/10 bg-[#0d1117]">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
         <span className="text-xs text-slate-400">
           {language || "code"}
@@ -217,6 +217,7 @@ function MarkdownMessage({ content }: { content: string }) {
 }
 
 export default function ResumeChat() {
+  const [historyOpen, setHistoryOpen] = useState(false);
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeId, setActiveId] = useState("");
   const [input, setInput] = useState("");
@@ -577,23 +578,22 @@ export default function ResumeChat() {
   }
 
   return (
-    <section id="ai-assistant" className="border-t border-white/10 py-24">
+    <section id="ai-assistant" className="atlas-chat border-t border-white/10 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 text-center">
           <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
-            eAI · ENGINEERING INTELLIGENCE
+            INTELLIGENCE ENGINEERED
           </p>
           <h2 className="text-4xl font-bold text-white md:text-5xl">
-            Meet eAI
+            Meet eAI.
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-slate-400">
-            Advanced AI assistance for coding, automation testing,
-            AWS, generative AI, and software engineering.
+            Ask a question. Build something better.
           </p>
         </div>
 
-        <div className="grid overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#101827] shadow-2xl md:grid-cols-[260px_1fr]">
-          <aside className="border-b border-white/10 bg-slate-950/60 p-4 md:border-b-0 md:border-r">
+        <div className={`atlas-chat-shell grid overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#101827] shadow-2xl ${historyOpen ? "md:grid-cols-[260px_1fr]" : "grid-cols-1"}`}>
+          <aside id="eai-chat-history" hidden={!historyOpen} className="border-b border-white/10 bg-slate-950/60 p-4 md:border-b-0 md:border-r">
             <button
               type="button"
               onClick={newConversation}
@@ -649,16 +649,19 @@ export default function ResumeChat() {
           </aside>
 
           <div className="min-w-0">
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 bg-slate-900/70 px-5 py-4">
+            <div className="atlas-chat-toolbar flex flex-wrap items-center justify-between gap-4 border-b border-white/10 bg-slate-900/70 px-5 py-4">
               <div>
                 <p className="text-lg font-bold text-white">
                   eAI
                 </p>
                 <p className="text-xs text-slate-400">
-                  Professional AI Engineering Assistant
+                  Your AI engineering assistant
                 </p>
               </div>
 
+              <div className="atlas-chat-controls">
+                <button type="button" className="atlas-history-toggle" aria-controls="eai-chat-history" aria-expanded={historyOpen} onClick={() => setHistoryOpen(!historyOpen)}>{historyOpen ? "Close history" : "Conversations"}</button>
+                <button type="button" className="atlas-history-toggle" onClick={newConversation} disabled={!hydrated || loading}>New chat +</button>
               <select
                 value={active?.mode || "general"}
                 onChange={(event) =>
@@ -674,6 +677,7 @@ export default function ResumeChat() {
                   </option>
                 ))}
               </select>
+              </div>
             </div>
 
             <div
@@ -692,7 +696,7 @@ export default function ResumeChat() {
                   }`}
                 >
                   <div
-                    className={`min-w-0 max-w-[95%] rounded-2xl px-5 py-4 md:max-w-[90%] ${
+                    className={`atlas-chat-message ${message.role === "user" ? "atlas-user-message" : "atlas-assistant-message"} min-w-0 max-w-[95%] rounded-2xl px-5 py-4 md:max-w-[90%] ${
                       message.role === "user"
                         ? "bg-cyan-400 text-slate-950"
                         : "border border-white/10 bg-slate-800 text-slate-100"
@@ -716,7 +720,7 @@ export default function ResumeChat() {
               )}
             </div>
 
-            <div className="border-t border-white/10 bg-slate-900/50 p-5">
+            <div className="atlas-chat-composer border-t border-white/10 bg-slate-900/50 p-5">
               <div className="mb-4 flex flex-wrap gap-2">
                 {suggestions[active?.mode || "general"].map(
                   (suggestion) => (
@@ -725,7 +729,7 @@ export default function ResumeChat() {
                       type="button"
                       disabled={loading || !hydrated}
                       onClick={() => void sendMessage(suggestion)}
-                      className="rounded-full border border-white/15 px-3 py-2 text-xs text-slate-300 hover:border-cyan-400 hover:text-cyan-300 disabled:opacity-50"
+                      className="atlas-chat-suggestion rounded-full border border-white/15 px-3 py-2 text-xs text-slate-300 hover:border-cyan-400 hover:text-cyan-300 disabled:opacity-50"
                     >
                       {suggestion}
                     </button>
@@ -744,12 +748,12 @@ export default function ResumeChat() {
               )}
 
               {!loading &&
-                active?.messages.length &&
-                active.messages.at(-1)?.role === "assistant" && (
+                (active?.messages.length || 0) > 1 &&
+                active?.messages.at(-1)?.role === "assistant" && (
                   <button
                     type="button"
                     onClick={regenerateResponse}
-                    className="mb-3 rounded-xl border border-cyan-400/40 px-4 py-2 text-sm font-semibold text-cyan-300 hover:bg-cyan-400/10"
+                    className="atlas-chat-regenerate mb-3 rounded-xl border border-cyan-400/40 px-4 py-2 text-sm font-semibold text-cyan-300 hover:bg-cyan-400/10"
                   >
                     ↻ Regenerate Response
                   </button>

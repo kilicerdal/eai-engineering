@@ -3,3 +3,49 @@
 @media(max-width:1100px){.atlas-chapter{display:none}.atlas-brand small{font-size:10px}.atlas-header nav{gap:18px}.atlas-rail>a{padding-inline:20px;gap:16px}.atlas-rail h2{font-size:18px}.atlas-rail p{font-size:12px}.atlas-engineering-copy{padding:45px 9% 45px 5%}.atlas-hero{min-height:620px}.atlas-project-window{padding:25px}}
 @media(max-width:760px){.atlas-header{padding:18px 6%;align-items:flex-start}.atlas-brand{gap:12px}.atlas-brand>span{font-size:32px}.atlas-brand small{font-size:10px}.atlas-menu{display:block;padding:6px 0;font-size:13px;color:var(--paper);background:transparent;border:0}.atlas-header nav{display:none;position:absolute;top:70px;left:4%;right:4%;padding:25px;background:#0a121df5;border:1px solid var(--line);flex-direction:column;gap:20px;font-size:15px}.atlas-header nav.is-open{display:flex}.atlas-hero{min-height:690px;height:88svh;max-height:850px;align-items:flex-start}.atlas-hero .atlas-landscape{object-position:64% center}.atlas-hero-shade{background:linear-gradient(0deg,#030b1720,transparent 35%,#030b17e0 85%)}.atlas-hero-copy{margin:128px 6% 0}.atlas-hero h1{font-size:42px;line-height:1.08}.atlas-hero h1 br{display:none}.atlas-hero-copy>p:not(.atlas-eyebrow){font-size:16px}.desktop-break{display:none}.threshold .atlas-eyebrow{font-size:9px;letter-spacing:.16em}.atlas-actions{gap:10px}.atlas-button{font-size:13px;gap:16px;padding:10px 15px}.threshold .atlas-caption{font-size:9px;left:4%;right:auto;bottom:13px}.atlas-rail{grid-template-columns:1fr;padding:8px 6%}.atlas-rail>a,.atlas-rail>a:first-child{padding:20px 0;border-right:0;border-bottom:1px solid var(--line);gap:22px}.atlas-rail h2{font-size:21px}.atlas-rail p{font-size:14px}.atlas-rail svg{width:36px;height:36px}.atlas-engineering{grid-template-columns:1fr}.atlas-petra{min-height:360px}.atlas-petra:after{background:linear-gradient(0deg,#080e14,transparent 28%)}.atlas-engineering-copy{padding:24px 6% 50px}.atlas-engineering-copy>p:not(.atlas-eyebrow){font-size:16px}.atlas-container{padding:45px 6%}.atlas-practice{grid-template-columns:1fr;gap:30px}.atlas-practice h2{font-size:36px}.atlas-practice>div>p:not(.atlas-eyebrow){font-size:16px}.atlas-project-preview{min-width:0}.atlas-project-window h3{font-size:30px}.atlas-workspace{padding-top:5px;padding-bottom:20px}.atlas-workspace-heading{align-items:flex-start;flex-direction:column;gap:20px}.atlas-workspace h2{font-size:30px}.atlas-tool-tabs{display:grid;grid-template-columns:1fr 1fr}.atlas-tool-tabs button{padding:10px 7px;font-size:11px}.atlas-tool-panel>section>div{padding-inline:14px}.atlas-section-heading{align-items:flex-start;flex-direction:column}.atlas-projects article{grid-template-columns:26px 1fr;gap:12px}.atlas-project-status{grid-column:2;align-items:flex-start;flex-direction:row;justify-content:space-between}.atlas-projects article h3{font-size:23px}.atlas-about{grid-template-columns:1fr;gap:40px}.atlas-skills{gap:24px 20px}.atlas-contact .atlas-container{padding-block:45px}.atlas-contact-links{gap:15px 24px}.atlas-footer{flex-wrap:wrap;padding:24px 6%}.atlas-footer .atlas-brand{width:100%}.atlas-footer>small{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.threshold *{transition:none!important;scroll-behavior:auto!important}}
+
+/* Flagship assistant: opaque ivory surface, separated from the observatory sky. */
+.threshold .atlas-chat-nav{color:var(--gold)}
+.threshold .atlas-chat-feature{position:relative;isolation:isolate;background:#08172a;border-block:1px solid #d9ac7933;overflow:hidden}
+.threshold .atlas-chat-feature:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background-image:radial-gradient(circle at 8% 10%,#ead2a7 0 1px,transparent 1.6px),radial-gradient(circle at 88% 8%,#fff 0 1px,transparent 1.5px),radial-gradient(circle at 17% 17%,#c0d1e7 0 .6px,transparent 1.2px),radial-gradient(circle at 78% 13%,#e7c08b 0 .8px,transparent 1.4px),radial-gradient(circle at 4% 33%,#fff 0 .6px,transparent 1.2px),radial-gradient(circle at 95% 27%,#ddd 0 .7px,transparent 1.3px),radial-gradient(ellipse at 50% 35%,#122c48,transparent 65%);background-size:310px 240px,380px 260px,190px 190px,270px 200px,150px 300px,230px 250px,100% 100%;mask-image:linear-gradient(#000,transparent 48%)}
+.threshold .atlas-chat-feature:after{content:"";position:absolute;pointer-events:none;z-index:-1;top:30px;left:10%;width:80%;height:260px;border-top:1px solid #d9ac7950;border-radius:50%}
+.threshold .atlas-chat{padding:65px 0 75px;border:0;scroll-margin-top:15px}
+.threshold .atlas-chat>div{max-width:1140px}
+.threshold .atlas-chat>div>div:first-child{margin-bottom:30px}
+.threshold .atlas-chat h2{font-size:clamp(42px,5vw,66px);font-weight:400;margin:0}
+.threshold .atlas-chat>div>div:first-child>p:first-child{color:#e0b67d;font-size:10px;letter-spacing:.22em;margin-bottom:16px}
+.threshold .atlas-chat>div>div:first-child>p:last-child{color:#e0e3e8;margin-top:15px;font-size:17px}
+.threshold .atlas-chat-shell{--chat-ink:#222b35;--chat-muted:#525b65;--chat-line:#b8ab954f;color:var(--chat-ink);border:2px solid #ba975b;border-radius:14px;background:#f3efe7;box-shadow:0 28px 75px #0006,0 0 0 14px #08172a}
+.threshold .atlas-chat-toolbar{background:#f3efe7;border-color:var(--chat-line);padding:22px 26px}
+.threshold .atlas-chat-toolbar>div>p:first-child{font-family:Georgia,serif;font-size:32px;font-weight:400;color:#18212c}
+.threshold .atlas-chat-toolbar>div>p:last-child{color:var(--chat-muted);font-size:12px}
+.threshold .atlas-chat-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.threshold .atlas-history-toggle{border:1px solid #b7a78c;border-radius:7px;padding:9px 13px;font-size:12px;color:#26303d;background:transparent}
+.threshold .atlas-history-toggle:hover{background:#e6ddce}
+.threshold .atlas-chat select{border-radius:7px;border-color:var(--chat-line);background:#e9e2d6;color:#26303d;font-size:12px;max-width:100%}
+.threshold .atlas-chat [role=log]{height:300px;background:#f3efe7;padding:26px;color:var(--chat-ink)}
+.threshold .atlas-chat-message{color:var(--chat-ink);background:#e9e2d6;border:1px solid #b8ab9526;border-radius:12px}
+.threshold .atlas-chat .atlas-user-message{background:#d9bc8b;color:#202730}
+.threshold .atlas-chat-message p{color:inherit}
+.threshold .atlas-chat-message a{color:#70501a;text-decoration:underline}
+.threshold .atlas-chat-message :not(pre)>code{background:#dcd4c7;color:#29313a}
+.threshold .atlas-chat-code{color:#e2e8f0}
+.threshold .atlas-chat-code button{color:#e0b67d}
+.threshold .atlas-chat-code a{color:#e0b67d}
+.threshold .atlas-chat-composer{background:#f3efe7;border-color:var(--chat-line);padding:22px 26px}
+.threshold .atlas-chat-suggestion,.threshold .atlas-chat-regenerate{color:#3b4653;border-color:#b8aa91;background:transparent;font-weight:400}
+.threshold .atlas-chat-suggestion:hover,.threshold .atlas-chat-regenerate:hover{color:#222b35;background:#e6ddce;border-color:#957644}
+.threshold .atlas-chat-composer form{padding:5px;border:1px solid #ab9c85;border-radius:12px;background:#fff}
+.threshold .atlas-chat-composer input{color:#222b35;background:#fff;border:0;border-radius:8px;padding:12px;font-size:15px}
+.threshold .atlas-chat-composer input::placeholder{color:#636b75}
+.threshold .atlas-chat-composer input:focus-visible{outline:2px solid #89672d;outline-offset:0}
+.threshold .atlas-chat-composer button[type=submit]{background:#b58d49;color:#fff;border-radius:8px;font-size:14px}
+.threshold .atlas-chat-composer>p{color:#606975;font-size:11px}
+.threshold .atlas-chat-shell aside{background:#e8e1d5;border-color:var(--chat-line)}
+.threshold .atlas-chat-shell aside p,.threshold .atlas-chat-shell aside button{color:#37414c}
+.threshold .atlas-chat-shell aside>button{background:#d6b783;color:#202730}
+.threshold .atlas-chat-shell aside>div>div{background:#f3efe7;border-color:#b8ab954f}
+.threshold .atlas-chat [role=log]>div.bg-slate-800{background:#e9e2d6;color:#674d24}
+.threshold .atlas-chat-shell button:focus-visible,.threshold .atlas-chat-shell select:focus-visible{outline:2px solid #89672d;outline-offset:3px}
+@media(max-width:1100px){.threshold .atlas-chapter{display:none}}
+@media(max-width:760px){.threshold .atlas-chat{padding:40px 0 45px}.threshold .atlas-chat>div{padding-inline:6%}.threshold .atlas-chat [role=log]{height:260px;padding:16px}.threshold .atlas-chat-controls{gap:8px}.threshold .atlas-chat-controls select{padding:9px;flex:1}.threshold .atlas-history-toggle{padding:8px 10px;font-size:11px}.threshold .atlas-chat-toolbar{gap:14px;padding:18px}.threshold .atlas-chat-composer{padding:16px}.threshold .atlas-chat>div>div:first-child>p:last-child{font-size:14px}.threshold .atlas-chat-shell{box-shadow:0 20px 45px #0005,0 0 0 8px #08172a}.threshold .atlas-chat-composer form{gap:5px}.threshold .atlas-chat-composer button[type=submit]{padding-inline:14px}.threshold .atlas-chat-composer input{font-size:16px}.threshold .atlas-chat-feature:after{left:5%;width:90%;top:15px}}

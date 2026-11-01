@@ -81,7 +81,6 @@ const skills = [
 ];
 
 const tools = [
-  { key: "ai-assistant", title: "AI engineering", detail: "Explore an idea with the engineering assistant." },
   { key: "qa-dashboard", title: "Quality intelligence", detail: "Investigate results and understand failures." },
   { key: "ai-test-generator", title: "AI-assisted testing", detail: "Turn requirements into a practical test plan." },
   { key: "job-matcher", title: "Role alignment", detail: "Compare your experience with a role." },
@@ -93,7 +92,7 @@ function Orbit({kind = 0}: {kind?: number}) {
 
 export default function Home() {
  const [menuOpen, setMenuOpen] = useState(false);
- const [activeTool, setActiveTool] = useState("ai-assistant");
+ const [activeTool, setActiveTool] = useState("qa-dashboard");
  const [workspaceOpen, setWorkspaceOpen] = useState(false);
  useEffect(() => {
    const sync = () => { const key = location.hash.slice(1); if (tools.some(t => t.key === key)) { setActiveTool(key); setWorkspaceOpen(true); requestAnimationFrame(() => document.getElementById(key)?.scrollIntoView({block: "start"})); } };
@@ -106,15 +105,16 @@ export default function Home() {
    <span className="atlas-chapter">THE THRESHOLD</span>
    <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
-    <a href="#platform">Platform</a><a href="#engineering">Engineering</a><a href="/study">Study Studio</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    <a className="atlas-chat-nav" href="#ai-assistant">Chat with eAI</a><a href="#platform">Platform</a><a href="#engineering">Engineering</a><a href="/study">Study Studio</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
    </nav>
   </header>
   <section className="atlas-hero" aria-labelledby="hero-title">
    <Image src="/images/threshold/gobekli-future.webp" alt="" fill preload sizes="100vw" className="atlas-landscape" />
    <div className="atlas-hero-shade"/>
-   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p>eAI engineers practical intelligence for a more capable tomorrow.<br className="desktop-break"/> We build, test and learn — connecting human curiosity with what comes next.</p><div className="atlas-actions"><a className="atlas-button primary" href="#platform">Explore eAI <span>→</span></a><a className="atlas-button" href="/study">Enter Study Studio</a></div></div>
+   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p>Meet your AI engineering assistant. Bring a question, explore an idea,<br className="desktop-break"/> or work through a challenge in coding, testing and cloud engineering.</p><div className="atlas-actions"><a className="atlas-button primary" href="#ai-assistant">Chat with eAI <span>→</span></a><a className="atlas-button" href="/study">Enter Study Studio</a></div></div>
    <p className="atlas-caption">Göbekli Tepe, Türkiye · An imagined bridge to tomorrow</p>
   </section>
+  <div className="atlas-chat-feature"><ResumeChat /></div>
   <section className="atlas-rail" aria-label="Explore eAI">
    <a href="#engineering"><Orbit/><div><h2>AI Engineering</h2><p>From idea to real systems.</p></div><span>↗</span></a>
    <a href="#qa-dashboard" onClick={() => openTool("qa-dashboard")}><Orbit kind={1}/><div><h2>Quality Intelligence</h2><p>Reliability through insight.</p></div><span>↗</span></a>
@@ -132,7 +132,7 @@ export default function Home() {
   </section>
   <section className="atlas-workspace atlas-container" aria-label="Engineering tools"><div className="atlas-workspace-heading"><div><p className="atlas-eyebrow">YOUR ENGINEERING WORKSPACE</p><h2>Put an idea to work.</h2></div><button className="atlas-button" aria-expanded={workspaceOpen} aria-controls="tool-workspace" onClick={() => setWorkspaceOpen(!workspaceOpen)}>{workspaceOpen ? "Close workspace −" : "Open workspace +"}</button></div>
    <div id="tool-workspace" hidden={!workspaceOpen}><div className="atlas-tool-tabs" role="tablist" aria-label="Engineering tool">{tools.map(t => <button key={t.key} role="tab" id={`tab-${t.key}`} aria-selected={activeTool === t.key} aria-controls={`panel-${t.key}`} onKeyDown={e => { if (["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) { e.preventDefault(); const index = tools.findIndex(item => item.key === t.key); const next = e.key === "Home" ? 0 : e.key === "End" ? tools.length - 1 : (index + (e.key === "ArrowRight" ? 1 : -1) + tools.length) % tools.length; setActiveTool(tools[next].key); document.getElementById(`tab-${tools[next].key}`)?.focus(); } }} tabIndex={activeTool === t.key ? 0 : -1} onClick={() => setActiveTool(t.key)}>{t.title}</button>)}</div>
-   {tools.map((t,i) => <div key={t.key} id={`panel-${t.key}`} role="tabpanel" aria-labelledby={`tab-${t.key}`} hidden={activeTool !== t.key} className="atlas-tool-panel"><p className="atlas-tool-description">{t.detail}</p>{i === 0 ? <ResumeChat/> : i === 1 ? <QADashboard/> : i === 2 ? <AITestGenerator/> : <JobMatcher/>}</div>)}</div>
+   {tools.map((t,i) => <div key={t.key} id={`panel-${t.key}`} role="tabpanel" aria-labelledby={`tab-${t.key}`} hidden={activeTool !== t.key} className="atlas-tool-panel"><p className="atlas-tool-description">{t.detail}</p>{i === 0 ? <QADashboard/> : i === 1 ? <AITestGenerator/> : <JobMatcher/>}</div>)}</div>
   </section>
   <section className="atlas-projects atlas-container" id="projects"><div className="atlas-section-heading"><div><p className="atlas-eyebrow">BUILT WITH INTENT</p><h2>Engineering, in the open.</h2></div><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">View GitHub ↗</a></div><div>{projects.map((p,i) => <article key={p.name}><span className="atlas-index">0{i+1}</span><div><p className="atlas-eyebrow">{p.category}</p><h3>{p.name}</h3><p>{p.description}</p><p className="atlas-stack">{p.stack.join(" · ")}</p></div><div className="atlas-project-status"><span>{p.status}</span>{i < 2 && <a href={`https://github.com/kilicerdal/${i === 0 ? "ai-healthcare-quality-platform" : "playwright-ai-automation"}`} target="_blank" rel="noreferrer">Repository ↗</a>}</div></article>)}</div></section>
   <section className="atlas-about atlas-container" id="about"><div><p className="atlas-eyebrow">THE THINKING BEHIND eAI</p><h2>Curiosity, grounded<br/>in engineering.</h2><p>Founded by Erdal Kilic, eAI brings together software quality, automation and applied AI. With over nine years across financial, healthcare and enterprise systems, the approach is simple: understand the problem, build carefully, and learn from the evidence.</p><div className="atlas-credentials"><span>AWS Certified Developer – Associate</span><span>AWS Certified Cloud Practitioner</span></div></div><div className="atlas-skills" id="skills">{skills.map(s => <div key={s.title}><h3>{s.title}</h3><p>{s.items.join(" · ")}</p></div>)}</div></section>
