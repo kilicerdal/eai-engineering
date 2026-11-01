@@ -49,3 +49,15 @@ The practice bank now contains 31 questions with stable IDs and seven mini lesso
 Suggested review intervals are 1, 3, 7, and 14 elapsed days. Independent correct sessions must be at least 24 hours apart before the interval increases. Mistakes or hints reset that progression. These scheduling rules are product defaults, not a measured prediction of recall or a mastery assessment. Future-dated and invalid attempts are excluded from plan evidence. Review dates do not schedule notifications.
 
 The new questions include negative and zero solutions to linear equations, further force calculations, positive and negative Python range steps, and cache-expiration boundary examples. Worked lesson examples use different numerical scenarios from the practice bank. The bank remains a small foundations collection, not a complete school, university, or professional curriculum.
+
+## Course-material workspace
+
+`/study/materials` supports browser-side PDF text extraction, TXT/Markdown imports, and pasted notes. The initial library allows five materials, PDFs of up to 100 pages, and a 10 MB file limit. Extracted text is persisted in IndexedDB on that browser; original files are not sent to the server. A focused query selects up to six bounded excerpts locally. Only those excerpts, the question, and a short relevant conversation history are sent to the existing Cloudflare AI service through the protected material endpoint.
+
+The endpoint uses the shared 1,000/hour/IP allowance, bounds request size, treats uploaded content as untrusted, and validates citation IDs and verbatim quotation matches before returning supported answers. The client repeats citation validation against its own excerpts. Source buttons open the corresponding extracted PDF page or notes section and highlight the quoted passage. Stored answers are revalidated against their document pages on reload. Removing a material removes related saved answers.
+
+A sample two-page PDF uses fictional history and business cases so visitors can try the workflow without personal files. Source files and PDF.js worker/font/CMap assets are served from the website, with asset paths matched to the pinned package version.
+
+Explain, study-guide, and one-question quiz modes are provided. Retrieval is a bounded local keyword index, not a semantic vector database. Broad guides cover selected excerpts, not the entire course. Scanned/image-only PDFs require OCR before import; images, layout, and complex notation are not faithfully represented by the extracted text. Quote matching proves that cited text occurs in the supplied source; it does not prove that every generated claim is entailed by that quote. Learner accounts, cross-device sync, OCR, and private cloud document storage are not part of this release.
+
+Run `node scripts/evaluate-study-materials.mjs https://www.eai.engineering /tmp/materials-evaluation.json` deliberately for real-provider checks. The script extracts the tracked synthetic PDF and tests history, business, arithmetic, unsupported questions, guides, quizzes, and French-language notes. It consumes AI usage and the existing request allowance.

@@ -85,6 +85,7 @@ export default function StudyPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="#ai-assistant" className="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300">Start a learning session →</a>
             <a href="#practice-lab" className="rounded-xl border border-white/20 px-6 py-3 font-semibold text-slate-200 hover:border-cyan-300">Open Practice Lab</a>
+            <Link href="/study/materials" className="rounded-xl border border-cyan-300/30 bg-cyan-300/5 px-6 py-3 font-semibold text-cyan-200 hover:bg-cyan-300/10">Study with your materials ↗</Link>
           </div>
 
           <div className="mt-6 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-5 py-2 text-sm text-cyan-300">

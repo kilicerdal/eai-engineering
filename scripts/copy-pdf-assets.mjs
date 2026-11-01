@@ -1,0 +1,10 @@
+import { cp, mkdir, readFile } from "node:fs/promises";
+import { join } from "node:path";
+const source = join(process.cwd(), "node_modules/pdfjs-dist");
+const { version } = JSON.parse(await readFile(join(source, "package.json"), "utf8"));
+const destination = join(process.cwd(), "public/pdfjs", version);
+await mkdir(destination, { recursive: true });
+await cp(join(source, "build/pdf.worker.min.mjs"), join(destination, "pdf.worker.min.mjs"));
+for (const name of ["cmaps", "standard_fonts", "wasm"]) await cp(join(source,name), join(destination,name), { recursive: true });
+await cp(join(source,"LICENSE"), join(destination,"LICENSE"));
+console.log(`Prepared PDF.js ${version} browser assets.`);
