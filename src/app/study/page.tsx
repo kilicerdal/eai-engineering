@@ -5,6 +5,7 @@ import GoalLearning from "@/components/GoalLearning";
 import ExamPreparation from "@/components/ExamPreparation";
 import Link from "next/link";
 import Image from "next/image";
+import StudyGlyph from "@/components/StudyGlyph";
 import StudyNavigation from "@/components/StudyNavigation";
 
 const subjects = [
@@ -44,12 +45,7 @@ const subjects = [
     mode: "engineering",
     description: "Cloud architecture, test automation, AI systems, and interview practice.",
   },
-  {
-    icon: "🎯",
-    name: "Exam Preparation",
-    mode: "exam",
-    description: "Study guides, practice questions, and exam preparation.",
-  },
+
 ];
 
 export default function StudyPage() {
@@ -69,19 +65,19 @@ export default function StudyPage() {
         </div>
         <a href="#discover" className="studio-hero-scroll">YOUR NEXT DISCOVERY <span aria-hidden="true">↓</span></a>
       </section>
-      <GoalLearning />
-      <ExamPreparation />
       <section id="discover" className="studio-discover">
         <div className="studio-section-title"><div><p className="studio-eyebrow">A WORLD OF POSSIBILITIES</p><h2>Your next discovery</h2></div><p>Follow a question.<br />See where it takes you.</p></div>
         <div className="studio-pathways">
-          <a href="#ai-assistant"><span className="studio-path-icon" aria-hidden="true">✧</span><h3>Ask your tutor</h3><p>Work through a challenging idea, one thoughtful step at a time.</p><span className="studio-path-link">Begin a conversation ↗</span></a>
-          <Link href="/study/materials"><span className="studio-path-icon" aria-hidden="true">▤</span><h3>Study your materials</h3><p>Turn your notes and PDFs into explanations, guides, and source-based quizzes.</p><span className="studio-path-link">Open your library ↗</span></Link>
-          <a href="#exam-preparation"><span className="studio-path-icon" aria-hidden="true">⌘</span><h3>Prepare for your exam</h3><p>Build your preparation plan and learn from each attempt with a personal mistake notebook.</p><span className="studio-path-link">Open exam preparation ↗</span></a>
+          <a href="#ai-assistant"><span className="studio-path-icon"><StudyGlyph kind="general" /></span><h3>AI tutor</h3><p>Explore an idea. Find your next step.</p><span className="studio-path-link">Begin a conversation ↗</span></a>
+          <Link href="/study/materials"><span className="studio-path-icon"><StudyGlyph kind="writing" /></span><h3>My materials</h3><p>Your sources, connected to understanding.</p><span className="studio-path-link">Open your library ↗</span></Link>
+          <a href="#exam-preparation"><span className="studio-path-icon"><StudyGlyph kind="science" /></span><h3>Exam preparation</h3><p>Prepare with purpose. Learn from each attempt.</p><span className="studio-path-link">Open exam preparation ↗</span></a>
         </div>
       </section>
       <section id="explore" className="studio-explore">
         <div className="studio-section-title"><div><p className="studio-eyebrow">CURIOSITY HAS NO BOUNDARIES</p><h2>Where will you begin?</h2></div><p>Across subjects.<br />At your pace.</p></div>
-        <div className="studio-subjects">
+        <div className="studio-subjects" aria-label="Explore learning subjects">
+          <svg className="studio-orbit-lines" viewBox="0 0 1100 420" fill="none" aria-hidden="true"><ellipse cx="550" cy="210" rx="405" ry="145"/><ellipse cx="550" cy="210" rx="310" ry="108"/><ellipse cx="550" cy="210" rx="185" ry="70"/><ellipse cx="550" cy="210" rx="440" ry="90" transform="rotate(-10 550 210)"/><path d="M100 210H1000M550 45V375"/><circle cx="550" cy="210" r="39"/><circle cx="550" cy="210" r="53"/><circle cx="372" cy="151" r="3"/><circle cx="735" cy="245" r="4"/><circle cx="816" cy="134" r="2"/><circle cx="250" cy="259" r="3"/></svg>
+          <div className="studio-orbit-core" aria-hidden="true"><StudyGlyph kind="general"/><span>EAI</span></div>
           {subjects.map((subject) => (
             <a
               key={subject.name}
@@ -90,22 +86,20 @@ export default function StudyPage() {
                 try { sessionStorage.setItem("eai-study-selected-mode", subject.mode); } catch { /* Navigation still works when storage is unavailable. */ }
                 window.dispatchEvent(new Event("eai-study-mode-change"));
               }}
+              title={subject.description}
+              aria-label={`${subject.name}: ${subject.description}`}
               className="studio-subject"
             >
-              <span className="studio-subject-number" aria-hidden="true">{String(subjects.indexOf(subject) + 1).padStart(2, "0")}</span>
-
-              <h2 className="mb-3 text-xl font-bold">
-                {subject.name}
-              </h2>
-
-              <p className="text-sm leading-7 text-slate-400">
-                {subject.description}
-              </p>
+              <span className="studio-subject-glyph"><StudyGlyph kind={subject.mode}/></span>
+              <span className="studio-subject-label">{subject.mode === "engineering" ? "Engineering" : subject.mode === "history" ? "History" : subject.mode === "writing" ? "Writing" : subject.name}</span>
+              <span className="studio-subject-arrow" aria-hidden="true">↗</span>
             </a>
           ))}
         </div>
 
       </section>
+      <GoalLearning />
+      <ExamPreparation />
       <SharedAIChat />
 
     

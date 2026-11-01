@@ -16,3 +16,8 @@
 
 ## Scope
 Study landing page and shared study navigation/palette, including materials and writing. Existing learning logic, source validation, storage and AI service settings are unchanged. Accounts and cloud sync are not part of this release.
+
+## Orbital Index interface — November 1, 2026
+The shared study palette is midnight navy, warm ivory and antique gold. Compact tool links and a responsive orbital subject navigator replace the large discovery cards and subject tiles. The goal planner, tutor, materials, writing and exam/notebook interfaces share the same scoped styling. No learning or storage logic changed.
+
+Orbital rings, stars and subject glyphs are original code-native CSS/SVG graphics, not copied images. Decorative orbital artwork is hidden from assistive technology; each subject remains a labeled keyboard-accessible link. Phone layouts use a compact two-column subject index. Reduced-motion preferences are respected; no animated background was introduced. The original generated library artwork remains in use with its provenance above.
