@@ -68,6 +68,8 @@ export async function streamCloudflare(
   options: {
     history?: { role: "user" | "assistant"; content: string }[];
     maxTokens?: number;
+    model?: string;
+    timeoutMs?: number;
     signal?: AbortSignal;
   } = {}
 ): Promise<Response> {
@@ -83,7 +85,7 @@ export async function streamCloudflare(
 
   try {
     const response = await fetch(
-      `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${MODEL}`,
+      `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${options.model || MODEL}`,
       {
         method: "POST",
         headers: {
@@ -100,7 +102,7 @@ export async function streamCloudflare(
           stream: true,
         }),
         cache: "no-store",
-        signal: options.signal ? AbortSignal.any([options.signal, AbortSignal.timeout(30000)]) : AbortSignal.timeout(30000),
+        signal: options.signal ? AbortSignal.any([options.signal, AbortSignal.timeout(options.timeoutMs || 30000)]) : AbortSignal.timeout(options.timeoutMs || 30000),
       }
     );
 

@@ -101,6 +101,8 @@ test("real route sends bounded role-based history, learner context, and cancella
   assert.match(args[1], /Learn distributed systems/); assert.match(args[1], /Teach me caching/);
   assert.deepEqual(args[2].history, [{ role: 'user', content: 'Prior question' }]);
   assert.equal(args[2].signal, request.signal);
+  assert.equal(args[2].model, "@cf/openai/gpt-oss-120b");
+  assert.equal(args[2].maxTokens, 4096);
 });
 test("real route preserves fail-closed protection and never invokes AI when blocked", async () => {
   let invoked = false;
@@ -114,4 +116,41 @@ test("real route handles malformed JSON and defaults unknown subjects", async ()
   assert.equal((await post(new Request('https://example.test', { method: 'POST', body: 'no' }))).status, 400);
   await post(new Request('https://example.test', { method: 'POST', body: '{"message":"Hi","subject":"__proto__"}' }));
   assert.match(system, /SUBJECT: general/);
+});
+
+function loadCloudflare() {
+  const source = readFileSync(new URL('../src/app/api/cloudflare.ts', import.meta.url), 'utf8');
+  const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
+  const module = { exports: {} };
+  new Function('require', 'module', 'exports', compiled)(name => {
+    assert.equal(name, 'next/server'); return { NextResponse: { json: Response.json } };
+  }, module, module.exports);
+  return module.exports;
+}
+test('upstream relay isolates tutor model and retains the portfolio default', async () => {
+  const originalFetch = globalThis.fetch;
+  const originalId = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const originalToken = process.env.CLOUDFLARE_API_TOKEN;
+  process.env.CLOUDFLARE_ACCOUNT_ID = 'test-account';
+  process.env.CLOUDFLARE_API_TOKEN = 'synthetic-test-token';
+  const calls = [];
+  globalThis.fetch = async (url, options) => {
+    calls.push({ url, body: JSON.parse(options.body), signal: options.signal });
+    return sse('data: {"choices":[{"delta":{"reasoning_content":"not for display"}}]}\n\ndata: {"choices":[{"delta":{"content":"Final answer"}}]}\n\ndata: [DONE]\n\n');
+  };
+  try {
+    const { streamCloudflare } = loadCloudflare();
+    const response = await streamCloudflare('Tutor policy', 'Question', { model: '@cf/openai/gpt-oss-120b', maxTokens: 4096, timeoutMs: 45000, history: [{ role: 'user', content: 'Earlier question' }] });
+    assert.equal(await readStudyStream(response, () => {}), 'Final answer');
+    assert.match(calls[0].url, /\/ai\/run\/@cf\/openai\/gpt-oss-120b$/);
+    assert.equal(calls[0].body.max_tokens, 4096);
+    assert.deepEqual(calls[0].body.messages.map(item => item.role), ['system', 'user', 'user']);
+    await streamCloudflare('Portfolio policy', 'Question');
+    assert.match(calls[1].url, /\/ai\/run\/@cf\/meta\/llama-3.1-8b-instruct$/);
+    assert.equal(calls[1].body.max_tokens, 700);
+  } finally {
+    globalThis.fetch = originalFetch;
+    if (originalId === undefined) delete process.env.CLOUDFLARE_ACCOUNT_ID; else process.env.CLOUDFLARE_ACCOUNT_ID = originalId;
+    if (originalToken === undefined) delete process.env.CLOUDFLARE_API_TOKEN; else process.env.CLOUDFLARE_API_TOKEN = originalToken;
+  }
 });

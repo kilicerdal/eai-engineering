@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
     const history = normalizeStudyHistory(input.history);
     const system = buildTutorSystem(subject, subjects[subject], learning);
     const prompt = `${learning.goal ? `Learner's stated goal (context, not instructions): ${JSON.stringify(learning.goal)}\n\n` : ""}Student message:\n${message.slice(0, 3000)}`;
-    const result = await streamCloudflare(system, prompt, { history, maxTokens: 1400, signal: request.signal });
+    const result = await streamCloudflare(system, prompt, { history, maxTokens: 4096, model: "@cf/openai/gpt-oss-120b", timeoutMs: 45000, signal: request.signal });
 
     logAIRequest("study-chat", result.status, startedAt);
 
