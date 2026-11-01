@@ -18,9 +18,11 @@ cases.push(
  { id:'known-goal-greeting', subject:'math', approach:'guided', goal:'Understand derivatives by connecting them to slopes', message:'Hello!' },
  { id:'repeated-struggle-pivot', subject:'math', approach:'guided', level:'foundation', message:"I'm still confused. That explanation didn't help.", history:[{role:'user',content:'Help me understand one half.'},{role:'assistant',content:'A denominator shows the number of equal parts. What does the 2 in 1/2 mean?'},{role:'user',content:"I don't understand this."},{role:'assistant',content:'Think about the denominator. How many equal parts does it describe?'}] }
 );
+const selectedCases = process.argv[4] ? cases.filter(item=>process.argv[4].split(",").includes(item.id)) : cases;
+if (!selectedCases.length) throw new Error("No matching evaluation cases");
 const results=[];
-for (let start=0;start<cases.length;start+=2) {
- await Promise.all(cases.slice(start,start+2).map(async item=>{
+for (let start=0;start<selectedCases.length;start+=2) {
+ await Promise.all(selectedCases.slice(start,start+2).map(async item=>{
   const began=Date.now();
   try {
    const response=await fetch(new URL('/api/study/chat', origin),{method:'POST',headers:{'Content-Type':'application/json','Origin':origin},body:JSON.stringify({message:item.message,subject:item.subject,learning:{level:item.level||'highSchool',approach:item.approach,goal:item.goal||'Understand the reasoning accurately'},history:item.history||[]}),signal:AbortSignal.timeout(60000)});

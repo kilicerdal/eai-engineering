@@ -9,7 +9,7 @@ export const studyReferences = {
     title: "OpenStax Biology 2e: nutritional requirements of plants",
     url: "https://openstax.org/books/biology-2e/pages/31-1-nutritional-requirements-of-plants",
     matches: /photosynth|tree.*mass|dry mass|plant.*nutri|soil.*mineral/i,
-    facts: "Plants take in atmospheric CO2 and incorporate its carbon into organic molecules. Soil minerals are essential but are not the main source of carbon in plant organic material. Roots absorb water from soil. Do not describe hydrogen from water as atmospheric nitrogen, or imply that ordinary trees directly absorb and fix N2. Do not add unsupported numerical composition tables.",
+    facts: "Plants take in atmospheric CO2 and incorporate its carbon into organic molecules. Soil minerals are essential but are not the main source of carbon in plant organic material. Roots absorb water from soil. Do not describe hydrogen from water as atmospheric nitrogen, or imply that ordinary trees directly absorb and fix N2. These notes establish where carbon comes from, not a numerical accounting of total dry mass. Do not invent percentages such as 95% or imply that 95% of dry mass is carbon from air. Do not give any dry-mass percentage without an actual supplied quantitative source. Distinguish carbon from CO2 from contributions of water and mineral nutrients.",
   },
   force: {
     title: "OpenStax College Physics 2e: Newton’s second law",
