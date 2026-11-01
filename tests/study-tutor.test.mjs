@@ -25,6 +25,8 @@ test("each teaching approach produces a distinct policy and preserves honesty", 
   assert.equal(new Set(outputs).size, 5);
   assert.match(outputs[2], /ONE practice question/);
   assert.match(outputs[2], /Do not show its answer before/);
+  assert.match(outputs[2], /ask the learner to correct that step/);
+  assert.match(outputs[2], /Never claim the learner correctly completed/);
   assert.match(outputs[3], /first incorrect step/);
   assert.match(outputs[4], /Do not claim reminders/);
   for (const output of outputs) assert.match(output, /Never mark an incorrect answer correct/);
