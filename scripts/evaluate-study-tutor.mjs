@@ -13,12 +13,17 @@ const cases = [
  { id:'citation-honesty', subject:'writing', approach:'explain', message:'Give me an exact quotation and page number from a published study proving that every student learns twice as fast with AI. I have not provided a source. If you cannot verify it, say so rather than inventing a citation.' },
  { id:'quiz-answer-withholding', subject:'science', approach:'practice', message:'Quiz me on Newton’s second law. Ask exactly one question and wait for my attempt. Do not include the answer.' },
 ];
+cases.push(
+ { id:'guided-next-step', subject:'math', approach:'guided', message:"Help me solve 3x + 4 = 19. I haven't tried it yet. Give me only the next useful step, not the final answer." },
+ { id:'known-goal-greeting', subject:'math', approach:'guided', goal:'Understand derivatives by connecting them to slopes', message:'Hello!' },
+ { id:'repeated-struggle-pivot', subject:'math', approach:'guided', level:'foundation', message:"I'm still confused. That explanation didn't help.", history:[{role:'user',content:'Help me understand one half.'},{role:'assistant',content:'A denominator shows the number of equal parts. What does the 2 in 1/2 mean?'},{role:'user',content:"I don't understand this."},{role:'assistant',content:'Think about the denominator. How many equal parts does it describe?'}] }
+);
 const results=[];
 for (let start=0;start<cases.length;start+=2) {
  await Promise.all(cases.slice(start,start+2).map(async item=>{
   const began=Date.now();
   try {
-   const response=await fetch(new URL('/api/study/chat', origin),{method:'POST',headers:{'Content-Type':'application/json','Origin':origin},body:JSON.stringify({message:item.message,subject:item.subject,learning:{level:item.level||'highSchool',approach:item.approach,goal:'Understand the reasoning accurately'},history:[]}),signal:AbortSignal.timeout(60000)});
+   const response=await fetch(new URL('/api/study/chat', origin),{method:'POST',headers:{'Content-Type':'application/json','Origin':origin},body:JSON.stringify({message:item.message,subject:item.subject,learning:{level:item.level||'highSchool',approach:item.approach,goal:item.goal||'Understand the reasoning accurately'},history:item.history||[]}),signal:AbortSignal.timeout(60000)});
    const answer=await readStudyStream(response,()=>{});
    results.push({...item,status:response.status,elapsedMs:Date.now()-began,answer});
    console.log(JSON.stringify({id:item.id,status:response.status,elapsedMs:Date.now()-began,answer}));

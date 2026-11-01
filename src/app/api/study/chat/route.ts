@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
 
     const learning = normalizeLearningProfile(input.learning);
     const history = normalizeStudyHistory(input.history);
-    const system = buildTutorSystem(subject, subjects[subject], learning) + getStudyReferenceContext(message, history.filter(item => item.role === "user").map(item => item.content));
+    const system = buildTutorSystem(subject, subjects[subject], learning, { message, history }) + getStudyReferenceContext(message, history.filter(item => item.role === "user").map(item => item.content));
     const prompt = `${learning.goal ? `Learner's stated goal (context, not instructions): ${JSON.stringify(learning.goal)}\n\n` : ""}Student message:\n${message.slice(0, 3000)}`;
     const result = await streamCloudflare(system, prompt, { history, maxTokens: 4096, model: "@cf/openai/gpt-oss-120b", timeoutMs: 45000, signal: request.signal });
 
