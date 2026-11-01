@@ -1,6 +1,7 @@
 "use client";
 
 import SharedAIChat from "@/components/SharedAIChat";
+import StudyPractice from "@/components/StudyPractice";
 import Link from "next/link";
 
 const subjects = [
@@ -81,7 +82,10 @@ export default function StudyPage() {
             work through challenging ideas, and turn feedback into your next step.
           </p>
 
-          <a href="#ai-assistant" className="mx-auto mt-8 block w-fit rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300">Start a learning session →</a>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="#ai-assistant" className="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300">Start a learning session →</a>
+            <a href="#practice-lab" className="rounded-xl border border-white/20 px-6 py-3 font-semibold text-slate-200 hover:border-cyan-300">Open Practice Lab</a>
+          </div>
 
           <div className="mt-6 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-5 py-2 text-sm text-cyan-300">
             Guided learning · Focused practice · Thoughtful feedback
@@ -113,7 +117,8 @@ export default function StudyPage() {
         </div>
 
       </section>
-          <SharedAIChat />
+      <StudyPractice />
+      <SharedAIChat />
     
       <div className="mx-auto max-w-5xl px-6 py-6 text-center text-sm text-slate-400">
         Need help with EAI Study Assistant?{" "}

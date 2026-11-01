@@ -35,3 +35,9 @@ Run `npm run test:study` on Node 24+, `npx tsc --noEmit --incremental false`, an
 ### Repeatable live scenarios
 
 `node scripts/evaluate-study-tutor.mjs https://www.eai.engineering /tmp/tutor-evaluation.json` runs eight synthetic scenarios against the real protected endpoint. It consumes the existing request allowance and AI usage; use it deliberately, separately from offline tests. Review the actual answer text for correctness and teaching quality. HTTP 200 is not a passing educational assessment. The current reasoning-model candidate uses Cloudflare's compatible Chat Completions endpoint, and the portfolio model remains separate.
+
+## Practice Lab foundation
+
+The initial lab provides 13 fixed-answer questions across algebra, basic physics and plant biology, Python reasoning, and cache-aside fundamentals. Grading and worked explanations are deterministic. Two progressive hints are available before submission. Saved results distinguish first-attempt correctness from first-attempt correctness without hints; retakes do not change those first-attempt measures. The next-question flow prioritizes unseen items and then missed items. Results stay in browser storage and are not a mastery assessment or account-synced learning record.
+
+A practice question can open its own guided tutor session with the problem, learner answer, and completed practice explanation. Selected chat topics receive curated notes linked to Python documentation, OpenStax, or AWS documentation. This is a small curated reference layer, not live web search or a general document-retrieval system. The open-ended tutor still requires educational evaluation beyond the fixed practice bank.

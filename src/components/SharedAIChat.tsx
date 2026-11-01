@@ -499,6 +499,25 @@ export default function SharedAIChat() {
     if (hydrated) handleStudyModeChange();
   }, [activeId, hydrated, loading]);
 
+  useEffect(() => {
+    function receivePracticePrompt(event: Event) {
+      if (loading) return;
+      const detail = (event as CustomEvent<unknown>).detail;
+      if (!detail || typeof detail !== "object") return;
+      const { subject, message, title, goal } = detail as Record<string, unknown>;
+      if (typeof message !== "string" || !message.trim() || message.length > 3000 || !modes.some(mode => mode.id === subject)) return;
+      const conversation = createConversation(subject as Mode);
+      conversation.title = typeof title === "string" ? title.slice(0, 60) : "Practice discussion";
+      conversation.learning.goal = typeof goal === "string" ? goal.slice(0, 300) : "Understand this practice problem";
+      setConversations(previous => [conversation, ...previous]);
+      setActiveId(conversation.id);
+      setRequestError(null);
+      setInput(message);
+    }
+    window.addEventListener("eai-study-prompt", receivePracticePrompt);
+    return () => window.removeEventListener("eai-study-prompt", receivePracticePrompt);
+  }, [activeId, loading]);
+
   function changeLearning(patch: Partial<LearningProfile>) {
     if (!active || loading) return;
     updateConversation(active.id, conversation => ({ ...conversation, learning: { ...conversation.learning, ...patch } }));

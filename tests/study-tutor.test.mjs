@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { normalizeLearningProfile, normalizeSavedStudyMessages, normalizeStudyHistory, buildTutorSystem } from "../src/lib/study-tutor.ts";
+import { getStudyReferenceContext, studyReferences } from "../src/lib/study-reference.ts";
 import { normalizeStudyMath } from "../src/lib/study-markdown.ts";
 import { readStudyStream } from "../src/lib/study-stream.ts";
 
@@ -89,6 +90,7 @@ function loadRoute(protect, stream) {
     "../../../../lib/ai-security": { protectAIRequest: protect, logAIRequest() {} },
     "../../cloudflare": { streamCloudflare: stream },
     "@/lib/study-tutor": { normalizeLearningProfile, normalizeStudyHistory, buildTutorSystem },
+    "@/lib/study-reference": { getStudyReferenceContext },
   };
   new Function('require', 'module', 'exports', compiled)(name => { assert.ok(name in deps, `Unexpected dependency ${name}`); return deps[name]; }, module, module.exports);
   return module.exports.POST;
@@ -171,4 +173,71 @@ test('upstream relay isolates tutor model and retains the portfolio default', as
   const unfinished = '~~~python\nprint(r"\\[x\\]")';
   assert.ok(normalizeStudyMath(unfinished).includes(unfinished));
   assert.equal(normalizeStudyMath('`\\(x\\)`'), '`\\(x\\)`');
+});
+
+function loadPractice() {
+  const source = readFileSync(new URL('../src/lib/study-practice.ts', import.meta.url), 'utf8');
+  const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
+  const module = { exports: {} };
+  new Function('require', 'module', 'exports', compiled)(name => { assert.equal(name, './study-reference'); return { studyReferences }; }, module, module.exports);
+  return module.exports;
+}
+const { practiceQuestions, normalizePracticeAttempts, practiceSummary, nextPracticeQuestion } = loadPractice();
+test('practice bank has unique identities, valid answers, and progressive hints', () => {
+  assert.equal(practiceQuestions.length, 13);
+  assert.equal(new Set(practiceQuestions.map(question => question.id)).size, 13);
+  for (const question of practiceQuestions) {
+    assert.equal(new Set(question.choices).size, 4);
+    assert.ok(Number.isInteger(question.answerIndex) && question.answerIndex >= 0 && question.answerIndex < 4);
+    assert.equal(question.hints.length, 2);
+    if (question.track !== 'math') assert.match(question.source.url, /^https:\/\//);
+  }
+});
+test('linear practice answer keys satisfy their equations', () => {
+  const equations = [[3,4,19],[2,-7,5],[4,9,21],[5,-3,17]];
+  practiceQuestions.filter(question => question.track === 'math').forEach((question,index) => {
+    const [a,b,rhs]=equations[index];
+    assert.equal(a * Number(question.choices[question.answerIndex]) + b, rhs);
+    assert.ok(question.prompt.endsWith(`= ${rhs}.`));
+  });
+});
+test('science, Python, and cache practice use reviewed answer keys', () => {
+  const expected = {
+    'net-force-v1':'12 N', 'acceleration-v1':'4 m/s²', 'plant-carbon-v1':'Atmospheric carbon dioxide',
+    'python-default-v1':'[1, 1]', 'python-sentinel-v1':'Use items=None and create [] inside when items is None',
+    'python-range-v1':'[2, 4, 6]', 'cache-hit-v1':'Return the cached value', 'cache-stale-v1':'10',
+    'cache-miss-v1':'Query the database, populate the cache, return the value',
+  };
+  for (const [id,answer] of Object.entries(expected)) {
+    const question=practiceQuestions.find(question=>question.id===id);
+    assert.equal(question.choices[question.answerIndex],answer);
+  }
+});
+test('practice storage rejects corrupt attempts and discards claimed correctness', () => {
+  const valid = { questionId:'net-force-v1', selectedIndex:1, hintsUsed:0, submittedAt:100 };
+  const result = normalizePracticeAttempts([null,{...valid,selectedIndex:10},{...valid,hintsUsed:-1},{...valid,questionId:'unknown'},{...valid,submittedAt:NaN},{...valid,correct:false}]);
+  assert.deepEqual(result,[valid]);
+});
+test('later retries never inflate first-attempt or independent-correct results', () => {
+  const question=practiceQuestions.find(question=>question.id==='net-force-v1');
+  const first={questionId:question.id,selectedIndex:0,hintsUsed:0,submittedAt:100};
+  const retry={...first,selectedIndex:question.answerIndex,submittedAt:200};
+  const hinted={questionId:'acceleration-v1',selectedIndex:2,hintsUsed:1,submittedAt:300};
+  const stats=practiceSummary('science',[first,retry,hinted]);
+  assert.deepEqual(stats,{total:3,tried:2,firstTryCorrect:1,independentCorrect:0});
+});
+test('practice prioritizes unseen questions then revisits missed questions', () => {
+  const questions=practiceQuestions.filter(question=>question.track==='science');
+  const all=questions.map((question,index)=>({questionId:question.id,selectedIndex:index===0?0:question.answerIndex,hintsUsed:0,submittedAt:index+1}));
+  assert.equal(nextPracticeQuestion('science',all,questions[2].id).id,questions[0].id);
+  assert.equal(nextPracticeQuestion('science',all.slice(0,1),questions[0].id).id,questions[1].id);
+});
+test('reference notes follow the topic and do not claim live retrieval', () => {
+  assert.equal(getStudyReferenceContext('Explain a sonnet'), '');
+  const context=getStudyReferenceContext('Where does tree dry mass come from?');
+  assert.match(context,/OpenStax/); assert.match(context,/not fetched live/);
+  assert.doesNotMatch(context,/AWS/);
+  assert.match(getStudyReferenceContext('What about the next call?', ['Explain Python mutable defaults']), /definition|defined/);
+  const system=buildTutorSystem('writing','Writing support',normalizeLearningProfile({}));
+  assert.match(system,/You have NOT searched/);
 });
