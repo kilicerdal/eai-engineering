@@ -155,3 +155,19 @@ test('long source quotations selected by the application remain exact and bounde
  const answer=materials.materialAnswerFromDraft({supported:true,answer:'Mira Vale owns the budget. [S1]'},[source]);
  assert.ok(answer.citations[0].quote.length<=600);assert.ok(text.includes(answer.citations[0].quote));
 });
+
+test('one bounded format correction repairs a quiz object without weakening citation validation',async()=>{
+ let calls=0;
+ await mockProvider(async(url,options)=>{
+  const body=JSON.parse(options.body);calls++;
+  if(calls===1)return providerResponse({question:'Who owns the budget? [S1]'});
+  assert.match(body.messages.at(-1).content,/supported field MUST be a JSON boolean/);
+  return providerResponse({supported:true,answer:'Who owns the budget? [S1]'});
+ },async()=>{const response=await loadRoute()(request({...payload,task:'quiz'}));assert.equal(response.status,200);assert.equal((await response.json()).citations[0].page,2);});
+ assert.equal(calls,2);
+});
+test('invalid model output stops after two attempts',async()=>{
+ let calls=0;
+ await mockProvider(async()=>{calls++;return providerResponse({supported:true,answer:'Unknown source [S99]'});},async()=>assert.equal((await loadRoute()(request(payload))).status,502));
+ assert.equal(calls,2);
+});

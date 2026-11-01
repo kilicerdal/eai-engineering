@@ -21,8 +21,9 @@ const cases=[
  {id:'single-question-quiz',task:'quiz',message:'Ask one question about the Northwind budget and wait for my attempt.',documents:[document]},
  {id:'french-literature',task:'explain',message:'Qui a écrit le poème Rivière Claire et en quelle année ?',documents:[french]},
 ];
+const selected=process.argv[4]?cases.filter(item=>item.id===process.argv[4]):cases;
 const results=[];
-for(let i=0;i<cases.length;i+=2) await Promise.all(cases.slice(i,i+2).map(async item=>{
+for(let i=0;i<selected.length;i+=2) await Promise.all(selected.slice(i,i+2).map(async item=>{
  const started=Date.now();
  try{
   const excerpts=selectMaterialExcerpts(item.documents,item.message,item.task);
