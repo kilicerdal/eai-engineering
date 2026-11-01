@@ -7,6 +7,7 @@ import {
   type FormEvent,
 } from "react";
 
+import StudyGlyph from "@/components/StudyGlyph";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -235,6 +236,7 @@ function MarkdownMessage({ content }: { content: string }) {
 export default function SharedAIChat() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeId, setActiveId] = useState("");
+  const [openPanel, setOpenPanel] = useState<"history" | "settings" | null>(null);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [hydrated, setHydrated] = useState(false);
@@ -513,6 +515,7 @@ export default function SharedAIChat() {
       conversation.learning.goal = typeof goal === "string" ? goal.slice(0, 300) : "Understand this practice problem";
       setConversations(previous => [conversation, ...previous]);
       setActiveId(conversation.id);
+      setOpenPanel(null);
       setRequestError(null);
       setInput(message);
     }
@@ -542,34 +545,22 @@ export default function SharedAIChat() {
   return (
     <section id="ai-assistant" className="border-t border-white/10 py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 text-center">
-          <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
-            EAI · EDUCATIONAL INTELLIGENCE
-          </p>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">
-            Meet Your AI Tutor
-          </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-slate-400">
-            Understand the reasoning, practice at your level, and get
-            constructive feedback across academic subjects and professional skills.
-          </p>
+        <div className="tutor-section-intro">
+          <p className="studio-eyebrow">A LITTLE CURIOSITY GOES A LONG WAY</p>
+          <h2>Your AI Tutor</h2>
+          <p>A space to ask, work through an idea, and understand the next step.</p>
         </div>
-
-        <div className="grid overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#101827] shadow-2xl md:grid-cols-[260px_1fr]">
-          <aside className="border-b border-white/10 bg-slate-950/60 p-4 md:border-b-0 md:border-r">
-            <button
-              type="button"
-              onClick={newConversation}
-              disabled={!hydrated || loading}
-              className="w-full rounded-xl bg-cyan-400 px-4 py-3 font-semibold text-slate-950 disabled:opacity-50"
-            >
-              + New conversation
-            </button>
-
-            <p className="mb-3 mt-7 text-xs font-semibold tracking-widest text-slate-500">
-              YOUR CONVERSATIONS
-            </p>
-
+        <div className="tutor-focus-shell" onKeyDown={event => { if(event.key === "Escape" && openPanel) { event.preventDefault(); document.getElementById(`tutor-${openPanel}-trigger`)?.focus(); setOpenPanel(null); } }}>
+          <header className="tutor-focus-header">
+            <div className="tutor-focus-brand"><StudyGlyph kind="general"/><div><strong>EAI Study Studio</strong><span>Your learning conversation</span></div></div>
+            <div className="tutor-focus-tools">
+              <button id="tutor-history-trigger" type="button" aria-expanded={openPanel === "history"} aria-controls="tutor-session-history" onClick={()=>setOpenPanel(openPanel === "history" ? null : "history")}>Recent sessions <span aria-hidden="true">⌄</span></button>
+              <button id="tutor-settings-trigger" type="button" aria-expanded={openPanel === "settings"} aria-controls="tutor-session-settings" onClick={()=>setOpenPanel(openPanel === "settings" ? null : "settings")}>Session settings <span aria-hidden="true">⌄</span></button>
+              <button type="button" disabled={!hydrated || loading} className="tutor-new-session" onClick={()=>{setOpenPanel(null);newConversation();}}>+ New session</button>
+            </div>
+          </header>
+          {openPanel === "history" && <section id="tutor-session-history" aria-label="Recent sessions" className="tutor-focus-panel">
+            <div className="tutor-panel-heading"><h3>Recent sessions</h3><button type="button" onClick={()=>setOpenPanel(null)}>Close</button></div>
             <div className="max-h-64 space-y-2 overflow-y-auto md:max-h-[540px]">
               {conversations.map((conversation) => (
                 <div
@@ -583,7 +574,7 @@ export default function SharedAIChat() {
                   <button
                     type="button"
                     disabled={loading}
-                    onClick={() => setActiveId(conversation.id)}
+                    onClick={() => { setActiveId(conversation.id); setOpenPanel(null); }}
                     className="w-full truncate text-left text-sm text-slate-200"
                   >
                     {conversation.title}
@@ -610,19 +601,10 @@ export default function SharedAIChat() {
                 </div>
               ))}
             </div>
-          </aside>
-
-          <div className="min-w-0">
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 bg-slate-900/70 px-5 py-4">
-              <div>
-                <p className="text-lg font-bold text-white">
-                  eAI
-                </p>
-                <p className="text-xs text-slate-400">
-                  Personal AI Study Assistant
-                </p>
-              </div>
-
+          </section>}
+          {openPanel === "settings" && <section id="tutor-session-settings" aria-label="Session settings" className="tutor-focus-panel">
+            <div className="tutor-panel-heading"><h3>Session settings</h3><button type="button" onClick={()=>setOpenPanel(null)}>Done</button></div>
+            <label className="tutor-subject-label">Subject
               <select
                 value={active?.mode || "general"}
                 onChange={(event) =>
@@ -638,9 +620,7 @@ export default function SharedAIChat() {
                   </option>
                 ))}
               </select>
-            </div>
-
-            <div className="space-y-5 border-b border-white/10 bg-slate-950/30 p-5">
+            </label>
               <div className="grid gap-4 sm:grid-cols-[190px_1fr]">
                 <label className="text-xs font-medium text-slate-300">
                   Learning level
@@ -658,6 +638,11 @@ export default function SharedAIChat() {
                     className="mt-2 block w-full rounded-lg border border-white/15 bg-slate-950 px-3 py-2.5 text-sm text-white" />
                 </label>
               </div>
+
+          </section>}
+          <div className="tutor-focus-main">
+            {active && active.title !== "New conversation" && <div className="tutor-context-strip"><span>CURRENT SESSION</span><strong>{active.title}</strong>{active.learning.goal && <p>{active.learning.goal}</p>}</div>}
+            <div className="tutor-mode-bar">
               <div role="group" aria-label="Learning approach" className="flex flex-wrap gap-2">
                 {Object.entries(learningApproaches).map(([value, item]) => (
                   <button key={value} type="button" aria-pressed={active?.learning.approach === value} disabled={!hydrated || loading}
@@ -672,21 +657,21 @@ export default function SharedAIChat() {
 
             <div
               ref={chatContainerRef}
-              className="h-[520px] space-y-5 overflow-y-auto overscroll-contain p-5 md:p-7"
+              className="tutor-dialogue"
               role="log"
               aria-live="polite"
             >
-              {(active?.messages || []).map((message, index) => (
+              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Ask a question, share a problem, or show what you’ve tried.</p></div> : (active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
                 <div
                   key={index}
-                  className={`flex ${
+                  className={`tutor-message-row flex ${
                     message.role === "user"
                       ? "justify-end"
                       : "justify-start"
                   }`}
                 >
                   <div
-                    className={`min-w-0 max-w-[95%] rounded-2xl px-5 py-4 md:max-w-[90%] ${
+                    className={`tutor-message min-w-0 max-w-[95%] rounded-2xl px-5 py-4 md:max-w-[90%] ${
                       message.role === "user"
                         ? "bg-cyan-400 text-slate-950"
                         : "border border-white/10 bg-slate-800 text-slate-100"
@@ -710,8 +695,8 @@ export default function SharedAIChat() {
               )}
             </div>
 
-            <div className="border-t border-white/10 bg-slate-900/50 p-5">
-              <div className="mb-4 flex flex-wrap gap-2">
+            <div className="tutor-composer">
+              {!active?.messages.some(message => message.role === "user") && <div className="tutor-starter-prompts">
                 {suggestions[active?.mode || "general"].map(
                   (suggestion) => (
                     <button
@@ -725,7 +710,7 @@ export default function SharedAIChat() {
                     </button>
                   )
                 )}
-              </div>
+              </div>}
 
               {loading && (
                 <button
@@ -743,7 +728,7 @@ export default function SharedAIChat() {
                   <button
                     type="button"
                     onClick={regenerateResponse}
-                    className="mb-3 rounded-xl border border-cyan-400/40 px-4 py-2 text-sm font-semibold text-cyan-300 hover:bg-cyan-400/10"
+                    className="tutor-regenerate"
                   >
                     ↻ Regenerate Response
                   </button>
@@ -765,12 +750,12 @@ export default function SharedAIChat() {
                   <button type="button" disabled={loading} onClick={regenerateResponse} className="mt-2 font-semibold underline disabled:opacity-50">Retry last question</button>
                 </div>
               )}
-              <form onSubmit={handleSubmit} className="flex items-end gap-3">
+              <form onSubmit={handleSubmit} className="tutor-input-row">
                 <textarea
-                  rows={3}
+                  rows={2}
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
-                  placeholder="Share a question, paste a problem, or show your attempt…"
+                  placeholder="Ask a question or share your work…"
                   maxLength={3000}
                   aria-label="Your message"
                   className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"

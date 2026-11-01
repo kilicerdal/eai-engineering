@@ -9,3 +9,6 @@ Learners can edit title/overview, edit/reorder/add/remove lessons (3–8), accep
 Valid plans and self-reported progress persist in local browser storage. Partial invalid edits do not overwrite the last valid plan. Accounts, cloud sync, automatic mastery diagnosis, automatic plan adaptation and calendar scheduling are not implemented. Changes to input settings are flagged and require regeneration to update lesson content. Regenerating replaces the previous outline and clears its progress only after a valid response succeeds; failed/cancelled requests preserve it.
 
 The former four-track planner is labeled Guided Practice, with its actual question-bank scope disclosed.
+
+## Focused tutor layout
+The tutor now uses a single reading column with a compact mode row. Existing conversation history and subject/level/goal settings are available through collapsible toolbar panels. Existing rename, delete, new-session, stop, regenerate and follow-up controls are retained. A compact strip shows the current saved session title and goal when available. This is a presentation change: no notes canvas, new learning tools, AI provider changes, or storage migration.
