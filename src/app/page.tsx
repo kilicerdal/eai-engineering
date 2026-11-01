@@ -10,33 +10,6 @@ import AITestGenerator from "@/components/AITestGenerator";
 
 import { useState } from "react";
 
-const experience = [
-  {
-    company: "DTCC",
-    role: "Software Development Engineer in Test (SDET)",
-    period: "May 2021 – Present",
-    location: "Jersey City, NJ",
-    description:
-      "Engineering scalable automation frameworks for enterprise financial applications. Working with Java, Playwright, Selenium, API testing, AWS, CI/CD, and AI-assisted development.",
-  },
-  {
-    company: "CareFirst BCBS",
-    role: "Software Development Engineer in Test (SDET)",
-    period: "April 2019 – May 2021",
-    location: "Jersey City, NJ",
-    description:
-      "Developed automation frameworks using Java, Selenium, JUnit, Cucumber, and Maven. Supported functional, regression, and cross-browser testing.",
-  },
-  {
-    company: "WarnerMedia",
-    role: "Software Development Engineer in Test (SDET)",
-    period: "May 2017 – April 2019",
-    location: "New York, NY",
-    description:
-      "Built Java and Selenium automation, validated Oracle databases, and integrated automated testing with Jenkins and Maven.",
-  },
-];
-
 const projects = [
   {
     name: "AI Healthcare Quality Platform",
@@ -138,7 +111,6 @@ export default function Home() {
           <div className="hidden items-center gap-6 text-sm text-slate-300 lg:flex">
             {[
               ["About", "#about"],
-              ["Experience", "#experience"],
               ["Skills", "#skills"],
               ["Projects", "#projects"],
               ["AI Assistant", "#ai-assistant"],
@@ -165,13 +137,7 @@ export default function Home() {
             >
               GitHub ↗
             </a>
-            <a
-              href="/Erdal_Kilic.pdf"
-              download
-              className="rounded-xl bg-cyan-400 px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
-            >
-              Resume ↓
-            </a>
+
           </div>
 
           <button
@@ -190,7 +156,6 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               {[
                 ["About", "#about"],
-                ["Experience", "#experience"],
                 ["Skills", "#skills"],
                 ["Projects", "#projects"],
                 ["AI Assistant", "#ai-assistant"],
@@ -217,13 +182,7 @@ export default function Home() {
                 >
                   GitHub ↗
                 </a>
-                <a
-                  href="/Erdal_Kilic.pdf"
-                  download
-                  className="rounded-xl bg-cyan-400 px-4 py-3 text-sm font-bold text-slate-950"
-                >
-                  Resume ↓
-                </a>
+
               </div>
             </div>
           </div>
@@ -463,45 +422,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience */}
-      <section id="experience" className="py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
-            CAREER
-          </p>
-          <h2 className="mb-12 text-4xl font-bold">Professional Experience</h2>
-
-          <div className="space-y-6">
-            {experience.map((job, index) => (
-              <article
-                key={job.company}
-                className="rounded-2xl border border-white/10 bg-[#101827] p-8 transition hover:border-cyan-400/40"
-              >
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-3">
-                      <h3 className="text-2xl font-bold">{job.company}</h3>
-                      {index === 0 && (
-                        <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-400">
-                          CURRENT
-                        </span>
-                      )}
-                    </div>
-                    <p className="mt-2 font-medium text-cyan-400">{job.role}</p>
-                    <p className="mt-1 text-sm text-slate-500">{job.location}</p>
-                  </div>
-                  <span className="text-sm text-slate-400">{job.period}</span>
-                </div>
-
-                <p className="mt-6 max-w-4xl leading-8 text-slate-400">
-                  {job.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Skills */}
       <section id="skills" className="bg-white/[0.02] py-24">
         <div className="mx-auto max-w-7xl px-6">
@@ -726,16 +646,6 @@ export default function Home() {
               <p className="mt-6 font-semibold text-cyan-300">
                 View Repository →
               </p>
-            </a>
-          </div>
-
-          <div className="mt-10">
-            <a
-              href="/Erdal_Kilic.pdf"
-              download
-              className="inline-flex rounded-xl bg-cyan-400 px-7 py-4 font-semibold text-slate-950 transition hover:bg-cyan-300"
-            >
-              Download My Resume ↓
             </a>
           </div>
         </div>

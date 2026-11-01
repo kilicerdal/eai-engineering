@@ -12,3 +12,6 @@ The former four-track planner is labeled Guided Practice, with its actual questi
 
 ## Focused tutor layout
 The tutor now uses a single reading column with a compact mode row. Existing conversation history and subject/level/goal settings are available through collapsible toolbar panels. Existing rename, delete, new-session, stop, regenerate and follow-up controls are retained. A compact strip shows the current saved session title and goal when available. This is a presentation change: no notes canvas, new learning tools, AI provider changes, or storage migration.
+
+## Focused Personal Library
+The library uses a single answer-reading surface, a compact material selector and three learning-mode buttons. Material management, uploads, pasted notes and recent questions are tucked behind the toolbar. Existing validated citation quotes are shown in expandable source strips; the source-text dialog remains available. Saved materials, answers, source validation, retrieval and AI settings are unchanged.
