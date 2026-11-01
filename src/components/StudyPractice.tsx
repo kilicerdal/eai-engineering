@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import StudyLearningPlan from "@/components/StudyLearningPlan";
 import {
-  practiceQuestions, practiceTracks, normalizePracticeAttempts,
+  practiceQuestions, practiceTracks, normalizePracticeAttempts, normalizePracticeTrack,
   nextPracticeQuestion, practiceSummary,
   type PracticeAttempt, type PracticeTrack,
 } from "@/lib/study-practice";
 
 const STORAGE_KEY = "eai-study-practice-v1";
+const TRACK_KEY = "eai-study-practice-track-v1";
 
 export default function StudyPractice() {
   const [track, setTrack] = useState<PracticeTrack>("math");
@@ -22,11 +24,16 @@ export default function StudyPractice() {
   useEffect(() => {
     let initial: PracticeAttempt[] = [];
     let available = true;
-    try { initial = normalizePracticeAttempts(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]")); }
+    let initialTrack: PracticeTrack = "math";
+    try {
+      initial = normalizePracticeAttempts(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
+      initialTrack = normalizePracticeTrack(localStorage.getItem(TRACK_KEY));
+    }
     catch { available = false; }
     queueMicrotask(() => {
       setAttempts(initial);
-      setQuestionId(nextPracticeQuestion("math", initial).id);
+      setTrack(initialTrack);
+      setQuestionId(nextPracticeQuestion(initialTrack, initial).id);
       setStorageAvailable(available);
       setHydrated(true);
     });
@@ -34,9 +41,12 @@ export default function StudyPractice() {
 
   useEffect(() => {
     if (!hydrated) return;
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(attempts)); }
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(attempts));
+      localStorage.setItem(TRACK_KEY, track);
+    }
     catch { queueMicrotask(() => setStorageAvailable(false)); }
-  }, [attempts, hydrated]);
+  }, [attempts, hydrated, track]);
 
   const question = practiceQuestions.find(question => question.id === questionId)!;
   const summary = practiceSummary(track, attempts);
@@ -72,12 +82,19 @@ export default function StudyPractice() {
           <p className="rounded-full border border-white/10 px-4 py-2 text-xs text-slate-300">{practiceQuestions.length} questions · 4 learning tracks</p>
         </div>
 
+        <StudyLearningPlan track={track} attempts={attempts} ready={hydrated} onTrackChange={changeTrack} onPractice={id => {
+          openQuestion(id);
+          window.requestAnimationFrame(() => {
+            const workspace = document.getElementById("practice-question");
+            workspace?.focus({ preventScroll: true });
+            workspace?.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }} />
+
         <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
           <aside className="rounded-2xl border border-white/10 bg-[#101827] p-5">
-            <label className="block text-sm font-medium text-slate-200" htmlFor="practice-track">Practice track</label>
-            <select id="practice-track" value={track} disabled={!hydrated} onChange={event => changeTrack(event.target.value as PracticeTrack)} className="mt-3 w-full rounded-xl border border-white/15 bg-slate-950 px-3 py-3 text-sm text-white">
-              {Object.entries(practiceTracks).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
-            </select>
+            <p className="text-xs font-semibold uppercase tracking-widest text-cyan-300">PRACTICE PROGRESS</p>
+            <p className="mt-3 text-sm font-medium text-slate-200">{practiceTracks[track]}</p>
             <dl className="mt-6 space-y-5">
               <div><dt className="text-xs text-slate-400">Questions tried in this track</dt><dd className="mt-1 text-2xl font-semibold text-white">{summary.tried}<span className="text-base text-slate-500"> / {summary.total}</span></dd></div>
               <div><dt className="text-xs text-slate-400">Correct on first attempt</dt><dd className="mt-1 text-2xl font-semibold text-cyan-300">{summary.firstTryCorrect}</dd></div>
@@ -87,7 +104,7 @@ export default function StudyPractice() {
             {!storageAvailable && <p role="status" className="mt-3 text-xs text-amber-200">Browser storage is unavailable. This session’s results may not be saved.</p>}
           </aside>
 
-          <div className="min-w-0 rounded-2xl border border-cyan-400/20 bg-[#101827] p-5 md:p-8">
+          <div id="practice-question" tabIndex={-1} role="region" aria-label="Practice question workspace" className="min-w-0 scroll-mt-6 rounded-2xl border border-cyan-400/20 bg-[#101827] p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300 md:p-8">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-xs font-medium uppercase tracking-wider text-cyan-300">{practiceTracks[track]}</p>
               <label className="flex items-center gap-2 text-xs text-slate-400">Question

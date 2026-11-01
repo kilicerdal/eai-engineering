@@ -182,10 +182,11 @@ function loadPractice() {
   new Function('require', 'module', 'exports', compiled)(name => { assert.equal(name, './study-reference'); return { studyReferences }; }, module, module.exports);
   return module.exports;
 }
-const { practiceQuestions, normalizePracticeAttempts, practiceSummary, nextPracticeQuestion } = loadPractice();
+const practiceModule = loadPractice();
+const { practiceQuestions, normalizePracticeAttempts, practiceSummary, nextPracticeQuestion } = practiceModule;
 test('practice bank has unique identities, valid answers, and progressive hints', () => {
-  assert.equal(practiceQuestions.length, 13);
-  assert.equal(new Set(practiceQuestions.map(question => question.id)).size, 13);
+  assert.equal(practiceQuestions.length, 31);
+  assert.equal(new Set(practiceQuestions.map(question => question.id)).size, 31);
   for (const question of practiceQuestions) {
     assert.equal(new Set(question.choices).size, 4);
     assert.ok(Number.isInteger(question.answerIndex) && question.answerIndex >= 0 && question.answerIndex < 4);
@@ -194,7 +195,7 @@ test('practice bank has unique identities, valid answers, and progressive hints'
   }
 });
 test('linear practice answer keys satisfy their equations', () => {
-  const equations = [[3,4,19],[2,-7,5],[4,9,21],[5,-3,17]];
+  const equations = [[3,4,19],[2,-7,5],[4,9,21],[5,-3,17],[2,3,-1],[3,-6,-6],[4,-5,23],[5,8,-7],[6,-9,3],[7,5,33]];
   practiceQuestions.filter(question => question.track === 'math').forEach((question,index) => {
     const [a,b,rhs]=equations[index];
     assert.equal(a * Number(question.choices[question.answerIndex]) + b, rhs);
@@ -224,7 +225,7 @@ test('later retries never inflate first-attempt or independent-correct results',
   const retry={...first,selectedIndex:question.answerIndex,submittedAt:200};
   const hinted={questionId:'acceleration-v1',selectedIndex:2,hintsUsed:1,submittedAt:300};
   const stats=practiceSummary('science',[first,retry,hinted]);
-  assert.deepEqual(stats,{total:3,tried:2,firstTryCorrect:1,independentCorrect:0});
+  assert.deepEqual(stats,{total:9,tried:2,firstTryCorrect:1,independentCorrect:0});
 });
 test('practice prioritizes unseen questions then revisits missed questions', () => {
   const questions=practiceQuestions.filter(question=>question.track==='science');
@@ -240,4 +241,100 @@ test('reference notes follow the topic and do not claim live retrieval', () => {
   assert.match(getStudyReferenceContext('What about the next call?', ['Explain Python mutable defaults']), /definition|defined/);
   const system=buildTutorSystem('writing','Writing support',normalizeLearningProfile({}));
   assert.match(system,/You have NOT searched/);
+});
+
+function loadLearning() {
+  const source = readFileSync(new URL('../src/lib/study-learning.ts', import.meta.url), 'utf8');
+  const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
+  const module = { exports: {} };
+  const dependencies = { './study-practice': practiceModule, './study-reference': { studyReferences } };
+  new Function('require', 'module', 'exports', compiled)(name => { assert.ok(name in dependencies); return dependencies[name]; }, module, module.exports);
+  return module.exports;
+}
+const { miniLessons, normalizePlanSettings, questionLearningState, buildLearningPlan, REVIEW_DAY_MS: DAY } = loadLearning();
+const epoch = 1700000000000;
+function attempt(question, time, correct=true, hintsUsed=0) {
+  return { questionId:question.id, selectedIndex:correct?question.answerIndex:(question.answerIndex+1)%question.choices.length, hintsUsed, submittedAt:time };
+}
+test('expanded physics answer keys obey F=ma', () => {
+  const cases = [[2,5],[3,4],[5,2],[7,3],[8,4],[9,2]];
+  cases.forEach(([mass,acceleration],index)=>{
+    const question=practiceQuestions.find(question=>question.id===`force-example-v1-${index}`);
+    assert.equal(question.choices[question.answerIndex],`${mass*acceleration} N`);
+  });
+});
+test('expanded range and expiration boundary examples have correct keys', () => {
+  const expected = {'range-example-v1-0':'[1, 3, 5]','range-example-v1-1':'[5, 3, 1]','range-example-v1-2':'[0, 3]',
+    'cache-timeline-v1-0':'10','cache-timeline-v1-1':'12','cache-timeline-v1-2':'12'};
+  for (const [id,answer] of Object.entries(expected)) {
+    const question=practiceQuestions.find(question=>question.id===id);
+    assert.equal(question.choices[question.answerIndex],answer);
+  }
+});
+test('every question has a complete mini lesson for its skill', () => {
+  assert.equal(Object.keys(miniLessons).length,7);
+  for (const question of practiceQuestions) {
+    const lesson=miniLessons[question.skill];
+    assert.ok(lesson && lesson.objective && lesson.explanation && lesson.workedExample && lesson.checkpoint);
+  }
+});
+test('plan settings reject invalid goals and budgets', () => {
+  assert.deepEqual(normalizePlanSettings({goal:'retention',minutes:30}),{goal:'retention',minutes:30});
+  for (const value of [null,[],{goal:'constructor',minutes:999},{goal:'__proto__',minutes:'10'}]) {
+    assert.deepEqual(normalizePlanSettings(value),{goal:'foundations',minutes:20});
+  }
+});
+test('a fresh learner gets actionable steps without invented progress or review dates', () => {
+  for (const minutes of [10,20,30]) {
+    const plan=buildLearningPlan('math',[],{goal:'foundations',minutes},epoch);
+    assert.equal(plan.tasks.reduce((sum,task)=>sum+task.minutes,0),minutes);
+    assert.equal(plan.tasks.length,minutes===10?2:minutes===20?3:4);
+    assert.equal(plan.evidenceCount,0); assert.equal(plan.dueCount,0); assert.equal(plan.nextReviewAt,null);
+    for (const task of plan.tasks) assert.equal(practiceQuestions.find(question=>question.id===task.questionId).track,'math');
+  }
+});
+test('incorrect answers become review priorities and hints do not earn independent credit', () => {
+  const question=practiceQuestions[0];
+  const wrong=questionLearningState(question,[attempt(question,epoch,false)],epoch+1000);
+  assert.equal(wrong.status,'needsReview'); assert.equal(wrong.independentSessions,0);
+  const hinted=questionLearningState(question,[attempt(question,epoch,true,1)],epoch+1000);
+  assert.equal(hinted.status,'supported'); assert.equal(hinted.independentSessions,0);
+  assert.equal(hinted.nextReviewAt,epoch+DAY);
+  const plan=buildLearningPlan('math',[attempt(question,epoch,false)],{goal:'assessment',minutes:10},epoch+1000);
+  assert.equal(plan.tasks[0].questionId,question.id); assert.match(plan.tasks[0].reason,/incorrect/);
+});
+test('review intervals require separated independent sessions, not rapid retakes', () => {
+  const question=practiceQuestions[0];
+  const rapid=[attempt(question,epoch),attempt(question,epoch+1000),attempt(question,epoch+2000)];
+  const state=questionLearningState(question,rapid,epoch+3000);
+  assert.equal(state.independentSessions,1); assert.equal(state.nextReviewAt,epoch+DAY);
+  assert.equal(questionLearningState(question,rapid,epoch+DAY).status,'due');
+  const spaced=[attempt(question,epoch),attempt(question,epoch+DAY)];
+  const later=questionLearningState(question,spaced,epoch+DAY+1000);
+  assert.equal(later.independentSessions,2); assert.equal(later.nextReviewAt,epoch+4*DAY);
+});
+test('a new mistake resets the suggested review interval', () => {
+  const question=practiceQuestions[0];
+  const records=[attempt(question,epoch),attempt(question,epoch+DAY),attempt(question,epoch+2*DAY,false),attempt(question,epoch+2*DAY+1000)];
+  const state=questionLearningState(question,records,epoch+2*DAY+2000);
+  assert.equal(state.independentSessions,1); assert.equal(state.nextReviewAt,epoch+3*DAY+1000);
+});
+test('future-dated or corrupt records never create learning evidence', () => {
+  const question=practiceQuestions[0];
+  const records=[attempt(question,epoch+DAY),{...attempt(question,epoch),questionId:'unknown'}];
+  const plan=buildLearningPlan('math',records,{goal:'foundations',minutes:20},epoch);
+  assert.equal(plan.evidenceCount,0); assert.equal(plan.states[0].status,'unseen');
+});
+test('retention goals prioritize due review while foundation goals address current mistakes', () => {
+  const [first,second]=practiceQuestions;
+  const records=[attempt(first,epoch),attempt(second,epoch+DAY,false)];
+  const foundation=buildLearningPlan('math',records,{goal:'foundations',minutes:10},epoch+2*DAY);
+  const retention=buildLearningPlan('math',records,{goal:'retention',minutes:10},epoch+2*DAY);
+  assert.equal(foundation.tasks[0].questionId,second.id);
+  assert.equal(retention.tasks[0].questionId,first.id);
+});
+
+test('saved practice focus accepts known tracks and rejects corrupt values', () => {
+  assert.equal(practiceModule.normalizePracticeTrack('coding'),'coding');
+  for (const value of [null,{},'constructor','__proto__','unknown']) assert.equal(practiceModule.normalizePracticeTrack(value),'math');
 });
