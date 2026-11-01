@@ -8,7 +8,9 @@ import ResumeChat from "@/components/ResumeChat";
 import QADashboard from "@/components/QADashboard";
 import AITestGenerator from "@/components/AITestGenerator";
 
-import { useState } from "react";
+import "./threshold.css";
+
+import { useEffect, useState } from "react";
 
 const projects = [
   {
@@ -78,653 +80,63 @@ const skills = [
   },
 ];
 
+const tools = [
+  { key: "ai-assistant", title: "AI engineering", detail: "Explore an idea with the engineering assistant." },
+  { key: "qa-dashboard", title: "Quality intelligence", detail: "Investigate results and understand failures." },
+  { key: "ai-test-generator", title: "AI-assisted testing", detail: "Turn requirements into a practical test plan." },
+  { key: "job-matcher", title: "Role alignment", detail: "Compare your experience with a role." },
+];
+
+function Orbit({kind = 0}: {kind?: number}) {
+ return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><g stroke="currentColor" strokeWidth="1">{kind === 1 ? <><path d="m4 17 20-11 20 11-20 11zM4 25l20 11 20-11M4 33l20 11 20-11"/></> : kind === 2 ? <><path d="M24 10c-7-6-15-6-20-3v31c6-3 13-2 20 3 7-5 14-6 20-3V7c-5-3-13-3-20 3v31"/></> : <><circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="4"/><path d="M21 27 5 44m22-17 14 14"/></>}</g></svg>;
+}
+
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <main className="min-h-screen bg-[#080d19] text-white selection:bg-cyan-500/30">
-      {/* Premium Navigation */}
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080d19]/85 backdrop-blur-2xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-6 py-4">
-          <a
-            href="#"
-            aria-label="eAI — Intelligence Engineered"
-            className="group flex shrink-0 flex-col justify-center"
-          >
-            <Image
-                src="/eAI_header_vivid.png"
-                alt="eAI — Intelligence Engineered"
-                width={220}
-                height={90}
-                priority
-                className="h-12 w-auto max-w-[210px] object-contain"
-              />
-            <span className="mt-1 text-[10px] font-medium tracking-[0.16em] text-slate-300">
-              INTELLIGENCE ENGINEERED.
-            </span>
-          
-              <span className="mt-1 block text-[10px] font-medium tracking-wide text-slate-400">
-                Founded by <span className="font-semibold text-cyan-300">Erdal Kilic</span>
-              </span>
-</a>
-
-          <div className="hidden items-center gap-6 text-sm text-slate-300 lg:flex">
-            {[
-              ["About", "#about"],
-              ["Skills", "#skills"],
-              ["Projects", "#projects"],
-              ["AI Assistant", "#ai-assistant"],
-              ["Study Assistant", "/study"],
-              ["QA Dashboard", "#qa-dashboard"],
-              ["Contact", "#contact"],
-            ].map(([label, href]) => (
-              <a
-                key={label}
-                href={href}
-                className="transition hover:text-cyan-300"
-              >
-                {label}
-              </a>
-            ))}
-          </div>
-
-          <div className="hidden items-center gap-3 lg:flex">
-            <a
-              href="https://github.com/kilicerdal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-400/50 hover:text-cyan-300"
-            >
-              GitHub ↗
-            </a>
-
-          </div>
-
-          <button
-            type="button"
-            className="rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold lg:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation"
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? "Close" : "Menu"}
-          </button>
-        </nav>
-
-        {menuOpen && (
-          <div className="border-t border-white/10 bg-[#0c1424] px-6 py-5 lg:hidden">
-            <div className="flex flex-col gap-4">
-              {[
-                ["About", "#about"],
-                ["Skills", "#skills"],
-                ["Projects", "#projects"],
-                ["AI Assistant", "#ai-assistant"],
-              ["Study Assistant", "/study"],
-                ["QA Dashboard", "#qa-dashboard"],
-                ["Contact", "#contact"],
-              ].map(([label, href]) => (
-                <a
-                  key={label}
-                  href={href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-sm text-slate-300 transition hover:text-cyan-300"
-                >
-                  {label}
-                </a>
-              ))}
-
-              <div className="mt-3 flex gap-3 border-t border-white/10 pt-5">
-                <a
-                  href="https://github.com/kilicerdal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-xl border border-white/20 px-4 py-3 text-sm"
-                >
-                  GitHub ↗
-                </a>
-
-              </div>
-            </div>
-          </div>
-        )}
-      </header>
-
-      {/* Premium Hero */}
-      <section className="relative isolate overflow-hidden border-b border-white/5">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(34,211,238,0.12),transparent_50%)]" />
-        <div className="pointer-events-none absolute -right-32 top-10 h-[450px] w-[450px] rounded-full bg-blue-600/10 blur-[110px]" />
-        <div className="pointer-events-none absolute -left-40 bottom-0 h-[350px] w-[350px] rounded-full bg-cyan-500/10 blur-[100px]" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:py-32">
-          <div>
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyan-400/25 bg-cyan-400/[0.07] px-5 py-2.5 text-xs font-semibold tracking-wide text-cyan-200">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              SENIOR SDET · AI QUALITY ENGINEERING · AWS CERTIFIED
-            </div>
-
-            <h1 className="max-w-4xl text-5xl font-black leading-[1.08] tracking-tight sm:text-6xl xl:text-7xl">
-              Engineering
-              <br />
-              <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-                Intelligent Quality.
-              </span>
-            </h1>
-
-            <p className="mt-7 text-xl font-semibold text-white">
-              Erdal Kilic
-            </p>
-
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400 md:text-lg">
-              Senior Software Development Engineer in Test building
-              intelligent automation, AI-powered failure investigation,
-              scalable test frameworks, and cloud-ready quality
-              engineering solutions.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#qa-dashboard"
-                className="rounded-xl bg-cyan-400 px-7 py-4 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/10 transition hover:-translate-y-0.5 hover:bg-cyan-300"
-              >
-                Explore eAI →
-              </a>
-
-              <a
-                href="#projects"
-                className="rounded-xl border border-white/20 bg-white/[0.03] px-7 py-4 text-sm font-bold text-white transition hover:border-cyan-400/50"
-              >
-                View Engineering Projects
-              </a>
-            </div>
-
-            <div className="mt-14 grid max-w-2xl grid-cols-2 gap-5 sm:grid-cols-4">
-              {[
-                ["9+", "Years Experience"],
-                ["2", "AWS Certifications"],
-                ["4", "Featured Projects"],
-                ["AI", "Engineering Focus"],
-              ].map(([value, label]) => (
-                <div key={label} className="border-l border-cyan-400/40 pl-4">
-                  <div className="text-3xl font-black text-cyan-300">
-                    {value}
-                  </div>
-                  <div className="mt-2 text-xs leading-5 text-slate-400">
-                    {label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-lg">
-            <div className="absolute -inset-5 rounded-[2rem] bg-cyan-500/10 blur-3xl" />
-
-            <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#0d1728]/95 shadow-2xl shadow-black/30">
-              <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
-                <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
-                </div>
-                <span className="font-mono text-xs text-slate-400">
-                  eAI / ENGINEERING
-                </span>
-              </div>
-
-              <div className="space-y-5 p-6 sm:p-8">
-                <div className="flex items-center justify-between">
-                  <p className="text-xs font-bold tracking-[0.2em] text-cyan-300">
-                    PLATFORM CAPABILITIES
-                  </p>
-                  <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">
-                    AVAILABLE
-                  </span>
-                </div>
-
-                {[
-                  ["01", "GitHub CI Intelligence", "Workflow monitoring"],
-                  ["02", "AI Failure Investigation", "Root-cause assistance"],
-                  ["03", "AI Career Assistant", "Interactive conversations"],
-                  ["04", "Intelligent Job Matching", "Resume analysis"],
-                ].map(([number, title, description]) => (
-                  <div
-                    key={number}
-                    className="flex items-center gap-4 rounded-xl border border-white/[0.07] bg-white/[0.03] p-4"
-                  >
-                    <span className="font-mono text-sm text-cyan-400">
-                      {number}
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-white">
-                        {title}
-                      </p>
-                      <p className="mt-1 text-xs text-slate-400">
-                        {description}
-                      </p>
-                    </div>
-                    <span className="ml-auto text-emerald-400">✓</span>
-                  </div>
-                ))}
-
-                <div className="rounded-xl border border-cyan-400/10 bg-cyan-400/[0.04] p-4">
-                  <p className="font-mono text-xs leading-6 text-slate-400">
-                    <span className="text-cyan-300">$</span> quality-engineering --ai-enabled
-                    <br />
-                    <span className="text-emerald-300">
-                      ✓ Intelligent automation platform ready
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section
-        id="about"
-        className="border-y border-white/5 bg-white/[0.02] py-24 md:py-28"
-      >
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-
-            <div className="lg:sticky lg:top-28">
-              <p className="mb-5 text-sm font-bold uppercase tracking-[0.25em] text-cyan-400">
-                ABOUT ME
-              </p>
-
-              <h2 className="max-w-lg text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-                Quality Engineering Meets{" "}
-                <span className="text-cyan-400">
-                  Artificial Intelligence
-                </span>
-              </h2>
-
-              <div className="mt-8 h-1 w-20 rounded-full bg-cyan-400" />
-
-              <div className="mt-10 rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-6">
-                <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
-                  Professional Highlights
-                </p>
-
-                <div className="space-y-5">
-                  {[
-                    ["9+ Years", "Software Quality Engineering"],
-                    ["AWS Certified", "Developer Associate & Cloud Practitioner"],
-                    ["Enterprise Automation", "UI, API & CI/CD Engineering"],
-                    ["AI Engineering", "Generative AI & Intelligent Testing"],
-                    ["eAI Engineering", "Founder"],
-                  ].map(([title, description]) => (
-                    <div key={title} className="border-l-2 border-cyan-400/40 pl-4">
-                      <p className="font-semibold text-white">{title}</p>
-                      <p className="mt-1 text-sm text-slate-400">{description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-7 text-base leading-8 text-slate-300 md:text-[17px] md:leading-9">
-
-              <p>
-                I am a Senior Software Development Engineer in Test (SDET)
-                and AI Automation Engineer with over nine years of experience
-                designing, developing, and optimizing sophisticated automation
-                solutions across financial services, healthcare, and enterprise
-                technology environments. My professional journey has been
-                driven by a commitment to engineering excellence, software
-                reliability, and the continuous evolution of modern quality
-                assurance practices.
-              </p>
-
-              <p>
-                My technical expertise encompasses test automation architecture,
-                API and microservices testing, cloud-native applications,
-                database validation, and continuous integration and delivery.
-                Working with technologies such as Java, Python, TypeScript,
-                Playwright, Selenium, REST Assured, and AWS, I specialize in
-                building scalable, maintainable automation frameworks that
-                improve testing efficiency, strengthen system reliability,
-                and support complex enterprise software ecosystems.
-              </p>
-
-              <p>
-                As artificial intelligence reshapes the software engineering
-                landscape, my focus has expanded toward integrating Generative
-                AI, large language models, and intelligent automation into
-                traditional engineering workflows. I believe the future of
-                software quality lies in combining established engineering
-                principles with AI-driven capabilities that can accelerate
-                test development, improve defect detection, streamline
-                root-cause analysis, and enable more proactive approaches
-                to software reliability.
-              </p>
-
-              <p>
-                I founded{" "}
-                <span className="font-semibold text-white">
-                  eAI Engineering — INTELLIGENCE ENGINEERED
-                </span>{" "}
-                to bring this vision into practice. Through hands-on
-                engineering projects, AI-powered development tools, and
-                cloud-based solutions, I explore how emerging technologies
-                can transform software testing and developer productivity.
-                My objective is to bridge the gap between conventional
-                automation and intelligent engineering, creating practical,
-                scalable solutions that deliver measurable value while
-                continuously pushing the boundaries of what modern quality
-                engineering can achieve.
-              </p>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section id="skills" className="bg-white/[0.02] py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
-            TECHNOLOGIES
-          </p>
-          <h2 className="mb-12 text-4xl font-bold">Technical Expertise</h2>
-
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {skills.map((skill) => (
-              <div
-                key={skill.title}
-                className="rounded-2xl border border-white/10 bg-[#101827] p-7"
-              >
-                <div className="mb-5 text-3xl text-cyan-400">{skill.icon}</div>
-                <h3 className="mb-5 text-xl font-bold">{skill.title}</h3>
-
-                <div className="flex flex-wrap gap-2">
-                  {skill.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
-            CREDENTIALS
-          </p>
-          <h2 className="mb-12 text-4xl font-bold">AWS Certifications</h2>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {[
-              "AWS Certified Developer – Associate",
-              "AWS Certified Cloud Practitioner",
-            ].map((cert) => (
-              <div
-                key={cert}
-                className="rounded-2xl border border-orange-400/20 bg-gradient-to-br from-orange-400/10 to-transparent p-8"
-              >
-                <div className="mb-6 text-4xl">🏆</div>
-                <h3 className="text-xl font-bold">{cert}</h3>
-                <p className="mt-4 text-sm font-medium text-emerald-400">
-                  ✓ Certified
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="bg-white/[0.02] py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
-            ENGINEERING PORTFOLIO
-          </p>
-          <h2 className="mb-5 text-4xl font-bold">Featured Projects</h2>
-          <p className="mb-12 max-w-3xl text-slate-400">
-            Practical engineering projects demonstrating modern automation,
-            AI development, cloud integration, and software quality.
-          </p>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {projects.map((project) => (
-              <article
-                key={project.name}
-                className="group rounded-2xl border border-white/10 bg-[#101827] p-8 transition hover:-translate-y-1 hover:border-cyan-400/50"
-              >
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-xs font-bold tracking-widest text-cyan-400">
-                    {project.category}
-                  </span>
-                  <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-slate-400">
-                    {project.status}
-                  </span>
-                </div>
-
-                <h3 className="mb-4 text-2xl font-bold">{project.name}</h3>
-                <p className="mb-7 min-h-20 leading-7 text-slate-400">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md bg-cyan-400/10 px-3 py-2 text-xs text-cyan-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Live AI Engineering Platform */}
-      <section id="ai-assistant" className="relative overflow-hidden py-24">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[100px]" />
-
-        <div className="relative mx-auto max-w-7xl px-6">
-          <div className="rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-[#10263b] via-[#101827] to-[#080d19] p-8 md:p-14">
-            <div className="inline-flex items-center gap-3 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2 text-xs font-bold tracking-widest text-emerald-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              LIVE AI ENGINEERING PLATFORM
-            </div>
-
-            <h2 className="mt-8 max-w-4xl text-4xl font-black tracking-tight md:text-5xl">
-              Intelligent Quality Engineering.
-              <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Real Tools. Real Automation.
-              </span>
-            </h2>
-
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Explore working AI-powered engineering tools, including an
-              interactive career assistant, GitHub Actions CI intelligence,
-              automated failure investigation, and intelligent job matching.
-            </p>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                ["AI Assistant", "Interactive engineering conversations"],
-                ["CI Intelligence", "Real GitHub Actions workflow status"],
-                ["Failure Analysis", "AI-assisted root-cause investigation"],
-                ["Job Matching", "AI-powered resume and role analysis"],
-              ].map(([title, description]) => (
-                <div
-                  key={title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:border-cyan-400/40 hover:bg-white/[0.07]"
-                >
-                  <div className="mb-3 h-1 w-10 rounded-full bg-cyan-400" />
-                  <h3 className="font-bold text-white">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">
-                    {description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ResumeChat />
-      <QADashboard />
-      <AITestGenerator />
-
-
-      {/* Featured GitHub Projects */}
-      <section id="github-projects" className="border-t border-white/10 py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
-            REAL-WORLD ENGINEERING
-          </p>
-
-          <h2 className="mb-6 text-4xl font-bold text-white md:text-5xl">
-            Featured GitHub Projects
-          </h2>
-
-          <p className="mb-10 max-w-3xl text-slate-400">
-            Explore my hands-on work in AI-assisted quality engineering,
-            automated testing, and CI/CD.
-          </p>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <a
-              href="https://github.com/kilicerdal/ai-healthcare-quality-platform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-white/10 bg-slate-900 p-8 transition hover:border-cyan-400"
-            >
-              <p className="mb-3 text-sm font-semibold text-cyan-400">
-                AI + API TESTING
-              </p>
-
-              <h3 className="mb-4 text-2xl font-bold text-white">
-                AI Healthcare Quality Platform
-              </h3>
-
-              <p className="leading-7 text-slate-400">
-                Healthcare claims API testing, automated regression,
-                PostgreSQL, AWS service mocks, and GitHub Actions CI/CD.
-              </p>
-
-              <p className="mt-6 font-semibold text-cyan-300">
-                View Repository →
-              </p>
-            </a>
-
-            <a
-              href="https://github.com/kilicerdal/playwright-ai-automation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-white/10 bg-slate-900 p-8 transition hover:border-cyan-400"
-            >
-              <p className="mb-3 text-sm font-semibold text-cyan-400">
-                TEST AUTOMATION
-              </p>
-
-              <h3 className="mb-4 text-2xl font-bold text-white">
-                Playwright AI Automation
-              </h3>
-
-              <p className="leading-7 text-slate-400">
-                TypeScript, Playwright, cross-browser testing,
-                automated regression, and code quality checks.
-              </p>
-
-              <p className="mt-6 font-semibold text-cyan-300">
-                View Repository →
-              </p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <JobMatcher />
-
-      {/* Contact */}
-      <section id="contact" className="border-t border-white/10 py-24">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
-            LET&apos;S CONNECT
-          </p>
-
-          <h2 className="text-4xl font-bold md:text-5xl">
-            Let&apos;s Build Something Great.
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl leading-8 text-slate-400">
-            Open to discussing opportunities in software quality engineering,
-            test automation, cloud technologies, and AI-powered engineering.
-          </p>
-
-          <a
-            href="mailto:erdal.kilic.us@gmail.com"
-            className="mt-10 inline-block rounded-xl bg-cyan-400 px-8 py-4 font-bold text-slate-950 transition hover:bg-cyan-300"
-          >
-            Contact Me →
-          </a>
-
-          <p className="mt-8 text-sm text-slate-500">
-            Jersey City, New Jersey · United States
-          </p>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 text-sm text-slate-500">
-          <span>© 2026 Erdal Kilic</span>
-          <span>Senior SDET · AI Automation Engineer</span>
-          <span>Built with Next.js · TypeScript · Tailwind CSS</span>
-        </div>
-      </footer>
-    
-      {/* EAI Professional Contact */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <div className="rounded-2xl border border-cyan-500/20 bg-slate-900/60 p-8">
-          <h2 className="text-2xl font-bold text-white">
-            Contact EAI Engineering
-          </h2>
-
-          <p className="mt-3 text-slate-300">
-            Connect with EAI Engineering for AI automation,
-            engineering opportunities, and technical support.
-          </p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              ["Professional Contact", "erdal@eai.engineering"],
-              ["General Inquiries", "hello@eai.engineering"],
-              ["Career Opportunities", "careers@eai.engineering"],
-              ["Technical Support", "support@eai.engineering"],
-            ].map(([label, email]) => (
-              <a
-                key={email}
-                href={`mailto:${email}`}
-                className="rounded-xl border border-slate-700 bg-slate-950/60 p-5 transition hover:border-cyan-400"
-              >
-                <div className="text-sm text-slate-400">{label}</div>
-                <div className="mt-2 font-medium text-cyan-400">
-                  {email}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-</main>
-  );
+ const [menuOpen, setMenuOpen] = useState(false);
+ const [activeTool, setActiveTool] = useState("ai-assistant");
+ const [workspaceOpen, setWorkspaceOpen] = useState(false);
+ useEffect(() => {
+   const sync = () => { const key = location.hash.slice(1); if (tools.some(t => t.key === key)) { setActiveTool(key); setWorkspaceOpen(true); requestAnimationFrame(() => document.getElementById(key)?.scrollIntoView({block: "start"})); } };
+   sync(); window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync);
+ }, []);
+ const openTool = (key: string) => { setActiveTool(key); setWorkspaceOpen(true); };
+ return <main className="threshold" id="top">
+  <header className="atlas-header">
+   <a className="atlas-brand" href="#top" aria-label="eAI home"><span>eAI</span><small>Intelligence Engineered</small></a>
+   <span className="atlas-chapter">THE THRESHOLD</span>
+   <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
+   <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
+    <a href="#platform">Platform</a><a href="#engineering">Engineering</a><a href="/study">Study Studio</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+   </nav>
+  </header>
+  <section className="atlas-hero" aria-labelledby="hero-title">
+   <Image src="/images/threshold/gobekli-future.webp" alt="" fill preload sizes="100vw" className="atlas-landscape" />
+   <div className="atlas-hero-shade"/>
+   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p>eAI engineers practical intelligence for a more capable tomorrow.<br className="desktop-break"/> We build, test and learn — connecting human curiosity with what comes next.</p><div className="atlas-actions"><a className="atlas-button primary" href="#platform">Explore eAI <span>→</span></a><a className="atlas-button" href="/study">Enter Study Studio</a></div></div>
+   <p className="atlas-caption">Göbekli Tepe, Türkiye · An imagined bridge to tomorrow</p>
+  </section>
+  <section className="atlas-rail" aria-label="Explore eAI">
+   <a href="#engineering"><Orbit/><div><h2>AI Engineering</h2><p>From idea to real systems.</p></div><span>↗</span></a>
+   <a href="#qa-dashboard" onClick={() => openTool("qa-dashboard")}><Orbit kind={1}/><div><h2>Quality Intelligence</h2><p>Reliability through insight.</p></div><span>↗</span></a>
+   <a href="/study"><Orbit kind={2}/><div><h2>Study Studio</h2><p>A deeper way to learn.</p></div><span>↗</span></a>
+  </section>
+  <section className="atlas-engineering" id="engineering">
+   <div className="atlas-petra"><Image src="/images/threshold/petra-future.webp" alt="Artistic vision of Petra’s carved sandstone architecture opening toward an imagined future city" fill sizes="(max-width: 760px) 100vw, 58vw" className="atlas-landscape"/><p className="atlas-caption">Petra, Jordan · From timeless questions to new possibilities</p></div>
+   <div className="atlas-engineering-copy"><p className="atlas-eyebrow">ENGINEERING A BRIGHTER TOMORROW</p><h2>Built to endure.<br/>Designed to evolve.</h2><p>We engineer reliable, intelligent systems that adapt, improve and create lasting value. By combining rigorous engineering with continuous learning, we turn complex challenges into practical progress.</p><a className="atlas-button" href="#about">Our approach <span>→</span></a><div className="atlas-orbit" aria-hidden="true"><i/><i/><i/></div></div>
+  </section>
+  <section id="platform" className="atlas-practice atlas-container">
+   <div><p className="atlas-eyebrow">REAL WORK. REAL PROGRESS.</p><h2>Intelligence in practice.</h2><p>From development to assurance to continuous learning,<br/>eAI applies intelligence where it makes a difference.</p>
+    <div className="atlas-practice-links"><a href="#ai-test-generator" onClick={() => openTool("ai-test-generator")}><Orbit/><div><h3>AI-assisted testing</h3><p>Start smarter. Create a considered test plan.</p></div><span>→</span></a><a href="#qa-dashboard" onClick={() => openTool("qa-dashboard")}><Orbit kind={1}/><div><h3>CI failure investigation</h3><p>Explore evidence. Find your next step.</p></div><span>→</span></a><a href="/study"><Orbit kind={2}/><div><h3>Personal learning</h3><p>Your goals. Your materials. Your pace.</p></div><span>→</span></a></div>
+   </div>
+   <div className="atlas-project-preview"><div className="atlas-preview-top"><span>SELECTED PROJECT</span><span>01 / 04</span></div><div className="atlas-project-window"><p className="atlas-eyebrow">API AUTOMATION</p><h3>AI Healthcare<br/>Quality Platform</h3><p>API validation, database checks and automated regression workflows.</p><div className="atlas-flow"><span>Requirements</span><b>→</b><span>Validation</span><b>→</b><span>Evidence</span></div><p className="atlas-stack">Node.js · PostgreSQL · GitHub Actions</p><a href="https://github.com/kilicerdal/ai-healthcare-quality-platform" target="_blank" rel="noreferrer">Explore the repository ↗</a></div></div>
+  </section>
+  <section className="atlas-workspace atlas-container" aria-label="Engineering tools"><div className="atlas-workspace-heading"><div><p className="atlas-eyebrow">YOUR ENGINEERING WORKSPACE</p><h2>Put an idea to work.</h2></div><button className="atlas-button" aria-expanded={workspaceOpen} aria-controls="tool-workspace" onClick={() => setWorkspaceOpen(!workspaceOpen)}>{workspaceOpen ? "Close workspace −" : "Open workspace +"}</button></div>
+   <div id="tool-workspace" hidden={!workspaceOpen}><div className="atlas-tool-tabs" role="tablist" aria-label="Engineering tool">{tools.map(t => <button key={t.key} role="tab" id={`tab-${t.key}`} aria-selected={activeTool === t.key} aria-controls={`panel-${t.key}`} onKeyDown={e => { if (["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) { e.preventDefault(); const index = tools.findIndex(item => item.key === t.key); const next = e.key === "Home" ? 0 : e.key === "End" ? tools.length - 1 : (index + (e.key === "ArrowRight" ? 1 : -1) + tools.length) % tools.length; setActiveTool(tools[next].key); document.getElementById(`tab-${tools[next].key}`)?.focus(); } }} tabIndex={activeTool === t.key ? 0 : -1} onClick={() => setActiveTool(t.key)}>{t.title}</button>)}</div>
+   {tools.map((t,i) => <div key={t.key} id={`panel-${t.key}`} role="tabpanel" aria-labelledby={`tab-${t.key}`} hidden={activeTool !== t.key} className="atlas-tool-panel"><p className="atlas-tool-description">{t.detail}</p>{i === 0 ? <ResumeChat/> : i === 1 ? <QADashboard/> : i === 2 ? <AITestGenerator/> : <JobMatcher/>}</div>)}</div>
+  </section>
+  <section className="atlas-projects atlas-container" id="projects"><div className="atlas-section-heading"><div><p className="atlas-eyebrow">BUILT WITH INTENT</p><h2>Engineering, in the open.</h2></div><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">View GitHub ↗</a></div><div>{projects.map((p,i) => <article key={p.name}><span className="atlas-index">0{i+1}</span><div><p className="atlas-eyebrow">{p.category}</p><h3>{p.name}</h3><p>{p.description}</p><p className="atlas-stack">{p.stack.join(" · ")}</p></div><div className="atlas-project-status"><span>{p.status}</span>{i < 2 && <a href={`https://github.com/kilicerdal/${i === 0 ? "ai-healthcare-quality-platform" : "playwright-ai-automation"}`} target="_blank" rel="noreferrer">Repository ↗</a>}</div></article>)}</div></section>
+  <section className="atlas-about atlas-container" id="about"><div><p className="atlas-eyebrow">THE THINKING BEHIND eAI</p><h2>Curiosity, grounded<br/>in engineering.</h2><p>Founded by Erdal Kilic, eAI brings together software quality, automation and applied AI. With over nine years across financial, healthcare and enterprise systems, the approach is simple: understand the problem, build carefully, and learn from the evidence.</p><div className="atlas-credentials"><span>AWS Certified Developer – Associate</span><span>AWS Certified Cloud Practitioner</span></div></div><div className="atlas-skills" id="skills">{skills.map(s => <div key={s.title}><h3>{s.title}</h3><p>{s.items.join(" · ")}</p></div>)}</div></section>
+  <section className="atlas-contact" id="contact"><div className="atlas-container"><p className="atlas-eyebrow">A MORE INTELLIGENT TOMORROW</p><h2>What will we build next?</h2><p>Let’s turn your next idea into real progress.</p><a className="atlas-button" href="mailto:hello@eai.engineering">Get in touch <span>→</span></a><div className="atlas-contact-links"><a href="mailto:erdal@eai.engineering">Professional inquiries ↗</a><a href="mailto:support@eai.engineering">Technical support ↗</a><a href="mailto:careers@eai.engineering">Opportunities ↗</a></div></div></section>
+  <footer className="atlas-footer"><a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a><a href="/study">Study Studio ↗</a><small>© 2026 eAI · Erdal Kilic</small></footer>
+ </main>;
 }
