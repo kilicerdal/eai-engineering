@@ -85,7 +85,9 @@ export async function streamCloudflare(
 
   try {
     const response = await fetch(
-      `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${options.model || MODEL}`,
+      options.model
+        ? `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/v1/chat/completions`
+        : `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${MODEL}`,
       {
         method: "POST",
         headers: {
@@ -93,6 +95,7 @@ export async function streamCloudflare(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          ...(options.model ? { model: options.model } : {}),
           messages: [
             { role: "system", content: system },
             ...(options.history || []),

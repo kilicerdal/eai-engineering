@@ -142,7 +142,8 @@ test('upstream relay isolates tutor model and retains the portfolio default', as
     const { streamCloudflare } = loadCloudflare();
     const response = await streamCloudflare('Tutor policy', 'Question', { model: '@cf/openai/gpt-oss-120b', maxTokens: 4096, timeoutMs: 45000, history: [{ role: 'user', content: 'Earlier question' }] });
     assert.equal(await readStudyStream(response, () => {}), 'Final answer');
-    assert.match(calls[0].url, /\/ai\/run\/@cf\/openai\/gpt-oss-120b$/);
+    assert.match(calls[0].url, /\/ai\/v1\/chat\/completions$/);
+    assert.equal(calls[0].body.model, "@cf/openai/gpt-oss-120b");
     assert.equal(calls[0].body.max_tokens, 4096);
     assert.deepEqual(calls[0].body.messages.map(item => item.role), ['system', 'user', 'user']);
     await streamCloudflare('Portfolio policy', 'Question');
@@ -153,4 +154,9 @@ test('upstream relay isolates tutor model and retains the portfolio default', as
     if (originalId === undefined) delete process.env.CLOUDFLARE_ACCOUNT_ID; else process.env.CLOUDFLARE_ACCOUNT_ID = originalId;
     if (originalToken === undefined) delete process.env.CLOUDFLARE_API_TOKEN; else process.env.CLOUDFLARE_API_TOKEN = originalToken;
   }
+});
+
+ test("malformed model control output fails visibly", async () => {
+  await assert.rejects(readStudyStream(sse('data: {"response":"analysis: internal formatting failure"}\n\n'), () => {}), /invalid response/);
+  await assert.rejects(readStudyStream(sse('data: {"choices":[{"delta":{"content":"<|start|>assistant"}}]}\n\n'), () => {}), /invalid response/);
 });

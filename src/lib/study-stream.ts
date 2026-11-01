@@ -25,7 +25,13 @@ export async function readStudyStream(response: Response, onText: (text: string)
     try { payload = JSON.parse(data); } catch { throw new Error("The response was interrupted. Please retry or ask the tutor to continue."); }
     if (payload.error || payload.errors?.length) throw new Error("The response was interrupted. Please try again.");
     const token = payload.choices?.[0]?.delta?.content ?? payload.response;
-    if (typeof token === "string") { answer += token; onText(answer); }
+    if (typeof token === "string") {
+      answer += token;
+      if (/<\|(?:start|end|return|channel|im_start|im_end)\|>/.test(answer) || /^analysis:/.test(answer)) {
+        throw new Error("The tutor returned an invalid response. Please retry your question.");
+      }
+      onText(answer);
+    }
   }
   try {
     while (!finished) {
