@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { protectAIRequest, logAIRequest } from "@/lib/ai-security";
-import { MATERIAL_LIMITS, materialTutorSystem, validateMaterialSources, validateMaterialAnswer, type MaterialTask } from "@/lib/study-materials";
+import { MATERIAL_LIMITS, materialTutorSystem, validateMaterialSources, materialAnswerFromDraft, type MaterialTask } from "@/lib/study-materials";
 
 export const maxDuration = 60;
 
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     const response = await fetch(`https://api.cloudflare.com/client/v4/accounts/${account}/ai/v1/chat/completions`,{
       method:"POST",headers:{Authorization:`Bearer ${token}`,"Content-Type":"application/json"},cache:"no-store",
       signal:AbortSignal.any([request.signal,AbortSignal.timeout(45000)]),
-      body:JSON.stringify({model:"@cf/openai/gpt-oss-120b",stream:false,max_tokens:5000,messages:[
+      body:JSON.stringify({model:"@cf/openai/gpt-oss-120b",stream:false,max_tokens:5000,response_format:{type:"json_object"},messages:[
         {role:"system",content:materialTutorSystem(task)},
         {role:"user",content:JSON.stringify({task,question:input.message,previousConversation:history,excerpts:sources.map(({sourceId,name,kind,page,text})=>({sourceId,name,kind,page,text}))})},
       ]}),
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     let content = choice.message.content.trim();
     if (content.startsWith("```")) content = content.replace(/^```(?:json)?\s*/i,"").replace(/\s*```$/,"");
     let answer;
-    try { answer=validateMaterialAnswer(JSON.parse(content),sources); }
+    try { answer=materialAnswerFromDraft(JSON.parse(content),sources); }
     catch (error) { return reply({error:error instanceof SyntaxError ? "The tutor could not prepare a complete cited answer. Please try a more focused question." : error instanceof Error ? error.message : "The tutor’s source citations could not be verified. Please try again."},502); }
     return reply({...answer,excerptCount:sources.length},200,{"Cache-Control":"no-store"});
   } catch { return reply({error:"The tutor could not complete this request. Please try again."},502); }

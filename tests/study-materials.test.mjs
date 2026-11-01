@@ -142,3 +142,16 @@ test('repeated citations to a real source merge without accepting an invented qu
  assert.equal(validateMaterialAnswer(repeated,[source]).citations.length,1);
  assert.throws(()=>validateMaterialAnswer({...valid,citations:[...valid.citations,{sourceId:'S1',quote:'This quotation is not in the source.'}]},[source]));
 });
+
+test('model drafts cannot author displayed quotations or page metadata',()=>{
+ const answer=materials.materialAnswerFromDraft({supported:true,answer:'Mira Vale owns the budget. [S1]',citations:[{sourceId:'S1',quote:'Invented text',page:99}]},[source]);
+ assert.equal(answer.citations[0].page,2);assert.ok(source.text.includes(answer.citations[0].quote));
+ assert.doesNotMatch(answer.citations[0].quote,/Invented text/);
+ assert.throws(()=>materials.materialAnswerFromDraft({supported:true,answer:'False source [S99]'},[source]));
+});
+test('long source quotations selected by the application remain exact and bounded',()=>{
+ const text='Background material. '.repeat(40)+'The budget owner is Mira Vale. '+'Other course material. '.repeat(30);
+ const source=validateMaterialSources([{documentId:'long',name:'Long notes',kind:'text',page:1,text}])[0];
+ const answer=materials.materialAnswerFromDraft({supported:true,answer:'Mira Vale owns the budget. [S1]'},[source]);
+ assert.ok(answer.citations[0].quote.length<=600);assert.ok(text.includes(answer.citations[0].quote));
+});
