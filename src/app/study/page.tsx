@@ -3,6 +3,8 @@
 import SharedAIChat from "@/components/SharedAIChat";
 import StudyPractice from "@/components/StudyPractice";
 import Link from "next/link";
+import Image from "next/image";
+import StudyNavigation from "@/components/StudyNavigation";
 
 const subjects = [
   {
@@ -51,49 +53,32 @@ const subjects = [
 
 export default function StudyPage() {
   return (
-    <main className="min-h-screen bg-[#080d19] text-white">
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <Link href="/" className="text-xl font-bold text-cyan-400">
-            eAI Engineering
-          </Link>
-
-          <Link
-            href="/"
-            className="text-sm text-slate-300 transition hover:text-cyan-400"
-          >
-            ← Back to Engineering
-          </Link>
+    <main className="studio-home">
+      <section className="studio-hero" aria-labelledby="studio-title">
+        <Image src="/images/study/library-horizon.webp" alt="" fill preload sizes="100vw" className="studio-hero-image" />
+        <div className="studio-hero-shade" />
+        <StudyNavigation overlay />
+        <div className="studio-hero-copy">
+          <p className="studio-eyebrow">THE ART OF UNDERSTANDING</p>
+          <h1 id="studio-title">Explore what you<br className="studio-desktop-break" /> don’t yet know.</h1>
+          <p className="studio-hero-subtitle">Ancient wisdom. New possibilities.</p>
+          <p className="studio-hero-description">A space for curious minds. Connect ideas, explore your materials, and find a clearer path to understanding.</p>
+          <div className="studio-hero-actions"><a className="studio-button-gold" href="#ai-assistant">Start exploring <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
+          <p className="studio-hero-note">No account needed · Your work stays in this browser</p>
         </div>
-      </header>
-
-      <section className="mx-auto max-w-7xl px-6 py-14">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-5 text-sm font-bold tracking-[0.25em] text-cyan-400">
-            EAI EDUCATION
-          </p>
-
-          <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-            Your next breakthrough starts here.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
-            For students and professionals who want to understand the why. Set a learning goal,
-            work through challenging ideas, and turn feedback into your next step.
-          </p>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="#ai-assistant" className="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300">Start a learning session →</a>
-            <a href="#practice-lab" className="rounded-xl border border-white/20 px-6 py-3 font-semibold text-slate-200 hover:border-cyan-300">Open Practice Lab</a>
-            <Link href="/study/materials" className="rounded-xl border border-cyan-300/30 bg-cyan-300/5 px-6 py-3 font-semibold text-cyan-200 hover:bg-cyan-300/10">Study with your materials ↗</Link>
-          </div>
-
-          <div className="mt-6 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-5 py-2 text-sm text-cyan-300">
-            Guided learning · Focused practice · Thoughtful feedback
-          </div>
+        <a href="#discover" className="studio-hero-scroll">YOUR NEXT DISCOVERY <span aria-hidden="true">↓</span></a>
+      </section>
+      <section id="discover" className="studio-discover">
+        <div className="studio-section-title"><div><p className="studio-eyebrow">A WORLD OF POSSIBILITIES</p><h2>Your next discovery</h2></div><p>Follow a question.<br />See where it takes you.</p></div>
+        <div className="studio-pathways">
+          <a href="#ai-assistant"><span className="studio-path-icon" aria-hidden="true">✧</span><h3>Ask your tutor</h3><p>Work through a challenging idea, one thoughtful step at a time.</p><span className="studio-path-link">Begin a conversation ↗</span></a>
+          <Link href="/study/materials"><span className="studio-path-icon" aria-hidden="true">▤</span><h3>Study your materials</h3><p>Turn your notes and PDFs into explanations, guides, and source-based quizzes.</p><span className="studio-path-link">Open your library ↗</span></Link>
+          <a href="#practice-lab"><span className="studio-path-icon" aria-hidden="true">⌘</span><h3>Practice and understand</h3><p>Test your thinking with focused questions, hints, and worked explanations.</p><span className="studio-path-link">Explore Practice Lab ↗</span></a>
         </div>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      </section>
+      <section id="explore" className="studio-explore">
+        <div className="studio-section-title"><div><p className="studio-eyebrow">CURIOSITY HAS NO BOUNDARIES</p><h2>Where will you begin?</h2></div><p>Across subjects.<br />At your pace.</p></div>
+        <div className="studio-subjects">
           {subjects.map((subject) => (
             <a
               key={subject.name}
@@ -102,9 +87,9 @@ export default function StudyPage() {
                 try { sessionStorage.setItem("eai-study-selected-mode", subject.mode); } catch { /* Navigation still works when storage is unavailable. */ }
                 window.dispatchEvent(new Event("eai-study-mode-change"));
               }}
-              className="block rounded-2xl border border-white/10 bg-[#111a2b] p-7 transition hover:border-cyan-400/40"
+              className="studio-subject"
             >
-              <div className="mb-5 text-4xl">{subject.icon}</div>
+              <span className="studio-subject-number" aria-hidden="true">{String(subjects.indexOf(subject) + 1).padStart(2, "0")}</span>
 
               <h2 className="mb-3 text-xl font-bold">
                 {subject.name}
@@ -118,17 +103,17 @@ export default function StudyPage() {
         </div>
 
       </section>
-      <StudyPractice />
       <SharedAIChat />
+      <StudyPractice />
     
-      <div className="mx-auto max-w-5xl px-6 py-6 text-center text-sm text-slate-400">
-        Need help with EAI Study Assistant?{" "}
+      <div className="studio-footer">
+        <Link href="/">EAI Engineering</Link><span>Knowledge opens possibilities.</span><span>Need a hand?{" "}
         <a
           href="mailto:support@eai.engineering"
           className="font-medium text-cyan-400 hover:underline"
         >
-          Contact Technical Support
-        </a>
+          Contact support
+        </a></span>
       </div>
 
 </main>

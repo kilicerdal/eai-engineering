@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import StudyNavigation from "@/components/StudyNavigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -1110,34 +1110,11 @@ export default function WritingStudioPage() {
 
   return (
     <main className="min-h-screen bg-[#080d19] text-white">
-      <header className="border-b border-white/10 bg-[#0c1424]">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-5">
-          <div>
-            <Link
-              href="/study"
-              className="text-sm text-cyan-300 hover:text-cyan-200"
-            >
-              ← Back to Study Assistant
-            </Link>
-
-            <h1 className="mt-2 text-2xl font-bold">
-              EAI Academic Writing Studio
-            </h1>
-
-            <p className="mt-1 text-sm text-slate-400">
-              Write with confidence. Think critically. Improve your work.
-            </p>
-          </div>
-
-          <button
-            type="button"
-            onClick={downloadEssay}
-            className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
-          >
-            Download Essay ↓
-          </button>
-        </div>
-      </header>
+      <StudyNavigation />
+      <section className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-5 px-6 pt-10">
+        <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">EAI Academic Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p></div>
+        <button type="button" onClick={downloadEssay} className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950">Download Essay ↓</button>
+      </section>
 
       <div className="mx-auto max-w-7xl px-6 py-8">
         <section className="mb-6 rounded-2xl border border-white/10 bg-[#111a2b] p-5">
