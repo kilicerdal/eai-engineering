@@ -15,12 +15,15 @@ import "katex/dist/katex.min.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+import { defaultLearningProfile, learningLevels, learningApproaches, normalizeLearningProfile, normalizeSavedStudyMessages, type LearningProfile } from "@/lib/study-tutor";
+import { readStudyStream } from "@/lib/study-stream";
+
 type Message = {
   role: "user" | "assistant";
   content: string;
 };
 
-type Mode = "general" | "math" | "science" | "writing" | "history" | "coding" | "exam";
+type Mode = "general" | "math" | "science" | "writing" | "history" | "coding" | "exam" | "engineering";
 
 type Conversation = {
   id: string;
@@ -28,6 +31,7 @@ type Conversation = {
   mode: Mode;
   messages: Message[];
   updatedAt: number;
+  learning: LearningProfile;
 };
 
 const STORAGE_KEY = "eai-study-conversations-v1";
@@ -41,6 +45,7 @@ const modes: { id: Mode; label: string }[] = [
   { id: "history", label: "History & Humanities" },
   { id: "coding", label: "Computer Science" },
   { id: "exam", label: "Exam Preparation" },
+  { id: "engineering", label: "Professional & Technical" },
 ];
 
 const suggestions: Record<Mode, string[]> = {
@@ -74,6 +79,11 @@ const suggestions: Record<Mode, string[]> = {
     "Explain algorithms",
     "Help me debug my code",
   ],
+  engineering: [
+    "Help me understand AWS architecture trade-offs",
+    "Teach me how to design a reliable test automation framework",
+    "Practice a system design interview with me",
+  ],
   exam: [
     "Quiz me on biology",
     "Create a calculus practice test",
@@ -84,7 +94,7 @@ const suggestions: Record<Mode, string[]> = {
 const welcomeMessage: Message = {
   role: "assistant",
   content:
-    "Welcome to **EAI Study Assistant**! 🎓 Choose a subject or ask me anything. I can help you understand concepts, solve problems step by step, improve your writing, and prepare for exams.",
+    "Welcome to **EAI Tutor**. Set your level and learning goal, choose how you want to learn, then share a topic or problem. If you have already tried it, include your work so we can build from what you know.",
 };
 
 function createConversation(mode: Mode = "general"): Conversation {
@@ -94,6 +104,7 @@ function createConversation(mode: Mode = "general"): Conversation {
     mode,
     messages: [welcomeMessage],
     updatedAt: Date.now(),
+    learning: { ...defaultLearningProfile },
   };
 }
 
@@ -162,8 +173,8 @@ function MarkdownMessage({ content }: { content: string }) {
             }>;
 
             const className = child.props?.className || "";
-            const match = /language-(\\w+)/.exec(className);
-            const code = String(child.props?.children || "").replace(/\\n$/, "");
+            const match = /language-([\w-]+)/.exec(className);
+            const code = String(child.props?.children || "").replace(/\n$/, "");
 
             return (
               <CodeBlock
@@ -226,6 +237,7 @@ export default function SharedAIChat() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [hydrated, setHydrated] = useState(false);
+  const [requestError, setRequestError] = useState<{ id: string; message: string } | null>(null);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -246,8 +258,8 @@ export default function SharedAIChat() {
               typeof item.id === "string" &&
               typeof item.title === "string" &&
               Array.isArray(item.messages) &&
-              ["general", "math", "science", "writing", "history", "coding", "exam"].includes(item.mode)
-          );
+              ["general", "math", "science", "writing", "history", "coding", "exam", "engineering"].includes(item.mode)
+          ).map((item) => ({ ...item, learning: normalizeLearningProfile(item.learning), messages: normalizeSavedStudyMessages(item.messages) }));
         }
       }
 
@@ -259,7 +271,7 @@ export default function SharedAIChat() {
           const migrated = createConversation();
 
           if (Array.isArray(messages) && messages.length) {
-            migrated.messages = messages;
+            migrated.messages = normalizeSavedStudyMessages(messages);
             migrated.title = "Previous conversation";
           }
 
@@ -348,9 +360,11 @@ export default function SharedAIChat() {
     if (!question || loading || !active) return;
 
     const id = active.id;
+    const lastUserIndex = active.messages.findLastIndex(message => message.role === "user");
     const history = regenerate
-      ? active.messages.slice(0, -2).slice(-10)
-      : active.messages.slice(-10);
+      ? active.messages.slice(0, lastUserIndex).slice(-12)
+      : active.messages.slice(-12);
+    const baseMessages = regenerate ? active.messages.slice(0, lastUserIndex + 1) : [...active.messages, { role: "user" as const, content: question }];
     const mode = active.mode;
 
     updateConversation(id, (conversation) => ({
@@ -360,17 +374,10 @@ export default function SharedAIChat() {
           ? question.slice(0, 45)
           : conversation.title,
       updatedAt: Date.now(),
-      messages: regenerate
-        ? [
-            ...conversation.messages.slice(0, -1),
-            { role: "assistant", content: "" },
-          ]
-        : [
-            ...conversation.messages,
-            { role: "user", content: question },
-          ],
+      messages: baseMessages,
     }));
 
+    setRequestError(null);
     setInput("");
     setLoading(true);
 
@@ -388,131 +395,20 @@ export default function SharedAIChat() {
           message: question,
           history,
           subject: mode,
+          learning: active.learning,
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("AI request failed");
-      }
-
-      if (!response.body) {
-        throw new Error("Streaming response unavailable");
-      }
-
-      const contentType = response.headers.get("content-type") || "";
-
-      if (!contentType.includes("text/event-stream")) {
-        throw new Error("Expected AI streaming response");
-      }
-
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-
-      let buffer = "";
-      let answer = "";
-      let finished = false;
-      let assistantAdded = regenerate;
-
-      function updateAnswer() {
-        updateConversation(id, (conversation) => {
-          const messages = [...conversation.messages];
-
-          if (!assistantAdded) {
-            messages.push({
-              role: "assistant",
-              content: answer,
-            });
-            assistantAdded = true;
-          } else {
-            const last = messages.length - 1;
-
-            messages[last] = {
-              role: "assistant",
-              content: answer,
-            };
-          }
-
-          return {
-            ...conversation,
-            updatedAt: Date.now(),
-            messages,
-          };
-        });
-      }
-
-      function processEvent(event: string) {
-        const dataLines = event
-          .split("\n")
-          .filter((line) => line.startsWith("data:"))
-          .map((line) => line.slice(5).trimStart());
-
-        if (!dataLines.length) return;
-
-        const data = dataLines.join("\n").trim();
-
-        if (data === "[DONE]") {
-          finished = true;
-          return;
-        }
-
-        try {
-          const parsed = JSON.parse(data);
-          const token = parsed.choices?.[0]?.delta?.content;
-
-          if (typeof token === "string" && token.length > 0) {
-            answer += token;
-            updateAnswer();
-          }
-        } catch {
-          // Ignore malformed SSE events.
-        }
-      }
-
-      while (true) {
-        const { value, done } = await reader.read();
-
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-
-        const normalized = buffer.replace(/\r\n/g, "\n");
-
-        const events = normalized.split("\n\n");
-
-        buffer = events.pop() || "";
-
-        for (const event of events) {
-          processEvent(event);
-        }
-
-        if (finished) {
-          await reader.cancel();
-          break;
-        }
-      }
-
-      if (buffer.trim() && !finished) {
-        processEvent(buffer);
-      }
-
-      if (!answer.trim()) {
-        throw new Error("AI returned an empty streaming response");
-      }
-
-      updateAnswer();
-    } catch {
-      if (!controller.signal.aborted) {
+      await readStudyStream(response, (answer) => {
         updateConversation(id, (conversation) => ({
           ...conversation,
-          messages: [
-            ...conversation.messages,
-            {
-              role: "assistant",
-              content:
-                "Sorry, I couldn't complete that request. Please try again.",
-            },
-          ],
+          updatedAt: Date.now(),
+          messages: [...baseMessages, { role: "assistant", content: answer }],
         }));
+      });
+    } catch (error) {
+      if (!controller.signal.aborted) {
+        setRequestError({ id, message: error instanceof Error ? error.message : "The tutor could not complete your request. Please try again." });
       }
     } finally {
       if (abortControllerRef.current === controller) {
@@ -532,6 +428,7 @@ export default function SharedAIChat() {
       ...previous,
     ]);
     setActiveId(conversation.id);
+    setRequestError(null);
     setInput("");
   }
 
@@ -569,14 +466,17 @@ export default function SharedAIChat() {
 
   useEffect(() => {
     function handleStudyModeChange() {
-      const selected = sessionStorage.getItem("eai-study-selected-mode");
+      if (loading) return;
+      let selected: string | null;
+      try { selected = sessionStorage.getItem("eai-study-selected-mode"); } catch { return; }
 
       const allowed: Mode[] = [
         "general", "math", "science",
-        "writing", "history", "coding", "exam"
+        "writing", "history", "coding", "exam", "engineering"
       ];
 
       if (!selected || !allowed.includes(selected as Mode)) return;
+      try { sessionStorage.removeItem("eai-study-selected-mode"); } catch { /* Storage is optional. */ }
 
       setConversations((previous) =>
         previous.map((conversation) =>
@@ -592,7 +492,13 @@ export default function SharedAIChat() {
     return () => {
       window.removeEventListener("eai-study-mode-change", handleStudyModeChange);
     };
-  }, [activeId]);
+    if (hydrated) handleStudyModeChange();
+  }, [activeId, hydrated, loading]);
+
+  function changeLearning(patch: Partial<LearningProfile>) {
+    if (!active || loading) return;
+    updateConversation(active.id, conversation => ({ ...conversation, learning: { ...conversation.learning, ...patch } }));
+  }
 
   function changeMode(mode: Mode) {
     if (!active || loading) return;
@@ -619,8 +525,8 @@ export default function SharedAIChat() {
             Meet Your AI Tutor
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-slate-400">
-            Advanced AI assistance for coding, automation testing,
-            AWS, generative AI, and software engineering.
+            Understand the reasoning, practice at your level, and get
+            constructive feedback across academic subjects and professional skills.
           </p>
         </div>
 
@@ -651,6 +557,7 @@ export default function SharedAIChat() {
                 >
                   <button
                     type="button"
+                    disabled={loading}
                     onClick={() => setActiveId(conversation.id)}
                     className="w-full truncate text-left text-sm text-slate-200"
                   >
@@ -706,6 +613,36 @@ export default function SharedAIChat() {
                   </option>
                 ))}
               </select>
+            </div>
+
+            <div className="space-y-5 border-b border-white/10 bg-slate-950/30 p-5">
+              <div className="grid gap-4 sm:grid-cols-[190px_1fr]">
+                <label className="text-xs font-medium text-slate-300">
+                  Learning level
+                  <select aria-label="Learning level" value={active?.learning.level || "college"} disabled={!hydrated || loading}
+                    onChange={event => changeLearning({ level: event.target.value as LearningProfile["level"] })}
+                    className="mt-2 block w-full rounded-lg border border-white/15 bg-slate-950 px-3 py-2.5 text-sm text-white">
+                    {Object.entries(learningLevels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+                  </select>
+                </label>
+                <label className="text-xs font-medium text-slate-300">
+                  What do you want to learn?
+                  <input aria-label="Learning goal" value={active?.learning.goal || ""} maxLength={300} disabled={!hydrated || loading}
+                    onChange={event => changeLearning({ goal: event.target.value })}
+                    placeholder="For example: understand derivatives before Friday’s exam"
+                    className="mt-2 block w-full rounded-lg border border-white/15 bg-slate-950 px-3 py-2.5 text-sm text-white" />
+                </label>
+              </div>
+              <div role="group" aria-label="Learning approach" className="flex flex-wrap gap-2">
+                {Object.entries(learningApproaches).map(([value, item]) => (
+                  <button key={value} type="button" aria-pressed={active?.learning.approach === value} disabled={!hydrated || loading}
+                    onClick={() => changeLearning({ approach: value as LearningProfile["approach"] })}
+                    className={`rounded-lg border px-3 py-2 text-sm transition disabled:opacity-50 ${active?.learning.approach === value ? "border-cyan-300 bg-cyan-300/15 text-cyan-200" : "border-white/15 text-slate-300 hover:border-cyan-400/50"}`}>
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+              <p className="text-xs text-slate-400">{learningApproaches[active?.learning.approach || "guided"].description}</p>
             </div>
 
             <div
@@ -787,11 +724,28 @@ export default function SharedAIChat() {
                   </button>
                 )}
 
-              <form onSubmit={handleSubmit} className="flex gap-3">
-                <input
+              {!loading && active?.messages.some(message => message.role === "user") && (
+                <div className="mb-4 flex flex-wrap gap-2" aria-label="Continue learning">
+                  {[
+                    ["Give me a hint", "Give me just one hint for the current problem without revealing the answer."],
+                    ["Explain differently", "Explain the current concept using a different example or analogy."],
+                    ["Try a similar problem", "Give me one similar practice problem. Wait for my attempt before showing the answer."],
+                    ["Summarize this session", "Summarize what we covered, the gaps shown in my attempts, and what I should practice next. Do not invent progress or scores."],
+                  ].map(([label, prompt]) => <button key={label} type="button" onClick={() => void sendMessage(prompt)} className="rounded-lg border border-white/15 px-3 py-2 text-xs text-cyan-200 hover:bg-white/5">{label}</button>)}
+                </div>
+              )}
+              {requestError?.id === activeId && (
+                <div role="alert" className="mb-4 rounded-xl border border-amber-400/30 bg-amber-400/10 p-3 text-sm text-amber-100">
+                  <p>{requestError.message}</p>
+                  <button type="button" disabled={loading} onClick={regenerateResponse} className="mt-2 font-semibold underline disabled:opacity-50">Retry last question</button>
+                </div>
+              )}
+              <form onSubmit={handleSubmit} className="flex items-end gap-3">
+                <textarea
+                  rows={3}
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
-                  placeholder="Ask your AI tutor anything..."
+                  placeholder="Share a question, paste a problem, or show your attempt…"
                   maxLength={3000}
                   aria-label="Your message"
                   className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"
@@ -807,7 +761,7 @@ export default function SharedAIChat() {
               </form>
 
               <p className="mt-3 text-center text-xs text-slate-500">
-                Powered by Cloudflare Workers AI · AI-generated responses may contain inaccuracies.
+                Sessions are saved in this browser, without account sync. AI responses can contain mistakes; verify important facts and calculations.
               </p>
             </div>
           </div>
