@@ -76,8 +76,8 @@ export default function StudyPractice() {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
           <div>
             <p className="mb-3 text-xs font-bold tracking-[0.2em] text-cyan-300">LEARN BY DOING</p>
-            <h2 id="practice-heading" className="text-3xl font-bold md:text-4xl">Practice. Reflect. Improve.</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">Start with a focused question, use a hint when you need one, and compare your answer with a worked explanation.</p>
+            <h2 id="practice-heading" className="text-3xl font-bold md:text-4xl">Guided Practice</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">Explore our four-track practice bank. Try a question, use a hint when needed, and review the worked explanation.</p>
           </div>
           <p className="rounded-full border border-white/10 px-4 py-2 text-xs text-slate-300">{practiceQuestions.length} questions · 4 learning tracks</p>
         </div>

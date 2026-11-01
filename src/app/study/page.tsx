@@ -1,6 +1,7 @@
 "use client";
 
 import SharedAIChat from "@/components/SharedAIChat";
+import GoalLearning from "@/components/GoalLearning";
 import StudyPractice from "@/components/StudyPractice";
 import Link from "next/link";
 import Image from "next/image";
@@ -63,17 +64,18 @@ export default function StudyPage() {
           <h1 id="studio-title">Explore what you<br className="studio-desktop-break" /> don’t yet know.</h1>
           <p className="studio-hero-subtitle">Ancient wisdom. New possibilities.</p>
           <p className="studio-hero-description">A space for curious minds. Connect ideas, explore your materials, and find a clearer path to understanding.</p>
-          <div className="studio-hero-actions"><a className="studio-button-gold" href="#ai-assistant">Start exploring <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
+          <div className="studio-hero-actions"><a className="studio-button-gold" href="#learning-goal">Start exploring <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
           <p className="studio-hero-note">No account needed · Your work stays in this browser</p>
         </div>
         <a href="#discover" className="studio-hero-scroll">YOUR NEXT DISCOVERY <span aria-hidden="true">↓</span></a>
       </section>
+      <GoalLearning />
       <section id="discover" className="studio-discover">
         <div className="studio-section-title"><div><p className="studio-eyebrow">A WORLD OF POSSIBILITIES</p><h2>Your next discovery</h2></div><p>Follow a question.<br />See where it takes you.</p></div>
         <div className="studio-pathways">
           <a href="#ai-assistant"><span className="studio-path-icon" aria-hidden="true">✧</span><h3>Ask your tutor</h3><p>Work through a challenging idea, one thoughtful step at a time.</p><span className="studio-path-link">Begin a conversation ↗</span></a>
           <Link href="/study/materials"><span className="studio-path-icon" aria-hidden="true">▤</span><h3>Study your materials</h3><p>Turn your notes and PDFs into explanations, guides, and source-based quizzes.</p><span className="studio-path-link">Open your library ↗</span></Link>
-          <a href="#practice-lab"><span className="studio-path-icon" aria-hidden="true">⌘</span><h3>Practice and understand</h3><p>Test your thinking with focused questions, hints, and worked explanations.</p><span className="studio-path-link">Explore Practice Lab ↗</span></a>
+          <a href="#practice-lab"><span className="studio-path-icon" aria-hidden="true">⌘</span><h3>Practice and understand</h3><p>Test your thinking with focused questions, hints, and worked explanations.</p><span className="studio-path-link">Explore Guided Practice ↗</span></a>
         </div>
       </section>
       <section id="explore" className="studio-explore">

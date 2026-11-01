@@ -49,8 +49,8 @@ export default function StudyLearningPlan({ track, attempts, ready, onTrackChang
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-cyan-300">YOUR NEXT STEPS</p>
-          <h3 id="learning-plan-heading" className="mt-2 text-2xl font-semibold text-white">A learning plan that grows with you</h3>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">Choose your focus and available time. Your practice attempts shape the next lesson and review suggestions.</p>
+          <h3 id="learning-plan-heading" className="mt-2 text-2xl font-semibold text-white">Your guided practice session</h3>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">Choose from the skills in this practice bank. Your attempts shape the next exercise and suggested reviews.</p>
         </div>
         <span className="rounded-full border border-cyan-300/20 bg-cyan-300/5 px-3 py-2 text-xs text-cyan-200">Estimated session · {settings.minutes} min</span>
       </div>

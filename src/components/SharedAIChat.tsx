@@ -504,10 +504,11 @@ export default function SharedAIChat() {
       if (loading) return;
       const detail = (event as CustomEvent<unknown>).detail;
       if (!detail || typeof detail !== "object") return;
-      const { subject, message, title, goal } = detail as Record<string, unknown>;
+      const { subject, message, title, goal, level } = detail as Record<string, unknown>;
       if (typeof message !== "string" || !message.trim() || message.length > 3000 || !modes.some(mode => mode.id === subject)) return;
       const conversation = createConversation(subject as Mode);
       conversation.title = typeof title === "string" ? title.slice(0, 60) : "Practice discussion";
+      if (typeof level === "string" && Object.hasOwn(learningLevels, level)) conversation.learning.level = level as LearningProfile["level"];
       conversation.learning.goal = typeof goal === "string" ? goal.slice(0, 300) : "Understand this practice problem";
       setConversations(previous => [conversation, ...previous]);
       setActiveId(conversation.id);
