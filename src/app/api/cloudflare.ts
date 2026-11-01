@@ -64,7 +64,12 @@ export async function askCloudflare(
 
 export async function streamCloudflare(
   system: string,
-  question: string
+  question: string,
+  options: {
+    history?: { role: "user" | "assistant"; content: string }[];
+    maxTokens?: number;
+    signal?: AbortSignal;
+  } = {}
 ): Promise<Response> {
   const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
   const token = process.env.CLOUDFLARE_API_TOKEN;
@@ -88,13 +93,14 @@ export async function streamCloudflare(
         body: JSON.stringify({
           messages: [
             { role: "system", content: system },
+            ...(options.history || []),
             { role: "user", content: question },
           ],
-          max_tokens: 700,
+          max_tokens: options.maxTokens || 700,
           stream: true,
         }),
         cache: "no-store",
-        signal: AbortSignal.timeout(30000),
+        signal: options.signal ? AbortSignal.any([options.signal, AbortSignal.timeout(30000)]) : AbortSignal.timeout(30000),
       }
     );
 
