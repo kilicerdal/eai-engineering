@@ -12,7 +12,7 @@ const redis =
 const limiter = redis
   ? new Ratelimit({
       redis,
-      limiter: Ratelimit.slidingWindow(20, "1 h"),
+      limiter: Ratelimit.slidingWindow(1000, "1 h"),
       prefix: "erdal-ai:rate-limit",
       analytics: true,
     })
