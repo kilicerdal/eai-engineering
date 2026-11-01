@@ -29,7 +29,7 @@ test('reordered lessons retain identity and progress discards unknown or duplica
 test('lesson handoff preserves goal, time, and checkpoint without claiming file access',()=>{
  const prompt=goals.goalLessonPrompt(settings,goals.validateGoalPlan(plan).lessons[0]);
  assert.match(prompt,/French Revolution/);assert.match(prompt,/25 minutes/);assert.match(prompt,/one short question/);assert.match(prompt,/Do not claim to have read/);assert.ok(prompt.length<=3000);
- assert.match(goals.goalPlannerSystem,/never guarantee/i);assert.match(goals.goalPlannerSystem,/untrusted/);
+ assert.match(goals.goalPlannerSystem,/never guarantee/i);assert.match(goals.goalPlannerSystem,/untrusted/);assert.match(goals.goalPlannerSystem,/ONE individual/);assert.match(goals.goalPlannerSystem,/not been supplied/);
 });
 const require=createRequire(import.meta.url);const ts=require('typescript');
 function loadRoute(protect=async()=>null){
