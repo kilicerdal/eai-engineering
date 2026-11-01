@@ -17,6 +17,7 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { defaultLearningProfile, learningLevels, learningApproaches, normalizeLearningProfile, normalizeSavedStudyMessages, type LearningProfile } from "@/lib/study-tutor";
 import { readStudyStream } from "@/lib/study-stream";
+import { normalizeStudyMath } from "@/lib/study-markdown";
 
 type Message = {
   role: "user" | "assistant";
@@ -225,7 +226,7 @@ function MarkdownMessage({ content }: { content: string }) {
           },
         }}
       >
-        {content}
+        {normalizeStudyMath(content)}
       </ReactMarkdown>
     </div>
   );
@@ -408,6 +409,9 @@ export default function SharedAIChat() {
       });
     } catch (error) {
       if (!controller.signal.aborted) {
+        if (error instanceof Error && error.message.includes("invalid response")) {
+          updateConversation(id, conversation => ({ ...conversation, messages: baseMessages }));
+        }
         setRequestError({ id, message: error instanceof Error ? error.message : "The tutor could not complete your request. Please try again." });
       }
     } finally {

@@ -31,3 +31,7 @@ Consider diagrams, voice tutoring, accessibility improvements, and educator tool
 ## Verification
 
 Run `npm run test:study` on Node 24+, `npx tsc --noEmit --incremental false`, and `npm run build`. Browser checks should cover subject selection, learning settings, reload persistence, mobile layout, errors, retry, and a live multi-turn lesson. Mocked tests do not replace evaluation of actual model responses.
+
+### Repeatable live scenarios
+
+`node scripts/evaluate-study-tutor.mjs https://www.eai.engineering /tmp/tutor-evaluation.json` runs eight synthetic scenarios against the real protected endpoint. It consumes the existing request allowance and AI usage; use it deliberately, separately from offline tests. Review the actual answer text for correctness and teaching quality. HTTP 200 is not a passing educational assessment. The current reasoning-model candidate uses Cloudflare's compatible Chat Completions endpoint, and the portfolio model remains separate.

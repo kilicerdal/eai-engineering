@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { normalizeLearningProfile, normalizeSavedStudyMessages, normalizeStudyHistory, buildTutorSystem } from "../src/lib/study-tutor.ts";
+import { normalizeStudyMath } from "../src/lib/study-markdown.ts";
 import { readStudyStream } from "../src/lib/study-stream.ts";
 
 const profile = normalizeLearningProfile({ level: "advanced", approach: "practice", goal: "  Learn distributed systems  " });
@@ -159,4 +160,15 @@ test('upstream relay isolates tutor model and retains the portfolio default', as
  test("malformed model control output fails visibly", async () => {
   await assert.rejects(readStudyStream(sse('data: {"response":"analysis: internal formatting failure"}\n\n'), () => {}), /invalid response/);
   await assert.rejects(readStudyStream(sse('data: {"choices":[{"delta":{"content":"<|start|>assistant"}}]}\n\n'), () => {}), /invalid response/);
+});
+
+ test("math notation renders without changing code or native dollar math", () => {
+  assert.match(normalizeStudyMath(String.raw`\(x=3\)`), /\$x=3\$/);
+  assert.match(normalizeStudyMath(String.raw`\[x+4=19\]`), /\$\$\nx\+4=19\n\$\$/);
+  assert.equal(normalizeStudyMath('$x$'), '$x$');
+  const code = '```python\nprint(r"\\[x\\]")\n```';
+  assert.ok(normalizeStudyMath(code).includes(code));
+  const unfinished = '~~~python\nprint(r"\\[x\\]")';
+  assert.ok(normalizeStudyMath(unfinished).includes(unfinished));
+  assert.equal(normalizeStudyMath('`\\(x\\)`'), '`\\(x\\)`');
 });
