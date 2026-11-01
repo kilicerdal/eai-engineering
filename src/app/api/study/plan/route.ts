@@ -21,13 +21,15 @@ export async function POST(request: NextRequest) {
   try {
     const signal=AbortSignal.any([request.signal,AbortSignal.timeout(45000)]);
     const messages:{role:"system"|"user"|"assistant";content:string}[]=[{role:"system",content:goalPlannerSystem},{role:"user",content:JSON.stringify({settings,excerpts:sources})}];
+    let validationIssue="The plan was not complete.";
     for(let attempt=0;attempt<2;attempt++) {
       const response=await fetch(`https://api.cloudflare.com/client/v4/accounts/${account}/ai/v1/chat/completions`,{method:"POST",headers:{Authorization:`Bearer ${token}`,"Content-Type":"application/json"},cache:"no-store",signal,body:JSON.stringify({model:"@cf/openai/gpt-oss-120b",stream:false,max_tokens:4500,response_format:{type:"json_object"},messages})});
       if(!response.ok)return reply({error:response.status===429?"The tutor is busy. Please try again shortly.":"The tutor is temporarily unavailable. Your current plan has not been replaced."},response.status===429?429:502,response.headers.get("Retry-After")?{"Retry-After":response.headers.get("Retry-After")!}:undefined);
       const choice=(await response.json()).choices?.[0];if(choice?.finish_reason==="length"||typeof choice?.message?.content!=="string")return reply({error:"The plan was incomplete. Try a more focused goal."},502);
       const content=choice.message.content.trim().replace(/^```(?:json)?\s*/i,"").replace(/\s*```$/,"");
-      try{return reply({plan:validateGoalPlan(JSON.parse(content),sources),sources},200,{"Cache-Control":"no-store"});}catch{
-        if(attempt===0)messages.push({role:"assistant",content:choice.message.content.slice(0,18000)},{role:"user",content:'Correct the JSON format for the original goal. Include title, overview and 3–8 lessons. Every lesson needs title, objective, activity, checkpoint and sourceIds (an array, empty if unused). Use ONLY original source IDs. Return only the corrected JSON.'});
+      try{return reply({plan:validateGoalPlan(JSON.parse(content),sources),sources},200,{"Cache-Control":"no-store"});}catch(error){
+        validationIssue=error instanceof SyntaxError?"Return valid JSON.":error instanceof Error?error.message:"The plan was incomplete.";
+        if(attempt===0)messages.push({role:"assistant",content:choice.message.content.slice(0,18000)},{role:"user",content:`Correct the JSON format for the original goal. Include title, overview and 3–8 lessons. Every lesson needs title, objective, activity, checkpoint and sourceIds (an array, empty if unused). Use ONLY original source IDs. Return only the corrected JSON. Validation issue: ${validationIssue}`});
       }
     }
     return reply({error:"The tutor could not produce a complete plan. Please try again."},502);

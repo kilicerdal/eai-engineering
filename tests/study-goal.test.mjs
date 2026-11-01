@@ -20,6 +20,12 @@ test('plans require complete topic-specific lesson fields and only supplied mate
  assert.throws(()=>goals.validateGoalPlan(referenced));
  assert.equal(goals.validateGoalPlan(referenced,[{sourceId:'S1'}]).lessons[0].sourceIds[0],'S1');
 });
+test('harmless wrappers and omitted optional references normalize without inventing evidence',()=>{
+ assert.equal(goals.validateGoalPlan({plan}).lessons.length,3);
+ const noReferences={...plan,lessons:plan.lessons.map(({sourceIds,...lesson})=>lesson)};
+ assert.deepEqual(goals.validateGoalPlan(noReferences).lessons[0].sourceIds,[]);
+ assert.throws(()=>goals.validateGoalPlan({...plan,lessons:plan.lessons.map(l=>({...l,sourceIds:null}))}));
+});
 test('reordered lessons retain identity and progress discards unknown or duplicated entries',()=>{
  const parsed=goals.validateGoalPlan(plan);const reordered={...parsed,lessons:[parsed.lessons[2],parsed.lessons[0],parsed.lessons[1]]};
  assert.equal(goals.validateGoalPlan(reordered).lessons[0].id,'lesson-3');
