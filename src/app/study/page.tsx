@@ -2,7 +2,7 @@
 
 import SharedAIChat from "@/components/SharedAIChat";
 import GoalLearning from "@/components/GoalLearning";
-import StudyPractice from "@/components/StudyPractice";
+import ExamPreparation from "@/components/ExamPreparation";
 import Link from "next/link";
 import Image from "next/image";
 import StudyNavigation from "@/components/StudyNavigation";
@@ -70,12 +70,13 @@ export default function StudyPage() {
         <a href="#discover" className="studio-hero-scroll">YOUR NEXT DISCOVERY <span aria-hidden="true">↓</span></a>
       </section>
       <GoalLearning />
+      <ExamPreparation />
       <section id="discover" className="studio-discover">
         <div className="studio-section-title"><div><p className="studio-eyebrow">A WORLD OF POSSIBILITIES</p><h2>Your next discovery</h2></div><p>Follow a question.<br />See where it takes you.</p></div>
         <div className="studio-pathways">
           <a href="#ai-assistant"><span className="studio-path-icon" aria-hidden="true">✧</span><h3>Ask your tutor</h3><p>Work through a challenging idea, one thoughtful step at a time.</p><span className="studio-path-link">Begin a conversation ↗</span></a>
           <Link href="/study/materials"><span className="studio-path-icon" aria-hidden="true">▤</span><h3>Study your materials</h3><p>Turn your notes and PDFs into explanations, guides, and source-based quizzes.</p><span className="studio-path-link">Open your library ↗</span></Link>
-          <a href="#practice-lab"><span className="studio-path-icon" aria-hidden="true">⌘</span><h3>Practice and understand</h3><p>Test your thinking with focused questions, hints, and worked explanations.</p><span className="studio-path-link">Explore Guided Practice ↗</span></a>
+          <a href="#exam-preparation"><span className="studio-path-icon" aria-hidden="true">⌘</span><h3>Prepare for your exam</h3><p>Build your preparation plan and learn from each attempt with a personal mistake notebook.</p><span className="studio-path-link">Open exam preparation ↗</span></a>
         </div>
       </section>
       <section id="explore" className="studio-explore">
@@ -84,7 +85,7 @@ export default function StudyPage() {
           {subjects.map((subject) => (
             <a
               key={subject.name}
-              href={subject.name === "Writing Studio" ? "/study/writing" : "#ai-assistant"}
+              href={subject.name === "Writing Studio" ? "/study/writing" : subject.mode === "exam" ? "#exam-preparation" : "#ai-assistant"}
               onClick={() => {
                 try { sessionStorage.setItem("eai-study-selected-mode", subject.mode); } catch { /* Navigation still works when storage is unavailable. */ }
                 window.dispatchEvent(new Event("eai-study-mode-change"));
@@ -106,7 +107,7 @@ export default function StudyPage() {
 
       </section>
       <SharedAIChat />
-      <StudyPractice />
+
     
       <div className="studio-footer">
         <Link href="/">EAI Engineering</Link><span>Knowledge opens possibilities.</span><span>Need a hand?{" "}

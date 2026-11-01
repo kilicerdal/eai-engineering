@@ -116,3 +116,19 @@
 .eai-study-studio .goal-notice{padding:13px;background:#efe3ca;border:1px solid #d4bb8e;border-radius:7px;font-size:12px;line-height:1.8;margin-bottom:15px;}
 .eai-study-studio .goal-error{padding:13px;background:#fff0eb;color:#9a3626;border:1px solid #ddb3a9;border-radius:7px;font-size:13px;margin-top:20px;}
 @media(max-width:650px){.eai-study-studio .goal-workspace{padding:45px 5%;}.eai-study-studio .goal-panel{padding:20px;}.eai-study-studio .goal-steps{grid-template-columns:repeat(2,minmax(0,1fr));}.eai-study-studio .goal-settings{grid-template-columns:1fr;gap:12px;}.eai-study-studio .goal-plan-head{flex-direction:column;}.eai-study-studio .goal-lessons>li{grid-template-columns:24px minmax(0,1fr);gap:10px;}.eai-study-studio #learning-achievement{font-size:18px;}}
+
+.eai-study-studio .exam-workspace{border-top:1px solid #dcd4c6;}
+.eai-study-studio .exam-focuses{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 25px;}
+.eai-study-studio .exam-focuses button{font-size:11px;border-radius:30px;background:#f3eee3;padding:8px 14px;}
+.eai-study-studio .exam-notebook{margin-top:55px;}
+.eai-study-studio .exam-notebook-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:22px;}
+.eai-study-studio .exam-notebook-grid>div{min-width:0;}
+.eai-study-studio .exam-notebook h3{overflow-wrap:anywhere;font-size:25px;}
+.eai-study-studio .exam-entries{display:grid;gap:10px;margin-top:22px;}
+.eai-study-studio .exam-entries button{display:block;overflow-wrap:anywhere;min-width:0;}
+.eai-study-studio .exam-entries button[aria-pressed=true]{background:#efe3ca;border-color:#af8a4a;}
+.eai-study-studio .exam-entries strong{display:block;font-size:10px;color:#825b29;}
+.eai-study-studio .exam-entries span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.8;margin-top:5px;}
+.eai-study-studio .exam-reflection{font-size:13px;line-height:1.9;margin:25px 0;padding:20px;background:#f4efe5;border-radius:8px;overflow-wrap:anywhere;}
+.eai-study-studio .exam-reflection p{margin:12px 0;}.eai-study-studio .exam-reflection h2,.eai-study-studio .exam-reflection h3{font:600 16px var(--font-geist-sans),sans-serif;margin:18px 0 10px;}.eai-study-studio .exam-reflection ul,.eai-study-studio .exam-reflection ol{padding-left:20px;list-style:revert;}
+@media(max-width:800px){.eai-study-studio .exam-notebook-grid{grid-template-columns:1fr;}}

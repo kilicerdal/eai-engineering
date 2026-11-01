@@ -45,6 +45,19 @@ export default function GoalLearning() {
     try{validateGoalSettings(settings);validateGoalPlan(plan,sources);}catch{return;}
     try{localStorage.setItem(KEY,JSON.stringify({settings,plan,sources,completed,accepted,dirty}));}catch{setStorageWarning("This browser could not save your plan. Keep this page open to continue.");}
   },[ready,settings,plan,sources,completed,accepted,dirty]);
+  useEffect(()=>{
+    function receiveGoal(event:Event){
+      const detail=(event as CustomEvent<unknown>).detail;
+      if(!detail||typeof detail!=="object")return;
+      const input=detail as Record<string,unknown>;
+      try{
+        const level=input.level==="highSchool"?"highschool":input.level==="foundation"?"foundations":input.level;
+        const incoming=validateGoalSettings({...defaultGoalSettings,goal:input.goal,deadline:input.deadline,level});
+        setSettings(previous=>({...previous,goal:incoming.goal,deadline:incoming.deadline,level:incoming.level}));setStep(2);setDirty(true);setAccepted(false);setError("");
+      }catch{setError("The exam goal could not be opened. Please describe it above.");}
+    }
+    window.addEventListener("eai-learning-goal",receiveGoal);return()=>window.removeEventListener("eai-learning-goal",receiveGoal);
+  },[]);
   function move(next:number){setStep(next);setError("");window.requestAnimationFrame(()=>region.current?.scrollIntoView({block:"start",behavior:"smooth"}));}
   function change<K extends keyof GoalSettings>(key:K,value:GoalSettings[K]){setSettings(previous=>({...previous,[key]:value}));if(plan){setDirty(true);setAccepted(false);}}
   async function addMaterial(file?:File){
