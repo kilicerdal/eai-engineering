@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { MATERIAL_HANDOFF_KEY, makeLessonMaterialHandoff } from "@/lib/study-material-handoff";
 import { CHECK_KEY, normalizeLessonChecks, latestLessonCheck, checkMemory } from "@/lib/study-checkpoints";
 import { defaultGoalSettings, goalLevels, goalLessonPrompt, normalizeGoalProgress, validateGoalPlan, validateGoalSettings, type GoalPlan, type GoalSettings, type GoalSource } from "@/lib/study-goal";
 import { importCourseFile, importCourseNotes, loadMaterialLibrary, saveMaterialLibrary } from "@/lib/study-material-files";
@@ -97,6 +98,11 @@ export default function GoalLearning() {
     window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:(goalLessonPrompt(settings,plan.lessons[index]).slice(0,1900)+memory).slice(0,3000),title:plan.lessons[index].title,goal:settings.goal,level,checkpoint}}));
     document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth",block:"start"});
   }
+  function withMaterials(index:number,task:"explain"|"quiz"){
+    if(!plan||!accepted||editing)return;
+    try{sessionStorage.setItem(MATERIAL_HANDOFF_KEY,JSON.stringify(makeLessonMaterialHandoff(settings.goal,plan.lessons[index],sources,task)));window.location.assign("/study/materials");}
+    catch{setError("The lesson could not be passed to the library. Open Materials and enter the lesson objective there.");}
+  }
   const next=plan?.lessons.findIndex(lesson=>!completed.includes(lesson.id))??-1;
   return <section id="learning-goal" ref={region} className="goal-workspace" aria-labelledby="goal-heading" aria-busy={busy}>
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">What do you want to achieve?</h2></div><p>A learning path built<br/>around your goal.</p></div>
@@ -137,7 +143,7 @@ export default function GoalLearning() {
       <ol className="goal-lessons">{plan.lessons.map((lesson,index)=><li key={lesson.id}><span className="goal-lesson-number">{String(index+1).padStart(2,"0")}</span><div>
         {editing?<><label className="goal-label">Lesson title<input aria-label={`Lesson ${index+1} title`} maxLength={120} value={lesson.title} onChange={e=>editLesson(index,"title",e.target.value)}/></label>{(["objective","activity","checkpoint"] as const).map(key=><label className="goal-label" key={key}>{key=== "checkpoint"?"Understanding check":key}<textarea aria-label={`Lesson ${index+1} ${key}`} maxLength={key==="activity"?650:450} rows={2} value={lesson[key]} onChange={e=>editLesson(index,key,e.target.value)}/></label>)}<div className="goal-actions"><button disabled={index===0} onClick={()=>{const list=[...plan.lessons];[list[index-1],list[index]]=[list[index],list[index-1]];setPlan({...plan,lessons:list});}}>Move earlier ↑</button><button disabled={plan.lessons.length<=3} onClick={()=>{setPlan({...plan,lessons:plan.lessons.filter(l=>l.id!==lesson.id)});setCompleted(ids=>ids.filter(id=>id!==lesson.id));}}>Remove lesson</button></div></>:<><h4>{lesson.title}</h4><p>{lesson.objective}</p><p><strong>Try:</strong> {lesson.activity}</p><p><strong>Check your understanding:</strong> {lesson.checkpoint}</p></>}
         {!!lesson.sourceIds.length&&<p className="goal-helper">Planning context: {lesson.sourceIds.map(id=>{const source=sources.find(s=>s.sourceId===id);return source?`${source.name} · ${materialLocation(source)}`:id;}).join("; ")}. These references shaped the outline; they are not verified answer citations.</p>}
-        {accepted&&!editing&&<div className="goal-actions"><button onClick={()=>start(index)}>{completed.includes(lesson.id)?"Revisit lesson":"Start this lesson"} ↗</button><label className="goal-completion"><input type="checkbox" checked={completed.includes(lesson.id)} onChange={e=>setCompleted(ids=>e.target.checked?[...ids,lesson.id]:ids.filter(id=>id!==lesson.id))}/>Mark complete</label></div>}
+        {accepted&&!editing&&<div className="goal-actions"><button onClick={()=>start(index)}>{completed.includes(lesson.id)?"Revisit lesson":"Start this lesson"} ↗</button><button onClick={()=>withMaterials(index,"explain")}>Learn from my materials ↗</button><button onClick={()=>withMaterials(index,"quiz")}>Practice from my materials ↗</button><label className="goal-completion"><input type="checkbox" checked={completed.includes(lesson.id)} onChange={e=>setCompleted(ids=>e.target.checked?[...ids,lesson.id]:ids.filter(id=>id!==lesson.id))}/>Mark complete</label></div>}
       </div></li>)}</ol>
       {editing&&plan.lessons.length<8&&<button onClick={()=>{const id=Array.from({length:8},(_,i)=>`lesson-${i+1}`).find(id=>!plan.lessons.some(l=>l.id===id))!;setPlan({...plan,lessons:[...plan.lessons,{id,title:"New lesson",objective:"",activity:"",checkpoint:"",sourceIds:[]}]});}}>Add a lesson +</button>}
       <div className="goal-actions">{!accepted?<button className="goal-primary" onClick={accept}>Use this plan</button>:<button className="goal-primary" onClick={()=>start(next<0?0:next)}>{next<0?"Revisit the first lesson":"Continue my learning"} →</button>}<button onClick={()=>move(1)}>Change goal or pace</button><a href="#ai-assistant">Explore freely ↗</a><Link href="/study/materials">Study with materials ↗</Link></div>

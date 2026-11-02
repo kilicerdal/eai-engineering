@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {makeLessonMaterialHandoff,normalizeLessonMaterialHandoff,lessonMaterialScope} from '../src/lib/study-material-handoff.ts';
+const lesson={id:'lesson-1',title:'Plant carbon',objective:'Distinguish matter from energy.',activity:'Explain plant growth.',checkpoint:'Where do carbon atoms come from?',sourceIds:['S1','S2']};
+const sources=[{sourceId:'S1',documentId:'biology'},{sourceId:'S2',documentId:'biology'},{sourceId:'S3',documentId:'unrelated'}];
+const documents=[{id:'biology'},{id:'unrelated'}];
+test('handoff preserves lesson focus and links only its deduplicated source documents',()=>{const h=makeLessonMaterialHandoff('Understand photosynthesis',lesson,sources);assert.deepEqual(h.documentIds,['biology']);assert.match(h.question,/Distinguish matter from energy/);assert.deepEqual(lessonMaterialScope(documents,'lesson',h),[{id:'biology'}]);});
+test('quiz request withholds the answer and is prepared rather than automatically sent',()=>{const h=makeLessonMaterialHandoff('Biology',lesson,sources,'quiz');assert.equal(h.task,'quiz');assert.match(h.question,/Do not reveal its answer/);assert.equal(normalizeLessonMaterialHandoff(h).title,lesson.title);});
+test('missing or unlinked materials never silently broaden to the whole library',()=>{const h=makeLessonMaterialHandoff('Biology',lesson,sources);assert.throws(()=>lessonMaterialScope([{id:'unrelated'}],'lesson',h),/missing/);assert.throws(()=>lessonMaterialScope(documents,'choose',h),/Choose/);assert.throws(()=>lessonMaterialScope(documents,'lesson',{...h,documentIds:[]}),/no linked/);assert.deepEqual(lessonMaterialScope(documents,'all',h),documents);});
+test('malformed navigation data is rejected and bounded',()=>{const h=makeLessonMaterialHandoff('Biology',lesson,sources);for(const v of [null,{}, {...h,version:2},{...h,title:''},{...h,question:'x'.repeat(2501)},{...h,documentIds:[9]},{...h,task:'send'}])assert.equal(normalizeLessonMaterialHandoff(v),null);assert.deepEqual(normalizeLessonMaterialHandoff({...h,documentIds:['biology','biology']}).documentIds,['biology']);});

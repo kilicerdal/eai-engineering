@@ -1,7 +1,14 @@
 "use client";
+import ReactMarkdown from "react-markdown";
+import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
+import {normalizeStudyMath} from "@/lib/study-markdown";
 import {useEffect,useRef,useState} from "react";
 import {normalizeMistakes} from "@/lib/study-exams";
 import {CHECK_KEY,checkLabel,normalizeLessonChecks,latestLessonCheck,validateCheckQuestion,validateCheckFeedback,type LessonContext,type CheckQuestion,type LessonCheck} from "@/lib/study-checkpoints";
+function CheckText({text}:{text:string}){return <div className="lesson-check-rich"><ReactMarkdown skipHtml remarkPlugins={[remarkGfm,remarkMath]} rehypePlugins={[rehypeKatex]} components={{img:()=>null,a:({children})=><span>{children}</span>}}>{normalizeStudyMath(text)}</ReactMarkdown></div>;}
 export default function LessonCheckpoint({context,sessionId,disabled=false,recentWork=""}:{context:LessonContext;sessionId:string;disabled?:boolean;recentWork?:string}){
  const [notebookSaved,setNotebookSaved]=useState(false),[open,setOpen]=useState(false),[question,setQuestion]=useState<CheckQuestion|null>(null),[answer,setAnswer]=useState(""),[help,setHelp]=useState(false),[hint,setHint]=useState(""),[result,setResult]=useState<LessonCheck|null>(null),[previous,setPrevious]=useState<LessonCheck|null>(null),[hintRequested,setHintRequested]=useState(false),[ready,setReady]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(""),[warning,setWarning]=useState("");
  const controller=useRef<AbortController|null>(null),attemptId=useRef("");
@@ -44,12 +51,12 @@ export default function LessonCheckpoint({context,sessionId,disabled=false,recen
   <div className="lesson-check-heading"><div><p className="studio-eyebrow">PUT THE IDEA INTO PRACTICE</p><h3>Check this lesson’s understanding.</h3><p>{context.lesson.title}</p></div><button type="button" disabled={!ready||busy||disabled} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?"Close check":"Open lesson check"}</button></div>
   {open&&<><p className="goal-helper">Try a fresh question after working through the lesson. AI reviews your reasoning; it does not certify mastery or predict an exam score. Help use is self-reported.</p>
   {!question&&<><p>{previous?`Last check: ${checkLabel(previous)}. ${previous.result.nextStep}`:"Explain your reasoning so the tutor can identify what to work on next."}</p><button type="button" className="goal-primary" disabled={busy||disabled} onClick={()=>void request("question")}>Create a fresh question</button></>}
-  {question&&<><div className="lesson-check-question"><h4>Your practice question</h4><p>{question.question}</p><p className="goal-helper">What we’re checking: {question.criterion}</p></div>
+  {question&&<><div className="lesson-check-question"><h4>Your practice question</h4><CheckText text={question.question}/><p className="goal-helper">What we’re checking: {question.criterion}</p></div>
   <label className="goal-label">Your answer and reasoning<textarea aria-label="Lesson check answer" rows={4} maxLength={2500} value={answer} disabled={busy||!!result||disabled} onChange={e=>setAnswer(e.target.value)} placeholder="Show how you reached your answer…"/></label>
   <label className="lesson-check-help"><input type="checkbox" checked={help} disabled={busy||!!result||hintRequested||disabled} onChange={e=>setHelp(e.target.checked)}/>I used help, notes, or an example for this answer.</label>
   {!result&&<div className="goal-actions"><button type="button" className="goal-primary" disabled={busy||disabled||!answer.trim()} onClick={()=>void request("review")}>Review my reasoning</button><button type="button" disabled={busy||disabled||!!hint} onClick={()=>void request("hint")}>Get a hint · counts as help</button></div>}
   {hint&&<p className="lesson-check-hint"><strong>Hint:</strong> {hint}</p>}
-  {result&&<div className="lesson-check-result" aria-live="polite"><p className="studio-eyebrow">AI-REVIEWED · HELP USE SELF-REPORTED</p><h4>{checkLabel(result)}</h4><p>{result.result.feedback}</p><p><strong>Reasoning gap:</strong> {result.result.reasoningGap}</p><p><strong>Next step:</strong> {result.result.nextStep}</p><div className="goal-actions"><a href="/study#my-learning">See this in my learning home ↗</a><button type="button" disabled={notebookSaved} onClick={saveNotebook}>{notebookSaved?"Saved to mistake notebook":"Save this reflection to my notebook"}</button></div></div>}
+  {result&&<div className="lesson-check-result" aria-live="polite"><p className="studio-eyebrow">AI-REVIEWED · HELP USE SELF-REPORTED</p><h4>{checkLabel(result)}</h4><CheckText text={result.result.feedback}/><p><strong>Reasoning gap:</strong> {result.result.reasoningGap}</p><p><strong>Next step:</strong> {result.result.nextStep}</p><div className="goal-actions"><a href="/study#my-learning">See this in my learning home ↗</a><button type="button" disabled={notebookSaved} onClick={saveNotebook}>{notebookSaved?"Saved to mistake notebook":"Save this reflection to my notebook"}</button></div></div>}
   <div className="goal-actions"><button type="button" disabled={busy||disabled} onClick={()=>void request("question")}>New question · replaces this draft</button></div></>}
   {busy&&<p role="status">Working on your lesson check… <button type="button" onClick={()=>controller.current?.abort()}>Cancel</button></p>}
   </>}

@@ -8,6 +8,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { normalizeStudyMath } from "@/lib/study-markdown";
 import { importCourseFile, importCourseNotes, loadMaterialLibrary, saveMaterialLibrary } from "@/lib/study-material-files";
+import { MATERIAL_HANDOFF_KEY, normalizeLessonMaterialHandoff, lessonMaterialScope, type LessonMaterialHandoff } from "@/lib/study-material-handoff";
 import { MATERIAL_LIMITS, materialLocation, materialTasks, normalizeMaterialText, removeMaterialDocument, validateMaterialAnswer, validateMaterialSources, selectMaterialExcerpts, type CourseDocument, type MaterialCitation, type MaterialEntry, type MaterialLibrary, type MaterialTask } from "@/lib/study-materials";
 
 type SourceView = { documentId: string; page: number; quote: string };
@@ -48,6 +49,8 @@ export default function CourseMaterials() {
   const [ready,setReady] = useState(false);
   const [panel,setPanel] = useState<"materials"|"add"|null>(null);
   const [storageAvailable,setStorageAvailable] = useState(true);
+  const [lessonContext,setLessonContext] = useState<LessonMaterialHandoff|null>(null);
+  const [lessonNotice,setLessonNotice] = useState("");
   const [focus,setFocus] = useState("all");
   const [task,setTask] = useState<MaterialTask>("explain");
   const [question,setQuestion] = useState("");
@@ -66,7 +69,10 @@ export default function CourseMaterials() {
 
   useEffect(()=>{
     let cancelled=false;
-    loadMaterialLibrary().then(value=>{if(!cancelled){setLibrary(value);setActiveEntryId(value.entries[0]?.id||"");setReady(true);}}).catch(()=>{if(!cancelled){setReady(true);setStorageAvailable(false);}});
+    loadMaterialLibrary().then(value=>{if(!cancelled){setLibrary(value);setActiveEntryId(value.entries[0]?.id||"");
+      try{const raw=sessionStorage.getItem(MATERIAL_HANDOFF_KEY);if(raw){const handoff=normalizeLessonMaterialHandoff(JSON.parse(raw));sessionStorage.removeItem(MATERIAL_HANDOFF_KEY);if(handoff){setLessonContext(handoff);setQuestion(handoff.question);setTask(handoff.task);setActiveEntryId("");setFocus(handoff.documentIds.length?"lesson":"choose");if(!handoff.documentIds.length)setLessonNotice("This lesson has no linked materials. Choose a material below before asking.");else if(handoff.documentIds.some(id=>!value.documents.some(d=>d.id===id)))setLessonNotice("Some linked materials are missing from this browser. Add them again or choose another material explicitly.");}else setLessonNotice("The lesson link could not be restored. Your library is unchanged.");}}
+      catch{setLessonNotice("The prepared lesson could not be read. You can still ask about your materials.");}
+      setReady(true);}}).catch(()=>{if(!cancelled){setReady(true);setStorageAvailable(false);}});
     return ()=>{cancelled=true;abort.current?.abort();};
   },[]);
   useEffect(()=>{
@@ -117,7 +123,8 @@ export default function CourseMaterials() {
     event.preventDefault();if(loading||uploading||!ready)return;
     const message=question.trim()||(task==="guide"?"Create a study guide from the selected material.":task==="quiz"?"Ask me one practice question from the selected material.":"");
     if(!message)return;
-    const documents=library.documents.filter(document=>focus==="all"||document.id===focus);
+    let documents:CourseDocument[];
+    try{documents=lessonMaterialScope(library.documents,focus,lessonContext);}catch(e){setError(e instanceof Error?e.message:"Choose a material first.");return;}
     const ids=new Set(documents.map(document=>document.id));
     const recent=library.entries.filter(entry=>entry.documentIds.every(id=>ids.has(id))).slice(0,2);
     const excerpts=selectMaterialExcerpts(documents,message,task,recent[0]?.question||"");
@@ -140,10 +147,12 @@ export default function CourseMaterials() {
   const entry=library.entries.find(entry=>entry.id===activeEntryId);
   const sourceDocument=library.documents.find(document=>document.id===source?.documentId);
   return <>
+    {lessonContext&&<section className="library-lesson-context" aria-label="Lesson materials context"><div><p className="studio-eyebrow">YOUR LESSON, YOUR SOURCES</p><h2>{lessonContext.title}</h2><p>The question is prepared below. Review the material focus, then select Ask. Only selected excerpts are sent; your full files are not automatically read.</p>{lessonNotice&&<p role="status">{lessonNotice}</p>}</div><button type="button" disabled={busy} onClick={()=>{setLessonContext(null);setLessonNotice("");setFocus("all");setQuestion("");}}>Clear lesson context</button><a href="/study#learning-goal">Return to my plan ↗</a></section>}
+    {!lessonContext&&lessonNotice&&<p role="status" className="goal-notice">{lessonNotice}</p>}
     <div className="library-focused-shell" onKeyDown={event=>{if(event.key === "Escape" && panel){event.preventDefault();setPanel(null);document.getElementById("library-materials-trigger")?.focus();}}}>
       <div className="library-toolbar">
         <button type="button" id="library-materials-trigger" disabled={!ready||busy} aria-expanded={panel==="materials"} aria-controls="library-materials-panel" onClick={()=>setPanel(panel==="materials"?null:"materials")}>Materials · {library.documents.length} <span aria-hidden="true">⌄</span></button>
-        <div className="library-focus-select"><label className="min-w-0 text-xs font-medium text-slate-300">Material focus<select aria-label="Material focus" value={focus} onChange={event=>{setFocus(event.target.value);setActiveEntryId("");}} disabled={busy||!ready} className="mt-2 min-w-0 w-full rounded-xl border border-white/15 bg-slate-950 px-3 py-3 text-sm text-white"><option value="all">All materials</option>{library.documents.map(document=><option key={document.id} value={document.id}>{document.name}</option>)}</select></label></div>
+        <div className="library-focus-select"><label className="min-w-0 text-xs font-medium text-slate-300">Material focus<select aria-label="Material focus" value={focus} onChange={event=>{setFocus(event.target.value);setActiveEntryId("");}} disabled={busy||!ready} className="mt-2 min-w-0 w-full rounded-xl border border-white/15 bg-slate-950 px-3 py-3 text-sm text-white">{lessonContext&&<><option value="choose">Choose lesson materials…</option>{lessonContext.documentIds.length>0&&<option value="lesson">Linked lesson materials · {lessonContext.documentIds.length}</option>}</>}<option value="all">All materials</option>{library.documents.map(document=><option key={document.id} value={document.id}>{document.name}</option>)}</select></label></div>
         <button type="button" className="library-add-trigger" disabled={!ready||busy} aria-expanded={panel==="add"} aria-controls="library-materials-panel" onClick={()=>setPanel(panel==="add"?null:"add")}>+ Add materials</button>
       </div>
       {panel&&<>      <aside id="library-materials-panel" aria-label="Manage your materials" className={`library-material-panel library-panel-${panel}`}>

@@ -391,3 +391,14 @@
 @media(max-width:760px){.eai-study-studio .lesson-check{padding:18px}.eai-study-studio .lesson-check-heading{align-items:flex-start;flex-direction:column}.eai-study-studio .lesson-check textarea{font-size:16px}.eai-study-studio .learning-check-evidence>div{grid-template-columns:1fr}}
 
 .eai-study-studio .tutor-context-strip>a{display:inline-block;color:#d9b979;font-size:12px;padding:6px 0;text-decoration:underline}
+
+.eai-study-studio .library-lesson-context{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;border:1px solid #d9b97966;background:#102235;border-radius:9px;padding:22px;margin:0 0 22px}
+.eai-study-studio .library-lesson-context>div{flex:1 1 500px;min-width:0}
+.eai-study-studio .library-lesson-context h2{font:400 26px Georgia,serif;color:#eee7d9;margin:8px 0}
+.eai-study-studio .library-lesson-context p:not(.studio-eyebrow){color:#c3ced9;font-size:13px;line-height:1.7;margin:8px 0}
+.eai-study-studio .library-lesson-context p[role=status]{color:#e2c58e}
+.eai-study-studio .library-lesson-context button{border:1px solid #687887;padding:9px 13px;border-radius:5px;font-size:12px}
+.eai-study-studio .library-lesson-context>a{color:#d9b979;font-size:12px}
+@media(max-width:760px){.eai-study-studio .library-lesson-context{padding:18px}.eai-study-studio .library-lesson-context h2{font-size:23px}}
+
+.eai-study-studio .lesson-check-rich{font-size:14px;line-height:1.7;min-width:0;overflow-wrap:anywhere}.eai-study-studio .lesson-check-rich pre{overflow-x:auto;max-width:100%;background:#081522;padding:16px;border-radius:7px}.eai-study-studio .lesson-check-rich ul{list-style:disc;padding-left:22px}.eai-study-studio .lesson-check-rich ol{list-style:decimal;padding-left:22px}.eai-study-studio .lesson-check-rich .katex-display{overflow-x:auto;overflow-y:hidden}
