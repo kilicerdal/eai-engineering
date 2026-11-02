@@ -516,3 +516,46 @@
 .eai-study-studio .goal-landmark-workspace>.goal-steps li{font-size:9px;gap:4px;flex-wrap:wrap;}
 .eai-study-studio .goal-landmark-workspace>.goal-steps span{width:18px;height:18px;font-size:9px;}
 }
+
+/* Selected Cappadocia exam scene and Pantheon exterior notebook. */
+.eai-study-studio .exam-workspace{padding:0;}
+.eai-study-studio .exam-landmark-stage,.eai-study-studio .notebook-landmark-stage{position:relative;isolation:isolate;padding:36px 5% 30px;overflow:hidden;border-top:1px solid #c5a76e44;border-bottom:1px solid #c5a76e44;}
+.eai-study-studio .exam-landmark-stage>.studio-landmark-backdrop img{object-position:65% center;}
+.eai-study-studio .notebook-landmark-stage>.studio-landmark-backdrop img{object-position:70% center;}
+.eai-study-studio .exam-landmark-stage>.studio-landmark-backdrop:after,.eai-study-studio .notebook-landmark-stage>.studio-landmark-backdrop:after{background:linear-gradient(90deg,#06111ddd,#06111d99 42%,#06111d15 72%),linear-gradient(0deg,#06111d99,transparent 25%);}
+.eai-study-studio .exam-landmark-stage>.studio-section-title,.eai-study-studio .notebook-landmark-stage>.studio-section-title{display:block;width:48%;max-width:610px;margin-bottom:16px;}
+.eai-study-studio .exam-landmark-stage h2,.eai-study-studio .notebook-landmark-stage h2{font-size:clamp(28px,2.8vw,40px);line-height:1.15;text-wrap:balance;margin-top:10px;}
+.eai-study-studio .exam-landmark-stage>.studio-section-title>p{display:none;}
+.eai-study-studio .notebook-landmark-stage>.studio-section-title>p{font:12px/1.5 var(--font-geist-sans),Arial,sans-serif;color:#e2c18a;margin-top:12px;}
+.eai-study-studio .exam-landmark-stage>.goal-intro{font-size:13px;line-height:1.6;margin:0 0 18px;color:#dedbd4;width:48%;}
+.eai-study-studio .exam-prep-controls,.eai-study-studio .notebook-capture{width:48%;max-width:610px;padding:20px;background:#071522ed;border:1px solid #a4895577;border-radius:7px;}
+.eai-study-studio .exam-prep-controls .goal-settings{gap:12px;margin:0 0 10px;}
+.eai-study-studio .exam-prep-controls .goal-label,.eai-study-studio .notebook-capture .goal-label{font-size:11px;}
+.eai-study-studio .exam-prep-controls textarea,.eai-study-studio .notebook-capture textarea{font-size:14px;line-height:1.5;min-height:70px;}
+.eai-study-studio .exam-prep-controls .goal-helper,.eai-study-studio .notebook-capture .goal-helper{font-size:10px;line-height:1.7;margin:10px 0;}
+.eai-study-studio .exam-prep-controls summary,.eai-study-studio .notebook-capture summary{font-size:11px;padding:7px 0;}
+.eai-study-studio .exam-prep-controls .exam-focuses{margin:8px 0 12px;gap:6px;}
+.eai-study-studio .exam-prep-controls .goal-actions{margin:12px 0;gap:10px;font-size:11px;}
+.eai-study-studio .exam-prep-controls .goal-actions button{font-size:11px;padding:10px 12px;}
+.eai-study-studio .exam-prep-note{border-top:1px solid #a4895544;margin-top:12px;}
+.eai-study-studio .exam-workspace .exam-notebook{margin-top:0;}
+.eai-study-studio .notebook-capture h3{font-size:22px;margin-bottom:16px;}
+.eai-study-studio .notebook-capture>button{margin-top:12px;}
+.eai-study-studio .exam-landmark-stage>.studio-landmark-caption,.eai-study-studio .notebook-landmark-stage>.studio-landmark-caption{position:relative;bottom:auto;right:auto;width:fit-content;margin:18px 0 0;font-size:9px;}
+.eai-study-studio .exam-notebook-grid{padding:28px 5% 0;align-items:start;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);}
+.eai-study-studio .exam-notebook-grid .exam-entries{margin-top:16px;}
+.eai-study-studio .exam-workspace>.goal-footnote,.eai-study-studio .exam-workspace>.goal-error{margin:20px 5% 28px;}
+@media(max-width:760px){
+.eai-study-studio .exam-workspace{padding:0;}
+.eai-study-studio .exam-landmark-stage,.eai-study-studio .notebook-landmark-stage{padding:28px 6%;}
+.eai-study-studio .exam-landmark-stage>.studio-landmark-backdrop,.eai-study-studio .notebook-landmark-stage>.studio-landmark-backdrop{bottom:auto;height:350px;}
+.eai-study-studio .exam-landmark-stage>.studio-landmark-backdrop img,.eai-study-studio .notebook-landmark-stage>.studio-landmark-backdrop img{object-position:right center;}
+.eai-study-studio .exam-landmark-stage>.studio-landmark-backdrop:after,.eai-study-studio .notebook-landmark-stage>.studio-landmark-backdrop:after{background:linear-gradient(90deg,#06111dbb,#06111d11),linear-gradient(0deg,#06111d,transparent 65%);}
+.eai-study-studio .exam-landmark-stage>.studio-section-title,.eai-study-studio .notebook-landmark-stage>.studio-section-title,.eai-study-studio .exam-landmark-stage>.goal-intro,.eai-study-studio .exam-prep-controls,.eai-study-studio .notebook-capture{width:100%;max-width:none;}
+.eai-study-studio .exam-landmark-stage h2,.eai-study-studio .notebook-landmark-stage h2{font-size:30px;}
+.eai-study-studio .exam-prep-controls{margin-top:115px;}
+.eai-study-studio .notebook-capture{margin-top:140px;}
+.eai-study-studio .exam-prep-controls,.eai-study-studio .notebook-capture{padding:18px;}
+.eai-study-studio .exam-prep-controls .goal-settings{grid-template-columns:1fr 1fr;}
+.eai-study-studio .exam-notebook-grid{padding:22px 6% 0;grid-template-columns:1fr;}
+}
