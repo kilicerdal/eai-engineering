@@ -427,3 +427,46 @@
 @media(max-width:600px){.eai-study-studio .studio-account-providers{grid-template-columns:1fr}.eai-study-studio .studio-account-page{padding:2rem 1rem}.eai-study-studio .studio-account-identity{flex-direction:column;align-items:flex-start}}
 
 .eai-study-studio .studio-privacy h2{font-family:Georgia,serif;font-size:1.5rem;color:#f3e7d4;margin:2rem 0 .75rem}.eai-study-studio .studio-privacy p{line-height:1.8;color:#c4cede}.eai-study-studio .studio-privacy a{color:#ebc58f;text-decoration:underline;text-underline-offset:3px}.eai-study-studio .studio-privacy{overflow-wrap:anywhere}
+
+/* Ancient to future: approved Giza, Machu Picchu and Stonehenge backgrounds. */
+.eai-study-studio .learning-home{padding:0;}
+.eai-study-studio .learning-home-content{padding:30px 5% 45px;}
+.eai-study-studio .studio-landmark-banner{position:relative;isolation:isolate;min-height:440px;display:flex;flex-direction:column;justify-content:center;padding:65px 5% 70px;overflow:hidden;background:#081422;border-top:1px solid #c5a76e44;border-bottom:1px solid #c5a76e44;}
+.eai-study-studio .studio-landmark-backdrop{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden;}
+.eai-study-studio .studio-landmark-backdrop img{object-fit:cover;object-position:center;}
+.eai-study-studio .studio-landmark-backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06111de8 0%,#06111dba 30%,#06111d24 68%,transparent),linear-gradient(0deg,#06111d80,transparent 30%);}
+.eai-study-studio .studio-landmark-banner .studio-section-title{display:block;max-width:590px;margin:0;}
+.eai-study-studio .studio-landmark-banner .studio-section-title h2{font-size:clamp(38px,4.5vw,64px);line-height:1.08;color:#fff4df;max-width:550px;margin:16px 0 22px;text-wrap:balance;}
+.eai-study-studio .studio-landmark-banner .studio-section-title>p{display:block;font:17px/1.65 Georgia,serif;color:#eee3ce;}
+.eai-study-studio .studio-landmark-caption{position:absolute;bottom:20px;right:5%;margin:0;font-size:10px;line-height:1.5;letter-spacing:.035em;color:#ded8c9;text-shadow:0 1px 6px #000;background:#06111d80;padding:5px 9px;border-radius:3px;}
+.eai-study-studio .studio-discover{padding:0 0 30px;}
+.eai-study-studio .studio-discover .studio-pathways{margin:28px 5% 0;background:#071522;}
+.eai-study-studio .goal-landmark-workspace{isolation:isolate;padding-top:60px;padding-bottom:36px;min-height:730px;border-top:1px solid #c5a76e44;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-backdrop{bottom:auto;height:780px;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-backdrop:after{background:linear-gradient(90deg,#06111df2,#06111dc9 36%,#06111d0a 80%),linear-gradient(0deg,#06111d,transparent 35%);}
+.eai-study-studio .goal-landmark-workspace>.studio-section-title{display:block;max-width:720px;}
+.eai-study-studio .goal-landmark-workspace>.studio-section-title h2{font-size:clamp(38px,4.4vw,62px);line-height:1.1;max-width:670px;text-wrap:balance;color:#fff4df;}
+.eai-study-studio .goal-landmark-workspace>.studio-section-title>p{display:none;}
+.eai-study-studio .goal-landmark-workspace>.goal-intro{color:#dfdbd2;max-width:600px;}
+.eai-study-studio .goal-landmark-workspace>.goal-steps{max-width:680px;background:#06111d99;padding:12px 14px 0;border-radius:4px;}
+.eai-study-studio .goal-landmark-workspace[data-step="1"]>.goal-panel{max-width:680px;background:#071522ed;box-shadow:0 16px 50px #0003;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-caption{position:relative;bottom:auto;right:auto;width:fit-content;margin:22px 0 12px;}
+.eai-study-studio .goal-landmark-workspace>.goal-footnote{max-width:800px;background:#06111de8;padding:10px 0;}
+@media(max-width:760px){
+.eai-study-studio .learning-home{padding:0;}
+.eai-study-studio .learning-home-content{padding:24px 6% 32px;}
+.eai-study-studio .studio-landmark-banner{min-height:420px;padding:45px 6% 110px;justify-content:flex-start;}
+.eai-study-studio .studio-landmark-backdrop img{object-position:65% center;}
+.eai-study-studio .studio-landmark-backdrop:after{background:linear-gradient(90deg,#06111dbf,#06111d55),linear-gradient(0deg,#06111d66,transparent 55%);}
+.eai-study-studio .studio-landmark-banner .studio-section-title h2{font-size:42px;max-width:380px;}
+.eai-study-studio .studio-landmark-banner .studio-section-title>p{font-size:16px;}
+.eai-study-studio .studio-landmark-caption{left:6%;right:auto;bottom:16px;font-size:9px;}
+.eai-study-studio .studio-discover{padding:0 0 26px;}
+.eai-study-studio .studio-discover .studio-pathways{margin:20px 6% 0;}
+.eai-study-studio .goal-landmark-workspace{padding:42px 6% 28px;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-backdrop{height:720px;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-backdrop:after{background:linear-gradient(90deg,#06111dcf,#06111d55),linear-gradient(0deg,#06111d,transparent 65%);}
+.eai-study-studio .goal-landmark-workspace>.studio-section-title h2{font-size:40px;}
+.eai-study-studio .goal-landmark-workspace>.goal-steps{padding:12px 10px 0;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-caption{left:auto;}
+}

@@ -3,6 +3,7 @@
 import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import StudyLandmark from "@/components/StudyLandmark";
 import { MATERIAL_HANDOFF_KEY, makeLessonMaterialHandoff } from "@/lib/study-material-handoff";
 import { CHECK_KEY, normalizeLessonChecks, latestLessonCheck, checkMemory } from "@/lib/study-checkpoints";
 import { defaultGoalSettings, goalLevels, goalLessonPrompt, normalizeGoalProgress, validateGoalPlan, validateGoalSettings, type GoalPlan, type GoalSettings, type GoalSource } from "@/lib/study-goal";
@@ -105,7 +106,8 @@ export default function GoalLearning() {
     catch{setError("The lesson could not be passed to the library. Open Materials and enter the lesson objective there.");}
   }
   const next=plan?.lessons.findIndex(lesson=>!completed.includes(lesson.id))??-1;
-  return <section id="learning-goal" ref={region} className="goal-workspace" aria-labelledby="goal-heading" aria-busy={busy}>
+  return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} aria-labelledby="goal-heading" aria-busy={busy}>
+    <StudyLandmark scene="stonehenge" />
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">What do you want to achieve?</h2></div><p>A learning path built<br/>around your goal.</p></div>
     <p className="goal-intro">Describe it in your own words. We’ll propose a starting path you can reshape as you learn.</p>
     <ol className="goal-steps" aria-label="Plan creation steps">{["Your goal","Materials · optional","Your pace","Review & begin"].map((label,index)=><li key={label} aria-current={step===index+1?"step":undefined}><span>{index+1}</span>{label}</li>)}</ol>
@@ -151,6 +153,7 @@ export default function GoalLearning() {
       {accepted&&<p className="goal-helper">Starting a lesson prepares a message in the tutor. Review it and select Send when ready. Completion is self-reported, not a mastery assessment.</p>}
     </div>}
     {error&&<p role="alert" className="goal-error">{error}</p>}
+    <p className="studio-landmark-caption">Stonehenge, England · An imagined horizon</p>
     <p className="goal-footnote">Your plan is saved in this browser after generation. AI-proposed outlines can contain gaps or mistakes; edit them to suit your needs. {accountConfigured ? <Link href="/study/account">Choose optional account saving ↗</Link> : "Account sync is not yet available."}</p>
   </section>;
 }

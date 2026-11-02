@@ -2,6 +2,7 @@
 import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import StudyLandmark from "@/components/StudyLandmark";
 import { CHECK_KEY, checkLabel, normalizeLessonChecks, latestLessonCheck, recommendLesson, checkMemory, type LessonCheck } from "@/lib/study-checkpoints";
 import { restoreJourney, learningEvidence, type SavedJourney } from "@/lib/study-progress";
 import { goalLessonPrompt } from "@/lib/study-goal";
@@ -55,7 +56,12 @@ export default function LearningHome() {
     document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   return <section id="my-learning" className="learning-home" aria-labelledby="learning-home-heading">
+    <div className="studio-landmark-banner studio-landmark-giza">
+    <StudyLandmark scene="giza" />
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR LEARNING, CONNECTED</p><h2 id="learning-home-heading">Your next step, in focus.</h2></div><p>Build on what you know.<br/>Return to what needs practice.</p></div>
+    <p className="studio-landmark-caption">Giza, Egypt · An imagined horizon</p>
+    </div>
+    <div className="learning-home-content">
     <p className="learning-home-note">Saved in this browser · {accountConfigured ? <Link href="/study/account">Manage optional account saving ↗</Link> : "No account or subscription required"}</p>
     {!ready ? <p role="status">Loading your learning…</p> : <>
       {warning && <p role="status" className="goal-notice">{warning}</p>}
@@ -67,5 +73,6 @@ export default function LearningHome() {
       {lessonEvidence.length > 0 && <section className="learning-check-evidence" aria-label="Saved lesson checks"><h3>What your lesson checks show</h3><p>Latest AI review per lesson in your current plan. Check important feedback against your materials.</p><div>{lessonEvidence.map(check=><article key={check.context.lesson.id}><strong>{check.context.lesson.title}</strong><span>{checkLabel(check)}</span><p>{check.result.reasoningGap}</p><small>AI-reviewed · {new Date(check.submittedAt).toLocaleDateString()} · Help use self-reported</small></article>)}</div></section>}
       <details className="learning-evidence"><summary>Evidence behind your progress <span>{evidence.attempted} checked {evidence.attempted === 1 ? "question" : "questions"} · {documents === null ? "Library unavailable" : `${documents} ${documents === 1 ? "material" : "materials"}`}</span></summary><div className="learning-evidence-grid"><div><strong>{evidence.independent}</strong><span>Latest answer correct without hints</span></div><div><strong>{evidence.supported}</strong><span>Latest answer correct with hints</span></div><div><strong>{evidence.revisit}</strong><span>Latest answer needs another look</span></div><Link href="/study/materials"><strong>{documents ?? "—"}</strong><span>Saved materials · Open library ↗</span></Link></div><p className="learning-home-small">Checked answers come from the small foundational practice bank, one latest answer per question. Repeating an answer cannot increase this count. These results do not measure overall mastery or predict an exam score.</p><Link href="/study/practice">Continue foundational practice ↗</Link></details>
     </>}
+    </div>
   </section>;
 }

@@ -7,6 +7,7 @@ import GoalLearning from "@/components/GoalLearning";
 import ExamPreparation from "@/components/ExamPreparation";
 import Link from "next/link";
 import Image from "next/image";
+import StudyLandmark from "@/components/StudyLandmark";
 import StudyGlyph from "@/components/StudyGlyph";
 import StudyNavigation from "@/components/StudyNavigation";
 
@@ -69,7 +70,11 @@ export default function StudyPage() {
       </section>
       <LearningHome />
       <section id="discover" className="studio-discover">
+        <div className="studio-landmark-banner studio-landmark-machu">
+        <StudyLandmark scene="machu-picchu" />
         <div className="studio-section-title"><div><p className="studio-eyebrow">A WORLD OF POSSIBILITIES</p><h2>Your next discovery</h2></div><p>Follow a question.<br />See where it takes you.</p></div>
+        <p className="studio-landmark-caption">Machu Picchu, Peru · An imagined horizon</p>
+        </div>
         <div className="studio-pathways">
           <a href="#ai-assistant"><span className="studio-path-icon"><StudyGlyph kind="general" /></span><h3>AI tutor</h3><p>Explore an idea. Find your next step.</p><span className="studio-path-link">Begin a conversation ↗</span></a>
           <Link href="/study/materials"><span className="studio-path-icon"><StudyGlyph kind="writing" /></span><h3>My materials</h3><p>Your sources, connected to understanding.</p><span className="studio-path-link">Open your library ↗</span></Link>
