@@ -96,7 +96,7 @@ const suggestions: Record<Mode, string[]> = {
 const welcomeMessage: Message = {
   role: "assistant",
   content:
-    "Welcome to **EAI Tutor**. Set your level and learning goal, choose how you want to learn, then share a topic or problem. If you have already tried it, include your work so we can build from what you know.",
+    "Welcome to **dAI Tutor**. Set your level and learning goal, choose how you want to learn, then share a topic or problem. If you have already tried it, include your work so we can build from what you know.",
 };
 
 function createConversation(mode: Mode = "general"): Conversation {
@@ -552,7 +552,7 @@ export default function SharedAIChat() {
         </div>
         <div className="tutor-focus-shell" onKeyDown={event => { if(event.key === "Escape" && openPanel) { event.preventDefault(); document.getElementById(`tutor-${openPanel}-trigger`)?.focus(); setOpenPanel(null); } }}>
           <header className="tutor-focus-header">
-            <div className="tutor-focus-brand"><StudyGlyph kind="general"/><div><strong>EAI Study Studio</strong><span>Your learning conversation</span></div></div>
+            <div className="tutor-focus-brand"><StudyGlyph kind="general"/><div><strong>dAI Learning Studio</strong><span>Your learning conversation</span></div></div>
             <div className="tutor-focus-tools">
               <button id="tutor-history-trigger" type="button" aria-expanded={openPanel === "history"} aria-controls="tutor-session-history" onClick={()=>setOpenPanel(openPanel === "history" ? null : "history")}>Recent sessions <span aria-hidden="true">⌄</span></button>
               <button id="tutor-settings-trigger" type="button" aria-expanded={openPanel === "settings"} aria-controls="tutor-session-settings" onClick={()=>setOpenPanel(openPanel === "settings" ? null : "settings")}>Session settings <span aria-hidden="true">⌄</span></button>

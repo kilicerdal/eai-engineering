@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),ts=require('typescript'),cache=new Map();
+function load(name){if(cache.has(name))return cache.get(name);const code=ts.transpileModule(readFileSync(new URL(`../src/lib/${name}.ts`,import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;const m={exports:{}};new Function('require','module','exports',code)(d=>{assert.ok(d.startsWith('./'));return load(d.slice(2));},m,m.exports);cache.set(name,m.exports);return m.exports;}
+const {learningEvidence,restoreJourney}=load('study-progress'),q=load('study-practice').practiceQuestions[0],now=1700000000000;
+const a=(correct=true,hintsUsed=0,submittedAt=now-1)=>({questionId:q.id,selectedIndex:correct?q.answerIndex:(q.answerIndex+1)%q.choices.length,hintsUsed,submittedAt});
+test('latest answer supersedes earlier success without inflated repeat counts',()=>{const e=learningEvidence([a(),a(),a(false,0,now)],[],now);assert.equal(e.attempted,1);assert.equal(e.independent,0);assert.equal(e.revisit,1);});
+test('hints stay separate and future or unknown attempts do not count',()=>{const e=learningEvidence([a(true,1),a(true,0,now+1),{...a(),questionId:'bad'}],[],now);assert.equal(e.supported,1);assert.equal(e.independent,0);});
+test('invalid plan or unsupported source references cannot resume',()=>{for(const v of [null,{}, {settings:{goal:'Build algebra foundations',level:'highschool',minutes:20,sessions:3,deadline:''},plan:{lessons:[]}}])assert.equal(restoreJourney(v),null);});
+test('review dates honor actual entries and reject future-created work',()=>{const m={id:'a',exam:'SAT',question:'Solve x+2=4',answer:'3',expected:'',reflection:'',createdAt:now-10,reviewAt:now,reviews:0};const e=learningEvidence([],[m,{...m,id:'b',reviewAt:now+1000},{...m,id:'c',createdAt:now+1}],now);assert.equal(e.due.length,1);assert.equal(e.mistakes,2);assert.equal(e.nextReviewAt,now+1000);});
+test('empty evidence does not invent progress',()=>{const e=learningEvidence(null,null,now);assert.equal(e.attempted,0);assert.deepEqual(e.due,[]);});
+
+test('valid saved plan retains only unique known completion marks and review gates',()=>{const raw={settings:{goal:'Build algebra foundations',level:'highschool',minutes:20,sessions:3,deadline:''},sources:[],plan:{title:'Algebra foundations',overview:'Practice a few starting concepts.',lessons:Array.from({length:3},(_,i)=>({id:`lesson-${i+1}`,title:`Lesson ${i+1}`,objective:'Isolate the variable.',activity:'Solve a fresh example.',checkpoint:'Explain the operation.',sourceIds:[]}))},completed:['lesson-1','lesson-1','unknown'],accepted:true,dirty:false};assert.deepEqual(restoreJourney(raw).completed,['lesson-1']);assert.equal(restoreJourney({...raw,dirty:true}).dirty,true);assert.equal(restoreJourney({...raw,accepted:false}).accepted,false);assert.equal(restoreJourney({...raw,plan:{...raw.plan,lessons:raw.plan.lessons.map(l=>({...l,sourceIds:['invented']}))}}),null);});

@@ -1,6 +1,7 @@
 "use client";
 
 import SharedAIChat from "@/components/SharedAIChat";
+import LearningHome from "@/components/LearningHome";
 import GoalLearning from "@/components/GoalLearning";
 import ExamPreparation from "@/components/ExamPreparation";
 import Link from "next/link";
@@ -65,6 +66,7 @@ export default function StudyPage() {
         </div>
         <a href="#discover" className="studio-hero-scroll">YOUR NEXT DISCOVERY <span aria-hidden="true">↓</span></a>
       </section>
+      <LearningHome />
       <section id="discover" className="studio-discover">
         <div className="studio-section-title"><div><p className="studio-eyebrow">A WORLD OF POSSIBILITIES</p><h2>Your next discovery</h2></div><p>Follow a question.<br />See where it takes you.</p></div>
         <div className="studio-pathways">
@@ -77,7 +79,7 @@ export default function StudyPage() {
         <div className="studio-section-title"><div><p className="studio-eyebrow">CURIOSITY HAS NO BOUNDARIES</p><h2>Where will you begin?</h2></div><p>Across subjects.<br />At your pace.</p></div>
         <div className="studio-subjects" aria-label="Explore learning subjects">
           <svg className="studio-orbit-lines" viewBox="0 0 1100 420" fill="none" aria-hidden="true"><ellipse cx="550" cy="210" rx="405" ry="145"/><ellipse cx="550" cy="210" rx="310" ry="108"/><ellipse cx="550" cy="210" rx="185" ry="70"/><ellipse cx="550" cy="210" rx="440" ry="90" transform="rotate(-10 550 210)"/><path d="M100 210H1000M550 45V375"/><circle cx="550" cy="210" r="39"/><circle cx="550" cy="210" r="53"/><circle cx="372" cy="151" r="3"/><circle cx="735" cy="245" r="4"/><circle cx="816" cy="134" r="2"/><circle cx="250" cy="259" r="3"/></svg>
-          <div className="studio-orbit-core" aria-hidden="true"><StudyGlyph kind="general"/><span>EAI</span></div>
+          <div className="studio-orbit-core" aria-hidden="true"><StudyGlyph kind="general"/><span>dAI</span></div>
           {subjects.map((subject) => (
             <a
               key={subject.name}

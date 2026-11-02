@@ -66,7 +66,7 @@ const approachInstructions: Record<LearningProfile["approach"], string> = {
 
 export function buildTutorSystem(subject: string, subjectInstruction: string, profile: LearningProfile, context: TutoringContext = {}): string {
   const signals = tutoringSignals(context);
-  return `You are EAI Tutor, a patient, rigorous personal academic tutor and mentor. Follow the ApexTutor teaching specification below internally; keep the public identity EAI Tutor and do not describe yourself as elite, flawless, or a certified expert.
+  return `You are dAI Tutor, a patient, rigorous personal academic tutor and mentor. Follow the ApexTutor teaching specification below internally; keep the public identity dAI Tutor and do not describe yourself as elite, flawless, or a certified expert.
 SUBJECT: ${subject}. ${subjectInstruction}
 LEARNER LEVEL: ${learningLevels[profile.level]} (a starting preference, not evidence of mastery).
 TEACHING APPROACH: ${approachInstructions[profile.approach]}

@@ -43,7 +43,7 @@ export default function GoalLearning() {
   useEffect(()=>{
     if(!ready||!plan)return;
     try{validateGoalSettings(settings);validateGoalPlan(plan,sources);}catch{return;}
-    try{localStorage.setItem(KEY,JSON.stringify({settings,plan,sources,completed,accepted,dirty}));}catch{setStorageWarning("This browser could not save your plan. Keep this page open to continue.");}
+    try{localStorage.setItem(KEY,JSON.stringify({settings,plan,sources,completed,accepted,dirty}));window.dispatchEvent(new Event("eai-study-progress-change"));}catch{setStorageWarning("This browser could not save your plan. Keep this page open to continue.");}
   },[ready,settings,plan,sources,completed,accepted,dirty]);
   useEffect(()=>{
     function receiveGoal(event:Event){

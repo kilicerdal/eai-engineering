@@ -254,7 +254,7 @@
 .eai-study-studio .tutor-dialogue{height:clamp(320px,47vh,540px);overflow-y:auto;overscroll-behavior:contain;padding:30px 32px;scrollbar-color:#766244 #081522;}
 .eai-study-studio .tutor-message-row{max-width:850px;margin:0 auto 24px;}
 .eai-study-studio .tutor-message-row.justify-start .tutor-message{border:0;background:transparent;color:#e1e4e3;max-width:100%;width:100%;padding:0;}
-.eai-study-studio .tutor-message-row.justify-start .tutor-message:before{content:"EAI Tutor";display:block;color:#d9b979;font-size:10px;letter-spacing:.06em;margin-bottom:10px;}
+.eai-study-studio .tutor-message-row.justify-start .tutor-message:before{content:"dAI Tutor";display:block;color:#d9b979;font-size:10px;letter-spacing:.06em;margin-bottom:10px;}
 .eai-study-studio .tutor-message-row.justify-end .tutor-message{background:#182a3b;border:1px solid #40505e;color:#eee7d9;max-width:min(85%,650px);padding:12px 17px;border-radius:9px;}
 .eai-study-studio .tutor-empty-state{max-width:650px;margin:40px auto;text-align:center;}
 .eai-study-studio .tutor-empty-state>svg{width:42px;height:42px;color:#d9b979;margin:0 auto 25px;}
@@ -333,3 +333,28 @@
 @media(max-width:450px){.eai-study-studio .studio-nav nav{gap:5px;font-size:11px;}.eai-study-studio .studio-main-site{font-size:10px;}}
 
 @media(max-width:700px){.eai-study-studio .studio-nav .studio-main-site{flex-basis:100%;padding:4px 0 8px;}.eai-study-studio .studio-nav nav{flex-wrap:wrap;}}
+
+/* Connected learning home: uses existing plans, notebook and checked practice. */
+.eai-study-studio .learning-home{max-width:1440px;margin:auto;padding:54px 5%;border-bottom:1px solid #34404c}
+.eai-study-studio .learning-home-note{font-size:12px;color:#b1bdc9;margin:0 0 24px}
+.eai-study-studio .learning-home-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:22px}
+.eai-study-studio .learning-home article{padding:28px;border:1px solid #d9b97944;border-radius:10px;background:linear-gradient(130deg,#132334,#0b1826);min-width:0}
+.eai-study-studio .learning-home article h3{font:400 28px/1.2 Georgia,serif;color:#eee7d9;margin:12px 0 16px;overflow-wrap:anywhere}
+.eai-study-studio .learning-home article>p:not(.studio-eyebrow){font-size:14px;line-height:1.7;color:#c0cad4}
+.eai-study-studio .learning-home .learning-home-small{font-size:11px!important;line-height:1.6!important;color:#a8b5c4!important;margin:12px 0 0}
+.eai-study-studio .learning-home-count{font-size:12px!important;margin-top:20px}
+.eai-study-studio .learning-home progress{display:block;width:100%;height:5px;margin:10px 0;accent-color:#d9b979;border:0;border-radius:4px;background:#26384a}
+.eai-study-studio .learning-home progress::-webkit-progress-bar{background:#26384a;border-radius:4px}
+.eai-study-studio .learning-home progress::-webkit-progress-value{background:#d9b979;border-radius:4px}
+.eai-study-studio .learning-home .goal-actions{margin-top:22px;align-items:center}
+.eai-study-studio .learning-home .goal-primary{white-space:normal;text-align:left;max-width:100%;overflow-wrap:anywhere}
+.eai-study-studio .learning-evidence{margin-top:22px;padding:20px 24px;border:1px solid #34404c;border-radius:8px;background:#0b1826;font-size:13px}
+.eai-study-studio .learning-evidence summary{cursor:pointer;color:#eee7d9;line-height:1.7}
+.eai-study-studio .learning-evidence summary>span{color:#a8b5c4;margin-left:18px;font-size:12px}
+.eai-study-studio .learning-evidence-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:25px 0}
+.eai-study-studio .learning-evidence-grid>div,.eai-study-studio .learning-evidence-grid>a{display:flex;flex-direction:column;gap:8px;color:#bdc9d5;font-size:12px}
+.eai-study-studio .learning-evidence-grid strong{font:400 30px Georgia,serif;color:#d9b979}
+.eai-study-studio .learning-evidence>a{display:inline-block;color:#d9b979;margin-top:16px}
+@media(max-width:760px){.eai-study-studio .learning-home{padding:36px 6%}.eai-study-studio .learning-home-grid{grid-template-columns:1fr}.eai-study-studio .learning-home article{padding:22px}.eai-study-studio .learning-evidence{padding:18px}.eai-study-studio .learning-evidence summary>span{display:block;margin:8px 0 0}.eai-study-studio .learning-evidence-grid{grid-template-columns:1fr 1fr}.eai-study-studio .studio-brand{font-size:16px}.eai-study-studio .studio-brand-light{font-size:20px}}
+
+.eai-study-studio .learning-home .goal-primary{display:inline-flex;align-items:center;border:1px solid #d9b979;background:#d9b979;color:#15202b;padding:11px 17px;border-radius:5px;font-size:13px;line-height:1.5;font-weight:600;text-decoration:none;cursor:pointer}.eai-study-studio .learning-home .goal-primary:hover{background:#efd29a;border-color:#efd29a}

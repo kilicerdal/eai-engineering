@@ -44,6 +44,7 @@ export default function StudyPractice() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(attempts));
       localStorage.setItem(TRACK_KEY, track);
+      window.dispatchEvent(new Event("eai-study-progress-change"));
     }
     catch { queueMicrotask(() => setStorageAvailable(false)); }
   }, [attempts, hydrated, track]);

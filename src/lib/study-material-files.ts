@@ -79,7 +79,7 @@ export function saveMaterialLibrary(library: MaterialLibrary): Promise<void> {
       await new Promise<void>((resolve,reject) => {
         const transaction = database.transaction(STORE,"readwrite");
         transaction.objectStore(STORE).put(snapshot,"current");
-        transaction.oncomplete = () => resolve(); transaction.onerror = () => reject(transaction.error); transaction.onabort = () => reject(transaction.error);
+        transaction.oncomplete = () => { window.dispatchEvent(new Event("eai-study-progress-change")); resolve(); }; transaction.onerror = () => reject(transaction.error); transaction.onabort = () => reject(transaction.error);
       });
     } finally { database.close(); }
   });

@@ -695,7 +695,7 @@ export default function WritingStudioPage() {
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>${escapeHTML(reportTitle)} - EAI Evaluation</title>
+<title>${escapeHTML(reportTitle)} - dAI Evaluation</title>
 <style>
   @page { size: A4; margin: 18mm; }
   * { box-sizing: border-box; }
@@ -828,7 +828,7 @@ export default function WritingStudioPage() {
 </head>
 <body>
   <div class="header">
-    <div class="brand">EAI ENGINEERING</div>
+    <div class="brand">dAI LEARNING STUDIO</div>
     <h1>Academic Writing Evaluation</h1>
     <div class="subtitle">${escapeHTML(reportTitle)}</div>
     <div class="subtitle">Generated ${escapeHTML(new Date().toLocaleString())}</div>
@@ -847,7 +847,7 @@ export default function WritingStudioPage() {
   <div class="feedback">${escapeHTML(reportText)}</div>
 
   <div class="note">
-    EAI Study Assistant | AI-generated educational feedback.
+    dAI Learning Studio | AI-generated educational feedback.
     This report is not an official academic grade.
   </div>
 </body>
@@ -879,7 +879,7 @@ export default function WritingStudioPage() {
 
 
     const report = [
-      "EAI ENGINEERING",
+      "dAI LEARNING STUDIO",
       "ACADEMIC WRITING STUDIO",
       "ESSAY EVALUATION REPORT",
       "========================================",
@@ -1112,7 +1112,7 @@ export default function WritingStudioPage() {
     <main className="min-h-screen bg-[#080d19] text-white">
       <StudyNavigation />
       <section className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-5 px-6 pt-10">
-        <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">EAI Academic Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p></div>
+        <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">dAI Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p></div>
         <button type="button" onClick={downloadEssay} className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950">Download Essay ↓</button>
       </section>
 
@@ -1397,7 +1397,7 @@ export default function WritingStudioPage() {
       </div>
     
       <div className="mx-auto max-w-5xl px-6 py-6 text-center text-sm text-slate-400">
-        Need help with EAI Study Assistant?{" "}
+        Need help with dAI Learning Studio?{" "}
         <a
           href="mailto:support@eai.engineering"
           className="font-medium text-cyan-400 hover:underline"
