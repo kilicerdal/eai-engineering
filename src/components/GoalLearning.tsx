@@ -109,12 +109,12 @@ export default function GoalLearning() {
   return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} aria-labelledby="goal-heading" aria-busy={busy}>
     <StudyLandmark scene="stonehenge" />
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">What do you want to achieve?</h2></div><p>A learning path built<br/>around your goal.</p></div>
-    <p className="goal-intro">Describe it in your own words. We’ll propose a starting path you can reshape as you learn.</p>
-    <ol className="goal-steps" aria-label="Plan creation steps">{["Your goal","Materials · optional","Your pace","Review & begin"].map((label,index)=><li key={label} aria-current={step===index+1?"step":undefined}><span>{index+1}</span>{label}</li>)}</ol>
+    <p className="goal-intro">Tell us your goal. Shape your next step.</p>
+    <ol className="goal-steps" aria-label="Plan creation steps">{["Your goal","Materials","Your pace","Review"].map((label,index)=><li key={label} aria-current={step===index+1?"step":undefined}><span>{index+1}</span>{label}</li>)}</ol>
     {storageWarning&&<p role="status" className="goal-notice">{storageWarning}</p>}
     {step===1&&<div className="goal-panel">
       <label htmlFor="learning-achievement" className="goal-label">Tell us what you want to learn or accomplish</label>
-      <textarea id="learning-achievement" value={settings.goal} onChange={e=>change("goal",e.target.value)} maxLength={1500} rows={4} placeholder="I want to understand… so that I can…" disabled={!ready||busy}/>
+      <textarea id="learning-achievement" value={settings.goal} onChange={e=>change("goal",e.target.value)} maxLength={1500} rows={2} placeholder="I want to learn…" disabled={!ready||busy}/>
       <p className="goal-helper">Any subject. A specific question, a skill, or a bigger ambition. {settings.goal.length}/1,500</p>
       <details className="goal-examples"><summary>Need inspiration? Try an example</summary><div>{examples.map(example=><button key={example} type="button" onClick={()=>change("goal",example)}>{example} ↗</button>)}</div></details>
       <div className="goal-actions"><button className="goal-primary" disabled={!ready||settings.goal.trim().length<10} onClick={()=>move(2)}>Continue →</button>{plan&&<button onClick={()=>move(4)}>Return to my plan</button>}<a href="#ai-assistant">Explore with the tutor instead ↗</a></div>
@@ -154,6 +154,6 @@ export default function GoalLearning() {
     </div>}
     {error&&<p role="alert" className="goal-error">{error}</p>}
     <p className="studio-landmark-caption">Stonehenge, England · An imagined horizon</p>
-    <p className="goal-footnote">Your plan is saved in this browser after generation. AI-proposed outlines can contain gaps or mistakes; edit them to suit your needs. {accountConfigured ? <Link href="/study/account">Choose optional account saving ↗</Link> : "Account sync is not yet available."}</p>
+    <details className="goal-saving-note"><summary>About your saved plan</summary><p className="goal-footnote">Your plan is saved in this browser after generation. AI-proposed outlines can contain gaps or mistakes; edit them to suit your needs. {accountConfigured ? <Link href="/study/account">Choose optional account saving ↗</Link> : "Account sync is not yet available."}</p></details>
   </section>;
 }
