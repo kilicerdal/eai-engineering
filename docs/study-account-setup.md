@@ -37,3 +37,11 @@ Only set each provider true after it works. Rebuild/redeploy after public settin
 ## Release verification still required
 
 The unit tests exercise corrupted data, storage rollback, account switching, and mocked cloud compare-and-swap. They do not prove deployed RLS or OAuth configuration. Before public activation, run the SQL isolation test and real two-account checks; verify Google/email sign-in, logout, cancellation, account switching, save/restore across two browser sessions, conflict handling, and cloud deletion. Check desktop/mobile UI. Apple requires its own live test before its flag is enabled.
+
+## Verified setup on November 2, 2026
+
+The owner's existing Free Supabase project `adyjjsfytwcgfbbrroqu` was empty and has now received the migration. The SQL isolation suite passed live, including cross-owner insert/read/update/delete rejection, anonymous denial, malformed-snapshot rejection, and stale-revision protection; final fixture counts were zero.
+
+A separate, unbilled Google project `dai-learning-studio-eai` was created. After the owner explicitly approved the Google User Data Policy and client setup, the web OAuth client was configured and stored in Supabase. Google basic identity sign-in, PKCE completion, authenticated cloud save, backup-and-restore of a synthetic notebook entry plus sample library, and automatic saving were verified through the real UI on isolated localhost:3012. Automatic saving was paused after the test. Google remains in Testing status; no public-production or two-real-account end-to-end test is claimed.
+
+The exact local callback `http://localhost:3012/study/account` is temporarily allowlisted; remove after local testing is finished. Production public Supabase settings and provider flags were saved in Vercel, with all providers initially false. A new deployment is needed for changes to apply. Public provider activation still needs completed Google branding/publishing, email delivery setup, and final website verification. Apple remains disabled with no membership purchased. Privacy information is at `/study/privacy`.

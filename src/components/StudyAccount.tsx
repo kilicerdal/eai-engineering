@@ -32,7 +32,7 @@ export default function StudyAccount() {
   async function restore(){if(!record||!user)return;pauseCloud();const latest=await readCloud(user.id);if(!latest)throw new Error("That account record is no longer available.");exportStudy(await captureStudy());await restoreCloud(latest.snapshot);bindCloud(user.id,latest);location.assign("/study#my-learning");}
   async function remove(){if(!user||!record)return;pauseCloud();await deleteCloud(user.id,record.revision);setRecord(null);setConfirm(null);setMessage("Your cloud learning record was deleted. Your sign-in account and this browser's work remain.");}
   return <section className="studio-account-card" aria-labelledby="account-heading">
-    <p className="studio-eyebrow">YOUR LEARNING, YOUR CHOICE</p><h1 id="account-heading">Keep your next step with you.</h1><p className="studio-account-intro">Learn in this browser, or sign in to save your plan, tutor conversations, mistake notebook, lesson checks, and extracted materials to an account.</p>
+    <p className="studio-eyebrow">YOUR LEARNING, YOUR CHOICE</p><h1 id="account-heading">Keep your next step with you.</h1><p className="studio-account-intro">Learn in this browser, or sign in to save your plan, tutor conversations, mistake notebook, lesson checks, and extracted materials to an account.</p><p className="studio-account-fine"><Link href="/study/privacy">How your learning data is handled ↗</Link></p>
     {message && <p className="studio-account-notice" role="status">{message}</p>}
     {!ready?<p role="status">Checking your account…</p>:!user?<>
       {!accountConfigured && <p className="studio-account-notice">Account saving is being prepared. Your learning tools are available now in browser-only mode.</p>}

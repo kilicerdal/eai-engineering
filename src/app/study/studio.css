@@ -425,3 +425,5 @@
 .eai-study-studio .studio-account-controls{margin:2rem 0;border-top:1px solid #8f9cb044;padding-top:1.3rem}.eai-study-studio .studio-account-controls summary{cursor:pointer}
 .eai-study-studio .studio-cloud-status{position:fixed;bottom:1rem;right:1rem;z-index:40;max-width:min(460px,calc(100vw - 2rem));box-sizing:border-box;background:#132237;border:1px solid #c5a57588;border-radius:10px;padding:1rem;color:#f2e8da;box-shadow:0 12px 40px #0008;font-size:.85rem;line-height:1.5}.eai-study-studio .studio-cloud-status a{color:#f0ca94;white-space:nowrap}
 @media(max-width:600px){.eai-study-studio .studio-account-providers{grid-template-columns:1fr}.eai-study-studio .studio-account-page{padding:2rem 1rem}.eai-study-studio .studio-account-identity{flex-direction:column;align-items:flex-start}}
+
+.eai-study-studio .studio-privacy h2{font-family:Georgia,serif;font-size:1.5rem;color:#f3e7d4;margin:2rem 0 .75rem}.eai-study-studio .studio-privacy p{line-height:1.8;color:#c4cede}.eai-study-studio .studio-privacy a{color:#ebc58f;text-decoration:underline;text-underline-offset:3px}.eai-study-studio .studio-privacy{overflow-wrap:anywhere}

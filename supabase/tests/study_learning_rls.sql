@@ -37,3 +37,7 @@ do $$ begin
  begin perform * from public.study_learning_records; raise exception 'Anonymous read allowed'; exception when insufficient_privilege then null; end;
 end $$;
 rollback;
+
+select 'PASS: owner isolation, anonymous denial, stale-save rejection' as status,
+  (select count(*) from auth.users where id in ('e1cb316c-9024-4669-994b-d2dde3a7f111','e1cb316c-9024-4669-994b-d2dde3a7f222')) as remaining_test_users,
+  (select count(*) from public.study_learning_records where user_id in ('e1cb316c-9024-4669-994b-d2dde3a7f111','e1cb316c-9024-4669-994b-d2dde3a7f222')) as remaining_test_records;

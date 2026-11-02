@@ -107,7 +107,7 @@ export default function StudyPage() {
 
     
       <div className="studio-footer">
-        <Link href="/">EAI Engineering</Link><span>Knowledge opens possibilities.</span><span>Need a hand?{" "}
+        <Link href="/">EAI Engineering</Link><Link href="/study/privacy">Privacy & saved learning</Link><span>Knowledge opens possibilities.</span><span>Need a hand?{" "}
         <a
           href="mailto:support@eai.engineering"
           className="font-medium text-cyan-400 hover:underline"
