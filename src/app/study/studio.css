@@ -402,3 +402,5 @@
 @media(max-width:760px){.eai-study-studio .library-lesson-context{padding:18px}.eai-study-studio .library-lesson-context h2{font-size:23px}}
 
 .eai-study-studio .lesson-check-rich{font-size:14px;line-height:1.7;min-width:0;overflow-wrap:anywhere}.eai-study-studio .lesson-check-rich pre{overflow-x:auto;max-width:100%;background:#081522;padding:16px;border-radius:7px}.eai-study-studio .lesson-check-rich ul{list-style:disc;padding-left:22px}.eai-study-studio .lesson-check-rich ol{list-style:decimal;padding-left:22px}.eai-study-studio .lesson-check-rich .katex-display{overflow-x:auto;overflow-y:hidden}
+
+.eai-study-studio .library-lesson-question{font-size:12px;color:#aebdcb}.eai-study-studio .library-lesson-question summary{cursor:pointer}.eai-study-studio .library-lesson-question p{white-space:pre-wrap;font-size:12px;line-height:1.7;margin:12px 0}
