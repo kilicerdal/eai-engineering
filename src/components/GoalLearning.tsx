@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { CHECK_KEY, normalizeLessonChecks, latestLessonCheck, checkMemory } from "@/lib/study-checkpoints";
 import { defaultGoalSettings, goalLevels, goalLessonPrompt, normalizeGoalProgress, validateGoalPlan, validateGoalSettings, type GoalPlan, type GoalSettings, type GoalSource } from "@/lib/study-goal";
 import { importCourseFile, importCourseNotes, loadMaterialLibrary, saveMaterialLibrary } from "@/lib/study-material-files";
 import { MATERIAL_LIMITS, materialLocation, selectMaterialExcerpts, validateMaterialSources, type MaterialLibrary } from "@/lib/study-materials";
@@ -91,7 +92,9 @@ export default function GoalLearning() {
   function start(index:number){
     if(!plan||!accepted)return;
     const level=settings.level==="foundations"?"foundation":settings.level==="highschool"?"highSchool":settings.level;
-    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:goalLessonPrompt(settings,plan.lessons[index]),title:plan.lessons[index].title,goal:settings.goal,level}}));
+    const checkpoint={goal:settings.goal,lesson:plan.lessons[index]};
+    let memory="";try{memory=checkMemory(latestLessonCheck(checkpoint,normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]")),Date.now()));}catch{/* The lesson still opens without saved evidence. */}
+    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:(goalLessonPrompt(settings,plan.lessons[index]).slice(0,1900)+memory).slice(0,3000),title:plan.lessons[index].title,goal:settings.goal,level,checkpoint}}));
     document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   const next=plan?.lessons.findIndex(lesson=>!completed.includes(lesson.id))??-1;

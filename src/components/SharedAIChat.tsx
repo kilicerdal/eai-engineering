@@ -7,6 +7,8 @@ import {
   type FormEvent,
 } from "react";
 
+import LessonCheckpoint from "@/components/LessonCheckpoint";
+import { normalizeLessonContext, type LessonContext } from "@/lib/study-checkpoints";
 import StudyGlyph from "@/components/StudyGlyph";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -34,6 +36,7 @@ type Conversation = {
   messages: Message[];
   updatedAt: number;
   learning: LearningProfile;
+  checkpoint?: LessonContext;
 };
 
 const STORAGE_KEY = "eai-study-conversations-v1";
@@ -262,7 +265,7 @@ export default function SharedAIChat() {
               typeof item.title === "string" &&
               Array.isArray(item.messages) &&
               ["general", "math", "science", "writing", "history", "coding", "exam", "engineering"].includes(item.mode)
-          ).map((item) => ({ ...item, learning: normalizeLearningProfile(item.learning), messages: normalizeSavedStudyMessages(item.messages) }));
+          ).map((item) => ({ ...item, learning: normalizeLearningProfile(item.learning), checkpoint: normalizeLessonContext(item.checkpoint) || undefined, messages: normalizeSavedStudyMessages(item.messages) }));
         }
       }
 
@@ -506,9 +509,10 @@ export default function SharedAIChat() {
       if (loading) return;
       const detail = (event as CustomEvent<unknown>).detail;
       if (!detail || typeof detail !== "object") return;
-      const { subject, message, title, goal, level, approach } = detail as Record<string, unknown>;
+      const { subject, message, title, goal, level, approach, checkpoint } = detail as Record<string, unknown>;
       if (typeof message !== "string" || !message.trim() || message.length > 3000 || !modes.some(mode => mode.id === subject)) return;
       const conversation = createConversation(subject as Mode);
+      conversation.checkpoint = normalizeLessonContext(checkpoint) || undefined;
       conversation.title = typeof title === "string" ? title.slice(0, 60) : "Practice discussion";
       if (typeof level === "string" && Object.hasOwn(learningLevels, level)) conversation.learning.level = level as LearningProfile["level"];
       if (typeof approach === "string" && Object.hasOwn(learningApproaches, approach)) conversation.learning.approach = approach as LearningProfile["approach"];
@@ -641,7 +645,7 @@ export default function SharedAIChat() {
 
           </section>}
           <div className="tutor-focus-main">
-            {active && active.title !== "New conversation" && <div className="tutor-context-strip"><span>CURRENT SESSION</span><strong>{active.title}</strong>{active.learning.goal && <p>{active.learning.goal}</p>}</div>}
+            {active && active.title !== "New conversation" && <div className="tutor-context-strip"><span>CURRENT SESSION</span><strong>{active.title}</strong>{active.learning.goal && <p>{active.learning.goal}</p>}{active.checkpoint && <a href="#lesson-understanding-check">Check understanding ↓</a>}</div>}
             <div className="tutor-mode-bar">
               <div role="group" aria-label="Learning approach" className="flex flex-wrap gap-2">
                 {Object.entries(learningApproaches).map(([value, item]) => (
@@ -776,6 +780,7 @@ export default function SharedAIChat() {
             </div>
           </div>
         </div>
+        {active?.checkpoint && <LessonCheckpoint key={active.id} context={active.checkpoint} sessionId={active.id} disabled={loading} recentWork={`Learner level: ${active.learning.level}\n`+active.messages.slice(-4).map(message=>`${message.role}: ${message.content.slice(0,1800)}`).join("\n").slice(0,4000)} />}
       </div>
     </section>
   );
