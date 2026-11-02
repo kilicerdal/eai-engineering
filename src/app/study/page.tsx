@@ -1,5 +1,6 @@
 "use client";
 
+import { accountConfigured } from "@/lib/study-account";
 import SharedAIChat from "@/components/SharedAIChat";
 import LearningHome from "@/components/LearningHome";
 import GoalLearning from "@/components/GoalLearning";
@@ -62,7 +63,7 @@ export default function StudyPage() {
           <p className="studio-hero-subtitle">Ancient wisdom. New possibilities.</p>
           <p className="studio-hero-description">A space for curious minds. Connect ideas, explore your materials, and find a clearer path to understanding.</p>
           <div className="studio-hero-actions"><a className="studio-button-gold" href="#learning-goal">Start exploring <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
-          <p className="studio-hero-note">No account needed · Your work stays in this browser</p>
+          <p className="studio-hero-note">No account needed · {accountConfigured ? <Link href="/study/account">Optional account saving ↗</Link> : "Your work stays in this browser"}</p>
         </div>
         <a href="#discover" className="studio-hero-scroll">YOUR NEXT DISCOVERY <span aria-hidden="true">↓</span></a>
       </section>

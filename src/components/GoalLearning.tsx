@@ -1,5 +1,6 @@
 "use client";
 
+import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MATERIAL_HANDOFF_KEY, makeLessonMaterialHandoff } from "@/lib/study-material-handoff";
@@ -123,7 +124,7 @@ export default function GoalLearning() {
       <details><summary>Paste notes instead</summary><textarea aria-label="Planning notes" rows={4} value={notes} maxLength={250000} disabled={uploading} onChange={e=>setNotes(e.target.value)}/><button type="button" disabled={!notes.trim()||uploading} onClick={()=>void addMaterial()}>Add these notes</button></details>
       {uploading&&<p role="status">{status||"Saving your material…"}</p>}
       <div className="goal-materials">{library.documents.map(document=><label key={document.id}><input type="checkbox" checked={selected.includes(document.id)} onChange={e=>{setSelected(ids=>e.target.checked?[...ids,document.id]:ids.filter(id=>id!==document.id));if(plan){setDirty(true);setAccepted(false);}}} disabled={uploading}/><span>{document.name}<small>{document.pages.length} readable {document.kind==="pdf"?"pages":"sections"}</small></span></label>)}</div>
-      <p className="goal-helper">Extracted text stays in this browser. Up to six selected excerpts are sent to the AI when you create the plan. A long syllabus may only be partially represented. <Link href="/study/materials">Manage your library ↗</Link></p>
+      <p className="goal-helper">Extracted text is saved in this browser{accountConfigured ? " and included if you choose account saving" : ""}. Up to six selected excerpts are sent to the AI when you create the plan. A long syllabus may only be partially represented. <Link href="/study/materials">Manage your library ↗</Link></p>
       <div className="goal-actions"><button onClick={()=>move(1)} disabled={uploading}>← Back</button><button className="goal-primary" disabled={uploading} onClick={()=>move(3)}>{selected.length?"Continue with selected materials":"Continue without materials"} →</button></div>
     </div>}
     {step===3&&<div className="goal-panel">
@@ -150,6 +151,6 @@ export default function GoalLearning() {
       {accepted&&<p className="goal-helper">Starting a lesson prepares a message in the tutor. Review it and select Send when ready. Completion is self-reported, not a mastery assessment.</p>}
     </div>}
     {error&&<p role="alert" className="goal-error">{error}</p>}
-    <p className="goal-footnote">Your plan is saved in this browser after generation. AI-proposed outlines can contain gaps or mistakes; edit them to suit your needs. Account sync is not yet available.</p>
+    <p className="goal-footnote">Your plan is saved in this browser after generation. AI-proposed outlines can contain gaps or mistakes; edit them to suit your needs. {accountConfigured ? <Link href="/study/account">Choose optional account saving ↗</Link> : "Account sync is not yet available."}</p>
   </section>;
 }

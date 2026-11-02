@@ -1,5 +1,6 @@
 "use client";
 
+import { accountConfigured } from "@/lib/study-account";
 import {
   useEffect,
   useRef,
@@ -775,7 +776,7 @@ export default function SharedAIChat() {
               </form>
 
               <p className="mt-3 text-center text-xs text-slate-500">
-                Sessions are saved in this browser, without account sync. AI responses can contain mistakes; verify important facts and calculations.
+                Sessions are saved in this browser. {accountConfigured && <>Optional account saving is managed on the <a href="/study/account">Account page</a>. </>}AI responses can contain mistakes; verify important facts and calculations.
               </p>
             </div>
           </div>

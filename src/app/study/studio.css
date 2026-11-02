@@ -404,3 +404,24 @@
 .eai-study-studio .lesson-check-rich{font-size:14px;line-height:1.7;min-width:0;overflow-wrap:anywhere}.eai-study-studio .lesson-check-rich pre{overflow-x:auto;max-width:100%;background:#081522;padding:16px;border-radius:7px}.eai-study-studio .lesson-check-rich ul{list-style:disc;padding-left:22px}.eai-study-studio .lesson-check-rich ol{list-style:decimal;padding-left:22px}.eai-study-studio .lesson-check-rich .katex-display{overflow-x:auto;overflow-y:hidden}
 
 .eai-study-studio .library-lesson-question{font-size:12px;color:#aebdcb}.eai-study-studio .library-lesson-question summary{cursor:pointer}.eai-study-studio .library-lesson-question p{white-space:pre-wrap;font-size:12px;line-height:1.7;margin:12px 0}
+
+/* Optional learning account: quiet, readable surfaces within the studio. */
+.eai-study-studio .studio-account-page{min-height:80vh;padding:5rem 1.5rem;background:radial-gradient(ellipse at 15% 0%,#1a283e 0,transparent 65%),#080e18}
+.eai-study-studio .studio-account-card{max-width:760px;margin:auto;padding:clamp(1.5rem,4vw,3.5rem);border:1px solid #c5a57544;border-radius:18px;background:#101a28;color:#e9edf2;box-shadow:0 24px 80px #0004}
+.eai-study-studio .studio-account-card h1{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;margin:.7rem 0 1.2rem}
+.eai-study-studio .studio-account-intro{font-size:1.05rem;line-height:1.7;color:#c1ccdc}
+.eai-study-studio .studio-account-providers{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1.8rem 0}
+.eai-study-studio .studio-account-card button{border:1px solid #8f9cb077;border-radius:8px;padding:.8rem 1rem;color:#eef2f7;background:#1c293b;cursor:pointer;line-height:1.4}
+.eai-study-studio .studio-account-card button:disabled{opacity:.55;cursor:not-allowed}
+.eai-study-studio .studio-account-card button:focus-visible,.eai-study-studio .studio-account-card a:focus-visible,.eai-study-studio .studio-account-card input:focus-visible{outline:2px solid #e7bd80;outline-offset:4px}
+.eai-study-studio .studio-account-card .goal-primary{background:#e6bc81;color:#142033;border-color:#e6bc81}
+.eai-study-studio .studio-account-card form{display:grid;gap:.8rem;margin:1.5rem 0}
+.eai-study-studio .studio-account-card input{background:#090f19;border:1px solid #74869c;border-radius:8px;color:#fff;padding:.9rem;font-size:1rem;width:100%;box-sizing:border-box}
+.eai-study-studio .studio-account-card small,.eai-study-studio .studio-account-fine{font-size:.85rem;line-height:1.7;color:#aebdd0}
+.eai-study-studio .studio-account-browser{display:inline-block;color:#e9c38d;padding:1rem 0}
+.eai-study-studio .studio-account-notice,.eai-study-studio .studio-account-confirm{background:#223047;border:1px solid #c2a07266;border-radius:10px;padding:1rem 1.2rem;line-height:1.6;margin:1.3rem 0;overflow-wrap:anywhere}
+.eai-study-studio .studio-account-confirm h2{font-size:1.25rem}.eai-study-studio .studio-account-confirm button{margin:.3rem .5rem .3rem 0}
+.eai-study-studio .studio-account-identity{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.6rem 0;overflow-wrap:anywhere}
+.eai-study-studio .studio-account-controls{margin:2rem 0;border-top:1px solid #8f9cb044;padding-top:1.3rem}.eai-study-studio .studio-account-controls summary{cursor:pointer}
+.eai-study-studio .studio-cloud-status{position:fixed;bottom:1rem;right:1rem;z-index:40;max-width:min(460px,calc(100vw - 2rem));box-sizing:border-box;background:#132237;border:1px solid #c5a57588;border-radius:10px;padding:1rem;color:#f2e8da;box-shadow:0 12px 40px #0008;font-size:.85rem;line-height:1.5}.eai-study-studio .studio-cloud-status a{color:#f0ca94;white-space:nowrap}
+@media(max-width:600px){.eai-study-studio .studio-account-providers{grid-template-columns:1fr}.eai-study-studio .studio-account-page{padding:2rem 1rem}.eai-study-studio .studio-account-identity{flex-direction:column;align-items:flex-start}}

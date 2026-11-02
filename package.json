@@ -12,6 +12,7 @@
     "predev": "node scripts/copy-pdf-assets.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
     "@upstash/ratelimit": "^2.2.0",
     "@upstash/redis": "^1.40.0",
     "@vercel/functions": "^3.10.4",

@@ -1,4 +1,5 @@
 "use client";
+import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { CHECK_KEY, checkLabel, normalizeLessonChecks, latestLessonCheck, recommendLesson, checkMemory, type LessonCheck } from "@/lib/study-checkpoints";
@@ -55,7 +56,7 @@ export default function LearningHome() {
   }
   return <section id="my-learning" className="learning-home" aria-labelledby="learning-home-heading">
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR LEARNING, CONNECTED</p><h2 id="learning-home-heading">Your next step, in focus.</h2></div><p>Build on what you know.<br/>Return to what needs practice.</p></div>
-    <p className="learning-home-note">Saved in this browser · No account or subscription required</p>
+    <p className="learning-home-note">Saved in this browser · {accountConfigured ? <Link href="/study/account">Manage optional account saving ↗</Link> : "No account or subscription required"}</p>
     {!ready ? <p role="status">Loading your learning…</p> : <>
       {warning && <p role="status" className="goal-notice">{warning}</p>}
       <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">{journey ? "YOUR PERSONAL PATH" : "BEGIN WITH YOUR GOAL"}</p><h3>{journey?.plan.title || "What would you like to understand?"}</h3><p>{journey ? usable ? next ? next.objective : "You marked every lesson complete. Revisit a checkpoint or explore a new goal to check what you can explain independently." : "Your outline needs your review before you continue." : "Start with a subject, a challenge, or an exam. Your existing tutor and materials will help you shape a practical starting path."}</p>
