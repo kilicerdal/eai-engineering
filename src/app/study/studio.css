@@ -559,3 +559,15 @@
 .eai-study-studio .exam-prep-controls .goal-settings{grid-template-columns:1fr 1fr;}
 .eai-study-studio .exam-notebook-grid{padding:22px 6% 0;grid-template-columns:1fr;}
 }
+
+/* Background only: preserve every existing tutor/chat dimension and control. */
+.eai-study-studio #ai-assistant{position:relative;isolation:isolate;background:#06111d;}
+.eai-study-studio #ai-assistant:before{content:"";position:absolute;inset:0 0 auto;height:clamp(340px,38vw,620px);z-index:-1;pointer-events:none;background-image:linear-gradient(90deg,#06111d80,#06111d33 45%,#06111d22),linear-gradient(0deg,#06111d,transparent 38%),url('/images/study/parthenon-future.webp');background-size:cover;background-position:center;}
+.eai-study-studio #ai-assistant .tutor-section-intro{position:relative;}
+.eai-study-studio #ai-assistant .tutor-section-intro h2{color:#fff4df;text-shadow:0 2px 14px #0009;}
+.eai-study-studio #ai-assistant .tutor-section-intro>p:last-child{color:#e0e3e5;text-shadow:0 1px 8px #000;}
+@media(max-width:760px){.eai-study-studio #ai-assistant:before{height:340px;background-position:center top;background-image:linear-gradient(90deg,#06111d99,#06111d66),linear-gradient(0deg,#06111d,transparent 50%),url('/images/study/parthenon-future.webp');}}
+/* Reserve a shallow scenic header; the chat shell itself keeps its exact sizing. */
+.eai-study-studio #ai-assistant .tutor-section-intro{min-height:220px;}
+.eai-study-studio #ai-assistant:before{background-size:cover,cover,100% auto;background-position:center,center,center top;background-repeat:no-repeat;}
+@media(max-width:760px){.eai-study-studio #ai-assistant .tutor-section-intro{min-height:190px;}.eai-study-studio #ai-assistant:before{background-size:cover,cover,100% auto;background-position:center,center,center 135px;}}
