@@ -2,14 +2,16 @@ import type { GoalLesson } from "./study-goal";
 import type { SavedJourney } from "./study-progress";
 import { normalizeMistakes } from "./study-exams";
 import { latestLessonCheck, type LessonCheck } from "./study-checkpoints";
+import {readExamRecord,examSkillEvidence,recommendedExamDomain} from "./study-exam-practice";
+import {examDomains,type ExamProfile,type ExamDomain} from "./study-exam-bank";
 import { mistakePracticeContext } from "./study-mistake-practice";
 
 export type LearningRecommendation = {
  title: string; reason: string; action: string; check?: LessonCheck;
-} & ({kind: "lesson"; lesson: GoalLesson} | {kind: "notebook"; mistakeId: string} | {kind: "plan"});
+} & ({kind: "lesson"; lesson: GoalLesson} | {kind: "notebook"; mistakeId: string} | {kind: "plan"} | {kind:"exam";exam:ExamProfile;domain:ExamDomain});
 
 /** Transparent rules over saved evidence; never a score or an automatic completion. */
-export function recommendLearningStep(journey: SavedJourney | null, rawMistakes: unknown, checks: LessonCheck[], now: number): LearningRecommendation {
+export function recommendLearningStep(journey: SavedJourney | null, rawMistakes: unknown, checks: LessonCheck[], now: number, rawExamPractice:unknown=null): LearningRecommendation {
  if (journey && (!journey.accepted || journey.dirty)) return {kind:"plan",title:"Review your learning plan.",reason:"Your plan has changes or has not been accepted. Review it before continuing a planned lesson.",action:"Review my plan"};
  const candidates: {recommendation: LearningRecommendation; priority: number; time: number}[] = [];
  if (journey) {
@@ -41,6 +43,14 @@ export function recommendLearningStep(journey: SavedJourney | null, rawMistakes:
   else {priority=55;recommendation={...base,title:`Finish your review: ${short}`,reason:"Your latest follow-up was answered independently. The original entry is still due; review the evidence and choose whether to reschedule it.",action:"Review this result"};}
   candidates.push({recommendation,priority,time:mistake.reviewAt});
  }
+ try {
+  if(rawExamPractice){
+   const practice=readExamRecord(rawExamPractice),exam=practice.activeExam,domain=recommendedExamDomain(exam,practice.attempts,now);
+   const skills=examSkillEvidence(exam,practice.attempts,now).filter(s=>s.domain===domain);
+   const missed=skills.reduce((n,s)=>n+s.needsPractice,0),helped=skills.reduce((n,s)=>n+s.helped,0);
+   if(missed||helped)candidates.push({priority:missed?15:35,time:0,recommendation:{kind:"exam",exam,domain,title:`Strengthen: ${examDomains[domain].name}`,reason:missed?`Your latest checked ${exam==="sat"?"SAT":"PSAT/NMSQT"} practice includes answers to revisit in this area. Work through the explanations, then try different original questions.`:"Your latest checked exam practice in this area included helped answers. A focused set can help you recall the method independently.",action:`Practice ${exam==="sat"?"SAT":"PSAT"} skills`}});
+  }
+ }catch{/* An unreadable exam record must never invent evidence or block other learning. */}
  candidates.sort((a,b)=>a.priority-b.priority||a.time-b.time);
  return candidates[0]?.recommendation || {kind:"plan",title:journey?"Choose your next learning goal.":"What would you like to understand?",reason:journey?"There are no due notebook entries or current lesson checks needing follow-up. You can review your plan or explore a new goal; this does not certify mastery.":"Describe a subject, challenge, or exam to shape a practical starting path.",action:journey?"Review my plan":"Shape my learning plan"};
 }

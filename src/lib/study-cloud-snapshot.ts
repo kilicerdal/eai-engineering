@@ -1,5 +1,5 @@
 // Deliberately excludes credentials, unrelated site data, and temporary prompts.
-export const STUDY_KEYS = ["eai-goal-journey-v1", "eai-study-conversations-v1", "eai-study-practice-v1", "eai-study-practice-track-v1", "eai-study-plan-v1", "eai-exam-mistakes-v1", "eai-lesson-checks-v1"] as const;
+export const STUDY_KEYS = ["eai-goal-journey-v1", "eai-study-conversations-v1", "eai-study-practice-v1", "eai-study-practice-track-v1", "eai-study-plan-v1", "eai-exam-mistakes-v1", "eai-lesson-checks-v1", "eai-exam-prep-v1"] as const;
 export const SNAPSHOT_BYTES = 4 * 1024 * 1024;
 export type StudySnapshot = { version: 1; values: Partial<Record<typeof STUDY_KEYS[number], string>>; library: { documents: unknown[]; entries: unknown[] } };
 const arrays = new Set(["eai-study-conversations-v1", "eai-study-practice-v1", "eai-exam-mistakes-v1", "eai-lesson-checks-v1"]);

@@ -15,6 +15,7 @@ export default function LearningHome() {
   const [journey,setJourney] = useState<SavedJourney | null>(null);
   const [evidence,setEvidence] = useState(emptyEvidence);
   const [documents,setDocuments] = useState<number | null>(null);
+  const [examPractice,setExamPractice] = useState<unknown>(null);
   const [checks,setChecks] = useState<LessonCheck[]>([]);
   const [now,setNow] = useState(0);
   const [ready,setReady] = useState(false);
@@ -27,6 +28,7 @@ export default function LearningHome() {
         const saved = localStorage.getItem("eai-goal-journey-v1");
         setJourney(restoreJourney(saved ? JSON.parse(saved) : null));
         setNow(Date.now());
+        try{setExamPractice(JSON.parse(localStorage.getItem("eai-exam-prep-v1")||"null"));}catch{setExamPractice(null);}
         try { setChecks(normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]"))); } catch { setChecks([]); }
         setEvidence(learningEvidence(JSON.parse(localStorage.getItem("eai-study-practice-v1") || "[]"),JSON.parse(localStorage.getItem("eai-exam-mistakes-v1") || "[]"),Date.now()));
         setWarning("");
@@ -43,7 +45,7 @@ export default function LearningHome() {
   },[]);
   const next = journey ? recommendLesson(journey.settings.goal,journey.plan.lessons,journey.completed,checks,now) : null;
   const lessonEvidence = journey ? journey.plan.lessons.flatMap(lesson => {const check=latestLessonCheck({goal:journey.settings.goal,lesson},checks,now);return check?[check]:[];}) : [];
-  const recommendation = recommendLearningStep(journey,evidence.due,checks,now);
+  const recommendation = recommendLearningStep(journey,evidence.due,checks,now,examPractice);
   const notebookRecommendation = recommendLearningStep(null,evidence.due,checks,now);
   const sharedNotebookStep = recommendation.kind==="notebook"&&notebookRecommendation.kind==="notebook"&&recommendation.mistakeId===notebookRecommendation.mistakeId;
   const usable = journey?.accepted && !journey.dirty;
@@ -74,7 +76,7 @@ export default function LearningHome() {
       <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">RECOMMENDED NEXT STEP</p><h3>{recommendation.title}</h3><p>{recommendation.reason}</p>
       {recommendation.check && <div className="learning-check-memory"><strong>{checkLabel(recommendation.check)} · AI-reviewed</strong><p>{recommendation.check.result.nextStep}</p><small>Latest saved response · {new Date(recommendation.check.submittedAt).toLocaleDateString()} · Help use self-reported.</small></div>}
       <p className="learning-home-small">Based on your latest saved checks and due review dates. You can choose a different lesson or explore freely.</p>
-      <div className="goal-actions">{recommendation.kind==="plan"?<a className="goal-primary" href="#learning-goal">{recommendation.action} →</a>:<button className="goal-primary" onClick={followRecommendation}>{recommendation.action} ↗</button>}{journey&&usable&&<a href="#learning-goal">View my plan ↗</a>}</div>
+      <div className="goal-actions">{recommendation.kind==="exam"?<Link className="goal-primary" href={`/study/exams?exam=${recommendation.exam}&domain=${recommendation.domain}`}>{recommendation.action} ↗</Link>:recommendation.kind==="plan"?<a className="goal-primary" href="#learning-goal">{recommendation.action} →</a>:<button className="goal-primary" onClick={followRecommendation}>{recommendation.action} ↗</button>}{journey&&usable&&<a href="#learning-goal">View my plan ↗</a>}</div>
       {recommendation.kind==="lesson"&&<p className="learning-home-small">Prepares the lesson and its latest feedback in your tutor. Review the message and select Send.</p>}
       {journey&&<><p className="learning-home-count">Your plan: {journey.plan.title}</p><p className="learning-home-small">{journey.completed.length} of {journey.plan.lessons.length} lessons marked complete by you</p><progress aria-label="Lessons you marked complete" value={journey.completed.length} max={journey.plan.lessons.length}/><p className="learning-home-small">Completion marks are your record of activity, not a mastery score.</p>{recommendation.kind!=="lesson"&&usable&&next&&<button className="learning-plan-alternative" onClick={()=>resume()}>Continue my plan instead ↗</button>}</>}
       </article>

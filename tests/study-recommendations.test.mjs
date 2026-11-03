@@ -21,3 +21,11 @@ test('future work, deleted entries, modified goals, and unrelated checks do not 
 test('a learner-scheduled future date is honored and no recommendation changes stored data',()=>{const future={...mistake,reviewAt:now+1000};const original=structuredClone({journey,future});const result=recommend(journey,[future],[check(bookContext,'needs_work')],now);assert.equal(result.kind,'lesson');assert.deepEqual({journey,future},original);});
 test('notebook checks predating the saved attempt are not evidence for it',()=>{const result=recommend(null,[mistake],[check(bookContext,'meets',false,now-200)],now);assert.equal(result.check,undefined);assert.match(result.reason,/no saved follow-up/);});
 test('completed plans suggest an unchecked lesson without claiming mastery',()=>{const result=recommend({...journey,completed:['l1','l2']},[],[],now);assert.equal(result.kind,'lesson');assert.match(result.reason,/no saved understanding check/);});
+
+test('authored exam keys inform targeted recommendations without being labeled AI-reviewed',()=>{
+ const p=load('study-exam-practice'),b=load('study-exam-bank');let record=p.startExamSession(p.emptyExamRecord(),'sat','practice','algebra',now-20,'exam-session');
+ const session=record.sessions.sat,q=b.examBank.find(q=>q.id===session.questionIds[0]);record={...record,sessions:{...record.sessions,sat:{...session,selectedIndex:(q.answerIndex+1)%4}}};record=p.submitExamAnswer(record,'sat',false,now-10,'exam-missed');
+ const result=recommend(journey,[],[],now,record);assert.equal(result.kind,'exam');assert.equal(result.domain,'algebra');assert.equal(result.exam,'sat');assert.equal(result.check,undefined);
+ const future={...record,attempts:record.attempts.map(a=>({...a,submittedAt:now+1}))};assert.equal(recommend(journey,[],[],now,future).kind,'lesson');
+ assert.equal(recommend(journey,[],[],now,{version:99}).kind,'lesson');
+});

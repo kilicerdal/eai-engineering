@@ -17,6 +17,7 @@ export default function StudyNavigation({ overlay = false }: { overlay?: boolean
   }, [pathname]);
   const current = (href: string): "page" | "location" | undefined => {
     const [path, anchor] = href.split("#");
+    if(pathname==="/study/exams"&&href==="/study#exam-preparation")return "page";
     if (pathname !== path) return undefined;
     if (!anchor) return "page";
     return hash === `#${anchor}` || (!hash && anchor === "my-learning") ? "location" : undefined;
