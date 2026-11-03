@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mistakePracticeContext,mistakePracticeEvidence} from '../src/lib/study-mistake-practice.ts';
-import {freshNotebookLinearQuestion,normalizeLessonContext,lessonIdentity,latestLessonCheck,normalizeLessonChecks,checkLabel} from '../src/lib/study-checkpoints.ts';
+import {loadStudyModule} from './load-study-module.mjs';
+const {freshNotebookLinearQuestion,normalizeLessonContext,lessonIdentity,latestLessonCheck,normalizeLessonChecks,checkLabel}=loadStudyModule('study-checkpoints');
 import {validateStudySnapshot,STUDY_KEYS} from '../src/lib/study-cloud-snapshot.ts';
 const mistake={id:'sample-1',exam:'SAT',question:'Solve 3x + 4 = 19.',answer:'I subtracted 4 and got 3x = 23.',expected:'Subtracting 4 gives 3x = 15.',reflection:'Check equivalent operations.',createdAt:1000,reviewAt:2000,reviews:0};
 const context=mistakePracticeContext(mistake);

@@ -1,3 +1,5 @@
+import {materialReviewSteps} from "./study-material-practice";
+import type {CourseDocument} from "./study-materials";
 import type { GoalLesson } from "./study-goal";
 import type { SavedJourney } from "./study-progress";
 import { normalizeMistakes } from "./study-exams";
@@ -8,10 +10,10 @@ import { mistakePracticeContext } from "./study-mistake-practice";
 
 export type LearningRecommendation = {
  title: string; reason: string; action: string; check?: LessonCheck;
-} & ({kind: "lesson"; lesson: GoalLesson} | {kind: "notebook"; mistakeId: string} | {kind: "plan"} | {kind:"exam";exam:ExamProfile;domain:ExamDomain;skill?:ExamSkill});
+} & ({kind: "lesson"; lesson: GoalLesson} | {kind: "notebook"; mistakeId: string} | {kind: "plan"} | {kind:"material";contextId:string} | {kind:"exam";exam:ExamProfile;domain:ExamDomain;skill?:ExamSkill});
 
 /** Transparent rules over saved evidence; never a score or an automatic completion. */
-export function recommendLearningStep(journey: SavedJourney | null, rawMistakes: unknown, checks: LessonCheck[], now: number, rawExamPractice:unknown=null): LearningRecommendation {
+export function recommendLearningStep(journey: SavedJourney | null, rawMistakes: unknown, checks: LessonCheck[], now: number, rawExamPractice:unknown=null,materials:CourseDocument[]=[]): LearningRecommendation {
  if (journey && (!journey.accepted || journey.dirty)) return {kind:"plan",title:"Review your learning plan.",reason:"Your plan has changes or has not been accepted. Review it before continuing a planned lesson.",action:"Review my plan"};
  const candidates: {recommendation: LearningRecommendation; priority: number; time: number}[] = [];
  if (journey) {
@@ -42,6 +44,10 @@ export function recommendLearningStep(journey: SavedJourney | null, rawMistakes:
   else if (check.helpUsed) {priority=30;recommendation={...base,title:`Try without hints: ${short}`,reason:"This entry is due. Its latest follow-up was completed with help; try a fresh example independently when you are ready.",action:"Practice without hints"};}
   else {priority=55;recommendation={...base,title:`Finish your review: ${short}`,reason:"Your latest follow-up was answered independently. The original entry is still due; review the evidence and choose whether to reschedule it.",action:"Review this result"};}
   candidates.push({recommendation,priority,time:mistake.reviewAt});
+ }
+ for(const check of materialReviewSteps(checks,materials,now)){
+  const due=check.submittedAt+86400000<=now,uncertain=check.result.decision==="uncertain";
+  candidates.push({priority:uncertain?20:due?(check.result.decision!=="meets"?10:30):45,time:check.submittedAt,recommendation:{kind:"material",contextId:check.context.lesson.id,check,title:`${uncertain?"Clarify":"Revisit"}: ${check.context.sources![0].name}`,reason:uncertain?"The passage feedback needs verification. Reopen the original source and clarify what it supports.":due?"Your passage review is due. Revisit the source and try a different question on the idea that needed practice.":"This source-based attempt needed another look or used help. A review is suggested after 24 hours; you can revisit it sooner.",action:"Review this passage"}});
  }
  try {
   if(rawExamPractice){

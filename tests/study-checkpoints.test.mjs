@@ -2,11 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
-import * as c from '../src/lib/study-checkpoints.ts';
+import {loadStudyModule} from './load-study-module.mjs';
+const c=loadStudyModule('study-checkpoints');
 import {mistakePracticeContext,mistakePracticeEvidence} from '../src/lib/study-mistake-practice.ts';
 const require=createRequire(import.meta.url),ts=require('typescript');
-const feedbackModule={exports:{}};new Function('require','module','exports',ts.transpileModule(readFileSync(new URL('../src/lib/study-feedback.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText)(name=>{assert.equal(name,'./study-checkpoints');return c;},feedbackModule,feedbackModule.exports);const f=feedbackModule.exports;
-const qualityModule={exports:{}};new Function('require','module','exports',ts.transpileModule(readFileSync(new URL('../src/lib/study-question-quality.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText)(name=>{assert.equal(name,'./study-checkpoints');return c;},qualityModule,qualityModule.exports);const quality=qualityModule.exports;
+const f=loadStudyModule('study-feedback'),quality=loadStudyModule('study-question-quality');
 const lesson={id:'lesson-1',title:'Balance equations',objective:'Isolate the variable.',activity:'Work through a new equation.',checkpoint:'Explain the same operation on both sides.',sourceIds:[]};
 const context={goal:'Understand linear algebra foundations',lesson},now=1700000000000;
 const record={id:'check-1',context,question:{question:'Solve 3x + 4 = 19. Show each step.',criterion:'Equivalent operations and arithmetic'},answer:'Subtract 4 gives 3x=15; divide by 3 gives x=5.',helpUsed:false,result:{decision:'meets',feedback:'Both operations preserve equality.',reasoningGap:'None identified in this attempt.',nextStep:'Try a fresh equation.'},submittedAt:now};
@@ -77,4 +77,12 @@ test('question quality repair is bounded, shares its timeout and does not change
  const handler=route(async(_url,options)=>{calls++;if(signal)assert.equal(options.signal,signal);signal=options.signal;const sent=JSON.parse(options.body);if(calls===2)assert.match(sent.messages.at(-1).content,/different problem/);return upstream(calls===1?{question:previousQuestion,criterion:'Explain your steps.'}:{question:'Solve 4x + 5 = 29. Show each step.',criterion:'Explain equivalent operations.'});});
  const response=await handler(req({action:'question',context,previousQuestion}));assert.equal(response.status,200);assert.equal(calls,2);
  calls=0;const bad=route(async()=>{calls++;return upstream({question:'According to the graph, what is the trend?',criterion:'Read the data.'});});assert.equal((await bad(req({action:'question',context}))).status,502);assert.equal(calls,2);
+});
+
+test('source practice sends only the supplied passage and requires valid source markers and review evidence',async()=>{
+ const sources=[{sourceId:'S1',documentId:'notes',name:'Circuit notes',kind:'text',page:1,text:'A switch opens or closes a circuit path. Current stops if the path is broken.'}],sourceContext={...context,sources};let calls=0;
+ const handler=route(async(_url,options)=>{calls++;const sent=JSON.parse(options.body);assert.match(sent.messages[0].content,/SOURCE-BOUNDED/);assert.equal(JSON.parse(sent.messages[1].content).context.sources[0].text,sources[0].text);return upstream({question:calls===1?'Explain the source. [S9]':'What happens when the switch opens? [S1]',criterion:'Use the supplied source.'});});
+ const response=await handler(req({action:'question',context:sourceContext}));assert.equal(response.status,200);assert.equal(calls,2);
+ const review=route(async()=>upstream({...record.result,canVerify:true,answerExcerpt:'The path is broken',guidingQuestion:'What does the source say happens then?',sourceEvidence:[{sourceId:'S1',quote:'Current stops if the path is broken.'}]}));
+ const reviewed=await (await review(req({action:'review',context:sourceContext,question:{question:'What happens to current? [S1]',criterion:'Use the source'},answer:'The path is broken but current continues.'}))).json();assert.equal(reviewed.result.sourceEvidence[0].sourceId,'S1');
 });

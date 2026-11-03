@@ -8,12 +8,14 @@ import { restoreJourney, learningEvidence, type SavedJourney } from "@/lib/study
 import { recommendLearningStep } from "@/lib/study-recommendations";
 import type { GoalLesson } from "@/lib/study-goal";
 import { goalLessonPrompt } from "@/lib/study-goal";
+import type {CourseDocument} from "@/lib/study-materials";
 import { loadMaterialLibrary } from "@/lib/study-material-files";
 
 const emptyEvidence = learningEvidence([], [], 0);
 export default function LearningHome() {
   const [journey,setJourney] = useState<SavedJourney | null>(null);
   const [evidence,setEvidence] = useState(emptyEvidence);
+  const [materials,setMaterials]=useState<CourseDocument[]>([]);
   const [documents,setDocuments] = useState<number | null>(null);
   const [examPractice,setExamPractice] = useState<unknown>(null);
   const [checks,setChecks] = useState<LessonCheck[]>([]);
@@ -34,7 +36,7 @@ export default function LearningHome() {
         setWarning("");
       } catch { setJourney(null); setEvidence(emptyEvidence); setWarning("Some saved progress could not be read. Open the original tool to check your work."); }
       setReady(true);
-      void loadMaterialLibrary().then(library => { if (!cancelled && current === revision) setDocuments(library.documents.length); }).catch(() => { if (!cancelled && current === revision) setDocuments(null); });
+      void loadMaterialLibrary().then(library => { if (!cancelled && current === revision) {setDocuments(library.documents.length);setMaterials(library.documents);} }).catch(() => { if (!cancelled && current === revision) {setDocuments(null);setMaterials([]);} });
     };
     const initial = window.setTimeout(refresh,0);
     const timer = window.setInterval(refresh,60000);
@@ -45,7 +47,7 @@ export default function LearningHome() {
   },[]);
   const next = journey ? recommendLesson(journey.settings.goal,journey.plan.lessons,journey.completed,checks,now) : null;
   const lessonEvidence = journey ? journey.plan.lessons.flatMap(lesson => {const check=latestLessonCheck({goal:journey.settings.goal,lesson},checks,now);return check?[check]:[];}) : [];
-  const recommendation = recommendLearningStep(journey,evidence.due,checks,now,examPractice);
+  const recommendation = recommendLearningStep(journey,evidence.due,checks,now,examPractice,materials);
   const notebookRecommendation = recommendLearningStep(null,evidence.due,checks,now);
   const sharedNotebookStep = recommendation.kind==="notebook"&&notebookRecommendation.kind==="notebook"&&recommendation.mistakeId===notebookRecommendation.mistakeId;
   const usable = journey?.accepted && !journey.dirty;
@@ -76,7 +78,7 @@ export default function LearningHome() {
       <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">RECOMMENDED NEXT STEP</p><h3>{recommendation.title}</h3><p>{recommendation.reason}</p>
       {recommendation.check && <div className="learning-check-memory"><strong>{checkLabel(recommendation.check)} · {checkReviewMethod(recommendation.check)}</strong><p>{recommendation.check.result.nextStep}</p><small>Latest saved response · {new Date(recommendation.check.submittedAt).toLocaleDateString()} · Help use self-reported.</small></div>}
       <p className="learning-home-small">Based on your latest saved checks and due review dates. You can choose a different lesson or explore freely.</p>
-      <div className="goal-actions">{recommendation.kind==="exam"?<Link className="goal-primary" href={`/study/exams?exam=${recommendation.exam}&domain=${recommendation.domain}${recommendation.skill?`&skill=${recommendation.skill}`:""}#exam-review`}>{recommendation.action} ↗</Link>:recommendation.kind==="plan"?<a className="goal-primary" href="#learning-goal">{recommendation.action} →</a>:<button className="goal-primary" onClick={followRecommendation}>{recommendation.action} ↗</button>}{journey&&usable&&<a href="#learning-goal">View my plan ↗</a>}</div>
+      <div className="goal-actions">{recommendation.kind==="material"?<Link className="goal-primary" href={`/study/materials?review=${encodeURIComponent(recommendation.contextId)}`}>{recommendation.action} ↗</Link>:recommendation.kind==="exam"?<Link className="goal-primary" href={`/study/exams?exam=${recommendation.exam}&domain=${recommendation.domain}${recommendation.skill?`&skill=${recommendation.skill}`:""}#exam-review`}>{recommendation.action} ↗</Link>:recommendation.kind==="plan"?<a className="goal-primary" href="#learning-goal">{recommendation.action} →</a>:<button className="goal-primary" onClick={followRecommendation}>{recommendation.action} ↗</button>}{journey&&usable&&<a href="#learning-goal">View my plan ↗</a>}</div>
       {recommendation.kind==="lesson"&&<p className="learning-home-small">Prepares the lesson and its latest feedback in your tutor. Review the message and select Send.</p>}
       {journey&&<><p className="learning-home-count">Your plan: {journey.plan.title}</p><p className="learning-home-small">{journey.completed.length} of {journey.plan.lessons.length} lessons marked complete by you</p><progress aria-label="Lessons you marked complete" value={journey.completed.length} max={journey.plan.lessons.length}/><p className="learning-home-small">Completion marks are your record of activity, not a mastery score.</p>{recommendation.kind!=="lesson"&&usable&&next&&<button className="learning-plan-alternative" onClick={()=>resume()}>Continue my plan instead ↗</button>}</>}
       </article>

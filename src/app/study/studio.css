@@ -685,3 +685,29 @@
 .eai-study-studio .lesson-check-guiding{border:1px solid #d9b97955;padding:20px;margin-top:22px;background:#102333;border-radius:5px;}
 .eai-study-studio .lesson-check-guiding>strong{color:#e8c98b;}
 .eai-study-studio .lesson-check-guiding>.goal-primary{min-height:44px;padding:10px 16px;margin-top:14px;border:1px solid #d9b97966;background:#d9b979;color:#142231;border-radius:4px;}
+
+.eai-study-studio .source-study-picker{margin-top:20px;border:1px solid #d9b97955;border-radius:5px;padding:15px;}
+.eai-study-studio .source-study-picker summary{cursor:pointer;color:#e5c68a;min-height:44px;}
+.eai-study-studio .source-study-picker p{font-size:13px;line-height:1.8;color:#bdc9d1;margin:12px 0;}
+.eai-study-studio .source-study-picker textarea{width:100%;border:1px solid #d9b97955;background:#071421;color:#e6e5dc;font-size:16px;line-height:1.8;padding:14px;}
+.eai-study-studio .source-study-picker>div{display:flex;gap:12px;flex-wrap:wrap;}
+.eai-study-studio .source-study-picker button,.eai-study-studio .material-review-list button{min-height:44px;padding:10px 15px;border:1px solid #d9b97966;background:#d9b979;color:#132234;border-radius:4px;font-size:13px;}
+.eai-study-studio .source-study-picker button:disabled{opacity:.4;cursor:not-allowed;}
+.eai-study-studio .selected-study-passage{margin:20px 25px;padding:20px;border:1px solid #d9b97966;border-radius:5px;background:#102334;scroll-margin-top:100px;}
+.eai-study-studio .selected-study-passage>div{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;}
+.eai-study-studio .selected-study-passage strong{color:#e5c68a;font-size:14px;}
+.eai-study-studio .selected-study-passage blockquote{max-height:220px;overflow:auto;border-left:2px solid #d9b97955;margin:16px 0;padding-left:16px;font-size:15px;line-height:1.8;color:#d6dee3;}
+.eai-study-studio .selected-study-passage button{color:#e5c68a;font-size:13px;min-height:44px;text-align:left;}
+.eai-study-studio .library-passage-invitation{font-size:13px;color:#bfcad3;margin:18px 25px;line-height:1.8;}
+.eai-study-studio .material-explanation-style{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:15px 25px;color:#d5dce1;font-size:13px;}
+.eai-study-studio .material-explanation-style select{font-size:16px;background:#071421;border:1px solid #d9b97955;color:#e5d7ba;padding:10px;min-height:44px;border-radius:4px;}
+.eai-study-studio .material-passage-practice{margin:20px 25px;}
+.eai-study-studio .material-review-list{margin:25px;padding:22px;border-top:1px solid #d9b97944;scroll-margin-top:100px;}
+.eai-study-studio .material-review-list h2{font:25px/1.4 Georgia,serif;color:#eee4d1;margin-bottom:15px;}
+.eai-study-studio .material-review-list>p{font-size:13px;line-height:1.8;color:#b6c4ce;max-width:800px;}
+.eai-study-studio .material-review-list article{border:1px solid #d9b97933;padding:18px;margin-top:18px;border-radius:4px;}
+.eai-study-studio .material-review-list article>strong,.eai-study-studio .material-review-list article>span{display:block;font-size:14px;color:#e0c58f;margin-bottom:10px;}
+.eai-study-studio .material-review-list article>span,.eai-study-studio .material-review-list article>p{font-size:13px;line-height:1.8;color:#b6c4ce;}
+.eai-study-studio .material-review-list button{margin-top:12px;}
+.eai-study-studio .lesson-check-evidence>button{color:#e0c58f;min-height:44px;padding:10px 0;font-size:13px;}
+@media(max-width:700px){.eai-study-studio .selected-study-passage,.eai-study-studio .material-explanation-style,.eai-study-studio .material-passage-practice,.eai-study-studio .material-review-list{margin:16px 12px;}.eai-study-studio .material-review-list{padding:18px 0;}}

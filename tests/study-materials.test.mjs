@@ -171,3 +171,8 @@ test('invalid model output stops after two attempts',async()=>{
  await mockProvider(async()=>{calls++;return providerResponse({supported:true,answer:'Unknown source [S99]'});},async()=>assert.equal((await loadRoute()(request(payload))).status,502));
  assert.equal(calls,2);
 });
+
+test('explanation style is bounded and preserves source-only evidence rules',async()=>{
+ await mockProvider(async(_url,options)=>{const sent=JSON.parse(options.body);assert.match(sent.messages[0].content,/numbered steps/);assert.match(sent.messages[0].content,/Use only facts supported/);return providerResponse({supported:true,answer:'The budget owner is Mira Vale. [S1]'});},async()=>assert.equal((await loadRoute()(request({...payload,style:'steps'}))).status,200));
+ await mockProvider(async()=>assert.fail('unsupported style must not call provider'),async()=>assert.equal((await loadRoute()(request({...payload,style:'invented'}))).status,400));
+});

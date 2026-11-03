@@ -1,8 +1,9 @@
+import {validateMaterialSources,normalizeMaterialText,type MaterialSource} from "./study-materials";
 import type { GoalLesson } from "./study-goal";
 export const CHECK_KEY = "eai-lesson-checks-v1";
-export type LessonContext = { goal: string; lesson: GoalLesson };
+export type LessonContext = { goal: string; lesson: GoalLesson; sources?:MaterialSource[] };
 export type CheckQuestion = { question: string; criterion: string };
-export type CheckFeedback = { decision: "meets" | "partial" | "needs_work" | "uncertain"; feedback: string; reasoningGap: string; nextStep: string; answerExcerpt?:string; guidingQuestion?:string; method?:"ai"|"substitution" };
+export type CheckFeedback = { decision: "meets" | "partial" | "needs_work" | "uncertain"; feedback: string; reasoningGap: string; nextStep: string; answerExcerpt?:string; guidingQuestion?:string; method?:"ai"|"substitution"; sourceEvidence?:{sourceId:string;quote:string}[] };
 export type LessonCheck = { id: string; context: LessonContext; question: CheckQuestion; answer: string; helpUsed: boolean; result: CheckFeedback; submittedAt: number };
 const bounded = (v: unknown, max: number) => typeof v === "string" && v.trim().length > 0 && v.length <= max ? v.trim() : null;
 export function normalizeLessonContext(value: unknown): LessonContext | null {
@@ -10,11 +11,13 @@ export function normalizeLessonContext(value: unknown): LessonContext | null {
  const v = value as Record<string,unknown>, l = v.lesson as Record<string,unknown> | undefined;
  if (!bounded(v.goal,1500) || !l || !bounded(l.id,100)) return null;
  for (const [key,max] of [["title",120],["objective",450],["activity",650],["checkpoint",450]] as const) if (!bounded(l[key],max)) return null;
- return {goal: String(v.goal).trim(),lesson:{id:String(l.id),title:String(l.title),objective:String(l.objective),activity:String(l.activity),checkpoint:String(l.checkpoint),sourceIds:[]}};
+ let sources:MaterialSource[]|undefined;
+ try{if(v.sources!==undefined){sources=validateMaterialSources(v.sources);}}catch{return null;}
+ return {...(sources?{sources}:{}),goal: String(v.goal).trim(),lesson:{id:String(l.id),title:String(l.title),objective:String(l.objective),activity:String(l.activity),checkpoint:String(l.checkpoint),sourceIds:[]}};
 }
 export function lessonIdentity(context: LessonContext): string {
  const {goal,lesson:l}=context;
- return JSON.stringify([goal,l.id,l.title,l.objective,l.activity,l.checkpoint]);
+ return JSON.stringify([goal,l.id,l.title,l.objective,l.activity,l.checkpoint,...(context.sources?.length?[context.sources]:[])]);
 }
 export function validateCheckQuestion(value: unknown): CheckQuestion {
  const v=value as Record<string,unknown>;
@@ -24,9 +27,13 @@ export function validateCheckQuestion(value: unknown): CheckQuestion {
 export function validateCheckFeedback(value: unknown): CheckFeedback {
  const v=value as Record<string,unknown>;
  if(!v || !["meets","partial","needs_work","uncertain"].includes(String(v.decision)) || !bounded(v.feedback,1800) || !bounded(v.reasoningGap,700) || !bounded(v.nextStep,700)) throw new Error("The feedback was incomplete. Your answer has not been recorded as a success.");
- const extra:Pick<CheckFeedback,"answerExcerpt"|"guidingQuestion"|"method">={};
+ const extra:Pick<CheckFeedback,"answerExcerpt"|"guidingQuestion"|"method"|"sourceEvidence">={};
  for(const key of ["answerExcerpt","guidingQuestion"] as const)if(v[key]!==undefined){if(!bounded(v[key],500))throw new Error("The feedback evidence was incomplete.");extra[key]=String(v[key]).trim();}
  if(v.method!==undefined){if(v.method!=="ai"&&v.method!=="substitution")throw new Error("The feedback method is not supported.");extra.method=v.method;}
+ if(v.sourceEvidence!==undefined){
+  if(!Array.isArray(v.sourceEvidence)||!v.sourceEvidence.length||v.sourceEvidence.length>6||v.sourceEvidence.some(e=>!e||typeof e.sourceId!=="string"||!/^S[1-6]$/.test(e.sourceId)||!bounded(e.quote,600)||e.quote.trim().length<15))throw new Error("The feedback source evidence is incomplete.");
+  extra.sourceEvidence=v.sourceEvidence.map(e=>({sourceId:e.sourceId,quote:normalizeMaterialText(e.quote)}));
+ }
  return {...extra,decision:v.decision as CheckFeedback["decision"],feedback:String(v.feedback).trim(),reasoningGap:String(v.reasoningGap).trim(),nextStep:String(v.nextStep).trim()};
 }
 export function normalizeLessonChecks(value: unknown): LessonCheck[] {
@@ -36,6 +43,7 @@ export function normalizeLessonChecks(value: unknown): LessonCheck[] {
   const context=normalizeLessonContext(v?.context);
   if(!context || !bounded(v.id,100) || ids.has(v.id) || !bounded(v.answer,2500) || typeof v.helpUsed!=="boolean" || !Number.isFinite(v.submittedAt) || v.submittedAt<=0)continue;
   const question=validateCheckQuestion(v.question),feedback=validateCheckFeedback(v.result);
+  if(feedback.sourceEvidence?.some(e=>!context.sources?.some(s=>s.sourceId===e.sourceId&&s.text.includes(e.quote))))continue;
   ids.add(v.id);result.push({id:v.id,context,question,answer:v.answer,helpUsed:v.helpUsed,result:feedback,submittedAt:v.submittedAt});
  }catch{/* Ignore corrupt entries, never invent success. */}}
  return result.sort((a,b)=>b.submittedAt-a.submittedAt).slice(0,100);

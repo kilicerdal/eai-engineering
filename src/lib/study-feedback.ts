@@ -1,10 +1,11 @@
+import {normalizeMaterialText,type MaterialSource} from "./study-materials";
 import {validateCheckFeedback,type CheckFeedback,type CheckQuestion} from "./study-checkpoints";
 const compact=(value:string)=>value.trim().replace(/\s+/g," ");
 function uncertain(reason:"source"|"evidence"):CheckFeedback{
  return {decision:"uncertain",method:"ai",feedback:reason==="source"?"There is not enough original question or source context to verify this answer. This is not evidence that your answer is incorrect.":"The review could not be connected reliably to the words in your answer. This is not evidence that your answer is incorrect.",reasoningGap:"Verification is pending; no reasoning error has been established.",nextStep:reason==="source"?"Supply the referenced passage, data, or complete question before checking the answer again.":"Explain one step of your reasoning and request another review.",guidingQuestion:reason==="source"?"What passage, data, or other information does the question refer to?":"What was the first step you used, and why?"};
 }
 /** Ground quoted evidence in learner text; this does not independently prove an AI judgment. */
-export function validateReviewedFeedback(value:unknown,answer:string):CheckFeedback{
+export function validateReviewedFeedback(value:unknown,answer:string,sources:MaterialSource[]=[]):CheckFeedback{
  if(!value||typeof value!=="object")throw new Error("The review was incomplete.");
  const data=value as Record<string,unknown>;
  if(typeof data.canVerify!=="boolean")throw new Error("Missing verification status.");
@@ -12,6 +13,10 @@ export function validateReviewedFeedback(value:unknown,answer:string):CheckFeedb
  const excerpt=typeof data.answerExcerpt==="string"?compact(data.answerExcerpt):"";
  if(!excerpt||excerpt.length>500||!compact(answer).includes(excerpt))return uncertain("evidence");
  if(typeof data.guidingQuestion!=="string"||!data.guidingQuestion.trim()||data.guidingQuestion.length>500)throw new Error("The review needs one useful guiding question.");
+ if(sources.length){
+  if(!Array.isArray(data.sourceEvidence)||!data.sourceEvidence.length||data.sourceEvidence.length>sources.length)return uncertain("source");
+  if(data.sourceEvidence.some(e=>!e||typeof e!=="object"||typeof e.quote!=="string"||normalizeMaterialText(e.quote).length<15||normalizeMaterialText(e.quote).length>600||!sources.some(s=>s.sourceId===e.sourceId&&s.text.includes(normalizeMaterialText(e.quote)))))return uncertain("source");
+ }
  return validateCheckFeedback({...data,answerExcerpt:excerpt,guidingQuestion:data.guidingQuestion,method:"ai"});
 }
 /** Narrow substitution check for a short numeric answer to an explicit integer linear equation. */

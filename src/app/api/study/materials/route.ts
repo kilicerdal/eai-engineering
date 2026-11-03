@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { protectAIRequest, logAIRequest } from "@/lib/ai-security";
-import { MATERIAL_LIMITS, materialTutorSystem, validateMaterialSources, materialAnswerFromDraft, type MaterialTask } from "@/lib/study-materials";
+import { MATERIAL_LIMITS, materialTutorSystem, validateMaterialSources, materialAnswerFromDraft, materialExplanationStyles,type MaterialExplanationStyle,type MaterialTask } from "@/lib/study-materials";
 
 export const maxDuration = 60;
 
@@ -36,6 +36,8 @@ export async function POST(request: NextRequest) {
   let sources;
   try { sources = validateMaterialSources(input.excerpts); }
   catch (error) { return reply({error:error instanceof Error ? error.message : "The source excerpts are invalid."},400); }
+  if(input.style!==undefined&&(typeof input.style!=="string"||!Object.hasOwn(materialExplanationStyles,input.style)))return reply({error:"Choose a supported explanation style."},400);
+  const style:MaterialExplanationStyle=input.style as MaterialExplanationStyle||"clear";
   const task: MaterialTask = input.task === "guide" || input.task === "quiz" ? input.task : "explain";
   const history = Array.isArray(input.history) ? input.history.filter(item => item && typeof item === "object" && (item.role === "user" || item.role === "assistant") && typeof item.content === "string").slice(-4).map(item => ({role:item.role,content:item.content.slice(0,3000)})) : [];
   const account = process.env.CLOUDFLARE_ACCOUNT_ID;
@@ -44,7 +46,7 @@ export async function POST(request: NextRequest) {
   try {
     const signal=AbortSignal.any([request.signal,AbortSignal.timeout(45000)]);
     const messages: {role:"system"|"user"|"assistant";content:string}[]=[
-      {role:"system",content:materialTutorSystem(task)},
+      {role:"system",content:materialTutorSystem(task,style)},
       {role:"user",content:JSON.stringify({task,question:input.message,previousConversation:history,excerpts:sources.map(({sourceId,name,kind,page,text})=>({sourceId,name,kind,page,text}))})},
     ];
     let failure="The tutor could not prepare a complete cited answer. Please try a more focused question.";
