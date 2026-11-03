@@ -5,6 +5,8 @@ import Link from "next/link";
 import StudyLandmark from "@/components/StudyLandmark";
 import { CHECK_KEY, checkLabel, normalizeLessonChecks, latestLessonCheck, recommendLesson, checkMemory, type LessonCheck } from "@/lib/study-checkpoints";
 import { restoreJourney, learningEvidence, type SavedJourney } from "@/lib/study-progress";
+import { recommendLearningStep } from "@/lib/study-recommendations";
+import type { GoalLesson } from "@/lib/study-goal";
 import { goalLessonPrompt } from "@/lib/study-goal";
 import { loadMaterialLibrary } from "@/lib/study-material-files";
 
@@ -41,17 +43,22 @@ export default function LearningHome() {
   },[]);
   const next = journey ? recommendLesson(journey.settings.goal,journey.plan.lessons,journey.completed,checks,now) : null;
   const lessonEvidence = journey ? journey.plan.lessons.flatMap(lesson => {const check=latestLessonCheck({goal:journey.settings.goal,lesson},checks,now);return check?[check]:[];}) : [];
-  const nextCheck = journey && next ? latestLessonCheck({goal:journey.settings.goal,lesson:next},checks,now) : null;
+  const recommendation = recommendLearningStep(journey,evidence.due,checks,now);
+  const notebookRecommendation = recommendLearningStep(null,evidence.due,checks,now);
   const usable = journey?.accepted && !journey.dirty;
-  function resume() {
-    if (!journey || !next || !usable) return;
+  function resume(lesson:GoalLesson|null=next) {
+    if (!journey || !lesson || !usable) return;
+    const nextCheck=latestLessonCheck({goal:journey.settings.goal,lesson},checks,now);
     const level = journey.settings.level === "foundations" ? "foundation" : journey.settings.level === "highschool" ? "highSchool" : journey.settings.level;
-    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:(goalLessonPrompt(journey.settings,next).slice(0,1900)+checkMemory(nextCheck)).slice(0,3000),title:next.title,goal:journey.settings.goal,level,checkpoint:{goal:journey.settings.goal,lesson:next}}}));
+    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:(goalLessonPrompt(journey.settings,lesson).slice(0,1900)+checkMemory(nextCheck)).slice(0,3000),title:lesson.title,goal:journey.settings.goal,level,checkpoint:{goal:journey.settings.goal,lesson}}}));
     document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth",block:"start"});
   }
-  function review() {
-    const mistake = evidence.due[0]; if (!mistake) return;
-    window.dispatchEvent(new CustomEvent("eai-study-notebook-practice",{detail:{id:mistake.id}}));
+  function review(id:string) {
+    window.dispatchEvent(new CustomEvent("eai-study-notebook-practice",{detail:{id}}));
+  }
+  function followRecommendation() {
+    if(recommendation.kind==="lesson")resume(recommendation.lesson);
+    else if(recommendation.kind==="notebook")review(recommendation.mistakeId);
   }
   return <section id="my-learning" className="learning-home" aria-labelledby="learning-home-heading">
     <div className="studio-landmark-banner studio-landmark-giza">
@@ -63,11 +70,16 @@ export default function LearningHome() {
     <p className="learning-home-note">Saved in this browser · {accountConfigured ? <Link href="/study/account">Manage optional account saving ↗</Link> : "No account or subscription required"}</p>
     {!ready ? <p role="status">Loading your learning…</p> : <>
       {warning && <p role="status" className="goal-notice">{warning}</p>}
-      <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">{journey ? "YOUR PERSONAL PATH" : "BEGIN WITH YOUR GOAL"}</p><h3>{journey?.plan.title || "What would you like to understand?"}</h3><p>{journey ? usable ? next ? next.objective : "You marked every lesson complete. Revisit a checkpoint or explore a new goal to check what you can explain independently." : "Your outline needs your review before you continue." : "Start with a subject, a challenge, or an exam. Your existing tutor and materials will help you shape a practical starting path."}</p>
-      {nextCheck && <div className="learning-check-memory"><strong>{checkLabel(nextCheck)} · AI-reviewed</strong><p>{nextCheck.result.nextStep}</p><small>One practice response; help use is self-reported. This is not a mastery assessment.</small></div>}
-      {journey && <><p className="learning-home-count">{journey.completed.length} of {journey.plan.lessons.length} lessons marked complete by you</p><progress aria-label="Lessons you marked complete" value={journey.completed.length} max={journey.plan.lessons.length}/><p className="learning-home-small">Completion marks are your record of activity, not a mastery score.</p></>}
-      <div className="goal-actions">{usable && next ? <button className="goal-primary" onClick={resume}>Continue: {next.title} ↗</button> : <a className="goal-primary" href="#learning-goal">{journey ? "Review my plan" : "Shape my learning plan"} →</a>}{journey && usable && <a href="#learning-goal">View my plan ↗</a>}</div>{usable && next && <p className="learning-home-small">Continue prepares your lesson in the tutor. Review it and select Send.</p>}</article>
-      <article className="learning-review"><p className="studio-eyebrow">MY MISTAKE NOTEBOOK</p><h3>{evidence.due.length ? `${evidence.due.length} ready to revisit` : evidence.mistakes ? "Your next review is planned." : "Turn a mistake into a next step."}</h3><p>{evidence.due.length ? "Try a fresh question and get feedback on your reasoning in the notebook. Your entry stays due until you mark it reviewed." : evidence.nextReviewAt ? `Next suggested review: ${new Date(evidence.nextReviewAt).toLocaleDateString()}.` : "Capture your reasoning in the existing notebook, understand the missing idea, then return to a fresh example."}</p><div className="goal-actions">{evidence.due.length > 0 && <button className="goal-primary" onClick={review}>Practice a due concept ↗</button>}<a href="#mistake-notebook">Open my notebook ↗</a></div><p className="learning-home-small">Review dates follow your own review marks; they do not certify understanding.</p></article></div>
+      <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">RECOMMENDED NEXT STEP</p><h3>{recommendation.title}</h3><p>{recommendation.reason}</p>
+      {recommendation.check && <div className="learning-check-memory"><strong>{checkLabel(recommendation.check)} · AI-reviewed</strong><p>{recommendation.check.result.nextStep}</p><small>Latest saved response · {new Date(recommendation.check.submittedAt).toLocaleDateString()} · Help use self-reported.</small></div>}
+      <p className="learning-home-small">Based on your latest saved checks and due review dates. You can choose a different lesson or explore freely.</p>
+      <div className="goal-actions">{recommendation.kind==="plan"?<a className="goal-primary" href="#learning-goal">{recommendation.action} →</a>:<button className="goal-primary" onClick={followRecommendation}>{recommendation.action} ↗</button>}{journey&&usable&&<a href="#learning-goal">View my plan ↗</a>}</div>
+      {recommendation.kind==="lesson"&&<p className="learning-home-small">Prepares the lesson and its latest feedback in your tutor. Review the message and select Send.</p>}
+      {journey&&<><p className="learning-home-count">Your plan: {journey.plan.title}</p><p className="learning-home-small">{journey.completed.length} of {journey.plan.lessons.length} lessons marked complete by you</p><progress aria-label="Lessons you marked complete" value={journey.completed.length} max={journey.plan.lessons.length}/><p className="learning-home-small">Completion marks are your record of activity, not a mastery score.</p>{recommendation.kind!=="lesson"&&usable&&next&&<button className="learning-plan-alternative" onClick={()=>resume()}>Continue my plan instead ↗</button>}</>}
+      </article>
+      <article className="learning-review"><p className="studio-eyebrow">MY MISTAKE NOTEBOOK</p><h3>{evidence.due.length ? `${evidence.due.length} ready to revisit` : evidence.mistakes ? "Your next review is planned." : "Turn a mistake into a next step."}</h3><p>{evidence.due.length&&notebookRecommendation.kind==="notebook" ? notebookRecommendation.reason : evidence.nextReviewAt ? `Next suggested review: ${new Date(evidence.nextReviewAt).toLocaleDateString()}.` : "Capture your reasoning in the existing notebook, understand the missing idea, then return to a fresh example."}</p>
+      {notebookRecommendation.check&&<div className="learning-check-memory"><strong>{checkLabel(notebookRecommendation.check)} · Latest follow-up</strong><p>{notebookRecommendation.check.result.nextStep}</p><small>AI-reviewed; not a mastery assessment.</small></div>}
+      <div className="goal-actions">{notebookRecommendation.kind==="notebook"&&<button className="goal-primary" onClick={()=>{if(notebookRecommendation.kind==="notebook")review(notebookRecommendation.mistakeId);}}>{notebookRecommendation.action} ↗</button>}<a href="#mistake-notebook">Open my notebook ↗</a></div><p className="learning-home-small">Review dates follow your own review marks; they do not certify understanding.</p></article></div>
       {lessonEvidence.length > 0 && <section className="learning-check-evidence" aria-label="Saved lesson checks"><h3>What your lesson checks show</h3><p>Latest AI review per lesson in your current plan. Check important feedback against your materials.</p><div>{lessonEvidence.map(check=><article key={check.context.lesson.id}><strong>{check.context.lesson.title}</strong><span>{checkLabel(check)}</span><p>{check.result.reasoningGap}</p><small>AI-reviewed · {new Date(check.submittedAt).toLocaleDateString()} · Help use self-reported</small></article>)}</div></section>}
       <details className="learning-evidence"><summary>Evidence behind your progress <span>{evidence.attempted} checked {evidence.attempted === 1 ? "question" : "questions"} · {documents === null ? "Library unavailable" : `${documents} ${documents === 1 ? "material" : "materials"}`}</span></summary><div className="learning-evidence-grid"><div><strong>{evidence.independent}</strong><span>Latest answer correct without hints</span></div><div><strong>{evidence.supported}</strong><span>Latest answer correct with hints</span></div><div><strong>{evidence.revisit}</strong><span>Latest answer needs another look</span></div><Link href="/study/materials"><strong>{documents ?? "—"}</strong><span>Saved materials · Open library ↗</span></Link></div><p className="learning-home-small">Checked answers come from the small foundational practice bank, one latest answer per question. Repeating an answer cannot increase this count. These results do not measure overall mastery or predict an exam score.</p><Link href="/study/practice">Continue foundational practice ↗</Link></details>
     </>}

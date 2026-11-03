@@ -588,3 +588,6 @@
 .eai-study-studio .studio-nav .studio-main-site{flex-basis:100%;font-size:14px;min-height:40px;padding:8px 0;}
 .eai-study-studio .studio-nav .studio-brand-light{font-size:22px;}
 }
+
+.eai-study-studio .learning-plan-alternative{font-size:13px;color:#e7c789;padding:8px 0;text-align:left;text-decoration:underline;text-underline-offset:4px;}
+.eai-study-studio .learning-next h3{overflow-wrap:anywhere;}
