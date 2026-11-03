@@ -66,3 +66,18 @@ test('provider rate limits and failures return safe errors without retry loops',
  let calls=0;await withProvider(async()=>{calls++;return new Response('private-provider-message',{status:429,headers:{'Retry-After':'30'}});},async()=>{const response=await loadRoute()(req(settings));assert.equal(response.status,429);assert.equal(response.headers.get('Retry-After'),'30');assert.doesNotMatch(await response.text(),/private-provider/);assert.equal(calls,1);});
  await withProvider(async()=>Response.json({choices:[{finish_reason:'length',message:{content:'{}'}}]}),async()=>assert.equal((await loadRoute()(req(settings))).status,502));
 });
+
+test('new lesson proposals must support an individual learner without losing legacy plans',()=>{
+ for(const activity of ['Discuss the causes in pairs.','Complete the provided worksheet.','Analyze the simplified graph.']){
+  const proposed={...plan,lessons:plan.lessons.map(l=>({...l,activity}))};
+  const legacy=goals.validateGoalPlan(proposed);assert.equal(legacy.lessons.length,3);
+  assert.throws(()=>goals.validateIndependentPlan(legacy));
+ }
+ for(const activity of ['Ask the tutor to create an illustrative table, then compare the entries.','Read a short passage: A small community voted to share its tools. Explain the decision.','Explain an idea to your tutor, then answer a new question.'])assert.equal(goals.validateIndependentPlan(goals.validateGoalPlan({...plan,lessons:plan.lessons.map(l=>({...l,activity}))})).lessons.length,3);
+ const linked=goals.validateGoalPlan({...plan,lessons:plan.lessons.map(l=>({...l,activity:'Read the passage and identify its main idea.',sourceIds:['S1']}))},[{sourceId:'S1'}]);assert.equal(goals.validateIndependentPlan(linked).lessons.length,3);
+});
+test('real route repairs classroom activities once and fails closed if unsuitable content persists',async()=>{
+ const bad={...plan,lessons:plan.lessons.map(l=>({...l,activity:'Discuss this topic in small groups.'}))};
+ let calls=0;await withProvider(async(url,options)=>{calls++;if(calls===2)assert.match(JSON.parse(options.body).messages.at(-1).content,/ONE individual learner/);return answer(calls===1?bad:plan);},async()=>{assert.equal((await loadRoute()(req(settings))).status,200);assert.equal(calls,2);});
+ calls=0;await withProvider(async()=>{calls++;return answer(bad);},async()=>{assert.equal((await loadRoute()(req(settings))).status,502);assert.equal(calls,2);});
+});

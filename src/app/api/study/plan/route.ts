@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { protectAIRequest, logAIRequest } from "@/lib/ai-security";
-import { validateGoalSettings, validateGoalPlan, goalPlannerSystem } from "@/lib/study-goal";
+import { validateGoalSettings, validateGoalPlan, validateIndependentPlan, goalPlannerSystem } from "@/lib/study-goal";
 import { validateMaterialSources } from "@/lib/study-materials";
 export const maxDuration = 60;
 export async function POST(request: NextRequest) {
@@ -27,9 +27,9 @@ export async function POST(request: NextRequest) {
       if(!response.ok)return reply({error:response.status===429?"The tutor is busy. Please try again shortly.":"The tutor is temporarily unavailable. Your current plan has not been replaced."},response.status===429?429:502,response.headers.get("Retry-After")?{"Retry-After":response.headers.get("Retry-After")!}:undefined);
       const choice=(await response.json()).choices?.[0];if(choice?.finish_reason==="length"||typeof choice?.message?.content!=="string")return reply({error:"The plan was incomplete. Try a more focused goal."},502);
       const content=choice.message.content.trim().replace(/^```(?:json)?\s*/i,"").replace(/\s*```$/,"");
-      try{return reply({plan:validateGoalPlan(JSON.parse(content),sources),sources},200,{"Cache-Control":"no-store"});}catch(error){
+      try{return reply({plan:validateIndependentPlan(validateGoalPlan(JSON.parse(content),sources)),sources},200,{"Cache-Control":"no-store"});}catch(error){
         validationIssue=error instanceof SyntaxError?"Return valid JSON.":error instanceof Error?error.message:"The plan was incomplete.";
-        if(attempt===0)messages.push({role:"assistant",content:choice.message.content.slice(0,18000)},{role:"user",content:`Correct the JSON format for the original goal. Include title, overview and 3–8 lessons. Every lesson needs title, objective, activity, checkpoint and sourceIds (an array, empty if unused). Use ONLY original source IDs. Return only the corrected JSON. Validation issue: ${validationIssue}`});
+        if(attempt===0)messages.push({role:"assistant",content:choice.message.content.slice(0,18000)},{role:"user",content:`Correct this proposal for the original goal and ONE individual learner. Repair both the JSON and the activity quality. Supply self-contained examples or ask the tutor to create them; do not require classmates or missing worksheets. Include title, overview and 3–8 lessons. Every lesson needs title, objective, activity, checkpoint and sourceIds (an array, empty if unused). Use ONLY original source IDs. Return only the corrected JSON. Validation issue: ${validationIssue}`});
       }
     }
     return reply({error:"The tutor could not produce a complete plan. Please try again."},502);

@@ -10,7 +10,7 @@ import "katex/dist/katex.min.css";
 import { normalizeStudyMath } from "@/lib/study-markdown";
 import { importCourseFile, importCourseNotes, loadMaterialLibrary, saveMaterialLibrary } from "@/lib/study-material-files";
 import { MATERIAL_HANDOFF_KEY, normalizeLessonMaterialHandoff, lessonMaterialScope, type LessonMaterialHandoff } from "@/lib/study-material-handoff";
-import { MATERIAL_LIMITS, materialLocation, materialTasks, normalizeMaterialText, removeMaterialDocument, validateMaterialAnswer, validateMaterialSources, selectMaterialExcerpts, type CourseDocument, type MaterialCitation, type MaterialEntry, type MaterialLibrary, type MaterialTask } from "@/lib/study-materials";
+import { MATERIAL_LIMITS, materialLocation, materialTasks, normalizeMaterialText, removeMaterialDocument, validateMaterialAnswer, validateMaterialSources, selectMaterialExcerpts, type CourseDocument, type MaterialEntry, type MaterialLibrary, type MaterialTask } from "@/lib/study-materials";
 
 type SourceView = { documentId: string; page: number; quote: string };
 function SourceViewer({ document, source, close }: { document: CourseDocument; source: SourceView; close: () => void }) {
@@ -67,20 +67,23 @@ export default function CourseMaterials() {
   const [source,setSource] = useState<SourceView|null>(null);
   const abort = useRef<AbortController|null>(null);
   const currentLibrary = useRef(library);
-  currentLibrary.current = library;
+  const savedLibrary=useRef<MaterialLibrary|null>(null);
+  useEffect(()=>{currentLibrary.current=library;},[library]);
 
   useEffect(()=>{
     let cancelled=false;
-    loadMaterialLibrary().then(value=>{if(!cancelled){setLibrary(value);setActiveEntryId(value.entries[0]?.id||"");
+    loadMaterialLibrary().then(value=>{if(!cancelled){savedLibrary.current=value;currentLibrary.current=value;setLibrary(value);setActiveEntryId(value.entries[0]?.id||"");
       try{const raw=sessionStorage.getItem(MATERIAL_HANDOFF_KEY);if(raw){const handoff=normalizeLessonMaterialHandoff(JSON.parse(raw));sessionStorage.removeItem(MATERIAL_HANDOFF_KEY);if(handoff){setLessonContext(handoff);setQuestion(handoff.question);setTask(handoff.task);setActiveEntryId("");setFocus(handoff.documentIds.length?"lesson":"choose");if(!handoff.documentIds.length)setLessonNotice("This lesson has no linked materials. Choose a material below before asking.");else if(handoff.documentIds.some(id=>!value.documents.some(d=>d.id===id)))setLessonNotice("Some linked materials are missing from this browser. Add them again or choose another material explicitly.");}else setLessonNotice("The lesson link could not be restored. Your library is unchanged.");}}
       catch{setLessonNotice("The prepared lesson could not be read. You can still ask about your materials.");}
       setReady(true);}}).catch(()=>{if(!cancelled){setReady(true);setStorageAvailable(false);}});
     return ()=>{cancelled=true;abort.current?.abort();};
   },[]);
   useEffect(()=>{
-    if(!ready) return;
-    saveMaterialLibrary(library).catch(()=>setStorageAvailable(false));
-  },[library,ready]);
+    if(!ready||!storageAvailable) return;
+    if(!savedLibrary.current||savedLibrary.current===library)return;
+    const expected=savedLibrary.current;savedLibrary.current=library;
+    saveMaterialLibrary(library,expected).catch(()=>setStorageAvailable(false));
+  },[library,ready,storageAvailable]);
 
   function addDocument(document: CourseDocument) {
     const current=currentLibrary.current;
@@ -134,8 +137,9 @@ export default function CourseMaterials() {
     setLoading(true);setError("");const controller=new AbortController();abort.current=controller;
     try{
       const history=recent.slice().reverse().flatMap(entry=>[{role:"user",content:entry.question.slice(0,3000)},{role:"assistant",content:entry.answer.slice(0,3000)}]);
-      const response=await fetch("/api/study/materials",{method:"POST",headers:{"Content-Type":"application/json"},signal:controller.signal,body:JSON.stringify({message,task,excerpts,history})});
+      const response=await fetch("/api/study/materials",{method:"POST",headers:{"Content-Type":"application/json"},signal:AbortSignal.any([controller.signal,AbortSignal.timeout(55000)]),body:JSON.stringify({message,task,excerpts,history})});
       const result=await response.json().catch(()=>null);
+      if(controller.signal.aborted)throw new DOMException("Cancelled","AbortError");
       if(!response.ok)throw new Error(typeof result?.error==="string"?result.error:"The tutor is temporarily unavailable. Please try again.");
       if(!result||typeof result.answer!=="string"||!Array.isArray(result.citations))throw new Error("The tutor returned an invalid response.");
       const verified=validateMaterialAnswer(result,validateMaterialSources(excerpts));
@@ -175,7 +179,7 @@ export default function CourseMaterials() {
         </div>
         {!!library.entries.length&&<div className="library-recent-questions"><h2 className="text-sm font-semibold text-slate-300">Recent questions</h2><div className="mt-3 space-y-2">{library.entries.map(item=><button type="button" key={item.id} disabled={busy} onClick={()=>{setActiveEntryId(item.id);setPanel(null);}} className={`w-full rounded-lg border px-3 py-2 text-left text-xs leading-5 disabled:opacity-40 ${item.id===activeEntryId?"border-cyan-300/30 bg-cyan-300/5 text-cyan-200":"border-white/5 text-slate-400"}`}>{item.question.slice(0,100)}</button>)}</div></div>}
       </aside></>}
-      {!storageAvailable&&<p role="status" className="library-storage-warning">Browser storage is unavailable. Keep this page open; your current materials and answers may not survive a reload.</p>}
+      {!storageAvailable&&<p role="status" className="library-storage-warning">Saving is paused. The original saved library has been preserved. Keep this page open and copy new work before reloading.</p>}
       <div className="library-mode-bar" role="group" aria-label="Material learning mode">{Object.entries(materialTasks).map(([value,label])=><button key={value} type="button" aria-pressed={task===value} disabled={busy} onClick={()=>setTask(value as MaterialTask)}>{label}</button>)}</div>
       <div className="library-reading-area" aria-live="polite">
           {entry?<MaterialResponse entry={entry} openSource={setSource}/>:<div className="library-empty"><h2>What would you like to know?</h2><p>Add a source, choose how you want to learn, and follow a question.</p><p className="library-empty-note">Answers use selected excerpts. Scanned pages and images need OCR.</p>{!library.documents.length&&<button type="button" disabled={busy||!ready} onClick={()=>setPanel("add")}>Add your first material ↗</button>}</div>}

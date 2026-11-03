@@ -48,3 +48,10 @@ test('reviewed notebook linear practice bypasses generation, preserves guards, a
  const blocked=route(async()=>assert.fail('rate limited'),Response.json({error:'limit'},{status:429}));
  assert.equal((await blocked(req({action:'question',context}))).status,429);
 });
+
+test('drafts restore only for the same lesson version and preserve help flags',()=>{
+ const draft={id:'draft-1',identity:c.lessonIdentity(context),question:record.question,answer:'My partial reasoning',hint:'Try isolating the variable.',help:true,hintRequested:true};
+ assert.equal(c.readLessonDraft(draft,context).answer,draft.answer);assert.equal(c.readLessonDraft(draft,context).hintRequested,true);
+ for(const value of [null,false,0,{...draft,identity:undefined},{...draft,answer:'x'.repeat(2501)},{...draft,help:'false'},{...draft,question:{question:'incomplete'}}])assert.throws(()=>c.readLessonDraft(value,context));
+ assert.throws(()=>c.readLessonDraft(draft,{...context,lesson:{...lesson,activity:'A changed activity.'}}),/preserved/);
+});

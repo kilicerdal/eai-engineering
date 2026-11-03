@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSavedStudyArray } from "@/components/useSavedStudyArray";
 import StudyLearningPlan from "@/components/StudyLearningPlan";
 import {
   practiceQuestions, practiceTracks, normalizePracticeAttempts, normalizePracticeTrack,
@@ -14,7 +15,8 @@ const TRACK_KEY = "eai-study-practice-track-v1";
 export default function StudyPractice() {
   const [track, setTrack] = useState<PracticeTrack>("math");
   const [questionId, setQuestionId] = useState(practiceQuestions[0].id);
-  const [attempts, setAttempts] = useState<PracticeAttempt[]>([]);
+  const {items:attempts,setItems:setAttempts,ready,warning}=useSavedStudyArray<PracticeAttempt>(STORAGE_KEY,normalizePracticeAttempts);
+  const initialized=useRef(false);
   const [selected, setSelected] = useState<number | null>(null);
   const [hintsUsed, setHintsUsed] = useState(0);
   const [submitted, setSubmitted] = useState(false);
@@ -22,32 +24,12 @@ export default function StudyPractice() {
   const [storageAvailable, setStorageAvailable] = useState(true);
 
   useEffect(() => {
-    let initial: PracticeAttempt[] = [];
-    let available = true;
-    let initialTrack: PracticeTrack = "math";
-    try {
-      initial = normalizePracticeAttempts(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
-      initialTrack = normalizePracticeTrack(localStorage.getItem(TRACK_KEY));
-    }
-    catch { available = false; }
-    queueMicrotask(() => {
-      setAttempts(initial);
-      setTrack(initialTrack);
-      setQuestionId(nextPracticeQuestion(initialTrack, initial).id);
-      setStorageAvailable(available);
-      setHydrated(true);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!hydrated) return;
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(attempts));
-      localStorage.setItem(TRACK_KEY, track);
-      window.dispatchEvent(new Event("eai-study-progress-change"));
-    }
-    catch { queueMicrotask(() => setStorageAvailable(false)); }
-  }, [attempts, hydrated, track]);
+    if(!ready||initialized.current)return;
+    initialized.current=true;
+    let initialTrack:PracticeTrack="math",available=true;
+    try{initialTrack=normalizePracticeTrack(localStorage.getItem(TRACK_KEY));}catch{available=false;}
+    queueMicrotask(()=>{setTrack(initialTrack);setQuestionId(nextPracticeQuestion(initialTrack,attempts).id);setStorageAvailable(available);setHydrated(true);});
+  },[ready,attempts]);
 
   const question = practiceQuestions.find(question => question.id === questionId)!;
   const summary = practiceSummary(track, attempts);
@@ -57,6 +39,7 @@ export default function StudyPractice() {
     setQuestionId(id); setSelected(null); setHintsUsed(0); setSubmitted(false);
   }
   function changeTrack(value: PracticeTrack) {
+    try{localStorage.setItem(TRACK_KEY,value);}catch{setStorageAvailable(false);}
     setTrack(value); openQuestion(nextPracticeQuestion(value, attempts).id);
   }
   function checkAnswer() {
@@ -102,6 +85,7 @@ export default function StudyPractice() {
               <div><dt className="text-xs text-slate-400">First attempt correct without hints</dt><dd className="mt-1 text-2xl font-semibold text-white">{summary.independentCorrect}</dd></div>
             </dl>
             <p className="mt-6 border-t border-white/10 pt-4 text-xs leading-5 text-slate-500">These are practice results, not a mastery assessment. Progress is stored in this browser.</p>
+            {warning&&<p role="status" className="mt-3 text-xs text-amber-200">{warning}</p>}
             {!storageAvailable && <p role="status" className="mt-3 text-xs text-amber-200">Browser storage is unavailable. This session’s results may not be saved.</p>}
           </aside>
 

@@ -195,3 +195,11 @@ export function materialAnswerFromDraft(value: unknown, sources: MaterialSource[
   });
   return validateMaterialAnswer({supported:true,answer,citations},sources);
 }
+
+/** Storage reads must not silently discard damaged documents or their evidence. */
+export function readMaterialLibrary(value:unknown):MaterialLibrary {
+ if(value===undefined)return {documents:[],entries:[]};
+ const normalized=normalizeMaterialLibrary(value),raw=value as Partial<MaterialLibrary>|null;
+ if(!raw||!Array.isArray(raw.documents)||!Array.isArray(raw.entries)||raw.documents.length!==normalized.documents.length||raw.entries.length!==normalized.entries.length)throw new Error("The material library could not be fully read. The original copy is preserved.");
+ return normalized;
+}

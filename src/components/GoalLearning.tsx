@@ -7,6 +7,7 @@ import StudyLandmark from "@/components/StudyLandmark";
 import { MATERIAL_HANDOFF_KEY, makeLessonMaterialHandoff } from "@/lib/study-material-handoff";
 import { CHECK_KEY, normalizeLessonChecks, latestLessonCheck, checkMemory } from "@/lib/study-checkpoints";
 import { defaultGoalSettings, goalLevels, goalLessonPrompt, normalizeGoalProgress, validateGoalPlan, validateGoalSettings, type GoalPlan, type GoalSettings, type GoalSource } from "@/lib/study-goal";
+import { writeStudyCopy } from "@/lib/study-safe-storage";
 import { importCourseFile, importCourseNotes, loadMaterialLibrary, saveMaterialLibrary } from "@/lib/study-material-files";
 import { MATERIAL_LIMITS, materialLocation, selectMaterialExcerpts, validateMaterialSources, type MaterialLibrary } from "@/lib/study-materials";
 
@@ -32,7 +33,10 @@ export default function GoalLearning() {
   const [editing,setEditing]=useState(false);
   const [dirty,setDirty]=useState(false);
   const abort=useRef<AbortController|null>(null);
-  const libraryRef=useRef(library);libraryRef.current=library;
+  const libraryRef=useRef(library);
+  const materialRead=useRef(false);
+  const savedPlan=useRef<{raw:string|null}|null>(null);
+  useEffect(()=>{libraryRef.current=library;},[library]);
   const region=useRef<HTMLElement>(null);
   useEffect(()=>{
     let cancelled=false;
@@ -40,14 +44,15 @@ export default function GoalLearning() {
       const raw=localStorage.getItem(KEY);
       if(raw){const saved=JSON.parse(raw);const settings=validateGoalSettings(saved.settings);const sources:GoalSource[]=Array.isArray(saved.sources)&&saved.sources.length?validateMaterialSources(saved.sources):[];const plan=saved.plan?validateGoalPlan(saved.plan,sources):null;
         queueMicrotask(()=>{if(cancelled)return;setSettings(settings);setSources(sources);setPlan(plan);setCompleted(plan?normalizeGoalProgress(saved.completed,plan):[]);setAccepted(!!plan&&saved.accepted===true);setStep(plan?4:1);setDirty(saved.dirty===true);setSelected(sources.map(source=>source.documentId));});}
+      savedPlan.current={raw};
     } catch {queueMicrotask(()=>setStorageWarning("A saved plan could not be restored. You can create a new one."));}
-    loadMaterialLibrary().then(value=>{if(!cancelled){setLibrary(value);setReady(true);}}).catch(()=>{if(!cancelled){setStorageWarning("Material storage is unavailable. You can still plan without materials.");setReady(true);}});
+    loadMaterialLibrary().then(value=>{if(!cancelled){materialRead.current=true;libraryRef.current=value;setLibrary(value);setReady(true);}}).catch(()=>{if(!cancelled){setStorageWarning("Material storage is unavailable. You can still plan without materials.");setReady(true);}});
     return ()=>{cancelled=true;abort.current?.abort();};
   },[]);
   useEffect(()=>{
     if(!ready||!plan)return;
     try{validateGoalSettings(settings);validateGoalPlan(plan,sources);}catch{return;}
-    try{localStorage.setItem(KEY,JSON.stringify({settings,plan,sources,completed,accepted,dirty}));window.dispatchEvent(new Event("eai-study-progress-change"));}catch{setStorageWarning("This browser could not save your plan. Keep this page open to continue.");}
+    try{if(!savedPlan.current)throw new Error("Saving is paused because the original plan could not be read.");savedPlan.current.raw=writeStudyCopy(localStorage,KEY,savedPlan.current.raw,{settings,plan,sources,completed,accepted,dirty});window.dispatchEvent(new Event("eai-study-progress-change"));}catch{savedPlan.current=null;queueMicrotask(()=>setStorageWarning("Plan saving is paused. The saved copy has been preserved. Copy new work before leaving or reloading."));}
   },[ready,settings,plan,sources,completed,accepted,dirty]);
   useEffect(()=>{
     function receiveGoal(event:Event){
@@ -67,12 +72,13 @@ export default function GoalLearning() {
   async function addMaterial(file?:File){
     if(uploading||busy)return;setUploading(true);setError("");
     try {
+      if(!materialRead.current)throw new Error("Your saved material library could not be read. It has been preserved; add materials after storage is available again.");
       const document=file?await importCourseFile(file,setStatus):await importCourseNotes("Planning notes",notes);
       const current=libraryRef.current;
       if(current.documents.some(d=>d.id===document.id))throw new Error("This material is already in your library. Select it below.");
       if(current.documents.length>=MATERIAL_LIMITS.documents)throw new Error("Your library has five materials. Manage them in your library before adding another.");
       if([...current.documents,document].reduce((sum,d)=>sum+d.pages.reduce((n,p)=>n+p.text.length,0),0)>MATERIAL_LIMITS.libraryCharacters)throw new Error("The library is full. Use a smaller selection or manage your materials.");
-      const next={...current,documents:[...current.documents,document]};await saveMaterialLibrary(next);libraryRef.current=next;setLibrary(next);setSelected(previous=>[...previous,document.id]);setNotes("");if(plan){setDirty(true);setAccepted(false);}
+      const next={...current,documents:[...current.documents,document]};await saveMaterialLibrary(next,current);libraryRef.current=next;setLibrary(next);setSelected(previous=>[...previous,document.id]);setNotes("");if(plan){setDirty(true);setAccepted(false);}
     }catch(e){setError(e instanceof Error?e.message:"The material could not be added.");}finally{setUploading(false);setStatus("");}
   }
   async function generate(){

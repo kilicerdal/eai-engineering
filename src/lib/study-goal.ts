@@ -36,6 +36,15 @@ export function validateGoalPlan(value: unknown, sources: Pick<GoalSource,"sourc
   });
   return { title, overview, lessons };
 }
+/** Only new proposals use this quality gate; legacy saved plans remain readable. */
+export function validateIndependentPlan(plan:GoalPlan):GoalPlan {
+ for(const lesson of plan.lessons){
+  const activity=lesson.activity;
+  if(/\b(?:in pairs|with (?:a|your) partner|in small groups|class discussion|teacher-led|ask (?:the|your) teacher)\b/i.test(activity))throw new Error("Make each activity suitable for one learner with the tutor, without requiring classmates or a teacher.");
+  if(!lesson.sourceIds.length&&/\b(?:read|examine|view|analy[sz]e|complete|watch)\s+(?:(?:a|the|provided|attached|simplified|short)\s+){1,3}(?:worksheet|graph|table|chart|video|passage|dataset)\b/i.test(activity)&&!/\b(?:create|construct|invent|illustrative|fictional)\b/i.test(activity)&&!/:/.test(activity))throw new Error("Supply the example within the activity or ask the tutor to create one; do not require missing materials.");
+ }
+ return plan;
+}
 export function normalizeGoalProgress(value: unknown, plan: GoalPlan): string[] {
   return Array.isArray(value) ? [...new Set(value.filter((id): id is string => typeof id === "string" && plan.lessons.some(l => l.id === id)))] : [];
 }

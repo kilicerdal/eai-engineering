@@ -1,4 +1,4 @@
-import { MATERIAL_LIMITS, makeTextDocument, normalizeMaterialLibrary, type CourseDocument, type MaterialLibrary } from "./study-materials";
+import { MATERIAL_LIMITS, makeTextDocument, readMaterialLibrary, type CourseDocument, type MaterialLibrary } from "./study-materials";
 
 async function fingerprint(data: BufferSource): Promise<string> {
   const digest = await crypto.subtle.digest("SHA-256",data);
@@ -67,19 +67,30 @@ export async function loadMaterialLibrary(): Promise<MaterialLibrary> {
       const request = database.transaction(STORE,"readonly").objectStore(STORE).get("current");
       request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
     });
-    return normalizeMaterialLibrary(value);
+    return readMaterialLibrary(value);
   } finally { database.close(); }
 }
 let pendingWrite = Promise.resolve();
-export function saveMaterialLibrary(library: MaterialLibrary): Promise<void> {
+export function saveMaterialLibrary(library: MaterialLibrary, expected?: MaterialLibrary): Promise<void> {
   const snapshot = structuredClone(library);
+  const expectedCopy=expected===undefined?undefined:JSON.stringify(expected);
   const next = pendingWrite.catch(()=>undefined).then(async () => {
     const database = await openLibrary();
     try {
       await new Promise<void>((resolve,reject) => {
         const transaction = database.transaction(STORE,"readwrite");
-        transaction.objectStore(STORE).put(snapshot,"current");
-        transaction.oncomplete = () => { window.dispatchEvent(new Event("eai-study-progress-change")); resolve(); }; transaction.onerror = () => reject(transaction.error); transaction.onabort = () => reject(transaction.error);
+        const store=transaction.objectStore(STORE);
+        let conflict=false;
+        if(expectedCopy===undefined)store.put(snapshot,"current");
+        else {
+          const read=store.get("current");
+          read.onsuccess=()=>{
+            try{if(JSON.stringify(readMaterialLibrary(read.result))!==expectedCopy){conflict=true;transaction.abort();return;}store.put(snapshot,"current");}
+            catch{conflict=true;transaction.abort();}
+          };
+        }
+
+        transaction.oncomplete = () => { window.dispatchEvent(new Event("eai-study-progress-change")); resolve(); }; transaction.onerror = () => reject(transaction.error); transaction.onabort = () => reject(conflict?new Error("Another tab changed your material library. Your saved copy is preserved; reload before saving again."):transaction.error);
       });
     } finally { database.close(); }
   });

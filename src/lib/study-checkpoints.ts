@@ -78,3 +78,12 @@ export function freshNotebookLinearQuestion(context: LessonContext, previousQues
   criterion: `Use the inverse operation to remove the ${sign === "+" ? "added" : "subtracted"} constant on both sides, divide both sides by the variable's coefficient, and verify the result by substitution.`,
  };
 }
+
+export function readLessonDraft(value:unknown,context:LessonContext){
+ if(!value||typeof value!=="object")throw new Error("The saved draft could not be fully read. It has been preserved.");
+ const draft=value as Record<string,unknown>;
+ if(draft.identity!==lessonIdentity(context))throw new Error("This draft belongs to an earlier lesson version. It has been preserved; new work stays in this tab.");
+ const question=validateCheckQuestion(draft.question);
+ if(typeof draft.id!=="string"||!draft.id||draft.id.length>100||typeof draft.answer!=="string"||draft.answer.length>2500||typeof draft.hint!=="string"||draft.hint.length>900||typeof draft.help!=="boolean"||typeof draft.hintRequested!=="boolean")throw new Error("The saved draft could not be fully read. It has been preserved; new work stays in this tab.");
+ return {id:draft.id,question,answer:draft.answer,hint:draft.hint,help:draft.help,hintRequested:draft.hintRequested};
+}
