@@ -1,8 +1,8 @@
 import {normalizeMaterialText,type MaterialSource} from "./study-materials";
 import {validateCheckFeedback,type CheckFeedback,type CheckQuestion} from "./study-checkpoints";
 const compact=(value:string)=>value.trim().replace(/\s+/g," ");
-function uncertain(reason:"source"|"evidence"):CheckFeedback{
- return {decision:"uncertain",method:"ai",feedback:reason==="source"?"There is not enough original question or source context to verify this answer. This is not evidence that your answer is incorrect.":"The review could not be connected reliably to the words in your answer. This is not evidence that your answer is incorrect.",reasoningGap:"Verification is pending; no reasoning error has been established.",nextStep:reason==="source"?"Supply the referenced passage, data, or complete question before checking the answer again.":"Explain one step of your reasoning and request another review.",guidingQuestion:reason==="source"?"What passage, data, or other information does the question refer to?":"What was the first step you used, and why?"};
+function uncertain(reason:"source"|"evidence"|"source-evidence"):CheckFeedback{
+ return {decision:"uncertain",method:"ai",feedback:reason==="source-evidence"?"The review could not verify its supporting quotation against your selected passage. Your answer has not been judged incorrect.":reason==="source"?"There is not enough original question or source context to verify this answer. This is not evidence that your answer is incorrect.":"The review could not be connected reliably to the words in your answer. This is not evidence that your answer is incorrect.",reasoningGap:"Verification is pending; no reasoning error has been established.",nextStep:reason==="source-evidence"?"Reopen the selected passage and request another review with the relevant sentence in mind.":reason==="source"?"Supply the referenced passage, data, or complete question before checking the answer again.":"Explain one step of your reasoning and request another review.",guidingQuestion:reason==="source-evidence"?"Which sentence in the selected passage supports or contradicts your reasoning?":reason==="source"?"What passage, data, or other information does the question refer to?":"What was the first step you used, and why?"};
 }
 /** Ground quoted evidence in learner text; this does not independently prove an AI judgment. */
 export function validateReviewedFeedback(value:unknown,answer:string,sources:MaterialSource[]=[]):CheckFeedback{
@@ -13,11 +13,22 @@ export function validateReviewedFeedback(value:unknown,answer:string,sources:Mat
  const excerpt=typeof data.answerExcerpt==="string"?compact(data.answerExcerpt):"";
  if(!excerpt||excerpt.length>500||!compact(answer).includes(excerpt))return uncertain("evidence");
  if(typeof data.guidingQuestion!=="string"||!data.guidingQuestion.trim()||data.guidingQuestion.length>500)throw new Error("The review needs one useful guiding question.");
+ let sourceEvidence=data.sourceEvidence;
  if(sources.length){
-  if(!Array.isArray(data.sourceEvidence)||!data.sourceEvidence.length||data.sourceEvidence.length>sources.length)return uncertain("source");
-  if(data.sourceEvidence.some(e=>!e||typeof e!=="object"||typeof e.quote!=="string"||normalizeMaterialText(e.quote).length<15||normalizeMaterialText(e.quote).length>600||!sources.some(s=>s.sourceId===e.sourceId&&s.text.includes(normalizeMaterialText(e.quote)))))return uncertain("source");
+  if(!Array.isArray(sourceEvidence)||!sourceEvidence.length||sourceEvidence.length>sources.length)return uncertain("source-evidence");
+  const verified=[];
+  for(const e of sourceEvidence){
+   if(!e||typeof e!=="object"||typeof e.quote!=="string"||typeof e.sourceId!=="string")return uncertain("source-evidence");
+   const sourceId=e.sourceId.replace(/^\[(S[1-6])\]$/,"$1"),source=sources.find(s=>s.sourceId===sourceId),quote=normalizeMaterialText(e.quote);
+   if(!source||quote.length<15||quote.length>600)return uncertain("source-evidence");
+   let index=source.text.indexOf(quote);
+   if(index<0&&source.text.toLowerCase().length===source.text.length&&quote.toLowerCase().length===quote.length)index=source.text.toLowerCase().indexOf(quote.toLowerCase());
+   if(index<0)return uncertain("source-evidence");
+   verified.push({sourceId,quote:source.text.slice(index,index+quote.length)});
+  }
+  sourceEvidence=verified;
  }
- return validateCheckFeedback({...data,answerExcerpt:excerpt,guidingQuestion:data.guidingQuestion,method:"ai"});
+ return validateCheckFeedback({...data,answerExcerpt:excerpt,guidingQuestion:data.guidingQuestion,method:"ai",...(sourceEvidence?{sourceEvidence}:{})});
 }
 /** Narrow substitution check for a short numeric answer to an explicit integer linear equation. */
 export function checkShortLinearAnswer(question:CheckQuestion,answer:string):CheckFeedback|null{

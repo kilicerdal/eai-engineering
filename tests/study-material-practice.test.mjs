@@ -33,3 +33,7 @@ test('source-provided questions may refer to the visible passage but cannot cite
  const value={question:'According to the passage, what does opening the switch change? [S1]',criterion:'Use source evidence.'};assert.ok(q.validateFreshCheckQuestion(value,'','','',true));assert.throws(()=>q.validateFreshCheckQuestion(value));
  assert.match(m.materialTutorSystem('explain','analogy'),/explicitly labeled as an illustration/);assert.match(m.materialTutorSystem('explain','steps'),/numbered steps/);assert.match(m.materialTutorSystem('explain','clear'),/preserve important qualifications/);
 });
+
+test('harmless citation brackets and quote capitalization resolve back to the original source text',()=>{
+ const result=f.validateReviewedFeedback({...record.result,canVerify:true,sourceEvidence:[{sourceId:'[S1]',quote:'if the path is broken, current stops flowing.'}]},record.answer,[source]);assert.equal(result.decision,'partial');assert.equal(result.sourceEvidence[0].quote,'If the path is broken, current stops flowing.');assert.equal(result.sourceEvidence[0].sourceId,'S1');
+});

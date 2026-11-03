@@ -86,3 +86,9 @@ test('source practice sends only the supplied passage and requires valid source 
  const review=route(async()=>upstream({...record.result,canVerify:true,answerExcerpt:'The path is broken',guidingQuestion:'What does the source say happens then?',sourceEvidence:[{sourceId:'S1',quote:'Current stops if the path is broken.'}]}));
  const reviewed=await (await review(req({action:'review',context:sourceContext,question:{question:'What happens to current? [S1]',criterion:'Use the source'},answer:'The path is broken but current continues.'}))).json();assert.equal(reviewed.result.sourceEvidence[0].sourceId,'S1');
 });
+
+test('source review repairs invalid quotation format once without upgrading unverifiable evidence',async()=>{
+ const sources=[{sourceId:'S1',documentId:'notes',name:'Circuit notes',kind:'text',page:1,text:'A switch opens or closes a circuit path. Current stops if the path is broken.'}],sourceContext={...context,sources};let calls=0;
+ const handler=route(async()=>{calls++;return upstream({...record.result,canVerify:true,answerExcerpt:'The path is broken',guidingQuestion:'What does the source say happens next?',sourceEvidence:calls===1?undefined:[{sourceId:'S1',quote:'Current stops if the path is broken.'}]});});
+ const data=await (await handler(req({action:'review',context:sourceContext,question:{question:'What happens to current? [S1]',criterion:'Use source evidence'},answer:'The path is broken but current continues.'}))).json();assert.equal(calls,2);assert.equal(data.result.sourceEvidence[0].sourceId,'S1');
+});
