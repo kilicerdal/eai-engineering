@@ -21,3 +21,9 @@ test('referenced materials must appear inside the generated question, without re
  assert.ok(validate({question:'In a poem, how can repeated sounds contribute to an effect?',criterion}));
  assert.ok(validate({question:'Explain why a graph can show a trend without establishing its cause.',criterion}));
 });
+
+test('fictional data cannot be used as evidence for actual historical causes',()=>{
+ assert.throws(()=>validate({question:'In a fictional French province in 1788, households paid invented tax amounts. Explain how this disparity contributed to the French Revolution.',criterion}),/invented data/);
+ assert.ok(validate({question:'In a fictional model, group A pays 20 units and group B pays 40 units. What does this model illustrate about unequal burdens, and why is it not evidence about an actual historical event?',criterion}));
+ assert.ok(validate({question:'Explain the distinction between a long-term structural cause and a short-term trigger in historical analysis.',criterion}));
+});
