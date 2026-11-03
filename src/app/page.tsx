@@ -96,10 +96,11 @@ function AtlasBackdrop({ scene }: { scene: "maya" | "ephesus" | "great-wall" | "
 
 export default function Home() {
  const [menuOpen, setMenuOpen] = useState(false);
+ const [navSection, setNavSection] = useState("ai-assistant");
  const [activeTool, setActiveTool] = useState("qa-dashboard");
  const [workspaceOpen, setWorkspaceOpen] = useState(false);
  useEffect(() => {
-   const sync = () => { const key = location.hash.slice(1); if (tools.some(t => t.key === key)) { setActiveTool(key); setWorkspaceOpen(true); requestAnimationFrame(() => document.getElementById(key)?.scrollIntoView({block: "start"})); } };
+   const sync = () => { const key = location.hash.slice(1); setNavSection(key || "ai-assistant"); if (tools.some(t => t.key === key)) { setActiveTool(key); setWorkspaceOpen(true); requestAnimationFrame(() => document.getElementById(key)?.scrollIntoView({block: "start"})); } };
    sync(); window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync);
  }, []);
  const openTool = (key: string) => { setActiveTool(key); setWorkspaceOpen(true); };
@@ -109,7 +110,7 @@ export default function Home() {
    <span className="atlas-chapter">THE THRESHOLD</span>
    <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
-    <a className="atlas-chat-nav" href="#ai-assistant">Chat with eAI</a><a href="#platform">Platform</a><a href="#engineering">Engineering</a><a href="/study">dAI Learning Studio</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    <a className="atlas-chat-nav" href="#ai-assistant" aria-current={navSection === "ai-assistant" ? "location" : undefined}>Chat with eAI</a><a href="#platform" aria-current={navSection === "platform" ? "location" : undefined}>Platform</a><a href="#engineering" aria-current={navSection === "engineering" ? "location" : undefined}>Engineering</a><a href="/study">dAI Learning Studio</a><a href="#projects" aria-current={navSection === "projects" ? "location" : undefined}>Projects</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
    </nav>
   </header>
   <section className="atlas-hero" aria-labelledby="hero-title">

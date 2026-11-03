@@ -571,3 +571,20 @@
 .eai-study-studio #ai-assistant .tutor-section-intro{min-height:220px;}
 .eai-study-studio #ai-assistant:before{background-size:cover,cover,100% auto;background-position:center,center,center top;background-repeat:no-repeat;}
 @media(max-width:760px){.eai-study-studio #ai-assistant .tutor-section-intro{min-height:190px;}.eai-study-studio #ai-assistant:before{background-size:cover,cover,100% auto;background-position:center,center,center 135px;}}
+
+/* Navigation B: consistent framed navy navigation across the learning studio. */
+.eai-study-studio .studio-nav,.eai-study-studio .studio-nav:not(.studio-nav-overlay){max-width:calc(100% - 4%);margin:18px auto 0;padding:14px 22px;gap:24px;border:1px solid #d9b979b3;border-radius:12px;background:#071425f5;color:#f6f1e8;box-shadow:0 8px 28px #0005;}
+.eai-study-studio .studio-nav nav{gap:22px;font-size:16px;font-weight:600;}
+.eai-study-studio .studio-nav nav a{position:relative;padding:10px 0;line-height:1.4;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;}
+.eai-study-studio .studio-nav nav a:hover{opacity:1;color:#edc578;}
+.eai-study-studio .studio-nav nav a[aria-current]{color:#edc578;}
+.eai-study-studio .studio-nav nav a[aria-current]:after{content:"";position:absolute;bottom:2px;height:3px;background:#e5b75e;left:0;right:0;}
+.eai-study-studio .studio-nav .studio-main-site{font-size:14px;color:#ddd1bb;}
+.eai-study-studio .studio-nav .studio-nav-action{border:0;border-radius:0;color:inherit;}
+@media(max-width:1150px){.eai-study-studio .studio-nav{flex-wrap:wrap;gap:8px;}.eai-study-studio .studio-nav nav{width:100%;justify-content:space-between;gap:16px;flex-wrap:wrap;}}
+@media(max-width:700px){
+.eai-study-studio .studio-nav,.eai-study-studio .studio-nav:not(.studio-nav-overlay){margin-top:12px;padding:14px 16px;}
+.eai-study-studio .studio-nav nav{justify-content:flex-start;gap:6px 24px;font-size:16px;}
+.eai-study-studio .studio-nav .studio-main-site{flex-basis:100%;font-size:14px;min-height:40px;padding:8px 0;}
+.eai-study-studio .studio-nav .studio-brand-light{font-size:22px;}
+}
