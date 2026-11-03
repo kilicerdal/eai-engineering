@@ -27,3 +27,11 @@ test('fictional data cannot be used as evidence for actual historical causes',()
  assert.ok(validate({question:'In a fictional model, group A pays 20 units and group B pays 40 units. What does this model illustrate about unequal burdens, and why is it not evidence about an actual historical event?',criterion}));
  assert.ok(validate({question:'Explain the distinction between a long-term structural cause and a short-term trigger in historical analysis.',criterion}));
 });
+
+test('historical numeric datasets are rejected even when the model presents invented records as real',()=>{
+ const text='In Languedoc in 1787, the following data are recorded: First Estate 100 households, 30 livres each; Second Estate 70 households, 50 livres each; Third Estate 1300 households, 20 livres each. Calculate the tax burden.';
+ assert.throws(()=>validate({question:text,criterion},'','','Understand unequal taxation before the French Revolution'),/qualitative conceptual/);
+ assert.throws(()=>validate({question:text.replace('the following data are recorded','consider a fictional dataset'),criterion},'','','Study French history'),/qualitative conceptual/);
+ assert.ok(validate({question:'Explain why unequal legal obligations can create resentment even when people differ in wealth. Apply the distinction between a grievance and proof of its effects to the Three Estates.',criterion},'','','French Revolution'));
+ assert.ok(validate({question:'A fictional company has 100 employees in one unit and 200 in another. If their budgets are 30000 and 50000 dollars, compare the budget per employee.',criterion},'','','Understand ratios'));
+});
