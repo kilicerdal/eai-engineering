@@ -32,3 +32,9 @@ test('insufficient source context cannot be saved as a failed or successful answ
  assert.equal(response.status,200);
  const content=JSON.parse(sent.messages[1].content);assert.equal(content.context.lesson.id,mistake.id);assert.match(content.recentWork,/x=23/);assert.match(content.context.lesson.activity,/changed values or context/);assert.match(sent.messages[0].content,/Do not include the answer/);
 });
+
+test('checkpoint instructions separate currency from math and assess the actual problem',()=>{
+ assert.match(c.checkpointSystem,/never use a dollar sign as a currency symbol/);
+ assert.match(c.checkpointSystem,/question and its criterion agree/);
+ assert.match(c.checkpointSystem,/actual problem, not a mistaken criterion/);
+});

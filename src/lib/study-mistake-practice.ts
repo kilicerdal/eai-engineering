@@ -9,7 +9,7 @@ export function mistakePracticeContext(mistake: Pick<Mistake, "id" | "exam" | "q
       id: mistake.id,
       title: `Practice reflection: ${mistake.exam}`.slice(0, 120),
       objective: `Apply the underlying concept in this saved question: ${mistake.question}`.slice(0, 450),
-      activity: "Create a different, self-contained example testing the same idea, with changed values or context. Include any necessary passage or data. Do not reveal its answer or assume the saved attempt was wrong.",
+      activity: "Create a different, self-contained example testing the same idea, with changed values or context. Include any necessary passage or data. Keep the same reasoning demand (for example, both inverse operations for a two-step equation). Do not reveal its answer or assume the saved attempt was wrong.",
       checkpoint: "Explain the reasoning for the fresh example. Check the original problem independently; if the concept or required source context is unclear, report uncertainty rather than inventing evidence.",
       sourceIds: [],
     },
