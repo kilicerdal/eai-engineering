@@ -9,7 +9,7 @@ const start=(r=p.emptyExamRecord(),exam='sat',mode='diagnostic',domain='algebra'
 function choose(r,exam='sat',correct=true,hints=0){const s=r.sessions[exam],q=bank.examBank.find(q=>q.id===s.questionIds[s.index]);return {...r,sessions:{...r.sessions,[exam]:{...s,selectedIndex:correct?q.answerIndex:(q.answerIndex+1)%4,hintsUsed:hints,reasoning:'My reasoning'}}};}
 function submit(r,exam='sat',correct=true,hints=0,n=0){return p.submitExamAnswer(choose(r,exam,correct,hints),exam,false,now+n+1,'answer-'+n);}
 test('all original questions have complete self-contained content and unambiguous choices',()=>{
- assert.equal(bank.examBank.length,40);assert.equal(new Set(bank.examBank.map(q=>q.id)).size,40);
+ assert.equal(bank.examBank.length,72);assert.equal(new Set(bank.examBank.map(q=>q.id)).size,72);
  assert.equal(Object.keys(bank.examDomains).length,8);assert.equal(Object.keys(bank.examSkillLessons).length,16);
  for(const q of bank.examBank){assert.equal(q.choices.length,4);assert.equal(new Set(q.choices.map(c=>c.trim())).size,4,q.id);assert.ok(q.answerIndex>=0&&q.answerIndex<4);assert.equal(q.choiceNotes.length,4);assert.ok(q.choiceNotes.every(n=>n.length>15));assert.equal(q.hints.length,2);assert.ok(q.explanation.length>40);assert.ok([q.passage,q.prompt].filter(Boolean).join('\n\n').length<=1200);assert.ok(bank.examSkillLessons[q.skill]);if(!q.proof)assert.ok(q.passage?.length>50);}
  for(const d of Object.keys(bank.examDomains))assert.ok(bank.examBank.filter(q=>q.domain===d).length>=4);
@@ -17,14 +17,14 @@ test('all original questions have complete self-contained content and unambiguou
  assert.deepEqual([...new Set(bank.examBank.filter(q=>q.proof).map(q=>q.answerIndex))].sort(),[0,1,2,3]);
 });
 test('every math key satisfies an independent arithmetic check',()=>{
- for(const q of bank.examBank.filter(q=>q.proof)){const v=q.proof.values,answer=q.choices[q.answerIndex];let expected;
-  switch(q.proof.kind){case 'linear':expected=v[2];assert.equal(v[0]*Number(answer)+v[1],v[0]*v[2]+v[1]);break;case 'systems':expected=v[0];assert.equal((v[0]+v[1])+(v[0]-v[1]),2*Number(answer));break;case 'quadratics':assert.equal(answer,`${v[0]} and −${v[1]}`);for(const root of [v[0],-v[1]])assert.ok((root-v[0])*(root+v[1])===0);continue;case 'exponents':assert.equal(answer,`t^${v[0]+v[1]}`);for(const t of [-2,0,2,3])assert.equal(t**v[0]*t**v[1],t**(v[0]+v[1]));continue;case 'percent':expected=v[0]+v[0]*v[1]/100;break;case 'mean':expected=3*v[0]-v[1]-v[2];break;case 'triangle':expected=v[0]*v[1]/2;break;case 'circle':expected=v[0]**2;break;default:assert.fail(q.id);}
+ for(const q of bank.examBank.filter(q=>q.proof)){const v=q.proof.values,form=q.proof.form,answer=q.choices[q.answerIndex];let expected;
+  switch(q.proof.kind){case 'linear':expected=v[2];assert.equal(v[0]*Number(answer)+v[1],v[0]*v[2]+v[1]);break;case 'systems':expected=v[0];assert.equal((v[0]+v[1])+(v[0]-v[1]),2*Number(answer));break;case 'quadratics':if(form==='quadraticPositive'){assert.equal(answer,`${v[0]} and ${v[1]}`);for(const root of [v[0],v[1]])assert.equal(root**2-(v[0]+v[1])*root+v[0]*v[1],0);}else{assert.equal(answer,`${v[0]} and −${v[1]}`);for(const root of [v[0],-v[1]])assert.ok((root-v[0])*(root+v[1])===0);}continue;case 'exponents':assert.equal(answer,`t^${v[0]+v[1]}`);for(const t of [-2,0,2,3])assert.equal(t**v[0]*t**v[1],t**(v[0]+v[1]));continue;case 'percent':expected=form==='percentOriginal'?v[0]/(1-v[1]/100):form==='percentDecrease'?v[0]-v[0]*v[1]/100:v[0]+v[0]*v[1]/100;break;case 'mean':expected=form==='meanAdded'?(v[0]*v[1]+v[2])/(v[0]+1):form==='meanFour'?4*v[0]-v[1]-v[2]-v[3]:3*v[0]-v[1]-v[2];break;case 'triangle':expected=form==='triangleMeters'?v[0]*v[1]/20000:form==='triangleHeight'?2*v[0]/v[1]:v[0]*v[1]/2;break;case 'circle':expected=form==='circleRadius'?Math.sqrt(v[0]):form==='circleDiameter'?2*Math.sqrt(v[0]):v[0]**2;break;default:assert.fail(q.id);}
   assert.equal(parseFloat(answer),expected,q.id);
  }
 });
 test('reading and writing keys match the editorial review map',()=>{
  const keys={mainIdea:[1,0],inference:[1,2],words:[2,1],purpose:[0,3],transitions:[1,2],synthesis:[0,3],boundaries:[1,1],agreement:[2,1]};
- for(const q of bank.examBank.filter(q=>!q.proof)){const index=Number(q.id.split('-').at(-1));assert.equal(q.answerIndex,keys[q.skill][index],q.id);}
+ for(const q of bank.examBank.filter(q=>!q.proof&&q.id.includes('-v1-'))){const index=Number(q.id.split('-').at(-1));assert.equal(q.answerIndex,keys[q.skill][index],q.id);}
 });
 test('diagnostics cover each domain once with separate SAT and PSAT starting items',()=>{
  const sat=start(),psat=start(p.emptyExamRecord(),'psat');for(const [r,exam] of [[sat,'sat'],[psat,'psat']]){const ids=r.sessions[exam].questionIds;assert.equal(ids.length,8);assert.equal(new Set(ids.map(id=>bank.examBank.find(q=>q.id===id).domain)).size,8);}
@@ -88,7 +88,7 @@ test('skill review uses a different original item, prioritizes unseen variants a
  for(const id of reviewed.sessions.sat.questionIds){assert.notEqual(id,a.questionId);assert.equal(bank.examBank.find(q=>q.id===id).skill,'linear');}
  assert.deepEqual(p.readExamRecord(JSON.parse(JSON.stringify(reviewed))),reviewed);
  const seen=reviewAttempt(linearQuestions[1],{id:'already-seen',selectedIndex:linearQuestions[1].answerIndex,submittedAt:now-1});
- assert.equal(p.startExamReview({...record,attempts:[seen,a]},'sat','linear',now+1,'review2').sessions.sat.questionIds[0],linearQuestions[2].id);
+ const nextReview=p.startExamReview({...record,attempts:[seen,a]},'sat','linear',now+1,'review2');assert.equal(bank.examBank.find(q=>q.id===nextReview.sessions.sat.questionIds[0]).representation,'applied');
  assert.throws(()=>p.startExamReview(record,'sat','missing',now+1,'bad'));
  assert.throws(()=>p.startExamReview(record,'psat','linear',now+1,'wrong-profile'));
  assert.throws(()=>p.startExamReview(record,'sat','linear',now-1,'future'));
@@ -98,4 +98,22 @@ test('a follow-up clears after a fresh independent answer without deleting the o
  r=p.submitExamAnswer(choose(r),'sat',false,now+86400001,'fresh-result');const review=p.examReviewProgress('sat',r.attempts,now+86400002)[0];
  assert.equal(review.resolvedBy.id,'fresh-result');assert.equal(r.attempts.length,2);assert.equal(r.attempts[0].id,anchor.id);
  assert.throws(()=>p.startExamReview(r,'sat','linear',now+86400003,'completed'));
+});
+
+test('new reading and writing items match their editorial key map',()=>{
+ const keys={mainIdea:[2,3],inference:[1,2],words:[0,3],purpose:[2,0],transitions:[3,1],synthesis:[2,0],boundaries:[1,3],agreement:[2,1]};
+ const questions=bank.examBank.filter(q=>!q.proof&&q.id.includes('-v2-'));assert.equal(questions.length,16);
+ for(const q of questions){const index=Number(q.id.split('-').at(-1));assert.equal(q.answerIndex,keys[q.skill][index],q.id);}
+});
+test('added content broadens each existing skill and survives saved-history and account round trips',()=>{
+ for(const skill of Object.keys(bank.examSkillLessons)){const questions=bank.examBank.filter(q=>q.skill===skill);assert.ok(questions.length>=4);assert.equal(questions.filter(q=>q.id.includes('-v2-')).length,2);}
+ const additions=bank.examBank.filter(q=>q.id.includes('-v2-'));assert.equal(additions.length,32);
+ const attempts=additions.map((q,i)=>({id:'new-content-'+i,exam:'sat',sessionId:'new-content-session',mode:'practice',questionId:q.id,selectedIndex:q.answerIndex,hintsUsed:0,reasoning:'An explanation',submittedAt:now+i}));
+ const record={...p.emptyExamRecord(),attempts};assert.equal(p.readExamRecord(record).attempts.length,32);
+ const snapshot=snapshots.validateStudySnapshot({version:1,values:{[p.EXAM_PREP_KEY]:JSON.stringify(record)},library:{documents:[],entries:[]}});assert.deepEqual(p.readExamRecord(JSON.parse(snapshot.values[p.EXAM_PREP_KEY])),record);
+ const forms=new Set(additions.filter(q=>q.proof).map(q=>q.proof.form).filter(Boolean));for(const form of ['quadraticPositive','percentDecrease','percentOriginal','meanFour','meanAdded','triangleHeight','triangleMeters','circleRadius','circleDiameter'])assert.ok(forms.has(form),form);
+});
+test('all original question identifiers, texts, choices and keys remain byte-for-byte stable',async()=>{
+ const {createHash}=await import('node:crypto');const original=bank.examBank.filter(q=>q.id.includes('-v1-'));assert.equal(original.length,40);
+ assert.equal(createHash('sha256').update(JSON.stringify(original)).digest('hex'),'f39b21c58b5cd72bb4db9df6b1851d402383dd4ba27c5aa48e54036215df2d6c');
 });

@@ -1,3 +1,4 @@
+import {additionalExamQuestions} from "./study-exam-bank-extension";
 // Original dAI exercises. Domain names follow College Board's public outline;
 // questions, passages, distractors and explanations are independently authored.
 export const examDomains = {
@@ -31,7 +32,7 @@ export const examSkillLessons={
  circle:{name:"Radius and circle area",domain:"geometry",idea:"Use the radius in A=πr². If a diameter is supplied, divide it by two first.",example:"A circle of diameter 10 has radius 5 and area 25π square units.",check:"Was the supplied measurement a radius or diameter?"},
 } as const;
 export type ExamSkill=keyof typeof examSkillLessons;
-export type ExamBankQuestion={id:string;domain:ExamDomain;skill:ExamSkill;prompt:string;passage?:string;choices:string[];answerIndex:number;hints:string[];explanation:string;choiceNotes:string[];proof?:{kind:ExamSkill;values:number[]}};
+export type ExamBankQuestion={id:string;domain:ExamDomain;skill:ExamSkill;prompt:string;passage?:string;choices:string[];answerIndex:number;hints:string[];explanation:string;choiceNotes:string[];representation?:"applied";proof?:{kind:ExamSkill;values:number[];form?:"percentDecrease"|"meanFour"|"triangleHeight"|"circleRadius"|"circleDiameter"|"quadraticPositive"|"percentOriginal"|"meanAdded"|"triangleMeters"}};
 function mathQuestion(skill:ExamSkill,index:number,prompt:string,correct:string,wrong:string[],explanation:string,hints:string[],notes:string[],values:number[]):ExamBankQuestion{
  const all=[correct,...wrong],reasons=["This answer follows the required operations.",...notes],rotation=(index+[...skill].reduce((n,c)=>n+c.charCodeAt(0),0))%4;
  return {id:`exam-${skill}-v1-${index}`,domain:examSkillLessons[skill].domain,skill,prompt,choices:[...all.slice(rotation),...all.slice(0,rotation)],answerIndex:(4-rotation)%4,hints,explanation,choiceNotes:[...reasons.slice(rotation),...reasons.slice(0,rotation)],proof:{kind:skill,values}};
@@ -74,5 +75,5 @@ const readingQuestions:ExamBankQuestion[]=[
  reading("agreement",0,"The collection of field notes _____ stored in a locked cabinet.","Which choice completes the sentence with correct subject–verb agreement?",["are","have been","is","were"],2,"The subject is the singular noun 'collection.' The phrase 'of field notes' does not make the subject plural, so 'is' agrees.",["Find the head noun of the subject.","Ignore the intervening 'of' phrase when determining number."],["'Are' is plural, but 'collection' is singular.","'Have been' is plural here and does not agree with 'collection'.","The singular verb agrees with 'collection'.","'Were' is plural in this factual sentence and does not agree."]),
  reading("agreement",1,"The two assistants, along with the project leader, _____ reviewing the records now.","Which choice agrees with the subject?",["is","are","was","has been"],1,"The subject is plural 'assistants.' The parenthetical phrase does not change its number; 'are reviewing' also fits 'now.'",["Identify the subject outside the commas.","'Along with' does not combine the parenthetical noun with the subject."],["The subject is plural rather than singular.","This agrees with 'two assistants' and the present context.","This is singular and past tense.","This singular form does not agree with the plural subject."]),
 ];
-export const examBank:ExamBankQuestion[]=[...mathQuestions,...readingQuestions];
+export const examBank:ExamBankQuestion[]=[...mathQuestions,...readingQuestions,...additionalExamQuestions];
 export const examDomainSource={title:"College Board: SAT Suite content domains",url:"https://satsuite.collegeboard.org/practice/content-domains"};

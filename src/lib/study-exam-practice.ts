@@ -111,7 +111,9 @@ export function startExamReview(record:ExamRecord,exam:ExamProfile,skill:ExamSki
  if(!review)throw new Error("This skill has no pending review. Choose another area or refresh your practice.");
  const latest=latestExamEvidence(exam,record.attempts,now);
  const priority=(q:ExamBankQuestion)=>{const a=latest.get(q.id);return !a?0:a.selectedIndex===null?1:a.selectedIndex!==q.answerIndex?2:a.hintsUsed?3:4;};
- const questionIds=examBank.filter(q=>q.skill===skill&&q.id!==review.anchor.questionId).sort((a,b)=>priority(a)-priority(b)||(latest.get(a.id)?.submittedAt||0)-(latest.get(b.id)?.submittedAt||0)).slice(0,2).map(q=>q.id);
+ const anchorRepresentation=examBank.find(q=>q.id===review.anchor.questionId)?.representation;
+ const differentPresentation=(q:ExamBankQuestion)=>Number(q.representation!==anchorRepresentation);
+ const questionIds=examBank.filter(q=>q.skill===skill&&q.id!==review.anchor.questionId).sort((a,b)=>priority(a)-priority(b)||differentPresentation(b)-differentPresentation(a)||(latest.get(a.id)?.submittedAt||0)-(latest.get(b.id)?.submittedAt||0)).slice(0,2).map(q=>q.id);
  if(!questionIds.length)throw new Error("There is no different reviewed question for this skill yet. Choose another area.");
  const session:ExamSession={id:sessionId,mode:"practice",questionIds,index:0,startedAt:now,finished:false,selectedIndex:null,hintsUsed:0,reasoning:""};
  return {...record,activeExam:exam,sessions:{...record.sessions,[exam]:session}};

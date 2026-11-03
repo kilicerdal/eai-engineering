@@ -8,7 +8,7 @@ import {EXAM_PREP_KEY,emptyExamRecord,readExamRecord,examSkillEvidence,recommend
 import {normalizeMistakes} from "@/lib/study-exams";
 const examName=(exam:ExamProfile)=>exam==="sat"?"SAT":"PSAT/NMSQT";
 function eventTime(event:{timeStamp:number}){return Math.round(event.timeStamp>1e12?event.timeStamp:performance.timeOrigin+event.timeStamp);}
-function display(text:string){const superscript="⁰¹²³⁴⁵⁶⁷⁸⁹";return text.replace(/([a-z])\^(\d+)/gi,(_all,base:string,power:string)=>base+[...power].map(d=>superscript[Number(d)]).join(""));}
+function display(text:string){const superscript="⁰¹²³⁴⁵⁶⁷⁸⁹";return text.replace(/([a-z)])\^(\d+)/gi,(_all,base:string,power:string)=>base+[...power].map(d=>superscript[Number(d)]).join(""));}
 export default function StudyExamPractice(){
  const params=useSearchParams(),requested=params.get("exam"),requestedDomain=params.get("domain"),requestedSkill=params.get("skill");
  const [record,setRecord]=useState<ExamRecord>(emptyExamRecord),[ready,setReady]=useState(false),[warning,setWarning]=useState(""),[error,setError]=useState(""),[now,setNow]=useState(0),[domain,setDomain]=useState<ExamDomain>("information"),[savedNotebook,setSavedNotebook]=useState(""),[pendingBackup,setPendingBackup]=useState<ExamRecord|null>(null);
