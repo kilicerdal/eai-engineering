@@ -49,3 +49,103 @@
 .threshold .atlas-chat-shell button:focus-visible,.threshold .atlas-chat-shell select:focus-visible{outline:2px solid #89672d;outline-offset:3px}
 @media(max-width:1100px){.threshold .atlas-chapter{display:none}}
 @media(max-width:760px){.threshold .atlas-chat{padding:40px 0 45px}.threshold .atlas-chat>div{padding-inline:6%}.threshold .atlas-chat [role=log]{height:260px;padding:16px}.threshold .atlas-chat-controls{gap:8px}.threshold .atlas-chat-controls select{padding:9px;flex:1}.threshold .atlas-history-toggle{padding:8px 10px;font-size:11px}.threshold .atlas-chat-toolbar{gap:14px;padding:18px}.threshold .atlas-chat-composer{padding:16px}.threshold .atlas-chat>div>div:first-child>p:last-child{font-size:14px}.threshold .atlas-chat-shell{box-shadow:0 20px 45px #0005,0 0 0 8px #08172a}.threshold .atlas-chat-composer form{gap:5px}.threshold .atlas-chat-composer button[type=submit]{padding-inline:14px}.threshold .atlas-chat-composer input{font-size:16px}.threshold .atlas-chat-feature:after{left:5%;width:90%;top:15px}}
+
+/* Approved main-site landscapes: original artwork behind real, accessible content. */
+.atlas-scenic{position:relative;isolation:isolate;background:#080e14;overflow:hidden;}
+.atlas-scene-art{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden;}
+.atlas-scene-art img{object-fit:cover;object-position:center;}
+.atlas-scene-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080e14,transparent 22%,transparent 78%,#080e1480);}
+.threshold .atlas-scene-caption{font-size:10px;line-height:1.6;color:#d9d3c7;text-shadow:0 1px 5px #000;margin:0;padding:12px 5.5% 20px;}
+/* Keep the signature cream chatbox's dimensions, appearance and behavior intact. */
+.threshold .atlas-chat-feature{background:#08172a;border-top:0;}
+.threshold .atlas-chat-feature>.atlas-scene-art{z-index:-2;}
+.threshold .atlas-chat-feature>.atlas-scene-art:after{background:linear-gradient(0deg,#080e14,transparent 18%,transparent 82%,#080e1499);}
+.threshold .atlas-chat-feature:before,.threshold .atlas-chat-feature:after{display:none;}
+.threshold .atlas-chat-feature .atlas-chat>div>div:first-child{text-shadow:0 2px 16px #000;}
+.threshold .atlas-chat-feature>.atlas-scene-caption{text-align:right;}
+/* Ephesus stays visible beside the practice links and selected project. */
+.atlas-ephesus .atlas-practice{max-width:1600px;min-height:660px;padding-left:30%;padding-right:5.5%;gap:5%;align-items:start;}
+.atlas-ephesus .atlas-practice>div:first-child{padding:24px;background:#080e14b8;border:1px solid #d9ac7933;border-radius:5px;}
+.atlas-ephesus .atlas-practice h2{font-size:clamp(30px,3vw,46px);}
+.atlas-ephesus .atlas-practice>div>p:not(.atlas-eyebrow){font-size:15px;color:#d0d4db;}
+.atlas-ephesus .atlas-practice-links{margin-top:22px;}
+.atlas-ephesus .atlas-practice-links a{gap:14px;padding:16px 0;}
+.atlas-ephesus .atlas-practice-links svg{width:32px;height:32px;}
+.atlas-ephesus .atlas-practice-links h3{font-size:19px;}
+.atlas-ephesus .atlas-practice-links p{font-size:12px;color:#c3cbd4;}
+.atlas-ephesus .atlas-project-window{background:#0a1422ed;border-color:#d9ac7977;padding:25px;}
+.atlas-ephesus .atlas-preview-top{color:#e0d4c1;background:#080e1499;}
+.atlas-ephesus .atlas-project-window h3{font-size:28px;}
+.atlas-ephesus .atlas-flow{gap:6px;padding:16px 0;margin:20px 0;}
+.atlas-ephesus .atlas-flow span{font-size:10px;padding:7px;}
+/* Great Wall workspace: show the landscape when closed, retain tools when expanded. */
+.atlas-workspace.atlas-scenic{max-width:none;padding:40px 0;min-height:400px;}
+.atlas-workspace>.atlas-scene-art{bottom:auto;height:520px;}
+.atlas-workspace>.atlas-scene-art:after{background:linear-gradient(90deg,#080e1480,transparent 65%),linear-gradient(0deg,#080e14,transparent 30%);}
+.atlas-workspace .atlas-workspace-heading{display:block;padding:30px;margin:0 5.5%;max-width:550px;background:#071320d9;border:1px solid #d9ac7970;border-radius:4px;}
+.atlas-workspace .atlas-workspace-heading h2{font-size:clamp(30px,3.4vw,44px);}
+.atlas-workspace .atlas-workspace-intro{font:16px/1.6 Georgia,serif;margin:16px 0;color:#d0d4db;}
+.atlas-workspace .atlas-workspace-heading>.atlas-button{margin-top:8px;}
+.atlas-workspace #tool-workspace{max-width:1320px;margin:30px auto 0;padding:0 5.5%;}
+/* Taj Mahal C: preserve all four projects as a compact responsive gallery. */
+.atlas-projects.atlas-scenic{max-width:none;padding-top:45px;padding-bottom:40px;}
+.atlas-projects>.atlas-scene-art{bottom:auto;height:clamp(500px,53vw,800px);}
+.atlas-projects>.atlas-scene-art:after{background:linear-gradient(0deg,#080e14,transparent 27%),linear-gradient(180deg,#080e1499,transparent 28%);}
+.atlas-projects .atlas-section-heading{position:relative;z-index:1;max-width:1175px;margin:auto;align-items:start;}
+.atlas-projects .atlas-section-heading h2{font-size:clamp(30px,3.4vw,46px);}
+.atlas-project-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;max-width:1320px;margin:340px auto 0;}
+.atlas-project-grid article{display:flex;flex-direction:column;gap:10px;padding:20px;border:1px solid #d9ac7977;border-radius:5px;background:#081422ed;min-width:0;}
+.atlas-project-grid .atlas-index{font-size:13px;}
+.atlas-project-grid article h3{font-size:21px;line-height:1.25;overflow-wrap:anywhere;}
+.atlas-project-grid article p{font-size:12px;line-height:1.7;margin:10px 0;}
+.atlas-project-grid article .atlas-eyebrow{font-size:9px;}
+.atlas-project-grid .atlas-project-status{margin-top:auto;padding-top:12px;border-top:1px solid #d9ac7944;align-items:flex-start;gap:9px;font-size:10px;}
+/* Barcelona A: keep the selected landmarks visible above biography and skills. */
+.atlas-about.atlas-scenic{display:block;max-width:none;padding-top:45px;padding-bottom:35px;}
+.atlas-about>.atlas-scene-art{bottom:auto;height:clamp(320px,33.33vw,680px);}
+.atlas-about>.atlas-scene-art:after{background:linear-gradient(0deg,#080e14,transparent 32%),linear-gradient(180deg,#080e1466,transparent 32%);}
+.atlas-about-heading{text-align:center;max-width:600px;margin:0 auto;position:relative;}
+.atlas-about-heading h2{font-size:clamp(32px,3.5vw,48px);}
+.atlas-about-content{display:grid;grid-template-columns:1fr 1fr;gap:45px;max-width:1175px;margin:150px auto 0;}
+.atlas-biography,.atlas-about-content .atlas-skills{background:#081422e8;border:1px solid #d9ac7944;padding:26px;border-radius:5px;}
+.atlas-biography p{margin:0;font-size:14px;line-height:1.85;}
+.atlas-about-content .atlas-skills{gap:22px;}
+.atlas-about-content .atlas-skills h3{font-size:18px;}
+.atlas-about-content .atlas-skills p{font-size:11px;}
+.atlas-about>.atlas-scene-caption{padding:20px 0 0;max-width:1175px;margin:auto;}
+@media(min-width:1600px){.atlas-project-grid{margin-top:400px;}.atlas-about-content{margin-top:220px;}}
+@media(max-width:1100px){.atlas-ephesus .atlas-practice{padding-left:24%;gap:3%;}.atlas-ephesus .atlas-practice>div:first-child{padding:18px;}.atlas-ephesus .atlas-project-window{padding:20px;}.atlas-project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.atlas-about-content{gap:22px;}}
+@media(max-width:760px){
+.threshold .atlas-chat-feature>.atlas-scene-art img{object-position:center;}
+.threshold .atlas-chat-feature>.atlas-scene-art:after{background:linear-gradient(0deg,#080e14,transparent 15%,transparent 85%,#080e1499);}
+.threshold .atlas-scene-caption{font-size:9px;padding:10px 6% 18px;}
+.atlas-ephesus>.atlas-scene-art{bottom:auto;height:380px;}
+.atlas-ephesus>.atlas-scene-art img{object-position:left center;}
+.atlas-ephesus .atlas-practice{padding:235px 6% 18px;gap:20px;min-height:0;}
+.atlas-ephesus .atlas-practice>div:first-child{padding:22px;}
+.atlas-ephesus .atlas-project-window{padding:24px;}
+.atlas-workspace.atlas-scenic{padding:30px 0 35px;min-height:450px;}
+.atlas-workspace>.atlas-scene-art{height:480px;}
+.atlas-workspace>.atlas-scene-art img{object-position:65% center;}
+.atlas-workspace .atlas-workspace-heading{margin:0 6%;padding:24px;}
+.atlas-workspace #tool-workspace{padding:0 6%;}
+.atlas-projects.atlas-scenic{padding-top:35px;}
+.atlas-projects>.atlas-scene-art{height:430px;}
+.atlas-projects>.atlas-scene-art img{object-position:center;}
+.atlas-projects .atlas-section-heading h2{font-size:34px;}
+.atlas-project-grid{grid-template-columns:1fr;margin-top:210px;gap:12px;}
+.atlas-project-grid article{padding:20px;}
+.atlas-project-grid article h3{font-size:22px;}
+.atlas-project-grid .atlas-project-status{grid-column:auto;flex-direction:row;justify-content:space-between;}
+.atlas-about.atlas-scenic{padding-top:35px;}
+.atlas-about>.atlas-scene-art{height:300px;}
+.atlas-about>.atlas-scene-art img{object-fit:contain;object-position:center bottom;}
+.atlas-about-heading{text-align:left;}
+.atlas-about-content{grid-template-columns:1fr;margin-top:175px;gap:18px;}
+.atlas-biography,.atlas-about-content .atlas-skills{padding:22px;}
+.atlas-about>.atlas-scene-caption{padding:18px 0 0;}
+}
+/* On smaller screens, show the full Maya panorama above the unchanged chatbox. */
+@media(max-width:1100px){.threshold .atlas-chat-feature>.atlas-scene-art{bottom:auto;height:510px;}.threshold .atlas-chat-feature>.atlas-scene-art img{object-fit:contain;object-position:center bottom;}.threshold .atlas-chat-feature .atlas-chat>div>div:first-child{min-height:320px;}}
+@media(max-width:760px){.threshold .atlas-chat-feature>.atlas-scene-art{height:340px;}.threshold .atlas-chat-feature .atlas-chat>div>div:first-child{min-height:250px;}}
+@media(max-width:760px){.atlas-projects .atlas-section-heading{padding:18px;background:linear-gradient(110deg,#080e14ed,#080e1488);border:1px solid #d9ac7944;border-radius:5px;}.atlas-projects .atlas-section-heading>a{color:#edc794;}.atlas-project-grid{margin-top:165px;}}
