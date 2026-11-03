@@ -680,3 +680,8 @@
 .eai-study-studio .exam-review-empty{padding-top:18px;}
 @media(max-width:700px){.eai-study-studio .exam-review-panel{padding:20px;}.eai-study-studio .exam-review-heading,.eai-study-studio .exam-review-item{align-items:flex-start;flex-direction:column;}.eai-study-studio .exam-review-heading h2{font-size:26px;}.eai-study-studio .exam-review-item>.goal-primary{max-width:100%;}.eai-study-studio .exam-review-item{padding:16px;}}
 .eai-study-studio .exam-answer-feedback .exam-review-breakthrough{border-left:3px solid #d9b979;background:#132a30;padding:16px;color:#e4eddf;}
+.eai-study-studio .lesson-check-evidence{border-left:2px solid #d9b97966;margin:20px 0;padding:12px 18px;background:#071725;color:#cad4dc;white-space:pre-wrap;overflow-wrap:anywhere;}
+.eai-study-studio .lesson-check-evidence>strong{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#d9b979;}
+.eai-study-studio .lesson-check-guiding{border:1px solid #d9b97955;padding:20px;margin-top:22px;background:#102333;border-radius:5px;}
+.eai-study-studio .lesson-check-guiding>strong{color:#e8c98b;}
+.eai-study-studio .lesson-check-guiding>.goal-primary{min-height:44px;padding:10px 16px;margin-top:14px;border:1px solid #d9b97966;background:#d9b979;color:#142231;border-radius:4px;}
