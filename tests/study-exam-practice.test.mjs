@@ -64,3 +64,38 @@ test('notebook conversion preserves source passage, selected reasoning, checked 
 test('optional account snapshots preserve exam histories and session drafts',()=>{
  const r=submit(start());const snapshot=snapshots.validateStudySnapshot({version:1,values:{[p.EXAM_PREP_KEY]:JSON.stringify(r)},library:{documents:[],entries:[]}});assert.deepEqual(p.readExamRecord(JSON.parse(snapshot.values[p.EXAM_PREP_KEY])),r);
 });
+
+const linearQuestions=bank.examBank.filter(q=>q.skill==='linear');
+function reviewAttempt(question=linearQuestions[0],patch={}){return {id:'review-a',exam:'sat',sessionId:'review-session',mode:'practice',questionId:question.id,selectedIndex:(question.answerIndex+1)%4,hintsUsed:0,reasoning:'An attempted method',submittedAt:now,...patch};}
+test('missed and helped answers schedule one next-day review per skill; skips do not',()=>{
+ const a=reviewAttempt(),helped=reviewAttempt(linearQuestions[1],{id:'helped',selectedIndex:linearQuestions[1].answerIndex,hintsUsed:1,submittedAt:now+10});
+ const reviews=p.examReviewProgress('sat',[a,helped],now+20);assert.equal(reviews.length,1);assert.equal(reviews[0].anchor.id,'helped');assert.equal(reviews[0].dueAt,now+10+86400000);assert.equal(reviews[0].resolvedBy,null);
+ assert.equal(p.examReviewProgress('sat',[{...a,selectedIndex:null}],now+20).length,0);assert.equal(p.examReviewProgress('psat',[a],now+20).length,0);assert.equal(p.examReviewProgress('sat',[a],now-1).length,0);
+});
+test('a review requires a later different question answered without hints',()=>{
+ const a=reviewAttempt(),same=reviewAttempt(linearQuestions[0],{id:'same',selectedIndex:linearQuestions[0].answerIndex,submittedAt:now+10}),different=reviewAttempt(linearQuestions[1],{id:'different',selectedIndex:linearQuestions[1].answerIndex,submittedAt:now+20});
+ assert.equal(p.examReviewProgress('sat',[a,same],now+30)[0].resolvedBy,null);
+ assert.equal(p.examReviewProgress('sat',[a,{...different,hintsUsed:1}],now+30)[0].resolvedBy,null);
+ assert.equal(p.examReviewProgress('sat',[a,{...different,submittedAt:now}],now+30)[0].resolvedBy,null);
+ assert.equal(p.examReviewProgress('sat',[{...different,submittedAt:now-1},a],now+30)[0].resolvedBy,null);
+ assert.equal(p.examReviewProgress('sat',[a,same,different,different],now+30)[0].resolvedBy.id,'different');
+ const regressed=reviewAttempt(linearQuestions[2],{id:'regression',submittedAt:now+40});assert.equal(p.examReviewProgress('sat',[a,different,regressed],now+50)[0].resolvedBy,null);
+});
+test('skill review uses a different original item, prioritizes unseen variants and preserves other profiles',()=>{
+ const a=reviewAttempt();let record={...start(p.emptyExamRecord(),'psat'),attempts:[a]};const before=structuredClone(record);
+ const reviewed=p.startExamReview(record,'sat','linear',now+1,'focused-review');
+ assert.deepEqual(record,before);assert.deepEqual(reviewed.sessions.psat,record.sessions.psat);assert.equal(reviewed.sessions.sat.mode,'practice');assert.ok(reviewed.sessions.sat.questionIds.length>0);
+ for(const id of reviewed.sessions.sat.questionIds){assert.notEqual(id,a.questionId);assert.equal(bank.examBank.find(q=>q.id===id).skill,'linear');}
+ assert.deepEqual(p.readExamRecord(JSON.parse(JSON.stringify(reviewed))),reviewed);
+ const seen=reviewAttempt(linearQuestions[1],{id:'already-seen',selectedIndex:linearQuestions[1].answerIndex,submittedAt:now-1});
+ assert.equal(p.startExamReview({...record,attempts:[seen,a]},'sat','linear',now+1,'review2').sessions.sat.questionIds[0],linearQuestions[2].id);
+ assert.throws(()=>p.startExamReview(record,'sat','missing',now+1,'bad'));
+ assert.throws(()=>p.startExamReview(record,'psat','linear',now+1,'wrong-profile'));
+ assert.throws(()=>p.startExamReview(record,'sat','linear',now-1,'future'));
+});
+test('a follow-up clears after a fresh independent answer without deleting the original attempt',()=>{
+ const anchor=reviewAttempt();let r=p.startExamReview({...p.emptyExamRecord(),attempts:[anchor]},'sat','linear',now+86400000,'review-now');
+ r=p.submitExamAnswer(choose(r),'sat',false,now+86400001,'fresh-result');const review=p.examReviewProgress('sat',r.attempts,now+86400002)[0];
+ assert.equal(review.resolvedBy.id,'fresh-result');assert.equal(r.attempts.length,2);assert.equal(r.attempts[0].id,anchor.id);
+ assert.throws(()=>p.startExamReview(r,'sat','linear',now+86400003,'completed'));
+});

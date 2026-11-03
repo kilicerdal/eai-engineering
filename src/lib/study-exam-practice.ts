@@ -91,3 +91,28 @@ export function examAttemptToMistake(attempt:ExamAttempt,now:number):Mistake{
  const question=[q.passage,q.prompt].filter(Boolean).join("\n\n");
  return {id:`exam-${a.id}`,exam:a.exam==="sat"?"SAT":"PSAT/NMSQT",question:question.slice(0,1200),answer:`Selected: ${q.choices[a.selectedIndex]}.${a.reasoning?` My reasoning: ${a.reasoning}`:""}`.slice(0,700),expected:`${q.choices[q.answerIndex]}. ${q.explanation}`.slice(0,700),reflection:`Original dAI practice, checked against its authored answer key. ${q.choiceNotes[a.selectedIndex]}\n${q.explanation}\nHints used: ${a.hintsUsed}.`,createdAt:a.submittedAt,reviewAt:now+86400000,reviews:0};
 }
+
+export type ExamReview={skill:ExamSkill;domain:ExamDomain;anchor:ExamAttempt;dueAt:number;resolvedBy:ExamAttempt|null};
+/** A supported/missed answer needs a different independently answered example, not a repeat of its key. */
+export function examReviewProgress(exam:ExamProfile,attempts:ExamAttempt[],now:number):ExamReview[]{
+ const history=normalizeExamAttempts(attempts).filter(a=>a.exam===exam&&a.submittedAt<=now),reviews:ExamReview[]=[];
+ for(const skill of Object.keys(examSkillLessons) as ExamSkill[]){
+  const items=history.filter(a=>examBank.find(q=>q.id===a.questionId)?.skill===skill);
+  const anchor=items.findLast(a=>{const q=examBank.find(q=>q.id===a.questionId)!;return a.selectedIndex!==null&&(a.selectedIndex!==q.answerIndex||a.hintsUsed>0);});
+  if(!anchor)continue;
+  const resolvedBy=items.find(a=>{const q=examBank.find(q=>q.id===a.questionId)!;return a.submittedAt>anchor.submittedAt&&a.questionId!==anchor.questionId&&a.selectedIndex===q.answerIndex&&a.hintsUsed===0;})||null;
+  reviews.push({skill,domain:examSkillLessons[skill].domain,anchor,dueAt:anchor.submittedAt+86400000,resolvedBy});
+ }
+ return reviews.sort((a,b)=>a.dueAt-b.dueAt||a.skill.localeCompare(b.skill));
+}
+export function startExamReview(record:ExamRecord,exam:ExamProfile,skill:ExamSkill,now:number,sessionId:string):ExamRecord{
+ if(!profile(exam)||!Object.hasOwn(examSkillLessons,skill)||!instant(now)||!id(sessionId))throw new Error("Choose a valid review skill.");
+ const review=examReviewProgress(exam,record.attempts,now).find(r=>r.skill===skill&&!r.resolvedBy);
+ if(!review)throw new Error("This skill has no pending review. Choose another area or refresh your practice.");
+ const latest=latestExamEvidence(exam,record.attempts,now);
+ const priority=(q:ExamBankQuestion)=>{const a=latest.get(q.id);return !a?0:a.selectedIndex===null?1:a.selectedIndex!==q.answerIndex?2:a.hintsUsed?3:4;};
+ const questionIds=examBank.filter(q=>q.skill===skill&&q.id!==review.anchor.questionId).sort((a,b)=>priority(a)-priority(b)||(latest.get(a.id)?.submittedAt||0)-(latest.get(b.id)?.submittedAt||0)).slice(0,2).map(q=>q.id);
+ if(!questionIds.length)throw new Error("There is no different reviewed question for this skill yet. Choose another area.");
+ const session:ExamSession={id:sessionId,mode:"practice",questionIds,index:0,startedAt:now,finished:false,selectedIndex:null,hintsUsed:0,reasoning:""};
+ return {...record,activeExam:exam,sessions:{...record.sessions,[exam]:session}};
+}

@@ -29,3 +29,12 @@ test('authored exam keys inform targeted recommendations without being labeled A
  const future={...record,attempts:record.attempts.map(a=>({...a,submittedAt:now+1}))};assert.equal(recommend(journey,[],[],now,future).kind,'lesson');
  assert.equal(recommend(journey,[],[],now,{version:99}).kind,'lesson');
 });
+
+test('fresh independent follow-up stops the original exam mistake being recommended repeatedly',()=>{
+ const p=load('study-exam-practice'),b=load('study-exam-bank'),questions=b.examBank.filter(q=>q.skill==='linear'),q=questions[0],other=questions[1];
+ const anchor={id:'missed',exam:'sat',sessionId:'session',mode:'practice',questionId:q.id,selectedIndex:(q.answerIndex+1)%4,hintsUsed:0,reasoning:'A method',submittedAt:now-86400001};
+ const record={...p.emptyExamRecord(),attempts:[anchor]};const result=recommend(journey,[],[],now,record);assert.equal(result.kind,'exam');assert.equal(result.skill,'linear');assert.match(result.reason,/due/);
+ const fresh={...anchor,id:'fresh',questionId:other.id,selectedIndex:other.answerIndex,submittedAt:now-1};assert.equal(recommend(journey,[],[],now,{...record,attempts:[anchor,fresh]}).kind,'lesson');
+ assert.equal(recommend(journey,[],[],now,{...record,attempts:[anchor,{...fresh,hintsUsed:1}]}).kind,'exam');
+ const same={...fresh,questionId:q.id,selectedIndex:q.answerIndex};assert.equal(recommend(journey,[],[],now,{...record,attempts:[anchor,same]}).kind,'exam');
+});

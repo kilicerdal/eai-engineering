@@ -2,13 +2,13 @@ import type { GoalLesson } from "./study-goal";
 import type { SavedJourney } from "./study-progress";
 import { normalizeMistakes } from "./study-exams";
 import { latestLessonCheck, type LessonCheck } from "./study-checkpoints";
-import {readExamRecord,examSkillEvidence,recommendedExamDomain} from "./study-exam-practice";
-import {examDomains,type ExamProfile,type ExamDomain} from "./study-exam-bank";
+import {readExamRecord,examReviewProgress} from "./study-exam-practice";
+import {examBank,examSkillLessons,type ExamProfile,type ExamDomain,type ExamSkill} from "./study-exam-bank";
 import { mistakePracticeContext } from "./study-mistake-practice";
 
 export type LearningRecommendation = {
  title: string; reason: string; action: string; check?: LessonCheck;
-} & ({kind: "lesson"; lesson: GoalLesson} | {kind: "notebook"; mistakeId: string} | {kind: "plan"} | {kind:"exam";exam:ExamProfile;domain:ExamDomain});
+} & ({kind: "lesson"; lesson: GoalLesson} | {kind: "notebook"; mistakeId: string} | {kind: "plan"} | {kind:"exam";exam:ExamProfile;domain:ExamDomain;skill?:ExamSkill});
 
 /** Transparent rules over saved evidence; never a score or an automatic completion. */
 export function recommendLearningStep(journey: SavedJourney | null, rawMistakes: unknown, checks: LessonCheck[], now: number, rawExamPractice:unknown=null): LearningRecommendation {
@@ -45,10 +45,12 @@ export function recommendLearningStep(journey: SavedJourney | null, rawMistakes:
  }
  try {
   if(rawExamPractice){
-   const practice=readExamRecord(rawExamPractice),exam=practice.activeExam,domain=recommendedExamDomain(exam,practice.attempts,now);
-   const skills=examSkillEvidence(exam,practice.attempts,now).filter(s=>s.domain===domain);
-   const missed=skills.reduce((n,s)=>n+s.needsPractice,0),helped=skills.reduce((n,s)=>n+s.helped,0);
-   if(missed||helped)candidates.push({priority:missed?15:35,time:0,recommendation:{kind:"exam",exam,domain,title:`Strengthen: ${examDomains[domain].name}`,reason:missed?`Your latest checked ${exam==="sat"?"SAT":"PSAT/NMSQT"} practice includes answers to revisit in this area. Work through the explanations, then try different original questions.`:"Your latest checked exam practice in this area included helped answers. A focused set can help you recall the method independently.",action:`Practice ${exam==="sat"?"SAT":"PSAT"} skills`}});
+   const practice=readExamRecord(rawExamPractice),exam=practice.activeExam;
+   const review=examReviewProgress(exam,practice.attempts,now).find(r=>!r.resolvedBy);
+   if(review){
+    const missed=review.anchor.selectedIndex!==examBank.find(q=>q.id===review.anchor.questionId)?.answerIndex;
+    candidates.push({priority:review.dueAt<=now?(missed?15:35):45,time:review.dueAt,recommendation:{kind:"exam",exam,domain:review.domain,skill:review.skill,title:`Revisit: ${examSkillLessons[review.skill].name}`,reason:review.dueAt<=now?"Your suggested review is due. Try a different question on this idea without hints; repeating the original answer does not complete this follow-up.":"Your last attempt on this idea needed another look or used help. A next-day review is suggested; you can try a different example sooner if you prefer.",action:`Review ${exam==="sat"?"SAT":"PSAT"} skill`}});
+   }
   }
  }catch{/* An unreadable exam record must never invent evidence or block other learning. */}
  candidates.sort((a,b)=>a.priority-b.priority||a.time-b.time);

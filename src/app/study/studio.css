@@ -662,3 +662,21 @@
 .eai-study-studio .exam-backup-preview{width:100%;padding:20px;background:#102236;border:1px solid #d9b97977;border-radius:6px;}
 .eai-study-studio .exam-backup-preview h3{font:23px Georgia,serif;color:#f2e6d0;}
 .eai-study-studio .exam-backup-preview button{margin-right:20px;}
+
+.eai-study-studio .exam-review-panel{scroll-margin-top:100px;border:1px solid #d9b97955;background:linear-gradient(120deg,#112236,#091725);border-radius:7px;padding:28px;margin:28px 0;}
+.eai-study-studio .exam-review-heading{display:flex;align-items:center;justify-content:space-between;gap:22px;}
+.eai-study-studio .exam-review-heading h2{font:30px/1.25 Georgia,serif;color:#f1e6d2;margin:10px 0;}
+.eai-study-studio .exam-review-heading>span{white-space:nowrap;color:#e3c389;font-size:13px;}
+.eai-study-studio .exam-review-panel>p{font-size:14px;line-height:1.8;color:#bfcbd5;max-width:850px;}
+.eai-study-studio .exam-review-list{display:grid;gap:12px;margin-top:22px;}
+.eai-study-studio .exam-review-item{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:20px;border:1px solid #d9b97933;background:#071521;border-radius:5px;}
+.eai-study-studio .exam-review-item[data-highlighted=true]{border-color:#e3c389;}
+.eai-study-studio .exam-review-item h3{font:22px/1.4 Georgia,serif;color:#f1e6d2;margin:7px 0;}
+.eai-study-studio .exam-review-item p{font-size:13px;color:#b5c2cf;line-height:1.7;max-width:570px;}
+.eai-study-studio .exam-review-item>.goal-primary{flex-shrink:0;max-width:240px;}
+.eai-study-studio .exam-review-panel>details{margin-top:20px;font-size:14px;line-height:1.8;}
+.eai-study-studio .exam-review-panel summary{cursor:pointer;min-height:44px;color:#e3c389;}
+.eai-study-studio .exam-review-evidence p{padding:12px 0;border-top:1px solid #d9b97922;color:#bfcbd5;}
+.eai-study-studio .exam-review-empty{padding-top:18px;}
+@media(max-width:700px){.eai-study-studio .exam-review-panel{padding:20px;}.eai-study-studio .exam-review-heading,.eai-study-studio .exam-review-item{align-items:flex-start;flex-direction:column;}.eai-study-studio .exam-review-heading h2{font-size:26px;}.eai-study-studio .exam-review-item>.goal-primary{max-width:100%;}.eai-study-studio .exam-review-item{padding:16px;}}
+.eai-study-studio .exam-answer-feedback .exam-review-breakthrough{border-left:3px solid #d9b979;background:#132a30;padding:16px;color:#e4eddf;}
