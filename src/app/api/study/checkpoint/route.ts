@@ -1,6 +1,6 @@
 import {NextRequest,NextResponse} from "next/server";
 import {protectAIRequest,logAIRequest} from "@/lib/ai-security";
-import {checkpointSystem,normalizeLessonContext,validateCheckQuestion,validateCheckFeedback} from "@/lib/study-checkpoints";
+import {checkpointSystem,freshNotebookLinearQuestion,normalizeLessonContext,validateCheckQuestion,validateCheckFeedback} from "@/lib/study-checkpoints";
 export const maxDuration=60;
 export async function POST(request:NextRequest){
  const started=Date.now();
@@ -18,6 +18,10 @@ export async function POST(request:NextRequest){
  let question;
  try{if(input.action!=="question")question=validateCheckQuestion(input.question);}catch{return reply({error:"The practice question is incomplete."},400);}
  if(input.action==="review"&&(typeof input.answer!=="string"||!input.answer.trim()||input.answer.length>2500))return reply({error:"Share your answer and reasoning in up to 2,500 characters."},400);
+ if(input.action==="question"){
+  const reviewed=freshNotebookLinearQuestion(context,typeof input.previousQuestion==="string"?input.previousQuestion:"");
+  if(reviewed)return reply({question:reviewed},200);
+ }
  const account=process.env.CLOUDFLARE_ACCOUNT_ID,token=process.env.CLOUDFLARE_API_TOKEN;
  if(!account||!token)return reply({error:"The AI service is not configured."},503);
  const task=input.action==="question"?'Create ONE self-contained original question. Do not reuse a worked example or solved question present in recentWork. Return {"question":"...","criterion":"the skill/reasoning to demonstrate, with no answer or solution"}. Do not include the answer.':input.action==="hint"?'Return {"hint":"one small next-step hint without the answer"}.':'Review the actual answer and reasoning. First determine whether the ORIGINAL question and necessary context are sufficient to verify an answer. If a referenced poem, passage, figure or dataset was not supplied, canVerify MUST be false; do not blame the student or infer an incorrect answer. Return {"canVerify":true,"decision":"meets|partial|needs_work|uncertain","feedback":"specific explanation grounded in the student attempt","reasoningGap":"first gap or None identified in this attempt","nextStep":"one useful next learning step"}. Do not infer whether help was used; that is recorded separately.';

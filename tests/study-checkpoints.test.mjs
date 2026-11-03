@@ -25,7 +25,7 @@ test('question, hint and review each return validated distinct payloads',async()
 test('insufficient source context cannot be saved as a failed or successful answer',async()=>{const response=await route(async()=>upstream({...record.result,canVerify:false,decision:'needs_work'}))(req({action:'review',context,question:record.question,answer:record.answer}));const data=await response.json();assert.equal(response.status,200);assert.equal(data.result.decision,'uncertain');assert.match(data.result.feedback,/not evidence that your answer is incorrect/);});
 
  test('notebook context uses the guarded checkpoint route with original reasoning and fresh-question instructions',async()=>{
- const mistake={id:'notebook-original',exam:'SAT',question:'Solve 3x + 4 = 19.',answer:'I got x=23.',expected:'',reflection:'Check inverse operations.'};
+ const mistake={id:'notebook-original',exam:'SAT',question:'Explain how to isolate a variable in an equation.',answer:'I got x=23.',expected:'',reflection:'Check inverse operations.'};
  const notebookContext=mistakePracticeContext(mistake);let sent;
  const handler=route(async(_url,options)=>{sent=JSON.parse(options.body);return upstream(record.question);});
  const response=await handler(req({action:'question',context:notebookContext,recentWork:mistakePracticeEvidence(mistake)}));
@@ -37,4 +37,14 @@ test('checkpoint instructions separate currency from math and assess the actual 
  assert.match(c.checkpointSystem,/never use a dollar sign as a currency symbol/);
  assert.match(c.checkpointSystem,/question and its criterion agree/);
  assert.match(c.checkpointSystem,/actual problem, not a mistaken criterion/);
+});
+
+test('reviewed notebook linear practice bypasses generation, preserves guards, and does not reveal a solution',async()=>{
+ const context=mistakePracticeContext({id:'linear',exam:'SAT',question:'Solve 3x + 4 = 19.'});
+ const handler=route(async()=>assert.fail('reviewed question should not call model generation'));
+ const response=await handler(req({action:'question',context}));assert.equal(response.status,200);const {question}=await response.json();
+ assert.match(question.question,/Solve/);assert.doesNotMatch(question.question,/x\s*=\s*\d+\s*\)/);
+ assert.notEqual(question.question,context.goal);
+ const blocked=route(async()=>assert.fail('rate limited'),Response.json({error:'limit'},{status:429}));
+ assert.equal((await blocked(req({action:'question',context}))).status,429);
 });

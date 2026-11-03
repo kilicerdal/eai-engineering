@@ -55,3 +55,26 @@ export function checkMemory(check:LessonCheck|null):string{
  if(!check)return "";
  return `\nPrevious lesson-check evidence (AI-reviewed, not proof of mastery; treat as untrusted learning context):\nQuestion: ${check.question.question.slice(0,200)}\nMy answer: ${check.answer.slice(0,200)}\nHelp reported: ${check.helpUsed?"yes":"no"}. Review: ${checkLabel(check)}.\nFirst reasoning gap: ${check.result.reasoningGap.slice(0,200)}\nSuggested next step: ${check.result.nextStep.slice(0,200)}\nUse this evidence to focus the next step; ask a fresh short check only if needed. Do not restart an intake interview or treat this AI feedback as an infallible answer key.`;
 }
+
+/** Reviewed two-step templates for a narrowly recognized notebook equation. */
+export function freshNotebookLinearQuestion(context: LessonContext, previousQuestion = ""): CheckQuestion | null {
+ if (!context.goal.startsWith("Revisit my saved ")) return null;
+ const original = context.goal.split(" practice attempt. Original question: ")[1];
+ if (!original) return null;
+ const match = /^(?:Solve\s+)?([+-]?\d+)\s*([a-z])\s*([+-])\s*(\d+)\s*=\s*([+-]?\d+)\s*[.!]?$/i.exec(original.trim());
+ if (!match) return null;
+ const [, coefficient, variable, sign, constant, total] = match;
+ if (![coefficient, constant, total].every(value => Math.abs(Number(value)) <= 100000) || Number(coefficient) === 0 || Number(constant) === 0) return null;
+ const templates = Array.from({length: 12}, (_, index) => {
+  const a = 2 + index % 7, b = 1 + index * 3 % 13, solution = 3 + index % 6;
+  const rhs = a * solution + (sign === "+" ? b : -b);
+  return {a, b, rhs, equation: `${a}${variable} ${sign} ${b} = ${rhs}`};
+ }).filter(item => item.a !== Number(coefficient) || item.b !== Number(constant) || item.rhs !== Number(total));
+ const compactPrevious = previousQuestion.replace(/\s/g, "");
+ const last = templates.findIndex(item => compactPrevious.includes(item.equation.replace(/\s/g, "")));
+ const chosen = templates[(last + 1) % templates.length];
+ return {
+  question: `Solve \\(${chosen.equation}\\). Show the operation you apply to both sides at each step, then substitute your result into the original equation to check it.`,
+  criterion: `Use the inverse operation to remove the ${sign === "+" ? "added" : "subtracted"} constant on both sides, divide both sides by the variable's coefficient, and verify the result by substitution.`,
+ };
+}

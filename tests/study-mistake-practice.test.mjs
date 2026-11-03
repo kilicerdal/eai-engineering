@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mistakePracticeContext,mistakePracticeEvidence} from '../src/lib/study-mistake-practice.ts';
-import {normalizeLessonContext,lessonIdentity,latestLessonCheck,normalizeLessonChecks,checkLabel} from '../src/lib/study-checkpoints.ts';
+import {freshNotebookLinearQuestion,normalizeLessonContext,lessonIdentity,latestLessonCheck,normalizeLessonChecks,checkLabel} from '../src/lib/study-checkpoints.ts';
 import {validateStudySnapshot,STUDY_KEYS} from '../src/lib/study-cloud-snapshot.ts';
 const mistake={id:'sample-1',exam:'SAT',question:'Solve 3x + 4 = 19.',answer:'I subtracted 4 and got 3x = 23.',expected:'Subtracting 4 gives 3x = 15.',reflection:'Check equivalent operations.',createdAt:1000,reviewAt:2000,reviews:0};
 const context=mistakePracticeContext(mistake);
@@ -38,4 +38,19 @@ test('notebook follow-up checks use the existing optional cloud snapshot key',()
  assert.ok(STUDY_KEYS.includes('eai-lesson-checks-v1'));
  const snapshot=validateStudySnapshot({version:1,values:{'eai-lesson-checks-v1':JSON.stringify([record])},library:{documents:[],entries:[]}});
  assert.equal(normalizeLessonChecks(JSON.parse(snapshot.values['eai-lesson-checks-v1']))[0].context.lesson.id,mistake.id);
+});
+
+test('reviewed two-step questions have coherent arithmetic, change the example, and avoid the latest question',()=>{
+ for(const source of ['Solve 3x + 4 = 19.','Solve 5y - 7 = 28.']){
+  const context=mistakePracticeContext({...mistake,question:source});let previous='';const seen=new Set();
+  for(let i=0;i<12;i++){
+   const next=freshNotebookLinearQuestion(context,previous);assert.ok(next);assert.notEqual(next.question,previous);seen.add(next.question);
+   const m=/\\\((\d+)([a-z]) ([+-]) (\d+) = (-?\d+)\\\)/.exec(next.question);assert.ok(m);
+   const a=Number(m[1]),b=Number(m[4])*(m[3]==='+'?1:-1),rhs=Number(m[5]);const x=(rhs-b)/a;assert.ok(Number.isInteger(x));assert.equal(a*x+b,rhs);
+   previous=next.question;
+  }
+  assert.ok(seen.size>=10);
+ }
+ for(const question of ['Solve 0x + 4 = 19.','Solve 3x + 0 = 19.','A word problem with missing data','Solve x*x + 2 = 4.'])assert.equal(freshNotebookLinearQuestion(mistakePracticeContext({...mistake,question})),null);
+ assert.equal(freshNotebookLinearQuestion({...context,goal:'An ordinary lesson'}),null);
 });
