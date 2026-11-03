@@ -110,14 +110,19 @@ export default function Home() {
    <span className="atlas-chapter">THE THRESHOLD</span>
    <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
-    <a className="atlas-chat-nav" href="#ai-assistant" aria-current={navSection === "ai-assistant" ? "location" : undefined}>Chat with eAI</a><a href="#platform" aria-current={navSection === "platform" ? "location" : undefined}>Platform</a><a href="#engineering" aria-current={navSection === "engineering" ? "location" : undefined}>Engineering</a><a href="/study">dAI Learning Studio</a><a href="#projects" aria-current={navSection === "projects" ? "location" : undefined}>Projects</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
+    <a className="atlas-chat-nav" href="#ai-assistant" aria-current={navSection === "ai-assistant" ? "location" : undefined}>Chat with eAI</a><a href="#platform" aria-current={navSection === "platform" ? "location" : undefined}>Platform</a><a href="#engineering" aria-current={navSection === "engineering" ? "location" : undefined}>Engineering</a><a href="#projects" aria-current={navSection === "projects" ? "location" : undefined}>Projects</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
    </nav>
+   <a className="atlas-dai-entry" href="/study" aria-label="Explore dAI Learning Studio">Explore dAI <span aria-hidden="true">→</span></a>
   </header>
   <section className="atlas-hero" aria-labelledby="hero-title">
    <Image src="/images/threshold/gobekli-future.webp" alt="" fill preload sizes="100vw" className="atlas-landscape" />
    <div className="atlas-hero-shade"/>
-   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p>Meet your AI engineering assistant. Bring a question, explore an idea,<br className="desktop-break"/> or work through a challenge in coding, testing and cloud engineering.</p><div className="atlas-actions"><a className="atlas-button primary" href="#ai-assistant">Chat with eAI <span>→</span></a><a className="atlas-button" href="/study">Enter dAI Learning Studio</a></div></div>
+   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p>Meet your AI engineering assistant. Bring a question, explore an idea,<br className="desktop-break"/> or work through a challenge in coding, testing and cloud engineering.</p><div className="atlas-actions"><a className="atlas-button primary" href="#ai-assistant">Chat with eAI <span>→</span></a></div></div>
    <p className="atlas-caption">Göbekli Tepe, Türkiye · An imagined bridge to tomorrow</p>
+  </section>
+  <section className="atlas-dai-invitation" aria-labelledby="dai-invitation-title">
+   <div className="atlas-dai-art"><Image src="/images/study/library-horizon.webp" alt="" fill sizes="(max-width: 760px) 100vw, 44vw" /></div>
+   <div className="atlas-dai-copy"><p className="atlas-eyebrow">dAI LEARNING STUDIO</p><h2 id="dai-invitation-title">Turn curiosity into understanding.</h2><p>Learn with an AI tutor, work from your materials, and prepare with purpose.</p><ul aria-label="Learning Studio features"><li>Personal learning plans</li><li>AI tutoring</li><li>Exam preparation</li></ul><a className="atlas-button primary" href="/study">Explore the Learning Studio <span aria-hidden="true">→</span></a><p className="atlas-dai-note">Start without an account.</p></div>
   </section>
   <div className="atlas-chat-feature"><AtlasBackdrop scene="maya"/><ResumeChat /><p className="atlas-scene-caption">Maya landmarks · An imagined bridge to the future</p></div>
   <section className="atlas-rail" aria-label="Explore eAI">
