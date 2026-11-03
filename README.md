@@ -2,7 +2,7 @@
 
 ### AI-Powered Software Quality & Learning Platform
 
-**EAI Engineering** is an independent AI engineering project created by **Erdal Kilic**, Senior SDET | QA Automation Lead | AI Automation Engineer.
+**EAI Engineering** is an independent AI engineering project created by **Erdal Kilic**, Senior SDET | QA Automation Engineer.
 
 The platform demonstrates practical applications of artificial intelligence, software quality engineering, and modern full-stack development.
 
@@ -29,16 +29,17 @@ An AI-powered writing environment featuring:
 
 **Live Demo:** https://www.eai.engineering/study/writing
 
-### AI-Powered QA Engineering Tools
+### Engineering AI Assistant
 
-Engineering utilities focused on:
+An AI assistant for coding, debugging, testing, code review, and AWS questions, with conversation controls and formatted code responses.
 
-- AI-assisted test generation
-- Test code improvement
-- Failure analysis and classification
-- Test quality validation
-- Test coverage intelligence
-- CI and repository health monitoring
+### Learning Studio
+
+AI tutoring, learning plans, linked study materials, lesson checks, and a mistake notebook.
+
+### Quality Engineering Roadmap
+
+AI-assisted test generation, failure analysis, coverage intelligence, and repository health workflows are areas of ongoing development. Their inclusion in the roadmap does not imply a finished enterprise testing product.
 
 ---
 
@@ -48,8 +49,8 @@ Engineering utilities focused on:
 |---|---|
 | Frontend | Next.js, React, TypeScript, Tailwind CSS |
 | AI Integration | Cloudflare Workers AI |
-| Backend | Next.js API Routes |
-| Quality | ESLint, TypeScript, production build validation |
+| Backend | Next.js API Routes, Supabase |
+| Quality | Node.js test runner, ESLint, TypeScript, production build validation |
 | Version Control | Git, GitHub |
 | Deployment | Vercel |
 
@@ -103,6 +104,7 @@ Start the development server:
 
 Run quality checks:
 
+    npm run test:study
     npm run lint
     npm run build
 
@@ -120,6 +122,10 @@ Current priorities:
 - Enhancing academic writing feedback
 - Expanding AI-powered quality engineering tools
 - Improving application usability and performance
+
+## Personal Contribution
+
+I design, develop, and maintain the interface, server-side AI integrations, conversation controls, and learning workflows. I also maintain automated regression checks and deployment through GitHub and Vercel.
 
 ## Connect
 
