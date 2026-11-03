@@ -1,6 +1,6 @@
 "use client";
 import { accountConfigured } from "@/lib/study-account";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import StudyLandmark from "@/components/StudyLandmark";
 import ReactMarkdown from "react-markdown";
@@ -10,17 +10,35 @@ import "katex/dist/katex.min.css";
 import { normalizeStudyMath } from "@/lib/study-markdown";
 import { buildExamGoal, differentQuestionPrompt, examProfiles, mistakeReviewPrompt, nextMistakeReview, normalizeMistakes, type Mistake } from "@/lib/study-exams";
 import { readStudyStream } from "@/lib/study-stream";
+import LessonCheckpoint from "@/components/LessonCheckpoint";
+import { mistakePracticeContext, mistakePracticeEvidence } from "@/lib/study-mistake-practice";
 const KEY="eai-exam-mistakes-v1";
+function NotebookPractice({mistake}:{mistake:Mistake}) {
+ const {id,exam,question}=mistake;
+ const context=useMemo(()=>mistakePracticeContext({id,exam,question}),[id,exam,question]);
+ return <LessonCheckpoint context={context} sessionId={`notebook-${mistake.id}`} recentWork={mistakePracticeEvidence(mistake)} kind="notebook"/>;
+}
 export default function ExamPreparation(){
  const [examId,setExamId]=useState("sat"),[examName,setExamName]=useState(""),[focus,setFocus]=useState(""),[date,setDate]=useState("");
  const [question,setQuestion]=useState(""),[answer,setAnswer]=useState(""),[expected,setExpected]=useState("");
  const [mistakes,setMistakes]=useState<Mistake[]>([]),[active,setActive]=useState(""),[ready,setReady]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(""),[warning,setWarning]=useState("");
+ const [practiceId,setPracticeId]=useState("");
  const [draft,setDraft]=useState(""),[now,setNow]=useState(0);
  const abort=useRef<AbortController|null>(null);
  const profile=examProfiles.find(p=>p.id===examId)!;
  useEffect(()=>{let saved:Mistake[]=[];try{saved=normalizeMistakes(JSON.parse(localStorage.getItem(KEY)||"[]"));}catch{queueMicrotask(()=>setWarning("Browser saving is unavailable. Keep this page open to use your notebook."));}queueMicrotask(()=>{setMistakes(saved);setActive(saved[0]?.id||"");setNow(Date.now());setReady(true);});const timer=setInterval(()=>setNow(Date.now()),60000);return()=>{clearInterval(timer);abort.current?.abort();};},[]);
  useEffect(()=>{if(!ready)return;try{localStorage.setItem(KEY,JSON.stringify(mistakes));window.dispatchEvent(new Event("eai-study-progress-change"));}catch{setWarning("Your notebook could not be saved. Keep this page open and copy important notes.");}},[mistakes,ready]);
  useEffect(()=>{function reload(){try{const saved=normalizeMistakes(JSON.parse(localStorage.getItem(KEY)||"[]"));setMistakes(saved);setActive(id=>saved.some(item=>item.id===id)?id:saved.at(-1)?.id||"");setNow(Date.now());}catch{setWarning("The saved notebook update could not be read.");}}window.addEventListener("eai-study-notebook-update",reload);return()=>window.removeEventListener("eai-study-notebook-update",reload);},[]);
+ useEffect(()=>{
+  function openPractice(event:Event){
+   const id=(event as CustomEvent).detail?.id;
+   if(typeof id!=="string"||!mistakes.some(item=>item.id===id))return;
+   setActive(id);setPracticeId(id);
+   requestAnimationFrame(()=>document.getElementById("mistake-understanding-check")?.scrollIntoView({behavior:"smooth",block:"start"}));
+  }
+  window.addEventListener("eai-study-notebook-practice",openPractice);
+  return()=>window.removeEventListener("eai-study-notebook-practice",openPractice);
+ },[mistakes]);
  function plan(){try{const data=buildExamGoal({examId,examName,focus,date});window.dispatchEvent(new CustomEvent("eai-learning-goal",{detail:data}));setError("");document.getElementById("learning-goal")?.scrollIntoView({behavior:"smooth"});}catch(e){setError(e instanceof Error?e.message:"Describe your exam focus.");}}
  function tutor(){try{const data=buildExamGoal({examId,examName,focus,date});window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"exam",title:`${examId==="other"?examName:profile.name} practice`,goal:data.goal,level:data.level,approach:"practice",message:`${data.goal}\nStart with one original practice question focused on ${focus}. Ask for any missing course or exam variant first. Wait for my answer, then explain my reasoning gaps. Do not claim to simulate official scoring or test conditions.`}}));document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth"});setError("");}catch(e){setError(e instanceof Error?e.message:"Describe your exam focus.");}}
  function save(){if(!question.trim()||!answer.trim())return;if(mistakes.length>=50){setError("Your notebook has 50 entries. Remove an entry before adding another.");return;}const m:Mistake={id:crypto.randomUUID(),exam:examId==="other"?examName.trim()||"My exam":profile.name,question:question.trim(),answer:answer.trim(),expected:expected.trim(),reflection:"",createdAt:Date.now(),reviewAt:Date.now()+86400000,reviews:0};setMistakes(items=>[m,...items]);setActive(m.id);setQuestion("");setAnswer("");setExpected("");setError("");}
@@ -49,7 +67,7 @@ export default function ExamPreparation(){
   <div className="goal-actions"><button className="goal-primary" disabled={busy} onClick={()=>void explain(entry)}>{busy?"Reviewing your reasoning…":entry.reflection?"Review my reasoning again":"Help me understand this mistake"}</button>{busy&&<button onClick={()=>abort.current?.abort()}>Cancel review</button>}</div>
   {(draft||entry.reflection)&&<div className="exam-reflection" aria-live="polite"><ReactMarkdown skipHtml remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={{a:({children})=><span>{children}</span>,img:()=>null}}>{normalizeStudyMath(draft||entry.reflection)}</ReactMarkdown></div>}
   <details><summary>Edit my learning notes</summary><label className="goal-label">My learning notes<textarea aria-label="My learning notes" rows={5} maxLength={14000} value={entry.reflection} disabled={busy} onChange={e=>setMistakes(items=>items.map(m=>m.id===entry.id?{...m,reflection:e.target.value}:m))}/></label></details>
-  <div className="goal-actions"><button disabled={busy} onClick={()=>retry(entry)}>Try a different question ↗</button><button disabled={busy} onClick={()=>{setMistakes(items=>items.map(m=>m.id===entry.id?nextMistakeReview(m,Date.now()):m));setNow(Date.now());}}>I reviewed this · schedule again</button><button disabled={busy} onClick={()=>{setMistakes(items=>items.filter(m=>m.id!==entry.id));setActive(mistakes.find(m=>m.id!==entry.id)?.id||"");}}>Remove entry</button></div><p className="goal-helper">Reviews are suggested after 1, 3, 7, then 14 days, based on your own review marks. Return here to see what is due; no notifications or mastery scores are created. AI feedback can be wrong—check your source or answer key.</p></>:<><h3>A mistake is a starting point.</h3><p className="goal-overview">Save an attempt to inspect the reasoning, identify a missing idea, and revisit it with a different question.</p><p className="goal-helper">Up to 50 entries, saved in this browser. Clearing browser data removes the local copy. {accountConfigured ? <a href="/study/account">Choose optional account saving ↗</a> : "Account sync is not available."}</p></>}</div></div></div>
+  <div className="goal-actions"><button className="goal-primary" disabled={busy} onClick={()=>setPracticeId(entry.id)}>Practice and check this idea</button><button disabled={busy} onClick={()=>retry(entry)}>Explore this with my tutor ↗</button><button disabled={busy} onClick={()=>{setMistakes(items=>items.map(m=>m.id===entry.id?nextMistakeReview(m,Date.now()):m));setNow(Date.now());}}>I reviewed this · schedule again</button><button disabled={busy} onClick={()=>{setMistakes(items=>items.filter(m=>m.id!==entry.id));setActive(mistakes.find(m=>m.id!==entry.id)?.id||"");}}>Remove entry</button></div><p className="goal-helper">Reviews are suggested after 1, 3, 7, then 14 days, based on your own review marks. Return here to see what is due; no notifications or mastery scores are created. AI feedback can be wrong—check your source or answer key.</p>{practiceId===entry.id&&<NotebookPractice key={entry.id} mistake={entry}/>}</>:<><h3>A mistake is a starting point.</h3><p className="goal-overview">Save an attempt to inspect the reasoning, identify a missing idea, and revisit it with a different question.</p><p className="goal-helper">Up to 50 entries, saved in this browser. Clearing browser data removes the local copy. {accountConfigured ? <a href="/study/account">Choose optional account saving ↗</a> : "Account sync is not available."}</p></>}</div></div></div>
   {error&&<p className="goal-error" role="alert">{error}</p>}
   <p className="goal-footnote">Want a short checked exercise? <Link href="/study/practice">Open foundational practice ↗</Link> · Limited to the existing four-track bank; not an exam simulation.</p>
  </section>;

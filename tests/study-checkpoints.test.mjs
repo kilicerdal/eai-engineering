@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import * as c from '../src/lib/study-checkpoints.ts';
+import {mistakePracticeContext,mistakePracticeEvidence} from '../src/lib/study-mistake-practice.ts';
 const require=createRequire(import.meta.url),ts=require('typescript');
 const lesson={id:'lesson-1',title:'Balance equations',objective:'Isolate the variable.',activity:'Work through a new equation.',checkpoint:'Explain the same operation on both sides.',sourceIds:[]};
 const context={goal:'Understand linear algebra foundations',lesson},now=1700000000000;
@@ -22,3 +23,12 @@ test('rate-limited and oversized requests never call the provider',async()=>{con
 test('question, hint and review each return validated distinct payloads',async()=>{assert.deepEqual(await (await route(async()=>upstream(record.question))(req({action:'question',context}))).json(),{question:record.question});assert.deepEqual(await (await route(async()=>upstream({hint:'Undo the added constant on both sides.'}))(req({action:'hint',context,question:record.question}))).json(),{hint:'Undo the added constant on both sides.'});assert.deepEqual(await (await route(async()=>upstream({...record.result,canVerify:true}))(req({action:'review',context,question:record.question,answer:record.answer}))).json(),{result:record.result});});
 
 test('insufficient source context cannot be saved as a failed or successful answer',async()=>{const response=await route(async()=>upstream({...record.result,canVerify:false,decision:'needs_work'}))(req({action:'review',context,question:record.question,answer:record.answer}));const data=await response.json();assert.equal(response.status,200);assert.equal(data.result.decision,'uncertain');assert.match(data.result.feedback,/not evidence that your answer is incorrect/);});
+
+ test('notebook context uses the guarded checkpoint route with original reasoning and fresh-question instructions',async()=>{
+ const mistake={id:'notebook-original',exam:'SAT',question:'Solve 3x + 4 = 19.',answer:'I got x=23.',expected:'',reflection:'Check inverse operations.'};
+ const notebookContext=mistakePracticeContext(mistake);let sent;
+ const handler=route(async(_url,options)=>{sent=JSON.parse(options.body);return upstream(record.question);});
+ const response=await handler(req({action:'question',context:notebookContext,recentWork:mistakePracticeEvidence(mistake)}));
+ assert.equal(response.status,200);
+ const content=JSON.parse(sent.messages[1].content);assert.equal(content.context.lesson.id,mistake.id);assert.match(content.recentWork,/x=23/);assert.match(content.context.lesson.activity,/changed values or context/);assert.match(sent.messages[0].content,/Do not include the answer/);
+});
