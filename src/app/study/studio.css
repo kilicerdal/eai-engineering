@@ -711,3 +711,14 @@
 .eai-study-studio .material-review-list button{margin-top:12px;}
 .eai-study-studio .lesson-check-evidence>button{color:#e0c58f;min-height:44px;padding:10px 0;font-size:13px;}
 @media(max-width:700px){.eai-study-studio .selected-study-passage,.eai-study-studio .material-explanation-style,.eai-study-studio .material-passage-practice,.eai-study-studio .material-review-list{margin:16px 12px;}.eai-study-studio .material-review-list{padding:18px 0;}}
+
+.eai-study-studio .tutor-continuity-note{display:block;margin-top:22px;font-size:13px;color:#d6c8ae;line-height:1.8;}
+.eai-study-studio .tutor-continuity-note textarea{display:block;width:100%;resize:vertical;min-height:90px;margin-top:10px;padding:12px;background:#071521;color:#e6e5dd;border:1px solid #d9b97955;border-radius:4px;font-size:16px;line-height:1.8;}
+.eai-study-studio .tutor-continuity-choice{display:flex;align-items:flex-start;gap:12px;margin-top:18px;font-size:13px;line-height:1.8;color:#d6dfe3;}
+.eai-study-studio .tutor-continuity-choice input{margin-top:6px;accent-color:#d9b979;}
+.eai-study-studio .tutor-continuity-fine{font-size:12px;color:#aebbc5;line-height:1.8;margin-top:12px;}
+.eai-study-studio .tutor-continuity-preview{border-bottom:1px solid #d9b97933;padding:0 24px;font-size:13px;color:#bdcbd5;line-height:1.8;}
+.eai-study-studio .tutor-continuity-preview summary{min-height:44px;display:list-item;padding:12px 0;cursor:pointer;color:#d9c08b;}
+.eai-study-studio .tutor-continuity-preview>div{border-left:2px solid #d9b97944;padding:12px 16px;margin:15px 0;background:#102232;}
+.eai-study-studio .tutor-continuity-preview p{white-space:pre-wrap;overflow-wrap:anywhere;margin:9px 0;}
+.eai-study-studio .tutor-continuity-preview strong{color:#e6d7b7;}

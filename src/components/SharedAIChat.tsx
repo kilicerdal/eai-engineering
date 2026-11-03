@@ -9,7 +9,9 @@ import {
 } from "react";
 
 import LessonCheckpoint from "@/components/LessonCheckpoint";
-import { normalizeLessonContext, type LessonContext } from "@/lib/study-checkpoints";
+import {CHECK_KEY,latestLessonCheck,normalizeLessonChecks,checkLabel,checkReviewMethod,type LessonCheck, normalizeLessonContext, type LessonContext } from "@/lib/study-checkpoints";
+import {normalizeStudyConversations,earlierStudyContext,type StudyConversation} from "@/lib/study-continuity";
+import {readSavedArray,writeStudyCopy} from "@/lib/study-safe-storage";
 import StudyGlyph from "@/components/StudyGlyph";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -19,7 +21,7 @@ import "katex/dist/katex.min.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import { defaultLearningProfile, learningLevels, learningApproaches, normalizeLearningProfile, normalizeSavedStudyMessages, type LearningProfile } from "@/lib/study-tutor";
+import { defaultLearningProfile, learningLevels, learningApproaches, normalizeSavedStudyMessages, type LearningProfile } from "@/lib/study-tutor";
 import { readStudyStream } from "@/lib/study-stream";
 import { normalizeStudyMath } from "@/lib/study-markdown";
 
@@ -30,15 +32,7 @@ type Message = {
 
 type Mode = "general" | "math" | "science" | "writing" | "history" | "coding" | "exam" | "engineering";
 
-type Conversation = {
-  id: string;
-  title: string;
-  mode: Mode;
-  messages: Message[];
-  updatedAt: number;
-  learning: LearningProfile;
-  checkpoint?: LessonContext;
-};
+type Conversation = StudyConversation;
 
 const STORAGE_KEY = "eai-study-conversations-v1";
 const OLD_STORAGE_KEY = "eai-study-chat-legacy";
@@ -113,6 +107,8 @@ function createConversation(mode: Mode = "general"): Conversation {
     learning: { ...defaultLearningProfile },
   };
 }
+
+function readCurrentContinuityCheck(context:LessonContext,goal=""){if(goal.trim()&&goal.trim()!==context.goal.trim().slice(0,300))return null;return latestLessonCheck(context,readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items,Date.now());}
 
 function CodeBlock({
   language,
@@ -244,8 +240,10 @@ export default function SharedAIChat() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [hydrated, setHydrated] = useState(false);
-  const [requestError, setRequestError] = useState<{ id: string; message: string } | null>(null);
+  const [requestError, setRequestError] = useState<{ id: string; message: string;retry?:boolean } | null>(null);
 
+  const [storageWarning,setStorageWarning]=useState(""),[savedCheck,setSavedCheck]=useState<LessonCheck|null>(null);
+  const savedCopy=useRef<string|null>(null),saveEnabled=useRef(true);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -253,21 +251,13 @@ export default function SharedAIChat() {
     let initial: Conversation[] = [];
 
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
+      const saved = localStorage.getItem(STORAGE_KEY);savedCopy.current=saved;
 
-      if (saved) {
+      if (saved!==null) {
         const parsed: unknown = JSON.parse(saved);
 
-        if (Array.isArray(parsed)) {
-          initial = parsed.filter(
-            (item): item is Conversation =>
-              item &&
-              typeof item.id === "string" &&
-              typeof item.title === "string" &&
-              Array.isArray(item.messages) &&
-              ["general", "math", "science", "writing", "history", "coding", "exam", "engineering"].includes(item.mode)
-          ).map((item) => ({ ...item, learning: normalizeLearningProfile(item.learning), checkpoint: normalizeLessonContext(item.checkpoint) || undefined, messages: normalizeSavedStudyMessages(item.messages) }));
-        }
+        initial=normalizeStudyConversations(parsed);
+        if(!Array.isArray(parsed)||initial.length!==parsed.length)throw new Error("The saved sessions could not be fully read.");
       }
 
       if (!initial.length) {
@@ -279,6 +269,7 @@ export default function SharedAIChat() {
 
           if (Array.isArray(messages) && messages.length) {
             migrated.messages = normalizeSavedStudyMessages(messages);
+            if(migrated.messages.length!==messages.length)throw new Error("The legacy session could not be fully restored.");
             migrated.title = "Previous conversation";
           }
 
@@ -286,7 +277,8 @@ export default function SharedAIChat() {
         }
       }
     } catch {
-      initial = [];
+      initial = [];saveEnabled.current=false;
+      queueMicrotask(()=>setStorageWarning("Saved sessions could not be fully read. The original copy is preserved; new work stays in this tab. Download a copy before leaving."));
     }
 
     if (!initial.length) {
@@ -303,19 +295,25 @@ export default function SharedAIChat() {
   useEffect(() => {
     if (!hydrated) return;
 
+    if(!saveEnabled.current)return;
     try {
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(conversations.slice(0, 30))
-      );
-    } catch {
-      // Ignore unavailable browser storage.
-    }
-  }, [conversations, hydrated]);
+      savedCopy.current=writeStudyCopy(localStorage,STORAGE_KEY,savedCopy.current,conversations);
+      if(!loading)window.dispatchEvent(new Event("eai-study-progress-change"));
+    }catch{saveEnabled.current=false;queueMicrotask(()=>setStorageWarning("Session saving is paused because storage failed or another tab changed the saved copy. Your work is still open here. Download it before reloading."));}
+  }, [conversations, hydrated, loading]);
 
   const active = conversations.find(
     (conversation) => conversation.id === activeId
   );
+
+  useEffect(()=>{
+    let cancelled=false;
+    function refresh(){if(cancelled)return;try{const checks=readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items;setSavedCheck(active?.checkpoint?latestLessonCheck(active.checkpoint,checks,Date.now()):null);}catch{setSavedCheck(null);}}
+    queueMicrotask(refresh);window.addEventListener("eai-study-progress-change",refresh);window.addEventListener("storage",refresh);
+    return()=>{cancelled=true;window.removeEventListener("eai-study-progress-change",refresh);window.removeEventListener("storage",refresh);};
+  },[active?.id,active?.checkpoint,active?.learning.goal]);
+  const earlier=earlierStudyContext(active?.messages||[]);
+  function downloadSessions(){const url=URL.createObjectURL(new Blob([JSON.stringify(conversations,null,2)],{type:"application/json"}));const link=document.createElement("a");link.href=url;link.download="dai-tutor-session-backup.json";link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 
   useEffect(() => {
     const container = chatContainerRef.current;
@@ -368,9 +366,10 @@ export default function SharedAIChat() {
 
     const id = active.id;
     const lastUserIndex = active.messages.findLastIndex(message => message.role === "user");
-    const history = regenerate
-      ? active.messages.slice(0, lastUserIndex).slice(-12)
-      : active.messages.slice(-12);
+    const preceding=regenerate?active.messages.slice(0,lastUserIndex):active.messages;
+    const history=preceding.slice(-12);
+    let check:LessonCheck|null=null;
+    if(active.useContinuity!==false&&active.checkpoint){try{check=readCurrentContinuityCheck(active.checkpoint,active.learning.goal);}catch{/* Continue without unreadable feedback; never replace it. */}}
     const baseMessages = regenerate ? active.messages.slice(0, lastUserIndex + 1) : [...active.messages, { role: "user" as const, content: question }];
     const mode = active.mode;
 
@@ -403,6 +402,8 @@ export default function SharedAIChat() {
           history,
           subject: mode,
           learning: active.learning,
+          checkpoint:active.useContinuity!==false?active.checkpoint:undefined,
+          continuity:{enabled:active.useContinuity!==false,note:active.useContinuity!==false?active.continuityNote||"":"",earlier:active.useContinuity!==false?earlierStudyContext(preceding):[],check},
         }),
       });
 
@@ -430,6 +431,7 @@ export default function SharedAIChat() {
 
   function newConversation() {
     if (loading) return;
+    if(conversations.length>=30){setRequestError({id:activeId,retry:false,message:"You have 30 saved sessions. Download a session backup and remove an older session before starting another."});return;}
 
     const conversation = createConversation(active?.mode || "general");
 
@@ -512,6 +514,7 @@ export default function SharedAIChat() {
       if (!detail || typeof detail !== "object") return;
       const { subject, message, title, goal, level, approach, checkpoint } = detail as Record<string, unknown>;
       if (typeof message !== "string" || !message.trim() || message.length > 3000 || !modes.some(mode => mode.id === subject)) return;
+      if(conversations.length>=30){setRequestError({id:activeId,retry:false,message:"You have 30 saved sessions. Download a backup and remove an older session before opening another lesson."});return;}
       const conversation = createConversation(subject as Mode);
       conversation.checkpoint = normalizeLessonContext(checkpoint) || undefined;
       conversation.title = typeof title === "string" ? title.slice(0, 60) : "Practice discussion";
@@ -526,7 +529,7 @@ export default function SharedAIChat() {
     }
     window.addEventListener("eai-study-prompt", receivePracticePrompt);
     return () => window.removeEventListener("eai-study-prompt", receivePracticePrompt);
-  }, [activeId, loading]);
+  }, [activeId, loading,conversations.length]);
 
   function changeLearning(patch: Partial<LearningProfile>) {
     if (!active || loading) return;
@@ -644,8 +647,12 @@ export default function SharedAIChat() {
                 </label>
               </div>
 
+              <label className="tutor-continuity-note">Carry-forward note for this session<textarea aria-label="Session carry-forward note" rows={3} maxLength={1000} disabled={!active||loading} value={active?.continuityNote||""} onChange={event=>active&&updateConversation(active.id,c=>({...c,continuityNote:event.target.value}))} placeholder="Keep a useful detail or the step you want to revisit…"/></label>
+              <label className="tutor-continuity-choice"><input type="checkbox" aria-label="Use extra session context" checked={active?.useContinuity!==false} disabled={!active||loading} onChange={event=>active&&updateConversation(active.id,c=>({...c,useContinuity:event.target.checked}))}/>Use my carry-forward note, earlier session excerpts and matching saved lesson feedback.</label><p className="tutor-continuity-fine">Only this session is used. Recent messages and your current goal are still included when this is off. This does not create a mastery score or unrestricted memory.</p>
           </section>}
           <div className="tutor-focus-main">
+            {storageWarning&&<p className="goal-notice" role="status">{storageWarning} <button type="button" onClick={downloadSessions}>Download session backup</button></p>}
+            {active&&<details className="tutor-continuity-preview"><summary>What the tutor can use {active.useContinuity===false?"· extra context off":`· ${earlier.length} earlier excerpts${savedCheck?" + saved feedback":""}`}</summary><p>Recent messages, your selected level and current goal are sent with your question. Extra context below stays within this session and may be shortened.</p>{active.useContinuity!==false?<>{active.continuityNote&&<div><strong>Your carry-forward note</strong><p>{active.continuityNote}</p></div>}{earlier.map((item,index)=><div key={index}><strong>{item.role==="user"?"Your earlier words":"Earlier tutor response · may contain mistakes"}</strong><p>{item.content}</p></div>)}{savedCheck&&<div><strong>Latest matching check · {checkLabel(savedCheck)} · {checkReviewMethod(savedCheck)}</strong><p>{savedCheck.result.reasoningGap}</p><p>{savedCheck.result.nextStep}</p></div>}{!active.continuityNote&&!earlier.length&&!savedCheck&&<p>No extra context yet. Add a carry-forward note in Session settings when useful.</p>}</>:<p>Your extra context is off for this session. Change this in Session settings.</p>}</details>}
             {active && active.title !== "New conversation" && <div className="tutor-context-strip"><span>CURRENT SESSION</span><strong>{active.title}</strong>{active.learning.goal && <p>{active.learning.goal}</p>}{active.checkpoint && <a href="#lesson-understanding-check">Check understanding ↓</a>}</div>}
             <div className="tutor-mode-bar">
               <div role="group" aria-label="Learning approach" className="flex flex-wrap gap-2">
@@ -752,7 +759,7 @@ export default function SharedAIChat() {
               {requestError?.id === activeId && (
                 <div role="alert" className="mb-4 rounded-xl border border-amber-400/30 bg-amber-400/10 p-3 text-sm text-amber-100">
                   <p>{requestError.message}</p>
-                  <button type="button" disabled={loading} onClick={regenerateResponse} className="mt-2 font-semibold underline disabled:opacity-50">Retry last question</button>
+                  {requestError.retry!==false?<button type="button" disabled={loading} onClick={regenerateResponse} className="mt-2 font-semibold underline disabled:opacity-50">Retry last question</button>:<button type="button" onClick={downloadSessions} className="mt-2 font-semibold underline">Download session backup</button>}
                 </div>
               )}
               <form onSubmit={handleSubmit} className="tutor-input-row">

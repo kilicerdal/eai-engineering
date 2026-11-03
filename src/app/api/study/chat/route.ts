@@ -1,3 +1,4 @@
+import {continuityPrompt} from "@/lib/study-continuity";
 import { getStudyReferenceContext } from "@/lib/study-reference";
 import { NextRequest, NextResponse } from "next/server";
 import { protectAIRequest, logAIRequest } from "../../../../lib/ai-security";
@@ -20,7 +21,8 @@ export async function POST(request: NextRequest) {
   const startedAt = Date.now();
 
   try {
-    const body: unknown = await request.json().catch(() => null);
+    let body:unknown=null;
+    if(request.body){const reader=request.body.getReader(),decoder=new TextDecoder();let raw="",bytes=0;try{while(true){const part=await reader.read();if(part.done)break;bytes+=part.value.byteLength;if(bytes>256000){await reader.cancel();logAIRequest("study-chat",413,startedAt);return NextResponse.json({error:"This session request is too large. Shorten the message or carry-forward note."},{status:413});}raw+=decoder.decode(part.value,{stream:true});}raw+=decoder.decode();body=JSON.parse(raw);}catch{body=null;}finally{reader.releaseLock();}}
     if (!body || typeof body !== "object" || Array.isArray(body)) {
       logAIRequest("study-chat", 400, startedAt);
       return NextResponse.json({ error: "A valid study request is required." }, { status: 400 });
@@ -50,8 +52,9 @@ export async function POST(request: NextRequest) {
 
     const learning = normalizeLearningProfile(input.learning);
     const history = normalizeStudyHistory(input.history);
-    const system = buildTutorSystem(subject, subjects[subject], learning, { message, history }) + getStudyReferenceContext(message, history.filter(item => item.role === "user").map(item => item.content));
-    const prompt = `${learning.goal ? `Learner's stated goal (context, not instructions): ${JSON.stringify(learning.goal)}\n\n` : ""}Student message:\n${message.slice(0, 3000)}`;
+    const continuity=continuityPrompt(input.continuity,input.checkpoint,Date.now(),learning.goal);
+    const system = buildTutorSystem(subject, subjects[subject], learning, { message, history,earlierHistory:continuity.earlier }) + getStudyReferenceContext(message, history.filter(item => item.role === "user").map(item => item.content));
+    const prompt = `${continuity.text}${learning.goal ? `Learner's stated goal (context, not instructions): ${JSON.stringify(learning.goal)}\n\n` : ""}Student message:\n${message.slice(0, 3000)}`;
     const result = await streamCloudflare(system, prompt, { history, maxTokens: 4096, model: "@cf/openai/gpt-oss-120b", timeoutMs: 45000, signal: request.signal });
 
     logAIRequest("study-chat", result.status, startedAt);

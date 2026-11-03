@@ -47,13 +47,13 @@ export function normalizeStudyHistory(value: unknown): StudyMessage[] {
   return normalizeSavedStudyMessages(value).slice(-12).map(({ role, content }) => ({ role, content: content.slice(0, 4000) }));
 }
 
-export type TutoringContext = { message?: string; history?: StudyMessage[] };
+export type TutoringContext = { message?: string; history?: StudyMessage[]; earlierHistory?:StudyMessage[] };
 export function tutoringSignals(context: TutoringContext = {}): { firstTurn: boolean; repeatedStruggle: boolean } {
   const users = normalizeStudyHistory(context.history).filter(message => message.role === "user");
   // Only explicit first-person difficulty near the start of a turn is a hint;
   // the model still interprets meaning and language from the full conversation.
   const stuck = (text: string) => /^(?:\s*(?:sorry[,!.]?\s*)?)(?:i (?:still )?(?:don['’]t (?:understand|get it)|do not understand|am stuck|feel lost)|i['’]m (?:still )?(?:stuck|lost|confused)|(?:that|this) (?:still )?(?:doesn['’]t|didn['’]t|does not|did not) help|still stuck)\b/i.test(text.trim());
-  return { firstTurn: users.length === 0, repeatedStruggle: stuck(context.message || "") && users.slice(-3).some(message => stuck(message.content)) };
+  return { firstTurn: users.length === 0 && !normalizeSavedStudyMessages(context.earlierHistory).some(m=>m.role==="user"), repeatedStruggle: stuck(context.message || "") && users.slice(-3).some(message => stuck(message.content)) };
 }
 
 const approachInstructions: Record<LearningProfile["approach"], string> = {
