@@ -733,3 +733,10 @@
 .eai-study-studio .open-study-work a>strong{font:20px/1.4 Georgia,serif;color:#eee3cf;}
 .eai-study-studio .open-study-work a>p{font-size:12px;line-height:1.8;color:#b4c1ce;}
 .eai-study-studio .open-study-work a>b{margin-top:auto;min-height:32px;display:flex;align-items:center;color:#e1c28a;font-size:13px;font-weight:500;}
+
+.practice-recovery {margin:1.25rem 0;padding:1.25rem;border:1px solid rgba(208,171,99,.45);border-radius:12px;background:rgba(23,39,53,.85);}
+.practice-recovery h4 {font-size:1.35rem;margin:.4rem 0 .8rem;color:#f1e7d3;}
+.practice-recovery details {margin:.85rem 0;}
+.practice-recovery summary {cursor:pointer;color:#e0bd77;}
+.practice-recovery details>div {padding:.65rem 0;border-bottom:1px solid rgba(208,171,99,.2);}
+.practice-recovery .goal-actions {flex-wrap:wrap;}

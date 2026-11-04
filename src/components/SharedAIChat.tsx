@@ -1,4 +1,5 @@
 "use client";
+import {packPracticeEvidence,matchingPractice} from "@/lib/study-recovery";
 
 import { accountConfigured } from "@/lib/study-account";
 import {
@@ -108,7 +109,7 @@ function createConversation(mode: Mode = "general"): Conversation {
   };
 }
 
-function readCurrentContinuityCheck(context:LessonContext,goal=""){if(goal.trim()&&goal.trim()!==context.goal.trim().slice(0,300))return null;return latestLessonCheck(context,readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items,Date.now());}
+function readCurrentContinuityCheck(context:LessonContext,goal=""){if(goal.trim()&&goal.trim()!==context.goal.trim().slice(0,300))return null;return latestLessonCheck(context,readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items,practiceTime());}
 
 function resumableLesson(conversations:Conversation[],context:unknown){return findResumableConversation(conversations,context,Date.now());}
 function inputTime(stamp:number){return Math.round(stamp>1e12?stamp:performance.timeOrigin+stamp);}
@@ -236,6 +237,7 @@ function MarkdownMessage({ content }: { content: string }) {
   );
 }
 
+function practiceTime(){return Date.now();}
 export default function SharedAIChat() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeId, setActiveId] = useState("");
@@ -246,6 +248,7 @@ export default function SharedAIChat() {
 
   const [resumeNotice,setResumeNotice]=useState("");
   const [storageWarning,setStorageWarning]=useState(""),[savedCheck,setSavedCheck]=useState<LessonCheck|null>(null);
+  const [savedPractice,setSavedPractice]=useState<LessonCheck[]>([]);
   const savedCopy=useRef<string|null>(null),saveEnabled=useRef(true);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -318,7 +321,7 @@ export default function SharedAIChat() {
 
   useEffect(()=>{
     let cancelled=false;
-    function refresh(){if(cancelled)return;try{const checks=readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items;setSavedCheck(active?.checkpoint&&(!active.learning.goal.trim()||active.learning.goal.trim()===active.checkpoint.goal.trim().slice(0,300))?latestLessonCheck(active.checkpoint,checks,Date.now()):null);}catch{setSavedCheck(null);}}
+    function refresh(){if(cancelled)return;try{const checks=readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items;setSavedPractice(active?.checkpoint&&(!active.learning.goal.trim()||active.learning.goal.trim()===active.checkpoint.goal.trim().slice(0,300))?matchingPractice(active.checkpoint,packPracticeEvidence(active.checkpoint,checks,Date.now()),Date.now()):[]);setSavedCheck(active?.checkpoint&&(!active.learning.goal.trim()||active.learning.goal.trim()===active.checkpoint.goal.trim().slice(0,300))?latestLessonCheck(active.checkpoint,checks,Date.now()):null);}catch{setSavedCheck(null);setSavedPractice([]);}}
     queueMicrotask(refresh);window.addEventListener("eai-study-progress-change",refresh);window.addEventListener("storage",refresh);
     return()=>{cancelled=true;window.removeEventListener("eai-study-progress-change",refresh);window.removeEventListener("storage",refresh);};
   },[active?.id,active?.checkpoint,active?.learning.goal]);
@@ -378,8 +381,8 @@ export default function SharedAIChat() {
     const lastUserIndex = active.messages.findLastIndex(message => message.role === "user");
     const preceding=regenerate?active.messages.slice(0,lastUserIndex):active.messages;
     const history=preceding.slice(-12);
-    let check:LessonCheck|null=null;
-    if(active.useContinuity!==false&&active.checkpoint){try{check=readCurrentContinuityCheck(active.checkpoint,active.learning.goal);}catch{/* Continue without unreadable feedback; never replace it. */}}
+    let check:LessonCheck|null=null;let practiceEvidence=null;
+    if(active.useContinuity!==false&&active.checkpoint){try{check=readCurrentContinuityCheck(active.checkpoint,active.learning.goal);if(!active.learning.goal.trim()||active.learning.goal.trim()===active.checkpoint.goal.trim().slice(0,300))practiceEvidence=packPracticeEvidence(active.checkpoint,readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items,practiceTime());}catch{/* Continue without unreadable feedback; never replace it. */}}
     const baseMessages = regenerate ? active.messages.slice(0, lastUserIndex + 1) : [...active.messages, { role: "user" as const, content: question }];
     const mode = active.mode;
 
@@ -413,7 +416,7 @@ export default function SharedAIChat() {
           subject: mode,
           learning: active.learning,
           checkpoint:active.useContinuity!==false?active.checkpoint:undefined,
-          continuity:{enabled:active.useContinuity!==false,note:active.useContinuity!==false?active.continuityNote||"":"",earlier:active.useContinuity!==false?earlierStudyContext(preceding):[],check},
+          continuity:{enabled:active.useContinuity!==false,note:active.useContinuity!==false?active.continuityNote||"":"",earlier:active.useContinuity!==false?earlierStudyContext(preceding):[],check,practiceEvidence},
         }),
       });
 
@@ -663,12 +666,12 @@ export default function SharedAIChat() {
               </div>
 
               <label className="tutor-continuity-note">Carry-forward note for this session<textarea aria-label="Session carry-forward note" rows={3} maxLength={1000} disabled={!active||loading} value={active?.continuityNote||""} onChange={event=>active&&updateConversation(active.id,c=>({...c,continuityNote:event.target.value}))} placeholder="Keep a useful detail or the step you want to revisit…"/></label>
-              <label className="tutor-continuity-choice"><input type="checkbox" aria-label="Use extra session context" checked={active?.useContinuity!==false} disabled={!active||loading} onChange={event=>active&&updateConversation(active.id,c=>({...c,useContinuity:event.target.checked}))}/>Use my carry-forward note, earlier session excerpts and matching saved lesson feedback.</label><p className="tutor-continuity-fine">Only this session is used. Recent messages and your current goal are still included when this is off. This does not create a mastery score or unrestricted memory.</p>
+              <label className="tutor-continuity-choice"><input type="checkbox" aria-label="Use extra session context" checked={active?.useContinuity!==false} disabled={!active||loading} onChange={event=>active&&updateConversation(active.id,c=>({...c,useContinuity:event.target.checked}))}/>Use my carry-forward note, earlier session excerpts and up to four matching saved lesson checks.</label><p className="tutor-continuity-fine">Only this session is used. Recent messages and your current goal are still included when this is off. This does not create a mastery score or unrestricted memory.</p>
           </section>}
           <div id="tutor-chat-workspace" className="tutor-focus-main">
             {resumeNotice&&<p className="goal-notice" role="status">{resumeNotice}</p>}
             {storageWarning&&<p className="goal-notice" role="status">{storageWarning} <button type="button" onClick={downloadSessions}>Download session backup</button></p>}
-            {active&&<details className="tutor-continuity-preview"><summary>What the tutor can use {active.useContinuity===false?"· extra context off":`· ${earlier.length} earlier excerpts${savedCheck?" + saved feedback":""}`}</summary><p>Recent messages, your selected level and current goal are sent with your question. Extra context below stays within this session and may be shortened.</p>{active.useContinuity!==false?<>{active.continuityNote&&<div><strong>Your carry-forward note</strong><p>{active.continuityNote}</p></div>}{earlier.map((item,index)=><div key={index}><strong>{item.role==="user"?"Your earlier words":"Earlier tutor response · may contain mistakes"}</strong><p>{item.content}</p></div>)}{savedCheck&&<div><strong>Latest matching check · {checkLabel(savedCheck)} · {checkReviewMethod(savedCheck)}</strong><p>{savedCheck.result.reasoningGap}</p><p>{savedCheck.result.nextStep}</p></div>}{!active.continuityNote&&!earlier.length&&!savedCheck&&<p>No extra context yet. Add a carry-forward note in Session settings when useful.</p>}</>:<p>Your extra context is off for this session. Change this in Session settings.</p>}</details>}
+            {active&&<details className="tutor-continuity-preview"><summary>What the tutor can use {active.useContinuity===false?"· extra context off":`· ${earlier.length} earlier excerpts${savedCheck?" + saved feedback":""}`}</summary><p>Recent messages, your selected level and current goal are sent with your question. Earlier excerpts stay within this session. Saved checks must match its exact objective and source version; excerpts may be shortened.</p>{active.useContinuity!==false?<>{active.continuityNote&&<div><strong>Your carry-forward note</strong><p>{active.continuityNote}</p></div>}{earlier.map((item,index)=><div key={index}><strong>{item.role==="user"?"Your earlier words":"Earlier tutor response · may contain mistakes"}</strong><p>{item.content}</p></div>)}{savedCheck&&<div><strong>Latest matching check · {checkLabel(savedCheck)} · {checkReviewMethod(savedCheck)}</strong><p>{savedCheck.result.reasoningGap}</p><p>{savedCheck.result.nextStep}</p></div>}{savedPractice.length>1&&<div><strong>{savedPractice.length} matching practice checks</strong><p>The tutor can compare these attempts for this same objective and source version. Matching outcomes alone do not establish the same misconception.</p>{savedPractice.map(c=><p key={c.id}>{checkLabel(c)} · {c.question.question.slice(0,180)}</p>)}</div>}{!active.continuityNote&&!earlier.length&&!savedCheck&&<p>No extra context yet. Add a carry-forward note in Session settings when useful.</p>}</>:<p>Your extra context is off for this session. Change this in Session settings.</p>}</details>}
             {active && active.title !== "New conversation" && <div className="tutor-context-strip"><span>CURRENT SESSION</span><strong>{active.title}</strong>{active.learning.goal && <p>{active.learning.goal}</p>}{active.checkpoint && <a href="#lesson-understanding-check">Check understanding ↓</a>}</div>}
             <div className="tutor-mode-bar">
               <div role="group" aria-label="Learning approach" className="flex flex-wrap gap-2">
