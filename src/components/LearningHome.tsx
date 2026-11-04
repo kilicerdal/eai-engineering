@@ -1,4 +1,9 @@
 "use client";
+import DailyStudySession from "@/components/DailyStudySession";
+import {dailyTargetHref,type DailyTarget} from "@/lib/study-daily-session";
+import {mistakePracticeContext} from "@/lib/study-mistake-practice";
+import {normalizeMistakes} from "@/lib/study-exams";
+import {lessonIdentity} from "@/lib/study-checkpoints";
 import OpenStudyWork from "@/components/OpenStudyWork";
 import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useState } from "react";
@@ -66,6 +71,19 @@ export default function LearningHome() {
     if(recommendation.kind==="lesson")resume(recommendation.lesson);
     else if(recommendation.kind==="notebook")review(recommendation.mistakeId);
   }
+  const dailyTarget:DailyTarget=recommendation.kind==="lesson"&&journey?{kind:"lesson",title:recommendation.lesson.title,context:{goal:journey.settings.goal,lesson:recommendation.lesson}}:recommendation.kind==="notebook"?(()=>{const item=evidence.due.find(m=>m.id===recommendation.mistakeId);return item?{kind:"notebook" as const,title:recommendation.title,id:item.id,context:mistakePracticeContext(item)}:{kind:"plan" as const,title:"Shape your learning goal"};})():recommendation.kind==="material"&&recommendation.check?{kind:"material",title:recommendation.title,id:recommendation.contextId,context:recommendation.check.context}:recommendation.kind==="exam"?{kind:"exam",title:recommendation.title,exam:recommendation.exam,domain:recommendation.domain,skill:recommendation.skill}:{kind:"plan",title:recommendation.title};
+  function openDailyTarget(target:DailyTarget,practice=false){
+    if(target.kind==="lesson"){
+      const lesson=journey?.plan.lessons.find(l=>lessonIdentity({goal:journey.settings.goal,lesson:l})===lessonIdentity(target.context!));
+      if(!lesson||!usable)throw new Error("This plan changed. Your session is preserved; review the current plan before continuing.");resume(lesson);if(practice)requestAnimationFrame(()=>requestAnimationFrame(()=>document.getElementById("lesson-understanding-check")?.scrollIntoView({behavior:"smooth",block:"start"})));return;
+    }
+    if(target.kind==="notebook"){
+      const item=normalizeMistakes(JSON.parse(localStorage.getItem("eai-exam-mistakes-v1")||"[]")).find(m=>m.id===target.id);
+      if(!item||lessonIdentity(mistakePracticeContext(item))!==lessonIdentity(target.context!))throw new Error("This notebook entry changed or was removed. Your session is preserved.");review(item.id);document.getElementById("mistake-notebook")?.scrollIntoView({behavior:"smooth",block:"start"});return;
+    }
+    if(target.kind==="material"&&!target.context?.sources?.every(source=>materials.some(d=>d.id===source.documentId&&d.pages.some(p=>p.number===source.page&&p.text.replace(/\s+/g," ").includes(source.text)))))throw new Error("The original source passage is unavailable or changed. Your session is preserved.");
+    window.location.assign(dailyTargetHref(target));
+  }
   return <section id="my-learning" className="learning-home" aria-labelledby="learning-home-heading">
     <div className="studio-landmark-banner studio-landmark-giza">
     <StudyLandmark scene="giza" />
@@ -76,6 +94,7 @@ export default function LearningHome() {
     <p className="learning-home-note">Saved in this browser · {accountConfigured ? <Link href="/study/account">Manage optional account saving ↗</Link> : "No account or subscription required"}</p>
     {!ready ? <p role="status">Loading your learning…</p> : <>
       {warning && <p role="status" className="goal-notice">{warning}</p>}
+      <DailyStudySession target={dailyTarget} openTarget={openDailyTarget} checks={checks} exam={examPractice} now={now}/>
       <OpenStudyWork/>
       <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">RECOMMENDED NEXT STEP</p><h3>{recommendation.title}</h3><p>{recommendation.reason}</p>
       {recommendation.check && <div className="learning-check-memory"><strong>{checkLabel(recommendation.check)} · {checkReviewMethod(recommendation.check)}</strong><p>{recommendation.check.result.nextStep}</p><small>Latest saved response · {new Date(recommendation.check.submittedAt).toLocaleDateString()} · Help use self-reported.</small></div>}

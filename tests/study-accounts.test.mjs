@@ -21,3 +21,8 @@ test('invalid cloud reads and material-loss restores are rejected',async()=>{awa
 test('deleting a changed cloud record is refused',async()=>{await assert.rejects(()=>cloud(mock('owner',{data:[],error:null})).deleteCloud('owner','old'),/changed|deleted/);});
 
 test('database JSON key reordering cannot block a valid material restore',async()=>{global.localStorage=storage();let saved;const c=cloud(mock(),{loadMaterialLibrary:async()=>empty().library,saveMaterialLibrary:async value=>{saved=value;}},value=>({documents:value.documents.map(item=>({id:item.id,name:item.name})),entries:[]}));await c.restoreCloud({...empty(),library:{documents:[{name:'Notes',id:'doc-1'}],entries:[]}});assert.equal(saved.documents[0].name,'Notes');delete global.localStorage;});
+
+test('focused sessions are included in optional account snapshots without collecting unrelated storage',()=>{
+ const raw=JSON.stringify({version:1,activeId:null,sessions:[]}),s=storage({'eai-daily-sessions-v1':raw,'other-app':'private'});
+ const values=snapshots.collectStudyValues(s);assert.deepEqual(values,{'eai-daily-sessions-v1':raw});assert.equal(snapshots.validateStudySnapshot({...empty(),values}).values['eai-daily-sessions-v1'],raw);
+});
