@@ -24,8 +24,9 @@ export default function StudyExamPractice(){
   return()=>{clearTimeout(initial);clearInterval(timer);};
  },[requested,requestedDomain]);
  useEffect(()=>{
-  if(!ready||window.location.hash!=="#exam-review")return;
-  const frame=requestAnimationFrame(()=>document.getElementById("exam-review")?.scrollIntoView({block:"start"}));
+  if(!ready||!["#exam-review","#exam-practice-workspace"].includes(window.location.hash))return;
+  const target=window.location.hash.slice(1);
+  const frame=requestAnimationFrame(()=>document.getElementById(target)?.scrollIntoView({block:"start"}));
   return()=>cancelAnimationFrame(frame);
  },[ready,requested,requestedSkill]);
  const exam=record.activeExam,session=record.sessions[exam],question=session?examBank.find(q=>q.id===session.questionIds[session.index]):null;
@@ -114,7 +115,7 @@ export default function StudyExamPractice(){
     <div className="exam-review-list">{pendingReviews.slice(0,3).map(reviewCard)}</div>{pendingReviews.length>3&&<details><summary>View {pendingReviews.length-3} more suggested reviews</summary><div className="exam-review-list">{pendingReviews.slice(3).map(reviewCard)}</div></details>}
     {!!finishedReviews.length&&<details className="exam-review-evidence"><summary>{finishedReviews.length} {finishedReviews.length===1?"idea revisited":"ideas revisited"} with a different example</summary>{finishedReviews.map(review=><p key={review.skill}><strong>{examSkillLessons[review.skill].name}</strong> · Different question answered without hints on {new Date(review.resolvedBy!.submittedAt).toLocaleDateString()}. Earlier attempts stay in your history.</p>)}</details>}
    </section>
-   {session&&<section ref={workspace} tabIndex={-1} className="exam-question-shell" aria-label="Exam practice workspace">
+   {session&&<section id="exam-practice-workspace" ref={workspace} tabIndex={-1} className="exam-question-shell" aria-label="Exam practice workspace">
     {session.finished?<><p className="studio-eyebrow">SESSION COMPLETE</p><h2>Your practice snapshot.</h2><p>{answers.filter(a=>a.selectedIndex!==null).length} answered · {answers.filter(a=>a.selectedIndex===null).length} skipped. These results describe this set of questions, not your overall ability.</p><div className="exam-session-results">{answers.map(a=>{const q=examBank.find(q=>q.id===a.questionId)!;return <details key={a.id}><summary>{examSkillLessons[q.skill].name} · {a.selectedIndex===null?"Not answered":a.selectedIndex!==q.answerIndex?"Needs another look":a.hintsUsed?"Correct with help":"Correct without hints"}</summary>{q.passage&&<p className="exam-passage">{q.passage}</p>}<p>{display(q.prompt)}</p><p>Your answer: {a.selectedIndex===null?"Skipped":display(q.choices[a.selectedIndex])}</p><p>{q.explanation}</p></details>;})}</div><div className="goal-actions"><button className="goal-primary" onClick={event=>{setDomain(suggestion);start("practice",suggestion,eventTime(event));}}>Practice the suggested area</button><Link href="/study#my-learning">Return to my learning home ↗</Link></div></>:question&&<>
      <div className="exam-question-top"><p className="studio-eyebrow">{session.mode==="diagnostic"?"SKILL CHECK":"TARGETED PRACTICE"} · {session.index+1} / {session.questionIds.length}</p><span>{examDomains[question.domain].name}</span></div><progress value={answers.length} max={session.questionIds.length} aria-label="Questions checked or skipped in this session"/>
      <h2>{examSkillLessons[question.skill].name}</h2>{question.passage&&<div className="exam-passage">{question.passage}</div>}<p className="exam-question-prompt">{display(question.prompt)}</p>

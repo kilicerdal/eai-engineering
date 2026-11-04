@@ -1,4 +1,5 @@
 "use client";
+import OpenStudyWork from "@/components/OpenStudyWork";
 import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -75,6 +76,7 @@ export default function LearningHome() {
     <p className="learning-home-note">Saved in this browser · {accountConfigured ? <Link href="/study/account">Manage optional account saving ↗</Link> : "No account or subscription required"}</p>
     {!ready ? <p role="status">Loading your learning…</p> : <>
       {warning && <p role="status" className="goal-notice">{warning}</p>}
+      <OpenStudyWork/>
       <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">RECOMMENDED NEXT STEP</p><h3>{recommendation.title}</h3><p>{recommendation.reason}</p>
       {recommendation.check && <div className="learning-check-memory"><strong>{checkLabel(recommendation.check)} · {checkReviewMethod(recommendation.check)}</strong><p>{recommendation.check.result.nextStep}</p><small>Latest saved response · {new Date(recommendation.check.submittedAt).toLocaleDateString()} · Help use self-reported.</small></div>}
       <p className="learning-home-small">Based on your latest saved checks and due review dates. You can choose a different lesson or explore freely.</p>

@@ -10,7 +10,7 @@ import {
 
 import LessonCheckpoint from "@/components/LessonCheckpoint";
 import {CHECK_KEY,latestLessonCheck,normalizeLessonChecks,checkLabel,checkReviewMethod,type LessonCheck, normalizeLessonContext, type LessonContext } from "@/lib/study-checkpoints";
-import {normalizeStudyConversations,earlierStudyContext,type StudyConversation} from "@/lib/study-continuity";
+import {normalizeStudyConversations,earlierStudyContext,findResumableConversation,type StudyConversation} from "@/lib/study-continuity";
 import {readSavedArray,writeStudyCopy} from "@/lib/study-safe-storage";
 import StudyGlyph from "@/components/StudyGlyph";
 import ReactMarkdown from "react-markdown";
@@ -109,6 +109,9 @@ function createConversation(mode: Mode = "general"): Conversation {
 }
 
 function readCurrentContinuityCheck(context:LessonContext,goal=""){if(goal.trim()&&goal.trim()!==context.goal.trim().slice(0,300))return null;return latestLessonCheck(context,readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items,Date.now());}
+
+function resumableLesson(conversations:Conversation[],context:unknown){return findResumableConversation(conversations,context,Date.now());}
+function inputTime(stamp:number){return Math.round(stamp>1e12?stamp:performance.timeOrigin+stamp);}
 
 function CodeBlock({
   language,
@@ -237,11 +240,11 @@ export default function SharedAIChat() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeId, setActiveId] = useState("");
   const [openPanel, setOpenPanel] = useState<"history" | "settings" | null>(null);
-  const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [requestError, setRequestError] = useState<{ id: string; message: string;retry?:boolean } | null>(null);
 
+  const [resumeNotice,setResumeNotice]=useState("");
   const [storageWarning,setStorageWarning]=useState(""),[savedCheck,setSavedCheck]=useState<LessonCheck|null>(null);
   const savedCopy=useRef<string|null>(null),saveEnabled=useRef(true);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -286,9 +289,13 @@ export default function SharedAIChat() {
     }
 
     queueMicrotask(() => {
-      setConversations(initial);
-      setActiveId(initial[0].id);
+      const requested=new URLSearchParams(window.location.search).get("session"),selected=requested?initial.find(s=>s.id===requested):undefined;
+      setConversations(selected?[selected,...initial.filter(s=>s.id!==selected.id)]:initial);
+      setActiveId(selected?.id||initial[0].id);
+      if(requested&&!selected)setResumeNotice("That saved session is unavailable in this browser. Your other work is unchanged.");
+      else if(selected)setResumeNotice(selected.draft?.trim()?"Your unsent message is restored. Review it before choosing Send.":"Your saved conversation is open. Continue when ready.");
       setHydrated(true);
+      if(requested)requestAnimationFrame(()=>document.getElementById("ai-assistant")?.scrollIntoView({block:"start"}));
     });
   }, []);
 
@@ -298,17 +305,20 @@ export default function SharedAIChat() {
     if(!saveEnabled.current)return;
     try {
       savedCopy.current=writeStudyCopy(localStorage,STORAGE_KEY,savedCopy.current,conversations);
+      const currentUrl=new URL(window.location.href);
+      if(activeId&&currentUrl.searchParams.has("session")&&currentUrl.searchParams.get("session")!==activeId){currentUrl.searchParams.set("session",activeId);window.history.replaceState(null,"",currentUrl.pathname+currentUrl.search+currentUrl.hash);}
       if(!loading)window.dispatchEvent(new Event("eai-study-progress-change"));
     }catch{saveEnabled.current=false;queueMicrotask(()=>setStorageWarning("Session saving is paused because storage failed or another tab changed the saved copy. Your work is still open here. Download it before reloading."));}
-  }, [conversations, hydrated, loading]);
+  }, [conversations, hydrated, loading, activeId]);
 
   const active = conversations.find(
     (conversation) => conversation.id === activeId
   );
 
+
   useEffect(()=>{
     let cancelled=false;
-    function refresh(){if(cancelled)return;try{const checks=readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items;setSavedCheck(active?.checkpoint?latestLessonCheck(active.checkpoint,checks,Date.now()):null);}catch{setSavedCheck(null);}}
+    function refresh(){if(cancelled)return;try{const checks=readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items;setSavedCheck(active?.checkpoint&&(!active.learning.goal.trim()||active.learning.goal.trim()===active.checkpoint.goal.trim().slice(0,300))?latestLessonCheck(active.checkpoint,checks,Date.now()):null);}catch{setSavedCheck(null);}}
     queueMicrotask(refresh);window.addEventListener("eai-study-progress-change",refresh);window.addEventListener("storage",refresh);
     return()=>{cancelled=true;window.removeEventListener("eai-study-progress-change",refresh);window.removeEventListener("storage",refresh);};
   },[active?.id,active?.checkpoint,active?.learning.goal]);
@@ -381,10 +391,10 @@ export default function SharedAIChat() {
           : conversation.title,
       updatedAt: Date.now(),
       messages: baseMessages,
+      draft:"",
     }));
 
     setRequestError(null);
-    setInput("");
     setLoading(true);
 
     const controller = new AbortController();
@@ -441,7 +451,7 @@ export default function SharedAIChat() {
     ]);
     setActiveId(conversation.id);
     setRequestError(null);
-    setInput("");
+    setResumeNotice("");
   }
 
   function renameConversation(id: string) {
@@ -514,9 +524,15 @@ export default function SharedAIChat() {
       if (!detail || typeof detail !== "object") return;
       const { subject, message, title, goal, level, approach, checkpoint } = detail as Record<string, unknown>;
       if (typeof message !== "string" || !message.trim() || message.length > 3000 || !modes.some(mode => mode.id === subject)) return;
+      const existing=checkpoint?resumableLesson(conversations,checkpoint):null;
+      if(existing){
+        const prepared=existing.draft?.trim()?existing.draft:`Continue our work on ${existing.checkpoint!.lesson.title}. Focus on the latest relevant saved check and the next useful step, without restarting intake.`;
+        setConversations(previous=>{const current=previous.find(c=>c.id===existing.id)!;return [{...current,draft:prepared,updatedAt:Date.now()},...previous.filter(c=>c.id!==existing.id)];});setActiveId(existing.id);setOpenPanel(null);setRequestError(null);setResumeNotice(existing.draft?.trim()?"Reopened your lesson with its unsent message preserved. Review it before choosing Send.":"Reopened your existing lesson conversation. Review the prepared continuation before choosing Send.");return;
+      }
       if(conversations.length>=30){setRequestError({id:activeId,retry:false,message:"You have 30 saved sessions. Download a backup and remove an older session before opening another lesson."});return;}
       const conversation = createConversation(subject as Mode);
       conversation.checkpoint = normalizeLessonContext(checkpoint) || undefined;
+      conversation.draft=message;
       conversation.title = typeof title === "string" ? title.slice(0, 60) : "Practice discussion";
       if (typeof level === "string" && Object.hasOwn(learningLevels, level)) conversation.learning.level = level as LearningProfile["level"];
       if (typeof approach === "string" && Object.hasOwn(learningApproaches, approach)) conversation.learning.approach = approach as LearningProfile["approach"];
@@ -525,11 +541,10 @@ export default function SharedAIChat() {
       setActiveId(conversation.id);
       setOpenPanel(null);
       setRequestError(null);
-      setInput(message);
     }
     window.addEventListener("eai-study-prompt", receivePracticePrompt);
     return () => window.removeEventListener("eai-study-prompt", receivePracticePrompt);
-  }, [activeId, loading,conversations.length]);
+  }, [activeId, loading,conversations]);
 
   function changeLearning(patch: Partial<LearningProfile>) {
     if (!active || loading) return;
@@ -547,7 +562,7 @@ export default function SharedAIChat() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    void sendMessage(input);
+    void sendMessage(active?.draft||"");
   }
 
   return (
@@ -582,7 +597,7 @@ export default function SharedAIChat() {
                   <button
                     type="button"
                     disabled={loading}
-                    onClick={() => { setActiveId(conversation.id); setOpenPanel(null); }}
+                    onClick={() => {setConversations(previous=>{const current=previous.find(c=>c.id===conversation.id)!;return [{...current,updatedAt:Date.now()},...previous.filter(c=>c.id!==conversation.id)];});setActiveId(conversation.id);setResumeNotice(conversation.draft?.trim()?"Your unsent message is restored. Review it before choosing Send.":"");setOpenPanel(null);}}
                     className="w-full truncate text-left text-sm text-slate-200"
                   >
                     {conversation.title}
@@ -650,7 +665,8 @@ export default function SharedAIChat() {
               <label className="tutor-continuity-note">Carry-forward note for this session<textarea aria-label="Session carry-forward note" rows={3} maxLength={1000} disabled={!active||loading} value={active?.continuityNote||""} onChange={event=>active&&updateConversation(active.id,c=>({...c,continuityNote:event.target.value}))} placeholder="Keep a useful detail or the step you want to revisit…"/></label>
               <label className="tutor-continuity-choice"><input type="checkbox" aria-label="Use extra session context" checked={active?.useContinuity!==false} disabled={!active||loading} onChange={event=>active&&updateConversation(active.id,c=>({...c,useContinuity:event.target.checked}))}/>Use my carry-forward note, earlier session excerpts and matching saved lesson feedback.</label><p className="tutor-continuity-fine">Only this session is used. Recent messages and your current goal are still included when this is off. This does not create a mastery score or unrestricted memory.</p>
           </section>}
-          <div className="tutor-focus-main">
+          <div id="tutor-chat-workspace" className="tutor-focus-main">
+            {resumeNotice&&<p className="goal-notice" role="status">{resumeNotice}</p>}
             {storageWarning&&<p className="goal-notice" role="status">{storageWarning} <button type="button" onClick={downloadSessions}>Download session backup</button></p>}
             {active&&<details className="tutor-continuity-preview"><summary>What the tutor can use {active.useContinuity===false?"· extra context off":`· ${earlier.length} earlier excerpts${savedCheck?" + saved feedback":""}`}</summary><p>Recent messages, your selected level and current goal are sent with your question. Extra context below stays within this session and may be shortened.</p>{active.useContinuity!==false?<>{active.continuityNote&&<div><strong>Your carry-forward note</strong><p>{active.continuityNote}</p></div>}{earlier.map((item,index)=><div key={index}><strong>{item.role==="user"?"Your earlier words":"Earlier tutor response · may contain mistakes"}</strong><p>{item.content}</p></div>)}{savedCheck&&<div><strong>Latest matching check · {checkLabel(savedCheck)} · {checkReviewMethod(savedCheck)}</strong><p>{savedCheck.result.reasoningGap}</p><p>{savedCheck.result.nextStep}</p></div>}{!active.continuityNote&&!earlier.length&&!savedCheck&&<p>No extra context yet. Add a carry-forward note in Session settings when useful.</p>}</>:<p>Your extra context is off for this session. Change this in Session settings.</p>}</details>}
             {active && active.title !== "New conversation" && <div className="tutor-context-strip"><span>CURRENT SESSION</span><strong>{active.title}</strong>{active.learning.goal && <p>{active.learning.goal}</p>}{active.checkpoint && <a href="#lesson-understanding-check">Check understanding ↓</a>}</div>}
@@ -765,8 +781,8 @@ export default function SharedAIChat() {
               <form onSubmit={handleSubmit} className="tutor-input-row">
                 <textarea
                   rows={2}
-                  value={input}
-                  onChange={(event) => setInput(event.target.value)}
+                  value={active?.draft||""}
+                  onChange={(event) => {if(active){const value=event.target.value,at=inputTime(event.timeStamp);updateConversation(active.id,c=>({...c,draft:value,updatedAt:at}));}}}
                   placeholder="Ask a question or share your work…"
                   maxLength={3000}
                   aria-label="Your message"
@@ -775,7 +791,7 @@ export default function SharedAIChat() {
 
                 <button
                   type="submit"
-                  disabled={loading || !hydrated || !input.trim()}
+                  disabled={loading || !hydrated || !active?.draft?.trim()}
                   className="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 disabled:opacity-50"
                 >
                   Send
@@ -783,7 +799,7 @@ export default function SharedAIChat() {
               </form>
 
               <p className="mt-3 text-center text-xs text-slate-500">
-                Sessions are saved in this browser. {accountConfigured && <>Optional account saving is managed on the <a href="/study/account">Account page</a>. </>}AI responses can contain mistakes; verify important facts and calculations.
+                Sessions and unsent messages are saved in this browser. Only Send submits a message to the AI. {accountConfigured && <>Optional account saving is managed on the <a href="/study/account">Account page</a>. </>}AI responses can contain mistakes; verify important facts and calculations.
               </p>
             </div>
           </div>
