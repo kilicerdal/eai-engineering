@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./studio.css";
+import DailySessionReturn from "@/components/DailySessionReturn";
 import StudyCloudBridge from "@/components/StudyCloudBridge";
 
 export const metadata: Metadata = {
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function StudyLayout({ children }: { children: React.ReactNode }) {
-  return <div className="eai-study-studio">{children}<StudyCloudBridge/></div>;
+  return <div className="eai-study-studio">{children}<DailySessionReturn/><StudyCloudBridge/></div>;
 }

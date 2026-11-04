@@ -770,3 +770,18 @@
 .daily-study-history button:first-child {flex:1;text-align:left;}
 .daily-study-session details {margin:1rem 0;}
 @media(max-width:650px){.daily-study-heading {display:block;}.daily-study-heading>span {display:block;margin-top:1rem;white-space:normal;}.daily-study-stages {grid-template-columns:repeat(2,minmax(0,1fr));}.daily-study-history {flex-wrap:wrap;}.daily-study-session .goal-actions button {width:100%;}}
+
+.daily-session-return {position:fixed;z-index:80;bottom:16px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 32px));box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 1.2rem;background:#112535;border:1px solid #c8a762;border-radius:12px;box-shadow:0 8px 35px #0008;}
+.daily-session-return>div {min-width:0;}
+.daily-session-return span,.daily-session-return small {font-size:.72rem;color:#cdb37b;}
+.daily-session-return strong {display:block;max-width:760px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.95rem;color:#f0e6cf;margin:.2rem 0;}
+.daily-session-return a {flex-shrink:0;padding:.75rem 1rem;border-radius:7px;background:#cfac68;color:#081621;font-size:.85rem;font-weight:600;text-decoration:none;}
+.daily-session-return a span {color:inherit;}
+.eai-study-studio:has(.daily-session-return) {padding-bottom:115px;}
+.daily-study-next,.practice-next-action {margin:1rem 0;padding:1rem;border-left:2px solid #d4b16a;background:rgba(30,49,65,.7);border-radius:0 9px 9px 0;}
+.practice-next-action h3,.practice-next-action h4 {font-size:1.15rem;margin:.4rem 0;}
+.practice-next-action summary {cursor:pointer;color:#e4c47e;}
+.practice-next-action .goal-actions {display:flex;flex-wrap:wrap;gap:.65rem;}
+.practice-next-action button {border:1px solid #a18b5d;border-radius:7px;padding:.65rem .85rem;color:#ebddbc;background:#112535;}
+.daily-session-return a:focus-visible {outline:2px solid #ffe4a8;outline-offset:4px;}
+@media(max-width:650px){.daily-session-return {bottom:8px;width:calc(100% - 16px);padding:.7rem .85rem;gap:.6rem;align-items:stretch;flex-direction:column;}.daily-session-return strong {max-width:100%;}.daily-session-return a {text-align:center;padding:.6rem;}.eai-study-studio:has(.daily-session-return) {padding-bottom:170px;}.practice-next-action .goal-actions {flex-direction:column;}}

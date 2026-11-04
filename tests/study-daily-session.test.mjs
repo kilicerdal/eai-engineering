@@ -30,3 +30,34 @@ test('history capacity and conflicting browser writes preserve prior sessions',(
  const s=start().sessions[0],record={version:1,activeId:'daily-0',sessions:Array.from({length:20},(_,i)=>({...s,id:'daily-'+i,finishedAt:now+1,updatedAt:now+1}))};assert.throws(()=>d.startDailySession(record,target,10,now+5,'new'),/20 saved sessions/);
  const original=JSON.stringify(start()),storage={getItem:()=>original,setItem:()=>assert.fail('must not overwrite')};assert.throws(()=>safe.writeStudyCopy(storage,d.DAILY_SESSION_KEY,'different',d.emptyDailyRecord()),/Another tab/);
 });
+
+test('return bar selects the unfinished session even when viewing older history, never future or finished work',()=>{
+ const record=start(),open=record.sessions[0],done={...open,id:'old',startedAt:now-100,updatedAt:now-10,finishedAt:now-10};
+ const value={version:1,activeId:'old',sessions:[done,open]},before=structuredClone(value);
+ assert.equal(d.openDailySession(value,now+5).id,open.id);assert.deepEqual(value,before);
+ assert.equal(d.openDailySession({...value,sessions:[done],activeId:'old'},now+5),null);
+ assert.equal(d.openDailySession(record,now-1),null);assert.throws(()=>d.openDailySession({bad:true},now));
+ assert.throws(()=>d.readDailyRecord({...record,sessions:[open,{...open,id:'another'}]}),/Multiple open/);
+});
+test('closing guidance uses real matching checks, favors verification and never invents a diagnosis from step marks',()=>{
+ const s={...start().sessions[0],completed:[0,1,2,3]},uncertain={...check,id:'verify',question:{...check.question,question:'Explain a new equation'},result:{...check.result,decision:'uncertain',nextStep:'Check whether the original question is complete.'}};
+ assert.match(d.dailyClosingStep(s,[],null,now+10).reason,/No matching checked answers/);
+ assert.match(d.dailyClosingStep(s,[check,uncertain],null,now+10).heading,/Verify/);
+ assert.match(d.dailyClosingStep(s,[uncertain],null,now+10).reason,/question is complete/);
+ const miss={...check,result:{...check.result,decision:'partial',reasoningGap:'The inverse operation was not explained.',nextStep:'Explain equality on both sides.'}};
+ assert.match(d.dailyClosingStep(s,[miss],null,now+10).reason,/inverse operation/);
+ assert.match(d.dailyClosingStep(s,[{...check,helpUsed:true}],null,now+10).heading,/without help/);
+ assert.equal(d.dailyClosingStep(s,[{...check,submittedAt:now-1}],null,now+10).reviewAt,null);
+});
+test('independent closing guidance suggests recall without claiming mastery and stays bounded by finish time',()=>{
+ const s={...start().sessions[0],finishedAt:now+7,updatedAt:now+7};
+ const next=d.dailyClosingStep(s,[check],null,now+20);assert.match(next.heading,/recall/);assert.equal(next.reviewAt,now+7+86400000);assert.match(next.reason,/not a mastery assessment/);
+ const later={...check,id:'later',submittedAt:now+8,helpUsed:true};assert.match(d.dailyClosingStep(s,[check,later],null,now+20).heading,/recall/);
+ const changed={...check,context:{...context,goal:'Other subject'}};assert.match(d.dailyClosingStep(s,[changed],null,now+20).reason,/No matching/);
+});
+test('skipped and incorrect exam outcomes get useful next actions without being labeled independent',()=>{
+ const q=bank.examBank.find(q=>q.domain==='algebra'),s={...start().sessions[0],target:{kind:'exam',title:'SAT algebra',exam:'sat',domain:'algebra'}};
+ const a={id:'a',exam:'sat',sessionId:'exam-session',mode:'practice',questionId:q.id,selectedIndex:null,hintsUsed:0,reasoning:'',submittedAt:now+1};
+ assert.match(d.dailyClosingStep(s,[],{attempts:[a]},now+10).heading,/unanswered/);
+ assert.match(d.dailyClosingStep(s,[],{attempts:[{...a,selectedIndex:(q.answerIndex+1)%4}]},now+10).heading,/missing step/);
+});
