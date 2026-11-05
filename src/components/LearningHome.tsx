@@ -1,4 +1,5 @@
 "use client";
+import WeeklyStudySummary from "@/components/WeeklyStudySummary";
 import StudyGuide from "@/components/StudyGuide";
 import {PLAN_CHOICE_KEY,resolvePlanChoice} from "@/lib/study-plan-adjustment";
 import DailyStudySession from "@/components/DailyStudySession";
@@ -26,6 +27,7 @@ export default function LearningHome() {
   const [materials,setMaterials]=useState<CourseDocument[]>([]);
   const [documents,setDocuments] = useState<number | null>(null);
   const [examPractice,setExamPractice] = useState<unknown>(null);
+  const [foundation,setFoundation] = useState<unknown>([]);
   const [checks,setChecks] = useState<LessonCheck[]>([]);
   const [planChoice,setPlanChoice]=useState<unknown>(null);
   const [now,setNow] = useState(0);
@@ -41,7 +43,9 @@ export default function LearningHome() {
         setNow(Date.now());try{setPlanChoice(JSON.parse(localStorage.getItem(PLAN_CHOICE_KEY)||"null"));}catch{setPlanChoice(null);}
         try{setExamPractice(JSON.parse(localStorage.getItem("eai-exam-prep-v1")||"null"));}catch{setExamPractice(null);}
         try { setChecks(normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]"))); } catch { setChecks([]); }
-        setEvidence(learningEvidence(JSON.parse(localStorage.getItem("eai-study-practice-v1") || "[]"),JSON.parse(localStorage.getItem("eai-exam-mistakes-v1") || "[]"),Date.now()));
+        const attempts = JSON.parse(localStorage.getItem("eai-study-practice-v1") || "[]");
+        setFoundation(attempts);
+        setEvidence(learningEvidence(attempts,JSON.parse(localStorage.getItem("eai-exam-mistakes-v1") || "[]"),Date.now()));
         setWarning("");
       } catch { setJourney(null); setEvidence(emptyEvidence); setWarning("Some saved progress could not be read. Open the original tool to check your work."); }
       setReady(true);
@@ -110,6 +114,7 @@ export default function LearningHome() {
       <article className="learning-review"><p className="studio-eyebrow">MY MISTAKE NOTEBOOK</p><h3>{evidence.due.length ? `${evidence.due.length} ready to revisit` : evidence.mistakes ? "Your next review is planned." : "Turn a mistake into a next step."}</h3><p>{sharedNotebookStep ? "Your suggested review is highlighted in the recommendation. Open the notebook to see all saved attempts and their review dates." : evidence.due.length&&notebookRecommendation.kind==="notebook" ? notebookRecommendation.reason : evidence.nextReviewAt ? `Next suggested review: ${new Date(evidence.nextReviewAt).toLocaleDateString()}.` : "Capture your reasoning in the existing notebook, understand the missing idea, then return to a fresh example."}</p>
       {!sharedNotebookStep&&notebookRecommendation.check&&<div className="learning-check-memory"><strong>{checkLabel(notebookRecommendation.check)} · Latest follow-up</strong><p>{notebookRecommendation.check.result.nextStep}</p><small>{checkReviewMethod(notebookRecommendation.check)}; not a mastery assessment.</small></div>}
       <div className="goal-actions">{!sharedNotebookStep&&notebookRecommendation.kind==="notebook"&&<button className="goal-primary" onClick={()=>{if(notebookRecommendation.kind==="notebook")review(notebookRecommendation.mistakeId);}}>{notebookRecommendation.action} ↗</button>}<a href="#mistake-notebook">Open my notebook ↗</a></div><p className="learning-home-small">Review dates follow your own review marks; they do not certify understanding.</p></article></div>
+      {!warning && <WeeklyStudySummary checks={checks} exams={examPractice} practice={foundation} now={now}/>}
       {lessonEvidence.length > 0 && <section className="learning-check-evidence" aria-label="Saved lesson checks"><h3>What your lesson checks show</h3><p>Latest saved check per lesson in your current plan. Check important feedback against your materials.</p><div>{lessonEvidence.map(check=><article key={check.context.lesson.id}><strong>{check.context.lesson.title}</strong><span>{checkLabel(check)}</span><p>{check.result.reasoningGap}</p><small>{checkReviewMethod(check)} · {new Date(check.submittedAt).toLocaleDateString()} · Help use self-reported</small></article>)}</div></section>}
       <details className="learning-evidence"><summary>Evidence behind your progress <span>{evidence.attempted} checked {evidence.attempted === 1 ? "question" : "questions"} · {documents === null ? "Library unavailable" : `${documents} ${documents === 1 ? "material" : "materials"}`}</span></summary><div className="learning-evidence-grid"><div><strong>{evidence.independent}</strong><span>Latest answer correct without hints</span></div><div><strong>{evidence.supported}</strong><span>Latest answer correct with hints</span></div><div><strong>{evidence.revisit}</strong><span>Latest answer needs another look</span></div><Link href="/study/materials"><strong>{documents ?? "—"}</strong><span>Saved materials · Open library ↗</span></Link></div><p className="learning-home-small">Checked answers come from the small foundational practice bank, one latest answer per question. Repeating an answer cannot increase this count. These results do not measure overall mastery or predict an exam score.</p><Link href="/study/practice">Continue foundational practice ↗</Link></details>
     </>}
