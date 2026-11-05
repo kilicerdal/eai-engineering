@@ -1,4 +1,5 @@
 "use client";
+import StudyGuide from "@/components/StudyGuide";
 import {PLAN_CHOICE_KEY,resolvePlanChoice} from "@/lib/study-plan-adjustment";
 import DailyStudySession from "@/components/DailyStudySession";
 import {dailyTargetHref,type DailyTarget} from "@/lib/study-daily-session";
@@ -91,7 +92,7 @@ export default function LearningHome() {
     <div className="studio-landmark-banner studio-landmark-giza">
     <StudyLandmark scene="giza" />
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR LEARNING, CONNECTED</p><h2 id="learning-home-heading">Your next step, in focus.</h2></div><p>Build on what you know.<br/>Return to what needs practice.</p></div>
-    <p className="studio-landmark-caption">Giza, Egypt · An imagined horizon</p>
+    <StudyGuide section="Learning home">Start a focused session if you have time set aside. To resume earlier work, look for a saved activity below. The recommended next step uses your saved checks and review dates.</StudyGuide><p className="studio-landmark-caption">Giza, Egypt · An imagined horizon</p>
     </div>
     <div className="learning-home-content">
     <p className="learning-home-note">Saved in this browser · {accountConfigured ? <Link href="/study/account">Manage optional account saving ↗</Link> : "No account or subscription required"}</p>

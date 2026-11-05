@@ -822,3 +822,14 @@
 @media(max-width:650px){.eai-study-studio .tutor-help-guide ol {grid-template-columns:1fr;}.eai-study-studio .tutor-heading-row {align-items:flex-start;}.eai-study-studio .tutor-how-button {font-size:.8rem;padding:.65rem .8rem;}.eai-study-studio .studio-library-entry {flex-wrap:wrap;gap:1rem;padding:1.5rem 6%;}.eai-study-studio .studio-library-entry>div:nth-child(2) {flex:1;min-width:0;}.eai-study-studio .studio-library-entry>a {margin-left:58px;}.eai-study-studio .tutor-empty-steps {gap:.4rem 1.5rem;font-size:.68rem;}}
 .eai-study-studio #ai-assistant .tutor-section-intro>p:not(.studio-eyebrow) {color:#e0e3e5;text-shadow:0 1px 8px #000;}
 .eai-study-studio .tutor-starter-prompts .tutor-starter-caption {flex-basis:100%;font-size:.72rem;line-height:1.5;color:#aebcc6;margin:0 0 .2rem;}
+
+.eai-study-studio .studio-how-to { position: relative; margin: .5rem 0; max-width: 38rem; }
+.eai-study-studio .studio-how-to > summary {
+  width: fit-content; cursor: pointer; padding: .45rem .75rem; border: 1px solid #ab915d;
+  border-radius: .4rem; background: #0b1825; color: #f2d59a; font: 600 .875rem/1.5 system-ui, sans-serif;
+}
+.eai-study-studio .studio-how-to > summary:focus-visible { outline: 2px solid #ffe4a9; outline-offset: 3px; }
+.eai-study-studio .studio-how-to > p {
+  margin: .45rem 0 0; padding: .75rem 1rem; border-radius: .4rem; background: #0b1825;
+  color: #e6eaf0; font: 400 .9375rem/1.6 system-ui, sans-serif;
+}

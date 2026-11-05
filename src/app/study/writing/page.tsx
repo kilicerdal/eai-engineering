@@ -1,5 +1,6 @@
 "use client";
 
+import StudyGuide from "@/components/StudyGuide";
 import { useEffect, useState } from "react";
 import StudyNavigation from "@/components/StudyNavigation";
 import ReactMarkdown from "react-markdown";
@@ -1112,7 +1113,7 @@ export default function WritingStudioPage() {
     <main className="min-h-screen bg-[#080d19] text-white">
       <StudyNavigation />
       <section className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-5 px-6 pt-10">
-        <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">dAI Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p></div>
+        <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">dAI Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p><StudyGuide section="Writing Studio">Start with a template or write in the editor. Ask for feedback on a specific issue, such as whether your evidence supports your argument. Revise your draft and download it when ready.</StudyGuide></div>
         <button type="button" onClick={downloadEssay} className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950">Download Essay ↓</button>
       </section>
 

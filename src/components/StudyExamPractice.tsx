@@ -1,4 +1,5 @@
 "use client";
+import StudyGuide from "@/components/StudyGuide";
 import {useEffect,useRef,useState} from "react";
 import {useSearchParams} from "next/navigation";
 import Link from "next/link";
@@ -102,7 +103,7 @@ export default function StudyExamPractice(){
   }catch(e){setError(e instanceof Error?e.message:"The backup could not be restored. Keep this page open and download your current work.");}
  }
  return <div className="exam-practice-page">
-  <header className="exam-practice-intro"><p className="studio-eyebrow">PREPARE WITH PURPOSE</p><h1>Your next breakthrough starts with a clear picture.</h1><p>Find a starting point, practice a specific skill, and learn from the reasoning behind each answer.</p><Link href="/study#exam-preparation">← Return to exam preparation</Link></header>
+  <header className="exam-practice-intro"><p className="studio-eyebrow">PREPARE WITH PURPOSE</p><h1>Your next breakthrough starts with a clear picture.</h1><p>Find a starting point, practice a specific skill, and learn from the reasoning behind each answer.</p><StudyGuide section="Exam skill practice">Choose a short skill check to find a starting point, or practice one skill. Select an answer and check it, then read the explanation. Use the suggested reviews to return to skills that need another attempt.</StudyGuide><Link href="/study#exam-preparation">← Return to exam preparation</Link></header>
   <div className="exam-profile-nav" aria-label="Practice exam profile">{(["sat","psat"] as const).map(value=><Link key={value} href={`/study/exams?exam=${value}`} aria-current={exam===value?"page":undefined} scroll={false}>{examName(value)}</Link>)}</div>
   <p className="exam-practice-scope">{examBank.length} original dAI questions · 16 sampled skills · 8 content domains. Shared foundational skills, separate profile histories. This is a small learning snapshot—not a full test, an official score, or a complete exam course. <a href={examDomainSource.url} target="_blank" rel="noopener noreferrer">Official domain outline ↗</a></p>
   {!ready?<p role="status">Opening your saved practice…</p>:<>
