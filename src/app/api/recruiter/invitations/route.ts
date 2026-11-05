@@ -4,7 +4,7 @@ import { automationAuthorized, invitationDigest, invitationToken, normalizeRecru
 import { PRIVATE_HEADERS, portalEnabled, recruiterAdmin, recruiterOrigin } from "@/lib/recruiter-server";
 export async function POST(request: Request) {
   if (!portalEnabled()) return new NextResponse(null,{status:404,headers:PRIVATE_HEADERS});
-  if (!automationAuthorized(request.headers.get("authorization"),process.env.RECRUITER_AUTOMATION_KEY)) return new NextResponse(null,{status:401,headers:PRIVATE_HEADERS});
+  if (!automationAuthorized(request.headers.get("authorization"),process.env.RECRUITER_INVITE_API_KEY) && !automationAuthorized(request.headers.get("authorization"),process.env.RECRUITER_AUTOMATION_KEY)) return new NextResponse(null,{status:401,headers:PRIVATE_HEADERS});
   try {
     const raw=await request.text();if(raw.length>4096)return new NextResponse(null,{status:413,headers:PRIVATE_HEADERS});
     const body=JSON.parse(raw),email=normalizeRecruiterEmail(body.email);
@@ -25,6 +25,6 @@ export async function POST(request: Request) {
     if(!invite || invite.revoked_at || Date.parse(invite.expires_at)<=Date.now())return NextResponse.json({error:"Invitation expired or revoked"},{status:409,headers:PRIVATE_HEADERS});
     const token=invitationToken(process.env.RECRUITER_AUTOMATION_KEY!,invite.id,invite.email);
     if(invitationDigest(token)!==invite.token_hash)return NextResponse.json({error:"Invitation key changed; owner action required"},{status:409,headers:PRIVATE_HEADERS});
-    return NextResponse.json({invitationId:invite.id,url:`${recruiterOrigin()}/recruiters/invite#invite=${token}`,expiresAt:invite.expires_at},{headers:PRIVATE_HEADERS});
+    return NextResponse.json({invitationId:invite.id,email:invite.email,url:`${recruiterOrigin()}/recruiters/invite#invite=${token}`,expiresAt:invite.expires_at},{headers:PRIVATE_HEADERS});
   } catch {return NextResponse.json({error:"Invitation could not be created"},{status:503,headers:PRIVATE_HEADERS});}
 }
