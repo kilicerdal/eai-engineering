@@ -24,3 +24,4 @@ assert.match(review,/waitFor\s*\(/);
 assert.doesNotMatch(review,/visible:\s*true|waitForFunction/);
 const log = await ask('debug','Analyze this CI log: "POST /orders returned 401; expected 201". No server logs are attached. Quote the relevant evidence, distinguish a hypothesis, and give one verification step.');
 assert.match(log,/401/); assert.match(log,/auth|token|credential/i);
+assert.doesNotMatch(log,/page\.post\s*\(/);
