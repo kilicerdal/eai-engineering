@@ -1,5 +1,5 @@
 /** Read Cloudflare-native and OpenAI-compatible SSE without assuming network chunk boundaries. */
-export async function readStudyStream(response: Response, onText: (text: string) => void): Promise<string> {
+export async function readStudyStream(response: Response, onText: (text: string) => void, requireDone = false): Promise<string> {
   if (!response.ok) {
     const payload = await response.json().catch(() => null);
     const wait = Number(response.headers.get("Retry-After"));
@@ -44,6 +44,7 @@ export async function readStudyStream(response: Response, onText: (text: string)
       }
       if (done) { if (buffer.trim() && !finished) processEvent(buffer); break; }
     }
+    if (requireDone && !finished) throw new Error("The response was interrupted. Retry the question.");
     if (!answer.trim()) throw new Error("The tutor returned an empty response. Please try again.");
     return answer;
   } finally {

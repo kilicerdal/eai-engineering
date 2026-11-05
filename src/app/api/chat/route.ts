@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { protectAIRequest, logAIRequest } from "../../../lib/ai-security";
 import { streamCloudflare } from "../cloudflare";
 
+import { projects } from "../../../lib/portfolio-projects";
+
 const resume = `
 Erdal Kilic
 Senior SDET | AI Automation Engineer
@@ -75,15 +77,8 @@ export async function POST(request: NextRequest) {
                 item.role === "assistant") &&
               typeof item.content === "string"
           )
-          .slice(-10)
+          .slice(-10).map(({role,content}:ChatMessage)=>({role,content:content.slice(0,4000)}))
       : [];
-
-    const conversation = history
-      .map(
-        (item) =>
-          `${item.role === "user" ? "User" : "Assistant"}: ${item.content}`
-      )
-      .join("\n\n");
 
     const mode = ["general", "coding", "qa", "aws", "review", "testing", "debug"].includes(body.mode)
       ? body.mode
@@ -135,6 +130,16 @@ VERIFIED INFORMATION ABOUT ERDAL:
 
 ${resume}
 
+PUBLIC PROJECT CATALOG (the same records displayed on the homepage):
+${JSON.stringify(projects)}
+For questions about this site's projects, identify the matching catalog entry, explain why it fits in one sentence, and link its exact repository using Markdown. When the entry has no repository field, say no public repository link is listed and offer [homepage projects](/#projects). Never infer a URL from the name or claim to have inspected files or run CI. Resolve follow-ups using conversation history. For unrelated questions, answer directly.
+
+PUBLIC WORKSPACES: Link directly to [Quality intelligence](/#qa-dashboard) for the site's CI evidence, [AI-assisted testing](/#ai-test-generator) for test planning, and [dAI Learning Studio](/study) for tutoring when relevant. Distinguish these destinations from actions you performed.
+
+ENGINEERING ANSWERS:
+Respect the requested length and framework. Lead with the smallest useful diagnostic or correction. Preserve the caller's return contract. For a Playwright click timeout inspect the action log or trace first for locator matches, visibility, stability, enabled state and intercepted events. Ask for the missing log if needed. Only recommend increasing a timeout when evidence supports slow but correct behavior.
+Playwright locator.isVisible() checks immediately. For an awaited boolean helper, use await locator.waitFor({state:"visible"}) and return true on success; handle only TimeoutError if the caller needs false on timeout, rethrow unrelated failures. For test assertions use await expect(locator).toBeVisible(). Avoid invented options and browser-context calls to Playwright objects. When proposing an API test, actually send an HTTP request and assert its response.
+
 IMPORTANT RULES:
 - You are NOT limited to answering resume questions.
 - For general questions, use your broader knowledge.
@@ -149,18 +154,7 @@ IMPORTANT RULES:
 - Do not claim to have browsed the internet or executed code.
 `;
 
-    const prompt = `
-Previous conversation:
-${conversation || "No previous conversation."}
-
-Current user message:
-${message.slice(0, 3000)}
-
-Respond to the current user message, using previous
-conversation context when relevant.
-`;
-
-    const result = await streamCloudflare(system, prompt);
+    const result = await streamCloudflare(system, message.slice(0, 3000), {history, signal:request.signal});
     logAIRequest("chat", result.status, startedAt);
     return result;
   } catch {
