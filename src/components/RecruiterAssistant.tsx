@@ -7,7 +7,7 @@ const starters=[
  {label:'Explore SDET expertise',prompt:'Tell me about Erdal’s SDET strengths and automation experience.'},
  {label:'Compare a job description',prompt:'Compare this job description with Erdal’s documented experience and identify strengths and gaps. Job description: '},
  {label:'Build a skills matrix',prompt:'Create a concise skills matrix for Erdal. Distinguish professional, project and resume-listed experience. Do not invent individual skill years.'},
- {label:'Tailor a resume',prompt:'Suggest a truthful resume summary and relevant bullet edits for the job description below, using only documented experience. Flag missing facts. Job description: '},
+ {label:'Suggest resume additions',prompt:'Suggest up to 3 additional resume bullet points in total for the focus or job description below. Match each to the original resume, avoid duplicates, and preserve all existing wording. Focus or job description: '},
 ];
 export default function RecruiterAssistant(){
  const [message,setMessage]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState(''),[turns,setTurns]=useState<RecruiterTurn[]>([]);
@@ -32,7 +32,7 @@ export default function RecruiterAssistant(){
   </div>
   <div className="atlas-chat-composer"><div className="recruiter-starters">{starters.map(item=><button className="atlas-chat-suggestion" type="button" disabled={busy} key={item.label} onClick={()=>{setMessage(item.prompt);input.current?.focus();}}>{item.label}</button>)}</div>
    <form onSubmit={send}><textarea ref={input} aria-label="Your message" value={message} maxLength={10000} rows={1} onChange={e=>setMessage(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();e.currentTarget.form?.requestSubmit();}}} placeholder="Ask eAI about Erdal, or paste a job description…"/><button disabled={busy||!message.trim()} type="submit">{busy?'Thinking…':'Send'}</button></form>
-   {error&&<p className="recruiter-error" role="alert">{error}</p>}<p>AI answers from approved career records. Resume suggestions are for review; your PDF stays unchanged.</p>
+   {error&&<p className="recruiter-error" role="alert">{error}</p>}<p>AI answers from approved career records. Up to 3 additional resume bullets only. Existing content and the original PDF stay unchanged.</p>
   </div>
  </div></section>;
 }
