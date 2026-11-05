@@ -19,5 +19,5 @@ export async function POST(request:Request){
   if(!account||!token)throw Error('AI service unavailable');
   const answer=await generateConversation(validProfile(data.profile),message,history,{account,token});
   return NextResponse.json({answer,kind:'answer'},{headers:PRIVATE_HEADERS});
- }catch{return NextResponse.json({error:'I could not produce a verified answer just now. Please try again or rephrase your question.'},{status:503,headers:PRIVATE_HEADERS});}
+ }catch(error){console.error('recruiter_chat_failure',error instanceof Error?error.message:'Unknown failure');return NextResponse.json({error:'I could not produce a verified answer just now. Please try again or rephrase your question.'},{status:503,headers:PRIVATE_HEADERS});}
 }
