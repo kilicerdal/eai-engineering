@@ -51,9 +51,9 @@ const modes: { id: Mode; label: string }[] = [
 
 const suggestions: Record<Mode, string[]> = {
   general: [
-    "Explain a difficult concept",
-    "Help me create a study plan",
-    "Teach me something new",
+    "Explain photosynthesis using an everyday analogy",
+    "Guide me through 3x + 4 = 19 without giving the answer first",
+    "Help me improve a paragraph while keeping my own ideas",
   ],
   math: [
     "Explain derivatives step by step",
@@ -246,6 +246,7 @@ export default function SharedAIChat() {
   const [hydrated, setHydrated] = useState(false);
   const [requestError, setRequestError] = useState<{ id: string; message: string;retry?:boolean } | null>(null);
 
+  const [showTutorHelp,setShowTutorHelp]=useState(false);
   const [resumeNotice,setResumeNotice]=useState("");
   const [storageWarning,setStorageWarning]=useState(""),[savedCheck,setSavedCheck]=useState<LessonCheck|null>(null);
   const [savedPractice,setSavedPractice]=useState<LessonCheck[]>([]);
@@ -372,7 +373,16 @@ export default function SharedAIChat() {
     abortControllerRef.current?.abort();
   }
 
-  async function sendMessage(text: string, regenerate = false) {
+  function prepareStarter(suggestion:string,stamp:number){
+    if(!active||loading||!hydrated)return;
+    const draft=active.draft?.trim()?`${active.draft}\n\n${suggestion}`:suggestion;
+    if(draft.length>3000){setRequestError({id:active.id,retry:false,message:"Your draft is full. Edit it before adding an example prompt."});return;}
+    updateConversation(active.id,c=>({...c,draft,updatedAt:inputTime(stamp)}));setRequestError(null);
+    requestAnimationFrame(()=>document.getElementById("tutor-message-input")?.focus());
+  }
+  function closeTutorHelp(){setShowTutorHelp(false);requestAnimationFrame(()=>document.getElementById("tutor-help-trigger")?.focus());}
+
+  async function sendMessage(text: string, regenerate = false, clearDraft = false) {
     const question = text.trim();
 
     if (!question || loading || !active) return;
@@ -394,7 +404,7 @@ export default function SharedAIChat() {
           : conversation.title,
       updatedAt: Date.now(),
       messages: baseMessages,
-      draft:"",
+      draft:clearDraft?"":conversation.draft,
     }));
 
     setRequestError(null);
@@ -565,16 +575,17 @@ export default function SharedAIChat() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    void sendMessage(active?.draft||"");
+    void sendMessage(active?.draft||"",false,true);
   }
 
   return (
-    <section id="ai-assistant" className="border-t border-white/10 py-24">
+    <section id="ai-assistant" aria-labelledby="tutor-heading" className="border-t border-white/10 py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="tutor-section-intro">
+        <div className="tutor-section-intro" onKeyDown={event=>{if(showTutorHelp&&event.key==="Escape"){event.preventDefault();closeTutorHelp();}}}>
           <p className="studio-eyebrow">A LITTLE CURIOSITY GOES A LONG WAY</p>
-          <h2>Your AI Tutor</h2>
+          <div className="tutor-heading-row"><h2 id="tutor-heading">Your AI Tutor</h2><button id="tutor-help-trigger" type="button" className="tutor-how-button" aria-expanded={showTutorHelp} aria-controls="tutor-help-guide" onClick={()=>setShowTutorHelp(!showTutorHelp)}>How this works <span aria-hidden="true">?</span></button></div>
           <p>A space to ask, work through an idea, and understand the next step.</p>
+          {showTutorHelp&&<div id="tutor-help-guide" className="tutor-help-guide" role="region" aria-label="How to use your AI Tutor"><div className="tutor-help-heading"><h3>Start with a question. Build understanding.</h3><button type="button" aria-label="Close tutor guide" onClick={closeTutorHelp}>Close</button></div><ol><li><strong>Tell the tutor what you need.</strong><p>Share a subject, paste a problem or show your attempt. Add your level or goal if useful; you can begin with one question.</p></li><li><strong>Choose how to work.</strong><p><b>Guide me</b> asks guiding questions. <b>Explain</b> clarifies an idea. <b>Quiz me</b> offers practice. <b>Check my work</b> reviews your attempt. <b>Study plan</b> helps structure a goal.</p></li><li><strong>Review your message, then Send.</strong><p>Example prompts only fill your draft. Edit them freely. Follow-up and regeneration buttons request another tutor response.</p></li><li><strong>Keep learning at your pace.</strong><p>Ask for a different explanation, try a fresh question or use Recent sessions to return later. Use New session for a separate topic. To study from a document, <a href="/study/materials">open your personal library</a>.</p></li></ol><p className="tutor-help-saving">Sessions and unsent drafts are saved in this browser. {accountConfigured?<>Choose <a href="/study/account">optional account saving</a> to keep an account copy.</>:"No account is required."} Check important facts and calculations against your materials.</p></div>}
         </div>
         <div className="tutor-focus-shell" onKeyDown={event => { if(event.key === "Escape" && openPanel) { event.preventDefault(); document.getElementById(`tutor-${openPanel}-trigger`)?.focus(); setOpenPanel(null); } }}>
           <header className="tutor-focus-header">
@@ -692,7 +703,7 @@ export default function SharedAIChat() {
               role="log"
               aria-live="polite"
             >
-              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Ask a question, share a problem, or show what you’ve tried.</p></div> : (active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
+              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Start with a subject, a question or a problem. Add your level or what you’ve tried if useful.</p><ol className="tutor-empty-steps" aria-label="Start your first tutor conversation"><li>Choose an approach</li><li>Write or use an example</li><li>Select Send when ready</li></ol></div> : (active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
                 <div
                   key={index}
                   className={`tutor-message-row flex ${
@@ -727,14 +738,14 @@ export default function SharedAIChat() {
             </div>
 
             <div className="tutor-composer">
-              {!active?.messages.some(message => message.role === "user") && <div className="tutor-starter-prompts">
+              {!active?.messages.some(message => message.role === "user") && <div className="tutor-starter-prompts"><p className="tutor-starter-caption">Use an example to start a draft, then edit and Send.</p>
                 {suggestions[active?.mode || "general"].map(
                   (suggestion) => (
                     <button
                       key={suggestion}
                       type="button"
                       disabled={loading || !hydrated}
-                      onClick={() => void sendMessage(suggestion)}
+                      onClick={event => prepareStarter(suggestion,event.timeStamp)}
                       className="rounded-full border border-white/15 px-3 py-2 text-xs text-slate-300 hover:border-cyan-400 hover:text-cyan-300 disabled:opacity-50"
                     >
                       {suggestion}
@@ -783,10 +794,11 @@ export default function SharedAIChat() {
               )}
               <form onSubmit={handleSubmit} className="tutor-input-row">
                 <textarea
+                  id="tutor-message-input"
                   rows={2}
                   value={active?.draft||""}
                   onChange={(event) => {if(active){const value=event.target.value,at=inputTime(event.timeStamp);updateConversation(active.id,c=>({...c,draft:value,updatedAt:at}));}}}
-                  placeholder="Ask a question or share your work…"
+                  placeholder="Tell me what you want to understand, or paste a problem…"
                   maxLength={3000}
                   aria-label="Your message"
                   className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"
@@ -802,7 +814,7 @@ export default function SharedAIChat() {
               </form>
 
               <p className="mt-3 text-center text-xs text-slate-500">
-                Sessions and unsent messages are saved in this browser. Only Send submits a message to the AI. {accountConfigured && <>Optional account saving is managed on the <a href="/study/account">Account page</a>. </>}AI responses can contain mistakes; verify important facts and calculations.
+                Sessions and unsent messages are saved in this browser. Send, follow-up and regeneration buttons request an AI response. {accountConfigured && <>Optional account saving is managed on the <a href="/study/account">Account page</a>. </>}AI responses can contain mistakes; verify important facts and calculations.
               </p>
             </div>
           </div>

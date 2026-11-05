@@ -794,3 +794,31 @@
 .plan-adjustment summary {cursor:pointer;color:#d8ba7e;}
 .plan-adjustment .goal-actions {display:flex;flex-wrap:wrap;gap:.7rem;}
 @media(max-width:650px){.plan-adjustment .goal-actions button {width:100%;}}
+
+.eai-study-studio .tutor-heading-row {display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
+.eai-study-studio .tutor-how-button {display:inline-flex;align-items:center;gap:.65rem;padding:.7rem 1rem;border:1px solid #ccac6e;border-radius:7px;background:#0d2031ed;color:#f1dfba;font-size:.85rem;font-weight:600;cursor:pointer;box-shadow:0 2px 12px #0003;}
+.eai-study-studio .tutor-how-button>span {display:inline-grid;place-items:center;width:20px;height:20px;border:1px solid #ccac6e;border-radius:50%;font-size:.7rem;}
+.eai-study-studio .tutor-how-button[aria-expanded=true] {background:#cfac68;color:#081622;}
+.eai-study-studio .tutor-how-button:focus-visible,.eai-study-studio .tutor-help-guide button:focus-visible {outline:2px solid #ffe1a2;outline-offset:4px;}
+.eai-study-studio .tutor-help-guide {margin:1.25rem 0;padding:clamp(1rem,2vw,1.5rem);border:1px solid #a88e59;border-radius:12px;background:#0d1e2df5;box-shadow:0 12px 30px #0003;}
+.eai-study-studio .tutor-help-heading {display:flex;justify-content:space-between;align-items:start;gap:1rem;}
+.eai-study-studio .tutor-help-heading h3 {font:1.35rem Georgia,serif;color:#f3e6cb;}
+.eai-study-studio .tutor-help-heading button {padding:.45rem .8rem;border:1px solid #ad986f;border-radius:6px;color:#eee0c7;cursor:pointer;}
+.eai-study-studio .tutor-help-guide ol {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.15rem 2rem;list-style:decimal;padding:1rem 0 1rem 1.3rem;}
+.eai-study-studio .tutor-help-guide li::marker {color:#dcbb77;font-weight:600;}
+.eai-study-studio .tutor-help-guide li strong {color:#f1e4c9;font-size:.95rem;}
+.eai-study-studio #ai-assistant .tutor-help-guide p {margin:.4rem 0 0;font-size:.85rem;line-height:1.65;color:#bdc8d0;max-width:none;}
+.eai-study-studio .tutor-help-guide a {color:#e2c17f;text-decoration:underline;text-underline-offset:3px;}
+.eai-study-studio #ai-assistant .tutor-help-saving {padding-top:.9rem;border-top:1px solid #82704666;font-size:.8rem;}
+.eai-study-studio .tutor-empty-steps {display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem 1.4rem;list-style:decimal;padding:0 1rem;margin:1rem 0 0;color:#d2bb8d;font-size:.72rem;}
+.eai-study-studio .tutor-empty-steps li {padding-left:.1rem;}
+.eai-study-studio .studio-library-entry {display:flex;align-items:center;gap:1.5rem;padding:2rem 6%;background:#0c1d2a;border-top:1px solid #a4895545;border-bottom:1px solid #a4895545;}
+.eai-study-studio .studio-library-entry h2 {font:clamp(1.3rem,2.2vw,1.9rem) Georgia,serif;color:#eee4cf;margin:.4rem 0;}
+.eai-study-studio .studio-library-entry p {font-size:.85rem;color:#aebbc6;line-height:1.6;}
+.eai-study-studio .studio-library-entry .studio-eyebrow {font-size:.65rem;color:#d9ba7b;}
+.eai-study-studio .studio-library-glyph {color:#d2b273;flex:0 0 42px;}
+.eai-study-studio .studio-library-glyph svg {width:42px;height:42px;}
+.eai-study-studio .studio-library-entry>a {margin-left:auto;flex-shrink:0;padding:.75rem 1rem;border:1px solid #aa905d;border-radius:7px;color:#efddb5;font-size:.85rem;}
+@media(max-width:650px){.eai-study-studio .tutor-help-guide ol {grid-template-columns:1fr;}.eai-study-studio .tutor-heading-row {align-items:flex-start;}.eai-study-studio .tutor-how-button {font-size:.8rem;padding:.65rem .8rem;}.eai-study-studio .studio-library-entry {flex-wrap:wrap;gap:1rem;padding:1.5rem 6%;}.eai-study-studio .studio-library-entry>div:nth-child(2) {flex:1;min-width:0;}.eai-study-studio .studio-library-entry>a {margin-left:58px;}.eai-study-studio .tutor-empty-steps {gap:.4rem 1.5rem;font-size:.68rem;}}
+.eai-study-studio #ai-assistant .tutor-section-intro>p:not(.studio-eyebrow) {color:#e0e3e5;text-shadow:0 1px 8px #000;}
+.eai-study-studio .tutor-starter-prompts .tutor-starter-caption {flex-basis:100%;font-size:.72rem;line-height:1.5;color:#aebcc6;margin:0 0 .2rem;}

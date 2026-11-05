@@ -63,12 +63,16 @@ export default function StudyPage() {
           <h1 id="studio-title">Explore what you<br className="studio-desktop-break" /> don’t yet know.</h1>
           <p className="studio-hero-subtitle">Ancient wisdom. New possibilities.</p>
           <p className="studio-hero-description">A space for curious minds. Connect ideas, explore your materials, and find a clearer path to understanding.</p>
-          <div className="studio-hero-actions"><a className="studio-button-gold" href="#learning-goal">Start exploring <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
+          <div className="studio-hero-actions"><a className="studio-button-gold" href="#ai-assistant">Start with your AI Tutor <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
           <p className="studio-hero-note">No account needed · {accountConfigured ? <Link href="/study/account">Optional account saving ↗</Link> : "Your work stays in this browser"}</p>
         </div>
-        <a href="#discover" className="studio-hero-scroll">YOUR NEXT DISCOVERY <span aria-hidden="true">↓</span></a>
+        <a href="#ai-assistant" className="studio-hero-scroll">MEET YOUR AI TUTOR <span aria-hidden="true">↓</span></a>
       </section>
+      <SharedAIChat />
       <LearningHome />
+      <GoalLearning />
+      <section id="personal-library" className="studio-library-entry" aria-labelledby="personal-library-heading"><div className="studio-library-glyph" aria-hidden="true"><StudyGlyph kind="writing"/></div><div><p className="studio-eyebrow">YOUR PERSONAL LIBRARY</p><h2 id="personal-library-heading">Bring your learning materials.</h2><p>Study from your notes, syllabus or a chapter, with source passages you can return to.</p></div><Link href="/study/materials">Open my library ↗</Link></section>
+      <ExamPreparation />
       <section id="discover" className="studio-discover">
         <div className="studio-landmark-banner studio-landmark-machu">
         <StudyLandmark scene="machu-picchu" />
@@ -106,9 +110,7 @@ export default function StudyPage() {
         </div>
 
       </section>
-      <GoalLearning />
-      <ExamPreparation />
-      <SharedAIChat />
+
 
     
       <div className="studio-footer">
