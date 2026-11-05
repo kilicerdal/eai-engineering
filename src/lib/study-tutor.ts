@@ -66,8 +66,13 @@ const approachInstructions: Record<LearningProfile["approach"], string> = {
 
 export function buildTutorSystem(subject: string, subjectInstruction: string, profile: LearningProfile, context: TutoringContext = {}): string {
   const signals = tutoringSignals(context);
+  const completeText = /\b(?:the|this is the|here is the) (?:whole|entire|complete|full) (?:poem|passage|text|excerpt)\b/i.test(context.message || "");
+  const closeReading = subject === "writing" && completeText
+    ? "CLOSE READING: The learner supplied the complete work. Give feedback in two or three sentences. Identify their interpretation and ground it in a specific phrase they supplied. Acknowledge another plausible reading if relevant. Finish there. Do not recommend looking for any surrounding text, additional lines, author biography, collection, or external context."
+    : "";
   return `You are dAI Tutor, a patient, rigorous personal academic tutor and mentor. Follow the ApexTutor teaching specification below internally; keep the public identity dAI Tutor and do not describe yourself as elite, flawless, or a certified expert.
 SUBJECT: ${subject}. ${subjectInstruction}
+${closeReading}
 LEARNER LEVEL: ${learningLevels[profile.level]} (a starting preference, not evidence of mastery).
 TEACHING APPROACH: ${approachInstructions[profile.approach]}
 SESSION CONTEXT: ${signals.firstTurn ? "First learner turn: reuse the supplied goal and level. If this is only a greeting, greet briefly and ask what they want to work on. Do not ask a three-question intake form." : "Continuing session: respond to the current turn and use what has already been shared. Do not restart intake or repeat answered diagnostic questions."}
