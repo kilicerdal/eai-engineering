@@ -29,7 +29,11 @@ export default function ExamPreparation(){
  const [draft,setDraft]=useState(""),[now,setNow]=useState(0);
  const abort=useRef<AbortController|null>(null);
  const profile=examProfiles.find(p=>p.id===examId)!;
- useEffect(()=>{queueMicrotask(()=>setNow(Date.now()));const timer=setInterval(()=>setNow(Date.now()),60000);return()=>{clearInterval(timer);abort.current?.abort();};},[]);
+ useEffect(()=>{queueMicrotask(()=>{
+   setNow(Date.now());
+   const requested=new URLSearchParams(window.location.search).get("mistake");
+   if(requested?.startsWith("check-") && requested.length<=100)setActive(requested);
+ });const timer=setInterval(()=>setNow(Date.now()),60000);return()=>{clearInterval(timer);abort.current?.abort();};},[]);
  useEffect(()=>{
   function openPractice(event:Event){
    const id=(event as CustomEvent).detail?.id;

@@ -3,12 +3,14 @@ import {packPracticeEvidence,matchingPractice} from "@/lib/study-recovery";
 
 import { accountConfigured } from "@/lib/study-account";
 import {
+  useMemo,
   useEffect,
   useRef,
   useState,
   type FormEvent,
 } from "react";
 
+import {chatPractice} from "@/lib/study-chat-check";
 import LessonCheckpoint from "@/components/LessonCheckpoint";
 import {CHECK_KEY,latestLessonCheck,normalizeLessonChecks,checkLabel,checkReviewMethod,type LessonCheck, normalizeLessonContext, type LessonContext } from "@/lib/study-checkpoints";
 import {normalizeStudyConversations,earlierStudyContext,findResumableConversation,type StudyConversation} from "@/lib/study-continuity";
@@ -319,6 +321,9 @@ export default function SharedAIChat() {
     (conversation) => conversation.id === activeId
   );
 
+
+  const chatId = active?.id, turns = active?.messages, planned = !!active?.checkpoint;
+  const practice = useMemo(() => chatId && turns && !planned ? chatPractice(chatId, turns) : null, [chatId, turns, planned]);
 
   useEffect(()=>{
     let cancelled=false;
@@ -683,7 +688,7 @@ export default function SharedAIChat() {
             {resumeNotice&&<p className="goal-notice" role="status">{resumeNotice}</p>}
             {storageWarning&&<p className="goal-notice" role="status">{storageWarning} <button type="button" onClick={downloadSessions}>Download session backup</button></p>}
             {active&&<details className="tutor-continuity-preview"><summary>What the tutor can use {active.useContinuity===false?"· extra context off":`· ${earlier.length} earlier excerpts${savedCheck?" + saved feedback":""}`}</summary><p>Recent messages, your selected level and current goal are sent with your question. Earlier excerpts stay within this session. Saved checks must match its exact objective and source version; excerpts may be shortened.</p>{active.useContinuity!==false?<>{active.continuityNote&&<div><strong>Your carry-forward note</strong><p>{active.continuityNote}</p></div>}{earlier.map((item,index)=><div key={index}><strong>{item.role==="user"?"Your earlier words":"Earlier tutor response · may contain mistakes"}</strong><p>{item.content}</p></div>)}{savedCheck&&<div><strong>Latest matching check · {checkLabel(savedCheck)} · {checkReviewMethod(savedCheck)}</strong><p>{savedCheck.result.reasoningGap}</p><p>{savedCheck.result.nextStep}</p></div>}{savedPractice.length>1&&<div><strong>{savedPractice.length} matching practice checks</strong><p>The tutor can compare these attempts for this same objective and source version. Matching outcomes alone do not establish the same misconception.</p>{savedPractice.map(c=><p key={c.id}>{checkLabel(c)} · {c.question.question.slice(0,180)}</p>)}</div>}{!active.continuityNote&&!earlier.length&&!savedCheck&&<p>No extra context yet. Add a carry-forward note in Session settings when useful.</p>}</>:<p>Your extra context is off for this session. Change this in Session settings.</p>}</details>}
-            {active && active.title !== "New conversation" && <div className="tutor-context-strip"><span>CURRENT SESSION</span><strong>{active.title}</strong>{active.learning.goal && <p>{active.learning.goal}</p>}{active.checkpoint && <a href="#lesson-understanding-check">Check understanding ↓</a>}</div>}
+            {active && active.title !== "New conversation" && <div className="tutor-context-strip"><span>CURRENT SESSION</span><strong>{active.title}</strong>{active.learning.goal && <p>{active.learning.goal}</p>}{practice && <a href="#chat-understanding-check">Check my understanding ↓</a>}{active.checkpoint && <a href="#lesson-understanding-check">Check understanding ↓</a>}</div>}
             <div className="tutor-mode-bar">
               <div role="group" aria-label="Learning approach" className="flex flex-wrap gap-2">
                 {Object.entries(learningApproaches).map(([value, item]) => (
@@ -819,6 +824,7 @@ export default function SharedAIChat() {
             </div>
           </div>
         </div>
+        {practice && <LessonCheckpoint key={practice.key} context={practice.context} sessionId={practice.key} kind="chat" disabled={loading} recentWork={practice.recentWork}/>}
         {active?.checkpoint && <LessonCheckpoint key={active.id} context={active.checkpoint} sessionId={active.id} disabled={loading} recentWork={`Learner level: ${active.learning.level}\n`+active.messages.slice(-4).map(message=>`${message.role}: ${message.content.slice(0,1800)}`).join("\n").slice(0,4000)} />}
       </div>
     </section>
