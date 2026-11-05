@@ -121,13 +121,18 @@ export default function GoalLearning() {
   return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} aria-labelledby="goal-heading" aria-busy={busy}>
     <StudyLandmark scene="stonehenge" />
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">What do you want to achieve?</h2></div><p>A learning path built<br/>around your goal.</p></div>
-    <p className="goal-intro">Tell us your goal. Shape your next step.</p>
+    <details className="goal-intro">
+      <summary className="cursor-pointer w-fit text-[#ebc782]">How this works</summary>
+      <p className="mt-2 max-w-prose">Describe one thing you want to do. You can bring notes or skip straight to choosing your level and study time. Review the proposed lessons, edit their order or wording, then choose “Use this plan” to start a lesson with your tutor.</p>
+    </details>
     <ol className="goal-steps" aria-label="Plan creation steps">{["Your goal","Materials","Your pace","Review"].map((label,index)=><li key={label} aria-current={step===index+1?"step":undefined}><span>{index+1}</span>{label}</li>)}</ol>
     {storageWarning&&<p role="status" className="goal-notice">{storageWarning}</p>}
     {step===1&&<div className="goal-panel">
       <label htmlFor="learning-achievement" className="goal-label">Tell us what you want to learn or accomplish</label>
-      <textarea id="learning-achievement" value={settings.goal} onChange={e=>change("goal",e.target.value)} maxLength={1500} rows={2} placeholder="I want to learn…" disabled={!ready||busy}/>
-      <p className="goal-helper">Any subject. A specific question, a skill, or a bigger ambition. {settings.goal.length}/1,500</p>
+      <textarea id="learning-achievement" aria-describedby="learning-goal-hint" value={settings.goal} onChange={e=>change("goal",e.target.value)} maxLength={1500} rows={2} placeholder="I want to be able to…" disabled={!ready||busy}/>
+      <p id="learning-goal-hint" className="goal-helper">
+        {settings.goal.trim().length < 10 ? "Write at least 10 characters. Try naming something you want to solve, explain, or create." : "You can refine your goal when you review the plan."} {settings.goal.length}/1,500
+      </p>
       <details className="goal-examples"><summary>Need inspiration? Try an example</summary><div>{examples.map(example=><button key={example} type="button" onClick={()=>change("goal",example)}>{example} ↗</button>)}</div></details>
       <div className="goal-actions"><button className="goal-primary" disabled={!ready||settings.goal.trim().length<10} onClick={()=>move(2)}>Continue →</button>{plan&&<button onClick={()=>move(4)}>Return to my plan</button>}<a href="#ai-assistant">Explore with the tutor instead ↗</a></div>
     </div>}
