@@ -52,8 +52,9 @@ export function recommendedExamDomain(exam:ExamProfile,attempts:ExamAttempt[],no
   return {domain,missed:items.reduce((n,s)=>n+s.needsPractice,0),helped:items.reduce((n,s)=>n+s.helped,0),checked:items.reduce((n,s)=>n+s.checked,0)};
  }).sort((a,b)=>Number(b.missed>0)-Number(a.missed>0)||Number(b.helped>0)-Number(a.helped>0)||a.checked-b.checked)[0].domain;
 }
-export function startExamSession(record:ExamRecord,exam:ExamProfile,mode:"diagnostic"|"practice",domain:ExamDomain,now:number,sessionId:string):ExamRecord{
+export function startExamSession(record:ExamRecord,exam:ExamProfile,mode:"diagnostic"|"practice",domain:ExamDomain,now:number,sessionId:string,skill?:ExamSkill):ExamRecord{
  if(!profile(exam)||!id(sessionId)||!instant(now)||!["diagnostic","practice"].includes(mode)||!Object.hasOwn(examDomains,domain))throw new Error("Choose a valid exam and practice focus.");
+ if(skill!==undefined && (mode!=="practice" || !Object.hasOwn(examSkillLessons,skill) || examSkillLessons[skill].domain!==domain))throw new Error("Choose a skill in the selected practice domain.");
  const latest=latestExamEvidence(exam,record.attempts,now);
  const ranked=(questions:ExamBankQuestion[])=>[...questions].sort((a,b)=>{
   const priority=(q:ExamBankQuestion)=>{const a=latest.get(q.id);return !a||a.selectedIndex===null?0:a.selectedIndex!==q.answerIndex?1:a.hintsUsed?2:3;};
@@ -63,7 +64,7 @@ export function startExamSession(record:ExamRecord,exam:ExamProfile,mode:"diagno
   const questions=ranked(examBank.filter(q=>q.domain===d));
   const offset=exam==="psat"&&questions.length>1&&!latest.size?1:0;
   return questions[offset].id;
- }):ranked(examBank.filter(q=>q.domain===domain)).slice(0,4).map(q=>q.id);
+ }):ranked(examBank.filter(q=>q.domain===domain&&(!skill||q.skill===skill))).slice(0,4).map(q=>q.id);
  const session:ExamSession={id:sessionId,mode,questionIds,index:0,startedAt:now,finished:false,selectedIndex:null,hintsUsed:0,reasoning:""};
  return {...record,activeExam:exam,sessions:{...record.sessions,[exam]:session}};
 }

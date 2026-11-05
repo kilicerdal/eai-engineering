@@ -13,6 +13,7 @@ function display(text:string){const superscript="⁰¹²³⁴⁵⁶⁷⁸⁹";re
 export default function StudyExamPractice(){
  const params=useSearchParams(),requested=params.get("exam"),requestedDomain=params.get("domain"),requestedSkill=params.get("skill");
  const [record,setRecord]=useState<ExamRecord>(emptyExamRecord),[ready,setReady]=useState(false),[warning,setWarning]=useState(""),[error,setError]=useState(""),[now,setNow]=useState(0),[domain,setDomain]=useState<ExamDomain>("information"),[savedNotebook,setSavedNotebook]=useState(""),[pendingBackup,setPendingBackup]=useState<ExamRecord|null>(null);
+ const [coverageFilter,setCoverageFilter]=useState("all");
  const current=useRef(record),lastRaw=useRef<string|null>(null),writable=useRef(true),importRevision=useRef(0),workspace=useRef<HTMLElement>(null);
  useEffect(()=>{
   let next=emptyExamRecord(),message="";writable.current=true;
@@ -20,12 +21,14 @@ export default function StudyExamPractice(){
   catch(e){writable.current=false;message=e instanceof Error?e.message:"Browser saving is unavailable. This session will stay temporary.";}
   if(requested==="sat"||requested==="psat")next={...next,activeExam:requested};
   current.current=next;
-  const initial=setTimeout(()=>{setRecord(next);setWarning(message);setNow(Date.now());setDomain(requestedDomain&&Object.hasOwn(examDomains,requestedDomain)?requestedDomain as ExamDomain:recommendedExamDomain(next.activeExam,next.attempts,Date.now()));setReady(true);},0);
+  const initial=setTimeout(()=>{setRecord(next);setCoverageFilter("all");setWarning(message);setNow(Date.now());setDomain(requestedDomain&&Object.hasOwn(examDomains,requestedDomain)?requestedDomain as ExamDomain:recommendedExamDomain(next.activeExam,next.attempts,Date.now()));setReady(true);},0);
   const timer=setInterval(()=>setNow(Date.now()),30000);
   return()=>{clearTimeout(initial);clearInterval(timer);};
  },[requested,requestedDomain]);
  useEffect(()=>{
-  if(!ready||!["#exam-review","#exam-practice-workspace"].includes(window.location.hash))return;
+  if(!ready)return;
+  const allowed=["#exam-review","#exam-practice-workspace","#skill-coverage",...Object.keys(examSkillLessons).map(s=>"#coverage-"+s)];
+  if(!allowed.includes(window.location.hash))return;
   const target=window.location.hash.slice(1);
   const frame=requestAnimationFrame(()=>document.getElementById(target)?.scrollIntoView({block:"start"}));
   return()=>cancelAnimationFrame(frame);
@@ -34,6 +37,14 @@ export default function StudyExamPractice(){
  const answers=sessionAnswers(record,exam,now),attempt=question?answers.find(a=>a.questionId===question.id):undefined;
  const reviews=examReviewProgress(exam,record.attempts,now),pendingReviews=reviews.filter(r=>!r.resolvedBy),finishedReviews=reviews.filter(r=>r.resolvedBy);
  const skills=examSkillEvidence(exam,record.attempts,now),suggestion=recommendedExamDomain(exam,record.attempts,now);
+ const coverageGroups=[
+  {id:"all",name:"All skills",items:skills},
+  {id:"new",name:"Not checked",items:skills.filter(s=>!s.checked)},
+  {id:"helped",name:"Correct with help",items:skills.filter(s=>s.helped>0)},
+  {id:"review",name:"Needs review",items:skills.filter(s=>s.needsPractice>0)},
+  {id:"independent",name:"Correct without hints",items:skills.filter(s=>s.independent>0)}
+ ];
+ const visibleSkills=coverageGroups.find(group=>group.id===coverageFilter)!.items;
  function update(next:ExamRecord,at:number){
   if(next===current.current)return;
   current.current=next;setRecord(next);setNow(at);setError("");
@@ -45,10 +56,10 @@ export default function StudyExamPractice(){
   }catch{writable.current=false;setWarning("Your latest work could not be saved in this browser. Download a practice backup before leaving.");}
  }
  function focusWorkspace(){requestAnimationFrame(()=>{workspace.current?.focus({preventScroll:true});workspace.current?.scrollIntoView({behavior:"smooth",block:"start"});});}
- function start(mode:"diagnostic"|"practice",focus:ExamDomain,at:number){
+ function start(mode:"diagnostic"|"practice",focus:ExamDomain,at:number,skill?:ExamSkill){
   const active=current.current.sessions[exam];
   if(active&&!active.finished&&!window.confirm("Start a new session? Checked answers stay in your history; the current unsubmitted answer will be replaced."))return;
-  update(startExamSession(current.current,exam,mode,focus,at,crypto.randomUUID()),at);setSavedNotebook("");focusWorkspace();
+  update(startExamSession(current.current,exam,mode,focus,at,crypto.randomUUID(),skill),at);setSavedNotebook("");focusWorkspace();
  }
  function reviewSkill(skill:ExamSkill,at:number){
   const active=current.current.sessions[exam];
@@ -109,7 +120,7 @@ export default function StudyExamPractice(){
   {!ready?<p role="status">Opening your saved practice…</p>:<>
    {warning&&<div className="goal-notice" role="status">{warning} <button onClick={backup}>Download practice backup</button></div>}
    {error&&<p className="goal-error" role="alert">{error}</p>}
-   <div className="exam-start-grid"><section className="exam-start-card"><p className="studio-eyebrow">FIND YOUR STARTING POINT</p><h2>A short skill check.</h2><p>Eight questions, one per domain. Use a hint or skip when needed—we keep that separate from an independent answer. Untimed; pause and return.</p><button className="goal-primary" onClick={event=>start("diagnostic",domain,eventTime(event))}>{session&&!session.finished?"Start a new skill check":"Start skill check"}</button></section><section className="exam-start-card"><p className="studio-eyebrow">FOCUSED PRACTICE</p><h2>Work on one area.</h2><label className="goal-label">Practice focus<select value={domain} onChange={e=>setDomain(e.target.value as ExamDomain)}>{(Object.keys(examDomains) as ExamDomain[]).map(d=><option key={d} value={d}>{examDomains[d].name}</option>)}</select></label><p className="goal-helper">Suggested from your latest checked items: {examDomains[suggestion].name}. A small sample cannot establish mastery.</p><div className="goal-actions"><button className="goal-primary" onClick={event=>start("practice",domain,eventTime(event))}>Start targeted practice</button><button onClick={()=>setDomain(suggestion)}>Use suggested focus</button></div></section></div>
+   <div className="exam-start-grid"><section className="exam-start-card"><p className="studio-eyebrow">FIND YOUR STARTING POINT</p><h2>A short skill check.</h2><p>Eight questions, one per domain. Use a hint or skip when needed—we keep that separate from an independent answer. Untimed; pause and return.</p><button className="goal-primary" onClick={event=>start("diagnostic",domain,eventTime(event))}>{session&&!session.finished?"Start a new skill check":"Start skill check"}</button></section><section className="exam-start-card"><p className="studio-eyebrow">FOCUSED PRACTICE</p><h2>Work on one area.</h2><label className="goal-label">Practice focus<select value={domain} onChange={e=>setDomain(e.target.value as ExamDomain)}>{(Object.keys(examDomains) as ExamDomain[]).map(d=><option key={d} value={d}>{examDomains[d].name}</option>)}</select></label><p className="goal-helper">Suggested from your latest checked items: {examDomains[suggestion].name}. A small sample cannot establish mastery.</p><div className="goal-actions"><button className="goal-primary" onClick={event=>start("practice",domain,eventTime(event))}>Start targeted practice</button><button onClick={()=>setDomain(suggestion)}>Use suggested focus</button><a href="#skill-coverage">Browse skills ↓</a></div></section></div>
    <section id="exam-review" className="exam-review-panel" aria-labelledby="exam-review-heading"><div className="exam-review-heading"><div><p className="studio-eyebrow">BUILD UNDERSTANDING THAT LASTS</p><h2 id="exam-review-heading">Return to the idea. Try it differently.</h2></div><span>{pendingReviews.filter(r=>r.dueAt<=now).length} ready · {pendingReviews.filter(r=>r.dueAt>now).length} upcoming</span></div><p>Missed and helped answers suggest a review 24 hours later. Review sooner if you like. A different question answered without hints completes this follow-up; it does not prove mastery. Dates are suggestions, with no automatic notifications.</p>
     {!pendingReviews.length&&<p className="exam-review-empty">{finishedReviews.length?"Your current follow-ups have a different example answered without hints. Keep exploring, or choose another practice area.":"Your review list will grow from checked answers. Skipping a question is not counted as a mistake."}</p>}
     {requestedSkill&&Object.hasOwn(examSkillLessons,requestedSkill)&&!pendingReviews.some(r=>r.skill===requestedSkill)&&<p className="goal-notice">There is no pending review for {examSkillLessons[requestedSkill as ExamSkill].name} in this profile. Your latest evidence may have changed.</p>}
@@ -131,7 +142,24 @@ export default function StudyExamPractice(){
      <div className="exam-study-actions"><button onClick={event=>tutor(eventTime(event))}>Work through this with my tutor{!attempt?" · counts as help":""} ↗</button><details><summary>Review the key idea{!attempt?" · counts as help":""}</summary><button disabled={!!attempt||session.hintsUsed>=question.hints.length} onClick={event=>draft({hintsUsed:question.hints.length},eventTime(event))}>Use the mini lesson · counts as help</button>{(!!attempt||session.hintsUsed===question.hints.length)&&<div><p>{examSkillLessons[question.skill].idea}</p><p><strong>Another example:</strong> {examSkillLessons[question.skill].example}</p><p><strong>Think about:</strong> {examSkillLessons[question.skill].check}</p></div>}</details></div>
     </>}
    </section>}
-   <section className="exam-evidence-grid" aria-labelledby="exam-evidence-title"><h2 id="exam-evidence-title">What your checked practice shows.</h2><p>Latest eligible answer per question in this profile. Repeating a question does not add another point. These counts do not measure all skills in a domain.</p><div>{(Object.keys(examDomains) as ExamDomain[]).map(d=><article key={d}><p className="studio-eyebrow">{examDomains[d].section}</p><h3>{examDomains[d].name}</h3>{skills.filter(s=>s.domain===d).map(s=><div className="exam-skill-row" key={s.skill}><strong>{examSkillLessons[s.skill].name}</strong><span>{s.checked?`${s.independent} correct without hints · ${s.helped} with help · ${s.needsPractice} need review`:`Not checked yet${s.unanswered?` · ${s.unanswered} skipped`:""}`}</span></div>)}<button onClick={event=>{setDomain(d);start("practice",d,eventTime(event));}}>Practice this area ↗</button></article>)}</div></section>
+   <section id="skill-coverage" className="exam-evidence-grid" aria-labelledby="exam-evidence-title">
+    <h2 id="exam-evidence-title">{examName(exam)} skill coverage</h2>
+    <p>{skills.filter(s=>s.checked>0).length} of {skills.length} skills have a checked answer. Counts use the latest attempt on each question in this profile. A skill can appear in several groups.</p>
+    <label className="goal-label">Show skills
+      <select value={coverageFilter} onChange={e=>setCoverageFilter(e.target.value)}>{coverageGroups.map(g=><option key={g.id} value={g.id}>{g.name} ({g.items.length})</option>)}</select>
+    </label>
+    {!visibleSkills.length && <p role="status">No skills match this group for {examName(exam)} yet. Choose All skills to start practicing.</p>}
+    <div>{(Object.keys(examDomains) as ExamDomain[]).map(d=>{
+      const rows=visibleSkills.filter(s=>s.domain===d);
+      return rows.length>0 && <article key={d}><p className="studio-eyebrow">{examDomains[d].section}</p><h3>{examDomains[d].name}</h3>
+        {rows.map(s=><div className="exam-skill-row" id={`coverage-${s.skill}`} key={s.skill}>
+          <strong>{examSkillLessons[s.skill].name}</strong>
+          <span>{s.checked} of {s.total} questions checked · {s.independent} correct without hints · {s.helped} correct with help · {s.needsPractice} need review{s.unanswered>0 && ` · ${s.unanswered} skipped`}</span>
+          <button type="button" className="goal-primary self-start" aria-label={`Practice ${examSkillLessons[s.skill].name}`} onClick={event=>start("practice",d,eventTime(event),s.skill)}>Practice this skill →</button>
+        </div>)}
+      </article>;
+    })}</div>
+   </section>
    <footer className="exam-practice-footer"><p>Saved in this browser{accountConfigured&&<> · <Link href="/study/account">Optional account saving</Link></>}. {examName(exam)} profile results stay separate. Original dAI exercises; not affiliated with or endorsed by College Board. No official score or readiness prediction.</p><button onClick={backup}>Download practice backup</button><label className="exam-backup-import">Open a practice backup<input type="file" accept="application/json,.json" aria-label="Open exam practice backup" onChange={event=>{void importBackup(event.target.files?.[0]);event.target.value="";}}/></label><Link href="/study#mistake-notebook">Open my mistake notebook ↗</Link>{pendingBackup&&<div className="exam-backup-preview"><h3>Review this backup before restoring.</h3><p>{pendingBackup.attempts.length} checked or skipped attempts, with separate SAT and PSAT sessions. Restoring replaces exam practice on this device. Your other learning tools stay unchanged. We download the existing exam-practice copy first.</p><button onClick={event=>restoreBackup(eventTime(event))}>Restore this exam-practice backup</button><button onClick={()=>setPendingBackup(null)}>Cancel restore</button></div>}</footer>
   </>}
  </div>;

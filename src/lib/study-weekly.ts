@@ -35,7 +35,7 @@ export function weeklyAttempts(checks: LessonCheck[], exams: unknown, practice: 
     addChoice(a.exam+"-"+q.id,a.submittedAt,a.exam.toUpperCase()+" · "+skill.name,
       [q.passage,q.prompt].filter(Boolean).join("\n"),q.choices[a.selectedIndex],a.reasoning,
       a.selectedIndex===q.answerIndex,a.hintsUsed,q.explanation,
-      `/study/exams?exam=${a.exam}&domain=${q.domain}&skill=${q.skill}`,"Open exam practice");
+      `/study/exams?exam=${a.exam}&domain=${q.domain}&skill=${q.skill}#coverage-${q.skill}`,"Open exam practice");
   }
   for (const a of normalizePracticeAttempts(practice)) {
     const q=practiceQuestions.find(item=>item.id===a.questionId)!;

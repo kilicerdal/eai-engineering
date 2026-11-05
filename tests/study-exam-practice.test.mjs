@@ -117,3 +117,18 @@ test('all original question identifiers, texts, choices and keys remain byte-for
  const {createHash}=await import('node:crypto');const original=bank.examBank.filter(q=>q.id.includes('-v1-'));assert.equal(original.length,40);
  assert.equal(createHash('sha256').update(JSON.stringify(original)).digest('hex'),'f39b21c58b5cd72bb4db9df6b1851d402383dd4ba27c5aa48e54036215df2d6c');
 });
+
+test('every coverage skill opens only its own questions and preserves the other exam session',()=>{
+ for(const exam of ['sat','psat']){
+  const other=exam==='sat'?'psat':'sat',record=start(p.emptyExamRecord(),other);
+  for(const [skill,{domain}] of Object.entries(bank.examSkillLessons)){
+   const next=p.startExamSession(record,exam,'practice',domain,now,'focused',skill);
+   const ids=next.sessions[exam].questionIds;
+   assert.ok(ids.length>0 && ids.length<=4);
+   assert.ok(ids.every(id=>bank.examBank.find(q=>q.id===id).skill===skill));
+   assert.deepEqual(next.sessions[other],record.sessions[other]);
+   assert.deepEqual(p.readExamRecord(next),next);
+  }
+ }
+ assert.throws(()=>p.startExamSession(p.emptyExamRecord(),'sat','practice','algebra',now,'invalid','inference'));
+});
