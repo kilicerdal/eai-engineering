@@ -33,3 +33,13 @@ test('the notebook copy supports edits, keeps the original answer and is retry-s
   assert.equal(tutorNotebookEntry(check,fields,400).id,entry.id);
   assert.throws(()=>tutorNotebookEntry(check,{...fields,answer:'x'.repeat(701)},200));
 });
+
+test('negative scaling asks for the comparison without disclosing the rule or repeating the last item',()=>{
+ const {negativeScaleQuestion}=loadStudyModule('study-chat-check');
+ const {context}=chatPractice('s',turns);
+ const first=negativeScaleQuestion(context,'');
+ assert.match(first.question,/justify/);
+ assert.doesNotMatch(first.question,/revers|flip|reflect|must change/i);
+ assert.notEqual(negativeScaleQuestion(context,first.question).question,first.question);
+ assert.equal(negativeScaleQuestion({...context,goal:'Discuss negative imagery in this poem.'},''),null);
+});

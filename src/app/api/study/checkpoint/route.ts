@@ -1,3 +1,4 @@
+import {negativeScaleQuestion} from "@/lib/study-chat-check";
 import {recoveryPrompt,recoveryApproaches,matchingPractice} from "@/lib/study-recovery";
 import {NextRequest,NextResponse} from "next/server";
 import {protectAIRequest,logAIRequest} from "@/lib/ai-security";
@@ -23,7 +24,8 @@ export async function POST(request:NextRequest){
  if(input.action==="review"&&(typeof input.answer!=="string"||!input.answer.trim()||input.answer.length>2500))return reply({error:"Share your answer and reasoning in up to 2,500 characters."},400);
  if(input.action==="review"&&question&&!context.sources?.length){const checked=checkShortLinearAnswer(question,input.answer as string);if(checked)return reply({result:checked},200);}
  if(input.action==="question"){
-  const reviewed=!context.sources?.length&&freshNotebookLinearQuestion(context,typeof input.previousQuestion==="string"?input.previousQuestion:"");
+  const previous=typeof input.previousQuestion==="string"?input.previousQuestion:"";
+  const reviewed=negativeScaleQuestion(context,previous)||(!context.sources?.length&&freshNotebookLinearQuestion(context,previous));
   if(reviewed)return reply({question:reviewed},200);
  }
  if(input.action==="explain"&&(!Object.hasOwn(recoveryApproaches,String(input.approach))||!matchingPractice(context,input.practiceEvidence,Date.now()).length))return reply({error:"Choose an explanation style for saved matching feedback."},400);

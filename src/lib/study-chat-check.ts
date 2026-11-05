@@ -41,3 +41,13 @@ export function tutorNotebookEntry(check: LessonCheck, fields: ReturnType<typeof
   return {id: `check-${check.id}`, exam: "Tutor practice", question, answer, reflection, expected: "",
     createdAt: check.submittedAt, reviewAt: now + 86400000, reviews: 0};
 }
+
+// A neutral transfer item for a common case where model questions reveal the sign rule.
+export function negativeScaleQuestion(context: LessonContext, previous: string) {
+  if (!context.lesson.id.startsWith("chat-") || context.sources?.length ||
+      !/inequalit/i.test(context.goal) || !/multipl/i.test(context.goal) || !/negative/i.test(context.goal)) return null;
+  const base = 2 + Math.floor(Math.random() * 30);
+  const make = (n: number) => `Two values are ${n} and ${n+5}. Multiply each by −3. Compare the resulting values using <, > or =, and justify your comparison.`;
+  const question = make(base);
+  return {question: question === previous ? make(base + 1) : question, criterion: "Compare both products and justify their order."};
+}
