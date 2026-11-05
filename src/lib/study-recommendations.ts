@@ -1,3 +1,4 @@
+import {resolvePlanChoice} from "./study-plan-adjustment";
 import {materialReviewSteps} from "./study-material-practice";
 import type {CourseDocument} from "./study-materials";
 import type { GoalLesson } from "./study-goal";
@@ -13,8 +14,9 @@ export type LearningRecommendation = {
 } & ({kind: "lesson"; lesson: GoalLesson} | {kind: "notebook"; mistakeId: string} | {kind: "plan"} | {kind:"material";contextId:string} | {kind:"exam";exam:ExamProfile;domain:ExamDomain;skill?:ExamSkill});
 
 /** Transparent rules over saved evidence; never a score or an automatic completion. */
-export function recommendLearningStep(journey: SavedJourney | null, rawMistakes: unknown, checks: LessonCheck[], now: number, rawExamPractice:unknown=null,materials:CourseDocument[]=[]): LearningRecommendation {
+export function recommendLearningStep(journey: SavedJourney | null, rawMistakes: unknown, checks: LessonCheck[], now: number, rawExamPractice:unknown=null,materials:CourseDocument[]=[],planChoice:unknown=null): LearningRecommendation {
  if (journey && (!journey.accepted || journey.dirty)) return {kind:"plan",title:"Review your learning plan.",reason:"Your plan has changes or has not been accepted. Review it before continuing a planned lesson.",action:"Review my plan"};
+ const chosen=resolvePlanChoice(journey,checks,planChoice,now);if(chosen)return {kind:"lesson",lesson:chosen.lesson,title:chosen.title,reason:chosen.reason,action:chosen.action,check:chosen.proposal.source};
  const candidates: {recommendation: LearningRecommendation; priority: number; time: number}[] = [];
  if (journey) {
   for (const lesson of journey.plan.lessons) {

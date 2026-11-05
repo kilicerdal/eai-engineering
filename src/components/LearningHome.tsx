@@ -1,4 +1,5 @@
 "use client";
+import {PLAN_CHOICE_KEY,resolvePlanChoice} from "@/lib/study-plan-adjustment";
 import DailyStudySession from "@/components/DailyStudySession";
 import {dailyTargetHref,type DailyTarget} from "@/lib/study-daily-session";
 import {mistakePracticeContext} from "@/lib/study-mistake-practice";
@@ -25,6 +26,7 @@ export default function LearningHome() {
   const [documents,setDocuments] = useState<number | null>(null);
   const [examPractice,setExamPractice] = useState<unknown>(null);
   const [checks,setChecks] = useState<LessonCheck[]>([]);
+  const [planChoice,setPlanChoice]=useState<unknown>(null);
   const [now,setNow] = useState(0);
   const [ready,setReady] = useState(false);
   const [warning,setWarning] = useState("");
@@ -35,7 +37,7 @@ export default function LearningHome() {
       try {
         const saved = localStorage.getItem("eai-goal-journey-v1");
         setJourney(restoreJourney(saved ? JSON.parse(saved) : null));
-        setNow(Date.now());
+        setNow(Date.now());try{setPlanChoice(JSON.parse(localStorage.getItem(PLAN_CHOICE_KEY)||"null"));}catch{setPlanChoice(null);}
         try{setExamPractice(JSON.parse(localStorage.getItem("eai-exam-prep-v1")||"null"));}catch{setExamPractice(null);}
         try { setChecks(normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]"))); } catch { setChecks([]); }
         setEvidence(learningEvidence(JSON.parse(localStorage.getItem("eai-study-practice-v1") || "[]"),JSON.parse(localStorage.getItem("eai-exam-mistakes-v1") || "[]"),Date.now()));
@@ -51,9 +53,10 @@ export default function LearningHome() {
     window.addEventListener("focus",refresh);
     return () => { cancelled = true; clearTimeout(initial); clearInterval(timer); window.removeEventListener("eai-study-progress-change",refresh); window.removeEventListener("storage",refresh); window.removeEventListener("focus",refresh); };
   },[]);
-  const next = journey ? recommendLesson(journey.settings.goal,journey.plan.lessons,journey.completed,checks,now) : null;
+  const chosenPlan=resolvePlanChoice(journey,checks,planChoice,now);
+  const next = chosenPlan?.lesson || (journey ? recommendLesson(journey.settings.goal,journey.plan.lessons,journey.completed,checks,now) : null);
   const lessonEvidence = journey ? journey.plan.lessons.flatMap(lesson => {const check=latestLessonCheck({goal:journey.settings.goal,lesson},checks,now);return check?[check]:[];}) : [];
-  const recommendation = recommendLearningStep(journey,evidence.due,checks,now,examPractice,materials);
+  const recommendation = recommendLearningStep(journey,evidence.due,checks,now,examPractice,materials,planChoice);
   const notebookRecommendation = recommendLearningStep(null,evidence.due,checks,now);
   const sharedNotebookStep = recommendation.kind==="notebook"&&notebookRecommendation.kind==="notebook"&&recommendation.mistakeId===notebookRecommendation.mistakeId;
   const usable = journey?.accepted && !journey.dirty;
@@ -97,7 +100,7 @@ export default function LearningHome() {
       <DailyStudySession target={dailyTarget} openTarget={openDailyTarget} checks={checks} exam={examPractice} now={now}/>
       <OpenStudyWork/>
       <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">RECOMMENDED NEXT STEP</p><h3>{recommendation.title}</h3><p>{recommendation.reason}</p>
-      {recommendation.check && <div className="learning-check-memory"><strong>{checkLabel(recommendation.check)} · {checkReviewMethod(recommendation.check)}</strong><p>{recommendation.check.result.nextStep}</p><small>Latest saved response · {new Date(recommendation.check.submittedAt).toLocaleDateString()} · Help use self-reported.</small></div>}
+      {recommendation.check && <div className="learning-check-memory"><strong>{checkLabel(recommendation.check)} · {checkReviewMethod(recommendation.check)}</strong>{recommendation.kind==="lesson"&&recommendation.lesson.id!==recommendation.check.context.lesson.id&&<p className="learning-home-small">Evidence from the earlier lesson: {recommendation.check.context.lesson.title}. The next lesson has not been assessed by this check.</p>}<p>{recommendation.check.result.nextStep}</p><small>Latest saved response · {new Date(recommendation.check.submittedAt).toLocaleDateString()} · Help use self-reported.</small></div>}
       <p className="learning-home-small">Based on your latest saved checks and due review dates. You can choose a different lesson or explore freely.</p>
       <div className="goal-actions">{recommendation.kind==="material"?<Link className="goal-primary" href={`/study/materials?review=${encodeURIComponent(recommendation.contextId)}`}>{recommendation.action} ↗</Link>:recommendation.kind==="exam"?<Link className="goal-primary" href={`/study/exams?exam=${recommendation.exam}&domain=${recommendation.domain}${recommendation.skill?`&skill=${recommendation.skill}`:""}#exam-review`}>{recommendation.action} ↗</Link>:recommendation.kind==="plan"?<a className="goal-primary" href="#learning-goal">{recommendation.action} →</a>:<button className="goal-primary" onClick={followRecommendation}>{recommendation.action} ↗</button>}{journey&&usable&&<a href="#learning-goal">View my plan ↗</a>}</div>
       {recommendation.kind==="lesson"&&<p className="learning-home-small">Prepares the lesson and its latest feedback in your tutor. Review the message and select Send.</p>}

@@ -785,3 +785,12 @@
 .practice-next-action button {border:1px solid #a18b5d;border-radius:7px;padding:.65rem .85rem;color:#ebddbc;background:#112535;}
 .daily-session-return a:focus-visible {outline:2px solid #ffe4a8;outline-offset:4px;}
 @media(max-width:650px){.daily-session-return {bottom:8px;width:calc(100% - 16px);padding:.7rem .85rem;gap:.6rem;align-items:stretch;flex-direction:column;}.daily-session-return strong {max-width:100%;}.daily-session-return a {text-align:center;padding:.6rem;}.eai-study-studio:has(.daily-session-return) {padding-bottom:170px;}.practice-next-action .goal-actions {flex-direction:column;}}
+
+.plan-adjustment {padding:clamp(1rem,2vw,1.5rem);margin:1.5rem 0;border:1px solid rgba(211,173,99,.5);border-radius:12px;background:rgba(16,35,50,.95);}
+.plan-adjustment h3 {font-size:1.35rem;margin:.4rem 0;}
+.plan-adjustment h4 {font-size:1.1rem;color:#e2c486;margin:.7rem 0;}
+.plan-adjustment p {line-height:1.6;}
+.plan-adjustment details {margin:1rem 0;}
+.plan-adjustment summary {cursor:pointer;color:#d8ba7e;}
+.plan-adjustment .goal-actions {display:flex;flex-wrap:wrap;gap:.7rem;}
+@media(max-width:650px){.plan-adjustment .goal-actions button {width:100%;}}

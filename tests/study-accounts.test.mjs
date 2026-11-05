@@ -26,3 +26,8 @@ test('focused sessions are included in optional account snapshots without collec
  const raw=JSON.stringify({version:1,activeId:null,sessions:[]}),s=storage({'eai-daily-sessions-v1':raw,'other-app':'private'});
  const values=snapshots.collectStudyValues(s);assert.deepEqual(values,{'eai-daily-sessions-v1':raw});assert.equal(snapshots.validateStudySnapshot({...empty(),values}).values['eai-daily-sessions-v1'],raw);
 });
+
+test('student plan-next-step choices are included in optional account snapshots',()=>{
+ const raw=JSON.stringify({version:1,key:'a reviewed plan/evidence identity',option:'original',decidedAt:1700000000000}),values=snapshots.collectStudyValues(storage({'eai-plan-next-step-v1':raw}));
+ assert.equal(snapshots.validateStudySnapshot({...empty(),values}).values['eai-plan-next-step-v1'],raw);
+});
