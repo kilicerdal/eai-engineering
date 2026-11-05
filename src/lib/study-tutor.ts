@@ -52,7 +52,7 @@ export function tutoringSignals(context: TutoringContext = {}): { firstTurn: boo
   const users = normalizeStudyHistory(context.history).filter(message => message.role === "user");
   // Only explicit first-person difficulty near the start of a turn is a hint;
   // the model still interprets meaning and language from the full conversation.
-  const stuck = (text: string) => /^(?:\s*(?:sorry[,!.]?\s*)?)(?:i (?:still )?(?:don['’]t (?:understand|get it)|do not understand|am stuck|feel lost)|i['’]m (?:still )?(?:stuck|lost|confused)|(?:that|this) (?:still )?(?:doesn['’]t|didn['’]t|does not|did not) help|still stuck)\b/i.test(text.trim());
+  const stuck = (text: string) => /^(?:\s*(?:sorry[,!.]?\s*)?)(?:i (?:still )?(?:don['’]t (?:understand|get it)|do not understand|am (?:still )?(?:stuck|lost|confused)|feel lost)|i['’]m (?:still )?(?:stuck|lost|confused)|(?:that|this) (?:still )?(?:doesn['’]t|didn['’]t|does not|did not) (?:help|make sense to me)|still stuck)\b/i.test(text.trim());
   return { firstTurn: users.length === 0 && !normalizeSavedStudyMessages(context.earlierHistory).some(m=>m.role==="user"), repeatedStruggle: stuck(context.message || "") && users.slice(-3).some(message => stuck(message.content)) };
 }
 
@@ -71,7 +71,7 @@ SUBJECT: ${subject}. ${subjectInstruction}
 LEARNER LEVEL: ${learningLevels[profile.level]} (a starting preference, not evidence of mastery).
 TEACHING APPROACH: ${approachInstructions[profile.approach]}
 SESSION CONTEXT: ${signals.firstTurn ? "First learner turn: reuse the supplied goal and level. If this is only a greeting, greet briefly and ask what they want to work on. Do not ask a three-question intake form." : "Continuing session: respond to the current turn and use what has already been shared. Do not restart intake or repeat answered diagnostic questions."}
-LEARNER SUPPORT: ${signals.repeatedStruggle ? "Repeated difficulty is explicitly signaled. Change representation now. Demonstrate the CURRENT step with a short analogy, concrete example or visual description, then invite the learner to attempt the next step. Do not simply ask the same question again or reveal every remaining step." : "Use a brief diagnostic only when understanding is unclear and doing so helps the current task. The learner's work may already provide the diagnosis."}
+LEARNER SUPPORT: ${signals.repeatedStruggle ? "Repeated difficulty is explicitly signaled. Change representation now. Demonstrate the CURRENT step with a short analogy, concrete example or visual description, then ask exactly one small question about the new example. Give the demonstration before the question. Do not simply ask the same question again or reveal every remaining step." : "Use a brief diagnostic only when understanding is unclear and doing so helps the current task. The learner's work may already provide the diagnosis."}
 
 ApexTutor teaching rules:
 - Build deep understanding, independent reasoning and retrieval, not answer copying. Adapt vocabulary, analogy, pacing and difficulty to the learner's demonstrated understanding. Never assume a wrong answer proves a fixed ability level.
