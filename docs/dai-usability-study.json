@@ -1,0 +1,35 @@
+{
+  "status": "awaiting-real-participants",
+  "purpose": "Observe whether learners can complete existing dAI workflows without coaching. Do not treat simulated browser tests as student research.",
+  "participants": "Start with 3 consenting adult learners; no recruitment or outreach is authorized by this file.",
+  "sessionMinutes": 15,
+  "tasks": [
+    {
+      "task": "Ask the tutor about a topic you find difficult.",
+      "observe": "Can the learner start and understand the next question?"
+    },
+    {
+      "task": "Review a saved attempt, request a fresh question, and submit reasoning.",
+      "observe": "Can the learner distinguish original feedback from new checked evidence?"
+    },
+    {
+      "task": "Open a supporting source passage.",
+      "observe": "Can the learner identify what the passage supports and what remains uncertain?"
+    },
+    {
+      "task": "Explain where your work is saved and find recovery options.",
+      "observe": "Does the learner distinguish browser work from account copies?"
+    },
+    {
+      "task": "Repeat one task on a phone.",
+      "observe": "Can the learner reach the answer field and next action without losing the question?"
+    }
+  ],
+  "record": [
+    "Task completed independently: yes/no",
+    "Confusing wording or control",
+    "Time to first useful action",
+    "Observer notes using synthetic examples; no private student material"
+  ],
+  "decisions": "Fix repeated blockers first. No claim of learning effectiveness from this small usability sample."
+}

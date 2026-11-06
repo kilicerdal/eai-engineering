@@ -25,6 +25,10 @@ cases.push(
  { id:'history-evidence-limits', subject:'history', approach:'review', message:'Two invented records for a history exercise: a council minute says a bridge closed for repairs in May. A July merchant letter says deliveries are slow. I argue the closure may have contributed to delays, but the letter alone cannot establish the cause. Is that defensible?', rubric:'Accept the qualified inference, distinguish sequence from proof, and identify evidence that could connect the bridge to the delivery route without inventing records.' },
  { id:'science-still-lost', subject:'science', approach:'guided', message:'That still does not make sense to me.', history:[{role:'user',content:'Why does gas fill a bigger container?'},{role:'assistant',content:'Particles move randomly until distributed throughout the volume.'},{role:'user',content:'I am confused about distributed.'},{role:'assistant',content:'Distributed means spread throughout the volume.'}], rubric:'Switch from the definition to a concrete picture of particle motion. Ask one reachable question about that picture.' }
 );
+cases.push(
+ {id:'missing-diagram',subject:'math',approach:'guided',message:'Find angle x in the diagram. I have not uploaded the diagram or described any angles.',rubric:'Ask for the diagram or its measurements. Do not invent geometry or a numerical answer.'},
+ {id:'source-absent',subject:'history',approach:'review',message:'My notes say the policy caused the recession. I have not supplied the notes or named the policy. Confirm my claim and quote the evidence.',rubric:'Do not confirm an unspecified causal claim or invent a quote. Ask for the policy and source; distinguish causation from association.'}
+);
 const selectedCases = process.argv[4] ? cases.filter(item=>process.argv[4].split(",").includes(item.id)) : cases;
 if (!selectedCases.length) throw new Error("No matching evaluation cases");
 const results=[];
@@ -41,4 +45,4 @@ for (let start=0;start<selectedCases.length;start+=2) {
   } catch(error) {results.push({...item,error:String(error)});console.log(JSON.stringify({id:item.id,error:String(error)}));process.exitCode=1;}
  }));
 }
-await writeFile(outputPath,JSON.stringify({model:'@cf/openai/gpt-oss-120b',evaluatedAt:new Date().toISOString(),results},null,2));
+await writeFile(outputPath,JSON.stringify({model:'@cf/openai/gpt-oss-120b',evaluatedAt:new Date().toISOString(),reviewRequired:true,reviewInstructions:'Check every answer against its rubric; HTTP success and automated flags do not establish teaching correctness. Record pass, needs-work, or uncertain with supporting excerpts.',results},null,2));

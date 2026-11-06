@@ -8,8 +8,15 @@ export function readSavedArray<T>(storage: StudyStorage, key: string, normalize:
   return {items,raw};
 }
 export function writeStudyCopy(storage: StudyStorage,key:string,expected:string|null,value:unknown):string {
+  try {
   if(storage.getItem(key)!==expected)throw new Error("Another tab or account restore changed the saved copy. Reload after copying your new work.");
   const raw=JSON.stringify(value);
   storage.setItem(key,raw);
+  notifySave(key,true);
   return raw;
+  } catch(error) { notifySave(key,false); throw error; }
+}
+
+function notifySave(key:string,ok:boolean) {
+  if(typeof window!=="undefined")window.dispatchEvent(new CustomEvent("dai-browser-save",{detail:{key,ok}}));
 }

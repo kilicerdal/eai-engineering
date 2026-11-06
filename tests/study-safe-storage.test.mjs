@@ -22,3 +22,11 @@ test('library reads reject damaged and duplicate material records instead of dro
  assert.equal(readMaterialLibrary(valid).documents.length,1);assert.deepEqual(readMaterialLibrary(undefined),{documents:[],entries:[]});
  for(const value of [null,{},[],{...valid,documents:[doc,doc]},{documents:[{id:'bad'}],entries:[]},{...valid,entries:[{id:'orphaned'}]}]){const before=structuredClone(value);assert.throws(()=>readMaterialLibrary(value));assert.deepEqual(value,before);}
 });
+
+test('save notifications distinguish successful writes from failures',()=>{
+ const original=globalThis.window,events=[];
+ globalThis.window={dispatchEvent:event=>events.push(event.detail)};
+ try{const s=store('[1]');writeStudyCopy(s,'k','[1]',[2]);assert.deepEqual(events.pop(),{key:'k',ok:true});
+ assert.throws(()=>writeStudyCopy(s,'k','[1]',[3]));assert.deepEqual(events.pop(),{key:'k',ok:false});assert.equal(s.raw,'[2]');
+ }finally{if(original===undefined)delete globalThis.window;else globalThis.window=original;}
+});

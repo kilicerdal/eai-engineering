@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-06",
+  "scope": "Three synthetic cases; not a broad tutor certification",
+  "results": [
+    {
+      "case": "science-confounded-trial",
+      "verdict": "pass",
+      "evidence": "Identified water as a confounder and proposed controlling conditions."
+    },
+    {
+      "case": "writing-alternative-reading",
+      "verdict": "needs-work",
+      "evidence": "Accepted a valid alternative interpretation but called the learner paraphrase a line from the poem. Added explicit quotation attribution guidance; not yet re-evaluated."
+    },
+    {
+      "case": "history-evidence-limits",
+      "verdict": "incomplete",
+      "evidence": "Response validator rejected output. No correctness judgment possible. Retain as a regression case."
+    }
+  ],
+  "realStudentTesting": "Not conducted; protocol in dai-usability-study.json"
+}

@@ -7,6 +7,7 @@ type Outcome = "independent" | "practice" | "helped" | "uncertain";
 export type WeeklyAttempt = {
   key: string; time: number; topic: string; outcome: Outcome; label: string;
   sources?: LessonContext["sources"];
+  originalQuestion?:string;
   question: string; answer: string; feedback: string; next: string; href: string; action: string;
 };
 
@@ -24,7 +25,7 @@ export function weeklyAttempts(checks: LessonCheck[], exams: unknown, practice: 
     const decision = c.result.decision;
     const outcome = decision === "uncertain" ? "uncertain" : decision !== "meets" ? "practice" : c.helpUsed ? "helped" : "independent";
     add({key: JSON.stringify([lessonIdentity(c.context),c.question.question]), time:c.submittedAt, topic:c.context.lesson.title,
-      sources:c.context.sources, outcome, label:checkLabel(c), question:c.question.question, answer:c.answer,
+      originalQuestion:c.context.originalQuestion, sources:c.context.sources, outcome, label:checkLabel(c), question:c.question.question, answer:c.answer,
       feedback:`${checkReviewMethod(c)} · ${c.result.feedback}`, next:c.result.nextStep,
       href:"#ai-assistant", action:"Open AI Tutor"});
   }

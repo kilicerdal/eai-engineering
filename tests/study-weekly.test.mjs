@@ -49,3 +49,9 @@ test('review identity is stable, preserves sources, and separates later attempts
  assert.equal(normalizeLessonContext({...context,originalQuestion:'x'.repeat(1801)}),null);
  assert.notEqual(lessonIdentity(context),lessonIdentity({...context,originalQuestion:'Different original question'}));
 });
+
+test('follow-up evidence retains original question and never labels uncertainty independent',()=>{
+ const original='Solve 3x + 4 = 19.';
+ const check={context:{goal:'Review',originalQuestion:original,lesson:{id:'review',title:'Equations',objective:'Explain',activity:'Practice',checkpoint:'Check'}},question:{question:'Solve 4x + 2 = 22.'},answer:'5',helpUsed:false,result:{decision:'uncertain',feedback:'Need reasoning',nextStep:'Explain the operations'},submittedAt:now};
+ const result=weeklyAttempts([check],null,[],now);assert.equal(result.review.originalQuestion,original);assert.equal(result.independent,undefined);
+});

@@ -819,7 +819,7 @@ export default function SharedAIChat() {
               </form>
 
               <p className="mt-3 text-center text-xs text-slate-500">
-                Sessions and unsent messages are saved in this browser. Send, follow-up and regeneration buttons request an AI response. {accountConfigured && <>Optional account saving is managed on the <a href="/study/account">Account page</a>. </>}AI responses can contain mistakes; verify important facts and calculations.
+                Sessions and unsent messages are saved in this browser. <a href="#study-saving-status">Saving status and recovery</a>. Send, follow-up and regeneration buttons request an AI response. {accountConfigured && <>Optional account saving is managed on the <a href="/study/account">Account page</a>. </>}AI responses can contain mistakes; verify important facts and calculations.
               </p>
             </div>
           </div>
