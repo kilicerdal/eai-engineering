@@ -1,6 +1,5 @@
 "use client";
 import WeeklyStudySummary from "@/components/WeeklyStudySummary";
-import StudyGuide from "@/components/StudyGuide";
 import {PLAN_CHOICE_KEY,resolvePlanChoice} from "@/lib/study-plan-adjustment";
 import DailyStudySession from "@/components/DailyStudySession";
 import {dailyTargetHref,type DailyTarget} from "@/lib/study-daily-session";
@@ -8,7 +7,6 @@ import {mistakePracticeContext} from "@/lib/study-mistake-practice";
 import {normalizeMistakes} from "@/lib/study-exams";
 import {lessonIdentity} from "@/lib/study-checkpoints";
 import OpenStudyWork from "@/components/OpenStudyWork";
-import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import StudyLandmark from "@/components/StudyLandmark";
@@ -96,21 +94,23 @@ export default function LearningHome() {
     <div className="studio-landmark-banner studio-landmark-giza">
     <StudyLandmark scene="giza" />
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR LEARNING, CONNECTED</p><h2 id="learning-home-heading">Your next step, in focus.</h2></div><p>Build on what you know.<br/>Return to what needs practice.</p></div>
-    <StudyGuide section="Learning home">Start a focused session if you have time set aside. To resume earlier work, look for a saved activity below. The recommended next step uses your saved checks and review dates.</StudyGuide><p className="studio-landmark-caption">Giza, Egypt · An imagined horizon</p>
+    <p className="studio-landmark-caption">Giza, Egypt · An imagined horizon</p>
     </div>
     <div className="learning-home-content">
-    <p className="learning-home-note">Saved in this browser · {accountConfigured ? <Link href="/study/account">Manage optional account saving ↗</Link> : "No account or subscription required"}</p>
     {!ready ? <p role="status">Loading your learning…</p> : <>
       {warning && <p role="status" className="goal-notice">{warning}</p>}
-      <DailyStudySession target={dailyTarget} openTarget={openDailyTarget} checks={checks} exam={examPractice} now={now}/>
-      <OpenStudyWork/>
-      <div className="learning-home-grid"><article className="learning-next"><p className="studio-eyebrow">RECOMMENDED NEXT STEP</p><h3>{recommendation.title}</h3><p>{recommendation.reason}</p>
+      <DailyStudySession target={dailyTarget} openTarget={openDailyTarget} checks={checks} exam={examPractice} now={now}>
+      <article className="learning-next"><p className="studio-eyebrow">01 / YOUR SUGGESTED FOCUS</p><h3>{recommendation.title}</h3><p>{recommendation.reason}</p>
       {recommendation.check && <div className="learning-check-memory"><strong>{checkLabel(recommendation.check)} · {checkReviewMethod(recommendation.check)}</strong>{recommendation.kind==="lesson"&&recommendation.lesson.id!==recommendation.check.context.lesson.id&&<p className="learning-home-small">Evidence from the earlier lesson: {recommendation.check.context.lesson.title}. The next lesson has not been assessed by this check.</p>}<p>{recommendation.check.result.nextStep}</p><small>Latest saved response · {new Date(recommendation.check.submittedAt).toLocaleDateString()} · Help use self-reported.</small></div>}
       <p className="learning-home-small">Based on your latest saved checks and due review dates. You can choose a different lesson or explore freely.</p>
-      <div className="goal-actions">{recommendation.kind==="material"?<Link className="goal-primary" href={`/study/materials?review=${encodeURIComponent(recommendation.contextId)}`}>{recommendation.action} ↗</Link>:recommendation.kind==="exam"?<Link className="goal-primary" href={`/study/exams?exam=${recommendation.exam}&domain=${recommendation.domain}${recommendation.skill?`&skill=${recommendation.skill}`:""}#exam-review`}>{recommendation.action} ↗</Link>:recommendation.kind==="plan"?<a className="goal-primary" href="#learning-goal">{recommendation.action} →</a>:<button className="goal-primary" onClick={followRecommendation}>{recommendation.action} ↗</button>}{journey&&usable&&<a href="#learning-goal">View my plan ↗</a>}</div>
+      <div className="goal-actions">{recommendation.kind==="material"?<Link className="goal-primary" href={`/study/materials?review=${encodeURIComponent(recommendation.contextId)}`}>{recommendation.action} ↗</Link>:recommendation.kind==="exam"?<Link className="goal-primary" href={`/study/exams?exam=${recommendation.exam}&domain=${recommendation.domain}${recommendation.skill?`&skill=${recommendation.skill}`:""}#exam-review`}>{recommendation.action} ↗</Link>:recommendation.kind==="plan"?<a className="goal-primary" href="#learning-goal">Choose a learning goal →</a>:<button className="goal-primary" onClick={followRecommendation}>{recommendation.action} ↗</button>}{journey&&usable&&<a href="#learning-goal">View my plan ↗</a>}</div>
       {recommendation.kind==="lesson"&&<p className="learning-home-small">Prepares the lesson and its latest feedback in your tutor. Review the message and select Send.</p>}
       {journey&&<><p className="learning-home-count">Your plan: {journey.plan.title}</p><p className="learning-home-small">{journey.completed.length} of {journey.plan.lessons.length} lessons marked complete by you</p><progress aria-label="Lessons you marked complete" value={journey.completed.length} max={journey.plan.lessons.length}/><p className="learning-home-small">Completion marks are your record of activity, not a mastery score.</p>{recommendation.kind!=="lesson"&&usable&&next&&<button className="learning-plan-alternative" onClick={()=>resume()}>Continue my plan instead ↗</button>}</>}
       </article>
+
+      </DailyStudySession>
+      <OpenStudyWork/>
+      <div className="learning-home-grid">
       <article className="learning-review"><p className="studio-eyebrow">MY MISTAKE NOTEBOOK</p><h3>{evidence.due.length ? `${evidence.due.length} ready to revisit` : evidence.mistakes ? "Your next review is planned." : "Turn a mistake into a next step."}</h3><p>{sharedNotebookStep ? "Your suggested review is highlighted in the recommendation. Open the notebook to see all saved attempts and their review dates." : evidence.due.length&&notebookRecommendation.kind==="notebook" ? notebookRecommendation.reason : evidence.nextReviewAt ? `Next suggested review: ${new Date(evidence.nextReviewAt).toLocaleDateString()}.` : "Capture your reasoning in the existing notebook, understand the missing idea, then return to a fresh example."}</p>
       {!sharedNotebookStep&&notebookRecommendation.check&&<div className="learning-check-memory"><strong>{checkLabel(notebookRecommendation.check)} · Latest follow-up</strong><p>{notebookRecommendation.check.result.nextStep}</p><small>{checkReviewMethod(notebookRecommendation.check)}; not a mastery assessment.</small></div>}
       <div className="goal-actions">{!sharedNotebookStep&&notebookRecommendation.kind==="notebook"&&<button className="goal-primary" onClick={()=>{if(notebookRecommendation.kind==="notebook")review(notebookRecommendation.mistakeId);}}>{notebookRecommendation.action} ↗</button>}<a href="#mistake-notebook">Open my notebook ↗</a></div><p className="learning-home-small">Review dates follow your own review marks; they do not certify understanding.</p></article></div>

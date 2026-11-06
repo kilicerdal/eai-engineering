@@ -11,6 +11,7 @@
     "prebuild": "node scripts/copy-pdf-assets.mjs",
     "predev": "node scripts/copy-pdf-assets.mjs",
     "test:engineering-story": "node --test tests/engineering-story.test.mjs",
+    "test:study-layout": "playwright test --config=playwright.study-layout.config.ts",
     "test:engineering-browser": "playwright test --config=playwright.engineering.config.ts",
     "render:engineering-share": "node scripts/render-engineering-share.mjs"
   },
