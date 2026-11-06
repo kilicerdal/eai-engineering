@@ -4,6 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { atlasRows, atlasEdges, type AtlasFlow } from "@/lib/ai-atlas";
 
+const projectExamples: Record<string, { label: string; href: string; scope: string }> = {
+  runtime: { label: "Inspect checkout retry evidence", href: "/engineering/order-once#business-outcomes", scope: "Related application example: repeated requests, concurrent requests, and payload conflicts." },
+  evals: { label: "Review the regression source", href: "/engineering/order-once#source", scope: "Related application regression checks; this is not a model evaluation benchmark." },
+  traces: { label: "Inspect the claim delivery record", href: "/engineering/claim-twice#evidence", scope: "Recorded synthetic observations from local PostgreSQL and a queue simulation." },
+};
+const principles = [
+  { title: "Explore with purpose", detail: "Begin with a question worth pursuing.", destination: "Ask the engineering assistant", href: "/#ai-assistant" },
+  { title: "Build with care", detail: "Make the implementation and its decisions visible.", destination: "Inspect the Engineering Studio", href: "/engineering" },
+  { title: "Learn from evidence", detail: "Follow the outcome, including where the design breaks.", destination: "Explore the recorded case studies", href: "/engineering#case-studies" },
+];
+
 const allNodes = atlasRows.flatMap(row => row.nodes);
 const filters: { flow: AtlasFlow; title: string }[] = [
   { flow: "all", title: "Full architecture" },
@@ -18,6 +29,7 @@ export default function AIPhilosophy() {
   const [paths, setPaths] = useState<string[]>([]);
   const mapRef = useRef<HTMLDivElement>(null);
   const selectedNode = allNodes.find(node => node.id === selected)!;
+  const example = projectExamples[selected];
 
   useEffect(() => {
     const map = mapRef.current;
@@ -48,8 +60,11 @@ export default function AIPhilosophy() {
   return <section id="about" className="ai-philosophy" aria-labelledby="ai-philosophy-title">
     <div className="backdrop" aria-hidden="true" />
     <div className="sheet">
-      <div className="masthead"><span className="brand" aria-hidden="true">eAI</span><small>THE THINKING BEHIND eAI</small></div>
-      <div className="intro"><div><p className="eyebrow">CURIOSITY, WITH DIRECTION</p><h2 id="ai-philosophy-title">Wonder asks the question.<br /><em>Engineering</em><br />carries it forward.</h2></div><div><p>eAI explores how software, automation, and artificial intelligence can turn ambitious questions into useful systems.</p><p>Explore with purpose. Build with care.<br />Learn from evidence.</p></div></div>
+      <div className="intro philosophy-editorial">
+        <div className="philosophy-statement"><p className="eyebrow">THE THINKING BEHIND eAI</p><h2 id="ai-philosophy-title">Wonder asks the question.<br /><em>Engineering carries it forward.</em></h2><p className="philosophy-summary">eAI explores how software, automation, and artificial intelligence can turn ambitious questions into useful systems.</p></div>
+        <nav className="philosophy-principles" aria-label="Explore the engineering principles">{principles.map((principle, index) => <Link key={principle.title} href={principle.href}><span className="principle-number">0{index + 1}</span><div><h3>{principle.title}</h3><p>{principle.detail}</p><span className="principle-destination">{principle.destination}</span></div><span className="principle-arrow" aria-hidden="true">↗</span></Link>)}</nav>
+      </div>
+      <div className="philosophy-bridge"><p className="eyebrow">FROM PRINCIPLE TO SYSTEM DESIGN</p><p>How those principles shape an AI system.</p><span>A conceptual map, with links to related work where demonstrated.</span></div>
       <section className="atlas" aria-labelledby="ai-atlas-title">
         <div className="atlas-head"><div><p className="eyebrow">THE AI SYSTEMS ATLAS</p><h3 id="ai-atlas-title">Intelligence, connected.</h3></div><small>CONCEPTUAL ARCHITECTURE<br />RETRIEVE / REASON / ACT / VERIFY</small></div>
         <div className="filters" role="group" aria-label="Highlight an architecture path">{filters.map(filter => <button key={filter.flow} type="button" aria-pressed={flow === filter.flow} onClick={() => setFlow(filter.flow)}>{filter.title}</button>)}</div>
@@ -59,6 +74,7 @@ export default function AIPhilosophy() {
           <div className="lanes">{atlasRows.map(row => <div className="lane" key={row.number}><div className="lane-label"><span>{row.number}</span>{row.label}</div>{row.nodes.map(node => <button key={node.id} data-node={node.id} type="button" className={`node${inFlow(node.id) ? "" : " dim"}`} aria-pressed={selected === node.id} aria-controls="ai-atlas-detail" onClick={() => setSelected(node.id)}><b>{node.title}</b><small>{node.subtitle}</small></button>)}</div>)}</div>
         </div>
         <div className="trace-detail" id="ai-atlas-detail" aria-live="polite" aria-atomic="true"><strong>{selectedNode.title.toUpperCase()}</strong><p>{selectedNode.detail}</p></div>
+        {example && <aside className="atlas-project-example" aria-label="Related project evidence"><p className="eyebrow">RELATED PROJECT EVIDENCE</p><Link href={example.href}>{example.label} <span aria-hidden="true">↗</span></Link><p>{example.scope}</p></aside>}
       </section>
       <div className="foot"><span>Founded by Erdal Kilic</span><Link href="/engineering">Explore the Engineering Studio <span aria-hidden="true">↗</span></Link></div>
       <p className="caption">Illustrative AI system design · No live execution or performance metrics<br />Barcelona, Spain · Casa Batlló and the Sagrada Família reimagined</p>

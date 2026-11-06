@@ -17,3 +17,11 @@ Both concepts were generated with the built-in image generation tool, using the 
 Prompt direction: a high-resolution cinematic website background blending imagined Barcelona Casa Batlló / Sagrada Família forms with computational intelligence. Midnight navy, muted teal, champagne gold, dark low-contrast central negative space, detail near the outer thirds; no text, logos, UI or chart. Active concept: an abstract translucent synthetic profile at the right, formed from fine teal/gold neural threads, dissolving into architecture and data filaments. Fallback: Gaudí-inspired stone arches, dark bronze and gold parametric ribbons, and restrained computational filaments.
 
 The background trial passed all 32 browser executions and the production build. Desktop/mobile screenshots were reviewed, including the selected retrieval path. The image is decorative; chart controls and labels remain HTML and vector connectors.
+
+## Editorial refinement and evidence connections
+
+Replaced the decorative masthead and oversized philosophy block with a restrained headline, concise statement, and three numbered linked principles. Explore with purpose links to the existing assistant; Build with care opens the Engineering Studio; Learn from evidence opens the case-study directory. The assistant link navigates only and does not submit a question or call a model.
+
+A short bridge introduces the conceptual system map. Selected atlas roles now offer scoped related-project links: bounded execution to checkout retry/business outcomes, evaluation suite to application regression source, and trace/evidence to recorded claim delivery observations. Application regression evidence is explicitly distinguished from a model evaluation benchmark. Unmapped conceptual roles retain their explanation without a fabricated implementation link.
+
+Verification: all 40 browser executions and production build passed, including new desktop/mobile principle destinations, scope notes and evidence navigation. Existing path controls, accessibility checks, full-width backgrounds and wide-display overflow tests remain passing. Lint completed with zero errors and five existing warnings. Desktop/mobile screenshots were reviewed. No new services, dependencies or model calls were added.

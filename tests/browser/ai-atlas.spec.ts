@@ -47,3 +47,21 @@ test("atlas layout and selected accessibility rules pass at supported widths", a
     }
   }
 });
+
+test("principles connect to real destinations and evidence links distinguish conceptual roles", async ({ page }) => {
+  await page.goto("/#about");
+  const about = page.locator("#about");
+  const principles = about.getByRole("navigation", { name: "Explore the engineering principles" });
+  await expect(principles.getByRole("link", { name: /Explore with purpose/ })).toHaveAttribute("href", "/#ai-assistant");
+  await expect(principles.getByRole("link", { name: /Build with care/ })).toHaveAttribute("href", "/engineering");
+  await expect(principles.getByRole("link", { name: /Learn from evidence/ })).toHaveAttribute("href", "/engineering#case-studies");
+  await expect(about.getByRole("complementary", { name: "Related project evidence" })).toHaveCount(0);
+  await about.locator('[data-node="evals"]').click();
+  await expect(about.getByRole("complementary", { name: "Related project evidence" })).toContainText("not a model evaluation benchmark");
+  await about.locator('[data-node="traces"]').click();
+  await expect(about.getByRole("link", { name: "Inspect the claim delivery record" })).toHaveAttribute("href", "/engineering/claim-twice#evidence");
+  await about.locator('[data-node="runtime"]').click();
+  await about.getByRole("link", { name: "Inspect checkout retry evidence" }).click();
+  await expect(page).toHaveURL(/\/engineering\/order-once#business-outcomes$/);
+  await expect(page.getByRole("heading", { name: /business|request|outcome/i }).first()).toBeVisible();
+});
