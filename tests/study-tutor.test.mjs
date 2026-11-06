@@ -85,7 +85,7 @@ const ts = require("typescript");
 function loadRoute(protect, stream) {
   const source = readFileSync(new URL('../src/app/api/study/chat/route.ts', import.meta.url), 'utf8');
   const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
-  const module = { exports: {} };
+  const harnessModule = { exports: {} };
   const deps = {
     "next/server": { NextResponse: { json: Response.json } },
     "../../../../lib/ai-security": { protectAIRequest: protect, logAIRequest() {} },
@@ -94,8 +94,8 @@ function loadRoute(protect, stream) {
     "@/lib/study-continuity": loadStudyModule("study-continuity"),
     "@/lib/study-reference": { getStudyReferenceContext },
   };
-  new Function('require', 'module', 'exports', compiled)(name => { assert.ok(name in deps, `Unexpected dependency ${name}`); return deps[name]; }, module, module.exports);
-  return module.exports.POST;
+  new Function('require', 'module', 'exports', compiled)(name => { assert.ok(name in deps, `Unexpected dependency ${name}`); return deps[name]; }, harnessModule, harnessModule.exports);
+  return harnessModule.exports.POST;
 }
 test("real route sends bounded role-based history, learner context, and cancellation upstream", async () => {
   let args;
@@ -126,11 +126,11 @@ test("real route handles malformed JSON and defaults unknown subjects", async ()
 function loadCloudflare() {
   const source = readFileSync(new URL('../src/app/api/cloudflare.ts', import.meta.url), 'utf8');
   const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
-  const module = { exports: {} };
+  const harnessModule = { exports: {} };
   new Function('require', 'module', 'exports', compiled)(name => {
     assert.equal(name, 'next/server'); return { NextResponse: { json: Response.json } };
-  }, module, module.exports);
-  return module.exports;
+  }, harnessModule, harnessModule.exports);
+  return harnessModule.exports;
 }
 test('upstream relay isolates tutor model and retains the portfolio default', async () => {
   const originalFetch = globalThis.fetch;
@@ -180,9 +180,9 @@ test('upstream relay isolates tutor model and retains the portfolio default', as
 function loadPractice() {
   const source = readFileSync(new URL('../src/lib/study-practice.ts', import.meta.url), 'utf8');
   const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
-  const module = { exports: {} };
-  new Function('require', 'module', 'exports', compiled)(name => { assert.equal(name, './study-reference'); return { studyReferences }; }, module, module.exports);
-  return module.exports;
+  const harnessModule = { exports: {} };
+  new Function('require', 'module', 'exports', compiled)(name => { assert.equal(name, './study-reference'); return { studyReferences }; }, harnessModule, harnessModule.exports);
+  return harnessModule.exports;
 }
 const practiceModule = loadPractice();
 const { practiceQuestions, normalizePracticeAttempts, practiceSummary, nextPracticeQuestion } = practiceModule;
@@ -248,10 +248,10 @@ test('reference notes follow the topic and do not claim live retrieval', () => {
 function loadLearning() {
   const source = readFileSync(new URL('../src/lib/study-learning.ts', import.meta.url), 'utf8');
   const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
-  const module = { exports: {} };
+  const harnessModule = { exports: {} };
   const dependencies = { './study-practice': practiceModule, './study-reference': { studyReferences } };
-  new Function('require', 'module', 'exports', compiled)(name => { assert.ok(name in dependencies); return dependencies[name]; }, module, module.exports);
-  return module.exports;
+  new Function('require', 'module', 'exports', compiled)(name => { assert.ok(name in dependencies); return dependencies[name]; }, harnessModule, harnessModule.exports);
+  return harnessModule.exports;
 }
 const { miniLessons, normalizePlanSettings, questionLearningState, buildLearningPlan, REVIEW_DAY_MS: DAY } = loadLearning();
 const epoch = 1700000000000;

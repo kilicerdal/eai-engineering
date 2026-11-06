@@ -2,11 +2,12 @@ export const projects = [
   {
     name: "AI Healthcare Quality Platform",
     category: "API AUTOMATION",
+    caseStudy: "/engineering/claim-twice",
     repository: "https://github.com/kilicerdal/ai-healthcare-quality-platform",
     description:
-      "API validation, database checks, and automated regression workflows.",
-    stack: ["Node.js", "PostgreSQL", "GitHub Actions"],
-    status: "Active Development",
+      "Claim redelivery, database deduplication, and recorded local S3/SQS simulation.",
+    stack: ["Node.js", "PostgreSQL", "S3/SQS simulation"],
+    status: "Recorded local case · Public CI",
   },
   {
     name: "Playwright AI Automation",

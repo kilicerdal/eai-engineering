@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-06T16:58:01.348Z",
+  "origin": "authored-synthetic-local-capture",
+  "backend": "postgres",
+  "simulator": "Moto",
+  "modelCalls": 0,
+  "realAWSCalls": 0,
+  "source": {
+    "repository": "https://github.com/kilicerdal/ai-healthcare-quality-platform",
+    "commit": "b175a55d882658583e617a95b4a8631b87fd069a"
+  },
+  "setup": "Synthetic claim, local S3/SQS simulation, disposable PostgreSQL schema. Acknowledgement loss is deliberately injected; visibility is released immediately to make redelivery deterministic.",
+  "observations": [
+    {
+      "operation": "POST /api/claims",
+      "status": 201,
+      "sameClaimAsFirst": true
+    },
+    {
+      "operation": "POST /api/claims",
+      "status": 201,
+      "sameClaimAsFirst": true
+    },
+    {
+      "operation": "POST /api/claims",
+      "status": 409,
+      "sameClaimAsFirst": null
+    }
+  ],
+  "stages": [
+    {
+      "id": "ack-loss",
+      "title": "Stored, but not acknowledged",
+      "apiStatus": 201,
+      "persistedClaims": 1,
+      "storedAmount": 125.5,
+      "acknowledgement": "injected-failure",
+      "sameClaimAsFirst": true
+    },
+    {
+      "id": "redelivery",
+      "title": "Delivered again, same claim",
+      "apiStatus": 201,
+      "persistedClaims": 1,
+      "storedAmount": 125.5,
+      "acknowledgement": "succeeded",
+      "sameClaimAsFirst": true
+    },
+    {
+      "id": "changed-object",
+      "title": "Same object key, changed content",
+      "apiStatus": 409,
+      "persistedClaims": 1,
+      "storedAmount": 125.5,
+      "acknowledgement": "withheld-after-api-conflict",
+      "sameClaimAsFirst": null
+    }
+  ],
+  "safety": "Synthetic data only. Claim amounts are input values, not payments. Received does not mean approved or paid. No patient identifiers, credentials, receipt handles, queue URLs or connection strings are included.",
+  "reproduction": "Start local Moto on 127.0.0.1:4311 and the disposable eai_quality PostgreSQL lab on 55432; run npm run showcase:capture."
+}

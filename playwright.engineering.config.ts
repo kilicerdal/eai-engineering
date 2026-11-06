@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests/browser",
-  testMatch: "**/engineering-story.spec.ts",
+  testMatch: ["**/engineering-story.spec.ts", "**/connected-stories.spec.ts"],
   fullyParallel: true,
   forbidOnly: true,
   retries: 0,
@@ -30,7 +30,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev -- --hostname 127.0.0.1 --port 3040",
+    command: "RECRUITER_PORTAL_ENABLED=true npm run dev -- --hostname 127.0.0.1 --port 3040",
     url: "http://127.0.0.1:3040/engineering/order-once",
     reuseExistingServer: true,
     timeout: 60000,

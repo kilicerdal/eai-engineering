@@ -40,8 +40,8 @@ test('lesson handoff preserves goal, time, and checkpoint without claiming file 
 const require=createRequire(import.meta.url);const ts=require('typescript');
 function loadRoute(protect=async()=>null){
  const code=ts.transpileModule(readFileSync(new URL('../src/app/api/study/plan/route.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
- const module={exports:{}};const deps={'next/server':{NextResponse:{json:Response.json}},'@/lib/ai-security':{protectAIRequest:protect,logAIRequest(){}},'@/lib/study-goal':goals,'@/lib/study-materials':materials};
- new Function('require','module','exports',code)(name=>{assert.ok(name in deps);return deps[name];},module,module.exports);return module.exports.POST;
+ const harnessModule={exports:{}};const deps={'next/server':{NextResponse:{json:Response.json}},'@/lib/ai-security':{protectAIRequest:protect,logAIRequest(){}},'@/lib/study-goal':goals,'@/lib/study-materials':materials};
+ new Function('require','module','exports',code)(name=>{assert.ok(name in deps);return deps[name];},harnessModule,harnessModule.exports);return harnessModule.exports.POST;
 }
 const req=body=>new Request('https://example.test/api/study/plan',{method:'POST',body:typeof body==='string'?body:JSON.stringify(body)});
 const answer=value=>Response.json({choices:[{finish_reason:'stop',message:{content:JSON.stringify(value)}}]});

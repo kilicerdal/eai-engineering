@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RetryExplorer from "@/components/engineering/RetryExplorer";
+import CheckoutOutcomes from "@/components/engineering/CheckoutOutcomes";
+import checkoutCapture from "../../../../public/evidence/checkout-scenarios.json";
 import recorded from "../../../../public/evidence/order-once.json";
 import {
   storySources,
@@ -162,6 +164,7 @@ export default function OrderOncePage() {
         </dl>
       </aside>
       <RetryExplorer capture={capture} />
+      <CheckoutOutcomes capture={checkoutCapture} />
       <section
         className="failure-evidence"
         id="evidence"
@@ -405,6 +408,27 @@ ${capture.reproduction}`}</pre>
           ))}
         </div>
       </section>
+      <section
+        className="failure-decisions"
+        aria-labelledby="order-contribution-heading"
+      >
+        <p className="failure-kicker">THE ENGINEERING WORK</p>
+        <h2 id="order-contribution-heading">
+          What this project brings together.
+        </h2>
+        <p>
+          The repository implements the commerce API, PostgreSQL store,
+          independent journey model, test fixtures, controlled defects and local
+          evidence runner. AI development assistance supported implementation;
+          the runtime examples are authored and do not call a live model.
+        </p>
+        <p>
+          The choices prioritize transactional consistency, isolated test data
+          and inspectable assertions. Production adoption would add real
+          identity, payment-provider coordination, operational controls and
+          workload-specific validation.
+        </p>
+      </section>
       <section className="failure-related" aria-labelledby="related-heading">
         <p className="failure-kicker">THE PRINCIPLE TRAVELS</p>
         <h2 id="related-heading">
@@ -417,6 +441,12 @@ ${capture.reproduction}`}</pre>
           deduplication—not identical status codes.
         </p>
         <div className="failure-actions">
+          <Link
+            className="failure-button is-primary"
+            href="/engineering/claim-twice"
+          >
+            Follow the healthcare case ↗
+          </Link>
           <a
             className="failure-button"
             href="https://github.com/kilicerdal/ai-healthcare-quality-platform"

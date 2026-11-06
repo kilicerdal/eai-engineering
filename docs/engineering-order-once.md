@@ -26,15 +26,24 @@ The page is prerendered static content with a small client component for the pre
 
 Source links are pinned to the captured commit. Historical V5 framework verification is kept distinct from the website interaction checks. The legacy .about-backup file is unrelated and remains untouched.
 
+## Connected healthcare release — November 6, 2026
+
+The healthcare project remains independent at /engineering/claim-twice, with its own repository and source links. Homepage project cards and both case studies link between the stories. The flagship chatbot remains the primary homepage action.
+
+public/evidence/checkout-scenarios.json adds three independently captured PostgreSQL cases: repeated checkout, three concurrent requests, and changed payload with the same key. Each observes one order, notebook stock 20 → 18, and an empty cart. The concurrent status list is a result set, not a chronology. Source: playwright-ai-automation commit 1ddd99a55c7e6b6a7ca4859662b05b26267a6b73.
+
+public/evidence/claim-redelivery.json records a synthetic local PostgreSQL/Moto execution: acknowledgement failure after persistence, successful redelivery, and changed content at the same object key. API statuses are 201, 201, 409; the persisted row count stays one. Source: ai-healthcare-quality-platform commit b175a55d882658583e617a95b4a8631b87fd069a. The amount is an input value, not a payment; RECEIVED does not mean approval. No real AWS or model calls were made. The healthcare public CI run 42257611714 succeeded using the standard public runner, with no cache or artifact upload.
+
 ## Verification
 
-- Production Next.js build passed, with /engineering/order-once prerendered as static content.
-- 227 existing Learning Studio checks passed.
-- Four new Node checks passed: captured replay outcomes, rejection of incomplete/untrusted evidence, secret exclusion/provenance, and pinned source links.
-- Ten browser executions passed: five scenarios on desktop and 390px mobile, covering native keyboard prediction, healthy/faulty comparison, reset focus, safe JSON download, homepage navigation, no POST requests during story interaction, viewport overflow, and selected WCAG-tagged axe checks.
-- TypeScript and lint on all changed source/test files passed.
+- Production Next.js build passed; both engineering stories are prerendered static routes.
+- 227 Learning Studio checks, 37 recruiter checks, and seven evidence checks passed.
+- Twenty browser executions passed across desktop and 390px mobile: recorded interactions, keyboard controls, downloads, cross-links, selected accessibility rules, viewport overflow, and synthetic invitation initialization without sending verification.
+- The healthcare repository's 59 unit checks passed; both capture scripts ran against local PostgreSQL, with Moto for the healthcare queue/object simulation.
+- Repository-wide lint passes with zero errors and five existing warnings. Generated PDF.js vendor assets are excluded; application code is still checked. Account initialization effects and reserved test variable names were corrected.
+- Desktop and mobile screenshots were reviewed. Automated accessibility checks are selected checks, not certification.
 
-The repository-wide npm run lint baseline still reports errors in generated PDF.js vendor assets and older account/recruiter/test files. Those files were not modified for this feature; a passing focused lint check is not presented as a clean repository-wide lint run. Automated accessibility checks are selected checks, not certification.
+The unrelated .about-backup file remains untouched. These checks establish the recorded scenarios, not production healthcare compliance or distributed exactly-once guarantees.
 
 ## Spending and deployment
 

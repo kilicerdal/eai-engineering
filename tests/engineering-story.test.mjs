@@ -78,3 +78,57 @@ test("every code reference is pinned to the captured source commit", () => {
   }
   assert.throws(() => storySources("main"), /full commit/);
 });
+const checkoutCapture = JSON.parse(
+  readFileSync(
+    new URL("../public/evidence/checkout-scenarios.json", import.meta.url),
+    "utf8",
+  ),
+);
+const claimCapture = JSON.parse(
+  readFileSync(
+    new URL("../public/evidence/claim-redelivery.json", import.meta.url),
+    "utf8",
+  ),
+);
+const { checkedCheckout, checkedClaims } = loadStudyModule("linked-evidence");
+test("checkout business outcomes preserve one order, one deduction and an empty cart", () => {
+  const cases = checkedCheckout(checkoutCapture);
+  assert.deepEqual(
+    cases.map((c) => c.id),
+    ["replay", "concurrent", "changed-payload"],
+  );
+  assert.deepEqual(
+    cases.find((c) => c.id === "concurrent").requestStatuses,
+    [200, 200, 201],
+  );
+  assert.deepEqual(
+    cases.find((c) => c.id === "changed-payload").requestStatuses,
+    [201, 409],
+  );
+  for (const item of cases) {
+    assert.equal(item.orderCount, 1);
+    assert.equal(item.stockReduction, 2);
+    assert.equal(item.cartCount, 0);
+  }
+});
+test("claim capture preserves identity and one record across simulated redelivery and conflict", () => {
+  const stages = checkedClaims(claimCapture);
+  assert.deepEqual(
+    stages.map((s) => s.apiStatus),
+    [201, 201, 409],
+  );
+  assert.equal(stages[1].sameClaimAsFirst, true);
+  assert.equal(stages[2].acknowledgement, "withheld-after-api-conflict");
+  assert.ok(
+    stages.every((s) => s.persistedClaims === 1 && s.storedAmount === 125.5),
+  );
+  assert.equal(claimCapture.realAWSCalls, 0);
+});
+test("linked evidence rejects fabricated cloud provenance or inconsistent stock state", () => {
+  const bad = structuredClone(claimCapture);
+  bad.realAWSCalls = 1;
+  assert.throws(() => checkedClaims(bad));
+  const inconsistent = structuredClone(checkoutCapture);
+  inconsistent.cases[0].stockAfter = 999;
+  assert.throws(() => checkedCheckout(inconsistent));
+});

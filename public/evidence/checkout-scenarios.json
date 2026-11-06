@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-06T17:02:31.454Z",
+  "origin": "authored-synthetic-local-capture",
+  "backend": "postgres",
+  "modelCalls": 0,
+  "source": {
+    "repository": "https://github.com/kilicerdal/playwright-ai-automation",
+    "commit": "1ddd99a55c7e6b6a7ca4859662b05b26267a6b73"
+  },
+  "cases": [
+    {
+      "id": "replay",
+      "requestStatuses": [
+        201,
+        200
+      ],
+      "orderCount": 1,
+      "distinctSuccessfulOrderIdentities": 1,
+      "stockBefore": 20,
+      "stockAfter": 18,
+      "stockReduction": 2,
+      "cartCount": 0,
+      "totalCents": 3600
+    },
+    {
+      "id": "concurrent",
+      "requestStatuses": [
+        200,
+        200,
+        201
+      ],
+      "orderCount": 1,
+      "distinctSuccessfulOrderIdentities": 1,
+      "stockBefore": 20,
+      "stockAfter": 18,
+      "stockReduction": 2,
+      "cartCount": 0,
+      "totalCents": 3600
+    },
+    {
+      "id": "changed-payload",
+      "requestStatuses": [
+        201,
+        409
+      ],
+      "orderCount": 1,
+      "distinctSuccessfulOrderIdentities": 1,
+      "stockBefore": 20,
+      "stockAfter": 18,
+      "stockReduction": 2,
+      "cartCount": 0,
+      "totalCents": 3600
+    }
+  ],
+  "scope": "Each case uses a fresh disposable schema. Concurrent statuses are a sorted result set, not a timeline. No payments, credentials or shipping inputs are exported.",
+  "reproduction": "Start the disposable loopback PostgreSQL lab, then run npm run showcase:capture-checkout."
+}

@@ -87,10 +87,10 @@ const ts=require('typescript');
 function loadRoute(protect=async()=>null) {
  const source=readFileSync(new URL('../src/app/api/study/materials/route.ts',import.meta.url),'utf8');
  const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
- const module={exports:{}};
+ const harnessModule={exports:{}};
  const dependencies={'next/server':{NextResponse:{json:Response.json}},'@/lib/ai-security':{protectAIRequest:protect,logAIRequest(){}},'@/lib/study-materials':materials};
- new Function('require','module','exports',compiled)(name=>{assert.ok(name in dependencies);return dependencies[name];},module,module.exports);
- return module.exports.POST;
+ new Function('require','module','exports',compiled)(name=>{assert.ok(name in dependencies);return dependencies[name];},harnessModule,harnessModule.exports);
+ return harnessModule.exports.POST;
 }
 function request(body) {return new Request('https://example.test/api/study/materials',{method:'POST',body:typeof body==='string'?body:JSON.stringify(body)});}
 const payload={message:'Who owns the budget?',task:'explain',excerpts:[source]};
