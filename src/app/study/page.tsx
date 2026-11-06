@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import StudyLandmark from "@/components/StudyLandmark";
 import StudyGlyph from "@/components/StudyGlyph";
+import LearningResources from "@/components/LearningResources";
 import StudyNavigation from "@/components/StudyNavigation";
 
 const subjects = [
@@ -72,8 +73,7 @@ export default function StudyPage() {
       <SharedAIChat />
       <LearningHome />
       <GoalLearning />
-      <section id="personal-library" className="studio-library-entry" aria-labelledby="personal-library-heading"><div className="studio-library-glyph" aria-hidden="true"><StudyGlyph kind="writing"/></div><div><p className="studio-eyebrow">YOUR PERSONAL LIBRARY</p><h2 id="personal-library-heading">Bring your learning materials.</h2><p>Study from your notes, syllabus or a chapter, with source passages you can return to.</p><StudyGuide section="Personal library">Open “Add materials” to upload a readable file or paste notes. Choose a learning mode and ask about your source. Open the cited passage to check the answer in context.</StudyGuide></div><Link href="/study/materials">Open my library ↗</Link></section>
-      <section className="studio-library-entry" aria-labelledby="reading-room-heading"><div><p className="studio-eyebrow">THE READING ROOM</p><h2 id="reading-room-heading">Read for the joy of it.</h2><p>Find a classic, follow your curiosity, and keep a personal bookshelf.</p></div><Link href="/study/reading">Explore the Reading Room ↗</Link></section>
+      <LearningResources />
       <ExamPreparation />
       <section id="discover" className="studio-discover">
         <div className="studio-landmark-banner studio-landmark-machu">

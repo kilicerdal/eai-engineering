@@ -120,6 +120,7 @@ export default function GoalLearning() {
   }
   return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} aria-labelledby="goal-heading" aria-busy={busy}>
     <StudyLandmark scene="stonehenge" />
+    <div className="goal-planner-shell">
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">What do you want to achieve?</h2></div><p>A learning path built<br/>around your goal.</p></div>
     <details className="goal-intro">
       <summary className="cursor-pointer w-fit text-[#ebc782]">How this works</summary>
@@ -171,7 +172,9 @@ export default function GoalLearning() {
       {accepted&&<p className="goal-helper">Starting a lesson prepares a message in the tutor. Review it and select Send when ready. Completion is self-reported, not a mastery assessment.</p>}
     </div>}
     {error&&<p role="alert" className="goal-error">{error}</p>}
-    <p className="studio-landmark-caption">Stonehenge, England · An imagined horizon</p>
+
     <details className="goal-saving-note"><summary>About your saved plan</summary><p className="goal-footnote">Your plan is saved in this browser after generation. AI-proposed outlines can contain gaps or mistakes; edit them to suit your needs. {accountConfigured ? <Link href="/study/account">Choose optional account saving ↗</Link> : "Account sync is not yet available."}</p></details>
+    </div>
+    <p className="studio-landmark-caption">Stonehenge, England · An imagined horizon</p>
   </section>;
 }

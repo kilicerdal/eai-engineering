@@ -880,3 +880,56 @@
 .eai-study-studio .learning-home article.learning-review{display:block;padding:22px;}
 .eai-study-studio .daily-study-heading>span{font-size:11px;}
 }
+
+/* Framed learning planner and paired resource collection. */
+.eai-study-studio .goal-landmark-workspace{max-width:none;padding:54px max(6%,calc((100% - 1240px)/2)) 36px;min-height:0;overflow:clip;background:#081522;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-backdrop{left:46%;height:100%;max-height:760px;opacity:.72;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-backdrop img{object-position:62% center;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-backdrop:after{background:linear-gradient(90deg,#081522,transparent 65%),linear-gradient(0deg,#081522,transparent 55%);}
+.eai-study-studio .goal-planner-shell{position:relative;width:64%;max-width:800px;padding:32px;border:1px solid #d9b97955;border-radius:4px;background:#0c1d2bf5;box-shadow:0 18px 60px #0002;}
+.eai-study-studio .goal-landmark-workspace[data-step="4"] .goal-planner-shell{width:100%;max-width:none;}
+.eai-study-studio .goal-planner-shell .studio-section-title{display:block;margin-bottom:18px;}
+.eai-study-studio .goal-planner-shell .studio-section-title>p{display:none;}
+.eai-study-studio .goal-planner-shell .studio-section-title h2{font:400 clamp(28px,3vw,38px)/1.15 Georgia,serif;margin:10px 0;}
+.eai-study-studio .goal-planner-shell .goal-intro{font-size:12px;margin:0 0 24px;line-height:1.7;color:#becad4;}
+.eai-study-studio .goal-planner-shell .goal-steps{max-width:none;margin:0 0 26px;padding:0;gap:0;}
+.eai-study-studio .goal-planner-shell .goal-steps li{font-size:11px;gap:8px;padding:0 4px 14px;}
+.eai-study-studio .goal-planner-shell .goal-steps span{height:24px;width:24px;font-size:11px;}
+.eai-study-studio .goal-planner-shell .goal-panel{padding:0;border:0;background:none;box-shadow:none;}
+.eai-study-studio .goal-planner-shell .goal-label{font-size:12px;line-height:1.6;}
+.eai-study-studio .goal-planner-shell #learning-achievement{font:16px/1.6 var(--font-geist-sans),Arial,sans-serif;min-height:118px;padding:16px;margin-top:10px;background:#07131f;border-color:#7b795e;}
+.eai-study-studio .goal-planner-shell .goal-helper{font-size:11px;line-height:1.7;}
+.eai-study-studio .goal-planner-shell .goal-actions{gap:16px;font-size:12px;align-items:center;}
+.eai-study-studio .goal-planner-shell .goal-saving-note{border-top:1px solid #d9b97933;padding-top:14px;margin-top:24px;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-caption{margin:18px 0 0;}
+.eai-study-studio .learning-resources{position:relative;background:linear-gradient(120deg,#0a1b28,#081522);border-top:1px solid #d9b97933;border-bottom:1px solid #d9b97933;}
+.eai-study-studio .learning-resources-inner{max-width:1360px;margin:auto;padding:52px 60px 60px;}
+.eai-study-studio .learning-resources header{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:30px;}
+.eai-study-studio .learning-resources header h2{font:400 clamp(26px,2.8vw,36px)/1.2 Georgia,serif;margin-top:12px;max-width:620px;}
+.eai-study-studio .learning-resources header>p{font-size:13px;line-height:1.7;color:#aebdc8;}
+.eai-study-studio .learning-resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+.eai-study-studio .learning-resource-card{position:relative;overflow:hidden;border:1px solid #d9b97944;background:linear-gradient(145deg,#142b38,#0a1b28);border-radius:4px;}
+.eai-study-studio .reading-resource{background:linear-gradient(145deg,#1d2a32,#101d29);}
+.eai-study-studio .learning-resource-art{height:155px;border-bottom:1px solid #d9b97922;background:radial-gradient(ellipse at 70% 10%,#b18c4720,transparent 70%);}
+.eai-study-studio .learning-resource-art svg{height:100%;width:100%;}
+.eai-study-studio .learning-resource-copy{padding:28px 32px 30px;}
+.eai-study-studio .learning-resource-copy h3{font:400 clamp(26px,2.5vw,34px)/1.18 Georgia,serif;letter-spacing:-.025em;margin:14px 0 18px;}
+.eai-study-studio .learning-resource-copy>p:not(.studio-eyebrow){font-size:14px;line-height:1.8;color:#becad3;max-width:420px;min-height:76px;}
+.eai-study-studio .learning-resource-copy>a{display:flex;justify-content:space-between;gap:24px;margin-top:24px;padding:14px 0;border-top:1px solid #d9b97933;border-bottom:1px solid #d9b97933;color:#efce96;font-size:14px;}
+.eai-study-studio .learning-resource-copy>a:hover{color:#fff0d3;border-color:#d9b979aa;}
+.eai-study-studio .learning-resource-copy>small{display:block;font-size:10px;color:#9fafbb;letter-spacing:.04em;margin-top:18px;}
+.eai-study-studio .studio-home>.exam-workspace{margin-top:32px;}
+@media(max-width:760px){
+.eai-study-studio .goal-landmark-workspace{padding:30px 6%;}
+.eai-study-studio .goal-landmark-workspace>.studio-landmark-backdrop{left:0;max-height:380px;opacity:.3;}
+.eai-study-studio .goal-planner-shell{width:100%;max-width:none;padding:22px;}
+.eai-study-studio .goal-planner-shell .goal-steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:0;}
+.eai-study-studio .goal-planner-shell .goal-steps li{font-size:10px;flex-direction:column;align-items:start;gap:8px;}
+.eai-study-studio .learning-resources-inner{padding:32px 6% 36px;}
+.eai-study-studio .learning-resources header{display:block;}
+.eai-study-studio .learning-resources header>p{margin-top:16px;}
+.eai-study-studio .learning-resource-grid{grid-template-columns:1fr;gap:18px;}
+.eai-study-studio .learning-resource-art{height:135px;}
+.eai-study-studio .learning-resource-copy{padding:24px;}
+.eai-study-studio .learning-resource-copy>p:not(.studio-eyebrow){min-height:0;}
+}
