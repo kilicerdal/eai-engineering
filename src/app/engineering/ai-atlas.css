@@ -7,3 +7,23 @@
 #about.ai-philosophy .sheet{max-width:1440px;margin:auto;padding:65px 5.5% 35px}#about.ai-philosophy .intro{padding:75px 0 55px;gap:8%}#about.ai-philosophy .intro h2{font-size:clamp(38px,4.3vw,65px)}#about.ai-philosophy .masthead small{margin-right:0}#about.ai-philosophy .node:hover{border-color:var(--gold)}#about.ai-philosophy .node[aria-pressed=true]{border-color:var(--gold);background:#1d3041}#about.ai-philosophy .trace-detail{scroll-margin-top:30px}#about.ai-philosophy .backdrop{background-repeat:no-repeat;background-size:100% auto;background-color:#08121e}#about.ai-philosophy .atlas{max-width:1180px;margin:auto}#about.ai-philosophy .foot,#about.ai-philosophy .caption{max-width:1180px;margin-inline:auto}#about.ai-philosophy .foot{margin-top:30px}#about.ai-philosophy .caption{margin-top:17px}#about.ai-philosophy .node.dim{opacity:.65}#about.ai-philosophy .lane-label,#about.ai-philosophy .node small,#about.ai-philosophy .atlas-head small{font-size:11px}#about.ai-philosophy .caption{font-size:11px}@media(max-width:650px){#about.ai-philosophy .sheet{padding:38px 6% 28px}#about.ai-philosophy .intro{padding:40px 0 32px;gap:25px}#about.ai-philosophy .intro h2{font-size:39px}#about.ai-philosophy .backdrop{background-size:auto 620px}#about.ai-philosophy .node{min-height:95px}}
 
 #about.ai-philosophy .intro div>p+p{margin-top:22px}
+
+/* Generated option 3: retain Barcelona above; blend the synthetic mind into the atlas. */
+#about.ai-philosophy .atlas {
+  background-color: #091625;
+  background-image: linear-gradient(90deg, #091625eb 0%, #091625b8 48%, #09162575 100%), url('/images/engineering/quiet-synthetic-mind-v1.webp');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+#about.ai-philosophy .node { background: #0c1c2bdc; }
+#about.ai-philosophy .node[aria-pressed=true] { background: #213447f2; }
+#about.ai-philosophy .trace-detail { background: #091625b8; padding-bottom: 12px; }
+@media(max-width:650px) {
+  #about.ai-philosophy .atlas {
+    background-image: linear-gradient(180deg, #09162570, #091625b8 45%, #091625eb 100%), url('/images/engineering/quiet-synthetic-mind-v1.webp');
+    background-size: auto 760px;
+    background-position: 82% top;
+    background-color: #091625;
+  }
+}
