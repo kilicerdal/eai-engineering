@@ -95,8 +95,8 @@ export default function OrderOncePage() {
           <a href="#decisions">The decision</a>
           <a href="#source">The code</a>
         </nav>
-        <Link className="failure-header-back" href="/#projects">
-          All projects <span aria-hidden="true">↗</span>
+        <Link className="failure-header-back" href="/engineering#projects">
+          Engineering Studio <span aria-hidden="true">↗</span>
         </Link>
       </header>
       <section className="failure-hero">

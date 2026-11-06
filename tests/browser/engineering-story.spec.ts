@@ -124,12 +124,12 @@ test("homepage keeps chat primary and offers the working case-study entry", asyn
     page.locator(".atlas-hero .atlas-button.primary"),
   ).toHaveAttribute("href", "#ai-assistant");
   await expect(
-    page.getByRole("link", { name: "Follow a failure" }),
-  ).toHaveAttribute("href", route);
-  await page.getByRole("link", { name: "Follow a failure" }).click();
+    page.getByRole("link", { name: "Explore Engineering Studio" }),
+  ).toHaveAttribute("href", "/engineering");
+  await page.getByRole("link", { name: "Explore Engineering Studio" }).click();
   await expect(
     page.getByRole("heading", {
-      name: "The order that should happen only once.",
+      name: "Engineering you can inspect.",
     }),
   ).toBeVisible();
 });

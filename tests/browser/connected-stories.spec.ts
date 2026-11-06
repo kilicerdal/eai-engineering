@@ -96,15 +96,15 @@ test("selected healthcare card opens its case study while preserving a source li
   page,
 }) => {
   await page.goto("/");
-  const selected = page.locator(".atlas-project-window");
+  const selected = page.locator("#project-0");
   await expect(
-    selected.getByRole("link", { name: "Inspect the repository" }),
+    selected.getByRole("link", { name: "Repository" }),
   ).toHaveAttribute(
     "href",
     "https://github.com/kilicerdal/ai-healthcare-quality-platform",
   );
   await selected
-    .getByRole("link", { name: "Follow the claim’s journey" })
+    .getByRole("link", { name: "Case study" })
     .click();
   await expect(page).toHaveURL(/\/engineering\/claim-twice$/);
 });
