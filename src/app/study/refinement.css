@@ -1,0 +1,24 @@
+/* dAI design refinement V1: shared reading scale and compact navigation. */
+.eai-study-studio{--study-body:16px;--study-support:14px;--study-caption:12px;}
+.eai-study-studio .studio-eyebrow,.eai-study-studio .studio-hero .studio-eyebrow{font-size:12px;letter-spacing:.16em;}
+.eai-study-studio .studio-landmark-caption,.eai-study-studio .learning-resource-copy>small{font-size:12px;}
+.eai-study-studio .studio-hero-description,.eai-study-studio .goal-overview,.eai-study-studio .goal-lessons p,.eai-study-studio .learning-resource-copy>p:not(.studio-eyebrow),.eai-study-studio .daily-study-session p:not(.studio-eyebrow):not(.goal-helper){font-size:16px;line-height:1.75;}
+.eai-study-studio .goal-helper,.eai-study-studio .learning-home .learning-home-small{font-size:14px!important;line-height:1.7!important;}
+.eai-study-studio input:not([type=checkbox]):not([type=radio]),.eai-study-studio textarea,.eai-study-studio select{font-size:16px!important;line-height:1.6;}
+.eai-study-studio #ai-assistant .tutor-starter-prompts button,.eai-study-studio #ai-assistant .tutor-empty-steps,.eai-study-studio #ai-assistant .tutor-starter-caption{font-size:14px;line-height:1.6;}
+.eai-study-studio .studio-footer{font-size:14px;line-height:1.7;}
+.eai-study-studio .studio-menu-toggle,.eai-study-studio .studio-mobile-shortcuts{display:none;}
+@media(max-width:760px){
+.eai-study-studio .studio-nav,.eai-study-studio .studio-nav:not(.studio-nav-overlay){display:grid;grid-template-columns:1fr auto;gap:8px 12px;margin:8px auto 0;padding:10px 14px;border-radius:6px;}
+.eai-study-studio .studio-nav .studio-brand{font-size:16px;gap:8px;min-width:0;}
+.eai-study-studio .studio-nav .studio-brand-light{font-size:18px;}
+.eai-study-studio .studio-nav .studio-emblem{width:30px;height:30px;font-size:24px;flex-shrink:0;}
+.eai-study-studio .studio-menu-toggle{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding:8px;border:1px solid #d9b97966;border-radius:4px;font-size:14px;color:#f0d4a0;background:#0c1c2b;}
+.eai-study-studio .studio-mobile-shortcuts{display:flex;grid-column:1/-1;gap:24px;border-top:1px solid #d9b97922;font-size:14px;}
+.eai-study-studio .studio-mobile-shortcuts a{display:flex;align-items:center;min-height:44px;}
+.eai-study-studio .studio-nav nav{display:none;grid-column:1/-1;width:100%;font-size:14px;gap:4px 16px;border-top:1px solid #d9b97933;padding-top:8px;}
+.eai-study-studio .studio-nav nav[data-open=true]{display:grid;grid-template-columns:1fr 1fr;}
+.eai-study-studio .studio-nav .studio-main-site{grid-column:1/-1;font-size:14px;}
+.eai-study-studio .studio-nav nav a{white-space:normal;}
+.eai-study-studio .studio-hero h1{font-size:42px;line-height:1.1;}
+}

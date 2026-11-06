@@ -56,3 +56,20 @@ test('resources pair correctly and planner steps remain usable without generatio
  await page.screenshot({path:`artifacts/engineering-story/planner-${info.project.name}.png`});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
+test('mobile menu supports keyboard dismissal and readable tutor controls',async({page},info)=>{
+ await page.goto('/study');
+ if(info.project.name==='mobile'){
+ const menu=page.locator('#study-menu-toggle');
+ await menu.click();
+ await expect(page.locator('#study-navigation-links')).toBeVisible();
+ await menu.press('Escape');
+ await expect(page.locator('#study-navigation-links')).toBeHidden();
+ await expect(page.locator('#study-menu-toggle')).toBeFocused();
+ await menu.click();
+ await page.locator('#study-navigation-links').getByRole('link',{name:'My learning',exact:true}).click();
+ await expect(page.locator('#study-navigation-links')).toBeHidden();
+ }
+ await expect(page.locator('#tutor-message-input')).toHaveCSS('font-size','16px');
+ await expect(page.locator('.tutor-starter-prompts button').first()).toHaveCSS('font-size','14px');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
