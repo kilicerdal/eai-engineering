@@ -31,3 +31,27 @@ test('student plan-next-step choices are included in optional account snapshots'
  const raw=JSON.stringify({version:1,key:'a reviewed plan/evidence identity',option:'original',decidedAt:1700000000000}),values=snapshots.collectStudyValues(storage({'eai-plan-next-step-v1':raw}));
  assert.equal(snapshots.validateStudySnapshot({...empty(),values}).values['eai-plan-next-step-v1'],raw);
 });
+
+test('two simulated clients cannot overwrite a newer revision and can resume after rereading',async()=>{
+ let record=null,revision=0;
+ function client(){return {auth:{getUser:async()=>({data:{user:{id:'owner'}},error:null})},from:()=>{
+  let operation='read',payload,filters={};
+  const query={select:()=>query,eq:(key,value)=>{filters[key]=value;return query;},insert:value=>{operation='insert';payload=value;return query;},update:value=>{operation='update';payload=value;return query;},maybeSingle:async()=>{
+   if(operation==='read')return {data:record,error:null};
+   if(operation==='insert'&&record)return {data:null,error:{code:'23505'}};
+   if(operation==='update'&&filters.revision!==record?.revision)return {data:null,error:null};
+   record={snapshot:payload.snapshot,revision:`revision-${++revision}`,updated_at:'now'};
+   return {data:record,error:null};
+  }};return query;
+ }};}
+ const a=cloud(client()),b=cloud(client());
+ const initial=await a.writeCloud('owner',empty(),null);
+ const copyB=await b.readCloud('owner');assert.equal(copyB.revision,initial.revision);
+ const changed={...empty(),values:{'eai-study-practice-track-v1':'math'}};
+ await a.writeCloud('owner',changed,initial.revision);
+ await assert.rejects(()=>b.writeCloud('owner',empty(),copyB.revision),/Another tab or device/);
+ assert.deepEqual((await b.readCloud('owner')).snapshot,changed);
+ const fresh=await b.readCloud('owner');
+ await b.writeCloud('owner',fresh.snapshot,fresh.revision);
+ assert.deepEqual((await a.readCloud('owner')).snapshot,changed);
+});

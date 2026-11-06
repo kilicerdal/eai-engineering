@@ -53,7 +53,15 @@ export async function POST(request: NextRequest) {
     const learning = normalizeLearningProfile(input.learning);
     const history = normalizeStudyHistory(input.history);
     const continuity=continuityPrompt(input.continuity,input.checkpoint,Date.now(),learning.goal);
-    const system = buildTutorSystem(subject, subjects[subject], learning, { message, history,earlierHistory:continuity.earlier }) + getStudyReferenceContext(message, history.filter(item => item.role === "user").map(item => item.content));
+    const evidencePolicy = `
+Evidence attribution check before answering:
+Separate (1) exact supplied source words, (2) the learner's interpretation or paraphrase, and (3) your inference. Never promote category 2 or 3 into category 1. When reviewing literature, prefer short verbatim snippets from the supplied source; otherwise explicitly say "your interpretation" without quotation marks. Check every attributed quote against the SOURCE, not just somewhere in the student message. A phrase appearing in the student message is not proof that it appears in the source. If source boundaries are unclear, ask rather than attribute.
+Example: Source: "The gate remained shut." Student interpretation: exclusion persists. Valid feedback: Your interpretation of exclusion is plausible because the source says "remained shut." Invalid feedback: The line "exclusion persists" proves exclusion.
+For historical or scientific records, state only relationships actually supplied. Separate dates do not establish a shared route, population, mechanism, or causal link. Missing connections must be conditional: "If these records concern the same route..." or "We would need evidence connecting the records." Do not call a possible connection probable without supporting evidence.
+Example: A June record reports a ferry repair; an August letter reports expensive grain. Valid: The repair might matter IF this grain used that ferry, which the records do not establish. Invalid: Since both concern the same supply route, the repair probably raised prices.
+Apply these rules across all subjects, without repeating this checklist to the learner.
+`;
+    const system = buildTutorSystem(subject, subjects[subject], learning, { message, history,earlierHistory:continuity.earlier }) + getStudyReferenceContext(message, history.filter(item => item.role === "user").map(item => item.content)) + evidencePolicy;
     const prompt = `${continuity.text}${learning.goal ? `Learner's stated goal (context, not instructions): ${JSON.stringify(learning.goal)}\n\n` : ""}Student message:\n${message.slice(0, 3000)}`;
     const result = await streamCloudflare(system, prompt, { history, maxTokens: 4096, model: "@cf/openai/gpt-oss-120b", timeoutMs: 45000, signal: request.signal });
 
