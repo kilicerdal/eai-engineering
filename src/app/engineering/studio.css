@@ -399,3 +399,48 @@
     font-size: 8px;
   }
 }
+
+/* Decorative computational landscape shared by homepage and full Studio. */
+.engineering-studio {
+  isolation: isolate;
+  background: #0a121b;
+}
+.engineering-studio::before,
+.engineering-studio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url('/images/engineering/studio-computational-landscape-v1.webp');
+  background-repeat: no-repeat;
+  background-size: max(100%, 1400px) auto;
+}
+.engineering-studio::before {
+  background-position: center top;
+  opacity: .85;
+  mask-image: linear-gradient(to bottom, #000 0%, #000b 35%, transparent 70%);
+}
+.engineering-studio::after {
+  background-position: center bottom;
+  opacity: .45;
+  mask-image: linear-gradient(to top, #000, transparent 45%);
+}
+.studio-case {
+  background: linear-gradient(135deg, #142433e8, #0c1823e8);
+}
+.studio-project {
+  background: #0a1722e0;
+}
+.studio-tools .studio-section-heading {
+  position: relative;
+}
+@media(max-width:760px) {
+  .engineering-studio::before,
+  .engineering-studio::after {
+    background-size: auto 850px;
+    background-position-x: 70%;
+  }
+  .engineering-studio::before { opacity: .65; }
+  .engineering-studio::after { opacity: .3; }
+}
