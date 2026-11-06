@@ -199,3 +199,6 @@
 .atlas-dai-copy .atlas-button{font-size:14px;}
 }
 @media(max-width:450px){.threshold .atlas-header .atlas-brand>span{font-size:30px;}.threshold .atlas-header{gap:6px;padding:10px 12px;}.threshold .atlas-menu{font-size:14px;padding:6px;}.threshold .atlas-dai-entry{padding:8px 10px;font-size:13px;gap:8px;}.atlas-dai-copy ul{display:block;}.atlas-dai-copy li{margin:7px 0;}.atlas-dai-copy li+li:before{content:none;}}
+
+.atlas-skip-link{position:fixed;top:8px;left:8px;z-index:1000;transform:translateY(-200%);background:#fff;color:#17212c;padding:12px 20px;border:2px solid #89672d;border-radius:6px}.atlas-skip-link:focus{transform:none}
+@media(prefers-reduced-motion:reduce){.threshold,.threshold *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}

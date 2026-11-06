@@ -157,7 +157,7 @@ export default function RepositoryHealth({
                 )}
 
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5">
-                  <span className="text-xs text-slate-500">
+                  <span className="text-xs text-slate-400">
                     {latest
                       ? `Latest workflow: ${new Date(
                           latest.createdAt

@@ -104,6 +104,7 @@ export default function GitHubFailureInvestigator() {
       </p>
 
       <select
+        aria-label="Failed GitHub workflow"
         value={selected}
         onChange={(event) => setSelected(event.target.value)}
         className="mt-5 w-full rounded-lg border border-white/20 bg-slate-950 p-3 text-sm"

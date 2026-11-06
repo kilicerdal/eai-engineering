@@ -30,3 +30,14 @@ assert.doesNotMatch(log,/page\.post\s*\(/);
 
 assert.doesNotMatch(log,/```/);
 console.log("PASS six model scenarios; semantic checks are not a guarantee of correctness.");
+
+const sequential = await ask('review','What is wrong with await items.forEach(async item => { await save(item); }); ? Give a sequential fix that propagates errors.');
+assert.match(sequential,/for\s*\(\s*(?:const|let)\s+\w+\s+of\s+items\s*\)/);
+assert.doesNotMatch(sequential,/await Promise\.all/);
+const fetchErrors = await ask('coding','In JavaScript fetch, does HTTP 500 reject the promise? Show a small example that handles HTTP errors, network errors, and invalid JSON separately.');
+assert.match(fetchErrors,/response\.ok|res\.ok/); assert.match(fetchErrors,/pars|JSON/i);
+const auth = await ask('qa','A test returns 200 for an unauthorized request but expected 401. Does this prove authentication works? Give the next verification step, no code.');
+assert.match(auth,/without|omit|missing|absen|remov/i);
+const sql = await ask('review','Correct this Node pg query against SQL injection: pool.query("SELECT * FROM users WHERE email = " + email). Use the email value as a parameter.');
+assert.match(sql,/\$1/); assert.match(sql,/\[email\]/); assert.doesNotMatch(sql,/```sql\s*pool/);
+console.log('PASS ten model scenarios. Review outputs as well as assertions.');
