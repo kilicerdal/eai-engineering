@@ -31,3 +31,12 @@
 .threshold .atlas-chat-shell aside>div>div{background:#f3efe7;border-color:#b8ab954f}
 .threshold .atlas-chat [role=log]>div.bg-slate-800{background:#e9e2d6;color:#674d24}
 .threshold .atlas-chat-shell button:focus-visible,.threshold .atlas-chat-shell select:focus-visible{outline:2px solid #89672d;outline-offset:3px}
+
+/* Public chat composer: readable multiline code input and keyboard focus. */
+.threshold #ai-assistant .atlas-chat-composer textarea{color:#222b35;background:#fff;border:1px solid #ab9c85;border-radius:8px;padding:12px;font-size:16px;resize:vertical;min-width:0;max-width:100%}
+.threshold #ai-assistant .atlas-chat-composer textarea::placeholder{color:#636b75}
+.threshold #ai-assistant textarea:focus-visible,.threshold #ai-assistant summary:focus-visible,.threshold #ai-assistant [role=log]:focus-visible{outline:2px solid #89672d;outline-offset:2px}
+.threshold #ai-assistant .atlas-chat-composer form{align-items:flex-end}
+
+.threshold #ai-assistant .atlas-chat-composer details p{color:#525b65}
+.threshold #ai-assistant .atlas-chat-composer button[type=submit]{color:#17212c}

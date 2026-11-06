@@ -3,8 +3,10 @@ import { readStudyStream } from '../src/lib/study-stream.ts';
 
 const origin = new URL(process.argv[2] || 'http://localhost:3000').origin;
 async function ask(mode, message, history = []) {
+  const started = performance.now();
   const response = await fetch(new URL('/api/chat', origin), {method:'POST', headers:{'Content-Type':'application/json', Origin:origin}, body:JSON.stringify({mode,message,history}), signal:AbortSignal.timeout(60000)});
   const answer = await readStudyStream(response,()=>{},true);
+  console.log(JSON.stringify({mode, elapsedMs:Math.round(performance.now()-started), answerCharacters:answer.length}));
   console.log(message, answer);
   return answer;
 }
@@ -25,3 +27,6 @@ assert.doesNotMatch(review,/visible:\s*true|waitForFunction/);
 const log = await ask('debug','Analyze this CI log: "POST /orders returned 401; expected 201". No server logs are attached. Quote the relevant evidence, distinguish a hypothesis, and give one verification step.');
 assert.match(log,/401/); assert.match(log,/auth|token|credential/i);
 assert.doesNotMatch(log,/page\.post\s*\(/);
+
+assert.doesNotMatch(log,/```/);
+console.log("PASS six model scenarios; semantic checks are not a guarantee of correctness.");
