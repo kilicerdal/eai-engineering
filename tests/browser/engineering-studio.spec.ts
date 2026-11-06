@@ -135,3 +135,25 @@ test("studio fits desktop and mobile and passes selected accessibility checks", 
     ).violations,
   ).toEqual([]);
 });
+
+
+test("Studio backgrounds reach both viewport edges on wide displays", async ({ page }, info) => {
+  if (info.project.name !== "desktop") return;
+  for (const route of ["/", "/engineering"]) {
+    await page.goto(route);
+    for (const width of [1920, 2560]) {
+      await page.setViewportSize({ width, height: 1080 });
+      for (const id of ["case-studies", "projects", "tools"]) {
+        const bounds = await page.locator(`#${id}`).evaluate(el => {
+          const style = getComputedStyle(el, "::before");
+          const rect = el.getBoundingClientRect();
+          const imageWidth = parseFloat(style.width);
+          return { width: imageWidth, left: rect.left + rect.width / 2 - imageWidth / 2 };
+        });
+        expect(bounds.width).toBe(width);
+        expect(Math.abs(bounds.left)).toBeLessThan(1);
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    }
+  }
+});

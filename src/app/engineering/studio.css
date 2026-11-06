@@ -423,7 +423,10 @@
 .studio-section::before {
   content: "";
   position: absolute;
-  inset: 0 -5vw;
+  inset: 0 auto;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
   z-index: -1;
   pointer-events: none;
   background-position: center;
@@ -454,7 +457,6 @@
 @media(max-width:760px) {
   .engineering-studio::before { height: 500px; opacity: .5; }
   .studio-section::before {
-    inset-inline: -6vw;
     background-size: auto 850px;
     background-position: 65% top;
   }

@@ -39,10 +39,11 @@ test("atlas layout and selected accessibility rules pass at supported widths", a
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await about.screenshot({ path: `artifacts/engineering-story/atlas-${info.project.name}.png` });
   if (info.project.name === "desktop") {
-    for (const width of [768, 1024, 1440]) {
+    for (const width of [768, 1024, 1440, 1920, 2560]) {
       await page.setViewportSize({ width, height: 900 });
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       await expect(about.locator(".node").last()).toBeVisible();
+      expect(await about.locator(".atlas").evaluate(el => Math.abs(parseFloat(getComputedStyle(el, "::before").width) - innerWidth) < 1)).toBe(true);
     }
   }
 });

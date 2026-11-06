@@ -39,3 +39,9 @@ Supersedes the repeated shared background: the original computational landscape 
 All three were generated with the built-in image tool, in midnight navy, muted teal and champagne gold with calm dark central space; no readable text, logos, UI, metrics, faces or bright bloom. Original PNGs remain intact. The decorative images do not alter project claims or tool functionality.
 
 All 32 browser executions and the production build passed. Desktop/mobile screenshots were reviewed; selected accessibility and overflow checks passed.
+
+## Full-width artwork correction
+
+Studio destination backgrounds now use a centered viewport-width decorative layer rather than fixed negative viewport margins around the constrained content. They reach both screen edges at wide display sizes while the text, cards and controls keep their existing centered widths. The AI atlas uses the same separation: a viewport-wide decorative background behind the centered diagram. Images preserve their aspect ratios through background sizing; content is not stretched.
+
+Verification: browser suite passed all 34 executions; the wide-display regression checks Studio layers at 1920/2560 pixels on both homepage and /engineering, while atlas sizing is checked through 2560 pixels. Overflow and existing desktop/mobile accessibility checks passed. Production build passed.

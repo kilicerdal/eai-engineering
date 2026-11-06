@@ -8,8 +8,18 @@
 
 #about.ai-philosophy .intro div>p+p{margin-top:22px}
 
+#about.ai-philosophy .atlas { background: transparent; isolation: isolate; }
 /* Generated option 3: retain Barcelona above; blend the synthetic mind into the atlas. */
-#about.ai-philosophy .atlas {
+#about.ai-philosophy .atlas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: -1;
   background-color: #091625;
   background-image: linear-gradient(90deg, #091625eb 0%, #091625b8 48%, #09162575 100%), url('/images/engineering/quiet-synthetic-mind-v1.webp');
   background-size: cover;
@@ -20,7 +30,7 @@
 #about.ai-philosophy .node[aria-pressed=true] { background: #213447f2; }
 #about.ai-philosophy .trace-detail { background: #091625b8; padding-bottom: 12px; }
 @media(max-width:650px) {
-  #about.ai-philosophy .atlas {
+  #about.ai-philosophy .atlas::before {
     background-image: linear-gradient(180deg, #09162570, #091625b8 45%, #091625eb 100%), url('/images/engineering/quiet-synthetic-mind-v1.webp');
     background-size: auto 760px;
     background-position: 82% top;
