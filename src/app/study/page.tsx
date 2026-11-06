@@ -100,7 +100,7 @@ export default function StudyPage() {
                 window.dispatchEvent(new Event("eai-study-mode-change"));
               }}
               title={subject.description}
-              aria-label={`${subject.name}: ${subject.description}`}
+              aria-label={`${subject.mode === "engineering" ? "Engineering" : subject.mode === "history" ? "History" : subject.mode === "writing" ? "Writing" : subject.name}: ${subject.description}`}
               className="studio-subject"
             >
               <span className="studio-subject-glyph"><StudyGlyph kind={subject.mode}/></span>

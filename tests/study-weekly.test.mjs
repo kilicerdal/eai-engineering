@@ -55,3 +55,16 @@ test('follow-up evidence retains original question and never labels uncertainty 
  const check={context:{goal:'Review',originalQuestion:original,lesson:{id:'review',title:'Equations',objective:'Explain',activity:'Practice',checkpoint:'Check'}},question:{question:'Solve 4x + 2 = 22.'},answer:'5',helpUsed:false,result:{decision:'uncertain',feedback:'Need reasoning',nextStep:'Explain the operations'},submittedAt:now};
  const result=weeklyAttempts([check],null,[],now);assert.equal(result.review.originalQuestion,original);assert.equal(result.independent,undefined);
 });
+
+ test('outcome totals include every latest result, separate uncertainty, and do not double-count retries',()=>{
+  const base={context:{goal:'Study',lesson:{id:'a',title:'Study',objective:'Explain',activity:'Try',checkpoint:'Check'}},question:{question:'Explain A'},answer:'A',helpUsed:false,result:{decision:'meets',feedback:'Reasoned answer',nextStep:'Try another'},submittedAt:now};
+  const checks=[base,{...base,submittedAt:now-1,result:{...base.result,decision:'partial'}},
+   {...base,question:{question:'Explain B'},helpUsed:true},
+   {...base,question:{question:'Explain C'},result:{...base.result,decision:'uncertain'}},
+   {...base,question:{question:'Explain D'},result:{...base.result,decision:'needs_work'}}];
+  const summary=weeklyAttempts(checks,null,[],now);
+  assert.equal(summary.attempts.length,4);
+  assert.deepEqual(summary.counts,{independent:1,helped:1,uncertain:1,practice:1});
+  assert.equal(summary.attempts.find(a=>a.question==='Explain A').outcome,'independent');
+  assert.deepEqual(weeklyAttempts([],null,[],now).counts,{independent:0,helped:0,uncertain:0,practice:0});
+ });

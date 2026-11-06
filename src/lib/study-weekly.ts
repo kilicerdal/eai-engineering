@@ -3,7 +3,7 @@ import {normalizePracticeAttempts, practiceQuestions} from "./study-practice";
 import {normalizeExamAttempts} from "./study-exam-practice";
 import {examBank, examSkillLessons} from "./study-exam-bank";
 
-type Outcome = "independent" | "practice" | "helped" | "uncertain";
+export type Outcome = "independent" | "practice" | "helped" | "uncertain";
 export type WeeklyAttempt = {
   key: string; time: number; topic: string; outcome: Outcome; label: string;
   sources?: LessonContext["sources"];
@@ -54,7 +54,9 @@ export function weeklyAttempts(checks: LessonCheck[], exams: unknown, practice: 
   const attempts = [...latest.values()].sort((a,b)=>b.time-a.time);
   const independent = attempts.find(a=>a.outcome==="independent");
   const review = attempts.find(a=>a.outcome==="practice") ?? attempts.find(a=>a.outcome==="helped") ?? attempts.find(a=>a.outcome==="uncertain");
-  return {count:attempts.length, independent, review};
+  const counts: Record<Outcome, number> = {independent:0, practice:0, helped:0, uncertain:0};
+  for (const attempt of attempts) counts[attempt.outcome]++;
+  return {count:attempts.length, attempts, counts, independent, review};
 }
 
 /** Prepared draft only: no assessment, storage mutation or AI call. */

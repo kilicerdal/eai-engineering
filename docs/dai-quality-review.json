@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "scope": "Three synthetic cases; not a broad tutor certification",
+  "scope": "Limited synthetic tutor/source cases; not a broad tutor certification",
   "results": [
     {
       "case": "science-confounded-trial",
@@ -10,13 +10,23 @@
     {
       "case": "writing-alternative-reading",
       "verdict": "needs-work",
-      "evidence": "Accepted a valid alternative interpretation but called the learner paraphrase a line from the poem. Added explicit quotation attribution guidance; not yet re-evaluated."
+      "evidence": "Live recheck still misattributed the student paraphrase as a quoted line despite attribution guidance. Remains unresolved; do not claim verified quotation accuracy."
     },
     {
       "case": "history-evidence-limits",
-      "verdict": "incomplete",
-      "evidence": "Response validator rejected output. No correctness judgment possible. Retain as a regression case."
+      "verdict": "needs-work",
+      "evidence": "Live recheck accepted the qualified inference but assumed both records concern the same transport network, which the prompt did not establish."
+    },
+    {
+      "case": "conflicting-sources",
+      "verdict": "pass",
+      "evidence": "Live test attributed 1982 to Archive A and 1987 to Archive B, cited both exact passages, and identified disagreement without inventing a resolution."
     }
   ],
-  "realStudentTesting": "Not conducted; protocol in dai-usability-study.json"
+  "realStudentTesting": "Not conducted; protocol in dai-usability-study.json",
+  "verification": {
+    "unitTests": 272,
+    "mobileProgress": "390px filters, empty category, pressed state, no overflow passed",
+    "accountProtection": "Mock tests for expired/switched accounts and revision conflicts pass; real two-device sign-in not verified"
+  }
 }
