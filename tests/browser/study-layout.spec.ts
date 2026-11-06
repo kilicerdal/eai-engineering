@@ -168,3 +168,62 @@ test('mobile approach selector exposes every mode and changes only an unsent pre
  await expect(selector.locator('option:checked')).toHaveText('Check my work');
  expect(posts).toBe(0);
 });
+
+test('returning-user shortcut resumes valid saved work without sending or starting a session',async({page})=>{
+ let posts=0;
+ await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
+ await page.goto('/study');
+ await expect(page.locator('#tutor-message-input')).toBeEnabled();
+ await expect(page.getByRole('link',{name:'Resume learning',exact:false})).toHaveCount(0);
+ const time=Date.now()-1000;
+ await page.evaluate(time=>{
+ localStorage.setItem('eai-daily-sessions-v1',JSON.stringify({version:1,activeId:'resume-sample',sessions:[{id:'resume-sample',minutes:20,target:{kind:'plan',title:'A saved focus'},startedAt:time,updatedAt:time,finishedAt:null,stage:1,completed:[0],reflection:''}]}));
+ window.dispatchEvent(new Event('eai-study-progress-change'));
+ },time);
+ const resume=page.getByRole('link',{name:'Resume learning',exact:false});
+ await expect(resume).toHaveAttribute('href','#my-learning');
+ await resume.click();
+ await expect(page).toHaveURL(/#my-learning$/);
+ const record=await page.evaluate(()=>JSON.parse(localStorage.getItem('eai-daily-sessions-v1')!));
+ expect(record.sessions).toHaveLength(1);expect(record.sessions[0].stage).toBe(1);
+ expect(posts).toBe(0);
+});
+
+test('saved check statuses distinguish uncertainty from incorrect work and keep explanations available',async({page},info)=>{
+ const goal='Compare economic causes with specific evidence';
+ const lessons=[1,2,3,4].map(n=>({id:`lesson-${n}`,title:`A long economic lesson title ${n}: distinguish the original evidence from an illustrative explanation`,objective:'Compare causes using reasoning.',activity:'Explain one cause to your tutor.',checkpoint:'Justify your explanation.',sourceIds:[]}));
+ const journey={settings:{goal,level:'college',minutes:20,sessions:3,deadline:''},plan:{title:'A saved evidence plan',overview:'A concise saved plan overview.',lessons},sources:[],completed:[],accepted:true,dirty:false};
+ const checks=lessons.map((lesson,i)=>({id:`status-${i}`,context:{goal,lesson},question:{question:'What evidence supports this cause?',criterion:'Explain the evidence.'},answer:'My saved reasoning.',helpUsed:i===2,result:{decision:['uncertain','needs_work','meets','meets'][i],feedback:'Compare this review with the original source.',reasoningGap:'A recorded reasoning observation.',nextStep:'Check a fresh example.',method:'ai'},submittedAt:Date.now()-1000}));
+ await page.addInitScript(({journey,checks})=>{localStorage.setItem('eai-goal-journey-v1',JSON.stringify(journey));localStorage.setItem('eai-lesson-checks-v1',JSON.stringify(checks));},{journey,checks});
+ await page.goto('/study');
+ const saved=page.getByLabel('Saved lesson checks',{exact:true});
+ await saved.locator('summary').first().click();
+ for(const outcome of ['uncertain','practice','helped','independent'])await expect(saved.locator(`[data-outcome=${outcome}]`)).toHaveCount(1);
+ const uncertain=saved.locator('.study-feedback-status').filter({has:page.locator('[data-outcome=uncertain]')});
+ await uncertain.getByText('About this result',{exact:true}).click();
+ await expect(uncertain).toContainText('does not establish that your answer is wrong');
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('eai-lesson-checks-v1')!).length)).toBe(4);
+ await expect(page.locator('.weekly-summary-detail')).not.toHaveAttribute('open','');
+ await page.locator('.weekly-summary-detail>summary').click();
+ await expect(page.locator('#weekly-summary')).toContainText('Last 7 days');
+ await page.locator('#my-learning').scrollIntoViewIfNeeded();
+ await page.screenshot({path:`artifacts/engineering-story/medium-learning-${info.project.name}.png`});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+test('notebook summaries retain labeled capture fields and open for review handoffs',async({page})=>{
+ const time=Date.now()-86400000;
+ const entry={id:'review-sample',exam:'SAT',question:'Solve 3x + 4 = 19.',answer:'I need to check my operation.',expected:'',reflection:'Saved notes remain intact.',createdAt:time,reviewAt:time,reviews:0};
+ await page.addInitScript(entry=>localStorage.setItem('eai-exam-mistakes-v1',JSON.stringify([entry])),entry);
+ await page.goto('/study');
+ const notebook=page.locator('#mistake-notebook');
+ await expect(notebook.locator('.notebook-capture-disclosure')).not.toHaveAttribute('open','');
+ await expect(notebook.locator('.notebook-saved-work')).not.toHaveAttribute('open','');
+ await notebook.getByText('Add an attempt to review',{exact:true}).click();
+ await expect(notebook.getByRole('textbox',{name:'Your answer and reasoning',exact:true})).toBeVisible();
+ await page.evaluate(()=>window.dispatchEvent(new CustomEvent('eai-study-notebook-practice',{detail:{id:'review-sample'}})));
+ await expect(notebook.locator('.notebook-saved-work')).toHaveAttribute('open','');
+ await expect(notebook).toContainText('Saved notes remain intact.');
+ const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem('eai-exam-mistakes-v1')!));
+ expect(stored).toEqual([entry]);
+});

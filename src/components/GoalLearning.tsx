@@ -124,7 +124,7 @@ export default function GoalLearning() {
     <div className="goal-planner-shell">
     <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">{step===4&&accepted&&!editing?"Your learning plan.":"Build your learning plan."}</h2></div><p>A learning path built<br/>around your goal.</p></div>
     <details className="goal-intro">
-      <summary className="cursor-pointer w-fit text-[#ebc782]">How this works</summary>
+      <summary className="cursor-pointer w-fit text-[#ebc782]">Help with planning</summary>
       <p className="mt-2 max-w-prose">Describe one thing you want to do. You can bring notes or skip straight to choosing your level and study time. Review the proposed lessons, edit their order or wording, then choose “Use this plan” to start a lesson with your tutor.</p>
     </details>
     <ol className="goal-steps" aria-label="Plan creation steps">{["Your goal","Materials","Your pace","Review"].map((label,index)=><li key={label} aria-current={step===index+1?"step":undefined}><span>{index+1}</span>{label}</li>)}</ol>

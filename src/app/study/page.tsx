@@ -9,6 +9,7 @@ import ExamPreparation from "@/components/ExamPreparation";
 import Link from "next/link";
 import Image from "next/image";
 import StudyGlyph from "@/components/StudyGlyph";
+import StudyResumeShortcut from "@/components/StudyResumeShortcut";
 import LearningResources from "@/components/LearningResources";
 import StudyNavigation from "@/components/StudyNavigation";
 
@@ -60,6 +61,7 @@ export default function StudyPage() {
         <div className="studio-hero-shade" />
         <StudyNavigation overlay />
         <div className="studio-hero-copy">
+          <StudyResumeShortcut />
           <p className="studio-eyebrow">THE ART OF UNDERSTANDING</p>
           <h1 id="studio-title">Explore what you<br className="studio-desktop-break" /> don’t yet know.</h1>
           <p className="studio-hero-subtitle">Ask questions. Study your sources. Put ideas into practice.</p>

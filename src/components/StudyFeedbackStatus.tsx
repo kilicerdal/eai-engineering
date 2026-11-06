@@ -1,0 +1,8 @@
+import {checkLabel,checkReviewMethod,type LessonCheck} from "@/lib/study-checkpoints";
+
+/** Labels describe a saved attempt, never a learner's ability or overall mastery. */
+export default function StudyFeedbackStatus({check}:{check:LessonCheck}){
+ const kind=check.result.decision==="uncertain"?"uncertain":check.result.decision!=="meets"?"practice":check.helpUsed?"helped":"independent";
+ const explanation=kind==="uncertain"?"The feedback could not verify this attempt. This does not establish that your answer is wrong; check the question and your source before treating it as an error.":kind==="practice"?"This review found missing or incorrect reasoning in this attempt. Read the feedback and verify it against the original question.":kind==="helped"?"This answer met the check with help reported. Try a different question without help when ready.":"This answer met the check with no help reported. One answer does not establish mastery of the topic.";
+ return <div className="study-feedback-status"><div className="study-feedback-labels"><span className="study-outcome-badge" data-outcome={kind}>{checkLabel(check)}</span><span className="study-review-method">{checkReviewMethod(check)}</span></div><details><summary>About this result</summary><p>{explanation}</p><p>{check.result.method==="substitution"?"A substitution check supports a mathematical equality; it does not verify every part of your explanation.":"AI feedback can be mistaken. Check important reasoning against your source or answer key."} Help use is self-reported; these labels are not an exam score or ability rating.</p></details></div>;
+}

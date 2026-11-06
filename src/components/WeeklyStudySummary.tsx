@@ -30,6 +30,7 @@ export default function WeeklyStudySummary({checks,exams,practice,now}: {checks:
   return <section id="weekly-summary" className="learning-check-evidence" aria-labelledby="weekly-heading">
     <h3 id="weekly-heading">Your week in learning</h3>
     <p>Last 7 days · {count} distinct {count===1?"question":"questions"} checked</p>
+    <details className="weekly-summary-detail"><summary>Review this week’s activity</summary>
     <StudyGuide section="Weekly summary">Open a saved attempt to see the question, your answer and the feedback. This summary uses the latest checked attempt per question from today and the previous six days.</StudyGuide>
     {!next ? <p>Complete a check after a tutor conversation, or answer a practice question. Your first result will appear here. <a href="#ai-assistant">Start with your tutor ↗</a></p> : <>
       <div>{independent && <article><strong>Answered independently</strong><p>{independent.topic}</p><Evidence attempt={independent}/></article>}
@@ -47,5 +48,6 @@ export default function WeeklyStudySummary({checks,exams,practice,now}: {checks:
       {!independent && <p>An independent answer will appear here once a check records one.</p>}
       <p><strong>Suggested next step · {next.topic}</strong><br/>{next.next} <a href={next.href}>{next.action} ↗</a></p>
     </>}
+    </details>
   </section>;
 }
