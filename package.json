@@ -9,7 +9,10 @@
     "lint": "eslint",
     "test:study": "node --test tests/study-*.test.mjs",
     "prebuild": "node scripts/copy-pdf-assets.mjs",
-    "predev": "node scripts/copy-pdf-assets.mjs"
+    "predev": "node scripts/copy-pdf-assets.mjs",
+    "test:engineering-story": "node --test tests/engineering-story.test.mjs",
+    "test:engineering-browser": "playwright test --config=playwright.engineering.config.ts",
+    "render:engineering-share": "node scripts/render-engineering-share.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
@@ -28,6 +31,8 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.0",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -35,6 +40,7 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
+    "playwright-core": "1.64.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

@@ -67,3 +67,8 @@ page.backup.txt
 
 # Generated, version-matched PDF.js browser assets
 /public/pdfjs/
+
+# Local engineering story verification
+/artifacts/
+/playwright-report/
+/test-results/

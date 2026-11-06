@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "runId": "12c57b11-38c8-4e56-95a2-638062544ba4",
+  "generatedAt": "2026-11-06T16:26:01.895Z",
+  "origin": "authored-offline-example",
+  "journey": "J-REPLAY",
+  "title": "Checkout replay preserves one order and one inventory decrement",
+  "requirement": "ORDER-02",
+  "hash": "1e4b952042a7c2ec0801d25dd91d7ee0f31ddb872a36d289b156cbfe00dcea03",
+  "modelCalls": 0,
+  "backend": "postgres",
+  "outcome": "fault-detected",
+  "control": {
+    "id": "J-REPLAY",
+    "title": "Checkout replay preserves one order and one inventory decrement",
+    "requirement": "ORDER-02",
+    "hash": "1e4b952042a7c2ec0801d25dd91d7ee0f31ddb872a36d289b156cbfe00dcea03",
+    "origin": "authored-offline-example",
+    "fault": null,
+    "passed": true,
+    "steps": [
+      {
+        "index": 1,
+        "action": "login",
+        "actor": "owner",
+        "expected": {
+          "status": 201
+        },
+        "actual": {
+          "status": 201
+        },
+        "passed": true
+      },
+      {
+        "index": 2,
+        "action": "add",
+        "actor": "owner",
+        "expected": {
+          "status": 200,
+          "total": 3600,
+          "count": 2
+        },
+        "actual": {
+          "status": 200,
+          "total": 3600,
+          "count": 2
+        },
+        "passed": true
+      },
+      {
+        "index": 3,
+        "action": "checkout",
+        "actor": "owner",
+        "expected": {
+          "status": 201,
+          "total": 3600,
+          "state": "confirmed"
+        },
+        "actual": {
+          "status": 201,
+          "total": 3600,
+          "state": "confirmed"
+        },
+        "passed": true
+      },
+      {
+        "index": 4,
+        "action": "checkout",
+        "actor": "owner",
+        "expected": {
+          "status": 200,
+          "total": 3600,
+          "state": "confirmed",
+          "sameOrder": true
+        },
+        "actual": {
+          "status": 200,
+          "total": 3600,
+          "state": "confirmed",
+          "sameOrder": true
+        },
+        "passed": true
+      },
+      {
+        "index": 5,
+        "action": "inspect",
+        "actor": "owner",
+        "expected": {
+          "status": 200,
+          "count": 1
+        },
+        "actual": {
+          "status": 200,
+          "count": 1
+        },
+        "passed": true
+      },
+      {
+        "index": 6,
+        "action": "inspect",
+        "actor": "owner",
+        "expected": {
+          "status": 200,
+          "stock": {
+            "field-notebook": 18,
+            "atlas-pack": 8,
+            "arc-lamp": 0
+          }
+        },
+        "actual": {
+          "status": 200,
+          "stock": {
+            "arc-lamp": 0,
+            "atlas-pack": 8,
+            "field-notebook": 18
+          }
+        },
+        "passed": true
+      },
+      {
+        "index": 7,
+        "action": "inspect",
+        "actor": "owner",
+        "expected": {
+          "status": 200,
+          "total": 0,
+          "count": 0
+        },
+        "actual": {
+          "status": 200,
+          "total": 0,
+          "count": 0
+        },
+        "passed": true
+      }
+    ]
+  },
+  "fault": {
+    "id": "J-REPLAY",
+    "title": "Checkout replay preserves one order and one inventory decrement",
+    "requirement": "ORDER-02",
+    "hash": "1e4b952042a7c2ec0801d25dd91d7ee0f31ddb872a36d289b156cbfe00dcea03",
+    "origin": "authored-offline-example",
+    "fault": "duplicate-replay",
+    "passed": false,
+    "steps": [
+      {
+        "index": 1,
+        "action": "login",
+        "actor": "owner",
+        "expected": {
+          "status": 201
+        },
+        "actual": {
+          "status": 201
+        },
+        "passed": true
+      },
+      {
+        "index": 2,
+        "action": "add",
+        "actor": "owner",
+        "expected": {
+          "status": 200,
+          "total": 3600,
+          "count": 2
+        },
+        "actual": {
+          "status": 200,
+          "total": 3600,
+          "count": 2
+        },
+        "passed": true
+      },
+      {
+        "index": 3,
+        "action": "checkout",
+        "actor": "owner",
+        "expected": {
+          "status": 201,
+          "total": 3600,
+          "state": "confirmed"
+        },
+        "actual": {
+          "status": 201,
+          "total": 3600,
+          "state": "confirmed"
+        },
+        "passed": true
+      },
+      {
+        "index": 4,
+        "action": "checkout",
+        "actor": "owner",
+        "expected": {
+          "status": 200,
+          "total": 3600,
+          "state": "confirmed",
+          "sameOrder": true
+        },
+        "actual": {
+          "status": 201,
+          "total": 3600,
+          "state": "confirmed",
+          "sameOrder": false
+        },
+        "passed": false
+      }
+    ]
+  },
+  "divergence": {
+    "index": 4,
+    "action": "checkout",
+    "actor": "owner",
+    "expected": {
+      "status": 200,
+      "total": 3600,
+      "state": "confirmed",
+      "sameOrder": true
+    },
+    "actual": {
+      "status": 201,
+      "total": 3600,
+      "state": "confirmed",
+      "sameOrder": false
+    },
+    "passed": false
+  },
+  "reproduction": "npm run showcase:replay -- --journey=J-REPLAY --fault=duplicate-replay",
+  "note": "Actual local execution in isolated disposable schemas. Authored plan; simulated fault when selected. No paid API calls. A detected divergence is evidence, not an AI root-cause diagnosis.",
+  "source": {
+    "repository": "https://github.com/kilicerdal/playwright-ai-automation",
+    "commit": "dbcbb6e2a773a37b1325af4f8a58bdd89369cc02",
+    "tag": "v5.0.0"
+  }
+}

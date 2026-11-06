@@ -11,11 +11,12 @@ export const projects = [
   {
     name: "Playwright AI Automation",
     category: "TEST FRAMEWORK",
+    caseStudy: "/engineering/order-once",
     repository: "https://github.com/kilicerdal/playwright-ai-automation",
     description:
-      "Browser automation and automated quality checks with Playwright and TypeScript.",
-    stack: ["Playwright", "TypeScript", "CI/CD"],
-    status: "Active Development",
+      "V5 local journey execution, PostgreSQL fault demonstrations, and reproducible evidence.",
+    stack: ["Playwright", "TypeScript", "PostgreSQL"],
+    status: "V5 released · Verified locally",
   },
   {
     name: "AI Python Automation",
