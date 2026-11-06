@@ -16,6 +16,16 @@ export async function readStudyStream(response: Response, onText: (text: string)
   let buffer = "";
   let answer = "";
   let finished = false;
+  let displayed = "";
+  const markers=["<|start|>","<|end|>","<|return|>","<|channel|>","<|im_start|>","<|im_end|>"];
+  function visiblePrefix(text:string) {
+    if ("analysis:".startsWith(text)) return "";
+    // Hold incomplete control markers until enough text arrives to classify them.
+    let held=0;
+    for(const marker of markers)for(let length=1;length<marker.length;length++)
+      if(text.endsWith(marker.slice(0,length)))held=Math.max(held,length);
+    return held?text.slice(0,-held):text;
+  }
   function processEvent(event: string) {
     const data = event.split(/\r?\n/).filter(line => line.startsWith("data:"))
       .map(line => line.slice(5).trimStart()).join("\n").trim();
@@ -24,13 +34,17 @@ export async function readStudyStream(response: Response, onText: (text: string)
     let payload;
     try { payload = JSON.parse(data); } catch { throw new Error("The response was interrupted. Please retry or ask the tutor to continue."); }
     if (payload.error || payload.errors?.length) throw new Error("The response was interrupted. Please try again.");
+    const finishReason=payload.choices?.[0]?.finish_reason;
+    if(finishReason==="length")throw new Error("The reply reached its output limit before finishing. The visible text is incomplete. Retry or ask a narrower question.");
+    if(finishReason==="content_filter")throw new Error("The provider could not complete this reply. Try rephrasing the question.");
     const token = payload.choices?.[0]?.delta?.content ?? payload.response;
     if (typeof token === "string") {
       answer += token;
       if (/<\|(?:start|end|return|channel|im_start|im_end)\|>/.test(answer) || /^analysis:/.test(answer)) {
         throw new Error("The tutor returned an invalid response. Please retry your question.");
       }
-      onText(answer);
+      const visible=visiblePrefix(answer);
+      if(visible && visible!==displayed){onText(visible);displayed=visible;}
     }
   }
   try {
@@ -46,6 +60,8 @@ export async function readStudyStream(response: Response, onText: (text: string)
     }
     if (requireDone && !finished) throw new Error("The response was interrupted. Retry the question.");
     if (!answer.trim()) throw new Error("The tutor returned an empty response. Please try again.");
+    if(visiblePrefix(answer)!==answer && /<\|[^>]*$/.test(answer))throw new Error("The tutor returned an invalid response. Please retry your question.");
+    if(answer!==displayed)onText(answer);
     return answer;
   } finally {
     await reader.cancel().catch(() => undefined);

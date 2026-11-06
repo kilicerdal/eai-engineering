@@ -37,7 +37,7 @@ for (let start=0;start<selectedCases.length;start+=2) {
   const began=Date.now();
   try {
    const response=await fetch(new URL('/api/study/chat', origin),{method:'POST',headers:{'Content-Type':'application/json','Origin':origin},body:JSON.stringify({message:item.message,subject:item.subject,learning:{level:item.level||'highSchool',approach:item.approach,goal:item.goal||'Understand the reasoning accurately'},history:item.history||[]}),signal:AbortSignal.timeout(60000)});
-   const answer=await readStudyStream(response,()=>{});
+   const answer=await readStudyStream(response,()=>{},true);
    const excessQuestions = item.id==="science-still-lost" && (answer.match(/\?/g)||[]).length>1;
    if(excessQuestions)process.exitCode=1;
    results.push({...item,...(excessQuestions?{failedCheck:"More than one follow-up question"}:{}),status:response.status,elapsedMs:Date.now()-began,answer});

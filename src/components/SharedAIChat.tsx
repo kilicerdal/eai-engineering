@@ -441,7 +441,7 @@ export default function SharedAIChat() {
           updatedAt: Date.now(),
           messages: [...baseMessages, { role: "assistant", content: answer }],
         }));
-      });
+      }, true);
     } catch (error) {
       if (!controller.signal.aborted) {
         if (error instanceof Error && error.message.includes("invalid response")) {
