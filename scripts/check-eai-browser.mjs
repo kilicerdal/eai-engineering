@@ -1,5 +1,7 @@
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const assert=require('node:assert/strict');
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+const load=createRequire(import.meta.url);
+const {chromium}=load(process.env.PLAYWRIGHT_MODULE || 'playwright');
 (async()=>{const browser=await chromium.launch({channel:'chrome',headless:true});const page=await browser.newPage({viewport:{width:390,height:844}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
 await page.goto(process.env.EAI_TEST_ORIGIN || 'http://localhost:3011');await page.getByLabel('AI assistant mode').selectOption('review');await page.getByLabel('Your message',{exact:true}).fill('Unsent code\nsecond line');await page.locator('#ai-assistant summary').filter({hasText:'Project context'}).click();await page.getByLabel('Project context',{exact:true}).fill('TypeScript Playwright, use fixtures');await page.reload();await page.getByLabel('AI assistant mode').waitFor();await page.waitForFunction(()=>document.querySelector('#ai-assistant select').value==='review');assert.equal(await page.getByLabel('Your message',{exact:true}).inputValue(),'Unsent code\nsecond line');await page.locator('#ai-assistant summary').filter({hasText:'Project context'}).click();assert.equal(await page.getByLabel('Project context',{exact:true}).inputValue(),'TypeScript Playwright, use fixtures');
 let calls=[];await page.route('**/api/chat',async route=>{calls.push(route.request().postDataJSON());if(calls.length===1)return route.fulfill({status:429,contentType:'application/json',body:JSON.stringify({error:'Try again',retryAfter:1})});return route.fulfill({status:200,contentType:'text/event-stream',body:'data: '+JSON.stringify({response:'Checked response.'})+'\n\ndata: [DONE]\n\n'});});
