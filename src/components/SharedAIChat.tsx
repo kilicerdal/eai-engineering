@@ -705,10 +705,11 @@ export default function SharedAIChat() {
             <div
               ref={chatContainerRef}
               className="tutor-dialogue"
+              data-empty={!active?.messages.some(message => message.role === "user")}
               role="log"
               aria-live="polite"
             >
-              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Start with a subject, a question or a problem. Add your level or what you’ve tried if useful.</p><ol className="tutor-empty-steps" aria-label="Start your first tutor conversation"><li>Choose an approach</li><li>Write or use an example</li><li>Select Send when ready</li></ol></div> : (active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
+              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Start with a subject, a question or a problem. Add your level or what you’ve tried if useful.</p></div> : (active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
                 <div
                   key={index}
                   className={`tutor-message-row flex ${
@@ -743,7 +744,7 @@ export default function SharedAIChat() {
             </div>
 
             <div className="tutor-composer">
-              {!active?.messages.some(message => message.role === "user") && <div className="tutor-starter-prompts"><p className="tutor-starter-caption">Use an example to start a draft, then edit and Send.</p>
+              {!active?.messages.some(message => message.role === "user") && <details className="tutor-example-drawer"><summary>Try an example question</summary><div className="tutor-starter-prompts"><p className="tutor-starter-caption">Use an example to start a draft, then edit and Send.</p>
                 {suggestions[active?.mode || "general"].map(
                   (suggestion) => (
                     <button
@@ -757,7 +758,7 @@ export default function SharedAIChat() {
                     </button>
                   )
                 )}
-              </div>}
+              </div></details>}
 
               {loading && (
                 <button

@@ -22,3 +22,39 @@
 .eai-study-studio .studio-nav nav a{white-space:normal;}
 .eai-study-studio .studio-hero h1{font-size:42px;line-height:1.1;}
 }
+
+/* V2: shorter work paths, quieter scenery and progressive disclosure. */
+.eai-study-studio #ai-assistant .tutor-section-intro{min-height:0;margin-bottom:24px;}
+.eai-study-studio #ai-assistant:before{height:260px;opacity:.32;background-position:center;}
+.eai-study-studio .tutor-dialogue[data-empty=true]{height:auto;min-height:0;padding:20px 24px;overflow:visible;}
+.eai-study-studio .tutor-dialogue[data-empty=true] .tutor-empty-state{margin:0 auto;text-align:left;max-width:none;}
+.eai-study-studio .tutor-empty-state>svg{display:none;}
+.eai-study-studio .tutor-empty-state h3{font-size:26px;}
+.eai-study-studio .tutor-empty-state p{margin-top:8px;font-size:16px;}
+.eai-study-studio .tutor-example-drawer{margin-bottom:16px;}
+.eai-study-studio .tutor-example-drawer>summary{font-size:14px;cursor:pointer;color:#e7c68b;min-height:44px;padding:10px 0;}
+.eai-study-studio .tutor-example-drawer .tutor-starter-prompts{padding-top:12px;}
+.eai-study-studio .tutor-mode-bar [role=group]{flex-wrap:nowrap;overflow-x:auto;gap:20px;}
+.eai-study-studio .tutor-mode-bar button{flex-shrink:0;min-height:44px;}
+.eai-study-studio .learning-home .studio-landmark-banner{min-height:220px;padding-top:32px;padding-bottom:42px;}
+.eai-study-studio .learning-home .studio-landmark-backdrop{opacity:.65;}
+.eai-study-studio .learning-home .studio-landmark-banner .studio-section-title h2{font-size:36px;}
+.eai-study-studio .learning-home-content:before{opacity:.35;}
+.eai-study-studio .exam-landmark-stage>.studio-landmark-backdrop,.eai-study-studio .notebook-landmark-stage>.studio-landmark-backdrop{opacity:.38;}
+.eai-study-studio .daily-finished-toggle{margin:10px 0 16px;}
+.eai-study-studio details.learning-check-evidence{margin:24px 0;padding:22px;}
+.eai-study-studio details.learning-check-evidence>summary{font-size:16px;cursor:pointer;color:#e5d0aa;}
+.eai-study-studio .studio-explore{padding-top:40px;padding-bottom:40px;}
+@media(max-width:760px){
+.eai-study-studio #ai-assistant .tutor-section-intro{min-height:0;margin-bottom:20px;}
+.eai-study-studio #ai-assistant:before{height:180px;background-position:top;background-size:cover;}
+.eai-study-studio .tutor-dialogue[data-empty=true]{padding:18px 16px;}
+.eai-study-studio .tutor-empty-state h3{font-size:24px;}
+.eai-study-studio .tutor-focus-brand>svg{display:none;}
+.eai-study-studio .tutor-focus-header{padding:14px 16px;gap:10px;}
+.eai-study-studio .tutor-focus-brand span{display:none;}
+.eai-study-studio .tutor-continuity-preview{padding:0 16px;}
+.eai-study-studio .tutor-composer{padding:16px;}
+.eai-study-studio .learning-home .studio-landmark-banner{min-height:240px;padding:30px 6% 58px;}
+.eai-study-studio .learning-home .studio-landmark-banner .studio-section-title h2{font-size:30px;}
+}

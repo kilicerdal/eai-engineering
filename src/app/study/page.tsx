@@ -8,7 +8,6 @@ import GoalLearning from "@/components/GoalLearning";
 import ExamPreparation from "@/components/ExamPreparation";
 import Link from "next/link";
 import Image from "next/image";
-import StudyLandmark from "@/components/StudyLandmark";
 import StudyGlyph from "@/components/StudyGlyph";
 import LearningResources from "@/components/LearningResources";
 import StudyNavigation from "@/components/StudyNavigation";
@@ -75,18 +74,6 @@ export default function StudyPage() {
       <GoalLearning />
       <LearningResources />
       <ExamPreparation />
-      <section id="discover" className="studio-discover">
-        <div className="studio-landmark-banner studio-landmark-machu">
-        <StudyLandmark scene="machu-picchu" />
-        <div className="studio-section-title"><div><p className="studio-eyebrow">A WORLD OF POSSIBILITIES</p><h2>Your next discovery</h2></div><p>Follow a question.<br />See where it takes you.</p></div>
-        <StudyGuide section="Discovery">Choose AI tutor for a conversation, My materials for a question about a source, or Exam preparation for practice toward a test.</StudyGuide><p className="studio-landmark-caption">Machu Picchu, Peru · An imagined horizon</p>
-        </div>
-        <div className="studio-pathways">
-          <a href="#ai-assistant"><span className="studio-path-icon"><StudyGlyph kind="general" /></span><h3>AI tutor</h3><p>Explore an idea. Find your next step.</p><span className="studio-path-link">Begin a conversation ↗</span></a>
-          <Link href="/study/materials"><span className="studio-path-icon"><StudyGlyph kind="writing" /></span><h3>My materials</h3><p>Your sources, connected to understanding.</p><span className="studio-path-link">Open your library ↗</span></Link>
-          <a href="#exam-preparation"><span className="studio-path-icon"><StudyGlyph kind="science" /></span><h3>Exam preparation</h3><p>Prepare with purpose. Learn from each attempt.</p><span className="studio-path-link">Open exam preparation ↗</span></a>
-        </div>
-      </section>
       <section id="explore" className="studio-explore">
         <div className="studio-section-title"><div><p className="studio-eyebrow">CURIOSITY HAS NO BOUNDARIES</p><h2>Where will you begin?</h2></div><p>Across subjects.<br />At your pace.</p></div>
         <StudyGuide section="Explore subjects">Pick a subject to set the tutor’s focus, then type your question. Writing opens a separate workspace where you can draft and revise an essay.</StudyGuide><div className="studio-subjects" aria-label="Explore learning subjects">

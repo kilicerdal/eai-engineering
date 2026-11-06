@@ -73,3 +73,26 @@ test('mobile menu supports keyboard dismissal and readable tutor controls',async
  await expect(page.locator('.tutor-starter-prompts button').first()).toHaveCSS('font-size','14px');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
+test('compact tutor keeps examples as unsent drafts and finished sessions collapsed',async({page},info)=>{
+ let posts=0;
+ await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
+ await page.addInitScript(()=>{
+ const time=Date.now()-60000;
+ localStorage.setItem('eai-daily-sessions-v1',JSON.stringify({version:1,activeId:'finished-sample',sessions:[{id:'finished-sample',minutes:20,target:{kind:'plan',title:'Choose a focus'},startedAt:time,updatedAt:time+1000,finishedAt:time+1000,stage:3,completed:[0,1,2,3],reflection:'A saved reflection survives the visual update.'}]}));
+ });
+ await page.goto('/study');
+ const tutor=page.locator('#ai-assistant');
+ const input=await page.locator('#tutor-message-input').boundingBox(),section=await tutor.boundingBox();
+ expect(input!.y-section!.y).toBeLessThan(info.project.name==='mobile'?850:650);
+ await page.locator('.tutor-example-drawer>summary').click();
+ await page.locator('.tutor-starter-prompts button').first().click();
+ await expect(page.locator('#tutor-message-input')).not.toHaveValue('');
+ expect(posts).toBe(0);
+ await expect(page.locator('#discover')).toHaveCount(0);
+ const session=page.locator('#daily-study-session');
+ await expect(session.getByLabel('Session reflection')).toHaveCount(0);
+ await session.getByRole('button',{name:'Review your last session reflection'}).click();
+ await expect(session.getByLabel('Session reflection')).toHaveValue('A saved reflection survives the visual update.');
+ await page.locator('#ai-assistant').scrollIntoViewIfNeeded();
+ await page.screenshot({path:`artifacts/engineering-story/refinement-tutor-${info.project.name}.png`});
+});
