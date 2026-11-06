@@ -7,6 +7,8 @@ import "./engineering/studio.css";
 import Image from "next/image";
 import Link from "next/link";
 
+import ContactDesk from "@/components/ContactDesk";
+import "./contact-desk.css";
 import ResumeChat from "@/components/ResumeChat";
 
 import "./threshold.css";
@@ -48,7 +50,7 @@ export default function Home() {
    <div className="atlas-dai-copy"><p className="atlas-eyebrow">dAI LEARNING STUDIO</p><h2 id="dai-invitation-title">Turn curiosity into understanding.</h2><p>Learn with an AI tutor, work from your materials, and prepare with purpose.</p><ul aria-label="Learning Studio features"><li>Personal learning plans</li><li>AI tutoring</li><li>PSAT &amp; SAT practice</li><li>Reading Room</li></ul><a className="atlas-button primary" href="/study">Explore the Learning Studio <span aria-hidden="true">→</span></a><p className="atlas-dai-note">Start without an account.</p></div>
   </section>
   <AIPhilosophy />
-  <section className="atlas-contact atlas-scenic" id="contact"><AtlasBackdrop scene="civilizations"/><div className="atlas-container"><p className="atlas-eyebrow">A MORE INTELLIGENT TOMORROW</p><h2>What will we build next?</h2><p>Let’s turn your next idea into real progress.</p><a className="atlas-button" href="mailto:hello@eai.engineering">Get in touch <span>→</span></a><div className="atlas-contact-links"><a href="mailto:erdal@eai.engineering">Professional inquiries ↗</a><a href="mailto:support@eai.engineering">Technical support ↗</a><a href="mailto:careers@eai.engineering">Opportunities ↗</a></div></div></section>
-  <footer className="atlas-footer"><a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a><a href="/study">dAI Learning Studio ↗</a><small>© 2026 eAI · Erdal Kilic</small></footer>
+  <ContactDesk />
+  <footer className="atlas-footer"><a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a><nav className="footer-destinations" aria-label="Footer navigation"><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">GitHub ↗</a><Link href="/study">Learning Studio ↗</Link><Link href="/study/privacy">Learning privacy</Link></nav><small>© 2026 eAI · Erdal Kilic</small></footer>
  </main>;
 }
