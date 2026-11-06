@@ -14,3 +14,13 @@ test('reference is narrowly scoped and does not replace concurrent or unrelated 
  assert.equal(engineeringReference('Write a sequential database migration'),null);
  assert.match(engineeringReference('Fix await items.forEach(async item => save(item)) sequentially'),/for…of/);
 });
+
+test('fetch reference separates request, HTTP, JSON and success outcomes',async()=>{
+ const {fetchJSONExample}=loadStudyModule('eai-engineering-reference');
+ const fetchJSON=new Function(`${fetchJSONExample}; return fetchJSON;`)();
+ let parsed=false;
+ assert.deepEqual(await fetchJSON('/',async()=>({ok:false,status:500,json(){parsed=true;}})),{ok:false,kind:'http',status:500});assert.equal(parsed,false);
+ const error=new Error('offline');assert.deepEqual(await fetchJSON('/',async()=>{throw error;}),{ok:false,kind:'request',error});
+ assert.deepEqual(await fetchJSON('/',async()=>({ok:true,json(){throw error;}})),{ok:false,kind:'json',error});
+ assert.deepEqual(await fetchJSON('/',async()=>({ok:true,json:async()=>42})),{ok:true,data:42});
+});

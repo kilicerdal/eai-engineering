@@ -1,4 +1,4 @@
-import {weeklyAttempts, type WeeklyAttempt} from "@/lib/study-weekly";
+import {weeklyReviewPrompt, weeklyAttempts, type WeeklyAttempt} from "@/lib/study-weekly";
 import type {LessonCheck} from "@/lib/study-checkpoints";
 import StudyGuide from "@/components/StudyGuide";
 
@@ -8,6 +8,11 @@ function Evidence({attempt}: {attempt: WeeklyAttempt}) {
     <p className="whitespace-pre-wrap"><strong>Question</strong><br/>{attempt.question}</p>
     <p className="whitespace-pre-wrap"><strong>Your answer</strong><br/>{attempt.answer}</p>
     <p>{attempt.feedback}</p>
+    <button type="button" onClick={() => {
+      window.dispatchEvent(new CustomEvent("eai-study-prompt", {detail:weeklyReviewPrompt(attempt)}));
+      document.getElementById("ai-assistant")?.scrollIntoView({block:"start"});
+    }}>Review this attempt with my tutor →</button>
+    <p>A new tutor draft includes this question, your answer and saved feedback. Review it before sending; long entries are shortened.</p>
   </details>;
 }
 

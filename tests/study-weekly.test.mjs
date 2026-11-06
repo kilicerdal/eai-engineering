@@ -26,3 +26,13 @@ test('uncertain tutor feedback links to its real answer without classing it as i
  const summary=weeklyAttempts([c],null,[],now);
  assert.equal(summary.review.outcome,'uncertain');assert.equal(summary.review.answer,c.answer);assert.equal(summary.independent,undefined);
 });
+
+test('weekly tutor draft carries the chosen attempt and remains within the tutor input limit',()=>{
+ const {weeklyReviewPrompt}=loadStudyModule('study-weekly');
+ const attempt=weeklyAttempts([],null,[answer(now,false)],now).review;
+ const prompt=weeklyReviewPrompt(attempt);
+ assert.ok(prompt.message.includes(attempt.question));assert.ok(prompt.message.includes(attempt.answer));assert.ok(prompt.message.includes(attempt.feedback));
+ assert.equal(prompt.subject,'general');assert.equal(prompt.checkpoint,undefined);
+ const long=weeklyReviewPrompt({...attempt,question:'q'.repeat(1800),answer:'a'.repeat(2500),feedback:'f'.repeat(1800)});
+ assert.ok(long.message.length<=3000);assert.match(long.message,/excerpt shortened/);assert.match(long.message,/ask me for it/);
+});

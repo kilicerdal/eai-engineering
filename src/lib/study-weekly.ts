@@ -54,3 +54,22 @@ export function weeklyAttempts(checks: LessonCheck[], exams: unknown, practice: 
   const review = attempts.find(a=>a.outcome==="practice") ?? attempts.find(a=>a.outcome==="helped") ?? attempts.find(a=>a.outcome==="uncertain");
   return {count:attempts.length, independent, review};
 }
+
+/** Prepared draft only: no assessment, storage mutation or AI call. */
+export function weeklyReviewPrompt(attempt: WeeklyAttempt) {
+  const excerpt = (text: string, limit: number) => text.length > limit ? text.slice(0,limit) + " [excerpt shortened]" : text;
+  return {
+    subject: "general",
+    title: `Review: ${attempt.topic}`.slice(0,60),
+    goal: `Understand my saved attempt: ${attempt.topic}`.slice(0,300),
+    message: [
+      "Help me revisit this saved learning attempt. Treat the saved feedback as something to verify, not an infallible answer key. Guide me through the first reasoning gap, then offer a different practice question. Do not claim mastery from this one attempt.",
+      `Topic: ${excerpt(attempt.topic,100)}`,
+      `Original question: ${excerpt(attempt.question,1100)}`,
+      `My saved answer: ${excerpt(attempt.answer,600)}`,
+      `Saved feedback: ${excerpt(attempt.feedback,450)}`,
+      `Recorded outcome: ${attempt.label}`,
+      "If the excerpts omit essential information, ask me for it before judging my answer."
+    ].join("\n\n")
+  };
+}

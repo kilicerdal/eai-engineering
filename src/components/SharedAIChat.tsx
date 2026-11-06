@@ -537,7 +537,7 @@ export default function SharedAIChat() {
 
   useEffect(() => {
     function receivePracticePrompt(event: Event) {
-      if (loading) return;
+      if (loading) {setResumeNotice("Finish or stop the current reply, then open your saved attempt again. Your current work is unchanged.");return;}
       const detail = (event as CustomEvent<unknown>).detail;
       if (!detail || typeof detail !== "object") return;
       const { subject, message, title, goal, level, approach, checkpoint } = detail as Record<string, unknown>;
