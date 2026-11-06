@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { protectAIRequest, logAIRequest } from "../../../lib/ai-security";
 import { streamCloudflare } from "../cloudflare";
 
+import { engineeringReference } from "../../../lib/eai-engineering-reference";
 import { triageCILog } from "../../../lib/eai-ci-triage";
 import { projects } from "../../../lib/portfolio-projects";
 
@@ -68,8 +69,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (body.task === "ci-log") {
-      const answer = triageCILog(message.slice(0,3000));
+    const reference = engineeringReference(message);
+    if (body.task === "ci-log" || reference) {
+      const answer = body.task === "ci-log" ? triageCILog(message.slice(0,3000)) : reference;
       logAIRequest("chat", 200, startedAt);
       return new Response(`data: ${JSON.stringify({response:answer})}\n\ndata: [DONE]\n\n`, {headers:{"Content-Type":"text/event-stream; charset=utf-8", "Cache-Control":"no-store"}});
     }
