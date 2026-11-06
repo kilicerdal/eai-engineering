@@ -69,6 +69,11 @@ test('mobile menu supports keyboard dismissal and readable tutor controls',async
  await page.locator('#study-navigation-links').getByRole('link',{name:'My learning',exact:true}).click();
  await expect(page.locator('#study-navigation-links')).toBeHidden();
  }
+ const shell=await page.locator('.tutor-focus-shell').boundingBox();
+ const tools=await page.locator('.tutor-focus-tools').boundingBox();
+ expect(tools!.x+tools!.width).toBeLessThanOrEqual(shell!.x+shell!.width);
+ const lastTool=await page.locator('.tutor-focus-tools button').last().boundingBox();
+ expect(lastTool!.x+lastTool!.width).toBeLessThanOrEqual(shell!.x+shell!.width);
  await expect(page.locator('#tutor-message-input')).toHaveCSS('font-size','16px');
  await expect(page.locator('.tutor-starter-prompts button').first()).toHaveCSS('font-size','14px');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
