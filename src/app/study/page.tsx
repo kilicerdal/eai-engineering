@@ -62,9 +62,9 @@ export default function StudyPage() {
         <div className="studio-hero-copy">
           <p className="studio-eyebrow">THE ART OF UNDERSTANDING</p>
           <h1 id="studio-title">Explore what you<br className="studio-desktop-break" /> don’t yet know.</h1>
-          <p className="studio-hero-subtitle">Ancient wisdom. New possibilities.</p>
-          <p className="studio-hero-description">A space for curious minds. Connect ideas, explore your materials, and find a clearer path to understanding.</p>
-          <StudyGuide section="Learning Studio">Ask the tutor a question, or bring a source you want to study. When you have a longer-term goal, open the learning plan and describe what you want to achieve.</StudyGuide><div className="studio-hero-actions"><a className="studio-button-gold" href="#ai-assistant">Start with your AI Tutor <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
+          <p className="studio-hero-subtitle">Ask questions. Study your sources. Put ideas into practice.</p>
+          <p className="studio-hero-description">Work through a question with your AI tutor, learn from your own materials, or build a focused study plan.</p>
+          <div className="studio-hero-actions"><a className="studio-button-gold" href="#ai-assistant">Start with your AI Tutor <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
           <p className="studio-hero-note">No account needed · {accountConfigured ? <Link href="/study/account">Optional account saving ↗</Link> : "Your work stays in this browser"}</p>
         </div>
         <a href="#ai-assistant" className="studio-hero-scroll">MEET YOUR AI TUTOR <span aria-hidden="true">↓</span></a>
@@ -75,7 +75,7 @@ export default function StudyPage() {
       <LearningResources />
       <ExamPreparation />
       <section id="explore" className="studio-explore">
-        <div className="studio-section-title"><div><p className="studio-eyebrow">CURIOSITY HAS NO BOUNDARIES</p><h2>Where will you begin?</h2></div><p>Across subjects.<br />At your pace.</p></div>
+        <div className="studio-section-title"><div><p className="studio-eyebrow">CHOOSE A SUBJECT</p><h2>Explore by subject.</h2></div><p>Across subjects.<br />At your pace.</p></div>
         <StudyGuide section="Explore subjects">Pick a subject to set the tutor’s focus, then type your question. Writing opens a separate workspace where you can draft and revise an essay.</StudyGuide><div className="studio-subjects" aria-label="Explore learning subjects">
           <svg className="studio-orbit-lines" viewBox="0 0 1100 420" fill="none" aria-hidden="true"><ellipse cx="550" cy="210" rx="405" ry="145"/><ellipse cx="550" cy="210" rx="310" ry="108"/><ellipse cx="550" cy="210" rx="185" ry="70"/><ellipse cx="550" cy="210" rx="440" ry="90" transform="rotate(-10 550 210)"/><path d="M100 210H1000M550 45V375"/><circle cx="550" cy="210" r="39"/><circle cx="550" cy="210" r="53"/><circle cx="372" cy="151" r="3"/><circle cx="735" cy="245" r="4"/><circle cx="816" cy="134" r="2"/><circle cx="250" cy="259" r="3"/></svg>
           <div className="studio-orbit-core" aria-hidden="true"><StudyGlyph kind="general"/><span>dAI</span></div>
@@ -103,13 +103,13 @@ export default function StudyPage() {
 
     
       <div className="studio-footer">
-        <Link href="/">EAI Engineering</Link><Link href="/study/privacy">Privacy & saved learning</Link><span>Knowledge opens possibilities.</span><span>Need a hand?{" "}
+        <div className="studio-footer-statement"><p>Ask a better question.<br/>Build a clearer understanding.</p><span>dAI Learning Studio · From eAI Engineering</span></div><nav aria-label="Learning Studio footer"><Link href="/">eAI Engineering</Link><Link href="/study/privacy">Privacy & saved learning</Link><span>Need a hand?{" "}
         <a
           href="mailto:support@eai.engineering"
           className="font-medium text-cyan-400 hover:underline"
         >
           Contact support
-        </a></span>
+        </a></span></nav>
       </div>
 
 </main>

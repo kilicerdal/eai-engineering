@@ -587,9 +587,9 @@ export default function SharedAIChat() {
     <section id="ai-assistant" aria-labelledby="tutor-heading" className="border-t border-white/10 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="tutor-section-intro" onKeyDown={event=>{if(showTutorHelp&&event.key==="Escape"){event.preventDefault();closeTutorHelp();}}}>
-          <p className="studio-eyebrow">A LITTLE CURIOSITY GOES A LONG WAY</p>
-          <div className="tutor-heading-row"><h2 id="tutor-heading">Your AI Tutor</h2><button id="tutor-help-trigger" type="button" className="tutor-how-button" aria-expanded={showTutorHelp} aria-controls="tutor-help-guide" onClick={()=>setShowTutorHelp(!showTutorHelp)}>How this works <span aria-hidden="true">?</span></button></div>
-          <p>A space to ask, work through an idea, and understand the next step.</p>
+          <p className="studio-eyebrow">ASK · EXPLORE · PRACTICE</p>
+          <div className="tutor-heading-row"><h2 id="tutor-heading">Your AI Tutor</h2><button id="tutor-help-trigger" type="button" className="tutor-how-button" aria-expanded={showTutorHelp} aria-controls="tutor-help-guide" onClick={()=>setShowTutorHelp(!showTutorHelp)}>Tutor guide <span aria-hidden="true">?</span></button></div>
+          <p>Ask a question, work through a problem, or review your reasoning.</p>
           {showTutorHelp&&<div id="tutor-help-guide" className="tutor-help-guide" role="region" aria-label="How to use your AI Tutor"><div className="tutor-help-heading"><h3>Start with a question. Build understanding.</h3><button type="button" aria-label="Close tutor guide" onClick={closeTutorHelp}>Close</button></div><ol><li><strong>Tell the tutor what you need.</strong><p>Share a subject, paste a problem or show your attempt. Add your level or goal if useful; you can begin with one question.</p></li><li><strong>Choose how to work.</strong><p><b>Guide me</b> asks guiding questions. <b>Explain</b> clarifies an idea. <b>Quiz me</b> offers practice. <b>Check my work</b> reviews your attempt. <b>Study plan</b> helps structure a goal.</p></li><li><strong>Review your message, then Send.</strong><p>Example prompts only fill your draft. Edit them freely. Follow-up and regeneration buttons request another tutor response.</p></li><li><strong>Keep learning at your pace.</strong><p>Ask for a different explanation, try a fresh question or use Recent sessions to return later. Use New session for a separate topic. To study from a document, <a href="/study/materials">open your personal library</a>.</p></li></ol><p className="tutor-help-saving">Sessions and unsent drafts are saved in this browser. {accountConfigured?<>Choose <a href="/study/account">optional account saving</a> to keep an account copy.</>:"No account is required."} Check important facts and calculations against your materials.</p></div>}
         </div>
         <div className="tutor-focus-shell" onKeyDown={event => { if(event.key === "Escape" && openPanel) { event.preventDefault(); document.getElementById(`tutor-${openPanel}-trigger`)?.focus(); setOpenPanel(null); } }}>
@@ -820,8 +820,9 @@ export default function SharedAIChat() {
               </form>
 
               <p className="mt-3 text-center text-xs text-slate-500">
-                Sessions and unsent messages are saved in this browser. <a href="#study-saving-status">Saving status and recovery</a>. Send, follow-up and regeneration buttons request an AI response. {accountConfigured && <>Optional account saving is managed on the <a href="/study/account">Account page</a>. </>}AI responses can contain mistakes; verify important facts and calculations.
+                Drafts and sessions are saved in this browser. <a href="#study-saving-status">Saving &amp; recovery</a>. AI can make mistakes; check important answers against your sources.
               </p>
+              <details className="tutor-request-note"><summary>About AI requests and account saving</summary><p>Send, follow-up and regeneration buttons request an AI response. Example prompts only prepare a draft. {accountConfigured && <>Manage optional account saving on the <a href="/study/account">Account page</a>.</>}</p></details>
             </div>
           </div>
         </div>

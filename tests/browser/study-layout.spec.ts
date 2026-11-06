@@ -101,3 +101,22 @@ test('compact tutor keeps examples as unsent drafts and finished sessions collap
  await page.locator('#ai-assistant').scrollIntoViewIfNeeded();
  await page.screenshot({path:`artifacts/engineering-story/refinement-tutor-${info.project.name}.png`});
 });
+test('V3 exam actions have one primary route and secondary resources remain reachable',async({page},info)=>{
+ let posts=0;
+ await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
+ await page.goto('/study');
+ const exams=page.locator('.exam-prep-controls');
+ await expect(exams.getByRole('link',{name:'Start SAT practice'})).toHaveAttribute('href','/study/exams?exam=sat');
+ await expect(exams.locator('.goal-primary')).toHaveCount(1);
+ await exams.locator('.exam-secondary-actions>summary').click();
+ await expect(exams.getByRole('button',{name:'Build my preparation plan'})).toBeVisible();
+ await expect(exams.getByRole('link',{name:'Official exam resources'})).toHaveAttribute('target','_blank');
+ await exams.getByLabel('Exam profile',{exact:true}).selectOption('mcat');
+ await expect(exams.locator('.goal-primary')).toHaveCount(1);
+ await expect(exams.getByRole('link',{name:'Start SAT practice'})).toHaveCount(0);
+ expect(posts).toBe(0);
+ await page.goto('/study');
+ await page.screenshot({path:`artifacts/engineering-story/refinement-hero-${info.project.name}.png`});
+ await page.locator('#ai-assistant').scrollIntoViewIfNeeded();
+ await page.screenshot({path:`artifacts/engineering-story/refinement-final-tutor-${info.project.name}.png`});
+});

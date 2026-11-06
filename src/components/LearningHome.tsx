@@ -93,7 +93,7 @@ export default function LearningHome() {
   return <section id="my-learning" className="learning-home" aria-labelledby="learning-home-heading">
     <div className="studio-landmark-banner studio-landmark-giza">
     <StudyLandmark scene="giza" />
-    <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR LEARNING, CONNECTED</p><h2 id="learning-home-heading">Your next step, in focus.</h2></div><p>Build on what you know.<br/>Return to what needs practice.</p></div>
+    <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR LEARNING, CONNECTED</p><h2 id="learning-home-heading">Continue your learning.</h2></div><p>Build on what you know.<br/>Return to what needs practice.</p></div>
     <p className="studio-landmark-caption">Giza, Egypt · An imagined horizon</p>
     </div>
     <div className="learning-home-content">
@@ -111,7 +111,7 @@ export default function LearningHome() {
       </DailyStudySession>
       <OpenStudyWork/>
       <div className="learning-home-grid">
-      <article className="learning-review"><p className="studio-eyebrow">MY MISTAKE NOTEBOOK</p><h3>{evidence.due.length ? `${evidence.due.length} ready to revisit` : evidence.mistakes ? "Your next review is planned." : "Turn a mistake into a next step."}</h3><p>{sharedNotebookStep ? "Your suggested review is highlighted in the recommendation. Open the notebook to see all saved attempts and their review dates." : evidence.due.length&&notebookRecommendation.kind==="notebook" ? notebookRecommendation.reason : evidence.nextReviewAt ? `Next suggested review: ${new Date(evidence.nextReviewAt).toLocaleDateString()}.` : "Capture your reasoning in the existing notebook, understand the missing idea, then return to a fresh example."}</p>
+      <article className="learning-review"><p className="studio-eyebrow">YOUR REVIEW NOTEBOOK</p><h3>{evidence.due.length ? `${evidence.due.length} ready to revisit` : evidence.mistakes ? "Your next review is planned." : "Turn a mistake into a next step."}</h3><p>{sharedNotebookStep ? "Your suggested review is highlighted in the recommendation. Open the notebook to see all saved attempts and their review dates." : evidence.due.length&&notebookRecommendation.kind==="notebook" ? notebookRecommendation.reason : evidence.nextReviewAt ? `Next suggested review: ${new Date(evidence.nextReviewAt).toLocaleDateString()}.` : "Capture your reasoning in the existing notebook, understand the missing idea, then return to a fresh example."}</p>
       {!sharedNotebookStep&&notebookRecommendation.check&&<div className="learning-check-memory"><strong>{checkLabel(notebookRecommendation.check)} · Latest follow-up</strong><p>{notebookRecommendation.check.result.nextStep}</p><small>{checkReviewMethod(notebookRecommendation.check)}; not a mastery assessment.</small></div>}
       <div className="goal-actions">{!sharedNotebookStep&&notebookRecommendation.kind==="notebook"&&<button className="goal-primary" onClick={()=>{if(notebookRecommendation.kind==="notebook")review(notebookRecommendation.mistakeId);}}>{notebookRecommendation.action} ↗</button>}<a href="#mistake-notebook">Open my notebook ↗</a></div><p className="learning-home-small">Review dates follow your own review marks; they do not certify understanding.</p></article></div>
       {!warning && <WeeklyStudySummary checks={checks} exams={examPractice} practice={foundation} now={now}/>}

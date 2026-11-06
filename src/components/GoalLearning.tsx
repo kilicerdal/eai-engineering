@@ -121,7 +121,7 @@ export default function GoalLearning() {
   return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} aria-labelledby="goal-heading" aria-busy={busy}>
     <StudyLandmark scene="stonehenge" />
     <div className="goal-planner-shell">
-    <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">What do you want to achieve?</h2></div><p>A learning path built<br/>around your goal.</p></div>
+    <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">Build your learning plan.</h2></div><p>A learning path built<br/>around your goal.</p></div>
     <details className="goal-intro">
       <summary className="cursor-pointer w-fit text-[#ebc782]">How this works</summary>
       <p className="mt-2 max-w-prose">Describe one thing you want to do. You can bring notes or skip straight to choosing your level and study time. Review the proposed lessons, edit their order or wording, then choose “Use this plan” to start a lesson with your tutor.</p>
