@@ -1,7 +1,7 @@
 import {validateMaterialSources,normalizeMaterialText,type MaterialSource} from "./study-materials";
 import type { GoalLesson } from "./study-goal";
 export const CHECK_KEY = "eai-lesson-checks-v1";
-export type LessonContext = { goal: string; lesson: GoalLesson; sources?:MaterialSource[] };
+export type LessonContext = { goal: string; lesson: GoalLesson; sources?:MaterialSource[]; originalQuestion?:string };
 export type CheckQuestion = { question: string; criterion: string };
 export type CheckFeedback = { decision: "meets" | "partial" | "needs_work" | "uncertain"; feedback: string; reasoningGap: string; nextStep: string; answerExcerpt?:string; guidingQuestion?:string; method?:"ai"|"substitution"; sourceEvidence?:{sourceId:string;quote:string}[] };
 export type LessonCheck = { id: string; context: LessonContext; question: CheckQuestion; answer: string; helpUsed: boolean; result: CheckFeedback; submittedAt: number };
@@ -13,11 +13,12 @@ export function normalizeLessonContext(value: unknown): LessonContext | null {
  for (const [key,max] of [["title",120],["objective",450],["activity",650],["checkpoint",450]] as const) if (!bounded(l[key],max)) return null;
  let sources:MaterialSource[]|undefined;
  try{if(v.sources!==undefined){sources=validateMaterialSources(v.sources);}}catch{return null;}
- return {...(sources?{sources}:{}),goal: String(v.goal).trim(),lesson:{id:String(l.id),title:String(l.title),objective:String(l.objective),activity:String(l.activity),checkpoint:String(l.checkpoint),sourceIds:[]}};
+ if(v.originalQuestion!==undefined&&!bounded(v.originalQuestion,1800))return null;
+ return {...(v.originalQuestion?{originalQuestion:String(v.originalQuestion).trim()}:{}),...(sources?{sources}:{}),goal: String(v.goal).trim(),lesson:{id:String(l.id),title:String(l.title),objective:String(l.objective),activity:String(l.activity),checkpoint:String(l.checkpoint),sourceIds:[]}};
 }
 export function lessonIdentity(context: LessonContext): string {
  const {goal,lesson:l}=context;
- return JSON.stringify([goal,l.id,l.title,l.objective,l.activity,l.checkpoint,...(context.sources?.length?[context.sources]:[])]);
+ return JSON.stringify([goal,l.id,l.title,l.objective,l.activity,l.checkpoint,...(context.sources?.length?[context.sources]:[]),...(context.originalQuestion?[context.originalQuestion]:[])]);
 }
 export function validateCheckQuestion(value: unknown): CheckQuestion {
  const v=value as Record<string,unknown>;

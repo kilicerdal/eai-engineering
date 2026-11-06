@@ -32,7 +32,20 @@ test('weekly tutor draft carries the chosen attempt and remains within the tutor
  const attempt=weeklyAttempts([],null,[answer(now,false)],now).review;
  const prompt=weeklyReviewPrompt(attempt);
  assert.ok(prompt.message.includes(attempt.question));assert.ok(prompt.message.includes(attempt.answer));assert.ok(prompt.message.includes(attempt.feedback));
- assert.equal(prompt.subject,'general');assert.equal(prompt.checkpoint,undefined);
+ assert.equal(prompt.subject,'general');assert.equal(prompt.checkpoint.originalQuestion,attempt.question);
  const long=weeklyReviewPrompt({...attempt,question:'q'.repeat(1800),answer:'a'.repeat(2500),feedback:'f'.repeat(1800)});
  assert.ok(long.message.length<=3000);assert.match(long.message,/excerpt shortened/);assert.match(long.message,/ask me for it/);
+});
+
+test('review identity is stable, preserves sources, and separates later attempts',()=>{
+ const {weeklyReviewPrompt}=loadStudyModule('study-weekly');
+ const {normalizeLessonContext,lessonIdentity}=loadStudyModule('study-checkpoints');
+ const attempt=weeklyAttempts([],null,[answer(now,false)],now).review;
+ const context=weeklyReviewPrompt(attempt).checkpoint;
+ assert.ok(normalizeLessonContext(context));
+ assert.equal(lessonIdentity(context),lessonIdentity(weeklyReviewPrompt(attempt).checkpoint));
+ assert.notEqual(lessonIdentity(context),lessonIdentity(weeklyReviewPrompt({...attempt,time:now+1}).checkpoint));
+ assert.equal(weeklyReviewPrompt({...attempt,sources:[{sourceId:'S1',text:'saved source'}]}).checkpoint.sources[0].text,'saved source');
+ assert.equal(normalizeLessonContext({...context,originalQuestion:'x'.repeat(1801)}),null);
+ assert.notEqual(lessonIdentity(context),lessonIdentity({...context,originalQuestion:'Different original question'}));
 });

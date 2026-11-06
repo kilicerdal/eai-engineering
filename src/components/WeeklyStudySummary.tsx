@@ -12,7 +12,7 @@ function Evidence({attempt}: {attempt: WeeklyAttempt}) {
       window.dispatchEvent(new CustomEvent("eai-study-prompt", {detail:weeklyReviewPrompt(attempt)}));
       document.getElementById("ai-assistant")?.scrollIntoView({block:"start"});
     }}>Review this attempt with my tutor →</button>
-    <p>A new tutor draft includes this question, your answer and saved feedback. Review it before sending; long entries are shortened.</p>
+    <p>Open a tutor review with this question, your answer and feedback. After discussing it, choose Open review practice to try a different question and save checked feedback. Existing drafts are preserved; long entries are shortened.</p>
   </details>;
 }
 

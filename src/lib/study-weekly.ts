@@ -1,4 +1,4 @@
-import {checkLabel, checkReviewMethod, lessonIdentity, type LessonCheck} from "./study-checkpoints";
+import {checkLabel, checkReviewMethod, lessonIdentity, type LessonCheck, type LessonContext} from "./study-checkpoints";
 import {normalizePracticeAttempts, practiceQuestions} from "./study-practice";
 import {normalizeExamAttempts} from "./study-exam-practice";
 import {examBank, examSkillLessons} from "./study-exam-bank";
@@ -6,6 +6,7 @@ import {examBank, examSkillLessons} from "./study-exam-bank";
 type Outcome = "independent" | "practice" | "helped" | "uncertain";
 export type WeeklyAttempt = {
   key: string; time: number; topic: string; outcome: Outcome; label: string;
+  sources?: LessonContext["sources"];
   question: string; answer: string; feedback: string; next: string; href: string; action: string;
 };
 
@@ -23,7 +24,7 @@ export function weeklyAttempts(checks: LessonCheck[], exams: unknown, practice: 
     const decision = c.result.decision;
     const outcome = decision === "uncertain" ? "uncertain" : decision !== "meets" ? "practice" : c.helpUsed ? "helped" : "independent";
     add({key: JSON.stringify([lessonIdentity(c.context),c.question.question]), time:c.submittedAt, topic:c.context.lesson.title,
-      outcome, label:checkLabel(c), question:c.question.question, answer:c.answer,
+      sources:c.context.sources, outcome, label:checkLabel(c), question:c.question.question, answer:c.answer,
       feedback:`${checkReviewMethod(c)} · ${c.result.feedback}`, next:c.result.nextStep,
       href:"#ai-assistant", action:"Open AI Tutor"});
   }
@@ -58,10 +59,24 @@ export function weeklyAttempts(checks: LessonCheck[], exams: unknown, practice: 
 /** Prepared draft only: no assessment, storage mutation or AI call. */
 export function weeklyReviewPrompt(attempt: WeeklyAttempt) {
   const excerpt = (text: string, limit: number) => text.length > limit ? text.slice(0,limit) + " [excerpt shortened]" : text;
+  // Stable identity reopens the same review; a later saved attempt gets its own check history.
+  let hash=2166136261;
+  for (const character of attempt.key) hash=Math.imul(hash^character.charCodeAt(0),16777619);
+  const goal=`Review the idea behind my saved attempt: ${attempt.topic}`.slice(0,300);
+  const checkpoint:LessonContext={
+    goal,
+    originalQuestion:attempt.question.slice(0,1800),
+    ...(attempt.sources?.length?{sources:attempt.sources}:{}),
+    lesson:{id:`weekly-review-${(hash>>>0).toString(16)}-${attempt.time}`,title:`Review: ${attempt.topic}`.slice(0,120),
+      objective:`Apply the idea behind ${attempt.topic} to a different, self-contained question and explain the reasoning.`.slice(0,450),
+      activity:"First discuss the saved question, answer and feedback with the tutor. Verify uncertain feedback. Then try a different example independently. Ask for missing source information rather than inventing it.",
+      checkpoint:"Use a different question from the original attempt. Check the learner's reasoning, report uncertainty when evidence is insufficient, and record whether help was used. One success is not proof of mastery.",sourceIds:[]}
+  };
   return {
+    checkpoint,
     subject: "general",
     title: `Review: ${attempt.topic}`.slice(0,60),
-    goal: `Understand my saved attempt: ${attempt.topic}`.slice(0,300),
+    goal,
     message: [
       "Help me revisit this saved learning attempt. Treat the saved feedback as something to verify, not an infallible answer key. Guide me through the first reasoning gap, then offer a different practice question. Do not claim mastery from this one attempt.",
       `Topic: ${excerpt(attempt.topic,100)}`,
