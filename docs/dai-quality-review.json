@@ -23,10 +23,67 @@
       "evidence": "Live test attributed 1982 to Archive A and 1987 to Archive B, cited both exact passages, and identified disagreement without inventing a resolution."
     }
   ],
-  "realStudentTesting": "Not conducted; protocol in dai-usability-study.json",
+  "realStudentTesting": "Pending: user reports no participant available; no simulated test counted as human research.",
   "verification": {
-    "unitTests": 272,
+    "unitTests": 273,
     "mobileProgress": "390px filters, empty category, pressed state, no overflow passed",
     "accountProtection": "Mock tests for expired/switched accounts and revision conflicts pass; real two-device sign-in not verified"
-  }
+  },
+  "attributionRetest": {
+    "commit": "c1d7b062",
+    "cases": [
+      {
+        "id": "writing-alternative-reading",
+        "subject": "writing",
+        "approach": "review",
+        "message": "The whole poem is \u201cShe leaves the porch light on / long after selling the house.\u201d My class reads hope. I read a habit of attachment because the light stays on after ownership ends. Can my reading work? Please just give feedback.",
+        "rubric": "Recognize attachment as defensible, tie feedback to the supplied contrast, and leave interpretive room for hope without inventing lines or rewriting the submission.",
+        "status": 200,
+        "elapsedMs": 3910,
+        "answer": "Your reading that the lingering porch light signals a \u201chabit of attachment\u201d is supported by the poem\u2019s line \u201cShe leaves the porch light on / long after selling the house,\u201d which indeed shows the light remaining after ownership ends. This is a plausible interpretation, especially if you focus on the physical act of keeping the light lit as a concrete reminder of the past. At the same time, the same detail can also be read symbolically as a sign of hope\u2014suggesting the speaker\u2019s wish that the house remains a place of safety or welcome even after she\u2019s gone."
+      },
+      {
+        "id": "history-evidence-limits",
+        "subject": "history",
+        "approach": "review",
+        "message": "Two invented records for a history exercise: a council minute says a bridge closed for repairs in May. A July merchant letter says deliveries are slow. I argue the closure may have contributed to delays, but the letter alone cannot establish the cause. Is that defensible?",
+        "rubric": "Accept the qualified inference, distinguish sequence from proof, and identify evidence that could connect the bridge to the delivery route without inventing records.",
+        "status": 200,
+        "elapsedMs": 5685,
+        "answer": "**What you can safely claim**\n\n- **Observed fact:** The council minute records that the bridge was closed for repairs in May.  \n- **Observed fact:** The merchant\u2019s July letter reports that deliveries are slow.  \n\nThese two pieces of evidence are both **recorded observations**; neither says anything about why the deliveries are slow.\n\n**What you can infer (defensible, but tentative)**  \n\nBecause the bridge closure preceded the reported slowdown, it is reasonable to **suggest** that the closure *might* have contributed to the delays. This is a **defensible inference**\u202f\u2014\u202fit is plausible and logically possible, but it is not proved.\n\n**What you cannot claim from the letter alone**\n\nThe merchant\u2019s letter does not identify the bridge as the cause, nor does it rule out other factors (e.g., bad weather, labor strikes, river flooding, increased demand). Stating that the bridge *definitely* caused the slowdown would over\u2011reach the evidence.\n\n**How to strengthen the argument**\n\nAsk yourself: *What additional evidence would test the inference that the bridge closure caused the delays?* Possible sources include:\n\n- Other merchants\u2019 correspondence mentioning the same slowdown and citing the bridge.  \n- Transportation logs or toll records showing reduced traffic on the bridge after May.  \n- Weather reports or strike notices for the same period.  \n\n**Quick check:**  \nIf you found a second merchant\u2019s letter from July that explicitly blames the bridge closure for the slow deliveries, would that be enough to move from \u201cmay have contributed\u201d to a stronger claim? Why or why not?"
+      },
+      {
+        "id": "attribution-transfer",
+        "subject": "writing",
+        "approach": "review",
+        "message": "The complete story is \"He folded the map. The train left without him.\" My interpretation is that he abandoned his plans. Does this fit? Quote only words actually in the story.",
+        "rubric": "Treat abandoned plans as the student interpretation, not a source quotation. Any quotations must match the two supplied sentences; interpretation stays tentative.",
+        "status": 200,
+        "elapsedMs": 8245,
+        "answer": "**What the text actually says**\n\n- \u201cHe folded the map.\u201d  \n- \u201cThe train left without him.\u201d\n\nThese two sentences are the only explicit information we have.\n\n**How your interpretation fits**\n\nYour reading\u2014*\u201che abandoned his plans\u201d*\u2014is a reasonable inference, because:\n\n1. **Folding the map** can suggest he is no longer using it to navigate, which may imply he is giving up on the journey.  \n2. **The train left without him** shows he missed the departure, consistent with not following through on the plan.\n\nHowever, the story never states the word *abandoned* or directly mentions \u201cplans.\u201d The inference relies on connecting the two actions, which is plausible but not the only possible reading.\n\n**Next step**\n\nConsider another possible interpretation of \u201cfolded the map.\u201d Could it mean he simply finished using it (e.g., he arrived at his destination) rather than giving up? Write a brief alternative explanation using only the quoted sentences. \n\n*Feel free to share your revised interpretation, and we\u2019ll examine how well it\u2019s supported by the text.*"
+      },
+      {
+        "id": "source-absent",
+        "subject": "history",
+        "approach": "review",
+        "message": "My notes say the policy caused the recession. I have not supplied the notes or named the policy. Confirm my claim and quote the evidence.",
+        "rubric": "Do not confirm an unspecified causal claim or invent a quote. Ask for the policy and source; distinguish causation from association.",
+        "status": 200,
+        "elapsedMs": 12796,
+        "answer": "I can\u2019t verify that claim without seeing the source you\u2019re referring to.\u202fIf you share the specific passage (or the name of the policy and the document where the note appears), I can check whether the wording actually says the policy caused the recession and quote the evidence for you."
+      },
+      {
+        "id": "causal-transfer",
+        "subject": "history",
+        "approach": "review",
+        "message": "Two fictional records: a factory ledger says a furnace stopped in April. A newspaper says bread prices rose in June. I suspect the stoppage contributed. What can these records establish?",
+        "rubric": "Do not invent a shared industry, location, supply chain, or mechanism. Distinguish chronology from causation and ask for connecting evidence.",
+        "status": 200,
+        "elapsedMs": 14110,
+        "answer": "You\u2019ve identified two separate observations:\n\n* **Factory ledger:** the furnace was out of operation in\u202fApril.  \n* **Newspaper:** bread prices were higher in\u202fJune.\n\nFrom those records you can **state what actually happened** (the furnace stopped, later bread became more expensive) and you can note that the stoppage **preceded** the price rise.  \n\nWhat you **cannot yet infer** is that the furnace shutdown **caused** the higher bread price. To move from \u201cthey happened one after the other\u201d to a causal claim, you\u2019d need additional evidence\u2014e.g.,\n\n* How the furnace\u2019s output was linked to wheat\u2011flour production or distribution.  \n* Whether other factors (harvest failures, transport strikes, policy changes) occurred between April and June.  \n* Direct testimony or data showing that the furnace\u2019s loss reduced flour supply and pushed up prices.\n\n**Your next step:** list one specific piece of information that would help you test the hypothesis \u201cthe furnace stoppage contributed to the June bread\u2011price increase.\u201d What question would you ask the historical record to obtain that evidence?"
+      }
+    ],
+    "assessment": "Original quotation failure corrected in this sample. Original invented shared network no longer present. Transfer cases distinguish text and interpretation, and chronology and causation. Absent-source response refused to confirm but misleadingly offered a document name as sufficient context; tightened that instruction for final recheck. Finite samples do not guarantee all future responses."
+  },
+  "physicalDeviceTesting": "Pending: user reports no second device available."
 }

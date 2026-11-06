@@ -1,0 +1,33 @@
+{
+  "status": "awaiting-two-physical-devices",
+  "requires": "Same consenting test user signed in on two physical devices; use synthetic learning work and preserve/export existing work before restores.",
+  "steps": [
+    {
+      "action": "On device A, save a synthetic tutor conversation to the account and record its title.",
+      "pass": "Account confirms saving without error."
+    },
+    {
+      "action": "On device B, sign in to the same account, open Account and review/restore the cloud copy after backing up local work.",
+      "pass": "Exact conversation title and text match device A."
+    },
+    {
+      "action": "With both devices holding the same account revision, save a change from A, then attempt to save a different change from B before refreshing B.",
+      "pass": "B warns of a changed account record and does not overwrite A; B retains its local work."
+    },
+    {
+      "action": "On B, review the newer account copy and explicitly choose the version to continue.",
+      "pass": "Both devices can read the selected version without unexplained data loss."
+    },
+    {
+      "action": "Sign out on B, then attempt account saving.",
+      "pass": "Sign-in is required; browser work remains available."
+    }
+  ],
+  "record": [
+    "Device/browser versions",
+    "Pass/fail for each step",
+    "Exact error wording",
+    "Whether any work was lost"
+  ],
+  "limitations": "Simulated clients passing is not physical-device verification."
+}
