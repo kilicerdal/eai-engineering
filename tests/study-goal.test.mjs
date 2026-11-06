@@ -81,3 +81,13 @@ test('real route repairs classroom activities once and fails closed if unsuitabl
  let calls=0;await withProvider(async(url,options)=>{calls++;if(calls===2)assert.match(JSON.parse(options.body).messages.at(-1).content,/ONE individual learner/);return answer(calls===1?bad:plan);},async()=>{assert.equal((await loadRoute()(req(settings))).status,200);assert.equal(calls,2);});
  calls=0;await withProvider(async()=>{calls++;return answer(bad);},async()=>{assert.equal((await loadRoute()(req(settings))).status,502);assert.equal(calls,2);});
 });
+
+test('individual-study quality gate covers objectives and checkpoints as well as activities',()=>{
+ for(const patch of [{checkpoint:'Prepare a group presentation with classmates.'},{objective:'Lead a class debrief.'},{activity:'Compare your answers in breakout groups.'}]){
+  const legacy=goals.validateGoalPlan({...plan,lessons:plan.lessons.map(l=>({...l,...patch}))});
+  assert.equal(legacy.lessons.length,3);
+  assert.throws(()=>goals.validateIndependentPlan(legacy),/one learner/);
+ }
+ const independent=goals.validateGoalPlan({...plan,lessons:plan.lessons.map(l=>({...l,activity:'Ask your tutor to create an illustrative table. Compare the entries, then explain your reasoning.'}))});
+ assert.equal(goals.validateIndependentPlan(independent).lessons.length,3);
+});

@@ -1,6 +1,7 @@
 "use client";
 
 import {restoreJourney} from "@/lib/study-progress";
+import AcceptedStudyPlan from "@/components/AcceptedStudyPlan";
 import PlanAdjustment from "@/components/PlanAdjustment";
 import {PLAN_CHOICE_KEY,resolvePlanChoice} from "@/lib/study-plan-adjustment";
 import { accountConfigured } from "@/lib/study-account";
@@ -118,10 +119,10 @@ export default function GoalLearning() {
     try{sessionStorage.setItem(MATERIAL_HANDOFF_KEY,JSON.stringify(makeLessonMaterialHandoff(settings.goal,plan.lessons[index],sources,task)));window.location.assign("/study/materials");}
     catch{setError("The lesson could not be passed to the library. Open Materials and enter the lesson objective there.");}
   }
-  return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} aria-labelledby="goal-heading" aria-busy={busy}>
+  return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} data-plan-view={step===4&&accepted&&!editing?"accepted":"setup"} aria-labelledby="goal-heading" aria-busy={busy}>
     <StudyLandmark scene="stonehenge" />
     <div className="goal-planner-shell">
-    <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">Build your learning plan.</h2></div><p>A learning path built<br/>around your goal.</p></div>
+    <div className="studio-section-title"><div><p className="studio-eyebrow">YOUR CURIOSITY. YOUR DIRECTION.</p><h2 id="goal-heading">{step===4&&accepted&&!editing?"Your learning plan.":"Build your learning plan."}</h2></div><p>A learning path built<br/>around your goal.</p></div>
     <details className="goal-intro">
       <summary className="cursor-pointer w-fit text-[#ebc782]">How this works</summary>
       <p className="mt-2 max-w-prose">Describe one thing you want to do. You can bring notes or skip straight to choosing your level and study time. Review the proposed lessons, edit their order or wording, then choose “Use this plan” to start a lesson with your tutor.</p>
@@ -156,7 +157,8 @@ export default function GoalLearning() {
       <p className="goal-helper">This creates a suggested outline, not calendar bookings or a guarantee of completion.</p>
       <div className="goal-actions"><button onClick={()=>move(2)} disabled={busy}>← Back</button><button className="goal-primary" onClick={()=>void generate()} disabled={busy}>{busy?"Building your starting path…":"Create my learning plan →"}</button>{busy&&<button onClick={()=>abort.current?.abort()}>Cancel</button>}</div>
     </div>}
-    {step===4&&plan&&<div className="goal-panel">
+    {step===4&&plan&&accepted&&!editing&&<AcceptedStudyPlan journey={{settings,plan,completed,accepted,dirty}} sources={sources} onContinue={continuePlan} onEdit={()=>{setEditing(true);setAccepted(false);}} onChangePace={()=>move(1)} onStart={start} onMaterials={withMaterials} onComplete={(id,checked)=>setCompleted(ids=>checked?[...new Set([...ids,id])]:ids.filter(item=>item!==id))}/>}
+    {step===4&&plan&&(!accepted||editing)&&<div className="goal-panel">
       <div className="goal-plan-head"><div><p className="studio-eyebrow">{accepted?"YOUR LEARNING PATH":"PROPOSED PATH · REVIEW BEFORE STARTING"}</p>{editing?<input aria-label="Plan title" value={plan.title} maxLength={120} onChange={e=>{setPlan({...plan,title:e.target.value});setAccepted(false);}}/>:<h3>{plan.title}</h3>}</div><button onClick={()=>{setEditing(!editing);setAccepted(false);}}> {editing?"Finish editing":"Edit this plan"}</button></div>
       {editing?<textarea aria-label="Plan overview" value={plan.overview} maxLength={1200} rows={3} onChange={e=>setPlan({...plan,overview:e.target.value})}/>:<p className="goal-overview">{plan.overview}</p>}
       <p className="goal-helper">{settings.minutes} minutes per session · {settings.sessions} sessions per week{settings.deadline?` · Target: ${settings.deadline}`:""} · {completed.length}/{plan.lessons.length} marked complete by you</p>
