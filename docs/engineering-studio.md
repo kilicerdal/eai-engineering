@@ -27,3 +27,15 @@ Asset: public/images/engineering/studio-computational-landscape-v1.webp, 1774 ×
 Prompt: premium detailed panoramic computational architecture with translucent blue-glass planes, fine circuit traces, geometric constructions, a delicate neural lattice at the right, and champagne-gold nodes. Midnight navy, muted teal and gold, dark calm center for text, detail concentrated at outer thirds; subtle Gaudí-inspired architectural curves; seamless dark edges. No human/robot face, readable text, logos, chart, UI, watermark or bright bloom.
 
 Verified: all 32 browser executions and production build passed. Desktop/mobile screenshots reviewed. Selected accessibility checks and overflow checks passed for the shared Studio; existing navigation and tool-state regressions remain covered. No new dependencies or paid services were introduced.
+
+## Separate section designs — November 6, 2026
+
+Supersedes the repeated shared background: the original computational landscape is confined to the Studio introduction. Each destination now has its own generated image with independently faded edges and mobile crops, shared consistently between homepage and full Studio.
+
+- Case Studies: public/images/engineering/studio-evidence-trails-v1.webp (94464 bytes). Prompt direction: organic particle trajectories and two trace streams converging into a precise gold thread, representing investigation and observed outcomes.
+- Projects: public/images/engineering/studio-modular-projects-v1.webp (72568 bytes). Prompt direction: structured modular dark-glass blocks, isometric wireframes, circuit planes and sparse gold connections.
+- Tools: public/images/engineering/studio-drafting-workspace-v1.webp (80436 bytes). Prompt direction: concentric drafting arcs, construction geometry, translucent instrument rings and fine teal light paths.
+
+All three were generated with the built-in image tool, in midnight navy, muted teal and champagne gold with calm dark central space; no readable text, logos, UI, metrics, faces or bright bloom. Original PNGs remain intact. The decorative images do not alter project claims or tool functionality.
+
+All 32 browser executions and the production build passed. Desktop/mobile screenshots were reviewed; selected accessibility and overflow checks passed.

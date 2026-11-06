@@ -400,31 +400,50 @@
   }
 }
 
-/* Decorative computational landscape shared by homepage and full Studio. */
+/* Distinct artwork for the introduction and each Studio destination. */
 .engineering-studio {
   isolation: isolate;
   background: #0a121b;
 }
-.engineering-studio::before,
-.engineering-studio::after {
+.engineering-studio::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 0 0 auto;
+  height: 460px;
   pointer-events: none;
   z-index: -1;
-  background-image: url('/images/engineering/studio-computational-landscape-v1.webp');
+  background: url('/images/engineering/studio-computational-landscape-v1.webp') center top / cover no-repeat;
+  opacity: .75;
+  mask-image: linear-gradient(to bottom, #000, #000b 55%, transparent);
+}
+.studio-section {
+  position: relative;
+  isolation: isolate;
+}
+.studio-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 -5vw;
+  z-index: -1;
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: max(100%, 1400px) auto;
+  opacity: .8;
+  mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 82%, transparent);
 }
-.engineering-studio::before {
+#case-studies.studio-section::before {
+  background-image: url('/images/engineering/studio-evidence-trails-v1.webp');
+}
+#projects.studio-section::before {
+  background-image: url('/images/engineering/studio-modular-projects-v1.webp');
+  opacity: .9;
+}
+#tools.studio-section::before {
+  background-image: url('/images/engineering/studio-drafting-workspace-v1.webp');
   background-position: center top;
-  opacity: .85;
-  mask-image: linear-gradient(to bottom, #000 0%, #000b 35%, transparent 70%);
-}
-.engineering-studio::after {
-  background-position: center bottom;
-  opacity: .45;
-  mask-image: linear-gradient(to top, #000, transparent 45%);
+  background-size: 100% auto;
+  opacity: .8;
 }
 .studio-case {
   background: linear-gradient(135deg, #142433e8, #0c1823e8);
@@ -432,15 +451,14 @@
 .studio-project {
   background: #0a1722e0;
 }
-.studio-tools .studio-section-heading {
-  position: relative;
-}
 @media(max-width:760px) {
-  .engineering-studio::before,
-  .engineering-studio::after {
+  .engineering-studio::before { height: 500px; opacity: .5; }
+  .studio-section::before {
+    inset-inline: -6vw;
     background-size: auto 850px;
-    background-position-x: 70%;
+    background-position: 65% top;
   }
-  .engineering-studio::before { opacity: .65; }
-  .engineering-studio::after { opacity: .3; }
+  #case-studies.studio-section::before { opacity: .65; }
+  #projects.studio-section::before { opacity: .65; background-size: auto 100%; }
+  #tools.studio-section::before { background-size: auto 600px; opacity: .6; }
 }
