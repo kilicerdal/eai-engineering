@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SettlementLab assurance report</title><style>body{background:#0a111c;color:#dbe6ef;font:14px/1.6 system-ui;margin:40px auto;padding:0 24px;max-width:1250px}h1{font-size:36px;color:#a3dfca}.passed{color:#a3dfca}.failed{color:#f0ad91}.skipped{color:#d9c788}table{border-collapse:collapse;width:100%}td,th{padding:12px;text-align:left;border-bottom:1px solid #304050}pre{white-space:pre-wrap;overflow-wrap:anywhere}summary{cursor:pointer}.scroll{overflow:auto}small{color:#9baebe}</style><h1>SettlementLab / Assurance evidence</h1><p>FAILED · 2 cases · 1 failed · Target: collateral</p><small>2026-11-07T16:09:38.461197+00:00 · Python 3.13.18</small><p>This report records executed controls and scenarios. It is not a model-accuracy or production-readiness claim.</p><div class="scroll"><table><thead><tr><th>Suite</th><th>Case</th><th>Status</th><th>Duration</th><th>Details</th></tr></thead><tbody><tr><td>scenarios</td><td>C01</td><td class="passed">passed</td><td>0.014s</td><td><details><summary>Evidence</summary><pre></pre><ol><li>1 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/inventory&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0019747920014197007
+  }
+}</pre></li><li>2 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0012998340098420158
+  }
+}</pre></li><li>3 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations&quot;,
+    &quot;status&quot;: 409,
+    &quot;duration&quot;: 0.000704541991581209
+  }
+}</pre></li><li>4 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;GET&quot;,
+    &quot;path&quot;: &quot;/inventory/ASSET-FAB8C3F7DA52&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.0006085420027375221
+  }
+}</pre></li><li>5 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations/R-EC3A8C225B614950/release&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.001084832998458296
+  }
+}</pre></li><li>6 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations/R-EC3A8C225B614950/release&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.0005658750014845282
+  }
+}</pre></li><li>7 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;GET&quot;,
+    &quot;path&quot;: &quot;/inventory/ASSET-FAB8C3F7DA52&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.0004784580087289214
+  }
+}</pre></li></ol></details></td></tr><tr><td>scenarios</td><td>C02</td><td class="failed">failed</td><td>0.010s</td><td><details><summary>Evidence</summary><pre>Step 3: HTTP status differs from contract: {&#x27;kind&#x27;: &#x27;http_status&#x27;, &#x27;expected&#x27;: 200, &#x27;actual&#x27;: 201}</pre><ol><li>1 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/inventory&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0014147920010145754
+  }
+}</pre></li><li>2 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0010876249871216714
+  }
+}</pre></li><li>3 / http / failed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0009289580048061907
+  },
+  &quot;failure&quot;: {
+    &quot;kind&quot;: &quot;http_status&quot;,
+    &quot;expected&quot;: 200,
+    &quot;actual&quot;: 201
+  }
+}</pre></li></ol></details></td></tr></tbody></table></div></html>

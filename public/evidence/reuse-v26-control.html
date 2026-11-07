@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SettlementLab assurance report</title><style>body{background:#0a111c;color:#dbe6ef;font:14px/1.6 system-ui;margin:40px auto;padding:0 24px;max-width:1250px}h1{font-size:36px;color:#a3dfca}.passed{color:#a3dfca}.failed{color:#f0ad91}.skipped{color:#d9c788}table{border-collapse:collapse;width:100%}td,th{padding:12px;text-align:left;border-bottom:1px solid #304050}pre{white-space:pre-wrap;overflow-wrap:anywhere}summary{cursor:pointer}.scroll{overflow:auto}small{color:#9baebe}</style><h1>SettlementLab / Assurance evidence</h1><p>PASSED · 2 cases · 0 failed · Target: collateral</p><small>2026-11-07T16:09:38.382590+00:00 · Python 3.13.18</small><p>This report records executed controls and scenarios. It is not a model-accuracy or production-readiness claim.</p><div class="scroll"><table><thead><tr><th>Suite</th><th>Case</th><th>Status</th><th>Duration</th><th>Details</th></tr></thead><tbody><tr><td>scenarios</td><td>C01</td><td class="passed">passed</td><td>0.019s</td><td><details><summary>Evidence</summary><pre></pre><ol><li>1 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/inventory&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0021735830086981878
+  }
+}</pre></li><li>2 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0013670839980477467
+  }
+}</pre></li><li>3 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations&quot;,
+    &quot;status&quot;: 409,
+    &quot;duration&quot;: 0.0006899579893797636
+  }
+}</pre></li><li>4 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;GET&quot;,
+    &quot;path&quot;: &quot;/inventory/ASSET-631C13D4B1B5&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.0006271659949561581
+  }
+}</pre></li><li>5 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations/R-F5F615C083CE46A1/release&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.0014135000092210248
+  }
+}</pre></li><li>6 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations/R-F5F615C083CE46A1/release&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.0006867909978609532
+  }
+}</pre></li><li>7 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;GET&quot;,
+    &quot;path&quot;: &quot;/inventory/ASSET-631C13D4B1B5&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.0006037910061422735
+  }
+}</pre></li></ol></details></td></tr><tr><td>scenarios</td><td>C02</td><td class="passed">passed</td><td>0.010s</td><td><details><summary>Evidence</summary><pre></pre><ol><li>1 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/inventory&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0016566249978495762
+  }
+}</pre></li><li>2 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations&quot;,
+    &quot;status&quot;: 201,
+    &quot;duration&quot;: 0.0011655829875962809
+  }
+}</pre></li><li>3 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;path&quot;: &quot;/reservations&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.0006239999929675832
+  }
+}</pre></li><li>4 / http / passed<pre>{
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;GET&quot;,
+    &quot;path&quot;: &quot;/inventory/ASSET-6124A23F1B3D&quot;,
+    &quot;status&quot;: 200,
+    &quot;duration&quot;: 0.00057441700482741
+  }
+}</pre></li></ol></details></td></tr></tbody></table></div></html>
