@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "target": "settlement",
+  "generated_at": "2026-11-07T16:20:25.103106+00:00",
+  "python": "3.13.18",
+  "status": "passed",
+  "duration": 0.31151641700125765,
+  "cases": [
+    {
+      "id": "S01",
+      "suite": "scenarios",
+      "target": "settlement",
+      "name": "Matching break and preserved correction",
+      "status": "passed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "identity",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.0005870829918421805
+        },
+        {
+          "index": 2,
+          "action": "create",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.002067041990812868
+        },
+        {
+          "index": 3,
+          "action": "manager",
+          "status": "passed",
+          "assertions": 3,
+          "duration": 0.0018090840021613985
+        },
+        {
+          "index": 4,
+          "action": "manager",
+          "status": "passed",
+          "assertions": 3,
+          "duration": 0.001497917008236982
+        }
+      ],
+      "duration": 0.07871420899755321,
+      "environment": {
+        "mode": "simulated",
+        "date": "2026-11-09",
+        "timezone": "date-only"
+      }
+    },
+    {
+      "id": "S02",
+      "suite": "scenarios",
+      "target": "settlement",
+      "name": "Governed settlement failure and recovery",
+      "status": "passed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "identity",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.0006262500101001933
+        },
+        {
+          "index": 2,
+          "action": "create",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.002006916009122506
+        },
+        {
+          "index": 3,
+          "action": "manager",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0017202500021085143
+        },
+        {
+          "index": 4,
+          "action": "request",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0016062919894466177
+        },
+        {
+          "index": 5,
+          "action": "approve",
+          "status": "passed",
+          "expected_http_status": 403,
+          "assertions": 1,
+          "duration": 0.0009649999992689118
+        },
+        {
+          "index": 6,
+          "action": "identity",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.0005200840096222237
+        },
+        {
+          "index": 7,
+          "action": "approve",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0014277080044848844
+        },
+        {
+          "index": 8,
+          "action": "settle",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0014146249886834994
+        },
+        {
+          "index": 9,
+          "action": "fund",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.001356958004180342
+        },
+        {
+          "index": 10,
+          "action": "fund",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.0015007909969426692
+        },
+        {
+          "index": 11,
+          "action": "settle",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0018410839984426275
+        },
+        {
+          "index": 12,
+          "action": "snapshot",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0010318339918740094
+        }
+      ],
+      "duration": 0.07952862499223556,
+      "environment": {
+        "mode": "simulated",
+        "date": "2026-11-09",
+        "timezone": "date-only"
+      }
+    },
+    {
+      "id": "S03",
+      "suite": "scenarios",
+      "target": "settlement",
+      "name": "Early settlement is blocked without moving value",
+      "status": "passed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "identity",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.0005937079986324534
+        },
+        {
+          "index": 2,
+          "action": "create",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.001823250000597909
+        },
+        {
+          "index": 3,
+          "action": "manager",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0016276660026051104
+        },
+        {
+          "index": 4,
+          "action": "request",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0015209170087473467
+        },
+        {
+          "index": 5,
+          "action": "approve",
+          "status": "passed",
+          "expected_http_status": 403,
+          "assertions": 1,
+          "duration": 0.0009509170049568638
+        },
+        {
+          "index": 6,
+          "action": "identity",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.0005831669986946508
+        },
+        {
+          "index": 7,
+          "action": "approve",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0015117919974727556
+        },
+        {
+          "index": 8,
+          "action": "settle",
+          "status": "passed",
+          "expected_http_status": 409,
+          "assertions": 1,
+          "duration": 0.0009151660051429644
+        },
+        {
+          "index": 9,
+          "action": "snapshot",
+          "status": "passed",
+          "assertions": 2,
+          "duration": 0.0008916250080801547
+        }
+      ],
+      "duration": 0.07409850000112783,
+      "environment": {
+        "mode": "simulated",
+        "date": "2026-11-06",
+        "timezone": "date-only"
+      }
+    },
+    {
+      "id": "S04",
+      "suite": "scenarios",
+      "target": "settlement",
+      "name": "Closed business date blocks settlement",
+      "status": "passed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "identity",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.0007268750050570816
+        },
+        {
+          "index": 2,
+          "action": "create",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0019082079961663112
+        },
+        {
+          "index": 3,
+          "action": "manager",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.001938499990501441
+        },
+        {
+          "index": 4,
+          "action": "request",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.0016982499946607277
+        },
+        {
+          "index": 5,
+          "action": "approve",
+          "status": "passed",
+          "expected_http_status": 403,
+          "assertions": 1,
+          "duration": 0.0009693749889265746
+        },
+        {
+          "index": 6,
+          "action": "identity",
+          "status": "passed",
+          "assertions": 0,
+          "duration": 0.0005462920089485124
+        },
+        {
+          "index": 7,
+          "action": "approve",
+          "status": "passed",
+          "assertions": 1,
+          "duration": 0.002954041992779821
+        },
+        {
+          "index": 8,
+          "action": "settle",
+          "status": "passed",
+          "expected_http_status": 409,
+          "assertions": 1,
+          "duration": 0.0009706249984446913
+        },
+        {
+          "index": 9,
+          "action": "snapshot",
+          "status": "passed",
+          "assertions": 2,
+          "duration": 0.0009341250115539879
+        }
+      ],
+      "duration": 0.07695791599689983,
+      "environment": {
+        "mode": "simulated",
+        "date": "2026-11-14",
+        "timezone": "date-only"
+      }
+    }
+  ]
+}

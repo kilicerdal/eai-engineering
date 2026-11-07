@@ -26,7 +26,7 @@ export const projects = [
     description:
       "Independent matching, maker/checker instruction review, shared cash and securities settlement, and local AI investigation.",
     stack: ["Python", "SQLite", "Playwright", "Local AI"],
-    status: "V2.6 · Independent API reuse",
+    status: "V3.0 · Verified showcase release",
   },
   {
     name: "AI Engineering Lab",

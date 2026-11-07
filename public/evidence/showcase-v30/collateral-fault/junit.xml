@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="SettlementLab assurance" tests="2" failures="1" time="0.025984958992921747"><testcase classname="scenarios" name="C01" time="0.01449020899599418" /><testcase classname="scenarios" name="C02" time="0.010857207991648465"><failure message="Step 3: HTTP status differs from contract: {'kind': 'http_status', 'expected': 200, 'actual': 201}">Step 3: HTTP status differs from contract: {'kind': 'http_status', 'expected': 200, 'actual': 201}</failure></testcase></testsuite>

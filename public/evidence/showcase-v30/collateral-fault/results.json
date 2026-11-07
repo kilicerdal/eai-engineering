@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "target": "collateral",
+  "generated_at": "2026-11-07T16:20:25.214264+00:00",
+  "python": "3.13.18",
+  "status": "failed",
+  "duration": 0.025984958992921747,
+  "cases": [
+    {
+      "id": "C01",
+      "suite": "scenarios",
+      "target": "collateral",
+      "name": "Reservation capacity and idempotent release",
+      "status": "passed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/inventory",
+            "status": 201,
+            "duration": 0.001686667004832998
+          },
+          "duration": 0.0017379590135533363
+        },
+        {
+          "index": 2,
+          "action": "http",
+          "status": "passed",
+          "assertions": 2,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 201,
+            "duration": 0.0012435420067049563
+          },
+          "duration": 0.001288457991904579
+        },
+        {
+          "index": 3,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 409,
+            "duration": 0.0007110409933375195
+          },
+          "duration": 0.0007414169958792627
+        },
+        {
+          "index": 4,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "GET",
+            "path": "/inventory/ASSET-DE10B136C8CC",
+            "status": 200,
+            "duration": 0.0006360409897752106
+          },
+          "duration": 0.000662042002659291
+        },
+        {
+          "index": 5,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/reservations/R-389A82AC89824005/release",
+            "status": 200,
+            "duration": 0.0010004170035244897
+          },
+          "duration": 0.0010308749915566295
+        },
+        {
+          "index": 6,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/reservations/R-389A82AC89824005/release",
+            "status": 200,
+            "duration": 0.0006303330010268837
+          },
+          "duration": 0.0006559590110555291
+        },
+        {
+          "index": 7,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "GET",
+            "path": "/inventory/ASSET-DE10B136C8CC",
+            "status": 200,
+            "duration": 0.000617457990301773
+          },
+          "duration": 0.0006355419900501147
+        }
+      ],
+      "duration": 0.01449020899599418,
+      "environment": {
+        "mode": "external-http",
+        "base_url": "http://127.0.0.1:53588",
+        "timeout": 10
+      }
+    },
+    {
+      "id": "C02",
+      "suite": "scenarios",
+      "target": "collateral",
+      "name": "Reservation replay preserves identity and inventory",
+      "status": "failed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/inventory",
+            "status": 201,
+            "duration": 0.0015184590010903776
+          },
+          "duration": 0.001556792005430907
+        },
+        {
+          "index": 2,
+          "action": "http",
+          "status": "passed",
+          "assertions": 2,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 201,
+            "duration": 0.001251458001206629
+          },
+          "duration": 0.0012917499989271164
+        },
+        {
+          "index": 3,
+          "action": "http",
+          "status": "failed",
+          "detail": "HTTP status differs from contract: {'kind': 'http_status', 'expected': 200, 'actual': 201}",
+          "failure": {
+            "kind": "http_status",
+            "expected": 200,
+            "actual": 201
+          },
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 201,
+            "duration": 0.0011252499971305951
+          },
+          "duration": 0.0011626670020632446
+        }
+      ],
+      "duration": 0.010857207991648465,
+      "environment": {
+        "mode": "external-http",
+        "base_url": "http://127.0.0.1:53588",
+        "timeout": 10
+      },
+      "detail": "Step 3: HTTP status differs from contract: {'kind': 'http_status', 'expected': 200, 'actual': 201}"
+    }
+  ]
+}

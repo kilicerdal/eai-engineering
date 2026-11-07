@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "framework_version": "3.0.0",
+  "generated_at": "2026-11-07T16:20:25.295391+00:00",
+  "python": "3.13.18",
+  "source": {
+    "commit": "366f15c03ba462e7ab1721ae5eb8b3a65385acfa",
+    "dirty": false
+  },
+  "scope": "Owned synthetic local services; model-free scenario execution",
+  "checks": {
+    "settlement_passed": true,
+    "independent_target_passed": true,
+    "injected_defect_detected": true
+  },
+  "files": {
+    "settlement/index.html": "beebc8efb368fb546bef56c5e14f194772133beafc6316b883d248f8d3d05a55",
+    "settlement/results.json": "a4fdf4daaf16d51fbcae10ce350f99745755452849ee97e4a484f481aa6054bb",
+    "settlement/junit.xml": "4a9c1cee36c7d8b2e6e4f0bea00a9d58f7e9d9be6cc7d4cd075fd2e63ae7adab",
+    "collateral-control/index.html": "4db4eff2758b2479db419a9985db8321d3f5fea9799cb44c718c3d266ac00503",
+    "collateral-control/results.json": "c71e1127d4697a6e10b1ec0fe8ff8744017259c88b645df7548d440fcc443b07",
+    "collateral-control/junit.xml": "88623dc0da719764ad211535da1d9483bfdfd93bde00812e72cd66b20f01dcab",
+    "collateral-fault/index.html": "a219ad9b23ebaae005950bf1f7f80d40e6b2c3c103f82994e8033d2953798215",
+    "collateral-fault/results.json": "48b64be3b91429a16b72e1799f085ec590372819161eb72ad6ce0d8505340ef0",
+    "collateral-fault/junit.xml": "40e3ea68d4002d052145b47fb1f6dcfc3f6d7e047b5799897487f9a4c829735e",
+    "index.html": "6430857640c3f67449cad0bae2000a6cd851cc625a527d3931d82aa222123c10"
+  }
+}

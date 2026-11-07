@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "target": "collateral",
+  "generated_at": "2026-11-07T16:20:25.133352+00:00",
+  "python": "3.13.18",
+  "status": "passed",
+  "duration": 0.02528612500464078,
+  "cases": [
+    {
+      "id": "C01",
+      "suite": "scenarios",
+      "target": "collateral",
+      "name": "Reservation capacity and idempotent release",
+      "status": "passed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/inventory",
+            "status": 201,
+            "duration": 0.0016797090065665543
+          },
+          "duration": 0.0017299580067628995
+        },
+        {
+          "index": 2,
+          "action": "http",
+          "status": "passed",
+          "assertions": 2,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 201,
+            "duration": 0.0012094160047126934
+          },
+          "duration": 0.0013143749965820462
+        },
+        {
+          "index": 3,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 409,
+            "duration": 0.0007195829966804013
+          },
+          "duration": 0.0007504579989472404
+        },
+        {
+          "index": 4,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "GET",
+            "path": "/inventory/ASSET-0F339304BA57",
+            "status": 200,
+            "duration": 0.0005867919971933588
+          },
+          "duration": 0.0006124579958850518
+        },
+        {
+          "index": 5,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/reservations/R-5D8B7376CD2B4433/release",
+            "status": 200,
+            "duration": 0.0009765419963514432
+          },
+          "duration": 0.0010043340007541701
+        },
+        {
+          "index": 6,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/reservations/R-5D8B7376CD2B4433/release",
+            "status": 200,
+            "duration": 0.0006534590065712109
+          },
+          "duration": 0.0006765409925719723
+        },
+        {
+          "index": 7,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "GET",
+            "path": "/inventory/ASSET-0F339304BA57",
+            "status": 200,
+            "duration": 0.000689333988702856
+          },
+          "duration": 0.0007183340057963505
+        }
+      ],
+      "duration": 0.0143328330013901,
+      "environment": {
+        "mode": "external-http",
+        "base_url": "http://127.0.0.1:53576",
+        "timeout": 10
+      }
+    },
+    {
+      "id": "C02",
+      "suite": "scenarios",
+      "target": "collateral",
+      "name": "Reservation replay preserves identity and inventory",
+      "status": "passed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/inventory",
+            "status": 201,
+            "duration": 0.0013589169975603
+          },
+          "duration": 0.001394666003761813
+        },
+        {
+          "index": 2,
+          "action": "http",
+          "status": "passed",
+          "assertions": 2,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 201,
+            "duration": 0.001051541999913752
+          },
+          "duration": 0.0010850410035345703
+        },
+        {
+          "index": 3,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 200,
+            "duration": 0.0005799579957965761
+          },
+          "duration": 0.0006072910036891699
+        },
+        {
+          "index": 4,
+          "action": "http",
+          "status": "passed",
+          "assertions": 1,
+          "request": {
+            "method": "GET",
+            "path": "/inventory/ASSET-944FCCB0C00C",
+            "status": 200,
+            "duration": 0.0005444170092232525
+          },
+          "duration": 0.0005686670046998188
+        }
+      ],
+      "duration": 0.010234208006295376,
+      "environment": {
+        "mode": "external-http",
+        "base_url": "http://127.0.0.1:53576",
+        "timeout": 10
+      }
+    }
+  ]
+}

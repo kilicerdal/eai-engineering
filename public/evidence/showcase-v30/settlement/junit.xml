@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="SettlementLab assurance" tests="4" failures="0" time="0.31151641700125765"><testcase classname="scenarios" name="S01" time="0.07871420899755321" /><testcase classname="scenarios" name="S02" time="0.07952862499223556" /><testcase classname="scenarios" name="S03" time="0.07409850000112783" /><testcase classname="scenarios" name="S04" time="0.07695791599689983" /></testsuite>
