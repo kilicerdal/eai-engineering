@@ -10,7 +10,7 @@ const projectExamples: Record<string, { label: string; href: string; scope: stri
   traces: { label: "Inspect the claim delivery record", href: "/engineering/claim-twice#evidence", scope: "Recorded synthetic observations from local PostgreSQL and a queue simulation." },
 };
 const principles = [
-  { title: "Explore with purpose", detail: "Begin with a question worth pursuing.", destination: "Ask the engineering assistant", href: "/#ai-assistant" },
+  { title: "Explore with purpose", detail: "Begin with a question worth pursuing.", destination: "Ask the engineering assistant", href: "/chat" },
   { title: "Build with care", detail: "Make the implementation and its decisions visible.", destination: "Inspect the Engineering Studio", href: "/engineering" },
   { title: "Learn from evidence", detail: "Follow the outcome, including where the design breaks.", destination: "Explore the recorded case studies", href: "/engineering#case-studies" },
 ];
