@@ -20,12 +20,13 @@ export const projects = [
     status: "V5 released · Verified locally",
   },
   {
-    name: "AI Python Automation",
-    category: "INTELLIGENT TESTING",
+    name: "SettlementLab",
+    category: "FINANCIAL SYSTEMS ASSURANCE",
+    caseStudy: "/engineering/settlementlab",
     description:
-      "Python testing with Pytest, Playwright, and AI-assisted tools.",
-    stack: ["Python", "Pytest", "Playwright"],
-    status: "In Progress",
+      "Post-trade exceptions, settlement recovery, reconciliation, and local AI-assisted investigation.",
+    stack: ["Python", "SQLite", "Playwright", "Local AI"],
+    status: "V1 · Recorded local evidence",
   },
   {
     name: "AI Engineering Lab",
