@@ -24,9 +24,9 @@ export const projects = [
     category: "FINANCIAL SYSTEMS ASSURANCE",
     caseStudy: "/engineering/settlementlab",
     description:
-      "Independent trade matching, preserved manager revisions, settlement recovery, and local AI investigation.",
+      "Independent matching, maker/checker instruction review, shared cash and securities settlement, and local AI investigation.",
     stack: ["Python", "SQLite", "Playwright", "Local AI"],
-    status: "V2.1 · Independent matching",
+    status: "V2.2 · Shared ledger & approvals",
   },
   {
     name: "AI Engineering Lab",
