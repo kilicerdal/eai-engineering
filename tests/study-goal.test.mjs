@@ -22,7 +22,7 @@ test('plans require complete topic-specific lesson fields and only supplied mate
 });
 test('harmless wrappers and omitted optional references normalize without inventing evidence',()=>{
  assert.equal(goals.validateGoalPlan({plan}).lessons.length,3);
- const noReferences={...plan,lessons:plan.lessons.map(({sourceIds,...lesson})=>lesson)};
+ const noReferences={...plan,lessons:plan.lessons.map(lesson=>{const copy={...lesson};delete copy.sourceIds;return copy;})};
  assert.deepEqual(goals.validateGoalPlan(noReferences).lessons[0].sourceIds,[]);
  assert.throws(()=>goals.validateGoalPlan({...plan,lessons:plan.lessons.map(l=>({...l,sourceIds:null}))}));
 });

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadStudyModule} from './load-study-module.mjs';
-const d=loadStudyModule('study-daily-session'),safe=loadStudyModule('study-safe-storage'),p=loadStudyModule('study-exam-practice'),bank=loadStudyModule('study-exam-bank');
+const d=loadStudyModule('study-daily-session'),safe=loadStudyModule('study-safe-storage'),bank=loadStudyModule('study-exam-bank');
 const now=1700000000000,context={goal:'Learn equations',lesson:{id:'l1',title:'Balance equations',objective:'Use inverse operations',activity:'Solve an equation',checkpoint:'Explain each equivalent operation',sourceIds:[]}},target={kind:'lesson',title:'Balance equations',context};
 const start=()=>d.startDailySession(d.emptyDailyRecord(),target,20,now,'daily-1');
 const check={id:'c1',context,question:{question:'Solve 3x+4=19',criterion:'Equivalent operations'},answer:'x=5',helpUsed:false,result:{decision:'meets',feedback:'Both operations preserve equality.',reasoningGap:'None identified.',nextStep:'Try a different example.'},submittedAt:now+5};

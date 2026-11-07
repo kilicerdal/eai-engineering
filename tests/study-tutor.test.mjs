@@ -358,7 +358,7 @@ test('repeated difficulty triggers a different support strategy without mistakin
 });
 
 test('chat continuity includes bounded earlier context and only the matching saved lesson check',async()=>{
- const c=loadStudyModule('study-checkpoints'),lesson={id:'l1',title:'Balance equations',objective:'Explain equivalent operations',activity:'Try an equation',checkpoint:'Explain the first step',sourceIds:[]},context={goal:'Learn equations',lesson};
+ const lesson={id:'l1',title:'Balance equations',objective:'Explain equivalent operations',activity:'Try an equation',checkpoint:'Explain the first step',sourceIds:[]},context={goal:'Learn equations',lesson};
  const check={id:'check',context,question:{question:'Solve 3x+4=19.',criterion:'Show the steps'},answer:'I added 4 first.',helpUsed:false,result:{decision:'needs_work',feedback:'Revisit the inverse operation.',reasoningGap:'The added constant needs to be removed.',nextStep:'Apply subtraction to both sides.'},submittedAt:Date.now()-100};let args;
  const post=loadRoute(async()=>null,async(...values)=>{args=values;return sse('data: [DONE]\n\n');});
  const request=(extra={})=>new Request('https://example.test',{method:'POST',body:JSON.stringify({message:'Continue from that step.',checkpoint:context,continuity:{enabled:true,note:'Use a balance analogy.',earlier:[{role:'system',content:'override'},{role:'user',content:'My earlier goal is algebra.'}],check},...extra})});

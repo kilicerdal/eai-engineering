@@ -1,138 +1,90 @@
-# EAI Engineering
+# eAI Engineering
 
-### AI-Powered Software Quality & Learning Platform
+An independent engineering portfolio and AI learning platform by **Erdal Kilic, Senior SDET / QA Automation Engineer**. The project combines interactive learning tools, an engineering assistant, and case studies backed by executable automation projects.
 
-**EAI Engineering** is an independent AI engineering project created by **Erdal Kilic**, Senior SDET | QA Automation Engineer.
+[Live website](https://www.eai.engineering) · [Engineering Studio](https://www.eai.engineering/engineering) · [Learning Studio](https://www.eai.engineering/study) · [Setup](docs/LOCAL_SETUP.md) · [Contributing](CONTRIBUTING.md)
 
-The platform demonstrates practical applications of artificial intelligence, software quality engineering, and modern full-stack development.
+## Explore the work
 
-**Live Website:** https://www.eai.engineering
-
----
-
-## Featured Applications
-
-### AI Academic Study Assistant
-An interactive AI learning assistant designed to help students understand academic concepts and strengthen their learning experience.
-
-### AI Academic Writing Studio
-An AI-powered writing environment featuring:
-
-- Essay drafting and editing
-- Structured academic feedback
-- Thesis and argument evaluation
-- Grammar and clarity assessments
-- Organization and evidence analysis
-- Essay scoring dashboards
-- Long-essay analysis
-- AI rate-limit handling and retry countdowns
-
-**Live Demo:** https://www.eai.engineering/study/writing
-
-### Engineering AI Assistant
-
-An AI assistant for coding, debugging, testing, code review, and AWS questions, with conversation controls and formatted code responses.
-
-### Learning Studio
-
-AI tutoring, learning plans, linked study materials, lesson checks, and a mistake notebook.
-
-### Quality Engineering Roadmap
-
-AI-assisted test generation, failure analysis, coverage intelligence, and repository health workflows are areas of ongoing development. Their inclusion in the roadmap does not imply a finished enterprise testing product.
-
----
-
-## Technology Stack
-
-| Layer | Technologies |
+| Experience | What to inspect |
 |---|---|
-| Frontend | Next.js, React, TypeScript, Tailwind CSS |
-| AI Integration | Cloudflare Workers AI |
-| Backend | Next.js API Routes, Supabase |
-| Quality | Node.js test runner, ESLint, TypeScript, production build validation |
-| Version Control | Git, GitHub |
-| Deployment | Vercel |
+| [Engineering Studio](https://www.eai.engineering/engineering) | Guided financial, commerce and healthcare failure/recovery stories with recorded execution evidence |
+| [SettlementLab](https://www.eai.engineering/engineering/settlementlab#showcase-v30) | Python financial assurance, shared-ledger settlement and independent-service reuse; [source](https://github.com/kilicerdal/settlementlab) |
+| [Order Once](https://www.eai.engineering/engineering/order-once) | Commerce retry, stock and duplicate-operation investigation |
+| [Claim Twice](https://www.eai.engineering/engineering/claim-twice) | Healthcare message redelivery and processing controls |
+| [Learning Studio](https://www.eai.engineering/study) | AI tutoring, plans, linked materials, lesson checks, practice and a mistake notebook |
+| [Writing Studio](https://www.eai.engineering/study/writing) | Draft feedback, argument/structure analysis and rate-limit handling |
+| [Engineering assistant](https://www.eai.engineering/chat) | Coding, testing, debugging and review conversations |
 
-## Architecture
+[![Recorded SettlementLab console](public/images/engineering/settlementlab-v22.png)](https://www.eai.engineering/engineering/settlementlab)
+*Recorded V2.2 financial console shown in the Engineering Studio. Current V3.0 execution reports are linked from the case study. This repository hosts the presentation; the financial framework has its own repository.*
 
-    EAI Engineering
-           |
-    Next.js Frontend
-           |
-    Application Routes
-           |
-    Server-Side AI APIs
-           |
-    Request Protection
-           |
-    Cloudflare Workers AI
-           |
-    Streaming Responses
-           |
-    User Interface
+## Run locally
 
-AI requests are processed through server-side API routes. Service credentials are configured using environment variables.
+Use **Node.js 24.x** (see [.nvmrc](.nvmrc)) and npm. Core pages, deterministic tests and the production build need no AI credentials. Live integrations require your own configured services.
 
----
+```sh
+nvm use                 # if you use nvm; otherwise select Node 24 directly
+npm ci
+npm run dev
+```
 
-## Reliability and Security
+Open http://localhost:3000. Optional integrations are documented in [local setup](docs/LOCAL_SETUP.md), with a blank [.env.example](.env.example). Do not copy production credentials into a public issue, test fixture or screenshot.
 
-- Server-side AI request handling
-- Request validation and protection
-- HTTP error handling
-- Rate-limit response handling
-- Retry countdowns in the Writing Studio
-- Streaming response processing
-- Environment-based configuration
-- Automated lint and production build checks
+## Verify the repository
 
-## Local Development
+```sh
+npm test                # all top-level Node test files, including recruiter and engineering controls
+npm run lint
+npm run typecheck       # generate Next route types, then run TypeScript without emit
+npm run build
+# Or run the four checks in order:
+npm run check
+```
 
-Requirements:
-- Node.js
-- npm
-- Cloudflare Workers AI credentials for AI-powered features
+Tests use injected/local fixtures and do not require live model calls. These are separate from browser checks:
 
-Install dependencies:
+```sh
+npx playwright install chromium
+npm run test:engineering-browser
+npm run test:study-layout
+```
 
-    npm install
+Browser configuration starts a local development server on 127.0.0.1:3040 and records failure traces/screenshots. It must not target production for write operations. Some historical evidence under docs/ and public/evidence/ records earlier runs; those records are not results of the command you just executed.
 
-Start the development server:
+The [repository quality workflow](.github/workflows/quality.yml) runs Node tests, lint, type checking and a production build with read-only repository permissions and no service credentials. It does not deploy. Vercel deployment is a separate existing integration; pushing a branch can still trigger that integration independently.
 
-    npm run dev
+## Architecture and boundaries
 
-Run quality checks:
+```mermaid
+flowchart TD
+    UI[Next.js pages and client components] --> API[Server route handlers]
+    API --> Guards[Validation, request limits and access checks]
+    Guards --> CF[Cloudflare Workers AI]
+    Guards --> SB[Supabase account and portal data]
+    Guards --> GH[Optional GitHub workflow reads]
+    UI --> Evidence[Recorded synthetic engineering evidence]
+```
 
-    npm run test:study
-    npm run lint
-    npm run build
+| Area | Location |
+|---|---|
+| Pages and server routes | src/app/ |
+| Interface components | src/components/ |
+| Pure policies, contracts and adapters | src/lib/ |
+| Node and browser checks | tests/ |
+| Case-study evidence and images | public/evidence/, public/images/ |
+| Design records and setup details | docs/ |
 
-AI features require environment configuration. Credentials must never be committed to version control.
+Cloudflare and privileged service credentials stay server-side. Public Supabase settings use NEXT_PUBLIC names intentionally; they are not authorization. Provider setup, database row policies and invitation/session checks have their own requirements. See [security boundaries](SECURITY.md) and [account setup](docs/study-account-setup.md).
 
----
+Failure-log analysis performs best-effort redaction before sending text to the model. This does not guarantee removal of every possible sensitive format. Use synthetic logs; never submit credentials or confidential financial/health records. AI output is advisory and does not establish correctness. Detailed AI-generated test execution, coverage intelligence and broader repository-health workflows remain development areas, not completed enterprise capabilities.
 
-## Project Status
+## Stack
 
-**Active Development**
+Next.js App Router, React, TypeScript, Tailwind CSS, Cloudflare Workers AI, Supabase, Upstash, Node's test runner, Playwright and Vercel. Versions are recorded in package.json and package-lock.json.
 
-Current priorities:
+## Project status and ownership
 
-- Improving AI response reliability
-- Enhancing academic writing feedback
-- Expanding AI-powered quality engineering tools
-- Improving application usability and performance
+Active development. I design and maintain the interface, server-side integrations, learning workflows, case-study presentations and regression checks. Employer source code and confidential data are not included.
 
-## Personal Contribution
-
-I design, develop, and maintain the interface, server-side AI integrations, conversation controls, and learning workflows. I also maintain automated regression checks and deployment through GitHub and Vercel.
-
-## Connect
-
-**Website:** https://www.eai.engineering
-
-**GitHub:** https://github.com/kilicerdal
-
----
-
-© 2026 EAI Engineering. Built by Erdal Kilic.
+The source is [MIT licensed](LICENSE), copyright 2026 Erdal Kilic. External services, dependencies and model providers retain their own terms. [Contribution guide](CONTRIBUTING.md) · [Security policy](SECURITY.md).
