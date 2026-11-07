@@ -133,3 +133,13 @@
 .threshold #ai-assistant .atlas-workspace-heading p{font:600 18px/1.4 Arial,sans-serif;color:#222;margin:0;}
 .threshold #ai-assistant .atlas-sidebar-toggle{display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:8px;color:#555;background:transparent;}
 .threshold #ai-assistant .atlas-sidebar-toggle:hover{background:#eee;}
+
+.threshold #ai-assistant .atlas-chat-search{display:block;margin:14px 8px 0;flex:none;}
+.threshold #ai-assistant .atlas-chat-search input{width:100%;border:1px solid #e5e5e5;background:#fff;color:#222;padding:9px 12px;border-radius:9px;font-size:13px;outline-offset:2px;}
+.threshold #ai-assistant .atlas-answer-actions{display:flex;gap:16px;margin-top:12px;font-size:12px;color:#777;}
+.threshold #ai-assistant .atlas-answer-actions button:hover{color:#111;}
+.threshold #ai-assistant .atlas-file-chip{display:inline-flex;align-items:center;gap:10px;padding:5px 10px;margin:0 6px 8px 0;border:1px solid #ddd;border-radius:10px;font-size:12px;color:#333;max-width:100%;overflow-wrap:anywhere;}
+.threshold #ai-assistant .atlas-file-chip button{font-size:18px;}
+.threshold #ai-assistant .atlas-file-status{font-size:12px;color:#666;margin:4px 0 10px;}
+.threshold #ai-assistant .atlas-attach-button{display:block;font-weight:600;padding:8px 0;}
+.threshold #ai-assistant .atlas-chat-tools-panel>p{font-size:11px;color:#777;margin:4px 0 16px;line-height:1.5;}

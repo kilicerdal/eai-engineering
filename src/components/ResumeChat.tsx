@@ -23,7 +23,10 @@ type Message = {
 
 type Mode = "general" | "coding" | "qa" | "aws" | "review" | "testing" | "debug";
 
+type Attachment = { name: string; text: string };
+
 type Conversation = {
+  attachments?: Attachment[];
   id: string;
   title: string;
   mode: Mode;
@@ -134,6 +137,11 @@ function MarkdownMessage({ content }: { content: string }) {
 }
 
 export default function ResumeChat() {
+  const [search, setSearch] = useState("");
+  const [fileStatus, setFileStatus] = useState("");
+  const [readingFile, setReadingFile] = useState(false);
+  const [answerStatus, setAnswerStatus] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeId, setActiveId] = useState("");
@@ -310,6 +318,7 @@ export default function ResumeChat() {
           history,
           mode,
           context: active.context || "",
+          attachments: active.attachments || [],
           task: regenerate ? base.at(-1)?.task : task,
         }),
       });
@@ -387,9 +396,45 @@ export default function ResumeChat() {
     }));
   }
 
+  async function attachFile(file: File) {
+    if (!active || readingFile) return;
+    const id = active.id;
+    const existing = active.attachments || [];
+    if (existing.length >= 3) { setFileStatus("Attach up to three files per chat. Remove one first."); return; }
+    setReadingFile(true); setFileStatus("Reading file…");
+    try {
+      let text: string;
+      if (/\.pdf$/i.test(file.name)) {
+        const { importCourseFile } = await import("@/lib/study-material-files");
+        const doc = await importCourseFile(file, setFileStatus);
+        text = doc.pages.map(page => `[Page ${page.number}]\n${page.text}`).join("\n\n");
+      } else {
+        if (!/\.(txt|md|log|json|csv|ts|tsx|js|jsx|py|java|yaml|yml|xml|html|css|sql|sh)$/i.test(file.name)) throw new Error("Choose a PDF, text, code, CSV, JSON, or log file.");
+        if (file.size > 200000) throw new Error("Text files must be smaller than 200 KB.");
+        text = await file.text();
+        if (text.includes("\0")) throw new Error("This looks like a binary file. Choose readable text.");
+      }
+      if (!text.trim()) throw new Error("No readable text found in this file.");
+      if (text.length + existing.reduce((total, item) => total + item.text.length, 0) > 12000) throw new Error("Files exceed the 12,000-character chat limit. Choose a smaller file or excerpt.");
+      updateConversation(id, conversation => ({...conversation, attachments:[...existing,{name:file.name.slice(0,120),text}]}));
+      setFileStatus("File attached. Its text will be sent with your questions in this chat.");
+    } catch (error) { setFileStatus(error instanceof Error ? error.message : "Could not read this file."); }
+    finally { setReadingFile(false); }
+  }
+  async function copyAnswer(text: string) {
+    try { await navigator.clipboard.writeText(text); setAnswerStatus("Answer copied."); }
+    catch { setAnswerStatus("Copy unavailable. Select the answer text to copy it."); }
+  }
+  function downloadAnswer(text: string) {
+    const url = URL.createObjectURL(new Blob([text],{type:"text/markdown;charset=utf-8"}));
+    const link = document.createElement("a"); link.href=url; link.download="eai-answer.md"; link.click();
+    setTimeout(() => URL.revokeObjectURL(url),1000);
+    setAnswerStatus("Answer downloaded.");
+  }
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!dictating && !voiceActive) void sendMessage(input);
+    if (!dictating && !voiceActive && !readingFile) void sendMessage(input);
   }
 
   return (
@@ -419,12 +464,13 @@ export default function ResumeChat() {
               + New chat
             </button>
 
+            <label className="atlas-chat-search"><span className="sr-only">Search conversations</span><input type="search" placeholder="Search chats" value={search} onChange={event => setSearch(event.target.value)} /></label>
             <p className="mb-3 mt-7 text-xs font-semibold tracking-widest text-slate-500">
               Recents
             </p>
 
             <div className="max-h-64 space-y-2 overflow-y-auto md:max-h-[540px]">
-              {conversations.filter(conversation => conversation.messages.some(message => message.role === "user")).map((conversation) => (
+              {conversations.filter(conversation => conversation.messages.some(message => message.role === "user") && (!search.trim() || `${conversation.title} ${conversation.messages.map(message => message.content).join(" ")}`.toLowerCase().includes(search.trim().toLowerCase()))).map((conversation) => (
                 <div
                   key={conversation.id}
                   className={`rounded-xl border p-2 ${
@@ -462,6 +508,7 @@ export default function ResumeChat() {
                   </div>
                 </div>
               ))}
+            {search.trim() && !conversations.some(c => c.messages.some(m => m.role === "user") && `${c.title} ${c.messages.map(m => m.content).join(" ")}`.toLowerCase().includes(search.trim().toLowerCase())) && <p role="status">No matching chats.</p>}
             </div>
             <div className="atlas-sidebar-links"><a href="/engineering">Engineering Studio ↗</a><a href="/study">Learning Studio ↗</a></div>
           </aside>
@@ -523,7 +570,8 @@ export default function ResumeChat() {
                     }`}
                   >
                     {message.role === "assistant" ? (
-                      <MarkdownMessage content={message.content} />
+                      <><MarkdownMessage content={message.content} />
+                      {!(loading && index === (active?.messages.length || 0) - 2) && <div className="atlas-answer-actions"><button type="button" onClick={() => copyAnswer(message.content)}>Copy</button><button type="button" onClick={() => downloadAnswer(message.content)}>Download</button></div>}</>
                     ) : (
                       <p className="whitespace-pre-wrap break-words text-sm leading-7">
                         {message.content}
@@ -541,10 +589,16 @@ export default function ResumeChat() {
             </div>
 
             <div className="atlas-chat-composer border-t border-white/10 bg-slate-900/50 p-5">
+              {answerStatus && <span className="sr-only" role="status">{answerStatus}</span>}
+              {(active?.attachments || []).map((file, index) => <span className="atlas-file-chip" key={`${index}-${file.name}`}>{file.name}<button type="button" disabled={loading || readingFile || voiceActive} aria-label={`Remove ${file.name}`} onClick={() => active && updateConversation(active.id,c => ({...c, attachments:c.attachments?.filter((_,i) => i !== index)}))}>×</button></span>)}
+              {fileStatus && <p className="atlas-file-status" role="status">{fileStatus}</p>}
+              <input ref={fileInputRef} className="sr-only" type="file" tabIndex={-1} accept=".pdf,.txt,.md,.log,.json,.csv,.ts,.tsx,.js,.jsx,.py,.java,.yaml,.yml,.xml,.html,.css,.sql,.sh" onChange={event => { const file=event.target.files?.[0]; if(file) void attachFile(file); event.target.value=""; }} />
               {storageWarning && <p role="status">Browser saving is unavailable. Keep this tab open to retain your conversation.</p>}
               <details className="atlas-chat-tools" key={active?.id}>
                 <summary aria-label="Add context" title="Add context">+ <span>Add context</span></summary>
                 <div className="atlas-chat-tools-panel">
+                  <button className="atlas-attach-button" type="button" disabled={loading || readingFile || voiceActive || dictating} onClick={event => { fileInputRef.current?.click(); event.currentTarget.closest("details")?.removeAttribute("open"); }}>Attach a file</button>
+                  <p>PDF, text, code, and logs. Up to 3 files and 12,000 text characters. Files stay in this browser; extracted text is sent when you ask a question. Remove secrets before attaching.</p>
               <details className="mb-3">
                 <summary className="cursor-pointer font-semibold">Project context</summary>
                 <label className="block my-2">Keep your goal, framework, and constraints available in every reply.
@@ -610,11 +664,11 @@ export default function ResumeChat() {
                   className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"
                 />
 
-                <VoiceConversation key={`voice-${activeId}`} onQuestion={sendMessage} onActiveChange={setVoiceActive} disabled={loading || dictating || !hydrated} />
-                <DictationButton key={activeId} value={input} onChange={setInput} onListeningChange={setDictating} disabled={voiceActive || loading || !hydrated} />
+                <VoiceConversation key={`voice-${activeId}`} onQuestion={sendMessage} onActiveChange={setVoiceActive} disabled={loading || readingFile || dictating || !hydrated} />
+                <DictationButton key={activeId} value={input} onChange={setInput} onListeningChange={setDictating} disabled={voiceActive || readingFile || loading || !hydrated} />
                 <button
                   type="submit"
-                  disabled={loading || dictating || voiceActive || !hydrated || !input.trim()}
+                  disabled={loading || readingFile || dictating || voiceActive || !hydrated || !input.trim()}
                   className="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 disabled:opacity-50"
                 >
                   <span aria-hidden="true">↑</span><span className="sr-only">Send message</span>
