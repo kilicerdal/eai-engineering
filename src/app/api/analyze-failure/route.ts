@@ -1,16 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { protectAIRequest, logAIRequest } from "../../../lib/ai-security";
 import { askCloudflare } from "../cloudflare";
+import { redactFailureLog } from "../../../lib/failure-log-redaction";
 
 const frameworks = ["Playwright", "Selenium", "pytest", "API", "CI/CD", "Other"];
 
-function redact(text: string) {
-  return text
-    .replace(/gh[pousr]_[A-Za-z0-9_]+/g, "[REDACTED_TOKEN]")
-    .replace(/(Bearer\\s+)[A-Za-z0-9._~+/-]+/gi, "$1[REDACTED]")
-    .replace(/(password|secret|api[_-]?key|token)\\s*[:=]\\s*[^\\s,;]+/gi, "$1=[REDACTED]")
-    .replace(/(authorization\\s*[:=]\\s*)[^\\r\\n]+/gi, "$1[REDACTED]");
-}
 
 export async function POST(request: NextRequest) {
   const startedAt = Date.now();
@@ -41,7 +35,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const safeLog = redact(log);
+    const safeLog = redactFailureLog(log);
 
     const system = `
 You are a senior SDET and test automation failure analyst.
