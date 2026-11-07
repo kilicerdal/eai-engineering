@@ -194,6 +194,7 @@ export default function ResumeChat() {
       setConversations(initial);
       setActiveId(initial[0].id);
       setHydrated(true);
+      setHistoryOpen(window.matchMedia("(min-width: 768px)").matches);
     });
   }, []);
 
@@ -387,7 +388,7 @@ export default function ResumeChat() {
   return (
     <section tabIndex={-1} id="ai-assistant" className="atlas-chat border-t border-white/10 py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 text-center">
+        <div className="atlas-chat-intro mb-10 text-center">
           <p className="mb-4 text-sm font-bold tracking-widest text-cyan-400">
             INTELLIGENCE ENGINEERED
           </p>
@@ -399,23 +400,24 @@ export default function ResumeChat() {
           </p>
         </div>
 
-        <div className={`atlas-chat-shell atlas-chat-simple grid overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#101827] shadow-2xl ${historyOpen ? "md:grid-cols-[260px_1fr]" : "grid-cols-1"}`}>
+        <div className={`atlas-chat-shell atlas-chat-simple ${active?.messages.some(message => message.role === "user") ? "atlas-chat-started" : "atlas-chat-fresh"} grid overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#101827] shadow-2xl ${historyOpen ? "md:grid-cols-[260px_1fr]" : "grid-cols-1"}`}>
           <aside id="eai-chat-history" hidden={!historyOpen} className="border-b border-white/10 bg-slate-950/60 p-4 md:border-b-0 md:border-r">
+            <div className="atlas-sidebar-brand"><span>eAI</span><button type="button" aria-label="Close conversations" onClick={() => setHistoryOpen(false)}>×</button></div>
             <button
               type="button"
               onClick={newConversation}
               disabled={!hydrated || loading}
               className="w-full rounded-xl bg-cyan-400 px-4 py-3 font-semibold text-slate-950 disabled:opacity-50"
             >
-              + New conversation
+              + New chat
             </button>
 
             <p className="mb-3 mt-7 text-xs font-semibold tracking-widest text-slate-500">
-              YOUR CONVERSATIONS
+              Recents
             </p>
 
             <div className="max-h-64 space-y-2 overflow-y-auto md:max-h-[540px]">
-              {conversations.map((conversation) => (
+              {conversations.filter(conversation => conversation.messages.some(message => message.role === "user")).map((conversation) => (
                 <div
                   key={conversation.id}
                   className={`rounded-xl border p-2 ${
@@ -454,9 +456,10 @@ export default function ResumeChat() {
                 </div>
               ))}
             </div>
+            <div className="atlas-sidebar-links"><a href="/engineering">Engineering Studio ↗</a><a href="/study">Learning Studio ↗</a></div>
           </aside>
 
-          <div className="min-w-0">
+          <div className="atlas-chat-main min-w-0">
             <div className="atlas-chat-toolbar flex flex-wrap items-center justify-between gap-4 border-b border-white/10 bg-slate-900/70 px-5 py-4">
               <div>
                 <p className="text-lg font-bold text-white">
@@ -495,8 +498,8 @@ export default function ResumeChat() {
               tabIndex={0}
               aria-live="polite"
             >
-              {(active?.messages.length || 0) <= 1 && (
-                <div className="atlas-chat-empty"><h3>What can I help with?</h3></div>
+              {!active?.messages.some(message => message.role === "user") && (
+                <div className="atlas-chat-empty"><h3>What’s on your mind?</h3></div>
               )}
               {(active?.messages || []).slice(1).map((message, index) => (
                 <div
@@ -582,7 +585,7 @@ export default function ResumeChat() {
 
               <form onSubmit={handleSubmit} className="flex gap-3">
                 <textarea
-                  rows={1}
+                  rows={2}
                   value={input}
                   onChange={(event) => {
                     setInput(event.target.value);

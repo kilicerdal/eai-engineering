@@ -70,3 +70,44 @@
 .threshold #ai-assistant .atlas-chat-shell aside{background:#f5f5f5;border-color:#e5e5e5;}
 .threshold #ai-assistant .atlas-chat-shell aside>button{background:#e7e7e7;}
 @media(max-width:600px){.threshold #ai-assistant .atlas-chat-toolbar{padding:12px;gap:6px}.threshold #ai-assistant .atlas-chat-controls{gap:2px}.threshold #ai-assistant .atlas-history-toggle{padding:7px 6px;font-size:11px}.threshold #ai-assistant select{font-size:11px;max-width:120px}.threshold #ai-assistant [role=log]{height:320px;padding:18px 16px}.threshold #ai-assistant .atlas-chat-composer{padding:8px 12px 12px}.threshold #ai-assistant .atlas-chat-simple{border-radius:16px}}
+
+/* A chat workspace: centered composer before the first turn, bottom composer thereafter. */
+.threshold .atlas-chat-feature:has(.atlas-chat-simple){background:#fff;border:0;}
+.threshold .atlas-chat-feature:has(.atlas-chat-simple)>.atlas-scene-art,.threshold .atlas-chat-feature:has(.atlas-chat-simple)>.atlas-scene-caption{display:none;}
+.threshold #ai-assistant.atlas-chat{padding:0;scroll-margin-top:0;}
+.threshold #ai-assistant>div{max-width:none;padding:0;}
+.threshold #ai-assistant .atlas-chat-intro{display:none;}
+.threshold #ai-assistant .atlas-chat-simple{height:calc(100dvh - 12px);min-height:580px;max-height:1000px;border:0;border-radius:0;box-shadow:none;background:#fff;}
+.threshold #ai-assistant .atlas-chat-main{display:flex;flex-direction:column;min-height:0;position:relative;}
+.threshold #ai-assistant .atlas-chat-toolbar{flex-shrink:0;border:0;padding:16px 24px;}
+.threshold #ai-assistant .atlas-chat-toolbar>div>p:first-child{font-size:18px;}
+.threshold #ai-assistant .atlas-chat-toolbar .atlas-history-toggle:nth-child(2){display:none;}
+.threshold #ai-assistant [role=log]{height:auto;min-height:0;flex:1;padding:24px max(24px,calc((100% - 760px)/2));}
+.threshold #ai-assistant .atlas-chat-fresh [role=log]{flex:0 0 auto;margin-top:auto;overflow:visible;padding:0 24px 26px;}
+.threshold #ai-assistant .atlas-chat-empty{height:auto;}
+.threshold #ai-assistant .atlas-chat-empty h3{font:400 clamp(25px,3vw,32px)/1.35 Arial,sans-serif;letter-spacing:-.5px;margin:0;}
+.threshold #ai-assistant .atlas-chat-composer{flex-shrink:0;width:100%;max-width:808px;margin:0 auto;padding:0 24px 18px;}
+.threshold #ai-assistant .atlas-chat-fresh .atlas-chat-composer{margin-bottom:auto;}
+.threshold #ai-assistant .atlas-chat-composer form{position:relative;display:block;border:1px solid #e5e5e5;background:#fff;border-radius:26px;box-shadow:0 3px 18px #00000007;padding:14px 20px 48px;}
+.threshold #ai-assistant .atlas-chat-composer form textarea{display:block;width:100%;min-height:64px;padding:0;font-size:16px;line-height:24px;}
+.threshold #ai-assistant .atlas-chat-composer button[type=submit]{position:absolute;right:12px;bottom:10px;margin:0;width:36px;height:36px;}
+.threshold #ai-assistant .atlas-chat-tools{position:absolute;bottom:53px;left:37px;z-index:5;margin:0;}
+.threshold #ai-assistant .atlas-chat-tools>summary{font-size:25px;line-height:32px;color:#444;padding:0;width:32px;height:32px;justify-content:center;}
+.threshold #ai-assistant .atlas-chat-tools>summary>span{display:none;}
+.threshold #ai-assistant .atlas-chat-tools-panel{position:absolute;bottom:34px;left:0;width:min(360px,calc(100vw - 66px));background:#fff;box-shadow:0 6px 24px #0002;margin:0;padding:16px;}
+.threshold #ai-assistant .atlas-chat-composer>p{margin:10px 0 0;line-height:16px;}
+.threshold #ai-assistant .atlas-chat-shell aside{display:flex;flex-direction:column;background:#f9f9f9;border:0;padding:18px 12px;min-height:0;}
+.threshold #ai-assistant .atlas-chat-shell aside[hidden]{display:none;}
+.threshold #ai-assistant .atlas-sidebar-brand{font:600 20px/1.5 Arial,sans-serif;color:#202123;padding:0 10px 24px;}
+.threshold #ai-assistant .atlas-chat-shell aside>button{background:#efefef;border:0;border-radius:10px;font-size:14px;text-align:left;padding:12px;color:#222;}
+.threshold #ai-assistant .atlas-chat-shell aside>p{font-size:12px;letter-spacing:0;font-weight:400;color:#888;text-transform:none;margin:28px 10px 12px;}
+.threshold #ai-assistant .atlas-chat-shell aside>div:not(.atlas-sidebar-brand):not(.atlas-sidebar-links){max-height:none;overflow:auto;flex:1;}
+.threshold #ai-assistant .atlas-chat-shell aside>div>div{border:0;background:transparent;padding:10px;border-radius:8px;}
+.threshold #ai-assistant .atlas-chat-shell aside>div>div:hover{background:#eee;}
+.threshold #ai-assistant .atlas-chat-shell aside button{text-align:left;}
+.threshold #ai-assistant .atlas-sidebar-links{display:flex;flex-direction:column;gap:12px;margin-top:auto;padding:20px 10px 4px;font-size:12px;color:#666;}
+.threshold #ai-assistant .atlas-sidebar-links a:hover{color:#111;}
+@media(max-width:767px){.threshold #ai-assistant .atlas-chat-simple{height:calc(100dvh - 12px);min-height:480px;max-height:none}.threshold #ai-assistant .atlas-chat-toolbar{padding:12px 16px}.threshold #ai-assistant .atlas-chat-shell aside:not([hidden]){position:absolute;inset:0 auto 0 0;width:245px;z-index:12;border-right:1px solid #eee;box-shadow:6px 0 24px #0001}.threshold #ai-assistant .atlas-chat-simple{position:relative}.threshold #ai-assistant .atlas-chat-composer{padding:0 16px 14px}.threshold #ai-assistant .atlas-chat-tools{left:29px;bottom:49px}.threshold #ai-assistant [role=log]{padding:18px 20px}.threshold #ai-assistant .atlas-chat-fresh [role=log]{padding-bottom:24px}.threshold #ai-assistant .atlas-chat-empty h3{font-size:25px}}
+
+.threshold #ai-assistant .atlas-sidebar-brand{display:flex;align-items:center;justify-content:space-between;}
+.threshold #ai-assistant .atlas-sidebar-brand button{font-size:22px;font-weight:400;color:#777;border:0;background:transparent;padding:0 6px;line-height:30px;}
