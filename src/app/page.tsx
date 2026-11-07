@@ -9,15 +9,11 @@ import Link from "next/link";
 
 import ContactDesk from "@/components/ContactDesk";
 import "./contact-desk.css";
-import ResumeChat from "@/components/ResumeChat";
+
 
 import "./threshold.css";
 
 import { useEffect, useState } from "react";
-
-function AtlasBackdrop({ scene }: { scene: "maya" | "ephesus" | "great-wall" | "taj-mahal" | "taj-reflection" | "civilizations" | "barcelona" }) {
- return <div className="atlas-scene-art" aria-hidden="true"><Image src={`/images/threshold/${scene}-future.webp`} alt="" fill sizes="100vw" /></div>;
-}
 
 export default function Home() {
  const [menuOpen, setMenuOpen] = useState(false);
@@ -27,23 +23,23 @@ export default function Home() {
    sync(); window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync);
  }, []);
  return <main className="threshold" id="top">
-  <a href="#ai-assistant" className="atlas-skip-link">Skip to eAI chat</a>
+  <a href="/chat" className="atlas-skip-link">Skip to eAI chat</a>
   <header className="atlas-header">
    <a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a>
    <span className="atlas-chapter">THE THRESHOLD</span>
    <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onKeyDown={e => {if(e.key === "Escape") setMenuOpen(false);}} onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onKeyDown={e=>{if(e.key === "Escape"){setMenuOpen(false);document.querySelector<HTMLButtonElement>(".atlas-menu")?.focus();}}} onClick={event => { const link=(event.target as HTMLElement).closest("a"); if(!link)return; setMenuOpen(false); const href=link.getAttribute("href"); if(href?.startsWith("#"))requestAnimationFrame(()=>{const target=document.getElementById(href.slice(1));if(target){target.setAttribute("tabindex","-1");target.focus({preventScroll:true});}}); }}>
-    <a className="atlas-chat-nav" href="#ai-assistant" aria-current={navSection === "ai-assistant" ? "location" : undefined}>Chat with eAI</a><a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Engineering Studio</a><a href="/study">Learning Studio</a><a href="#about">About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
+    <a className="atlas-chat-nav" href="/chat" aria-current={navSection === "ai-assistant" ? "location" : undefined}>Chat with eAI</a><a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Engineering Studio</a><a href="/study">Learning Studio</a><a href="#about">About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
    </nav>
    <a className="atlas-dai-entry" href="/study" aria-label="Explore dAI Learning Studio">Explore dAI <span aria-hidden="true">→</span></a>
   </header>
   <section className="atlas-hero" aria-labelledby="hero-title">
    <Image src="/images/threshold/gobekli-future.webp" alt="" fill preload sizes="100vw" className="atlas-landscape" />
    <div className="atlas-hero-shade"/>
-   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p>Meet your AI engineering assistant. Bring a question, explore an idea,<br className="desktop-break"/> or work through a challenge in coding, testing and cloud engineering.</p><div className="atlas-actions"><a className="atlas-button primary" href="#ai-assistant">Chat with eAI <span>→</span></a><Link className="atlas-button atlas-story-entry" href="/engineering">Explore Engineering Studio <span aria-hidden="true">↗</span></Link></div></div>
+   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p>Meet your AI engineering assistant. Bring a question, explore an idea,<br className="desktop-break"/> or work through a challenge in coding, testing and cloud engineering.</p><div className="atlas-actions"><a className="atlas-button primary" href="/chat">Chat with eAI <span>→</span></a><Link className="atlas-button atlas-story-entry" href="/engineering">Explore Engineering Studio <span aria-hidden="true">↗</span></Link></div></div>
    <p className="atlas-caption">Göbekli Tepe, Türkiye · An imagined bridge to tomorrow</p>
   </section>
-  <div className="atlas-chat-feature"><AtlasBackdrop scene="maya"/><ResumeChat /><p className="atlas-scene-caption">Maya landmarks · An imagined bridge to the future</p></div>
+
   <EngineeringStudio />
   <section className="atlas-dai-invitation" aria-labelledby="dai-invitation-title">
    <div className="atlas-dai-art"><Image src="/images/study/library-horizon.webp" alt="" fill sizes="(max-width: 760px) 100vw, 44vw" /></div>

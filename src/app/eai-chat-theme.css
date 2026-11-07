@@ -111,3 +111,11 @@
 
 .threshold #ai-assistant .atlas-sidebar-brand{display:flex;align-items:center;justify-content:space-between;}
 .threshold #ai-assistant .atlas-sidebar-brand button{font-size:22px;font-weight:400;color:#777;border:0;background:transparent;padding:0 6px;line-height:30px;}
+
+.eai-dedicated-chat{background:#fff;min-height:100dvh;}
+.threshold.eai-dedicated-chat #ai-assistant .atlas-chat-simple{height:100dvh;min-height:0;max-height:none;}
+.threshold #ai-assistant .atlas-dictation{position:absolute;right:60px;bottom:10px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:#333;display:grid;place-items:center;}
+.threshold #ai-assistant .atlas-dictation:hover{background:#eee;}
+.threshold #ai-assistant .atlas-dictation[aria-pressed=true]{background:#fee2e2;color:#b91c1c;}
+.threshold #ai-assistant .atlas-dictation:disabled{opacity:.4;cursor:default;}
+.threshold #ai-assistant .atlas-dictation-status{font-size:12px;color:#555;margin:8px 0;}

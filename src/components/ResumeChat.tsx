@@ -8,6 +8,7 @@ import {
 } from "react";
 
 import { readStudyStream } from "@/lib/study-stream";
+import DictationButton from "./DictationButton";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import dynamic from "next/dynamic";
@@ -140,6 +141,7 @@ export default function ResumeChat() {
   const [failure, setFailure] = useState<{id:string; message:string} | null>(null);
   const [loading, setLoading] = useState(false);
   const [hydrated, setHydrated] = useState(false);
+  const [dictating, setDictating] = useState(false);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const followLatestRef = useRef(true);
@@ -382,7 +384,7 @@ export default function ResumeChat() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    void sendMessage(input);
+    if (!dictating) void sendMessage(input);
   }
 
   return (
@@ -587,6 +589,7 @@ export default function ResumeChat() {
                 <textarea
                   rows={2}
                   value={input}
+                  readOnly={dictating}
                   onChange={(event) => {
                     setInput(event.target.value);
                     event.target.style.height = "auto";
@@ -604,9 +607,10 @@ export default function ResumeChat() {
                   className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"
                 />
 
+                <DictationButton key={activeId} value={input} onChange={setInput} onListeningChange={setDictating} disabled={loading || !hydrated} />
                 <button
                   type="submit"
-                  disabled={loading || !hydrated || !input.trim()}
+                  disabled={loading || dictating || !hydrated || !input.trim()}
                   className="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 disabled:opacity-50"
                 >
                   <span aria-hidden="true">↑</span><span className="sr-only">Send message</span>
