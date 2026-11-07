@@ -119,3 +119,17 @@
 .threshold #ai-assistant .atlas-dictation[aria-pressed=true]{background:#fee2e2;color:#b91c1c;}
 .threshold #ai-assistant .atlas-dictation:disabled{opacity:.4;cursor:default;}
 .threshold #ai-assistant .atlas-dictation-status{font-size:12px;color:#555;margin:8px 0;}
+
+.threshold #ai-assistant .atlas-voice-button{position:absolute;right:105px;bottom:10px;width:36px;height:36px;border:0;border-radius:50%;background:#222;color:white;display:grid;place-items:center;}
+.threshold #ai-assistant .atlas-voice-button:disabled{opacity:.4;cursor:default;}
+.threshold #ai-assistant .atlas-voice-panel{position:absolute;z-index:15;bottom:100%;right:0;width:min(380px,calc(100vw - 40px));padding:20px;background:#fff;border:1px solid #ddd;border-radius:20px;box-shadow:0 10px 40px #0002;color:#222;font-size:14px;}
+.threshold #ai-assistant .atlas-voice-heading{display:flex;justify-content:space-between;align-items:center;}
+.threshold #ai-assistant .atlas-voice-heading button{font-size:24px;}
+.threshold #ai-assistant .atlas-voice-panel p{color:#444;margin:12px 0;}
+.threshold #ai-assistant .atlas-voice-panel>button{border:1px solid #ddd;border-radius:20px;padding:8px 15px;margin:0 0 12px;}
+.threshold #ai-assistant .atlas-voice-panel small{display:block;color:#777;font-size:11px;line-height:1.5;}
+
+.threshold #ai-assistant .atlas-workspace-heading{display:flex;align-items:center;gap:14px;}
+.threshold #ai-assistant .atlas-workspace-heading p{font:600 18px/1.4 Arial,sans-serif;color:#222;margin:0;}
+.threshold #ai-assistant .atlas-sidebar-toggle{display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:8px;color:#555;background:transparent;}
+.threshold #ai-assistant .atlas-sidebar-toggle:hover{background:#eee;}

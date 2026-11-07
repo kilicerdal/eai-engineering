@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Recognition = {
+export type Recognition = {
   lang: string;
   continuous: boolean;
   interimResults: boolean;
@@ -13,7 +13,7 @@ type Recognition = {
   stop(): void;
   abort(): void;
 };
-type SpeechWindow = Window & {
+export type SpeechWindow = Window & {
   SpeechRecognition?: new () => Recognition;
   webkitSpeechRecognition?: new () => Recognition;
 };

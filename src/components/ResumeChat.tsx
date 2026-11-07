@@ -8,6 +8,7 @@ import {
 } from "react";
 
 import { readStudyStream } from "@/lib/study-stream";
+import VoiceConversation from "./VoiceConversation";
 import DictationButton from "./DictationButton";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -142,6 +143,7 @@ export default function ResumeChat() {
   const [loading, setLoading] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [dictating, setDictating] = useState(false);
+  const [voiceActive, setVoiceActive] = useState(false);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const followLatestRef = useRef(true);
@@ -312,13 +314,16 @@ export default function ResumeChat() {
         }),
       });
 
+      let finalAnswer = "";
       await readStudyStream(response, answer => {
+        finalAnswer = answer;
         updateConversation(id, conversation => ({
           ...conversation,
           updatedAt: Date.now(),
           messages: [...base, {role:"assistant", content:answer}],
         }));
       }, true);
+      return finalAnswer;
     } catch (error) {
       updateConversation(id, conversation => ({...conversation, messages:regenerate ? previous : base}));
       setFailure({id, message:controller.signal.aborted ? "Response stopped." : error instanceof Error && error.name==="TimeoutError" ? "The request timed out. You can retry the question." : error instanceof Error ? error.message : "The request could not finish."});
@@ -384,7 +389,7 @@ export default function ResumeChat() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!dictating) void sendMessage(input);
+    if (!dictating && !voiceActive) void sendMessage(input);
   }
 
   return (
@@ -404,7 +409,7 @@ export default function ResumeChat() {
 
         <div className={`atlas-chat-shell atlas-chat-simple ${active?.messages.some(message => message.role === "user") ? "atlas-chat-started" : "atlas-chat-fresh"} grid overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#101827] shadow-2xl ${historyOpen ? "md:grid-cols-[260px_1fr]" : "grid-cols-1"}`}>
           <aside id="eai-chat-history" hidden={!historyOpen} className="border-b border-white/10 bg-slate-950/60 p-4 md:border-b-0 md:border-r">
-            <div className="atlas-sidebar-brand"><span>eAI</span><button type="button" aria-label="Close conversations" onClick={() => setHistoryOpen(false)}>×</button></div>
+            <div className="atlas-sidebar-brand"><span>eAI</span><button type="button" aria-label="Hide sidebar" title="Hide sidebar" onClick={() => setHistoryOpen(false)}>×</button></div>
             <button
               type="button"
               onClick={newConversation}
@@ -463,15 +468,13 @@ export default function ResumeChat() {
 
           <div className="atlas-chat-main min-w-0">
             <div className="atlas-chat-toolbar flex flex-wrap items-center justify-between gap-4 border-b border-white/10 bg-slate-900/70 px-5 py-4">
-              <div>
-                <p className="text-lg font-bold text-white">
-                  eAI
-                </p>
+              <div className="atlas-workspace-heading">
+                <button type="button" className="atlas-sidebar-toggle" aria-label={historyOpen ? "Hide sidebar" : "Show sidebar"} title={historyOpen ? "Hide sidebar" : "Show sidebar"} aria-controls="eai-chat-history" aria-expanded={historyOpen} onClick={() => setHistoryOpen(value => !value)}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
+                </button>
+                {!historyOpen && <p className="text-lg font-bold text-white">eAI</p>}
               </div>
-
               <div className="atlas-chat-controls">
-                <button type="button" className="atlas-history-toggle" aria-controls="eai-chat-history" aria-expanded={historyOpen} onClick={() => setHistoryOpen(!historyOpen)}>{historyOpen ? "Close history" : "Conversations"}</button>
-                <button type="button" className="atlas-history-toggle" onClick={newConversation} disabled={!hydrated || loading}>New chat</button>
               <select
                 value={active?.mode || "general"}
                 onChange={(event) =>
@@ -589,7 +592,7 @@ export default function ResumeChat() {
                 <textarea
                   rows={2}
                   value={input}
-                  readOnly={dictating}
+                  readOnly={dictating || voiceActive}
                   onChange={(event) => {
                     setInput(event.target.value);
                     event.target.style.height = "auto";
@@ -607,10 +610,11 @@ export default function ResumeChat() {
                   className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"
                 />
 
-                <DictationButton key={activeId} value={input} onChange={setInput} onListeningChange={setDictating} disabled={loading || !hydrated} />
+                <VoiceConversation key={`voice-${activeId}`} onQuestion={sendMessage} onActiveChange={setVoiceActive} disabled={loading || dictating || !hydrated} />
+                <DictationButton key={activeId} value={input} onChange={setInput} onListeningChange={setDictating} disabled={voiceActive || loading || !hydrated} />
                 <button
                   type="submit"
-                  disabled={loading || dictating || !hydrated || !input.trim()}
+                  disabled={loading || dictating || voiceActive || !hydrated || !input.trim()}
                   className="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 disabled:opacity-50"
                 >
                   <span aria-hidden="true">↑</span><span className="sr-only">Send message</span>
