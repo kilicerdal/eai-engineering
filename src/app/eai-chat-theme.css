@@ -40,3 +40,33 @@
 
 .threshold #ai-assistant .atlas-chat-composer details p{color:#525b65}
 .threshold #ai-assistant .atlas-chat-composer button[type=submit]{color:#17212c}
+
+/* Public assistant: a quiet, conversation-first interface. */
+.threshold #ai-assistant .atlas-chat-simple{background:#fff;border:1px solid #e5e5e5;border-radius:20px;box-shadow:0 18px 55px #0002;color:#202123;}
+.threshold #ai-assistant .atlas-chat-toolbar{background:#fff;border-color:#ececec;padding:14px 20px;gap:12px;}
+.threshold #ai-assistant .atlas-chat-toolbar>div>p:first-child{font:600 20px/1.4 Arial,sans-serif;color:#202123;}
+.threshold #ai-assistant .atlas-chat-controls{gap:6px;}
+.threshold #ai-assistant .atlas-history-toggle{border:0;background:transparent;border-radius:8px;padding:9px 10px;color:#555;font-size:12px;}
+.threshold #ai-assistant .atlas-history-toggle:hover{background:#f4f4f4;}
+.threshold #ai-assistant select{background:#fff;border:0;color:#555;padding:9px 6px;}
+.threshold #ai-assistant [role=log]{height:380px;background:#fff;padding:24px clamp(16px,4vw,48px);}
+.threshold #ai-assistant .atlas-chat-empty{height:100%;display:grid;place-items:center;text-align:center;}
+.threshold #ai-assistant .atlas-chat-empty h3{font:500 clamp(23px,3vw,30px)/1.3 Arial,sans-serif;letter-spacing:-.7px;color:#202123;}
+.threshold #ai-assistant .atlas-assistant-message{border:0;background:transparent;padding-left:0;}
+.threshold #ai-assistant .atlas-user-message{background:#f1f1f1;border:0;color:#202123;}
+.threshold #ai-assistant .atlas-chat-composer{position:relative;background:#fff;border:0;padding:12px 24px 16px;}
+.threshold #ai-assistant .atlas-chat-composer form{border:1px solid #dedede;background:#f5f5f5;border-radius:24px;padding:6px 8px 6px 14px;gap:8px;}
+.threshold #ai-assistant .atlas-chat-composer form:focus-within{border-color:#aaa;}
+.threshold #ai-assistant .atlas-chat-composer form textarea{border:0;background:transparent;border-radius:0;resize:none;padding:10px 0;font-size:16px;line-height:24px;min-height:44px;max-height:180px;outline:none;}
+.threshold #ai-assistant .atlas-chat-composer button[type=submit]{background:#222;color:white;width:36px;height:36px;min-width:36px;padding:0;margin-bottom:4px;border-radius:50%;font-size:25px;line-height:1;}
+.threshold #ai-assistant .atlas-chat-composer button[type=submit]:disabled{background:#ddd;color:#888;}
+.threshold #ai-assistant .atlas-chat-composer>p{font-size:11px;color:#777;margin-top:10px;}
+.threshold #ai-assistant .atlas-chat-tools{margin:0 0 8px;}
+.threshold #ai-assistant .atlas-chat-tools>summary{list-style:none;display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#666;cursor:pointer;padding:4px 6px;border-radius:6px;}
+.threshold #ai-assistant .atlas-chat-tools>summary::-webkit-details-marker{display:none;}
+.threshold #ai-assistant .atlas-chat-tools>summary:hover{background:#f4f4f4;}
+.threshold #ai-assistant .atlas-chat-tools-panel{padding:14px;margin:8px 0;border:1px solid #e5e5e5;background:#fafafa;border-radius:12px;font-size:13px;}
+.threshold #ai-assistant .atlas-chat-regenerate{border:0;padding:4px 0;font-size:12px;color:#666;}
+.threshold #ai-assistant .atlas-chat-shell aside{background:#f5f5f5;border-color:#e5e5e5;}
+.threshold #ai-assistant .atlas-chat-shell aside>button{background:#e7e7e7;}
+@media(max-width:600px){.threshold #ai-assistant .atlas-chat-toolbar{padding:12px;gap:6px}.threshold #ai-assistant .atlas-chat-controls{gap:2px}.threshold #ai-assistant .atlas-history-toggle{padding:7px 6px;font-size:11px}.threshold #ai-assistant select{font-size:11px;max-width:120px}.threshold #ai-assistant [role=log]{height:320px;padding:18px 16px}.threshold #ai-assistant .atlas-chat-composer{padding:8px 12px 12px}.threshold #ai-assistant .atlas-chat-simple{border-radius:16px}}
