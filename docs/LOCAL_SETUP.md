@@ -39,3 +39,5 @@ Install Chromium with `npx playwright install chromium` before browser checks. T
 ## Branch and deployment handling
 
 Vercel is connected separately from GitHub Actions. A branch push may create a preview deployment, and pushing to the production branch may deploy the live site. To prepare changes without any deployment, keep the branch local. Review the complete diff and check the current deployment configuration before publishing or merging. No deployment credentials are needed by the quality workflow.
+
+The `codex/repository-quality` review branch explicitly disables automatic Vercel deployments in vercel.json. That exact branch rule leaves other branches at their existing default behavior. This prevents its review push from creating a preview deployment; it does not authorize a merge into the production branch. See [Vercel Git configuration](https://vercel.com/docs/project-configuration/git-configuration#gitdeploymentenabled).
