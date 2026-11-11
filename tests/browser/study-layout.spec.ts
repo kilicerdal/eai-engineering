@@ -226,6 +226,12 @@ test('notebook summaries retain labeled capture fields and open for review hando
  await page.evaluate(()=>window.dispatchEvent(new CustomEvent('eai-study-notebook-practice',{detail:{id:'review-sample'}})));
  await expect(notebook.locator('.notebook-saved-work')).toHaveAttribute('open','');
  await expect(notebook).toContainText('Saved notes remain intact.');
+ await page.route('**/api/study/chat', route => route.fulfill({
+   contentType: 'text/event-stream', body: 'data: {"response":"Incomplete reasoning"}\n\n',
+ }));
+ await notebook.getByRole('button', { name: 'Review my reasoning again' }).click();
+ await expect(page.getByRole('alert').filter({hasText:'interrupted'})).toContainText('interrupted');
+ await expect(notebook).toContainText('Saved notes remain intact.');
  await notebook.getByText('Prepare a question for my teacher',{exact:true}).click();
  const teacherDraft=notebook.getByRole('textbox',{name:'Edit your question before copying'});
  await expect(teacherDraft).toHaveValue(/Solve 3x[\s\S]*I need to check my operation/);
@@ -399,4 +405,68 @@ test('unreadable essay and feedback remain recoverable after opening the writing
   await expect(page.getByRole('button',{name:/Download Essay/})).toBeEnabled();
   const data=await page.evaluate(()=>[localStorage.getItem('eai-writing-studio-v1'),localStorage.getItem('eai-writing-chat-v1')]);
   expect(data).toEqual(['{"content":42}','{']);
+});
+
+test('writing feedback survives interrupted responses and accepts a complete retry', async ({ page }) => {
+  let responseBody = 'data: {"response":"Keep the concrete example."}\n\ndata: [DONE]\n\n';
+  await page.route('**/api/study/chat', route => route.fulfill({ contentType: 'text/event-stream', body: responseBody }));
+  await page.goto('/study/writing');
+  await page.getByLabel('Essay content').fill('My essay includes a specific example.');
+  const review = page.getByRole('button', { name: 'Improve clarity and grammar' });
+  await review.click();
+  await expect(page.getByText('Keep the concrete example.', { exact: true })).toBeVisible();
+  responseBody = 'data: {"response":"Incomplete review"}\n\n';
+  await review.click();
+  await expect(page.getByText(/The response was interrupted/)).toBeVisible();
+  await page.reload();
+  await expect(page.getByText('Keep the concrete example.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Incomplete review', { exact: true })).toHaveCount(0);
+  responseBody = 'data: {"response":"Clarify the final sentence."}\r\n\r\ndata: [DONE]';
+  await review.click();
+  await expect(page.getByText('Clarify the final sentence.', { exact: true })).toBeVisible();
+});
+
+test('essay evaluation fits the API limit and failed follow-ups keep the question', async ({ page }) => {
+  const requests: string[] = [];
+  await page.route('**/api/study/chat', route => {
+    requests.push(route.request().postDataJSON().message);
+    return route.fulfill({status: 503, body: '{}'});
+  });
+  await page.goto('/study/writing');
+  const essay = 'a'.repeat(2591) + 'LAST LINE';
+  await page.getByLabel('Essay content').fill(essay);
+  await page.getByRole('button', { name: /Evaluate My Essay/ }).click();
+  await expect(page.getByText(/HTTP 503/)).toBeVisible();
+  expect(requests[0]).toContain(essay);
+  expect(requests[0].length).toBeLessThanOrEqual(3000);
+  const question = page.getByLabel('Follow-up question');
+  await question.fill('Does my ending support the thesis?');
+  await page.getByRole('button', {name: 'Send Question'}).click();
+  await expect.poll(() => requests.length).toBe(2);
+  await expect(question).toHaveValue('Does my ending support the thesis?');
+});
+
+test('full essay analysis stops on an incomplete section and includes every section on retry', async ({ page }) => {
+  let interrupted = true;
+  const messages: string[] = [];
+  await page.route('**/api/study/chat', route => {
+    const message = route.request().postDataJSON().message as string;
+    messages.push(message);
+    const answer = message.startsWith('Create a unified') ? 'Connect the evidence to the conclusion.' :
+      message.includes('section 1 of') ? 'Opening evidence' : 'Closing evidence';
+    return route.fulfill({contentType:'text/event-stream',
+      body:'data: '+JSON.stringify({response:answer})+'\n\n'+(interrupted ? '' : 'data: [DONE]\n\n')});
+  });
+  await page.goto('/study/writing');
+  await page.getByLabel('Essay content').fill('An essay sentence. '.repeat(155));
+  const analyze = page.getByRole('button', {name:'Analyze Full Essay'});
+  await analyze.click();
+  await expect(page.getByText(/The response was interrupted/)).toBeVisible();
+  expect(messages).toHaveLength(1);
+  interrupted = false;
+  await analyze.click();
+  await expect(page.getByText('Connect the evidence to the conclusion.', {exact:true})).toBeVisible();
+  expect(messages).toHaveLength(4);
+  expect(messages[3]).toContain('Opening evidence');
+  expect(messages[3]).toContain('Closing evidence');
 });

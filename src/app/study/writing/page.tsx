@@ -2,6 +2,7 @@
 
 import StudyGuide from "@/components/StudyGuide";
 import { useEffect, useRef, useState } from "react";
+import { readStudyStream } from "@/lib/study-stream";
 import { writeStudyCopy } from "@/lib/study-safe-storage";
 import StudyNavigation from "@/components/StudyNavigation";
 import ReactMarkdown from "react-markdown";
@@ -443,6 +444,7 @@ export default function WritingStudioPage() {
     setAiLoading(true);
     setAiError("");
 
+    setStreamingAnswer("");
     const collected: string[] = [];
 
     try {
@@ -468,51 +470,7 @@ export default function WritingStudioPage() {
           handleAIRateLimit(response);
         }
 
-        if (!response.body) {
-          throw new Error(`Section ${i + 1} returned no response stream.`);
-        }
-
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder();
-
-        let buffer = "";
-        let answer = "";
-
-        while (true) {
-          const { value, done } = await reader.read();
-
-          if (done) break;
-
-          buffer += decoder.decode(value, { stream: true });
-
-          const events = buffer.replace(/\r\n/g, "\n").split("\n\n");
-          buffer = events.pop() || "";
-
-          for (const event of events) {
-            const data = event
-              .split("\n")
-              .filter((line) => line.startsWith("data:"))
-              .map((line) => line.slice(5).trim())
-              .join("\n");
-
-            if (!data || data === "[DONE]") continue;
-
-            try {
-              const parsed = JSON.parse(data);
-              const token = parsed.choices?.[0]?.delta?.content;
-
-              if (typeof token === "string") {
-                answer += token;
-              }
-            } catch {
-              // Ignore malformed SSE events.
-            }
-          }
-        }
-
-        if (!answer.trim()) {
-          throw new Error(`Section ${i + 1} returned empty feedback.`);
-        }
+        const answer = await readStudyStream(response, () => {}, true);
 
         collected.push(`## Essay Section ${i + 1}\n\n${answer}`);
       }
@@ -564,56 +522,7 @@ export default function WritingStudioPage() {
         handleAIRateLimit(synthesisResponse);
       }
 
-      if (!synthesisResponse.body) {
-        throw new Error("Unified essay evaluation returned no response stream.");
-      }
-
-      const synthesisReader = synthesisResponse.body.getReader();
-      const synthesisDecoder = new TextDecoder();
-
-      let synthesisBuffer = "";
-      let unifiedFeedback = "";
-
-      while (true) {
-        const { value, done } = await synthesisReader.read();
-
-        if (done) break;
-
-        synthesisBuffer += synthesisDecoder.decode(value, {
-          stream: true,
-        });
-
-        const events = synthesisBuffer
-          .replace(/\r\n/g, "\n")
-          .split("\n\n");
-
-        synthesisBuffer = events.pop() || "";
-
-        for (const event of events) {
-          const data = event
-            .split("\n")
-            .filter((line) => line.startsWith("data:"))
-            .map((line) => line.slice(5).trim())
-            .join("\n");
-
-          if (!data || data === "[DONE]") continue;
-
-          try {
-            const parsed = JSON.parse(data);
-            const token = parsed.choices?.[0]?.delta?.content;
-
-            if (typeof token === "string") {
-              unifiedFeedback += token;
-            }
-          } catch {
-            // Ignore malformed streaming events.
-          }
-        }
-      }
-
-      if (!unifiedFeedback.trim()) {
-        throw new Error("Unified evaluation returned empty feedback.");
-      }
+      const unifiedFeedback = await readStudyStream(synthesisResponse, setStreamingAnswer, true);
 
       setChatHistory((previous) => [
         ...previous,
@@ -939,54 +848,17 @@ export default function WritingStudioPage() {
     setAiError("");
     setStreamingAnswer("");
 
-    if (!isFollowUp) {
-      setChatHistory([]);
-    }
+    // Leave room for the complete 2,600-character excerpt within the API limit.
+    const instructions = action === "Evaluate My Essay"
+      ? "Use a ## heading and Score: X/10 for each: Thesis Strength, Grammar and Clarity, Organization and Structure, Evidence and Reasoning. Explain each score with exact quotes. Give Top 3 Improvements. The app calculates the overall. State this is an AI estimate."
+      : action;
 
-    const evaluationInstructions =
-      action === "Evaluate My Essay"
-        ? [
-            "Evaluate this essay using a rigorous college-level rubric.",
-            "Judge only the submitted text. Do not invent evidence or citations.",
-            "Score each category independently from 0 to 10.",
-            "0-2 weak, 3-4 developing, 5-6 adequate, 7-8 strong, 9-10 exceptional.",
-            "Use these exact headings and put Score: X/10 below each:",
-            "## Thesis Strength",
-            "## Grammar and Clarity",
-            "## Organization and Structure",
-            "## Evidence and Reasoning",
-            "Explain each score using specific observations and exact quotations.",
-            "Identify strengths, weaknesses, and actionable improvements.",
-            "Do not invent an overall score; the application calculates it.",
-            "## Top 3 Improvements",
-            "Provide three prioritized revision suggestions.",
-            "State: This is an AI estimate, not an official grade.",
-          ].join("\\n")
-        : action;
-
-    const essayContext = [
-      "You are an academic writing coach.",
-      "Give specific, constructive feedback.",
-      "Do not rewrite the entire essay or invent citations.",
-      "Essay title: " + title,
-      "Essay text:",
-      content.slice(0, 2600),
+    const message = [
+      isFollowUp ? "Follow-up: " + action : instructions,
+      "Essay title: " + title.trim().slice(0, 96),
+      "Essay excerpt:",
+      content.trim().slice(0, isFollowUp ? 1400 : 2600),
     ].join("\n\n");
-
-    const message = isFollowUp
-      ? [
-          "Follow-up question about my essay:",
-          action,
-          "Use the previous feedback and conversation for context.",
-          "Current essay title: " + title,
-          "Essay excerpt:",
-          content.slice(0, 1400),
-        ].join("\n\n")
-      : [
-          essayContext,
-          "Writing improvement request:",
-          evaluationInstructions,
-        ].join("\n\n");
 
     const previousHistory = isFollowUp ? chatHistory.slice(-8) : [];
 
@@ -1013,58 +885,18 @@ export default function WritingStudioPage() {
         );
       }
 
-      if (!response.body) {
-        throw new Error("AI response contained no readable stream.");
-      }
+      const answer = await readStudyStream(response, setStreamingAnswer, true);
+      const finalAnswer =
+        action === "Evaluate My Essay"
+          ? normalizeEssayEvaluation(answer)
+          : answer;
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
-      let answer = "";
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const events = buffer.replace(/\r\n/g, "\n").split("\n\n");
-        buffer = events.pop() ?? "";
-
-        for (const event of events) {
-          for (const line of event.split("\n")) {
-            if (!line.startsWith("data:")) continue;
-
-            const data = line.slice(5).trim();
-            if (data === "[DONE]") continue;
-
-            try {
-              const parsed = JSON.parse(data);
-              const chunk = parsed.choices?.[0]?.delta?.content;
-              if (typeof chunk === "string") {
-                answer += chunk;
-                setStreamingAnswer(answer);
-              }
-            } catch {
-              // Ignore non-JSON stream events.
-            }
-          }
-        }
-      }
-
-      if (!answer.trim()) {
-        setAiError("The AI returned an empty response. Please try again.");
-      } else {
-        const finalAnswer =
-          action === "Evaluate My Essay"
-            ? normalizeEssayEvaluation(answer)
-            : answer;
-
-        setChatHistory((current) => [
-          ...(isFollowUp ? current : []),
-          { role: "user" as const, content: action },
-          { role: "assistant" as const, content: finalAnswer },
-        ].slice(-20));
-      }
+      setChatHistory((current) => [
+        ...(isFollowUp ? current : []),
+        { role: "user" as const, content: action },
+        { role: "assistant" as const, content: finalAnswer },
+      ].slice(-20));
+      if (isFollowUp) setFollowUp(current => current.trim() === action ? "" : current);
     } catch (error) {
       setAiError(
         error instanceof Error
@@ -1361,7 +1193,6 @@ export default function WritingStudioPage() {
 
                   if (!question || aiLoading) return;
 
-                  setFollowUp("");
                   void requestFeedback(question, true);
                 }}
               >
