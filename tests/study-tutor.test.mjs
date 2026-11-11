@@ -57,6 +57,7 @@ test("rate limiting is actionable, and malformed or empty streams fail visibly",
   await assert.rejects(readStudyStream(new Response('{}', { status: 429, headers: { "Retry-After": "120" } }), () => {}), /2 minute/);
   await assert.rejects(readStudyStream(new Response('{"error":"Unavailable"}', { status: 503 }), () => {}), /Unavailable/);
   await assert.rejects(readStudyStream(sse('data: [DONE]\n\n'), () => {}), /empty/);
+  for (const data of ['null','42','[]']) await assert.rejects(readStudyStream(sse(`data: ${data}\n\n`), () => {}), /interrupted/);
   await assert.rejects(readStudyStream(sse('data: not-json\n\n'), () => {}), /interrupted/);
   await assert.rejects(readStudyStream(sse('data: {"error":"failed"}\n\n'), () => {}), /interrupted/);
   await assert.rejects(readStudyStream(new Response('html'), () => {}), /could not start/);
@@ -396,3 +397,15 @@ for (const [label, original, answer] of [
     assert.match(received[0], /If the original answer holds/);
   });
 }
+
+test('retry guidance handles seconds, expired dates and missing or invalid reset times',async()=>{
+  for(const [value,expected] of [
+    ['1',/about 1 second\./],['60',/about 1 minute\./],['0',/retry now/],
+    ['Sun, 01 Nov 2026 00:00:00 GMT',/retry now/],['Infinity',/try again later/i],
+    ['bad date GMT',/try again later/i],[null,/try again later/i],
+  ]) {
+    const headers=new Headers({Date:'Wed, 11 Nov 2026 12:00:00 GMT'});
+    if(value!==null)headers.set('Retry-After',value);
+    await assert.rejects(readStudyStream(new Response('{}',{status:429,headers}),()=>{}),expected);
+  }
+});

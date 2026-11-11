@@ -141,3 +141,25 @@ test("empty legacy chat records show a recovery warning before saving new work",
   await page.getByLabel("Your message").fill("Temporary draft");
   expect(await page.evaluate(()=>localStorage.getItem("erdal-ai-conversations-v31"))).toBeNull();
 });
+
+for(const path of ['/chat','/study#ai-assistant']){
+  test('rate limit timing and interrupted replies recover on '+path,async({page})=>{
+    const study=path.startsWith('/study');
+    let calls=0;
+    await page.route(study?'**/api/study/chat':'**/api/chat',route=>{
+      calls++;
+      if(calls===1)return route.fulfill({status:429,headers:{Date:'Wed, 11 Nov 2026 12:00:00 GMT','Retry-After':'Wed, 11 Nov 2026 12:00:15 GMT'},json:{}});
+      return route.fulfill({contentType:'text/event-stream',body:calls===2?'data: null\n\n':'data: {"response":"Recovered synthetic explanation."}\n\ndata: [DONE]\n\n'});
+    });
+    await page.goto(path);
+    const area=study?page.locator('#ai-assistant'):page.locator('main');
+    await area.getByRole('textbox',{name:'Your message'}).fill('How does a test compare two values?');
+    await area.getByRole('button',{name:study?'Send':'Send message',exact:true}).click();
+    await expect(area.getByText(/Try again in about 15 seconds/)).toBeVisible();
+    await area.getByRole('button',{name:'Retry last question'}).click();
+    await expect(area.getByText(/The response was interrupted/)).toBeVisible();
+    await area.getByRole('button',{name:'Retry last question'}).click();
+    await expect(area.getByRole('log')).toContainText('Recovered synthetic explanation.');
+    expect(calls).toBe(3);
+  });
+}
