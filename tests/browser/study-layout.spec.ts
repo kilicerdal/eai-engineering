@@ -260,6 +260,8 @@ test('a sample attempt becomes an editable tutor draft and survives a refresh', 
   await draft.fill('Why do we divide both sides here?');
   await page.reload();
   await expect(draft).toHaveValue('Why do we divide both sides here?');
+  expect(new URL(page.url()).searchParams.has('from')).toBe(false);
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('eai-study-conversations-v1')!).filter((item:{title:string})=>item.title==='Algebra sample').length)).toBe(1);
   expect(requests).toBe(0);
 });
 

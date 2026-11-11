@@ -7,6 +7,7 @@ import { accountConfigured } from "@/lib/study-account";
 import {
   useMemo,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   type FormEvent,
@@ -292,7 +293,7 @@ export default function SharedAIChat() {
     });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!hydrated) return;
 
     if(!saveEnabled.current)return;
@@ -557,7 +558,7 @@ export default function SharedAIChat() {
       const url = new URL(window.location.href);
       if (url.searchParams.get("from") !== "algebra-sample") return;
       url.searchParams.delete("from");
-      window.history.replaceState(window.history.state, "", url);
+      window.history.replaceState(null, "", url);
       let message = algebraDiscussion(null);
       try {
         message = algebraDiscussion(sessionStorage.getItem(algebraSampleKey));
