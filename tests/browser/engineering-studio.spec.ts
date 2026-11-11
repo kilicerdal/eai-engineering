@@ -383,3 +383,57 @@ test('project link reopens and focuses the planner even when its hash is already
   await expect(page.getByRole('tabpanel',{name:'AI-assisted test planning'})).toBeFocused();
   await expect(requirements).toHaveValue('Keep this synthetic draft while revisiting the same project link.');
 });
+
+test('workflow investigation shares refreshed runs and preserves the selected evidence on failure or cancellation',async({page})=>{
+  let fetches=0,lookups=0;
+  const run={id:42,name:'Synthetic tests',repository:'playwright-ai-automation',conclusion:'failure',status:'completed',createdAt:'2026-01-01T10:00:00Z',url:'https://example.org/synthetic'};
+  await page.route('**/api/ci-status',route=>{
+    fetches++;
+    return fetches===1?route.fulfill({status:503,json:{error:'Offline'}}):route.fulfill({json:{live:true,runs:[run]}});
+  });
+  let release!:()=>void;
+  const gate=new Promise<void>(resolve=>{release=resolve;});
+  await page.route('**/api/github-failure?**',async route=>{
+    lookups++;
+    if(lookups===2)return route.fulfill({json:{source:'verified'}});
+    if(lookups===3)await gate;
+    await route.fulfill({json:{source:'VERIFIED GITHUB METADATA',evidence:'Synthetic workflow evidence.'}});
+  });
+  await page.goto('/engineering#qa-dashboard');
+  await expect(page.getByText(/Current workflow status is unavailable/)).toBeVisible();
+  await page.getByRole('button',{name:/Refresh CI Data/}).click();
+  const select=page.getByLabel('Failed GitHub workflow');
+  await select.selectOption('playwright-ai-automation:42');
+  const load=page.getByRole('button',{name:'Load GitHub Failure'});
+  await load.click();
+  await expect(page.getByText(/VERIFIED GITHUB METADATA · playwright-ai-automation · Run 42/)).toBeVisible();
+  await load.click();
+  await expect(page.getByRole('alert').filter({hasText:'incomplete evidence'})).toBeVisible();
+  await expect(page.getByText('Synthetic workflow evidence.',{exact:true})).toBeVisible();
+  await load.click();
+  try {
+    await expect.poll(()=>lookups).toBe(3);
+    await page.getByRole('button',{name:'Load Demo Failure'}).click();
+  } finally {release();}
+  await expect(page.getByText('SIMULATED DEMO',{exact:true})).toBeVisible();
+  await expect(page.getByText('Synthetic workflow evidence.',{exact:true})).toHaveCount(0);
+  await page.getByRole('button',{name:'Analyze with AI'}).click();
+  await expect(page.locator('#failure-log')).toBeFocused();
+  await expect(page.locator('#failure-log')).toHaveValue(/^SIMULATED DEMO\n/);
+  expect(fetches).toBe(2);
+});
+
+test('long workflow evidence keeps attribution and final error in the analyzer',async({page})=>{
+  await page.route('**/api/ci-status',route=>route.fulfill({json:{live:true,runs:[]}}));
+  await page.route('**/api/github-failure?**',route=>route.fulfill({json:{
+    source:'REAL GITHUB ACTIONS LOGS',evidence:'Start of synthetic run\n'+'x'.repeat(3200)+'\nFinal timeout in synthetic test.'
+  }}));
+  await page.goto('/engineering#qa-dashboard');
+  await page.getByRole('button',{name:'Investigate Real Historical Failure'}).click();
+  await page.getByRole('button',{name:'Analyze with AI'}).click();
+  const text=await page.locator('#failure-log').inputValue();
+  expect(text).toHaveLength(3000);
+  expect(text).toMatch(/^REAL GITHUB ACTIONS LOGS · ai-healthcare-quality-platform · Run 38679023819/);
+  expect(text).toContain('[Middle omitted');
+  expect(text).toMatch(/Final timeout in synthetic test\.$/);
+});

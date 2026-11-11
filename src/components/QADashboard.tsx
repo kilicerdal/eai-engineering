@@ -217,7 +217,7 @@ export default function QADashboard() {
           )}
         </div>
 
-        <GitHubFailureInvestigator />
+        <GitHubFailureInvestigator runs={ciRuns} refreshing={ciLoading} unavailable={!!ciError} />
         <FailureAnalyzer />
 
       </div>
