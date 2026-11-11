@@ -87,7 +87,9 @@ export default function GoalLearning() {
       if(current.documents.some(d=>d.id===document.id))throw new Error("This material is already in your library. Select it below.");
       if(current.documents.length>=MATERIAL_LIMITS.documents)throw new Error("Your library has five materials. Manage them in your library before adding another.");
       if([...current.documents,document].reduce((sum,d)=>sum+d.pages.reduce((n,p)=>n+p.text.length,0),0)>MATERIAL_LIMITS.libraryCharacters)throw new Error("The library is full. Use a smaller selection or manage your materials.");
-      const next={...current,documents:[...current.documents,document]};await saveMaterialLibrary(next,current);libraryRef.current=next;setLibrary(next);setSelected(previous=>[...previous,document.id]);setNotes("");if(plan){setDirty(true);setAccepted(false);}
+      const next={...current,documents:[...current.documents,document]};await saveMaterialLibrary(next,current);libraryRef.current=next;setLibrary(next);setSelected(previous=>[...previous,document.id]);
+      if (!file) setNotes("");
+      if(plan){setDirty(true);setAccepted(false);}
     }catch(e){setError(e instanceof Error?e.message:"The material could not be added.");}finally{setUploading(false);setStatus("");}
   }
   async function generate(){

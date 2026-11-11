@@ -129,9 +129,19 @@ export default function CourseMaterials() {
     if(!files?.length || uploading || loading) return;
     if(currentLibrary.current.documents.length+files.length>MATERIAL_LIMITS.documents){setError("Choose fewer files: the library supports five materials at a time.");return;}
     setUploading(true);setError("");
-    try { for(const file of Array.from(files)) {setUploadStatus(`Reading ${file.name}…`);addDocument(await importCourseFile(file,setUploadStatus));} }
-    catch(error){setError(error instanceof Error?error.message:"This file could not be read.");}
-    finally{setUploading(false);setUploadStatus("");}
+    const failures: string[] = [];
+    for (const file of Array.from(files)) {
+      try {
+        setUploadStatus(`Reading ${file.name}…`);
+        addDocument(await importCourseFile(file, setUploadStatus));
+      } catch (error) {
+        const reason = error instanceof Error ? error.message : "This file could not be read.";
+        failures.push(`${file.name}: ${reason}`);
+      }
+    }
+    setError(failures.join(" "));
+    setUploading(false);
+    setUploadStatus("");
   }
   async function trySample() {
     if(uploading||loading||!ready)return;

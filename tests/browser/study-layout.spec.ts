@@ -289,6 +289,19 @@ test('reading search combines author and title and announces the current filtere
   await expect(page.getByLabel('Shelf for Moby Dick')).toHaveValue('Reading');
 });
 
+test('a rejected material identifies the failed file and later files still import', async ({page}) => {
+  await page.goto('/study/materials');
+  await page.getByRole('button', {name:'Add your first material'}).click();
+  await page.getByLabel('Add course files').setInputFiles([
+    {name:'empty.txt', mimeType:'text/plain', buffer:Buffer.alloc(0)},
+    {name:'lesson.txt', mimeType:'text/plain', buffer:Buffer.from('Water vapor condenses when air cools.')},
+  ]);
+  await expect(page.getByRole('alert').filter({hasText:'empty.txt: This file is empty.'})).toBeVisible();
+  await expect(page.getByLabel('Material focus').locator('option:checked')).toHaveText('lesson.txt');
+  await page.reload();
+  await expect(page.getByLabel('Material focus').getByRole('option', {name:'lesson.txt'})).toHaveCount(1);
+});
+
 test('removing the selected material keeps a pending question from using unrelated notes', async ({page}) => {
   let requests=0;
   await page.route('**/api/study/materials',route=>{requests++;return route.abort();});
@@ -309,6 +322,24 @@ test('removing the selected material keeps a pending question from using unrelat
   await focus.selectOption({label:'first.txt'});
   await expect(ask).toBeEnabled();
   expect(requests).toBe(0);
+});
+
+test('adding a planning file preserves notes until the student saves them', async ({page}) => {
+  await page.goto('/study');
+  const planner = page.locator('#learning-goal');
+  await planner.locator('#learning-achievement').fill('Understand how water moves through soil.');
+  await planner.getByRole('button', {name:'Continue →', exact:true}).click();
+  await planner.getByText('Paste notes instead', {exact:true}).click();
+  const notes = planner.getByRole('textbox', {name:'Planning notes', exact:true});
+  await notes.fill('Compare runoff with groundwater recharge.');
+  await planner.getByLabel('Add planning material').setInputFiles({
+    name:'soil.txt', mimeType:'text/plain', buffer:Buffer.from('Water drains through connected pores in soil.'),
+  });
+  await expect(planner.getByRole('checkbox', {name:/soil.txt/})).toBeChecked();
+  await expect(notes).toHaveValue('Compare runoff with groundwater recharge.');
+  await planner.getByRole('button', {name:'Add these notes'}).click();
+  await expect(planner.getByRole('checkbox', {name:/Planning notes/})).toBeChecked();
+  await expect(notes).toHaveValue('');
 });
 
 test('planner asks for a new source selection when another tab removes a selected file', async ({page,context}) => {
