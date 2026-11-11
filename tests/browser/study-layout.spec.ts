@@ -7,11 +7,13 @@ test('one session decision preserves duration, progress and backup without calli
  await expect(session.getByRole('heading',{name:'Your next session.',exact:true})).toBeVisible();
  await expect(home.locator('.learning-next')).toHaveCount(1);
  await expect(home.getByText('RECOMMENDED NEXT STEP',{exact:true})).toHaveCount(0);
- await session.getByRole('button',{name:'10 minutes',exact:true}).click();
+ await session.getByRole('button',{name:'30 minutes',exact:true}).click();
  await session.getByRole('button',{name:'Start my focused session'}).click();
- await expect(session.getByText('YOUR SAVED SESSION · 10 MINUTE PLAN')).toBeVisible();
+ await expect(session.getByText('YOUR SAVED SESSION · 30 MINUTE PLAN')).toBeVisible();
  await session.getByRole('button',{name:'Mark this step done'}).click();
+ await session.getByRole('button',{name:'I only have 10 minutes today'}).click();
  await page.reload();
+ await expect(session.getByText('YOUR SAVED SESSION · 10 MINUTE PLAN')).toBeVisible();
  await expect(session.getByRole('button',{name:/2. Learn/})).toHaveAttribute('aria-current','step');
  await session.getByText('Saving & backups',{exact:true}).click();
  const download=page.waitForEvent('download');
@@ -224,6 +226,33 @@ test('notebook summaries retain labeled capture fields and open for review hando
  await page.evaluate(()=>window.dispatchEvent(new CustomEvent('eai-study-notebook-practice',{detail:{id:'review-sample'}})));
  await expect(notebook.locator('.notebook-saved-work')).toHaveAttribute('open','');
  await expect(notebook).toContainText('Saved notes remain intact.');
+ await notebook.getByText('Prepare a question for my teacher',{exact:true}).click();
+ const teacherDraft=notebook.getByRole('textbox',{name:'Edit your question before copying'});
+ await expect(teacherDraft).toHaveValue(/Solve 3x[\s\S]*I need to check my operation/);
+ await teacherDraft.fill('Which inverse operation should I use first?');
+ await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw new Error('Clipboard unavailable');}}}));
+ await notebook.getByRole('button',{name:'Copy question'}).click();
+ await expect(notebook.getByText(/copy it manually/)).toBeVisible();
+ await expect(teacherDraft).toHaveValue('Which inverse operation should I use first?');
  const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem('eai-exam-mistakes-v1')!));
  expect(stored).toEqual([entry]);
+});
+
+test('a sample attempt becomes an editable tutor draft and survives a refresh', async ({page}) => {
+  let requests = 0;
+  await page.route('**/api/study/chat', route => {
+    requests++;
+    return route.fulfill({status:503, body:'{}'});
+  });
+  await page.goto('/study/sample');
+  await page.getByRole('button', {name:'Show a hint'}).click();
+  await page.getByRole('radio').first().check();
+  await page.getByRole('button', {name:'Check my choice'}).click();
+  await page.getByRole('link', {name:'Discuss this sample with your AI Tutor'}).click();
+  const draft = page.locator('#ai-assistant').getByRole('textbox', {name:'Your message',exact:true});
+  await expect(draft).toHaveValue(/My choice: .+Hint used: yes/);
+  await draft.fill('Why do we divide both sides here?');
+  await page.reload();
+  await expect(draft).toHaveValue('Why do we divide both sides here?');
+  expect(requests).toBe(0);
 });

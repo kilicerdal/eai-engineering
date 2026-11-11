@@ -10,7 +10,7 @@ test("homepage has one connected studio and keeps chat and learning distinct", a
   await expect(page.locator(".studio-project")).toHaveCount(4);
   await expect(page.locator(".atlas-hero .primary")).toHaveAttribute(
     "href",
-    "#ai-assistant",
+    "/chat",
   );
   await expect(
     page.getByRole("heading", { name: "Intelligence in practice." }),
@@ -156,4 +156,32 @@ test("Studio backgrounds reach both viewport edges on wide displays", async ({ p
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     }
   }
+});
+
+test('test result links land on the interactive evidence for each download', async ({page}) => {
+  for (const [path, anchor] of [['order-once', 'business-outcomes'], ['claim-twice', 'delivery']]) {
+    await page.goto('/');
+    await page.locator(`a[href="/engineering/${path}#${anchor}"]`).click();
+    const evidence = page.locator('#' + anchor);
+    await expect(evidence).toBeInViewport();
+    const alternate = evidence.getByRole('button').nth(1);
+    await alternate.click();
+    await expect(alternate).toHaveAttribute('aria-pressed','true');
+  }
+});
+
+test('new chat and case entry preserve a full history of unsent drafts', async ({page}) => {
+  const saved = Array.from({length:30}, (_,i) => ({
+    id:`saved-${i}`, title:`Saved ${i}`, mode:'general', messages:[], updatedAt:i, draft:`My draft ${i}`,
+  }));
+  await page.goto('/');
+  await page.evaluate(items => localStorage.setItem('erdal-ai-conversations-v31', JSON.stringify(items)), saved);
+  await page.goto('/chat?case=order-once');
+  await expect(page.getByText(/You have 30 saved chats/)).toBeVisible();
+  const newChat = page.getByRole('button',{name:'+ New chat',exact:true});
+  if (!await newChat.isVisible()) await page.getByRole('button',{name:'Show sidebar'}).click();
+  await newChat.click();
+  await page.reload();
+  await expect(page.getByRole('textbox',{name:'Your message'})).toHaveValue('My draft 0');
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('erdal-ai-conversations-v31')!))).toEqual(saved);
 });

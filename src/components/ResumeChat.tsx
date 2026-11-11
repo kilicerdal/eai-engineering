@@ -38,6 +38,8 @@ type Conversation = {
   context?: string;
 };
 
+const chatLimit = 30;
+const chatLimitNotice = "You have 30 saved chats. Delete a chat you no longer need before starting another.";
 const STORAGE_KEY = "erdal-ai-conversations-v31";
 const OLD_STORAGE_KEY = "erdal-ai-chat-v3";
 
@@ -147,6 +149,7 @@ export default function ResumeChat() {
   const [historyOpen, setHistoryOpen] = useState(false);
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeId, setActiveId] = useState("");
+  const [capacityNotice, setCapacityNotice] = useState("");
   const [storageWarning, setStorageWarning] = useState(false);
   const [logText,setLogText]=useState("");
   const [failure, setFailure] = useState<{id:string; message:string} | null>(null);
@@ -200,9 +203,6 @@ export default function ResumeChat() {
       initial = [];
     }
 
-    if (!initial.length) {
-      initial = [createConversation()];
-    }
 
     const url = new URL(window.location.href);
     const caseName = url.searchParams.get("case");
@@ -210,12 +210,21 @@ export default function ResumeChat() {
       const item = caseDiscussions[caseName as CaseName];
       const context = [item.title, item.result, item.scope, "Recorded evidence: " + item.source].join("\n");
       const existing = initial.find(conversation => conversation.context === context);
-      const discussion = existing ?? {
-        ...createConversation(), title: item.title, context, draft: item.question,
-      };
-      initial = [discussion, ...initial.filter(conversation => conversation.id !== discussion.id)];
+      if (existing || initial.length < chatLimit) {
+        const discussion = existing ?? {
+          ...createConversation(), title: item.title, context, draft: item.question,
+        };
+        initial = [discussion, ...initial.filter(conversation => conversation.id !== discussion.id)];
+      } else {
+        queueMicrotask(() => setCapacityNotice(chatLimitNotice));
+      }
     }
+    if (!initial.length) initial = [createConversation()];
     queueMicrotask(() => {
+      if (caseName && Object.hasOwn(caseDiscussions, caseName)) {
+        url.searchParams.delete("case");
+        window.history.replaceState(window.history.state, "", url);
+      }
       setConversations(initial);
       setActiveId(initial[0].id);
       setHydrated(true);
@@ -229,7 +238,7 @@ export default function ResumeChat() {
     try {
       localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify(conversations.slice(0, 30))
+        JSON.stringify(conversations)
       );
     } catch {
       queueMicrotask(() => setStorageWarning(true));
@@ -360,6 +369,11 @@ export default function ResumeChat() {
   function newConversation() {
     if (loading) return;
 
+    if (conversations.length >= chatLimit) {
+      setCapacityNotice(chatLimitNotice);
+      return;
+    }
+    setCapacityNotice("");
     const conversation = createConversation(active?.mode || "general");
 
     setConversations((previous) => [
@@ -602,6 +616,7 @@ export default function ResumeChat() {
             </div>
 
             <div className="atlas-chat-composer border-t border-white/10 bg-slate-900/50 p-5">
+              {capacityNotice && conversations.length >= chatLimit && <p role="status">{capacityNotice}</p>}
               {answerStatus && <span className="sr-only" role="status">{answerStatus}</span>}
               {(active?.attachments || []).map((file, index) => <span className="atlas-file-chip" key={`${index}-${file.name}`}>{file.name}<button type="button" disabled={loading || readingFile || voiceActive} aria-label={`Remove ${file.name}`} onClick={() => active && updateConversation(active.id,c => ({...c, attachments:c.attachments?.filter((_,i) => i !== index)}))}>×</button></span>)}
               {fileStatus && <p className="atlas-file-status" role="status">{fileStatus}</p>}

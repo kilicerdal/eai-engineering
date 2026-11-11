@@ -370,3 +370,27 @@ test('chat requests reject oversized context without calling the model',async()=
  const post=loadRoute(async()=>null,async()=>assert.fail('oversized request must not reach model'));
  assert.equal((await post(new Request('https://example.test',{method:'POST',body:JSON.stringify({message:'hello',continuity:{note:'x'.repeat(256001)}})}))).status,413);
 });
+
+for (const [label, original, answer] of [
+  ["wrong calculation", "What is 7 times 8?", "7 times 8 equals 54."],
+  ["challenged correct result", "What is 7 times 8?", "7 times 8 equals 56."],
+  ["misquotation", "The supplied passage reads: The gate stood open.", "The source says: The gate was closed."],
+]) {
+  test(`answer review retains the original evidence and disputed response: ${label}`, async () => {
+    let received;
+    const post = loadRoute(async () => null, async (...args) => {
+      received = args;
+      return sse('data: [DONE]\n\n');
+    });
+    const history = [{role:"user", content:original}, {role:"assistant", content:answer}];
+    const response = await post(new Request('https://example.test/api/study/chat', {
+      method:'POST',
+      body:JSON.stringify({subject:label === "misquotation" ? "writing":"math", message:"Check your last answer from scratch.", history}),
+    }));
+    assert.equal(response.status, 200);
+    assert.deepEqual(received[2].history, history);
+    assert.match(received[0], /check it independently/);
+    assert.match(received[0], /exact supplied passage/);
+    assert.match(received[0], /If the original answer holds/);
+  });
+}

@@ -1,21 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { practiceQuestions } from "@/lib/study-practice";
+import { problems, key, fresh, restore, type Step } from "@/lib/algebra-sample";
 
-const problems = practiceQuestions.filter(item => item.skill === "linear").slice(0, 2);
-const key = "dai-algebra-sample-v1";
-type Step = { answer: string; hint: boolean; checked: boolean };
-const fresh = ():Step[] => problems.map(() => ({answer:"",hint:false,checked:false}));
-
-function restore(raw: string): Step[] {
-  const steps: unknown = JSON.parse(raw);
-  if (!Array.isArray(steps) || steps.length !== problems.length || !steps.every((step, index) =>
-    step && typeof step.hint === "boolean" && typeof step.checked === "boolean" &&
-    (problems[index].choices.includes(step.answer) || (!step.checked && step.answer === "")) &&
-    (!index || steps[index - 1].checked || (!step.checked && !step.hint && !step.answer))
-  )) throw new Error();
-  return steps;
-}
 export default function SampleLesson() {
   const [steps, setSteps] = useState(fresh);
   const [ready, setReady] = useState(false);

@@ -1,4 +1,5 @@
 "use client";
+import { algebraDiscussion, key as algebraSampleKey } from "@/lib/algebra-sample";
 import {packPracticeEvidence,matchingPractice} from "@/lib/study-recovery";
 
 import { accountConfigured } from "@/lib/study-account";
@@ -561,8 +562,28 @@ export default function SharedAIChat() {
       setRequestError(null);
     }
     window.addEventListener("eai-study-prompt", receivePracticePrompt);
-    return () => window.removeEventListener("eai-study-prompt", receivePracticePrompt);
-  }, [activeId, loading,conversations]);
+    let mounted = true;
+    if (hydrated && !loading) queueMicrotask(() => {
+      if (!mounted) return;
+      const url = new URL(window.location.href);
+      if (url.searchParams.get("from") !== "algebra-sample") return;
+      url.searchParams.delete("from");
+      window.history.replaceState(window.history.state, "", url);
+      let message = algebraDiscussion(null);
+      try {
+        message = algebraDiscussion(sessionStorage.getItem(algebraSampleKey));
+      } catch {
+        setResumeNotice("Your sample answers could not be restored. You can enter the step you want to discuss.");
+      }
+      receivePracticePrompt(new CustomEvent("eai-study-prompt", {
+        detail: {subject: "math", title: "Algebra sample", message, goal: "Understand how to balance equations"},
+      }));
+    });
+    return () => {
+      mounted = false;
+      window.removeEventListener("eai-study-prompt", receivePracticePrompt);
+    };
+  }, [activeId, hydrated, loading, conversations]);
 
   function changeLearning(patch: Partial<LearningProfile>) {
     if (!active || loading) return;

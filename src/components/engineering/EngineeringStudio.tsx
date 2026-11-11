@@ -32,6 +32,7 @@ const tools = [
 const cases = [
   {
     path: "/engineering/order-once",
+    resultAnchor: "business-outcomes",
     category: "CHECKOUT INTEGRITY",
     title: "The order that should happen only once.",
     description: caseDiscussions["order-once"].result,
@@ -43,6 +44,7 @@ const cases = [
   },
   {
     path: "/engineering/claim-twice",
+    resultAnchor: "delivery",
     category: "CLAIM REDELIVERY",
     title: "The claim that arrived twice.",
     description:
@@ -162,7 +164,7 @@ export default function EngineeringStudio({
                     Follow the {index === 0 ? "checkout" : "claim’s journey"}{" "}
                     <span aria-hidden="true">→</span>
                   </Link>
-                  <Link href={`${item.path}#evidence`}>View test result →</Link>
+                  <Link href={`${item.path}#${item.resultAnchor}`}>View test result →</Link>
                   <Link href={`${item.path}#decisions`}>Engineering decision →</Link>
                   <a href={item.record} download>
                     Evidence JSON <span aria-hidden="true">↓</span>

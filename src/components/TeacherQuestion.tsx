@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export default function TeacherQuestion({ question, answer }: { question: string; answer: string }) {
-  const [draft, setDraft] = useState(`Problem: ${question}\n\nMy reasoning: ${answer}\n\nCould you help me check the step where `);
+  const [draft, setDraft] = useState(`Problem: ${question}\n\nMy reasoning: ${answer}\n\nWhich step in my reasoning should I revisit, and why?`);
   const [status, setStatus] = useState("");
   async function copy() {
     try {
