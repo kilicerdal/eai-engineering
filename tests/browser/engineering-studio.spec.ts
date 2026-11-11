@@ -314,3 +314,62 @@ test('CI analysis preserves completed evidence on retry and clears a pending req
   await expect(tool.getByLabel('Failure Log')).toHaveValue('');
   await expect(tool.getByRole('heading',{name:'AI Failure Analysis'})).toHaveCount(0);
 });
+
+test('both test comparison panels copy and download their own code',async({page})=>{
+  await page.addInitScript(()=>{
+    let denied=true;
+    Object.defineProperty(navigator,'clipboard',{value:{writeText:async(value:string)=>{
+      if(denied){denied=false;throw new Error('Clipboard denied');}
+      document.documentElement.dataset.copied=value;
+    }}});
+  });
+  await page.route('**/api/generate-test',route=>route.fulfill({json:{code:'original();'}}));
+  await page.route('**/api/improve-test',route=>route.fulfill({json:{code:'revised();'}}));
+  await page.goto('/engineering#ai-test-generator');
+  const tool=page.locator('#ai-test-generator');
+  await tool.getByLabel('Describe Your Test Scenario').fill('Verify that a student can open a saved lesson.');
+  await tool.getByRole('button',{name:'Generate Test Code'}).click();
+  await tool.getByRole('button',{name:'Improve Generated Tests'}).click();
+  for(const [title,code,file] of [['Original Generated Code','original();','generated.spec.ts'],['AI-Improved Code','revised();','improved_generated.spec.ts']]){
+    const panel=tool.getByRole('region',{name:title,exact:true});
+    const copy=panel.getByRole('button',{name:'Copy code'});
+    if(title==='Original Generated Code'){
+      await copy.click();
+      await expect(panel.getByRole('status')).toContainText('Clipboard unavailable');
+    }
+    await copy.click();
+    await expect(page.locator('html')).toHaveAttribute('data-copied',code);
+    const event=page.waitForEvent('download');
+    await panel.getByRole('button',{name:'Download File'}).click();
+    const download=await event;
+    expect(download.suggestedFilename()).toBe(file);
+    const stream=await download.createReadStream();
+    let contents='';
+    for await(const chunk of stream!)contents+=chunk.toString();
+    expect(contents).toBe(code);
+  }
+});
+
+test('role alignment enforces the request limit and keeps previous results on failure',async({page})=>{
+  const requests:string[]=[];
+  await page.route('**/api/match',route=>{
+    requests.push(route.request().postDataJSON().job_description);
+    return requests.length===1?route.fulfill({json:{analysis:'Synthetic comparison for the first role.'}}):route.fulfill({status:429,json:{}});
+  });
+  await page.goto('/engineering#job-matcher');
+  const tool=page.locator('#job-matcher'),input=tool.getByLabel('Paste a Job Description'),submit=tool.getByRole('button',{name:'Analyze Job Match'});
+  await input.fill('x'.repeat(3001));
+  await expect(submit).toBeDisabled();
+  await expect(input).toHaveValue('x'.repeat(3001));
+  await input.fill('x'.repeat(3000));
+  await submit.click();
+  await expect(tool.getByText('Synthetic comparison for the first role.')).toBeVisible();
+  const revised='A different role focused on software quality.';
+  await input.fill(revised);
+  await expect(tool.getByRole('status')).toContainText('previous description');
+  await submit.click();
+  await expect(tool.getByRole('alert')).toContainText('request limit');
+  await expect(input).toHaveValue(revised);
+  await expect(tool.getByText('Synthetic comparison for the first role.')).toBeVisible();
+  expect(requests).toEqual(['x'.repeat(3000),revised]);
+});

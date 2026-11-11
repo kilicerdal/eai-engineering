@@ -1,7 +1,7 @@
 "use client";
 import {useState} from "react";
 
-export default function CopyCodeButton({code}:{code:string}) {
+export default function CopyCodeButton({code, className = "text-xs text-cyan-300 hover:text-white"}:{code:string; className?:string}) {
   const [status, setStatus] = useState("");
   async function copy() {
     try {
@@ -12,7 +12,7 @@ export default function CopyCodeButton({code}:{code:string}) {
     }
   }
   return <div className="text-right">
-    <button type="button" onClick={copy} className="text-xs text-cyan-300 hover:text-white">
+    <button type="button" onClick={copy} className={className}>
       Copy code
     </button>
     <p role="status" className="text-xs text-slate-300">{status}</p>

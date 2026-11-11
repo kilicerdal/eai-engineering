@@ -4,18 +4,17 @@ import { useState, type FormEvent } from "react";
 
 export default function JobMatcher() {
   const [description, setDescription] = useState("");
-  const [analysis, setAnalysis] = useState("");
+  const [result, setResult] = useState<{description:string; analysis:string} | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (description.trim().length < 30 || loading) return;
+    if (description.trim().length < 30 || description.trim().length > 3000 || loading) return;
 
     setLoading(true);
     setError("");
-    setAnalysis("");
 
     try {
       const response = await fetch("/api/match", {
@@ -24,20 +23,20 @@ export default function JobMatcher() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          job_description: description,
+          job_description: description.trim(),
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Unable to analyze this job description.");
+      if (response.status === 429) {
+        setError("The request limit has been reached. Please try again later.");
+        return;
       }
-
-      const result = await response.json();
-      setAnalysis(result.analysis);
+      if (!response.ok) throw new Error();
+      const payload = await response.json();
+      if (typeof payload?.analysis !== "string" || !payload.analysis.trim()) throw new Error();
+      setResult({description, analysis:payload.analysis});
     } catch {
-      setError(
-        "The AI matcher is unavailable. Make sure FastAPI and Ollama are running."
-      );
+      setError("The matcher could not complete this analysis. Your description is still here. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -56,7 +55,7 @@ export default function JobMatcher() {
           </h2>
 
           <p className="mt-5 text-slate-400">
-            Compare a job description against my resume using local AI.
+            Compare a job description with Erdal Kilic’s listed experience, skills, and certifications.
           </p>
         </div>
 
@@ -75,18 +74,18 @@ export default function JobMatcher() {
               onChange={(event) => setDescription(event.target.value)}
               placeholder="Paste the job requirements, responsibilities, and qualifications here..."
               rows={10}
-              maxLength={15000}
+              aria-describedby="job-description-limit"
               className="w-full resize-y rounded-xl border border-white/10 bg-slate-900 p-5 text-sm leading-7 text-white outline-none focus:border-cyan-400"
             />
 
             <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
               <p className="text-xs text-slate-500">
-                Resume-grounded analysis · Powered by Ollama
+                <span id="job-description-limit">30–3,000 characters · {description.trim().length.toLocaleString()} entered</span>
               </p>
 
               <button
                 type="submit"
-                disabled={loading || description.trim().length < 30}
+                disabled={loading || description.trim().length < 30 || description.trim().length > 3000}
                 className="rounded-xl bg-cyan-400 px-7 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 disabled:opacity-50"
               >
                 {loading ? "Analyzing..." : "Analyze Job Match"}
@@ -100,14 +99,15 @@ export default function JobMatcher() {
             </p>
           )}
 
-          {analysis && (
+          {result && (
             <div className="mt-8 border-t border-white/10 pt-8">
               <h3 className="mb-5 text-xl font-bold text-cyan-300">
                 AI Match Analysis
               </h3>
 
+              {result.description !== description && <p role="status">This analysis is for the previous description. Submit your current description for a new comparison.</p>}
               <div className="whitespace-pre-wrap rounded-2xl bg-slate-900 p-6 text-sm leading-8 text-slate-200">
-                {analysis}
+                {result.analysis}
               </div>
 
               <p className="mt-4 text-xs text-slate-500">
