@@ -18,7 +18,8 @@ const example =
 export default function AITestGenerator() {
   const [framework, setFramework] = useState("playwright");
   const [requirements, setRequirements] = useState("");
-  const [code, setCode] = useState("");
+  const [result, setResult] = useState<{code:string; requirements:string; framework:string} | null>(null);
+  const code = result?.code || "";
   const [improvedCode, setImprovedCode] = useState("");
   const [improving, setImproving] = useState(false);
   const [improveError, setImproveError] = useState("");
@@ -27,17 +28,16 @@ export default function AITestGenerator() {
   const [copied, setCopied] = useState(false);
 
   async function improveTests() {
-    if (improving || loading || !code.trim()) return;
+    if (improving || loading || !result) return;
 
     setImproving(true);
     setImproveError("");
-    setImprovedCode("");
 
     try {
       const response = await fetch("/api/improve-test", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ requirements, code, framework }),
+        body: JSON.stringify(result),
       });
 
       const data = await response.json();
@@ -61,11 +61,10 @@ export default function AITestGenerator() {
   }
 
   async function generate() {
-    if (loading || requirements.trim().length < 20) return;
+    if (loading || improving || requirements.trim().length < 20) return;
 
     setLoading(true);
     setError("");
-    setCode("");
     setCopied(false);
 
     try {
@@ -85,7 +84,9 @@ export default function AITestGenerator() {
         throw new Error("The AI service returned no test code.");
       }
 
-      setCode(data.code);
+      setResult({code:data.code, requirements, framework});
+      setImprovedCode("");
+      setImproveError("");
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "Test generation failed."
@@ -133,10 +134,7 @@ export default function AITestGenerator() {
             <select
               id="generator-framework"
               value={framework}
-              onChange={(event) => {
-                setFramework(event.target.value);
-                setCode("");
-              }}
+              onChange={event => setFramework(event.target.value)}
               className="mt-2 w-full rounded-xl border border-white/20 bg-slate-950 p-3 text-sm text-white"
             >
               {frameworks.map((item) => (
@@ -176,7 +174,7 @@ export default function AITestGenerator() {
               <button
                 type="button"
                 onClick={() => void generate()}
-                disabled={loading || requirements.trim().length < 20}
+                disabled={loading || improving || requirements.trim().length < 20}
                 className="rounded-xl bg-cyan-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {loading ? "Generating..." : "Generate Test Code"}
@@ -186,7 +184,7 @@ export default function AITestGenerator() {
                 type="button"
                 onClick={() => {
                   setRequirements(example);
-                  setCode("");
+
                   setError("");
                 }}
                 className="rounded-xl border border-white/20 px-5 py-3 text-sm text-white hover:bg-white/5"
@@ -218,6 +216,7 @@ export default function AITestGenerator() {
               endpoints, assertions, dependencies, and security before use.
             </p>
 
+            {result && (requirements !== result.requirements || framework !== result.framework) && <p role="status" className="mt-3 text-sm text-amber-200">The code below is from your previous scenario. Generate again to use your current inputs.</p>}
             <div className="mt-6 min-h-[340px] overflow-auto rounded-xl border border-white/10 bg-slate-950 p-5">
               {code ? (
                 <pre className="whitespace-pre-wrap break-words font-mono text-xs leading-6 text-cyan-100">
@@ -230,15 +229,15 @@ export default function AITestGenerator() {
               )}
             </div>
 
-            {code && (
-              <TestQualityValidator code={code} framework={framework} />
+            {result && (
+              <TestQualityValidator code={code} framework={result.framework} />
             )}
 
-            {code && (
+            {result && (
               <TestCoverageIntelligence
                 code={code}
-                requirements={requirements}
-                framework={framework}
+                requirements={result.requirements}
+                framework={result.framework}
               />
             )}
             {code && (
@@ -270,10 +269,7 @@ export default function AITestGenerator() {
                   <p className="mt-3 text-sm text-red-300">{improveError}</p>
                 )}
 
-                {improvedCode && (
-                  <div className="mt-5">
-                  </div>
-                )}
+
               </div>
             )}
 
@@ -298,12 +294,12 @@ export default function AITestGenerator() {
           </div>
         </div>
 
-        {code && improvedCode && (
+        {result && improvedCode && (
           <div className="mt-10">
             <TestCodeComparison
               originalCode={code}
               improvedCode={improvedCode}
-              framework={framework}
+              framework={result.framework}
             />
           </div>
         )}

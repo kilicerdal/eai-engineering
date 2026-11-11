@@ -217,7 +217,8 @@ export default function QADashboard() {
           )}
         </div>
 
-        <GitHubFailureInvestigator />\n      <FailureAnalyzer />
+        <GitHubFailureInvestigator />
+        <FailureAnalyzer />
 
       </div>
     </section>

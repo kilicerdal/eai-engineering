@@ -252,3 +252,65 @@ test('unsent CI notes stay with their chat and are cleared on reload',async({pag
   await expect(log).toHaveValue('Synthetic build log for the first project');
   expect(await page.evaluate(()=>localStorage.getItem('erdal-ai-conversations-v31'))).not.toContain('Synthetic build log');
 });
+
+test('test generation keeps the previous result and compares revisions from the same scenario',async({page})=>{
+  const first='Verify that the cart total reflects the selected item quantity.';
+  const second='Verify that a learner can change the study session length.';
+  let nextCode='firstResult();';
+  let improvePayload:Record<string,string>={};
+  await page.route('**/api/generate-test',route=>route.fulfill({status:nextCode?200:503,json:nextCode?{code:nextCode}:{error:'Generation unavailable.'}}));
+  await page.route('**/api/improve-test',route=>{
+    improvePayload=route.request().postDataJSON();
+    return route.fulfill({json:{code:'firstImprovement();'}});
+  });
+  await page.goto('/engineering#ai-test-generator');
+  const tool=page.locator('#ai-test-generator');
+  const input=tool.getByLabel('Describe Your Test Scenario');
+  const generate=tool.getByRole('button',{name:'Generate Test Code'});
+  await input.fill(first);
+  await generate.click();
+  await expect(tool.locator('pre').first()).toHaveText('firstResult();');
+  await input.fill(second);
+  await tool.getByLabel('Automation Framework').selectOption('pytest');
+  await expect(tool.getByRole('status').filter({hasText:'previous scenario'})).toBeVisible();
+  await tool.getByRole('button',{name:'Improve Generated Tests'}).click();
+  await expect.poll(()=>improvePayload.requirements).toBe(first);
+  expect(improvePayload.framework).toBe('playwright');
+  nextCode='';
+  await generate.click();
+  await expect(tool.getByRole('alert')).toHaveText('Generation unavailable.');
+  await expect(tool.locator('pre').first()).toHaveText('firstResult();');
+  nextCode='secondResult();';
+  await generate.click();
+  await expect(tool.locator('pre').first()).toHaveText('secondResult();');
+  await expect(tool.getByText('firstImprovement();',{exact:true})).toHaveCount(0);
+});
+
+test('CI analysis preserves completed evidence on retry and clears a pending request',async({page})=>{
+  let response: 'success'|'empty'|'pending'='success';
+  let release: (()=>void)|undefined;
+  await page.route('**/api/ci-status', route=>route.fulfill({json:{live:true,runs:[]}}));
+  await page.route('**/api/analyze-failure',async route=>{
+    if(response==='pending') await new Promise<void>(resolve=>{release=resolve;});
+    await route.fulfill({json:{answer:response==='empty'?'':'Synthetic failure explanation.'}}).catch(()=>undefined);
+  });
+  await page.goto('/engineering#qa-dashboard');
+  const tool=page.locator('#ai-failure-analyzer');
+  await tool.getByLabel('Failure Log').fill('Synthetic fixture: expected 4 but received 5.');
+  const analyze=tool.getByRole('button',{name:'Analyze Failure'});
+  await analyze.click();
+  await expect(tool.getByText('Synthetic failure explanation.',{exact:true})).toBeVisible();
+  response='empty';
+  await analyze.click();
+  await expect(tool.getByRole('alert')).toContainText('No analysis was returned');
+  await expect(tool.getByText('Synthetic failure explanation.',{exact:true})).toBeVisible();
+  await tool.getByLabel('Failure Log').fill('A separate synthetic fixture did not load.');
+  await expect(tool.getByText(/analysis is for the previous input/)).toBeVisible();
+  response='pending';
+  await analyze.click();
+  await expect.poll(()=>!!release).toBe(true);
+  await tool.getByRole('button',{name:'Clear',exact:true}).click();
+  release?.();
+  await expect(tool.getByLabel('Failure Log')).toHaveValue('');
+  await expect(tool.getByRole('heading',{name:'AI Failure Analysis'})).toHaveCount(0);
+});

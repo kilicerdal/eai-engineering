@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FailureClassifier from "./FailureClassifier";
 
 import ReactMarkdown from "react-markdown";
@@ -18,7 +18,18 @@ Call log:
 export default function FailureAnalyzer() {
   const [framework, setFramework] = useState("Playwright");
   const [log, setLog] = useState("");
-  const [analysis, setAnalysis] = useState("");
+  const [result, setResult] = useState<{framework:string; log:string; answer:string} | null>(null);
+  const analysis = result?.answer || "";
+  const request = useRef<AbortController | null>(null);
+
+  function resetAnalysis() {
+    request.current?.abort();
+    request.current = null;
+    setLoading(false);
+    setResult(null);
+    setError("");
+    setCopied(false);
+  }
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
@@ -36,14 +47,13 @@ export default function FailureAnalyzer() {
 
       setFramework(detail.framework || "CI/CD");
       setLog(detail.log.slice(0, 3000));
-      setAnalysis("");
-      setError("");
-      setCopied(false);
+      resetAnalysis();
     }
 
     window.addEventListener("erdal-ai-load-failure", handleFailure);
 
     return () => {
+      request.current?.abort();
       window.removeEventListener("erdal-ai-load-failure", handleFailure);
     };
   }, []);
@@ -53,10 +63,12 @@ export default function FailureAnalyzer() {
 
     setLoading(true);
     setError("");
-    setAnalysis("");
+    const controller = new AbortController();
+    request.current = controller;
 
     try {
       const response = await fetch("/api/analyze-failure", {
+        signal: controller.signal,
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ framework, log }),
@@ -68,11 +80,12 @@ export default function FailureAnalyzer() {
         throw new Error(data.error || "Analysis failed.");
       }
 
-      setAnalysis(data.answer || "No analysis generated.");
+      if (typeof data.answer !== "string" || !data.answer.trim()) throw new Error("No analysis was returned. Try again.");
+      if (!controller.signal.aborted) setResult({framework, log, answer:data.answer});
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Analysis failed.");
+      if (!controller.signal.aborted) setError(err instanceof Error ? err.message : "Analysis failed.");
     } finally {
-      setLoading(false);
+      if (request.current === controller) {request.current = null; setLoading(false); }
     }
   }
 
@@ -146,8 +159,7 @@ export default function FailureAnalyzer() {
           type="button"
           onClick={() => {
             setLog(example);
-            setAnalysis("");
-            setError("");
+            resetAnalysis();
           }}
           className="rounded-lg border border-white/20 px-5 py-3 text-sm"
         >
@@ -158,8 +170,7 @@ export default function FailureAnalyzer() {
           type="button"
           onClick={() => {
             setLog("");
-            setAnalysis("");
-            setError("");
+            resetAnalysis();
           }}
           className="rounded-lg border border-white/20 px-5 py-3 text-sm"
         >
@@ -176,6 +187,7 @@ export default function FailureAnalyzer() {
           <h4 className="mb-4 text-lg font-bold text-cyan-300">
             AI Failure Analysis
           </h4>
+          {result && (result.log !== log || result.framework !== framework) && <p role="status">This analysis is for the previous input. Analyze again to review your current log.</p>}
           <div className="min-w-0 break-words text-sm leading-7 text-slate-200">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
