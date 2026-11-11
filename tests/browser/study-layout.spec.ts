@@ -1055,3 +1055,22 @@ test('reopening a library answer uses its own sources and history for follow-ups
   expect(sent[2].history.map(turn=>turn.content)).toContain(first);
   expect(sent[2].history.map(turn=>turn.content)).not.toContain('Describe rainfall in the west.');
 });
+
+test('a numeric source question retrieves only the matching reading', async ({page}) => {
+  await page.route('**/api/study/materials', route => route.fulfill({json:{supported:false,answer:'More evidence needed.',citations:[]}}));
+  await page.goto('/study/materials');
+  await page.getByRole('button',{name:'Add your first material'}).click();
+  await page.getByLabel('Add course files').setInputFiles([
+    {name:'Opening.txt',mimeType:'text/plain',buffer:Buffer.from('The fictional observatory opened its doors in 1973.')},
+    {name:'Renovation.txt',mimeType:'text/plain',buffer:Buffer.from('The fictional observatory was renovated in 1990.')},
+  ]);
+  const focus = page.getByLabel('Material focus');
+  await expect(focus.locator('option:checked')).toHaveText('Renovation.txt');
+  await page.getByRole('button',{name:'Close',exact:true}).click();
+  await focus.selectOption('all');
+  await page.getByLabel('Question about your materials').fill('1973?');
+  const outgoing = page.waitForRequest(request => request.url().endsWith('/api/study/materials'));
+  await page.getByRole('button',{name:'Ask about materials'}).click();
+  const {excerpts} = (await outgoing).postDataJSON();
+  expect(excerpts.map((excerpt:{name:string})=>excerpt.name)).toEqual(['Opening.txt']);
+});

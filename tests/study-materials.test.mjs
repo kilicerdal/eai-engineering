@@ -31,6 +31,11 @@ test('retrieval selects the relevant subject and keeps page metadata',()=>{
  assert.ok(result.every(item=>item.text.length<=MATERIAL_LIMITS.excerptCharacters));
  assert.equal(selectMaterialExcerpts([pdf],'What is the diameter of Venus?','explain').length,0);
 });
+test('numeric source searches find exact years while numeric quiz replies retain the question topic',()=>{
+ assert.deepEqual(selectMaterialExcerpts([pdf],'1973','explain').map(excerpt=>excerpt.page),[1]);
+ assert.deepEqual(selectMaterialExcerpts([pdf],'197','explain'),[]);
+ assert.deepEqual(selectMaterialExcerpts([pdf],'1973','quiz','What is the Northwind budget?').map(excerpt=>excerpt.page),[2]);
+});
 test('multilingual retrieval works without an English-only tokenizer',()=>{
  const french=makeTextDocument('Économie','Le budget de formation est de quarante crédits.','fr',100);
  const chinese=makeTextDocument('历史','图书馆在一九七三年开放。阅览室名为雪松厅。','zh',100);

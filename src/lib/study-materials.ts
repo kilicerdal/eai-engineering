@@ -49,7 +49,7 @@ export function makeTextDocument(name: string, text: string, id: string, addedAt
 const stopWords = new Set("a an and are as at be because by can could do does explain for from give how i in is it me my of on or please question ask one practice create selected show summarize that the their these they this to understand was what when where which why with would you your answer answered guide quiz study notes material materials".split(" "));
 function terms(text: string): string[] {
   const segmenter = new Intl.Segmenter(undefined, { granularity: "word" });
-  return [...segmenter.segment(text.toLowerCase())].filter(part => part.isWordLike).map(part => part.segment).filter(word => !stopWords.has(word) && /\p{L}/u.test(word)).slice(0,1000);
+  return [...segmenter.segment(text.toLowerCase())].filter(part => part.isWordLike).map(part => part.segment).filter(word => !stopWords.has(word) && /[\p{L}\p{N}]/u.test(word)).slice(0,1000);
 }
 function chunks(documents: CourseDocument[]): MaterialExcerpt[] {
   const output: MaterialExcerpt[] = [];
@@ -72,7 +72,11 @@ function chunks(documents: CourseDocument[]): MaterialExcerpt[] {
 export function selectMaterialExcerpts(documents: CourseDocument[], question: string, task: MaterialTask, previousQuestion = ""): MaterialExcerpt[] {
   const all = chunks(documents);
   let query = [...new Set(terms(question))].slice(0,40);
-  if (!query.length && previousQuestion) query = [...new Set(terms(previousQuestion))].slice(0,40);
+  const numericQuizReply = task === "quiz" && query.every(word => !/\p{L}/u.test(word));
+  if (previousQuestion && (!query.length || numericQuizReply)) {
+    const previousTerms = [...new Set(terms(previousQuestion))].slice(0,40);
+    if (previousTerms.length) query = previousTerms;
+  }
   const frequencies = new Map<string,number>();
   const indexed = all.map(excerpt => {
     const words = terms(excerpt.text);
