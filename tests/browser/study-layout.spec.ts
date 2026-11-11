@@ -324,3 +324,28 @@ test('planner asks for a new source selection when another tab removes a selecte
   await expect(planner.getByRole('button',{name:/Continue without materials/})).toBeEnabled();
   expect(requests).toBe(0);
 });
+
+test('a question cannot send excerpts removed from another open library tab', async ({page,context}) => {
+  let calls=0;
+  await context.route('**/api/study/materials',route=>{calls++;return route.abort();});
+  await page.goto('/study/materials');
+  await page.getByRole('button',{name:'Add your first material'}).click();
+  await page.getByLabel('Add course files').setInputFiles({
+    name:'Rainfall.txt',mimeType:'text/plain',buffer:Buffer.from('Rainfall supplies water to the soil and replenishes shallow aquifers.'),
+  });
+  const other=await context.newPage();
+  await expect(page.getByRole('button',{name:'Remove Rainfall.txt'})).toBeVisible();
+  await other.goto('/study/materials');
+  await other.locator('#library-materials-trigger').click();
+  await other.getByRole('button',{name:'Remove Rainfall.txt'}).click();
+  await expect(other.locator('#library-materials-trigger')).toContainText('Materials · 0');
+  const close=page.getByRole('button',{name:/Close/}).first();
+  if(await close.isVisible()) await close.click();
+  const question=page.getByLabel('Question about your materials');
+  await question.fill('How does rainfall replenish aquifers?');
+  await page.getByRole('button',{name:'Ask about materials'}).click();
+  await expect(page.getByText(/Your selected source changed in another tab/)).toBeVisible();
+  await expect(page.getByLabel('Material focus')).toHaveValue('choose');
+  await expect(question).toHaveValue('How does rainfall replenish aquifers?');
+  expect(calls).toBe(0);
+});

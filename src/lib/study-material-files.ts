@@ -60,7 +60,9 @@ function openLibrary(): Promise<IDBDatabase> {
     request.onblocked = () => reject(new Error("Close other Study Assistant tabs to finish opening storage."));
   });
 }
+let pendingWrite = Promise.resolve();
 export async function loadMaterialLibrary(): Promise<MaterialLibrary> {
+  await pendingWrite.catch(() => undefined);
   const database = await openLibrary();
   try {
     const value = await new Promise<unknown>((resolve,reject) => {
@@ -70,7 +72,6 @@ export async function loadMaterialLibrary(): Promise<MaterialLibrary> {
     return readMaterialLibrary(value);
   } finally { database.close(); }
 }
-let pendingWrite = Promise.resolve();
 export function saveMaterialLibrary(library: MaterialLibrary, expected?: MaterialLibrary): Promise<void> {
   const snapshot = structuredClone(library);
   const expectedCopy=expected===undefined?undefined:JSON.stringify(expected);

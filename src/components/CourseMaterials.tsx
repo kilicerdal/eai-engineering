@@ -152,7 +152,24 @@ export default function CourseMaterials() {
     if(!excerpts.length){setError("I couldn’t find matching text in the selected materials. Try a more specific question or choose another material.");return;}
     setLoading(true);setError("");const controller=new AbortController();abort.current=controller;
     try{
-      const history=recent.slice().reverse().flatMap(entry=>[{role:"user",content:entry.question.slice(0,3000)},{role:"assistant",content:entry.answer.slice(0,3000)}]);
+      let relevantHistory = recent;
+      if (storageAvailable) {
+        const saved = await loadMaterialLibrary();
+        if (controller.signal.aborted) return;
+        relevantHistory = recent.filter(entry => saved.entries.some(stored => stored.id === entry.id));
+        if (!excerpts.every(excerpt => sourceStillAvailable(excerpt, saved.documents))) {
+          currentLibrary.current = saved;
+          savedLibrary.current = saved;
+          setLibrary(saved);
+          setPassage(null);
+          setSource(null);
+          setFocus("choose");
+          setActiveEntryId("");
+          setError("Your selected source changed in another tab. Your question is still here. Choose a current source before asking again.");
+          return;
+        }
+      }
+      const history=relevantHistory.slice().reverse().flatMap(entry=>[{role:"user",content:entry.question.slice(0,3000)},{role:"assistant",content:entry.answer.slice(0,3000)}]);
       const response=await fetch("/api/study/materials",{method:"POST",headers:{"Content-Type":"application/json"},signal:AbortSignal.any([controller.signal,AbortSignal.timeout(55000)]),body:JSON.stringify({message,task,style,excerpts,history})});
       const result=await response.json().catch(()=>null);
       if(controller.signal.aborted)throw new DOMException("Cancelled","AbortError");
