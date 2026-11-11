@@ -29,6 +29,7 @@ export default function StudyAccount() {
     [message, setMessage] = useState("");
   const [record, setRecord] = useState<CloudRecord | null>(null),
     [recordReady, setRecordReady] = useState(false),
+    [recordReadFailed, setRecordReadFailed] = useState(false),
     [saving, setSaving] = useState(false);
   const [confirm, setConfirm] = useState<"restore" | "delete" | null>(null);
   useEffect(() => {
@@ -55,6 +56,7 @@ export default function StudyAccount() {
         setReady(true);
         setRecord(null);
         setRecordReady(false);
+        setRecordReadFailed(false);
         setConfirm(null);
       }
     });
@@ -75,7 +77,10 @@ export default function StudyAccount() {
         }
       })
       .catch((error) => {
-        if (!cancelled) setMessage(error.message);
+        if (!cancelled) {
+          setRecordReadFailed(true);
+          setMessage(error.message);
+        }
       });
     return () => {
       cancelled = true;
@@ -152,7 +157,13 @@ export default function StudyAccount() {
     if (!record || !user) return;
     pauseCloud();
     const latest = await readCloud(user.id);
-    if (!latest) throw new Error("That account record is no longer available.");
+    if (!latest || latest.revision !== record.revision) {
+      setRecord(latest);
+      setConfirm(null);
+      throw new Error(latest
+        ? "Your account has a newer save. Review its date and choose Restore again."
+        : "That account record is no longer available.");
+    }
     exportStudy(await captureStudy());
     await restoreCloud(latest.snapshot);
     bindCloud(user.id, latest);
@@ -289,7 +300,7 @@ export default function StudyAccount() {
               ? record
                 ? `Account save: ${new Date(record.updated_at).toLocaleString()}`
                 : "No learning record saved to this account yet."
-              : "Opening your account record…"}
+              : recordReadFailed ? "Account record unavailable. Open “Export and data controls” and choose “Refresh account record” to retry." : "Opening your account record…"}
           </p>
           <p className="studio-account-fine">
             {saving
@@ -307,7 +318,6 @@ export default function StudyAccount() {
             <button
               disabled={busy || !record}
               onClick={() => {
-                pauseCloud();
                 setConfirm("restore");
               }}
             >
@@ -377,7 +387,6 @@ export default function StudyAccount() {
               <button
                 disabled={busy || !record}
                 onClick={() => {
-                  pauseCloud();
                   setConfirm("delete");
                 }}
               >
@@ -389,6 +398,7 @@ export default function StudyAccount() {
                   void run(async () => {
                     pauseCloud();
                     setRecord(await readCloud(user.id));
+                    setRecordReadFailed(false);
                     setRecordReady(true);
                     setMessage(
                       "Account record refreshed. Automatic saving is paused until you choose a version.",

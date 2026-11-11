@@ -256,3 +256,15 @@ test('a sample attempt becomes an editable tutor draft and survives a refresh', 
   await expect(draft).toHaveValue('Why do we divide both sides here?');
   expect(requests).toBe(0);
 });
+
+test('a damaged lesson handoff is reported once and the materials library reopens normally', async ({page}) => {
+  await page.goto('/study');
+  await page.evaluate(() => sessionStorage.setItem('eai-lesson-material-handoff-v1','{'));
+  await page.goto('/study/materials');
+  const notice = page.getByText(/The prepared lesson could not be read/);
+  await expect(notice).toBeVisible();
+  expect(await page.evaluate(()=>sessionStorage.getItem('eai-lesson-material-handoff-v1'))).toBeNull();
+  await page.reload();
+  await expect(page.getByRole('heading',{level:1})).toBeVisible();
+  await expect(notice).toHaveCount(0);
+});
