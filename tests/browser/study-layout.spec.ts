@@ -349,3 +349,23 @@ test('a question cannot send excerpts removed from another open library tab', as
   await expect(question).toHaveValue('How does rainfall replenish aquifers?');
   expect(calls).toBe(0);
 });
+
+test('closing a source returns keyboard focus and selecting a passage moves focus to it', async ({page})=>{
+  await page.goto('/study/materials');
+  await page.getByRole('button',{name:'Add your first material'}).click();
+  await page.getByLabel('Add course files').setInputFiles({name:'Focus.txt',mimeType:'text/plain',buffer:Buffer.from('A practice passage on how rainfall replenishes shallow aquifers.')});
+  const read=page.getByRole('button',{name:'Read Focus.txt'});
+  await read.focus();
+  await read.press('Enter');
+  const dialog=page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(read).toBeFocused();
+  await read.press('Enter');
+  await dialog.getByRole('button',{name:'Close source'}).click();
+  await expect(read).toBeFocused();
+  await read.press('Enter');
+  await dialog.getByText('Choose a passage to study',{exact:true}).click();
+  await dialog.getByRole('button',{name:'Use this section'}).click();
+  await expect(page.getByRole('region',{name:'Selected study passage'})).toBeFocused();
+});
