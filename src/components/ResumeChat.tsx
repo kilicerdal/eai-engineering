@@ -143,7 +143,7 @@ function MarkdownMessage({ content }: { content: string }) {
 
 export default function ResumeChat() {
   const [search, setSearch] = useState("");
-  const [fileStatus, setFileStatus] = useState("");
+  const [fileFeedback, setFileFeedback] = useState({chatId:"", text:""});
   const [readingFile, setReadingFile] = useState(false);
   const [answerStatus, setAnswerStatus] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -154,7 +154,11 @@ export default function ResumeChat() {
   const [storageWarning, setStorageWarning] = useState("");
   const savedCopy = useRef<string | null>(null);
   const savingPaused = useRef(false);
-  const [logText,setLogText]=useState("");
+  const [logDrafts, setLogDrafts] = useState<Record<string, string>>({});
+  const logText = logDrafts[activeId] ?? "";
+  function setLogText(text: string) {
+    setLogDrafts(previous => ({...previous, [activeId]: text}));
+  }
   const [failure, setFailure] = useState<{id:string; message:string} | null>(null);
   const [loading, setLoading] = useState(false);
   const [hydrated, setHydrated] = useState(false);
@@ -398,6 +402,12 @@ export default function ResumeChat() {
     }
   }
 
+  function openConversation(id: string) {
+    followLatestRef.current = true;
+    setActiveId(id);
+    if (window.matchMedia("(max-width: 767px)").matches) setHistoryOpen(false);
+  }
+
   function newConversation() {
     if (loading) return;
 
@@ -412,7 +422,7 @@ export default function ResumeChat() {
       conversation,
       ...previous,
     ]);
-    setActiveId(conversation.id);
+    openConversation(conversation.id);
   }
 
   function renameConversation(id: string) {
@@ -429,6 +439,11 @@ export default function ResumeChat() {
   function deleteConversation(id: string) {
     if (loading) return;
 
+    setLogDrafts(previous => {
+      const remaining = {...previous};
+      delete remaining[id];
+      return remaining;
+    });
     const remaining = conversations.filter(
       (conversation) => conversation.id !== id
     );
@@ -458,6 +473,7 @@ export default function ResumeChat() {
   async function attachFile(file: File) {
     if (!active || readingFile) return;
     const id = active.id;
+    const setFileStatus = (text: string) => setFileFeedback({chatId:id, text});
     const existing = active.attachments || [];
     if (existing.length >= 3) { setFileStatus("Attach up to three files per chat. Remove one first."); return; }
     setReadingFile(true); setFileStatus("Reading file…");
@@ -541,7 +557,7 @@ export default function ResumeChat() {
                   <button
                     type="button"
                     disabled={loading}
-                    onClick={() => { followLatestRef.current=true; setActiveId(conversation.id); setLogText(""); }}
+                    onClick={() => openConversation(conversation.id)}
                     className="w-full truncate text-left text-sm text-slate-200"
                   >
                     {conversation.title === "New conversation" && conversation.draft?.trim() ? conversation.draft.trim().slice(0, 60) : conversation.title}
@@ -651,7 +667,7 @@ export default function ResumeChat() {
               {capacityNotice && conversations.length >= chatLimit && <p role="status">{capacityNotice}</p>}
               {answerStatus && <span className="sr-only" role="status">{answerStatus}</span>}
               {(active?.attachments || []).map((file, index) => <span className="atlas-file-chip" key={`${index}-${file.name}`}>{file.name}<button type="button" disabled={loading || readingFile || voiceActive} aria-label={`Remove ${file.name}`} onClick={() => active && updateConversation(active.id,c => ({...c, attachments:c.attachments?.filter((_,i) => i !== index)}))}>×</button></span>)}
-              {fileStatus && <p className="atlas-file-status" role="status">{fileStatus}</p>}
+              {fileFeedback.chatId === activeId && fileFeedback.text && <p className="atlas-file-status" role="status">{fileFeedback.text}</p>}
               <input ref={fileInputRef} className="sr-only" type="file" tabIndex={-1} accept=".pdf,.txt,.md,.log,.json,.csv,.ts,.tsx,.js,.jsx,.py,.java,.yaml,.yml,.xml,.html,.css,.sql,.sh" onChange={event => { const file=event.target.files?.[0]; if(file) void attachFile(file); event.target.value=""; }} />
               {storageWarning && <p role="status">{storageWarning}</p>}
               <details className="atlas-chat-tools" key={active?.id}>

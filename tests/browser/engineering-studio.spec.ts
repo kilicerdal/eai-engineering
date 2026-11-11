@@ -227,3 +227,28 @@ test('damaged chat records survive a reload and remain recoverable', async ({pag
   await expect(page.getByText(/Saving is paused to protect it/)).toBeVisible();
   expect(await page.evaluate(()=>localStorage.getItem('erdal-ai-conversations-v31'))).toBe('{"partial":');
 });
+
+test('unsent CI notes stay with their chat and are cleared on reload',async({page})=>{
+  await page.goto('/chat');
+  await page.getByRole('combobox',{name:'AI assistant mode'}).selectOption('testing');
+  await page.getByLabel('Add context',{exact:true}).click();
+  await page.getByText('Analyze a CI log',{exact:true}).click();
+  const log=page.getByRole('textbox',{name:'Redacted CI log'});
+  await log.fill('Synthetic build log for the first project');
+  const newChat=page.getByRole('button',{name:'+ New chat',exact:true});
+  if (!await newChat.isVisible()) await page.getByRole('button',{name:'Show sidebar'}).click();
+  await newChat.click();
+  if (!await log.isVisible()) {
+    if (!await page.getByText('Analyze a CI log',{exact:true}).isVisible()) await page.getByLabel('Add context',{exact:true}).click();
+    if (!await log.isVisible()) await page.getByText('Analyze a CI log',{exact:true}).click();
+  }
+  await expect(log).toHaveValue('');
+  if (!await newChat.isVisible()) await page.getByRole('button',{name:'Show sidebar'}).click();
+  await page.getByRole('button',{name:'New conversation',exact:true}).last().click();
+  if (!await log.isVisible()) {
+    if (!await page.getByText('Analyze a CI log',{exact:true}).isVisible()) await page.getByLabel('Add context',{exact:true}).click();
+    if (!await log.isVisible()) await page.getByText('Analyze a CI log',{exact:true}).click();
+  }
+  await expect(log).toHaveValue('Synthetic build log for the first project');
+  expect(await page.evaluate(()=>localStorage.getItem('erdal-ai-conversations-v31'))).not.toContain('Synthetic build log');
+});
