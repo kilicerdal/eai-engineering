@@ -1,3 +1,4 @@
+import CaseDiscussion from "@/components/engineering/CaseDiscussion";
 import type { Metadata } from "next";
 import Link from "next/link";
 import RetryExplorer from "@/components/engineering/RetryExplorer";
@@ -469,6 +470,7 @@ ${capture.reproduction}`}</pre>
           requests, call an AI model or start cloud services.
         </p>
       </section>
+      <CaseDiscussion name="order-once" />
       <footer className="failure-footer">
         <Link href="/">eAI / Intelligence Engineered</Link>
         <p>Built by Erdal Kilic · Quality engineering &amp; applied AI</p>

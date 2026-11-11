@@ -1,4 +1,5 @@
 "use client";
+import TeacherQuestion from "@/components/TeacherQuestion";
 import StudyGuide from "@/components/StudyGuide";
 import { useSavedStudyArray } from "@/components/useSavedStudyArray";
 import { accountConfigured } from "@/lib/study-account";
@@ -18,7 +19,7 @@ const KEY="eai-exam-mistakes-v1";
 function NotebookPractice({mistake}:{mistake:Mistake}) {
  const {id,exam,question}=mistake;
  const context=useMemo(()=>mistakePracticeContext({id,exam,question}),[id,exam,question]);
- return <LessonCheckpoint context={context} sessionId={`notebook-${mistake.id}`} recentWork={mistakePracticeEvidence(mistake)} kind="notebook"/>;
+ return <LessonCheckpoint context={context} sessionId={`notebook-${mistake.id}`} recentWork={mistakePracticeEvidence(mistake)} kind="notebook" originalAttempt={mistake}/>;
 }
 export default function ExamPreparation(){
  const [examId,setExamId]=useState("sat"),[examName,setExamName]=useState(""),[focus,setFocus]=useState(""),[date,setDate]=useState("");
@@ -73,6 +74,7 @@ export default function ExamPreparation(){
   <div className="goal-panel">{entry?<><p className="studio-eyebrow">{entry.exam} · PRACTICE REFLECTION</p><h3>{entry.question}</h3><p className="goal-overview"><strong>Your answer:</strong> {entry.answer}</p>{entry.expected&&<p className="goal-helper">Your supplied answer key: {entry.expected}</p>}
   <div className="goal-actions"><button className="goal-primary" disabled={busy} onClick={()=>void explain(entry)}>{busy?"Reviewing your reasoning…":entry.reflection?"Review my reasoning again":"Help me understand this mistake"}</button>{busy&&<button onClick={()=>abort.current?.abort()}>Cancel review</button>}</div>
   {(draft||entry.reflection)&&<div className="exam-reflection" aria-live="polite"><ReactMarkdown skipHtml remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={{a:({children})=><span>{children}</span>,img:()=>null}}>{normalizeStudyMath(draft||entry.reflection)}</ReactMarkdown></div>}
+  <TeacherQuestion key={entry.id} question={entry.question} answer={entry.answer}/>
   <details><summary>Edit your learning notes</summary><label className="goal-label">Your learning notes<textarea aria-label="Your learning notes" rows={5} maxLength={14000} value={entry.reflection} disabled={busy} onChange={e=>setMistakes(items=>items.map(m=>m.id===entry.id?{...m,reflection:e.target.value}:m))}/></label></details>
   <div className="goal-actions"><button className="goal-primary" disabled={busy} onClick={()=>setPracticeId(entry.id)}>Practice and check this idea</button><button disabled={busy} onClick={()=>retry(entry)}>Explore this with my tutor ↗</button><button disabled={busy} onClick={()=>{setMistakes(items=>items.map(m=>m.id===entry.id?nextMistakeReview(m,Date.now()):m));setNow(Date.now());}}>I reviewed this · schedule again</button><button disabled={busy} onClick={()=>{setMistakes(items=>items.filter(m=>m.id!==entry.id));setActive(mistakes.find(m=>m.id!==entry.id)?.id||"");}}>Remove entry</button></div><p className="goal-helper">Reviews are suggested after 1, 3, 7, then 14 days, based on your own review marks. Return here to see what is due; no notifications or mastery scores are created. AI feedback can be wrong—check your source or answer key.</p>{practiceId===entry.id&&<NotebookPractice key={entry.id} mistake={entry}/>}</>:<><h3>A mistake is a starting point.</h3><p className="goal-overview">Save an attempt to inspect the reasoning, identify a missing idea, and revisit it with a different question.</p><p className="goal-helper">Up to 50 entries, saved in this browser. Clearing browser data removes the local copy. {accountConfigured ? <a href="/study/account">Choose optional account saving ↗</a> : "Account sync is not available."}</p></>}</div></div></details></div>
   {error&&<p className="goal-error" role="alert">{error}</p>}

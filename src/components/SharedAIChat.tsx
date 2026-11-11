@@ -727,7 +727,13 @@ export default function SharedAIChat() {
                     }`}
                   >
                     {message.role === "assistant" ? (
-                      <MarkdownMessage content={message.content} />
+                      <>
+                        <MarkdownMessage content={message.content} />
+                        {message === active?.messages.at(-1) && message.content.trim() && !loading && <div className="tutor-starter-prompts">
+                          <button type="button" onClick={event => prepareStarter("Explain the step in your last reply a different way. Use one small worked example, then ask me to try a similar step.",event.timeStamp)}>Explain this step differently</button>
+                          <button type="button" onClick={event => prepareStarter("Check your last answer from scratch. Recalculate any disputed step, compare quotations with the supplied passage, and distinguish evidence from assumptions. Explain what holds up or needs correction. If evidence is missing, ask for it.",event.timeStamp)}>Check this answer</button>
+                        </div>}
+                      </>
                     ) : (
                       <p className="whitespace-pre-wrap break-words text-sm leading-7">
                         {message.content}

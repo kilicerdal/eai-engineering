@@ -1,5 +1,7 @@
 "use client";
 
+import {caseDiscussions, type CaseName} from "@/lib/case-discussion";
+
 import {
   useEffect,
   useRef,
@@ -202,6 +204,17 @@ export default function ResumeChat() {
       initial = [createConversation()];
     }
 
+    const url = new URL(window.location.href);
+    const caseName = url.searchParams.get("case");
+    if (caseName && Object.hasOwn(caseDiscussions, caseName)) {
+      const item = caseDiscussions[caseName as CaseName];
+      const context = [item.title, item.result, item.scope, "Recorded evidence: " + item.source].join("\n");
+      const existing = initial.find(conversation => conversation.context === context);
+      const discussion = existing ?? {
+        ...createConversation(), title: item.title, context, draft: item.question,
+      };
+      initial = [discussion, ...initial.filter(conversation => conversation.id !== discussion.id)];
+    }
     queueMicrotask(() => {
       setConversations(initial);
       setActiveId(initial[0].id);

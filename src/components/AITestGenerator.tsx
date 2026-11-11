@@ -191,7 +191,7 @@ export default function AITestGenerator() {
                 }}
                 className="rounded-xl border border-white/20 px-5 py-3 text-sm text-white hover:bg-white/5"
               >
-                Load Example
+                Load sample
               </button>
             </div>
 

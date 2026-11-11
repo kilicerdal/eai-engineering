@@ -1,3 +1,4 @@
+import CaseDiscussion from "@/components/engineering/CaseDiscussion";
 import type { Metadata } from "next";
 import Link from "next/link";
 import ClaimRedeliveryExplorer from "@/components/engineering/ClaimRedeliveryExplorer";
@@ -390,6 +391,7 @@ npm run showcase:capture`}</pre>
           started by this page.
         </p>
       </section>
+      <CaseDiscussion name="claim-twice" />
       <footer className="failure-footer">
         <Link href="/">eAI / Intelligence Engineered</Link>
         <p>Built by Erdal Kilic · Quality engineering &amp; applied AI</p>

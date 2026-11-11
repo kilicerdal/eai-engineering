@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { caseDiscussions } from "@/lib/case-discussion";
 import Link from "next/link";
 import { projects } from "@/lib/portfolio-projects";
 
@@ -33,8 +34,7 @@ const cases = [
     path: "/engineering/order-once",
     category: "CHECKOUT INTEGRITY",
     title: "The order that should happen only once.",
-    description:
-      "Follow a repeated checkout, compare an injected defect, and inspect concurrent requests and payload conflicts.",
+    description: caseDiscussions["order-once"].result,
     outcome: "One order. Stock reduced once.",
     project: "Playwright AI Automation",
     projectIndex: 1,
@@ -162,6 +162,8 @@ export default function EngineeringStudio({
                     Follow the {index === 0 ? "checkout" : "claim’s journey"}{" "}
                     <span aria-hidden="true">→</span>
                   </Link>
+                  <Link href={`${item.path}#evidence`}>View test result →</Link>
+                  <Link href={`${item.path}#decisions`}>Engineering decision →</Link>
                   <a href={item.record} download>
                     Evidence JSON <span aria-hidden="true">↓</span>
                   </a>

@@ -151,7 +151,7 @@ export default function FailureAnalyzer() {
           }}
           className="rounded-lg border border-white/20 px-5 py-3 text-sm"
         >
-          Load Example
+          Load sample
         </button>
 
         <button

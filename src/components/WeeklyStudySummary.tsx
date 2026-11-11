@@ -3,6 +3,7 @@
 import {useState} from "react";
 import {weeklyReviewPrompt, weeklyAttempts, type WeeklyAttempt, type Outcome} from "@/lib/study-weekly";
 import type {LessonCheck} from "@/lib/study-checkpoints";
+import TeacherQuestion from "@/components/TeacherQuestion";
 import StudyGuide from "@/components/StudyGuide";
 
 function Evidence({attempt}: {attempt: WeeklyAttempt}) {
@@ -11,6 +12,7 @@ function Evidence({attempt}: {attempt: WeeklyAttempt}) {
     <p className="whitespace-pre-wrap"><strong>Question</strong><br/>{attempt.question}</p>
     <p className="whitespace-pre-wrap"><strong>Your answer</strong><br/>{attempt.answer}</p>
     <p>{attempt.feedback}</p>
+    <TeacherQuestion key={attempt.key + attempt.time} question={attempt.question} answer={attempt.answer}/>
     {attempt.originalQuestion&&<details><summary>Original question behind this follow-up</summary><p className="whitespace-pre-wrap">{attempt.originalQuestion}</p><p>This is a follow-up result, not a mastery score. Compare the reasoning and recorded help before drawing conclusions.</p></details>}
     {attempt.sources?.length&&<details><summary>Source passages available for this review</summary><p>These saved excerpts support source-based review. They do not verify every statement in the feedback.</p>{attempt.sources.map(source=><blockquote key={source.sourceId}><strong>{source.name} · {source.kind==="pdf"?"Page":"Section"} {source.page}</strong><p className="whitespace-pre-wrap">{source.text}</p></blockquote>)}</details>}
     <button type="button" onClick={() => {

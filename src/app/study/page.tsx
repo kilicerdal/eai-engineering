@@ -66,7 +66,7 @@ export default function StudyPage() {
           <h1 id="studio-title">Explore what you<br className="studio-desktop-break" /> don’t yet know.</h1>
           <p className="studio-hero-subtitle">Ask questions. Study your sources. Put ideas into practice.</p>
           <p className="studio-hero-description">Work through a question with your AI tutor, learn from your own materials, or build a focused study plan.</p>
-          <div className="studio-hero-actions"><a className="studio-button-gold" href="#ai-assistant">Start with your AI Tutor <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
+          <div className="studio-hero-actions"><a className="studio-button-gold" href="#ai-assistant">Start with your AI Tutor <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/sample">Try a 5-minute lesson</Link><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
           <p className="studio-hero-note">No account needed · {accountConfigured ? <Link href="/study/account">Optional account saving ↗</Link> : "Your work stays in this browser"}</p>
         </div>
         <a href="#ai-assistant" className="studio-hero-scroll">MEET YOUR AI TUTOR <span aria-hidden="true">↓</span></a>

@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import{createRequire}from'node:module';import{readFileSync}from'node:fs';
 const require=createRequire(import.meta.url),ts=require('typescript');
-const root=new URL('../',import.meta.url).pathname;
-function load(relative,deps={}){const compiled=ts.transpileModule(readFileSync(root+relative,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;const m={exports:{}};new Function('require','module','exports',compiled)(name=>name in deps?deps[name]:require(name),m,m.exports);return m.exports;}
+const root=new URL('../',import.meta.url);
+function load(relative,deps={}){const compiled=ts.transpileModule(readFileSync(new URL(relative,root),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;const m={exports:{}};new Function('require','module','exports',compiled)(name=>name in deps?deps[name]:require(name),m,m.exports);return m.exports;}
 const career=load('src/lib/recruiter-career.ts'),profile={facts:[{id:'summary',label:'Overview',text:'A documented career summary.',tags:['overview','experience']},{id:'java',label:'Java',text:'Professional Java experience confirmed. Individual years not documented.',tags:['java']}],skills:[{name:'Java',aliases:[],basis:'professional'},{name:'Python',aliases:[],basis:'project'}]};
 test('answers are composed only from approved facts, not model-generated claims',()=>{const result=career.careerReply(profile,'Java experience?','question',['invented','java']);assert.deepEqual(result.facts,[profile.facts[1]]);assert.ok(!JSON.stringify(result).includes('invented'));});
 test('unknown career details are not invented',()=>assert.equal(career.careerReply(profile,'What salary does he expect?','question').kind,'unknown'));
