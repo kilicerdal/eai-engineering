@@ -764,3 +764,18 @@ test('daily backup exports the original damaged record and distinguishes unavail
   await expect(backup).toBeDisabled();
   await expect(session.getByText(/Browser storage could not be opened/)).toBeVisible();
 });
+
+test('mini lesson opens at its heading and returns keyboard focus to the lesson trigger',async({page})=>{
+  await page.goto('/study/practice');
+  const trigger=page.getByRole('button',{name:'Read mini lesson'}).first();
+  await trigger.focus();
+  await trigger.press('Enter');
+  const lesson=page.getByRole('region',{name:'Mini lesson'});
+  await expect(lesson.getByRole('heading')).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(lesson.getByRole('button',{name:'Close lesson'})).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(lesson).toHaveCount(0);
+  await expect(trigger).toBeFocused();
+  await expect(trigger).toHaveAttribute('aria-expanded','false');
+});

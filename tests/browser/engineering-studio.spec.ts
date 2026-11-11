@@ -373,3 +373,13 @@ test('role alignment enforces the request limit and keeps previous results on fa
   await expect(tool.getByText('Synthetic comparison for the first role.')).toBeVisible();
   expect(requests).toEqual(['x'.repeat(3000),revised]);
 });
+
+test('project link reopens and focuses the planner even when its hash is already selected', async ({page})=>{
+  await page.goto('/engineering#ai-test-generator');
+  const requirements=page.locator('#generator-requirements');
+  await requirements.fill('Keep this synthetic draft while revisiting the same project link.');
+  await page.getByRole('button',{name:'Close workspace'}).click();
+  await page.locator('#project-0').getByRole('link',{name:'Plan tests'}).click();
+  await expect(page.getByRole('tabpanel',{name:'AI-assisted test planning'})).toBeFocused();
+  await expect(requirements).toHaveValue('Keep this synthetic draft while revisiting the same project link.');
+});

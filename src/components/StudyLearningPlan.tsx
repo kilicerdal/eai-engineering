@@ -21,6 +21,12 @@ export default function StudyLearningPlan({ track, attempts, ready, onTrackChang
   const [loaded, setLoaded] = useState(false);
   const [now, setNow] = useState(0);
   const [lessonQuestionId, setLessonQuestionId] = useState<string | null>(null);
+  const lessonTrigger = useRef<HTMLButtonElement>(null);
+  const lessonHeading = useRef<HTMLHeadingElement>(null);
+  function closeLesson() {
+    setLessonQuestionId(null);
+    lessonTrigger.current?.focus();
+  }
   const savedRaw = useRef<string | null | undefined>(undefined);
   const [saveNotice, setSaveNotice] = useState("");
 
@@ -103,15 +109,21 @@ export default function StudyLearningPlan({ track, attempts, ready, onTrackChang
             <div className="flex items-center justify-between gap-3 text-xs"><span className="font-semibold text-cyan-300">STEP {index + 1}</span><span className="text-slate-500">{task.minutes} min</span></div>
             <h4 className="mt-3 text-sm font-semibold text-white">{task.title}</h4>
             <p className="mb-4 mt-2 flex-1 text-xs leading-6 text-slate-400">{task.reason}</p>
-            <button type="button" aria-expanded={task.kind === "lesson" ? lessonQuestionId === task.questionId : undefined} aria-controls={task.kind === "lesson" ? "active-mini-lesson" : undefined} onClick={() => task.kind === "lesson" ? setLessonQuestionId(task.questionId) : onPractice(task.questionId)} className="w-fit rounded-lg border border-cyan-300/30 px-3 py-2 text-xs font-semibold text-cyan-200 hover:bg-cyan-300/10">
+            <button type="button" aria-expanded={task.kind === "lesson" ? lessonQuestionId === task.questionId : undefined} aria-controls={task.kind === "lesson" ? "active-mini-lesson" : undefined} onClick={event => {
+              if (task.kind !== "lesson") return onPractice(task.questionId);
+              if (lessonQuestionId === task.questionId) return closeLesson();
+              lessonTrigger.current = event.currentTarget;
+              setLessonQuestionId(task.questionId);
+              requestAnimationFrame(() => lessonHeading.current?.focus());
+            }} className="w-fit rounded-lg border border-cyan-300/30 px-3 py-2 text-xs font-semibold text-cyan-200 hover:bg-cyan-300/10">
               {task.kind === "lesson" ? "Read mini lesson" : "Open practice"}
             </button>
           </li>)}
         </ol>
       </>}
 
-      {lesson && lessonQuestion && <div className="mt-5 rounded-xl border border-cyan-300/25 bg-[#101827] p-5" id="active-mini-lesson" role="region" aria-label="Mini lesson" aria-live="polite">
-        <div className="flex items-start justify-between gap-4"><h4 className="text-lg font-semibold text-white">{lesson.title}</h4><button type="button" onClick={() => setLessonQuestionId(null)} className="shrink-0 text-xs text-slate-400 hover:text-white">Close lesson</button></div>
+      {lesson && lessonQuestion && <div className="mt-5 rounded-xl border border-cyan-300/25 bg-[#101827] p-5" id="active-mini-lesson" role="region" aria-label="Mini lesson">
+        <div className="flex items-start justify-between gap-4"><h4 ref={lessonHeading} tabIndex={-1} className="text-lg font-semibold text-white">{lesson.title}</h4><button type="button" onClick={closeLesson} className="shrink-0 text-xs text-slate-400 hover:text-white">Close lesson</button></div>
         <p className="mt-2 text-sm font-medium text-cyan-200">{lesson.objective}</p>
         <p className="mt-3 text-sm leading-7 text-slate-300">{lesson.explanation}</p>
         <pre className="mt-4 overflow-x-auto whitespace-pre-wrap break-words rounded-xl bg-slate-950 p-4 text-sm leading-7 text-slate-200">{lesson.workedExample}</pre>
