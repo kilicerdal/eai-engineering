@@ -258,11 +258,12 @@ export default function SharedAIChat() {
       if (!initial.length) {
         const old = localStorage.getItem(OLD_STORAGE_KEY);
 
-        if (old) {
-          const messages = JSON.parse(old) as Message[];
+        if (old !== null) {
+          const messages: unknown = JSON.parse(old);
+          if (!Array.isArray(messages)) throw new Error("Unreadable previous tutor conversation");
           const migrated = createConversation();
 
-          if (Array.isArray(messages) && messages.length) {
+          if (messages.length) {
             migrated.messages = normalizeSavedStudyMessages(messages);
             if(migrated.messages.length!==messages.length)throw new Error("The legacy session could not be fully restored.");
             migrated.title = "Previous conversation";

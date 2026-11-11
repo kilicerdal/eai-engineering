@@ -201,7 +201,7 @@ export default function ResumeChat() {
       if (!initial.length) {
         const old = localStorage.getItem(OLD_STORAGE_KEY);
 
-        if (old) {
+        if (old !== null) {
           const messages = JSON.parse(old);
           if (!Array.isArray(messages) || !messages.every(m => m && ["user", "assistant"].includes(m.role) && typeof m.content === "string")) throw new Error("Unreadable previous conversation");
           const migrated = createConversation();

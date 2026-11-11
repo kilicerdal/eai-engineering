@@ -176,3 +176,13 @@ test('explanation style is bounded and preserves source-only evidence rules',asy
  await mockProvider(async(_url,options)=>{const sent=JSON.parse(options.body);assert.match(sent.messages[0].content,/numbered steps/);assert.match(sent.messages[0].content,/Use only facts supported/);return providerResponse({supported:true,answer:'The budget owner is Mira Vale. [S1]'});},async()=>assert.equal((await loadRoute()(request({...payload,style:'steps'}))).status,200));
  await mockProvider(async()=>assert.fail('unsupported style must not call provider'),async()=>assert.equal((await loadRoute()(request({...payload,style:'invented'}))).status,400));
 });
+
+test('formatted notes preserve section numbers and earlier saved libraries reopen across blank sections',()=>{
+ const text='Opening'.padEnd(5000)+' '.repeat(5000)+'Closing observation.';
+ const doc=makeTextDocument('Lab notes',text,'lab',1);
+ assert.deepEqual(doc.pages.map(page=>page.number),[1,3]);
+ assert.equal(doc.pageCount,3);
+ const old={...doc,pages:[doc.pages[0],{number:2,text:' '.repeat(5000)},doc.pages[1]]};
+ assert.deepEqual(materials.readMaterialLibrary({documents:[old],entries:[]}).documents,[doc]);
+ assert.equal(selectMaterialExcerpts([doc],'Closing observation','explain')[0].page,3);
+});

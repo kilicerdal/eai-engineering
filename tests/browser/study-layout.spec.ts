@@ -361,6 +361,8 @@ test('closing a source returns keyboard focus and selecting a passage moves focu
   await page.getByRole('button',{name:'Add your first material'}).click();
   await page.getByLabel('Add course files').setInputFiles({name:'Focus.txt',mimeType:'text/plain',buffer:Buffer.from('A practice passage on how rainfall replenishes shallow aquifers.')});
   const read=page.getByRole('button',{name:'Read Focus.txt'});
+  const question=page.getByLabel('Question about your materials');
+  await question.fill('How does this connect to groundwater?');
   await read.focus();
   await read.press('Enter');
   const dialog=page.getByRole('dialog');
@@ -374,6 +376,7 @@ test('closing a source returns keyboard focus and selecting a passage moves focu
   await dialog.getByText('Choose a passage to study',{exact:true}).click();
   await dialog.getByRole('button',{name:'Use this section'}).click();
   await expect(page.getByRole('region',{name:'Selected study passage'})).toBeFocused();
+  await expect(question).toHaveValue('How does this connect to groundwater?');
 });
 
 test('writing studio preserves a newer essay from a second tab and the unsaved local edit',async({page,context})=>{
@@ -564,4 +567,34 @@ test('study shortcuts close the expanded menu and identify the current section',
   await learning.focus();
   await learning.press('Escape');
   await expect(learning).toBeFocused();
+});
+
+test('unreadable legacy tutor history keeps the old copy and avoids creating a misleading empty replacement', async ({page}) => {
+  await page.addInitScript(()=>localStorage.setItem('eai-study-chat-legacy','{"messages":"unreadable"}'));
+  await page.goto('/study#ai-assistant');
+  const tutor=page.locator('#ai-assistant');
+  await expect(tutor.getByText(/Saved sessions could not be fully read/)).toBeVisible();
+  await tutor.getByLabel('Your message').fill('Recoverable temporary draft.');
+  await expect(tutor.getByRole('button',{name:'Download session backup'}).first()).toBeVisible();
+  const records=await page.evaluate(()=>[localStorage.getItem('eai-study-chat-legacy'),localStorage.getItem('eai-study-conversations-v1')]);
+  expect(records).toEqual(['{"messages":"unreadable"}',null]);
+});
+
+test('formatted course notes with a blank section survive reopening the library', async ({page}) => {
+  await page.goto('/study/materials');
+  await page.getByRole('button',{name:'Add your first material'}).click();
+  await page.getByLabel('Add course files').setInputFiles({
+    name:'Formatted notes.txt',mimeType:'text/plain',
+    buffer:Buffer.from('First observation.'.padEnd(10000)+'Closing observation.')
+  });
+  const read=page.getByRole('button',{name:'Read Formatted notes.txt'});
+  await expect(read).toBeVisible();
+  await read.click();
+  await page.getByLabel('Source location').selectOption('3');
+  await expect(page.getByRole('dialog')).toContainText('Closing observation.');
+  await page.reload();
+  await page.getByRole('button',{name:/Materials · 1/}).click();
+  await read.click();
+  await page.getByLabel('Source location').selectOption('3');
+  await expect(page.getByRole('dialog')).toContainText('Closing observation.');
 });

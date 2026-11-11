@@ -133,3 +133,11 @@ test("chat history keyboard focus follows the sidebar when it opens and closes",
   await expect(sidebar).toBeHidden();
   await expect(toggle).toBeFocused();
 });
+
+test("empty legacy chat records show a recovery warning before saving new work", async ({page}) => {
+  await page.addInitScript(()=>localStorage.setItem("erdal-ai-chat-v3",""));
+  await page.goto("/chat");
+  await expect(page.getByText(/saved history could not be fully opened/)).toBeVisible();
+  await page.getByLabel("Your message").fill("Temporary draft");
+  expect(await page.evaluate(()=>localStorage.getItem("erdal-ai-conversations-v31"))).toBeNull();
+});

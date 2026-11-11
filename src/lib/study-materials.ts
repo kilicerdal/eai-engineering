@@ -21,10 +21,17 @@ export function validateCourseDocument(value: unknown): CourseDocument | null {
   const numbers = new Set<number>();
   let characters = 0;
   for (const page of input.pages) {
-    if (!page || !Number.isInteger(page.number) || page.number < 1 || page.number > Number(input.pageCount) || typeof page.text !== "string" || !page.text.trim() || numbers.has(page.number)) return null;
+    if (!page || !Number.isInteger(page.number) || page.number < 1 || page.number > Number(input.pageCount) || typeof page.text !== "string" || numbers.has(page.number)) return null;
     characters += page.text.length; if (characters > MATERIAL_LIMITS.documentCharacters) return null;
-    numbers.add(page.number); pages.push({ number: page.number, text: page.text });
+    numbers.add(page.number);
+    if (!page.text.trim()) {
+      // Older text imports could save a whole 5,000-character section of whitespace.
+      if (input.kind === "text" && page.text.length === 5000 && page.number > 1 && page.number < Number(input.pageCount)) continue;
+      return null;
+    }
+    pages.push({ number: page.number, text: page.text });
   }
+  if (!pages.length) return null;
   return { id: input.id, name: input.name.trim(), kind: input.kind, pages: pages.sort((a,b) => a.number-b.number), pageCount: Number(input.pageCount), addedAt: input.addedAt };
 }
 
@@ -32,8 +39,11 @@ export function makeTextDocument(name: string, text: string, id: string, addedAt
   const clean = text.replace(/\u0000/g, "").trim();
   if (!clean || clean.length > MATERIAL_LIMITS.documentCharacters) throw new Error("Add readable text of up to 250,000 characters.");
   const pages: MaterialPage[] = [];
-  for (let start = 0; start < clean.length; start += 5000) pages.push({ number: pages.length+1, text: clean.slice(start,start+5000) });
-  return { id, name: name.trim().slice(0,120) || "Course notes", kind: "text", pages, pageCount: pages.length, addedAt };
+  for (let start = 0; start < clean.length; start += 5000) {
+    const section = clean.slice(start, start + 5000);
+    if (section.trim()) pages.push({number: start / 5000 + 1, text: section});
+  }
+  return { id, name: name.trim().slice(0,120) || "Course notes", kind: "text", pages, pageCount: Math.ceil(clean.length / 5000), addedAt };
 }
 
 const stopWords = new Set("a an and are as at be because by can could do does explain for from give how i in is it me my of on or please question ask one practice create selected show summarize that the their these they this to understand was what when where which why with would you your answer answered guide quiz study notes material materials".split(" "));
