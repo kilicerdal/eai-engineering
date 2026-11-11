@@ -31,7 +31,9 @@ test('the notebook copy supports edits, keeps the original answer and is retry-s
   assert.deepEqual(normalizeMistakes([entry]),[entry]);assert.equal(entry.reviewAt,86400200);
   assert.equal(entry.answer,'My edited note');assert.equal(check.answer,'I reflected the points.');
   assert.equal(tutorNotebookEntry(check,fields,400).id,entry.id);
-  assert.throws(()=>tutorNotebookEntry(check,{...fields,answer:'x'.repeat(701)},200));
+  assert.throws(()=>tutorNotebookEntry(check,{...fields,answer:'x'.repeat(701)},200),/My reasoning.*700/);
+  assert.throws(()=>tutorNotebookEntry(check,{...fields,reflection:'x'.repeat(14001)},200),/Feedback and notes.*14,000/);
+  assert.throws(()=>tutorNotebookEntry(check,{...fields,question:'   '},200),/Enter a question/);
 });
 
 test('negative scaling asks for the comparison without disclosing the rule or repeating the last item',()=>{

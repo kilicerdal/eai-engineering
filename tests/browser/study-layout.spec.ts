@@ -682,3 +682,19 @@ test('a legacy evaluation opens the printable report without attributing it to t
  await expect(popup.locator('body')).not.toContainText('Unrelated current essay');
  await expect(popup.locator('html')).toHaveAttribute('data-printed','yes');
 });
+
+test('reading stays available when the saved bookshelf cannot be accessed', async ({page}) => {
+  await page.addInitScript(() => {
+    const original = Storage.prototype.getItem;
+    Storage.prototype.getItem = function(key) {
+      if (key === 'dai-reading-shelf-v1') throw new DOMException('Storage blocked', 'SecurityError');
+      return original.call(this, key);
+    };
+  });
+  await page.goto('/study/reading');
+  await expect(page.getByText(/Browser storage is unavailable/)).toBeVisible();
+  await expect(page.getByLabel('My bookshelf')).toBeDisabled();
+  await page.getByRole('searchbox', {name:'Find a book'}).fill('Melville');
+  await expect(page.getByLabel('Shelf for Moby Dick')).toBeDisabled();
+  await expect(page.getByRole('link', {name:/Read free.*Moby Dick/})).toHaveAttribute('href','https://www.gutenberg.org/ebooks/2701');
+});
