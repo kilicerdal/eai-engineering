@@ -959,3 +959,29 @@ for (const entry of ['plan','home']) test('starting a long lesson from '+entry+'
   expect(message).toContain(check.result.nextStep);
   expect(message.length).toBeLessThanOrEqual(3000);
 });
+
+test('teacher question selects the edited draft when the clipboard is blocked',async({page})=>{
+  await page.addInitScript(()=>{
+    let first=true;
+    Object.defineProperty(navigator,'clipboard',{value:{async writeText(){
+      if(first){first=false;await new Promise<void>(resolve=>window.addEventListener('finish-test-copy',()=>resolve(),{once:true}));return;}
+      throw new Error('Clipboard blocked');
+    }}});
+    const entry={id:'teacher-draft',exam:'SAT',question:'What explains the change?',answer:'My original reasoning.',expected:'',reflection:'',createdAt:100,reviewAt:200,reviews:0};
+    localStorage.setItem('eai-exam-mistakes-v1',JSON.stringify([entry]));
+  });
+  await page.goto('/study#mistake-notebook');
+  const book=page.locator('#mistake-notebook');
+  await book.getByText(/Review saved attempts · 1/).click();
+  await book.getByText('Prepare a question for my teacher',{exact:true}).click();
+  const draft=book.getByLabel('Edit your question before copying');
+  await book.getByRole('button',{name:'Copy question'}).click();
+  await draft.fill('New draft while copying.');
+  await page.evaluate(()=>window.dispatchEvent(new Event('finish-test-copy')));
+  await expect(book.getByText(/Copied. You can paste/)).toHaveCount(0);
+  await draft.fill('Could you explain the second step in this example?');
+  await book.getByRole('button',{name:'Copy question'}).click();
+  await expect(book.getByText(/Your question is selected/)).toBeVisible();
+  await expect(draft).toBeFocused();
+  expect(await draft.evaluate((input:HTMLTextAreaElement)=>input.value.slice(input.selectionStart,input.selectionEnd))).toBe(await draft.inputValue());
+});

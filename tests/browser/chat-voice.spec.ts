@@ -163,3 +163,27 @@ for(const path of ['/chat','/study#ai-assistant']){
     expect(calls).toBe(3);
   });
 }
+
+test('copy feedback and Markdown download belong to the chosen answer',async({page})=>{
+  let count=0;
+  await page.addInitScript(()=>Object.defineProperty(navigator,'clipboard',{value:{async writeText(){throw new Error('Unavailable');}}}));
+  await page.route('**/api/chat',route=>route.fulfill({contentType:'text/event-stream',body:'data: '+JSON.stringify({response:'Synthetic **answer '+(++count)+'**.'})+'\n\ndata: [DONE]\n\n'}));
+  await page.goto('/chat');
+  for(const [i,prompt] of ['One synthetic question','Another synthetic question'].entries()){
+    await page.getByLabel('Your message').fill(prompt);
+    await page.getByRole('button',{name:'Send message'}).click();
+    await expect(page.getByRole('log')).toContainText('answer '+(i+1));
+  }
+  const replies=page.locator('.atlas-assistant-message').filter({has:page.getByRole('button',{name:'Download',exact:true})});
+  await expect(replies).toHaveCount(2);
+  await replies.first().getByRole('button',{name:'Copy',exact:true}).click();
+  await expect(replies.first().getByRole('status')).toContainText('Clipboard unavailable');
+  await expect(replies.last()).not.toContainText('Clipboard unavailable');
+  const event=page.waitForEvent('download');
+  await replies.first().getByRole('button',{name:'Download',exact:true}).click();
+  const stream=await (await event).createReadStream();
+  let text='';
+  for await(const chunk of stream!) text+=chunk.toString();
+  expect(text).toBe('Synthetic **answer 1**.');
+  await expect(replies.first().getByRole('status')).toHaveText('Answer downloaded.');
+});

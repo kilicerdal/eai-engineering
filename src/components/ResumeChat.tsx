@@ -17,6 +17,25 @@ import remarkGfm from "remark-gfm";
 import dynamic from "next/dynamic";
 const CodeBlock = dynamic(() => import("./EAIChatCode"), {loading: () => <p role="status">Loading code formatting…</p>});
 
+function AnswerActions({text}:{text:string}) {
+  const [status,setStatus]=useState("");
+  async function copy() {
+    try { await navigator.clipboard.writeText(text); setStatus("Answer copied."); }
+    catch { setStatus("Clipboard unavailable. Select this answer to copy it manually, or download it."); }
+  }
+  function download() {
+    const url=URL.createObjectURL(new Blob([text],{type:"text/markdown;charset=utf-8"}));
+    const link=document.createElement("a");
+    link.href=url; link.download="eai-answer.md"; link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    setStatus("Answer downloaded.");
+  }
+  return <>
+    <div className="atlas-answer-actions"><button type="button" onClick={copy}>Copy</button><button type="button" onClick={download}>Download</button></div>
+    <p role="status" className="text-xs empty:hidden">{status}</p>
+  </>;
+}
+
 type Message = {
   role: "user" | "assistant";
   content: string;
@@ -145,7 +164,6 @@ export default function ResumeChat() {
   const [search, setSearch] = useState("");
   const [fileFeedback, setFileFeedback] = useState({chatId:"", text:""});
   const [readingFile, setReadingFile] = useState(false);
-  const [answerStatus, setAnswerStatus] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const sidebarToggle = useRef<HTMLButtonElement>(null);
   const sidebarClose = useRef<HTMLButtonElement>(null);
@@ -513,17 +531,6 @@ export default function ResumeChat() {
     } catch (error) { setFileStatus(error instanceof Error ? error.message : "Could not read this file."); }
     finally { setReadingFile(false); }
   }
-  async function copyAnswer(text: string) {
-    try { await navigator.clipboard.writeText(text); setAnswerStatus("Answer copied."); }
-    catch { setAnswerStatus("Copy unavailable. Select the answer text to copy it."); }
-  }
-  function downloadAnswer(text: string) {
-    const url = URL.createObjectURL(new Blob([text],{type:"text/markdown;charset=utf-8"}));
-    const link = document.createElement("a"); link.href=url; link.download="eai-answer.md"; link.click();
-    setTimeout(() => URL.revokeObjectURL(url),1000);
-    setAnswerStatus("Answer downloaded.");
-  }
-
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!dictating && !voiceActive && !readingFile) void sendMessage(input);
@@ -663,7 +670,7 @@ export default function ResumeChat() {
                   >
                     {message.role === "assistant" ? (
                       <><MarkdownMessage content={message.content} />
-                      {!(loading && index === visibleMessages.length - 1) && <div className="atlas-answer-actions"><button type="button" onClick={() => copyAnswer(message.content)}>Copy</button><button type="button" onClick={() => downloadAnswer(message.content)}>Download</button></div>}</>
+                      {!(loading && index === visibleMessages.length - 1) && <AnswerActions key={activeId+":"+message.content} text={message.content}/>}</>
                     ) : (
                       <p className="whitespace-pre-wrap break-words text-sm leading-7">
                         {message.content}
@@ -682,7 +689,6 @@ export default function ResumeChat() {
 
             <div className="atlas-chat-composer border-t border-white/10 bg-slate-900/50 p-5">
               {capacityNotice && conversations.length >= chatLimit && <p role="status">{capacityNotice}</p>}
-              {answerStatus && <span className="sr-only" role="status">{answerStatus}</span>}
               {(active?.attachments || []).map((file, index) => <span className="atlas-file-chip" key={`${index}-${file.name}`}>{file.name}<button type="button" disabled={loading || readingFile || voiceActive} aria-label={`Remove ${file.name}`} onClick={() => active && updateConversation(active.id,c => ({...c, attachments:c.attachments?.filter((_,i) => i !== index)}))}>×</button></span>)}
               {fileFeedback.chatId === activeId && fileFeedback.text && <p className="atlas-file-status" role="status">{fileFeedback.text}</p>}
               <input ref={fileInputRef} className="sr-only" type="file" tabIndex={-1} accept=".pdf,.txt,.md,.log,.json,.csv,.ts,.tsx,.js,.jsx,.py,.java,.yaml,.yml,.xml,.html,.css,.sql,.sh" onChange={event => { const file=event.target.files?.[0]; if(file) void attachFile(file); event.target.value=""; }} />
