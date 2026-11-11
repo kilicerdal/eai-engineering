@@ -7,21 +7,23 @@ import {accountConfigured} from "@/lib/study-account";
 import {examBank,examDomains,examSkillLessons,examDomainSource,type ExamSkill,type ExamDomain,type ExamProfile} from "@/lib/study-exam-bank";
 import {EXAM_PREP_KEY,emptyExamRecord,readExamRecord,examSkillEvidence,recommendedExamDomain,examReviewProgress,startExamReview,startExamSession,sessionAnswers,submitExamAnswer,advanceExamSession,examAttemptToMistake,type ExamRecord,type ExamSession} from "@/lib/study-exam-practice";
 import {normalizeMistakes} from "@/lib/study-exams";
+import {readSavedArray,writeStudyCopy} from "@/lib/study-safe-storage";
 const examName=(exam:ExamProfile)=>exam==="sat"?"SAT":"PSAT/NMSQT";
 function eventTime(event:{timeStamp:number}){return Math.round(event.timeStamp>1e12?event.timeStamp:performance.timeOrigin+event.timeStamp);}
 function display(text:string){const superscript="⁰¹²³⁴⁵⁶⁷⁸⁹";return text.replace(/([a-z)])\^(\d+)/gi,(_all,base:string,power:string)=>base+[...power].map(d=>superscript[Number(d)]).join(""));}
 export default function StudyExamPractice(){
  const params=useSearchParams(),requested=params.get("exam"),requestedDomain=params.get("domain"),requestedSkill=params.get("skill");
  const [record,setRecord]=useState<ExamRecord>(emptyExamRecord),[ready,setReady]=useState(false),[warning,setWarning]=useState(""),[error,setError]=useState(""),[now,setNow]=useState(0),[domain,setDomain]=useState<ExamDomain>("information"),[savedNotebook,setSavedNotebook]=useState(""),[pendingBackup,setPendingBackup]=useState<ExamRecord|null>(null);
+ const [damagedCopy,setDamagedCopy]=useState<string|null>(null);
  const [coverageFilter,setCoverageFilter]=useState("all");
  const current=useRef(record),lastRaw=useRef<string|null>(null),writable=useRef(true),importRevision=useRef(0),workspace=useRef<HTMLElement>(null);
  useEffect(()=>{
-  let next=emptyExamRecord(),message="";writable.current=true;
-  try{lastRaw.current=localStorage.getItem(EXAM_PREP_KEY);if(lastRaw.current)next=readExamRecord(JSON.parse(lastRaw.current));}
-  catch(e){writable.current=false;message=e instanceof Error?e.message:"Browser saving is unavailable. This session will stay temporary.";}
+  let next=emptyExamRecord(),message="",stored:string|null=null;writable.current=true;
+  try{stored=localStorage.getItem(EXAM_PREP_KEY);lastRaw.current=stored;if(stored!==null)next=readExamRecord(JSON.parse(stored));}
+  catch{writable.current=false;message=stored===null?"Browser storage is unavailable. You can practice temporarily and download your work.":"Your saved exam practice could not be read. The original is preserved. New practice stays in this tab until you download it."; }
   if(requested==="sat"||requested==="psat")next={...next,activeExam:requested};
   current.current=next;
-  const initial=setTimeout(()=>{setRecord(next);setCoverageFilter("all");setWarning(message);setNow(Date.now());setDomain(requestedDomain&&Object.hasOwn(examDomains,requestedDomain)?requestedDomain as ExamDomain:recommendedExamDomain(next.activeExam,next.attempts,Date.now()));setReady(true);},0);
+  const initial=setTimeout(()=>{setDamagedCopy(writable.current?null:stored);setRecord(next);setCoverageFilter("all");setWarning(message);setNow(Date.now());setDomain(requestedDomain&&Object.hasOwn(examDomains,requestedDomain)?requestedDomain as ExamDomain:recommendedExamDomain(next.activeExam,next.attempts,Date.now()));setReady(true);},0);
   const timer=setInterval(()=>setNow(Date.now()),30000);
   return()=>{clearTimeout(initial);clearInterval(timer);};
  },[requested,requestedDomain]);
@@ -80,12 +82,15 @@ export default function StudyExamPractice(){
  function saveMistake(at:number){
   if(!attempt)return;
   try{
-   const raw=localStorage.getItem("eai-exam-mistakes-v1"),items=normalizeMistakes(JSON.parse(raw||"[]"));
-   if(raw&&(!Array.isArray(JSON.parse(raw))||items.length!==JSON.parse(raw).length))throw new Error("Your notebook contains unreadable entries. The original saved copy has not been changed.");
+   const notebookKey="eai-exam-mistakes-v1";
+   let copy: {raw:string|null; items:ReturnType<typeof normalizeMistakes>};
+   try { copy=readSavedArray(localStorage,notebookKey,normalizeMistakes); }
+   catch { throw new Error("Your saved notebook could not be read. Its original copy and your checked exam answer are preserved."); }
+   const {raw,items}=copy;
    const entry=examAttemptToMistake(attempt,at);
    if(items.some(m=>m.id===entry.id)){setSavedNotebook(attempt.id);return;}
    if(items.length>=50)throw new Error("Your notebook has 50 entries. This checked attempt remains in exam practice.");
-   localStorage.setItem("eai-exam-mistakes-v1",JSON.stringify([...items,entry]));setSavedNotebook(attempt.id);
+   writeStudyCopy(localStorage,notebookKey,raw,[...items,entry]);setError("");setSavedNotebook(attempt.id);
    window.dispatchEvent(new Event("eai-study-progress-change"));window.dispatchEvent(new Event("eai-study-notebook-update"));
   }catch(e){setError(e instanceof Error?e.message:"The attempt could not be saved to your notebook.");}
  }
@@ -107,10 +112,10 @@ export default function StudyExamPractice(){
   if(!pendingBackup)return;
   try{
    const original=localStorage.getItem(EXAM_PREP_KEY);
-   if(original)download(original,"dai-exam-practice-before-restore.json");
+   if(original!==null)download(original,"dai-exam-practice-before-restore.json");
    const restored={...pendingBackup,activeExam:requested==="sat"||requested==="psat"?requested:pendingBackup.activeExam};
    if(localStorage.getItem(EXAM_PREP_KEY)!==original)throw new Error("Practice changed while restoring. Nothing was replaced; choose your backup again.");
-   const raw=JSON.stringify(restored);localStorage.setItem(EXAM_PREP_KEY,raw);lastRaw.current=raw;writable.current=true;current.current=restored;setRecord(restored);setNow(at);setPendingBackup(null);setWarning("Exam practice restored. A copy of your previous saved practice was downloaded first.");setDomain(recommendedExamDomain(restored.activeExam,restored.attempts,at));window.dispatchEvent(new Event("eai-study-progress-change"));
+   const raw=JSON.stringify(restored);localStorage.setItem(EXAM_PREP_KEY,raw);lastRaw.current=raw;writable.current=true;current.current=restored;setRecord(restored);setNow(at);setPendingBackup(null);setDamagedCopy(null);setError("");setSavedNotebook("");setWarning(original===null?"Exam practice restored.":"Exam practice restored. A copy of your previous saved practice was downloaded first.");setDomain(recommendedExamDomain(restored.activeExam,restored.attempts,at));window.dispatchEvent(new Event("eai-study-progress-change"));
   }catch(e){setError(e instanceof Error?e.message:"The backup could not be restored. Keep this page open and download your current work.");}
  }
  return <div className="exam-practice-page">
@@ -118,7 +123,7 @@ export default function StudyExamPractice(){
   <div className="exam-profile-nav" aria-label="Practice exam profile">{(["sat","psat"] as const).map(value=><Link key={value} href={`/study/exams?exam=${value}`} aria-current={exam===value?"page":undefined} scroll={false}>{examName(value)}</Link>)}</div>
   <p className="exam-practice-scope">{examBank.length} original dAI questions · 16 sampled skills · 8 content domains. Shared foundational skills, separate profile histories. This is a small learning snapshot—not a full test, an official score, or a complete exam course. <a href={examDomainSource.url} target="_blank" rel="noopener noreferrer">Official domain outline ↗</a></p>
   {!ready?<p role="status">Opening your saved practice…</p>:<>
-   {warning&&<div className="goal-notice" role="status">{warning} <button onClick={backup}>Download practice backup</button></div>}
+   {warning&&<div className="goal-notice" role="status">{warning} {damagedCopy!==null&&<button onClick={()=>download(damagedCopy,"dai-exam-practice-original.json")}>Download original saved copy</button>} <button onClick={backup}>Download practice backup</button></div>}
    {error&&<p className="goal-error" role="alert">{error}</p>}
    <div className="exam-start-grid"><section className="exam-start-card"><p className="studio-eyebrow">FIND YOUR STARTING POINT</p><h2>A short skill check.</h2><p>Eight questions, one per domain. Use a hint or skip when needed—we keep that separate from an independent answer. Untimed; pause and return.</p><button className="goal-primary" onClick={event=>start("diagnostic",domain,eventTime(event))}>{session&&!session.finished?"Start a new skill check":"Start skill check"}</button></section><section className="exam-start-card"><p className="studio-eyebrow">FOCUSED PRACTICE</p><h2>Work on one area.</h2><label className="goal-label">Practice focus<select value={domain} onChange={e=>setDomain(e.target.value as ExamDomain)}>{(Object.keys(examDomains) as ExamDomain[]).map(d=><option key={d} value={d}>{examDomains[d].name}</option>)}</select></label><p className="goal-helper">Suggested from your latest checked items: {examDomains[suggestion].name}. A small sample cannot establish mastery.</p><div className="goal-actions"><button className="goal-primary" onClick={event=>start("practice",domain,eventTime(event))}>Start targeted practice</button><button onClick={()=>setDomain(suggestion)}>Use suggested focus</button><a href="#skill-coverage">Browse skills ↓</a></div></section></div>
    <section id="exam-review" className="exam-review-panel" aria-labelledby="exam-review-heading"><div className="exam-review-heading"><div><p className="studio-eyebrow">BUILD UNDERSTANDING THAT LASTS</p><h2 id="exam-review-heading">Return to the idea. Try it differently.</h2></div><span>{pendingReviews.filter(r=>r.dueAt<=now).length} ready · {pendingReviews.filter(r=>r.dueAt>now).length} upcoming</span></div><p>Missed and helped answers suggest a review 24 hours later. Review sooner if you like. A different question answered without hints completes this follow-up; it does not prove mastery. Dates are suggestions, with no automatic notifications.</p>

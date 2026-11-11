@@ -779,3 +779,61 @@ test('mini lesson opens at its heading and returns keyboard focus to the lesson 
   await expect(trigger).toBeFocused();
   await expect(trigger).toHaveAttribute('aria-expanded','false');
 });
+
+test('exam recovery keeps damaged saves separate from new practice and notebook writes',async({page})=>{
+  await page.addInitScript(()=>{
+    localStorage.setItem('eai-exam-prep-v1','');
+    localStorage.setItem('eai-exam-mistakes-v1','');
+  });
+  await page.goto('/study/exams');
+  await expect(page.getByText(/Your saved exam practice could not be read/)).toBeVisible();
+  await page.getByRole('button',{name:'Start targeted practice'}).click();
+  const workspace=page.getByRole('region',{name:'Exam practice workspace'});
+  await workspace.getByRole('radio').first().check();
+  await workspace.getByRole('button',{name:'Check answer'}).click();
+  const save=workspace.getByRole('button',{name:'Save this attempt to my notebook'});
+  await save.click();
+  await expect(page.getByText(/Your saved notebook could not be read/)).toBeVisible();
+  expect(await page.evaluate(()=>[localStorage.getItem('eai-exam-prep-v1'),localStorage.getItem('eai-exam-mistakes-v1')])).toEqual(['','']);
+  const download=page.waitForEvent('download');
+  await page.getByRole('button',{name:'Download original saved copy'}).click();
+  const stream=await (await download).createReadStream();
+  let original='';
+  for await(const chunk of stream!) original+=chunk.toString();
+  expect(original).toBe('');
+  const next=page.waitForEvent('download');
+  await page.getByRole('button',{name:'Download practice backup'}).first().click();
+  const practiceStream=await (await next).createReadStream();
+  let practice='';
+  for await(const chunk of practiceStream!) practice+=chunk.toString();
+  expect(JSON.parse(practice).attempts).toHaveLength(1);
+  await page.evaluate(()=>localStorage.setItem('eai-exam-mistakes-v1','[]'));
+  await save.click();
+  await expect(workspace.getByRole('button',{name:'Saved to notebook'})).toBeDisabled();
+  await expect(page.getByText(/Your saved notebook could not be read/)).toHaveCount(0);
+});
+
+test('exam restore downloads the exact previous record and reports a first restore accurately',async({page})=>{
+  const key='eai-exam-prep-v1';
+  const record={version:1,activeExam:'psat',attempts:[],sessions:{sat:null,psat:null}};
+  const file={name:'practice.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(record))};
+  await page.goto('/study/exams');
+  const input=page.getByLabel('Open exam practice backup');
+  await input.setInputFiles(file);
+  await page.getByRole('button',{name:'Restore this exam-practice backup'}).click();
+  await expect(page.getByRole('status').filter({hasText:'Exam practice restored.'})).not.toContainText('downloaded first');
+  expect(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),key)).toEqual(record);
+  const original='invalid prior copy';
+  await page.evaluate(({key,original})=>localStorage.setItem(key,original),{key,original});
+  await page.reload();
+  await input.setInputFiles(file);
+  const event=page.waitForEvent('download');
+  await page.getByRole('button',{name:'Restore this exam-practice backup'}).click();
+  const download=await event;
+  expect(download.suggestedFilename()).toBe('dai-exam-practice-before-restore.json');
+  const stream=await download.createReadStream();
+  let contents='';
+  for await(const chunk of stream!) contents+=chunk.toString();
+  expect(contents).toBe(original);
+  await expect(page.getByRole('button',{name:'Download original saved copy'})).toHaveCount(0);
+});
