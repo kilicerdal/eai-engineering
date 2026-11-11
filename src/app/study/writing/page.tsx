@@ -258,6 +258,8 @@ function EssayScoreDashboard({ feedback }: { feedback: string }) {
   );
 }
 
+type WritingMessage = {role: "user" | "assistant"; content: string; essayTitle?: string};
+
 export default function WritingStudioPage() {
   const [title, setTitle] = useState("Untitled Essay");
   const [content, setContent] = useState("");
@@ -276,9 +278,7 @@ export default function WritingStudioPage() {
   const [retryUntil, setRetryUntil] = useState(0);
   const [retrySeconds, setRetrySeconds] = useState(0);
   const [followUp, setFollowUp] = useState("");
-  const [chatHistory, setChatHistory] = useState<
-    { role: "user" | "assistant"; content: string }[]
-  >([]);
+  const [chatHistory, setChatHistory] = useState<WritingMessage[]>([]);
 
 
 
@@ -294,14 +294,12 @@ export default function WritingStudioPage() {
           if (!Array.isArray(parsed)) throw new Error("Unreadable feedback");
           {
             const valid = parsed.filter(
-              (item): item is {
-                role: "user" | "assistant";
-                content: string;
-              } =>
+              (item): item is WritingMessage =>
                 typeof item === "object" &&
                 item !== null &&
                 (item.role === "user" || item.role === "assistant") &&
-                typeof item.content === "string"
+                typeof item.content === "string" &&
+                (item.essayTitle === undefined || typeof item.essayTitle === "string")
             );
 
             if (valid.length !== parsed.length) throw new Error("Incomplete feedback history");
@@ -532,6 +530,7 @@ export default function WritingStudioPage() {
         },
         {
           role: "assistant" as const,
+          essayTitle: title.trim() || "Untitled Essay",
           content:
             "# Unified Full-Essay Evaluation\n\n" +
             normalizeEssayEvaluation(unifiedFeedback) +
@@ -558,6 +557,8 @@ export default function WritingStudioPage() {
         parseEssayScores(message.content) !== null
     );
 
+  const evaluatedTitle = latestValidEvaluation?.essayTitle || "Essay title not recorded";
+
   function downloadPDFReport() {
     const evaluation = latestValidEvaluation;
 
@@ -575,7 +576,7 @@ export default function WritingStudioPage() {
         return entities[character];
       });
 
-    const reportTitle = title.trim() || "Untitled Essay";
+    const reportTitle = evaluatedTitle;
     const reportText = evaluation.content;
 
     const parsed = parseEssayScores(reportText);
@@ -770,12 +771,11 @@ export default function WritingStudioPage() {
 
     reportWindow.document.open();
     reportWindow.document.write(html);
-    reportWindow.document.close();
-
-    reportWindow.onload = () => {
+    reportWindow.addEventListener("load", () => {
       reportWindow.focus();
       reportWindow.print();
-    };
+    }, {once:true});
+    reportWindow.document.close();
   }
 
   function downloadEvaluationReport() {
@@ -792,7 +792,7 @@ export default function WritingStudioPage() {
       "ESSAY EVALUATION REPORT",
       "========================================",
       "",
-      `Essay Title: ${title.trim() || "Untitled Essay"}`,
+      `Essay Title: ${evaluatedTitle}`,
       `Generated: ${new Date().toLocaleString()}`,
       "",
       "IMPORTANT: AI-generated educational feedback, not an official grade.",
@@ -801,7 +801,7 @@ export default function WritingStudioPage() {
       "EVALUATION",
       "========================================",
       "",
-      `Validated Overall Score: ${parsed.overall}/100`,
+      `Calculated Overall Score: ${parsed.overall}/100`,
       ...ESSAY_SCORE_CATEGORIES.map(
         (category, index) =>
           `${category}: ${parsed.scores[index]}/10`
@@ -822,7 +822,7 @@ export default function WritingStudioPage() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
 
-    const safeTitle = (title.trim() || "essay")
+    const safeTitle = (latestEvaluation.essayTitle || "essay")
       .replace(/[^a-z0-9-_]+/gi, "-")
       .slice(0, 60);
 
@@ -869,7 +869,7 @@ export default function WritingStudioPage() {
         body: JSON.stringify({
           message,
           subject: "writing",
-          history: previousHistory,
+          history: previousHistory.map(({role, content}) => ({role, content})),
         }),
       });
 
@@ -894,7 +894,7 @@ export default function WritingStudioPage() {
       setChatHistory((current) => [
         ...(isFollowUp ? current : []),
         { role: "user" as const, content: action },
-        { role: "assistant" as const, content: finalAnswer },
+        { role: "assistant" as const, content: finalAnswer, essayTitle: title.trim() || "Untitled Essay" },
       ].slice(-20));
       if (isFollowUp) setFollowUp(current => current.trim() === action ? "" : current);
     } catch (error) {
@@ -1081,6 +1081,7 @@ export default function WritingStudioPage() {
 
               {latestValidEvaluation && (
                 <div className="mt-4">
+                  <p className="text-sm text-slate-300">Evaluated draft · {evaluatedTitle}</p>
                   <EssayScoreDashboard
                     feedback={latestValidEvaluation.content}
                   />
@@ -1097,7 +1098,7 @@ export default function WritingStudioPage() {
                     }
                     className="mr-3 rounded-xl border border-cyan-400/40 bg-cyan-400/10 px-3 py-2 text-xs font-semibold text-cyan-300 hover:bg-cyan-400/20 disabled:opacity-40"
                   >
-                    Download PDF Report
+                    Print or save PDF report
                   </button>
 <button
                   type="button"

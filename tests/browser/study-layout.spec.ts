@@ -636,3 +636,49 @@ test('a plan lesson opens materials with the right task and supports browser bac
  await expect(planner).toHaveAttribute('data-plan-view','accepted');
  await expect(planner.getByRole('heading',{name:'Cities and trade'})).toBeVisible();
 });
+
+test('the writing report stays attributed to the evaluated essay after renaming and reloading',async({page})=>{
+ const review=['Thesis Strength','Grammar and Clarity','Organization and Structure','Evidence and Reasoning'].map(name=>'## '+name+'\nScore: 8/10').join('\n\n');
+ await page.route('**/api/study/chat', route=>route.fulfill({contentType:'text/event-stream',body:'data: '+JSON.stringify({response:review})+'\n\ndata: [DONE]\n\n'}));
+ await page.goto('/study/writing');
+ const title=page.getByLabel('Essay title');
+ await title.fill('First Draft');
+ await page.getByLabel('Essay content').fill('A synthetic argument about studying in short sessions.');
+ await page.getByRole('button',{name:/Evaluate My Essay/}).click();
+ await expect(page.getByText('Evaluated draft · First Draft')).toBeVisible();
+ await title.fill('Different Essay');
+ await page.reload();
+ await expect(title).toHaveValue('Different Essay');
+ await expect(page.getByText('Evaluated draft · First Draft')).toBeVisible();
+ const event=page.waitForEvent('download');
+ await page.getByRole('button',{name:'Download Evaluation Report'}).click();
+ const download=await event;
+ expect(download.suggestedFilename()).toBe('First-Draft-evaluation.txt');
+ const stream=await download.createReadStream();
+ let report='';
+ for await(const chunk of stream!) report+=chunk.toString();
+ expect(report).toContain('Essay Title: First Draft');
+ expect(report).not.toContain('Different Essay');
+});
+
+test('a legacy evaluation opens the printable report without attributing it to the current essay',async({page})=>{
+ const review=['Thesis Strength','Grammar and Clarity','Organization and Structure','Evidence and Reasoning'].map(name=>'## '+name+'\nScore: 7/10').join('\n\n');
+ await page.addInitScript(feedback=>{
+   localStorage.setItem('eai-writing-chat-v1',JSON.stringify([{role:'assistant',content:feedback}]));
+   const original=window.open.bind(window);
+   window.open=(...args)=>{
+     const child=original(...args);
+     if(child) child.print=()=>{child.document.documentElement.dataset.printed='yes';};
+     return child;
+   };
+ },review);
+ await page.goto('/study/writing');
+ await page.getByLabel('Essay title').fill('Unrelated current essay');
+ await expect(page.getByText('Evaluated draft · Essay title not recorded')).toBeVisible();
+ const wait=page.waitForEvent('popup');
+ await page.getByRole('button',{name:/PDF Report/i}).click();
+ const popup=await wait;
+ await expect(popup.locator('body')).toContainText('Essay title not recorded');
+ await expect(popup.locator('body')).not.toContainText('Unrelated current essay');
+ await expect(popup.locator('html')).toHaveAttribute('data-printed','yes');
+});
