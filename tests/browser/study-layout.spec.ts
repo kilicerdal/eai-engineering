@@ -837,3 +837,33 @@ test('exam restore downloads the exact previous record and reports a first resto
   expect(contents).toBe(original);
   await expect(page.getByRole('button',{name:'Download original saved copy'})).toHaveCount(0);
 });
+
+test('a pending notebook review preserves newer notes and uses the complete saved answer',async({page})=>{
+  const key='eai-exam-mistakes-v1';
+  const answer='a'.repeat(680)+' My final reasoning.';
+  const entry={id:'synthetic-review',exam:'SAT',question:'Which reasoning step supports this answer?',answer,expected:'',reflection:'My original note.',createdAt:100,reviewAt:200,reviews:0};
+  await page.addInitScript(({key,entry})=>localStorage.setItem(key,JSON.stringify([entry])),{key,entry});
+  let release!:()=>void;
+  const hold=new Promise<void>(resolve=>{release=resolve;});
+  let sent='';
+  await page.route('**/api/study/chat',async route=>{
+    sent=route.request().postDataJSON().message;
+    await hold;
+    await route.fulfill({contentType:'text/event-stream',body:'data: {"response":"An earlier review."}\n\ndata: [DONE]\n\n'});
+  });
+  await page.goto('/study#mistake-notebook');
+  const book=page.locator('#mistake-notebook');
+  await book.getByText(/Review saved attempts/).click();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await book.getByRole('button',{name:'Review my reasoning again'}).click();
+  try {
+    await expect.poll(()=>sent).toContain(answer);
+    await page.evaluate(({key,entry})=>{
+      localStorage.setItem(key,JSON.stringify([{...entry,reflection:'My newer note.'}]));
+      window.dispatchEvent(new StorageEvent('storage',{key}));
+    },{key,entry});
+    await expect(book.locator('.exam-reflection')).toContainText('My newer note.');
+  } finally {release();}
+  await expect(page.getByRole('alert').filter({hasText:'entry changed during the review'})).toBeVisible();
+  expect(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!)[0].reflection,key)).toBe('My newer note.');
+});

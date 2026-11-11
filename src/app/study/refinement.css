@@ -201,7 +201,7 @@
 .eai-study-studio .notebook-capture-disclosure>summary,.eai-study-studio .notebook-saved-work>summary{cursor:pointer;font-size:16px;line-height:1.6;color:#e6cb99;padding:16px 20px;border:1px solid #d9b97944;border-radius:4px;background:#0b1e2be8;}
 .eai-study-studio .notebook-capture-disclosure .notebook-capture{width:100%;max-width:none;margin-top:12px;}
 .eai-study-studio .notebook-saved-work{margin:24px 5%;}
-.eai-study-studio .notebook-saved-work .exam-notebook-grid{padding:20px 0 0;}
+.eai-study-studio .notebook-saved-work .exam-notebook-grid{padding:20px 0 0;overflow-wrap:anywhere;}
 .eai-study-studio .notebook-landmark-stage{min-height:220px;}
 .eai-study-studio .accepted-plan-header h3,.eai-study-studio .open-work-latest>strong,.eai-study-studio .accepted-lesson>summary{overflow-wrap:anywhere;}
 @media(max-width:760px){
