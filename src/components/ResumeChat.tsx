@@ -741,7 +741,7 @@ export default function ResumeChat() {
                   className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"
                 />
 
-                <VoiceConversation key={`voice-${activeId}`} onQuestion={sendMessage} onActiveChange={setVoiceActive} disabled={loading || readingFile || dictating || !hydrated} />
+                <VoiceConversation key={`voice-${activeId}`} onQuestion={question => sendMessage(question, false, true)} onActiveChange={setVoiceActive} disabled={loading || readingFile || dictating || !hydrated} />
                 <DictationButton key={activeId} value={input} onChange={setInput} onListeningChange={setDictating} disabled={voiceActive || readingFile || loading || !hydrated} />
                 <button
                   type="submit"

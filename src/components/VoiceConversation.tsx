@@ -48,8 +48,8 @@ export default function VoiceConversation({ onQuestion, disabled, onActiveChange
     let words = "", failed = false;
     setTranscript(""); setNotice("");
     mic.onresult = event => {
-      words = Array.from(event.results).map(result => result[0]?.transcript || "").join(" ").trim().slice(0,3000);
-      if (token === session.current) setTranscript(words);
+      words = Array.from(event.results).map(result => result[0]?.transcript || "").join(" ").trim();
+      if (token === session.current) setTranscript(words.slice(0,3000));
     };
     mic.onerror = event => {
       failed = true;
@@ -63,6 +63,11 @@ export default function VoiceConversation({ onQuestion, disabled, onActiveChange
       recognition.current = null;
       if (token !== session.current) return;
       if (failed || !words) { setPhase("ready"); if (!failed) setNotice("No speech detected. Try again."); return; }
+      if (words.length > 3000) {
+        setPhase("ready");
+        setNotice("Your spoken question exceeded 3,000 characters. Please ask a shorter question to send it.");
+        return;
+      }
       setPhase("thinking");
       try {
         const answer = await callback.current(words);

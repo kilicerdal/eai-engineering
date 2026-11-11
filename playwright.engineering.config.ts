@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests/browser",
-  testMatch: ["**/engineering-story.spec.ts", "**/connected-stories.spec.ts", "**/engineering-studio.spec.ts", "**/ai-atlas.spec.ts", "**/contact-desk.spec.ts"],
+  testMatch: ["**/chat-voice.spec.ts", "**/engineering-story.spec.ts", "**/connected-stories.spec.ts", "**/engineering-studio.spec.ts", "**/ai-atlas.spec.ts", "**/contact-desk.spec.ts"],
   fullyParallel: true,
   forbidOnly: true,
   retries: 0,
