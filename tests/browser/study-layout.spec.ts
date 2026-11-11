@@ -1074,3 +1074,31 @@ test('a numeric source question retrieves only the matching reading', async ({pa
   const {excerpts} = (await outgoing).postDataJSON();
   expect(excerpts.map((excerpt:{name:string})=>excerpt.name)).toEqual(['Opening.txt']);
 });
+
+test('a general study guide covers the selected readings after a narrow question', async ({page}) => {
+  const requests: {excerpts:{name:string;text:string}[]}[] = [];
+  await page.route('**/api/study/materials', route => {
+    requests.push(route.request().postDataJSON());
+    return route.fulfill({json:{supported:false,answer:'More evidence needed.',citations:[]}});
+  });
+  await page.goto('/study/materials');
+  await page.getByRole('button',{name:'Add your first material'}).click();
+  await page.getByLabel('Add course files').setInputFiles([
+    {name:'Field notes.txt',mimeType:'text/plain',buffer:Buffer.from('Rainfall measurements. '.repeat(1800)+'Closing observation.')},
+    {name:'Methods.txt',mimeType:'text/plain',buffer:Buffer.from('Calibration requires a dry instrument.')},
+  ]);
+  const focus = page.getByLabel('Material focus');
+  await expect(focus.locator('option:checked')).toHaveText('Methods.txt');
+  await page.getByRole('button',{name:'Close',exact:true}).click();
+  await focus.selectOption('all');
+  await page.getByLabel('Question about your materials').fill('Explain rainfall measurements.');
+  await page.getByRole('button',{name:'Ask about materials'}).click();
+  await expect(page.getByRole('heading',{name:'Explain rainfall measurements.'})).toBeVisible();
+  await page.getByRole('button',{name:'Study guide',exact:true}).click();
+  await page.getByRole('button',{name:'Create study guide'}).click();
+  await expect.poll(()=>requests.length).toBe(2);
+  expect(requests[0].excerpts.every(source=>source.name==='Field notes.txt')).toBe(true);
+  expect(requests[1].excerpts).toHaveLength(6);
+  expect(requests[1].excerpts.some(source=>source.name==='Methods.txt')).toBe(true);
+  expect(requests[1].excerpts.some(source=>source.text.endsWith('Closing observation.'))).toBe(true);
+});

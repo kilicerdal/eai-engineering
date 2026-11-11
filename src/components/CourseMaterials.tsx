@@ -195,8 +195,9 @@ export default function CourseMaterials() {
     const ids=new Set(documents.map(document=>document.id));
     const historyStart = entry ? library.entries.indexOf(entry) : 0;
     const recent=library.entries.slice(historyStart).filter(entry=>entry.documentIds.every(id=>ids.has(id))).slice(0,2);
+    const usePriorTopic = question.trim().length > 0 || (task === "quiz" && recent[0]?.task === "quiz");
     let excerpts;
-    try{if(passage&&!sourceStillAvailable(passage,library.documents))throw new Error("This passage is no longer available in your library. Choose it again from the source.");excerpts=passage?[passage]:selectMaterialExcerpts(documents,message,task,recent[0]?.question||"");}catch(e){setError(e instanceof Error?e.message:"Choose a source passage again.");return;}
+    try{if(passage&&!sourceStillAvailable(passage,library.documents))throw new Error("This passage is no longer available in your library. Choose it again from the source.");excerpts=passage?[passage]:selectMaterialExcerpts(documents,message,task,usePriorTopic ? recent[0]?.question : undefined);}catch(e){setError(e instanceof Error?e.message:"Choose a source passage again.");return;}
     if(!excerpts.length){setError("I couldn’t find matching text in the selected materials. Try a more specific question or choose another material.");return;}
     setLoading(true);setError("");const controller=new AbortController();abort.current=controller;
     try{

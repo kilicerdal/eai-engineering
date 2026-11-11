@@ -164,6 +164,7 @@ export default function ResumeChat() {
   const [search, setSearch] = useState("");
   const [filesByChat, setFilesByChat] = useState<Record<string,{text:string;reading:boolean}>>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const composer = useRef<HTMLTextAreaElement>(null);
   const sidebarToggle = useRef<HTMLButtonElement>(null);
   const sidebarClose = useRef<HTMLButtonElement>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
@@ -458,7 +459,9 @@ export default function ResumeChat() {
       conversation,
       ...previous,
     ]);
+    setSearch("");
     openConversation(conversation.id);
+    requestAnimationFrame(() => composer.current?.focus());
   }
 
   function renameConversation(id: string) {
@@ -584,6 +587,7 @@ export default function ResumeChat() {
                   <button
                     type="button"
                     disabled={loading}
+                    aria-current={conversation.id === activeId ? "true" : undefined}
                     onClick={() => openConversation(conversation.id)}
                     className="w-full truncate text-left text-sm text-slate-200"
                   >
@@ -751,6 +755,7 @@ export default function ResumeChat() {
               <form onSubmit={handleSubmit} className="flex gap-3">
                 <textarea
                   rows={2}
+                  ref={composer}
                   value={input}
                   readOnly={dictating || voiceActive}
                   disabled={!hydrated || !active}

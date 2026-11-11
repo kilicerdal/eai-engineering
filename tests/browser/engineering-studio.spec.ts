@@ -475,3 +475,19 @@ test('pending attachment stays in its chat while another chat can attach and sen
   await expect(page.getByRole('button',{name:'Remove first.txt'})).toBeVisible();
   await expect(page.getByRole('button',{name:'Remove second.txt'})).toHaveCount(0);
 });
+
+test('starting a chat from an empty search reveals the new conversation and focuses its composer', async ({page}) => {
+  await page.goto('/chat');
+  const search = page.getByRole('searchbox',{name:'Search conversations'});
+  const toggle = page.getByRole('button',{name:'Show sidebar'});
+  if (!await search.isVisible()) await toggle.click();
+  await search.fill('a nonexistent conversation title');
+  await expect(page.getByText('No matching chats.')).toBeVisible();
+  await page.getByRole('button',{name:'+ New chat',exact:true}).click();
+  const composer = page.getByRole('textbox',{name:'Your message'});
+  await expect(composer).toBeFocused();
+  await composer.fill('Fresh draft after searching');
+  if (!await search.isVisible()) await toggle.click();
+  await expect(search).toHaveValue('');
+  await expect(page.getByRole('button',{name:'Fresh draft after searching'})).toHaveAttribute('aria-current','true');
+});

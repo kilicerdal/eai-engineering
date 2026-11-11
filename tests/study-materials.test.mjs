@@ -47,6 +47,19 @@ test('guides use representative excerpts and vague follow-ups retain topic conte
  const next=selectMaterialExcerpts([pdf],'My answer is 120.','quiz','What is the Northwind training budget?');
  assert.equal(next[0].page,2);
 });
+test('general guides and quizzes include a short reading alongside the ending of a long one',()=>{
+ const long=makeTextDocument('Long reading','Seasonal observations. '.repeat(2400)+'Final appendix.', 'long', 1);
+ const short=makeTextDocument('Short reading','One independent observation.', 'short', 1);
+ for(const task of ['guide','quiz']){
+  for(const documents of [[long,short],[short,long]]){
+   const excerpts=selectMaterialExcerpts(documents,'',task);
+   assert.equal(excerpts.length,MATERIAL_LIMITS.excerpts);
+   assert.equal(excerpts.filter(e=>e.documentId==='short').length,1);
+   assert.ok(excerpts.some(e=>e.page===long.pageCount && e.text.endsWith('Final appendix.')));
+  }
+ }
+ assert.deepEqual(selectMaterialExcerpts([], '', 'guide'),[]);
+});
 test('source IDs are assigned by the application and oversized sources are rejected',()=>{
  const assigned=validateMaterialSources([{...source,sourceId:'S99'}]); assert.equal(assigned[0].sourceId,'S1');
  assert.throws(()=>validateMaterialSources([]));

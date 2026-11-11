@@ -51,9 +51,9 @@ function terms(text: string): string[] {
   const segmenter = new Intl.Segmenter(undefined, { granularity: "word" });
   return [...segmenter.segment(text.toLowerCase())].filter(part => part.isWordLike).map(part => part.segment).filter(word => !stopWords.has(word) && /[\p{L}\p{N}]/u.test(word)).slice(0,1000);
 }
-function chunks(documents: CourseDocument[]): MaterialExcerpt[] {
+function chunks(document: CourseDocument): MaterialExcerpt[] {
   const output: MaterialExcerpt[] = [];
-  for (const document of documents) for (const page of document.pages) {
+  for (const page of document.pages) {
     const text = normalizeMaterialText(page.text);
     let start = 0;
     while (start < text.length) {
@@ -69,14 +69,35 @@ function chunks(documents: CourseDocument[]): MaterialExcerpt[] {
   }
   return output;
 }
+function sampleSelectedMaterials(groups: MaterialExcerpt[][]): MaterialExcerpt[] {
+  const quotas = groups.map(() => 0);
+  let remaining = Math.min(MATERIAL_LIMITS.excerpts, groups.reduce((n, group) => n + group.length, 0));
+  while (remaining > 0) {
+    for (const [index, group] of groups.entries()) {
+      if (remaining > 0 && quotas[index] < group.length) {
+        quotas[index]++;
+        remaining--;
+      }
+    }
+  }
+  return groups.flatMap((group, index) => {
+    const count = quotas[index];
+    return Array.from({length: count}, (_, position) =>
+      group[count === 1 ? 0 : Math.round(position * (group.length - 1) / (count - 1))]
+    );
+  });
+}
+
 export function selectMaterialExcerpts(documents: CourseDocument[], question: string, task: MaterialTask, previousQuestion = ""): MaterialExcerpt[] {
-  const all = chunks(documents);
+  const groups = documents.map(chunks);
   let query = [...new Set(terms(question))].slice(0,40);
   const numericQuizReply = task === "quiz" && query.every(word => !/\p{L}/u.test(word));
   if (previousQuestion && (!query.length || numericQuizReply)) {
     const previousTerms = [...new Set(terms(previousQuestion))].slice(0,40);
     if (previousTerms.length) query = previousTerms;
   }
+  if (!query.length) return task === "explain" ? [] : sampleSelectedMaterials(groups);
+  const all = groups.flat();
   const frequencies = new Map<string,number>();
   const indexed = all.map(excerpt => {
     const words = terms(excerpt.text);
@@ -90,11 +111,7 @@ export function selectMaterialExcerpts(documents: CourseDocument[], question: st
     return score + (count ? Math.log(1+(all.length+1)/((frequencies.get(word)||0)+1)) * (count/(count+1.2)) : 0);
   },0) })).filter(item => item.score > 0).sort((a,b) => b.score-a.score);
   if (ranked.length) return ranked.slice(0,MATERIAL_LIMITS.excerpts).map(item => item.excerpt);
-  if (task === "guide" || task === "quiz") {
-    const count = Math.min(MATERIAL_LIMITS.excerpts,all.length);
-    return Array.from({length:count},(_,index) => all[Math.floor(index*all.length/count)]);
-  }
-  return [];
+  return task === "explain" ? [] : sampleSelectedMaterials(groups);
 }
 
 export function validateMaterialSources(value: unknown): MaterialSource[] {
