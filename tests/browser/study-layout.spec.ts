@@ -369,3 +369,34 @@ test('closing a source returns keyboard focus and selecting a passage moves focu
   await dialog.getByRole('button',{name:'Use this section'}).click();
   await expect(page.getByRole('region',{name:'Selected study passage'})).toBeFocused();
 });
+
+test('writing studio preserves a newer essay from a second tab and the unsaved local edit',async({page,context})=>{
+  await page.goto('/study/writing');
+  const essay=page.getByLabel('Essay content');
+  await essay.fill('First introduction.');
+  const other=await context.newPage();
+  await other.goto('/study/writing');
+  const revised=other.getByLabel('Essay content');
+  await expect(revised).toHaveValue('First introduction.');
+  await revised.fill('The newer revision.');
+  await essay.fill('My separate revision.');
+  await expect(page.getByText(/Browser saving paused/)).toBeVisible();
+  await expect(essay).toHaveValue('My separate revision.');
+  await other.reload();
+  await expect(revised).toHaveValue('The newer revision.');
+});
+
+test('unreadable essay and feedback remain recoverable after opening the writing studio',async({page})=>{
+  await page.goto('/study');
+  await page.evaluate(()=>{
+    localStorage.setItem('eai-writing-studio-v1','{"content":42}');
+    localStorage.setItem('eai-writing-chat-v1','{');
+  });
+  await page.goto('/study/writing');
+  await expect(page.getByText(/Your saved essay could not be opened/)).toBeVisible();
+  await expect(page.getByText(/Saved feedback could not be opened/)).toBeVisible();
+  await page.getByLabel('Essay content').fill('A temporary local draft.');
+  await expect(page.getByRole('button',{name:/Download Essay/})).toBeEnabled();
+  const data=await page.evaluate(()=>[localStorage.getItem('eai-writing-studio-v1'),localStorage.getItem('eai-writing-chat-v1')]);
+  expect(data).toEqual(['{"content":42}','{']);
+});

@@ -1,7 +1,8 @@
 "use client";
 
 import StudyGuide from "@/components/StudyGuide";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { writeStudyCopy } from "@/lib/study-safe-storage";
 import StudyNavigation from "@/components/StudyNavigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -261,6 +262,12 @@ export default function WritingStudioPage() {
   const [content, setContent] = useState("");
   const [ready, setReady] = useState(false);
   const [savedAt, setSavedAt] = useState("");
+  const essayCopy = useRef<string | null>(null);
+  const feedbackCopy = useRef<string | null>(null);
+  const essayPaused = useRef(false);
+  const feedbackPaused = useRef(false);
+  const [essayWarning, setEssayWarning] = useState("");
+  const [feedbackWarning, setFeedbackWarning] = useState("");
   const [streamingAnswer, setStreamingAnswer] = useState("");
   const [chatReady, setChatReady] = useState(false);
   const [aiLoading, setAiLoading] = useState(false);
@@ -279,10 +286,12 @@ export default function WritingStudioPage() {
       try {
         const saved = localStorage.getItem(CHAT_STORAGE_KEY);
 
-        if (saved) {
+        feedbackCopy.current = saved;
+        if (saved !== null) {
           const parsed: unknown = JSON.parse(saved);
 
-          if (Array.isArray(parsed)) {
+          if (!Array.isArray(parsed)) throw new Error("Unreadable feedback");
+          {
             const valid = parsed.filter(
               (item): item is {
                 role: "user" | "assistant";
@@ -294,11 +303,13 @@ export default function WritingStudioPage() {
                 typeof item.content === "string"
             );
 
+            if (valid.length !== parsed.length) throw new Error("Incomplete feedback history");
             setChatHistory(valid.slice(-20));
           }
         }
       } catch {
-        // Ignore invalid browser storage.
+        feedbackPaused.current = true;
+        setFeedbackWarning("Saved feedback could not be opened. Copy any new feedback before leaving.");
       }
 
       setChatReady(true);
@@ -312,17 +323,19 @@ export default function WritingStudioPage() {
       try {
         const saved = localStorage.getItem(STORAGE_KEY);
 
-        if (saved) {
-          const parsed = JSON.parse(saved) as {
-            title?: string;
-            content?: string;
-          };
-
+        essayCopy.current = saved;
+        if (saved !== null) {
+          const parsed = JSON.parse(saved);
+          if (!parsed || Array.isArray(parsed) || typeof parsed !== "object" ||
+              !(typeof parsed.title === "string" || typeof parsed.content === "string") ||
+              (parsed.title !== undefined && typeof parsed.title !== "string") ||
+              (parsed.content !== undefined && typeof parsed.content !== "string")) throw new Error("Unreadable essay");
           setTitle(parsed.title ?? "Untitled Essay");
           setContent(parsed.content ?? "");
         }
       } catch {
-        // If saved data is invalid, start with a blank document.
+        essayPaused.current = true;
+        setEssayWarning("Your saved essay could not be opened. Download any new writing before leaving.");
       }
 
       setReady(true);
@@ -332,27 +345,15 @@ export default function WritingStudioPage() {
   }, []);
 
   useEffect(() => {
-    if (!ready) return;
-
-    const timer = window.setTimeout(() => {
-      try {
-        localStorage.setItem(
-          STORAGE_KEY,
-          JSON.stringify({ title, content })
-        );
-
-        setSavedAt(
-          new Date().toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })
-        );
-      } catch {
-        setSavedAt("Unable to save");
-      }
-    }, 500);
-
-    return () => window.clearTimeout(timer);
+    if (!ready || essayPaused.current) return;
+    try {
+      essayCopy.current = writeStudyCopy(localStorage, STORAGE_KEY, essayCopy.current, { title, content });
+      const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      queueMicrotask(() => setSavedAt(time));
+    } catch {
+      essayPaused.current = true;
+      queueMicrotask(() => setEssayWarning("Browser saving paused. Storage is unavailable or another tab changed the saved essay. Download this draft before reloading."));
+    }
   }, [title, content, ready]);
 
   const wordCount = content.trim()
@@ -363,15 +364,12 @@ export default function WritingStudioPage() {
 
 
   useEffect(() => {
-    if (!chatReady) return;
-
+    if (!chatReady || feedbackPaused.current) return;
     try {
-      localStorage.setItem(
-        CHAT_STORAGE_KEY,
-        JSON.stringify(chatHistory.slice(-20))
-      );
+      feedbackCopy.current = writeStudyCopy(localStorage, CHAT_STORAGE_KEY, feedbackCopy.current, chatHistory.slice(-20));
     } catch {
-      // Browser storage may be unavailable.
+      feedbackPaused.current = true;
+      queueMicrotask(() => setFeedbackWarning("Feedback saving paused. Copy this tab’s feedback before reloading."));
     }
   }, [chatHistory, chatReady]);
 
@@ -1114,7 +1112,8 @@ export default function WritingStudioPage() {
       <StudyNavigation />
       <section className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-5 px-6 pt-10">
         <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">dAI Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p><StudyGuide section="Writing Studio">Start with a template or write in the editor. Ask for feedback on a specific issue, such as whether your evidence supports your argument. Revise your draft and download it when ready.</StudyGuide></div>
-        <button type="button" onClick={downloadEssay} className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950">Download Essay ↓</button>
+        {feedbackWarning && <p role="status">{feedbackWarning}</p>}
+        <button type="button" disabled={!ready} onClick={downloadEssay} className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950">Download Essay ↓</button>
       </section>
 
       <div className="mx-auto max-w-7xl px-6 py-8">
@@ -1128,6 +1127,7 @@ export default function WritingStudioPage() {
               <button
                 key={prompt.label}
                 type="button"
+                disabled={!ready}
                 onClick={() => applyTemplate(prompt.template)}
                 className="rounded-xl border border-white/10 bg-[#0c1424] p-4 text-left transition hover:border-cyan-400/50"
               >
@@ -1147,6 +1147,7 @@ export default function WritingStudioPage() {
           <section className="overflow-hidden rounded-2xl border border-white/10 bg-[#111a2b]">
             <div className="border-b border-white/10 p-5">
               <input
+                disabled={!ready}
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
                 aria-label="Essay title"
@@ -1158,12 +1159,13 @@ export default function WritingStudioPage() {
                 <span>{wordCount} words</span>
                 <span>{characterCount} characters</span>
                 <span>
-                  {savedAt ? `Saved: ${savedAt}` : "Preparing editor..."}
+                  {essayWarning ? <strong role="status">{essayWarning}</strong> : savedAt ? `Saved: ${savedAt}` : "Preparing editor…"}
                 </span>
               </div>
             </div>
 
             <textarea
+              disabled={!ready}
               value={content}
               onChange={(event) => setContent(event.target.value)}
               aria-label="Essay content"
