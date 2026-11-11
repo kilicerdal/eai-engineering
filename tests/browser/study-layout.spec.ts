@@ -1123,3 +1123,73 @@ test('saved citations highlight the occurrence inside the cited excerpt', async 
   await expect(mark).toHaveText(quote);
   expect(await mark.evaluate(element=>element.previousSibling?.textContent)).toMatch(/Evening protocol: $/);
 });
+
+test('cancelling a restore or reviewing an outdated backup preserves current exam progress', async ({page,context})=>{
+  const key='eai-exam-prep-v1';
+  const record={version:1,activeExam:'psat',attempts:[],sessions:{sat:null,psat:null}};
+  const file={name:'exam.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(record))};
+  await page.goto('/study/exams');
+  await page.getByRole('button',{name:'Start skill check',exact:true}).click();
+  const original=await page.evaluate(key=>localStorage.getItem(key),key);
+  const input=page.getByLabel('Open exam practice backup');
+  await input.setInputFiles({name:'invalid.json',mimeType:'application/json',buffer:Buffer.from('broken')});
+  await expect(page.getByRole('alert').filter({hasText:'not valid JSON'})).toBeVisible();
+  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe(original);
+  await input.setInputFiles(file);
+  await page.getByRole('button',{name:'Cancel restore'}).click();
+  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe(original);
+  await input.setInputFiles(file);
+  const restore=page.getByRole('button',{name:'Restore this exam-practice backup'});
+  await expect(restore).toBeVisible();
+  const other=await context.newPage();
+  await other.goto('/study/exams');
+  const newer=await other.evaluate(key=>{
+    const saved=JSON.parse(localStorage.getItem(key)!);
+    saved.sessions.sat.reasoning='Newer reasoning saved on the other tab';
+    const raw=JSON.stringify(saved);
+    localStorage.setItem(key,raw);
+    return raw;
+  },key);
+  await restore.click();
+  await expect(page.getByText(/Practice changed after you opened this backup/)).toBeVisible();
+  await expect(restore).toHaveCount(0);
+  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe(newer);
+});
+
+test('restoring after temporary practice preserves the draft and damaged original separately', async ({page})=>{
+  const key='eai-exam-prep-v1';
+  await page.goto('/study/exams');
+  await page.evaluate(key=>localStorage.setItem(key,'damaged original'),key);
+  await page.reload();
+  await page.getByRole('button',{name:'Start skill check',exact:true}).click();
+  const record={version:1,activeExam:'psat',attempts:[],sessions:{sat:null,psat:null}};
+  const input=page.getByLabel('Open exam practice backup');
+  await input.setInputFiles({name:'exam.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(record))});
+  const restore=page.getByRole('button',{name:'Restore this exam-practice backup'});
+  await restore.click();
+  await expect(page.getByRole('alert').filter({hasText:'temporary work'})).toBeVisible();
+  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe('damaged original');
+  const draftDownload=page.waitForEvent('download');
+  await page.getByRole('button',{name:'Download practice backup'}).last().click();
+  const draftStream=await (await draftDownload).createReadStream();
+  let raw='';for await(const chunk of draftStream!)raw+=chunk.toString();
+  expect(JSON.parse(raw).sessions.sat.questionIds).toHaveLength(8);
+  const previousDownload=page.waitForEvent('download');
+  await restore.click();
+  expect((await previousDownload).suggestedFilename()).toBe('dai-exam-practice-before-restore.json');
+  expect(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),key)).toEqual(record);
+});
+
+test('temporary SAT work remains available after visiting the PSAT profile', async ({page})=>{
+  const key='eai-exam-prep-v1';
+  await page.goto('/study/exams?exam=sat');
+  await page.evaluate(key=>localStorage.setItem(key,'damaged source'),key);
+  await page.reload();
+  await page.getByRole('button',{name:'Start skill check',exact:true}).click();
+  const profiles=page.locator('.exam-profile-nav');
+  await profiles.getByRole('link',{name:'PSAT',exact:false}).click();
+  await expect(profiles.getByRole('link',{name:'PSAT',exact:false})).toHaveAttribute('aria-current','page');
+  await profiles.getByRole('link',{name:'SAT',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Start a new skill check'})).toBeVisible();
+  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe('damaged source');
+});
