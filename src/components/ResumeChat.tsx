@@ -147,6 +147,8 @@ export default function ResumeChat() {
   const [readingFile, setReadingFile] = useState(false);
   const [answerStatus, setAnswerStatus] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const sidebarToggle = useRef<HTMLButtonElement>(null);
+  const sidebarClose = useRef<HTMLButtonElement>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeId, setActiveId] = useState("");
@@ -404,10 +406,23 @@ export default function ResumeChat() {
   const turns = pendingReply?.id === activeId ? pendingReply.messages : active?.messages || [];
   const visibleMessages = turns[0]?.role === "assistant" && turns[0].content === welcomeMessage.content ? turns.slice(1) : turns;
 
+  function closeSidebar() {
+    setHistoryOpen(false);
+    sidebarToggle.current?.focus();
+  }
+
+  function toggleSidebar() {
+    if (historyOpen) closeSidebar();
+    else {
+      setHistoryOpen(true);
+      requestAnimationFrame(() => sidebarClose.current?.focus());
+    }
+  }
+
   function openConversation(id: string) {
     followLatestRef.current = true;
     setActiveId(id);
-    if (window.matchMedia("(max-width: 767px)").matches) setHistoryOpen(false);
+    if (window.matchMedia("(max-width: 767px)").matches) closeSidebar();
   }
 
   function newConversation() {
@@ -530,8 +545,8 @@ export default function ResumeChat() {
         </div>
 
         <div className={`atlas-chat-shell atlas-chat-simple ${active?.messages.some(message => message.role === "user") ? "atlas-chat-started" : "atlas-chat-fresh"} grid overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#101827] shadow-2xl ${historyOpen ? "md:grid-cols-[260px_1fr]" : "grid-cols-1"}`}>
-          <aside id="eai-chat-history" hidden={!historyOpen} className="border-b border-white/10 bg-slate-950/60 p-4 md:border-b-0 md:border-r">
-            <div className="atlas-sidebar-brand"><span>eAI</span><button type="button" aria-label="Hide sidebar" title="Hide sidebar" onClick={() => setHistoryOpen(false)}>×</button></div>
+          <aside id="eai-chat-history" hidden={!historyOpen} className="border-b border-white/10 bg-slate-950/60 p-4 md:border-b-0 md:border-r" onKeyDown={event => { if (event.key === "Escape") { event.preventDefault(); closeSidebar(); } }}>
+            <div className="atlas-sidebar-brand"><span>eAI</span><button type="button" aria-label="Hide sidebar" title="Hide sidebar" ref={sidebarClose} onClick={closeSidebar}>×</button></div>
             <button
               type="button"
               onClick={newConversation}
@@ -593,7 +608,7 @@ export default function ResumeChat() {
           <div className="atlas-chat-main min-w-0">
             <div className="atlas-chat-toolbar flex flex-wrap items-center justify-between gap-4 border-b border-white/10 bg-slate-900/70 px-5 py-4">
               <div className="atlas-workspace-heading">
-                <button type="button" className="atlas-sidebar-toggle" aria-label={historyOpen ? "Hide sidebar" : "Show sidebar"} title={historyOpen ? "Hide sidebar" : "Show sidebar"} aria-controls="eai-chat-history" aria-expanded={historyOpen} onClick={() => setHistoryOpen(value => !value)}>
+                <button type="button" ref={sidebarToggle} className="atlas-sidebar-toggle" aria-label={historyOpen ? "Hide sidebar" : "Show sidebar"} title={historyOpen ? "Hide sidebar" : "Show sidebar"} aria-controls="eai-chat-history" aria-expanded={historyOpen} onClick={toggleSidebar}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
                 </button>
                 {!historyOpen && <p className="text-lg font-bold text-white">eAI</p>}

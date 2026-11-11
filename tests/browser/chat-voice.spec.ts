@@ -118,3 +118,18 @@ for (const path of ["/chat", "/study#ai-assistant"]) {
     await expect(page.locator("html")).toHaveAttribute("data-copied-code","const sum = 2 + 2;");
   });
 }
+
+test("chat history keyboard focus follows the sidebar when it opens and closes", async ({page}) => {
+  await page.goto("/chat");
+  await expect(page.getByLabel("Your message")).toBeEnabled();
+  const toggle=page.locator(".atlas-sidebar-toggle");
+  if(await toggle.getAttribute("aria-expanded")==="true") await toggle.click();
+  await toggle.focus();
+  await toggle.press("Enter");
+  const sidebar=page.locator("#eai-chat-history");
+  await expect(sidebar.getByRole("button",{name:"Hide sidebar"})).toBeFocused();
+  await sidebar.getByRole("searchbox").focus();
+  await page.keyboard.press("Escape");
+  await expect(sidebar).toBeHidden();
+  await expect(toggle).toBeFocused();
+});

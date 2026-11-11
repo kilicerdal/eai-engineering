@@ -549,3 +549,19 @@ test('tutor keeps the reading position when another part of a long reply arrives
   await expect(tutor.getByRole('button',{name:/Regenerate Response/})).toBeVisible();
   expect(await log.evaluate(el=>el.scrollTop)).toBeLessThan(40);
 });
+
+test('study shortcuts close the expanded menu and identify the current section', async ({page}) => {
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/study');
+  const menu = page.locator('#study-menu-toggle');
+  const shortcuts = page.locator('.studio-mobile-shortcuts');
+  const learning = shortcuts.getByRole('link',{name:'My learning'});
+  await menu.click();
+  await learning.click();
+  await expect(page).toHaveURL(/#my-learning$/);
+  await expect(menu).toHaveAttribute('aria-expanded','false');
+  await expect(learning).toHaveAttribute('aria-current','location');
+  await learning.focus();
+  await learning.press('Escape');
+  await expect(learning).toBeFocused();
+});
