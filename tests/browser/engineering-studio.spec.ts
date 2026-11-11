@@ -337,8 +337,12 @@ test('both test comparison panels copy and download their own code',async({page}
     if(title==='Original Generated Code'){
       await copy.click();
       await expect(panel.getByRole('status')).toContainText('Clipboard unavailable');
+      const manual = panel.getByRole('textbox',{name:'Code for manual copying'});
+      await expect(manual).toBeFocused();
+      expect(await manual.evaluate((field:HTMLTextAreaElement)=>field.value.slice(field.selectionStart,field.selectionEnd))).toBe(code);
     }
     await copy.click();
+    await expect(panel.getByRole('textbox',{name:'Code for manual copying'})).toHaveCount(0);
     await expect(page.locator('html')).toHaveAttribute('data-copied',code);
     const event=page.waitForEvent('download');
     await panel.getByRole('button',{name:'Download File'}).click();

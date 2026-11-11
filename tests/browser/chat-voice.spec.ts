@@ -113,6 +113,9 @@ for (const path of ["/chat", "/study#ai-assistant"]) {
     const copy=chat.getByRole("button",{name:"Copy code",exact:true});
     await copy.click();
     await expect(chat.getByText(/Clipboard unavailable/)).toBeVisible();
+    const manual=chat.getByRole("textbox",{name:"Code for manual copying"});
+    await expect(manual).toBeFocused();
+    expect(await manual.evaluate((field:HTMLTextAreaElement)=>field.value.slice(field.selectionStart,field.selectionEnd))).toBe("const sum = 2 + 2;");
     await copy.click();
     await expect(chat.getByText("Code copied.",{exact:true})).toBeVisible();
     await expect(page.locator("html")).toHaveAttribute("data-copied-code","const sum = 2 + 2;");
