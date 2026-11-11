@@ -193,6 +193,7 @@ test('draft-only chats can be searched and the selected draft survives refresh',
   )));
   await page.goto('/#ai-assistant');
   await expect(page).toHaveURL(/\/chat$/);
+  await expect(page.getByRole('textbox',{name:'Your message'})).toBeEnabled();
   const search = page.getByRole('searchbox',{name:'Search conversations'});
   if (!await search.isVisible()) await page.getByRole('button',{name:'Show sidebar'}).click();
   await search.fill('Second');
@@ -478,6 +479,7 @@ test('pending attachment stays in its chat while another chat can attach and sen
 
 test('starting a chat from an empty search reveals the new conversation and focuses its composer', async ({page}) => {
   await page.goto('/chat');
+  await expect(page.getByRole('textbox',{name:'Your message'})).toBeEnabled();
   const search = page.getByRole('searchbox',{name:'Search conversations'});
   const toggle = page.getByRole('button',{name:'Show sidebar'});
   if (!await search.isVisible()) await toggle.click();
