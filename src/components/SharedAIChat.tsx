@@ -246,6 +246,7 @@ export default function SharedAIChat() {
   const [activeId, setActiveId] = useState("");
   const [openPanel, setOpenPanel] = useState<"history" | "settings" | null>(null);
   const [loading, setLoading] = useState(false);
+  const [pendingReply, setPendingReply] = useState<{id:string; messages:Message[]} | null>(null);
   const [hydrated, setHydrated] = useState(false);
   const [requestError, setRequestError] = useState<{ id: string; message: string;retry?:boolean } | null>(null);
 
@@ -344,7 +345,7 @@ export default function SharedAIChat() {
         behavior: "smooth",
       });
     }
-  }, [active?.messages, loading]);
+  }, [active?.messages, loading, pendingReply]);
 
   function updateConversation(
     id: string,
@@ -409,11 +410,12 @@ export default function SharedAIChat() {
           ? question.slice(0, 45)
           : conversation.title,
       updatedAt: Date.now(),
-      messages: baseMessages,
+      messages: regenerate ? conversation.messages : baseMessages,
       draft:clearDraft?"":conversation.draft,
     }));
 
     setRequestError(null);
+    setPendingReply({id, messages:baseMessages});
     setLoading(true);
 
     const controller = new AbortController();
@@ -421,7 +423,7 @@ export default function SharedAIChat() {
 
     try {
       const response = await fetch("/api/study/chat", {
-        signal: controller.signal,
+        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(60000)]),
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -436,21 +438,20 @@ export default function SharedAIChat() {
         }),
       });
 
-      await readStudyStream(response, (answer) => {
-        updateConversation(id, (conversation) => ({
-          ...conversation,
-          updatedAt: Date.now(),
-          messages: [...baseMessages, { role: "assistant", content: answer }],
-        }));
+      const answer = await readStudyStream(response, text => {
+        setPendingReply({id, messages:[...baseMessages, {role:"assistant", content:text}]});
       }, true);
+      updateConversation(id, conversation => ({
+        ...conversation, updatedAt:Date.now(),
+        messages:[...baseMessages, {role:"assistant", content:answer}],
+      }));
     } catch (error) {
-      if (!controller.signal.aborted) {
-        if (error instanceof Error && error.message.includes("invalid response")) {
-          updateConversation(id, conversation => ({ ...conversation, messages: baseMessages }));
-        }
-        setRequestError({ id, message: error instanceof Error ? error.message : "The tutor could not complete your request. Please try again." });
-      }
+      const message = controller.signal.aborted ? "Response stopped. You can retry your question."
+        : error instanceof Error && error.name === "TimeoutError" ? "The tutor timed out. You can retry your question."
+        : error instanceof Error ? error.message : "The tutor could not complete your request. Please try again.";
+      setRequestError({id, message});
     } finally {
+      setPendingReply(null);
       if (abortControllerRef.current === controller) {
         abortControllerRef.current = null;
       }
@@ -731,7 +732,7 @@ export default function SharedAIChat() {
               role="log"
               aria-live="polite"
             >
-              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Start with a subject, a question or a problem. Add your level or what you’ve tried if useful.</p></div> : (active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
+              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Start with a subject, a question or a problem. Add your level or what you’ve tried if useful.</p></div> : (pendingReply?.id === activeId ? pendingReply.messages : active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
                 <div
                   key={index}
                   className={`tutor-message-row flex ${
@@ -809,6 +810,13 @@ export default function SharedAIChat() {
                     ↻ Regenerate Response
                   </button>
                 )}
+
+              {!loading && active?.messages.at(-1)?.role === "user" && requestError?.id !== activeId && (
+                <div role="status" className="mb-3">
+                  <p>Your last question has no completed reply.</p>
+                  <button type="button" onClick={regenerateResponse} className="tutor-regenerate">Retry last question</button>
+                </div>
+              )}
 
               {!loading && active?.messages.some(message => message.role === "user") && (
                 <div className="mb-4 flex flex-wrap gap-2" aria-label="Continue learning">

@@ -470,3 +470,48 @@ test('full essay analysis stops on an incomplete section and includes every sect
   expect(messages[3]).toContain('Opening evidence');
   expect(messages[3]).toContain('Closing evidence');
 });
+
+test('tutor keeps completed replies on failed regeneration and retries without duplicating the question', async ({page}) => {
+  let body = 'data: {"response":"Original complete explanation."}\n\ndata: [DONE]\n\n';
+  const questions: string[] = [];
+  await page.route('**/api/study/chat', route => {
+    questions.push(route.request().postDataJSON().message);
+    return route.fulfill({contentType:'text/event-stream', body});
+  });
+  await page.goto('/study#ai-assistant');
+  const tutor = page.locator('#ai-assistant');
+  const question = 'Why does the sequence converge?';
+  await tutor.getByLabel('Your message').fill(question);
+  await tutor.getByRole('button',{name:'Send',exact:true}).click();
+  await expect(tutor.getByText('Original complete explanation.',{exact:true})).toBeVisible();
+  body = 'data: {"response":"Unfinished replacement"}\n\n';
+  await tutor.getByRole('button',{name:/Regenerate Response/}).click();
+  await expect(tutor.getByRole('alert')).toContainText('interrupted');
+  await expect(tutor.getByRole('log')).toContainText('Original complete explanation.');
+  await page.reload();
+  await expect(tutor.getByRole('log')).not.toContainText('Unfinished replacement');
+  await expect(tutor.getByRole('log')).toContainText('Original complete explanation.');
+  body = 'data: {"response":"Complete revised explanation."}\n\ndata: [DONE]\n\n';
+  await tutor.getByRole('button',{name:/Regenerate Response/}).click();
+  await expect(tutor.getByRole('log')).toContainText('Complete revised explanation.');
+  await expect(tutor.getByRole('log').getByText(question,{exact:true})).toHaveCount(1);
+  expect(questions).toEqual([question,question,question]);
+});
+
+test('reopened tutor offers retry for an unanswered question and keeps the next draft', async ({page}) => {
+  let body = 'data: {"response":"Half a reply"}\n\n';
+  await page.route('**/api/study/chat', route => route.fulfill({contentType:'text/event-stream', body}));
+  await page.goto('/study#ai-assistant');
+  const tutor = page.locator('#ai-assistant');
+  const draft = tutor.getByLabel('Your message');
+  await draft.fill('Explain geometric series.');
+  await tutor.getByRole('button',{name:'Send',exact:true}).click();
+  await expect(tutor.getByRole('alert')).toContainText('interrupted');
+  await draft.fill('My next question is different.');
+  await page.reload();
+  await expect(tutor.getByRole('log')).not.toContainText('Half a reply');
+  body = 'data: {"response":"Completed series explanation."}\n\ndata: [DONE]\n\n';
+  await tutor.getByRole('button',{name:'Retry last question'}).click();
+  await expect(tutor.getByRole('log')).toContainText('Completed series explanation.');
+  await expect(draft).toHaveValue('My next question is different.');
+});

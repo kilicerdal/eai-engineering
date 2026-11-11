@@ -56,3 +56,36 @@ test("dictation preserves draft formatting and reports text that exceeds the lim
   await expect(draft).toHaveValue((original+"spoken ending").slice(0,3000));
   await expect(page.getByText(/Your draft reached 3,000 characters/)).toBeVisible();
 });
+
+test("refreshing an eAI reply in progress restores the question and offers a retry", async ({page}) => {
+  await page.addInitScript(() => {
+    const fetchOriginal = window.fetch;
+    window.fetch = (input, init) => {
+      if (input !== "/api/chat") return fetchOriginal(input, init);
+      const payload = new TextEncoder().encode('data: {"response":"Partial test reply"}\n\n');
+      const stream = new ReadableStream({start(controller) {controller.enqueue(payload);}});
+      return Promise.resolve(new Response(stream, {headers:{"Content-Type":"text/event-stream"}}));
+    };
+  });
+  await page.goto("/chat");
+  await page.getByRole("textbox",{name:"Your message"}).fill("What is a unit test?");
+  await page.getByRole("button",{name:"Send message"}).click();
+  await expect(page.getByText("Partial test reply",{exact:true})).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole("button",{name:"Retry last question"})).toBeVisible();
+  await expect(page.getByText("Partial test reply",{exact:true})).toHaveCount(0);
+  await expect(page.getByRole("log").getByText("What is a unit test?",{exact:true})).toBeVisible();
+});
+
+test("migrated eAI chats show their original opening question", async ({page}) => {
+  await page.addInitScript(() => localStorage.setItem("erdal-ai-chat-v3",JSON.stringify([
+    {role:"user",content:"My original opening question"},
+    {role:"assistant",content:"My saved reply"}
+  ])));
+  await page.goto("/chat");
+  const log=page.getByRole("log",{name:"Conversation messages"});
+  await expect(log.getByText("My original opening question",{exact:true})).toBeVisible();
+  await expect(log.getByText("My saved reply",{exact:true})).toBeVisible();
+  await page.reload();
+  await expect(log.getByText("My original opening question",{exact:true})).toBeVisible();
+});

@@ -160,6 +160,7 @@ export default function ResumeChat() {
     setLogDrafts(previous => ({...previous, [activeId]: text}));
   }
   const [failure, setFailure] = useState<{id:string; message:string} | null>(null);
+  const [pendingReply, setPendingReply] = useState<{id:string; messages:Message[]} | null>(null);
   const [loading, setLoading] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [dictating, setDictating] = useState(false);
@@ -299,7 +300,7 @@ export default function ResumeChat() {
         behavior: "instant",
       });
     }
-  }, [active?.messages, loading]);
+  }, [active?.messages, loading, pendingReply]);
 
   function updateConversation(
     id: string,
@@ -354,11 +355,12 @@ export default function ResumeChat() {
           ? question.slice(0, 45)
           : conversation.title,
       updatedAt: Date.now(),
-      messages: base,
+      messages: regenerate ? previous : base,
     }));
 
     if(!regenerate && !preserveDraft)setInput("");
     setFailure(null);
+    setPendingReply({id, messages:base});
     setLoading(true);
 
     const controller = new AbortController();
@@ -381,26 +383,26 @@ export default function ResumeChat() {
         }),
       });
 
-      let finalAnswer = "";
-      await readStudyStream(response, answer => {
-        finalAnswer = answer;
-        updateConversation(id, conversation => ({
-          ...conversation,
-          updatedAt: Date.now(),
-          messages: [...base, {role:"assistant", content:answer}],
-        }));
+      const finalAnswer = await readStudyStream(response, answer => {
+        setPendingReply({id, messages:[...base, {role:"assistant", content:answer}]});
       }, true);
+      updateConversation(id, conversation => ({
+        ...conversation, updatedAt:Date.now(), messages:[...base, {role:"assistant", content:finalAnswer}],
+      }));
       return finalAnswer;
     } catch (error) {
-      updateConversation(id, conversation => ({...conversation, messages:regenerate ? previous : base}));
       setFailure({id, message:controller.signal.aborted ? "Response stopped." : error instanceof Error && error.name==="TimeoutError" ? "The request timed out. You can retry the question." : error instanceof Error ? error.message : "The request could not finish."});
     } finally {
+      setPendingReply(null);
       if (abortControllerRef.current === controller) {
         abortControllerRef.current = null;
       }
       setLoading(false);
     }
   }
+
+  const turns = pendingReply?.id === activeId ? pendingReply.messages : active?.messages || [];
+  const visibleMessages = turns[0]?.role === "assistant" && turns[0].content === welcomeMessage.content ? turns.slice(1) : turns;
 
   function openConversation(id: string) {
     followLatestRef.current = true;
@@ -628,7 +630,7 @@ export default function ResumeChat() {
               {!active?.messages.some(message => message.role === "user") && (
                 <div className="atlas-chat-empty"><h3>What’s on your mind?</h3></div>
               )}
-              {(active?.messages || []).slice(1).map((message, index) => (
+              {visibleMessages.map((message, index) => (
                 <div
                   key={index}
                   className={`flex ${
@@ -646,7 +648,7 @@ export default function ResumeChat() {
                   >
                     {message.role === "assistant" ? (
                       <><MarkdownMessage content={message.content} />
-                      {!(loading && index === (active?.messages.length || 0) - 2) && <div className="atlas-answer-actions"><button type="button" onClick={() => copyAnswer(message.content)}>Copy</button><button type="button" onClick={() => downloadAnswer(message.content)}>Download</button></div>}</>
+                      {!(loading && index === visibleMessages.length - 1) && <div className="atlas-answer-actions"><button type="button" onClick={() => copyAnswer(message.content)}>Copy</button><button type="button" onClick={() => downloadAnswer(message.content)}>Download</button></div>}</>
                     ) : (
                       <p className="whitespace-pre-wrap break-words text-sm leading-7">
                         {message.content}
@@ -706,6 +708,9 @@ export default function ResumeChat() {
               )}
 
               {!loading && failure && failure.id===active?.id && <div role="status" className="mb-3"><p>{failure.message}</p><button type="button" onClick={regenerateResponse}>Retry last question</button></div>}
+              {!loading && failure?.id !== activeId && active?.messages.at(-1)?.role === "user" && (
+                <div role="status" className="mb-3"><p>Your last question has no completed reply.</p><button type="button" onClick={regenerateResponse}>Retry last question</button></div>
+              )}
               {!loading && failure?.id!==active?.id &&
                 (active?.messages.length || 0) > 1 &&
                 active?.messages.at(-1)?.role === "assistant" && (
