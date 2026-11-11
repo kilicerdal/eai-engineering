@@ -437,3 +437,41 @@ test('long workflow evidence keeps attribution and final error in the analyzer',
   expect(text).toContain('[Middle omitted');
   expect(text).toMatch(/Final timeout in synthetic test\.$/);
 });
+
+test('pending attachment stays in its chat while another chat can attach and send',async({page})=>{
+  await page.addInitScript(()=>{
+    const read=File.prototype.text;
+    File.prototype.text=async function(){
+      if(this.name==='first.txt') await new Promise<void>(resolve=>window.addEventListener('finish-first-file',()=>resolve(),{once:true}));
+      return read.call(this);
+    };
+  });
+  const sent:string[][]=[];
+  await page.route('**/api/chat',route=>{
+    sent.push(route.request().postDataJSON().attachments.map((f:{name:string})=>f.name));
+    return route.fulfill({contentType:'text/event-stream',body:'data: {"response":"Synthetic reply."}\n\ndata: [DONE]\n\n'});
+  });
+  await page.goto('/chat');
+  const files=page.locator('input[type=file]');
+  await page.getByRole('combobox',{name:'AI assistant mode'}).selectOption('testing');
+  await page.getByLabel('Add context',{exact:true}).click();
+  await page.getByText('Analyze a CI log',{exact:true}).click();
+  await page.getByLabel('Redacted CI log').fill('Synthetic CI note');
+  await files.setInputFiles({name:'first.txt',mimeType:'text/plain',buffer:Buffer.from('Synthetic first file')});
+  await expect(page.getByRole('button',{name:'Analyze log'})).toBeDisabled();
+  const newChat=page.getByRole('button',{name:'+ New chat',exact:true});
+  if(!await newChat.isVisible()) await page.getByRole('button',{name:'Show sidebar'}).click();
+  await newChat.click();
+  await files.setInputFiles({name:'second.txt',mimeType:'text/plain',buffer:Buffer.from('Synthetic second file')});
+  await expect(page.getByRole('button',{name:'Remove second.txt'})).toBeVisible();
+  await page.getByLabel('Your message').fill('Discuss the second file.');
+  await page.getByRole('button',{name:'Send message'}).click();
+  await expect(page.getByRole('log')).toContainText('Synthetic reply.');
+  expect(sent).toEqual([['second.txt']]);
+  await page.evaluate(()=>window.dispatchEvent(new Event('finish-first-file')));
+  await expect(page.getByRole('button',{name:'Remove first.txt'})).toHaveCount(0);
+  if(!await newChat.isVisible()) await page.getByRole('button',{name:'Show sidebar'}).click();
+  await page.getByRole('button',{name:'New conversation',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Remove first.txt'})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Remove second.txt'})).toHaveCount(0);
+});
