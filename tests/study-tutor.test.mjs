@@ -228,6 +228,8 @@ test('later retries never inflate first-attempt or independent-correct results',
   const hinted={questionId:'acceleration-v1',selectedIndex:2,hintsUsed:1,submittedAt:300};
   const stats=practiceSummary('science',[first,retry,hinted]);
   assert.deepEqual(stats,{total:9,tried:2,firstTryCorrect:1,independentCorrect:0});
+  assert.deepEqual(practiceSummary('science',[hinted,retry,first]),stats);
+
 });
 test('practice prioritizes unseen questions then revisits missed questions', () => {
   const questions=practiceQuestions.filter(question=>question.track==='science');

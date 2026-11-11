@@ -38,6 +38,12 @@ export default function StudyPractice() {
   function openQuestion(id: string) {
     setQuestionId(id); setSelected(null); setHintsUsed(0); setSubmitted(false);
   }
+  function practiceInWorkspace(id: string) {
+    openQuestion(id);
+    window.requestAnimationFrame(() => {
+      document.getElementById("practice-question-title")?.focus();
+    });
+  }
   function changeTrack(value: PracticeTrack) {
     try{localStorage.setItem(TRACK_KEY,value);}catch{setStorageAvailable(false);}
     setTrack(value); openQuestion(nextPracticeQuestion(value, attempts).id);
@@ -66,14 +72,7 @@ export default function StudyPractice() {
           <p className="rounded-full border border-white/10 px-4 py-2 text-xs text-slate-300">{practiceQuestions.length} questions · 4 learning tracks</p>
         </div>
 
-        <StudyLearningPlan track={track} attempts={attempts} ready={hydrated} onTrackChange={changeTrack} onPractice={id => {
-          openQuestion(id);
-          window.requestAnimationFrame(() => {
-            const workspace = document.getElementById("practice-question");
-            workspace?.focus({ preventScroll: true });
-            workspace?.scrollIntoView({ behavior: "smooth", block: "start" });
-          });
-        }} />
+        <StudyLearningPlan track={track} attempts={attempts} ready={hydrated} onTrackChange={changeTrack} onPractice={practiceInWorkspace} />
 
         <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
           <aside className="rounded-2xl border border-white/10 bg-[#101827] p-5">
@@ -98,7 +97,7 @@ export default function StudyPractice() {
                 </select>
               </label>
             </div>
-            <h3 className="mt-5 text-xl font-semibold text-white">{question.title}</h3>
+            <h3 id="practice-question-title" tabIndex={-1} className="scroll-mt-6 mt-5 text-xl font-semibold text-white">{question.title}</h3>
             <p className="mt-3 text-base leading-7 text-slate-200">{question.prompt}</p>
             {question.code && <pre className="mt-4 overflow-x-auto rounded-xl border border-white/10 bg-slate-950 p-4 text-sm text-cyan-100"><code>{question.code}</code></pre>}
             <fieldset className="mt-6 space-y-3" disabled={!hydrated || submitted}>
@@ -123,7 +122,7 @@ export default function StudyPractice() {
               {!submitted ? <>
                 <button type="button" disabled={!hydrated || selected === null} onClick={checkAnswer} className="rounded-xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 disabled:opacity-40">Check answer</button>
                 <button type="button" disabled={!hydrated || hintsUsed === question.hints.length} onClick={() => setHintsUsed(value => value + 1)} className="rounded-xl border border-white/20 px-4 py-3 text-sm text-white disabled:opacity-40">{hintsUsed === question.hints.length ? "All hints shown" : "Show a hint"}</button>
-              </> : <button type="button" onClick={() => openQuestion(nextPracticeQuestion(track, attempts, question.id).id)} className="rounded-xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950">Next question →</button>}
+              </> : <button type="button" onClick={() => practiceInWorkspace(nextPracticeQuestion(track, attempts, question.id).id)} className="rounded-xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950">Next question →</button>}
               <a href="#ai-assistant" onClick={discussWithTutor} className={`rounded-xl border border-white/20 px-4 py-3 text-sm text-slate-200 ${!hydrated ? "pointer-events-none opacity-40" : ""}`}>Discuss with tutor</a>
             </div>
           </div>

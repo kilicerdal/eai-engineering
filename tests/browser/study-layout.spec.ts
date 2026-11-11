@@ -698,3 +698,44 @@ test('reading stays available when the saved bookshelf cannot be accessed', asyn
   await expect(page.getByLabel('Shelf for Moby Dick')).toBeDisabled();
   await expect(page.getByRole('link', {name:/Read free.*Moby Dick/})).toHaveAttribute('href','https://www.gutenberg.org/ebooks/2701');
 });
+
+test('practice uses the earliest checked answer and focuses the next question', async ({page}) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('eai-study-practice-track-v1','science');
+    localStorage.setItem('eai-study-practice-v1',JSON.stringify([
+      {questionId:'net-force-v1',selectedIndex:1,hintsUsed:0,submittedAt:200},
+      {questionId:'net-force-v1',selectedIndex:0,hintsUsed:0,submittedAt:100},
+    ]));
+  });
+  await page.goto('/study/practice');
+  await expect(page.getByLabel('Practice track')).toHaveValue('science');
+  await expect(page.getByText('Correct on first attempt',{exact:true}).locator('..').locator('dd')).toHaveText('0');
+  const workspace=page.getByRole('region',{name:'Practice question workspace'});
+  await workspace.getByRole('radio').first().check();
+  await workspace.getByRole('button',{name:'Check answer'}).click();
+  const title=workspace.getByRole('heading',{level:3});
+  const previous=await title.textContent();
+  await workspace.getByRole('button',{name:'Next question'}).click();
+  await expect(title).toBeFocused();
+  await expect(title).not.toHaveText(previous!);
+});
+
+test('practice plan keeps unreadable settings and protects a newer saved choice', async ({page}) => {
+  const key='eai-study-plan-v1';
+  await page.goto('/study/practice');
+  await page.evaluate(key=>localStorage.setItem(key,'broken save'),key);
+  await page.reload();
+  const duration=page.getByLabel('Study session length');
+  await duration.selectOption('30');
+  await expect(page.getByText(/Saved plan settings could not be read/)).toBeVisible();
+  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe('broken save');
+  await page.evaluate(key=>localStorage.removeItem(key),key);
+  await page.reload();
+  await duration.selectOption('10');
+  expect(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).minutes,key)).toBe(10);
+  const external=JSON.stringify({goal:'foundations',minutes:20});
+  await page.evaluate(({key,external})=>localStorage.setItem(key,external),{key,external});
+  await duration.selectOption('30');
+  await expect(page.getByText(/Reload to read the latest saved settings/)).toBeVisible();
+  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe(external);
+});
