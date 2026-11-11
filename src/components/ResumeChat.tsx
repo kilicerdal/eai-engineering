@@ -165,6 +165,7 @@ export default function ResumeChat() {
   const [filesByChat, setFilesByChat] = useState<Record<string,{text:string;reading:boolean}>>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
   const composer = useRef<HTMLTextAreaElement>(null);
+  const chatSearch = useRef<HTMLInputElement>(null);
   const sidebarToggle = useRef<HTMLButtonElement>(null);
   const sidebarClose = useRef<HTMLButtonElement>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
@@ -488,17 +489,25 @@ export default function ResumeChat() {
       (conversation) => conversation.id !== id
     );
 
+    const index = visibleChats.findIndex(chat => chat.id === id);
+    const neighbor = visibleChats[index+1] ?? visibleChats[index-1];
+    let focusId = neighbor?.id;
     if (remaining.length) {
       setConversations(remaining);
 
       if (activeId === id) {
-        setActiveId(remaining[0].id);
+        setActiveId(neighbor?.id ?? remaining[0].id);
       }
     } else {
       const fresh = createConversation();
       setConversations([fresh]);
       setActiveId(fresh.id);
+      if (!query) focusId = fresh.id;
     }
+    requestAnimationFrame(() => {
+      const target = focusId && document.getElementById(`eai-history-chat-${focusId}`);
+      (target || chatSearch.current)?.focus();
+    });
   }
 
   function changeMode(mode: Mode) {
@@ -569,7 +578,7 @@ export default function ResumeChat() {
               + New chat
             </button>
 
-            <label className="atlas-chat-search"><span className="sr-only">Search conversations</span><input type="search" placeholder="Search chats" value={search} onChange={event => setSearch(event.target.value)} /></label>
+            <label className="atlas-chat-search"><span className="sr-only">Search conversations</span><input ref={chatSearch} type="search" placeholder="Search chats" value={search} onChange={event => setSearch(event.target.value)} /></label>
             <p className="mb-3 mt-7 text-xs font-semibold tracking-widest text-slate-500">
               Recents
             </p>
@@ -587,6 +596,7 @@ export default function ResumeChat() {
                   <button
                     type="button"
                     disabled={loading}
+                    id={`eai-history-chat-${conversation.id}`}
                     aria-current={conversation.id === activeId ? "true" : undefined}
                     onClick={() => openConversation(conversation.id)}
                     className="w-full truncate text-left text-sm text-slate-200"

@@ -497,3 +497,29 @@ test('starting a chat from an empty search reveals the new conversation and focu
   await expect(search).toHaveValue('');
   await expect(page.getByRole('button',{name:'Fresh draft after searching'})).toHaveAttribute('aria-current','true');
 });
+
+test('deleting a filtered conversation keeps the next matching chat selected and reachable', async ({page})=>{
+  const key='erdal-ai-conversations-v31';
+  await page.goto('/chat');
+  await page.evaluate(key=>localStorage.setItem(key,JSON.stringify(['Unrelated','Review one','Review two'].map((title,i)=>({
+    id:'sample-'+i,title,mode:'general',messages:[],updatedAt:10-i,draft:title+' draft'
+  })))),key);
+  await page.reload();
+  const composer=page.getByLabel('Your message');
+  await expect(composer).toBeEnabled();
+  const search=page.getByRole('searchbox',{name:'Search conversations'});
+  const toggle=page.getByRole('button',{name:'Show sidebar'});
+  if(!await search.isVisible()) await toggle.click();
+  await search.fill('Review');
+  await page.getByRole('button',{name:'Review one',exact:true}).click();
+  if(!await search.isVisible()) await toggle.click();
+  await page.getByRole('button',{name:'Delete',exact:true}).first().click();
+  const neighbor=page.getByRole('button',{name:'Review two',exact:true});
+  await expect(neighbor).toBeFocused();
+  await expect(neighbor).toHaveAttribute('aria-current','true');
+  await expect(composer).toHaveValue('Review two draft');
+  await page.getByRole('button',{name:'Delete',exact:true}).click();
+  await expect(search).toBeFocused();
+  await expect(page.getByText('No matching chats.')).toBeVisible();
+  await expect(composer).toHaveValue('Unrelated draft');
+});

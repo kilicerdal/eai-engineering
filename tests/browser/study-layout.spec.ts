@@ -1193,3 +1193,25 @@ test('temporary SAT work remains available after visiting the PSAT profile', asy
   await expect(page.getByRole('button',{name:'Start a new skill check'})).toBeVisible();
   expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe('damaged source');
 });
+
+test('moving a book off a filtered shelf keeps keyboard focus and updates the other tab', async ({page,context})=>{
+  await page.goto('/study/reading');
+  const second=await context.newPage();
+  await second.goto('/study/reading');
+  const a=page.getByLabel('Shelf for Frankenstein');
+  const b=page.getByLabel('Shelf for Moby Dick');
+  await a.selectOption('Reading');
+  await b.selectOption('Reading');
+  await page.getByLabel('My bookshelf').selectOption('Reading');
+  await a.focus();
+  await a.selectOption('Finished');
+  await expect(b).toBeFocused();
+  await expect(page.getByRole('status').filter({hasText:'Frankenstein moved to Finished.'})).toContainText('1 book to explore');
+  await b.selectOption('');
+  const showAll=page.getByRole('button',{name:'Show all books'});
+  await expect(showAll).toBeFocused();
+  await showAll.press('Enter');
+  await expect(page.getByRole('searchbox')).toBeFocused();
+  await expect(second.getByLabel('Shelf for Frankenstein')).toHaveValue('Finished');
+  await expect(second.getByLabel('Shelf for Moby Dick')).toHaveValue('');
+});
