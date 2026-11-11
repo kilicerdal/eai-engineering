@@ -238,7 +238,7 @@ test('notebook summaries retain labeled capture fields and open for review hando
  await teacherDraft.fill('Which inverse operation should I use first?');
  await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw new Error('Clipboard unavailable');}}}));
  await notebook.getByRole('button',{name:'Copy question'}).click();
- await expect(notebook.getByText(/copy it manually/)).toBeVisible();
+ await expect(notebook.getByText(/copy it manually/i)).toBeVisible();
  await expect(teacherDraft).toHaveValue('Which inverse operation should I use first?');
  const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem('eai-exam-mistakes-v1')!));
  expect(stored).toEqual([entry]);
@@ -296,7 +296,7 @@ test('a rejected material identifies the failed file and later files still impor
     {name:'empty.txt', mimeType:'text/plain', buffer:Buffer.alloc(0)},
     {name:'lesson.txt', mimeType:'text/plain', buffer:Buffer.from('Water vapor condenses when air cools.')},
   ]);
-  await expect(page.getByRole('alert').filter({hasText:'empty.txt: This file is empty.'})).toBeVisible();
+  await expect(page.getByRole('complementary', {name:'Manage your materials'}).getByRole('alert').filter({hasText:'empty.txt: This file is empty.'})).toBeVisible();
   await expect(page.getByLabel('Material focus').locator('option:checked')).toHaveText('lesson.txt');
   await page.reload();
   await expect(page.getByLabel('Material focus').getByRole('option', {name:'lesson.txt'})).toHaveCount(1);
@@ -1015,4 +1015,43 @@ test('teacher question selects the edited draft when the clipboard is blocked',a
   await expect(book.getByText(/Your question is selected/)).toBeVisible();
   await expect(draft).toBeFocused();
   expect(await draft.evaluate((input:HTMLTextAreaElement)=>input.value.slice(input.selectionStart,input.selectionEnd))).toBe(await draft.inputValue());
+});
+
+test('reopening a library answer uses its own sources and history for follow-ups', async ({page}) => {
+  const sent: {excerpts:{name:string}[];history:{content:string}[]}[] = [];
+  await page.route('**/api/study/materials', route => {
+    sent.push(route.request().postDataJSON());
+    return route.fulfill({json:{supported:false,answer:'More evidence needed.',citations:[]}});
+  });
+  await page.goto('/study/materials');
+  await page.getByRole('button', {name:'Add your first material'}).click();
+  const add = page.getByLabel('Add course files');
+  const file = (name:string) => ({name:name+'.txt',mimeType:'text/plain',buffer:Buffer.from(name+' field observations about seasonal rainfall and groundwater recharge.')});
+  await add.setInputFiles([file('North'),file('South')]);
+  const focus = page.getByLabel('Material focus');
+  await expect(focus.locator('option:checked')).toHaveText('South.txt');
+  await page.getByRole('button',{name:'Close',exact:true}).click();
+  await focus.selectOption('all');
+  const question = page.getByLabel('Question about your materials');
+  const ask = page.getByRole('button',{name:'Ask about materials'});
+  const first = 'Compare the seasonal rainfall observations.';
+  await question.fill(first);
+  await ask.click();
+  await expect(page.getByRole('heading',{name:first})).toBeVisible();
+  await page.getByRole('button',{name:'+ Add materials'}).click();
+  await add.setInputFiles(file('West'));
+  await expect(focus.locator('option:checked')).toHaveText('West.txt');
+  await page.getByRole('button',{name:'Close',exact:true}).click();
+  await question.fill('Describe rainfall in the west.');
+  await ask.click();
+  await expect(page.getByRole('heading',{name:'Describe rainfall in the west.'})).toBeVisible();
+  await page.locator('#library-materials-trigger').click();
+  await page.getByRole('button',{name:first,exact:true}).click();
+  await expect(focus.locator('option:checked')).toHaveText('Sources for this answer · 2');
+  await question.fill('Explain the seasonal rainfall evidence.');
+  await ask.click();
+  await expect.poll(()=>sent.length).toBe(3);
+  expect(sent[2].excerpts.map(source=>source.name).sort()).toEqual(['North.txt','South.txt']);
+  expect(sent[2].history.map(turn=>turn.content)).toContain(first);
+  expect(sent[2].history.map(turn=>turn.content)).not.toContain('Describe rainfall in the west.');
 });
