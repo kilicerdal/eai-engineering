@@ -185,3 +185,45 @@ test('new chat and case entry preserve a full history of unsent drafts', async (
   await expect(page.getByRole('textbox',{name:'Your message'})).toHaveValue('My draft 0');
   expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('erdal-ai-conversations-v31')!))).toEqual(saved);
 });
+
+test('draft-only chats can be searched and the selected draft survives refresh', async ({page}) => {
+  await page.goto('/');
+  await page.evaluate(() => localStorage.setItem('erdal-ai-conversations-v31',JSON.stringify(
+    ['First draft','Second draft'].map((draft,i)=>({id:'draft-'+i, mode:'general',title:'New conversation',messages:[],updatedAt:i,draft}))
+  )));
+  await page.goto('/#ai-assistant');
+  await expect(page).toHaveURL(/\/chat$/);
+  const search = page.getByRole('searchbox',{name:'Search conversations'});
+  if (!await search.isVisible()) await page.getByRole('button',{name:'Show sidebar'}).click();
+  await search.fill('Second');
+  await page.getByRole('button',{name:'Second draft',exact:true}).click();
+  await page.reload();
+  await expect(page.getByRole('textbox',{name:'Your message'})).toHaveValue('Second draft');
+});
+
+test('older tabs preserve a newer saved draft and keep their own edits visible', async ({page, context}) => {
+  await page.goto('/chat');
+  const draft = page.getByRole('textbox',{name:'Your message'});
+  await draft.fill('Starting draft');
+  const other = await context.newPage();
+  await other.goto('/chat');
+  const newer = other.getByRole('textbox',{name:'Your message'});
+  await expect(newer).toHaveValue('Starting draft');
+  await newer.fill('Latest saved version');
+  await draft.fill('My separate edits');
+  await expect(page.getByText(/Another tab updated your chats/)).toBeVisible();
+  await expect(draft).toHaveValue('My separate edits');
+  await other.reload();
+  await expect(newer).toHaveValue('Latest saved version');
+});
+
+test('damaged chat records survive a reload and remain recoverable', async ({page}) => {
+  await page.goto('/');
+  await page.evaluate(()=>localStorage.setItem('erdal-ai-conversations-v31','{"partial":'));
+  await page.goto('/chat');
+  await expect(page.getByText(/Saving is paused to protect it/)).toBeVisible();
+  await page.getByRole('textbox',{name:'Your message'}).fill('Temporary work');
+  await page.reload();
+  await expect(page.getByText(/Saving is paused to protect it/)).toBeVisible();
+  expect(await page.evaluate(()=>localStorage.getItem('erdal-ai-conversations-v31'))).toBe('{"partial":');
+});

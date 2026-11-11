@@ -829,6 +829,7 @@ export default function SharedAIChat() {
               <form onSubmit={handleSubmit} className="tutor-input-row">
                 <textarea
                   id="tutor-message-input"
+                  disabled={!hydrated || !active}
                   rows={2}
                   value={active?.draft||""}
                   onChange={(event) => {if(active){const value=event.target.value,at=inputTime(event.timeStamp);updateConversation(active.id,c=>({...c,draft:value,updatedAt:at}));}}}

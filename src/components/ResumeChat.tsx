@@ -41,6 +41,7 @@ type Conversation = {
 const chatLimit = 30;
 const chatLimitNotice = "You have 30 saved chats. Delete a chat you no longer need before starting another.";
 const STORAGE_KEY = "erdal-ai-conversations-v31";
+const ACTIVE_CHAT_KEY = "eai-active-chat";
 const OLD_STORAGE_KEY = "erdal-ai-chat-v3";
 
 const modes: { id: Mode; label: string }[] = [
@@ -150,7 +151,9 @@ export default function ResumeChat() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeId, setActiveId] = useState("");
   const [capacityNotice, setCapacityNotice] = useState("");
-  const [storageWarning, setStorageWarning] = useState(false);
+  const [storageWarning, setStorageWarning] = useState("");
+  const savedCopy = useRef<string | null>(null);
+  const savingPaused = useRef(false);
   const [logText,setLogText]=useState("");
   const [failure, setFailure] = useState<{id:string; message:string} | null>(null);
   const [loading, setLoading] = useState(false);
@@ -168,27 +171,32 @@ export default function ResumeChat() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
 
-      if (saved) {
+      savedCopy.current = saved;
+      if (saved !== null) {
         const parsed: unknown = JSON.parse(saved);
 
-        if (Array.isArray(parsed)) {
-          initial = parsed.filter(
-            (item): item is Conversation =>
-              item &&
-              typeof item.id === "string" &&
-              typeof item.title === "string" &&
-              Array.isArray(item.messages) &&
-              modes.some(mode => mode.id === item.mode) &&
-              item.messages.every((message: Message) => message && ["user", "assistant"].includes(message.role) && typeof message.content === "string")
-          );
-        }
+        if (!Array.isArray(parsed)) throw new Error("Unreadable chat history");
+        initial = parsed.filter(
+          (item): item is Conversation =>
+            item &&
+            typeof item.id === "string" &&
+            typeof item.title === "string" &&
+            (item.draft == null || typeof item.draft === "string") &&
+            (item.context == null || typeof item.context === "string") &&
+            (item.attachments == null || (Array.isArray(item.attachments) && item.attachments.every((file: Attachment) => file && typeof file.name === "string" && typeof file.text === "string"))) &&
+            Array.isArray(item.messages) &&
+            modes.some(mode => mode.id === item.mode) &&
+            item.messages.every((message: Message) => message && ["user", "assistant"].includes(message.role) && typeof message.content === "string")
+        );
+        if (parsed.length !== initial.length) throw new Error("Unreadable chat entry");
       }
 
       if (!initial.length) {
         const old = localStorage.getItem(OLD_STORAGE_KEY);
 
         if (old) {
-          const messages = JSON.parse(old) as Message[];
+          const messages = JSON.parse(old);
+          if (!Array.isArray(messages) || !messages.every(m => m && ["user", "assistant"].includes(m.role) && typeof m.content === "string")) throw new Error("Unreadable previous conversation");
           const migrated = createConversation();
 
           if (Array.isArray(messages) && messages.length) {
@@ -200,7 +208,8 @@ export default function ResumeChat() {
         }
       }
     } catch {
-      initial = [];
+      savingPaused.current = true;
+      queueMicrotask(() => setStorageWarning("Your saved history could not be fully opened. Saving is paused to protect it. Copy any new work before leaving."));
     }
 
 
@@ -220,30 +229,53 @@ export default function ResumeChat() {
       }
     }
     if (!initial.length) initial = [createConversation()];
+    let selected = initial[0].id;
+    if (!caseName || !Object.hasOwn(caseDiscussions, caseName)) {
+      try {
+        const savedId = sessionStorage.getItem(ACTIVE_CHAT_KEY);
+        selected = initial.find(chat => chat.id === savedId)?.id ?? selected;
+      } catch { /* A tab without session storage opens its most recent chat. */ }
+    }
     queueMicrotask(() => {
       if (caseName && Object.hasOwn(caseDiscussions, caseName)) {
         url.searchParams.delete("case");
         window.history.replaceState(window.history.state, "", url);
       }
       setConversations(initial);
-      setActiveId(initial[0].id);
+      setActiveId(selected);
       setHydrated(true);
       setHistoryOpen(window.matchMedia("(min-width: 768px)").matches);
     });
   }, []);
 
   useEffect(() => {
-    if (!hydrated) return;
-
+    if (!hydrated || savingPaused.current) return;
     try {
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(conversations)
-      );
+      const current = localStorage.getItem(STORAGE_KEY);
+      const next = JSON.stringify(conversations);
+      if (current !== savedCopy.current && current !== next) {
+        savingPaused.current = true;
+        queueMicrotask(() => setStorageWarning("Another tab updated your chats. Copy any unsaved work here before reloading the latest history."));
+        return;
+      }
+      if (current !== next) localStorage.setItem(STORAGE_KEY, next);
+      savedCopy.current = next;
     } catch {
-      queueMicrotask(() => setStorageWarning(true));
+      savingPaused.current = true;
+      queueMicrotask(() => setStorageWarning("Browser saving is unavailable. Copy your work before closing this tab."));
     }
   }, [conversations, hydrated]);
+
+  useEffect(() => {
+    if (hydrated) {
+      try { sessionStorage.setItem(ACTIVE_CHAT_KEY, activeId); } catch { /* Optional tab state. */ }
+    }
+  }, [activeId, hydrated]);
+
+  const query = search.trim().toLowerCase();
+  const visibleChats = conversations.filter(chat => !query ||
+    [chat.title, chat.draft, ...chat.messages.filter(m => m.role === "user" || m.content !== welcomeMessage.content).map(m => m.content)]
+      .some(text => typeof text === "string" && text.toLowerCase().includes(query)));
 
   const active = conversations.find(
     (conversation) => conversation.id === activeId
@@ -497,7 +529,7 @@ export default function ResumeChat() {
             </p>
 
             <div className="max-h-64 space-y-2 overflow-y-auto md:max-h-[540px]">
-              {conversations.filter(conversation => conversation.messages.some(message => message.role === "user") && (!search.trim() || `${conversation.title} ${conversation.messages.map(message => message.content).join(" ")}`.toLowerCase().includes(search.trim().toLowerCase()))).map((conversation) => (
+              {visibleChats.map((conversation) => (
                 <div
                   key={conversation.id}
                   className={`rounded-xl border p-2 ${
@@ -512,7 +544,7 @@ export default function ResumeChat() {
                     onClick={() => { followLatestRef.current=true; setActiveId(conversation.id); setLogText(""); }}
                     className="w-full truncate text-left text-sm text-slate-200"
                   >
-                    {conversation.title}
+                    {conversation.title === "New conversation" && conversation.draft?.trim() ? conversation.draft.trim().slice(0, 60) : conversation.title}
                   </button>
 
                   <div className="mt-2 flex gap-3">
@@ -535,7 +567,7 @@ export default function ResumeChat() {
                   </div>
                 </div>
               ))}
-            {search.trim() && !conversations.some(c => c.messages.some(m => m.role === "user") && `${c.title} ${c.messages.map(m => m.content).join(" ")}`.toLowerCase().includes(search.trim().toLowerCase())) && <p role="status">No matching chats.</p>}
+            {query && visibleChats.length === 0 && <p role="status">No matching chats.</p>}
             </div>
             <div className="atlas-sidebar-links"><a href="/engineering">Engineering Studio ↗</a><a href="/study">Learning Studio ↗</a></div>
           </aside>
@@ -621,7 +653,7 @@ export default function ResumeChat() {
               {(active?.attachments || []).map((file, index) => <span className="atlas-file-chip" key={`${index}-${file.name}`}>{file.name}<button type="button" disabled={loading || readingFile || voiceActive} aria-label={`Remove ${file.name}`} onClick={() => active && updateConversation(active.id,c => ({...c, attachments:c.attachments?.filter((_,i) => i !== index)}))}>×</button></span>)}
               {fileStatus && <p className="atlas-file-status" role="status">{fileStatus}</p>}
               <input ref={fileInputRef} className="sr-only" type="file" tabIndex={-1} accept=".pdf,.txt,.md,.log,.json,.csv,.ts,.tsx,.js,.jsx,.py,.java,.yaml,.yml,.xml,.html,.css,.sql,.sh" onChange={event => { const file=event.target.files?.[0]; if(file) void attachFile(file); event.target.value=""; }} />
-              {storageWarning && <p role="status">Browser saving is unavailable. Keep this tab open to retain your conversation.</p>}
+              {storageWarning && <p role="status">{storageWarning}</p>}
               <details className="atlas-chat-tools" key={active?.id}>
                 <summary aria-label="Add context" title="Add context">+ <span>Add context</span></summary>
                 <div className="atlas-chat-tools-panel">
@@ -675,6 +707,7 @@ export default function ResumeChat() {
                   rows={2}
                   value={input}
                   readOnly={dictating || voiceActive}
+                  disabled={!hydrated || !active}
                   onChange={(event) => {
                     setInput(event.target.value);
                     event.target.style.height = "auto";
