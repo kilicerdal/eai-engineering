@@ -67,6 +67,19 @@ export default function CourseMaterials() {
   const [library,setLibrary] = useState<MaterialLibrary>(emptyLibrary);
   const [ready,setReady] = useState(false);
   const [panel,setPanel] = useState<"materials"|"add"|null>(null);
+  const panelOpener = useRef<HTMLButtonElement | null>(null);
+  function showPanel(next: "materials" | "add", opener: HTMLButtonElement) {
+    panelOpener.current = opener;
+    setPanel(next);
+  }
+  function closePanel() {
+    setPanel(null);
+    const opener = panelOpener.current;
+    requestAnimationFrame(() => {
+      const target = opener?.isConnected && !opener.disabled ? opener : document.getElementById("library-materials-trigger");
+      target?.focus();
+    });
+  }
   const [storageAvailable,setStorageAvailable] = useState(true);
   const [lessonContext,setLessonContext] = useState<LessonMaterialHandoff|null>(null);
   const [lessonNotice,setLessonNotice] = useState("");
@@ -192,17 +205,17 @@ export default function CourseMaterials() {
   function choosePassage(selected:MaterialSource){setLessonContext(null);setLessonNotice("");setPassage(selected);setFocus(selected.documentId);setSource(null);setPanel(null);setActiveEntryId("");setError("");requestAnimationFrame(()=>{const selected=document.getElementById("selected-study-passage");selected?.focus({preventScroll:true});selected?.scrollIntoView({block:"start",behavior:"smooth"});});}
   const sourceDocument=library.documents.find(document=>document.id===source?.documentId);
   return <>
-    {lessonContext&&<section className="library-lesson-context" aria-label="Lesson materials context"><div><p className="studio-eyebrow">YOUR LESSON, YOUR SOURCES</p><h2>{lessonContext.title}</h2><p>The question is prepared below. Review the material focus, then select Ask. Only selected excerpts are sent; your full files are not automatically read.</p>{lessonNotice&&<p role="status">{lessonNotice}</p>}</div><button type="button" disabled={busy} onClick={()=>{setLessonContext(null);setLessonNotice("");setFocus("all");setQuestion("");}}>Clear lesson context</button><a href="/study#learning-goal">Return to my plan ↗</a></section>}
+    {lessonContext&&<section className="library-lesson-context" aria-label="Lesson materials context"><div><p className="studio-eyebrow">YOUR LESSON, YOUR SOURCES</p><h2>{lessonContext.title}</h2><p>The question is prepared below. Review the material focus, then select Ask. Only selected excerpts are sent; your full files are not automatically read.</p>{lessonNotice&&<p role="status">{lessonNotice}</p>}</div><button type="button" disabled={busy} onClick={()=>{setLessonContext(null);setLessonNotice("");if(focus==="lesson")setFocus("choose");if(question===lessonContext.question)setQuestion("");}}>Clear lesson context</button><a href="/study#learning-goal">Return to my plan ↗</a></section>}
     {!lessonContext&&lessonNotice&&<p role="status" className="goal-notice">{lessonNotice}</p>}
-    <div className="library-focused-shell" onKeyDown={event=>{if(event.key === "Escape" && panel){event.preventDefault();setPanel(null);document.getElementById("library-materials-trigger")?.focus();}}}>
+    <div className="library-focused-shell" onKeyDown={event=>{if(event.key === "Escape" && panel){event.preventDefault();closePanel();}}}>
       <div className="library-toolbar">
-        <button type="button" id="library-materials-trigger" disabled={!ready||busy} aria-expanded={panel==="materials"} aria-controls="library-materials-panel" onClick={()=>setPanel(panel==="materials"?null:"materials")}>Materials · {library.documents.length} <span aria-hidden="true">⌄</span></button>
+        <button type="button" id="library-materials-trigger" disabled={!ready||busy} aria-expanded={panel==="materials"} aria-controls="library-materials-panel" onClick={event=>panel==="materials"?closePanel():showPanel("materials",event.currentTarget)}>Materials · {library.documents.length} <span aria-hidden="true">⌄</span></button>
         <div className="library-focus-select"><label className="min-w-0 text-xs font-medium text-slate-300">Material focus<select aria-label="Material focus" value={focus} onChange={event=>{setFocus(event.target.value);setPassage(null);setActiveEntryId("");}} disabled={busy||!ready} className="mt-2 min-w-0 w-full rounded-xl border border-white/15 bg-slate-950 px-3 py-3 text-sm text-white">{(lessonContext || focus==="choose")&&<option value="choose">Choose materials…</option>}{lessonContext && lessonContext.documentIds.length>0&&<option value="lesson">Linked lesson materials · {lessonContext.documentIds.length}</option>}<option value="all">All materials</option>{library.documents.map(document=><option key={document.id} value={document.id}>{document.name}</option>)}</select></label></div>
-        <button type="button" className="library-add-trigger" disabled={!ready||busy} aria-expanded={panel==="add"} aria-controls="library-materials-panel" onClick={()=>setPanel(panel==="add"?null:"add")}>+ Add materials</button>
+        <button type="button" className="library-add-trigger" disabled={!ready||busy} aria-expanded={panel==="add"} aria-controls="library-materials-panel" onClick={event=>panel==="add"?closePanel():showPanel("add",event.currentTarget)}>+ Add materials</button>
       </div>
       {panel&&<>      <aside id="library-materials-panel" aria-label="Manage your materials" className={`library-material-panel library-panel-${panel}`}>
         <div className="library-management">
-          <div className="library-panel-heading"><h2 className="text-lg font-semibold text-white">Your materials</h2><span className="text-xs text-slate-500">{library.documents.length} / 5</span><button type="button" disabled={busy} onClick={()=>setPanel(null)}>Close</button></div>
+          <div className="library-panel-heading"><h2 className="text-lg font-semibold text-white">Your materials</h2><span className="text-xs text-slate-500">{library.documents.length} / 5</span><button type="button" disabled={busy} onClick={closePanel}>Close</button></div>
           <div className="library-upload-controls"><p className="mt-2 text-xs leading-6 text-slate-400">PDF, TXT, or Markdown · up to 10 MB per file · PDFs up to 100 pages</p>
           <label className={`mt-4 block rounded-xl border border-dashed border-cyan-300/40 px-4 py-5 text-center text-sm font-semibold text-cyan-200 ${busy||!ready?"opacity-40":"cursor-pointer hover:bg-cyan-300/5"}`}>
             Add course files
@@ -225,7 +238,7 @@ export default function CourseMaterials() {
       {task==="explain"&&<label className="material-explanation-style">How would you like it explained?<select aria-label="Explanation style" value={style} disabled={busy} onChange={event=>setStyle(event.target.value as MaterialExplanationStyle)}>{Object.entries(materialExplanationStyles).map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>}
       {passage&&task==="quiz"?<PassagePractice source={passage} openSource={setSource}/>:<>
       <div className="library-reading-area" aria-live="polite">
-          {entry?<MaterialResponse entry={entry} openSource={setSource}/>:<div className="library-empty"><h2>What would you like to know?</h2><p>Add a source, choose how you want to learn, and follow a question.</p><p className="library-empty-note">Answers use selected excerpts. Scanned pages and images need OCR.</p>{!library.documents.length&&<button type="button" disabled={busy||!ready} onClick={()=>setPanel("add")}>Add your first material ↗</button>}</div>}
+          {entry?<MaterialResponse entry={entry} openSource={setSource}/>:<div className="library-empty"><h2>What would you like to know?</h2><p>Add a source, choose how you want to learn, and follow a question.</p><p className="library-empty-note">Answers use selected excerpts. Scanned pages and images need OCR.</p>{!library.documents.length&&<button type="button" disabled={busy||!ready} onClick={event=>showPanel("add",event.currentTarget)}>Add your first material ↗</button>}</div>}
       </div>
       <div className="library-composer"><form onSubmit={ask}>
             <label className="block text-xs font-medium text-slate-300">Your question<textarea aria-label="Question about your materials" disabled={busy} rows={2} maxLength={3000} value={question} onChange={event=>setQuestion(event.target.value)} placeholder={task==="explain"?"For example: how does this chapter explain cellular respiration?":"Add a topic or leave this blank to use the selected excerpts."} className="mt-2 w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-3 text-sm leading-7 text-white" /></label>

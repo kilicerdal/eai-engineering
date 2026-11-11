@@ -598,3 +598,41 @@ test('formatted course notes with a blank section survive reopening the library'
   await page.getByLabel('Source location').selectOption('3');
   await expect(page.getByRole('dialog')).toContainText('Closing observation.');
 });
+
+test('materials panel returns focus to the specific control that opened it', async ({page})=>{
+  await page.goto('/study/materials');
+  const panel=page.getByRole('complementary',{name:'Manage your materials'});
+  for(const name of [/Add your first material/,/\+ Add materials/,/Materials · 0/]){
+    const trigger=page.getByRole('button',{name});
+    await trigger.click();
+    await expect(panel).toBeVisible();
+    const close=panel.getByRole('button',{name:'Close',exact:true});
+    if(name.source.includes('first')) await close.click();
+    else {await close.focus();await close.press('Escape');}
+    await expect(panel).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+  }
+});
+
+test('a plan lesson opens materials with the right task and supports browser back', async ({page})=>{
+ const saved={settings:{goal:'Understand economic changes in cities',level:'college',minutes:20,sessions:3,deadline:''},plan:{title:'Cities and trade',overview:'A study of economic changes in cities.',lessons:[1,2,3].map(n=>({id:'lesson-'+n,title:'City lesson '+n,objective:'Compare changes in local trade.',activity:'Describe two changes in your own words.',checkpoint:'Explain the difference between the examples.',sourceIds:[]}))},sources:[],completed:[],accepted:true,dirty:false};
+ await page.addInitScript(value=>{if(!localStorage.getItem('eai-goal-journey-v1'))localStorage.setItem('eai-goal-journey-v1',JSON.stringify(value));},saved);
+ await page.goto('/study#learning-goal');
+ const planner=page.locator('#learning-goal');
+ const lesson=planner.locator('.accepted-lesson').first();
+ await lesson.getByText('Study with your materials',{exact:true}).click();
+ await page.evaluate(()=>{document.documentElement.dataset.navigationProbe='same-document';});
+ await lesson.getByRole('button',{name:/Practice from my materials/}).click();
+ await expect(page).toHaveURL(/\/study\/materials$/);
+ await expect(page.getByLabel('Question about your materials')).toHaveValue(/Compare changes in local trade/);
+ await expect(page.getByRole('button',{name:'Start or continue quiz'})).toBeDisabled();
+ await expect(page.locator('html')).toHaveAttribute('data-navigation-probe','same-document');
+ const draft=page.getByLabel('Question about your materials');
+ await draft.fill('How did local trade change in the example?');
+ await page.getByRole('button',{name:'Clear lesson context'}).click();
+ await expect(draft).toHaveValue('How did local trade change in the example?');
+ await expect(page.getByLabel('Material focus')).toHaveValue('choose');
+ await page.goBack();
+ await expect(planner).toHaveAttribute('data-plan-view','accepted');
+ await expect(planner.getByRole('heading',{name:'Cities and trade'})).toBeVisible();
+});

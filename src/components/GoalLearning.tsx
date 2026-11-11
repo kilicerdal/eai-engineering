@@ -7,6 +7,7 @@ import {PLAN_CHOICE_KEY,resolvePlanChoice} from "@/lib/study-plan-adjustment";
 import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import StudyLandmark from "@/components/StudyLandmark";
 import { MATERIAL_HANDOFF_KEY, makeLessonMaterialHandoff } from "@/lib/study-material-handoff";
 import { CHECK_KEY, normalizeLessonChecks, latestLessonCheck, checkMemory } from "@/lib/study-checkpoints";
@@ -19,6 +20,7 @@ const KEY = "eai-goal-journey-v1";
 const examples = ["Understand calculus even though my algebra is rusty", "Learn world history and connect major events", "Learn Python so I can automate everyday tasks"];
 const emptyLibrary: MaterialLibrary = { documents: [], entries: [] };
 export default function GoalLearning() {
+  const router = useRouter();
   const [settings,setSettings]=useState<GoalSettings>(defaultGoalSettings);
   const [plan,setPlan]=useState<GoalPlan|null>(null);
   const [sources,setSources]=useState<GoalSource[]>([]);
@@ -127,7 +129,7 @@ export default function GoalLearning() {
   }
   function withMaterials(index:number,task:"explain"|"quiz"){
     if(!plan||!accepted||editing)return;
-    try{sessionStorage.setItem(MATERIAL_HANDOFF_KEY,JSON.stringify(makeLessonMaterialHandoff(settings.goal,plan.lessons[index],sources,task)));window.location.assign("/study/materials");}
+    try{sessionStorage.setItem(MATERIAL_HANDOFF_KEY,JSON.stringify(makeLessonMaterialHandoff(settings.goal,plan.lessons[index],sources,task)));router.push("/study/materials");}
     catch{setError("The lesson could not be passed to the library. Open Materials and enter the lesson objective there.");}
   }
   return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} data-plan-view={step===4&&accepted&&!editing?"accepted":"setup"} aria-labelledby="goal-heading" aria-busy={busy}>
