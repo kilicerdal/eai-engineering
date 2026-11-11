@@ -213,16 +213,17 @@ export function materialAnswerFromDraft(value: unknown, sources: MaterialSource[
     let quote=source.text;
     if(quote.length>600){
       let bestStart=0;let bestScore=-1;
-      for(let start=0;start<source.text.length;start+=200){
+      for(let offset=0;offset<source.text.length;offset+=200){
+        const start=Math.min(offset,source.text.length-560);
         const window=source.text.slice(start,start+560).toLowerCase();
         const score=query.reduce((sum,word)=>sum+(window.includes(word)?1:0),0);
         if(score>bestScore){bestScore=score;bestStart=start;}
       }
-      const boundary=source.text.indexOf(" ",Math.max(0,bestStart-1));
-      const start=boundary>=0&&boundary<bestStart+40?boundary+1:bestStart;
-      let end=Math.min(start+580,source.text.length);
-      const space=source.text.lastIndexOf(" ",end);
-      if(space>start+300)end=space;
+      const precedingSpace=source.text.lastIndexOf(" ",bestStart);
+      const start=bestStart-precedingSpace<=20 ? precedingSpace+1 : bestStart;
+      const windowEnd=bestStart+560;
+      const followingSpace=source.text.indexOf(" ",windowEnd);
+      const end=followingSpace>=windowEnd && followingSpace-windowEnd<=20 ? followingSpace : windowEnd;
       quote=source.text.slice(start,end).trim();
     }
     return {sourceId,quote};

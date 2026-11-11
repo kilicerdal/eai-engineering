@@ -1102,3 +1102,24 @@ test('a general study guide covers the selected readings after a narrow question
   expect(requests[1].excerpts.some(source=>source.name==='Methods.txt')).toBe(true);
   expect(requests[1].excerpts.some(source=>source.text.endsWith('Closing observation.'))).toBe(true);
 });
+
+test('saved citations highlight the occurrence inside the cited excerpt', async ({page}) => {
+  const quote = 'Record the observed temperature.';
+  const text = quote+' '+'Field notes. '.repeat(155)+'Evening protocol: '+quote;
+  await page.route('**/api/study/materials', route => route.fulfill({json:{
+    supported:true,answer:'Use the evening protocol. [S1]',citations:[{sourceId:'S1',quote}],
+  }}));
+  await page.goto('/study/materials');
+  await page.getByRole('button',{name:'Add your first material'}).click();
+  await page.getByLabel('Add course files').setInputFiles({name:'Protocol.txt',mimeType:'text/plain',buffer:Buffer.from(text)});
+  await expect(page.getByLabel('Material focus').locator('option:checked')).toHaveText('Protocol.txt');
+  await page.getByRole('button',{name:'Close',exact:true}).click();
+  await page.getByLabel('Question about your materials').fill('Explain the evening protocol.');
+  await page.getByRole('button',{name:'Ask about materials'}).click();
+  await expect(page.getByRole('heading',{name:'Explain the evening protocol.'})).toBeVisible();
+  await page.reload();
+  await page.getByRole('button',{name:/Open S1: Protocol.txt/}).first().click();
+  const mark=page.getByRole('dialog').locator('mark');
+  await expect(mark).toHaveText(quote);
+  expect(await mark.evaluate(element=>element.previousSibling?.textContent)).toMatch(/Evening protocol: $/);
+});

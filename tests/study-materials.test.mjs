@@ -204,3 +204,13 @@ test('formatted notes preserve section numbers and earlier saved libraries reope
  assert.deepEqual(materials.readMaterialLibrary({documents:[old],entries:[]}).documents,[doc]);
  assert.equal(selectMaterialExcerpts([doc],'Closing observation','explain')[0].page,3);
 });
+
+test('source quotes preserve matched terms at either end of a long excerpt',()=>{
+ for(const text of ['Cobalt crystallizes rapidly. '+'General observations. '.repeat(50), 'General observations. '.repeat(50)+'Cobalt crystallizes rapidly.']){
+  const answer=materials.materialAnswerFromDraft({supported:true,answer:'Cobalt crystallizes rapidly. [S1]'},[{...source,text}]);
+  const quote=answer.citations[0].quote;
+  assert.ok(quote.includes('Cobalt crystallizes rapidly.'));
+  assert.ok(text.includes(quote));
+  assert.ok(quote.length<=600);
+ }
+});

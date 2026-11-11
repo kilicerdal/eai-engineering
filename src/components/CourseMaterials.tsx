@@ -15,7 +15,7 @@ import { importCourseFile, importCourseNotes, loadMaterialLibrary, saveMaterialL
 import { MATERIAL_HANDOFF_KEY, normalizeLessonMaterialHandoff, lessonMaterialScope, type LessonMaterialHandoff } from "@/lib/study-material-handoff";
 import { MATERIAL_LIMITS, materialLocation, materialTasks, normalizeMaterialText, removeMaterialDocument, validateMaterialAnswer, validateMaterialSources, selectMaterialExcerpts, type CourseDocument, type MaterialEntry, type MaterialLibrary, materialExplanationStyles,type MaterialExplanationStyle,type MaterialSource,type MaterialTask } from "@/lib/study-materials";
 
-type SourceView = { documentId: string; page: number; quote: string };
+type SourceView = { documentId: string; page: number; quote: string; text?: string };
 function SourceViewer({ document, source, close, choose }: { document: CourseDocument; source: SourceView; close: () => void;choose:(source:MaterialSource)=>void }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const highlight = useRef<HTMLElement>(null);
@@ -25,7 +25,10 @@ function SourceViewer({ document, source, close, choose }: { document: CourseDoc
   const page = document.pages.find(page => page.number === pageNumber);
   const text = normalizeMaterialText(page?.text || "");
   const quote = pageNumber === source.page ? normalizeMaterialText(source.quote) : "";
-  const index = quote ? text.indexOf(quote) : -1;
+  const excerpt = normalizeMaterialText(source.text ?? text);
+  const excerptStart = text.indexOf(excerpt);
+  const quoteStart = quote ? excerpt.indexOf(quote) : -1;
+  const index = excerptStart >= 0 && quoteStart >= 0 ? excerptStart + quoteStart : -1;
   function dismiss() {
     dialog.current?.close();
     close();
