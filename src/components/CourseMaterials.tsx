@@ -106,7 +106,7 @@ export default function CourseMaterials() {
     if(current.documents.some(item=>item.id===document.id)) throw new Error("This material is already in your library.");
     const characters=[...current.documents,document].reduce((sum,item)=>sum+item.pages.reduce((sum,page)=>sum+page.text.length,0),0);
     if(characters>MATERIAL_LIMITS.libraryCharacters) throw new Error("This library has reached its text limit. Remove a material or use a shorter selection.");
-    const next={...current,documents:[...current.documents,document]}; currentLibrary.current=next; setLibrary(next);setFocus(document.id);setActiveEntryId("");
+    const next={...current,documents:[...current.documents,document]}; currentLibrary.current=next; setLibrary(next);setPassage(null);setFocus(document.id);setActiveEntryId("");
   }
   async function uploadFiles(files: FileList|null) {
     if(!files?.length || uploading || loading) return;
@@ -137,7 +137,7 @@ export default function CourseMaterials() {
   function removeDocument(id:string) {
     if(loading||uploading)return;
     setLibrary(previous=>removeMaterialDocument(previous,id));
-    if(passage?.documentId===id)setPassage(null);if(focus===id)setFocus("all");setActiveEntryId("");setSource(null);setError("");
+    if(passage?.documentId===id)setPassage(null);if(focus===id)setFocus("choose");setActiveEntryId("");setSource(null);setError("");
   }
   async function ask(event: FormEvent) {
     event.preventDefault();if(loading||uploading||!ready)return;
@@ -176,7 +176,7 @@ export default function CourseMaterials() {
     <div className="library-focused-shell" onKeyDown={event=>{if(event.key === "Escape" && panel){event.preventDefault();setPanel(null);document.getElementById("library-materials-trigger")?.focus();}}}>
       <div className="library-toolbar">
         <button type="button" id="library-materials-trigger" disabled={!ready||busy} aria-expanded={panel==="materials"} aria-controls="library-materials-panel" onClick={()=>setPanel(panel==="materials"?null:"materials")}>Materials · {library.documents.length} <span aria-hidden="true">⌄</span></button>
-        <div className="library-focus-select"><label className="min-w-0 text-xs font-medium text-slate-300">Material focus<select aria-label="Material focus" value={focus} onChange={event=>{setFocus(event.target.value);setPassage(null);setActiveEntryId("");}} disabled={busy||!ready} className="mt-2 min-w-0 w-full rounded-xl border border-white/15 bg-slate-950 px-3 py-3 text-sm text-white">{lessonContext&&<><option value="choose">Choose lesson materials…</option>{lessonContext.documentIds.length>0&&<option value="lesson">Linked lesson materials · {lessonContext.documentIds.length}</option>}</>}<option value="all">All materials</option>{library.documents.map(document=><option key={document.id} value={document.id}>{document.name}</option>)}</select></label></div>
+        <div className="library-focus-select"><label className="min-w-0 text-xs font-medium text-slate-300">Material focus<select aria-label="Material focus" value={focus} onChange={event=>{setFocus(event.target.value);setPassage(null);setActiveEntryId("");}} disabled={busy||!ready} className="mt-2 min-w-0 w-full rounded-xl border border-white/15 bg-slate-950 px-3 py-3 text-sm text-white">{(lessonContext || focus==="choose")&&<option value="choose">Choose materials…</option>}{lessonContext && lessonContext.documentIds.length>0&&<option value="lesson">Linked lesson materials · {lessonContext.documentIds.length}</option>}<option value="all">All materials</option>{library.documents.map(document=><option key={document.id} value={document.id}>{document.name}</option>)}</select></label></div>
         <button type="button" className="library-add-trigger" disabled={!ready||busy} aria-expanded={panel==="add"} aria-controls="library-materials-panel" onClick={()=>setPanel(panel==="add"?null:"add")}>+ Add materials</button>
       </div>
       {panel&&<>      <aside id="library-materials-panel" aria-label="Manage your materials" className={`library-material-panel library-panel-${panel}`}>
@@ -208,7 +208,7 @@ export default function CourseMaterials() {
       </div>
       <div className="library-composer"><form onSubmit={ask}>
             <label className="block text-xs font-medium text-slate-300">Your question<textarea aria-label="Question about your materials" disabled={busy} rows={2} maxLength={3000} value={question} onChange={event=>setQuestion(event.target.value)} placeholder={task==="explain"?"For example: how does this chapter explain cellular respiration?":"Add a topic or leave this blank to use the selected excerpts."} className="mt-2 w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-3 text-sm leading-7 text-white" /></label>
-            <div className="flex flex-wrap items-center gap-3"><button type="submit" disabled={!ready||busy||!library.documents.length||(task==="explain"&&!question.trim()&&!passage)} className="rounded-xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 disabled:opacity-40">{task==="guide"?"Create study guide":task==="quiz"?"Start or continue quiz":"Ask about materials"}</button>{loading&&<button type="button" onClick={()=>abort.current?.abort()} className="rounded-xl border border-white/20 px-4 py-3 text-sm text-slate-300">Stop request</button>}</div>
+            <div className="flex flex-wrap items-center gap-3"><button type="submit" disabled={!ready||busy||focus==="choose"||!library.documents.length||(task==="explain"&&!question.trim()&&!passage)} className="rounded-xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 disabled:opacity-40">{task==="guide"?"Create study guide":task==="quiz"?"Start or continue quiz":"Ask about materials"}</button>{loading&&<button type="button" onClick={()=>abort.current?.abort()} className="rounded-xl border border-white/20 px-4 py-3 text-sm text-slate-300">Stop request</button>}</div>
           </form>
           {error&&<p role="alert" className="mt-5 rounded-xl border border-amber-300/25 bg-amber-300/5 p-4 text-sm leading-7 text-amber-100">{error}</p>}
           {loading&&<p role="status" className="mt-5 text-sm text-cyan-200">Reading the relevant excerpts and checking citation quotes…</p>}

@@ -268,3 +268,59 @@ test('a damaged lesson handoff is reported once and the materials library reopen
   await expect(page.getByRole('heading',{level:1})).toBeVisible();
   await expect(notice).toHaveCount(0);
 });
+
+test('reading search combines author and title and announces the current filtered results', async ({page}) => {
+  await page.goto('/study/reading');
+  const search = page.getByRole('searchbox', {name:'Find a book'});
+  await page.getByLabel('Shelf for Moby Dick').selectOption('Reading');
+  await search.fill('Melville Moby-Dick');
+  await expect(page.getByRole('status').filter({hasText:'1 book to explore'})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Moby Dick', exact:true})).toBeVisible();
+  await search.fill("Alice's Wonderland");
+  await expect(page.getByRole('heading',{name:'Alice’s Adventures in Wonderland'})).toBeVisible();
+  await search.fill('unlisted title');
+  await page.getByRole('button',{name:'Show all books'}).click();
+  await expect(page.getByLabel('Shelf for Moby Dick')).toHaveValue('Reading');
+});
+
+test('removing the selected material keeps a pending question from using unrelated notes', async ({page}) => {
+  let requests=0;
+  await page.route('**/api/study/materials',route=>{requests++;return route.abort();});
+  await page.goto('/study/materials');
+  await page.getByRole('button',{name:'Add your first material'}).click();
+  await page.getByLabel('Add course files').setInputFiles(['first','second'].map(name=>({
+    name:name+'.txt',mimeType:'text/plain',buffer:Buffer.from(name+' set of synthetic notes about the movement of water through soil.'),
+  })));
+  const focus=page.getByLabel('Material focus');
+  await expect(focus.locator('option:checked')).toHaveText('second.txt');
+  await page.getByRole('button',{name:'Remove second.txt'}).click();
+  await expect(focus).toHaveValue('choose');
+  const close=page.getByRole('button',{name:/Close/}).first();
+  if(await close.isVisible()) await close.click();
+  await page.getByRole('textbox',{name:'Question about your materials'}).fill('Explain the second reading.');
+  const ask=page.getByRole('button',{name:'Ask about materials'});
+  await expect(ask).toBeDisabled();
+  await focus.selectOption({label:'first.txt'});
+  await expect(ask).toBeEnabled();
+  expect(requests).toBe(0);
+});
+
+test('planner asks for a new source selection when another tab removes a selected file', async ({page,context}) => {
+  let requests=0;
+  await page.route('**/api/study/plan',route=>{requests++;return route.abort();});
+  await page.goto('/study');
+  const planner=page.locator('#learning-goal');
+  await planner.locator('#learning-achievement').fill('Understand how groundwater moves through sand.');
+  await planner.getByRole('button',{name:'Continue →',exact:true}).click();
+  await planner.getByLabel('Add planning material').setInputFiles({name:'Groundwater.txt',mimeType:'text/plain',buffer:Buffer.from('Groundwater moves slowly between grains of sand in a porous aquifer.')});
+  await planner.getByRole('button',{name:/Continue with selected materials/}).click();
+  const library=await context.newPage();
+  await library.goto('/study/materials');
+  await library.locator('#library-materials-trigger').click();
+  await library.getByRole('button',{name:'Remove Groundwater.txt'}).click();
+  await expect(library.locator('#library-materials-trigger')).toContainText('Materials · 0');
+  await planner.getByRole('button',{name:/Create my learning plan/}).click();
+  await expect(planner.getByText(/A selected material is no longer in your library/)).toBeVisible();
+  await expect(planner.getByRole('button',{name:/Continue without materials/})).toBeEnabled();
+  expect(requests).toBe(0);
+});

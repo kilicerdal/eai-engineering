@@ -90,7 +90,18 @@ export default function GoalLearning() {
     try{normalized=validateGoalSettings(settings);}catch(e){setError(e instanceof Error?e.message:"Check your goal settings.");return;}
     setBusy(true);abort.current=new AbortController();
     try {
-      const excerpts=selectMaterialExcerpts(library.documents.filter(d=>selected.includes(d.id)),normalized.goal,"guide");
+      const refreshed = selected.length ? await loadMaterialLibrary() : library;
+      const currentDocuments = refreshed.documents;
+      if (abort.current.signal.aborted) throw new DOMException("Cancelled", "AbortError");
+      if (selected.some(id => !currentDocuments.some(document => document.id === id))) {
+        libraryRef.current = refreshed;
+        setLibrary(refreshed);
+        setSelected(ids => ids.filter(id => refreshed.documents.some(document => document.id === id)));
+        move(2);
+        setError("A selected material is no longer in your library. Review the remaining choices or continue without materials.");
+        return;
+      }
+      const excerpts=selectMaterialExcerpts(currentDocuments.filter(d=>selected.includes(d.id)),normalized.goal,"guide");
       const response=await fetch("/api/study/plan",{method:"POST",headers:{"Content-Type":"application/json"},signal:AbortSignal.any([abort.current.signal,AbortSignal.timeout(55000)]),body:JSON.stringify({...normalized,excerpts})});
       const result=await response.json();if(!response.ok)throw new Error(result.error||"The plan could not be created.");
       const sources=Array.isArray(result.sources)&&result.sources.length?validateMaterialSources(result.sources):[];
