@@ -1215,3 +1215,50 @@ test('moving a book off a filtered shelf keeps keyboard focus and updates the ot
   await expect(second.getByLabel('Shelf for Frankenstein')).toHaveValue('Finished');
   await expect(second.getByLabel('Shelf for Moby Dick')).toHaveValue('');
 });
+
+test('writing actions retain the evaluated report and isolate follow-ups after switching essays', async ({page})=>{
+  const review=['Thesis Strength','Grammar and Clarity','Organization and Structure','Evidence and Reasoning'].map(name=>'## '+name+'\nScore: 8/10').join('\n\n');
+  const requests:{history:{content:string}[]}[]=[];
+  let release!:()=>void;
+  const gate=new Promise<void>(resolve=>{release=resolve;});
+  await page.route('**/api/study/chat',async route=>{
+    requests.push(route.request().postDataJSON());
+    const first=requests.length===1;
+    if(first)await gate;
+    return route.fulfill({contentType:'text/event-stream',body:'data: '+JSON.stringify({response:first?review:'Review the transition in this paragraph.'})+'\n\ndata: [DONE]\n\n'});
+  });
+  await page.goto('/study/writing');
+  const title=page.getByLabel('Essay title'),essay=page.getByLabel('Essay content');
+  await title.fill('First draft');
+  await essay.fill('The first argument examines rainfall.');
+  await page.getByRole('button',{name:/Evaluate My Essay/}).click();
+  await expect.poll(()=>requests.length).toBe(1);
+  await title.fill('Second draft');
+  await essay.fill('The second argument examines transit.');
+  release();
+  await expect(page.getByText('Evaluated draft · First draft')).toBeVisible();
+  await page.getByLabel('Follow-up question').fill('Does this opening introduce the transit argument?');
+  await page.getByRole('button',{name:'Send Question'}).click();
+  await expect.poll(()=>requests.length).toBe(2);
+  expect(requests[1].history).toEqual([]);
+  await page.getByRole('button',{name:/Suggest stronger transitions/}).click();
+  await expect.poll(()=>requests.length).toBe(3);
+  await expect(page.getByRole('button',{name:'Send Question'})).toBeDisabled();
+  await expect(page.getByText('Review the transition in this paragraph.',{exact:true})).toHaveCount(2);
+  await page.reload();
+  await expect(essay).toHaveValue('The second argument examines transit.');
+  await expect(page.getByText('Evaluated draft · First draft')).toBeVisible();
+});
+
+test('writing honors a dated retry delay and allows a local conversation reset',async({page})=>{
+  await page.route('**/api/study/chat',route=>route.fulfill({status:429,headers:{Date:'Wed, 11 Nov 2026 12:00:00 GMT','Retry-After':'Wed, 11 Nov 2026 12:00:15 GMT'},json:{}}));
+  await page.goto('/study/writing');
+  await page.getByLabel('Essay content').fill('A synthetic draft for a timing check.');
+  const evaluate=page.getByRole('button',{name:/Evaluate My Essay/});
+  await evaluate.click();
+  await expect(page.getByText(/AI available again in 0m 1[0-5]s/)).toBeVisible();
+  await expect(evaluate).toBeDisabled();
+  await page.getByRole('button',{name:'New Conversation'}).click();
+  await expect(evaluate).toBeDisabled();
+  await expect(page.getByLabel('Essay content')).toHaveValue('A synthetic draft for a timing check.');
+});

@@ -2,7 +2,7 @@
 
 import StudyGuide from "@/components/StudyGuide";
 import { useEffect, useRef, useState } from "react";
-import { readStudyStream } from "@/lib/study-stream";
+import { readStudyStream, retryDelaySeconds } from "@/lib/study-stream";
 import { writeStudyCopy } from "@/lib/study-safe-storage";
 import StudyNavigation from "@/components/StudyNavigation";
 import ReactMarkdown from "react-markdown";
@@ -395,21 +395,15 @@ export default function WritingStudioPage() {
   }, [retryUntil]);
 
   function handleAIRateLimit(response: Response): never {
-    const retryAfter = response.headers.get("Retry-After");
-    const seconds = retryAfter ? Number(retryAfter) : NaN;
-
     if (response.status === 429) {
-      const waitSeconds =
-        Number.isFinite(seconds) && seconds > 0
-          ? Math.ceil(seconds)
-          : 60;
-
-      setRetrySeconds(waitSeconds);
-      setRetryUntil(Date.now() + waitSeconds * 1000);
-
-      throw new Error(
-        `AI usage limit reached. Please wait ${Math.ceil(waitSeconds / 60)} minute(s).`
-      );
+      const waitSeconds = retryDelaySeconds(response.headers);
+      if (waitSeconds) {
+        setRetrySeconds(waitSeconds);
+        setRetryUntil(Date.now() + waitSeconds * 1000);
+      }
+      throw new Error(waitSeconds === null
+        ? "AI request limit reached. Please try again later."
+        : "AI request limit reached. Your draft and feedback remain available.");
     }
 
     throw new Error(`AI request failed (HTTP ${response.status}).`);
@@ -860,7 +854,15 @@ export default function WritingStudioPage() {
       content.trim().slice(0, isFollowUp ? 1400 : 2600),
     ].join("\n\n");
 
-    const previousHistory = isFollowUp ? chatHistory.slice(-8) : [];
+    const essayTitle = title.trim() || "Untitled Essay";
+    const previousHistory: WritingMessage[] = [];
+    if (isFollowUp) {
+      for (let i = chatHistory.length - 1; i >= 1 && previousHistory.length < 8; i -= 2) {
+        const reply = chatHistory[i], question = chatHistory[i-1];
+        if (reply.role !== "assistant" || question.role !== "user" || reply.essayTitle !== essayTitle) break;
+        previousHistory.unshift(question, reply);
+      }
+    }
 
     try {
       const response = await fetch("/api/study/chat", {
@@ -869,7 +871,7 @@ export default function WritingStudioPage() {
         body: JSON.stringify({
           message,
           subject: "writing",
-          history: previousHistory.map(({role, content}) => ({role, content})),
+          history: previousHistory.map(({role, content}) => ({role, content: content.slice(0,4000)})),
         }),
       });
 
@@ -892,7 +894,7 @@ export default function WritingStudioPage() {
           : answer;
 
       setChatHistory((current) => [
-        ...(isFollowUp ? current : []),
+        ...current,
         { role: "user" as const, content: action },
         { role: "assistant" as const, content: finalAnswer, essayTitle: title.trim() || "Untitled Essay" },
       ].slice(-20));
@@ -1121,6 +1123,7 @@ export default function WritingStudioPage() {
                   >
                     <p className="mb-2 text-xs font-semibold text-cyan-300">
                       {message.role === "user" ? "You" : "AI Writing Coach"}
+                      {message.role === "assistant" && message.essayTitle && message.essayTitle !== (title.trim() || "Untitled Essay") && ` · ${message.essayTitle}`}
                     </p>
 
                     <div className="min-w-0 break-words text-sm leading-7 text-slate-200 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_strong]:text-cyan-200">
@@ -1173,7 +1176,7 @@ export default function WritingStudioPage() {
 
                 <button
                   type="button"
-                  disabled={aiLoading || retrySeconds > 0}
+                  disabled={aiLoading}
                   onClick={() => {
                     setChatHistory([]);
                     setStreamingAnswer("");

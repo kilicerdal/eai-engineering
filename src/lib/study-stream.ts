@@ -1,6 +1,6 @@
-function retryGuidance(headers: Headers): string {
+export function retryDelaySeconds(headers: Headers): number | null {
   const value = headers.get("Retry-After")?.trim();
-  if (!value) return "Please try again later.";
+  if (!value) return null;
   let seconds: number;
   if (/^\d+$/.test(value)) {
     seconds = Number(value);
@@ -8,9 +8,15 @@ function retryGuidance(headers: Headers): string {
     const serverTime = Date.parse(headers.get("Date") || "");
     seconds = Math.ceil((Date.parse(value) - (Number.isFinite(serverTime) ? serverTime : Date.now())) / 1000);
   } else {
-    return "Please try again later.";
+    return null;
   }
-  if (!Number.isSafeInteger(seconds)) return "Please try again later.";
+  if (!Number.isSafeInteger(seconds)) return null;
+  return Math.max(0, seconds);
+}
+
+function retryGuidance(headers: Headers): string {
+  const seconds = retryDelaySeconds(headers);
+  if (seconds === null) return "Please try again later.";
   if (seconds <= 0) return "You can retry now.";
   const unit = seconds < 60 ? "second" : "minute";
   const amount = seconds < 60 ? seconds : Math.ceil(seconds / 60);
