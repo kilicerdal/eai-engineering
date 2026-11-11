@@ -48,10 +48,10 @@ export default function GoalLearning() {
     let cancelled=false;
     try {
       const raw=localStorage.getItem(KEY);
-      if(raw){const saved=JSON.parse(raw);const settings=validateGoalSettings(saved.settings);const sources:GoalSource[]=Array.isArray(saved.sources)&&saved.sources.length?validateMaterialSources(saved.sources):[];const plan=saved.plan?validateGoalPlan(saved.plan,sources):null;
+      if(raw!==null){const saved=JSON.parse(raw);const settings=validateGoalSettings(saved.settings);const sources:GoalSource[]=Array.isArray(saved.sources)&&saved.sources.length?validateMaterialSources(saved.sources):[];const plan=saved.plan?validateGoalPlan(saved.plan,sources):null;
         queueMicrotask(()=>{if(cancelled)return;setSettings(settings);setSources(sources);setPlan(plan);setCompleted(plan?normalizeGoalProgress(saved.completed,plan):[]);setAccepted(!!plan&&saved.accepted===true);setStep(plan?4:1);setDirty(saved.dirty===true);setSelected(sources.map(source=>source.documentId));});}
       savedPlan.current={raw};
-    } catch {queueMicrotask(()=>setStorageWarning("A saved plan could not be restored. You can create a new one."));}
+    } catch {queueMicrotask(()=>setStorageWarning("Your saved plan could not be read. It is preserved. Any new plan will stay in this tab."));}
     loadMaterialLibrary().then(value=>{if(!cancelled){materialRead.current=true;libraryRef.current=value;setLibrary(value);setReady(true);}}).catch(()=>{if(!cancelled){setStorageWarning("Material storage is unavailable. You can still plan without materials.");setReady(true);}});
     return ()=>{cancelled=true;abort.current?.abort();};
   },[]);
@@ -68,6 +68,9 @@ export default function GoalLearning() {
       try{
         const level=input.level==="highSchool"?"highschool":input.level==="foundation"?"foundations":input.level;
         const incoming=validateGoalSettings({...defaultGoalSettings,goal:input.goal,deadline:input.deadline,level});
+        abort.current?.abort();
+        abort.current=null;
+        setBusy(false);
         setSettings(previous=>({...previous,goal:incoming.goal,deadline:incoming.deadline,level:incoming.level}));setStep(2);setDirty(true);setAccepted(false);setError("");
       }catch{setError("The exam goal could not be opened. Please describe it above.");}
     }
@@ -90,11 +93,11 @@ export default function GoalLearning() {
   async function generate(){
     if(busy||uploading)return;setError("");let normalized:GoalSettings;
     try{normalized=validateGoalSettings(settings);}catch(e){setError(e instanceof Error?e.message:"Check your goal settings.");return;}
-    setBusy(true);abort.current=new AbortController();
+    setBusy(true);const controller=new AbortController();abort.current=controller;
     try {
       const refreshed = selected.length ? await loadMaterialLibrary() : library;
       const currentDocuments = refreshed.documents;
-      if (abort.current.signal.aborted) throw new DOMException("Cancelled", "AbortError");
+      if (controller.signal.aborted) throw new DOMException("Cancelled", "AbortError");
       if (selected.some(id => !currentDocuments.some(document => document.id === id))) {
         libraryRef.current = refreshed;
         setLibrary(refreshed);
@@ -104,12 +107,12 @@ export default function GoalLearning() {
         return;
       }
       const excerpts=selectMaterialExcerpts(currentDocuments.filter(d=>selected.includes(d.id)),normalized.goal,"guide");
-      const response=await fetch("/api/study/plan",{method:"POST",headers:{"Content-Type":"application/json"},signal:AbortSignal.any([abort.current.signal,AbortSignal.timeout(55000)]),body:JSON.stringify({...normalized,excerpts})});
-      const result=await response.json();if(!response.ok)throw new Error(result.error||"The plan could not be created.");
+      const response=await fetch("/api/study/plan",{method:"POST",headers:{"Content-Type":"application/json"},signal:AbortSignal.any([controller.signal,AbortSignal.timeout(55000)]),body:JSON.stringify({...normalized,excerpts})});
+      const result=await response.json();controller.signal.throwIfAborted();if(!response.ok)throw new Error(result.error||"The plan could not be created.");
       const sources=Array.isArray(result.sources)&&result.sources.length?validateMaterialSources(result.sources):[];
       const next=validateGoalPlan(result.plan,sources);
       setPlan(next);setSources(sources);setCompleted([]);setAccepted(false);setEditing(false);setDirty(false);move(4);
-    }catch(e){if(e instanceof Error&&e.name==="AbortError")setError("Planning cancelled. Your previous plan is unchanged.");else setError(e instanceof Error?e.message:"The plan could not be created. Try again.");}finally{setBusy(false);abort.current=null;}
+    }catch(e){if(abort.current!==controller)return;if(e instanceof Error&&e.name==="AbortError")setError("Planning cancelled. Your previous plan is unchanged.");else setError(e instanceof Error?e.message:"The plan could not be created. Try again.");}finally{if(abort.current===controller){setBusy(false);abort.current=null;}}
   }
   function editLesson(index:number,key:"title"|"objective"|"activity"|"checkpoint",value:string){setPlan(previous=>previous?{...previous,lessons:previous.lessons.map((lesson,i)=>i===index?{...lesson,[key]:value}:lesson)}:null);setAccepted(false);}
   function accept(){

@@ -867,3 +867,67 @@ test('a pending notebook review preserves newer notes and uses the complete save
   await expect(page.getByRole('alert').filter({hasText:'entry changed during the review'})).toBeVisible();
   expect(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!)[0].reflection,key)).toBe('My newer note.');
 });
+
+test('exam handoff supersedes a pending plan and retains its deadline through reload',async({page})=>{
+  let release!:()=>void;
+  const gate=new Promise<void>(resolve=>{release=resolve;});
+  const goals:string[]=[];
+  await page.route('**/api/study/plan',async route=>{
+    const body=route.request().postDataJSON();
+    goals.push(body.goal);
+    const title=goals.length===1?'Earlier unrelated plan':'Current exam plan';
+    if(goals.length===1)await gate;
+    await route.fulfill({json:{sources:[],plan:{title,overview:'Work through one example at a time.',lessons:[1,2,3].map(n=>({title:'Lesson '+n,objective:'Understand the problem.',activity:'Work through an example.',checkpoint:'Explain the reasoning.'}))}}});
+  });
+  await page.goto('/study');
+  const planner=page.locator('#learning-goal'),exam=page.locator('.exam-prep-controls');
+  await planner.locator('#learning-achievement').fill('Understand an unrelated topic.');
+  await planner.getByRole('button',{name:'Continue →',exact:true}).click();
+  await planner.getByRole('button',{name:/Continue without materials/}).click();
+  await planner.getByRole('button',{name:/Create my learning plan/}).click();
+  try{
+    await expect.poll(()=>goals.length).toBe(1);
+    await exam.getByLabel('Exam study focus').fill('Compare arguments from two passages');
+    await exam.getByLabel('Exam date').fill('2027-04-03');
+    await exam.getByText('Preparation plan & resources',{exact:true}).click();
+    await exam.getByRole('button',{name:/Build my preparation plan/}).click();
+    await planner.getByRole('button',{name:/Continue without materials/}).click();
+    await expect(planner.getByLabel(/Target date/)).toHaveValue('2027-04-03');
+  }finally{release();}
+  await planner.getByRole('button',{name:/Create my learning plan/}).click();
+  await expect(planner.getByRole('heading',{name:'Current exam plan'})).toBeVisible();
+  await page.reload();
+  await expect(planner.getByRole('heading',{name:'Current exam plan'})).toBeVisible();
+  await expect(planner.getByText(/Target: 2027-04-03/)).toBeVisible();
+  await expect(planner.getByRole('heading',{name:'Earlier unrelated plan'})).toHaveCount(0);
+});
+
+test('exam tutor draft includes the chosen exam date without sending a message',async({page})=>{
+  let calls=0;
+  await page.route('**/api/study/chat',route=>{calls++;return route.abort();});
+  await page.goto('/study');
+  const exam=page.locator('.exam-prep-controls');
+  await exam.getByLabel('Exam study focus').fill('Compare claims and supporting evidence');
+  await exam.getByLabel('Exam date').fill('2027-04-03');
+  await exam.getByRole('button',{name:/Explore this focus with the tutor/}).click();
+  await expect(page.getByPlaceholder(/Tell me what you want to understand/)).toHaveValue(/My target exam date is 2027-04-03/);
+  expect(calls).toBe(0);
+});
+
+test('planner keeps an unreadable saved record when generating a temporary outline',async({page})=>{
+  const key='eai-goal-journey-v1';
+  await page.addInitScript(key=>localStorage.setItem(key,''),key);
+  await page.route('**/api/study/plan',route=>route.fulfill({json:{sources:[],plan:{
+    title:'Temporary outline',overview:'Work through these examples.',lessons:[1,2,3].map(n=>({title:'Example '+n,objective:'Identify the idea.',activity:'Try an example.',checkpoint:'Explain your answer.'}))
+  }}}));
+  await page.goto('/study');
+  const planner=page.locator('#learning-goal');
+  await expect(planner.getByText(/Your saved plan could not be read/)).toBeVisible();
+  await planner.locator('#learning-achievement').fill('Learn how to compare two passages.');
+  await planner.getByRole('button',{name:'Continue →',exact:true}).click();
+  await planner.getByRole('button',{name:/Continue without materials/}).click();
+  await planner.getByRole('button',{name:/Create my learning plan/}).click();
+  await expect(planner.getByRole('heading',{name:'Temporary outline'})).toBeVisible();
+  await expect(planner.getByText(/Plan saving is paused/)).toBeVisible();
+  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe('');
+});
