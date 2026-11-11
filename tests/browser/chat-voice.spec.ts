@@ -89,3 +89,32 @@ test("migrated eAI chats show their original opening question", async ({page}) =
   await page.reload();
   await expect(log.getByText("My original opening question",{exact:true})).toBeVisible();
 });
+
+for (const path of ["/chat", "/study#ai-assistant"]) {
+  test("code copy provides recovery and confirms retry at "+path, async ({page}) => {
+    const main = path === "/chat";
+    await page.addInitScript(() => {
+      let denied = true;
+      Object.defineProperty(navigator, "clipboard", {value:{
+        async writeText(value:string) {
+          if (denied) {denied=false; throw new Error("Clipboard denied");}
+          document.documentElement.dataset.copiedCode=value;
+        }
+      }});
+    });
+    await page.route(main ? "**/api/chat" : "**/api/study/chat", route => route.fulfill({
+      contentType:"text/event-stream",
+      body:"data: "+JSON.stringify({response:"```js\nconst sum = 2 + 2;\n```"})+"\n\ndata: [DONE]\n\n"
+    }));
+    await page.goto(path);
+    const chat=main?page.locator("main"):page.locator("#ai-assistant");
+    await chat.getByLabel("Your message").fill("Show a JavaScript addition example.");
+    await chat.getByRole("button",{name:main?"Send message":"Send",exact:true}).click();
+    const copy=chat.getByRole("button",{name:"Copy code",exact:true});
+    await copy.click();
+    await expect(chat.getByText(/Clipboard unavailable/)).toBeVisible();
+    await copy.click();
+    await expect(chat.getByText("Code copied.",{exact:true})).toBeVisible();
+    await expect(page.locator("html")).toHaveAttribute("data-copied-code","const sum = 2 + 2;");
+  });
+}

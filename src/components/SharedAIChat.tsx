@@ -1,4 +1,5 @@
 "use client";
+import CopyCodeButton from "./CopyCodeButton";
 import { algebraDiscussion, key as algebraSampleKey } from "@/lib/algebra-sample";
 import {packPracticeEvidence,matchingPractice} from "@/lib/study-recovery";
 
@@ -124,31 +125,13 @@ function CodeBlock({
   language: string;
   code: string;
 }) {
-  const [copied, setCopied] = useState(false);
-
-  async function copyCode() {
-    try {
-      await navigator.clipboard.writeText(code);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  }
-
   return (
     <div className="my-4 overflow-hidden rounded-xl border border-white/10 bg-[#0d1117]">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
         <span className="text-xs text-slate-400">
           {language || "code"}
         </span>
-        <button
-          type="button"
-          onClick={copyCode}
-          className="text-xs text-cyan-300 hover:text-white"
-        >
-          {copied ? "Copied!" : "Copy code"}
-        </button>
+        <CopyCodeButton code={code} />
       </div>
       <div className="overflow-x-auto">
         <SyntaxHighlighter
@@ -255,6 +238,7 @@ export default function SharedAIChat() {
   const [storageWarning,setStorageWarning]=useState(""),[savedCheck,setSavedCheck]=useState<LessonCheck|null>(null);
   const [savedPractice,setSavedPractice]=useState<LessonCheck[]>([]);
   const savedCopy=useRef<string|null>(null),saveEnabled=useRef(true);
+  const followLatest = useRef(true);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -336,16 +320,18 @@ export default function SharedAIChat() {
   const earlier=earlierStudyContext(active?.messages||[]);
   function downloadSessions(){const url=URL.createObjectURL(new Blob([JSON.stringify(conversations,null,2)],{type:"application/json"}));const link=document.createElement("a");link.href=url;link.download="dai-tutor-session-backup.json";link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 
+  useEffect(() => { followLatest.current = true; }, [activeId]);
+
   useEffect(() => {
     const container = chatContainerRef.current;
 
-    if (container) {
+    if (container && followLatest.current) {
       container.scrollTo({
         top: container.scrollHeight,
-        behavior: "smooth",
+        behavior: "instant",
       });
     }
-  }, [active?.messages, loading, pendingReply]);
+  }, [activeId, active?.messages, loading, pendingReply]);
 
   function updateConversation(
     id: string,
@@ -395,6 +381,7 @@ export default function SharedAIChat() {
     if (!question || loading || !active) return;
 
     const id = active.id;
+    followLatest.current = true;
     const lastUserIndex = active.messages.findLastIndex(message => message.role === "user");
     const preceding=regenerate?active.messages.slice(0,lastUserIndex):active.messages;
     const history=preceding.slice(-12);
@@ -727,6 +714,12 @@ export default function SharedAIChat() {
 
             <div
               ref={chatContainerRef}
+              onScroll={event => {
+                const log = event.currentTarget;
+                followLatest.current = log.scrollHeight - log.scrollTop - log.clientHeight < 80;
+              }}
+              tabIndex={0}
+              aria-label="Tutor conversation"
               className="tutor-dialogue"
               data-empty={!active?.messages.some(message => message.role === "user")}
               role="log"

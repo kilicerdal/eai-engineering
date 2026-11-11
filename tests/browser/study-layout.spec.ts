@@ -515,3 +515,37 @@ test('reopened tutor offers retry for an unanswered question and keeps the next 
   await expect(tutor.getByRole('log')).toContainText('Completed series explanation.');
   await expect(draft).toHaveValue('My next question is different.');
 });
+
+test('tutor keeps the reading position when another part of a long reply arrives', async ({page}) => {
+  await page.addInitScript(() => {
+    const original = window.fetch;
+    window.fetch = (input, init) => {
+      if(input !== '/api/study/chat') return original(input, init);
+      const stream = new ReadableStream({
+        start(controller) {
+          const encoder = new TextEncoder();
+          const append = (text:string) => controller.enqueue(encoder.encode('data: '+JSON.stringify({response:text})+'\n\n'));
+          append(Array.from({length:65},(_,i)=>'Paragraph '+i+' explains the method.').join('\n\n'));
+          window.addEventListener('test-finish-explanation',()=>{
+            append('\n\nFinal observation.');
+            controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+            controller.close();
+          },{once:true});
+        }
+      });
+      return Promise.resolve(new Response(stream,{headers:{'Content-Type':'text/event-stream'}}));
+    };
+  });
+  await page.goto('/study#ai-assistant');
+  const tutor = page.locator('#ai-assistant');
+  await tutor.getByLabel('Your message').fill('Walk through a long example.');
+  await tutor.getByRole('button',{name:'Send',exact:true}).click();
+  const log = tutor.getByRole('log');
+  await expect.poll(()=>log.evaluate(el=>el.scrollTop)).toBeGreaterThan(100);
+  await log.focus();
+  await log.press('Control+Home');
+  await log.evaluate(el=>{el.scrollTop=0;el.dispatchEvent(new Event('scroll'));});
+  await page.evaluate(()=>window.dispatchEvent(new Event('test-finish-explanation')));
+  await expect(tutor.getByRole('button',{name:/Regenerate Response/})).toBeVisible();
+  expect(await log.evaluate(el=>el.scrollTop)).toBeLessThan(40);
+});
