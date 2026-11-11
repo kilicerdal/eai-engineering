@@ -91,3 +91,13 @@ test('individual-study quality gate covers objectives and checkpoints as well as
  const independent=goals.validateGoalPlan({...plan,lessons:plan.lessons.map(l=>({...l,activity:'Ask your tutor to create an illustrative table. Compare the entries, then explain your reasoning.'}))});
  assert.equal(goals.validateIndependentPlan(independent).lessons.length,3);
 });
+
+test('maximum supported lesson fields keep the full checkpoint and saved feedback within the composer limit',()=>{
+ const lesson={id:'lesson-1',title:'t'.repeat(120),objective:'o'.repeat(450),activity:'a'.repeat(650),checkpoint:'c'.repeat(450),sourceIds:[]};
+ const memory='\nPrevious lesson-check evidence: '+'m'.repeat(1200);
+ const draft=goals.goalLessonPrompt({...settings,goal:'g'.repeat(1500),deadline:'2027-02-10'},lesson,memory);
+ assert.ok(draft.length<=3000);
+ assert.ok(draft.includes(lesson.checkpoint));
+ assert.ok(draft.endsWith(memory));
+ assert.ok(draft.includes('[excerpt shortened]'));
+});

@@ -931,3 +931,31 @@ test('planner keeps an unreadable saved record when generating a temporary outli
   await expect(planner.getByText(/Plan saving is paused/)).toBeVisible();
   expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe('');
 });
+
+for (const entry of ['plan','home']) test('starting a long lesson from '+entry+' keeps the understanding check, target date and matching prior feedback', async ({page}) => {
+  const goal='Compare the evidence. '.repeat(68).trim();
+  const checkpoint='Explain your reasoning. '.repeat(16)+'Finish by checking the original assumption.';
+  const lesson={id:'lesson-1',title:'Evaluate the evidence',objective:'Explain the main idea. '.repeat(19).trim(),activity:'Compare the two examples. '.repeat(24).trim(),checkpoint,sourceIds:[]};
+  const journey={settings:{goal,level:'college',minutes:25,sessions:3,deadline:'2027-02-10'},plan:{title:'Evidence plan',overview:'Practice comparing explanations.',lessons:[lesson,...[2,3].map(n=>({...lesson,id:'lesson-'+n,title:'Later lesson '+n}))]},sources:[],completed:[],accepted:true,dirty:false};
+  const check={id:'synthetic-prior-check',context:{goal,lesson},question:{question:'Which explanation fits?',criterion:'Support your conclusion.'},answer:'My saved answer.',helpUsed:false,result:{decision:'partial',feedback:'Review your evidence.',reasoningGap:'Consider the comparison group.',nextStep:'Try a fresh case.'},submittedAt:Date.now()-1000};
+  await page.addInitScript(({journey,check})=>{
+    localStorage.setItem('eai-goal-journey-v1',JSON.stringify(journey));
+    localStorage.setItem('eai-lesson-checks-v1',JSON.stringify([check]));
+  },{journey,check});
+  await page.goto('/study');
+  if(entry==='home'){
+    const home=page.locator('#my-learning');
+    await home.getByText('Plan progress & other options',{exact:true}).click();
+    await home.getByRole('button',{name:'Work on this lesson'}).click();
+  } else {
+    const detail=page.locator('.accepted-lesson').first();
+    if(await detail.getAttribute('open')===null) await detail.locator('summary').first().click();
+    await detail.getByRole('button',{name:'Start this lesson'}).click();
+  }
+  const composer=page.getByPlaceholder(/Tell me what you want to understand/);
+  await expect(composer).toHaveValue(/Finish by checking the original assumption/);
+  const message=await composer.inputValue();
+  expect(message).toContain('Target date: 2027-02-10');
+  expect(message).toContain(check.result.nextStep);
+  expect(message.length).toBeLessThanOrEqual(3000);
+});

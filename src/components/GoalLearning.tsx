@@ -123,7 +123,7 @@ export default function GoalLearning() {
     const level=settings.level==="foundations"?"foundation":settings.level==="highschool"?"highSchool":settings.level;
     const checkpoint={goal:settings.goal,lesson:plan.lessons[index]};
     let memory="";try{memory=checkMemory(latestLessonCheck(checkpoint,normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]")),Date.now()));}catch{/* The lesson still opens without saved evidence. */}
-    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:(goalLessonPrompt(settings,plan.lessons[index]).slice(0,1900)+memory).slice(0,3000),title:plan.lessons[index].title,goal:settings.goal,level,checkpoint}}));
+    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:goalLessonPrompt(settings,plan.lessons[index],memory),title:plan.lessons[index].title,goal:settings.goal,level,checkpoint}}));
     document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   function continuePlan(){
