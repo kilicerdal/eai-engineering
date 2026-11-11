@@ -739,3 +739,28 @@ test('practice plan keeps unreadable settings and protects a newer saved choice'
   await expect(page.getByText(/Reload to read the latest saved settings/)).toBeVisible();
   expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe(external);
 });
+
+test('daily backup exports the original damaged record and distinguishes unavailable storage', async ({page}) => {
+  await page.addInitScript(()=>localStorage.setItem('eai-daily-sessions-v1',''));
+  await page.goto('/study');
+  const session=page.locator('#daily-study-session');
+  await session.getByText('Saving & backups',{exact:true}).click();
+  const backup=session.getByRole('button',{name:'Export session backup'});
+  const event=page.waitForEvent('download');
+  await backup.click();
+  const stream=await (await event).createReadStream();
+  let content='';
+  for await(const chunk of stream!) content+=chunk.toString();
+  expect(content).toBe('');
+  await page.addInitScript(()=>{
+    const read=Storage.prototype.getItem;
+    Storage.prototype.getItem=function(key){
+      if(key==='eai-daily-sessions-v1') throw new DOMException('Storage blocked','SecurityError');
+      return read.call(this,key);
+    };
+  });
+  await page.reload();
+  await session.getByText('Saving & backups',{exact:true}).click();
+  await expect(backup).toBeDisabled();
+  await expect(session.getByText(/Browser storage could not be opened/)).toBeVisible();
+});
