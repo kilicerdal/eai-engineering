@@ -1262,3 +1262,24 @@ test('writing honors a dated retry delay and allows a local conversation reset',
   await expect(evaluate).toBeDisabled();
   await expect(page.getByLabel('Essay content')).toHaveValue('A synthetic draft for a timing check.');
 });
+
+test('sample lesson moves keyboard focus to checked feedback and back to the first choice on restart',async({page})=>{
+  await page.goto('/study/sample');
+  for(const name of ['First attempt','Try a fresh problem']){
+    const problem=page.getByRole('group',{name});
+    const choice=problem.getByRole('radio').first();
+    await choice.check();
+    const check=problem.getByRole('button',{name:'Check my choice'});
+    await check.focus();
+    await check.press('Enter');
+    await expect(problem.getByRole('status')).toBeFocused();
+    await expect(choice).toBeDisabled();
+    await page.keyboard.press('Tab');
+    if(name==='First attempt')await expect(page.getByRole('group',{name:'Try a fresh problem'}).getByRole('radio').first()).toBeFocused();
+  }
+  await expect(page.getByRole('button',{name:'Restart this sample'})).toBeFocused();
+  await page.keyboard.press('Enter');
+  const first=page.getByRole('group',{name:'First attempt'}).getByRole('radio').first();
+  await expect(first).toBeFocused();
+  await expect(first).not.toBeChecked();
+});
