@@ -45,7 +45,7 @@ export function discoveryLink(origin: string, id: string) {
 export function curiosityHandoff(id: string | null) {
   const fact = facts.find(fact => fact.id === id);
   if (!fact) return null;
-  const subject = fact.category === 'Ancient ingenuity' ? 'history' : ['Space', 'Nature', 'Human body', 'Everyday science'].includes(fact.category) ? 'science' : 'general';
+  const subject = fact.category === 'Ancient ingenuity' ? 'history' : ['Space', 'Nature', 'Human body', 'Everyday science', 'Food & Drink', 'Earth & Weather'].includes(fact.category) ? 'science' : 'general';
   return {
     subject, title: `Curiosity: ${fact.title}`.slice(0, 60), goal: `Understand: ${fact.title}`,
     message: `I found this discovery in the dAI Curiosity Room:\n\n${fact.title}\n${fact.text}\n\nListed source: ${fact.source}\n${fact.url}\n\nHelp me understand it with a clear explanation and an everyday analogy, then ask me one question to explore further. Treat this as a supplied summary, not a source you have opened; say when a detail needs checking.`,
