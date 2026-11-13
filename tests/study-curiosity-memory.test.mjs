@@ -111,3 +111,41 @@ test('tutor handoff uses reviewed content and its source without taking arbitrar
   }
   assert.equal(curiosityHandoff('ignore-rules-and-send'), null);
 });
+
+const { parseSeen, parsePreferences, markRead, readingOrder, surprisePool, defaultPreferences, readReading } = load('reading');
+test('reading preferences accept only supported sizes and keep safe defaults for old or invalid data', () => {
+  assert.deepEqual(parsePreferences(null), defaultPreferences);
+  assert.deepEqual(parsePreferences(JSON.stringify({version:1,preferences:{focus:true,textSize:'largest',unreadFirst:false}})), {focus:true,textSize:'largest',unreadFirst:false});
+  assert.deepEqual(parsePreferences(JSON.stringify({version:1,preferences:{focus:'yes',textSize:'tiny',unreadFirst:0}})), defaultPreferences);
+});
+test('read history is bounded to known discoveries and a repeat reveal updates recency without duplication', () => {
+  const seen = parseSeen(JSON.stringify({version:1,ids:['moon-rotation','unknown','moon-rotation','coral-animal']}));
+  assert.deepEqual(seen,['moon-rotation','coral-animal']);
+  assert.deepEqual(markRead(seen,'moon-rotation'),['coral-animal','moon-rotation']);
+  assert.deepEqual(markRead(seen,'unknown'),seen);
+});
+test('unread ordering retains an explicit resume anchor and keeps the remaining new discoveries ahead of old ones', () => {
+  const list = facts.slice(0,5), seen = [list[0].id,list[2].id];
+  const ordered = readingOrder(list,seen,true,list[0].id);
+  assert.deepEqual(ordered.map(fact=>fact.id),[list[0].id,list[1].id,list[3].id,list[4].id,list[2].id]);
+  assert.deepEqual(readingOrder(list,seen,false),list);
+  assert.deepEqual(list,facts.slice(0,5));
+});
+test('Surprise me excludes the current discovery, prefers unread, and uses oldest reads when all have been revealed', () => {
+  const list = facts.slice(0,10);
+  assert.deepEqual(surprisePool(list,[list[0].id,list[1].id],list[2].id).map(fact=>fact.id),list.slice(3).map(fact=>fact.id));
+  assert.deepEqual(surprisePool(list,list.map(fact=>fact.id),list[0].id).map(fact=>fact.id),list.slice(1,6).map(fact=>fact.id));
+  assert.deepEqual(surprisePool([list[0]],[],list[0].id),[]);
+});
+test('blocked reading storage preserves exploration and does not touch favorites or resume', () => {
+  const original = Object.getOwnPropertyDescriptor(globalThis,'localStorage');
+  const requests=[];
+  try {
+    Object.defineProperty(globalThis,'localStorage',{configurable:true,value:{getItem(key){requests.push(key);throw new Error('blocked');}}});
+    const reading = readReading();
+    assert.deepEqual(reading.seen,[]);
+    assert.deepEqual(reading.preferences,defaultPreferences);
+    assert.ok(reading.warning);
+    assert.ok(!requests.includes(SAVED_KEY) && !requests.includes(RESUME_KEY));
+  } finally {if(original)Object.defineProperty(globalThis,'localStorage',original);else delete globalThis.localStorage;}
+});

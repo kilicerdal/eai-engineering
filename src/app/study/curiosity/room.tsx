@@ -4,8 +4,16 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { facts } from './facts';
 import { discoveryLink, guesses, localDay } from './journey';
+import { markRead, parseSeen, readReading, readingOrder, surprisePool, READING_KEY, SEEN_KEY, type ReadingPreferences } from './reading';
 
 import { categories, discoveries, initialView, normalizeView, parseSaved, readMemory, RESUME_KEY, SAVED_KEY, type View } from './memory';
+
+
+function canScrollDiscovery(target: HTMLElement, direction: number) {
+  const card = target.closest<HTMLElement>('.curiosity-slide');
+  if (!card || card.scrollHeight <= card.clientHeight + 2) return false;
+  return direction < 0 ? card.scrollTop > 1 : card.scrollTop + card.clientHeight < card.scrollHeight - 2;
+}
 
 const subscribeToHydration = () => () => {};
 const clientReady = () => true;
@@ -25,6 +33,32 @@ export default function CuriosityRoom() {
 
 function RememberedRoom() {
   const [memory, setMemory] = useState(readMemory);
+  const [reading, setReading] = useState(readReading);
+  const [sessionSeen, setSessionSeen] = useState(() => reading.seen);
+  const [anchor, setAnchor] = useState(() => memory.view.factId);
+  const [optionsOpen, setOptionsOpen] = useState(false);
+  const [showBrowse, setShowBrowse] = useState(false);
+  const [scrollable, setScrollable] = useState(false);
+  const slide = useRef<HTMLElement>(null);
+  const readingToggle = useRef<HTMLButtonElement>(null);
+  function closeReadingOptions() {setOptionsOpen(false);readingToggle.current?.focus();}
+  function updatePreferences(patch: Partial<ReadingPreferences>) {
+    const preferences = { ...reading.preferences, ...patch };
+    let warning = reading.warning;
+    try { localStorage.setItem(READING_KEY, JSON.stringify({version:1,preferences})); }
+    catch { warning = 'Reading options apply for this visit only. Browser saving is unavailable.'; }
+    if ('unreadFirst' in patch) {setSessionSeen(reading.seen);setAnchor(view.factId);}
+    setReading(previous=>({...previous,preferences,warning}));
+    if ('focus' in patch) {setShowBrowse(false);setOptionsOpen(false);}
+  }
+  function recordReveal(id: string) {
+    let latest = reading.seen, warning = reading.warning;
+    try { const raw = localStorage.getItem(SEEN_KEY); if(raw !== null) latest = parseSeen(raw); } catch { /* Session history still works. */ }
+    const seen = markRead(latest, id);
+    try { localStorage.setItem(SEEN_KEY, JSON.stringify({version:1,ids:seen})); }
+    catch { warning = 'Read history applies for this visit only. Browser saving is unavailable.'; }
+    setReading(previous=>({...previous,seen,warning}));
+  }
   const { view, saved, warning, restored } = memory;
   const { category, query, revealed, savedOnly } = view;
   const [more, setMore] = useState(false);
@@ -32,7 +66,13 @@ function RememberedRoom() {
   const [guess, setGuess] = useState<{id:string;choice:number}|null>(null);
   const [copyFallback, setCopyFallback] = useState('');
   function remember(next: View, nextSaved = saved) {
-    const normalized = normalizeView(next, nextSaved);
+    let normalized = normalizeView(next, nextSaved);
+    if (!next.factId && reading.preferences.unreadFirst && !next.daily && !next.savedOnly) {
+      const first = readingOrder(discoveries(next,nextSaved),reading.seen,true)[0];
+      normalized = {...normalized,factId:first?.id || '',revealed:false};
+      setSessionSeen(reading.seen);setAnchor('');
+    }
+    if(normalized.revealed && normalized.factId) recordReveal(normalized.factId);
     let issue = warning;
     // Keep the last meaningful place when a search or an empty Saved view has no result.
     if (normalized.factId) {
@@ -49,6 +89,7 @@ function RememberedRoom() {
     setMemory({ saved: nextSaved, view: normalized, warning: issue, restored: false });
   }
   function startOver() {
+    setAnchor('');setSessionSeen(reading.seen);
     setMore(false); setNotice('Back at the first discovery. Saved discoveries kept.');
     remember(initialView);
   }
@@ -72,18 +113,30 @@ function RememberedRoom() {
   useEffect(() => {
     const element = feed.current;
     const preventPageScroll = (event: WheelEvent) => {
-      if (!(event.target as HTMLElement).closest('.curiosity-extra,input,select') && !event.ctrlKey && Math.abs(event.deltaY) >= Math.abs(event.deltaX)) event.preventDefault();
+      if (!(event.target as HTMLElement).closest('.curiosity-extra,input,select,.curiosity-reading-panel') && !canScrollDiscovery(event.target as HTMLElement,event.deltaY) && !event.ctrlKey && Math.abs(event.deltaY) >= Math.abs(event.deltaX)) event.preventDefault();
     };
     element?.addEventListener('wheel', preventPageScroll, { passive: false });
     return () => element?.removeEventListener('wheel', preventPageScroll);
   }, []);
   const touch = useRef<{x:number;y:number}|null>(null);
   const gesture = useRef({ amount:0, last:0, changed:0 });
-  const visible = discoveries(view, saved);
+  const visible = readingOrder(discoveries(view, saved), sessionSeen, reading.preferences.unreadFirst && !view.daily && !savedOnly, anchor);
   const currentIndex = Math.max(0, visible.findIndex(fact => fact.id === view.factId));
   const selected = visible[currentIndex];
   const quiz = selected ? guesses[selected.id] : null;
+  useEffect(()=>{
+    const element = slide.current;
+    if(!element) return;
+    let mounted = true;
+    const measure = () => {if(mounted)setScrollable(element.scrollHeight > element.clientHeight + 2);};
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    for(const child of element.children) observer.observe(child);
+    queueMicrotask(measure);
+    return ()=>{mounted=false;observer.disconnect();};
+  },[selected?.id,revealed,more,copyFallback,reading.preferences.focus,reading.preferences.textSize]);
   function todaysFive() {
+    setAnchor('');setSessionSeen(reading.seen);
     remember({ ...initialView, daily: true, dailyDate: localDay(), factId: '' });
     setMore(false); setNotice('Five discoveries across five topics. No score, no rush.');
   }
@@ -101,34 +154,39 @@ function RememberedRoom() {
   function surprise() {
     if(visible.length < 2) return;
     const random = window.crypto.getRandomValues(new Uint32Array(1))[0] / 0x100000000;
-    go((currentIndex + 1 + Math.floor(random * (visible.length - 1))) % visible.length);
+    const pool = reading.preferences.unreadFirst && !view.daily && !savedOnly ? surprisePool(visible,reading.seen,selected?.id || '') : visible.filter(fact=>fact.id !== selected?.id);
+    if(pool.length) go(visible.findIndex(fact=>fact.id === pool[Math.floor(random*pool.length)].id));
   }
   function changeCollection(savedOnly: boolean) {
-    remember({ ...initialView, savedOnly }); setMore(false); setNotice('');
+    setAnchor('');setSessionSeen(reading.seen);
+    remember({ ...initialView, savedOnly, factId: '' }); setMore(false); setNotice('');
   }
-  return <main ref={feed} className="curiosity-feed" id="discoveries" tabIndex={0} aria-label="Curiosity discovery feed"
+  return <main ref={feed} className="curiosity-feed curiosity-v11" data-focus={reading.preferences.focus} data-text-size={reading.preferences.textSize} id="discoveries" tabIndex={0} aria-label="Curiosity discovery feed"
     style={{backgroundImage:`linear-gradient(90deg,rgba(5,17,29,.88),rgba(5,17,29,.55)),url('/images/study/${scenes[selected?.category] || '04-observatory-v1.webp'}')`}}
     onKeyDown={event => {
+      if(event.key === 'Escape') {if(optionsOpen)closeReadingOptions();else if(reading.preferences.focus)updatePreferences({focus:false});return;}
       if((event.target as HTMLElement).closest('button,a,input,select,summary,textarea')) return;
+      if(canScrollDiscovery(event.target as HTMLElement,event.key === 'ArrowUp' || event.key === 'PageUp' ? -1 : 1)) return;
       if(event.key === 'ArrowDown' || event.key === 'PageDown') {event.preventDefault();go(currentIndex+1);}
       if(event.key === 'ArrowUp' || event.key === 'PageUp') {event.preventDefault();go(currentIndex-1);}
     }}
     onWheel={event => {
-      if((event.target as HTMLElement).closest('.curiosity-extra, input, select') || Math.abs(event.deltaX)>Math.abs(event.deltaY) || event.ctrlKey) return;
+      if((event.target as HTMLElement).closest('.curiosity-extra, input, select,.curiosity-reading-panel') || canScrollDiscovery(event.target as HTMLElement,event.deltaY) || Math.abs(event.deltaX)>Math.abs(event.deltaY) || event.ctrlKey) return;
       const now = event.timeStamp, tracker = gesture.current;
       if(now - tracker.changed < 850) {tracker.last=now;return;}
       if(now-tracker.last>180 || Math.sign(event.deltaY)!==Math.sign(tracker.amount)) tracker.amount=0;
       tracker.last=now;tracker.amount+=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?400:1);
       if(Math.abs(tracker.amount)>65) {go(currentIndex+(tracker.amount>0?1:-1));tracker.amount=0;tracker.changed=now;}
     }}
-    onTouchStart={event => {if(event.touches.length===1 && !(event.target as HTMLElement).closest('.curiosity-extra,input,select,button,a'))touch.current={x:event.touches[0].clientX,y:event.touches[0].clientY};else touch.current=null;}}
+    onTouchStart={event => {if(event.touches.length===1 && !(event.target as HTMLElement).closest('.curiosity-extra,input,select,button,a,.curiosity-reading-panel,[data-scrollable=true]'))touch.current={x:event.touches[0].clientX,y:event.touches[0].clientY};else touch.current=null;}}
     onTouchEnd={event => {if(!touch.current)return;const dx=touch.current.x-event.changedTouches[0].clientX,dy=touch.current.y-event.changedTouches[0].clientY;if(Math.abs(dy)>65 && Math.abs(dy)>Math.abs(dx)*1.3)go(currentIndex+(dy>0?1:-1));touch.current=null;}}
     onTouchCancel={()=>{touch.current=null;}}>
-    <div className="curiosity-feed-top"><div><Link href="/study" className="curiosity-back">← Studio</Link><h1>The Curiosity Room</h1></div><span className="curiosity-trial">{facts.length} SOURCED DISCOVERIES</span></div>
-    <div className="curiosity-feed-tools"><label><span>Choose a topic</span><select value={category} onChange={event=>{remember({ ...view, daily: false, category: event.target.value, factId: '', revealed: false });setMore(false);setNotice('');}}>{categories.map(item=><option key={item}>{item}</option>)}</select></label><label className="curiosity-feed-search"><span>Find a discovery</span><input type="search" maxLength={200} placeholder="Moon, memory, ancient…" value={query} onChange={event=>{remember({ ...view, daily: false, query: event.target.value.slice(0,200), factId: '', revealed: false });setMore(false);setNotice('');}} /></label><button className="curiosity-shuffle" onClick={surprise} disabled={visible.length<2}>Surprise me ✧</button></div>
-    <div className="curiosity-personal-bar"><div className="curiosity-collections" aria-label="Discovery collection"><button aria-pressed={!savedOnly && !view.daily} onClick={()=>changeCollection(false)}>Explore all</button><button aria-pressed={!!view.daily} onClick={todaysFive}>Today’s 5</button><button aria-pressed={savedOnly} onClick={()=>changeCollection(true)}>Saved ({saved.length})</button></div><button className="curiosity-restart" onClick={startOver}>Back to first ↺</button><p className="curiosity-memory-note" role="status">{warning || notice || (restored ? 'Resumed your place · saved in this browser only.' : 'Saves & your place stay in this browser only.')}</p></div>
+    <div className="curiosity-feed-top"><div><Link href="/study" className="curiosity-back">← Studio</Link><h1>The Curiosity Room</h1></div><div className="curiosity-reading-actions"><button aria-pressed={reading.preferences.focus} onClick={()=>updatePreferences({focus:!reading.preferences.focus})}>{reading.preferences.focus ? 'Exit Focus' : 'Focus mode'}</button><button ref={readingToggle} aria-expanded={optionsOpen} aria-controls="curiosity-reading-options" onClick={()=>setOptionsOpen(!optionsOpen)}>Reading options</button>{reading.preferences.focus && <button aria-expanded={showBrowse} aria-controls="curiosity-browse-tools" onClick={()=>setShowBrowse(!showBrowse)}>Browse</button>}</div>{optionsOpen && <section className="curiosity-reading-panel" id="curiosity-reading-options" aria-label="Reading options"><div className="curiosity-panel-heading"><h2>Make yourself comfortable.</h2><button aria-label="Close reading options" onClick={closeReadingOptions}>×</button></div><p>Text size</p><div className="curiosity-text-sizes" aria-label="Discovery text size">{(['regular','large','largest'] as const).map(size=><button key={size} aria-pressed={reading.preferences.textSize === size} onClick={()=>updatePreferences({textSize:size})}>{size === 'regular'?'Regular':size === 'large'?'Large':'Largest'}</button>)}</div><label><input type="checkbox" checked={reading.preferences.unreadFirst} onChange={event=>updatePreferences({unreadFirst:event.target.checked})}/> Prefer unread discoveries</label><p>New visits and Surprise me favor answers you haven’t revealed. Today’s 5 and Saved keep their order.</p><p>{reading.seen.length} of {facts.length} discoveries revealed. Options and read history stay in this browser.</p></section>}</div>
+    <div id="curiosity-browse-tools" className="curiosity-browse-tools" hidden={reading.preferences.focus && !showBrowse}><div className="curiosity-feed-tools"><label><span>Choose a topic</span><select value={category} onChange={event=>{remember({ ...view, daily: false, category: event.target.value, factId: '', revealed: false });setMore(false);setNotice('');}}>{categories.map(item=><option key={item}>{item}</option>)}</select></label><label className="curiosity-feed-search"><span>Find a discovery</span><input type="search" maxLength={200} placeholder="Moon, memory, ancient…" value={query} onChange={event=>{remember({ ...view, daily: false, query: event.target.value.slice(0,200), factId: '', revealed: false });setMore(false);setNotice('');}} /></label><button className="curiosity-shuffle" onClick={surprise} disabled={visible.length<2}>Surprise me ✧</button></div>
+    <div className="curiosity-personal-bar"><div className="curiosity-collections" aria-label="Discovery collection"><button aria-pressed={!savedOnly && !view.daily} onClick={()=>changeCollection(false)}>Explore all</button><button aria-pressed={!!view.daily} onClick={todaysFive}>Today’s 5</button><button aria-pressed={savedOnly} onClick={()=>changeCollection(true)}>Saved ({saved.length})</button></div><button className="curiosity-restart" onClick={startOver}>Back to first ↺</button><p className="curiosity-memory-note" role="status">{warning || reading.warning || notice || (restored ? 'Resumed your place · saved in this browser only.' : 'Saves & your place stay in this browser only.')}</p></div></div>
+    {reading.preferences.focus && !showBrowse && (warning || reading.warning || notice) && <p className="curiosity-focus-notice" role="status">{warning || reading.warning || notice}</p>}
     {selected ? <>
-      <article className="curiosity-slide" key={selected.id} aria-live="polite" aria-atomic="true">
+      <article ref={slide} className="curiosity-slide" data-scrollable={scrollable} tabIndex={scrollable ? 0 : -1} aria-label="Current discovery" key={selected.id} aria-live="polite" aria-atomic="true">
         <p className="curiosity-kicker">{selected.category} <span>·</span> A LITTLE WONDER GOES A LONG WAY</p>
         <h2>{selected.question || questions[facts.indexOf(selected)]}</h2>
         {!revealed ? <><p className={`curiosity-tease ${quiz ? 'curiosity-quiz-tease' : ''}`}>{quiz ? 'What’s your guess? No scores—just curiosity.' : 'Take a guess. Then discover the story.'}</p><div className={quiz ? "curiosity-guess-row" : "curiosity-reveal-row"}>{quiz && <div className="curiosity-guess-options" aria-label="Make a guess">{quiz.options.map((option,choice)=><button key={option} onClick={()=>{setGuess({id:selected.id,choice});remember({...view,revealed:true});}}>{option}</button>)}</div>}<button className={quiz ? 'curiosity-skip-guess' : 'curiosity-reveal'} onClick={()=>remember({ ...view, revealed: true })}>{quiz ? 'Reveal without guessing' : 'Reveal the fact'} <span aria-hidden="true">✧</span></button></div></> : <div className="curiosity-answer">{quiz && guess?.id === selected.id && <p className="curiosity-guess-feedback">{guess.choice === quiz.correct ? 'You spotted it.' : `A surprising answer: ${quiz.options[quiz.correct]}.`}</p>}<h3>{selected.title}</h3><p>{selected.text}</p><button className="curiosity-more" aria-expanded={more} aria-controls="curiosity-extra" onClick={()=>setMore(!more)}>{more?'Close exploration −':'Try a thought experiment +'}</button>{more && <div className="curiosity-extra" id="curiosity-extra" tabIndex={0}><p>{selected.explore}</p></div>}</div>}
@@ -136,7 +194,7 @@ function RememberedRoom() {
         {copyFallback && <label className="curiosity-copy-fallback">Discovery link<input value={copyFallback} readOnly onFocus={event=>event.target.select()} /></label>}
         {view.daily && currentIndex === visible.length - 1 && revealed && <p className="curiosity-daily-finish">That’s your five for today. Follow any idea further, or keep exploring.</p>}
       </article>
-      <footer className="curiosity-feed-bottom"><div className="curiosity-progress"><span role="status">{currentIndex+1} <span>of {visible.length}</span></span><progress aria-label="Discovery position" value={currentIndex+1} max={visible.length} /><small>{view.daily ? `Today’s five · ${view.dailyDate}` : currentIndex===visible.length-1?'You’ve reached the end of this collection.':'Swipe up · scroll down · or use ↓'}</small></div><div className="curiosity-step-buttons"><button aria-label="Previous discovery" onClick={()=>go(currentIndex-1)} disabled={currentIndex===0}>↑ <span>Previous</span></button>{view.daily && currentIndex===visible.length-1 && revealed ? <button className="curiosity-next" onClick={()=>changeCollection(false)}>Keep exploring →</button> : view.daily && currentIndex===visible.length-1 ? <button className="curiosity-next" onClick={()=>remember({...view,revealed:true})}>Reveal final discovery ✧</button> : currentIndex===visible.length-1?<button className="curiosity-next" onClick={()=>{remember({...view,factId:visible[0].id,revealed:false});setMore(false);setNotice('');}}>Start again ↺</button>:<button className="curiosity-next" onClick={()=>go(currentIndex+1)}>Next discovery ↓</button>}</div></footer>
+      <footer className="curiosity-feed-bottom"><div className="curiosity-progress"><span role="status">{currentIndex+1} <span>of {visible.length}</span></span><progress aria-label="Discovery position" value={currentIndex+1} max={visible.length} /><small>{scrollable ? 'Scroll inside the discovery to read more.' : view.daily ? `Today’s five · ${view.dailyDate}` : currentIndex===visible.length-1?'You’ve reached the end of this collection.':'Swipe up · scroll down · or use ↓'}</small></div><div className="curiosity-step-buttons"><button aria-label="Previous discovery" onClick={()=>go(currentIndex-1)} disabled={currentIndex===0}>↑ <span>Previous</span></button>{view.daily && currentIndex===visible.length-1 && revealed ? <button className="curiosity-next" onClick={()=>changeCollection(false)}>Keep exploring →</button> : view.daily && currentIndex===visible.length-1 ? <button className="curiosity-next" onClick={()=>remember({...view,revealed:true})}>Reveal final discovery ✧</button> : currentIndex===visible.length-1?<button className="curiosity-next" onClick={()=>{remember({...view,factId:visible[0].id,revealed:false});setMore(false);setNotice('');}}>Start again ↺</button>:<button className="curiosity-next" onClick={()=>go(currentIndex+1)}>Next discovery ↓</button>}</div></footer>
     </> : <div className="curiosity-no-results"><h2>{savedOnly && saved.length === 0 ? 'Keep a little wonder for later.' : 'A different question might open a door.'}</h2><p>{savedOnly && saved.length === 0 ? 'Tap Save discovery on a fact you like. You’ll find it here when you return in this browser.' : 'No discoveries match. Try another word or topic.'}</p><button className="curiosity-reveal" onClick={()=>changeCollection(false)}>Show all discoveries</button></div>}
   </main>;
 }
