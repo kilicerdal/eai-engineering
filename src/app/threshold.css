@@ -209,3 +209,24 @@
 @media(max-width:760px){.atlas-failure-feature{grid-template-columns:minmax(0,1fr);gap:28px;padding:42px 6%}.threshold .atlas-failure-feature h2{font-size:33px}.atlas-failure-feature>div>p:not(.atlas-eyebrow){font-size:15px}.atlas-failure-proof{padding:24px}.threshold .atlas-failure-feature .atlas-failure-scope{font-size:10px;line-height:1.7}.atlas-actions .atlas-story-entry{font-size:12px}}
 
 .atlas-project-window .atlas-preview-source{display:block;font-size:11px!important;margin-top:12px;color:#bdc7d3!important}.atlas-failure-feature .atlas-actions{gap:12px}.atlas-failure-feature .atlas-actions .atlas-button{font-size:12px;gap:12px}
+
+/* Panoramic composition keeps archaeology, proportion study and AI visible. */
+@media (min-width:761px) {
+  .atlas-hero .atlas-landscape { object-position:center center; }
+}
+
+/* Historical introduction sits beneath the headline without replacing product copy. */
+.threshold .atlas-hero-copy .atlas-heritage {
+  max-width: 680px;
+  margin: 0 0 22px;
+  padding-left: 18px;
+  border-left: 2px solid #d9ac7999;
+  font: 400 18px/1.55 Georgia, 'Times New Roman', serif;
+  color: #eadbc4;
+  text-shadow: 0 2px 10px #030b17;
+}
+@media (max-width:760px) {
+  .threshold .atlas-hero { height:auto; min-height:960px; max-height:none; }
+  .threshold .atlas-hero-copy { margin-bottom:100px; }
+  .threshold .atlas-hero-copy .atlas-heritage { font-size:16px; line-height:1.6; padding-left:14px; }
+}

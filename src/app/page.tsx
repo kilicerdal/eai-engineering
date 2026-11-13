@@ -40,9 +40,9 @@ export default function Home() {
    <a className="atlas-dai-entry" href="/study" aria-label="Explore dAI Learning Studio">Explore dAI <span aria-hidden="true">→</span></a>
   </header>
   <section className="atlas-hero" aria-labelledby="hero-title">
-   <Image src="/images/threshold/gobekli-future.webp" alt="" fill preload sizes="100vw" className="atlas-landscape" />
+   <Image src="/images/threshold/gobekli-intelligence-vitruvian-v2.webp" alt="" fill preload sizes="100vw" className="atlas-landscape" />
    <div className="atlas-hero-shade"/>
-   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p>Meet your AI engineering assistant. Bring a question, explore an idea,<br className="desktop-break"/> or work through a challenge in coding, testing and cloud engineering.</p><div className="atlas-actions"><a className="atlas-button primary" href="/chat">Chat with eAI <span>→</span></a><Link className="atlas-button atlas-story-entry" href="/engineering">Explore Engineering Studio <span aria-hidden="true">↗</span></Link></div></div>
+   <div className="atlas-hero-copy"><p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p><h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1><p className="atlas-heritage">Nearly 12,000 years ago, the builders of Göbekli Tepe created one of humanity’s earliest monumental architectural achievements—a legacy of imagination and ingenuity echoed in Leonardo’s studies and carried into the future through engineering and AI.</p><p>Meet your AI engineering assistant. Bring a question, explore an idea,<br className="desktop-break"/> or work through a challenge in coding, testing and cloud engineering.</p><div className="atlas-actions"><a className="atlas-button primary" href="/chat">Chat with eAI <span>→</span></a><Link className="atlas-button atlas-story-entry" href="/engineering">Explore Engineering Studio <span aria-hidden="true">↗</span></Link></div></div>
    <p className="atlas-caption">Göbekli Tepe, Türkiye · An imagined bridge to tomorrow</p>
   </section>
 
