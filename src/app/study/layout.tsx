@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./studio.css";
 import "./refinement.css";
+import "./scenery.css";
 import DailySessionReturn from "@/components/DailySessionReturn";
 import StudyCloudBridge from "@/components/StudyCloudBridge";
 

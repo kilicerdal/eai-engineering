@@ -1110,7 +1110,7 @@ export default function WritingStudioPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#080d19] text-white">
+    <main className="studio-writing min-h-screen bg-[#080d19] text-white">
       <StudyNavigation />
       <section className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-5 px-6 pt-10">
         <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">dAI Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p><StudyGuide section="Writing Studio">Start with a template or write in the editor. Ask for feedback on a specific issue, such as whether your evidence supports your argument. Revise your draft and download it when ready.</StudyGuide></div>

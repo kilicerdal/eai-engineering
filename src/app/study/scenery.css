@@ -1,0 +1,113 @@
+/* Ancient-to-future scenery shared with eAI. Work surfaces stay opaque. */
+.eai-study-studio #ai-assistant::before {
+  height: 440px;
+  opacity: 1;
+  background-size: cover;
+  background-position: center 45%;
+}
+.eai-study-studio #ai-assistant .tutor-section-intro {
+  min-height: 180px;
+}
+.eai-study-studio .learning-home .studio-landmark-banner {
+  min-height: 300px;
+}
+.eai-study-studio .learning-home .studio-landmark-backdrop,
+.eai-study-studio .exam-landmark-stage > .studio-landmark-backdrop,
+.eai-study-studio .notebook-landmark-stage > .studio-landmark-backdrop {
+  opacity: 1;
+}
+.eai-study-studio .learning-home-content::before { opacity: .65; }
+.eai-study-studio .learning-resources {
+  background: linear-gradient(90deg, #06111df2, #06111dab),
+    url('/images/study/library-horizon.webp') center / cover no-repeat;
+}
+.eai-study-studio .studio-explore {
+  max-width: none;
+  padding-inline: max(6%, calc((100% - 1240px) / 2));
+  background: linear-gradient(90deg, #06111df2, #06111da8),
+    url('/images/study/machu-picchu-future.webp') center / cover no-repeat;
+  border-top: 1px solid #d9b97933;
+}
+.eai-study-studio .studio-subject { background: #081725c9; }
+
+/* A scenic opening fades into a quiet canvas for long reading and writing. */
+.eai-study-studio main.studio-materials,
+.eai-study-studio main.studio-reading,
+.eai-study-studio main.studio-writing {
+  background-color: #06111d;
+  background-image: linear-gradient(90deg, #06111df2, #06111d80),
+    linear-gradient(0deg, #06111d, #06111d00 75%),
+    url('/images/study/library-horizon.webp');
+  background-position: center top;
+  background-size: 100% 680px;
+  background-repeat: no-repeat;
+}
+.eai-study-studio main.studio-writing {
+  background-image: linear-gradient(90deg, #06111def, #06111d80),
+    linear-gradient(0deg, #06111d, #06111d00 75%),
+    url('/images/study/pantheon-future.webp');
+}
+@media (max-width: 760px) {
+  .eai-study-studio #ai-assistant::before {
+    height: 360px;
+    background-position: 65% top;
+  }
+  .eai-study-studio #ai-assistant .tutor-section-intro { min-height: 140px; }
+  .eai-study-studio .learning-home .studio-landmark-banner { min-height: 270px; }
+  .eai-study-studio .exam-landmark-stage > .studio-landmark-backdrop,
+  .eai-study-studio .notebook-landmark-stage > .studio-landmark-backdrop { opacity: .8; }
+  .eai-study-studio main.studio-materials,
+  .eai-study-studio main.studio-reading,
+  .eai-study-studio main.studio-writing {
+    background-size: auto 560px;
+    background-position: 60% top;
+  }
+}
+
+/* Approved learning artwork: additive scenery around the existing workspaces.
+   The original landmark headers and all resource/orbit illustrations remain. */
+.eai-study-studio .studio-home #ai-assistant {
+  background-image: linear-gradient(#06111d40, #06111d66),
+    url('/images/study/01-academy-v1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.eai-study-studio .studio-home .learning-home-content::before {
+  opacity: 1;
+  background-image: linear-gradient(#08152255, #08152288),
+    url('/images/study/02-study-v1.webp'),
+    url('/images/engineering/studio-drafting-workspace-v1.webp');
+  background-position: center top;
+  background-size: cover;
+}
+.eai-study-studio .studio-home .learning-resources {
+  background-image: linear-gradient(#06111d55, #06111d66),
+    url('/images/study/03-library-v1.webp'),
+    url('/images/study/library-horizon.webp');
+  background-position: center;
+  background-size: cover;
+}
+.eai-study-studio .studio-home .studio-explore {
+  background-image: linear-gradient(#06111d66, #06111d80),
+    url('/images/study/04-observatory-v1.webp'),
+    url('/images/study/machu-picchu-future.webp');
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 760px) {
+  .eai-study-studio .studio-home #ai-assistant,
+  .eai-study-studio .studio-home .learning-home-content::before,
+  .eai-study-studio .studio-home .learning-resources,
+  .eai-study-studio .studio-home .studio-explore {
+    /* Fit the architecture across the opening; navy continues below long panels. */
+    background-size: auto 700px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #06111d;
+  }
+}
+/* Blend the retained Parthenon header into the new academy below it. */
+.eai-study-studio .studio-home #ai-assistant::before {
+  mask-image: linear-gradient(#000 55%, transparent);
+}
