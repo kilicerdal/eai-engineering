@@ -14,7 +14,29 @@ function load(name) {
   return harnessModule.exports;
 }
 const { facts } = load('facts');
+const { insights, relatedDiscoveries, discoveryQuestion } = load('insights');
 const { parseSaved, parseResume, discoveries, initialView, readMemory, SAVED_KEY, RESUME_KEY } = load('memory');
+
+test('every discovery has concise context and two distinct, existing editorial connections', () => {
+  assert.deepEqual(Object.keys(insights).sort(), facts.map(fact => fact.id).sort());
+  for (const fact of facts) {
+    const context = insights[fact.id];
+    assert.ok(context.why.length > 60 && context.why.length < 350, fact.id);
+    const related = relatedDiscoveries(fact.id);
+    assert.equal(related.length, 2, fact.id);
+    assert.equal(new Set(related.map(item => item.id)).size, 2, fact.id);
+    assert.ok(related.every(item => item.id !== fact.id && item.url.startsWith('https://')), fact.id);
+  }
+});
+test('connection questions preserve the existing prompts and unknown links yield no suggestions', () => {
+  assert.deepEqual(relatedDiscoveries('not-a-discovery'), []);
+  assert.equal(discoveryQuestion(facts[0]), 'Can a memory test teach you something?');
+  assert.equal(discoveryQuestion(facts.find(fact => fact.id === 'first-transistor')), 'What tiny invention helped change everything?');
+  for (const fact of facts) {
+    assert.ok(discoveryQuestion(fact).endsWith('?'), fact.id);
+    if (fact.question) assert.equal(discoveryQuestion(fact), fact.question);
+  }
+});
 
 test('curiosity favorites use unique stable identities and reject unknown or duplicate saves', () => {
   assert.equal(new Set(facts.map(fact => fact.id)).size, 60);

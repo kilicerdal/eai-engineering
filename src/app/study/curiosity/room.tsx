@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { facts } from './facts';
+import { discoveryQuestion, insights, relatedDiscoveries } from './insights';
 import { INTERESTS_KEY, parseInterests, personalOrder, readInterests, topics, type Interest, type TopicPreferences } from './interests';
 import { discoveryLink, guesses, localDay } from './journey';
 import { markRead, parseSeen, readReading, readingOrder, surprisePool, READING_KEY, SEEN_KEY, type ReadingPreferences } from './reading';
@@ -19,13 +20,6 @@ function canScrollDiscovery(target: HTMLElement, direction: number) {
 const subscribeToHydration = () => () => {};
 const clientReady = () => true;
 const serverReady = () => false;
-const questions = [
-  'Can a memory test teach you something?', 'Could a break help an idea stick?', 'Can a simple sketch help you remember?', 'Do revision gaps have to keep growing?',
-  'Who built monuments before powered machines?', 'What stories can a stone tell?', 'How did one stone help unlock a language?', 'How far would you move a giant stone?', 'Could you predict an eclipse with gears?',
-  'Can a planet’s spin last longer than its year?', 'Is the closest planet always the hottest?', 'How old is the sunlight reaching you?', 'Does the Moon actually rotate?', 'Could you stand on the Sun’s surface?',
-  'What animal has three working hearts?', 'Could you taste with your arms?', 'What if your skin could change its pattern?', 'Can a dance give directions?',
-  'Can a shape have only one side?', 'Is there a largest prime number?', 'What does weaving have to do with code?', 'Could a loom inspire a computer?', 'Can concrete help repair itself?', 'What tiny invention helped change everything?',
-];
 const scenes: Record<string,string> = { Learning:'02-study-v1.webp', 'Ancient ingenuity':'01-academy-v1.webp', Space:'04-observatory-v1.webp', Nature:'04-observatory-v1.webp', 'Patterns & invention':'03-library-v1.webp' };
 export default function CuriosityRoom() {
   const hydrated = useSyncExternalStore(subscribeToHydration, clientReady, serverReady);
@@ -146,6 +140,8 @@ function RememberedRoom() {
   const currentIndex = Math.max(0, visible.findIndex(fact => fact.id === view.factId));
   const selected = visible[currentIndex];
   const quiz = selected ? guesses[selected.id] : null;
+  const context = selected ? insights[selected.id] : null;
+  const related = selected ? relatedDiscoveries(selected.id) : [];
   useEffect(()=>{
     const element = slide.current;
     if(!element) return;
@@ -172,6 +168,13 @@ function RememberedRoom() {
     if (next < 0 || next >= visible.length || next === currentIndex) return;
     remember({ ...view, factId: visible[next].id, revealed: false });
     setMore(false); setNotice('');
+  }
+  function followRelated(id: string) {
+    if (!selected || !related.some(fact => fact.id === id)) return;
+    setAnchor(id);setSessionSeen(reading.seen);
+    remember({ ...initialView, factId: id, revealed: false });
+    setMore(false);setNotice('Following a related discovery in Explore all.');
+    requestAnimationFrame(() => feed.current?.querySelector<HTMLElement>('.curiosity-slide h2')?.focus());
   }
   function surprise() {
     if(visible.length < 2) return;
@@ -211,10 +214,14 @@ function RememberedRoom() {
     {selected ? <>
       <article ref={slide} className="curiosity-slide" data-scrollable={scrollable} tabIndex={scrollable ? 0 : -1} aria-label="Current discovery" key={selected.id} aria-live="polite" aria-atomic="true">
         <p className="curiosity-kicker">{selected.category} <span>·</span> A LITTLE WONDER GOES A LONG WAY</p>
-        <h2>{selected.question || questions[facts.indexOf(selected)]}</h2>
+        <h2 tabIndex={-1}>{discoveryQuestion(selected)}</h2>
         {!revealed ? <><p className={`curiosity-tease ${quiz ? 'curiosity-quiz-tease' : ''}`}>{quiz ? 'What’s your guess? No scores—just curiosity.' : 'Take a guess. Then discover the story.'}</p><div className={quiz ? "curiosity-guess-row" : "curiosity-reveal-row"}>{quiz && <div className="curiosity-guess-options" aria-label="Make a guess">{quiz.options.map((option,choice)=><button key={option} onClick={()=>{setGuess({id:selected.id,choice});remember({...view,revealed:true});}}>{option}</button>)}</div>}<button className={quiz ? 'curiosity-skip-guess' : 'curiosity-reveal'} onClick={()=>remember({ ...view, revealed: true })}>{quiz ? 'Reveal without guessing' : 'Reveal the fact'} <span aria-hidden="true">✧</span></button></div></> : <div className="curiosity-answer">{quiz && guess?.id === selected.id && <p className="curiosity-guess-feedback">{guess.choice === quiz.correct ? 'You spotted it.' : `A surprising answer: ${quiz.options[quiz.correct]}.`}</p>}<h3>{selected.title}</h3><p>{selected.text}</p><button className="curiosity-more" aria-expanded={more} aria-controls="curiosity-extra" onClick={()=>setMore(!more)}>{more?'Close exploration −':'Try a thought experiment +'}</button>{more && <div className="curiosity-extra" id="curiosity-extra" tabIndex={0}><p>{selected.explore}</p></div>}</div>}
         <div className="curiosity-fact-actions"><button className="curiosity-save" aria-pressed={saved.includes(selected.id)} onClick={toggleSaved}>{saved.includes(selected.id) ? '♥ Saved' : '♡ Save discovery'}</button><Link className="curiosity-ask" href={`/study?curiosity=${selected.id}#ai-assistant`}>Ask dAI ↗</Link><button className="curiosity-share" onClick={shareDiscovery}>Copy link ↗</button><a className="curiosity-citation" href={selected.url} target="_blank" rel="noopener noreferrer">Source: {selected.source} ↗</a></div>
         {revealed && <div className="curiosity-topic-feedback" aria-label={`Tune your ${selected.category} discoveries`}><button aria-pressed={interests.topics[selected.category] === 'more'} onClick={()=>rateTopic(selected.category,'more',true)}>More like this <span aria-hidden="true">↑</span></button><button aria-pressed={interests.topics[selected.category] === 'less'} onClick={()=>rateTopic(selected.category,'less',true)}>Less of this <span aria-hidden="true">↓</span></button><span>{selected.category}</span></div>}
+        {revealed && context && <div className="curiosity-depth">
+          <details className="curiosity-why"><summary>Why does this matter?</summary><p>{context.why}</p></details>
+          <details className="curiosity-related"><summary>Related discoveries <span>2 to explore</span></summary><p className="curiosity-related-note">Follow a connection in Explore all. Your saved discoveries and preferences stay with you.</p><div className="curiosity-related-grid">{related.map(fact => <button key={fact.id} onClick={()=>followRelated(fact.id)}><span>{fact.category}</span><strong>{discoveryQuestion(fact)}</strong><span aria-hidden="true">Explore →</span></button>)}</div></details>
+        </div>}
         {copyFallback && <label className="curiosity-copy-fallback">Discovery link<input value={copyFallback} readOnly onFocus={event=>event.target.select()} /></label>}
         {view.daily && currentIndex === visible.length - 1 && revealed && <p className="curiosity-daily-finish">That’s your five for today. Follow any idea further, or keep exploring.</p>}
       </article>
