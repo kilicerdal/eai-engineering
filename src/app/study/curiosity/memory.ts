@@ -1,3 +1,4 @@
+import type {PersonalCollection} from './collections';
 import { matchesDiscovery } from './search';
 import { facts } from './facts';
 import { dailyFacts, linkedFact, localDay } from './journey';
@@ -5,7 +6,7 @@ import { dailyFacts, linkedFact, localDay } from './journey';
 export const SAVED_KEY = 'dai.curiosity.saved.v1';
 export const RESUME_KEY = 'dai.curiosity.resume.v1';
 export const categories = ['All discoveries', ...new Set(facts.map(fact => fact.category))];
-export type View = { category: string; query: string; savedOnly: boolean; factId: string; revealed: boolean; daily?: boolean; dailyDate?: string; dailyIds?: string[]; collection?: 'sounds-made-up' | 'everyday-wonders' | 'hidden-connections' | 'your-world' | 'small-things'; newOnly?: boolean; newIds?: string[] };
+export type View = { category: string; query: string; savedOnly: boolean; factId: string; revealed: boolean; daily?: boolean; dailyDate?: string; dailyIds?: string[]; collection?: 'sounds-made-up' | 'everyday-wonders' | 'hidden-connections' | 'your-world' | 'small-things' | 'world-worth-wondering'; personalId?:string; personalName?:string; personalIds?:string[]; newOnly?: boolean; newIds?: string[] };
 export const initialView: View = { category: categories[0], query: '', savedOnly: false, factId: facts[0].id, revealed: false };
 const ids = new Set(facts.map(fact => fact.id));
 
@@ -17,7 +18,7 @@ export function parseSaved(raw: string | null): string[] {
 }
 
 export function discoveries(view: View, saved: string[]) {
-  const collection = view.daily ? view.dailyIds ? view.dailyIds.flatMap(id => facts.find(fact => fact.id === id) || []) : dailyFacts(view.dailyDate || localDay()) : facts;
+  const collection = view.personalId ? (view.personalIds || []).flatMap(id=>facts.find(fact=>fact.id===id)||[]) : view.daily ? view.dailyIds ? view.dailyIds.flatMap(id => facts.find(fact => fact.id === id) || []) : dailyFacts(view.dailyDate || localDay()) : facts;
   return collection.filter(fact => (!view.newOnly || !!view.newIds?.includes(fact.id)) && (!view.collection || fact.collection === view.collection) && (!view.savedOnly || saved.includes(fact.id)) && (view.category === categories[0] || fact.category === view.category) && matchesDiscovery(fact, view.query));
 }
 
@@ -32,11 +33,12 @@ export function parseResume(raw: string | null, saved: string[]): View | null {
   if (!data || typeof data !== 'object' || !('version' in data) || data.version !== 1 || !('view' in data) || !data.view || typeof data.view !== 'object') return null;
   const view = data.view;
   if (!('category' in view) || typeof view.category !== 'string' || !categories.includes(view.category) || !('query' in view) || typeof view.query !== 'string' || view.query.length > 200 || !('savedOnly' in view) || typeof view.savedOnly !== 'boolean' || !('factId' in view) || typeof view.factId !== 'string' || !ids.has(view.factId) || !('revealed' in view) || typeof view.revealed !== 'boolean') return null;
-  if ('collection' in view && view.collection !== 'sounds-made-up' && view.collection !== 'everyday-wonders' && view.collection !== 'hidden-connections' && view.collection !== 'your-world' && view.collection !== 'small-things') return null;
+  if ('collection' in view && view.collection !== 'sounds-made-up' && view.collection !== 'everyday-wonders' && view.collection !== 'hidden-connections' && view.collection !== 'your-world' && view.collection !== 'small-things' && view.collection !== 'world-worth-wondering') return null;
   if ('collection' in view && (('daily' in view && view.daily === true) || view.savedOnly)) return null;
   if ('newOnly' in view && typeof view.newOnly !== 'boolean') return null;
   if ('newIds' in view && (!Array.isArray(view.newIds) || view.newIds.length > facts.length || new Set(view.newIds).size !== view.newIds.length || view.newIds.some(id => typeof id !== 'string' || !ids.has(id)))) return null;
   if ('newOnly' in view && view.newOnly === true && (!('newIds' in view) || !Array.isArray(view.newIds) || 'collection' in view || view.savedOnly || ('daily' in view && view.daily))) return null;
+  if ('personalId' in view && (typeof view.personalId!=='string' || !/^[a-z0-9-]{1,80}$/.test(view.personalId) || !('personalName' in view) || typeof view.personalName!=='string' || view.personalName.length>48 || !('personalIds' in view) || !Array.isArray(view.personalIds) || view.personalIds.length>facts.length || view.personalIds.some(id=>typeof id!=='string' || !ids.has(id)) || new Set(view.personalIds).size!==view.personalIds.length || view.savedOnly || 'collection' in view || ('newOnly' in view && view.newOnly) || ('daily' in view && view.daily))) return null;
   if ('daily' in view && typeof view.daily !== 'boolean') return null;
   if ('dailyDate' in view && (typeof view.dailyDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(view.dailyDate))) return null;
   if ('dailyIds' in view && (!Array.isArray(view.dailyIds) || view.dailyIds.length !== 5 || new Set(view.dailyIds).size !== 5 || view.dailyIds.some(id => typeof id !== 'string' || !ids.has(id)) || new Set(view.dailyIds.map(id => facts.find(fact => fact.id === id)?.category)).size !== 5)) return null;
@@ -50,12 +52,13 @@ export function parseResume(raw: string | null, saved: string[]): View | null {
   return normalizeView(view as View, saved);
 }
 
-export function readMemory(arrivalIds?: string[]) {
+export function readMemory(arrivalIds?: string[], personalCollections?: PersonalCollection[]) {
   let saved: string[] = [], view = initialView, restored = false, warning = '';
   try { saved = parseSaved(localStorage.getItem(SAVED_KEY)); }
   catch { warning = 'Saving is unavailable or saved discoveries could not be read. You can still explore.'; }
   try {
     let resume = parseResume(localStorage.getItem(RESUME_KEY), saved);
+    if (resume?.personalId && personalCollections) {const item=personalCollections.find(item=>item.id===resume?.personalId);resume=item?normalizeView({...resume,personalName:item.name,personalIds:item.ids},saved):normalizeView(initialView,saved);}
     if (resume?.newOnly && arrivalIds) resume = normalizeView({...resume,newIds:arrivalIds},saved);
     if (resume?.factId) { view = resume; restored = true; }
   } catch { warning = 'Your place could not be restored. You can still explore.'; }
