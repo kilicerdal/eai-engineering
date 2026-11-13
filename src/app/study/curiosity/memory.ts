@@ -4,7 +4,7 @@ import { dailyFacts, linkedFact, localDay } from './journey';
 export const SAVED_KEY = 'dai.curiosity.saved.v1';
 export const RESUME_KEY = 'dai.curiosity.resume.v1';
 export const categories = ['All discoveries', ...new Set(facts.map(fact => fact.category))];
-export type View = { category: string; query: string; savedOnly: boolean; factId: string; revealed: boolean; daily?: boolean; dailyDate?: string };
+export type View = { category: string; query: string; savedOnly: boolean; factId: string; revealed: boolean; daily?: boolean; dailyDate?: string; dailyIds?: string[] };
 export const initialView: View = { category: categories[0], query: '', savedOnly: false, factId: facts[0].id, revealed: false };
 const ids = new Set(facts.map(fact => fact.id));
 
@@ -16,7 +16,7 @@ export function parseSaved(raw: string | null): string[] {
 }
 
 export function discoveries(view: View, saved: string[]) {
-  const collection = view.daily ? dailyFacts(view.dailyDate || localDay()) : facts;
+  const collection = view.daily ? view.dailyIds ? view.dailyIds.flatMap(id => facts.find(fact => fact.id === id) || []) : dailyFacts(view.dailyDate || localDay()) : facts;
   return collection.filter(fact => (!view.savedOnly || saved.includes(fact.id)) && (view.category === categories[0] || fact.category === view.category) && `${fact.title} ${fact.text} ${fact.category}`.toLowerCase().includes(view.query.toLowerCase().trim()));
 }
 
@@ -33,7 +33,14 @@ export function parseResume(raw: string | null, saved: string[]): View | null {
   if (!('category' in view) || typeof view.category !== 'string' || !categories.includes(view.category) || !('query' in view) || typeof view.query !== 'string' || view.query.length > 200 || !('savedOnly' in view) || typeof view.savedOnly !== 'boolean' || !('factId' in view) || typeof view.factId !== 'string' || !ids.has(view.factId) || !('revealed' in view) || typeof view.revealed !== 'boolean') return null;
   if ('daily' in view && typeof view.daily !== 'boolean') return null;
   if ('dailyDate' in view && (typeof view.dailyDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(view.dailyDate))) return null;
-  if ('daily' in view && view.daily === true && (!('dailyDate' in view) || view.dailyDate !== localDay())) return normalizeView({ ...initialView, daily: true, dailyDate: localDay(), factId: '' }, saved);
+  if ('dailyIds' in view && (!Array.isArray(view.dailyIds) || view.dailyIds.length !== 5 || new Set(view.dailyIds).size !== 5 || view.dailyIds.some(id => typeof id !== 'string' || !ids.has(id)) || new Set(view.dailyIds.map(id => facts.find(fact => fact.id === id)?.category)).size !== 5)) return null;
+  if ('daily' in view && view.daily === true && (!('dailyDate' in view) || view.dailyDate !== localDay())) return normalizeView({ ...initialView, daily: true, dailyDate: localDay(), dailyIds: dailyFacts(localDay()).map(fact => fact.id), factId: '' }, saved);
+  // Pre-expansion daily sessions stored only their current card. Reconstruct that day's
+  // original five from the unchanged V1.3 catalog, then retain their identities on save.
+  if ('daily' in view && view.daily === true && !('dailyIds' in view)) {
+    const legacy = dailyFacts(localDay(), facts.slice(0, 60));
+    if (legacy.some(fact => fact.id === view.factId)) return normalizeView({ ...(view as View), dailyIds: legacy.map(fact => fact.id) }, saved);
+  }
   return normalizeView(view as View, saved);
 }
 

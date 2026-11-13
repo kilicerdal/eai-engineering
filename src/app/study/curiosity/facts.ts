@@ -1,4 +1,5 @@
 import { moreFacts } from './more-facts';
+import { expandedFacts } from './expanded-facts';
 
 export type Fact = { id: string; question?: string; title: string; text: string; category: string; source: string; url: string; explore: string };
 const fact = (id: string, category: string, title: string, text: string, source: string, url: string, explore: string): Fact => ({ id, category, title, text, source, url, explore });
@@ -28,4 +29,5 @@ export const facts: Fact[] = [
   fact('roman-concrete', 'Patterns & invention', 'Some concrete can seal its cracks.', 'Researchers studying Roman concrete found lime clasts that could support self-healing. In experimental mixtures, reactions with water helped fill cracks.', 'MIT · original research team, 2023', 'https://news.mit.edu/2023/roman-concrete-durability-lime-casts-0106', 'What is the difference between preventing damage and designing a material to respond after damage?'),
   fact('first-transistor', 'Patterns & invention', 'A tiny device changed the scale.', 'In 1947, John Bardeen and Walter Brattain demonstrated the point-contact transistor at Bell Labs. Semiconductor amplification helped open a new era of electronics.', 'Computer History Museum · The Silicon Engine', 'https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/', 'Trace a chain from a small electronic switch to a calculator, a computer, and an AI system. What else is needed at each step?'),
   ...moreFacts,
+  ...expandedFacts,
 ];

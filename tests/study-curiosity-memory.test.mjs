@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
 
 const ts = createRequire(import.meta.url)('typescript');
 const modules = new Map();
@@ -15,7 +16,26 @@ function load(name) {
 }
 const { facts } = load('facts');
 const { insights, relatedDiscoveries, discoveryQuestion } = load('insights');
+const { expandedFacts, expansionSources } = load('expanded-facts');
 const { parseSaved, parseResume, discoveries, initialView, readMemory, SAVED_KEY, RESUME_KEY } = load('memory');
+
+test('V1.4 appends 90 sourced discoveries without changing any of the original 60 records', () => {
+  // Digest of the complete V1.3 catalog, including source URLs, wording, and stable IDs.
+  assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,60))).digest('hex'), '9fa2bdda155b70101186e6b55bc87ad250ddda7d95cb8d9bf59db84591f41c6b');
+  assert.equal(expandedFacts.length, 90);
+  assert.deepEqual(facts.slice(60), expandedFacts);
+  for (const fact of expandedFacts) {
+    assert.deepEqual([fact.source, fact.url], expansionSources[fact.sourceKey]);
+    assert.ok(fact.question && fact.explore && fact.why && fact.related.length === 2, fact.id);
+  }
+});
+test('old and new saved identities, resume positions, and computing preferences remain readable together', () => {
+  const saved = [facts[0].id, 'apollo-rope', 'qanat-gravity'];
+  assert.deepEqual(parseSaved(JSON.stringify({version:1,ids:saved})), saved);
+  const view = {...initialView,savedOnly:true,factId:'apollo-rope',revealed:true};
+  assert.deepEqual(parseResume(JSON.stringify({version:1,view}),saved),view);
+  assert.deepEqual(parseInterests(JSON.stringify({version:1,topics:{Space:'more','Computing & AI':'more',Nature:'less'}})),{Space:'more','Computing & AI':'more',Nature:'less'});
+});
 
 test('every discovery has concise context and two distinct, existing editorial connections', () => {
   assert.deepEqual(Object.keys(insights).sort(), facts.map(fact => fact.id).sort());
@@ -39,7 +59,7 @@ test('connection questions preserve the existing prompts and unknown links yield
 });
 
 test('curiosity favorites use unique stable identities and reject unknown or duplicate saves', () => {
-  assert.equal(new Set(facts.map(fact => fact.id)).size, 60);
+  assert.equal(new Set(facts.map(fact => fact.id)).size, 150);
   assert.deepEqual(parseSaved(JSON.stringify({ version: 1, ids: [facts[5].id, 'deleted-fact', facts[5].id, null] })), [facts[5].id]);
   assert.deepEqual(parseSaved(JSON.stringify({ version: 2, ids: [facts[5].id] })), []);
 });
@@ -83,8 +103,31 @@ test('blocked storage falls back to exploration without claiming to have restore
 });
 
 const { dailyFacts, localDay, linkedFact, discoveryLink, guesses, curiosityHandoff } = load('journey');
+test('same-day daily resume retains the V1.3 five after a catalog expansion', () => {
+  const day = localDay(), originalFive = dailyFacts(day,facts.slice(0,60));
+  const view = {...initialView,daily:true,dailyDate:day,factId:originalFive[3].id,revealed:true};
+  const resumed = parseResume(JSON.stringify({version:1,view}),[]);
+  assert.equal(resumed.factId,view.factId);
+  assert.equal(resumed.revealed,true);
+  assert.deepEqual(resumed.dailyIds,originalFive.map(fact=>fact.id));
+  assert.deepEqual(discoveries(resumed,[]),originalFive);
+});
+test('daily snapshots retain their order, reject invalid sets, and roll to the expanded catalog tomorrow', () => {
+  const day = localDay(), five = dailyFacts(day), dailyIds = five.map(fact=>fact.id);
+  const view = {...initialView,daily:true,dailyDate:day,dailyIds,factId:five[2].id,revealed:true};
+  assert.deepEqual(parseResume(JSON.stringify({version:1,view}),[]),view);
+  assert.deepEqual(discoveries(view,[]),five);
+  for(const invalid of [[...dailyIds.slice(0,4),'unknown'],Array(5).fill(five[0].id),dailyIds.slice(0,4),facts.filter(f=>f.category==='Space').slice(0,5).map(f=>f.id)]) {
+    assert.equal(parseResume(JSON.stringify({version:1,view:{...view,dailyIds:invalid}}),[]),null);
+  }
+  const rolled = parseResume(JSON.stringify({version:1,view:{...view,dailyDate:'2000-01-01'}}),[]);
+  assert.deepEqual(discoveries(rolled,[]),dailyFacts(day));
+  assert.deepEqual(rolled.dailyIds,dailyFacts(day).map(fact=>fact.id));
+  assert.deepEqual(parseResume(JSON.stringify({version:1,view:rolled}),[]),rolled);
+  assert.equal(rolled.revealed,false);
+});
 test('every discovery retains a stable ID, a source, and a usable question', () => {
-  assert.equal(facts.length, 60);
+  assert.equal(facts.length, 150);
   for (const fact of facts) {
     assert.match(fact.id, /^[a-z0-9-]+$/);
     assert.equal(new URL(fact.url).protocol, 'https:');
@@ -182,7 +225,7 @@ test('a preferred topic moves earlier without dropping other discoveries or chan
   const mixed = mixTopics(facts,{Space:'more'});
   assert.equal(mixed[0].category,'Space');
   assert.ok(mixed.slice(0,10).some(fact=>fact.category!=='Space'));
-  assert.equal(new Set(mixed.map(fact=>fact.id)).size,60);
+  assert.equal(new Set(mixed.map(fact=>fact.id)).size,150);
   assert.deepEqual(new Set(mixed.map(fact=>fact.id)),new Set(facts.map(fact=>fact.id)));
   for(const topic of new Set(facts.map(fact=>fact.category))) assert.deepEqual(mixed.filter(fact=>fact.category===topic),facts.filter(fact=>fact.category===topic));
   assert.deepEqual(mixTopics(facts,{Space:'more'}),mixed);

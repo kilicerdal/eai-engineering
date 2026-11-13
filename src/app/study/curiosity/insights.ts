@@ -1,4 +1,5 @@
 import { facts, type Fact } from './facts';
+import { expandedFacts } from './expanded-facts';
 
 type Insight = { why: string; related: [string, string] };
 const insight = (why: string, first: string, second: string): Insight => ({ why, related: [first, second] });
@@ -66,6 +67,7 @@ export const insights: Record<string, Insight> = {
   'euler-shapes': insight('Counting features can uncover a relationship that appearance alone does not show. Try the rule on several solids and pay attention to its stated conditions.', 'mobius-strip', 'infinite-primes'),
   'pigeonhole-months': insight('You can sometimes guarantee a result without knowing the individual details. Counting possibilities can be enough to establish a limit.', 'infinite-primes', 'braille-cell'),
   'regular-tilings': insight('Local rules at a corner determine whether a pattern can continue without gaps. A simple floor design becomes a way to investigate geometry.', 'saturn-hexagon', 'jacquard-patterns'),
+  ...Object.fromEntries(expandedFacts.map(fact => [fact.id, { why: fact.why, related: fact.related }])),
 };
 
 const originalQuestions = [

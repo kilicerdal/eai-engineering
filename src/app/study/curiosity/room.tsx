@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { facts } from './facts';
 import { discoveryQuestion, insights, relatedDiscoveries } from './insights';
 import { INTERESTS_KEY, parseInterests, personalOrder, readInterests, topics, type Interest, type TopicPreferences } from './interests';
-import { discoveryLink, guesses, localDay } from './journey';
+import { dailyFacts, discoveryLink, guesses, localDay } from './journey';
 import { markRead, parseSeen, readReading, readingOrder, surprisePool, READING_KEY, SEEN_KEY, type ReadingPreferences } from './reading';
 
 import { categories, discoveries, initialView, normalizeView, parseSaved, readMemory, RESUME_KEY, SAVED_KEY, type View } from './memory';
@@ -20,7 +20,7 @@ function canScrollDiscovery(target: HTMLElement, direction: number) {
 const subscribeToHydration = () => () => {};
 const clientReady = () => true;
 const serverReady = () => false;
-const scenes: Record<string,string> = { Learning:'02-study-v1.webp', 'Ancient ingenuity':'01-academy-v1.webp', Space:'04-observatory-v1.webp', Nature:'04-observatory-v1.webp', 'Patterns & invention':'03-library-v1.webp' };
+const scenes: Record<string,string> = { Learning:'02-study-v1.webp', 'Computing & AI':'03-library-v1.webp', 'Ancient ingenuity':'01-academy-v1.webp', Space:'04-observatory-v1.webp', Nature:'04-observatory-v1.webp', 'Patterns & invention':'03-library-v1.webp' };
 export default function CuriosityRoom() {
   const hydrated = useSyncExternalStore(subscribeToHydration, clientReady, serverReady);
   return hydrated ? <RememberedRoom /> : <main className="curiosity-feed" aria-busy="true"><p className="curiosity-loading">Opening the Curiosity Room…</p></main>;
@@ -155,7 +155,7 @@ function RememberedRoom() {
   },[selected?.id,revealed,more,copyFallback,reading.preferences.focus,reading.preferences.textSize]);
   function todaysFive() {
     setAnchor('');setSessionSeen(reading.seen);
-    remember({ ...initialView, daily: true, dailyDate: localDay(), factId: '' });
+    remember({ ...initialView, daily: true, dailyDate: localDay(), dailyIds: dailyFacts(localDay()).map(fact => fact.id), factId: '' });
     setMore(false); setNotice('Five discoveries across five topics. No score, no rush.');
   }
   async function shareDiscovery() {

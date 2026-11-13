@@ -1,4 +1,4 @@
-import { facts } from './facts';
+import { facts, type Fact } from './facts';
 
 export type Guess = { options: [string, string]; correct: number };
 export const guesses: Record<string, Guess> = {
@@ -24,8 +24,8 @@ function hash(text: string) {
   for (const character of text) value = Math.imul(value ^ character.charCodeAt(0), 16777619);
   return value >>> 0;
 }
-export function dailyFacts(day: string) {
-  const ranked = [...facts].sort((a, b) => hash(`${day}:${a.id}`) - hash(`${day}:${b.id}`) || a.id.localeCompare(b.id));
+export function dailyFacts(day: string, collection: Fact[] = facts) {
+  const ranked = [...collection].sort((a, b) => hash(`${day}:${a.id}`) - hash(`${day}:${b.id}`) || a.id.localeCompare(b.id));
   const topics = new Set<string>();
   return ranked.filter(fact => {
     if (topics.has(fact.category)) return false;
