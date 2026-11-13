@@ -47,3 +47,9 @@ export function surprisePool(list: Fact[], seen: string[], current: string): Fac
   const unread = other.filter(fact => !seen.includes(fact.id));
   return unread.length ? unread : readingOrder(other, seen, true).slice(0, 5);
 }
+
+// Strict opt-in: use the caller's filtered list and never fall back to a read card.
+export function unreadSurprisePool(list: Fact[], seen: string[], current: string): Fact[] {
+  const read = new Set(seen);
+  return list.filter(fact => fact.id !== current && !read.has(fact.id));
+}

@@ -1,9 +1,10 @@
+import { hiddenConnectionFacts } from './hidden-connections';
 import { everydayWonderFacts } from './everyday-wonders';
 import { soundsMadeUpFacts } from './sounds-made-up';
 import { moreFacts } from './more-facts';
 import { expandedFacts } from './expanded-facts';
 
-export type Fact = { id: string; collection?: 'sounds-made-up' | 'everyday-wonders'; question?: string; title: string; text: string; category: string; source: string; url: string; explore: string };
+export type Fact = { id: string; collection?: 'sounds-made-up' | 'everyday-wonders' | 'hidden-connections'; question?: string; title: string; text: string; category: string; source: string; url: string; explore: string };
 const fact = (id: string, category: string, title: string, text: string, source: string, url: string, explore: string): Fact => ({ id, category, title, text, source, url, explore });
 export const facts: Fact[] = [
   fact('retrieval-practice', 'Learning', 'Remembering is part of learning.', 'In three experiments, taking a memory test with feedback improved later recall more than another opportunity to study.', 'Journal of Experimental Psychology · 2008', 'https://pubmed.ncbi.nlm.nih.gov/18426072/', 'Close this page. Can you recall three facts? Reopen it to check and correct your answers.'),
@@ -34,4 +35,5 @@ export const facts: Fact[] = [
   ...expandedFacts,
   ...soundsMadeUpFacts,
   ...everydayWonderFacts,
+  ...hiddenConnectionFacts,
 ];
