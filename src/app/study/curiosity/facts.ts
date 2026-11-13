@@ -1,4 +1,6 @@
-export type Fact = { id: string; title: string; text: string; category: string; source: string; url: string; explore: string };
+import { moreFacts } from './more-facts';
+
+export type Fact = { id: string; question?: string; title: string; text: string; category: string; source: string; url: string; explore: string };
 const fact = (id: string, category: string, title: string, text: string, source: string, url: string, explore: string): Fact => ({ id, category, title, text, source, url, explore });
 export const facts: Fact[] = [
   fact('retrieval-practice', 'Learning', 'Remembering is part of learning.', 'In three experiments, taking a memory test with feedback improved later recall more than another opportunity to study.', 'Journal of Experimental Psychology · 2008', 'https://pubmed.ncbi.nlm.nih.gov/18426072/', 'Close this page. Can you recall three facts? Reopen it to check and correct your answers.'),
@@ -25,4 +27,5 @@ export const facts: Fact[] = [
   fact('babbage-loom', 'Patterns & invention', 'A loom inspired a computing engine.', 'Charles Babbage drew inspiration from the Jacquard system when planning punched-card control for his Analytical Engine.', 'National Museums Scotland · Jacquard loom', 'https://www.nms.ac.uk/discover-catalogue/the-jacquard-loom-innovation-in-textiles-and-computing', 'What everyday machine could inspire a new way to handle information? Start with its inputs, rules, and outputs.'),
   fact('roman-concrete', 'Patterns & invention', 'Some concrete can seal its cracks.', 'Researchers studying Roman concrete found lime clasts that could support self-healing. In experimental mixtures, reactions with water helped fill cracks.', 'MIT · original research team, 2023', 'https://news.mit.edu/2023/roman-concrete-durability-lime-casts-0106', 'What is the difference between preventing damage and designing a material to respond after damage?'),
   fact('first-transistor', 'Patterns & invention', 'A tiny device changed the scale.', 'In 1947, John Bardeen and Walter Brattain demonstrated the point-contact transistor at Bell Labs. Semiconductor amplification helped open a new era of electronics.', 'Computer History Museum · The Silicon Engine', 'https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/', 'Trace a chain from a small electronic switch to a calculator, a computer, and an AI system. What else is needed at each step?'),
+  ...moreFacts,
 ];

@@ -1,5 +1,6 @@
 "use client";
 import CopyCodeButton from "./CopyCodeButton";
+import { curiosityHandoff } from "@/app/study/curiosity/journey";
 import { algebraDiscussion, key as algebraSampleKey } from "@/lib/algebra-sample";
 import {packPracticeEvidence,matchingPractice} from "@/lib/study-recovery";
 
@@ -556,6 +557,22 @@ export default function SharedAIChat() {
     if (hydrated && !loading) queueMicrotask(() => {
       if (!mounted) return;
       const url = new URL(window.location.href);
+      if (url.searchParams.has("curiosity")) {
+        const prompt = curiosityHandoff(url.searchParams.get("curiosity"));
+        if (prompt && conversations.length >= 30) {
+          setResumeNotice("You have 30 saved sessions. Back up and remove an older session, then reopen this discovery. Your drafts are unchanged.");
+          return;
+        }
+        url.searchParams.delete("curiosity");
+        window.history.replaceState(null, "", url);
+        if (!prompt) {
+          setResumeNotice("That discovery is unavailable. Your existing conversations are unchanged.");
+          return;
+        }
+        receivePracticePrompt(new CustomEvent("eai-study-prompt", { detail: prompt }));
+        setResumeNotice("Opened a new Curiosity conversation. Your other drafts are preserved. Review the prepared question, then choose Send when ready.");
+        return;
+      }
       if (url.searchParams.get("from") !== "algebra-sample") return;
       url.searchParams.delete("from");
       window.history.replaceState(null, "", url);

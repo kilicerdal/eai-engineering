@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { facts } from './facts';
+import { discoveryLink, guesses, localDay } from './journey';
 
 import { categories, discoveries, initialView, normalizeView, parseSaved, readMemory, RESUME_KEY, SAVED_KEY, type View } from './memory';
 
@@ -28,6 +29,8 @@ function RememberedRoom() {
   const { category, query, revealed, savedOnly } = view;
   const [more, setMore] = useState(false);
   const [notice, setNotice] = useState('');
+  const [guess, setGuess] = useState<{id:string;choice:number}|null>(null);
+  const [copyFallback, setCopyFallback] = useState('');
   function remember(next: View, nextSaved = saved) {
     const normalized = normalizeView(next, nextSaved);
     let issue = warning;
@@ -36,6 +39,13 @@ function RememberedRoom() {
       try { localStorage.setItem(RESUME_KEY, JSON.stringify({ version: 1, view: normalized })); }
       catch { issue = 'Your place cannot be saved in this browser right now. You can still explore.'; }
     }
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('fact')) {
+      if (normalized.factId && !normalized.daily && !normalized.savedOnly && !normalized.query && normalized.category === categories[0]) url.searchParams.set('fact', normalized.factId);
+      else url.searchParams.delete('fact');
+      window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+    }
+    setCopyFallback('');
     setMemory({ saved: nextSaved, view: normalized, warning: issue, restored: false });
   }
   function startOver() {
@@ -72,6 +82,17 @@ function RememberedRoom() {
   const visible = discoveries(view, saved);
   const currentIndex = Math.max(0, visible.findIndex(fact => fact.id === view.factId));
   const selected = visible[currentIndex];
+  const quiz = selected ? guesses[selected.id] : null;
+  function todaysFive() {
+    remember({ ...initialView, daily: true, dailyDate: localDay(), factId: '' });
+    setMore(false); setNotice('Five discoveries across five topics. No score, no rush.');
+  }
+  async function shareDiscovery() {
+    if (!selected) return;
+    const link = discoveryLink(window.location.origin, selected.id);
+    try { await navigator.clipboard.writeText(link); setNotice('Discovery link copied.'); setCopyFallback(''); }
+    catch { setCopyFallback(link); setNotice('Select and copy the discovery link below.'); }
+  }
   function go(next: number) {
     if (next < 0 || next >= visible.length || next === currentIndex) return;
     remember({ ...view, factId: visible[next].id, revealed: false });
@@ -103,17 +124,19 @@ function RememberedRoom() {
     onTouchStart={event => {if(event.touches.length===1 && !(event.target as HTMLElement).closest('.curiosity-extra,input,select,button,a'))touch.current={x:event.touches[0].clientX,y:event.touches[0].clientY};else touch.current=null;}}
     onTouchEnd={event => {if(!touch.current)return;const dx=touch.current.x-event.changedTouches[0].clientX,dy=touch.current.y-event.changedTouches[0].clientY;if(Math.abs(dy)>65 && Math.abs(dy)>Math.abs(dx)*1.3)go(currentIndex+(dy>0?1:-1));touch.current=null;}}
     onTouchCancel={()=>{touch.current=null;}}>
-    <div className="curiosity-feed-top"><div><Link href="/study" className="curiosity-back">← Studio</Link><h1>The Curiosity Room</h1></div><span className="curiosity-trial">24 SOURCED DISCOVERIES</span></div>
-    <div className="curiosity-feed-tools"><label><span>Choose a topic</span><select value={category} onChange={event=>{remember({ ...view, category: event.target.value, factId: '', revealed: false });setMore(false);setNotice('');}}>{categories.map(item=><option key={item}>{item}</option>)}</select></label><label className="curiosity-feed-search"><span>Find a discovery</span><input type="search" maxLength={200} placeholder="Moon, memory, ancient…" value={query} onChange={event=>{remember({ ...view, query: event.target.value.slice(0,200), factId: '', revealed: false });setMore(false);setNotice('');}} /></label><button className="curiosity-shuffle" onClick={surprise} disabled={visible.length<2}>Surprise me ✧</button></div>
-    <div className="curiosity-personal-bar"><div className="curiosity-collections" aria-label="Discovery collection"><button aria-pressed={!savedOnly} onClick={()=>changeCollection(false)}>Explore all</button><button aria-pressed={savedOnly} onClick={()=>changeCollection(true)}>Saved ({saved.length})</button></div><button className="curiosity-restart" onClick={startOver}>Back to first ↺</button><p className="curiosity-memory-note" role="status">{warning || notice || (restored ? 'Resumed your place · saved in this browser only.' : 'Saves & your place stay in this browser only.')}</p></div>
+    <div className="curiosity-feed-top"><div><Link href="/study" className="curiosity-back">← Studio</Link><h1>The Curiosity Room</h1></div><span className="curiosity-trial">{facts.length} SOURCED DISCOVERIES</span></div>
+    <div className="curiosity-feed-tools"><label><span>Choose a topic</span><select value={category} onChange={event=>{remember({ ...view, daily: false, category: event.target.value, factId: '', revealed: false });setMore(false);setNotice('');}}>{categories.map(item=><option key={item}>{item}</option>)}</select></label><label className="curiosity-feed-search"><span>Find a discovery</span><input type="search" maxLength={200} placeholder="Moon, memory, ancient…" value={query} onChange={event=>{remember({ ...view, daily: false, query: event.target.value.slice(0,200), factId: '', revealed: false });setMore(false);setNotice('');}} /></label><button className="curiosity-shuffle" onClick={surprise} disabled={visible.length<2}>Surprise me ✧</button></div>
+    <div className="curiosity-personal-bar"><div className="curiosity-collections" aria-label="Discovery collection"><button aria-pressed={!savedOnly && !view.daily} onClick={()=>changeCollection(false)}>Explore all</button><button aria-pressed={!!view.daily} onClick={todaysFive}>Today’s 5</button><button aria-pressed={savedOnly} onClick={()=>changeCollection(true)}>Saved ({saved.length})</button></div><button className="curiosity-restart" onClick={startOver}>Back to first ↺</button><p className="curiosity-memory-note" role="status">{warning || notice || (restored ? 'Resumed your place · saved in this browser only.' : 'Saves & your place stay in this browser only.')}</p></div>
     {selected ? <>
       <article className="curiosity-slide" key={selected.id} aria-live="polite" aria-atomic="true">
         <p className="curiosity-kicker">{selected.category} <span>·</span> A LITTLE WONDER GOES A LONG WAY</p>
-        <h2>{questions[facts.indexOf(selected)]}</h2>
-        {!revealed ? <><p className="curiosity-tease">Take a guess. Then discover the story.</p><button className="curiosity-reveal" onClick={()=>remember({ ...view, revealed: true })}>Reveal the fact <span aria-hidden="true">✧</span></button></> : <div className="curiosity-answer"><h3>{selected.title}</h3><p>{selected.text}</p><button className="curiosity-more" aria-expanded={more} aria-controls="curiosity-extra" onClick={()=>setMore(!more)}>{more?'Close exploration −':'Try a thought experiment +'}</button>{more && <div className="curiosity-extra" id="curiosity-extra" tabIndex={0}><p>{selected.explore}</p></div>}</div>}
-        <div className="curiosity-fact-actions"><button className="curiosity-save" aria-pressed={saved.includes(selected.id)} onClick={toggleSaved}>{saved.includes(selected.id) ? '♥ Saved' : '♡ Save discovery'}</button><a className="curiosity-citation" href={selected.url} target="_blank" rel="noopener noreferrer">Source: {selected.source} ↗</a></div>
+        <h2>{selected.question || questions[facts.indexOf(selected)]}</h2>
+        {!revealed ? <><p className={`curiosity-tease ${quiz ? 'curiosity-quiz-tease' : ''}`}>{quiz ? 'What’s your guess? No scores—just curiosity.' : 'Take a guess. Then discover the story.'}</p><div className={quiz ? "curiosity-guess-row" : "curiosity-reveal-row"}>{quiz && <div className="curiosity-guess-options" aria-label="Make a guess">{quiz.options.map((option,choice)=><button key={option} onClick={()=>{setGuess({id:selected.id,choice});remember({...view,revealed:true});}}>{option}</button>)}</div>}<button className={quiz ? 'curiosity-skip-guess' : 'curiosity-reveal'} onClick={()=>remember({ ...view, revealed: true })}>{quiz ? 'Reveal without guessing' : 'Reveal the fact'} <span aria-hidden="true">✧</span></button></div></> : <div className="curiosity-answer">{quiz && guess?.id === selected.id && <p className="curiosity-guess-feedback">{guess.choice === quiz.correct ? 'You spotted it.' : `A surprising answer: ${quiz.options[quiz.correct]}.`}</p>}<h3>{selected.title}</h3><p>{selected.text}</p><button className="curiosity-more" aria-expanded={more} aria-controls="curiosity-extra" onClick={()=>setMore(!more)}>{more?'Close exploration −':'Try a thought experiment +'}</button>{more && <div className="curiosity-extra" id="curiosity-extra" tabIndex={0}><p>{selected.explore}</p></div>}</div>}
+        <div className="curiosity-fact-actions"><button className="curiosity-save" aria-pressed={saved.includes(selected.id)} onClick={toggleSaved}>{saved.includes(selected.id) ? '♥ Saved' : '♡ Save discovery'}</button><Link className="curiosity-ask" href={`/study?curiosity=${selected.id}#ai-assistant`}>Ask dAI ↗</Link><button className="curiosity-share" onClick={shareDiscovery}>Copy link ↗</button><a className="curiosity-citation" href={selected.url} target="_blank" rel="noopener noreferrer">Source: {selected.source} ↗</a></div>
+        {copyFallback && <label className="curiosity-copy-fallback">Discovery link<input value={copyFallback} readOnly onFocus={event=>event.target.select()} /></label>}
+        {view.daily && currentIndex === visible.length - 1 && revealed && <p className="curiosity-daily-finish">That’s your five for today. Follow any idea further, or keep exploring.</p>}
       </article>
-      <footer className="curiosity-feed-bottom"><div className="curiosity-progress"><span role="status">{currentIndex+1} <span>of {visible.length}</span></span><progress aria-label="Discovery position" value={currentIndex+1} max={visible.length} /><small>{currentIndex===visible.length-1?'You’ve reached the end of this collection.':'Swipe up · scroll down · or use ↓'}</small></div><div className="curiosity-step-buttons"><button aria-label="Previous discovery" onClick={()=>go(currentIndex-1)} disabled={currentIndex===0}>↑ <span>Previous</span></button>{currentIndex===visible.length-1?<button className="curiosity-next" onClick={()=>{remember({...view,factId:visible[0].id,revealed:false});setMore(false);setNotice('');}}>Start again ↺</button>:<button className="curiosity-next" onClick={()=>go(currentIndex+1)}>Next discovery ↓</button>}</div></footer>
+      <footer className="curiosity-feed-bottom"><div className="curiosity-progress"><span role="status">{currentIndex+1} <span>of {visible.length}</span></span><progress aria-label="Discovery position" value={currentIndex+1} max={visible.length} /><small>{view.daily ? `Today’s five · ${view.dailyDate}` : currentIndex===visible.length-1?'You’ve reached the end of this collection.':'Swipe up · scroll down · or use ↓'}</small></div><div className="curiosity-step-buttons"><button aria-label="Previous discovery" onClick={()=>go(currentIndex-1)} disabled={currentIndex===0}>↑ <span>Previous</span></button>{view.daily && currentIndex===visible.length-1 && revealed ? <button className="curiosity-next" onClick={()=>changeCollection(false)}>Keep exploring →</button> : view.daily && currentIndex===visible.length-1 ? <button className="curiosity-next" onClick={()=>remember({...view,revealed:true})}>Reveal final discovery ✧</button> : currentIndex===visible.length-1?<button className="curiosity-next" onClick={()=>{remember({...view,factId:visible[0].id,revealed:false});setMore(false);setNotice('');}}>Start again ↺</button>:<button className="curiosity-next" onClick={()=>go(currentIndex+1)}>Next discovery ↓</button>}</div></footer>
     </> : <div className="curiosity-no-results"><h2>{savedOnly && saved.length === 0 ? 'Keep a little wonder for later.' : 'A different question might open a door.'}</h2><p>{savedOnly && saved.length === 0 ? 'Tap Save discovery on a fact you like. You’ll find it here when you return in this browser.' : 'No discoveries match. Try another word or topic.'}</p><button className="curiosity-reveal" onClick={()=>changeCollection(false)}>Show all discoveries</button></div>}
   </main>;
 }
