@@ -221,3 +221,7 @@
 .eai-study-studio .weekly-summary-detail>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0;}
 .eai-study-studio .weekly-summary-detail>p{margin:16px 0;line-height:1.75;}
 @media(max-width:760px){.eai-study-studio .weekly-summary-detail>div{grid-template-columns:1fr;}}
+
+/* Keep the complete Studio menu readable as destinations grow. */
+@media(min-width:761px) and (max-width:1400px){.eai-study-studio .studio-nav{flex-wrap:wrap;gap:8px}.eai-study-studio .studio-nav nav{width:100%;justify-content:space-between;gap:12px;flex-wrap:wrap}}
+@media(max-width:760px){.eai-study-studio .studio-mobile-shortcuts{gap:18px;flex-wrap:wrap}.eai-study-studio .studio-mobile-shortcuts a[aria-current]{color:#edc578;text-decoration:underline;text-underline-offset:5px}}
