@@ -1,10 +1,11 @@
+import { matchesDiscovery } from './search';
 import { facts } from './facts';
 import { dailyFacts, linkedFact, localDay } from './journey';
 
 export const SAVED_KEY = 'dai.curiosity.saved.v1';
 export const RESUME_KEY = 'dai.curiosity.resume.v1';
 export const categories = ['All discoveries', ...new Set(facts.map(fact => fact.category))];
-export type View = { category: string; query: string; savedOnly: boolean; factId: string; revealed: boolean; daily?: boolean; dailyDate?: string; dailyIds?: string[]; collection?: 'sounds-made-up' | 'everyday-wonders' | 'hidden-connections' };
+export type View = { category: string; query: string; savedOnly: boolean; factId: string; revealed: boolean; daily?: boolean; dailyDate?: string; dailyIds?: string[]; collection?: 'sounds-made-up' | 'everyday-wonders' | 'hidden-connections' | 'your-world' };
 export const initialView: View = { category: categories[0], query: '', savedOnly: false, factId: facts[0].id, revealed: false };
 const ids = new Set(facts.map(fact => fact.id));
 
@@ -17,7 +18,7 @@ export function parseSaved(raw: string | null): string[] {
 
 export function discoveries(view: View, saved: string[]) {
   const collection = view.daily ? view.dailyIds ? view.dailyIds.flatMap(id => facts.find(fact => fact.id === id) || []) : dailyFacts(view.dailyDate || localDay()) : facts;
-  return collection.filter(fact => (!view.collection || fact.collection === view.collection) && (!view.savedOnly || saved.includes(fact.id)) && (view.category === categories[0] || fact.category === view.category) && `${fact.title} ${fact.text} ${fact.category}`.toLowerCase().includes(view.query.toLowerCase().trim()));
+  return collection.filter(fact => (!view.collection || fact.collection === view.collection) && (!view.savedOnly || saved.includes(fact.id)) && (view.category === categories[0] || fact.category === view.category) && matchesDiscovery(fact, view.query));
 }
 
 export function normalizeView(view: View, saved: string[]): View {
@@ -31,7 +32,7 @@ export function parseResume(raw: string | null, saved: string[]): View | null {
   if (!data || typeof data !== 'object' || !('version' in data) || data.version !== 1 || !('view' in data) || !data.view || typeof data.view !== 'object') return null;
   const view = data.view;
   if (!('category' in view) || typeof view.category !== 'string' || !categories.includes(view.category) || !('query' in view) || typeof view.query !== 'string' || view.query.length > 200 || !('savedOnly' in view) || typeof view.savedOnly !== 'boolean' || !('factId' in view) || typeof view.factId !== 'string' || !ids.has(view.factId) || !('revealed' in view) || typeof view.revealed !== 'boolean') return null;
-  if ('collection' in view && view.collection !== 'sounds-made-up' && view.collection !== 'everyday-wonders' && view.collection !== 'hidden-connections') return null;
+  if ('collection' in view && view.collection !== 'sounds-made-up' && view.collection !== 'everyday-wonders' && view.collection !== 'hidden-connections' && view.collection !== 'your-world') return null;
   if ('collection' in view && (('daily' in view && view.daily === true) || view.savedOnly)) return null;
   if ('daily' in view && typeof view.daily !== 'boolean') return null;
   if ('dailyDate' in view && (typeof view.dailyDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(view.dailyDate))) return null;

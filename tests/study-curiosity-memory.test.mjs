@@ -16,6 +16,9 @@ function load(name) {
 }
 const { facts } = load('facts');
 const { insights, relatedDiscoveries, discoveryQuestion } = load('insights');
+const { yourWorldFacts, yourWorldSources } = load('your-world');
+const { matchesDiscovery } = load('search');
+const { sourceDetails } = load('provenance');
 const { hiddenConnectionFacts, hiddenConnectionSources } = load('hidden-connections');
 const { everydayWonderFacts, everydayWonderSources } = load('everyday-wonders');
 const { soundsMadeUpFacts, soundsMadeUpSources } = load('sounds-made-up');
@@ -62,7 +65,7 @@ test('connection questions preserve the existing prompts and unknown links yield
 });
 
 test('curiosity favorites use unique stable identities and reject unknown or duplicate saves', () => {
-  assert.equal(new Set(facts.map(fact => fact.id)).size, 450);
+  assert.equal(new Set(facts.map(fact => fact.id)).size, 550);
   assert.deepEqual(parseSaved(JSON.stringify({ version: 1, ids: [facts[5].id, 'deleted-fact', facts[5].id, null] })), [facts[5].id]);
   assert.deepEqual(parseSaved(JSON.stringify({ version: 2, ids: [facts[5].id] })), []);
 });
@@ -130,7 +133,7 @@ test('daily snapshots retain their order, reject invalid sets, and roll to the e
   assert.equal(rolled.revealed,false);
 });
 test('every discovery retains a stable ID, a source, and a usable question', () => {
-  assert.equal(facts.length, 450);
+  assert.equal(facts.length, 550);
   for (const fact of facts) {
     assert.match(fact.id, /^[a-z0-9-]+$/);
     assert.equal(new URL(fact.url).protocol, 'https:');
@@ -228,7 +231,7 @@ test('a preferred topic moves earlier without dropping other discoveries or chan
   const mixed = mixTopics(facts,{Space:'more'});
   assert.equal(mixed[0].category,'Space');
   assert.ok(mixed.slice(0,10).some(fact=>fact.category!=='Space'));
-  assert.equal(new Set(mixed.map(fact=>fact.id)).size,450);
+  assert.equal(new Set(mixed.map(fact=>fact.id)).size,550);
   assert.deepEqual(new Set(mixed.map(fact=>fact.id)),new Set(facts.map(fact=>fact.id)));
   for(const topic of new Set(facts.map(fact=>fact.category))) assert.deepEqual(mixed.filter(fact=>fact.category===topic),facts.filter(fact=>fact.category===topic));
   assert.deepEqual(mixTopics(facts,{Space:'more'}),mixed);
@@ -265,8 +268,8 @@ test('V1.5 appends exactly 100 original sourced cards while preserving all 150 V
   assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,150))).digest('hex'), 'a5a1eeb3a5b36b6a19e2c02f0ce0d87f33256e62d93ca815256183af6269e8d0');
   assert.equal(soundsMadeUpFacts.length,100);
   assert.deepEqual(facts.slice(150,250),soundsMadeUpFacts);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,450);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,450);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,550);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,550);
   for(const fact of soundsMadeUpFacts) {
     const source = soundsMadeUpSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -299,12 +302,12 @@ test('V1.4 daily snapshots survive expansion to 250 and new daily selections sta
 
 test('V1.6 appends 100 Everyday Wonders while preserving all 250 complete existing records', () => {
   assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,250))).digest('hex'), 'ed4af805987ef6e4c7c844dfa34fc6f808c68a75455634290f300b0ca8cd51f1');
-  assert.equal(facts.length,450);
+  assert.equal(facts.length,550);
   assert.deepEqual(facts.slice(250,350),everydayWonderFacts);
   assert.equal(everydayWonderFacts.length,100);
-  assert.equal(new Set(facts.map(fact=>fact.id)).size,450);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,450);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,450);
+  assert.equal(new Set(facts.map(fact=>fact.id)).size,550);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,550);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,550);
   for(const fact of everydayWonderFacts) {
     const source=everydayWonderSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -340,11 +343,11 @@ test('V1.7 appends 100 reviewed Hidden Connections without changing any complete
   const previousInsights=Object.fromEntries(facts.slice(0,350).map(fact=>[fact.id,insights[fact.id]]));
   assert.equal(createHash('sha256').update(JSON.stringify(previousInsights)).digest('hex'),'a62e10f679d4890739cb6482f8e4b5a03ae45ad184cc8ff8388a3527d0cb38ec');
   assert.equal(hiddenConnectionFacts.length,100);
-  assert.deepEqual(facts.slice(350),hiddenConnectionFacts);
-  assert.equal(facts.length,450);
-  assert.equal(new Set(facts.map(fact=>fact.id)).size,450);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,450);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,450);
+  assert.deepEqual(facts.slice(350,450),hiddenConnectionFacts);
+  assert.equal(facts.length,550);
+  assert.equal(new Set(facts.map(fact=>fact.id)).size,550);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,550);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,550);
   for(const fact of hiddenConnectionFacts) {
     const source=hiddenConnectionSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -391,4 +394,64 @@ test('strict surprise respects saved, daily, collection, search and topic select
   assert.deepEqual(parseResume(JSON.stringify({version:1,view}),saved),view);
   assert.deepEqual(discoveries(view,saved).map(f=>f.id),dailyIds);
   assert.ok(unreadSurprisePool(discoveries(view,saved),[dailyIds[0]],dailyIds[1]).every(f=>dailyIds.includes(f.id)));
+});
+
+test('V1.8 appends 100 reviewed cards and preserves all 450 complete records and insights', () => {
+  assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,450))).digest('hex'),'2dde7f642d0393297c950f87104bf4c1323460c923c741a2445478795abd171f');
+  const previous=Object.fromEntries(facts.slice(0,450).map(f=>[f.id,insights[f.id]]));
+  assert.equal(createHash('sha256').update(JSON.stringify(previous)).digest('hex'),'7210ac86aa6ab13ea833bfc2ea60985e78b9d7901ee42b83c6a759848d8cc3a7');
+  assert.equal(yourWorldFacts.length,100);
+  assert.deepEqual(facts.slice(450),yourWorldFacts);
+  for(const fact of yourWorldFacts) {
+    const source=yourWorldSources[fact.sourceKey];
+    assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
+    assert.equal(source.reviewedOn,'2026-11-13');
+    assert.equal(fact.collection,'your-world');
+    assert.ok(fact.question.endsWith('?') && fact.text.length<450 && fact.explore.length>30,fact.id);
+  }
+});
+test('search finds questions, editorial significance, publishers and words in any order', () => {
+  const soap=yourWorldFacts.find(f=>f.id==='soap-two-ends');
+  assert.ok(matchesDiscovery(soap,'cooperate')); // question only
+  assert.ok(matchesDiscovery(soap,'interface connector')); // significance only
+  assert.ok(matchesDiscovery(soap,'American Cleaning Institute'));
+  assert.ok(matchesDiscovery(soap,'OIL   water soap'));
+  assert.ok(matchesDiscovery(facts.find(f=>f.id==='gobekli-builders'),'gobekli'));
+  assert.ok(matchesDiscovery(facts.find(f=>f.id==='mobius-strip'),'MOBIUS'));
+  assert.ok(matchesDiscovery(soap,'oil-attracting'));
+  assert.equal(matchesDiscovery(soap,'oil volcano'),false);
+  assert.ok(matchesDiscovery(soap,'   '));
+});
+test('expanded search intersects topic, saved and collection filters and restores an exact match', () => {
+  const saved=['soap-two-ends','pigeon-crop-milk','retrieval-practice'];
+  const view={...initialView,collection:'your-world',category:'Everyday science',query:'cooperate',factId:'soap-two-ends',revealed:true};
+  assert.deepEqual(discoveries(view,saved).map(f=>f.id),['soap-two-ends']);
+  assert.deepEqual(parseResume(JSON.stringify({version:1,view}),saved),view);
+  assert.equal(discoveries({...view,category:'Space'},saved).length,0);
+  assert.equal(discoveries({...initialView,savedOnly:true,query:'cooperate'},saved).length,1);
+  assert.equal(discoveries({...initialView,collection:'your-world'},saved).length,100);
+  assert.deepEqual(parseSaved(JSON.stringify({version:1,ids:saved})),saved);
+});
+test('source details preserve the citation and distinguish documented checks from missing dates', () => {
+  for(const fact of facts) {
+    const before=JSON.stringify(fact),detail=sourceDetails(fact);
+    assert.equal(detail.url,fact.url);
+    assert.equal(detail.label,fact.source);
+    assert.equal(detail.publisher,fact.source.split(' · ')[0]);
+    assert.ok(detail.host && !detail.host.includes('/'));
+    assert.equal(detail.reviewedOn,facts.indexOf(fact)<60?undefined:'2026-11-13');
+    assert.equal(JSON.stringify(fact),before);
+  }
+});
+test('V1.8 preserves pre-expansion daily snapshots, strict unread choices and user settings', () => {
+  const day=localDay(),dailyIds=dailyFacts(day,facts.slice(0,450)).map(f=>f.id);
+  const view={...initialView,daily:true,dailyDate:day,dailyIds,factId:dailyIds[2],revealed:true};
+  assert.deepEqual(parseResume(JSON.stringify({version:1,view}),[]),view);
+  assert.deepEqual(discoveries(view,[]).map(f=>f.id),dailyIds);
+  const list=discoveries({...initialView,collection:'your-world',query:'Purdue'},[]);
+  const seen=list.slice(0,-1).map(f=>f.id);
+  assert.deepEqual(unreadSurprisePool(list,seen,list[0].id).map(f=>f.id),[list.at(-1).id]);
+  assert.deepEqual(unreadSurprisePool(list,list.map(f=>f.id),''),[]);
+  assert.deepEqual(parsePreferences(JSON.stringify({version:1,preferences:{focus:true,textSize:'largest',unreadFirst:false}})),{focus:true,textSize:'largest',unreadFirst:false});
+  assert.deepEqual(parseInterests(JSON.stringify({version:1,topics:{Space:'more',Nature:'less'}})),{Space:'more',Nature:'less'});
 });
