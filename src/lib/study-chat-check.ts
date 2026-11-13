@@ -36,8 +36,15 @@ export function notebookFields(check: LessonCheck) {
 
 export function tutorNotebookEntry(check: LessonCheck, fields: ReturnType<typeof notebookFields>, now: number): Mistake {
   const question = fields.question.trim(), answer = fields.answer.trim(), reflection = fields.reflection.trim();
-  if (!question || !answer || question.length > 1200 || answer.length > 700 || reflection.length > 14000)
-    throw new Error("Edit your notebook copy to fit: up to 1,200 characters for the question and 700 for your answer. Your full checked attempt stays in the tutor.");
+  if (!question) throw new Error("Enter a question in your notebook copy.");
+  if (!answer) throw new Error("Add your reasoning to the notebook copy.");
+  for (const [label, text, limit] of [
+    ["Question", question, 1200], ["My reasoning", answer, 700], ["Feedback and notes", reflection, 14000],
+  ] as const) {
+    if (text.length > limit) {
+      throw new Error(`Shorten “${label}” to ${limit.toLocaleString("en-US")} characters to save. Your full checked attempt stays in the tutor.`);
+    }
+  }
   return {id: `check-${check.id}`, exam: "Tutor practice", question, answer, reflection, expected: "",
     createdAt: check.submittedAt, reviewAt: now + 86400000, reviews: 0};
 }

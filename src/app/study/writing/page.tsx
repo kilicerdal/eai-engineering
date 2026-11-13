@@ -1,7 +1,9 @@
 "use client";
 
 import StudyGuide from "@/components/StudyGuide";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { readStudyStream, retryDelaySeconds } from "@/lib/study-stream";
+import { writeStudyCopy } from "@/lib/study-safe-storage";
 import StudyNavigation from "@/components/StudyNavigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -256,11 +258,19 @@ function EssayScoreDashboard({ feedback }: { feedback: string }) {
   );
 }
 
+type WritingMessage = {role: "user" | "assistant"; content: string; essayTitle?: string};
+
 export default function WritingStudioPage() {
   const [title, setTitle] = useState("Untitled Essay");
   const [content, setContent] = useState("");
   const [ready, setReady] = useState(false);
   const [savedAt, setSavedAt] = useState("");
+  const essayCopy = useRef<string | null>(null);
+  const feedbackCopy = useRef<string | null>(null);
+  const essayPaused = useRef(false);
+  const feedbackPaused = useRef(false);
+  const [essayWarning, setEssayWarning] = useState("");
+  const [feedbackWarning, setFeedbackWarning] = useState("");
   const [streamingAnswer, setStreamingAnswer] = useState("");
   const [chatReady, setChatReady] = useState(false);
   const [aiLoading, setAiLoading] = useState(false);
@@ -268,9 +278,7 @@ export default function WritingStudioPage() {
   const [retryUntil, setRetryUntil] = useState(0);
   const [retrySeconds, setRetrySeconds] = useState(0);
   const [followUp, setFollowUp] = useState("");
-  const [chatHistory, setChatHistory] = useState<
-    { role: "user" | "assistant"; content: string }[]
-  >([]);
+  const [chatHistory, setChatHistory] = useState<WritingMessage[]>([]);
 
 
 
@@ -279,26 +287,28 @@ export default function WritingStudioPage() {
       try {
         const saved = localStorage.getItem(CHAT_STORAGE_KEY);
 
-        if (saved) {
+        feedbackCopy.current = saved;
+        if (saved !== null) {
           const parsed: unknown = JSON.parse(saved);
 
-          if (Array.isArray(parsed)) {
+          if (!Array.isArray(parsed)) throw new Error("Unreadable feedback");
+          {
             const valid = parsed.filter(
-              (item): item is {
-                role: "user" | "assistant";
-                content: string;
-              } =>
+              (item): item is WritingMessage =>
                 typeof item === "object" &&
                 item !== null &&
                 (item.role === "user" || item.role === "assistant") &&
-                typeof item.content === "string"
+                typeof item.content === "string" &&
+                (item.essayTitle === undefined || typeof item.essayTitle === "string")
             );
 
+            if (valid.length !== parsed.length) throw new Error("Incomplete feedback history");
             setChatHistory(valid.slice(-20));
           }
         }
       } catch {
-        // Ignore invalid browser storage.
+        feedbackPaused.current = true;
+        setFeedbackWarning("Saved feedback could not be opened. Copy any new feedback before leaving.");
       }
 
       setChatReady(true);
@@ -312,17 +322,19 @@ export default function WritingStudioPage() {
       try {
         const saved = localStorage.getItem(STORAGE_KEY);
 
-        if (saved) {
-          const parsed = JSON.parse(saved) as {
-            title?: string;
-            content?: string;
-          };
-
+        essayCopy.current = saved;
+        if (saved !== null) {
+          const parsed = JSON.parse(saved);
+          if (!parsed || Array.isArray(parsed) || typeof parsed !== "object" ||
+              !(typeof parsed.title === "string" || typeof parsed.content === "string") ||
+              (parsed.title !== undefined && typeof parsed.title !== "string") ||
+              (parsed.content !== undefined && typeof parsed.content !== "string")) throw new Error("Unreadable essay");
           setTitle(parsed.title ?? "Untitled Essay");
           setContent(parsed.content ?? "");
         }
       } catch {
-        // If saved data is invalid, start with a blank document.
+        essayPaused.current = true;
+        setEssayWarning("Your saved essay could not be opened. Download any new writing before leaving.");
       }
 
       setReady(true);
@@ -332,27 +344,15 @@ export default function WritingStudioPage() {
   }, []);
 
   useEffect(() => {
-    if (!ready) return;
-
-    const timer = window.setTimeout(() => {
-      try {
-        localStorage.setItem(
-          STORAGE_KEY,
-          JSON.stringify({ title, content })
-        );
-
-        setSavedAt(
-          new Date().toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })
-        );
-      } catch {
-        setSavedAt("Unable to save");
-      }
-    }, 500);
-
-    return () => window.clearTimeout(timer);
+    if (!ready || essayPaused.current) return;
+    try {
+      essayCopy.current = writeStudyCopy(localStorage, STORAGE_KEY, essayCopy.current, { title, content });
+      const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      queueMicrotask(() => setSavedAt(time));
+    } catch {
+      essayPaused.current = true;
+      queueMicrotask(() => setEssayWarning("Browser saving paused. Storage is unavailable or another tab changed the saved essay. Download this draft before reloading."));
+    }
   }, [title, content, ready]);
 
   const wordCount = content.trim()
@@ -363,15 +363,12 @@ export default function WritingStudioPage() {
 
 
   useEffect(() => {
-    if (!chatReady) return;
-
+    if (!chatReady || feedbackPaused.current) return;
     try {
-      localStorage.setItem(
-        CHAT_STORAGE_KEY,
-        JSON.stringify(chatHistory.slice(-20))
-      );
+      feedbackCopy.current = writeStudyCopy(localStorage, CHAT_STORAGE_KEY, feedbackCopy.current, chatHistory.slice(-20));
     } catch {
-      // Browser storage may be unavailable.
+      feedbackPaused.current = true;
+      queueMicrotask(() => setFeedbackWarning("Feedback saving paused. Copy this tab’s feedback before reloading."));
     }
   }, [chatHistory, chatReady]);
 
@@ -398,21 +395,15 @@ export default function WritingStudioPage() {
   }, [retryUntil]);
 
   function handleAIRateLimit(response: Response): never {
-    const retryAfter = response.headers.get("Retry-After");
-    const seconds = retryAfter ? Number(retryAfter) : NaN;
-
     if (response.status === 429) {
-      const waitSeconds =
-        Number.isFinite(seconds) && seconds > 0
-          ? Math.ceil(seconds)
-          : 60;
-
-      setRetrySeconds(waitSeconds);
-      setRetryUntil(Date.now() + waitSeconds * 1000);
-
-      throw new Error(
-        `AI usage limit reached. Please wait ${Math.ceil(waitSeconds / 60)} minute(s).`
-      );
+      const waitSeconds = retryDelaySeconds(response.headers);
+      if (waitSeconds) {
+        setRetrySeconds(waitSeconds);
+        setRetryUntil(Date.now() + waitSeconds * 1000);
+      }
+      throw new Error(waitSeconds === null
+        ? "AI request limit reached. Please try again later."
+        : "AI request limit reached. Your draft and feedback remain available.");
     }
 
     throw new Error(`AI request failed (HTTP ${response.status}).`);
@@ -445,6 +436,7 @@ export default function WritingStudioPage() {
     setAiLoading(true);
     setAiError("");
 
+    setStreamingAnswer("");
     const collected: string[] = [];
 
     try {
@@ -470,51 +462,7 @@ export default function WritingStudioPage() {
           handleAIRateLimit(response);
         }
 
-        if (!response.body) {
-          throw new Error(`Section ${i + 1} returned no response stream.`);
-        }
-
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder();
-
-        let buffer = "";
-        let answer = "";
-
-        while (true) {
-          const { value, done } = await reader.read();
-
-          if (done) break;
-
-          buffer += decoder.decode(value, { stream: true });
-
-          const events = buffer.replace(/\r\n/g, "\n").split("\n\n");
-          buffer = events.pop() || "";
-
-          for (const event of events) {
-            const data = event
-              .split("\n")
-              .filter((line) => line.startsWith("data:"))
-              .map((line) => line.slice(5).trim())
-              .join("\n");
-
-            if (!data || data === "[DONE]") continue;
-
-            try {
-              const parsed = JSON.parse(data);
-              const token = parsed.choices?.[0]?.delta?.content;
-
-              if (typeof token === "string") {
-                answer += token;
-              }
-            } catch {
-              // Ignore malformed SSE events.
-            }
-          }
-        }
-
-        if (!answer.trim()) {
-          throw new Error(`Section ${i + 1} returned empty feedback.`);
-        }
+        const answer = await readStudyStream(response, () => {}, true);
 
         collected.push(`## Essay Section ${i + 1}\n\n${answer}`);
       }
@@ -566,56 +514,7 @@ export default function WritingStudioPage() {
         handleAIRateLimit(synthesisResponse);
       }
 
-      if (!synthesisResponse.body) {
-        throw new Error("Unified essay evaluation returned no response stream.");
-      }
-
-      const synthesisReader = synthesisResponse.body.getReader();
-      const synthesisDecoder = new TextDecoder();
-
-      let synthesisBuffer = "";
-      let unifiedFeedback = "";
-
-      while (true) {
-        const { value, done } = await synthesisReader.read();
-
-        if (done) break;
-
-        synthesisBuffer += synthesisDecoder.decode(value, {
-          stream: true,
-        });
-
-        const events = synthesisBuffer
-          .replace(/\r\n/g, "\n")
-          .split("\n\n");
-
-        synthesisBuffer = events.pop() || "";
-
-        for (const event of events) {
-          const data = event
-            .split("\n")
-            .filter((line) => line.startsWith("data:"))
-            .map((line) => line.slice(5).trim())
-            .join("\n");
-
-          if (!data || data === "[DONE]") continue;
-
-          try {
-            const parsed = JSON.parse(data);
-            const token = parsed.choices?.[0]?.delta?.content;
-
-            if (typeof token === "string") {
-              unifiedFeedback += token;
-            }
-          } catch {
-            // Ignore malformed streaming events.
-          }
-        }
-      }
-
-      if (!unifiedFeedback.trim()) {
-        throw new Error("Unified evaluation returned empty feedback.");
-      }
+      const unifiedFeedback = await readStudyStream(synthesisResponse, setStreamingAnswer, true);
 
       setChatHistory((previous) => [
         ...previous,
@@ -625,6 +524,7 @@ export default function WritingStudioPage() {
         },
         {
           role: "assistant" as const,
+          essayTitle: title.trim() || "Untitled Essay",
           content:
             "# Unified Full-Essay Evaluation\n\n" +
             normalizeEssayEvaluation(unifiedFeedback) +
@@ -651,6 +551,8 @@ export default function WritingStudioPage() {
         parseEssayScores(message.content) !== null
     );
 
+  const evaluatedTitle = latestValidEvaluation?.essayTitle || "Essay title not recorded";
+
   function downloadPDFReport() {
     const evaluation = latestValidEvaluation;
 
@@ -668,7 +570,7 @@ export default function WritingStudioPage() {
         return entities[character];
       });
 
-    const reportTitle = title.trim() || "Untitled Essay";
+    const reportTitle = evaluatedTitle;
     const reportText = evaluation.content;
 
     const parsed = parseEssayScores(reportText);
@@ -863,12 +765,11 @@ export default function WritingStudioPage() {
 
     reportWindow.document.open();
     reportWindow.document.write(html);
-    reportWindow.document.close();
-
-    reportWindow.onload = () => {
+    reportWindow.addEventListener("load", () => {
       reportWindow.focus();
       reportWindow.print();
-    };
+    }, {once:true});
+    reportWindow.document.close();
   }
 
   function downloadEvaluationReport() {
@@ -885,7 +786,7 @@ export default function WritingStudioPage() {
       "ESSAY EVALUATION REPORT",
       "========================================",
       "",
-      `Essay Title: ${title.trim() || "Untitled Essay"}`,
+      `Essay Title: ${evaluatedTitle}`,
       `Generated: ${new Date().toLocaleString()}`,
       "",
       "IMPORTANT: AI-generated educational feedback, not an official grade.",
@@ -894,7 +795,7 @@ export default function WritingStudioPage() {
       "EVALUATION",
       "========================================",
       "",
-      `Validated Overall Score: ${parsed.overall}/100`,
+      `Calculated Overall Score: ${parsed.overall}/100`,
       ...ESSAY_SCORE_CATEGORIES.map(
         (category, index) =>
           `${category}: ${parsed.scores[index]}/10`
@@ -915,7 +816,7 @@ export default function WritingStudioPage() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
 
-    const safeTitle = (title.trim() || "essay")
+    const safeTitle = (latestEvaluation.essayTitle || "essay")
       .replace(/[^a-z0-9-_]+/gi, "-")
       .slice(0, 60);
 
@@ -941,56 +842,27 @@ export default function WritingStudioPage() {
     setAiError("");
     setStreamingAnswer("");
 
-    if (!isFollowUp) {
-      setChatHistory([]);
-    }
+    // Leave room for the complete 2,600-character excerpt within the API limit.
+    const instructions = action === "Evaluate My Essay"
+      ? "Use a ## heading and Score: X/10 for each: Thesis Strength, Grammar and Clarity, Organization and Structure, Evidence and Reasoning. Explain each score with exact quotes. Give Top 3 Improvements. The app calculates the overall. State this is an AI estimate."
+      : action;
 
-    const evaluationInstructions =
-      action === "Evaluate My Essay"
-        ? [
-            "Evaluate this essay using a rigorous college-level rubric.",
-            "Judge only the submitted text. Do not invent evidence or citations.",
-            "Score each category independently from 0 to 10.",
-            "0-2 weak, 3-4 developing, 5-6 adequate, 7-8 strong, 9-10 exceptional.",
-            "Use these exact headings and put Score: X/10 below each:",
-            "## Thesis Strength",
-            "## Grammar and Clarity",
-            "## Organization and Structure",
-            "## Evidence and Reasoning",
-            "Explain each score using specific observations and exact quotations.",
-            "Identify strengths, weaknesses, and actionable improvements.",
-            "Do not invent an overall score; the application calculates it.",
-            "## Top 3 Improvements",
-            "Provide three prioritized revision suggestions.",
-            "State: This is an AI estimate, not an official grade.",
-          ].join("\\n")
-        : action;
-
-    const essayContext = [
-      "You are an academic writing coach.",
-      "Give specific, constructive feedback.",
-      "Do not rewrite the entire essay or invent citations.",
-      "Essay title: " + title,
-      "Essay text:",
-      content.slice(0, 2600),
+    const message = [
+      isFollowUp ? "Follow-up: " + action : instructions,
+      "Essay title: " + title.trim().slice(0, 96),
+      "Essay excerpt:",
+      content.trim().slice(0, isFollowUp ? 1400 : 2600),
     ].join("\n\n");
 
-    const message = isFollowUp
-      ? [
-          "Follow-up question about my essay:",
-          action,
-          "Use the previous feedback and conversation for context.",
-          "Current essay title: " + title,
-          "Essay excerpt:",
-          content.slice(0, 1400),
-        ].join("\n\n")
-      : [
-          essayContext,
-          "Writing improvement request:",
-          evaluationInstructions,
-        ].join("\n\n");
-
-    const previousHistory = isFollowUp ? chatHistory.slice(-8) : [];
+    const essayTitle = title.trim() || "Untitled Essay";
+    const previousHistory: WritingMessage[] = [];
+    if (isFollowUp) {
+      for (let i = chatHistory.length - 1; i >= 1 && previousHistory.length < 8; i -= 2) {
+        const reply = chatHistory[i], question = chatHistory[i-1];
+        if (reply.role !== "assistant" || question.role !== "user" || reply.essayTitle !== essayTitle) break;
+        previousHistory.unshift(question, reply);
+      }
+    }
 
     try {
       const response = await fetch("/api/study/chat", {
@@ -999,7 +871,7 @@ export default function WritingStudioPage() {
         body: JSON.stringify({
           message,
           subject: "writing",
-          history: previousHistory,
+          history: previousHistory.map(({role, content}) => ({role, content: content.slice(0,4000)})),
         }),
       });
 
@@ -1015,58 +887,18 @@ export default function WritingStudioPage() {
         );
       }
 
-      if (!response.body) {
-        throw new Error("AI response contained no readable stream.");
-      }
+      const answer = await readStudyStream(response, setStreamingAnswer, true);
+      const finalAnswer =
+        action === "Evaluate My Essay"
+          ? normalizeEssayEvaluation(answer)
+          : answer;
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
-      let answer = "";
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const events = buffer.replace(/\r\n/g, "\n").split("\n\n");
-        buffer = events.pop() ?? "";
-
-        for (const event of events) {
-          for (const line of event.split("\n")) {
-            if (!line.startsWith("data:")) continue;
-
-            const data = line.slice(5).trim();
-            if (data === "[DONE]") continue;
-
-            try {
-              const parsed = JSON.parse(data);
-              const chunk = parsed.choices?.[0]?.delta?.content;
-              if (typeof chunk === "string") {
-                answer += chunk;
-                setStreamingAnswer(answer);
-              }
-            } catch {
-              // Ignore non-JSON stream events.
-            }
-          }
-        }
-      }
-
-      if (!answer.trim()) {
-        setAiError("The AI returned an empty response. Please try again.");
-      } else {
-        const finalAnswer =
-          action === "Evaluate My Essay"
-            ? normalizeEssayEvaluation(answer)
-            : answer;
-
-        setChatHistory((current) => [
-          ...(isFollowUp ? current : []),
-          { role: "user" as const, content: action },
-          { role: "assistant" as const, content: finalAnswer },
-        ].slice(-20));
-      }
+      setChatHistory((current) => [
+        ...current,
+        { role: "user" as const, content: action },
+        { role: "assistant" as const, content: finalAnswer, essayTitle: title.trim() || "Untitled Essay" },
+      ].slice(-20));
+      if (isFollowUp) setFollowUp(current => current.trim() === action ? "" : current);
     } catch (error) {
       setAiError(
         error instanceof Error
@@ -1114,7 +946,8 @@ export default function WritingStudioPage() {
       <StudyNavigation />
       <section className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-5 px-6 pt-10">
         <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">dAI Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p><StudyGuide section="Writing Studio">Start with a template or write in the editor. Ask for feedback on a specific issue, such as whether your evidence supports your argument. Revise your draft and download it when ready.</StudyGuide></div>
-        <button type="button" onClick={downloadEssay} className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950">Download Essay ↓</button>
+        {feedbackWarning && <p role="status">{feedbackWarning}</p>}
+        <button type="button" disabled={!ready} onClick={downloadEssay} className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950">Download Essay ↓</button>
       </section>
 
       <div className="mx-auto max-w-7xl px-6 py-8">
@@ -1128,6 +961,7 @@ export default function WritingStudioPage() {
               <button
                 key={prompt.label}
                 type="button"
+                disabled={!ready}
                 onClick={() => applyTemplate(prompt.template)}
                 className="rounded-xl border border-white/10 bg-[#0c1424] p-4 text-left transition hover:border-cyan-400/50"
               >
@@ -1147,6 +981,7 @@ export default function WritingStudioPage() {
           <section className="overflow-hidden rounded-2xl border border-white/10 bg-[#111a2b]">
             <div className="border-b border-white/10 p-5">
               <input
+                disabled={!ready}
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
                 aria-label="Essay title"
@@ -1158,12 +993,13 @@ export default function WritingStudioPage() {
                 <span>{wordCount} words</span>
                 <span>{characterCount} characters</span>
                 <span>
-                  {savedAt ? `Saved: ${savedAt}` : "Preparing editor..."}
+                  {essayWarning ? <strong role="status">{essayWarning}</strong> : savedAt ? `Saved: ${savedAt}` : "Preparing editor…"}
                 </span>
               </div>
             </div>
 
             <textarea
+              disabled={!ready}
               value={content}
               onChange={(event) => setContent(event.target.value)}
               aria-label="Essay content"
@@ -1247,6 +1083,7 @@ export default function WritingStudioPage() {
 
               {latestValidEvaluation && (
                 <div className="mt-4">
+                  <p className="text-sm text-slate-300">Evaluated draft · {evaluatedTitle}</p>
                   <EssayScoreDashboard
                     feedback={latestValidEvaluation.content}
                   />
@@ -1263,7 +1100,7 @@ export default function WritingStudioPage() {
                     }
                     className="mr-3 rounded-xl border border-cyan-400/40 bg-cyan-400/10 px-3 py-2 text-xs font-semibold text-cyan-300 hover:bg-cyan-400/20 disabled:opacity-40"
                   >
-                    Download PDF Report
+                    Print or save PDF report
                   </button>
 <button
                   type="button"
@@ -1286,6 +1123,7 @@ export default function WritingStudioPage() {
                   >
                     <p className="mb-2 text-xs font-semibold text-cyan-300">
                       {message.role === "user" ? "You" : "AI Writing Coach"}
+                      {message.role === "assistant" && message.essayTitle && message.essayTitle !== (title.trim() || "Untitled Essay") && ` · ${message.essayTitle}`}
                     </p>
 
                     <div className="min-w-0 break-words text-sm leading-7 text-slate-200 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_strong]:text-cyan-200">
@@ -1338,7 +1176,7 @@ export default function WritingStudioPage() {
 
                 <button
                   type="button"
-                  disabled={aiLoading || retrySeconds > 0}
+                  disabled={aiLoading}
                   onClick={() => {
                     setChatHistory([]);
                     setStreamingAnswer("");
@@ -1359,7 +1197,6 @@ export default function WritingStudioPage() {
 
                   if (!question || aiLoading) return;
 
-                  setFollowUp("");
                   void requestFeedback(question, true);
                 }}
               >

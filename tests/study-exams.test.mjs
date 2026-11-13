@@ -20,8 +20,8 @@ test('notebook restore discards malformed, oversized, duplicate or corrupt entri
 });
 test('mistake feedback checks assumptions and remains within shared message bounds',()=>{
  const prompt=mistakeReviewPrompt(mistake);assert.match(prompt,/do not assume it is wrong/i);assert.match(prompt,/may be wrong/);assert.match(prompt,/missing idea/);
- const max=mistakeReviewPrompt({...mistake,question:'q'.repeat(1200),answer:'a'.repeat(700),expected:'e'.repeat(700)});assert.ok(max.length<=3000);
- const retry=differentQuestionPrompt({...mistake,reflection:'r'.repeat(14000)});assert.ok(retry.length<=3000);assert.match(retry,/ONE different original/);assert.match(retry,/Wait for my attempt/);assert.match(retry,/not an official exam item\.$/);
+ const max=mistakeReviewPrompt({...mistake,exam:'s'.repeat(100),question:'q'.repeat(1200),answer:'a'.repeat(700),expected:'e'.repeat(700)});assert.ok(max.length<=3000);assert.ok(max.includes("q".repeat(1200)));assert.ok(max.includes("a".repeat(700)));assert.ok(max.includes("e".repeat(700)));
+ const retry=differentQuestionPrompt({...mistake,exam:'s'.repeat(100),question:'q'.repeat(1200),answer:'a'.repeat(700),reflection:'r'.repeat(14000)});assert.ok(retry.length<=3000);assert.ok(retry.includes("a".repeat(700)));assert.match(retry,/excerpt shortened/);assert.match(retry,/ONE different original/);assert.match(retry,/Wait for my attempt/);assert.match(retry,/not an official exam item\.$/);
 });
 test('self-reported reviews schedule bounded intervals without asserting mastery',()=>{
  const now=100000;let m=nextMistakeReview(mistake,now);assert.equal(m.reviewAt,now+86400000);assert.equal(m.reviews,1);

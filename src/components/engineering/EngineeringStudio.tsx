@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { caseDiscussions } from "@/lib/case-discussion";
 import Link from "next/link";
@@ -25,13 +25,14 @@ const tools = [
   {
     key: "job-matcher",
     title: "Role alignment",
-    detail: "Compare your experience with a role.",
+    detail: "Compare a role with Erdal Kilic’s experience.",
     Component: JobMatcher,
   },
 ];
 const cases = [
   {
     path: "/engineering/order-once",
+    resultAnchor: "business-outcomes",
     category: "CHECKOUT INTEGRITY",
     title: "The order that should happen only once.",
     description: caseDiscussions["order-once"].result,
@@ -43,6 +44,7 @@ const cases = [
   },
   {
     path: "/engineering/claim-twice",
+    resultAnchor: "delivery",
     category: "CLAIM REDELIVERY",
     title: "The claim that arrived twice.",
     description:
@@ -63,29 +65,33 @@ export default function EngineeringStudio({
   const [activeTool, setActiveTool] = useState("qa-dashboard");
   const [workspaceOpen, setWorkspaceOpen] = useState(false);
   const [visitedTools, setVisitedTools] = useState<string[]>([]);
-  const selectTool = (key: string) => {
+  const selectTool = useCallback((key: string) => {
     setActiveTool(key);
     setVisitedTools((previous) =>
       previous.includes(key) ? previous : [...previous, key],
     );
-  };
+  }, []);
+  const openLinkedTool = useCallback((key: string) => {
+    selectTool(key);
+    setWorkspaceOpen(true);
+    requestAnimationFrame(() => {
+      const panel = document.getElementById(`panel-${key}`);
+      panel?.focus({preventScroll:true});
+      panel?.scrollIntoView({block:"start"});
+    });
+  }, [selectTool]);
+
   useEffect(() => {
     const sync = () => {
       const key = location.hash.slice(1);
       if (tools.some((tool) => tool.key === key)) {
-        selectTool(key);
-        setWorkspaceOpen(true);
-        requestAnimationFrame(() =>
-          document
-            .getElementById(`panel-${key}`)
-            ?.scrollIntoView({ block: "start" }),
-        );
+        openLinkedTool(key);
       }
     };
     sync();
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
-  }, []);
+  }, [openLinkedTool]);
 
   return (
     <section
@@ -162,7 +168,7 @@ export default function EngineeringStudio({
                     Follow the {index === 0 ? "checkout" : "claim’s journey"}{" "}
                     <span aria-hidden="true">→</span>
                   </Link>
-                  <Link href={`${item.path}#evidence`}>View test result →</Link>
+                  <Link href={`${item.path}#${item.resultAnchor}`}>View test result →</Link>
                   <Link href={`${item.path}#decisions`}>Engineering decision →</Link>
                   <a href={item.record} download>
                     Evidence JSON <span aria-hidden="true">↓</span>
@@ -228,7 +234,12 @@ export default function EngineeringStudio({
                     </a>
                   )}
                   {project.caseStudy && (
-                    <a href="#ai-test-generator">
+                    <a href="#ai-test-generator" onClick={event => {
+                      if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && location.hash === "#ai-test-generator") {
+                        event.preventDefault();
+                        openLinkedTool("ai-test-generator");
+                      }
+                    }}>
                       Plan tests <span aria-hidden="true">→</span>
                     </a>
                   )}

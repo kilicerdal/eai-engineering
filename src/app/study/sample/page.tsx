@@ -12,7 +12,7 @@ export default function SamplePage() {
       <h1 className="my-4 font-serif text-4xl">Keep an equation balanced.</h1>
       <p>Try two short problems. Use a hint when you need one and compare your answers at the end. This sample stays in this tab for the session.</p>
       <SampleLesson/>
-      <Link href="/study#ai-assistant" className="underline">Continue with your AI Tutor →</Link>
+      <Link href="/study?from=algebra-sample#ai-assistant" className="underline">Discuss this sample with your AI Tutor →</Link>
     </section>
   </main>;
 }

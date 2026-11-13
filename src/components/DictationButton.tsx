@@ -55,11 +55,14 @@ export default function DictationButton({ value, onChange, onListeningChange, di
     recognition.lang = document.documentElement.lang || navigator.language || "en-US";
     recognition.continuous = true;
     recognition.interimResults = true;
-    const prefix = value.trimEnd();
+    const separator = value && !/\s$/.test(value) ? " " : "";
+    let reachedLimit = false;
     let hadError = false;
     recognition.onresult = event => {
       const transcript = Array.from(event.results).map(result => result[0]?.transcript || "").join(" ").trim();
-      callbacks.current.onChange(`${prefix}${prefix && transcript ? " " : ""}${transcript}`.slice(0, 3000));
+      const draft = transcript ? value + separator + transcript : value;
+      reachedLimit = draft.length > 3000;
+      callbacks.current.onChange(draft.slice(0, 3000));
     };
     recognition.onerror = event => {
       hadError = true;
@@ -73,7 +76,9 @@ export default function DictationButton({ value, onChange, onListeningChange, di
       recognitionRef.current = null;
       setListening(false);
       callbacks.current.onListeningChange(false);
-      if (!hadError) setStatus("Dictation stopped. Review your message before sending.");
+      if (!hadError) setStatus(reachedLimit
+        ? "Your draft reached 3,000 characters. Review the ending before sending."
+        : "Dictation stopped. Review your message before sending.");
     };
     recognitionRef.current = recognition;
     try {

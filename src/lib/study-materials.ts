@@ -21,10 +21,17 @@ export function validateCourseDocument(value: unknown): CourseDocument | null {
   const numbers = new Set<number>();
   let characters = 0;
   for (const page of input.pages) {
-    if (!page || !Number.isInteger(page.number) || page.number < 1 || page.number > Number(input.pageCount) || typeof page.text !== "string" || !page.text.trim() || numbers.has(page.number)) return null;
+    if (!page || !Number.isInteger(page.number) || page.number < 1 || page.number > Number(input.pageCount) || typeof page.text !== "string" || numbers.has(page.number)) return null;
     characters += page.text.length; if (characters > MATERIAL_LIMITS.documentCharacters) return null;
-    numbers.add(page.number); pages.push({ number: page.number, text: page.text });
+    numbers.add(page.number);
+    if (!page.text.trim()) {
+      // Older text imports could save a whole 5,000-character section of whitespace.
+      if (input.kind === "text" && page.text.length === 5000 && page.number > 1 && page.number < Number(input.pageCount)) continue;
+      return null;
+    }
+    pages.push({ number: page.number, text: page.text });
   }
+  if (!pages.length) return null;
   return { id: input.id, name: input.name.trim(), kind: input.kind, pages: pages.sort((a,b) => a.number-b.number), pageCount: Number(input.pageCount), addedAt: input.addedAt };
 }
 
@@ -32,18 +39,21 @@ export function makeTextDocument(name: string, text: string, id: string, addedAt
   const clean = text.replace(/\u0000/g, "").trim();
   if (!clean || clean.length > MATERIAL_LIMITS.documentCharacters) throw new Error("Add readable text of up to 250,000 characters.");
   const pages: MaterialPage[] = [];
-  for (let start = 0; start < clean.length; start += 5000) pages.push({ number: pages.length+1, text: clean.slice(start,start+5000) });
-  return { id, name: name.trim().slice(0,120) || "Course notes", kind: "text", pages, pageCount: pages.length, addedAt };
+  for (let start = 0; start < clean.length; start += 5000) {
+    const section = clean.slice(start, start + 5000);
+    if (section.trim()) pages.push({number: start / 5000 + 1, text: section});
+  }
+  return { id, name: name.trim().slice(0,120) || "Course notes", kind: "text", pages, pageCount: Math.ceil(clean.length / 5000), addedAt };
 }
 
 const stopWords = new Set("a an and are as at be because by can could do does explain for from give how i in is it me my of on or please question ask one practice create selected show summarize that the their these they this to understand was what when where which why with would you your answer answered guide quiz study notes material materials".split(" "));
 function terms(text: string): string[] {
   const segmenter = new Intl.Segmenter(undefined, { granularity: "word" });
-  return [...segmenter.segment(text.toLowerCase())].filter(part => part.isWordLike).map(part => part.segment).filter(word => !stopWords.has(word) && /\p{L}/u.test(word)).slice(0,1000);
+  return [...segmenter.segment(text.toLowerCase())].filter(part => part.isWordLike).map(part => part.segment).filter(word => !stopWords.has(word) && /[\p{L}\p{N}]/u.test(word)).slice(0,1000);
 }
-function chunks(documents: CourseDocument[]): MaterialExcerpt[] {
+function chunks(document: CourseDocument): MaterialExcerpt[] {
   const output: MaterialExcerpt[] = [];
-  for (const document of documents) for (const page of document.pages) {
+  for (const page of document.pages) {
     const text = normalizeMaterialText(page.text);
     let start = 0;
     while (start < text.length) {
@@ -59,10 +69,35 @@ function chunks(documents: CourseDocument[]): MaterialExcerpt[] {
   }
   return output;
 }
+function sampleSelectedMaterials(groups: MaterialExcerpt[][]): MaterialExcerpt[] {
+  const quotas = groups.map(() => 0);
+  let remaining = Math.min(MATERIAL_LIMITS.excerpts, groups.reduce((n, group) => n + group.length, 0));
+  while (remaining > 0) {
+    for (const [index, group] of groups.entries()) {
+      if (remaining > 0 && quotas[index] < group.length) {
+        quotas[index]++;
+        remaining--;
+      }
+    }
+  }
+  return groups.flatMap((group, index) => {
+    const count = quotas[index];
+    return Array.from({length: count}, (_, position) =>
+      group[count === 1 ? 0 : Math.round(position * (group.length - 1) / (count - 1))]
+    );
+  });
+}
+
 export function selectMaterialExcerpts(documents: CourseDocument[], question: string, task: MaterialTask, previousQuestion = ""): MaterialExcerpt[] {
-  const all = chunks(documents);
+  const groups = documents.map(chunks);
   let query = [...new Set(terms(question))].slice(0,40);
-  if (!query.length && previousQuestion) query = [...new Set(terms(previousQuestion))].slice(0,40);
+  const numericQuizReply = task === "quiz" && query.every(word => !/\p{L}/u.test(word));
+  if (previousQuestion && (!query.length || numericQuizReply)) {
+    const previousTerms = [...new Set(terms(previousQuestion))].slice(0,40);
+    if (previousTerms.length) query = previousTerms;
+  }
+  if (!query.length) return task === "explain" ? [] : sampleSelectedMaterials(groups);
+  const all = groups.flat();
   const frequencies = new Map<string,number>();
   const indexed = all.map(excerpt => {
     const words = terms(excerpt.text);
@@ -76,11 +111,7 @@ export function selectMaterialExcerpts(documents: CourseDocument[], question: st
     return score + (count ? Math.log(1+(all.length+1)/((frequencies.get(word)||0)+1)) * (count/(count+1.2)) : 0);
   },0) })).filter(item => item.score > 0).sort((a,b) => b.score-a.score);
   if (ranked.length) return ranked.slice(0,MATERIAL_LIMITS.excerpts).map(item => item.excerpt);
-  if (task === "guide" || task === "quiz") {
-    const count = Math.min(MATERIAL_LIMITS.excerpts,all.length);
-    return Array.from({length:count},(_,index) => all[Math.floor(index*all.length/count)]);
-  }
-  return [];
+  return task === "explain" ? [] : sampleSelectedMaterials(groups);
 }
 
 export function validateMaterialSources(value: unknown): MaterialSource[] {
@@ -182,16 +213,17 @@ export function materialAnswerFromDraft(value: unknown, sources: MaterialSource[
     let quote=source.text;
     if(quote.length>600){
       let bestStart=0;let bestScore=-1;
-      for(let start=0;start<source.text.length;start+=200){
+      for(let offset=0;offset<source.text.length;offset+=200){
+        const start=Math.min(offset,source.text.length-560);
         const window=source.text.slice(start,start+560).toLowerCase();
         const score=query.reduce((sum,word)=>sum+(window.includes(word)?1:0),0);
         if(score>bestScore){bestScore=score;bestStart=start;}
       }
-      const boundary=source.text.indexOf(" ",Math.max(0,bestStart-1));
-      const start=boundary>=0&&boundary<bestStart+40?boundary+1:bestStart;
-      let end=Math.min(start+580,source.text.length);
-      const space=source.text.lastIndexOf(" ",end);
-      if(space>start+300)end=space;
+      const precedingSpace=source.text.lastIndexOf(" ",bestStart);
+      const start=bestStart-precedingSpace<=20 ? precedingSpace+1 : bestStart;
+      const windowEnd=bestStart+560;
+      const followingSpace=source.text.indexOf(" ",windowEnd);
+      const end=followingSpace>=windowEnd && followingSpace-windowEnd<=20 ? followingSpace : windowEnd;
       quote=source.text.slice(start,end).trim();
     }
     return {sourceId,quote};

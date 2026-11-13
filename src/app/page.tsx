@@ -6,6 +6,7 @@ import EngineeringStudio from "@/components/engineering/EngineeringStudio";
 import "./engineering/studio.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import ContactDesk from "@/components/ContactDesk";
 import "./contact-desk.css";
@@ -17,11 +18,16 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
  const [menuOpen, setMenuOpen] = useState(false);
- const [navSection, setNavSection] = useState("ai-assistant");
+ const router = useRouter();
+ const [navSection, setNavSection] = useState("");
  useEffect(() => {
-   const sync = () => setNavSection(location.hash.slice(1) || "ai-assistant");
+   const sync = () => {
+     const section = location.hash.slice(1);
+     if (section === "ai-assistant") router.replace("/chat");
+     else setNavSection(section);
+   };
    sync(); window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync);
- }, []);
+ }, [router]);
  return <main className="threshold" id="top">
   <a href="/chat" className="atlas-skip-link">Skip to eAI chat</a>
   <header className="atlas-header">
@@ -29,7 +35,7 @@ export default function Home() {
    <span className="atlas-chapter">THE THRESHOLD</span>
    <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onKeyDown={e => {if(e.key === "Escape") setMenuOpen(false);}} onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onKeyDown={e=>{if(e.key === "Escape"){setMenuOpen(false);document.querySelector<HTMLButtonElement>(".atlas-menu")?.focus();}}} onClick={event => { const link=(event.target as HTMLElement).closest("a"); if(!link)return; setMenuOpen(false); const href=link.getAttribute("href"); if(href?.startsWith("#"))requestAnimationFrame(()=>{const target=document.getElementById(href.slice(1));if(target){target.setAttribute("tabindex","-1");target.focus({preventScroll:true});}}); }}>
-    <a className="atlas-chat-nav" href="/chat" aria-current={navSection === "ai-assistant" ? "location" : undefined}>Chat with eAI</a><a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Engineering Studio</a><a href="/study">Learning Studio</a><a href="#about">About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
+    <a className="atlas-chat-nav" href="/chat">Chat with eAI</a><a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Engineering Studio</a><a href="/study">Learning Studio</a><a href="#about" aria-current={navSection === "about" ? "location" : undefined}>About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
    </nav>
    <a className="atlas-dai-entry" href="/study" aria-label="Explore dAI Learning Studio">Explore dAI <span aria-hidden="true">→</span></a>
   </header>

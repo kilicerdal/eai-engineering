@@ -57,6 +57,7 @@ test("rate limiting is actionable, and malformed or empty streams fail visibly",
   await assert.rejects(readStudyStream(new Response('{}', { status: 429, headers: { "Retry-After": "120" } }), () => {}), /2 minute/);
   await assert.rejects(readStudyStream(new Response('{"error":"Unavailable"}', { status: 503 }), () => {}), /Unavailable/);
   await assert.rejects(readStudyStream(sse('data: [DONE]\n\n'), () => {}), /empty/);
+  for (const data of ['null','42','[]']) await assert.rejects(readStudyStream(sse(`data: ${data}\n\n`), () => {}), /interrupted/);
   await assert.rejects(readStudyStream(sse('data: not-json\n\n'), () => {}), /interrupted/);
   await assert.rejects(readStudyStream(sse('data: {"error":"failed"}\n\n'), () => {}), /interrupted/);
   await assert.rejects(readStudyStream(new Response('html'), () => {}), /could not start/);
@@ -228,6 +229,8 @@ test('later retries never inflate first-attempt or independent-correct results',
   const hinted={questionId:'acceleration-v1',selectedIndex:2,hintsUsed:1,submittedAt:300};
   const stats=practiceSummary('science',[first,retry,hinted]);
   assert.deepEqual(stats,{total:9,tried:2,firstTryCorrect:1,independentCorrect:0});
+  assert.deepEqual(practiceSummary('science',[hinted,retry,first]),stats);
+
 });
 test('practice prioritizes unseen questions then revisits missed questions', () => {
   const questions=practiceQuestions.filter(question=>question.track==='science');
@@ -369,4 +372,40 @@ test('chat continuity includes bounded earlier context and only the matching sav
 test('chat requests reject oversized context without calling the model',async()=>{
  const post=loadRoute(async()=>null,async()=>assert.fail('oversized request must not reach model'));
  assert.equal((await post(new Request('https://example.test',{method:'POST',body:JSON.stringify({message:'hello',continuity:{note:'x'.repeat(256001)}})}))).status,413);
+});
+
+for (const [label, original, answer] of [
+  ["wrong calculation", "What is 7 times 8?", "7 times 8 equals 54."],
+  ["challenged correct result", "What is 7 times 8?", "7 times 8 equals 56."],
+  ["misquotation", "The supplied passage reads: The gate stood open.", "The source says: The gate was closed."],
+]) {
+  test(`answer review retains the original evidence and disputed response: ${label}`, async () => {
+    let received;
+    const post = loadRoute(async () => null, async (...args) => {
+      received = args;
+      return sse('data: [DONE]\n\n');
+    });
+    const history = [{role:"user", content:original}, {role:"assistant", content:answer}];
+    const response = await post(new Request('https://example.test/api/study/chat', {
+      method:'POST',
+      body:JSON.stringify({subject:label === "misquotation" ? "writing":"math", message:"Check your last answer from scratch.", history}),
+    }));
+    assert.equal(response.status, 200);
+    assert.deepEqual(received[2].history, history);
+    assert.match(received[0], /check it independently/);
+    assert.match(received[0], /exact supplied passage/);
+    assert.match(received[0], /If the original answer holds/);
+  });
+}
+
+test('retry guidance handles seconds, expired dates and missing or invalid reset times',async()=>{
+  for(const [value,expected] of [
+    ['1',/about 1 second\./],['60',/about 1 minute\./],['0',/retry now/],
+    ['Sun, 01 Nov 2026 00:00:00 GMT',/retry now/],['Infinity',/try again later/i],
+    ['bad date GMT',/try again later/i],[null,/try again later/i],
+  ]) {
+    const headers=new Headers({Date:'Wed, 11 Nov 2026 12:00:00 GMT'});
+    if(value!==null)headers.set('Retry-After',value);
+    await assert.rejects(readStudyStream(new Response('{}',{status:429,headers}),()=>{}),expected);
+  }
 });

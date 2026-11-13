@@ -7,21 +7,30 @@ import {accountConfigured} from "@/lib/study-account";
 import {examBank,examDomains,examSkillLessons,examDomainSource,type ExamSkill,type ExamDomain,type ExamProfile} from "@/lib/study-exam-bank";
 import {EXAM_PREP_KEY,emptyExamRecord,readExamRecord,examSkillEvidence,recommendedExamDomain,examReviewProgress,startExamReview,startExamSession,sessionAnswers,submitExamAnswer,advanceExamSession,examAttemptToMistake,type ExamRecord,type ExamSession} from "@/lib/study-exam-practice";
 import {normalizeMistakes} from "@/lib/study-exams";
+import {readSavedArray,writeStudyCopy} from "@/lib/study-safe-storage";
 const examName=(exam:ExamProfile)=>exam==="sat"?"SAT":"PSAT/NMSQT";
 function eventTime(event:{timeStamp:number}){return Math.round(event.timeStamp>1e12?event.timeStamp:performance.timeOrigin+event.timeStamp);}
 function display(text:string){const superscript="⁰¹²³⁴⁵⁶⁷⁸⁹";return text.replace(/([a-z)])\^(\d+)/gi,(_all,base:string,power:string)=>base+[...power].map(d=>superscript[Number(d)]).join(""));}
 export default function StudyExamPractice(){
  const params=useSearchParams(),requested=params.get("exam"),requestedDomain=params.get("domain"),requestedSkill=params.get("skill");
- const [record,setRecord]=useState<ExamRecord>(emptyExamRecord),[ready,setReady]=useState(false),[warning,setWarning]=useState(""),[error,setError]=useState(""),[now,setNow]=useState(0),[domain,setDomain]=useState<ExamDomain>("information"),[savedNotebook,setSavedNotebook]=useState(""),[pendingBackup,setPendingBackup]=useState<ExamRecord|null>(null);
+ const [record,setRecord]=useState<ExamRecord>(emptyExamRecord),[ready,setReady]=useState(false),[warning,setWarning]=useState(""),[error,setError]=useState(""),[now,setNow]=useState(0),[domain,setDomain]=useState<ExamDomain>("information"),[savedNotebook,setSavedNotebook]=useState(""),[pendingBackup,setPendingBackup]=useState<{record:ExamRecord; previousRaw:string|null; previousRecord:ExamRecord}|null>(null);
+ const [damagedCopy,setDamagedCopy]=useState<string|null>(null);
  const [coverageFilter,setCoverageFilter]=useState("all");
+ const [backupError,setBackupError]=useState("");
+ const temporaryWork=useRef<"none"|"edited"|"exported">("none");
  const current=useRef(record),lastRaw=useRef<string|null>(null),writable=useRef(true),importRevision=useRef(0),workspace=useRef<HTMLElement>(null);
  useEffect(()=>{
-  let next=emptyExamRecord(),message="";writable.current=true;
-  try{lastRaw.current=localStorage.getItem(EXAM_PREP_KEY);if(lastRaw.current)next=readExamRecord(JSON.parse(lastRaw.current));}
-  catch(e){writable.current=false;message=e instanceof Error?e.message:"Browser saving is unavailable. This session will stay temporary.";}
+  const keepLocal = temporaryWork.current !== "none";
+  let next=current.current,message="",stored:string|null=null;
+  if (!keepLocal) {
+   writable.current=true;
+   next=emptyExamRecord();
+  try{stored=localStorage.getItem(EXAM_PREP_KEY);lastRaw.current=stored;if(stored!==null)next=readExamRecord(JSON.parse(stored));}
+  catch{writable.current=false;message=stored===null?"Browser storage is unavailable. You can practice temporarily and download your work.":"Your saved exam practice could not be read. The original is preserved. New practice stays in this tab until you download it."; }
+  }
   if(requested==="sat"||requested==="psat")next={...next,activeExam:requested};
   current.current=next;
-  const initial=setTimeout(()=>{setRecord(next);setCoverageFilter("all");setWarning(message);setNow(Date.now());setDomain(requestedDomain&&Object.hasOwn(examDomains,requestedDomain)?requestedDomain as ExamDomain:recommendedExamDomain(next.activeExam,next.attempts,Date.now()));setReady(true);},0);
+  const initial=setTimeout(()=>{if(!keepLocal){setDamagedCopy(writable.current?null:stored);setWarning(message);}setRecord(next);setCoverageFilter("all");setNow(Date.now());setDomain(requestedDomain&&Object.hasOwn(examDomains,requestedDomain)?requestedDomain as ExamDomain:recommendedExamDomain(next.activeExam,next.attempts,Date.now()));setReady(true);},0);
   const timer=setInterval(()=>setNow(Date.now()),30000);
   return()=>{clearTimeout(initial);clearInterval(timer);};
  },[requested,requestedDomain]);
@@ -48,10 +57,11 @@ export default function StudyExamPractice(){
  function update(next:ExamRecord,at:number){
   if(next===current.current)return;
   current.current=next;setRecord(next);setNow(at);setError("");
+  temporaryWork.current="edited";
   if(!writable.current)return;
   try{
    if(localStorage.getItem(EXAM_PREP_KEY)!==lastRaw.current){writable.current=false;setWarning("Exam practice changed in another tab or device restore. Your work here is still open, but saving is paused. Download a copy and reload before continuing to save.");return;}
-   const raw=JSON.stringify(next);localStorage.setItem(EXAM_PREP_KEY,raw);lastRaw.current=raw;
+   const raw=JSON.stringify(next);localStorage.setItem(EXAM_PREP_KEY,raw);lastRaw.current=raw;temporaryWork.current="none";
    window.dispatchEvent(new Event("eai-study-progress-change"));
   }catch{writable.current=false;setWarning("Your latest work could not be saved in this browser. Download a practice backup before leaving.");}
  }
@@ -80,12 +90,15 @@ export default function StudyExamPractice(){
  function saveMistake(at:number){
   if(!attempt)return;
   try{
-   const raw=localStorage.getItem("eai-exam-mistakes-v1"),items=normalizeMistakes(JSON.parse(raw||"[]"));
-   if(raw&&(!Array.isArray(JSON.parse(raw))||items.length!==JSON.parse(raw).length))throw new Error("Your notebook contains unreadable entries. The original saved copy has not been changed.");
+   const notebookKey="eai-exam-mistakes-v1";
+   let copy: {raw:string|null; items:ReturnType<typeof normalizeMistakes>};
+   try { copy=readSavedArray(localStorage,notebookKey,normalizeMistakes); }
+   catch { throw new Error("Your saved notebook could not be read. Its original copy and your checked exam answer are preserved."); }
+   const {raw,items}=copy;
    const entry=examAttemptToMistake(attempt,at);
    if(items.some(m=>m.id===entry.id)){setSavedNotebook(attempt.id);return;}
    if(items.length>=50)throw new Error("Your notebook has 50 entries. This checked attempt remains in exam practice.");
-   localStorage.setItem("eai-exam-mistakes-v1",JSON.stringify([...items,entry]));setSavedNotebook(attempt.id);
+   writeStudyCopy(localStorage,notebookKey,raw,[...items,entry]);setError("");setSavedNotebook(attempt.id);
    window.dispatchEvent(new Event("eai-study-progress-change"));window.dispatchEvent(new Event("eai-study-notebook-update"));
   }catch(e){setError(e instanceof Error?e.message:"The attempt could not be saved to your notebook.");}
  }
@@ -97,28 +110,38 @@ export default function StudyExamPractice(){
   document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth",block:"start"});
  }
  function download(raw:string,name:string){const url=URL.createObjectURL(new Blob([raw],{type:"application/json"}));const a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
- function backup(){download(JSON.stringify(current.current,null,2),"dai-exam-practice-backup.json");}
+ function backup(){
+  download(JSON.stringify(current.current,null,2),"dai-exam-practice-backup.json");
+  if(temporaryWork.current==="edited"){temporaryWork.current="exported";setBackupError("");}
+ }
  async function importBackup(file:File|undefined){
-  if(!file)return;const revision=++importRevision.current;setPendingBackup(null);setError("");
-  try{if(file.size>2*1024*1024)throw new Error("Choose a practice backup smaller than 2 MB.");const parsed=readExamRecord(JSON.parse(await file.text()));if(importRevision.current===revision)setPendingBackup(parsed);}
-  catch(e){if(importRevision.current===revision)setError(e instanceof Error?e.message:"This backup could not be read. Nothing was replaced.");}
+  if(!file)return;const revision=++importRevision.current;setPendingBackup(null);setBackupError("");setError("");
+  try{if(file.size>2*1024*1024)throw new Error("Choose a practice backup smaller than 2 MB.");const previousRaw=localStorage.getItem(EXAM_PREP_KEY),previousRecord=current.current;
+   const parsed=readExamRecord(JSON.parse(await file.text()));
+   if(importRevision.current===revision)setPendingBackup({record:parsed,previousRaw,previousRecord});}
+  catch(e){if(importRevision.current===revision)setBackupError(e instanceof SyntaxError?"This file is not valid JSON. Choose an exam practice backup. Your practice was preserved.":e instanceof Error?e.message:"This backup could not be read. Nothing was replaced.");}
  }
  function restoreBackup(at:number){
   if(!pendingBackup)return;
   try{
    const original=localStorage.getItem(EXAM_PREP_KEY);
-   if(original)download(original,"dai-exam-practice-before-restore.json");
-   const restored={...pendingBackup,activeExam:requested==="sat"||requested==="psat"?requested:pendingBackup.activeExam};
+   if(original!==pendingBackup.previousRaw || current.current!==pendingBackup.previousRecord){
+    setPendingBackup(null);
+    throw new Error("Practice changed after you opened this backup. Your work was preserved. Open the backup again to review it.");
+   }
+   if(temporaryWork.current==="edited")throw new Error("Download a practice backup of your temporary work before restoring this file.");
+   if(original!==null)download(original,"dai-exam-practice-before-restore.json");
+   const restored={...pendingBackup.record,activeExam:requested==="sat"||requested==="psat"?requested:pendingBackup.record.activeExam};
    if(localStorage.getItem(EXAM_PREP_KEY)!==original)throw new Error("Practice changed while restoring. Nothing was replaced; choose your backup again.");
-   const raw=JSON.stringify(restored);localStorage.setItem(EXAM_PREP_KEY,raw);lastRaw.current=raw;writable.current=true;current.current=restored;setRecord(restored);setNow(at);setPendingBackup(null);setWarning("Exam practice restored. A copy of your previous saved practice was downloaded first.");setDomain(recommendedExamDomain(restored.activeExam,restored.attempts,at));window.dispatchEvent(new Event("eai-study-progress-change"));
-  }catch(e){setError(e instanceof Error?e.message:"The backup could not be restored. Keep this page open and download your current work.");}
+   const raw=JSON.stringify(restored);localStorage.setItem(EXAM_PREP_KEY,raw);lastRaw.current=raw;writable.current=true;temporaryWork.current="none";current.current=restored;setRecord(restored);setNow(at);setPendingBackup(null);setDamagedCopy(null);setBackupError("");setError("");setSavedNotebook("");setWarning(original===null?"Exam practice restored.":"Exam practice restored. A copy of your previous saved practice was downloaded first.");setDomain(recommendedExamDomain(restored.activeExam,restored.attempts,at));window.dispatchEvent(new Event("eai-study-progress-change"));
+  }catch(e){setBackupError(e instanceof Error?e.message:"The backup could not be restored. Keep this page open and download your current work.");}
  }
  return <div className="exam-practice-page">
   <header className="exam-practice-intro"><p className="studio-eyebrow">PREPARE WITH PURPOSE</p><h1>Your next breakthrough starts with a clear picture.</h1><p>Find a starting point, practice a specific skill, and learn from the reasoning behind each answer.</p><StudyGuide section="Exam skill practice">Choose a short skill check to find a starting point, or practice one skill. Select an answer and check it, then read the explanation. Use the suggested reviews to return to skills that need another attempt.</StudyGuide><Link href="/study#exam-preparation">← Return to exam preparation</Link></header>
   <div className="exam-profile-nav" aria-label="Practice exam profile">{(["sat","psat"] as const).map(value=><Link key={value} href={`/study/exams?exam=${value}`} aria-current={exam===value?"page":undefined} scroll={false}>{examName(value)}</Link>)}</div>
   <p className="exam-practice-scope">{examBank.length} original dAI questions · 16 sampled skills · 8 content domains. Shared foundational skills, separate profile histories. This is a small learning snapshot—not a full test, an official score, or a complete exam course. <a href={examDomainSource.url} target="_blank" rel="noopener noreferrer">Official domain outline ↗</a></p>
   {!ready?<p role="status">Opening your saved practice…</p>:<>
-   {warning&&<div className="goal-notice" role="status">{warning} <button onClick={backup}>Download practice backup</button></div>}
+   {warning&&<div className="goal-notice" role="status">{warning} {damagedCopy!==null&&<button onClick={()=>download(damagedCopy,"dai-exam-practice-original.json")}>Download original saved copy</button>} <button onClick={backup}>Download practice backup</button></div>}
    {error&&<p className="goal-error" role="alert">{error}</p>}
    <div className="exam-start-grid"><section className="exam-start-card"><p className="studio-eyebrow">FIND YOUR STARTING POINT</p><h2>A short skill check.</h2><p>Eight questions, one per domain. Use a hint or skip when needed—we keep that separate from an independent answer. Untimed; pause and return.</p><button className="goal-primary" onClick={event=>start("diagnostic",domain,eventTime(event))}>{session&&!session.finished?"Start a new skill check":"Start skill check"}</button></section><section className="exam-start-card"><p className="studio-eyebrow">FOCUSED PRACTICE</p><h2>Work on one area.</h2><label className="goal-label">Practice focus<select value={domain} onChange={e=>setDomain(e.target.value as ExamDomain)}>{(Object.keys(examDomains) as ExamDomain[]).map(d=><option key={d} value={d}>{examDomains[d].name}</option>)}</select></label><p className="goal-helper">Suggested from your latest checked items: {examDomains[suggestion].name}. A small sample cannot establish mastery.</p><div className="goal-actions"><button className="goal-primary" onClick={event=>start("practice",domain,eventTime(event))}>Start targeted practice</button><button onClick={()=>setDomain(suggestion)}>Use suggested focus</button><a href="#skill-coverage">Browse skills ↓</a></div></section></div>
    <section id="exam-review" className="exam-review-panel" aria-labelledby="exam-review-heading"><div className="exam-review-heading"><div><p className="studio-eyebrow">BUILD UNDERSTANDING THAT LASTS</p><h2 id="exam-review-heading">Return to the idea. Try it differently.</h2></div><span>{pendingReviews.filter(r=>r.dueAt<=now).length} ready · {pendingReviews.filter(r=>r.dueAt>now).length} upcoming</span></div><p>Missed and helped answers suggest a review 24 hours later. Review sooner if you like. A different question answered without hints completes this follow-up; it does not prove mastery. Dates are suggestions, with no automatic notifications.</p>
@@ -160,7 +183,7 @@ export default function StudyExamPractice(){
       </article>;
     })}</div>
    </section>
-   <footer className="exam-practice-footer"><p>Saved in this browser{accountConfigured&&<> · <Link href="/study/account">Optional account saving</Link></>}. {examName(exam)} profile results stay separate. Original dAI exercises; not affiliated with or endorsed by College Board. No official score or readiness prediction.</p><button onClick={backup}>Download practice backup</button><label className="exam-backup-import">Open a practice backup<input type="file" accept="application/json,.json" aria-label="Open exam practice backup" onChange={event=>{void importBackup(event.target.files?.[0]);event.target.value="";}}/></label><Link href="/study#mistake-notebook">Open my mistake notebook ↗</Link>{pendingBackup&&<div className="exam-backup-preview"><h3>Review this backup before restoring.</h3><p>{pendingBackup.attempts.length} checked or skipped attempts, with separate SAT and PSAT sessions. Restoring replaces exam practice on this device. Your other learning tools stay unchanged. We download the existing exam-practice copy first.</p><button onClick={event=>restoreBackup(eventTime(event))}>Restore this exam-practice backup</button><button onClick={()=>setPendingBackup(null)}>Cancel restore</button></div>}</footer>
+   <footer className="exam-practice-footer"><p>Saved in this browser{accountConfigured&&<> · <Link href="/study/account">Optional account saving</Link></>}. {examName(exam)} profile results stay separate. Original dAI exercises; not affiliated with or endorsed by College Board. No official score or readiness prediction.</p><button onClick={backup}>Download practice backup</button><label className="exam-backup-import">Open a practice backup<input type="file" accept="application/json,.json" aria-label="Open exam practice backup" onChange={event=>{void importBackup(event.target.files?.[0]);event.target.value="";}}/></label><Link href="/study#mistake-notebook">Open my mistake notebook ↗</Link>{backupError&&<p className="goal-error" role="alert">{backupError}</p>}{pendingBackup&&<div className="exam-backup-preview"><h3>Review this backup before restoring.</h3><p>{pendingBackup.record.attempts.length} checked or skipped attempts, with separate SAT and PSAT sessions. Restoring replaces exam practice on this device. Your other learning tools stay unchanged. We download the existing exam-practice copy first.</p><button onClick={event=>restoreBackup(eventTime(event))}>Restore this exam-practice backup</button><button onClick={()=>{setPendingBackup(null);setBackupError("");}}>Cancel restore</button></div>}</footer>
   </>}
  </div>;
 }

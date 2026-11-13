@@ -68,7 +68,7 @@ export default function LearningHome() {
     if (!journey || !lesson || !usable) return;
     const nextCheck=latestLessonCheck({goal:journey.settings.goal,lesson},checks,now);
     const level = journey.settings.level === "foundations" ? "foundation" : journey.settings.level === "highschool" ? "highSchool" : journey.settings.level;
-    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:(goalLessonPrompt(journey.settings,lesson).slice(0,1900)+checkMemory(nextCheck)).slice(0,3000),title:lesson.title,goal:journey.settings.goal,level,checkpoint:{goal:journey.settings.goal,lesson}}}));
+    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:goalLessonPrompt(journey.settings,lesson,checkMemory(nextCheck)),title:lesson.title,goal:journey.settings.goal,level,checkpoint:{goal:journey.settings.goal,lesson}}}));
     document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   function review(id:string) {

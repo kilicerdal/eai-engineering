@@ -31,6 +31,11 @@ test('retrieval selects the relevant subject and keeps page metadata',()=>{
  assert.ok(result.every(item=>item.text.length<=MATERIAL_LIMITS.excerptCharacters));
  assert.equal(selectMaterialExcerpts([pdf],'What is the diameter of Venus?','explain').length,0);
 });
+test('numeric source searches find exact years while numeric quiz replies retain the question topic',()=>{
+ assert.deepEqual(selectMaterialExcerpts([pdf],'1973','explain').map(excerpt=>excerpt.page),[1]);
+ assert.deepEqual(selectMaterialExcerpts([pdf],'197','explain'),[]);
+ assert.deepEqual(selectMaterialExcerpts([pdf],'1973','quiz','What is the Northwind budget?').map(excerpt=>excerpt.page),[2]);
+});
 test('multilingual retrieval works without an English-only tokenizer',()=>{
  const french=makeTextDocument('Économie','Le budget de formation est de quarante crédits.','fr',100);
  const chinese=makeTextDocument('历史','图书馆在一九七三年开放。阅览室名为雪松厅。','zh',100);
@@ -41,6 +46,19 @@ test('guides use representative excerpts and vague follow-ups retain topic conte
  const guide=selectMaterialExcerpts([pdf],'','guide'); assert.equal(guide.length,2);
  const next=selectMaterialExcerpts([pdf],'My answer is 120.','quiz','What is the Northwind training budget?');
  assert.equal(next[0].page,2);
+});
+test('general guides and quizzes include a short reading alongside the ending of a long one',()=>{
+ const long=makeTextDocument('Long reading','Seasonal observations. '.repeat(2400)+'Final appendix.', 'long', 1);
+ const short=makeTextDocument('Short reading','One independent observation.', 'short', 1);
+ for(const task of ['guide','quiz']){
+  for(const documents of [[long,short],[short,long]]){
+   const excerpts=selectMaterialExcerpts(documents,'',task);
+   assert.equal(excerpts.length,MATERIAL_LIMITS.excerpts);
+   assert.equal(excerpts.filter(e=>e.documentId==='short').length,1);
+   assert.ok(excerpts.some(e=>e.page===long.pageCount && e.text.endsWith('Final appendix.')));
+  }
+ }
+ assert.deepEqual(selectMaterialExcerpts([], '', 'guide'),[]);
 });
 test('source IDs are assigned by the application and oversized sources are rejected',()=>{
  const assigned=validateMaterialSources([{...source,sourceId:'S99'}]); assert.equal(assigned[0].sourceId,'S1');
@@ -175,4 +193,24 @@ test('invalid model output stops after two attempts',async()=>{
 test('explanation style is bounded and preserves source-only evidence rules',async()=>{
  await mockProvider(async(_url,options)=>{const sent=JSON.parse(options.body);assert.match(sent.messages[0].content,/numbered steps/);assert.match(sent.messages[0].content,/Use only facts supported/);return providerResponse({supported:true,answer:'The budget owner is Mira Vale. [S1]'});},async()=>assert.equal((await loadRoute()(request({...payload,style:'steps'}))).status,200));
  await mockProvider(async()=>assert.fail('unsupported style must not call provider'),async()=>assert.equal((await loadRoute()(request({...payload,style:'invented'}))).status,400));
+});
+
+test('formatted notes preserve section numbers and earlier saved libraries reopen across blank sections',()=>{
+ const text='Opening'.padEnd(5000)+' '.repeat(5000)+'Closing observation.';
+ const doc=makeTextDocument('Lab notes',text,'lab',1);
+ assert.deepEqual(doc.pages.map(page=>page.number),[1,3]);
+ assert.equal(doc.pageCount,3);
+ const old={...doc,pages:[doc.pages[0],{number:2,text:' '.repeat(5000)},doc.pages[1]]};
+ assert.deepEqual(materials.readMaterialLibrary({documents:[old],entries:[]}).documents,[doc]);
+ assert.equal(selectMaterialExcerpts([doc],'Closing observation','explain')[0].page,3);
+});
+
+test('source quotes preserve matched terms at either end of a long excerpt',()=>{
+ for(const text of ['Cobalt crystallizes rapidly. '+'General observations. '.repeat(50), 'General observations. '.repeat(50)+'Cobalt crystallizes rapidly.']){
+  const answer=materials.materialAnswerFromDraft({supported:true,answer:'Cobalt crystallizes rapidly. [S1]'},[{...source,text}]);
+  const quote=answer.citations[0].quote;
+  assert.ok(quote.includes('Cobalt crystallizes rapidly.'));
+  assert.ok(text.includes(quote));
+  assert.ok(quote.length<=600);
+ }
 });

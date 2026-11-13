@@ -7,6 +7,7 @@ import {PLAN_CHOICE_KEY,resolvePlanChoice} from "@/lib/study-plan-adjustment";
 import { accountConfigured } from "@/lib/study-account";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import StudyLandmark from "@/components/StudyLandmark";
 import { MATERIAL_HANDOFF_KEY, makeLessonMaterialHandoff } from "@/lib/study-material-handoff";
 import { CHECK_KEY, normalizeLessonChecks, latestLessonCheck, checkMemory } from "@/lib/study-checkpoints";
@@ -19,6 +20,7 @@ const KEY = "eai-goal-journey-v1";
 const examples = ["Understand calculus even though my algebra is rusty", "Learn world history and connect major events", "Learn Python so I can automate everyday tasks"];
 const emptyLibrary: MaterialLibrary = { documents: [], entries: [] };
 export default function GoalLearning() {
+  const router = useRouter();
   const [settings,setSettings]=useState<GoalSettings>(defaultGoalSettings);
   const [plan,setPlan]=useState<GoalPlan|null>(null);
   const [sources,setSources]=useState<GoalSource[]>([]);
@@ -46,10 +48,10 @@ export default function GoalLearning() {
     let cancelled=false;
     try {
       const raw=localStorage.getItem(KEY);
-      if(raw){const saved=JSON.parse(raw);const settings=validateGoalSettings(saved.settings);const sources:GoalSource[]=Array.isArray(saved.sources)&&saved.sources.length?validateMaterialSources(saved.sources):[];const plan=saved.plan?validateGoalPlan(saved.plan,sources):null;
+      if(raw!==null){const saved=JSON.parse(raw);const settings=validateGoalSettings(saved.settings);const sources:GoalSource[]=Array.isArray(saved.sources)&&saved.sources.length?validateMaterialSources(saved.sources):[];const plan=saved.plan?validateGoalPlan(saved.plan,sources):null;
         queueMicrotask(()=>{if(cancelled)return;setSettings(settings);setSources(sources);setPlan(plan);setCompleted(plan?normalizeGoalProgress(saved.completed,plan):[]);setAccepted(!!plan&&saved.accepted===true);setStep(plan?4:1);setDirty(saved.dirty===true);setSelected(sources.map(source=>source.documentId));});}
       savedPlan.current={raw};
-    } catch {queueMicrotask(()=>setStorageWarning("A saved plan could not be restored. You can create a new one."));}
+    } catch {queueMicrotask(()=>setStorageWarning("Your saved plan could not be read. It is preserved. Any new plan will stay in this tab."));}
     loadMaterialLibrary().then(value=>{if(!cancelled){materialRead.current=true;libraryRef.current=value;setLibrary(value);setReady(true);}}).catch(()=>{if(!cancelled){setStorageWarning("Material storage is unavailable. You can still plan without materials.");setReady(true);}});
     return ()=>{cancelled=true;abort.current?.abort();};
   },[]);
@@ -66,6 +68,9 @@ export default function GoalLearning() {
       try{
         const level=input.level==="highSchool"?"highschool":input.level==="foundation"?"foundations":input.level;
         const incoming=validateGoalSettings({...defaultGoalSettings,goal:input.goal,deadline:input.deadline,level});
+        abort.current?.abort();
+        abort.current=null;
+        setBusy(false);
         setSettings(previous=>({...previous,goal:incoming.goal,deadline:incoming.deadline,level:incoming.level}));setStep(2);setDirty(true);setAccepted(false);setError("");
       }catch{setError("The exam goal could not be opened. Please describe it above.");}
     }
@@ -82,21 +87,34 @@ export default function GoalLearning() {
       if(current.documents.some(d=>d.id===document.id))throw new Error("This material is already in your library. Select it below.");
       if(current.documents.length>=MATERIAL_LIMITS.documents)throw new Error("Your library has five materials. Manage them in your library before adding another.");
       if([...current.documents,document].reduce((sum,d)=>sum+d.pages.reduce((n,p)=>n+p.text.length,0),0)>MATERIAL_LIMITS.libraryCharacters)throw new Error("The library is full. Use a smaller selection or manage your materials.");
-      const next={...current,documents:[...current.documents,document]};await saveMaterialLibrary(next,current);libraryRef.current=next;setLibrary(next);setSelected(previous=>[...previous,document.id]);setNotes("");if(plan){setDirty(true);setAccepted(false);}
+      const next={...current,documents:[...current.documents,document]};await saveMaterialLibrary(next,current);libraryRef.current=next;setLibrary(next);setSelected(previous=>[...previous,document.id]);
+      if (!file) setNotes("");
+      if(plan){setDirty(true);setAccepted(false);}
     }catch(e){setError(e instanceof Error?e.message:"The material could not be added.");}finally{setUploading(false);setStatus("");}
   }
   async function generate(){
     if(busy||uploading)return;setError("");let normalized:GoalSettings;
     try{normalized=validateGoalSettings(settings);}catch(e){setError(e instanceof Error?e.message:"Check your goal settings.");return;}
-    setBusy(true);abort.current=new AbortController();
+    setBusy(true);const controller=new AbortController();abort.current=controller;
     try {
-      const excerpts=selectMaterialExcerpts(library.documents.filter(d=>selected.includes(d.id)),normalized.goal,"guide");
-      const response=await fetch("/api/study/plan",{method:"POST",headers:{"Content-Type":"application/json"},signal:AbortSignal.any([abort.current.signal,AbortSignal.timeout(55000)]),body:JSON.stringify({...normalized,excerpts})});
-      const result=await response.json();if(!response.ok)throw new Error(result.error||"The plan could not be created.");
+      const refreshed = selected.length ? await loadMaterialLibrary() : library;
+      const currentDocuments = refreshed.documents;
+      if (controller.signal.aborted) throw new DOMException("Cancelled", "AbortError");
+      if (selected.some(id => !currentDocuments.some(document => document.id === id))) {
+        libraryRef.current = refreshed;
+        setLibrary(refreshed);
+        setSelected(ids => ids.filter(id => refreshed.documents.some(document => document.id === id)));
+        move(2);
+        setError("A selected material is no longer in your library. Review the remaining choices or continue without materials.");
+        return;
+      }
+      const excerpts=selectMaterialExcerpts(currentDocuments.filter(d=>selected.includes(d.id)),normalized.goal,"guide");
+      const response=await fetch("/api/study/plan",{method:"POST",headers:{"Content-Type":"application/json"},signal:AbortSignal.any([controller.signal,AbortSignal.timeout(55000)]),body:JSON.stringify({...normalized,excerpts})});
+      const result=await response.json();controller.signal.throwIfAborted();if(!response.ok)throw new Error(result.error||"The plan could not be created.");
       const sources=Array.isArray(result.sources)&&result.sources.length?validateMaterialSources(result.sources):[];
       const next=validateGoalPlan(result.plan,sources);
       setPlan(next);setSources(sources);setCompleted([]);setAccepted(false);setEditing(false);setDirty(false);move(4);
-    }catch(e){if(e instanceof Error&&e.name==="AbortError")setError("Planning cancelled. Your previous plan is unchanged.");else setError(e instanceof Error?e.message:"The plan could not be created. Try again.");}finally{setBusy(false);abort.current=null;}
+    }catch(e){if(abort.current!==controller)return;if(e instanceof Error&&e.name==="AbortError")setError("Planning cancelled. Your previous plan is unchanged.");else setError(e instanceof Error?e.message:"The plan could not be created. Try again.");}finally{if(abort.current===controller){setBusy(false);abort.current=null;}}
   }
   function editLesson(index:number,key:"title"|"objective"|"activity"|"checkpoint",value:string){setPlan(previous=>previous?{...previous,lessons:previous.lessons.map((lesson,i)=>i===index?{...lesson,[key]:value}:lesson)}:null);setAccepted(false);}
   function accept(){
@@ -107,7 +125,7 @@ export default function GoalLearning() {
     const level=settings.level==="foundations"?"foundation":settings.level==="highschool"?"highSchool":settings.level;
     const checkpoint={goal:settings.goal,lesson:plan.lessons[index]};
     let memory="";try{memory=checkMemory(latestLessonCheck(checkpoint,normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]")),Date.now()));}catch{/* The lesson still opens without saved evidence. */}
-    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:(goalLessonPrompt(settings,plan.lessons[index]).slice(0,1900)+memory).slice(0,3000),title:plan.lessons[index].title,goal:settings.goal,level,checkpoint}}));
+    window.dispatchEvent(new CustomEvent("eai-study-prompt",{detail:{subject:"general",message:goalLessonPrompt(settings,plan.lessons[index],memory),title:plan.lessons[index].title,goal:settings.goal,level,checkpoint}}));
     document.getElementById("ai-assistant")?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   function continuePlan(){
@@ -116,7 +134,7 @@ export default function GoalLearning() {
   }
   function withMaterials(index:number,task:"explain"|"quiz"){
     if(!plan||!accepted||editing)return;
-    try{sessionStorage.setItem(MATERIAL_HANDOFF_KEY,JSON.stringify(makeLessonMaterialHandoff(settings.goal,plan.lessons[index],sources,task)));window.location.assign("/study/materials");}
+    try{sessionStorage.setItem(MATERIAL_HANDOFF_KEY,JSON.stringify(makeLessonMaterialHandoff(settings.goal,plan.lessons[index],sources,task)));router.push("/study/materials");}
     catch{setError("The lesson could not be passed to the library. Open Materials and enter the lesson objective there.");}
   }
   return <section id="learning-goal" ref={region} className="goal-workspace goal-landmark-workspace" data-step={step} data-plan-view={step===4&&accepted&&!editing?"accepted":"setup"} aria-labelledby="goal-heading" aria-busy={busy}>

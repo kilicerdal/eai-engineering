@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Run = {
   id: number;
@@ -20,8 +20,12 @@ Locator: getByRole('button', { name: 'Sign in' })
 Element: <button disabled>Sign in</button>
 Actionability check: element is not enabled`;
 
-export default function GitHubFailureInvestigator() {
-  const [runs, setRuns] = useState<Run[]>([]);
+export default function GitHubFailureInvestigator({runs,refreshing,unavailable}: {
+  runs:Run[]; refreshing:boolean; unavailable:boolean;
+}) {
+  const failures = runs.filter(run => run.conclusion === "failure");
+  const request = useRef<AbortController | null>(null);
+  const [loadedRun, setLoadedRun] = useState("");
   const [selected, setSelected] = useState("");
   const [evidence, setEvidence] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,46 +34,24 @@ export default function GitHubFailureInvestigator() {
   const [note, setNote] = useState("");
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    let active = true;
-
-    async function loadRuns() {
-      try {
-        const response = await fetch("/api/ci-status");
-        const data = await response.json();
-
-        if (active && response.ok) {
-          setRuns(
-            (data.runs || []).filter(
-              (run: Run) => run.conclusion === "failure"
-            )
-          );
-        }
-      } catch {
-        if (active) setError("Unable to load GitHub workflows.");
-      }
-    }
-
-    void loadRuns();
-
-    return () => {
-      active = false;
-    };
-  }, []);
+  useEffect(() => () => request.current?.abort(), []);
 
   async function loadFailure(override?: string) {
     const target = override || selected;
     if (!target) return;
 
+    request.current?.abort();
+    const controller = new AbortController();
+    request.current = controller;
     setLoading(true);
     setError("");
-    setEvidence("");
+    setCopied(false);
 
     try {
       const [repo, runId] = target.split(":");
 
       const response = await fetch(
-        `/api/github-failure?repo=${encodeURIComponent(repo)}&runId=${encodeURIComponent(runId)}`
+        `/api/github-failure?repo=${encodeURIComponent(repo)}&runId=${encodeURIComponent(runId)}`, {signal:controller.signal}
       );
 
       const data = await response.json();
@@ -78,13 +60,18 @@ export default function GitHubFailureInvestigator() {
         throw new Error(data.error || "Unable to load failure.");
       }
 
+      if (controller.signal.aborted) return;
+      if (typeof data.evidence !== "string" || !data.evidence.trim() || typeof data.source !== "string" || !data.source.trim()) {
+        throw new Error("GitHub returned incomplete evidence. Try loading the workflow again.");
+      }
+      setLoadedRun(`${repo} · Run ${runId}`);
       setEvidence(data.evidence);
-      setSource(data.source || "VERIFIED GITHUB METADATA");
-      setNote(data.note || "");
+      setSource(data.source);
+      setNote(typeof data.note === "string" ? data.note : "");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Unable to load failure.");
+      if (!controller.signal.aborted) setError(err instanceof Error ? err.message : "Unable to load failure.");
     } finally {
-      setLoading(false);
+      if (request.current === controller) {request.current = null; setLoading(false);}
     }
   }
 
@@ -110,7 +97,7 @@ export default function GitHubFailureInvestigator() {
         className="mt-5 w-full rounded-lg border border-white/20 bg-slate-950 p-3 text-sm"
       >
         <option value="">Select a failed GitHub workflow</option>
-        {runs.map((run) => (
+        {failures.map((run) => (
           <option
             key={`${run.repository}-${run.id}`}
             value={`${run.repository}:${run.id}`}
@@ -120,16 +107,16 @@ export default function GitHubFailureInvestigator() {
         ))}
       </select>
 
-      {runs.length === 0 && (
+      {(!failures.length || unavailable || refreshing) && (
         <p className="mt-3 text-xs text-slate-400">
-          No failed workflows found in the latest GitHub Actions results.
+          {refreshing ? "Checking for failed workflows…" : unavailable ? "Current workflow status is unavailable. Use Refresh CI Data to try again." : "No failed workflows found in the latest GitHub Actions results."}
         </p>
       )}
 
       <div className="mt-4 flex flex-wrap gap-3">
         <button
           type="button"
-          disabled={!selected || loading}
+          disabled={!failures.some(run => `${run.repository}:${run.id}` === selected) || loading}
           onClick={() => void loadFailure()}
           className="rounded-lg bg-cyan-500 px-5 py-3 font-semibold text-slate-950 disabled:opacity-50"
         >
@@ -152,6 +139,11 @@ export default function GitHubFailureInvestigator() {
         <button
           type="button"
           onClick={() => {
+            request.current?.abort();
+            request.current = null;
+            setLoading(false);
+            setCopied(false);
+            setLoadedRun("");
             setEvidence(DEMO_LOG);
             setSource("SIMULATED DEMO");
             setNote("Demonstration only. Not retrieved from GitHub.");
@@ -170,7 +162,7 @@ export default function GitHubFailureInvestigator() {
       {evidence && (
         <div className="mt-6 rounded-xl border border-white/10 bg-slate-950 p-5">
           <span className="text-xs font-semibold text-amber-300">
-            {source}
+            {source}{loadedRun && ` · ${loadedRun}` }
           </span>
 
           {note && (
@@ -196,15 +188,21 @@ export default function GitHubFailureInvestigator() {
                     ? "pytest"
                     : "CI/CD";
 
+              const header = loadedRun ? `${source} · ${loadedRun}` : source;
+              const text = `${header}\n\n${evidence}`;
+              const gap = "\n[Middle omitted to fit the analyzer]\n";
+              const log = text.length <= 3000 ? text :
+                text.slice(0,1500) + gap + text.slice(-(1500-gap.length));
               window.dispatchEvent(
                 new CustomEvent("erdal-ai-load-failure", {
                   detail: {
                     framework,
-                    log: evidence.slice(0, 3000),
+                    log,
                   },
                 })
               );
 
+              document.getElementById("failure-log")?.focus({preventScroll:true});
               document
                 .getElementById("ai-failure-analyzer")
                 ?.scrollIntoView({

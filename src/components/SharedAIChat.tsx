@@ -1,10 +1,13 @@
 "use client";
+import CopyCodeButton from "./CopyCodeButton";
+import { algebraDiscussion, key as algebraSampleKey } from "@/lib/algebra-sample";
 import {packPracticeEvidence,matchingPractice} from "@/lib/study-recovery";
 
 import { accountConfigured } from "@/lib/study-account";
 import {
   useMemo,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   type FormEvent,
@@ -123,31 +126,13 @@ function CodeBlock({
   language: string;
   code: string;
 }) {
-  const [copied, setCopied] = useState(false);
-
-  async function copyCode() {
-    try {
-      await navigator.clipboard.writeText(code);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  }
-
   return (
     <div className="my-4 overflow-hidden rounded-xl border border-white/10 bg-[#0d1117]">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
         <span className="text-xs text-slate-400">
           {language || "code"}
         </span>
-        <button
-          type="button"
-          onClick={copyCode}
-          className="text-xs text-cyan-300 hover:text-white"
-        >
-          {copied ? "Copied!" : "Copy code"}
-        </button>
+        <CopyCodeButton code={code} />
       </div>
       <div className="overflow-x-auto">
         <SyntaxHighlighter
@@ -245,6 +230,7 @@ export default function SharedAIChat() {
   const [activeId, setActiveId] = useState("");
   const [openPanel, setOpenPanel] = useState<"history" | "settings" | null>(null);
   const [loading, setLoading] = useState(false);
+  const [pendingReply, setPendingReply] = useState<{id:string; messages:Message[]} | null>(null);
   const [hydrated, setHydrated] = useState(false);
   const [requestError, setRequestError] = useState<{ id: string; message: string;retry?:boolean } | null>(null);
 
@@ -253,6 +239,7 @@ export default function SharedAIChat() {
   const [storageWarning,setStorageWarning]=useState(""),[savedCheck,setSavedCheck]=useState<LessonCheck|null>(null);
   const [savedPractice,setSavedPractice]=useState<LessonCheck[]>([]);
   const savedCopy=useRef<string|null>(null),saveEnabled=useRef(true);
+  const followLatest = useRef(true);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -272,11 +259,12 @@ export default function SharedAIChat() {
       if (!initial.length) {
         const old = localStorage.getItem(OLD_STORAGE_KEY);
 
-        if (old) {
-          const messages = JSON.parse(old) as Message[];
+        if (old !== null) {
+          const messages: unknown = JSON.parse(old);
+          if (!Array.isArray(messages)) throw new Error("Unreadable previous tutor conversation");
           const migrated = createConversation();
 
-          if (Array.isArray(messages) && messages.length) {
+          if (messages.length) {
             migrated.messages = normalizeSavedStudyMessages(messages);
             if(migrated.messages.length!==messages.length)throw new Error("The legacy session could not be fully restored.");
             migrated.title = "Previous conversation";
@@ -305,7 +293,7 @@ export default function SharedAIChat() {
     });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!hydrated) return;
 
     if(!saveEnabled.current)return;
@@ -334,16 +322,18 @@ export default function SharedAIChat() {
   const earlier=earlierStudyContext(active?.messages||[]);
   function downloadSessions(){const url=URL.createObjectURL(new Blob([JSON.stringify(conversations,null,2)],{type:"application/json"}));const link=document.createElement("a");link.href=url;link.download="dai-tutor-session-backup.json";link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 
+  useEffect(() => { followLatest.current = true; }, [activeId]);
+
   useEffect(() => {
     const container = chatContainerRef.current;
 
-    if (container) {
+    if (container && followLatest.current) {
       container.scrollTo({
         top: container.scrollHeight,
-        behavior: "smooth",
+        behavior: "instant",
       });
     }
-  }, [active?.messages, loading]);
+  }, [activeId, active?.messages, loading, pendingReply]);
 
   function updateConversation(
     id: string,
@@ -393,6 +383,7 @@ export default function SharedAIChat() {
     if (!question || loading || !active) return;
 
     const id = active.id;
+    followLatest.current = true;
     const lastUserIndex = active.messages.findLastIndex(message => message.role === "user");
     const preceding=regenerate?active.messages.slice(0,lastUserIndex):active.messages;
     const history=preceding.slice(-12);
@@ -408,11 +399,12 @@ export default function SharedAIChat() {
           ? question.slice(0, 45)
           : conversation.title,
       updatedAt: Date.now(),
-      messages: baseMessages,
+      messages: regenerate ? conversation.messages : baseMessages,
       draft:clearDraft?"":conversation.draft,
     }));
 
     setRequestError(null);
+    setPendingReply({id, messages:baseMessages});
     setLoading(true);
 
     const controller = new AbortController();
@@ -420,7 +412,7 @@ export default function SharedAIChat() {
 
     try {
       const response = await fetch("/api/study/chat", {
-        signal: controller.signal,
+        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(60000)]),
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -435,21 +427,20 @@ export default function SharedAIChat() {
         }),
       });
 
-      await readStudyStream(response, (answer) => {
-        updateConversation(id, (conversation) => ({
-          ...conversation,
-          updatedAt: Date.now(),
-          messages: [...baseMessages, { role: "assistant", content: answer }],
-        }));
+      const answer = await readStudyStream(response, text => {
+        setPendingReply({id, messages:[...baseMessages, {role:"assistant", content:text}]});
       }, true);
+      updateConversation(id, conversation => ({
+        ...conversation, updatedAt:Date.now(),
+        messages:[...baseMessages, {role:"assistant", content:answer}],
+      }));
     } catch (error) {
-      if (!controller.signal.aborted) {
-        if (error instanceof Error && error.message.includes("invalid response")) {
-          updateConversation(id, conversation => ({ ...conversation, messages: baseMessages }));
-        }
-        setRequestError({ id, message: error instanceof Error ? error.message : "The tutor could not complete your request. Please try again." });
-      }
+      const message = controller.signal.aborted ? "Response stopped. You can retry your question."
+        : error instanceof Error && error.name === "TimeoutError" ? "The tutor timed out. You can retry your question."
+        : error instanceof Error ? error.message : "The tutor could not complete your request. Please try again.";
+      setRequestError({id, message});
     } finally {
+      setPendingReply(null);
       if (abortControllerRef.current === controller) {
         abortControllerRef.current = null;
       }
@@ -561,8 +552,28 @@ export default function SharedAIChat() {
       setRequestError(null);
     }
     window.addEventListener("eai-study-prompt", receivePracticePrompt);
-    return () => window.removeEventListener("eai-study-prompt", receivePracticePrompt);
-  }, [activeId, loading,conversations]);
+    let mounted = true;
+    if (hydrated && !loading) queueMicrotask(() => {
+      if (!mounted) return;
+      const url = new URL(window.location.href);
+      if (url.searchParams.get("from") !== "algebra-sample") return;
+      url.searchParams.delete("from");
+      window.history.replaceState(null, "", url);
+      let message = algebraDiscussion(null);
+      try {
+        message = algebraDiscussion(sessionStorage.getItem(algebraSampleKey));
+      } catch {
+        setResumeNotice("Your sample answers could not be restored. You can enter the step you want to discuss.");
+      }
+      receivePracticePrompt(new CustomEvent("eai-study-prompt", {
+        detail: {subject: "math", title: "Algebra sample", message, goal: "Understand how to balance equations"},
+      }));
+    });
+    return () => {
+      mounted = false;
+      window.removeEventListener("eai-study-prompt", receivePracticePrompt);
+    };
+  }, [activeId, hydrated, loading, conversations]);
 
   function changeLearning(patch: Partial<LearningProfile>) {
     if (!active || loading) return;
@@ -705,12 +716,18 @@ export default function SharedAIChat() {
 
             <div
               ref={chatContainerRef}
+              onScroll={event => {
+                const log = event.currentTarget;
+                followLatest.current = log.scrollHeight - log.scrollTop - log.clientHeight < 80;
+              }}
+              tabIndex={0}
+              aria-label="Tutor conversation"
               className="tutor-dialogue"
               data-empty={!active?.messages.some(message => message.role === "user")}
               role="log"
               aria-live="polite"
             >
-              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Start with a subject, a question or a problem. Add your level or what you’ve tried if useful.</p></div> : (active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
+              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Start with a subject, a question or a problem. Add your level or what you’ve tried if useful.</p></div> : (pendingReply?.id === activeId ? pendingReply.messages : active?.messages || []).filter((message,index)=>!(index===0 && message.role==="assistant" && message.content===welcomeMessage.content)).map((message, index) => (
                 <div
                   key={index}
                   className={`tutor-message-row flex ${
@@ -789,6 +806,13 @@ export default function SharedAIChat() {
                   </button>
                 )}
 
+              {!loading && active?.messages.at(-1)?.role === "user" && requestError?.id !== activeId && (
+                <div role="status" className="mb-3">
+                  <p>Your last question has no completed reply.</p>
+                  <button type="button" onClick={regenerateResponse} className="tutor-regenerate">Retry last question</button>
+                </div>
+              )}
+
               {!loading && active?.messages.some(message => message.role === "user") && (
                 <div className="mb-4 flex flex-wrap gap-2" aria-label="Continue learning">
                   {[
@@ -808,6 +832,7 @@ export default function SharedAIChat() {
               <form onSubmit={handleSubmit} className="tutor-input-row">
                 <textarea
                   id="tutor-message-input"
+                  disabled={!hydrated || !active}
                   rows={2}
                   value={active?.draft||""}
                   onChange={(event) => {if(active){const value=event.target.value,at=inputTime(event.timeStamp);updateConversation(active.id,c=>({...c,draft:value,updatedAt:at}));}}}

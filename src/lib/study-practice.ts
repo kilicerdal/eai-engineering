@@ -170,9 +170,14 @@ export function normalizePracticeAttempts(value: unknown): PracticeAttempt[] {
   }).map(({ questionId, selectedIndex, hintsUsed, submittedAt }) => ({ questionId, selectedIndex, hintsUsed, submittedAt }));
 }
 
+function attemptsInTimeOrder(attempts: PracticeAttempt[]) {
+  return [...attempts].sort((a,b) => a.submittedAt - b.submittedAt);
+}
+
 export function practiceSummary(track: PracticeTrack, attempts: PracticeAttempt[]) {
+  const history = attemptsInTimeOrder(attempts);
   const questions = practiceQuestions.filter(question => question.track === track);
-  const firstAttempts = questions.map(question => ({ question, attempt: attempts.find(attempt => attempt.questionId === question.id) })).filter(item => item.attempt);
+  const firstAttempts = questions.map(question => ({ question, attempt: history.find(attempt => attempt.questionId === question.id) })).filter(item => item.attempt);
   return {
     total: questions.length,
     tried: firstAttempts.length,
@@ -182,8 +187,9 @@ export function practiceSummary(track: PracticeTrack, attempts: PracticeAttempt[
 }
 
 export function nextPracticeQuestion(track: PracticeTrack, attempts: PracticeAttempt[], currentId?: string): PracticeQuestion {
+  const history = attemptsInTimeOrder(attempts);
   const questions = practiceQuestions.filter(question => question.track === track);
-  const unseen = questions.find(question => question.id !== currentId && !attempts.some(attempt => attempt.questionId === question.id));
-  const missed = questions.find(question => question.id !== currentId && attempts.findLast(attempt => attempt.questionId === question.id)?.selectedIndex !== question.answerIndex);
+  const unseen = questions.find(question => question.id !== currentId && !history.some(attempt => attempt.questionId === question.id));
+  const missed = questions.find(question => question.id !== currentId && history.findLast(attempt => attempt.questionId === question.id)?.selectedIndex !== question.answerIndex);
   return unseen || missed || questions[(questions.findIndex(question => question.id === currentId) + 1) % questions.length];
 }

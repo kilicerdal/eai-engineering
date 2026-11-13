@@ -52,7 +52,7 @@ test("principles connect to real destinations and evidence links distinguish con
   await page.goto("/#about");
   const about = page.locator("#about");
   const principles = about.getByRole("navigation", { name: "Explore the engineering principles" });
-  await expect(principles.getByRole("link", { name: /Explore with purpose/ })).toHaveAttribute("href", "/#ai-assistant");
+  await expect(principles.getByRole("link", { name: /Explore with purpose/ })).toHaveAttribute("href", "/chat");
   await expect(principles.getByRole("link", { name: /Build with care/ })).toHaveAttribute("href", "/engineering");
   await expect(principles.getByRole("link", { name: /Learn from evidence/ })).toHaveAttribute("href", "/engineering#case-studies");
   await expect(about.getByRole("complementary", { name: "Related project evidence" })).toHaveCount(0);

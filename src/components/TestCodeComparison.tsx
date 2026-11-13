@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import CopyCodeButton from "./CopyCodeButton";
 import TestCodeValidator from "./TestCodeValidator";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -52,20 +52,8 @@ function CodePanel({
   framework: string;
   improved: boolean;
 }) {
-  const [copied, setCopied] = useState(false);
-
-  async function copyCode() {
-    try {
-      await navigator.clipboard.writeText(code);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  }
-
   return (
-    <div className="min-w-0 overflow-hidden rounded-xl border border-white/10 bg-slate-950">
+    <section aria-label={title} className="min-w-0 overflow-hidden rounded-xl border border-white/10 bg-slate-950">
       <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
         <p className="text-sm font-semibold text-white">{title}</p>
 
@@ -78,13 +66,7 @@ function CodePanel({
             Download File
           </button>
 
-        <button
-          type="button"
-          onClick={copyCode}
-          className="rounded-lg border border-cyan-400/30 px-3 py-2 text-xs font-semibold text-cyan-300 hover:bg-cyan-400/10"
-        >
-          {copied ? "Copied!" : "Copy"}
-        </button>
+          <CopyCodeButton code={code} className="rounded-lg border border-cyan-400/30 px-3 py-2 text-xs font-semibold text-cyan-300 hover:bg-cyan-400/10" />
         </div>
       </div>
 
@@ -105,7 +87,7 @@ function CodePanel({
           {code}
         </SyntaxHighlighter>
       </div>
-    </div>
+    </section>
   );
 }
 

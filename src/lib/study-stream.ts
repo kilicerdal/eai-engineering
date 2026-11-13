@@ -1,10 +1,34 @@
+export function retryDelaySeconds(headers: Headers): number | null {
+  const value = headers.get("Retry-After")?.trim();
+  if (!value) return null;
+  let seconds: number;
+  if (/^\d+$/.test(value)) {
+    seconds = Number(value);
+  } else if (value.endsWith(" GMT")) {
+    const serverTime = Date.parse(headers.get("Date") || "");
+    seconds = Math.ceil((Date.parse(value) - (Number.isFinite(serverTime) ? serverTime : Date.now())) / 1000);
+  } else {
+    return null;
+  }
+  if (!Number.isSafeInteger(seconds)) return null;
+  return Math.max(0, seconds);
+}
+
+function retryGuidance(headers: Headers): string {
+  const seconds = retryDelaySeconds(headers);
+  if (seconds === null) return "Please try again later.";
+  if (seconds <= 0) return "You can retry now.";
+  const unit = seconds < 60 ? "second" : "minute";
+  const amount = seconds < 60 ? seconds : Math.ceil(seconds / 60);
+  return `Try again in about ${amount} ${unit}${amount === 1 ? "" : "s"}.`;
+}
+
 /** Read Cloudflare-native and OpenAI-compatible SSE without assuming network chunk boundaries. */
 export async function readStudyStream(response: Response, onText: (text: string) => void, requireDone = false): Promise<string> {
   if (!response.ok) {
     const payload = await response.json().catch(() => null);
-    const wait = Number(response.headers.get("Retry-After"));
     const message = response.status === 429
-      ? `You've reached the request limit. ${wait > 0 ? `Try again in about ${Math.ceil(wait / 60)} minute(s).` : "Please try again later."}`
+      ? `You've reached the request limit. ${retryGuidance(response.headers)}`
       : typeof payload?.error === "string" ? payload.error : "The tutor is temporarily unavailable. Please try again.";
     throw new Error(message);
   }
@@ -33,7 +57,7 @@ export async function readStudyStream(response: Response, onText: (text: string)
     if (data === "[DONE]") { finished = true; return; }
     let payload;
     try { payload = JSON.parse(data); } catch { throw new Error("The response was interrupted. Please retry or ask the tutor to continue."); }
-    if (payload.error || payload.errors?.length) throw new Error("The response was interrupted. Please try again.");
+    if (!payload || typeof payload !== "object" || Array.isArray(payload) || payload.error || payload.errors?.length) throw new Error("The response was interrupted. Please try again.");
     const finishReason=payload.choices?.[0]?.finish_reason;
     if(finishReason==="length")throw new Error("The reply reached its output limit before finishing. The visible text is incomplete. Retry or ask a narrower question.");
     if(finishReason==="content_filter")throw new Error("The provider could not complete this reply. Try rephrasing the question.");

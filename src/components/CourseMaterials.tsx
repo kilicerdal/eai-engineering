@@ -15,7 +15,7 @@ import { importCourseFile, importCourseNotes, loadMaterialLibrary, saveMaterialL
 import { MATERIAL_HANDOFF_KEY, normalizeLessonMaterialHandoff, lessonMaterialScope, type LessonMaterialHandoff } from "@/lib/study-material-handoff";
 import { MATERIAL_LIMITS, materialLocation, materialTasks, normalizeMaterialText, removeMaterialDocument, validateMaterialAnswer, validateMaterialSources, selectMaterialExcerpts, type CourseDocument, type MaterialEntry, type MaterialLibrary, materialExplanationStyles,type MaterialExplanationStyle,type MaterialSource,type MaterialTask } from "@/lib/study-materials";
 
-type SourceView = { documentId: string; page: number; quote: string };
+type SourceView = { documentId: string; page: number; quote: string; text?: string };
 function SourceViewer({ document, source, close, choose }: { document: CourseDocument; source: SourceView; close: () => void;choose:(source:MaterialSource)=>void }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const highlight = useRef<HTMLElement>(null);
@@ -25,9 +25,16 @@ function SourceViewer({ document, source, close, choose }: { document: CourseDoc
   const page = document.pages.find(page => page.number === pageNumber);
   const text = normalizeMaterialText(page?.text || "");
   const quote = pageNumber === source.page ? normalizeMaterialText(source.quote) : "";
-  const index = quote ? text.indexOf(quote) : -1;
-  return <dialog ref={dialog} onCancel={event=>{event.preventDefault();close();}} aria-labelledby="material-source-heading" className="m-auto max-h-[85vh] w-[92vw] max-w-3xl overflow-y-auto rounded-2xl border border-cyan-300/25 bg-[#101827] p-6 text-white shadow-2xl backdrop:bg-slate-950/80">
-    <div className="flex items-start justify-between gap-4"><div className="min-w-0"><p className="text-xs font-semibold uppercase tracking-wider text-cyan-300">SOURCE TEXT</p><h3 id="material-source-heading" className="mt-2 break-words text-lg font-semibold">{document.name}</h3></div><button type="button" onClick={close} className="shrink-0 rounded-lg border border-white/20 px-3 py-2 text-sm">Close source</button></div>
+  const excerpt = normalizeMaterialText(source.text ?? text);
+  const excerptStart = text.indexOf(excerpt);
+  const quoteStart = quote ? excerpt.indexOf(quote) : -1;
+  const index = excerptStart >= 0 && quoteStart >= 0 ? excerptStart + quoteStart : -1;
+  function dismiss() {
+    dialog.current?.close();
+    close();
+  }
+  return <dialog ref={dialog} onCancel={event=>{event.preventDefault();dismiss();}} aria-labelledby="material-source-heading" className="m-auto max-h-[85vh] w-[92vw] max-w-3xl overflow-y-auto rounded-2xl border border-cyan-300/25 bg-[#101827] p-6 text-white shadow-2xl backdrop:bg-slate-950/80">
+    <div className="flex items-start justify-between gap-4"><div className="min-w-0"><p className="text-xs font-semibold uppercase tracking-wider text-cyan-300">SOURCE TEXT</p><h3 id="material-source-heading" className="mt-2 break-words text-lg font-semibold">{document.name}</h3></div><button type="button" onClick={dismiss} className="shrink-0 rounded-lg border border-white/20 px-3 py-2 text-sm">Close source</button></div>
     <label className="mt-5 flex items-center gap-3 text-sm text-slate-300">{document.kind === "pdf" ? "PDF page" : "Notes section"}<select aria-label="Source location" value={pageNumber} onChange={event=>{setPageNumber(Number(event.target.value));setSelection("");}} className="rounded-lg border border-white/15 bg-slate-950 px-3 py-2 text-white">{document.pages.map(page=><option key={page.number} value={page.number}>{page.number}</option>)}</select></label>
     <p className="mt-3 text-xs leading-5 text-slate-500">Extracted text from your material. PDF layout, images, and complex notation may not be preserved.</p>
     <details className="source-study-picker"><summary>Choose a passage to study</summary><p>Select 30–1,800 characters below, or use this section if it fits. Your original material stays unchanged.</p><textarea aria-label="Select text from this source" readOnly value={text} rows={7} onSelect={event=>setSelection(event.currentTarget.value.slice(event.currentTarget.selectionStart,event.currentTarget.selectionEnd))}/><p>{normalizeMaterialText(selection).length} characters selected</p><div><button type="button" disabled={normalizeMaterialText(selection).length<30||normalizeMaterialText(selection).length>1800} onClick={()=>choose(selectStudyPassage(document,pageNumber,selection))}>Use selected passage</button><button type="button" disabled={text.length<30||text.length>1800} onClick={()=>choose(selectStudyPassage(document,pageNumber,text))}>Use this section</button></div></details>
@@ -55,6 +62,10 @@ function PassagePractice({source,openSource}:{source:MaterialSource;openSource:(
  return <div className="material-passage-practice"><LessonCheckpoint context={context} sessionId={context.lesson.id} kind="material" openSource={openSource}/></div>;
 }
 
+function answerFocus(entry: MaterialEntry) {
+  return entry.documentIds.length === 1 ? entry.documentIds[0] : "answer";
+}
+
 const emptyLibrary: MaterialLibrary = { documents: [], entries: [] };
 export default function CourseMaterials() {
   const [reviewLimit,setReviewLimit]=useState(5);
@@ -63,6 +74,19 @@ export default function CourseMaterials() {
   const [library,setLibrary] = useState<MaterialLibrary>(emptyLibrary);
   const [ready,setReady] = useState(false);
   const [panel,setPanel] = useState<"materials"|"add"|null>(null);
+  const panelOpener = useRef<HTMLButtonElement | null>(null);
+  function showPanel(next: "materials" | "add", opener: HTMLButtonElement) {
+    panelOpener.current = opener;
+    setPanel(next);
+  }
+  function closePanel() {
+    setPanel(null);
+    const opener = panelOpener.current;
+    requestAnimationFrame(() => {
+      const target = opener?.isConnected && !opener.disabled ? opener : document.getElementById("library-materials-trigger");
+      target?.focus();
+    });
+  }
   const [storageAvailable,setStorageAvailable] = useState(true);
   const [lessonContext,setLessonContext] = useState<LessonMaterialHandoff|null>(null);
   const [lessonNotice,setLessonNotice] = useState("");
@@ -70,6 +94,7 @@ export default function CourseMaterials() {
   const [task,setTask] = useState<MaterialTask>("explain");
   const [question,setQuestion] = useState("");
   const [activeEntryId,setActiveEntryId] = useState("");
+  const entry = library.entries.find(item => item.id === activeEntryId);
   const [uploading,setUploading] = useState(false);
   const [uploadStatus,setUploadStatus] = useState("");
   const [loading,setLoading] = useState(false);
@@ -86,7 +111,9 @@ export default function CourseMaterials() {
   useEffect(()=>{
     let cancelled=false;
     loadMaterialLibrary().then(value=>{if(!cancelled){savedLibrary.current=value;currentLibrary.current=value;setLibrary(value);setActiveEntryId(value.entries[0]?.id||"");
-      try{const raw=sessionStorage.getItem(MATERIAL_HANDOFF_KEY);if(raw){const handoff=normalizeLessonMaterialHandoff(JSON.parse(raw));sessionStorage.removeItem(MATERIAL_HANDOFF_KEY);if(handoff){setLessonContext(handoff);setQuestion(handoff.question);setTask(handoff.task);setActiveEntryId("");setFocus(handoff.documentIds.length?"lesson":"choose");if(!handoff.documentIds.length)setLessonNotice("This lesson has no linked materials. Choose a material below before asking.");else if(handoff.documentIds.some(id=>!value.documents.some(d=>d.id===id)))setLessonNotice("Some linked materials are missing from this browser. Add them again or choose another material explicitly.");}else setLessonNotice("The lesson link could not be restored. Your library is unchanged.");}}
+      const latest = value.entries[0];
+      if (latest) { setFocus(answerFocus(latest)); setTask(latest.task); }
+      try{const raw=sessionStorage.getItem(MATERIAL_HANDOFF_KEY);if(raw){sessionStorage.removeItem(MATERIAL_HANDOFF_KEY);const handoff=normalizeLessonMaterialHandoff(JSON.parse(raw));if(handoff){setLessonContext(handoff);setQuestion(handoff.question);setTask(handoff.task);setActiveEntryId("");setFocus(handoff.documentIds.length?"lesson":"choose");if(!handoff.documentIds.length)setLessonNotice("This lesson has no linked materials. Choose a material below before asking.");else if(handoff.documentIds.some(id=>!value.documents.some(d=>d.id===id)))setLessonNotice("Some linked materials are missing from this browser. Add them again or choose another material explicitly.");}else setLessonNotice("The lesson link could not be restored. Your library is unchanged.");}}
       catch{setLessonNotice("The prepared lesson could not be read. You can still ask about your materials.");}
       const requestedReview=new URLSearchParams(window.location.search).get("review");
       if(requestedReview){try{const saved=normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]")),check=materialReviewSteps(saved,value.documents,Date.now()).find(c=>c.context.lesson.id===requestedReview);if(check){const selected=check.context.sources![0];setLessonContext(null);setLessonNotice("");setPassage(selected);setFocus(selected.documentId);setTask("quiz");setActiveEntryId("");requestAnimationFrame(()=>document.getElementById("selected-study-passage")?.scrollIntoView({block:"start"}));}else setLessonNotice("This passage review is unavailable or no longer needs follow-up in this browser. Choose a source to continue.");}catch{setLessonNotice("The saved passage review could not be read. Your original work is unchanged.");}}
@@ -106,15 +133,25 @@ export default function CourseMaterials() {
     if(current.documents.some(item=>item.id===document.id)) throw new Error("This material is already in your library.");
     const characters=[...current.documents,document].reduce((sum,item)=>sum+item.pages.reduce((sum,page)=>sum+page.text.length,0),0);
     if(characters>MATERIAL_LIMITS.libraryCharacters) throw new Error("This library has reached its text limit. Remove a material or use a shorter selection.");
-    const next={...current,documents:[...current.documents,document]}; currentLibrary.current=next; setLibrary(next);setFocus(document.id);setActiveEntryId("");
+    const next={...current,documents:[...current.documents,document]}; currentLibrary.current=next; setLibrary(next);setPassage(null);setFocus(document.id);setActiveEntryId("");
   }
   async function uploadFiles(files: FileList|null) {
     if(!files?.length || uploading || loading) return;
     if(currentLibrary.current.documents.length+files.length>MATERIAL_LIMITS.documents){setError("Choose fewer files: the library supports five materials at a time.");return;}
     setUploading(true);setError("");
-    try { for(const file of Array.from(files)) {setUploadStatus(`Reading ${file.name}…`);addDocument(await importCourseFile(file,setUploadStatus));} }
-    catch(error){setError(error instanceof Error?error.message:"This file could not be read.");}
-    finally{setUploading(false);setUploadStatus("");}
+    const failures: string[] = [];
+    for (const file of Array.from(files)) {
+      try {
+        setUploadStatus(`Reading ${file.name}…`);
+        addDocument(await importCourseFile(file, setUploadStatus));
+      } catch (error) {
+        const reason = error instanceof Error ? error.message : "This file could not be read.";
+        failures.push(`${file.name}: ${reason}`);
+      }
+    }
+    setError(failures.join(" "));
+    setUploading(false);
+    setUploadStatus("");
   }
   async function trySample() {
     if(uploading||loading||!ready)return;
@@ -137,51 +174,84 @@ export default function CourseMaterials() {
   function removeDocument(id:string) {
     if(loading||uploading)return;
     setLibrary(previous=>removeMaterialDocument(previous,id));
-    if(passage?.documentId===id)setPassage(null);if(focus===id)setFocus("all");setActiveEntryId("");setSource(null);setError("");
+    if(passage?.documentId===id)setPassage(null);if(focus===id||focus==="answer")setFocus("choose");setActiveEntryId("");setSource(null);setError("");
+  }
+  function openAnswer(answer: MaterialEntry) {
+    if (lessonContext && question === lessonContext.question) setQuestion("");
+    setLessonContext(null);
+    setLessonNotice("");
+    setPassage(null);
+    setActiveEntryId(answer.id);
+    setFocus(answerFocus(answer));
+    setTask(answer.task);
+    setError("");
+    setPanel(null);
   }
   async function ask(event: FormEvent) {
     event.preventDefault();if(loading||uploading||!ready)return;
     const message=question.trim()||(passage&&task==="explain"?"Explain this selected passage, preserving its qualifications.":"")||(task==="guide"?"Create a study guide from the selected material.":task==="quiz"?"Ask me one practice question from the selected material.":"");
     if(!message)return;
     let documents:CourseDocument[];
-    try{documents=lessonMaterialScope(library.documents,focus,lessonContext);}catch(e){setError(e instanceof Error?e.message:"Choose a material first.");return;}
+    try{documents=focus === "answer"
+      ? library.documents.filter(document => entry?.documentIds.includes(document.id))
+      : lessonMaterialScope(library.documents,focus,lessonContext);}catch(e){setError(e instanceof Error?e.message:"Choose a material first.");return;}
     const ids=new Set(documents.map(document=>document.id));
-    const recent=library.entries.filter(entry=>entry.documentIds.every(id=>ids.has(id))).slice(0,2);
+    const historyStart = entry ? library.entries.indexOf(entry) : 0;
+    const recent=library.entries.slice(historyStart).filter(entry=>entry.documentIds.every(id=>ids.has(id))).slice(0,2);
+    const usePriorTopic = question.trim().length > 0 || (task === "quiz" && recent[0]?.task === "quiz");
     let excerpts;
-    try{if(passage&&!sourceStillAvailable(passage,library.documents))throw new Error("This passage is no longer available in your library. Choose it again from the source.");excerpts=passage?[passage]:selectMaterialExcerpts(documents,message,task,recent[0]?.question||"");}catch(e){setError(e instanceof Error?e.message:"Choose a source passage again.");return;}
+    try{if(passage&&!sourceStillAvailable(passage,library.documents))throw new Error("This passage is no longer available in your library. Choose it again from the source.");excerpts=passage?[passage]:selectMaterialExcerpts(documents,message,task,usePriorTopic ? recent[0]?.question : undefined);}catch(e){setError(e instanceof Error?e.message:"Choose a source passage again.");return;}
     if(!excerpts.length){setError("I couldn’t find matching text in the selected materials. Try a more specific question or choose another material.");return;}
     setLoading(true);setError("");const controller=new AbortController();abort.current=controller;
     try{
-      const history=recent.slice().reverse().flatMap(entry=>[{role:"user",content:entry.question.slice(0,3000)},{role:"assistant",content:entry.answer.slice(0,3000)}]);
+      let relevantHistory = recent;
+      if (storageAvailable) {
+        const saved = await loadMaterialLibrary();
+        if (controller.signal.aborted) return;
+        relevantHistory = recent.filter(entry => saved.entries.some(stored => stored.id === entry.id));
+        if (!excerpts.every(excerpt => sourceStillAvailable(excerpt, saved.documents))) {
+          currentLibrary.current = saved;
+          savedLibrary.current = saved;
+          setLibrary(saved);
+          setPassage(null);
+          setSource(null);
+          setFocus("choose");
+          setActiveEntryId("");
+          setError("Your selected source changed in another tab. Your question is still here. Choose a current source before asking again.");
+          return;
+        }
+      }
+      const history=relevantHistory.slice().reverse().flatMap(entry=>[{role:"user",content:entry.question.slice(0,3000)},{role:"assistant",content:entry.answer.slice(0,3000)}]);
       const response=await fetch("/api/study/materials",{method:"POST",headers:{"Content-Type":"application/json"},signal:AbortSignal.any([controller.signal,AbortSignal.timeout(55000)]),body:JSON.stringify({message,task,style,excerpts,history})});
       const result=await response.json().catch(()=>null);
       if(controller.signal.aborted)throw new DOMException("Cancelled","AbortError");
       if(!response.ok)throw new Error(typeof result?.error==="string"?result.error:"The tutor is temporarily unavailable. Please try again.");
       if(!result||typeof result.answer!=="string"||!Array.isArray(result.citations))throw new Error("The tutor returned an invalid response.");
       const verified=validateMaterialAnswer(result,validateMaterialSources(excerpts));
-      const entry:MaterialEntry={...verified,id:crypto.randomUUID(),question:message,task,documentIds:[...new Set(excerpts.map(excerpt=>excerpt.documentId))],createdAt:Date.now()};
-      setLibrary(previous=>({...previous,entries:[entry,...previous.entries].slice(0,20)}));setActiveEntryId(entry.id);setQuestion("");
+      const newEntry:MaterialEntry={...verified,id:crypto.randomUUID(),question:message,task,documentIds:[...new Set(excerpts.map(excerpt=>excerpt.documentId))],createdAt:Date.now()};
+      setLibrary(previous=>({...previous,entries:[newEntry,...previous.entries].slice(0,20)}));setActiveEntryId(newEntry.id);setQuestion("");
     }catch(error){if(!controller.signal.aborted)setError(error instanceof Error?error.message:"The tutor could not complete this request.");}
     finally{if(abort.current===controller)abort.current=null;setLoading(false);}
   }
 
+  const errorNotice = error && <p role="alert" className="mt-5 rounded-xl border border-amber-300/25 bg-amber-300/5 p-4 text-sm leading-7 text-amber-100">{error}</p>;
   const busy=uploading||loading;
-  const entry=library.entries.find(entry=>entry.id===activeEntryId);
   const reviews=materialReviewSteps(checks,library.documents,now);
-  function choosePassage(selected:MaterialSource){setLessonContext(null);setLessonNotice("");setPassage(selected);setFocus(selected.documentId);setSource(null);setPanel(null);setActiveEntryId("");setQuestion("");setError("");requestAnimationFrame(()=>document.getElementById("selected-study-passage")?.scrollIntoView({block:"start",behavior:"smooth"}));}
+  function choosePassage(selected:MaterialSource){setLessonContext(null);setLessonNotice("");setPassage(selected);setFocus(selected.documentId);setSource(null);setPanel(null);setActiveEntryId("");setError("");requestAnimationFrame(()=>{const selected=document.getElementById("selected-study-passage");selected?.focus({preventScroll:true});selected?.scrollIntoView({block:"start",behavior:"smooth"});});}
   const sourceDocument=library.documents.find(document=>document.id===source?.documentId);
   return <>
-    {lessonContext&&<section className="library-lesson-context" aria-label="Lesson materials context"><div><p className="studio-eyebrow">YOUR LESSON, YOUR SOURCES</p><h2>{lessonContext.title}</h2><p>The question is prepared below. Review the material focus, then select Ask. Only selected excerpts are sent; your full files are not automatically read.</p>{lessonNotice&&<p role="status">{lessonNotice}</p>}</div><button type="button" disabled={busy} onClick={()=>{setLessonContext(null);setLessonNotice("");setFocus("all");setQuestion("");}}>Clear lesson context</button><a href="/study#learning-goal">Return to my plan ↗</a></section>}
+    {lessonContext&&<section className="library-lesson-context" aria-label="Lesson materials context"><div><p className="studio-eyebrow">YOUR LESSON, YOUR SOURCES</p><h2>{lessonContext.title}</h2><p>The question is prepared below. Review the material focus, then select Ask. Only selected excerpts are sent; your full files are not automatically read.</p>{lessonNotice&&<p role="status">{lessonNotice}</p>}</div><button type="button" disabled={busy} onClick={()=>{setLessonContext(null);setLessonNotice("");if(focus==="lesson")setFocus("choose");if(question===lessonContext.question)setQuestion("");}}>Clear lesson context</button><a href="/study#learning-goal">Return to my plan ↗</a></section>}
     {!lessonContext&&lessonNotice&&<p role="status" className="goal-notice">{lessonNotice}</p>}
-    <div className="library-focused-shell" onKeyDown={event=>{if(event.key === "Escape" && panel){event.preventDefault();setPanel(null);document.getElementById("library-materials-trigger")?.focus();}}}>
+    <div className="library-focused-shell" onKeyDown={event=>{if(event.key === "Escape" && panel){event.preventDefault();closePanel();}}}>
       <div className="library-toolbar">
-        <button type="button" id="library-materials-trigger" disabled={!ready||busy} aria-expanded={panel==="materials"} aria-controls="library-materials-panel" onClick={()=>setPanel(panel==="materials"?null:"materials")}>Materials · {library.documents.length} <span aria-hidden="true">⌄</span></button>
-        <div className="library-focus-select"><label className="min-w-0 text-xs font-medium text-slate-300">Material focus<select aria-label="Material focus" value={focus} onChange={event=>{setFocus(event.target.value);setPassage(null);setActiveEntryId("");}} disabled={busy||!ready} className="mt-2 min-w-0 w-full rounded-xl border border-white/15 bg-slate-950 px-3 py-3 text-sm text-white">{lessonContext&&<><option value="choose">Choose lesson materials…</option>{lessonContext.documentIds.length>0&&<option value="lesson">Linked lesson materials · {lessonContext.documentIds.length}</option>}</>}<option value="all">All materials</option>{library.documents.map(document=><option key={document.id} value={document.id}>{document.name}</option>)}</select></label></div>
-        <button type="button" className="library-add-trigger" disabled={!ready||busy} aria-expanded={panel==="add"} aria-controls="library-materials-panel" onClick={()=>setPanel(panel==="add"?null:"add")}>+ Add materials</button>
+        <button type="button" id="library-materials-trigger" disabled={!ready||busy} aria-expanded={panel==="materials"} aria-controls="library-materials-panel" onClick={event=>panel==="materials"?closePanel():showPanel("materials",event.currentTarget)}>Materials · {library.documents.length} <span aria-hidden="true">⌄</span></button>
+        <div className="library-focus-select"><label className="min-w-0 text-xs font-medium text-slate-300">Material focus<select aria-label="Material focus" value={focus} onChange={event=>{setFocus(event.target.value);setPassage(null);setActiveEntryId("");}} disabled={busy||!ready} className="mt-2 min-w-0 w-full rounded-xl border border-white/15 bg-slate-950 px-3 py-3 text-sm text-white">{(lessonContext || focus==="choose")&&<option value="choose">Choose materials…</option>}{lessonContext && lessonContext.documentIds.length>0&&<option value="lesson">Linked lesson materials · {lessonContext.documentIds.length}</option>}{focus==="answer"&&entry&&<option value="answer">Sources for this answer · {entry.documentIds.length}</option>}<option value="all">All materials</option>{library.documents.map(document=><option key={document.id} value={document.id}>{document.name}</option>)}</select></label></div>
+        <button type="button" className="library-add-trigger" disabled={!ready||busy} aria-expanded={panel==="add"} aria-controls="library-materials-panel" onClick={event=>panel==="add"?closePanel():showPanel("add",event.currentTarget)}>+ Add materials</button>
       </div>
       {panel&&<>      <aside id="library-materials-panel" aria-label="Manage your materials" className={`library-material-panel library-panel-${panel}`}>
         <div className="library-management">
-          <div className="library-panel-heading"><h2 className="text-lg font-semibold text-white">Your materials</h2><span className="text-xs text-slate-500">{library.documents.length} / 5</span><button type="button" disabled={busy} onClick={()=>setPanel(null)}>Close</button></div>
+          <div className="library-panel-heading"><h2 className="text-lg font-semibold text-white">Your materials</h2><span className="text-xs text-slate-500">{library.documents.length} / 5</span><button type="button" disabled={busy} onClick={closePanel}>Close</button></div>
+          {errorNotice}
           <div className="library-upload-controls"><p className="mt-2 text-xs leading-6 text-slate-400">PDF, TXT, or Markdown · up to 10 MB per file · PDFs up to 100 pages</p>
           <label className={`mt-4 block rounded-xl border border-dashed border-cyan-300/40 px-4 py-5 text-center text-sm font-semibold text-cyan-200 ${busy||!ready?"opacity-40":"cursor-pointer hover:bg-cyan-300/5"}`}>
             Add course files
@@ -195,27 +265,27 @@ export default function CourseMaterials() {
           <p className="mt-5 border-t border-white/10 pt-4 text-xs leading-6 text-slate-500">Extracted text is saved in this browser{accountConfigured ? " and included if you choose account saving" : ""}. Relevant excerpts are sent to the AI provider when you ask a question. Removing a material removes its library answers. Saved practice checks retain their quoted passages in learning history; reviews for unavailable materials are hidden.</p>
           {!storageAvailable&&<p role="status" className="mt-3 text-xs leading-6 text-amber-200">Browser storage is unavailable. Your current materials and answers may not survive a reload.</p>}
         </div>
-        {!!library.entries.length&&<div className="library-recent-questions"><h2 className="text-sm font-semibold text-slate-300">Recent questions</h2><div className="mt-3 space-y-2">{library.entries.map(item=><button type="button" key={item.id} disabled={busy} onClick={()=>{setActiveEntryId(item.id);setPanel(null);}} className={`w-full rounded-lg border px-3 py-2 text-left text-xs leading-5 disabled:opacity-40 ${item.id===activeEntryId?"border-cyan-300/30 bg-cyan-300/5 text-cyan-200":"border-white/5 text-slate-400"}`}>{item.question.slice(0,100)}</button>)}</div></div>}
+        {!!library.entries.length&&<div className="library-recent-questions"><h2 className="text-sm font-semibold text-slate-300">Recent questions</h2><div className="mt-3 space-y-2">{library.entries.map(item=><button type="button" key={item.id} disabled={busy} onClick={()=>openAnswer(item)} className={`w-full rounded-lg border px-3 py-2 text-left text-xs leading-5 disabled:opacity-40 ${item.id===activeEntryId?"border-cyan-300/30 bg-cyan-300/5 text-cyan-200":"border-white/5 text-slate-400"}`}>{item.question.slice(0,100)}</button>)}</div></div>}
       </aside></>}
       {!storageAvailable&&<p role="status" className="library-storage-warning">Saving is paused. The original saved library has been preserved. Keep this page open and copy new work before reloading.</p>}
-      {passage&&<section id="selected-study-passage" className="selected-study-passage" aria-label="Selected study passage"><div><strong>{passage.name} · {materialLocation(passage)}</strong><button disabled={busy} onClick={()=>{setPassage(null);setActiveEntryId("");}}>Use whole material</button></div><blockquote>{passage.text}</blockquote><button disabled={busy} onClick={()=>setSource({documentId:passage.documentId,page:passage.page,quote:passage.text})}>Open source and choose another passage ↗</button></section>}
+      {passage&&<section id="selected-study-passage" tabIndex={-1} className="selected-study-passage" aria-label="Selected study passage"><div><strong>{passage.name} · {materialLocation(passage)}</strong><button disabled={busy} onClick={()=>{setPassage(null);setActiveEntryId("");}}>Use whole material</button></div><blockquote>{passage.text}</blockquote><button disabled={busy} onClick={()=>setSource({documentId:passage.documentId,page:passage.page,quote:passage.text})}>Open source and choose another passage ↗</button></section>}
       {!passage&&!!library.documents.length&&<p className="library-passage-invitation">For focused learning, open Materials → Read → Choose a passage to study.</p>}
       <div className="library-mode-bar" role="group" aria-label="Material learning mode">{Object.entries(materialTasks).map(([value,label])=><button key={value} type="button" aria-pressed={task===value} disabled={busy} onClick={()=>setTask(value as MaterialTask)}>{label}</button>)}</div>
       {task==="explain"&&<label className="material-explanation-style">How would you like it explained?<select aria-label="Explanation style" value={style} disabled={busy} onChange={event=>setStyle(event.target.value as MaterialExplanationStyle)}>{Object.entries(materialExplanationStyles).map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>}
       {passage&&task==="quiz"?<PassagePractice source={passage} openSource={setSource}/>:<>
       <div className="library-reading-area" aria-live="polite">
-          {entry?<MaterialResponse entry={entry} openSource={setSource}/>:<div className="library-empty"><h2>What would you like to know?</h2><p>Add a source, choose how you want to learn, and follow a question.</p><p className="library-empty-note">Answers use selected excerpts. Scanned pages and images need OCR.</p>{!library.documents.length&&<button type="button" disabled={busy||!ready} onClick={()=>setPanel("add")}>Add your first material ↗</button>}</div>}
+          {entry?<MaterialResponse entry={entry} openSource={setSource}/>:<div className="library-empty"><h2>What would you like to know?</h2><p>Add a source, choose how you want to learn, and follow a question.</p><p className="library-empty-note">Answers use selected excerpts. Scanned pages and images need OCR.</p>{!library.documents.length&&<button type="button" disabled={busy||!ready} onClick={event=>showPanel("add",event.currentTarget)}>Add your first material ↗</button>}</div>}
       </div>
       <div className="library-composer"><form onSubmit={ask}>
             <label className="block text-xs font-medium text-slate-300">Your question<textarea aria-label="Question about your materials" disabled={busy} rows={2} maxLength={3000} value={question} onChange={event=>setQuestion(event.target.value)} placeholder={task==="explain"?"For example: how does this chapter explain cellular respiration?":"Add a topic or leave this blank to use the selected excerpts."} className="mt-2 w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-3 text-sm leading-7 text-white" /></label>
-            <div className="flex flex-wrap items-center gap-3"><button type="submit" disabled={!ready||busy||!library.documents.length||(task==="explain"&&!question.trim()&&!passage)} className="rounded-xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 disabled:opacity-40">{task==="guide"?"Create study guide":task==="quiz"?"Start or continue quiz":"Ask about materials"}</button>{loading&&<button type="button" onClick={()=>abort.current?.abort()} className="rounded-xl border border-white/20 px-4 py-3 text-sm text-slate-300">Stop request</button>}</div>
+            <div className="flex flex-wrap items-center gap-3"><button type="submit" disabled={!ready||busy||focus==="choose"||!library.documents.length||(task==="explain"&&!question.trim()&&!passage)} className="rounded-xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 disabled:opacity-40">{task==="guide"?"Create study guide":task==="quiz"?"Start or continue quiz":"Ask about materials"}</button>{loading&&<button type="button" onClick={()=>abort.current?.abort()} className="rounded-xl border border-white/20 px-4 py-3 text-sm text-slate-300">Stop request</button>}</div>
           </form>
-          {error&&<p role="alert" className="mt-5 rounded-xl border border-amber-300/25 bg-amber-300/5 p-4 text-sm leading-7 text-amber-100">{error}</p>}
           {loading&&<p role="status" className="mt-5 text-sm text-cyan-200">Reading the relevant excerpts and checking citation quotes…</p>}
       </div>
       </>}
+      {!panel && errorNotice}
       <section id="material-reviews" className="material-review-list" aria-label="Material passage reviews"><h2>Return to what needs practice.</h2><p>Latest saved check per available passage. Missed or helped answers suggest a review after 24 hours; uncertain feedback needs clarification. These are learning prompts, not mastery scores or notifications.</p>{!reviews.length?<p>No passage follow-ups yet. Select a passage and try a practice question.</p>:reviews.slice(0,reviewLimit).map(check=>{const selected=check.context.sources![0],due=check.submittedAt+86400000;return <article key={check.context.lesson.id}><strong>{selected.name} · {materialLocation(selected)}</strong><span>{checkLabel(check)} · {check.result.decision==="uncertain"?"Clarify the feedback":due<=now?"Ready to revisit":`Suggested ${new Date(due).toLocaleDateString()}`}</span><p>{check.result.reasoningGap}</p><button disabled={busy} onClick={()=>{choosePassage(selected);setTask("quiz");}}>Revisit this passage →</button></article>;})}{reviews.length>reviewLimit&&<button disabled={busy} onClick={()=>setReviewLimit(reviews.length)}>Show all {reviews.length} passage reviews</button>}</section>
-      <div className="library-shell-footer"><span>Saved in this browser</span><span>Check AI answers against your sources.</span></div>
+      <div className="library-shell-footer"><span>{storageAvailable ? "Browser saving enabled" : "Saving paused"}</span><span>Check AI answers against your sources.</span></div>
     </div>
     {source&&sourceDocument&&<SourceViewer key={`${source.documentId}-${source.page}-${source.quote}`} document={sourceDocument} source={source} close={()=>setSource(null)} choose={choosePassage}/>}
   </>;
