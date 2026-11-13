@@ -1,3 +1,4 @@
+import { smallThingsFacts, smallThingsSources } from './small-things';
 import type { Fact } from './facts';
 import { expandedFacts } from './expanded-facts';
 import { soundsMadeUpFacts, soundsMadeUpSources } from './sounds-made-up';
@@ -8,6 +9,7 @@ import { yourWorldFacts, yourWorldSources } from './your-world';
 // Preserve the original records. Dates come from their documented source reviews,
 // not a claim that every earlier card was re-audited during V1.8.
 const reviews = new Map<string, string>([
+  ...smallThingsFacts.map(fact => [fact.id, smallThingsSources[fact.sourceKey].reviewedOn] as const),
   ...expandedFacts.map(fact => [fact.id, '2026-11-13'] as const),
   ...soundsMadeUpFacts.map(fact => [fact.id, soundsMadeUpSources[fact.sourceKey].reviewedOn] as const),
   ...everydayWonderFacts.map(fact => [fact.id, everydayWonderSources[fact.sourceKey].reviewedOn] as const),

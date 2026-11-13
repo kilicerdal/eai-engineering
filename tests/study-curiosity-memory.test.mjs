@@ -65,7 +65,7 @@ test('connection questions preserve the existing prompts and unknown links yield
 });
 
 test('curiosity favorites use unique stable identities and reject unknown or duplicate saves', () => {
-  assert.equal(new Set(facts.map(fact => fact.id)).size, 550);
+  assert.equal(new Set(facts.map(fact => fact.id)).size, 650);
   assert.deepEqual(parseSaved(JSON.stringify({ version: 1, ids: [facts[5].id, 'deleted-fact', facts[5].id, null] })), [facts[5].id]);
   assert.deepEqual(parseSaved(JSON.stringify({ version: 2, ids: [facts[5].id] })), []);
 });
@@ -133,7 +133,7 @@ test('daily snapshots retain their order, reject invalid sets, and roll to the e
   assert.equal(rolled.revealed,false);
 });
 test('every discovery retains a stable ID, a source, and a usable question', () => {
-  assert.equal(facts.length, 550);
+  assert.equal(facts.length, 650);
   for (const fact of facts) {
     assert.match(fact.id, /^[a-z0-9-]+$/);
     assert.equal(new URL(fact.url).protocol, 'https:');
@@ -231,7 +231,7 @@ test('a preferred topic moves earlier without dropping other discoveries or chan
   const mixed = mixTopics(facts,{Space:'more'});
   assert.equal(mixed[0].category,'Space');
   assert.ok(mixed.slice(0,10).some(fact=>fact.category!=='Space'));
-  assert.equal(new Set(mixed.map(fact=>fact.id)).size,550);
+  assert.equal(new Set(mixed.map(fact=>fact.id)).size,650);
   assert.deepEqual(new Set(mixed.map(fact=>fact.id)),new Set(facts.map(fact=>fact.id)));
   for(const topic of new Set(facts.map(fact=>fact.category))) assert.deepEqual(mixed.filter(fact=>fact.category===topic),facts.filter(fact=>fact.category===topic));
   assert.deepEqual(mixTopics(facts,{Space:'more'}),mixed);
@@ -268,8 +268,8 @@ test('V1.5 appends exactly 100 original sourced cards while preserving all 150 V
   assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,150))).digest('hex'), 'a5a1eeb3a5b36b6a19e2c02f0ce0d87f33256e62d93ca815256183af6269e8d0');
   assert.equal(soundsMadeUpFacts.length,100);
   assert.deepEqual(facts.slice(150,250),soundsMadeUpFacts);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,550);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,550);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,650);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,650);
   for(const fact of soundsMadeUpFacts) {
     const source = soundsMadeUpSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -302,12 +302,12 @@ test('V1.4 daily snapshots survive expansion to 250 and new daily selections sta
 
 test('V1.6 appends 100 Everyday Wonders while preserving all 250 complete existing records', () => {
   assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,250))).digest('hex'), 'ed4af805987ef6e4c7c844dfa34fc6f808c68a75455634290f300b0ca8cd51f1');
-  assert.equal(facts.length,550);
+  assert.equal(facts.length,650);
   assert.deepEqual(facts.slice(250,350),everydayWonderFacts);
   assert.equal(everydayWonderFacts.length,100);
-  assert.equal(new Set(facts.map(fact=>fact.id)).size,550);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,550);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,550);
+  assert.equal(new Set(facts.map(fact=>fact.id)).size,650);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,650);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,650);
   for(const fact of everydayWonderFacts) {
     const source=everydayWonderSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -344,10 +344,10 @@ test('V1.7 appends 100 reviewed Hidden Connections without changing any complete
   assert.equal(createHash('sha256').update(JSON.stringify(previousInsights)).digest('hex'),'a62e10f679d4890739cb6482f8e4b5a03ae45ad184cc8ff8388a3527d0cb38ec');
   assert.equal(hiddenConnectionFacts.length,100);
   assert.deepEqual(facts.slice(350,450),hiddenConnectionFacts);
-  assert.equal(facts.length,550);
-  assert.equal(new Set(facts.map(fact=>fact.id)).size,550);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,550);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,550);
+  assert.equal(facts.length,650);
+  assert.equal(new Set(facts.map(fact=>fact.id)).size,650);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,650);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,650);
   for(const fact of hiddenConnectionFacts) {
     const source=hiddenConnectionSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -401,7 +401,7 @@ test('V1.8 appends 100 reviewed cards and preserves all 450 complete records and
   const previous=Object.fromEntries(facts.slice(0,450).map(f=>[f.id,insights[f.id]]));
   assert.equal(createHash('sha256').update(JSON.stringify(previous)).digest('hex'),'7210ac86aa6ab13ea833bfc2ea60985e78b9d7901ee42b83c6a759848d8cc3a7');
   assert.equal(yourWorldFacts.length,100);
-  assert.deepEqual(facts.slice(450),yourWorldFacts);
+  assert.deepEqual(facts.slice(450,550),yourWorldFacts);
   for(const fact of yourWorldFacts) {
     const source=yourWorldSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -454,4 +454,53 @@ test('V1.8 preserves pre-expansion daily snapshots, strict unread choices and us
   assert.deepEqual(unreadSurprisePool(list,list.map(f=>f.id),''),[]);
   assert.deepEqual(parsePreferences(JSON.stringify({version:1,preferences:{focus:true,textSize:'largest',unreadFirst:false}})),{focus:true,textSize:'largest',unreadFirst:false});
   assert.deepEqual(parseInterests(JSON.stringify({version:1,topics:{Space:'more',Nature:'less'}})),{Space:'more',Nature:'less'});
+});
+
+const {smallThingsFacts,smallThingsSources}=load('small-things');
+const {readArrivals,arrivalIds,parseCatalog,parseVisit,CATALOG_KEY}=load('arrivals');
+const {concernReport}=load('concerns');
+function visitStore(entries={}) {const map=new Map(Object.entries(entries));return {getItem:key=>map.get(key)??null,setItem:(key,value)=>map.set(key,value),map};}
+test('V1.9 appends exactly 100 unique sourced discoveries and preserves all 550 existing records',()=>{
+  assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,550))).digest('hex'),'59ddd81c4eda20a3e924e84e20147efe8b8862ed5a1ee78e031a071449a7482f');
+  assert.equal(facts.length,650);assert.equal(smallThingsFacts.length,100);assert.deepEqual(facts.slice(550),smallThingsFacts);
+  for(const fact of smallThingsFacts){const source=smallThingsSources[fact.sourceKey];assert.equal(fact.url,source.url);assert.equal(fact.source,source.label);assert.equal(source.reviewedOn,'2026-11-13');assert.equal(fact.collection,'small-things');assert.ok(fact.question.endsWith('?'));}
+});
+test('first tracked visit honestly shows the latest batch and refresh keeps that selection',()=>{
+  const local=visitStore(),session=visitStore();
+  assert.deepEqual(readArrivals(['a','b','c'],['c'],local,session),{ids:['c'],kind:'latest',warning:''});
+  assert.deepEqual(readArrivals(['a','b','c'],['c'],local,session).ids,['c']);
+  assert.deepEqual(readArrivals(['a','b','c'],['c'],local,visitStore()),{ids:[],kind:'since-visit',warning:''});
+});
+test('later visits show only added identities and retain a fixed baseline while exploring',()=>{
+  const local=visitStore({[CATALOG_KEY]:JSON.stringify({version:1,ids:['a','b']})}),session=visitStore();
+  assert.deepEqual(readArrivals(['a','b','c'],['c'],local,session).ids,['c']);
+  assert.deepEqual(readArrivals(['a','b','c'],['c'],local,session).ids,['c']);
+  assert.deepEqual(readArrivals(['a','b','c','d'],['d'],local,visitStore()).ids,['d']);
+});
+test('an older cached catalog cannot remove identities recorded by a newer tab',()=>{
+  const local=visitStore({[CATALOG_KEY]:JSON.stringify({version:1,ids:['a','b','c']})});readArrivals(['a','b'],['b'],local,visitStore());
+  assert.deepEqual(parseCatalog(local.getItem(CATALOG_KEY)),['a','b','c']);
+});
+test('unavailable visit storage degrades to latest additions without touching saves',()=>{
+  const unavailable={getItem(){throw Error('disabled')},setItem(){throw Error('disabled')}};
+  const result=readArrivals(['a','b'],['b'],unavailable,unavailable);assert.deepEqual(result.ids,['b']);assert.ok(result.warning);assert.equal(result.kind,'latest');
+});
+test('malformed visit metadata cannot introduce invalid or duplicated identities',()=>{
+  for(const raw of ['{','null','{"version":2,"ids":["a"]}','{"version":1,"ids":["a","a"]}','{"version":1,"ids":["<script>"]}'])assert.equal(parseCatalog(raw),null);
+  assert.equal(parseVisit('{"version":1,"baselineIds":4}'),null);assert.deepEqual(arrivalIds(['a','b'],['a'],['a']),['b']);
+});
+test('new-only filtering intersects topic/search and resume validates its snapshot',()=>{
+  const ids=smallThingsFacts.map(fact=>fact.id);const view={...initialView,newOnly:true,newIds:ids,factId:ids[0]};
+  assert.equal(discoveries(view,[]).length,100);assert.equal(discoveries({...initialView,collection:'small-things'},[]).length,100);
+  assert.deepEqual(parseResume(JSON.stringify({version:1,view}),[]),view);
+  assert.ok(discoveries({...view,category:'Nature'},[]).every(f=>f.category==='Nature'&&ids.includes(f.id)));
+  assert.equal(parseResume(JSON.stringify({version:1,view:{...view,newIds:['unknown']}}),[]),null);
+  assert.equal(parseResume(JSON.stringify({version:1,view:{...view,savedOnly:true}}),[]),null);
+});
+test('concern handoff includes the selected discovery and encodes notes without adding mail headers',()=>{
+  const fact=smallThingsFacts[0],note='Check & clarify?\nBcc: nobody@example.test';const report=concernReport(fact,'Source link problem',note);
+  const url=new URL(report.mailto);assert.equal(url.pathname,'support@eai.engineering');assert.equal(url.searchParams.get('body'),report.body);assert.equal(url.searchParams.get('bcc'),null);
+  assert.ok(report.body.includes(`Discovery ID: ${fact.id}\n`));assert.ok(report.body.includes(fact.url));assert.ok(report.body.includes(note));assert.ok(!report.body.includes('\\n'));
+  assert.ok(concernReport(fact,'invalid','x'.repeat(1200)).body.endsWith('Reader note: '+'x'.repeat(1000)));
+  assert.ok(concernReport(fact,'invalid','').body.includes('Reason: Claim may be incorrect'));
 });
