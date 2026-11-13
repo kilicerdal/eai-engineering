@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { facts } from './facts';
+import { INTERESTS_KEY, parseInterests, personalOrder, readInterests, topics, type Interest, type TopicPreferences } from './interests';
 import { discoveryLink, guesses, localDay } from './journey';
 import { markRead, parseSeen, readReading, readingOrder, surprisePool, READING_KEY, SEEN_KEY, type ReadingPreferences } from './reading';
 
@@ -34,6 +35,10 @@ export default function CuriosityRoom() {
 function RememberedRoom() {
   const [memory, setMemory] = useState(readMemory);
   const [reading, setReading] = useState(readReading);
+  const [interests, setInterests] = useState(readInterests);
+  const [interestsOpen, setInterestsOpen] = useState(false);
+  const interestsToggle = useRef<HTMLButtonElement>(null);
+  function closeInterests() {setInterestsOpen(false);interestsToggle.current?.focus();}
   const [sessionSeen, setSessionSeen] = useState(() => reading.seen);
   const [anchor, setAnchor] = useState(() => memory.view.factId);
   const [optionsOpen, setOptionsOpen] = useState(false);
@@ -42,6 +47,22 @@ function RememberedRoom() {
   const slide = useRef<HTMLElement>(null);
   const readingToggle = useRef<HTMLButtonElement>(null);
   function closeReadingOptions() {setOptionsOpen(false);readingToggle.current?.focus();}
+  function storeInterests(next: TopicPreferences, message: string) {
+    let warning = '';
+    try { localStorage.setItem(INTERESTS_KEY,JSON.stringify({version:1,topics:next})); }
+    catch { warning = 'Topic preferences apply for this visit only. Browser saving is unavailable.'; }
+    setAnchor(view.factId);setSessionSeen(reading.seen);
+    setInterests({topics:next,warning});setNotice(message);
+  }
+  function rateTopic(topic: string, value: Interest | undefined, toggle = false) {
+    if (!topics.includes(topic)) return;
+    let latest = interests.topics;
+    try {const raw = localStorage.getItem(INTERESTS_KEY);if(raw !== null && !interests.warning) latest = parseInterests(raw);} catch { /* Session preferences remain usable. */ }
+    const next = {...latest};
+    const choice = toggle && latest[topic] === value ? undefined : value;
+    if(choice) next[topic] = choice; else delete next[topic];
+    storeInterests(next,choice === 'more' ? `More ${topic} in your mix. Other topics still appear.` : choice === 'less' ? `Less ${topic} in your mix. You can still find it through its topic filter.` : `${topic} is back to a balanced mix.`);
+  }
   function updatePreferences(patch: Partial<ReadingPreferences>) {
     const preferences = { ...reading.preferences, ...patch };
     let warning = reading.warning;
@@ -49,7 +70,7 @@ function RememberedRoom() {
     catch { warning = 'Reading options apply for this visit only. Browser saving is unavailable.'; }
     if ('unreadFirst' in patch) {setSessionSeen(reading.seen);setAnchor(view.factId);}
     setReading(previous=>({...previous,preferences,warning}));
-    if ('focus' in patch) {setShowBrowse(false);setOptionsOpen(false);}
+    if ('focus' in patch) {setShowBrowse(false);setOptionsOpen(false);setInterestsOpen(false);}
   }
   function recordReveal(id: string) {
     let latest = reading.seen, warning = reading.warning;
@@ -67,8 +88,8 @@ function RememberedRoom() {
   const [copyFallback, setCopyFallback] = useState('');
   function remember(next: View, nextSaved = saved) {
     let normalized = normalizeView(next, nextSaved);
-    if (!next.factId && reading.preferences.unreadFirst && !next.daily && !next.savedOnly) {
-      const first = readingOrder(discoveries(next,nextSaved),reading.seen,true)[0];
+    if (!next.factId && !next.daily && !next.savedOnly) {
+      const first = personalOrder(discoveries(next,nextSaved),next.category === categories[0] && !next.query ? interests.topics : {},reading.seen,reading.preferences.unreadFirst)[0];
       normalized = {...normalized,factId:first?.id || '',revealed:false};
       setSessionSeen(reading.seen);setAnchor('');
     }
@@ -120,7 +141,8 @@ function RememberedRoom() {
   }, []);
   const touch = useRef<{x:number;y:number}|null>(null);
   const gesture = useRef({ amount:0, last:0, changed:0 });
-  const visible = readingOrder(discoveries(view, saved), sessionSeen, reading.preferences.unreadFirst && !view.daily && !savedOnly, anchor);
+  const personalized = !view.daily && !savedOnly && category === categories[0] && !query.trim();
+  const visible = personalized ? personalOrder(discoveries(view,saved),interests.topics,sessionSeen,reading.preferences.unreadFirst,anchor) : readingOrder(discoveries(view, saved),sessionSeen,reading.preferences.unreadFirst && !view.daily && !savedOnly,anchor);
   const currentIndex = Math.max(0, visible.findIndex(fact => fact.id === view.factId));
   const selected = visible[currentIndex];
   const quiz = selected ? guesses[selected.id] : null;
@@ -155,7 +177,8 @@ function RememberedRoom() {
     if(visible.length < 2) return;
     const random = window.crypto.getRandomValues(new Uint32Array(1))[0] / 0x100000000;
     const pool = reading.preferences.unreadFirst && !view.daily && !savedOnly ? surprisePool(visible,reading.seen,selected?.id || '') : visible.filter(fact=>fact.id !== selected?.id);
-    if(pool.length) go(visible.findIndex(fact=>fact.id === pool[Math.floor(random*pool.length)].id));
+    const choices = personalized && Object.keys(interests.topics).length ? personalOrder(pool,interests.topics,[],false).slice(0,10) : pool;
+    if(choices.length) go(visible.findIndex(fact=>fact.id === choices[Math.floor(random*choices.length)].id));
   }
   function changeCollection(savedOnly: boolean) {
     setAnchor('');setSessionSeen(reading.seen);
@@ -164,7 +187,7 @@ function RememberedRoom() {
   return <main ref={feed} className="curiosity-feed curiosity-v11" data-focus={reading.preferences.focus} data-text-size={reading.preferences.textSize} id="discoveries" tabIndex={0} aria-label="Curiosity discovery feed"
     style={{backgroundImage:`linear-gradient(90deg,rgba(5,17,29,.88),rgba(5,17,29,.55)),url('/images/study/${scenes[selected?.category] || '04-observatory-v1.webp'}')`}}
     onKeyDown={event => {
-      if(event.key === 'Escape') {if(optionsOpen)closeReadingOptions();else if(reading.preferences.focus)updatePreferences({focus:false});return;}
+      if(event.key === 'Escape') {if(interestsOpen)closeInterests();else if(optionsOpen)closeReadingOptions();else if(reading.preferences.focus)updatePreferences({focus:false});return;}
       if((event.target as HTMLElement).closest('button,a,input,select,summary,textarea')) return;
       if(canScrollDiscovery(event.target as HTMLElement,event.key === 'ArrowUp' || event.key === 'PageUp' ? -1 : 1)) return;
       if(event.key === 'ArrowDown' || event.key === 'PageDown') {event.preventDefault();go(currentIndex+1);}
@@ -181,16 +204,17 @@ function RememberedRoom() {
     onTouchStart={event => {if(event.touches.length===1 && !(event.target as HTMLElement).closest('.curiosity-extra,input,select,button,a,.curiosity-reading-panel,[data-scrollable=true]'))touch.current={x:event.touches[0].clientX,y:event.touches[0].clientY};else touch.current=null;}}
     onTouchEnd={event => {if(!touch.current)return;const dx=touch.current.x-event.changedTouches[0].clientX,dy=touch.current.y-event.changedTouches[0].clientY;if(Math.abs(dy)>65 && Math.abs(dy)>Math.abs(dx)*1.3)go(currentIndex+(dy>0?1:-1));touch.current=null;}}
     onTouchCancel={()=>{touch.current=null;}}>
-    <div className="curiosity-feed-top"><div><Link href="/study" className="curiosity-back">← Studio</Link><h1>The Curiosity Room</h1></div><div className="curiosity-reading-actions"><button aria-pressed={reading.preferences.focus} onClick={()=>updatePreferences({focus:!reading.preferences.focus})}>{reading.preferences.focus ? 'Exit Focus' : 'Focus mode'}</button><button ref={readingToggle} aria-expanded={optionsOpen} aria-controls="curiosity-reading-options" onClick={()=>setOptionsOpen(!optionsOpen)}>Reading options</button>{reading.preferences.focus && <button aria-expanded={showBrowse} aria-controls="curiosity-browse-tools" onClick={()=>setShowBrowse(!showBrowse)}>Browse</button>}</div>{optionsOpen && <section className="curiosity-reading-panel" id="curiosity-reading-options" aria-label="Reading options"><div className="curiosity-panel-heading"><h2>Make yourself comfortable.</h2><button aria-label="Close reading options" onClick={closeReadingOptions}>×</button></div><p>Text size</p><div className="curiosity-text-sizes" aria-label="Discovery text size">{(['regular','large','largest'] as const).map(size=><button key={size} aria-pressed={reading.preferences.textSize === size} onClick={()=>updatePreferences({textSize:size})}>{size === 'regular'?'Regular':size === 'large'?'Large':'Largest'}</button>)}</div><label><input type="checkbox" checked={reading.preferences.unreadFirst} onChange={event=>updatePreferences({unreadFirst:event.target.checked})}/> Prefer unread discoveries</label><p>New visits and Surprise me favor answers you haven’t revealed. Today’s 5 and Saved keep their order.</p><p>{reading.seen.length} of {facts.length} discoveries revealed. Options and read history stay in this browser.</p></section>}</div>
+    <div className="curiosity-feed-top"><div><Link href="/study" className="curiosity-back">← Studio</Link><h1>The Curiosity Room</h1></div><div className="curiosity-reading-actions"><button aria-pressed={reading.preferences.focus} onClick={()=>updatePreferences({focus:!reading.preferences.focus})}>{reading.preferences.focus ? 'Exit Focus' : 'Focus mode'}</button><button ref={readingToggle} aria-expanded={optionsOpen} aria-controls="curiosity-reading-options" onClick={()=>{setInterestsOpen(false);setOptionsOpen(!optionsOpen);}}>Reading options</button><button ref={interestsToggle} aria-expanded={interestsOpen} aria-controls="curiosity-interests" onClick={()=>{setOptionsOpen(false);setInterestsOpen(!interestsOpen);}}>Interests</button>{reading.preferences.focus && <button aria-expanded={showBrowse} aria-controls="curiosity-browse-tools" onClick={()=>setShowBrowse(!showBrowse)}>Browse</button>}</div>{optionsOpen && <section className="curiosity-reading-panel" id="curiosity-reading-options" aria-label="Reading options"><div className="curiosity-panel-heading"><h2>Make yourself comfortable.</h2><button aria-label="Close reading options" onClick={closeReadingOptions}>×</button></div><p>Text size</p><div className="curiosity-text-sizes" aria-label="Discovery text size">{(['regular','large','largest'] as const).map(size=><button key={size} aria-pressed={reading.preferences.textSize === size} onClick={()=>updatePreferences({textSize:size})}>{size === 'regular'?'Regular':size === 'large'?'Large':'Largest'}</button>)}</div><label><input type="checkbox" checked={reading.preferences.unreadFirst} onChange={event=>updatePreferences({unreadFirst:event.target.checked})}/> Prefer unread discoveries</label><p>New visits and Surprise me favor answers you haven’t revealed. Today’s 5 and Saved keep their order.</p><p>{reading.seen.length} of {facts.length} discoveries revealed. Options and read history stay in this browser.</p></section>}{interestsOpen && <section className="curiosity-reading-panel curiosity-interests-panel" id="curiosity-interests" aria-label="Your curiosity interests"><div className="curiosity-panel-heading"><h2>Your curiosity.</h2><button aria-label="Close interests" onClick={closeInterests}>×</button></div><p>Choose favorite topics. Other topics will still appear.</p><button className="curiosity-reset-interests" onClick={()=>storeInterests({},'Topic preferences reset. Saved discoveries, Resume, and reading options kept.')}>Reset preferences</button><p>Reset clears topic choices only, keeping saved work and reading settings.</p><div className="curiosity-topic-preferences">{topics.map(topic=><label key={topic}><input type="checkbox" checked={interests.topics[topic] === 'more'} onChange={event=>rateTopic(topic,event.target.checked ? 'more' : undefined)}/><span>{topic}</span>{interests.topics[topic] === 'less' && <small>Less often</small>}</label>)}</div><p>Browser-only preferences. Topic filters, search, Today’s 5 and Saved stay under your control.</p>{interests.warning && <p role="status">{interests.warning}</p>}</section>}</div>
     <div id="curiosity-browse-tools" className="curiosity-browse-tools" hidden={reading.preferences.focus && !showBrowse}><div className="curiosity-feed-tools"><label><span>Choose a topic</span><select value={category} onChange={event=>{remember({ ...view, daily: false, category: event.target.value, factId: '', revealed: false });setMore(false);setNotice('');}}>{categories.map(item=><option key={item}>{item}</option>)}</select></label><label className="curiosity-feed-search"><span>Find a discovery</span><input type="search" maxLength={200} placeholder="Moon, memory, ancient…" value={query} onChange={event=>{remember({ ...view, daily: false, query: event.target.value.slice(0,200), factId: '', revealed: false });setMore(false);setNotice('');}} /></label><button className="curiosity-shuffle" onClick={surprise} disabled={visible.length<2}>Surprise me ✧</button></div>
-    <div className="curiosity-personal-bar"><div className="curiosity-collections" aria-label="Discovery collection"><button aria-pressed={!savedOnly && !view.daily} onClick={()=>changeCollection(false)}>Explore all</button><button aria-pressed={!!view.daily} onClick={todaysFive}>Today’s 5</button><button aria-pressed={savedOnly} onClick={()=>changeCollection(true)}>Saved ({saved.length})</button></div><button className="curiosity-restart" onClick={startOver}>Back to first ↺</button><p className="curiosity-memory-note" role="status">{warning || reading.warning || notice || (restored ? 'Resumed your place · saved in this browser only.' : 'Saves & your place stay in this browser only.')}</p></div></div>
-    {reading.preferences.focus && !showBrowse && (warning || reading.warning || notice) && <p className="curiosity-focus-notice" role="status">{warning || reading.warning || notice}</p>}
+    <div className="curiosity-personal-bar"><div className="curiosity-collections" aria-label="Discovery collection"><button aria-pressed={!savedOnly && !view.daily} onClick={()=>changeCollection(false)}>Explore all</button><button aria-pressed={!!view.daily} onClick={todaysFive}>Today’s 5</button><button aria-pressed={savedOnly} onClick={()=>changeCollection(true)}>Saved ({saved.length})</button></div><button className="curiosity-restart" onClick={startOver}>Back to first ↺</button><p className="curiosity-memory-note" role="status">{warning || reading.warning || interests.warning || notice || (restored ? 'Resumed your place · saved in this browser only.' : 'Saves & your place stay in this browser only.')}</p></div></div>
+    {reading.preferences.focus && !showBrowse && (warning || reading.warning || interests.warning || notice) && <p className="curiosity-focus-notice" role="status">{warning || reading.warning || interests.warning || notice}</p>}
     {selected ? <>
       <article ref={slide} className="curiosity-slide" data-scrollable={scrollable} tabIndex={scrollable ? 0 : -1} aria-label="Current discovery" key={selected.id} aria-live="polite" aria-atomic="true">
         <p className="curiosity-kicker">{selected.category} <span>·</span> A LITTLE WONDER GOES A LONG WAY</p>
         <h2>{selected.question || questions[facts.indexOf(selected)]}</h2>
         {!revealed ? <><p className={`curiosity-tease ${quiz ? 'curiosity-quiz-tease' : ''}`}>{quiz ? 'What’s your guess? No scores—just curiosity.' : 'Take a guess. Then discover the story.'}</p><div className={quiz ? "curiosity-guess-row" : "curiosity-reveal-row"}>{quiz && <div className="curiosity-guess-options" aria-label="Make a guess">{quiz.options.map((option,choice)=><button key={option} onClick={()=>{setGuess({id:selected.id,choice});remember({...view,revealed:true});}}>{option}</button>)}</div>}<button className={quiz ? 'curiosity-skip-guess' : 'curiosity-reveal'} onClick={()=>remember({ ...view, revealed: true })}>{quiz ? 'Reveal without guessing' : 'Reveal the fact'} <span aria-hidden="true">✧</span></button></div></> : <div className="curiosity-answer">{quiz && guess?.id === selected.id && <p className="curiosity-guess-feedback">{guess.choice === quiz.correct ? 'You spotted it.' : `A surprising answer: ${quiz.options[quiz.correct]}.`}</p>}<h3>{selected.title}</h3><p>{selected.text}</p><button className="curiosity-more" aria-expanded={more} aria-controls="curiosity-extra" onClick={()=>setMore(!more)}>{more?'Close exploration −':'Try a thought experiment +'}</button>{more && <div className="curiosity-extra" id="curiosity-extra" tabIndex={0}><p>{selected.explore}</p></div>}</div>}
         <div className="curiosity-fact-actions"><button className="curiosity-save" aria-pressed={saved.includes(selected.id)} onClick={toggleSaved}>{saved.includes(selected.id) ? '♥ Saved' : '♡ Save discovery'}</button><Link className="curiosity-ask" href={`/study?curiosity=${selected.id}#ai-assistant`}>Ask dAI ↗</Link><button className="curiosity-share" onClick={shareDiscovery}>Copy link ↗</button><a className="curiosity-citation" href={selected.url} target="_blank" rel="noopener noreferrer">Source: {selected.source} ↗</a></div>
+        {revealed && <div className="curiosity-topic-feedback" aria-label={`Tune your ${selected.category} discoveries`}><button aria-pressed={interests.topics[selected.category] === 'more'} onClick={()=>rateTopic(selected.category,'more',true)}>More like this <span aria-hidden="true">↑</span></button><button aria-pressed={interests.topics[selected.category] === 'less'} onClick={()=>rateTopic(selected.category,'less',true)}>Less of this <span aria-hidden="true">↓</span></button><span>{selected.category}</span></div>}
         {copyFallback && <label className="curiosity-copy-fallback">Discovery link<input value={copyFallback} readOnly onFocus={event=>event.target.select()} /></label>}
         {view.daily && currentIndex === visible.length - 1 && revealed && <p className="curiosity-daily-finish">That’s your five for today. Follow any idea further, or keep exploring.</p>}
       </article>

@@ -149,3 +149,45 @@ test('blocked reading storage preserves exploration and does not touch favorites
     assert.ok(!requests.includes(SAVED_KEY) && !requests.includes(RESUME_KEY));
   } finally {if(original)Object.defineProperty(globalThis,'localStorage',original);else delete globalThis.localStorage;}
 });
+
+const { parseInterests, mixTopics, personalOrder, readInterests, INTERESTS_KEY } = load('interests');
+test('topic preferences accept only known categories and bounded More/Less signals', () => {
+  assert.deepEqual(parseInterests(JSON.stringify({version:1,topics:{Space:'more',Nature:'less',Unknown:'more',Learning:9}})),{Space:'more',Nature:'less'});
+  assert.deepEqual(parseInterests(JSON.stringify({version:2,topics:{Space:'more'}})),{});
+  assert.deepEqual(parseInterests(JSON.stringify({version:1,topics:['Space']})),{});
+});
+test('a preferred topic moves earlier without dropping other discoveries or changing order within a topic', () => {
+  const mixed = mixTopics(facts,{Space:'more'});
+  assert.equal(mixed[0].category,'Space');
+  assert.ok(mixed.slice(0,10).some(fact=>fact.category!=='Space'));
+  assert.equal(new Set(mixed.map(fact=>fact.id)).size,60);
+  assert.deepEqual(new Set(mixed.map(fact=>fact.id)),new Set(facts.map(fact=>fact.id)));
+  for(const topic of new Set(facts.map(fact=>fact.category))) assert.deepEqual(mixed.filter(fact=>fact.category===topic),facts.filter(fact=>fact.category===topic));
+  assert.deepEqual(mixTopics(facts,{Space:'more'}),mixed);
+});
+test('Less delays a topic rather than deleting it from the feed', () => {
+  const less = mixTopics(facts,{Space:'less'}), more = mixTopics(facts,{Space:'more'});
+  assert.notEqual(less[0].category,'Space');
+  assert.ok(less.slice(0,20).filter(fact=>fact.category==='Space').length<more.slice(0,20).filter(fact=>fact.category==='Space').length);
+  assert.equal(less.filter(fact=>fact.category==='Space').length,facts.filter(fact=>fact.category==='Space').length);
+});
+test('personalization keeps resume anchored and unread facts ahead of previously revealed favorites', () => {
+  const seen = facts.filter(fact=>fact.category==='Space').map(fact=>fact.id);
+  const anchor = seen[0], ordered = personalOrder(facts,{Space:'more'},seen,true,anchor);
+  assert.equal(ordered[0].id,anchor);
+  const remaining = ordered.slice(1), firstRead = remaining.findIndex(fact=>seen.includes(fact.id));
+  assert.equal(firstRead,facts.filter(fact=>!seen.includes(fact.id)).length);
+});
+test('reset topic choices returns V1.1 ordering without resetting read history or explicit order settings', () => {
+  const seen = [facts[0].id,facts[2].id];
+  assert.deepEqual(personalOrder(facts,{},seen,true,facts[2].id),readingOrder(facts,seen,true,facts[2].id));
+  assert.deepEqual(personalOrder(facts,{},seen,false,facts[2].id),facts);
+});
+test('topic preference storage failures do not read or write existing save or reading keys', () => {
+  const original=Object.getOwnPropertyDescriptor(globalThis,'localStorage'),requests=[];
+  try {
+    Object.defineProperty(globalThis,'localStorage',{configurable:true,value:{getItem(key){requests.push(key);throw new Error('blocked');}}});
+    const result=readInterests();
+    assert.deepEqual(result.topics,{});assert.ok(result.warning);assert.deepEqual(requests,[INTERESTS_KEY]);
+  } finally {if(original)Object.defineProperty(globalThis,'localStorage',original);else delete globalThis.localStorage;}
+});
