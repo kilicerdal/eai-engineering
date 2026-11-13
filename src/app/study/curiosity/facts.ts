@@ -1,7 +1,8 @@
+import { soundsMadeUpFacts } from './sounds-made-up';
 import { moreFacts } from './more-facts';
 import { expandedFacts } from './expanded-facts';
 
-export type Fact = { id: string; question?: string; title: string; text: string; category: string; source: string; url: string; explore: string };
+export type Fact = { id: string; collection?: 'sounds-made-up'; question?: string; title: string; text: string; category: string; source: string; url: string; explore: string };
 const fact = (id: string, category: string, title: string, text: string, source: string, url: string, explore: string): Fact => ({ id, category, title, text, source, url, explore });
 export const facts: Fact[] = [
   fact('retrieval-practice', 'Learning', 'Remembering is part of learning.', 'In three experiments, taking a memory test with feedback improved later recall more than another opportunity to study.', 'Journal of Experimental Psychology · 2008', 'https://pubmed.ncbi.nlm.nih.gov/18426072/', 'Close this page. Can you recall three facts? Reopen it to check and correct your answers.'),
@@ -30,4 +31,5 @@ export const facts: Fact[] = [
   fact('first-transistor', 'Patterns & invention', 'A tiny device changed the scale.', 'In 1947, John Bardeen and Walter Brattain demonstrated the point-contact transistor at Bell Labs. Semiconductor amplification helped open a new era of electronics.', 'Computer History Museum · The Silicon Engine', 'https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/', 'Trace a chain from a small electronic switch to a calculator, a computer, and an AI system. What else is needed at each step?'),
   ...moreFacts,
   ...expandedFacts,
+  ...soundsMadeUpFacts,
 ];
