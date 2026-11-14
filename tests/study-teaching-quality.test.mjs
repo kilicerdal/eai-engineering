@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {buildTutorSystem,normalizeLearningProfile,tutoringSignals} from '../src/lib/study-tutor.ts';
+import {loadStudyModule} from './load-study-module.mjs';
+const {buildTutorSystem,normalizeLearningProfile,tutoringSignals}=loadStudyModule('study-tutor');
 const profile=normalizeLearningProfile({approach:'guided',level:'foundation'});
 
 test('a second expression of confusion triggers one concrete demonstration before a question',()=>{

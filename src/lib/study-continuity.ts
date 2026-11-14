@@ -1,8 +1,9 @@
+import {normalizeTutorWorkspace,type TutorWorkspace} from "./tutor-workspace";
 import {recoveryPrompt} from "./study-recovery";
 import {normalizeLearningProfile,normalizeSavedStudyMessages,type LearningProfile,type StudyMessage} from "./study-tutor";
 import {normalizeLessonContext,normalizeLessonChecks,lessonIdentity,checkMemory,type LessonContext,type LessonCheck} from "./study-checkpoints";
 export type StudyMode="general"|"math"|"science"|"writing"|"history"|"coding"|"exam"|"engineering";
-export type StudyConversation={id:string;title:string;mode:StudyMode;messages:StudyMessage[];updatedAt:number;learning:LearningProfile;checkpoint?:LessonContext;continuityNote?:string;useContinuity?:boolean;draft?:string};
+export type StudyConversation={id:string;title:string;mode:StudyMode;messages:StudyMessage[];updatedAt:number;learning:LearningProfile;checkpoint?:LessonContext;continuityNote?:string;useContinuity?:boolean;draft?:string;workspace?:TutorWorkspace};
 export function normalizeStudyConversations(value:unknown):StudyConversation[]{
  if(!Array.isArray(value))return [];
  const seen=new Set<string>(),result:StudyConversation[]=[];
@@ -13,7 +14,8 @@ export function normalizeStudyConversations(value:unknown):StudyConversation[]{
   if(v.draft!==undefined&&(typeof v.draft!=="string"||v.draft.length>3000))continue;
   if(v.useContinuity!==undefined&&typeof v.useContinuity!=="boolean")continue;
   const checkpoint=normalizeLessonContext(v.checkpoint);if(v.checkpoint!==undefined&&v.checkpoint!==null&&!checkpoint)continue;
-  seen.add(v.id);result.push({id:v.id,title:v.title,mode:v.mode,messages,updatedAt:v.updatedAt,learning:normalizeLearningProfile(v.learning),...(checkpoint?{checkpoint}:{}),...(v.continuityNote!==undefined?{continuityNote:v.continuityNote}:{}),...(v.useContinuity!==undefined?{useContinuity:v.useContinuity}:{}),...(v.draft!==undefined?{draft:v.draft}:{})});
+  const workspace=v.workspace===undefined?undefined:normalizeTutorWorkspace(v.workspace);if(v.workspace!==undefined&&!workspace)continue;
+  seen.add(v.id);result.push({id:v.id,title:v.title,mode:v.mode,messages,updatedAt:v.updatedAt,learning:normalizeLearningProfile(v.learning),...(workspace?{workspace}:{}),...(checkpoint?{checkpoint}:{}),...(v.continuityNote!==undefined?{continuityNote:v.continuityNote}:{}),...(v.useContinuity!==undefined?{useContinuity:v.useContinuity}:{}),...(v.draft!==undefined?{draft:v.draft}:{})});
  }
  return result;
 }

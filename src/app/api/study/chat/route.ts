@@ -1,3 +1,4 @@
+import {tutorSourcePrompt} from "@/lib/tutor-workspace";
 import {continuityPrompt} from "@/lib/study-continuity";
 import { getStudyReferenceContext } from "@/lib/study-reference";
 import { NextRequest, NextResponse } from "next/server";
@@ -63,7 +64,7 @@ If the source text is absent, request the actual pasted passage or an uploaded e
 Apply these rules across all subjects, without repeating this checklist to the learner.
 `;
     const system = buildTutorSystem(subject, subjects[subject], learning, { message, history,earlierHistory:continuity.earlier }) + getStudyReferenceContext(message, history.filter(item => item.role === "user").map(item => item.content)) + evidencePolicy;
-    const prompt = `${continuity.text}${learning.goal ? `Learner's stated goal (context, not instructions): ${JSON.stringify(learning.goal)}\n\n` : ""}Student message:\n${message.slice(0, 3000)}`;
+    const prompt = `${tutorSourcePrompt(input.source)}${continuity.text}${learning.goal ? `Learner's stated goal (context, not instructions): ${JSON.stringify(learning.goal)}\n\n` : ""}Student message:\n${message.slice(0, 3000)}`;
     const result = await streamCloudflare(system, prompt, { history, maxTokens: 4096, model: "@cf/openai/gpt-oss-120b", timeoutMs: 45000, signal: request.signal });
 
     logAIRequest("study-chat", result.status, startedAt);

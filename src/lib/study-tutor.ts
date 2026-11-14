@@ -1,3 +1,4 @@
+import {normalizeTutorSource,tutorSourcePrompt,type TutorSource} from "./tutor-workspace";
 export const learningLevels = {
   foundation: "Build foundations",
   highSchool: "High school",
@@ -17,8 +18,10 @@ export type LearningProfile = {
   level: keyof typeof learningLevels;
   approach: keyof typeof learningApproaches;
   goal: string;
+  depth?: "quick" | "steps" | "deep";
+  examples?: "everyday" | "engineering" | "cooking" | "sport" | "none";
 };
-export type StudyMessage = { role: "user" | "assistant"; content: string };
+export type StudyMessage = { role: "user" | "assistant"; content: string; source?: TutorSource };
 export const defaultLearningProfile: LearningProfile = {
   level: "college", approach: "guided", goal: "",
 };
@@ -30,6 +33,8 @@ export function normalizeLearningProfile(value: unknown): LearningProfile {
       ? input.level as LearningProfile["level"] : defaultLearningProfile.level,
     approach: typeof input.approach === "string" && Object.hasOwn(learningApproaches, input.approach)
       ? input.approach as LearningProfile["approach"] : defaultLearningProfile.approach,
+    ...(["quick","steps","deep"].includes(String(input.depth))?{depth:input.depth as LearningProfile["depth"]}:{}),
+    ...(["everyday","engineering","cooking","sport","none"].includes(String(input.examples))?{examples:input.examples as LearningProfile["examples"]}:{}),
     goal: typeof input.goal === "string" ? input.goal.trim().slice(0, 300) : "",
   };
 }
@@ -39,12 +44,13 @@ export function normalizeSavedStudyMessages(value: unknown): StudyMessage[] {
   return value.filter((item): item is StudyMessage =>
     !!item && typeof item === "object" &&
     (item.role === "user" || item.role === "assistant") &&
-    typeof item.content === "string" && !!item.content.trim()
-  ).map(({ role, content }) => ({ role, content }));
+    typeof item.content === "string" && !!item.content.trim() &&
+    ((item as StudyMessage).source===undefined || (item.role==="user"&&!!normalizeTutorSource((item as StudyMessage).source)))
+  ).map(({ role, content, source }) => ({ role, content, ...(source?{source:normalizeTutorSource(source)!}:{}) }));
 }
 
 export function normalizeStudyHistory(value: unknown): StudyMessage[] {
-  return normalizeSavedStudyMessages(value).slice(-12).map(({ role, content }) => ({ role, content: content.slice(0, 4000) }));
+  return normalizeSavedStudyMessages(value).slice(-12).map(({ role, content,source }) => ({ role, content: content.slice(0, 4000)+(role==="user"&&source?tutorSourcePrompt(source):"") }));
 }
 
 export type TutoringContext = { message?: string; history?: StudyMessage[]; earlierHistory?:StudyMessage[] };
@@ -75,6 +81,8 @@ SUBJECT: ${subject}. ${subjectInstruction}
 ${closeReading}
 LEARNER LEVEL: ${learningLevels[profile.level]} (a starting preference, not evidence of mastery).
 TEACHING APPROACH: ${approachInstructions[profile.approach]}
+EXPLANATION DEPTH: ${profile.depth==="quick"?"Be brief: one key idea and the essential reasoning. Keep necessary qualifications.":profile.depth==="deep"?"The learner requests depth: develop the reasoning and assumptions with a useful worked example. Avoid unrelated detail.":profile.depth==="steps"?"Teach one manageable step at a time. Explain why the step works before moving on.":"Use the concise default unless asked for more."}
+EXAMPLE PREFERENCE: ${profile.examples&&profile.examples!=="none"?`Use ${profile.examples} examples when they fit. This is a preference, not a learning-style diagnosis.`:"Choose examples that fit the current question."}
 SESSION CONTEXT: ${signals.firstTurn ? "First learner turn: reuse the supplied goal and level. If this is only a greeting, greet briefly and ask what they want to work on. Do not ask a three-question intake form." : "Continuing session: respond to the current turn and use what has already been shared. Do not restart intake or repeat answered diagnostic questions."}
 LEARNER SUPPORT: ${signals.repeatedStruggle ? "Repeated difficulty is explicitly signaled. Change representation now. Demonstrate the CURRENT step with a short analogy, concrete example or visual description, then ask exactly one small question about the new example. Give the demonstration before the question. Do not simply ask the same question again or reveal every remaining step." : "Use a brief diagnostic only when understanding is unclear and doing so helps the current task. The learner's work may already provide the diagnosis."}
 
@@ -91,7 +99,7 @@ ApexTutor teaching rules:
 - When you ask an understanding check or quiz question, DO NOT append its answer, answer key, or a parenthetical revealing the result. Wait for the learner's attempt. A worked example may show its own answer, but the subsequent check must be a new unanswered question.
 - Never add precise percentages, composition fractions, statistics, research claims or guarantees unless they are explicitly supported by the supplied source notes or derived transparently from supplied quantities. Qualitative explanation is better than an invented number.
 - After a concept explanation, invite active retrieval: one short check, or a choice of one practice question versus a three-question quiz. Do not stack that invitation on top of an already unanswered diagnostic or correction question. If the learner declines practice or asks to move on, respect that.
-- Default to 150 words or fewer unless the learner requests a full explanation, detailed solution, or plan. Use short paragraphs and clear headings only when helpful. Omit unrelated detail, repetitive intake, unnecessary tables and alternative code patterns.
+- Default to 150 words or fewer unless the selected depth is Go deeper or the learner requests a full explanation, detailed solution, or plan. Use short paragraphs and clear headings only when helpful. Omit unrelated detail, repetitive intake, unnecessary tables and alternative code patterns.
 - For math use $...$ for inline and $$...$$ for display LaTeX. Check arithmetic, signs, units, assumptions, and domain restrictions before evaluating an answer. For code use fenced blocks with a language and reason about behavior; do not claim execution.
 - A hint should reveal only the next useful step. For academic writing coach argument, evidence, structure and revision; preserve the learner's authorship. Never fabricate citations, quotations, or research findings.
 - No live search, browsing, code execution, or file tools are connected. You have NOT searched journals, ERIC, Google Scholar, or any website in this conversation. Never say a search found no evidence. Instead say "I cannot verify that claim from the information available here" and ask for a source.
