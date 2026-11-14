@@ -6,7 +6,7 @@ import { dailyFacts, linkedFact, localDay } from './journey';
 export const SAVED_KEY = 'dai.curiosity.saved.v1';
 export const RESUME_KEY = 'dai.curiosity.resume.v1';
 export const categories = ['All discoveries', ...new Set(facts.map(fact => fact.category))];
-export type View = { category: string; query: string; savedOnly: boolean; factId: string; revealed: boolean; daily?: boolean; dailyDate?: string; dailyIds?: string[]; collection?: 'sounds-made-up' | 'everyday-wonders' | 'hidden-connections' | 'your-world' | 'small-things' | 'world-worth-wondering'; personalId?:string; personalName?:string; personalIds?:string[]; newOnly?: boolean; newIds?: string[] };
+export type View = { category: string; query: string; savedOnly: boolean; factId: string; revealed: boolean; daily?: boolean; dailyDate?: string; dailyIds?: string[]; collection?: 'sounds-made-up' | 'everyday-wonders' | 'hidden-connections' | 'your-world' | 'small-things' | 'world-worth-wondering' | 'hidden-in-plain-sight'; personalId?:string; personalName?:string; personalIds?:string[]; newOnly?: boolean; newIds?: string[] };
 export const initialView: View = { category: categories[0], query: '', savedOnly: false, factId: facts[0].id, revealed: false };
 const ids = new Set(facts.map(fact => fact.id));
 
@@ -33,7 +33,7 @@ export function parseResume(raw: string | null, saved: string[]): View | null {
   if (!data || typeof data !== 'object' || !('version' in data) || data.version !== 1 || !('view' in data) || !data.view || typeof data.view !== 'object') return null;
   const view = data.view;
   if (!('category' in view) || typeof view.category !== 'string' || !categories.includes(view.category) || !('query' in view) || typeof view.query !== 'string' || view.query.length > 200 || !('savedOnly' in view) || typeof view.savedOnly !== 'boolean' || !('factId' in view) || typeof view.factId !== 'string' || !ids.has(view.factId) || !('revealed' in view) || typeof view.revealed !== 'boolean') return null;
-  if ('collection' in view && view.collection !== 'sounds-made-up' && view.collection !== 'everyday-wonders' && view.collection !== 'hidden-connections' && view.collection !== 'your-world' && view.collection !== 'small-things' && view.collection !== 'world-worth-wondering') return null;
+  if ('collection' in view && view.collection !== 'sounds-made-up' && view.collection !== 'everyday-wonders' && view.collection !== 'hidden-connections' && view.collection !== 'your-world' && view.collection !== 'small-things' && view.collection !== 'world-worth-wondering' && view.collection !== 'hidden-in-plain-sight') return null;
   if ('collection' in view && (('daily' in view && view.daily === true) || view.savedOnly)) return null;
   if ('newOnly' in view && typeof view.newOnly !== 'boolean') return null;
   if ('newIds' in view && (!Array.isArray(view.newIds) || view.newIds.length > facts.length || new Set(view.newIds).size !== view.newIds.length || view.newIds.some(id => typeof id !== 'string' || !ids.has(id)))) return null;

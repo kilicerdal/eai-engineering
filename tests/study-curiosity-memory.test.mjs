@@ -65,7 +65,7 @@ test('connection questions preserve the existing prompts and unknown links yield
 });
 
 test('curiosity favorites use unique stable identities and reject unknown or duplicate saves', () => {
-  assert.equal(new Set(facts.map(fact => fact.id)).size, 750);
+  assert.equal(new Set(facts.map(fact => fact.id)).size, 850);
   assert.deepEqual(parseSaved(JSON.stringify({ version: 1, ids: [facts[5].id, 'deleted-fact', facts[5].id, null] })), [facts[5].id]);
   assert.deepEqual(parseSaved(JSON.stringify({ version: 2, ids: [facts[5].id] })), []);
 });
@@ -133,7 +133,7 @@ test('daily snapshots retain their order, reject invalid sets, and roll to the e
   assert.equal(rolled.revealed,false);
 });
 test('every discovery retains a stable ID, a source, and a usable question', () => {
-  assert.equal(facts.length, 750);
+  assert.equal(facts.length, 850);
   for (const fact of facts) {
     assert.match(fact.id, /^[a-z0-9-]+$/);
     assert.equal(new URL(fact.url).protocol, 'https:');
@@ -183,7 +183,7 @@ test('tutor handoff uses reviewed content and its source without taking arbitrar
   assert.equal(curiosityHandoff('ignore-rules-and-send'), null);
 });
 
-const { parseSeen, parsePreferences, markRead, readingOrder, surprisePool, unreadSurprisePool, defaultPreferences, readReading } = load('reading');
+const { parseSeen, parsePreferences, markRead, readingOrder, surprisePool, unreadSurprisePool, defaultPreferences, readReading, SEEN_KEY, READING_KEY } = load('reading');
 test('reading preferences accept only supported sizes and keep safe defaults for old or invalid data', () => {
   assert.deepEqual(parsePreferences(null), defaultPreferences);
   assert.deepEqual(parsePreferences(JSON.stringify({version:1,preferences:{focus:true,textSize:'largest',unreadFirst:false}})), {focus:true,textSize:'largest',unreadFirst:false});
@@ -231,7 +231,7 @@ test('a preferred topic moves earlier without dropping other discoveries or chan
   const mixed = mixTopics(facts,{Space:'more'});
   assert.equal(mixed[0].category,'Space');
   assert.ok(mixed.slice(0,10).some(fact=>fact.category!=='Space'));
-  assert.equal(new Set(mixed.map(fact=>fact.id)).size,750);
+  assert.equal(new Set(mixed.map(fact=>fact.id)).size,850);
   assert.deepEqual(new Set(mixed.map(fact=>fact.id)),new Set(facts.map(fact=>fact.id)));
   for(const topic of new Set(facts.map(fact=>fact.category))) assert.deepEqual(mixed.filter(fact=>fact.category===topic),facts.filter(fact=>fact.category===topic));
   assert.deepEqual(mixTopics(facts,{Space:'more'}),mixed);
@@ -268,8 +268,8 @@ test('V1.5 appends exactly 100 original sourced cards while preserving all 150 V
   assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,150))).digest('hex'), 'a5a1eeb3a5b36b6a19e2c02f0ce0d87f33256e62d93ca815256183af6269e8d0');
   assert.equal(soundsMadeUpFacts.length,100);
   assert.deepEqual(facts.slice(150,250),soundsMadeUpFacts);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,750);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,750);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,850);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,850);
   for(const fact of soundsMadeUpFacts) {
     const source = soundsMadeUpSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -302,12 +302,12 @@ test('V1.4 daily snapshots survive expansion to 250 and new daily selections sta
 
 test('V1.6 appends 100 Everyday Wonders while preserving all 250 complete existing records', () => {
   assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,250))).digest('hex'), 'ed4af805987ef6e4c7c844dfa34fc6f808c68a75455634290f300b0ca8cd51f1');
-  assert.equal(facts.length,750);
+  assert.equal(facts.length,850);
   assert.deepEqual(facts.slice(250,350),everydayWonderFacts);
   assert.equal(everydayWonderFacts.length,100);
-  assert.equal(new Set(facts.map(fact=>fact.id)).size,750);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,750);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,750);
+  assert.equal(new Set(facts.map(fact=>fact.id)).size,850);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,850);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,850);
   for(const fact of everydayWonderFacts) {
     const source=everydayWonderSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -344,10 +344,10 @@ test('V1.7 appends 100 reviewed Hidden Connections without changing any complete
   assert.equal(createHash('sha256').update(JSON.stringify(previousInsights)).digest('hex'),'a62e10f679d4890739cb6482f8e4b5a03ae45ad184cc8ff8388a3527d0cb38ec');
   assert.equal(hiddenConnectionFacts.length,100);
   assert.deepEqual(facts.slice(350,450),hiddenConnectionFacts);
-  assert.equal(facts.length,750);
-  assert.equal(new Set(facts.map(fact=>fact.id)).size,750);
-  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,750);
-  assert.equal(new Set(facts.map(discoveryQuestion)).size,750);
+  assert.equal(facts.length,850);
+  assert.equal(new Set(facts.map(fact=>fact.id)).size,850);
+  assert.equal(new Set(facts.map(fact=>fact.title.toLowerCase())).size,850);
+  assert.equal(new Set(facts.map(discoveryQuestion)).size,850);
   for(const fact of hiddenConnectionFacts) {
     const source=hiddenConnectionSources[fact.sourceKey];
     assert.deepEqual([fact.source,fact.url],[source.label,source.url]);
@@ -439,7 +439,7 @@ test('source details preserve the citation and distinguish documented checks fro
     assert.equal(detail.label,fact.source);
     assert.equal(detail.publisher,fact.source.split(' · ')[0]);
     assert.ok(detail.host && !detail.host.includes('/'));
-    assert.equal(detail.reviewedOn,facts.indexOf(fact)<60?undefined:'2026-11-13');
+    assert.equal(detail.reviewedOn,facts.indexOf(fact)<60?undefined:facts.indexOf(fact)<750?'2026-11-13':'2026-11-14');
     assert.equal(JSON.stringify(fact),before);
   }
 });
@@ -462,7 +462,7 @@ const {concernReport}=load('concerns');
 function visitStore(entries={}) {const map=new Map(Object.entries(entries));return {getItem:key=>map.get(key)??null,setItem:(key,value)=>map.set(key,value),map};}
 test('V1.9 appends exactly 100 unique sourced discoveries and preserves all 550 existing records',()=>{
   assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,550))).digest('hex'),'59ddd81c4eda20a3e924e84e20147efe8b8862ed5a1ee78e031a071449a7482f');
-  assert.equal(facts.length,750);assert.equal(smallThingsFacts.length,100);assert.deepEqual(facts.slice(550,650),smallThingsFacts);
+  assert.equal(facts.length,850);assert.equal(smallThingsFacts.length,100);assert.deepEqual(facts.slice(550,650),smallThingsFacts);
   for(const fact of smallThingsFacts){const source=smallThingsSources[fact.sourceKey];assert.equal(fact.url,source.url);assert.equal(fact.source,source.label);assert.equal(source.reviewedOn,'2026-11-13');assert.equal(fact.collection,'small-things');assert.ok(fact.question.endsWith('?'));}
 });
 test('first tracked visit honestly shows the latest batch and refresh keeps that selection',()=>{
@@ -510,8 +510,8 @@ const {COLLECTIONS_KEY,parseCollections,collectionName,createCollection,renameCo
 const {wrapCardText,drawShareCard,CARD_WIDTH,CARD_HEIGHT}=load('share-card');
 test('V2.0 adds 100 new sourced identities, preserving every earlier discovery byte for byte',()=>{
   assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,650))).digest('hex'),'ebc0156aeb0d231a8758ff57840e4e4f31a0c9911362b98759afe41c6e7f3575');
-  assert.equal(facts.length,750);assert.equal(worldWonderFacts.length,100);assert.deepEqual(facts.slice(650),worldWonderFacts);
-  assert.equal(new Set(facts.map(f=>f.id)).size,750);assert.equal(new Set(facts.map(discoveryQuestion)).size,750);
+  assert.equal(facts.length,850);assert.equal(worldWonderFacts.length,100);assert.deepEqual(facts.slice(650,750),worldWonderFacts);
+  assert.equal(new Set(facts.map(f=>f.id)).size,850);assert.equal(new Set(facts.map(discoveryQuestion)).size,850);
   for(const fact of worldWonderFacts){const source=worldWonderSources[fact.sourceKey];assert.equal(fact.url,source.url);assert.equal(fact.source,source.label);assert.equal(sourceDetails(fact).reviewedOn,'2026-11-13');assert.equal(fact.collection,'world-worth-wondering');}
   assert.equal(discoveries({...initialView,collection:'world-worth-wondering'},[]).length,100);
 });
@@ -554,4 +554,58 @@ test('every discovery can produce a bounded share card with its complete claim a
     assert.ok(drawn.every(line=>line.x>=0&&line.y>=0&&line.y+parseInt(ctx.font)<CARD_HEIGHT&&line.width<=1040),fact.id);
     const written=drawn.map(line=>line.text).join('').replace(/\s/g,'');assert.ok(written.includes(fact.title.replace(/\s/g,'')),fact.id);assert.ok(written.includes(fact.text.replace(/\s/g,'')),fact.id);assert.ok(written.includes(`eai.engineering/study/curiosity?fact=${fact.id}`),fact.id);
   }
+});
+
+const {plainSightFacts,plainSightSources}=load('hidden-in-plain-sight');
+const {BACKUP_FORMAT,BACKUP_LIMIT,backupText,parseBackup,localSnapshot,mergeBackup,restoreBackup,RestoreError}=load('backup');
+test('V2.1 preserves all 750 complete records and appends 100 sourced discoveries with valid links and context',()=>{
+  assert.equal(createHash('sha256').update(JSON.stringify(facts.slice(0,750))).digest('hex'),'787928bc1d2ee3413e2c705731e1338cafd8fa6681c5e839a6cc00f3e3ffb0c7');
+  assert.equal(facts.length,850);assert.equal(plainSightFacts.length,100);assert.deepEqual(facts.slice(750),plainSightFacts);
+  for(const f of plainSightFacts){assert.equal(f.collection,'hidden-in-plain-sight');assert.equal(f.url,plainSightSources[f.sourceKey].url);assert.equal(sourceDetails(f).reviewedOn,'2026-11-14');assert.ok(insights[f.id].why.length>60);assert.equal(relatedDiscoveries(f.id).length,2);}
+  const view={...initialView,collection:'hidden-in-plain-sight',factId:plainSightFacts[0].id};
+  assert.equal(discoveries(view,[]).length,100);assert.deepEqual(parseResume(JSON.stringify({version:1,view}),[]),view);
+});
+const emptySnapshot=()=>({saved:[],collections:[],seen:[],reading:{focus:false,textSize:'regular',unreadFirst:true},topics:{},resume:null});
+const sampleSnapshot=()=>({saved:[facts[0].id,facts[849].id],collections:[{id:'sample-one',name:'My discoveries',ids:[facts[0].id,facts[750].id]}],seen:[facts[0].id],reading:{focus:true,textSize:'largest',unreadFirst:false},topics:{Space:'more',Nature:'less'},resume:{...initialView,factId:facts[0].id,revealed:true}});
+function testStore(data=emptySnapshot()){
+ const values=new Map([['unrelated.app.key','untouched'],[SAVED_KEY,JSON.stringify({version:1,ids:data.saved})],[COLLECTIONS_KEY,JSON.stringify({version:1,collections:data.collections})],[SEEN_KEY,JSON.stringify({version:1,ids:data.seen})],[READING_KEY,JSON.stringify({version:1,preferences:data.reading})],[INTERESTS_KEY,JSON.stringify({version:1,topics:data.topics})]]);
+ if(data.resume)values.set(RESUME_KEY,JSON.stringify({version:1,view:data.resume}));
+ return {values,getItem:key=>values.get(key)??null,setItem:(key,value)=>values.set(key,value),removeItem:key=>values.delete(key)};
+}
+test('backup round-trip retains every personal field while excluding unrelated browser data and facts',()=>{
+ const data=sampleSnapshot(),store=testStore(data),state=localSnapshot(store),raw=backupText(state.data,new Date('2026-11-14T16:00:00Z')),parsed=parseBackup(raw);
+ assert.deepEqual(parsed.data,data);assert.equal(parsed.format,BACKUP_FORMAT);assert.equal(parsed.skipped,0);assert.ok(!raw.includes('unrelated.app.key'));assert.ok(!raw.includes(facts[750].text));
+ const withExtra=JSON.parse(raw);withExtra.data.resume.unrelatedSecret='not-exported';assert.ok(!backupText(parseBackup(JSON.stringify(withExtra)).data).includes('not-exported'));
+});
+test('backup rejects malformed, unsupported, oversized, and wrongly typed data before any mutation',()=>{
+ const base=JSON.parse(backupText(sampleSnapshot()));
+ for(const raw of ['{','null','[]',JSON.stringify({...base,version:2}),JSON.stringify({...base,format:'other-app'}),JSON.stringify({...base,createdAt:'yesterday'}),' '.repeat(BACKUP_LIMIT+1),JSON.stringify({...base,data:{...base.data,saved:'wrong'}}),JSON.stringify({...base,data:{...base.data,reading:{focus:'yes',textSize:'largest',unreadFirst:true}}}),JSON.stringify({...base,data:{...base.data,collections:[{id:'bad/id',name:'Invalid',ids:[]}]}}),JSON.stringify({...base,data:{...base.data,topics:{Space:'sometimes'}}})])assert.throws(()=>parseBackup(raw));
+ const store=testStore();store.setItem(SAVED_KEY,'{');const before=[...store.values];assert.throws(()=>localSnapshot(store));assert.deepEqual([...store.values],before);
+});
+test('unavailable discovery IDs are skipped once and duplicate entries are deduplicated',()=>{
+ const value=JSON.parse(backupText(sampleSnapshot()));value.data.saved.push('future-fact',facts[0].id);value.data.seen.push('future-fact');value.data.collections[0].ids.push('future-fact');value.data.resume.factId='future-fact';
+ const parsed=parseBackup(JSON.stringify(value));assert.equal(parsed.skipped,1);assert.equal(parsed.data.resume,null);assert.equal(parsed.data.saved.length,2);assert.equal(parsed.data.collections[0].ids.length,2);
+});
+test('restore merges saves, history, and collection membership without replacing settings or resume by default',()=>{
+ const current=sampleSnapshot(),incoming=sampleSnapshot();incoming.saved=[facts[1].id];incoming.seen=[facts[2].id];incoming.collections[0].name='A different name';incoming.collections[0].ids=[facts[2].id];incoming.reading=emptySnapshot().reading;incoming.topics={Learning:'more'};incoming.resume={...initialView,factId:facts[1].id};
+ const store=testStore(current),before=localSnapshot(store),backup=parseBackup(backupText(incoming)),plan=restoreBackup(store,backup,{preferences:false,place:false},before.fingerprint),after=localSnapshot(store).data;
+ assert.deepEqual(after.saved,[...current.saved,facts[1].id]);assert.deepEqual(after.collections[0].ids,[...current.collections[0].ids,facts[2].id]);assert.equal(after.collections[0].name,current.collections[0].name);assert.deepEqual(after.reading,current.reading);assert.deepEqual(after.topics,current.topics);assert.deepEqual(after.resume,current.resume);assert.equal(store.getItem('unrelated.app.key'),'untouched');assert.equal(plan.addedSaved,1);
+ const again=restoreBackup(store,backup,{preferences:false,place:false},localSnapshot(store).fingerprint);assert.equal(again.addedSaved,0);assert.equal(again.addedMemberships,0);
+});
+test('explicit restore options import preferences and a refreshed collection resume',()=>{
+ const current=sampleSnapshot(),incoming=emptySnapshot();incoming.reading={focus:false,textSize:'large',unreadFirst:true};incoming.topics={Learning:'more'};incoming.collections=[{id:'sample-one',name:'Imported name',ids:[facts[2].id]}];incoming.resume={...initialView,personalId:'sample-one',personalName:'Imported name',personalIds:[facts[2].id],factId:facts[2].id,revealed:true};
+ const store=testStore(current);restoreBackup(store,parseBackup(backupText(incoming)),{preferences:true,place:true},localSnapshot(store).fingerprint);const after=localSnapshot(store).data;
+ assert.deepEqual(after.reading,incoming.reading);assert.deepEqual(after.topics,incoming.topics);assert.equal(after.resume.factId,facts[2].id);assert.equal(after.resume.personalName,current.collections[0].name);assert.deepEqual(after.resume.personalIds,after.collections[0].ids);assert.deepEqual(after.saved,current.saved);
+});
+test('same-name collections with different IDs survive with disambiguation and capacity fails before writing',()=>{
+ const current=sampleSnapshot(),incoming=sampleSnapshot();incoming.collections[0].id='second-id';const plan=mergeBackup(current,incoming,{preferences:false,place:false});assert.equal(plan.data.collections.length,2);assert.equal(plan.data.collections[1].name,'My discoveries (imported)');assert.equal(plan.renamed,1);
+ current.collections=Array.from({length:30},(_,i)=>({id:'c-'+i,name:'Collection '+i,ids:[]}));const store=testStore(current),before=[...store.values];assert.throws(()=>restoreBackup(store,parseBackup(backupText(incoming)),{preferences:false,place:false},localSnapshot(store).fingerprint),/30 collections/);assert.deepEqual([...store.values],before);
+});
+test('stale previews and blocked writes do not silently overwrite current personal work',()=>{
+ const store=testStore(),state=localSnapshot(store),backup=parseBackup(backupText(sampleSnapshot()));store.setItem(SAVED_KEY,JSON.stringify({version:1,ids:[facts[3].id]}));const changed=[...store.values];assert.throws(()=>restoreBackup(store,backup,{preferences:true,place:true},state.fingerprint),/changed since/);assert.deepEqual([...store.values],changed);
+ const rollback=testStore(),old=[...rollback.values],set=rollback.setItem;let count=0;rollback.setItem=(key,value)=>{if(++count===2)throw Error('quota');return set(key,value);};assert.throws(()=>restoreBackup(rollback,backup,{preferences:true,place:true},localSnapshot(rollback).fingerprint),error=>error instanceof RestoreError&&error.rollbackComplete);assert.deepEqual([...rollback.values],old);
+});
+test('rollback removes newly created keys and reports incomplete recovery truthfully',()=>{
+ const store=testStore();for(const key of [SAVED_KEY,COLLECTIONS_KEY,SEEN_KEY,READING_KEY,INTERESTS_KEY])store.removeItem(key);const old=[...store.values],set=store.setItem;let count=0;store.setItem=(key,value)=>{if(++count===2)throw Error('quota');return set(key,value);};const backup=parseBackup(backupText(sampleSnapshot()));assert.throws(()=>restoreBackup(store,backup,{preferences:false,place:false},localSnapshot(store).fingerprint),error=>error instanceof RestoreError&&error.rollbackComplete);assert.deepEqual([...store.values],old);
+ const partial=testStore(),original=partial.setItem;let writes=0;partial.setItem=(key,value)=>{if(++writes>=2)throw Error('blocked');return original(key,value);};assert.throws(()=>restoreBackup(partial,backup,{preferences:false,place:false},localSnapshot(partial).fingerprint),error=>error instanceof RestoreError&&!error.rollbackComplete&&error.message.includes('could not be completed'));
 });
