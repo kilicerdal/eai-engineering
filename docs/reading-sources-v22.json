@@ -1,0 +1,1274 @@
+[
+  {
+    "id": "98",
+    "title": "A Tale of Two Cities",
+    "authors": [
+      "Dickens, Charles"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/98.txt.utf-8",
+    "bytes": 807197,
+    "sha256": "d54c2b80d40a40b982cd88852c6180bb944d95acdb028af3d0e01a1750681784",
+    "checked": "2026-11-14",
+    "chapterAnchors": 47,
+    "excerpt": "p13"
+  },
+  {
+    "id": "1400",
+    "title": "Great Expectations",
+    "authors": [
+      "Dickens, Charles"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1400.txt.utf-8",
+    "bytes": 1058204,
+    "sha256": "9a637118af8e953e9764ec603d9b0a032883384d465acac2e27966a80cf1c6f8",
+    "checked": "2026-11-14",
+    "chapterAnchors": 60,
+    "excerpt": "p9"
+  },
+  {
+    "id": "730",
+    "title": "Oliver Twist",
+    "authors": [
+      "Dickens, Charles"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/730.txt.utf-8",
+    "bytes": 955858,
+    "sha256": "6c37f41a8a253e95eba0f990f61cf60ac2e6d625c306c13027672d67885a6b6a",
+    "checked": "2026-11-14",
+    "chapterAnchors": 51,
+    "excerpt": "p7"
+  },
+  {
+    "id": "766",
+    "title": "David Copperfield",
+    "authors": [
+      "Dickens, Charles"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/766.txt.utf-8",
+    "bytes": 2033321,
+    "sha256": "51650d348820a64ca4d4233da035f804819d2231801b59373db4e1279a1985e0",
+    "checked": "2026-11-14",
+    "chapterAnchors": 64,
+    "excerpt": "p21"
+  },
+  {
+    "id": "768",
+    "title": "Wuthering Heights",
+    "authors": [
+      "Brontë, Emily"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/768.txt.utf-8",
+    "bytes": 693819,
+    "sha256": "e533fe750589f0421d5d744576315f5c2b9b0d69e981179ea0551bbf134c5e02",
+    "checked": "2026-11-14",
+    "chapterAnchors": 34,
+    "excerpt": "p4"
+  },
+  {
+    "id": "345",
+    "title": "Dracula",
+    "authors": [
+      "Stoker, Bram"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/345.txt.utf-8",
+    "bytes": 890348,
+    "sha256": "96cd16eacdbfebae8fdda5591f66e0cc8ee76be18e0cd1aca02bc00615782d28",
+    "checked": "2026-11-14",
+    "chapterAnchors": 28,
+    "excerpt": "p21"
+  },
+  {
+    "id": "74",
+    "title": "The Adventures of Tom Sawyer, Complete",
+    "authors": [
+      "Twain, Mark"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/74.txt.utf-8",
+    "bytes": 434357,
+    "sha256": "74d77384b123a6360db9ab58463cff8b38df8525fbdc6000c81ee388e1f3cf10",
+    "checked": "2026-11-14",
+    "chapterAnchors": 35,
+    "excerpt": "p213"
+  },
+  {
+    "id": "76",
+    "title": "Adventures of Huckleberry Finn",
+    "authors": [
+      "Twain, Mark"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/76.txt.utf-8",
+    "bytes": 622460,
+    "sha256": "d617a37aa7ae1e1a93dcde2634db2bccb86824e31e29a55230bdbf77d6872d59",
+    "checked": "2026-11-14",
+    "chapterAnchors": 43,
+    "excerpt": "p60"
+  },
+  {
+    "id": "219",
+    "title": "Heart of Darkness",
+    "authors": [
+      "Conrad, Joseph"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/219.txt.utf-8",
+    "bytes": 237074,
+    "sha256": "1bcdf0a1ac611dd6b70a20d100a07085754da4e90a949d6031717b86cd6d020a",
+    "checked": "2026-11-14",
+    "chapterAnchors": 3,
+    "excerpt": "p6"
+  },
+  {
+    "id": "1232",
+    "title": "The Prince",
+    "authors": [
+      "Machiavelli, Niccolò"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1232.txt.utf-8",
+    "bytes": 308019,
+    "sha256": "33496a305f7a4b933784fb5aec95f920fbc3d4687794817e4cc444aa6578d2e4",
+    "checked": "2026-11-14",
+    "chapterAnchors": 29,
+    "excerpt": "p56"
+  },
+  {
+    "id": "236",
+    "title": "The Jungle Book",
+    "authors": [
+      "Kipling, Rudyard"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/236.txt.utf-8",
+    "bytes": 303640,
+    "sha256": "571353c4c69d127020fb16cd6a566f1d80101bc0fc3cf2b0c2ea5678bf4c769f",
+    "checked": "2026-11-14",
+    "chapterAnchors": 20,
+    "excerpt": "p6"
+  },
+  {
+    "id": "11339",
+    "title": "Aesop's Fables; a new translation",
+    "authors": [
+      "Aesop"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/11339.txt.utf-8",
+    "bytes": 241779,
+    "sha256": "0a2e7b971b00b76164071563e7e4bfa9cf962118ef67db9259020fc7c3b83602",
+    "checked": "2026-11-14",
+    "chapterAnchors": 284,
+    "excerpt": "p371"
+  },
+  {
+    "id": "2591",
+    "title": "Grimms' Fairy Tales",
+    "authors": [
+      "Grimm, Jacob",
+      "Grimm, Wilhelm"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/2591.txt.utf-8",
+    "bytes": 560164,
+    "sha256": "377ebb8ca06cd8bc0b1015ddb54766c44f50dece731c53bb030f1cc00f54092a",
+    "checked": "2026-11-14",
+    "chapterAnchors": 67,
+    "excerpt": "p11"
+  },
+  {
+    "id": "1597",
+    "title": "Andersen's Fairy Tales",
+    "authors": [
+      "Andersen, H. C. (Hans Christian)"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1597.txt.utf-8",
+    "bytes": 329056,
+    "sha256": "f886b6c92c0c7884cb64059d84363f10977cfb12d0bc0b120c2207ce2f57b2f2",
+    "checked": "2026-11-14",
+    "chapterAnchors": 22,
+    "excerpt": "p6"
+  },
+  {
+    "id": "503",
+    "title": "The Blue Fairy Book",
+    "authors": [
+      "Lang, Andrew"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/503.txt.utf-8",
+    "bytes": 774737,
+    "sha256": "212bd64fbd8d2f15312c90cd20f17f851186721804d00b187c7282a532075c3a",
+    "checked": "2026-11-14",
+    "chapterAnchors": 44,
+    "excerpt": "p7"
+  },
+  {
+    "id": "365",
+    "title": "The Land of Little Rain",
+    "authors": [
+      "Austin, Mary"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/365.txt.utf-8",
+    "bytes": 219653,
+    "sha256": "f7939de692b991b2a539e2e5e71a0d566762f352545f9fbd25aff76210702736",
+    "checked": "2026-11-14",
+    "chapterAnchors": 14,
+    "excerpt": "p33"
+  },
+  {
+    "id": "829",
+    "title": "Gulliver's Travels into Several Remote Nations of the World",
+    "authors": [
+      "Swift, Jonathan"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/829.txt.utf-8",
+    "bytes": 613946,
+    "sha256": "fca36de3de0d8b831b7588cf1df84639ccf4c503172d6444ee61d1c1b2036edd",
+    "checked": "2026-11-14",
+    "chapterAnchors": 42,
+    "excerpt": "p33"
+  },
+  {
+    "id": "215",
+    "title": "The call of the wild",
+    "authors": [
+      "London, Jack"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/215.txt.utf-8",
+    "bytes": 199757,
+    "sha256": "30f569c5671bba7bbc4a92ab6d8ee01a0d3be00f994819c77da62c28041eb8a2",
+    "checked": "2026-11-14",
+    "chapterAnchors": 7,
+    "excerpt": "p7"
+  },
+  {
+    "id": "910",
+    "title": "White Fang",
+    "authors": [
+      "London, Jack"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/910.txt.utf-8",
+    "bytes": 428909,
+    "sha256": "3c7226d00fd9b169f0016635d0e461501620f343220ee18db7ca9f083f4ad3f4",
+    "checked": "2026-11-14",
+    "chapterAnchors": 29,
+    "excerpt": "p12"
+  },
+  {
+    "id": "209",
+    "title": "The Turn of the Screw",
+    "authors": [
+      "James, Henry"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/209.txt.utf-8",
+    "bytes": 259197,
+    "sha256": "171afa184a54b6004194e02047f5d01cf216d8bc519ddfb671a1e41d80bbdf65",
+    "checked": "2026-11-14",
+    "chapterAnchors": 24,
+    "excerpt": "p64"
+  },
+  {
+    "id": "161",
+    "title": "Sense and Sensibility",
+    "authors": [
+      "Austen, Jane"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/161.txt.utf-8",
+    "bytes": 712852,
+    "sha256": "7bcd77c45cb32fb8d9f89402561270cc6a911c0a4e20667176d5be779fc3974a",
+    "checked": "2026-11-14",
+    "chapterAnchors": 51,
+    "excerpt": "p8"
+  },
+  {
+    "id": "105",
+    "title": "Persuasion",
+    "authors": [
+      "Austen, Jane"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/105.txt.utf-8",
+    "bytes": 497555,
+    "sha256": "7365e47089a3d63c64b011342bd00e2375cc51ee642dcf9af5aaba75cfd771bc",
+    "checked": "2026-11-14",
+    "chapterAnchors": 24,
+    "excerpt": "p7"
+  },
+  {
+    "id": "158",
+    "title": "Emma",
+    "authors": [
+      "Austen, Jane"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/158.txt.utf-8",
+    "bytes": 933709,
+    "sha256": "532b122b4e6a76cc556d6fdcd729b5892f5c4ce4a1b7060b9f832adfad8680dc",
+    "checked": "2026-11-14",
+    "chapterAnchors": 57,
+    "excerpt": "p9"
+  },
+  {
+    "id": "121",
+    "title": "Northanger Abbey",
+    "authors": [
+      "Austen, Jane"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/121.txt.utf-8",
+    "bytes": 468036,
+    "sha256": "273d7d35f8cc0286812bdb26ccc17f362b4f2d0d69a2ec96ca403fac8505b709",
+    "checked": "2026-11-14",
+    "chapterAnchors": 32,
+    "excerpt": "p12"
+  },
+  {
+    "id": "141",
+    "title": "Mansfield Park",
+    "authors": [
+      "Austen, Jane"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/141.txt.utf-8",
+    "bytes": 929142,
+    "sha256": "b34723544dbe8185e786d0fdd47e42e7e1ac4265b84141e31ca260c1e36b68d8",
+    "checked": "2026-11-14",
+    "chapterAnchors": 48,
+    "excerpt": "p9"
+  },
+  {
+    "id": "4276",
+    "title": "North and South",
+    "authors": [
+      "Gaskell, Elizabeth Cleghorn"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/4276.txt.utf-8",
+    "bytes": 1054663,
+    "sha256": "675a034c9711be4483f17316ac09fc9ec58d4503516db9b95ed70dc64fce9c79",
+    "checked": "2026-11-14",
+    "chapterAnchors": 52,
+    "excerpt": "p18"
+  },
+  {
+    "id": "580",
+    "title": "The Pickwick Papers",
+    "authors": [
+      "Dickens, Charles"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/580.txt.utf-8",
+    "bytes": 1855171,
+    "sha256": "b44980181ef76e3879d5864a5f6cc4073c12eb940bc6db7a32632e9bb2f4bbd9",
+    "checked": "2026-11-14",
+    "chapterAnchors": 55,
+    "excerpt": "p66"
+  },
+  {
+    "id": "599",
+    "title": "Vanity Fair",
+    "authors": [
+      "Thackeray, William Makepeace"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/599.txt.utf-8",
+    "bytes": 1765821,
+    "sha256": "36c7db9809ec4e833125f9ccc81ee66583ea6d698114b2907d2220599126fddd",
+    "checked": "2026-11-14",
+    "chapterAnchors": 134,
+    "excerpt": "p15"
+  },
+  {
+    "id": "145",
+    "title": "Middlemarch",
+    "authors": [
+      "Eliot, George"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/145.txt.utf-8",
+    "bytes": 1865684,
+    "sha256": "dc2e0107e6ae07e8e33da934b2ec4e8e600826a2e0cd48df265119cd02e5fb50",
+    "checked": "2026-11-14",
+    "chapterAnchors": 96,
+    "excerpt": "p22"
+  },
+  {
+    "id": "16",
+    "title": "Peter Pan : $b [Peter and Wendy]",
+    "authors": [
+      "Barrie, J. M. (James Matthew)"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/16.txt.utf-8",
+    "bytes": 288769,
+    "sha256": "6b08714281fe38266a756741e4c62915cda7536c2f78cca501f7fd53f3f445ae",
+    "checked": "2026-11-14",
+    "chapterAnchors": 17,
+    "excerpt": "p8"
+  },
+  {
+    "id": "12",
+    "title": "Through the Looking-Glass",
+    "authors": [
+      "Carroll, Lewis"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/12.txt.utf-8",
+    "bytes": 196534,
+    "sha256": "e40a38f5da841f9fb6acc557355c447b7c2ccb56a208caf5fcf2b05081f14d42",
+    "checked": "2026-11-14",
+    "chapterAnchors": 12,
+    "excerpt": "p22"
+  },
+  {
+    "id": "54",
+    "title": "The Marvelous Land of Oz",
+    "authors": [
+      "Baum, L. Frank (Lyman Frank)"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/54.txt.utf-8",
+    "bytes": 269667,
+    "sha256": "48e4dd66643ab160d986562d635b18aa4b8f3dc6d7d47d2796c108c2c8b60759",
+    "checked": "2026-11-14",
+    "chapterAnchors": 26,
+    "excerpt": "p13"
+  },
+  {
+    "id": "1998",
+    "title": "Thus Spake Zarathustra: A Book for All and None",
+    "authors": [
+      "Nietzsche, Friedrich Wilhelm"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1998.txt.utf-8",
+    "bytes": 682920,
+    "sha256": "0854ebabe235d46c8e5e099418c5189b1df0848898c552009b70d924b9065d05",
+    "checked": "2026-11-14",
+    "chapterAnchors": 146,
+    "excerpt": "p141"
+  },
+  {
+    "id": "4363",
+    "title": "Beyond Good and Evil",
+    "authors": [
+      "Nietzsche, Friedrich Wilhelm"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/4363.txt.utf-8",
+    "bytes": 408794,
+    "sha256": "6ee088f717d3760036086f108c03d57588036c9d344b7d71edbef4e631bd374a",
+    "checked": "2026-11-14",
+    "chapterAnchors": 10,
+    "excerpt": "p16"
+  },
+  {
+    "id": "216",
+    "title": "The Tao Teh King, or the Tao and its Characteristics",
+    "authors": [
+      "Laozi"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/216.txt.utf-8",
+    "bytes": 80552,
+    "sha256": "041568f8dfef3ac6c2deb7699756f9d26d6aa8669647f4ce611b0ed4a95b0db6",
+    "checked": "2026-11-14",
+    "chapterAnchors": 1,
+    "excerpt": "p8"
+  },
+  {
+    "id": "2017",
+    "title": "Dhammapada, a Collection of Verses; Being One of the Canonical Books of the Buddhists",
+    "authors": [],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/2017.txt.utf-8",
+    "bytes": 88619,
+    "sha256": "f2d09ebf28af0bf87ae7be7635d485b142e6526cb2cc164ba01c74586ff547bb",
+    "checked": "2026-11-14",
+    "chapterAnchors": 26,
+    "excerpt": "p11"
+  },
+  {
+    "id": "2388",
+    "title": "The Song Celestial; Or, Bhagavad-Gîtâ (from the Mahâbhârata)\r\nBeing a discourse between Arjuna, Prince of India, and the Supreme Being under the form of Krishna",
+    "authors": [],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/2388.txt.utf-8",
+    "bytes": 147501,
+    "sha256": "85b22401a9d256179f9a2e407215eb516da9b8213f23c32e03d66709d839a9e0",
+    "checked": "2026-11-14",
+    "chapterAnchors": 20,
+    "excerpt": "p20"
+  },
+  {
+    "id": "1524",
+    "title": "Hamlet",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1524.txt.utf-8",
+    "bytes": 206895,
+    "sha256": "31584c19795779431b5933499a45b9cecb03e8c246b6ea7e245a2b6d65e8e784",
+    "checked": "2026-11-14",
+    "chapterAnchors": 25,
+    "excerpt": "p16"
+  },
+  {
+    "id": "1533",
+    "title": "Macbeth",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1533.txt.utf-8",
+    "bytes": 130331,
+    "sha256": "1371a47e68246197f7f57017a83386fed75dbfebfd0ff51b4524921a3b38ff5e",
+    "checked": "2026-11-14",
+    "chapterAnchors": 35,
+    "excerpt": "p10"
+  },
+  {
+    "id": "1514",
+    "title": "A Midsummer Night's Dream",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1514.txt.utf-8",
+    "bytes": 121049,
+    "sha256": "e8626a628112990c8505dd1098276e6f75040cc268690d018ee6694c71888ea4",
+    "checked": "2026-11-14",
+    "chapterAnchors": 14,
+    "excerpt": "p19"
+  },
+  {
+    "id": "1532",
+    "title": "King Lear",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1532.txt.utf-8",
+    "bytes": 183459,
+    "sha256": "b4f8145ac519fcea19ce1fe0f7a87eb18738a6f89c1a73b5fb6491244204ba20",
+    "checked": "2026-11-14",
+    "chapterAnchors": 31,
+    "excerpt": "p16"
+  },
+  {
+    "id": "1727",
+    "title": "The Odyssey\r\nRendered into English prose for the use of those who cannot read the original",
+    "authors": [
+      "Homer"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1727.txt.utf-8",
+    "bytes": 717782,
+    "sha256": "b167ce5e348bf805dfe4355dff2eae5c2e522b11cce003a6f98bb65a753bbc69",
+    "checked": "2026-11-14",
+    "chapterAnchors": 24,
+    "excerpt": "p44"
+  },
+  {
+    "id": "6130",
+    "title": "The Iliad",
+    "authors": [
+      "Homer"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/6130.txt.utf-8",
+    "bytes": 1161373,
+    "sha256": "ca4f23115b384b0219427ef208e875f0351820b8f80f28259272997ea581c36b",
+    "checked": "2026-11-14",
+    "chapterAnchors": 25,
+    "excerpt": "p139"
+  },
+  {
+    "id": "996",
+    "title": "Don Quixote",
+    "authors": [
+      "Cervantes Saavedra, Miguel de"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/996.txt.utf-8",
+    "bytes": 2391678,
+    "sha256": "2864143e9addf498c1c5fd585db4a1ff3e06651c344cddf0931342f1a0ce24d4",
+    "checked": "2026-11-14",
+    "chapterAnchors": 128,
+    "excerpt": "p313"
+  },
+  {
+    "id": "1080",
+    "title": "A Modest Proposal\r\nFor preventing the children of poor people in Ireland, from being a burden on their parents or country, and for making them beneficial to the publick",
+    "authors": [
+      "Swift, Jonathan"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1080.txt.utf-8",
+    "bytes": 39645,
+    "sha256": "331340f2ada84a7f79d756a344f6ce7d78026cd1d2359d33f79ca4a13d9f1519",
+    "checked": "2026-11-14",
+    "chapterAnchors": 1,
+    "excerpt": "p6"
+  },
+  {
+    "id": "1065",
+    "title": "The Raven",
+    "authors": [
+      "Poe, Edgar Allan"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1065.txt.utf-8",
+    "bytes": 27244,
+    "sha256": "3ac57a5bb19230923d10acac3dfaccb605bb908dedca3606242fe0b69bec894b",
+    "checked": "2026-11-14",
+    "chapterAnchors": 1,
+    "excerpt": "p5"
+  },
+  {
+    "id": "1064",
+    "title": "The Masque of the Red Death",
+    "authors": [
+      "Poe, Edgar Allan"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1064.txt.utf-8",
+    "bytes": 33893,
+    "sha256": "58e8a7186604d9693b0a49a2d131fa11b2a8ab0e14958df728883bbf35b42520",
+    "checked": "2026-11-14",
+    "chapterAnchors": 1,
+    "excerpt": "p4"
+  },
+  {
+    "id": "932",
+    "title": "The Fall of the House of Usher",
+    "authors": [
+      "Poe, Edgar Allan"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/932.txt.utf-8",
+    "bytes": 63271,
+    "sha256": "f1093719bbbc8115a95fd0ed8e51ee9ed5c67ad94abf3229a2a96f8ed0762bf9",
+    "checked": "2026-11-14",
+    "chapterAnchors": 1,
+    "excerpt": "p4"
+  },
+  {
+    "id": "1322",
+    "title": "Leaves of Grass",
+    "authors": [
+      "Whitman, Walt"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1322.txt.utf-8",
+    "bytes": 780492,
+    "sha256": "77c066a8774e2b04d8bfbc570d9aa5131410355cd6062ab5962ac773240f3140",
+    "checked": "2026-11-14",
+    "chapterAnchors": 377,
+    "excerpt": "p7"
+  },
+  {
+    "id": "12242",
+    "title": "Poems by Emily Dickinson, Three Series, Complete",
+    "authors": [
+      "Dickinson, Emily"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/12242.txt.utf-8",
+    "bytes": 206765,
+    "sha256": "f4421418353de2737c9bfe3db1e4657534b6b8ae2a8603f31de2d77678d18791",
+    "checked": "2026-11-14",
+    "chapterAnchors": 353,
+    "excerpt": "p30"
+  },
+  {
+    "id": "574",
+    "title": "Poems of William Blake",
+    "authors": [
+      "Blake, William"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/574.txt.utf-8",
+    "bytes": 61296,
+    "sha256": "7e40d6eee71365362973c0083a3117bc11d49c1feaf5566163109d54bd573a24",
+    "checked": "2026-11-14",
+    "chapterAnchors": 46,
+    "excerpt": "p9"
+  },
+  {
+    "id": "1063",
+    "title": "The Cask of Amontillado",
+    "authors": [
+      "Poe, Edgar Allan"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1063.txt.utf-8",
+    "bytes": 33242,
+    "sha256": "8acff87c5a6beb6b5da6ff3529d3b8593c1cdb0a298125cd231682557f20e887",
+    "checked": "2026-11-14",
+    "chapterAnchors": 1,
+    "excerpt": "p5"
+  },
+  {
+    "id": "2814",
+    "title": "Dubliners",
+    "authors": [
+      "Joyce, James"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/2814.txt.utf-8",
+    "bytes": 405706,
+    "sha256": "6be7d8400ac2549459307d1c1a20a25c86a736984269d3e9d989c817814be60c",
+    "checked": "2026-11-14",
+    "chapterAnchors": 16,
+    "excerpt": "p7"
+  },
+  {
+    "id": "2500",
+    "title": "Siddhartha",
+    "authors": [
+      "Hesse, Hermann"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/2500.txt.utf-8",
+    "bytes": 242505,
+    "sha256": "345b21d95cb61c0756d482230ae4cb8c1858a0cef1835e1ba89d18cd471343a3",
+    "checked": "2026-11-14",
+    "chapterAnchors": 15,
+    "excerpt": "p10"
+  },
+  {
+    "id": "3600",
+    "title": "Essays of Michel de Montaigne — Complete",
+    "authors": [
+      "Montaigne, Michel de"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/3600.txt.utf-8",
+    "bytes": 3105655,
+    "sha256": "1b4c87312f0890e04cecee48e3a5fa263de65743230b819e16cb1bd72f7aee59",
+    "checked": "2026-11-14",
+    "chapterAnchors": 254,
+    "excerpt": "p223"
+  },
+  {
+    "id": "41",
+    "title": "The Legend of Sleepy Hollow",
+    "authors": [
+      "Irving, Washington"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/41.txt.utf-8",
+    "bytes": 90896,
+    "sha256": "6847c02f49c9ff8a5e2a0e8f49842bf3bffc7f5a87216c895a6b64f26ecf9353",
+    "checked": "2026-11-14",
+    "chapterAnchors": 1,
+    "excerpt": "p6"
+  },
+  {
+    "id": "244",
+    "title": "A Study in Scarlet",
+    "authors": [
+      "Doyle, Arthur Conan"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/244.txt.utf-8",
+    "bytes": 268777,
+    "sha256": "8bbec71f9fa9c2acc9afe9be70560ca5f65c1bc95ef5af8252e9097f8d012497",
+    "checked": "2026-11-14",
+    "chapterAnchors": 15,
+    "excerpt": "p11"
+  },
+  {
+    "id": "203",
+    "title": "Uncle Tom's Cabin",
+    "authors": [
+      "Stowe, Harriet Beecher"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/203.txt.utf-8",
+    "bytes": 1079453,
+    "sha256": "95e4ce1153f8506d9903df84541cfa99c8ac6ad3ad69bcf5ea37d042d01a0a98",
+    "checked": "2026-11-14",
+    "chapterAnchors": 46,
+    "excerpt": "p10"
+  },
+  {
+    "id": "32",
+    "title": "Herland",
+    "authors": [
+      "Gilman, Charlotte Perkins"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/32.txt.utf-8",
+    "bytes": 328583,
+    "sha256": "76a7f3e4403b98352a466b6095c176a72fdd30d3bf3a96400440c1bd5fa904f5",
+    "checked": "2026-11-14",
+    "chapterAnchors": 12,
+    "excerpt": "p4"
+  },
+  {
+    "id": "3797",
+    "title": "In the Days of the Comet",
+    "authors": [
+      "Wells, H. G. (Herbert George)"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/3797.txt.utf-8",
+    "bytes": 490064,
+    "sha256": "3adb4b55717d9549fe8c676a20fa461b83ac8bd7a1604fbd09ba49230615b0ef",
+    "checked": "2026-11-14",
+    "chapterAnchors": 17,
+    "excerpt": "p12"
+  },
+  {
+    "id": "31",
+    "title": "Plays of Sophocles: Oedipus the King; Oedipus at Colonus; Antigone",
+    "authors": [
+      "Sophocles"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/31.txt.utf-8",
+    "bytes": 245163,
+    "sha256": "2f4ec8ea09c52412660e94d5df578bfe71f6b81bcaa21226213a0c5483f402b9",
+    "checked": "2026-11-14",
+    "chapterAnchors": 9,
+    "excerpt": "p13"
+  },
+  {
+    "id": "1497",
+    "title": "The Republic",
+    "authors": [
+      "Plato"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1497.txt.utf-8",
+    "bytes": 1244165,
+    "sha256": "3d2e397122881d7737a48fb80e71cddf4c78cda54ceac7e0905fe945dfab48fd",
+    "checked": "2026-11-14",
+    "chapterAnchors": 12,
+    "excerpt": "p30"
+  },
+  {
+    "id": "20203",
+    "title": "Autobiography of Benjamin Franklin",
+    "authors": [
+      "Franklin, Benjamin"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/20203.txt.utf-8",
+    "bytes": 467432,
+    "sha256": "c5be0e49f68f0876be480074b9dc0712a8fdbc7faa7def3acc6765afba9bd128",
+    "checked": "2026-11-14",
+    "chapterAnchors": 40,
+    "excerpt": "p80"
+  },
+  {
+    "id": "643",
+    "title": "The Death of the Lion",
+    "authors": [
+      "James, Henry"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/643.txt.utf-8",
+    "bytes": 104682,
+    "sha256": "f2673ecc99ec91ce27ba55b6d6ca89e4f26ffd2bbf80b69c5d7c65fae837f0c4",
+    "checked": "2026-11-14",
+    "chapterAnchors": 10,
+    "excerpt": "p15"
+  },
+  {
+    "id": "130",
+    "title": "Orthodoxy",
+    "authors": [
+      "Chesterton, G. K. (Gilbert Keith)"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/130.txt.utf-8",
+    "bytes": 382206,
+    "sha256": "ec525c93afddb05465bf6fa0af8f873078b8e42a2a24f9b999582994f054fdf2",
+    "checked": "2026-11-14",
+    "chapterAnchors": 9,
+    "excerpt": "p12"
+  },
+  {
+    "id": "25344",
+    "title": "The Scarlet Letter",
+    "authors": [
+      "Hawthorne, Nathaniel"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/25344.txt.utf-8",
+    "bytes": 526324,
+    "sha256": "82836a0a74a55163187b1d62e0ee6e6500a9ae2714711dcef28f66780ce5650c",
+    "checked": "2026-11-14",
+    "chapterAnchors": 51,
+    "excerpt": "p82"
+  },
+  {
+    "id": "140",
+    "title": "The Jungle",
+    "authors": [
+      "Sinclair, Upton"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/140.txt.utf-8",
+    "bytes": 854298,
+    "sha256": "1a28274fdea8c1438ebad3d7d07946b3d8a0779754427ba4a4da3b64882b7514",
+    "checked": "2026-11-14",
+    "chapterAnchors": 31,
+    "excerpt": "p9"
+  },
+  {
+    "id": "7164",
+    "title": "Gitanjali",
+    "authors": [
+      "Tagore, Rabindranath"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/7164.txt.utf-8",
+    "bytes": 98478,
+    "sha256": "665ea9b282c0a542baafc278d79151aaa53d203a5c688b3daeddf7d908311d44",
+    "checked": "2026-11-14",
+    "chapterAnchors": 103,
+    "excerpt": "p19"
+  },
+  {
+    "id": "58585",
+    "title": "The Prophet",
+    "authors": [
+      "Gibran, Kahlil"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/58585.txt.utf-8",
+    "bytes": 89945,
+    "sha256": "55a7072e3c4f2924a010820fd45aa204d29915fb07cd3b917e3ab9adb63c336f",
+    "checked": "2026-11-14",
+    "chapterAnchors": 1,
+    "excerpt": "p13"
+  },
+  {
+    "id": "5616",
+    "title": "The Madman: His Parables and Poems",
+    "authors": [
+      "Gibran, Kahlil"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/5616.txt.utf-8",
+    "bytes": 58687,
+    "sha256": "bbf62c4940dbf477f083f7ced59cbb19efff155bfe94406095a58561a15b325b",
+    "checked": "2026-11-14",
+    "chapterAnchors": 34,
+    "excerpt": "p5"
+  },
+  {
+    "id": "408",
+    "title": "The Souls of Black Folk",
+    "authors": [
+      "Du Bois, W. E. B. (William Edward Burghardt)"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/408.txt.utf-8",
+    "bytes": 428742,
+    "sha256": "87f8e832484792b761a510b953d67e3835fa46a9f4231a508bfeb914a98559ca",
+    "checked": "2026-11-14",
+    "chapterAnchors": 24,
+    "excerpt": "p14"
+  },
+  {
+    "id": "242",
+    "title": "My Ántonia",
+    "authors": [
+      "Cather, Willa"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/242.txt.utf-8",
+    "bytes": 475760,
+    "sha256": "d078445e530bad6c0b1f33bd23a71a2f6fa717e8b30a57b9343a01c8510533c5",
+    "checked": "2026-11-14",
+    "chapterAnchors": 50,
+    "excerpt": "p31"
+  },
+  {
+    "id": "160",
+    "title": "The Awakening, and Selected Short Stories",
+    "authors": [
+      "Chopin, Kate"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/160.txt.utf-8",
+    "bytes": 392860,
+    "sha256": "31d4577d255806b92c6296419adddd5ca460bdb788743878a09ded1e19f4161a",
+    "checked": "2026-11-14",
+    "chapterAnchors": 54,
+    "excerpt": "p15"
+  },
+  {
+    "id": "151",
+    "title": "The Rime of the Ancient Mariner",
+    "authors": [
+      "Coleridge, Samuel Taylor"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/151.txt.utf-8",
+    "bytes": 44253,
+    "sha256": "97b2a12f1ae2c7724680bcfe584a3328eb87f908dc68c3e23ecf52b790772ee4",
+    "checked": "2026-11-14",
+    "chapterAnchors": 11,
+    "excerpt": "p6"
+  },
+  {
+    "id": "1513",
+    "title": "Romeo and Juliet",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "rights": "Public domain in the USA.",
+    "languages": [
+      "en"
+    ],
+    "url": "https://www.gutenberg.org/ebooks/1513.txt.utf-8",
+    "bytes": 169504,
+    "sha256": "5a2037a19e60cccb67b3f5fc93a12cb65c58694ce6a1dc61d0d67d0d2502b3b4",
+    "checked": "2026-11-14",
+    "chapterAnchors": 29,
+    "excerpt": "p22"
+  }
+]

@@ -1,0 +1,231 @@
+{
+  "books": [
+    {
+      "id": "1342",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "note": "Wit, first impressions, and the complicated business of knowing another person."
+    },
+    {
+      "id": "11",
+      "title": "Alice’s Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "genre": "Fantasy",
+      "note": "Follow curiosity into a world of playful language and impossible encounters."
+    },
+    {
+      "id": "1661",
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "genre": "Mystery",
+      "note": "A collection of mysteries to explore one case at a time."
+    },
+    {
+      "id": "84",
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "genre": "Gothic",
+      "note": "A searching story of creation, responsibility, and belonging."
+    },
+    {
+      "id": "2701",
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "genre": "Adventure",
+      "note": "An ocean voyage through obsession, uncertainty, and the natural world."
+    },
+    {
+      "id": "64317",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Literary fiction",
+      "note": "An encounter with ambition, longing, and the promises of reinvention."
+    },
+    {
+      "id": "120",
+      "title": "Treasure Island",
+      "author": "Robert Louis Stevenson",
+      "genre": "Adventure",
+      "note": "A map, a voyage, and a dangerous search for buried treasure."
+    },
+    {
+      "id": "35",
+      "title": "The Time Machine",
+      "author": "H. G. Wells",
+      "genre": "Science fiction",
+      "note": "A journey into the distant future that asks who progress really serves."
+    },
+    {
+      "id": "36",
+      "title": "The War of the Worlds",
+      "author": "H. G. Wells",
+      "genre": "Science fiction",
+      "note": "An unsettling encounter with an intelligence humanity cannot control."
+    },
+    {
+      "id": "113",
+      "title": "The Secret Garden",
+      "author": "Frances Hodgson Burnett",
+      "genre": "Coming of age",
+      "note": "A locked garden becomes a place of friendship and renewal."
+    },
+    {
+      "id": "45",
+      "title": "Anne of Green Gables",
+      "author": "L. M. Montgomery",
+      "genre": "Coming of age",
+      "note": "An imaginative young outsider finds a home and a voice."
+    },
+    {
+      "id": "514",
+      "title": "Little Women",
+      "author": "Louisa May Alcott",
+      "genre": "Coming of age",
+      "note": "Four sisters work out what kind of lives they want to lead."
+    },
+    {
+      "id": "1260",
+      "title": "Jane Eyre",
+      "author": "Charlotte Brontë",
+      "genre": "Gothic",
+      "note": "An independent voice navigates love, work, and moral choice."
+    },
+    {
+      "id": "174",
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+      "genre": "Gothic",
+      "note": "Beauty and conscience collide in a story about a mysterious portrait."
+    },
+    {
+      "id": "43",
+      "title": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+      "author": "Robert Louis Stevenson",
+      "genre": "Gothic",
+      "note": "A mystery turns the question of human identity inside out."
+    },
+    {
+      "id": "46",
+      "title": "A Christmas Carol",
+      "author": "Charles Dickens",
+      "genre": "Fantasy",
+      "note": "One winter night offers a miser an unexpected second chance."
+    },
+    {
+      "id": "844",
+      "title": "The Importance of Being Earnest",
+      "author": "Oscar Wilde",
+      "genre": "Comedy",
+      "note": "Invented identities meet sharp conversation and gloriously tangled manners."
+    },
+    {
+      "id": "1952",
+      "title": "The Yellow Wallpaper",
+      "author": "Charlotte Perkins Gilman",
+      "genre": "Gothic",
+      "note": "A short, unsettling account of confinement and a voice struggling to be heard."
+    },
+    {
+      "id": "205",
+      "title": "Walden, and On the Duty of Civil Disobedience",
+      "author": "Henry David Thoreau",
+      "genre": "Nature & ideas",
+      "note": "Observations of a deliberate life, followed by an essay on conscience."
+    },
+    {
+      "id": "132",
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "genre": "Strategy",
+      "note": "A historical text about planning, uncertainty, and strategic judgment."
+    },
+    {
+      "id": "2680",
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "genre": "Philosophy",
+      "note": "An emperor’s private reflections on attention, duty, and how to live."
+    },
+    {
+      "id": "289",
+      "title": "The Wind in the Willows",
+      "author": "Kenneth Grahame",
+      "genre": "Fantasy",
+      "note": "Friendship, home, and misadventure along a lively riverbank."
+    },
+    {
+      "id": "55",
+      "title": "The Wonderful Wizard of Oz",
+      "author": "L. Frank Baum",
+      "genre": "Fantasy",
+      "note": "A strange road brings an unlikely group of travelers together."
+    },
+    {
+      "id": "97",
+      "title": "Flatland",
+      "author": "Edwin A. Abbott",
+      "genre": "Science fiction",
+      "note": "A geometric fable that asks how much our viewpoint allows us to see."
+    },
+    {
+      "id": "23",
+      "title": "Narrative of the Life of Frederick Douglass",
+      "author": "Frederick Douglass",
+      "genre": "Memoir",
+      "note": "A firsthand account of enslavement, literacy, and the pursuit of freedom."
+    }
+  ],
+  "files": {
+    "public/reading/1342.json": "766d9419b4d6799856fd340db0a42735a7d46c9aa3fc01f16606a7060f203269",
+    "public/reading/1342.txt": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75",
+    "public/reading/11.json": "e1ac3f1a3ad3cad2396105d18780c4cccf0887eeb0dbd7f483ad2225d944ef6b",
+    "public/reading/11.txt": "01b38ea4c710a84bc18d0bd41271a5a1a92b94e97b2812f4dece97d4a694725e",
+    "public/reading/1661.json": "e6ab1e605068890d1dd37463b36800b94ac6d3154fd6907efe4fa788bec9b7eb",
+    "public/reading/1661.txt": "922e2a12ccb43a4c9544c260b2166c6ad2097aeb5957faeee113f173bb857cd0",
+    "public/reading/84.json": "e019d63de9bb4be52a22f2983be160bedb203a9bafe763479b9e2c7e62570726",
+    "public/reading/84.txt": "2b97b7f8aad508649481d8dd4f6b54f9b965ddb3ba634e9151c815f537b49e42",
+    "public/reading/2701.json": "30c33e4e23e80addf2034b0d9bed12815b1a5102c70e746bbaaaa462cddc6fe6",
+    "public/reading/2701.txt": "b5e88b71a1cda068e9ab1d94344c9d932338ba6da1a66def97a1aecd9cfcc87d",
+    "public/reading/64317.json": "474ee377fe30eb61351d27bd9b7c6b3a4bdec6ee7396a429dad54c661ba3ece4",
+    "public/reading/64317.txt": "ce760ec377accd352b41bb8f64504a72d7aa18ab3afb42ded2b56cecacf29e35",
+    "public/reading/120.json": "2ccf7e78ed20f028f09542dc14a610fc88631f8369ab48f3d9fb6c8346ec4f9f",
+    "public/reading/120.txt": "5bc08275eacea8640b1aa185c645283bb8c564d7b23df6b03437d229b4fc6ebd",
+    "public/reading/35.json": "f0dd5a2ff01ab75b782feddbf8c07834747092fb0af615ab8f48f2bccbef4cec",
+    "public/reading/35.txt": "2892e919000e17c83e1dac51b30f4675db50536b644d7579fe8a89bb399a9bdc",
+    "public/reading/36.json": "143ea82cf076f9d348d09ab999c44118b4a49de03872ca5e40a130e5c8dd53f9",
+    "public/reading/36.txt": "8417469e3ab664749f7b36ebb85799075818207b0380b54c27d07d592a44117d",
+    "public/reading/113.json": "cd69aaaa273556129237534b9904ab81b05b63ab5a470fe289a186222876d334",
+    "public/reading/113.txt": "40709a2894f0816a97dd8a67d3082cfc4dac31e45b45ee55a908d62e1dd18c23",
+    "public/reading/45.json": "00b59dc647549f513cd368c6a26056b69d8d28b88db7c266d0ab06a777108205",
+    "public/reading/45.txt": "89a5e9fb2e0bb44562a969785385366f94e1da736aebee7d9cdf459eb0b5f9f6",
+    "public/reading/514.json": "9049c1ba830f962407c415d66f1545084872c41259e34243c38b74ad87c71ba2",
+    "public/reading/514.txt": "36831477b339dbcd7e7206119d77e9e58b9727ef3c299d1a1dc4446e1db97850",
+    "public/reading/1260.json": "44c16320f5d4be49f218eed2f6ec561b09266817d599775f24b796d50db78d13",
+    "public/reading/1260.txt": "13414dee2951c3ee731d76d2ffd822016b2479c892162760c5d0eb2aa5fa7631",
+    "public/reading/174.json": "23bc55278685f45db5cbc476d1f8881341b014ce4893c01034eec0becd5c534e",
+    "public/reading/174.txt": "38f36b510417177aa87a6a24c968e3ec63a447b7df36a9c1a7c5a3f2d9e51547",
+    "public/reading/43.json": "10516c63c65acde9d02ba0fd18f0d02f51e00d3e8a859fb99e2c46f79edcaded",
+    "public/reading/43.txt": "b43448a88391591f9cf82b25553df00faf47a2752a873185fcdd1156eebdb990",
+    "public/reading/46.json": "849ca8603804a8aabec845d7505795872998b48caa61013706dec3e4a7af410d",
+    "public/reading/46.txt": "8c36b93723d454982df045ec0efdf2664e5a48e6b5e2f670e883575f75ad0cc8",
+    "public/reading/844.json": "c6bc9e047a348af137a9c5d576999de1e5654343ac7579d6a0e37a1ea93ff82c",
+    "public/reading/844.txt": "1b8a58099bb1cdef6a845277a4bacf2f4a268702c165bde30124d4b5105d1851",
+    "public/reading/1952.json": "1138ca5a45b30d1c32112d446b22368c492e954c147f22cd83eaadb0871c1428",
+    "public/reading/1952.txt": "20c7788eeae2fe3a0efd51a1f08b6723366a4be0778d65db219149a3522651d4",
+    "public/reading/205.json": "9f3d234c83cfab3d7a3b9f9cc54a1540305c6a0a58c450c500cfa8541ad138e7",
+    "public/reading/205.txt": "2d9a76a2e3e8195c69430516ebd33c4d0757a53ad432ff6186b7b794e6fe99f9",
+    "public/reading/132.json": "60babdeb185f48b5955608214a8c6ec1fddaabc00a0f605f7e9980dfe54f0acd",
+    "public/reading/132.txt": "2301ae1ce20875381a316b2fd0ac5ada00f71bacdc732458a11b3674b358e360",
+    "public/reading/2680.json": "eb55ec673b1d87136bd042eccc14f18cd1890c6553984b3a92893549a3da09c0",
+    "public/reading/2680.txt": "6977474f82a39dd88a4af31a59504821658174d33c177732c54357e4d680b96c",
+    "public/reading/289.json": "2eb52356ef8506ecbffb8035c72dd2f0097405f459965b81491b1cb714a5f9a9",
+    "public/reading/289.txt": "98f6b6cda20087857cefe9121b71d6166c1b92423bb7645fdba3c45ff0c141e8",
+    "public/reading/55.json": "0540fe2cd769da28705cb1e4d9c880c87a51a82c023cdaa23957f20a50c23995",
+    "public/reading/55.txt": "969bffab7740d4d8a0bac332d78bd0152ad4a40a2efc52f06c74a9bb6120be75",
+    "public/reading/97.json": "c6e0d0936175c074b2c80b1fedea694b9fde6a73c11d2b965c6f46cbfe5b1fba",
+    "public/reading/97.txt": "eb84ae1a164f9d54c7bd831c847f99046f6a3199ba78b0bd7c98c09d108a3a9a",
+    "public/reading/23.json": "28f564ac34e71272f85573c3913bc6a1c97aa5414373fd6a9a9042c587d74e34",
+    "public/reading/23.txt": "234c15348a66919bad1d534cdd48ee8ddf91f50115a706cbefaa8edd049672fd"
+  }
+}

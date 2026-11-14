@@ -1,3 +1,4 @@
+import {additionalReadingEditions} from './editions-v22';
 // Source editions checked 2026-11-14. Original openings checked against the bundled text.
 export const readingEditions={
   "1342": {
@@ -399,4 +400,5 @@ export const readingEditions={
     "motif": "⌁",
     "paragraphs": 229
   }
+  ,...additionalReadingEditions
 } as const;

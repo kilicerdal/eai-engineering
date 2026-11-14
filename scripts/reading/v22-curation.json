@@ -1,0 +1,688 @@
+{
+  "98": {
+    "title": "A Tale of Two Cities",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Revolution and private loyalties collide in a story that makes public history intensely personal."
+  },
+  "1400": {
+    "title": "Great Expectations",
+    "genre": "Coming of age",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "An unexpected change of fortune tests a young narrator’s ideas about worth, loyalty, and belonging."
+  },
+  "730": {
+    "title": "Oliver Twist",
+    "genre": "Social fiction",
+    "moods": [
+      "Unsettling",
+      "Hopeful"
+    ],
+    "note": "A child’s precarious journey through London exposes the distance between respectable appearances and compassion."
+  },
+  "766": {
+    "title": "David Copperfield",
+    "genre": "Coming of age",
+    "moods": [
+      "Reflective",
+      "Hopeful"
+    ],
+    "note": "A life told in retrospect makes room for remembered kindness, disappointment, friendship, and ambition."
+  },
+  "768": {
+    "title": "Wuthering Heights",
+    "genre": "Gothic",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "Competing narrators lead through a landscape of fierce attachments, isolation, and unreliable recollection."
+  },
+  "345": {
+    "title": "Dracula",
+    "genre": "Gothic",
+    "moods": [
+      "Unsettling",
+      "Adventurous"
+    ],
+    "note": "Letters, journals, and recorded observations piece together a threat that ordinary explanations cannot contain."
+  },
+  "74": {
+    "title": "The Adventures of Tom Sawyer",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Lighthearted"
+    ],
+    "note": "A restless imagination turns everyday childhood into performance, trouble, and the possibility of adventure."
+  },
+  "76": {
+    "title": "Adventures of Huckleberry Finn",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Reflective"
+    ],
+    "note": "A river journey brings a young narrator’s learned assumptions into conflict with experience and conscience."
+  },
+  "219": {
+    "title": "Heart of Darkness",
+    "genre": "Literary fiction",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "A narrated journey invites difficult questions about colonial power, self-deception, and who gets to tell a story."
+  },
+  "1232": {
+    "title": "The Prince",
+    "genre": "Political thought",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A historical argument about political power challenges readers to separate practical counsel from moral approval."
+  },
+  "236": {
+    "title": "The Jungle Book",
+    "genre": "Stories & fables",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "Animal tales and verse explore rules, belonging, danger, and the difficult boundaries between communities."
+  },
+  "11339": {
+    "title": "Aesop’s Fables",
+    "genre": "Stories & fables",
+    "moods": [
+      "Curious",
+      "Lighthearted"
+    ],
+    "note": "Brief encounters between animals and people turn everyday motives into small stories worth questioning."
+  },
+  "2591": {
+    "title": "Grimms’ Fairy Tales",
+    "genre": "Fairy tales",
+    "moods": [
+      "Adventurous",
+      "Unsettling"
+    ],
+    "note": "Familiar story patterns become stranger and sharper in a collection where luck, danger, and transformations meet."
+  },
+  "1597": {
+    "title": "Andersen’s Fairy Tales",
+    "genre": "Fairy tales",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Speaking objects and unlikely heroes make ordinary desires look moving, comic, and sometimes unsettling."
+  },
+  "503": {
+    "title": "The Blue Fairy Book",
+    "genre": "Fairy tales",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A gathering of wonder tales offers short journeys through enchantment, bargains, courage, and unexpected help."
+  },
+  "365": {
+    "title": "The Land of Little Rain",
+    "genre": "Nature & ideas",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Close attention to desert landscapes turns apparent emptiness into a world of relationships and adaptation."
+  },
+  "829": {
+    "title": "Gulliver’s Travels",
+    "genre": "Satire",
+    "moods": [
+      "Curious",
+      "Adventurous"
+    ],
+    "note": "Voyages through impossible societies make familiar institutions, customs, and assumptions look newly absurd."
+  },
+  "215": {
+    "title": "The Call of the Wild",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Unsettling"
+    ],
+    "note": "An animal’s changing circumstances bring survival, instinct, and the force of an unfamiliar landscape into focus."
+  },
+  "910": {
+    "title": "White Fang",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Reflective"
+    ],
+    "note": "A life between wilderness and human society tests how fear, treatment, and trust shape behavior."
+  },
+  "209": {
+    "title": "The Turn of the Screw",
+    "genre": "Gothic",
+    "moods": [
+      "Unsettling",
+      "Curious"
+    ],
+    "note": "A tightly framed account makes observation and interpretation difficult to separate in a troubling country house."
+  },
+  "161": {
+    "title": "Sense and Sensibility",
+    "genre": "Romance",
+    "moods": [
+      "Reflective",
+      "Lighthearted"
+    ],
+    "note": "Two sisters negotiate feeling, judgment, and uncertain security in a social world that rewards appearances."
+  },
+  "105": {
+    "title": "Persuasion",
+    "genre": "Romance",
+    "moods": [
+      "Reflective",
+      "Hopeful"
+    ],
+    "note": "A quiet heroine revisits questions of judgment, regret, and the possibility of a different future."
+  },
+  "158": {
+    "title": "Emma",
+    "genre": "Romance",
+    "moods": [
+      "Lighthearted",
+      "Reflective"
+    ],
+    "note": "A confident matchmaker discovers how difficult it is to read other people when one’s own story seems so convincing."
+  },
+  "121": {
+    "title": "Northanger Abbey",
+    "genre": "Satire",
+    "moods": [
+      "Lighthearted",
+      "Curious"
+    ],
+    "note": "An enthusiastic reader brings a love of Gothic stories into encounters with a less predictable everyday world."
+  },
+  "141": {
+    "title": "Mansfield Park",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "An observer on the edge of a wealthy household weighs belonging, obligation, and the cost of moral choices."
+  },
+  "4276": {
+    "title": "North and South",
+    "genre": "Social fiction",
+    "moods": [
+      "Reflective",
+      "Hopeful"
+    ],
+    "note": "A move into an industrial town tests inherited views of work, class, sympathy, and responsibility."
+  },
+  "580": {
+    "title": "The Pickwick Papers",
+    "genre": "Comedy",
+    "moods": [
+      "Lighthearted",
+      "Adventurous"
+    ],
+    "note": "An episodic journey through people and places gives comic misunderstandings room to become a whole social world."
+  },
+  "599": {
+    "title": "Vanity Fair",
+    "genre": "Satire",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Ambition and social performance unfold under a narrator who repeatedly invites readers to question the spectacle."
+  },
+  "145": {
+    "title": "Middlemarch",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Interwoven lives in a provincial town reveal how private hopes are shaped by institutions, marriages, and money."
+  },
+  "16": {
+    "title": "Peter Pan",
+    "genre": "Fantasy",
+    "moods": [
+      "Adventurous",
+      "Reflective"
+    ],
+    "note": "A flight away from ordinary life becomes a playful and uneasy meditation on childhood, memory, and growing up."
+  },
+  "12": {
+    "title": "Through the Looking-Glass",
+    "genre": "Fantasy",
+    "moods": [
+      "Curious",
+      "Lighthearted"
+    ],
+    "note": "A familiar child steps into a reversed world where chess, poems, and conversations keep changing the rules."
+  },
+  "54": {
+    "title": "The Marvelous Land of Oz",
+    "genre": "Fantasy",
+    "moods": [
+      "Adventurous",
+      "Lighthearted"
+    ],
+    "note": "A new group of unlikely companions explores a magical country through inventions, disguises, and shifting expectations."
+  },
+  "1998": {
+    "title": "Thus Spake Zarathustra",
+    "genre": "Philosophy",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A poetic philosophical voice uses speeches, parables, and provocation to challenge comfortable inherited values."
+  },
+  "4363": {
+    "title": "Beyond Good and Evil",
+    "genre": "Philosophy",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "Aphorisms and arguments ask how convictions are formed and what lies behind claims to moral certainty."
+  },
+  "216": {
+    "title": "Tao Te Ching",
+    "author": "Laozi · translated by James Legge",
+    "genre": "Philosophy",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Short, paradoxical passages invite reflection on action, restraint, leadership, and the limits of naming things."
+  },
+  "2017": {
+    "title": "The Dhammapada",
+    "author": "Traditional Buddhist verses · translated by F. Max Müller",
+    "genre": "Philosophy",
+    "moods": [
+      "Reflective",
+      "Hopeful"
+    ],
+    "note": "A collection of Buddhist verses returns to attention, conduct, suffering, and the discipline of living deliberately."
+  },
+  "2388": {
+    "title": "The Song Celestial · Bhagavad-Gita",
+    "author": "Translated by Edwin Arnold",
+    "genre": "Poetry",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "A verse translation of a dialogue about action, duty, knowledge, and spiritual commitment at a moment of crisis."
+  },
+  "1524": {
+    "title": "Hamlet",
+    "genre": "Drama",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "A prince’s questions turn a court into a place where evidence, performance, grief, and action refuse to align."
+  },
+  "1533": {
+    "title": "Macbeth",
+    "genre": "Drama",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "Compressed dramatic language follows the disturbing pressure of ambition, prediction, and moral imagination."
+  },
+  "1514": {
+    "title": "A Midsummer Night’s Dream",
+    "genre": "Drama",
+    "moods": [
+      "Lighthearted",
+      "Adventurous"
+    ],
+    "note": "A night of mistaken identities and altered affections brings lovers, craftspeople, and fairies into collision."
+  },
+  "1532": {
+    "title": "King Lear",
+    "genre": "Drama",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "Questions about love, authority, and appearances become painfully immediate in a divided family and kingdom."
+  },
+  "1727": {
+    "title": "The Odyssey",
+    "author": "Homer · translated by Samuel Butler",
+    "genre": "Epic",
+    "moods": [
+      "Adventurous",
+      "Reflective"
+    ],
+    "note": "Journeys and homecomings test what it means to recognize a person, honor a guest, and remain faithful to a purpose."
+  },
+  "6130": {
+    "title": "The Iliad",
+    "author": "Homer · translated by Alexander Pope",
+    "genre": "Epic",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An epic of conflict gives anger, honor, grief, and the shared vulnerability of enemies a powerful poetic form."
+  },
+  "996": {
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes · translated by John Ormsby",
+    "genre": "Adventure",
+    "moods": [
+      "Lighthearted",
+      "Reflective"
+    ],
+    "note": "A reader remakes the world through stories, turning travel into a comic argument about imagination and reality."
+  },
+  "1080": {
+    "title": "A Modest Proposal",
+    "genre": "Satire",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "An apparently practical proposal makes the cold language of calculation a weapon against social cruelty."
+  },
+  "1065": {
+    "title": "The Raven",
+    "genre": "Poetry",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "A repeated sound and a confined room create a short encounter with grief, suggestion, and obsessive interpretation."
+  },
+  "1064": {
+    "title": "The Masque of the Red Death",
+    "genre": "Short fiction",
+    "moods": [
+      "Unsettling",
+      "Curious"
+    ],
+    "note": "A richly imagined gathering raises questions about privilege, exclusion, and the limits of sheltering from danger."
+  },
+  "932": {
+    "title": "The Fall of the House of Usher",
+    "genre": "Short fiction",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "A visitor’s impressions turn a house, a family, and a landscape into a tightly connected atmosphere of unease."
+  },
+  "1322": {
+    "title": "Leaves of Grass",
+    "genre": "Poetry",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "An expansive poetic voice gathers bodies, landscapes, labor, and contradictions into a vision of shared life."
+  },
+  "12242": {
+    "title": "Poems by Emily Dickinson · Three Series",
+    "genre": "Poetry",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Brief poems open large uncertainties through compressed images, shifting perspectives, and surprising turns of thought."
+  },
+  "574": {
+    "title": "Poems of William Blake",
+    "genre": "Poetry",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Songs and visions place innocence beside experience, asking how institutions and habits shape what people can see."
+  },
+  "1063": {
+    "title": "The Cask of Amontillado",
+    "genre": "Short fiction",
+    "moods": [
+      "Unsettling",
+      "Curious"
+    ],
+    "note": "A controlled first-person voice makes every courteous phrase worth examining in a compact story of revenge."
+  },
+  "2814": {
+    "title": "Dubliners",
+    "genre": "Short fiction",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Everyday encounters in a city reveal quiet pressures, disappointed hopes, and moments of sudden recognition."
+  },
+  "2500": {
+    "title": "Siddhartha",
+    "author": "Hermann Hesse",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Hopeful"
+    ],
+    "note": "A spiritual journey asks what can be learned from teachers and what must be encountered through living."
+  },
+  "3600": {
+    "title": "Essays of Michel de Montaigne",
+    "author": "Michel de Montaigne · translated by Charles Cotton",
+    "genre": "Essays",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "A questioning mind moves among experience, quotations, contradictions, and the difficulty of knowing oneself."
+  },
+  "41": {
+    "title": "The Legend of Sleepy Hollow",
+    "genre": "Short fiction",
+    "moods": [
+      "Lighthearted",
+      "Unsettling"
+    ],
+    "note": "A local storyteller mixes rumor, comic characterization, and an uncanny landscape in a tale of competing explanations."
+  },
+  "244": {
+    "title": "A Study in Scarlet",
+    "genre": "Mystery",
+    "moods": [
+      "Curious",
+      "Adventurous"
+    ],
+    "note": "An unusual partnership begins with a case that rewards close attention to apparently unimportant details."
+  },
+  "203": {
+    "title": "Uncle Tom’s Cabin",
+    "genre": "Social fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A historical antislavery novel uses family, faith, and separation to confront its readers with human consequences."
+  },
+  "32": {
+    "title": "Herland",
+    "genre": "Science fiction",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "Visitors encounter an imagined society that makes their own assumptions about gender and civilization newly visible."
+  },
+  "3797": {
+    "title": "In the Days of the Comet",
+    "genre": "Science fiction",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "An imagined global change becomes a way to question the institutions and resentments people take for granted."
+  },
+  "31": {
+    "title": "Three Plays of Sophocles",
+    "author": "Sophocles · translated by F. Storr",
+    "genre": "Drama",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Oedipus and Antigone bring public duty, family loyalty, knowledge, and responsibility into demanding dramatic conflict."
+  },
+  "1497": {
+    "title": "The Republic",
+    "author": "Plato · translated by Benjamin Jowett",
+    "genre": "Philosophy",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A sustained conversation asks what justice might mean for a person, a community, and an education."
+  },
+  "20203": {
+    "title": "Autobiography of Benjamin Franklin",
+    "genre": "Memoir",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A self-portrait of work, learning, habits, and public life invites readers to question how a life is shaped in retrospect."
+  },
+  "643": {
+    "title": "The Death of the Lion",
+    "genre": "Short fiction",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Literary attention becomes an uneasy subject in a story about a writer, an observer, and the claims of fashionable admiration."
+  },
+  "130": {
+    "title": "Orthodoxy",
+    "genre": "Essays",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A personal defense of Christian belief uses paradox and argument to make familiar convictions look unusual."
+  },
+  "25344": {
+    "title": "The Scarlet Letter",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A public symbol gathers private meanings in a story about judgment, secrecy, and the power of a community’s gaze."
+  },
+  "140": {
+    "title": "The Jungle",
+    "genre": "Social fiction",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "An immigrant family’s encounter with industrial labor exposes the human stakes behind systems of production and power."
+  },
+  "7164": {
+    "title": "Gitanjali",
+    "author": "Rabindranath Tagore · English renderings by the author",
+    "genre": "Poetry",
+    "moods": [
+      "Reflective",
+      "Hopeful"
+    ],
+    "note": "Brief lyrical offerings return to devotion, ordinary beauty, mortality, and the openness of an attentive life."
+  },
+  "58585": {
+    "title": "The Prophet",
+    "genre": "Poetry",
+    "moods": [
+      "Reflective",
+      "Hopeful"
+    ],
+    "note": "Poetic addresses explore work, love, freedom, and everyday relationships through the voice of a departing teacher."
+  },
+  "5616": {
+    "title": "The Madman · Parables and Poems",
+    "genre": "Poetry",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "Small parables and poems use unexpected viewpoints to unsettle easy judgments about wisdom and belonging."
+  },
+  "408": {
+    "title": "The Souls of Black Folk",
+    "genre": "Essays",
+    "moods": [
+      "Reflective",
+      "Curious"
+    ],
+    "note": "Essays join history, lived experience, music, and argument in an examination of race and American democracy."
+  },
+  "242": {
+    "title": "My Ántonia",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Hopeful"
+    ],
+    "note": "Memory of a prairie community becomes a meditation on migration, landscape, labor, and the making of a life."
+  },
+  "160": {
+    "title": "The Awakening and Selected Short Stories",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A novel and shorter works explore private desires and the social expectations that leave them difficult to name."
+  },
+  "151": {
+    "title": "The Rime of the Ancient Mariner",
+    "genre": "Poetry",
+    "moods": [
+      "Unsettling",
+      "Reflective"
+    ],
+    "note": "A stranger’s urgent sea story turns repetition and striking images into questions about attention and responsibility."
+  },
+  "1513": {
+    "title": "Romeo and Juliet",
+    "genre": "Drama",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Urgent speech and competing loyalties reveal the pressure that a divided community places on private feeling."
+  }
+}

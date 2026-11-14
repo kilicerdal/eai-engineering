@@ -3,10 +3,10 @@ import {readingEditions, type BookId,type Position,type ReadingNote} from './lib
 import {chapterAt} from './navigation';
 export type Book=typeof readingBooks[number];
 export const readingJourneys:[{id:string;title:string;description:string;books:BookId[]},...{id:string;title:string;description:string;books:BookId[]}[]]=[
- {id:'strange-worlds',title:'Strange Worlds',description:'Step through a rabbit hole, across dimensions, or into a distant future.',books:['11','55','35','36','97','289']},
- {id:'under-two-hours',title:'An Hour or Two',description:'Two complete works with estimated reading times under two hours.',books:['1952','844']},
- {id:'human-mind',title:'The Human Mind',description:'Identity, perception, conscience, and the stories we tell ourselves.',books:['84','174','43','1952','2680','1342']},
- {id:'lasting-ideas',title:'Ideas That Stay With Us',description:'Explore freedom, responsibility, perspective, and how to live.',books:['23','205','132','2680','97','84']}
+ {id:'strange-worlds',title:'Strange Worlds',description:'Step through a rabbit hole, across dimensions, or into a distant future.',books:['11','55','35','36','97','289','12','16','32','54']},
+ {id:'under-two-hours',title:'An Hour or Two',description:'Complete works under two hours, from short fiction to poetry and satire.',books:['1952','844','1065','1080','58585','5616']},
+ {id:'human-mind',title:'The Human Mind',description:'Identity, perception, conscience, and the stories we tell ourselves.',books:['84','174','43','1952','2680','1342','209','2500','145']},
+ {id:'lasting-ideas',title:'Ideas That Stay With Us',description:'Explore freedom, responsibility, perspective, and how to live.',books:['23','205','132','2680','97','84','408','1497','216','2017']}
 ];
 export function inJourney(id:BookId,journey:string){return !journey||!!readingJourneys.find(j=>j.id===journey)?.books.includes(id);}
 export type FinderChoices={time:'short'|'evening'|'any';mood:string;novelty:'familiar'|'surprising'};
