@@ -1,57 +1,32 @@
-"use client";
-import {useRef,useState,useSyncExternalStore} from "react";
-import {readingBooks,readingStatuses,READING_KEY,readShelf,type ReadingStatus} from "@/lib/study-reading";
-function subscribe(callback:()=>void){window.addEventListener("storage",callback);window.addEventListener("dai-reading-change",callback);return()=>{window.removeEventListener("storage",callback);window.removeEventListener("dai-reading-change",callback);};}
-const unavailable = Symbol("bookshelf unavailable");
-function snapshot(): string | null | typeof unavailable {try{return localStorage.getItem(READING_KEY);}catch{return unavailable;}}
-function searchable(text: string) {
-  return text.toLowerCase().replace(/[’']/g, "").replace(/[.,!?;:()–—-]/g, " ");
-}
+'use client';
+import {useRef,useState} from 'react';
+import Link from 'next/link';
+import {readingBooks,readingStatuses} from '@/lib/study-reading';
+import {readingEditions,readingMatches,readingCollections,estimateLength,unexpectedBook,type BookId} from '@/lib/reading/library';
+import {useReadingLibrary} from './ReadingLibraryState';
+import ReadingBackup from './ReadingBackup';
+import {ReadingDialog} from './ReadingDialog';
+type Book=typeof readingBooks[number];
 export default function ReadingRoom(){
- const raw=useSyncExternalStore(subscribe,snapshot,()=>null);
- const [query,setQuery]=useState(""),[genre,setGenre]=useState("All"),[filter,setFilter]=useState("All books"),[feedback,setFeedback]=useState<{message:string;raw:ReturnType<typeof snapshot>}|null>(null);
- const notice=feedback && feedback.raw===raw ? feedback.message : "";
- let shelf:Record<string,ReadingStatus>={},corrupt=false;try{if(raw!==unavailable)shelf=readShelf(raw);}catch{corrupt=true;}
- const words=searchable(query).split(/\s+/).filter(Boolean);
- const visible=readingBooks.filter(book=>(genre==="All"||genre===book.genre)&&words.every(word=>searchable(`${book.title} ${book.author} ${book.genre}`).includes(word))&&(raw===unavailable||corrupt||filter==="All books"||shelf[book.id]===filter));
- const showAll = useRef<HTMLButtonElement>(null);
- const searchInput = useRef<HTMLInputElement>(null);
- const visibleShelf = corrupt || raw===unavailable ? "All books" : filter;
- function save(id:string,status:string){
-  try{
-   const latest=readShelf(localStorage.getItem(READING_KEY));
-   if(status)latest[id]=status as ReadingStatus;
-   else delete latest[id];
-   const updated=JSON.stringify(latest);
-   localStorage.setItem(READING_KEY,updated);
-   window.dispatchEvent(new Event("dai-reading-change"));
-   const index=visible.findIndex(book=>book.id===id);
-   const book=visible[index];
-   setFeedback({message:status ? `${book.title} moved to ${status}.` : `${book.title} removed from your shelf.`,raw:updated});
-   if(filter!=="All books" && status!==filter){
-    const neighbor=visible[index+1] ?? visible[index-1];
-    requestAnimationFrame(()=>{
-     const target=neighbor && document.getElementById(`reading-shelf-${neighbor.id}`);
-     (target || showAll.current || searchInput.current)?.focus();
-    });
-   }
-  }catch{setFeedback({message:"Your bookshelf could not be saved. Try again when browser storage is available.",raw:snapshot()});}
- }
- const control="w-full rounded-lg border border-[#766746] bg-[#101f2d] p-3 text-[#f5eddf] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#edc779]";
- return <>
- <div className="grid gap-4 rounded-2xl border border-[#766746] bg-[#0c1a27] p-5 md:grid-cols-3">
- <label>Find a book<input ref={searchInput} className={control} type="search" placeholder="Title, author, or genre" value={query} onChange={e=>{setQuery(e.target.value);setFeedback(null);}}/></label>
- <label>Genre<select className={control} value={genre} onChange={e=>{setGenre(e.target.value);setFeedback(null);}}><option>All</option>{[...new Set(readingBooks.map(book=>book.genre))].map(value=><option key={value}>{value}</option>)}</select></label>
- <label>My bookshelf<select className={control} disabled={corrupt||raw===unavailable} value={visibleShelf} onChange={e=>{setFilter(e.target.value);setFeedback(null);}}><option>All books</option>{readingStatuses.map(value=><option key={value}>{value}</option>)}</select></label>
- </div>
- <p className="my-4 text-sm text-[#d3dce2]">Bookshelf choices stay in this browser. They are not synced to your account. Reading opens on Project Gutenberg; your page position there is not tracked here.</p>
- <p role="status" className="my-3 text-[#edc779]">{notice && `${notice} `}{visible.length} {visible.length===1?"book":"books"} to explore</p>
- {raw===unavailable&&<p role="status">Browser storage is unavailable. You can still find and read books. Enable browser storage to use your bookshelf.</p>}
- {corrupt&&<p role="alert">Your saved bookshelf could not be read. It has been preserved; saving is disabled to avoid replacing it.</p>}
- {!visible.length&&<div className="rounded-xl border border-[#766746] p-6"><h2 className="text-2xl">A little room for discovery.</h2><p className="my-3">No books match these choices. Try another search, or add a book to this shelf.</p><button ref={showAll} className="underline" onClick={()=>{setQuery("");setGenre("All");setFilter("All books");setFeedback(null);searchInput.current?.focus();}}>Show all books</button></div>}
- <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{visible.map((book,index)=><article key={book.id} className="flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#766746] bg-[#0c1a27]">
- <div className="relative flex min-h-48 flex-col justify-end border-b border-[#766746] bg-gradient-to-br from-[#253e48] via-[#172a3c] to-[#101724] p-6"><span aria-hidden="true" className="absolute right-5 top-3 text-5xl text-[#edc779]/30">✧</span><p className="mb-3 text-xs uppercase tracking-[0.2em] text-[#edc779]">{String(index+1).padStart(2,"0")} · {book.genre}</p><h2 className="font-serif text-3xl leading-tight text-[#fff5e1]">{book.title}</h2><p className="mt-3 text-[#e1cfae]">{book.author}</p></div>
- <div className="flex flex-1 flex-col gap-4 p-5"><p className="flex-1 text-[#d3dce2]">{book.note}</p><a className="rounded-lg bg-[#e5bd73] px-4 py-3 text-center font-semibold text-[#101724] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" href={`https://www.gutenberg.org/ebooks/${book.id}`} target="_blank" rel="noopener noreferrer">Read free on Project Gutenberg ↗<span className="sr-only"> — {book.title}, opens in a new tab</span></a><label className="text-sm">Shelf for {book.title}<select id={`reading-shelf-${book.id}`} disabled={corrupt||raw===unavailable} className={control} value={shelf[book.id]||""} onChange={e=>save(book.id,e.target.value)}><option value="">Not on my shelf</option>{readingStatuses.map(status=><option key={status}>{status}</option>)}</select></label></div>
- </article>)}</div>
- </>;
+ const {shelf,library,shelfError,libraryError,setShelf}=useReadingLibrary();
+ const [query,setQuery]=useState(''),[genre,setGenre]=useState('All'),[mood,setMood]=useState('Any mood'),[filter,setFilter]=useState('All books'),[collection,setCollection]=useState('All books'),[notice,setNotice]=useState(''),[preview,setPreview]=useState<Book|null>(null),[backup,setBackup]=useState(false);
+ const lastUnexpected=useRef(''),search=useRef<HTMLInputElement>(null);
+ const visible=readingBooks.filter(b=>readingMatches(b,query,genre,mood,collection)&&(!shelfError&&filter!=='All books'?shelf[b.id]===filter:true));
+ const reading=readingBooks.filter(b=>shelf[b.id]==='Reading');
+ function save(book:Book,status:string){try{setShelf(book.id,status);setNotice(status?`${book.title} moved to ${status}.`:`${book.title} removed from your shelf.`);if(filter!=='All books'&&status!==filter)requestAnimationFrame(()=>search.current?.focus());}catch(error){setNotice(error instanceof Error?error.message:'Your shelf could not be saved.');}}
+ function surprise(){const n=window.crypto.getRandomValues(new Uint32Array(1))[0]/0x100000000;const next=unexpectedBook(visible,shelf,n,lastUnexpected.current);if(next){lastUnexpected.current=next.id;setPreview(next);}else setNotice('No books match. Clear a filter to explore something unexpected.');}
+ function readerLink(id:BookId,start=false){const info=readingEditions[id];return `/study/reading/${id}${start?`?section=${info.excerptSection}&paragraph=${info.excerptParagraph}`:''}`;}
+ return <div className="rr-library" id="books"><div className="rr-section-heading"><div><p className="rr-eyebrow">YOUR NEXT CHAPTER</p><h2>Find a book that finds you.</h2></div><button onClick={()=>setBackup(true)}>Backup & restore</button></div>
+ {reading.length>0&&<section className="rr-current" aria-label="Currently reading"><div><p className="rr-eyebrow">CURRENTLY READING</p><h3>A story waiting for you.</h3></div><div>{reading.map(book=><Link key={book.id} href={readerLink(book.id)}><strong>{book.title}</strong><span>{library.positions[book.id]?`Resume · section ${library.positions[book.id]!.section+1}`:'Open the book'} →</span></Link>)}</div></section>}
+ <div className="rr-tools"><label>Find a book<input ref={search} type="search" maxLength={200} placeholder="Title, author, or an idea…" value={query} onChange={e=>setQuery(e.target.value)}/></label><label>Genre<select value={genre} onChange={e=>setGenre(e.target.value)}><option>All</option>{[...new Set(readingBooks.map(b=>b.genre))].map(g=><option key={g}>{g}</option>)}</select></label><label>My bookshelf<select value={shelfError?'All books':filter} disabled={!!shelfError} onChange={e=>setFilter(e.target.value)}><option>All books</option>{readingStatuses.map(s=><option key={s}>{s}</option>)}</select></label></div>
+ <div className="rr-moods" aria-label="Choose a reading mood"><span>What are you in the mood for?</span>{['Any mood','Curious','Adventurous','Reflective','Lighthearted','Hopeful','Unsettling'].map(m=><button key={m} aria-pressed={mood===m} onClick={()=>setMood(m)}>{m}</button>)}</div>
+ <div className="rr-collections" aria-label="Reading collections">{readingCollections.map(c=><button key={c} aria-pressed={collection===c} onClick={()=>setCollection(c)}>{c}</button>)}<button className="rr-surprise" onClick={surprise}>Explore something unexpected ✧</button></div>
+ <div className="rr-library-status"><p role="status">{notice||`${visible.length} ${visible.length===1?'book':'books'} to explore`}</p><p>Bookshelf, notes, and reading positions stay in this browser. <button className="rr-text-button" onClick={()=>setBackup(true)}>Keep a backup ↗</button></p></div>
+ {(shelfError||libraryError)&&<p role="alert" className="rr-warning">{shelfError} {libraryError} Existing stored data is preserved.</p>}
+ {!visible.length&&<div className="rr-empty"><h3>A little room for discovery.</h3><p>No books match these choices. Try another search or mood.</p><button onClick={()=>{setQuery('');setGenre('All');setMood('Any mood');setFilter('All books');setCollection('All books');search.current?.focus();}}>Show all books</button></div>}
+ <div className="rr-grid">{visible.map(book=>{const info=readingEditions[book.id];return <article key={book.id} className="rr-book"><div className={`rr-cover rr-cover-${readingBooks.indexOf(book)%5}`}><span className="rr-cover-rule"/><span className="rr-cover-category">{book.genre}</span><div className="rr-cover-motif" aria-hidden="true">{info.motif}</div><h3>{book.title}</h3><p>{book.author}</p><span className="rr-cover-edition">THE dAI READING ROOM</span></div><div className="rr-book-body"><p className="rr-length">{Math.round(info.words/1000).toLocaleString()}k words · about {estimateLength(info.words)}</p><p>{book.note}</p><details className="rr-why"><summary>Why read this?</summary><p>{info.why}</p></details><p className="rr-mood-tags">{info.moods.join(' · ')}</p><div className="rr-book-actions"><Link className="rr-primary" href={readerLink(book.id)}>{library.positions[book.id]?'Resume reading':'Read here'} →</Link><button onClick={()=>setPreview(book)}>Try the opening</button></div><a className="rr-source" href={`https://www.gutenberg.org/ebooks/${book.id}`} target="_blank" rel="noopener noreferrer">Read free on Project Gutenberg ↗<span className="sr-only"> — {book.title}, opens in a new tab</span></a><label>Shelf for {book.title}<select id={`reading-shelf-${book.id}`} value={shelf[book.id]||''} disabled={!!shelfError} onChange={e=>save(book,e.target.value)}><option value="">Not on my shelf</option>{readingStatuses.map(s=><option key={s}>{s}</option>)}</select></label></div></article>;})}</div>
+ <p className="rr-estimate-note">Length estimates assume 200–250 words a minute and include this edition’s introductory material and notes. They are a guide, never a target. “Short reads” means editions under 45,000 words.</p>
+ {preview&&<ReadingDialog title={preview.title} onClose={()=>setPreview(null)}><p className="rr-eyebrow">AN OPENING TO EXPLORE · {preview.author}</p><blockquote className="rr-opening">{readingEditions[preview.id].excerpt}</blockquote><p>{readingEditions[preview.id].why}</p><p className="rr-small">An excerpt from the source text. Some editions begin with introductory material; this preview opens at the story or main text.</p><Link className="rr-primary" href={readerLink(preview.id,true)}>Start at this opening →</Link><p><a href={`https://www.gutenberg.org/ebooks/${preview.id}`} target="_blank" rel="noopener noreferrer">Source edition & other formats ↗</a></p></ReadingDialog>}
+ {backup&&<ReadingBackup onClose={()=>setBackup(false)}/>}
+ </div>;
 }

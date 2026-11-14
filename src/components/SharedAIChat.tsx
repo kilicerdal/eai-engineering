@@ -1,4 +1,5 @@
 "use client";
+import {passageHandoff,DISCUSSION_KEY} from '@/lib/reading/library';
 import CopyCodeButton from "./CopyCodeButton";
 import { curiosityHandoff } from "@/app/study/curiosity/journey";
 import { algebraDiscussion, key as algebraSampleKey } from "@/lib/algebra-sample";
@@ -557,6 +558,16 @@ export default function SharedAIChat() {
     if (hydrated && !loading) queueMicrotask(() => {
       if (!mounted) return;
       const url = new URL(window.location.href);
+      if (url.searchParams.get("reading") === "passage") {
+        let prompt=null;
+        try {prompt=passageHandoff(sessionStorage.getItem(DISCUSSION_KEY));} catch { /* Leave existing drafts untouched. */ }
+        if(prompt && conversations.length>=30){setResumeNotice("You have 30 saved sessions. Back up and remove an older session, then reopen the passage. Your drafts are unchanged.");return;}
+        url.searchParams.delete("reading");window.history.replaceState(null,"",url);
+        if(!prompt){setResumeNotice("The reading passage could not be restored. Your existing drafts are unchanged.");return;}
+        try {sessionStorage.removeItem(DISCUSSION_KEY);} catch { /* No personal note is included. */ }
+        receivePracticePrompt(new CustomEvent("eai-study-prompt",{detail:prompt}));
+        setResumeNotice("Opened a new reading discussion with an unsent passage draft. Your other drafts are preserved. Review it, then choose Send when ready.");return;
+      }
       if (url.searchParams.has("curiosity")) {
         const prompt = curiosityHandoff(url.searchParams.get("curiosity"));
         if (prompt && conversations.length >= 30) {
