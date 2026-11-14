@@ -7,7 +7,7 @@ export type BookId=keyof typeof readingEditions;
 export type Position={section:number;paragraph?:string;updatedAt:number};
 export type Bookmark={id:string;bookId:BookId;section:number;paragraph?:string;label:string;createdAt:number};
 export type ReadingNote={id:string;bookId:BookId;section:number;paragraph?:string;quote:string;text:string;createdAt:number};
-export type ReaderPreferences={theme:'night'|'paper'|'sepia';size:18|22|26;width:'comfortable'|'wide';focus:boolean};
+export type ReaderPreferences={theme:'night'|'paper'|'sepia';size:18|22|26;width:'comfortable'|'wide';focus:boolean;shelfView?:'grid'|'list'};
 export type ReadingLibrary={version:1;positions:Partial<Record<BookId,Position>>;bookmarks:Bookmark[];notes:ReadingNote[];preferences:ReaderPreferences};
 export const defaultReaderPreferences:ReaderPreferences={theme:'night',size:22,width:'comfortable',focus:false};
 export function emptyLibrary():ReadingLibrary{return {version:1,positions:{},bookmarks:[],notes:[],preferences:{...defaultReaderPreferences}};}
@@ -23,7 +23,7 @@ export function parseLibrary(raw:string|null):ReadingLibrary {
  if(raw===null)return emptyLibrary();const v:unknown=JSON.parse(raw);
  if(!object(v)||v.version!==1||!object(v.positions)||!Array.isArray(v.bookmarks)||!Array.isArray(v.notes)||!object(v.preferences))throw Error('Your reading library could not be read. The stored copy has been preserved.');
  for(const [id,pos] of Object.entries(v.positions))if(!bookId(id)||!validPosition(id,pos))throw Error('Invalid reading position. Stored data is unchanged.');
- const p=v.preferences;if(!['night','paper','sepia'].includes(String(p.theme))||![18,22,26].includes(Number(p.size))||typeof p.size!=='number'||!['comfortable','wide'].includes(String(p.width))||typeof p.focus!=='boolean')throw Error('Invalid reading preferences. Stored data is unchanged.');
+ const p=v.preferences;if(!['night','paper','sepia'].includes(String(p.theme))||![18,22,26].includes(Number(p.size))||typeof p.size!=='number'||!['comfortable','wide'].includes(String(p.width))||typeof p.focus!=='boolean'||(p.shelfView!==undefined&&!['grid','list'].includes(String(p.shelfView))))throw Error('Invalid reading preferences. Stored data is unchanged.');
  const check=(items:unknown[],notes:boolean)=>{
   if(items.length>200)throw Error('The library supports up to 200 bookmarks and 200 notes.');const ids=new Set<string>();
   for(const item of items){if(!object(item)||!validId(item.id)||ids.has(item.id)||!bookId(item.bookId)||!validPosition(item.bookId,{section:item.section,paragraph:item.paragraph,updatedAt:item.createdAt}))throw Error('Invalid saved reading item.');ids.add(item.id);
@@ -33,7 +33,7 @@ export function parseLibrary(raw:string|null):ReadingLibrary {
  };
  check(v.bookmarks,false);check(v.notes,true);
  // Copy only supported fields: backup files cannot add executable content or app keys.
- return {version:1,positions:Object.fromEntries(Object.entries(v.positions).map(([id,pos])=>{const p=pos as Position;return [id,{section:p.section,...(p.paragraph?{paragraph:p.paragraph}:{}),updatedAt:p.updatedAt}];})),bookmarks:v.bookmarks.map(i=>{const x=i as Bookmark;return {id:x.id,bookId:x.bookId,section:x.section,...(x.paragraph?{paragraph:x.paragraph}:{}),label:x.label,createdAt:x.createdAt};}),notes:v.notes.map(i=>{const x=i as ReadingNote;return {id:x.id,bookId:x.bookId,section:x.section,...(x.paragraph?{paragraph:x.paragraph}:{}),quote:x.quote,text:x.text,createdAt:x.createdAt};}),preferences:{theme:p.theme,size:p.size,width:p.width,focus:p.focus} as ReaderPreferences};
+ return {version:1,positions:Object.fromEntries(Object.entries(v.positions).map(([id,pos])=>{const p=pos as Position;return [id,{section:p.section,...(p.paragraph?{paragraph:p.paragraph}:{}),updatedAt:p.updatedAt}];})),bookmarks:v.bookmarks.map(i=>{const x=i as Bookmark;return {id:x.id,bookId:x.bookId,section:x.section,...(x.paragraph?{paragraph:x.paragraph}:{}),label:x.label,createdAt:x.createdAt};}),notes:v.notes.map(i=>{const x=i as ReadingNote;return {id:x.id,bookId:x.bookId,section:x.section,...(x.paragraph?{paragraph:x.paragraph}:{}),quote:x.quote,text:x.text,createdAt:x.createdAt};}),preferences:{theme:p.theme,size:p.size,width:p.width,focus:p.focus,...(p.shelfView?{shelfView:p.shelfView}:{})} as ReaderPreferences};
 }
 export function estimateLength(words:number){const min=Math.ceil(words/250),max=Math.ceil(words/200);const format=(m:number)=>m<60?`${m} min`:`${Math.floor(m/60)}h${m%60?` ${m%60}m`:''}`;return `${format(min)}–${format(max)}`;}
 export const readingCollections=['All books','Short reads','Big ideas','Journeys into imagination'] as const;
