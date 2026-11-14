@@ -1,7 +1,8 @@
 'use client';
 import {useEffect,useId,useRef,type ReactNode} from 'react';
+function focusable(element:Element|null):element is HTMLElement{return element instanceof HTMLElement&&element.isConnected&&element.getClientRects().length>0&&!element.closest('[hidden],dialog:not([open])')&&!element.hasAttribute('disabled');}
 export function ReadingDialog({title,onClose,children}:{title:string;onClose:()=>void;children:ReactNode}){
  const ref=useRef<HTMLDialogElement>(null),heading=useId();
- useEffect(()=>{const previous=document.activeElement;const dialog=ref.current;dialog?.showModal();return()=>{dialog?.close();if(previous instanceof HTMLElement&&previous.isConnected)previous.focus();};},[]);
- return <dialog ref={ref} className="rr-dialog" aria-labelledby={heading} onCancel={event=>{event.preventDefault();onClose();}}><header><h2 id={heading}>{title}</h2><button aria-label={`Close ${title}`} onClick={onClose}>×</button></header>{children}</dialog>;
+ useEffect(()=>{const previous=document.activeElement,dialog=ref.current;dialog?.showModal();return()=>{dialog?.close();if(focusable(previous))previous.focus({preventScroll:true});else{const fallback=[...document.querySelectorAll('[data-reading-dialog-fallback="true"],.rr-focus-tools,.rr-reader-header>a')].find(focusable);fallback?.focus({preventScroll:true});}};},[]);
+ return <dialog ref={ref} className="rr-dialog" aria-labelledby={heading} onKeyDown={event=>{if(event.key!=='Tab')return;const dialog=ref.current;if(!dialog)return;const items=[...dialog.querySelectorAll('a[href],button,input,select,textarea,[tabindex]')].filter(focusable).filter(el=>el.getAttribute('tabindex')!=='-1');if(!items.length){event.preventDefault();return;}const first=items[0],last=items.at(-1)!;if(event.shiftKey&&(document.activeElement===first||document.activeElement===dialog)){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}} onCancel={event=>{event.preventDefault();onClose();}}><header><h2 id={heading}>{title}</h2><button aria-label={`Close ${title}`} onClick={onClose}>×</button></header>{children}</dialog>;
 }
