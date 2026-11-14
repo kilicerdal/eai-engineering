@@ -1,3 +1,4 @@
+import {v30ReadingIntroductions} from './introductions-v30';
 import {additionalReadingIntroductions} from './introductions-v22';
 import type {BookId} from './library';
 // Original spoiler-free reading invitations. Bibliographic context checked 2026-11-14.
@@ -153,5 +154,5 @@ export const readingIntroductions:Record<BookId,{era:string;invitation:string;la
     "language": "Historical language and descriptions of racist violence are retained. The source edition includes introductory material before the narrative.",
     "source": "https://www.gutenberg.org/ebooks/23"
   }
-,...additionalReadingIntroductions
+,...additionalReadingIntroductions,...v30ReadingIntroductions
 };

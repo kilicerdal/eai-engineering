@@ -1,3 +1,4 @@
+import {v30ReadingBooks} from './reading/catalog-v30';
 import {additionalReadingBooks} from './reading/catalog-v22';
 export const readingBooks = [
   {id:"1342",title:"Pride and Prejudice",author:"Jane Austen",genre:"Romance",note:"Wit, first impressions, and the complicated business of knowing another person."},
@@ -25,7 +26,7 @@ export const readingBooks = [
   {"id": "55", "title": "The Wonderful Wizard of Oz", "author": "L. Frank Baum", "genre": "Fantasy", "note": "A strange road brings an unlikely group of travelers together."},
   {"id": "97", "title": "Flatland", "author": "Edwin A. Abbott", "genre": "Science fiction", "note": "A geometric fable that asks how much our viewpoint allows us to see."},
   {"id": "23", "title": "Narrative of the Life of Frederick Douglass", "author": "Frederick Douglass", "genre": "Memoir", "note": "A firsthand account of enslavement, literacy, and the pursuit of freedom."},
-  ...additionalReadingBooks,
+  ...additionalReadingBooks,...v30ReadingBooks,
 ] as const;
 export const readingStatuses = ["Want to read","Reading","Finished"] as const;
 export type ReadingStatus = typeof readingStatuses[number];

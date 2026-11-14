@@ -1,3 +1,4 @@
+import {v30SourceDetails} from './source-details-v30';
 // Extracted from the bundled Project Gutenberg headers; electronic release dates are not original publication dates.
 export const sourceDetails={
   "105": {
@@ -514,4 +515,4 @@ export const sourceDetails={
     "release": "July 27, 2004 [eBook #996]",
     "language": "English"
   }
-} as const;
+,...v30SourceDetails} as const;

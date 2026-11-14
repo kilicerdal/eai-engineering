@@ -1,0 +1,902 @@
+{
+  "946": {
+    "title": "Lady Susan",
+    "genre": "Romance",
+    "moods": [
+      "Lighthearted",
+      "Curious"
+    ],
+    "note": "Letters turn manners and persuasion into a contest of competing intentions."
+  },
+  "1212": {
+    "title": "Love and Freindship",
+    "genre": "Short fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Early comic writing plays with the conventions of feeling, friendship, and fashionable storytelling."
+  },
+  "1023": {
+    "title": "Bleak House",
+    "genre": "Social fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A long-running legal dispute connects lives across a richly observed social world."
+  },
+  "786": {
+    "title": "Hard Times",
+    "genre": "Social fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A town shaped by industry becomes a setting for questions about education and human feeling."
+  },
+  "550": {
+    "title": "Silas Marner",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An isolated life is changed by a new responsibility and the possibility of belonging."
+  },
+  "507": {
+    "title": "Adam Bede",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Work, community, and moral choices shape the lives of people in a rural setting."
+  },
+  "394": {
+    "title": "Cranford",
+    "genre": "Social fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Small rituals and everyday conversations reveal the texture of a close community."
+  },
+  "4274": {
+    "title": "Wives and Daughters",
+    "genre": "Coming of age",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Family changes and social observation shape a young woman's understanding of others."
+  },
+  "2153": {
+    "title": "Mary Barton",
+    "genre": "Social fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Working lives and family relationships unfold against an industrial city."
+  },
+  "1028": {
+    "title": "The Professor",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Work, independence, and teaching shape a young man's account of life abroad."
+  },
+  "30486": {
+    "title": "Shirley",
+    "genre": "Social fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Private relationships unfold beside conflicts over work, industry, and social expectations."
+  },
+  "767": {
+    "title": "Agnes Grey",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A governess observes the unequal relationships within the households where she works."
+  },
+  "969": {
+    "title": "The Tenant of Wildfell Hall",
+    "genre": "Gothic",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A mysterious arrival challenges a community's assumptions about reputation and private life."
+  },
+  "110": {
+    "title": "Tess of the d'Urbervilles",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A young woman's life confronts social judgment, circumstance, and the limits of sympathy."
+  },
+  "153": {
+    "title": "Jude the Obscure",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An ambition for learning meets difficult barriers of class, convention, and circumstance."
+  },
+  "107": {
+    "title": "Far from the Madding Crowd",
+    "genre": "Romance",
+    "moods": [
+      "Lighthearted",
+      "Curious"
+    ],
+    "note": "Rural work and complicated attachments surround a woman's effort to live independently."
+  },
+  "482": {
+    "title": "The Woodlanders",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Woodland lives expose tensions between social position, loyalty, and personal desire."
+  },
+  "2662": {
+    "title": "Under the Greenwood Tree",
+    "genre": "Romance",
+    "moods": [
+      "Lighthearted",
+      "Curious"
+    ],
+    "note": "Village music and courtship offer a quieter encounter with a changing rural community."
+  },
+  "221": {
+    "title": "The Return of Sherlock Holmes",
+    "genre": "Mystery",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A series of separate investigations offers clues, deduction, and the company of a familiar narrator."
+  },
+  "834": {
+    "title": "The Memoirs of Sherlock Holmes",
+    "genre": "Mystery",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Watson recounts further cases that reward attention to details and explanations."
+  },
+  "2097": {
+    "title": "The Sign of the Four",
+    "genre": "Mystery",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A puzzling request opens an investigation into promises, secrets, and a complicated past."
+  },
+  "3289": {
+    "title": "The Valley of Fear",
+    "genre": "Mystery",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A coded warning leads into an investigation with a wider history behind it."
+  },
+  "139": {
+    "title": "The Lost World",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "An expedition tests its travelers' expectations about evidence and the unfamiliar."
+  },
+  "903": {
+    "title": "The White Company",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A medieval adventure brings companions into a landscape of travel, conflict, and changing loyalties."
+  },
+  "1013": {
+    "title": "The First Men in the Moon",
+    "genre": "Science fiction",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "An imagined lunar journey asks what explorers can understand about an unfamiliar society."
+  },
+  "780": {
+    "title": "The War in the Air",
+    "genre": "Science fiction",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "An unsettling speculation considers technological power and the consequences of aerial warfare."
+  },
+  "5230": {
+    "title": "The Invisible Man",
+    "genre": "Science fiction",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A scientific achievement becomes a story about isolation, power, and responsibility."
+  },
+  "11696": {
+    "title": "The Food of the Gods",
+    "genre": "Science fiction",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A strange invention changes the scale of ordinary life and exposes competing visions of progress."
+  },
+  "159": {
+    "title": "The Island of Doctor Moreau",
+    "genre": "Science fiction",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A disturbing island encounter questions the boundary between scientific ambition and restraint."
+  },
+  "103": {
+    "title": "Around the World in Eighty Days",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A wager becomes a journey in which schedules and unexpected encounters compete."
+  },
+  "164": {
+    "title": "Twenty Thousand Leagues under the Sea",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A submarine voyage combines imagined engineering with encounters beneath the sea."
+  },
+  "18857": {
+    "title": "A Journey to the Centre of the Earth",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "An expedition follows a remarkable possibility into a world beneath familiar ground."
+  },
+  "1268": {
+    "title": "The Mysterious Island",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "Castaways confront practical problems through cooperation, observation, and invention."
+  },
+  "421": {
+    "title": "Kidnapped",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A young traveler is drawn into danger, contested loyalties, and an unfamiliar landscape."
+  },
+  "848": {
+    "title": "The Black Arrow",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A young man's loyalties are tested amid conflict and uncertain identities."
+  },
+  "535": {
+    "title": "Travels with a Donkey in the Cevennes",
+    "genre": "Travel writing",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A walking journey makes room for landscape, encounters, and an occasionally uncooperative companion."
+  },
+  "86": {
+    "title": "A Connecticut Yankee in King Arthur's Court",
+    "genre": "Fantasy",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A collision of eras becomes a comic and questioning encounter with power and progress."
+  },
+  "1837": {
+    "title": "The Prince and the Pauper",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An exchange of appearances challenges assumptions about rank, justice, and experience."
+  },
+  "245": {
+    "title": "Life on the Mississippi",
+    "genre": "Memoir",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "River experience and recollection combine in an account of work, travel, and change."
+  },
+  "3177": {
+    "title": "Roughing It",
+    "genre": "Travel writing",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "Travel and recollection become opportunities for comic exaggeration and observation."
+  },
+  "3176": {
+    "title": "The Innocents Abroad",
+    "genre": "Travel writing",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A traveling observer questions familiar expectations through humor and encounters abroad."
+  },
+  "11231": {
+    "title": "Bartleby, the Scrivener",
+    "genre": "Short fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An office narrator encounters a refusal he cannot easily explain."
+  },
+  "1900": {
+    "title": "Typee",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A travel narrative invites questions about observation, storytelling, and unfamiliar communities."
+  },
+  "33": {
+    "title": "The Scarlet Letter",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A public mark of judgment shapes private lives within a tightly governed community."
+  },
+  "77": {
+    "title": "The House of the Seven Gables",
+    "genre": "Gothic",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An old house connects family history, suspicion, and the possibility of change."
+  },
+  "2081": {
+    "title": "The Blithedale Romance",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An observer recalls a communal experiment through uncertain motives and relationships."
+  },
+  "976": {
+    "title": "Tanglewood Tales",
+    "genre": "Fairy tales",
+    "moods": [
+      "Lighthearted",
+      "Curious"
+    ],
+    "note": "Classical stories are retold for a new audience through a nineteenth-century narrative voice."
+  },
+  "432": {
+    "title": "The Ambassadors",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A journey abroad becomes an occasion for revising assumptions about other people's lives."
+  },
+  "2870": {
+    "title": "Washington Square",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Family expectations and a courtship test the ways people interpret one another."
+  },
+  "208": {
+    "title": "Daisy Miller",
+    "genre": "Short fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An observer's judgments reveal the uncertainty of interpreting someone across social conventions."
+  },
+  "541": {
+    "title": "The Age of Innocence",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Private hopes meet the rules and expectations of a closely watched social world."
+  },
+  "284": {
+    "title": "The House of Mirth",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A woman's place in society depends on appearances, resources, and difficult choices."
+  },
+  "4517": {
+    "title": "Ethan Frome",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A visitor reconstructs a life constrained by place, duty, and frustrated longing."
+  },
+  "11052": {
+    "title": "The Custom of the Country",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Social ambition exposes the pressures and assumptions surrounding marriage and status."
+  },
+  "166": {
+    "title": "Summer",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A young woman seeks a wider life while confronting the limits of her circumstances."
+  },
+  "4368": {
+    "title": "Flappers and Philosophers",
+    "genre": "Short fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Separate stories explore aspiration, performance, and surprising changes of circumstance."
+  },
+  "71865": {
+    "title": "Mrs. Dalloway",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A single day opens into memories, passing encounters, and interconnected private lives."
+  },
+  "4217": {
+    "title": "A Portrait of the Artist as a Young Man",
+    "genre": "Coming of age",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A developing consciousness tests inherited language, belief, and artistic ambition."
+  },
+  "4300": {
+    "title": "Ulysses",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A day of encounters becomes an experiment in voice, form, and the movement of thought."
+  },
+  "2817": {
+    "title": "Chamber Music",
+    "genre": "Poetry",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Short lyric poems invite attention to sound, repetition, and musical phrasing."
+  },
+  "2641": {
+    "title": "A Room with a View",
+    "genre": "Romance",
+    "moods": [
+      "Lighthearted",
+      "Curious"
+    ],
+    "note": "Travel and changing surroundings unsettle familiar expectations about life and love."
+  },
+  "2891": {
+    "title": "Howards End",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Several households expose contrasting ideas of connection, property, and responsibility."
+  },
+  "2781": {
+    "title": "Just So Stories",
+    "genre": "Stories & fables",
+    "moods": [
+      "Lighthearted",
+      "Curious"
+    ],
+    "note": "Playful origin tales make language and explanation part of the storytelling."
+  },
+  "1074": {
+    "title": "The Sea-Wolf",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "Life aboard a ship becomes a confrontation between different ideas of strength and morality."
+  },
+  "1056": {
+    "title": "Martin Eden",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A pursuit of learning and writing tests ambition against social divisions and personal change."
+  },
+  "1688": {
+    "title": "The People of the Abyss",
+    "genre": "Social nonfiction",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A historical observer reports on poverty through firsthand encounters and a particular viewpoint."
+  },
+  "310": {
+    "title": "Before Adam",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "An imagined prehistory explores memory, survival, and a speculative human past."
+  },
+  "974": {
+    "title": "The Secret Agent",
+    "genre": "Political fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Private relationships intersect with political intrigue and the limits of understanding others."
+  },
+  "2021": {
+    "title": "Nostromo",
+    "genre": "Political fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Personal loyalties and public ambitions intersect around a contested source of wealth."
+  },
+  "1142": {
+    "title": "Typhoon",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A voyage tests practical judgment in conditions that resist tidy explanations."
+  },
+  "525": {
+    "title": "Youth",
+    "genre": "Short fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An older narrator recalls a sea voyage through the distance between youth and memory."
+  },
+  "18247": {
+    "title": "The Last Man",
+    "genre": "Science fiction",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "An imagined future becomes a meditation on companionship, loss, and human vulnerability."
+  },
+  "14522": {
+    "title": "The Canterville Ghost",
+    "genre": "Short fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A ghost story meets comedy as familiar supernatural expectations fail to impress a new household."
+  },
+  "902": {
+    "title": "The Happy Prince and Other Tales",
+    "genre": "Fairy tales",
+    "moods": [
+      "Lighthearted",
+      "Curious"
+    ],
+    "note": "Short tales combine imaginative settings with questions of generosity and suffering."
+  },
+  "1257": {
+    "title": "The Three Musketeers",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Companionship and intrigue propel a young adventurer into a world of competing loyalties."
+  },
+  "1184": {
+    "title": "The Count of Monte Cristo",
+    "genre": "Adventure",
+    "moods": [
+      "Adventurous",
+      "Curious"
+    ],
+    "note": "A long adventure explores confinement, identity, and the far-reaching consequences of revenge."
+  },
+  "965": {
+    "title": "The Black Tulip",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A seemingly small ambition becomes entangled with political suspicion and personal rivalry."
+  },
+  "2600": {
+    "title": "War and Peace",
+    "genre": "Historical fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Private lives unfold alongside public conflict in a large, shifting historical panorama."
+  },
+  "1399": {
+    "title": "Anna Karenina",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Interwoven relationships explore family, social judgment, and conflicting ideas of a meaningful life."
+  },
+  "2554": {
+    "title": "Crime and Punishment",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An intensely troubled consciousness confronts an act and its consequences."
+  },
+  "28054": {
+    "title": "The Brothers Karamazov",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A family conflict opens into questions about belief, responsibility, and moral choice."
+  },
+  "2638": {
+    "title": "The Idiot",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An unusual presence unsettles a social circle's assumptions about goodness and judgment."
+  },
+  "600": {
+    "title": "Notes from the Underground",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A combative narrator challenges readers to question his account of himself."
+  },
+  "1081": {
+    "title": "Dead Souls",
+    "genre": "Social fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A strange business scheme becomes a journey through social ambition and appearances."
+  },
+  "1237": {
+    "title": "Father Goriot",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Ambition and family attachments meet within a closely observed social world."
+  },
+  "2413": {
+    "title": "Madame Bovary",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Private dissatisfaction meets the promises of romance and the texture of everyday life."
+  },
+  "2527": {
+    "title": "The Sorrows of Young Werther",
+    "genre": "Literary fiction",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Letters turn private feeling into an account of longing and self-interpretation."
+  },
+  "2446": {
+    "title": "An Enemy of the People",
+    "genre": "Drama",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A public dispute tests the relationship between evidence, reputation, and collective interests."
+  },
+  "2467": {
+    "title": "Ghosts",
+    "genre": "Drama",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "A household conversation exposes the force of inherited expectations and concealed history."
+  },
+  "4093": {
+    "title": "Hedda Gabler",
+    "genre": "Drama",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Conversation and constrained choices create tension within a small social circle."
+  },
+  "1531": {
+    "title": "Othello",
+    "genre": "Drama",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "An intimate tragedy examines trust, persuasion, and the construction of suspicion."
+  },
+  "1515": {
+    "title": "The Merchant of Venice",
+    "genre": "Drama",
+    "moods": [
+      "Reflective",
+      "Unsettling"
+    ],
+    "note": "Competing obligations, bargains, and identities shape a difficult historical play."
+  },
+  "1228": {
+    "title": "On the Origin of Species",
+    "genre": "Natural history",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A historical scientific argument develops through observations, examples, and competing explanations."
+  },
+  "944": {
+    "title": "The Voyage of the Beagle",
+    "genre": "Travel writing",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A naturalist's journey records observations of landscapes, organisms, and human societies."
+  },
+  "14474": {
+    "title": "The Chemical History of a Candle",
+    "genre": "Science writing",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A familiar flame becomes a starting point for exploring physical and chemical processes."
+  },
+  "2376": {
+    "title": "Up from Slavery",
+    "genre": "Memoir",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A firsthand account connects education, work, and self-presentation within a particular historical setting."
+  },
+  "2397": {
+    "title": "The Story of My Life",
+    "genre": "Memoir",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A personal account explores language, education, and discovering ways to communicate."
+  },
+  "11030": {
+    "title": "Incidents in the Life of a Slave Girl",
+    "genre": "Memoir",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A firsthand narrative describes enslavement, family ties, and a struggle for freedom."
+  },
+  "3420": {
+    "title": "A Vindication of the Rights of Woman",
+    "genre": "Essays",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "An argument about education and social expectations asks how independence can be cultivated."
+  },
+  "1022": {
+    "title": "Walking",
+    "genre": "Essays",
+    "moods": [
+      "Curious",
+      "Reflective"
+    ],
+    "note": "A short essay uses walking as an invitation to reconsider habits of attention."
+  }
+}
