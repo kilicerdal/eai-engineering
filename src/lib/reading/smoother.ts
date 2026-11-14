@@ -1,0 +1,9 @@
+import {readingChapters,chapterAt} from './navigation';
+import type {BookId,Bookmark,Position} from './library';
+import type {PersonalCollection} from './collections';
+export type ReaderPlace=Pick<Position,'section'|'paragraph'>;
+export function jumpOrigin(origin:ReaderPlace,target:ReaderPlace){return origin.section===target.section&&origin.paragraph===target.paragraph?null:{section:origin.section,...(origin.paragraph?{paragraph:origin.paragraph}:{})};}
+export function nameBookmark(mark:Bookmark,value:string):Bookmark{const title=value.trim();if(title.length>80)throw Error('Keep bookmark names to 80 characters.');const next={...mark};if(title)next.title=title;else delete next.title;return next;}
+export function moveCollectionBook(items:readonly PersonalCollection[],collectionId:string,id:BookId,direction:-1|1){const collection=items.find(c=>c.id===collectionId);if(!collection)throw Error('This collection changed. Close and reopen collections.');const from=collection.bookIds.indexOf(id);if(from<0)throw Error('This book is no longer in this collection.');const to=Math.max(0,Math.min(collection.bookIds.length-1,from+direction));return items.map(c=>{if(c.id!==collectionId)return c;const ids=[...c.bookIds];ids.splice(from,1);ids.splice(to,0,id);return {...c,bookIds:ids};});}
+export function collectionOrder<T extends {id:BookId}>(books:readonly T[],ids:readonly BookId[]){const order=new Map(ids.map((id,i)=>[id,i]));return [...books].sort((a,b)=>(order.get(a.id)??Number.MAX_SAFE_INTEGER)-(order.get(b.id)??Number.MAX_SAFE_INTEGER));}
+export function adjacentChapter(id:BookId,place:ReaderPlace,direction:-1|1){const chapters=readingChapters[id],current=chapterAt(id,place),index=current?chapters.findIndex(c=>c.paragraph===current.paragraph):-1;return chapters[index+direction]||null;}

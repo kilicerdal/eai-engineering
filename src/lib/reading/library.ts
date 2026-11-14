@@ -6,7 +6,7 @@ export const LIBRARY_KEY='dai-reading-library-v1';
 export const DISCUSSION_KEY='dai-reading-discussion-v1';
 export type BookId=keyof typeof readingEditions;
 export type Position={section:number;paragraph?:string;updatedAt:number};
-export type Bookmark={id:string;bookId:BookId;section:number;paragraph?:string;label:string;createdAt:number};
+export type Bookmark={title?:string;id:string;bookId:BookId;section:number;paragraph?:string;label:string;createdAt:number};
 export type ReadingNote={title?:string;tag?:'Question'|'Favorite passage'|'Thought';id:string;bookId:BookId;section:number;paragraph?:string;quote:string;text:string;createdAt:number};
 export type ReaderPreferences={theme:'night'|'paper'|'sepia';size:18|22|26;width:'comfortable'|'wide';focus:boolean;shelfView?:'grid'|'list';spacing?:'compact'|'comfortable'|'spacious'};
 export type ReadingLibrary={version:1;positions:Partial<Record<BookId,Position>>;bookmarks:Bookmark[];notes:ReadingNote[];preferences:ReaderPreferences;collections?:PersonalCollection[];savedAt?:Partial<Record<BookId,number>>;upNext?:BookId};
@@ -30,7 +30,7 @@ export function parseLibrary(raw:string|null):ReadingLibrary {
   if(items.length>200)throw Error('The library supports up to 200 bookmarks and 200 notes.');const ids=new Set<string>();
   for(const item of items){if(!object(item)||!validId(item.id)||ids.has(item.id)||!bookId(item.bookId)||!validPosition(item.bookId,{section:item.section,paragraph:item.paragraph,updatedAt:item.createdAt}))throw Error('Invalid saved reading item.');ids.add(item.id);
    if(notes){if((item.title!==undefined&&(typeof item.title!=='string'||!item.title.trim()||item.title.length>80))||(item.tag!==undefined&&(typeof item.tag!=='string'||!['Question','Favorite passage','Thought'].includes(item.tag))))throw Error('Invalid note details.');if(typeof item.quote!=='string'||item.quote.length>2000||typeof item.text!=='string'||item.text.length>5000||(!item.text.trim()&&!item.quote.trim()))throw Error('Invalid note.');}
-   else if(typeof item.label!=='string'||item.label.length>100)throw Error('Invalid bookmark.');
+   else if(typeof item.label!=='string'||item.label.length>100||(item.title!==undefined&&(typeof item.title!=='string'||!item.title.trim()||item.title.length>80)))throw Error('Invalid bookmark.');
   }
  };
  check(v.bookmarks,false);check(v.notes,true);
@@ -40,7 +40,7 @@ export function parseLibrary(raw:string|null):ReadingLibrary {
  let savedAt:ReadingLibrary['savedAt'];
  if(v.savedAt!==undefined){if(!object(v.savedAt)||Object.entries(v.savedAt).some(([id,t])=>!bookId(id)||!time(t)))throw Error('Invalid shelf dates. Stored data is unchanged.');savedAt={...v.savedAt} as ReadingLibrary['savedAt'];}
  // Copy only supported fields: backup files cannot add executable content or app keys.
- return {version:1,...(v.upNext!==undefined?{upNext:v.upNext as BookId}:{}),...(savedAt!==undefined?{savedAt}:{}),...(collections!==undefined?{collections}:{}),positions:Object.fromEntries(Object.entries(v.positions).map(([id,pos])=>{const p=pos as Position;return [id,{section:p.section,...(p.paragraph?{paragraph:p.paragraph}:{}),updatedAt:p.updatedAt}];})),bookmarks:v.bookmarks.map(i=>{const x=i as Bookmark;return {id:x.id,bookId:x.bookId,section:x.section,...(x.paragraph?{paragraph:x.paragraph}:{}),label:x.label,createdAt:x.createdAt};}),notes:v.notes.map(i=>{const x=i as ReadingNote;return {id:x.id,bookId:x.bookId,section:x.section,...(x.paragraph?{paragraph:x.paragraph}:{}),quote:x.quote,text:x.text,createdAt:x.createdAt,...(x.title!==undefined?{title:x.title}:{}),...(x.tag!==undefined?{tag:x.tag}:{})};}),preferences:{theme:p.theme,size:p.size,width:p.width,focus:p.focus,...(p.shelfView?{shelfView:p.shelfView}:{}),...(p.spacing?{spacing:p.spacing}:{})} as ReaderPreferences};
+ return {version:1,...(v.upNext!==undefined?{upNext:v.upNext as BookId}:{}),...(savedAt!==undefined?{savedAt}:{}),...(collections!==undefined?{collections}:{}),positions:Object.fromEntries(Object.entries(v.positions).map(([id,pos])=>{const p=pos as Position;return [id,{section:p.section,...(p.paragraph?{paragraph:p.paragraph}:{}),updatedAt:p.updatedAt}];})),bookmarks:v.bookmarks.map(i=>{const x=i as Bookmark;return {id:x.id,bookId:x.bookId,section:x.section,...(x.paragraph?{paragraph:x.paragraph}:{}),label:x.label,createdAt:x.createdAt,...(x.title!==undefined?{title:x.title}:{})};}),notes:v.notes.map(i=>{const x=i as ReadingNote;return {id:x.id,bookId:x.bookId,section:x.section,...(x.paragraph?{paragraph:x.paragraph}:{}),quote:x.quote,text:x.text,createdAt:x.createdAt,...(x.title!==undefined?{title:x.title}:{}),...(x.tag!==undefined?{tag:x.tag}:{})};}),preferences:{theme:p.theme,size:p.size,width:p.width,focus:p.focus,...(p.shelfView?{shelfView:p.shelfView}:{}),...(p.spacing?{spacing:p.spacing}:{})} as ReaderPreferences};
 }
 export function estimateLength(words:number){const min=Math.ceil(words/250),max=Math.ceil(words/200);const format=(m:number)=>m<60?`${m} min`:`${Math.floor(m/60)}h${m%60?` ${m%60}m`:''}`;return `${format(min)}–${format(max)}`;}
 export const readingCollections=['All books','Short reads','Big ideas','Journeys into imagination'] as const;
