@@ -1,0 +1,3 @@
+import {readingIntroductions} from '@/lib/reading/introductions';
+import type {BookId} from '@/lib/reading/library';
+export default function ReadingIntroduction({id}:{id:BookId}){const intro=readingIntroductions[id];return <details className="rr-before"><summary>Before you begin · spoiler-free</summary><p className="rr-eyebrow">{intro.era}</p><p>{intro.invitation}</p><p><strong>A note on reading:</strong> {intro.language}</p><a href={intro.source} target="_blank" rel="noopener noreferrer">Book context & source ↗</a><p className="rr-small">Reading invitations and language guidance by dAI.</p></details>;}
