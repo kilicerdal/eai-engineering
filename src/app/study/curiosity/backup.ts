@@ -37,7 +37,7 @@ function snapshot(value:unknown,missing:Set<string>):Snapshot {
     // resume position or reject the rest of an otherwise valid personal library.
     if(!known.has(value.resume.factId))missing.add(value.resume.factId);
     else {
-      const fields=['category','query','savedOnly','factId','revealed','daily','dailyDate','dailyIds','collection','personalId','personalName','personalIds','newOnly','newIds'];
+      const fields=['trailId','category','query','savedOnly','factId','revealed','daily','dailyDate','dailyIds','collection','personalId','personalName','personalIds','newOnly','newIds'];
       const view=Object.fromEntries(Object.entries(value.resume).filter(([key])=>fields.includes(key)));
       for(const key of ['dailyIds','personalIds','newIds'])if(key in view)view[key]=idList(view[key],missing);
       if(view.daily===true && Array.isArray(view.dailyIds) && view.dailyIds.length!==5)resume=null;

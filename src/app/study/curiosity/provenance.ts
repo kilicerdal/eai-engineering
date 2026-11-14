@@ -1,3 +1,4 @@
+import {thousandFacts,thousandSources} from './thousand-reasons';
 import {natureSolutionFacts,natureSolutionSources} from './nature-solutions';
 import {plainSightFacts,plainSightSources} from './hidden-in-plain-sight';
 import {worldWonderFacts, worldWonderSources} from './world-wonders';
@@ -12,6 +13,7 @@ import { yourWorldFacts, yourWorldSources } from './your-world';
 // Preserve the original records. Dates come from their documented source reviews,
 // not a claim that every earlier card was re-audited during V1.8.
 const reviews = new Map<string, string>([
+  ...thousandFacts.map(fact=>[fact.id,thousandSources[fact.sourceKey].reviewedOn] as const),
   ...natureSolutionFacts.map(fact=>[fact.id,natureSolutionSources[fact.sourceKey].reviewedOn] as const),
   ...plainSightFacts.map(fact=>[fact.id,plainSightSources[fact.sourceKey].reviewedOn] as const),
   ...worldWonderFacts.map(fact=>[fact.id,worldWonderSources[fact.sourceKey].reviewedOn] as const),
