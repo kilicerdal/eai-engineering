@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="threshold explore-page"><div className="explore-container explore-intro"><div><p className="explore-kicker">eAI EXPLORE</p><h1>Opening your experiment…</h1><p role="status">Preparing the model and your controls.</p></div></div></main>}
