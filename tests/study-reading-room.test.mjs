@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync as originalReadFileSync} from 'node:fs';
+import {gunzipSync} from 'node:zlib';
+// Legacy fixture paths remain intact; compare their exact decoded source bytes.
+function readFileSync(file,encoding){if(typeof file==='string'&&file.startsWith('public/reading/')){const raw=gunzipSync(originalReadFileSync(file.replace('public/reading/','data/reading/')+'.gz'));return encoding?raw.toString(encoding):raw;}return originalReadFileSync(file,encoding);}
 import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
 import path from 'node:path';

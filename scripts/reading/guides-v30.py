@@ -1,5 +1,5 @@
 from pathlib import Path
-import json,re
+import gzip,json,re
 root=Path.cwd();meta=json.loads(Path('/private/tmp/reading-v30-metadata.json').read_text());early={};notes={}
 content={
  '23':('Contains firsthand accounts of enslavement and racist violence.',r'whipp'),
@@ -14,7 +14,7 @@ content={
  '1952':('Contains psychological distress and restrictive care within a historical setting.',r'nervous'),
  '1399':('Contains difficult relationships, death and suicide.',r'suicide')}
 for b in meta['books']:
- id=b['id'];info=meta['editions'][id];data=json.loads((root/f'public/reading/{id}.json').read_text());ps=[dict(**p,section=i) for i,s in enumerate(data['sections']) for p in s];start=next((i for i,p in enumerate(ps) if p['id']==info['excerptParagraph']),0);nexthead=next((int(c['paragraph'][1:]) for c in meta['chapters'][id] if int(c['paragraph'][1:])>int(info['excerptParagraph'][1:])),10**9)
+ id=b['id'];info=meta['editions'][id];data=json.loads(gzip.decompress((root/f'data/reading/{id}.json.gz').read_bytes()));ps=[dict(**p,section=i) for i,s in enumerate(data['sections']) for p in s];start=next((i for i,p in enumerate(ps) if p['id']==info['excerptParagraph']),0);nexthead=next((int(c['paragraph'][1:]) for c in meta['chapters'][id] if int(c['paragraph'][1:])>int(info['excerptParagraph'][1:])),10**9)
  candidate=next((p for p in ps[start+1:start+35] if int(p['id'][1:])<nexthead and 20<=len(p['text'].split())<=220 and not p['text'].isupper() and not re.search(r'copyright|gutenberg|transcrib|contents|illustration',p['text'],re.I)),None)
  early[id]=dict(section=candidate['section'],paragraph=candidate['id'],text=candidate['text'][:1100]+('…' if len(candidate['text'])>1100 else '')) if candidate else None
  if id in content:

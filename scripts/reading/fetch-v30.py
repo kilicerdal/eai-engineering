@@ -2,7 +2,7 @@ from pathlib import Path
 import urllib.request,json,xml.etree.ElementTree as E,time,concurrent.futures
 root=Path.cwd();cache=Path('/private/tmp/reading-v30-sources');cache.mkdir(exist_ok=True)
 baseline=root/'tests/fixtures/reading-v29-baseline.json'
-existing={b['id'] for b in json.loads(baseline.read_text())['books']} if baseline.exists() else {p.stem for p in (root/'public/reading').glob('*.txt')}
+existing={b['id'] for b in json.loads(baseline.read_text())['books']} if baseline.exists() else {p.name.split('.')[0] for p in (root/'data/reading').glob('*.txt.gz')}
 ns={'d':'http://purl.org/dc/terms/','p':'http://www.gutenberg.org/2009/pgterms/','r':'http://www.w3.org/1999/02/22-rdf-syntax-ns#'}
 candidates=[]
 for line in (root/'scripts/reading/v30-candidates.tsv').read_text().splitlines():

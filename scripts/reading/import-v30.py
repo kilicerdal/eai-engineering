@@ -1,6 +1,6 @@
 # Run from the checkout: python3 scripts/reading/import-v30.py /absolute/source-cache
 from pathlib import Path
-import json,re,hashlib,unicodedata,html.parser,xml.etree.ElementTree as E
+import gzip,json,re,hashlib,unicodedata,html.parser,xml.etree.ElementTree as E
 import sys
 root=Path.cwd();cache=Path(sys.argv[1]);cur=json.loads((root/'scripts/reading/v30-curation.json').read_text());rows=json.loads((cache/'selected.json').read_text());assert len(cur)==len(rows)==100
 class Heads(html.parser.HTMLParser):
@@ -84,7 +84,7 @@ for row in rows:
  excerptText=excerpt['text'][:600];excerptText=excerptText.rsplit(' ',1)[0]+'…' if len(excerpt['text'])>600 else excerptText
  author=c.get('author') or ' & '.join(' '.join(reversed(a.split(', ',1))) for a in row['authors']);author=re.sub(r' \([^)]*\)','',author)
  data=dict(id=id,revision='2026-11-14-v30',source=f'https://www.gutenberg.org/ebooks/{id}',sha256=hashlib.sha256(raw).hexdigest(),rights='Public domain in the USA; copyright may differ elsewhere.',sections=sections)
- (root/f'public/reading/{id}.txt').write_bytes(raw);(root/f'public/reading/{id}.json').write_text(json.dumps(data,ensure_ascii=False,separators=(',',':')))
+ (root/f'data/reading/{id}.txt.gz').write_bytes(gzip.compress(raw,compresslevel=9,mtime=0));(root/f'data/reading/{id}.json.gz').write_bytes(gzip.compress(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode('utf8'),compresslevel=9,mtime=0))
  meta[id]=dict(words=len(body.split()),sections=len(sections),excerpt=excerptText,excerptParagraph=excerpt['id'],excerptSection=locations[excerpt['id']],sourceTitle=row['title'],sha256=data['sha256'],moods=c['moods'],why=c['note']+' Read for the questions the language and viewpoint leave with you.',motif=['✧','◇','◌','❧','⌘'][len(books)%5],paragraphs=len(paras),excerptKind='passage',startSection=anchors[0]['section'],startParagraph=anchors[0]['paragraph'])
  books.append(dict(id=id,title=c['title'],author=author,genre=c['genre'],note=c['note']))
  guidance={'Poetry':'Read a little aloud. Line breaks, rhythm, and repetition carry meaning; the source edition may include notes and introductory material.','Drama':'Character names and stage directions guide the action. This is a play, so read speech as performance rather than continuous narration.','Epic':'This is an English translation of an ancient epic. The translator’s style and historical conventions shape the voice you hear.','Philosophy':'Read a short passage at a time. Historical arguments and translated terminology invite questioning rather than automatic agreement.','Fairy tales':'Each tale can be read separately. Traditional stories may include violence and attitudes that differ from modern retellings.','Stories & fables':'Try one piece at a time. A narrator’s stated lesson is an invitation to think, not a rule you must accept.','Short fiction':'Small details and changes of voice matter. Read slowly enough to notice what the narrator leaves uncertain.','Essays':'You can read an essay at a time. These historical voices make arguments that can be questioned as well as appreciated.'}.get(c['genre'],'Historical wording and attitudes are retained. Let the narrator’s voice set the pace, and use the source notes when a reference is unfamiliar.')
@@ -96,3 +96,7 @@ for row in rows:
 (root/'src/lib/reading/contents-v30.ts').write_text('export const v30ReadingChapters='+json.dumps(chapters,ensure_ascii=False,indent=2)+';\n')
 (root/'src/lib/reading/introductions-v30.ts').write_text('export const v30ReadingIntroductions='+json.dumps(intros,ensure_ascii=False,indent=2)+';\n')
 (root/'docs/reading-sources-v30.json').write_text(json.dumps(ledger,ensure_ascii=False,indent=2));(cache/'review.txt').write_text('\n'.join(review));print('\n'.join(review))
+
+# Refresh delivery sizes and hashes after importing source editions.
+import subprocess
+subprocess.run(['node','scripts/reading/pack-books.mjs'],check=True)
