@@ -1,0 +1,7 @@
+import {getCert,CONTENT_REVIEWED,type CertId} from './certification-content';
+import {parseCert,type CertStudy,CERT_KEY} from './certification-study';
+import {parseLearning,type LearningWork,LEARNING_KEY} from './certification-learning';
+import {parseChallenge,challengeKey,type ChallengeWork} from './certification-challenges';
+import {prepResources} from './certification-resources';
+export function backupKeys(id:CertId){return {study:`${CERT_KEY}:${id}`,learning:`${LEARNING_KEY}:${id}`,challenge:challengeKey(id)};}
+export function combinedBackup(study:CertStudy,learning:LearningWork,challenge:ChallengeWork,read:(key:string)=>string|null,now:number,warnings:string[]=[]){if(study.track!==learning.track)throw Error('Backup path mismatch');parseCert(study.track,JSON.stringify(study));parseLearning(study.track,JSON.stringify(learning));parseChallenge(JSON.stringify(challenge));const raw:Record<string,string|null>={};for(const [name,key] of Object.entries(backupKeys(study.track))){try{raw[name]=read(key);}catch{raw[name]=null;warnings=[...warnings,`Stored ${name} copy could not be read; current in-tab work is included.`];}}return {format:'eai-certification-backup',version:1,track:study.track,title:getCert(study.track)!.title,exportedAt:new Date(now).toISOString(),contentReviewed:CONTENT_REVIEWED,current:{study,learning,challenge},storedCopies:raw,warnings:warnings.filter(Boolean),resources:prepResources(study.track).map(({id,href,version})=>({id,href,version}))};}

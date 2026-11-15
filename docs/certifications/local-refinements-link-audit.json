@@ -1,0 +1,273 @@
+{
+  "reviewed": "2026-11-14",
+  "paths": 10,
+  "resourceEntries": 88,
+  "uniqueDocuments": 44,
+  "responses": [
+    {
+      "url": "https://aws.amazon.com/certification/certification-prep/",
+      "status": 200,
+      "final": "https://aws.amazon.com/certification/certification-prep/",
+      "type": "text/html;charset=utf-8"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain1.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain1.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain2.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain2.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain3.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain3.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain4.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain4.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "status": 200,
+      "final": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "type": "text/html"
+    },
+    {
+      "url": "https://docs.github.com/en/actions",
+      "status": 200,
+      "final": "https://docs.github.com/en/actions",
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/?download_id=3352&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/?download_id=3352&sdm_process_download=1",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/?download_id=3357&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/?download_id=3357&sdm_process_download=1",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/?download_id=3435&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTAL-TAE_Syllabus_v2.0.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/?download_id=3437&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/wp-content/uploads/2026/05/ISTQB_CTAL-TAE_Sample_Exam_Questions_v2.4-1.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/?download_id=3438&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/wp-content/uploads/2026/05/ISTQB_CTAL-TAE_Sample_Exam_Answers_v2.4-1.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/?download_id=6295&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/?download_id=6295&sdm_process_download=1",
+      "type": "application/octet-stream"
+    },
+    {
+      "url": "https://istqb.org/?download_id=6301&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/?download_id=6301&sdm_process_download=1",
+      "type": "application/octet-stream"
+    },
+    {
+      "url": "https://istqb.org/?download_id=6309&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/?download_id=6309&sdm_process_download=1",
+      "type": "application/octet-stream"
+    },
+    {
+      "url": "https://istqb.org/?download_id=9558&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/wp-content/uploads/2026/05/ISTQB-_CTAI_Syllabus_v2.0_Release.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/?download_id=9561&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/wp-content/uploads/2026/07/ISTQB_CTAI_V2.0_SampleExam-Questions-v2.2-1.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/?download_id=9564&sdm_process_download=1",
+      "status": 200,
+      "final": "https://istqb.org/wp-content/uploads/2026/07/ISTQB_CTAI_v2.0_SampleExam-Answers-v2.2.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "status": 200,
+      "final": "https://istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "status": 200,
+      "final": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "status": 200,
+      "final": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://istqb.org/certifications/gen-ai/",
+      "status": 200,
+      "final": "https://istqb.org/certifications/gen-ai/",
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/github-actions/",
+      "status": 200,
+      "final": "https://learn.microsoft.com/en-us/credentials/certifications/github-actions/",
+      "type": "text/html"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/",
+      "status": 200,
+      "final": "https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/",
+      "type": "text/html"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-200",
+      "status": 200,
+      "final": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-200",
+      "type": "text/html"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "status": 200,
+      "final": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "type": "text/html"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/paths/copilot/",
+      "status": 200,
+      "final": "https://learn.microsoft.com/en-us/training/paths/copilot/",
+      "type": "text/html"
+    }
+  ],
+  "fragmentIssues": []
+}
