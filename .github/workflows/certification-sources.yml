@@ -1,0 +1,25 @@
+name: Certification source review
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 12 * * 1'
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: node scripts/audit-certification-sources.mjs --output /tmp/eai-certification-source-audit.json
+      - name: Keep the review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: certification-source-review
+          path: /tmp/eai-certification-source-audit.json

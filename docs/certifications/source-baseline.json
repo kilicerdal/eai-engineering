@@ -1,0 +1,599 @@
+{
+  "checkedAt": "2026-11-15T05:27:14.487Z",
+  "method": "PDF byte fingerprint; HTML heading fingerprint plus link/section availability. Changes require human review. Unchanged headings do not prove unchanged content.",
+  "paths": [
+    {
+      "id": "cloud-practitioner",
+      "version": "CLF-C02 · current online exam guide",
+      "questions": 27,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "ai-practitioner",
+      "version": "AIF-C01 · current online exam guide",
+      "questions": 27,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "istqb-foundation",
+      "version": "Syllabus v4.0.1 · 2024-09-15",
+      "questions": 27,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "solutions-architect",
+      "version": "SAA-C03 · current online exam guide",
+      "questions": 16,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "developer-associate",
+      "version": "DVA-C03 · upcoming exam from December 1, 2026",
+      "questions": 15,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "test-automation",
+      "version": "CTAL-TAE · syllabus v2.0",
+      "questions": 26,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "ai-testing",
+      "version": "CT-AI · syllabus v2.0",
+      "questions": 23,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "generative-ai-testing",
+      "version": "CT-GenAI · syllabus v1.1",
+      "questions": 17,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "github-actions",
+      "version": "GH-200 · skills measured January 2026",
+      "questions": 17,
+      "oldestQuestionReview": "2026-11-14"
+    },
+    {
+      "id": "github-copilot",
+      "version": "GH-300 · skills measured August 7, 2026",
+      "questions": 20,
+      "oldestQuestionReview": "2026-11-14"
+    }
+  ],
+  "documents": [
+    {
+      "url": "https://aws.amazon.com/certification/certification-prep/",
+      "finalURL": "https://aws.amazon.com/certification/certification-prep/",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "aa56d2e2010100f826a2431e7ee0524b99920f7c9c22e73ea9e3c304ca7ba6fb",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "cloud-practitioner",
+        "ai-practitioner",
+        "solutions-architect",
+        "developer-associate"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "0d5de2096fec0dd56f5f8e378c75db24e65a922ba6909dc43fc0cd16ef37f320",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "3868285bc3f5697ff97838eb6a4e44eee20e0a5feeb6cb965ea35f33a11fb715",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "e411be9feb50d1ab08146a54557a2f20f567d25c27bd8cca7ee6b7cd6951a98c",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "02b5afa9a0e3113fed8f2830879b89409ccc7a17bc166598d7d1740ca048d0be",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "e95fddd61edbf3ccb7a4402d2f16186bbeb905cb3fe885d34497131c7415fc38",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "3acb407583a88c8aa0fe0d28ad50db7dbb4812ea9c07f687f044b5c81232b207",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "7508c74feabe62360d1b510b3bd6e239cd62fa993981bacdfed195e5f8c18b68",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "cloud-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "7b4cfc34717f63e0d5a78d11ccdde44ba787fbe4d00056bdbe60a4720247c132",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "cloud-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "196775d425b07ead8bf16e5768d0486f212864791ed3d47359e0a9309746989b",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "cloud-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "51561a84ee63228b35606488f49674de0e0760e0039649e4dadf47cab384a654",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "cloud-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "5823e1beecc12074706ffa200dc4c5584bedee6dc0225816a3fc24e6a4f7e808",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "cloud-practitioner"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain1.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain1.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "a2b386dacaf91c65a3ee326daa8686080fdbfced2a471cb8786abc378d5b2161",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "developer-associate"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain2.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain2.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "d1457f4b93321faf0bf0713a043bbb730b72d8e9952cd71241a97e9862d20b4e",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "developer-associate"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain3.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain3.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "aab8db403eeb0436ad6e1b71f1d77d8ffd36dc175fc4bc0713c2708f9862a105",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "developer-associate"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain4.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain4.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "8f05b3144aa1a63477330bc358b498bc077cf547c39e2a349f78ecf920a1c7a7",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "developer-associate"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "4b83db25c510b9502a03d5e1861d7ffdd7ca037c9b7ed1e2d72f7a67dcd3ffe3",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "developer-associate"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "e4c66792905bb4be48c5f779fdb4425738c76a4d81749be4f3f4072d8bb6b456",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "solutions-architect"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "ed2c7962b2774f051e35114cfb9c5cfef5f67a7b945811e3d084f5a121fc84fd",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "solutions-architect"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "dec652bef639602512e857f2eac335d19c1320ca2281fa2de25a18b393e1791c",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "solutions-architect"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "c60d3b60f495238ffbd746b64a9ec2a4671976101253304fed907bf35208bb5c",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "solutions-architect"
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "bdde182108fc66995c8ae5b948c10a82cad1441562e2ace92f925c5ffdd5f7b6",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "solutions-architect"
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/actions",
+      "finalURL": "https://docs.github.com/en/actions",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "4d9dd8b7c494e011a3d945be4378300f6811bbd01534cf0c56b76b78b8b4cc3f",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "github-actions"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "3b072f81db5c7671aadacc42553e726faa93913a969cc7a89e9dc28c2318d1f1",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "istqb-foundation"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=3352&sdm_process_download=1",
+      "finalURL": "https://istqb.org/?download_id=3352&sdm_process_download=1",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "f2996eec47914c04ea5b94422a5d98018ef3b04e44d27900b76a68050a64efb3",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "istqb-foundation"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=3357&sdm_process_download=1",
+      "finalURL": "https://istqb.org/?download_id=3357&sdm_process_download=1",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "cd7724806a645a128be41b426782570998fa1694ef5eff4a3239756cc2b579da",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "istqb-foundation"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=3435&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTAL-TAE_Syllabus_v2.0.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "b6cce409fafd779fd5a854da2f3521a8273724214c5a4f92af89483f8c5d0809",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "test-automation"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=3437&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2026/05/ISTQB_CTAL-TAE_Sample_Exam_Questions_v2.4-1.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "f0b9409aa7ddd08924834e7098150c6b7c942fb7db43b0bc15d84d151bd8322a",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "test-automation"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=3438&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2026/05/ISTQB_CTAL-TAE_Sample_Exam_Answers_v2.4-1.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "66fd41b3f7238da3963208b6fa86de4eac2a36bbd651cbc5d912a978a2ef7543",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "test-automation"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=6295&sdm_process_download=1",
+      "finalURL": "https://istqb.org/?download_id=6295&sdm_process_download=1",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "b507d433eee2bcb9914321785e22cbf201ab215df003dbeb7f75ec93e9945b86",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "generative-ai-testing"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=6301&sdm_process_download=1",
+      "finalURL": "https://istqb.org/?download_id=6301&sdm_process_download=1",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "df97bdcaa378b483a66ebba0fb4f4e5846557a7fc493746ca6289d072f10fd2f",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "generative-ai-testing"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=6309&sdm_process_download=1",
+      "finalURL": "https://istqb.org/?download_id=6309&sdm_process_download=1",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "4e4c0d1fd5528c394f93dc48779f8690cebe989447f86a405fe815d14a17ae7e",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "generative-ai-testing"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=9558&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2026/05/ISTQB-_CTAI_Syllabus_v2.0_Release.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "02160246f3d243aee76af79d7c1c0394c35d10ccc44484f24960e0229302fa83",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-testing"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=9561&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2026/07/ISTQB_CTAI_V2.0_SampleExam-Questions-v2.2-1.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "01caacc2a7ee10bc45f33bf0d3547a322c6bf8998e38674a255f16d810918f5e",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-testing"
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=9564&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2026/07/ISTQB_CTAI_v2.0_SampleExam-Answers-v2.2.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "hash": "da2cd751eeb62ddf8e1e136167af59715764c4069584b72c53cee5c5dc927290",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-testing"
+      ]
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "finalURL": "https://istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "72caf012ffe66d34470be2fa6de3948616b5a6f760b1356adda37ccd7160a772",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "test-automation"
+      ]
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "finalURL": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "9f260a4b0ee4bf76419347a4e9e7d7aa94f2d9323b4cf33b1c55a3a268391c4b",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "ai-testing"
+      ]
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "finalURL": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "53aff3b5cabeb9e351cd578c545279cc37db9c11b2053e3d535e3386e74dfb1e",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "istqb-foundation"
+      ]
+    },
+    {
+      "url": "https://istqb.org/certifications/gen-ai/",
+      "finalURL": "https://istqb.org/certifications/gen-ai/",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "88ec64f74c56022fdccf9169a68d3c39d84c7929ae0902c107875bfb2d5b6e8e",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "generative-ai-testing"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/github-actions/",
+      "finalURL": "https://learn.microsoft.com/en-us/credentials/certifications/github-actions/",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "ea1a5d4497c4ffc1a0605455a721061255c0d0b7cdcb232d3eb8498d5b999a6d",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "github-actions"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/",
+      "finalURL": "https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "d2b99e025dadaebb46d1a1ab91e2c645a84491fa5b29b4bb9a3c90f685cc41d7",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "github-copilot"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-200",
+      "finalURL": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-200",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "b3c1e03fa7367a1636e3d5e6d08880ff65af7f34deea1398be4de6889e78cabb",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "github-actions"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "finalURL": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "3a058856e1cf7832bf2d091b3766ae0bcc87d55b4b01473714b07ddbe9db9499",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "github-copilot"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/paths/copilot/",
+      "finalURL": "https://learn.microsoft.com/en-us/training/paths/copilot/",
+      "status": 200,
+      "kind": "html-headings",
+      "hash": "fd461f0fbe77aef4c9179af9d61b1c6b9035258c392fd3488e75e837444d3613",
+      "changed": null,
+      "missingFragments": [],
+      "paths": [
+        "github-copilot"
+      ]
+    }
+  ]
+}

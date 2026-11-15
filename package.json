@@ -16,7 +16,8 @@
     "render:engineering-share": "node scripts/render-engineering-share.mjs",
     "test": "node --test tests/*.test.mjs",
     "typecheck": "next typegen && tsc --noEmit",
-    "check": "npm test && npm run lint && npm run typecheck && npm run build"
+    "check": "npm test && npm run lint && npm run typecheck && npm run build",
+    "audit:certifications": "node scripts/audit-certification-sources.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
