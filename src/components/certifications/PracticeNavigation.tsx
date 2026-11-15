@@ -1,0 +1,4 @@
+'use client';
+import type {CertSession} from '@/lib/certification-study';
+import {questionProgress} from '@/lib/certification-practice-v8';
+export default function PracticeNavigation({session,flags,onJump}:{session:CertSession;flags:string[];onJump:(index:number)=>void}){return <nav className="cert-question-progress" aria-label="Question progress"><p className="cert-small">Jump to any question. Answered means a choice was made, not that it is correct.</p><div>{questionProgress(session,flags).map(q=><button key={q.id} aria-current={q.current?'step':undefined} aria-label={`Question ${q.index+1} · ${q.answered?'Answered':'Unanswered'}${q.marked?' · Marked for review':''}`} onClick={()=>onJump(q.index)}><strong>{q.index+1}</strong><small>{q.answered?'Answered':'Unanswered'}{q.marked?' · Marked':''}</small></button>)}</div></nav>;}

@@ -1,0 +1,5 @@
+// Explicitly selected combined backups only. Never scans browser storage or a directory.
+import {readFile,writeFile} from 'node:fs/promises';
+import {loadStudyModule} from '../tests/load-study-module.mjs';
+const paths=process.argv.slice(2);if(!paths.length){console.error('Supply explicit combined certification backup paths. Output is written to /tmp/eai-editorial-attention.json. Backups remain private; do not commit them.');process.exit(1);}
+const {editorialSignals}=loadStudyModule('certification-editorial'),inputs=[];for(const path of paths){const d=JSON.parse(await readFile(path,'utf8'));if(d?.format!=='eai-certification-backup'||d.version!==1||!d.current?.study||!d.current?.learning)throw Error('Expected a combined certification backup');inputs.push({study:d.current.study,learning:d.current.learning});}const result=editorialSignals(inputs,Date.now());await writeFile('/tmp/eai-editorial-attention.json',JSON.stringify(result,null,2)+'\n');console.log(`Prepared ${result.rows.length} question summaries without written learner content. /tmp/eai-editorial-attention.json`);
