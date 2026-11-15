@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="cert-studio"><div className="cert-wrap cert-path-heading"><p className="cert-eyebrow">ENGINEERING CERTIFICATION STUDIO</p><h1>Opening your path…</h1><p role="status">Preparing your lessons and saved practice.</p></div></main>;}

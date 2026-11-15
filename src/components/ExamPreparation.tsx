@@ -1,4 +1,5 @@
 "use client";
+import "@/app/study/certifications/certifications.css";
 import TeacherQuestion from "@/components/TeacherQuestion";
 import StudyGuide from "@/components/StudyGuide";
 import { useSavedStudyArray } from "@/components/useSavedStudyArray";
@@ -62,7 +63,7 @@ export default function ExamPreparation(){
   <div className="exam-landmark-stage">
   <StudyLandmark scene="cappadocia" />
   <div className="studio-section-title"><div><p className="studio-eyebrow">PREPARE WITH PURPOSE</p><h2 id="exam-heading">Prepare for your next exam.</h2></div><p>Understand the idea.<br/>Learn from each attempt.</p></div>
-  <p className="goal-intro">Choose an exam. Build a study path around your focus.</p>
+  <p className="goal-intro">Choose an exam. Build a study path around your focus.</p><Link href="/study/certifications" className="cert-entry-link"><strong>Engineering Certification Studio →</strong><span>AWS Cloud Practitioner · AWS AI Practitioner · ISTQB Foundation Level. Original questions, study plans and practical engineering connections.</span></Link>
   <StudyGuide section="Exam preparation">Choose your exam and enter a skill you want to improve. Build a preparation plan, or choose “Explore this focus with the tutor” to prepare a tutor message. SAT and PSAT also offer checked skill practice.</StudyGuide><div className="goal-panel exam-prep-controls"><div className="goal-settings"><label className="goal-label">Exam profile<select aria-label="Exam profile" value={examId} onChange={e=>{setExamId(e.target.value);setFocus("");}}>{examProfiles.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label><label className="goal-label">Exam date · optional<input aria-label="Exam date" type="date" value={date} onChange={e=>setDate(e.target.value)}/></label></div>
   {examId==="other"&&<label className="goal-label">Exam name<input aria-label="Exam name" maxLength={100} value={examName} onChange={e=>setExamName(e.target.value)}/></label>}
   <p className="goal-helper">{profile.note}</p><details className="exam-focus-ideas"><summary>Explore focus ideas</summary><div className="exam-focuses" aria-label="Optional focus ideas">{profile.focus.map(topic=><button key={topic} type="button" onClick={()=>setFocus(topic)}>{topic} +</button>)}</div></details>
