@@ -1,5 +1,6 @@
+import {expandedTracks,expandedQuestions} from './certification-expansion';
 export const CONTENT_REVIEWED='2026-11-14';
-export type CertId='cloud-practitioner'|'ai-practitioner'|'istqb-foundation';
+export type CertId='cloud-practitioner'|'ai-practitioner'|'istqb-foundation'|'solutions-architect'|'developer-associate'|'test-automation'|'ai-testing'|'generative-ai-testing'|'github-actions'|'github-copilot';
 export type Domain={id:string;title:string;weight:number;lesson:string;check:string;source:string;connections:{title:string;href:string;task:string}[]};
 export type CertTrack={id:CertId;title:string;code:string;version:string;intro:string;guide:string;domains:Domain[]};
 const aws=(track:string,n:number)=>`https://docs.aws.amazon.com/aws-certification/latest/${track}/${track}-domain${n}.html`;
@@ -29,6 +30,7 @@ export const certTracks:CertTrack[]=[
 {id:'tools',title:'Test Tools',weight:5,lesson:'Tools can repeat checks and organize evidence, but they require suitable selection, maintenance and interpretation. Automating a weak assertion repeats a weak assertion faster.',check:'What ongoing cost remains after a test is automated?',source:ctflSyllabus,connections:[link('Checkout evidence','/engineering/order-once#evidence','Compare an API response assertion with persisted-order evidence. Explain what the automation actually proves.')]}
 ]}
 ];
+certTracks.push(...expandedTracks);
 export const getCert=(id:string)=>certTracks.find(t=>t.id===id);
 export type CertQuestion={id:string;track:CertId;domain:string;objective:string;prompt:string;choices:string[];answer:number;explanations:string[];reviewed:string;source:string};
 const bank:CertQuestion[]=[];
@@ -111,5 +113,5 @@ add(T,'tools','§6.2','What is a realistic benefit of suitable test automation?'
 add(T,'tools','§6.2','A team automates thousands of weak assertions. What risk remains?', ['Fast execution can create false confidence in weak evidence','High test count guarantees useful coverage','Automation makes the assertions correct','Passing scripts prove every user need is met'],['Automation repeats what was specified, including weak checks.','Count alone does not establish useful coverage.','Automation does not repair an inadequate assertion by itself.','Scripts only establish the conditions and outcomes they actually check.']);
 add(T,'tools','§6.1','Which tool primarily helps coordinate test cases, runs and their status?', ['A test management tool','A DNS registrar','A text-to-speech engine','A hardware power switch'],['Test management tools organize test activities and evidence.','Domain registration does not manage test runs.','Speech synthesis has a different primary function.','A power switch does not organize test cases and status.']);
 add(T,'tools','§6.2','Before rolling out a new automation tool widely, which approach is most sensible?', ['Pilot it against representative needs and maintenance constraints','Assume vendor claims prove suitability','Purchase it and remove all existing checks immediately','Measure success only by generated script count'],['A pilot provides evidence about fit, costs and limitations.','Claims need evaluation in the intended context.','Immediate replacement without evidence introduces risk.','Script count alone does not establish value.']);
-export const certQuestions:readonly CertQuestion[]=bank;
+export const certQuestions:readonly CertQuestion[]=[...bank,...expandedQuestions];
 export const getQuestion=(id:string)=>certQuestions.find(q=>q.id===id);
