@@ -101,3 +101,33 @@
 .eai-study-studio .tutor-preview-notice{padding:14px 24px;font-size:14px;line-height:1.6;color:#d3dce0;background:#102b3b;border-bottom:1px solid #cbaa6555;}
 
 @media(max-width:800px){.eai-study-studio .tutor-width-toggle{display:none;}}
+/* V1.2 — optional tools for revisiting a particular idea. */
+.eai-study-studio .tutor-response-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0 4px;font-size:14px;}
+.eai-study-studio .tutor-response-actions>button{border:1px solid #c6ae7666;border-radius:5px;padding:8px 11px;color:#e4cd9a;background:#102435;}
+.eai-study-studio .tutor-response-actions details{width:100%;}
+.eai-study-studio .tutor-response-actions summary{cursor:pointer;color:#b8c5cf;}
+.eai-study-studio .tutor-response-actions .tutor-listen-button{margin-right:18px;}
+.eai-study-studio .tutor-reply-workbench{padding:24px;border-block:1px solid #d4b77866;background:#0d2131;}
+.eai-study-studio .tutor-reply-workbench header{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:18px;}
+.eai-study-studio .tutor-reply-workbench h3,.eai-study-studio .tutor-takeaway-notebook h3{font:25px Georgia,serif;color:#f0e7d6;}
+.eai-study-studio .tutor-reply-workbench h4,.eai-study-studio .tutor-takeaway-notebook h4{font:20px Georgia,serif;color:#f0e7d6;margin:12px 0;}
+.eai-study-studio .tutor-reply-workbench p,.eai-study-studio .tutor-takeaway-notebook p{font-size:15px;line-height:1.75;margin:12px 0;color:#c4d0d7;overflow-wrap:anywhere;}
+.eai-study-studio .tutor-reply-workbench button,.eai-study-studio .tutor-conversation-navigation button,.eai-study-studio .tutor-older-exchanges,.eai-study-studio .tutor-defaults button{border:1px solid #b5a47a65;border-radius:5px;padding:10px 13px;margin:5px 7px 5px 0;color:#eee6d7;background:#102435;font-size:14px;min-height:42px;}
+.eai-study-studio .tutor-reply-workbench label{display:block;font-size:15px;margin:12px 0;}
+.eai-study-studio .tutor-reply-workbench label input,.eai-study-studio .tutor-reply-workbench label textarea,.eai-study-studio .tutor-reply-workbench label select{display:block;width:100%;margin-top:8px;}
+.eai-study-studio .tutor-reply-workbench blockquote{border-left:2px solid #c5a467;padding:12px 16px;background:#06132170;line-height:1.8;font-size:var(--tutor-font-size);max-height:280px;overflow:auto;}
+.eai-study-studio .tutor-reasoning-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0;}
+.eai-study-studio .tutor-reasoning-pair>div{min-width:0;border:1px solid #c6ae7644;padding:14px;border-radius:5px;max-height:340px;overflow:auto;}
+.eai-study-studio .tutor-quote-check{padding:12px;margin:10px 0;border:1px solid #b5a47a55;border-radius:5px;font-size:15px;line-height:1.7;}
+.eai-study-studio .tutor-conversation-navigation{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 24px;border-bottom:1px solid #d7b87933;}
+.eai-study-studio .tutor-conversation-navigation label{font-size:14px;display:flex;align-items:center;gap:10px;flex:1;min-width:0;}
+.eai-study-studio .tutor-conversation-navigation select{min-width:0;max-width:400px;flex:1;}
+.eai-study-studio .tutor-conversation-navigation button{margin:0;}
+.eai-study-studio .tutor-older-exchanges{display:block;margin:0 auto 20px;}
+.eai-study-studio .tutor-takeaway-notebook article{padding:18px 0;border-top:1px solid #d7b87944;}
+.eai-study-studio .tutor-takeaway-notebook article button{margin-right:8px;}
+.eai-study-studio .tutor-takeaway-notebook .tutor-notebook-origin{font-size:13px;color:#aebcc6;}
+.eai-study-studio .tutor-defaults{border-block:1px solid #d7b87944;padding:14px 0;margin:14px 0;font-size:14px;}
+.eai-study-studio .tutor-defaults summary{cursor:pointer;color:#e2c182;}
+.eai-study-studio .tutor-defaults p{line-height:1.7;margin:10px 0;}
+@media(max-width:800px){.eai-study-studio .tutor-reply-workbench{padding:18px 16px;}.eai-study-studio .tutor-reply-workbench header{align-items:flex-start;flex-wrap:wrap;}.eai-study-studio .tutor-reasoning-pair{grid-template-columns:1fr;}.eai-study-studio .tutor-conversation-navigation{padding:12px 16px;}.eai-study-studio .tutor-conversation-navigation label{width:100%;flex-basis:100%;}.eai-study-studio .tutor-conversation-navigation select{width:100%;}.eai-study-studio .tutor-reply-workbench .tutor-tool-tabs{display:grid;grid-template-columns:1fr 1fr;}}

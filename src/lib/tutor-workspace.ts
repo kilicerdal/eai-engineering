@@ -1,19 +1,16 @@
 /** Optional additions to existing tutor sessions. No storage-key migration. */
-export type TutorSource = {kind:'problem'|'passage';title:string;text:string;href?:string};
-export type TutorWorkspace = {scratch?:string;sourceDraft?:string;sourceTitle?:string;sourceHref?:string;recapDraft?:string;source?:TutorSource;useSource?:boolean;recap?:string;nextStep?:string;pinned?:boolean};
-export function normalizeTutorSource(value:unknown):TutorSource|null {
- if(!value||typeof value!=='object')return null;
- const v=value as Record<string,unknown>;
- if(!['problem','passage'].includes(String(v.kind))||typeof v.title!=='string'||!v.title.trim()||v.title.length>200||typeof v.text!=='string'||!v.text.trim()||v.text.length>4000)return null;
- if(v.href!==undefined&&(typeof v.href!=='string'||v.href.length>500||!/^\/study\/(?:reading|materials)(?:[/?#]|$)/.test(v.href)))return null;
- return {kind:v.kind as TutorSource['kind'],title:v.title,text:v.text,...(typeof v.href==='string'?{href:v.href}:{})};
-}
+import {normalizeTutorSource,type TutorSource} from "./tutor-source";
+export {normalizeTutorSource,type TutorSource} from "./tutor-source";
+import {normalizeTakeawayDraft,normalizeTakeaways,type TakeawayDraft,type TutorTakeaway} from "./tutor-v12";
+export type TutorWorkspace = {scratch?:string;sourceDraft?:string;sourceTitle?:string;sourceHref?:string;recapDraft?:string;source?:TutorSource;useSource?:boolean;recap?:string;nextStep?:string;pinned?:boolean;takeaways?:TutorTakeaway[];takeawayDraft?:TakeawayDraft};
 export function normalizeTutorWorkspace(value:unknown):TutorWorkspace|null {
  if(!value||typeof value!=='object'||Array.isArray(value))return null;
  const v=value as Record<string,unknown>,out:TutorWorkspace={};
  for(const [key,max] of [['scratch',10000],['sourceDraft',4000],['sourceTitle',200],['recapDraft',5000],['recap',5000],['nextStep',1000]] as const){if(v[key]!==undefined){if(typeof v[key]!=='string'||v[key].length>max)return null;out[key]=v[key];}}
  for(const key of ['pinned','useSource'] as const){if(v[key]!==undefined){if(typeof v[key]!=='boolean')return null;out[key]=v[key];}}
  if(v.sourceHref!==undefined){if(typeof v.sourceHref!=="string"||v.sourceHref.length>500||!/^\/study\/(?:reading|materials)(?:[/?#]|$)/.test(v.sourceHref))return null;out.sourceHref=v.sourceHref;}
+ if(v.takeaways!==undefined){const items=normalizeTakeaways(v.takeaways);if(!items)return null;out.takeaways=items;}
+ if(v.takeawayDraft!==undefined){const draft=normalizeTakeawayDraft(v.takeawayDraft);if(!draft)return null;out.takeawayDraft=draft;}
  if(v.source!==undefined){const source=normalizeTutorSource(v.source);if(!source)return null;out.source=source;}
  return out;
 }
