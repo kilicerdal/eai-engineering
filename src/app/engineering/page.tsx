@@ -28,7 +28,7 @@ export default function StudioPage() {
           <Link href="/study">Learning Studio ↗</Link>
         </nav>
       </header>
-      <nav className="main-case-guide" aria-label="Explore the Studio"><Link href="/engineering/projects">Project directory ↗</Link>{" · "}<Link href="/engineering/field-notes">Field notes ↗</Link>{" · "}<Link href="/engineering/tour">Two-minute tour ↗</Link></nav>
+      <nav className="main-case-guide" aria-label="Explore the Studio"><Link href="/engineering/lab">Investigation Lab ↗</Link>{" · "}<Link href="/engineering/projects">Project directory ↗</Link>{" · "}<Link href="/engineering/field-notes">Field notes ↗</Link>{" · "}<Link href="/engineering/tour">Two-minute tour ↗</Link></nav>
       <EngineeringStudio fullPage />
       <RecordedReplay />
       <Walkthroughs />
