@@ -2,7 +2,8 @@
 
 import AIPhilosophy from "@/components/engineering/AIPhilosophy";
 import "./engineering/ai-atlas.css";
-import EngineeringStudio from "@/components/engineering/EngineeringStudio";
+import {StartHere, FlagshipProjects, RecordedReplay, FieldNotes} from "@/components/engineering/MainShowcase";
+import "./engineering/main-showcase.css";
 import "./engineering/studio.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,6 +25,7 @@ export default function Home() {
    const sync = () => {
      const section = location.hash.slice(1);
      if (section === "ai-assistant") router.replace("/chat");
+     else if (["projects","platform","case-studies","tools","qa-dashboard","ai-test-generator","job-matcher"].includes(section) || /^project-\d+$/.test(section)) router.replace(`/engineering#${section}`);
      else setNavSection(section);
    };
    sync(); window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync);
@@ -46,11 +48,14 @@ export default function Home() {
    <p className="atlas-caption">Göbekli Tepe, Türkiye · An imagined bridge to tomorrow</p>
   </section>
 
-  <EngineeringStudio />
+  <StartHere />
+  <FlagshipProjects />
+  <RecordedReplay />
   <section className="atlas-dai-invitation" aria-labelledby="dai-invitation-title">
    <div className="atlas-dai-art"><Image src="/images/study/library-horizon.webp" alt="" fill sizes="(max-width: 760px) 100vw, 44vw" /></div>
-   <div className="atlas-dai-copy"><p className="atlas-eyebrow">dAI LEARNING STUDIO</p><h2 id="dai-invitation-title">Turn curiosity into understanding.</h2><p>Learn with an AI tutor, work from your materials, and prepare with purpose.</p><ul aria-label="Learning Studio features"><li>Personal learning plans</li><li>AI tutoring</li><li>PSAT &amp; SAT practice</li><li>Reading Room</li></ul><a className="atlas-button primary" href="/study">Explore the Learning Studio <span aria-hidden="true">→</span></a><p className="atlas-dai-note">Start without an account.</p></div>
+   <div className="atlas-dai-copy"><p className="atlas-eyebrow">dAI LEARNING STUDIO</p><h2 id="dai-invitation-title">Turn curiosity into understanding.</h2><p>Learn with an AI tutor, work from your materials, and prepare with purpose.</p><ul aria-label="Learning Studio features"><li>Personal learning plans</li><li>AI tutoring</li><li>PSAT &amp; SAT practice</li><li>Reading Room</li></ul><a className="atlas-button primary" href="/study">Explore the Learning Studio <span aria-hidden="true">→</span></a><p className="atlas-dai-note">Start without an account.</p><nav className="main-learning-links" aria-label="Learning rooms"><a href="/study#ai-assistant">AI Tutor ↗</a><Link href="/study/reading">Reading Room ↗</Link><Link href="/study/curiosity">Curiosity Room ↗</Link><Link href="/study/materials">Your materials ↗</Link></nav><aside className="main-discovery"><p className="atlas-eyebrow">ONE SMALL DISCOVERY</p><h3>A sketch can be a memory tool.</h3><p>Experiments have found a memory advantage for drawing studied items compared with writing them. Artistic skill is not the goal: representing the idea is.</p><p><a href="https://pubmed.ncbi.nlm.nih.gov/29873039/" target="_blank" rel="noreferrer">Source: Psychonomic Bulletin &amp; Review · 2018 ↗</a></p><Link href="/study/curiosity?fact=drawing-memory">Explore this discovery →</Link></aside></div>
   </section>
+  <FieldNotes />
   <AIPhilosophy />
   <ContactDesk />
   <footer className="atlas-footer"><a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a><nav className="footer-destinations" aria-label="Footer navigation"><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">GitHub ↗</a><Link href="/study">Learning Studio ↗</Link><Link href="/study/privacy">Learning privacy</Link></nav><small>© 2026 eAI · Erdal Kilic</small></footer>

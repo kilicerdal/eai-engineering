@@ -1,3 +1,5 @@
+import {RecordedReplay, Walkthroughs} from "@/components/engineering/MainShowcase";
+import "./main-showcase.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import EngineeringStudio from "@/components/engineering/EngineeringStudio";
@@ -26,7 +28,10 @@ export default function StudioPage() {
           <Link href="/study">Learning Studio ↗</Link>
         </nav>
       </header>
+      <nav className="main-case-guide" aria-label="Explore the Studio"><Link href="/engineering/projects">Project directory ↗</Link>{" · "}<Link href="/engineering/field-notes">Field notes ↗</Link>{" · "}<Link href="/engineering/tour">Two-minute tour ↗</Link></nav>
       <EngineeringStudio fullPage />
+      <RecordedReplay />
+      <Walkthroughs />
       <footer className="atlas-footer">
         <Link href="/">eAI / Intelligence Engineered</Link>
         <a href="#top">Back to top ↑</a>

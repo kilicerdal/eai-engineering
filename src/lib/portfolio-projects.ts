@@ -21,6 +21,7 @@ export const projects = [
   },
   {
     name: "SettlementLab",
+    repository: "https://github.com/kilicerdal/settlementlab",
     category: "FINANCIAL SYSTEMS ASSURANCE",
     caseStudy: "/engineering/settlementlab",
     description:

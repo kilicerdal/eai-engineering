@@ -1,3 +1,5 @@
+import CaseRouteMap from "@/components/engineering/CaseRouteMap";
+import "../main-showcase.css";
 import CaseDiscussion from "@/components/engineering/CaseDiscussion";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -51,6 +53,7 @@ export default function ClaimTwicePage() {
           Engineering Studio <span aria-hidden="true">↗</span>
         </Link>
       </header>
+      <CaseRouteMap story="claim-twice" />
       <section className="failure-hero">
         <div>
           <p className="failure-kicker">FOLLOW A FAILURE / CASE 02</p>
