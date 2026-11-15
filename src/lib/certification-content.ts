@@ -35,7 +35,7 @@ export const certTracks:CertTrack[]=[
 ];
 certTracks.push(...expandedTracks);
 export const getCert=(id:string)=>certTracks.find(t=>t.id===id);
-export type CertQuestion={id:string;track:CertId;domain:string;objective:string;prompt:string;choices:string[];answer:number;explanations:string[];reviewed:string;source:string};
+export type CertQuestion={id:string;track:CertId;domain:string;objective:string;prompt:string;choices:string[];answer:number;explanations:string[];reviewed:string;source:string;contentRevision?:string};
 const bank:CertQuestion[]=[];
 function add(track:CertId,domain:string,objective:string,prompt:string,options:[string,string,string,string],why:[string,string,string,string]){const index=bank.filter(q=>q.track===track).length; // Rotate correct answers so position is not a cue.
  const shift=index%4,choices=options.map((_,i)=>options[(i+shift)%4]),explanations=why.map((_,i)=>why[(i+shift)%4]);bank.push({id:`${track}-${String(index+1).padStart(2,'0')}`,track,domain,objective,prompt,choices,answer:(4-shift)%4,explanations,reviewed:CONTENT_REVIEWED,source:getCert(track)!.domains.find(d=>d.id===domain)!.source});}
