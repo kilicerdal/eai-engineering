@@ -30,9 +30,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "RECRUITER_PORTAL_ENABLED=true npm run dev -- --hostname 127.0.0.1 --port 3040",
+    command: "RECRUITER_PORTAL_ENABLED=true npm run build && RECRUITER_PORTAL_ENABLED=true npm run start -- --hostname 127.0.0.1 --port 3040",
     url: "http://127.0.0.1:3040/engineering/order-once",
-    reuseExistingServer: true,
-    timeout: 60000,
+    reuseExistingServer: false,
+    timeout: 180000,
   },
 });

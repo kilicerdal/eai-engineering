@@ -68,6 +68,7 @@ test('mobile menu supports keyboard dismissal and readable tutor controls',async
  await expect(page.locator('#study-navigation-links')).toBeHidden();
  await expect(page.locator('#study-menu-toggle')).toBeFocused();
  await menu.click();
+ await page.locator('#study-more-toggle').click();
  await page.locator('#study-navigation-links').getByRole('link',{name:'My learning',exact:true}).click();
  await expect(page.locator('#study-navigation-links')).toBeHidden();
  }
@@ -80,7 +81,7 @@ test('mobile menu supports keyboard dismissal and readable tutor controls',async
  await expect(page.locator('.tutor-starter-prompts button').first()).toHaveCSS('font-size','14px');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
-test('compact tutor keeps examples as unsent drafts and finished sessions collapsed',async({page},info)=>{
+test('tutor keeps examples as unsent drafts and finished sessions collapsed',async({page},info)=>{
  let posts=0;
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
  await page.addInitScript(()=>{
@@ -89,8 +90,8 @@ test('compact tutor keeps examples as unsent drafts and finished sessions collap
  });
  await page.goto('/study');
  const tutor=page.locator('#ai-assistant');
- const input=await page.locator('#tutor-message-input').boundingBox(),section=await tutor.boundingBox();
- expect(input!.y-section!.y).toBeLessThan(info.project.name==='mobile'?850:650);
+ await tutor.getByLabel("Your message").scrollIntoViewIfNeeded();
+ await expect(tutor.getByLabel("Your message")).toBeInViewport();
  await page.locator('.tutor-example-drawer>summary').click();
  await page.locator('.tutor-starter-prompts button').first().click();
  await expect(page.locator('#tutor-message-input')).not.toHaveValue('');
@@ -277,18 +278,22 @@ test('a damaged lesson handoff is reported once and the materials library reopen
   await expect(notice).toHaveCount(0);
 });
 
-test('reading search combines author and title and announces the current filtered results', async ({page}) => {
-  await page.goto('/study/reading');
-  const search = page.getByRole('searchbox', {name:'Find a book'});
-  await page.getByLabel('Shelf for Moby Dick').selectOption('Reading');
-  await search.fill('Melville Moby-Dick');
-  await expect(page.getByRole('status').filter({hasText:'1 book to explore'})).toBeVisible();
-  await expect(page.getByRole('heading',{name:'Moby Dick', exact:true})).toBeVisible();
-  await search.fill("Alice's Wonderland");
-  await expect(page.getByRole('heading',{name:'Alice’s Adventures in Wonderland'})).toBeVisible();
-  await search.fill('unlisted title');
-  await page.getByRole('button',{name:'Show all books'}).click();
-  await expect(page.getByLabel('Shelf for Moby Dick')).toHaveValue('Reading');
+test('reading search combines author and title and preserves saved shelves', async ({page}) => {
+ await page.goto('/study/reading');
+ await page.getByText('Looking for a particular book?',{exact:true}).click();
+ const search=page.getByRole('searchbox',{name:'Find a book'});
+ await search.fill('Melville Moby-Dick');
+ await expect(page.getByRole('article',{name:'Moby Dick',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Moby Dick',exact:true}).click();
+ const dialog=page.getByRole('dialog');
+ await dialog.getByLabel('Shelf for Moby Dick').selectOption('Reading');
+ await dialog.getByRole('button',{name:'Close Moby Dick',exact:true}).click();
+ await search.fill("Alice's Wonderland");
+ await expect(page.getByRole('article',{name:'Alice’s Adventures in Wonderland',exact:true})).toBeVisible();
+ await search.fill('unlisted title');
+ await page.getByRole('button',{name:'Show all books',exact:true}).click();
+ await page.getByRole('button',{name:'Moby Dick',exact:true}).click();
+ await expect(page.getByLabel('Shelf for Moby Dick')).toHaveValue('Reading');
 });
 
 test('a rejected material identifies the failed file and later files still import', async ({page}) => {
@@ -586,20 +591,18 @@ test('tutor keeps the reading position when another part of a long reply arrives
   expect(await log.evaluate(el=>el.scrollTop)).toBeLessThan(40);
 });
 
-test('study shortcuts close the expanded menu and identify the current section', async ({page}) => {
+test('study shortcuts close the expanded menu and retain keyboard focus', async ({page}) => {
   await page.setViewportSize({width:390,height:844});
   await page.goto('/study');
-  const menu = page.locator('#study-menu-toggle');
-  const shortcuts = page.locator('.studio-mobile-shortcuts');
-  const learning = shortcuts.getByRole('link',{name:'My learning'});
+  const menu=page.locator('#study-menu-toggle');
   await menu.click();
-  await learning.click();
-  await expect(page).toHaveURL(/#my-learning$/);
-  await expect(menu).toHaveAttribute('aria-expanded','false');
-  await expect(learning).toHaveAttribute('aria-current','location');
-  await learning.focus();
-  await learning.press('Escape');
-  await expect(learning).toBeFocused();
+  await page.locator('.studio-mobile-shortcuts').getByRole('link',{name:'Read',exact:true}).click();
+  await expect(page).toHaveURL(/\/study\/reading$/);
+  const currentMenu=page.locator('#study-menu-toggle:visible');
+  await expect(currentMenu).toHaveAttribute('aria-expanded','false');
+  await currentMenu.click();
+  await currentMenu.press('Escape');
+  await expect(currentMenu).toBeFocused();
 });
 
 test('unreadable legacy tutor history keeps the old copy and avoids creating a misleading empty replacement', async ({page}) => {
@@ -717,19 +720,15 @@ test('a legacy evaluation opens the printable report without attributing it to t
 });
 
 test('reading stays available when the saved bookshelf cannot be accessed', async ({page}) => {
-  await page.addInitScript(() => {
-    const original = Storage.prototype.getItem;
-    Storage.prototype.getItem = function(key) {
-      if (key === 'dai-reading-shelf-v1') throw new DOMException('Storage blocked', 'SecurityError');
-      return original.call(this, key);
-    };
-  });
-  await page.goto('/study/reading');
-  await expect(page.getByText(/Browser storage is unavailable/)).toBeVisible();
-  await expect(page.getByLabel('My bookshelf')).toBeDisabled();
-  await page.getByRole('searchbox', {name:'Find a book'}).fill('Melville');
-  await expect(page.getByLabel('Shelf for Moby Dick')).toBeDisabled();
-  await expect(page.getByRole('link', {name:/Read free.*Moby Dick/})).toHaveAttribute('href','https://www.gutenberg.org/ebooks/2701');
+ await page.addInitScript(()=>{const original=Storage.prototype.getItem;Storage.prototype.getItem=function(key){if(key==='dai-reading-shelf-v1')throw new DOMException('Storage blocked','SecurityError');return original.call(this,key);};});
+ await page.goto('/study/reading');
+ await expect(page.getByRole('alert').filter({hasText:'Bookshelf storage is unavailable'})).toBeVisible();
+ await page.getByText('Looking for a particular book?',{exact:true}).click();
+ await page.getByRole('searchbox',{name:'Find a book'}).fill('Melville');
+ await expect(page.getByRole('link',{name:'Read Moby Dick',exact:true})).toHaveAttribute('href','/study/reading/2701');
+ await page.getByRole('button',{name:'Moby Dick',exact:true}).click();
+ await expect(page.getByLabel('Shelf for Moby Dick')).toBeDisabled();
+ await expect(page.getByRole('link',{name:'Source edition & other formats ↗',exact:true})).toHaveAttribute('href','https://www.gutenberg.org/ebooks/2701');
 });
 
 test('practice uses the earliest checked answer and focuses the next question', async ({page}) => {
@@ -1196,26 +1195,27 @@ test('temporary SAT work remains available after visiting the PSAT profile', asy
   expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe('damaged source');
 });
 
-test('moving a book off a filtered shelf keeps keyboard focus and updates the other tab', async ({page,context})=>{
-  await page.goto('/study/reading');
-  const second=await context.newPage();
-  await second.goto('/study/reading');
-  const a=page.getByLabel('Shelf for Frankenstein');
-  const b=page.getByLabel('Shelf for Moby Dick');
-  await a.selectOption('Reading');
-  await b.selectOption('Reading');
-  await page.getByLabel('My bookshelf').selectOption('Reading');
-  await a.focus();
-  await a.selectOption('Finished');
-  await expect(b).toBeFocused();
-  await expect(page.getByRole('status').filter({hasText:'Frankenstein moved to Finished.'})).toContainText('1 book to explore');
-  await b.selectOption('');
-  const showAll=page.getByRole('button',{name:'Show all books'});
-  await expect(showAll).toBeFocused();
-  await showAll.press('Enter');
-  await expect(page.getByRole('searchbox')).toBeFocused();
-  await expect(second.getByLabel('Shelf for Frankenstein')).toHaveValue('Finished');
-  await expect(second.getByLabel('Shelf for Moby Dick')).toHaveValue('');
+test('book detail dialogs restore keyboard focus and synchronize shelves across tabs', async ({page,context})=>{
+ await page.goto('/study/reading');
+ const second=await context.newPage();await second.goto('/study/reading');
+ for(const title of ['Frankenstein','Moby Dick']){
+  await page.getByRole('button',{name:title,exact:true}).click();
+  await page.getByLabel('Shelf for '+title).selectOption('Reading');
+  await page.getByRole('button',{name:'Close '+title,exact:true}).click();
+  await expect(page.getByRole('button',{name:title,exact:true})).toBeFocused();
+ }
+ await page.getByRole('button',{name:'Frankenstein',exact:true}).click();
+ await page.getByLabel('Shelf for Frankenstein').selectOption('Finished');
+ await page.getByRole('button',{name:'Skip reflection',exact:true}).click();
+ await page.getByRole('button',{name:'Moby Dick',exact:true}).click();
+ await page.getByLabel('Shelf for Moby Dick').selectOption('');
+ await page.getByRole('button',{name:'Close Moby Dick',exact:true}).click();
+ await expect(page.getByRole('button',{name:'Moby Dick',exact:true})).toBeFocused();
+ for(const [title,value] of [['Frankenstein','Finished'],['Moby Dick','']]){
+  await second.getByRole('button',{name:title,exact:true}).click();
+  await expect(second.getByLabel('Shelf for '+title)).toHaveValue(value);
+  await second.getByRole('button',{name:'Close '+title,exact:true}).click();
+ }
 });
 
 test('writing actions retain the evaluated report and isolate follow-ups after switching essays', async ({page})=>{

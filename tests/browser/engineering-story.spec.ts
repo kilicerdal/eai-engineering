@@ -46,7 +46,7 @@ test("a different prediction receives an explanation and can be reset accessibly
   await page.goto(route);
   await page.getByRole("radio", { name: /Create another order/ }).check();
   await page.getByRole("button", { name: "Reveal recorded result" }).click();
-  await expect(page.getByRole("status")).toContainText(
+  await expect(page.locator("#predict").getByRole("status")).toContainText(
     "The healthy control returned the existing order",
   );
   await page.getByRole("button", { name: "Try the prediction again" }).click();
@@ -124,9 +124,9 @@ test("homepage keeps chat primary and offers the working case-study entry", asyn
     page.locator(".atlas-hero .atlas-button.primary"),
   ).toHaveAttribute("href", "/chat");
   await expect(
-    page.getByRole("link", { name: "Explore Engineering Studio" }),
+    page.getByRole("link", { name: "Explore Engineering Studio", exact: true }),
   ).toHaveAttribute("href", "/engineering");
-  await page.getByRole("link", { name: "Explore Engineering Studio" }).click();
+  await page.getByRole("link", { name: "Explore Engineering Studio", exact: true }).click();
   await expect(
     page.getByRole("heading", {
       name: "Engineering you can inspect.",
