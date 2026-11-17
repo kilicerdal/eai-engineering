@@ -1,24 +1,25 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-test("homepage has one connected studio and keeps chat and learning distinct", async ({
+test("homepage leads to the dedicated studio and keeps chat and learning distinct", async ({
   page,
 }) => {
   await page.goto("/");
+  await expect(page.locator(".main-project")).toHaveCount(3);
+  await expect(page.locator(".atlas-hero .primary")).toHaveAttribute("href", "/chat");
+  await expect(page.locator(".atlas-dai-invitation")).toBeVisible();
+  await page.getByRole("link", { name: "Explore Engineering Studio", exact: true }).click();
+  await expect(page).toHaveURL(/\/engineering$/);
   await expect(page.locator(".engineering-studio")).toHaveCount(1);
   await expect(page.locator(".studio-case")).toHaveCount(2);
   await expect(page.locator(".studio-project")).toHaveCount(4);
-  await expect(page.locator(".atlas-hero .primary")).toHaveAttribute(
-    "href",
-    "/chat",
-  );
+
   await expect(
     page.getByRole("heading", { name: "Intelligence in practice." }),
   ).toHaveCount(0);
   await expect(
     page.getByRole("heading", { name: "Put an idea to work." }),
   ).toHaveCount(0);
-  await expect(page.locator(".atlas-dai-invitation")).toBeVisible();
   const studio = page.getByRole("navigation", {
     name: "Engineering Studio navigation",
   });
@@ -129,7 +130,7 @@ test("studio fits desktop and mobile and passes selected accessibility checks", 
   expect(
     (
       await new AxeBuilder({ page })
-        .include(".engineering-studio")
+        .include("#engineering")
         .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
         .analyze()
     ).violations,
@@ -137,19 +138,19 @@ test("studio fits desktop and mobile and passes selected accessibility checks", 
 });
 
 
-test("Studio backgrounds reach both viewport edges on wide displays", async ({ page }, info) => {
+test("Studio and homepage backgrounds reach both viewport edges on wide displays", async ({ page }, info) => {
   if (info.project.name !== "desktop") return;
   for (const route of ["/", "/engineering"]) {
     await page.goto(route);
     for (const width of [1920, 2560]) {
       await page.setViewportSize({ width, height: 1080 });
-      for (const id of ["case-studies", "projects", "tools"]) {
-        const bounds = await page.locator(`#${id}`).evaluate(el => {
-          const style = getComputedStyle(el, "::before");
+      const ids = route === "/" ? ["engineering", "recorded-replay"] : ["case-studies", "projects", "tools"];
+      for (const id of ids) {
+        const bounds = await page.locator(`#${id}`).evaluate((el, homepage) => {
           const rect = el.getBoundingClientRect();
-          const imageWidth = parseFloat(style.width);
+          const imageWidth = homepage ? rect.width : parseFloat(getComputedStyle(el, "::before").width);
           return { width: imageWidth, left: rect.left + rect.width / 2 - imageWidth / 2 };
-        });
+        }, route === "/");
         expect(bounds.width).toBe(width);
         expect(Math.abs(bounds.left)).toBeLessThan(1);
       }
@@ -160,7 +161,7 @@ test("Studio backgrounds reach both viewport edges on wide displays", async ({ p
 
 test('test result links land on the interactive evidence for each download', async ({page}) => {
   for (const [path, anchor] of [['order-once', 'business-outcomes'], ['claim-twice', 'delivery']]) {
-    await page.goto('/');
+    await page.goto('/engineering');
     await page.locator(`a[href="/engineering/${path}#${anchor}"]`).click();
     const evidence = page.locator('#' + anchor);
     await expect(evidence).toBeInViewport();
@@ -457,7 +458,7 @@ test('pending attachment stays in its chat while another chat can attach and sen
     return route.fulfill({contentType:'text/event-stream',body:'data: {"response":"Synthetic reply."}\n\ndata: [DONE]\n\n'});
   });
   await page.goto('/chat');
-  const files=page.locator('input[type=file]');
+  const files=page.locator('input[type=file][accept^=".pdf"]');
   await page.getByRole('combobox',{name:'AI assistant mode'}).selectOption('testing');
   await page.getByLabel('Add context',{exact:true}).click();
   await page.getByText('Analyze a CI log',{exact:true}).click();
