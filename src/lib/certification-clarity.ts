@@ -1,0 +1,47 @@
+import {certQuestions,getCert,getQuestion,type CertId} from './certification-content';
+import {extraFor,getExtra} from './certification-extra-questions';
+import {guidedChecks} from './certification-workshop-content';
+import type {LearningWork} from './certification-learning';
+export function topicMap(id:CertId,ids?:string[]){const track=getCert(id);if(!track)throw Error('Unknown path');if(ids&&(new Set(ids).size!==ids.length||ids.some(qid=>getQuestion(qid)?.track!==id)))throw Error('Invalid selected set');const sizes=track.domains.map(d=>certQuestions.filter(q=>q.track===id&&q.domain===d.id).length+extraFor(id).filter(q=>q.domain===d.id).length),smallest=Math.min(...sizes),largest=Math.max(...sizes);return track.domains.map(d=>{const core=certQuestions.filter(q=>q.track===id&&q.domain===d.id).length,extra=extraFor(id).filter(q=>q.domain===d.id).length;return {id:d.id,title:d.title,core,extra,guided:guidedChecks.filter(q=>q.track===id&&q.domain===d.id).length,selected:ids?.filter(qid=>getQuestion(qid)!.domain===d.id).length??0,scope:core+extra<5?'Few bank examples':core+extra===smallest&&smallest<largest?'Fewer examples than other topics in this path':'Selected examples only'};});}
+export function setDescription(id:CertId,ids:string[]){const topics=topicMap(id,ids).filter(r=>r.selected>0).sort((a,b)=>b.selected-a.selected);return {label:topics.slice(0,2).map(t=>t.title).join(' · ')+(topics.length>2?` · ${topics.length-2} other topics`:''),topics};}
+export function startingLesson(id:CertId){const track=getCert(id);if(!track)throw Error('Unknown path');const d=track.domains[0];return {domain:d.id,title:d.title,href:`/study/certifications/${id}#topic-${d.id}`,why:'Start with the first topic in this path, then try one question. This is a learning suggestion, not a prerequisite judgment.'};}
+export const termExamples:Record<string,string>={oracle:'A tester compares an invoice total with the approved pricing rule, rather than trusting another generated answer.',regression:'After a discount fix, the team checks that previously working checkout and payment behavior still works.',confirmation:'A tester reruns the original failing discount example to check that the reported defect is fixed.',risk:'A rare double-charge defect may deserve attention because its impact is high, even if many cosmetic checks pass.',precision:'An alert team asks how many raised alerts were real incidents; missed incidents are a different question.',recall:'An alert team asks how many actual incidents its detector found; false alarms are a different question.'};
+export const awsComparisons=[{title:'CloudWatch or CloudTrail?',situation:'The service is slow, and a separate investigation asks who changed an account policy.',left:'CloudWatch: inspect suitable operational metrics, logs and alarms to investigate performance.',right:'CloudTrail: inspect the relevant recorded account/API activity and actor for the supported policy change.',limit:'They can complement each other; log delivery and recorded event coverage depend on configuration.',sources:['https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html','https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html']}] as const;
+export function awsComparisonFor(id:CertId){return ['cloud-practitioner','ai-practitioner','solutions-architect','developer-associate'].includes(id)?awsComparisons[0]:null;}
+// Authored reading aids for every numeric quantity in the unchanged prompt bank.
+export const numberNotes:Record<string,string>={
+ 'istqb-foundation-14':'10 and 90 are inclusive limits. The integer partitions are below 10, 10 through 90, and above 90; choose a representative from each. No frequency or probability is supplied.',
+ 'istqb-foundation-15':'16 and 65 are inclusive limits. “3-value” means each boundary and its immediate neighbors: 15/16/17 and 64/65/66. It is not a request for only three values overall.',
+ 'istqb-foundation-17':'8 is the total branch count; 6 is the executed count. Use 6/8 × 100 = 75%. Statement and path counts are not supplied.',
+ 'solutions-architect-08':'90 days is the stated age after which reads become rare, not a retention deadline. Retrieval delay, access costs and retention requirements still need evaluation.',
+ 'test-automation-01':'5,000 counts scripts, not meaningful failure detection or requirement coverage. No evidence of those outcomes is supplied.',
+ 'test-automation-11':'100% uses a report that excludes skipped tests. The number of skipped tests and their risk are missing; the percentage cannot establish complete execution.',
+ 'ai-testing-03':'98% is overall accuracy. The prompt separately says most rare critical events are missed; class-specific outcomes matter. Class counts are not supplied, so do not invent recall.',
+ 'ai-testing-05':'30 is true positives; 10 is false negatives. Actual positives = 40, so recall = 30/40 = 75%. False positives are absent, so precision cannot be calculated.',
+ 'istqb-foundation-transfer-1':'10 and 50 are inclusive valid limits already tested. Immediately outside them are 9 and 51; use the specified integer domain.',
+ 'ai-testing-transfer-1':'45 is true positives; 15 is false negatives. Recall = 45/(45+15) = 75%. False positives are explicitly absent, so precision is not supported.',
+ 'generative-ai-testing-transfer-2':'30 minutes is drafting time saved; 50 minutes is added review/correction. For these supplied activities the net change is 20 additional minutes, not 30 minutes saved overall.',
+ 'solutions-architect-depth-2':'40 minutes observed restoration is within the 60-minute RTO. 20 minutes of lost updates exceeds the 5-minute RPO. Compare time-to-recover and data-loss windows separately.',
+ 'solutions-architect-depth-3':'60 seconds is tolerated catalog staleness. It is not permission for stale checkout pricing; checkout needs the authoritative current value.',
+ 'test-automation-depth-3':'80 is the number of tests needing edits after a shared locator change. It illustrates repeated maintenance; it does not measure the tests’ effectiveness or justify a numerical cost estimate.',
+ 'test-automation-depth-6':'99% is a reported pass rate whose scope omits unexecuted high-risk payment tests. Their result is unknown; do not count them as passed or invent a corrected percentage.',
+ 'ai-testing-depth-3':'40 is predicted positives; 30 of those are true positives. Precision = 30/40 = 75%. Actual-positive totals are not supplied for recall.',
+ 'generative-ai-testing-depth-1':'100 counts generated cases. Many only assert that a page opens; count alone does not establish meaningful coverage or fault detection.',
+ 'istqb-foundation-growth-026':'1 through 100 is the inclusive valid interval. Below 1, within the interval and above 100 are the stated equivalence partitions.',
+ 'istqb-foundation-growth-027':'1 and 100 are valid endpoints; 0 and 101 sit immediately outside them. These values target the boundaries rather than arbitrary interior representatives.',
+ 'istqb-foundation-growth-036':'18 is the accepted lower endpoint. 17 is immediately below, 18 is at it, and 19 is immediately above; the three values probe that boundary.',
+ 'istqb-foundation-growth-037':'100% refers only to statement coverage. It does not prove all branches, all requirements or stakeholder needs have been satisfied.',
+ 'test-automation-growth-044':'HTTP 200 is a response status code, not a percentage or a content-quality measure. The content requirement needs its own assertion.',
+ 'ai-testing-growth-010':'90% is stated prediction confidence, whereas half the observed predictions are correct. Compare confidence with observed correctness; group sizes and uncertainty are not supplied.',
+ 'ai-testing-growth-014':'The rare class is 1% of cases, leaving 99% absent cases. Always predicting absent can achieve 99% accuracy while finding none of the rare events.',
+ 'ai-testing-growth-015':'80 found incidents out of 100 actual incidents gives recall of 80%. False-positive counts are absent, so precision is not determined.',
+ 'ai-testing-growth-016':'100 is flagged cases; 80 are real incidents. Precision is 80%. Missed actual incidents are absent, so recall is not determined.',
+ 'ai-testing-growth-050':'100 is flagged cases, comprising 80 true and 20 false positives. Precision = 80/(80+20) = 80%. Actual-positive totals are explicitly absent for recall.',
+ 'ai-practitioner-extra-01':'18 is detected actual positives out of 24 actual positives. Recall = 18/24 = 75%. A false-positive count is not supplied for precision.',
+ 'solutions-architect-extra-01':'30 minutes restoration is within its 45-minute target. Two hours of lost edits is 120 minutes, exceeding the 15-minute data-loss target. Recovery time and data loss are separate constraints.',
+ 'istqb-foundation-extra-01':'12 and 20 are inclusive valid limits. Immediately outside are 11 and 21; endpoints 12 and 20 are still valid.',
+ 'ai-testing-extra-01':'24 is true positives; 6 is false positives. Predicted positives = 30, so precision = 24/30 = 80%. False negatives are absent for recall.'
+};
+export function numbersFor(id:string){return numberNotes[id]??null;}
+export function reportedInSet(ids:string[],work:LearningWork){return ids.filter(id=>{const c=work.concerns[id];return !!c&&(!!c.reason||!!c.note.trim()||!!c.quote?.trim());});}
+export function questionForEditorial(id:string){return getQuestion(id)??getExtra(id);}

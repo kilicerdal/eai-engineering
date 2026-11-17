@@ -1,0 +1,1658 @@
+{
+  "ai-practitioner-16": {
+    "previousEdition": "quality-v9",
+    "previousHash": "08bec4e577da3b96e88c693e4e7143b9c9b01c8541b957679a36dc55ec10f7a2",
+    "currentHash": "72e99b147b5f5e3a78effe8d0079ec06c197a8c26d39f7df5556beecf3a5a2b9",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Focus alternatives on realistic evaluation omissions instead of deletion or concealment commands.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Delete all failed examples from evaluation",
+        "text": "Removing failures can bias the evaluation."
+      },
+      {
+        "choice": "Hide subgroup results behind the overall score",
+        "text": "Hiding results prevents investigation."
+      },
+      {
+        "choice": "Assume the overall score proves fairness",
+        "text": "An aggregate score does not prove fairness."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-14": {
+    "previousEdition": "quality-v9",
+    "previousHash": "9bff927c54b2dc3862aad2a8985bb93047c50239e51ba07dd9a3566928dddef8",
+    "currentHash": "cee4039e648a45239889828fce3cda7f193f97a8d73d3ba442ecb5684bea011a",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An integer field accepts 10 through 90. Using equivalence partitioning, which set includes one representative from each valid/invalid partition?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "10, 50, 90",
+        "text": "All three are in the same valid partition."
+      },
+      {
+        "choice": "20, 30, 40",
+        "text": "These are all valid representatives."
+      },
+      {
+        "choice": "11, 12, 13",
+        "text": "These are all in the valid partition too."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-17": {
+    "previousEdition": "quality-v9",
+    "previousHash": "e73950bd8c5300277f7b421a4c4b365bbb4a1e13225a0f7faf7f663e7d5d6e8f",
+    "currentHash": "3011bbc752daa45ede9496d3c2cfb249b8d539b534e719346b82fe920573f8c8",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A control-flow model has 8 branches. Tests execute 6 of them. What is the branch coverage?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "75%",
+        "text": "6 divided by 8 is 0.75."
+      },
+      {
+        "choice": "6%",
+        "text": "The count alone is not a percentage."
+      },
+      {
+        "choice": "100%",
+        "text": "Two branches remain unexecuted."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-01": {
+    "previousEdition": "quality-v9",
+    "previousHash": "dfea3b8fcce48ec89a2811c8421eb4672158a8fba342d792b1bc8ac0d7a2f406",
+    "currentHash": "192f904840fa8602611f8c71300ecf45c039986501f70326f699970218626bb3",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Explain the supervision signal rather than relying on an obviously unrelated alternative.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Supervised learning",
+        "text": "Labels supply the training target."
+      },
+      {
+        "choice": "Reinforcement learning from environment rewards",
+        "text": "No reward-driven interaction is described."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-07": {
+    "previousEdition": "quality-v9",
+    "previousHash": "1388994c6a1ec54c2c411382ee5ecd8940811d4191123510c1ae3714124d31b0",
+    "currentHash": "b12671e41b8385bcaeb1eefd5af1785ec905e5ab7c3509bdf55d92fc095ebacd",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Replace accreditation and guarantee cues with distinct failure categories.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Proof of data encryption",
+        "text": "Output wording does not prove encryption."
+      },
+      {
+        "choice": "Guaranteed factual grounding",
+        "text": "Fluency alone does not establish grounding."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-23": {
+    "previousEdition": "quality-v9",
+    "previousHash": "d587d541a38d2036df42b37bc6cfe2be9f9214f92be786a0809d46b1cb1e9cfc",
+    "currentHash": "44e00cfadd4a6c0c1c224e8b569d78a4977b2b215223d643e9b899ea7ef573dc",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Why record the origin and transformations of data used by an AI application?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "To avoid checking data permissions",
+        "text": "Usage permissions still need review."
+      },
+      {
+        "choice": "To replace output evaluation entirely",
+        "text": "Output behavior still needs evaluation."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-05": {
+    "previousEdition": "quality-v9",
+    "previousHash": "f0ee4dbad55c49182bc3e59bb6a92ab162fc2c4071b17903c12c3baf2830f8f9",
+    "currentHash": "6791bcd05bd3b492aa2c99c88e47dad50e8764aec3a47076d04a64291e6472e7",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A classifier finds 30 true positives and misses 10 actual positives. What is recall?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "30%",
+        "text": "30 is a count, not the recall percentage."
+      },
+      {
+        "choice": "100%",
+        "text": "Ten missed positives prevent perfect recall."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-07": {
+    "previousEdition": "quality-v9",
+    "previousHash": "dafd23207000c834e09a18b10707e7c5eabd517e8595fac068a3ca4d9c0f82a0",
+    "currentHash": "9435e3407e7075ac4c3418c24ea521cc40a885755c3f10f6199cf35896bf9c46",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A generated answer invents a citation. Which evaluation is needed?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Accept confidence as proof",
+        "text": "Confidence is not external evidence."
+      },
+      {
+        "choice": "Check only grammar",
+        "text": "Grammar does not establish factual accuracy."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-11": {
+    "previousEdition": "quality-v9",
+    "previousHash": "aa84d5c5898369e95d0796ef416934cdc8ac540c9e6d584f8a9b3651e4f7b176",
+    "currentHash": "5e2b51fcfd7bf8197e298aa5426fa1b23006673b7408ab8d5e1f853b90c10af5",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A new model is compared on a different test set from the old model. What improves the comparison?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Compare only model names",
+        "text": "Names do not measure performance."
+      },
+      {
+        "choice": "Choose the larger model automatically",
+        "text": "Size does not prove better task behavior."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-03": {
+    "previousEdition": "quality-v9",
+    "previousHash": "a55bbe1841ad4ff1f4a581ec3a440ffc14978734a6c0bc9a5d7d49f7debd8743",
+    "currentHash": "d50bfdd4d95ec08087aa5a8ff30c2c48b18362f5bd93d182f00a36b92a661138",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A startup avoids buying servers before it knows demand. What economic change is illustrated?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A fixed charge independent of all usage",
+        "text": "That describes a different cost arrangement."
+      },
+      {
+        "choice": "Guaranteed zero operating costs",
+        "text": "Cloud resources still have costs."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "developer-associate-03": {
+    "previousEdition": "quality-v9",
+    "previousHash": "06dd6c1305d925bce9858084380d61f8429894584460551beddd37bffff77523",
+    "currentHash": "9da4a67a5f99460c3a5b5a5dffc6ac564dbbe1de8b5830cfa92538db96a8e38b",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Use realistic stale-copy mistakes and explain rotation assumptions.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A plaintext error message",
+        "text": "Errors and logs are not secret storage."
+      },
+      {
+        "choice": "A public repository README",
+        "text": "A public document exposes the secret."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "developer-associate-05": {
+    "previousEdition": "quality-v9",
+    "previousHash": "bbe6dda5b6e9476ffcd9083bf3cc9423c7282324dd6f0af5abd7b0a810c50ab2",
+    "currentHash": "b3b7d0c859cd03f37bf33fbf176b7c03cd8370717ab77b8d00151243594558c1",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Replace trivial source-comment distractors and qualify runtime observation.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Delete the previous version first",
+        "text": "Removing the old version impairs rollback."
+      },
+      {
+        "choice": "Change only the source-code comment",
+        "text": "Comments do not route execution traffic."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "developer-associate-06": {
+    "previousEdition": "quality-v9",
+    "previousHash": "5e96b1a0d3d9e5f7a4cf043f3f5cb3cafac3d111c3a30ef3062dffba7d2236a6",
+    "currentHash": "a89a35ea69212f6ba7377cb8f2bae901aced71ef09adfa4b58e69a7fb0fcf976",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A generated test asserts only that the mocked function returns its configured mock value. What should improve?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Add more copies of the same assertion",
+        "text": "Repetition does not improve the weak oracle."
+      },
+      {
+        "choice": "Treat generated tests as automatically sufficient",
+        "text": "Generation does not establish test quality."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-01": {
+    "previousEdition": "quality-v9",
+    "previousHash": "eee5c741de0bafb41c2e7d1f619635287666fb7102cd28ccc1ea9fafb5f7faab",
+    "currentHash": "47ada0e8772916fc1e59fd244cc56a45bd9d9adca859eb1f9bf3b1ccccdcd58b",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An LLM invents a password rule absent from the requirements. What should the tester do?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Make it mandatory because the LLM proposed it",
+        "text": "Generation does not grant product authority."
+      },
+      {
+        "choice": "Mark the imagined rule as verified",
+        "text": "An invented rule has not been verified."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-actions-03": {
+    "previousEdition": "quality-v9",
+    "previousHash": "20a6a55f3289f1100bb94469a0db301bbcc52d9ecdbbbae00ea2f48697dca36e",
+    "currentHash": "6e001793d8a0d21b9c5ceecb3a5e0575325a1df53800e16c4c269d09b97a171b",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A build succeeded but a later job cannot find its output. What mechanism transfers the file between jobs?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Write its filename in a comment",
+        "text": "A comment does not transfer the file."
+      },
+      {
+        "choice": "Use only a display-name change",
+        "text": "Names do not persist build outputs."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-actions-09": {
+    "previousEdition": "quality-v9",
+    "previousHash": "f293822adc6c5253fc8f9076ce7447be809aa51e1633d3e37d8a1de377d2e672",
+    "currentHash": "a94c3e0c3fa77fe6f026b630a2669c073c004bdfd03ecf1e2c1dd5a532b0dd1b",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Contrast realistic credential-workflow mistakes.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Printing the key before deployment",
+        "text": "Logs can expose the credential."
+      },
+      {
+        "choice": "Disabling cloud authorization",
+        "text": "Authorization must still protect deployment."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-actions-depth-1": {
+    "previousEdition": "quality-v9",
+    "previousHash": "bc4ab7cad987c39d4fb4e4b54ea6b3bf90bbe83fdb90273d839a011e97a36c94",
+    "currentHash": "0bc313d985be350a7b5f0a136fb40d8c718cf58e415eee90f9cf4c31d886572d",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A workflow should run only after a dependency job succeeds. Which configuration concept directly expresses that relationship?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Placing the job lower in the YAML file only",
+        "text": "File order is not a job dependency."
+      },
+      {
+        "choice": "Giving both jobs the same display name",
+        "text": "Names do not establish execution ordering."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-copilot-01": {
+    "previousEdition": "quality-v9",
+    "previousHash": "799b67292d695e88a417983100959eb7a888cc553eb60767db6e0caa47e6da0c",
+    "currentHash": "7056148987ea05c6deb7bef7b0898e0f5feec0fbcaadb4a54d228f200f4c309f",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Copilot proposes a plausible authentication change. What should happen before merging?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Merge because the explanation sounds certain",
+        "text": "Confidence is not proof of secure behavior."
+      },
+      {
+        "choice": "Disable tests to save time",
+        "text": "Removing tests discards useful evidence."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-copilot-05": {
+    "previousEdition": "quality-v9",
+    "previousHash": "6697067b0c916f8bf4767279c3cb9d4750747cb540c81c9f285aea607cc4d1b1",
+    "currentHash": "40d81589ed597bbb13db895de64482183213f3ec727423cf831d9872fcca8bfa",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An assistant uses an outdated API absent from the supplied context. What helps?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Increase confidence wording",
+        "text": "Tone does not update an API contract."
+      },
+      {
+        "choice": "Rename the chat",
+        "text": "A title does not supply technical context."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-02": {
+    "previousEdition": "quality-v9",
+    "previousHash": "9db652f696ab2eb8d32a2f304b238663b2f96d41f19fc23b72dcf63759fb886a",
+    "currentHash": "7cf0860e31f4127dff9a5006e6b641f373b4b4bfcc1c8b12f8d3b8571cfe63a2",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Retain the Foundation principle while removing obvious stop-testing absolutes.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Stop all testing permanently",
+        "text": "Ongoing changes can introduce new risks."
+      },
+      {
+        "choice": "Only rename the existing tests",
+        "text": "Names alone do not change test conditions."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-10": {
+    "previousEdition": "quality-v9",
+    "previousHash": "e5f0eb55ec2ccf5109908d5b65eb81933f86d0d92188815dc3572648219d91a2",
+    "currentHash": "71987ad6b895f8e73dcad4a35aaa9f56923f539288686d951974d8c11bb5a747",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Which activity is static testing?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Measuring response time under load",
+        "text": "Runtime measurement is dynamic."
+      },
+      {
+        "choice": "Executing a checkout test",
+        "text": "Executing checkout is dynamic testing."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-12": {
+    "previousEdition": "quality-v9",
+    "previousHash": "09895ccf9630d903ad9f0aa57679057e06a53646befeecaf4f79fa62f6c9430a",
+    "currentHash": "ba138e227fdddb6d5e36da8f98002aa3e1269706c3804b53521bd6fd198f2c50",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Use neighboring ISTQB review roles rather than unrelated jobs.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Scribe",
+        "text": "A scribe records the review information."
+      },
+      {
+        "choice": "Database administrator tuning queries",
+        "text": "No database tuning is described."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-18": {
+    "previousEdition": "quality-v9",
+    "previousHash": "d10ee42d08842aebd34c7f83428b7474e4371c894a4089b65700df577f04071d",
+    "currentHash": "4084b061969cc837c1c43c0416098e9edaf2a9e7da7bb81e3fe7b081c3dbb200",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Two equally likely failures have very different business impacts. What is the better risk-based priority?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Treat impact as irrelevant",
+        "text": "Impact is a key risk attribute."
+      },
+      {
+        "choice": "Ignore both because likelihood is equal",
+        "text": "Equal likelihood does not eliminate risk."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-21": {
+    "previousEdition": "quality-v9",
+    "previousHash": "95f16b9a4d7ad9d05dcc42534bf3a2854b178a010648e6cf079d80537908285d",
+    "currentHash": "eb839b36a710baa2da80c8ca1b01a4cb9b0e8a3ab1538b82f3b75c99403fd30d",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Why track which build, test data and test cases produced a result?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "To guarantee every later build behaves identically",
+        "text": "Later changes can alter behavior."
+      },
+      {
+        "choice": "To eliminate the need for defect reports",
+        "text": "Defect communication remains necessary."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-05": {
+    "previousEdition": "quality-v9",
+    "previousHash": "785ff3de808ce493f96502e2f5cc58fdf98940558b4c72aab1f8c6510aba792b",
+    "currentHash": "f61e9e9336eb26936e2771723144067e03375fa410e6d3b2f254ce18cb39e79e",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Every test embeds the same login HTTP request. What refactoring reduces duplication?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Copy the request into more tests",
+        "text": "More copies increase maintenance effort."
+      },
+      {
+        "choice": "Delete the login checks",
+        "text": "Deleting needed checks does not solve reuse."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-06": {
+    "previousEdition": "quality-v9",
+    "previousHash": "324a4e0ec1add2994b27bc81544520c1accef7558bba414ba4fb79d388018fe2",
+    "currentHash": "aef3c7944fd2fe395f66303ca6c2afe7dcc745c62f13f61dd83c5d9fef4b6e7f",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A framework’s abstractions make failures impossible to locate. What should improve?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Always report every run as successful",
+        "text": "False success destroys trust in feedback."
+      },
+      {
+        "choice": "Remove test names",
+        "text": "Names help identify the failing behavior."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-13": {
+    "previousEdition": "quality-v9",
+    "previousHash": "8315e13d975043bb50f0773f4b7d36af47d43de775a786845e3935ff81fac704",
+    "currentHash": "e4e18cccdc78f1465a8f56ce98718ae2ef0e1ecadae783b590f0b428bf5dd482",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Use distinct verification omissions instead of arbitrary retries.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Rename the suite",
+        "text": "A name does not verify behavior."
+      },
+      {
+        "choice": "Increase retries until green",
+        "text": "Retries can conceal the missing check."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-02": {
+    "previousEdition": "quality-v9",
+    "previousHash": "daf631ff277c59f83b71436c360b4b9f19978b352a43f76d6bf27aeba134f5d9",
+    "currentHash": "07481055ccb8f33783afb5d6467ef7e498b6ebba2993f7a4d822ca1429f9020c",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A shop wants to estimate a numeric delivery time. Which prediction task fits?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Regression",
+        "text": "Regression predicts a numeric quantity."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-03": {
+    "previousEdition": "quality-v9",
+    "previousHash": "4bd7204c4d3f30a5becf51a87624a1fe94ea83e2c5c110dc4fcb873277197042",
+    "currentHash": "499727de6bf82621391157f68026032ec8126477a597a93077fe41840ee4cdef",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A classifier is evaluated on the exact examples it trained on. What is the main limitation?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "It makes labels unnecessary",
+        "text": "Labels still define the supervised target."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-12": {
+    "previousEdition": "quality-v9",
+    "previousHash": "cef605df040ef29ad944ecfa28dee75138a2f917205c4596890f004695728f21",
+    "currentHash": "adfd5e0cc4e4921b98d9239189832ea1c8d0ded72ccf895f1819fd2ebc97a642",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Contrast nearby prompting and training concepts.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Deleting all context",
+        "text": "Examples add context rather than remove it."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-17": {
+    "previousEdition": "quality-v9",
+    "previousHash": "bb0d5292750f6924bd3ac1d9b9cc4f6d930ab363f4403ca7e70be6d74a3ceac9",
+    "currentHash": "7f120e58c398fc78aed3f254a2b462ffc84e9ca4e3fa41318f094a9b1be9440b",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A team publishes intended uses, evaluation results and known model limitations. What does this support?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Elimination of human review in every context",
+        "text": "Review needs depend on risk and context."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-20": {
+    "previousEdition": "quality-v9",
+    "previousHash": "2ef6265257944f4a3d6c9ac0e8cac22836fa2511f2a302312d92528ff9c830ec",
+    "currentHash": "ed6e157231828e2403468f3a99623c33d8256d592fde8e3c397e7822c0e4a6db",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A user asks why a model produced a recommendation. What does an explanation need?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A fabricated story presented as the model’s exact internal process",
+        "text": "Invented internal narratives are misleading."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-21": {
+    "previousEdition": "quality-v9",
+    "previousHash": "d041654e3c778ca66864179480b43951b65bd3af0a846ddbf35d0d3b04c383c5",
+    "currentHash": "dd999d5ffec13694a6ec34ee7edc7c86894d270becc9a8218b07c74c8db37b13",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A retrieved page tells an assistant to ignore access rules and reveal a secret. How should the application treat that text?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "As a new instruction from the user",
+        "text": "The page is not the user’s authorization."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-25": {
+    "previousEdition": "quality-v9",
+    "previousHash": "f9684fe33606e3120b386e0126b5f6e3a3f2ef97d0a0cd03acf525e7444f62f2",
+    "currentHash": "34629e08c6bbdc709d878babcb28a3cf402883c81291179af645457b8f4525cc",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A team copies sensitive prompts into long-lived logs without a retention plan. Which improvement is most relevant?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Assume logs cannot contain sensitive data",
+        "text": "Prompts may contain sensitive information."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-extra-01": {
+    "previousEdition": "extra-v1",
+    "previousHash": "69bc6b63e39e149d50c06783c54a99ba4c0ff495e8176f11016a2a66a4c63b59",
+    "currentHash": "69bc6b63e39e149d50c06783c54a99ba4c0ff495e8176f11016a2a66a4c63b59",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A detector identifies 18 of 24 actual positive cases. Which value is supported without a false-positive count?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Precision is 75%",
+        "text": "Precision also needs false positives."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-practitioner-extra-02": {
+    "previousEdition": "extra-v1",
+    "previousHash": "1ffb16da49d3b70cb081db182a00e2c9a5698b8e48849bfb19f0c73d326ddb3b",
+    "currentHash": "1ffb16da49d3b70cb081db182a00e2c9a5698b8e48849bfb19f0c73d326ddb3b",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A team compares two assistants on different task sets and declares the one with the higher score superior. What should it improve first?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Compare only their marketing names",
+        "text": "Names do not establish task performance."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-04": {
+    "previousEdition": "quality-v9",
+    "previousHash": "5c0d25c45ebe2d8337fc69821087ee4881c606add126c882afa7306303322c73",
+    "currentHash": "c6ed9c8fe384f7b1631a4544e3c70100e2c646128ec4dc6e4c5ce29d0c353b13",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Preserve testability and metric scope without vague universal approval cues.",
+    "inspectedShortPassages": [
+      {
+        "choice": "The model should be smart",
+        "text": "Smart has no operational measurement here."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-09": {
+    "previousEdition": "quality-v9",
+    "previousHash": "843e1d82e3e506e25cdcab5bf9f092d282c55cb16282f34dde5b671e9a807d2c",
+    "currentHash": "b79eb3288e31c1be6db4a99bc7f20a5eb87f73fad102eabe6a8fe392b26adbdd",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A sensor changes from Celsius to Fahrenheit without updating preprocessing. What should tests detect?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A harmless formatting preference",
+        "text": "Units are semantic rather than cosmetic."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-10": {
+    "previousEdition": "quality-v9",
+    "previousHash": "f0b42609359411f4dcd22682de87ddf80b5fbf75a0f1cf3fa8f1909c55c27141",
+    "currentHash": "2c77501bcd76505027863bdf69bac9df8ff65e56fe3bbd53f20e5167058ab4f5",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An evaluation set contains only daylight images for an all-hours product. What is missing?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A shorter test filename",
+        "text": "Naming does not repair representativeness."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-12": {
+    "previousEdition": "quality-v9",
+    "previousHash": "488c2935ce7449496adf22311371939736356ecdc981476d1f452443bb89211e",
+    "currentHash": "32f0cc54df6f6d4978c4b1d1d55521f4f8e7c4ac275ba38e9a87df154d14fa8d",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “One demographic slice performs poorly while the mean passes. What should follow?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Hide the slice from the report",
+        "text": "Omission conceals a relevant limitation."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-depth-3": {
+    "previousEdition": "quality-v9",
+    "previousHash": "468108bfe8a7d4040fbdd92a741090391d15d4a4372cb954ef240c16d99d4080",
+    "currentHash": "d20f6ae62d7313baa7f012bea896ddd4e62cf55a8ebbf0d300ce60d6c8664aec",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A classifier labels 40 cases positive, of which 30 are truly positive. What is its precision on these observations?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "30%",
+        "text": "The numerator alone is not the percentage."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-extra-01": {
+    "previousEdition": "extra-v1",
+    "previousHash": "559624f7c8646efc23d225de8ed0d4798af1a79989580fd756533dc717949b27",
+    "currentHash": "559624f7c8646efc23d225de8ed0d4798af1a79989580fd756533dc717949b27",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A classifier produces 24 true positives and 6 false positives. Which calculation is supported?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Accuracy = 80% without other counts",
+        "text": "Accuracy requires all relevant outcomes."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-extra-02": {
+    "previousEdition": "extra-v1",
+    "previousHash": "b74a1786b163df0efd9b2d08bd6c0205700be2d4384ab746c3f8d8c5c228c71e",
+    "currentHash": "b74a1786b163df0efd9b2d08bd6c0205700be2d4384ab746c3f8d8c5c228c71e",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An input-data review finds that evaluation records duplicate training records. What concern should be investigated?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Whether a larger filename fixes the overlap",
+        "text": "A filename does not change dataset overlap."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-growth-016": {
+    "previousEdition": "quality-v9",
+    "previousHash": "1588f5cdb51c56c94ab0034d84b85c997615d5a61b3fe2ffba797a8a7581855f",
+    "currentHash": "9e9018d413aadc00aaa34e9f1837f851549e9d21add906cf7b428b0ae7ef9c87",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A detector flags 100 cases, of which 80 are real incidents. Which metric directly describes that fraction?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Precision",
+        "text": "The denominator is predicted positive cases."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "ai-testing-transfer-1": {
+    "previousEdition": "quality-v9",
+    "previousHash": "436f85f1a33e8afbd430cb96e8e65f6a2b0cb061163d75b918c36f20709fcdfc",
+    "currentHash": "16d6828dd4ef3e5321f47d0c8023372490fe4692cd35142d6530715aedb11457",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A detector finds 45 true positives and misses 15 actual positives. False positives are not supplied. Which metric can be calculated from this evidence?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Recall: 75%",
+        "text": "Recall is 45 divided by 45 plus 15."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-07": {
+    "previousEdition": "quality-v9",
+    "previousHash": "d71f2ec3843419f472a24b5b3503ccee29cc7ffc78c57790d0ce4577934c5080",
+    "currentHash": "4cf2e985a15a4e12a888a1135c3b836c4edd27c51cc3c335ccbad4d0e3e28cb4",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Replace impossible claims with neighboring cloud benefits.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Elimination of all security duties",
+        "text": "Customer security responsibilities remain."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-10": {
+    "previousEdition": "quality-v9",
+    "previousHash": "2488065c79d56b8b410591f428beacf3294df8f8fdac875540125fd9d0834d3c",
+    "currentHash": "115aac70aa17a456e39c616efbba10a6de863d6928837fd8cae9ea5a54a537f4",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An investigator asks which identity made an AWS API call. Which service is the closest starting point?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "AWS Pricing Calculator",
+        "text": "A pricing estimate is not an audit record."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-12": {
+    "previousEdition": "quality-v9",
+    "previousHash": "0072bec73ac91fe1518b2a803a76406dbc23608eed6ba4dc9b556668799119cb",
+    "currentHash": "80e164b5e386c410e1440fe60c917eab183c9d71c0e7c0a5c1a4ac9c52fc1025",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Contrast authentication, authorization, protection and audit without universal guarantees.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Require an additional authentication factor",
+        "text": "MFA adds another factor to authentication."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-14": {
+    "previousEdition": "quality-v9",
+    "previousHash": "3749df5f6a718c0a480338abcd1c09f98d105d3933a2a1d7df0f705cb416c6d1",
+    "currentHash": "58a29640a81054ee1a2750f4448dba0e2a3a15da275976cc3ac860dc3f63f591",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An application stores images as objects accessed by key. Which service fits?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Amazon S3",
+        "text": "S3 is object storage."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-15": {
+    "previousEdition": "quality-v9",
+    "previousHash": "97fc49afad2f40a2a75599b17f37e173b1cffa8f8d53f639718d0124c6441608",
+    "currentHash": "0c28b519404f33dcda6f75c224c80e36f9ef951badd48fb387857e9e0fe104aa",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A short event-driven function should run without the team administering servers. Which option fits?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A Route 53 hosted zone",
+        "text": "A hosted zone supplies DNS configuration."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-16": {
+    "previousEdition": "quality-v9",
+    "previousHash": "22a103829697204cdf02c244464e76b0686cb867b810970ba0615a94c44931ab",
+    "currentHash": "37be1afa7e9423fc59616e49f4bad3f1898488927c0e086ba8d2233f9c5cfa59",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A workload needs a managed relational database. Which service is the closest fit?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Amazon RDS",
+        "text": "RDS manages relational database engines."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-17": {
+    "previousEdition": "quality-v9",
+    "previousHash": "8e2f9fc695b1e8d02f5c0a37b788780e3451c2f22331049cc92056b22271d246",
+    "currentHash": "1181b22754e8037038706ecce8fe62d020fd96e29bf717f38bca2b985aff1ab1",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A website wants cached content served nearer geographically distributed viewers. Which service fits?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "AWS Budgets",
+        "text": "Budget alerts do not deliver content."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-19": {
+    "previousEdition": "quality-v9",
+    "previousHash": "80d8f120191c2516012b74c4cf981ee2c6e2abbe2a4c06d8a279ddf1066e2cf7",
+    "currentHash": "fdd270b45562015626a6bce9a66a1e70676a945f6f16c90d16dc0f0fddb7e8e5",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Use realistic capacity and monitoring alternatives while preserving the failure boundary.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Rename the Region in application logs",
+        "text": "A label does not change deployment topology."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-23": {
+    "previousEdition": "quality-v9",
+    "previousHash": "a0b027cd57a39c2476fc77803b52a697e9a39bf1371bfead82f7a21606773ad8",
+    "currentHash": "c577e21e33f21aa24d276e5b5e9f5997cef091b92d4921121fd7949cca6713e9",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A team wants to inspect actual cost trends over time. Which tool fits?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "AWS Cost Explorer",
+        "text": "Cost Explorer analyzes cost and usage data."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "cloud-practitioner-24": {
+    "previousEdition": "quality-v9",
+    "previousHash": "a2fea6493ca6305f0c666135a213e76716668d2727998681072767952a677674",
+    "currentHash": "a55f9494041957550fd78245a54bc71921339be9ef41ef249031991def71e5e8",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Replace non-compute distractors with plausible EC2 purchasing decisions.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A storage lifecycle rule",
+        "text": "A storage rule does not purchase compute."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "developer-associate-02": {
+    "previousEdition": "quality-v9",
+    "previousHash": "8fc24f8685ddd2eea5e427d1e95a554f391bc9e93e5d6d5be8b98bab654bd541",
+    "currentHash": "03b75debb6af4ce59d9f37e1936142ce0d3f26eceaea5008a09d2dd7ad49da3a",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An AI assistant proposes an SDK method that does not exist. What is the next step?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Add a comment saying the call is correct",
+        "text": "A comment cannot repair an invalid API call."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "developer-associate-07": {
+    "previousEdition": "quality-v9",
+    "previousHash": "03c2e80efdbad6afecad966383792941d4fe9405620bfc5b875cc6bb0b3e6e34",
+    "currentHash": "4ce8212c74f7b6684775b5f9d2f3bd18560c9a2f2c79a69e4ad93a2d7da46bd6",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A request crosses an API and three workers. What helps correlate its failures?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Logging only successful requests",
+        "text": "Failure evidence is essential for diagnosis."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "developer-associate-depth-3": {
+    "previousEdition": "quality-v9",
+    "previousHash": "3f606af5e2b0ecf9b9102d00a2603a871cd203f36ac39f5e2ddee8754d5cbf33",
+    "currentHash": "5d73f3c0ce2b58990ebafac9947f5dcbf9f53162b06ee907f01d6f228cd51c58",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A release is routed to a small fraction of traffic first. Which observation should control whether rollout expands?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Only the number of new source files",
+        "text": "File count is not operational evidence."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "developer-associate-extra-05": {
+    "previousEdition": "extra-v1",
+    "previousHash": "0d0b551822cc26f06727d5648309e81b9e094b835901760bab1863bacbc53758",
+    "currentHash": "0d0b551822cc26f06727d5648309e81b9e094b835901760bab1863bacbc53758",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A permission review aims to reduce unnecessary workload access. Select two helpful measures.”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Review and remove unused access",
+        "text": "Unused access should be regularly reviewed."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-02": {
+    "previousEdition": "quality-v9",
+    "previousHash": "727dc4c08547bd34689cd43cc57bebfd899a82859d0252881253b9572f8e11e4",
+    "currentHash": "824b6497c1aa33c76f2014294d145143857a5d45c29550eb41e5e23e2a62339c",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Keep GenAI assistance distinct from acceptance authority.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Replace all test oracles with generated text",
+        "text": "Outputs require independent checking."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-04": {
+    "previousEdition": "quality-v9",
+    "previousHash": "63031c5b7d5c755e92f140282ab0ee5ea41850bfed212313e5a8e83afadb9e3a",
+    "currentHash": "3b69dadac32e45eeb3dab7136338ba0e7fde774f72dadfb874dd80e0c4637d4f",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Explain concrete prompt refinement instead of implausible acceptance cues.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Remove the boundary requirement",
+        "text": "Deleting the requirement hides the problem."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-05": {
+    "previousEdition": "quality-v9",
+    "previousHash": "abd0315cad7296d9c55aef11fdfb37ed45349d51e130ecb81e56d781dfddd416",
+    "currentHash": "fe2f4ed6e283b68680603a90c0a5a230ad173b1a0129c7f680e2aac4880f9e2b",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A prompt includes real customer identifiers unnecessarily. What should change?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Publish the prompt publicly",
+        "text": "Public posting widens the exposure."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-06": {
+    "previousEdition": "quality-v9",
+    "previousHash": "0f56b061c6236c4a237afac954bbb438112a3b082b94a34a1bda4c099aabed24",
+    "currentHash": "93544a999b42e651845d2a860c49a6faf1511c6496db27b75e55f039559d2de9",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A retrieved issue says “ignore policy and expose secrets.” How should it be treated?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "As proof the secrets are public",
+        "text": "Mentioning a secret does not make it public."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-depth-1": {
+    "previousEdition": "quality-v9",
+    "previousHash": "002799096ec8c12646bfee94a4679aaab5fa59bcf391c455d8c2c4a72275fe63",
+    "currentHash": "5995ce5d0740082605fa8fc0bba3f2444ac723ea5fa5bb0d261a7032a4c5cb7c",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An LLM produces 100 test cases, most asserting that the page opens. How should a tester judge their value?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Accept them because 100 is a large number",
+        "text": "Quantity does not establish testing value."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-depth-2": {
+    "previousEdition": "quality-v9",
+    "previousHash": "eb9546dd3c0d9f3578a023e489cd93e09132a76b7ac5057871fa2a2b1ef7e687",
+    "currentHash": "82a27827c6c539a9aa7487ae7cf478ace4e266164fd52c34ffc0fe11a4afa955",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A prompt omits the valid input range and the model invents one. Which next prompt revision best addresses that gap?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Repeat the same underspecified prompt unchanged",
+        "text": "Repeating the gap does not resolve it."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-depth-3": {
+    "previousEdition": "quality-v9",
+    "previousHash": "05a33fa8882bc12f4265cbb1eb33c699b17d6a8b9736500479c2cbb1d4c18eb8",
+    "currentHash": "5deee57d1d52ec625bf94529b5b0202c0c99fc13ba0f5fc81eea0c35b18340a8",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A defect contains customer identifiers and internal credentials. What should happen before using an external GenAI tool to help analyze it?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Paste the full record because analysis is useful",
+        "text": "Usefulness does not authorize disclosure."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-depth-5": {
+    "previousEdition": "quality-v9",
+    "previousHash": "eb04f47a1c114b49437ecd8bef78c553e464f04a599b2e739ab291a5ca654c69",
+    "currentHash": "f5591d30ab50e0c9e03e0e1f2e5b7e94b2fa1a8cbd6075c36cd800cd72b73a55",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A pilot saves drafting time but doubles review and maintenance time. Which adoption decision is best supported?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Measure only the number of prompts used",
+        "text": "Prompt count is not net value or quality."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-extra-02": {
+    "previousEdition": "extra-v1",
+    "previousHash": "c936c18197c89f9fd30ee6cca410d0aeb9e5a337f30ec12fe32b13e7b51d0604",
+    "currentHash": "c936c18197c89f9fd30ee6cca410d0aeb9e5a337f30ec12fe32b13e7b51d0604",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Generated expected outcomes disagree with the approved policy, although the generated tests are syntactically valid. What should determine acceptance?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "The number of generated tests",
+        "text": "Quantity cannot repair an incorrect oracle."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "generative-ai-testing-transfer-2": {
+    "previousEdition": "quality-v9",
+    "previousHash": "72869e9e1a39fb706047ae70a0c49d9825b55bcf350a0c6b08d5025bbe9a8360",
+    "currentHash": "6a0e533544cff19bc9600469544f0faa17e0ccc4d55f03a77e0dd4b25378f16d",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A GenAI pilot cuts drafting by 30 minutes but adds 50 minutes of review and correction. Which assessment best reflects the supplied evidence?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Generated line count proves a productivity gain",
+        "text": "Output volume does not account for rework."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-actions-02": {
+    "previousEdition": "quality-v9",
+    "previousHash": "c4e8107d5e937b7fbefca9ad9b2416c225bc8c3237a5e27527a465070c9ff912",
+    "currentHash": "15864738368cd0593ce46d5eee88cd01921588e57d8536869bd3a7c3fce27e7f",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A project must test two runtimes on two operating systems. What expresses the combinations?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A comment claiming coverage",
+        "text": "Comments do not create coverage."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-actions-07": {
+    "previousEdition": "quality-v9",
+    "previousHash": "3805c1b307ec96f75590f31524896f4613253caf0df127a6e7e7958e7cb02997",
+    "currentHash": "80d86d96b827086309b3cf39f1c0e1ce0a830582ce2cf28834ed6f168d13d032",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Public contributions can run arbitrary code. What is a concern with a privileged persistent self-hosted runner?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "The runner name prevents execution",
+        "text": "Names are not an execution sandbox."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-actions-08": {
+    "previousEdition": "quality-v9",
+    "previousHash": "dc1b2e265f55caa9eabc748b3a4de95ba9cd4973beb7fe79af5bd2fb9d149b4d",
+    "currentHash": "7508bc46ec4cb7743f253775ee74628fe588ccdd0a625b81b452dbaf1742ed2b",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An organization wants shared CI logic maintained centrally. What should it consider?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Removing all change history",
+        "text": "History supports review and diagnosis."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-actions-10": {
+    "previousEdition": "quality-v9",
+    "previousHash": "b0ab6747ae65b8d00cb6c113ecc291256dda8fbe1b86e7bf51188c1ac53eb3e9",
+    "currentHash": "e6ab30dfcacb4c8ac5d11e9efd028e457c6e22a49a91a584d58ac7a004c3267d",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A pull request title is inserted directly into a shell command. What should improve?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Assume titles cannot contain shell syntax",
+        "text": "Titles are attacker-controlled strings."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-copilot-02": {
+    "previousEdition": "quality-v9",
+    "previousHash": "680c4888e2582d1b5fbcb5b539b2696604c1b5ea901bd74f84198968ec7408a1",
+    "currentHash": "2601fd57d1d7e6c90ae18b1951f9d925de6c9de71811862a900d9e96a688cfe9",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A suggestion repeats a biased assumption from a prompt. What is appropriate?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Use fluency as the fairness metric",
+        "text": "Fluent prose does not measure fairness."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-copilot-07": {
+    "previousEdition": "quality-v9",
+    "previousHash": "a02857219428c0800fe9b12a1064eb63489e2193dd31d8a6dc3ba0f356172e96",
+    "currentHash": "466be6b5e29a402da01fa0aa0d008e8a14636e853a615466e449cb9c2b685595",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A refactor must preserve a public API. What belongs in the prompt?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Only “make it modern”",
+        "text": "A vague aesthetic goal omits compatibility."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-copilot-11": {
+    "previousEdition": "quality-v9",
+    "previousHash": "dd9adc190a995fcccd35def8a8ab3e4c5915f90d6de7af2e42f87f5e7bd2d6d8",
+    "currentHash": "921a335ecc318689571b53fec0a93a16b3deb210a763b9fb504eff3d1108181e",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A debugging example contains a production token. What should happen before using it as context?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Publish it in the issue for convenience",
+        "text": "Public posting broadens exposure."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-copilot-12": {
+    "previousEdition": "quality-v9",
+    "previousHash": "7957be0b597680ca63ad9aee9c4af7a5830951c658ea0c8d8a22e127b90c1a0d",
+    "currentHash": "f723f2d27287f47d40eed1d426285952bd496745e68e8e3c91e57726f623ab60",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Remove absolute-language cues while preserving feature-specific scope.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Stop reviewing all generated output",
+        "text": "Output review remains necessary."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "github-copilot-depth-4": {
+    "previousEdition": "quality-v9",
+    "previousHash": "4abae183c9b3cce1e98c2a8318b99069ea4fa3ae308b8ab7520da2fc85959dbc",
+    "currentHash": "95c9c409e3ea0f43c91649bf228add84204dc88b0bb84130d72423c6fdead768",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A code-generation request says only “fix it.” What would most improve a follow-up request?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Ask for a larger patch without describing the failure",
+        "text": "A larger patch does not clarify the target."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-11": {
+    "previousEdition": "quality-v9",
+    "previousHash": "ff44be097015229b675eab3005459e093c76eb254c849cf73cb8622649fc123e",
+    "currentHash": "beeb8841fa54a148ffc439f53e200be44631616095285fc9a9e03ccf59b55488",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Separate review findings from unsupported runtime diagnoses.",
+    "inspectedShortPassages": [
+      {
+        "choice": "The production response time is definitely too slow",
+        "text": "No execution measurement is supplied."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-13": {
+    "previousEdition": "quality-v9",
+    "previousHash": "c4769d9154d8d4084d1d9bdd6073fe6d4244561f6ccdd7b7bd66099dacb5616a",
+    "currentHash": "17b61810acca80a27d4a7d8d51af738b49bc5880cf17f9710ea8e2069fc1c553",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Make review-feedback alternatives plausible while preserving work-product focus.",
+    "inspectedShortPassages": [
+      {
+        "choice": "“The author is careless.”",
+        "text": "Personal blame does not explain the defect."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-15": {
+    "previousEdition": "quality-v9",
+    "previousHash": "4774b4e950f49029bca8a6e5335ed952fa237d79793438a5eae958f36a0d6f22",
+    "currentHash": "4baaed07d2f7a19275842a6ad9e6bf64e5402d1e2ec5a58ab21e4ef7fea9b47c",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An integer field accepts 16 through 65. Which set exercises 3-value boundary analysis at both ends?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "20, 30, 40, 50",
+        "text": "These do not exercise the boundaries."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-20": {
+    "previousEdition": "quality-v9",
+    "previousHash": "cb38a9426a6bc130955696776d15757d921c904529eacc99efa03f7347b4bf3f",
+    "currentHash": "614a35349b28f0d241d9c224bee29f307b2f26925204fe1014c13d3413d82b98",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Which defect report best supports reproduction?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "“It broke yesterday”",
+        "text": "The statement lacks concrete conditions."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-22": {
+    "previousEdition": "quality-v9",
+    "previousHash": "3def4f3e379c861b735351d97e1b254afaffe321e531525adcc15acf43866f37",
+    "currentHash": "8b548a9a6eaab883d1109c4f5d0f83d41c251c4b3f441faa64d08225a55c7d09",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Remove guarantee-heavy distractors and state the scope of repeatability.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Zero maintenance after the first run",
+        "text": "Tests and tooling can require maintenance."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-25": {
+    "previousEdition": "quality-v9",
+    "previousHash": "c9943fadb4faa0bae82ee8a04fbf24a45d2c9350f7482aac3b7fa2fa6a67dca1",
+    "currentHash": "512a439926f4b04ac5f9555d4f4d41d78c29ef043a5947e8bf6128d66cf7637d",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Clarify that the evaluated example is practical enrichment beyond Foundation tools detail.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Measure success only by generated script count",
+        "text": "Script count alone does not establish value."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-extra-01": {
+    "previousEdition": "extra-v1",
+    "previousHash": "fca760434d2ba60be9e8116d61e055a54d453bfdfbcefc2d935287779ae334c6",
+    "currentHash": "fca760434d2ba60be9e8116d61e055a54d453bfdfbcefc2d935287779ae334c6",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “An integer field accepts 12 through 20 inclusive. Which pair directly checks rejection immediately outside the valid range?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "16 and 17",
+        "text": "These are ordinary valid values."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "istqb-foundation-extra-05": {
+    "previousEdition": "extra-v1",
+    "previousHash": "313e9bc0313d7cf395612015eceddb1ecb1579d02595583029baaf6fcdb071cb",
+    "currentHash": "313e9bc0313d7cf395612015eceddb1ecb1579d02595583029baaf6fcdb071cb",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A failure occurs only on build B with a particular dataset. Select two useful report details.”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "An unsupported accusation about the developer",
+        "text": "Blame does not provide diagnostic evidence."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "solutions-architect-05": {
+    "previousEdition": "quality-v9",
+    "previousHash": "194e80055c2aaff172352b7c8cd0dc475349e9cfa8f06f2f411f7c3c913ca5cc",
+    "currentHash": "558798a5f93eb1db0890cf6af1b7efeb52b82a13e0ecce4a1b4f3da0c5b1fd63",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Use realistic adjacent delivery services rather than governance tools.",
+    "inspectedShortPassages": [
+      {
+        "choice": "AWS Organizations",
+        "text": "Account governance does not cache content."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "solutions-architect-08": {
+    "previousEdition": "quality-v9",
+    "previousHash": "6fa0ccfc07de67fb4419869f55d4718012ded9179b780f85496157ba6b8616ce",
+    "currentHash": "da388882800a139b55f262070484ea1d659a5d8293b2141668c71a963411585c",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Make the cost/access trade-off explicit without “most expensive forever” cues.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Delete the objects immediately",
+        "text": "Deletion conflicts with retention."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "solutions-architect-depth-5": {
+    "previousEdition": "quality-v9",
+    "previousHash": "380b6d71c012c35d3fbf5278b03f69aeb77aeb215541e3124af05811c5b9f077",
+    "currentHash": "9a955442338b6c24ffb4a98fab464353c0a53f957552d164fc91f797fb4cce96",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A team encrypts a private dataset but grants every employee permission to decrypt it. Which remaining issue should the review address?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Only change the object names",
+        "text": "Names do not establish access restrictions."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-04": {
+    "previousEdition": "quality-v9",
+    "previousHash": "a511155424da19952c653f623970feb4ccab4468b91fda981616f3e96f83efdf",
+    "currentHash": "78f2b29de0749b25070cc2592145b6dd96ec8a9bef2922d0ac2b09fa43d6dee1",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Clarify testability and stable contracts without asserting all coordinate use is forbidden.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Use only screen coordinates forever",
+        "text": "Coordinates are fragile when layout changes."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-07": {
+    "previousEdition": "quality-v9",
+    "previousHash": "db0795cab7c35ae189a6b7874b02cd3d5ac8b1dfda713df2615a35bf92043f2a",
+    "currentHash": "0a807ac5a52f8ab0f1cac8dd8364eeefe332358b0c0d79ab555fa91697c74d3d",
+    "decision": "Revised alternatives and explanatory contrasts",
+    "reason": "Explain bounded synchronization and failure visibility.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Catch the error and pass",
+        "text": "False success masks the problem."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-09": {
+    "previousEdition": "quality-v9",
+    "previousHash": "afe1427be05cce72f04a9610941b60c4edf118aa27c4700fa4e150eff09b55aa",
+    "currentHash": "ec5f6b889ec52c0b3107a1fa12e327a3cecaaca4ebb887cfc934b992e768e765",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A pipeline takes hours before detecting simple contract failures. What could improve feedback?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Hide failures until release day",
+        "text": "Late reporting delays correction."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-15": {
+    "previousEdition": "quality-v9",
+    "previousHash": "2cf99a006e11b5da8d57eafe12c92b3959f2020b72cf5279bee1b02279d6a947",
+    "currentHash": "1abc10c845329d9cb5f729d8d1003e54e35d2800535fe525cbd758a986df1800",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “Most investigation time comes from one flaky shared fixture. What should be prioritized?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Mark all future failures as harmless",
+        "text": "Blanket dismissal can hide product defects."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-depth-6": {
+    "previousEdition": "quality-v9",
+    "previousHash": "a202ee4ac088553a0de01b316b14b5c90015c3ce212f7b22d5f905ec06a750ff",
+    "currentHash": "c27374207d22b4fbb651971e8ca0370031dc8bd6302ee205ce9756cc7c7ff943",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A report says 99% passed but omits the high-risk payment tests that never ran. How should the report improve?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "Round the percentage up to 100%",
+        "text": "Rounding hides rather than explains the gap."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-extra-01": {
+    "previousEdition": "extra-v1",
+    "previousHash": "f3b6adbcc70e7fd2b41beabae8f690c7a1f3ba0a5cfc11b1fbfeed1d405cd114",
+    "currentHash": "f3b6adbcc70e7fd2b41beabae8f690c7a1f3ba0a5cfc11b1fbfeed1d405cd114",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A tool works on a vendor’s demonstration but has not been tried against the team’s application constraints. What should come before broad adoption?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "A representative pilot with explicit evaluation criteria",
+        "text": "A pilot tests relevant fit and limitations."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  },
+  "test-automation-extra-03": {
+    "previousEdition": "extra-v1",
+    "previousHash": "2f98bfbbd79de23369b5cfc051a2ab503052d813908f2e43d6582930bc4ba24e",
+    "currentHash": "2f98bfbbd79de23369b5cfc051a2ab503052d813908f2e43d6582930bc4ba24e",
+    "decision": "Retained concise, explicit contrast",
+    "reason": "Retain the concise explanation where it identifies the relevant distinction for “A retrying suite reports only its final successful runs. What evidence is lost from that summary?”. The short passage is evaluated with the other choice-specific explanations, not as a stand-alone fact or a word-count target.",
+    "inspectedShortPassages": [
+      {
+        "choice": "The fact that any tests exist",
+        "text": "Final runs still demonstrate tests exist."
+      }
+    ],
+    "reviewedBy": "Codex editorial pass",
+    "reviewedAt": "2026-11-17",
+    "technicalScope": "Editorial contrast review and topic/source mapping; not independent expert validation."
+  }
+}

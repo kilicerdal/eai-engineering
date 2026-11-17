@@ -23,6 +23,11 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run audit:certification-quality
+      - run: node scripts/audit-certification-purpose.mjs
+      - run: node scripts/audit-certification-workshop.mjs
+      - run: node scripts/audit-certification-simple.mjs
+      - run: node scripts/audit-certification-quality-pass.mjs
+      - run: node scripts/audit-certification-new-paths.mjs
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run build

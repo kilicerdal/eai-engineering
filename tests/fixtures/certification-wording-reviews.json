@@ -1,0 +1,2766 @@
+{
+  "cloud-practitioner-case-8-1": {
+    "sha256": "102a54a9d4b245dbafc59fedd2a78e27b992bba1e23e1be45f72c984422ab0d7",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Billing, Pricing, and Support \u00b7 caselet 8 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-8-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-8-2": {
+    "sha256": "89be1e337007ebb150d8a2be9c9d8496887c04eaf152e641b5c7f2c6d52ef2fc",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Billing, Pricing, and Support \u00b7 caselet 8 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-4-1": {
+    "sha256": "f7291c16f65f3c12a4cdedf4de923f657ad421ebfe7d6074cb574a063e830de7",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security and Compliance \u00b7 caselet 4 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-4-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-6-1": {
+    "sha256": "406d3f400318c3fcb398653ed9c7289297f0ee0d46af8488a2a147987cc37531",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Technology and Services \u00b7 caselet 6 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-6-2",
+      "cloud-practitioner-case-6-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-1-1": {
+    "sha256": "e842a025c9c4b1ded6c646a7a176d87da0b0fe67cc3278c9d512a6a40d6c24d5",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Concepts \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-1-2",
+      "cloud-practitioner-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-4-2": {
+    "sha256": "bf4e91a353be956ce8cb0f5c8f5525d73ee01e44633710bedc9b4bba21a4c423",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security and Compliance \u00b7 caselet 4 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-6-2": {
+    "sha256": "0a1dace64b9d4e426c571820e5140a107e82605d718308d766e4f4ebf8ce9b3e",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Technology and Services \u00b7 caselet 6 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-9-1": {
+    "sha256": "a032c7391090496eb751b7c8ed59c783ec00ab004186d8881f25cdf53cbd7ff0",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Billing, Pricing, and Support \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-9-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-1-2": {
+    "sha256": "e3491f738ba70314794a23a5c08f1cae98f7e8c48f303f404f73bb682bddf52d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Concepts \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-1-1",
+      "cloud-practitioner-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-6-3": {
+    "sha256": "4d3910d6870f7cd055b0008b49da5d2958550c21e2416d6f501522aff05316c7",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Technology and Services \u00b7 caselet 6 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-9-2": {
+    "sha256": "b5e5618b1ac57968bea9e49dc7f8c582c4a6053f37060ae2f04d33b51e070728",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Billing, Pricing, and Support \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-1-3": {
+    "sha256": "1f95437a9bf9fb1f31d0a112ebb8f955539aa5b90e99625161bc17762b394c17",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Concepts \u00b7 caselet 1 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-1-1",
+      "cloud-practitioner-case-1-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-5-1": {
+    "sha256": "a858553ccc1b3b3d060e70028b1d92cc25044172e5a31b9cb3b0dd3116de3a7c",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security and Compliance \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-5-2",
+      "cloud-practitioner-case-5-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-7-1": {
+    "sha256": "d48a741eda83dc41a23fa428d197e9193cd3df96875489d13b85b1b1b41bef4f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Technology and Services \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-2-1": {
+    "sha256": "6824ba7fc2a5c4d715642cc8088caa863f0ecd799074ba3f70f4005b0b83488e",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Concepts \u00b7 caselet 2 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-2-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-5-2": {
+    "sha256": "e079f0ab39bd4a62a2c1daf4c7d6f6bda69b334d2ad51a5361e9650b4e34c25a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security and Compliance \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-7-2": {
+    "sha256": "e151e7e30858747ef2affc74418af027f211ac936858fe7bacef24d986fa124d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Technology and Services \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-2-2": {
+    "sha256": "58b95492589b2be227ff0b5e8e3391be7059b8bbe1b972a357caa5b767aff15c",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cloud Concepts \u00b7 caselet 2 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "cloud-practitioner-case-5-3": {
+    "sha256": "cc14f7708789d4330b1b5f6880122e641ee98837a70c9be78491e387826ca5c6",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case cloud-practitioner-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security and Compliance \u00b7 caselet 5 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "cloud-practitioner-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-1-1": {
+    "sha256": "ecfb07632148cfc5d14076864cb2ed906a1e0702b323fb64323901b0d0cb09b8",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of AI and ML \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-1-2",
+      "ai-practitioner-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-8-1": {
+    "sha256": "a6b38999bd74867980bff4bab280c7ad540c8897683a8af069ae94a0c509713a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security, Compliance, and Governance for AI \u00b7 caselet 8 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-8-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-10-1": {
+    "sha256": "2820e11d47fb70f10e7f8e2450c8082f0880d29258a708e94e460f5feb00ff5f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of GenAI \u00b7 caselet 10 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-10-2",
+      "ai-practitioner-case-10-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-1-2": {
+    "sha256": "a4ef40270b125333e1f15d78d4b2dd646370b6c43159575927b167d5a75fb92c",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of AI and ML \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-1-1",
+      "ai-practitioner-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-4-1": {
+    "sha256": "9f1fbc014ffd4dd45cc1ac15d66fb8e9f29257eac0a2defc8e2c8742da54e347",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Applications of Foundation Models \u00b7 caselet 4 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-4-2",
+      "ai-practitioner-case-4-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-6-1": {
+    "sha256": "d478bd05bbad0931d10a83d2cf298f6b73514448225206edef9313ab207bc4b6",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Guidelines for Responsible AI \u00b7 caselet 6 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-6-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-8-2": {
+    "sha256": "56e7f8e9b2944a7acf0f0bdab23948c4319c75c37878a2b5516f834cb8cad4fb",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security, Compliance, and Governance for AI \u00b7 caselet 8 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-10-2": {
+    "sha256": "a7b0c2fe7ebde356dc1092971cfae046baedc873eeaa401459920c421ff45360",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of GenAI \u00b7 caselet 10 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-1-3": {
+    "sha256": "d8bb8a444d288da2da189f7fca44b835503a50fd94926c96b8d98538124cba5b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of AI and ML \u00b7 caselet 1 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-1-1",
+      "ai-practitioner-case-1-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-4-2": {
+    "sha256": "1b5d12ac44e0758167edea22b9b0de39bfac9ea539863cb103c1109b539299c0",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Applications of Foundation Models \u00b7 caselet 4 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-6-2": {
+    "sha256": "f95c4e1a50ed4d27d8f1a5862f63e033ad52fcda894827a78456f24be7c25ea9",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Guidelines for Responsible AI \u00b7 caselet 6 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-10-3": {
+    "sha256": "f3db8b6c5593683b2859f44efd7fb3e74bce44e4e48d98bc60a3222c1a01ed41",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of GenAI \u00b7 caselet 10 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-2-1": {
+    "sha256": "036ba3123ad4912c4536a48796741cbbbf61f9a7194842cbc4ad35d5414b54c3",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of AI and ML \u00b7 caselet 2 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-2-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-4-3": {
+    "sha256": "05d4eb6078ad872e40ccdafc5090f0df33fa58d84a8c0e287a1a527956cf6d5f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Applications of Foundation Models \u00b7 caselet 4 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-9-1": {
+    "sha256": "968e5c08bbb75ba09ec53b9cdd40be86e1d4a9149a365fe6087a0f9fc878758d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security, Compliance, and Governance for AI \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-9-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-2-2": {
+    "sha256": "424ef7dab07a08c1fb526d1147cfb9b158634837dc2c673b0034585c5ed961e2",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of AI and ML \u00b7 caselet 2 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-5-1": {
+    "sha256": "93e7fbe370959d953e713c756797186296c5bbf798c3db56f6685b74dc31c167",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Applications of Foundation Models \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-5-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-9-2": {
+    "sha256": "114e45e65de1195fab892a0533001ba00cf09dfc19955834afba05a142f751d4",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security, Compliance, and Governance for AI \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-practitioner-case-5-2": {
+    "sha256": "d75c38a1c02645dca36958ee3ae16bd42b5f81f80409f6a93c46b9ccfb1ed1b5",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-practitioner-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Applications of Foundation Models \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-practitioner-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-5-1": {
+    "sha256": "d063f472f5d2cf638cbb544e4e6cbcf9652ba0ef14ac15c6ea7484ea9ffa2e02",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Static Testing \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-5-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-9-1": {
+    "sha256": "83722819dc4a014f403c18cd20afb1861775045db606fd2b5fee6f6ed5bf5e8b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Managing Test Activities \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-9-2",
+      "istqb-foundation-case-9-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-10-1": {
+    "sha256": "48504372b412b07ca26785fb0fe574f71a9f6afa15ae1b3afc8f009d6ea6dd35",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Test Tools \u00b7 caselet 10 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-10-2",
+      "istqb-foundation-case-10-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-1-1": {
+    "sha256": "9d1ffa93deb10bc1798af3bc09aab51fa1d26f3500647230739fdf526b710306",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of Testing \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-1-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-3-1": {
+    "sha256": "3ab70239d89e4403ad2d970a027ea8a6bbe45e02341e3529886691f90fe09c26",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing Through the Lifecycle \u00b7 caselet 3 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-3-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-5-2": {
+    "sha256": "961eb4d7a28310f5a9254f8fba4e495d29bb39f80c7214aa52b5e37fabe9a227",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Static Testing \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-7-1": {
+    "sha256": "accc49901d582a65148540a14837d253518f49a89bb480beaeecde2c53afff20",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Test Analysis and Design \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-9-2": {
+    "sha256": "a05ca8e5ccb6e55060aabcf5df8420138f6fdc41a10b424aaa33fb9b495cd073",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Managing Test Activities \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-10-2": {
+    "sha256": "ff2c120c9c89ab2522dddaeef21afa3311d388cee97d3349358d650f928ad79f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Test Tools \u00b7 caselet 10 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-10-1",
+      "istqb-foundation-case-10-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-1-2": {
+    "sha256": "df8d97edfc88332283ba1a29c24fd608425b28a0af5a3e5f9b7eb91d4b594c26",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Fundamentals of Testing \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-3-2": {
+    "sha256": "4616a4b7812e7b2b44cc036891ba584dafec62a874269928e5a7d38879103e21",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing Through the Lifecycle \u00b7 caselet 3 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-7-2": {
+    "sha256": "eff389385230b80bd6d6875590465439d9086e98d3fff20d0f2f002cab6bd9c4",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Test Analysis and Design \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-9-3": {
+    "sha256": "b3c27735be008b6319a73c78104977fcda6820bb2353a07bf3177be375f223e8",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Managing Test Activities \u00b7 caselet 9 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "istqb-foundation-case-10-3": {
+    "sha256": "e8e78ed3f20bc83a8a98c423455e39c12679730070cf4e8b16f28aba76f940ce",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case istqb-foundation-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Test Tools \u00b7 caselet 10 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "istqb-foundation-case-10-1",
+      "istqb-foundation-case-10-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-1-1": {
+    "sha256": "52b757877e62bc1509b34fd4fec559c51aec644559d142c9e2006f8f6b985ae2",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure architectures \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-1-2",
+      "solutions-architect-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-4-1": {
+    "sha256": "60f8cc0c28c44d65cd9af8b966013d9147372a45a2fd3131cc4cff38f2230557",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Resilient architectures \u00b7 caselet 4 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-4-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-7-1": {
+    "sha256": "afb4a10a32b58f80ea6ebebd9da5875da1ad90bfcf09470fa708f103d5a7f15b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is High-performing architectures \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-10-1": {
+    "sha256": "9de0f817ba7640ac83e7e7d364bfac22a2791887ef8c6ed5913fa37626a2f666",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cost-optimized architectures \u00b7 caselet 10 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-10-2",
+      "solutions-architect-case-10-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-1-2": {
+    "sha256": "8573a104955394b0fd0743b3248da2b0e84b822e9c31d93c011fee484639fa3c",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure architectures \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-1-1",
+      "solutions-architect-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-4-2": {
+    "sha256": "07c87271d2c5a3e47b9be50e19319c2499821108fff0fa32a81aacbae47719fb",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Resilient architectures \u00b7 caselet 4 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-7-2": {
+    "sha256": "4e0a66656ee4a9efabc2e924306ace4e2aac2d420e53f265fba115074ed75d1a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is High-performing architectures \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-10-2": {
+    "sha256": "2d6f3a8add896921ec42c8765a926429ca35dce9324147d32c2ef41d7d6d7b26",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cost-optimized architectures \u00b7 caselet 10 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-1-3": {
+    "sha256": "5e9f16ec8e5a05f5da4d747da250ece9ce61ab7a1d8cef4b7ad3adce2a1ae473",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure architectures \u00b7 caselet 1 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-1-1",
+      "solutions-architect-case-1-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-10-3": {
+    "sha256": "d46c5c555d55054e4474f6fea78185a8031b33d3bbccd1bf3cc2ad41d6ba8cdb",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cost-optimized architectures \u00b7 caselet 10 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-2-1": {
+    "sha256": "ba64681e357134e08eb1a1f151a76bf7095569aea0c1b544dbe3084fbfe52276",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure architectures \u00b7 caselet 2 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-2-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-5-1": {
+    "sha256": "5b5cb12bab8fe4651793f81d07759acbbe4c6fad9967226be1b99cd81664e378",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Resilient architectures \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-5-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-8-1": {
+    "sha256": "761bcba5e88f53057ea8e98f3ba42bafe0216630c0dd03b2fe2dfb61b026980f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is High-performing architectures \u00b7 caselet 8 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-8-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-11-1": {
+    "sha256": "36c5bb46a52de34fd7b247c45290ec7fd639f2ad4527745cf85a32cc4100f42a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cost-optimized architectures \u00b7 caselet 11 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-11-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-2-2": {
+    "sha256": "1fd33f3f1145f0ece87a6216567afa0a9e8da950a3cf058b9e22cb6530e37909",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure architectures \u00b7 caselet 2 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-5-2": {
+    "sha256": "8a6d99ac40f88545d16f01a2117a7246e7f59f13e5913d98d693b7d173641b53",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Resilient architectures \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-8-2": {
+    "sha256": "ef819ae59cd15b98739d01e1f1fe721403297cd60e9a738418855a2c5f93d41a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is High-performing architectures \u00b7 caselet 8 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-11-2": {
+    "sha256": "5dcf6da206586d430ba77a96afed939a2cfe12bd2dd6915a93f98c10f19a226c",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cost-optimized architectures \u00b7 caselet 11 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-11-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-3-1": {
+    "sha256": "77dc1587b3aea3b6452e14bc18ffc01b0874b3f7ff7253274d6f6409b568013d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure architectures \u00b7 caselet 3 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-3-2",
+      "solutions-architect-case-3-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-6-1": {
+    "sha256": "d86392e98c99b11896f4c451e9d5853b5b010165d9bfbda6e25eba573c6c74c0",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Resilient architectures \u00b7 caselet 6 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-6-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-9-1": {
+    "sha256": "6f34de8ec30f81b6bf0e37d263d05be16800678188620cd8a64c2d4eab813346",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is High-performing architectures \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-9-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-12-1": {
+    "sha256": "fc001023a0a6c139c7aff3663f937e60c33743929c90fcab3ea2a2ef5f67655d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-12 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cost-optimized architectures \u00b7 caselet 12 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-12-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-3-2": {
+    "sha256": "8c997c66a0d040046fd39da6b0dbe3d3df93cee770576c397b448d6f7e3b7bee",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure architectures \u00b7 caselet 3 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-6-2": {
+    "sha256": "14e6e8719ea1340ee78f342a16070dbb664e4c6f3bc4674e10e22ee6afaa0c29",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Resilient architectures \u00b7 caselet 6 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-9-2": {
+    "sha256": "cc41c6e54fa60a734bcc2df397863fbc48387325fb165d8b4d4c945de5af508a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is High-performing architectures \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-12-2": {
+    "sha256": "f5fcc4f09d08f074d4f0db76ba8f3663f894d354c350004bb3955f66cd1e479d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-12 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Cost-optimized architectures \u00b7 caselet 12 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-12-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "solutions-architect-case-3-3": {
+    "sha256": "31943b078f98aa03b61975270e52b7ab839c1bd79befd6bd6a28dffcfc9fc161",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case solutions-architect-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure architectures \u00b7 caselet 3 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "solutions-architect-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-7-1": {
+    "sha256": "96bfe0187a6b26d9cabe8d702f385b46cf18d4a38a726ae32d7529f8164fd70f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing and Deployment \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-1-1": {
+    "sha256": "a64f7bc606951bee578e820e9683dce94498603fcc49e5b2a34e5652b57d9fda",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Development with AWS Services \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-1-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-4-1": {
+    "sha256": "82b2e386687db24d225963cbf8f9d8f709910df4fd04ad99d7a615a1553e2b38",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security \u00b7 caselet 4 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-4-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-7-2": {
+    "sha256": "29245d2f867d9a55e00fb8b433b0457734c70d43f49910308b7cccf025ab82a8",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing and Deployment \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-10-1": {
+    "sha256": "aa711481f3d5b2aebbca4e4c65d2ec3beb63097d7676f900a41f55db9dd589dc",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Troubleshooting and Optimization \u00b7 caselet 10 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-10-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-1-2": {
+    "sha256": "5a08cb6793ec3c3ad216b74288e65f9cf870a47ac2bef7eeaf16e73dfe8848e9",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Development with AWS Services \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-4-2": {
+    "sha256": "f572f77d496fc92892211507f0eceb22b825adddb220b7aabc75be7b4aa19279",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security \u00b7 caselet 4 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-10-2": {
+    "sha256": "b15003aabb81f0a51fef68637efc6e5af49bfe6421c47cdf3c7391394b372273",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Troubleshooting and Optimization \u00b7 caselet 10 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-8-1": {
+    "sha256": "b9f7827f88343398f1f91255702a5b3042260ca4d9dd2eb79dcb13c7d2d9ff21",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing and Deployment \u00b7 caselet 8 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-8-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-2-1": {
+    "sha256": "5bdcd35e5c495792710126053b54eb2940d496fec37cecf98209477b41cbcd48",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Development with AWS Services \u00b7 caselet 2 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-2-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-5-1": {
+    "sha256": "d9bf429cd260663b9d4d0d3ef279d31aa25dbc70c26e1aa5967d04e3eb0a4354",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-5-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-8-2": {
+    "sha256": "2b4d96a602c6aa6025360cf0efba51e574a17710fb8047fd4617c71f4509962f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing and Deployment \u00b7 caselet 8 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-11-1": {
+    "sha256": "2d76b08eb697868d77bf189468392563b8f574b10aabccfad675aaee424cd782",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Troubleshooting and Optimization \u00b7 caselet 11 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-11-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-2-2": {
+    "sha256": "17b5bceb23751da0f09d1c3d3541bde062610736ed4994eb28e0209ab6a08556",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Development with AWS Services \u00b7 caselet 2 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-5-2": {
+    "sha256": "9dd6d1caeea4ad32f3c9fbad4150b919ee9ade52adc3aa4b68c59eabd78a6a8d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-11-2": {
+    "sha256": "4d0bf643e49313d668e4ac4eaac49d2ee4070fe90e8248d11c02f0d017e4627c",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Troubleshooting and Optimization \u00b7 caselet 11 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-11-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-9-1": {
+    "sha256": "aa0ad7dbbdb8fd4b1e9f2bb966a1857dc5b056ebd503943a34c05a1653cce9ab",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing and Deployment \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-9-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-3-1": {
+    "sha256": "3dc842d35c59c8b79eee32c74d2061ef9a8d6cb3c7a600e5db9144b20042f066",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Development with AWS Services \u00b7 caselet 3 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-3-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-6-1": {
+    "sha256": "2cf9e217ce49d8a15ba6ac309ea42bcfa2565ba4ba6c4cb7a7462f0f1bfb0fd8",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security \u00b7 caselet 6 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-6-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-9-2": {
+    "sha256": "1ae0bee003a708c68aee4e4754df809a4065c4871460b75395f93897e32f3736",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing and Deployment \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-12-1": {
+    "sha256": "e0fa792a6b23a6e1308b903e94cef5817a877c0ecaef083d5e45c49ec2172957",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-12 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Troubleshooting and Optimization \u00b7 caselet 12 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-12-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-3-2": {
+    "sha256": "9ab886585baaf2f581bd11d32f75a430affd1076d1f3e13ce7bd282b11bf7152",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Development with AWS Services \u00b7 caselet 3 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-6-2": {
+    "sha256": "08e583ed3d2cc1fb191b6958f6ef3b572a17dcbd18c27c716c03b57a917f161b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Security \u00b7 caselet 6 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "developer-associate-case-12-2": {
+    "sha256": "aa693e6f52fed8cb0ad5174e777badec3d273ca47025fb95cb53ed9501e912e0",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case developer-associate-case-12 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Troubleshooting and Optimization \u00b7 caselet 12 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "developer-associate-case-12-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-1-1": {
+    "sha256": "0969bf2ab1ac9863354ba2b66aa7d3aaddb1a08a5a3f43a40d59c166ff78b224",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Objectives for automation \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-1-2",
+      "test-automation-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-2-1": {
+    "sha256": "7e7b8cb2a858b09fa04673a43891f06745fd9a9a628eb1784f00d222ac52d365",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Preparing for automation \u00b7 caselet 2 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-2-2",
+      "test-automation-case-2-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-3-1": {
+    "sha256": "e03a223a7d1ce34c57c66164d035f1b29a8c34417c6b414442dcd20040ac9e1b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Automation architecture \u00b7 caselet 3 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-3-2",
+      "test-automation-case-3-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-7-1": {
+    "sha256": "7e8ac465c24ad7bd563837377995b5abac3eaa41680a325424bd28fb29482ecb",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Deployment and CI/CD \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-8-1": {
+    "sha256": "260ac62b01a6fc3b80c6d3a29b87f36ade3092c24c6ff6dbfaaf9706937f4f76",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Reporting and metrics \u00b7 caselet 8 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-8-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-10-1": {
+    "sha256": "532118ff1dd3810753cff6fca3c80fb5065f790574c3ebc578ec038b02c6dd55",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Continuous improvement \u00b7 caselet 10 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-10-2",
+      "test-automation-case-10-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-1-2": {
+    "sha256": "38a2a98c483c295848eccc0f4361c2fb22c18da18bdbdedd2898ffe3f85a2cad",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Objectives for automation \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-2-2": {
+    "sha256": "2c759aa537dad522c0f089bc174b6a21739592e0ffbe39107527073fe0c37271",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Preparing for automation \u00b7 caselet 2 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-3-2": {
+    "sha256": "1ab7260df086d8ba3c08c1b95447ddaf67d94b9651486825e46afb0478ce9408",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Automation architecture \u00b7 caselet 3 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-5-1": {
+    "sha256": "9a4ed08c500d17ec985f59db55a28d2e9c7deeb0fbbe17401d12b51a8f4651e1",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Implementing automation \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-5-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-7-2": {
+    "sha256": "c00ed38b638af0ffd3d162a421feafbac383d75cd574af5e9744f19a35f8b504",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Deployment and CI/CD \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-8-2": {
+    "sha256": "769f95ea1b70e48122b9342afcbb23e9740e8ca10e9d27a5f2959e7be1ed1b16",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Reporting and metrics \u00b7 caselet 8 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-9-1": {
+    "sha256": "16c4153f83495476b3a6b3177e3301d27e2927df08db7dd209d6b4bbd32866cf",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Verifying automation \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-9-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-10-2": {
+    "sha256": "0fc4982f970348e8d873aa613d189898fa9f2d1f61e9fae4e0934a8a2be9032d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Continuous improvement \u00b7 caselet 10 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-1-3": {
+    "sha256": "d6171f06fbc5ede5169a25e03f6ad92f42415775305bec565fe311a5651bc22e",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Objectives for automation \u00b7 caselet 1 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-2-3": {
+    "sha256": "f56d636db435697c40dad64bfe410c2dfbf371e0ecc305b3cce61e36dbbf8244",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Preparing for automation \u00b7 caselet 2 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-3-3": {
+    "sha256": "75a4012a110fd7f7005c5a7fcf26bc5011e2d1a8611ed8ef355739d0e929e249",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Automation architecture \u00b7 caselet 3 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-5-2": {
+    "sha256": "43a80242e1f18d801663eb0e0820fb918bda18e39b3cd88e8cdfd7228c62bd33",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Implementing automation \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-9-2": {
+    "sha256": "38c30953c4b2ed9240904b56ae1a2ae04e8506cdf5d452093866a01c87d13adc",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Verifying automation \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "test-automation-case-10-3": {
+    "sha256": "5bd38e06a2c372c9f96cd20800f0f80b95d905e6dcefe70884f460c3d7467164",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case test-automation-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Continuous improvement \u00b7 caselet 10 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "test-automation-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-1-1": {
+    "sha256": "ef7a1292ee4a3bc286e3db087692399386af32048f74df62a40ce40fb3d0b153",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is AI foundations \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-1-2",
+      "ai-testing-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-2-1": {
+    "sha256": "e30d40e47a02d39c5a0e18f4daab795ac48ff958d220b6bf7ac2ddeed2ed2622",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is AI quality and acceptance \u00b7 caselet 2 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-2-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-6-1": {
+    "sha256": "010b9a213a508b8c4933eb964554ad1b0612c3c9a40cb654eda20fb7055b2271",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing AI-based systems \u00b7 caselet 6 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-6-2",
+      "ai-testing-case-6-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-7-1": {
+    "sha256": "f1365d036c2b24eba1c5e9f99b11e6c2efe7ce5aacff9cb4f4bdc6badfa9f345",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Input data testing \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-9-1": {
+    "sha256": "aa3b67c944fbbb7c760252681389ba974680e8e906f9a1b3ace0e4ea4146508d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is ML development testing \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-9-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-1-2": {
+    "sha256": "3675bf6f6614e6be3a535e13aead0e7f5d48b9dfc089f3ec279b13285f3f9f15",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is AI foundations \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-2-2": {
+    "sha256": "2bf633f4f708ac58477b1d090f2404666f815405dd664edb4b9c402c891f44f7",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is AI quality and acceptance \u00b7 caselet 2 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-4-1": {
+    "sha256": "f72edd8cd50b696eae2dba717ec1a71c0e453dc69be8abb5223fe7f77cb7bb9b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Machine learning and metrics \u00b7 caselet 4 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-4-2",
+      "ai-testing-case-4-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-6-2": {
+    "sha256": "e12cfa84e9169fb7fcfb106631155d049cd65b72d774b8035c0535f528aebe7a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing AI-based systems \u00b7 caselet 6 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-7-2": {
+    "sha256": "9c1fa189d71f8cb4b7e2f0e4e639e5510829ad902bd2ebb031e12b1fd8f86f7b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Input data testing \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-8-1": {
+    "sha256": "6a3d95b6e4e6fa4b3363a375b3d1ee66e489efdb97d19e60553bf99708354da6",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Model testing \u00b7 caselet 8 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-8-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-9-2": {
+    "sha256": "9518fbe54c370d13158c1384947339d696184dfb919bcbb8d9af5917b6c87095",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is ML development testing \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-1-3": {
+    "sha256": "51b835ea34fcfe558628e6c5398d24c7a1083164018ac18ecbe4b09d37d2683b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is AI foundations \u00b7 caselet 1 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-4-2": {
+    "sha256": "26ecef5db660ee483f9801a2a35e4dbfc470bd7275c705498b88d61e6be5bf33",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Machine learning and metrics \u00b7 caselet 4 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-6-3": {
+    "sha256": "f3a52fceac4e3f8113689ae6757955228b67e77b9869c935d047a58299e61dc2",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Testing AI-based systems \u00b7 caselet 6 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-8-2": {
+    "sha256": "7d017366d94adf407a361bbbe6bb9a81835509859afac119b77693b4378c1618",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Model testing \u00b7 caselet 8 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-3-1": {
+    "sha256": "e6d681eb2d5497d4bfa92a27f8c90eee8404181429884b26c8845d747c384a6b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is AI quality and acceptance \u00b7 caselet 3 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-3-2",
+      "ai-testing-case-3-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-4-3": {
+    "sha256": "527fd771abdaeb7b152bbd666031c71b4d3d273e4eb757a601d5aed494c7ad5a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Machine learning and metrics \u00b7 caselet 4 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-10-1": {
+    "sha256": "80fc6266d52eda2d6953c20a1ca60678495ca3dc1dcf28be31f3d3809cca30d9",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is ML development testing \u00b7 caselet 10 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-10-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-3-2": {
+    "sha256": "081ee19cb1ff72bc357094eb5f5edaba232dd8cb5067a12861c6deb1f7e9c18e",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is AI quality and acceptance \u00b7 caselet 3 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-10-2": {
+    "sha256": "08d4626488d333b7be7e93ce5b72fc28e2e085ccc8e2c3fc992f63b5f80f4094",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is ML development testing \u00b7 caselet 10 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-case-3-3": {
+    "sha256": "ffb8c552e86901521a493158c657f95bfb06f1d1121edd02da7b7de2b1e6a184",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case ai-testing-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is AI quality and acceptance \u00b7 caselet 3 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-1-1": {
+    "sha256": "22e00d4d3a867a5fe484bce640c7594852d43383b2e3becfdccdf3d62270ad0a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is GenAI for software testing \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-1-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-5-1": {
+    "sha256": "eb1d303d9ad079aa84a29274a71b6a19e2099c1840f9b811a0298859c5c07a9d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Risks in GenAI testing \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-5-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-7-1": {
+    "sha256": "aa19e66ed615c624b746914b7f449fb0fa55a17056eb1c1cc45e692631943444",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is LLM-powered testing solutions \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-1-2": {
+    "sha256": "09a235eaf70845efabebd9bbaac9b92d8af49134c1552d1d26e9b47c51fc94aa",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is GenAI for software testing \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-3-1": {
+    "sha256": "83691f723c617fca6bda99cff74a29dfcb9ed19dccf5ad0ff24d15cb6327846f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Prompt engineering \u00b7 caselet 3 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-3-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-5-2": {
+    "sha256": "77dc4e276e31c58402fd434790d601ff69a3bafa17fafc09880370cd3db6d4dd",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Risks in GenAI testing \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-7-2": {
+    "sha256": "f969284ab698a59b426f094e005971133501683257c7e14fd2d476e11078c3b4",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is LLM-powered testing solutions \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-9-1": {
+    "sha256": "b19da58b0d0b95b9bc06d27d9d31221a6b5a1f2fd8921adf31a810676683ca2b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Adoption in test organizations \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-9-2",
+      "generative-ai-testing-case-9-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-3-2": {
+    "sha256": "c62640b7eb6b0d2ae29b1c2cbd15eee892883c187ce2a25dfce575b9646962f6",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Prompt engineering \u00b7 caselet 3 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-9-2": {
+    "sha256": "7c996ad8e8fb0400ef89406eff4b0b77acc39fc8f5851c2418b87add32321dd0",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Adoption in test organizations \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-6-1": {
+    "sha256": "b3fca87431dc1cd532669eb4f6cde37a54edc9bdbf50e47266d76134c0eb61c9",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Risks in GenAI testing \u00b7 caselet 6 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-6-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-8-1": {
+    "sha256": "8479f513b7a8dd15dcfb9f2663ad4b7ed991b4677430110ceea40c0d37533689",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is LLM-powered testing solutions \u00b7 caselet 8 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-8-2",
+      "generative-ai-testing-case-8-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-9-3": {
+    "sha256": "dc6e08d6d8a55a4bf65f81355361e50ac300e6f4d6e793c3f411522cfc6be4ca",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Adoption in test organizations \u00b7 caselet 9 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-4-1": {
+    "sha256": "56ba6969160dddc771c470705f7aa2a1a20576ffec893a2065e5fa627ade0b6f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Prompt engineering \u00b7 caselet 4 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-4-2",
+      "generative-ai-testing-case-4-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-6-2": {
+    "sha256": "8778d2ed070389b8d49ccc0361e96d5c4a137460b786c5125ad98959ca8be414",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Risks in GenAI testing \u00b7 caselet 6 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-8-2": {
+    "sha256": "22f05b445839d941a8becfdbaf9eca53182503f27527c986be3c9fd329bdf10b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is LLM-powered testing solutions \u00b7 caselet 8 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-4-2": {
+    "sha256": "97a92b49139931038886e0caa459052fe0e72b9dee73e6ebe2e5e49e4ac9b788",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Prompt engineering \u00b7 caselet 4 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-8-3": {
+    "sha256": "72819df35c0296214b30f2f96779405c3bf6ada4a13a59bcfbaf57b6fbb9df3c",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is LLM-powered testing solutions \u00b7 caselet 8 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-4-3": {
+    "sha256": "178888f2a9c25dd24f1a101b2e9b73c1fe82200fa051a763776d1f347d9c5d4f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Prompt engineering \u00b7 caselet 4 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-11-1": {
+    "sha256": "8826f36bf5533e6f3c14932b60baca9b2ca135f091488d9c94752df265b0e2b3",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Adoption in test organizations \u00b7 caselet 11 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-11-2",
+      "generative-ai-testing-case-11-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-11-2": {
+    "sha256": "629feb3b5ac5f589aae0b3b60ea1c76093d366dba1546dd60c513f3de636eb2f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Adoption in test organizations \u00b7 caselet 11 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-11-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "generative-ai-testing-case-11-3": {
+    "sha256": "525c1fb91d7a9c3f974509bf63fb8c846ffd8f6ba1f45680b84eba256015468a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case generative-ai-testing-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Adoption in test organizations \u00b7 caselet 11 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "generative-ai-testing-case-11-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-4-1": {
+    "sha256": "e3ec8bcc94ca6d26dc533270bb6409ad3726430ac5e51e8a25819b5e031ee217",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Consume and troubleshoot workflows \u00b7 caselet 4 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-4-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-6-1": {
+    "sha256": "219c4d5b95fd1d2b62ed46e4340c468f025f84e97ff94ff35b54eb9744a8d2e8",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Author and maintain actions \u00b7 caselet 6 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-6-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-8-1": {
+    "sha256": "4e861140944272174262c3145303ae7e3740dfd5d8f68ad4d4644ddbc0f5e007",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Manage enterprise automation \u00b7 caselet 8 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-8-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-4-2": {
+    "sha256": "acbc02acd91efddf9c19f203123eddc66325e231a4c3141721477a8c0160a2b7",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Consume and troubleshoot workflows \u00b7 caselet 4 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-6-2": {
+    "sha256": "b23b13f137368eddfebd968735f8feabb1a67d085387a1371ebe1e79ec91c513",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Author and maintain actions \u00b7 caselet 6 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-8-2": {
+    "sha256": "54735bf5bf7172c8af75eafc5faf0aadc749f9daa3677769168888581fc8b50a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Manage enterprise automation \u00b7 caselet 8 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-8-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-10-1": {
+    "sha256": "b543c6c66c1b01e8d07f7723b3b9ce12c21b44700a00a391a3e5f7af7312f208",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure and optimize automation \u00b7 caselet 10 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-10-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-10-2": {
+    "sha256": "b7357b3c3abcf91c2c08a299e9c25483470ec22c8e88dd8517ec89f0dc9a8ec5",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure and optimize automation \u00b7 caselet 10 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-5-1": {
+    "sha256": "7f119f40eb1ff21960339714bbf80a9f6c0b04254079a9e60e781e723ede18be",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Consume and troubleshoot workflows \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-5-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-7-1": {
+    "sha256": "6b5e9ffd1fe5376863ecab25954f2bf2b8adf27bbcbb12f332692c32e8a52240",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Author and maintain actions \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-9-1": {
+    "sha256": "5f4a6e8ee516644c4ea30a34980d1249b57abd7e5ed9c9562b30eb7ecc04c27f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Manage enterprise automation \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-9-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-2-1": {
+    "sha256": "7be1f2e5360690519df8edee1d72346a6d599cecdc6de9954520281ac635202e",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Author and manage workflows \u00b7 caselet 2 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-2-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-5-2": {
+    "sha256": "7fd81f446622d0992e2b1e9d2b327126a8adba5961e19a5498b4b0aa99601158",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Consume and troubleshoot workflows \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-7-2": {
+    "sha256": "9bd8a806edc3ac0e31d5c71d53fd2d2943ade7812ac01b095a56f8d7d4e6d0f6",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Author and maintain actions \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-9-2": {
+    "sha256": "482237dbe3f4afcf754fb5d1b889c5049cb9ab97cd65ac1234f0a559585d430e",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Manage enterprise automation \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-11-1": {
+    "sha256": "7f7a90a74e1ed0ced25fc295c1d700b31c1716474e3978727617f31e399c341f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure and optimize automation \u00b7 caselet 11 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-11-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-2-2": {
+    "sha256": "ea8636bab8bfe2362a2c5cff4fd54b14db57b51cf9603903f16d6e73a7ee0381",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Author and manage workflows \u00b7 caselet 2 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-11-2": {
+    "sha256": "df99da49b5ffdb9f4d6a4e6e5cd5d8b059a21099d439c4aa18fdc86174450ba4",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-11 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Secure and optimize automation \u00b7 caselet 11 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-11-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-3-1": {
+    "sha256": "55a2f82877d0b2cb885cf2684faa25677566366948b71637d451edfa5d9fa12a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Author and manage workflows \u00b7 caselet 3 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-3-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-actions-case-3-2": {
+    "sha256": "6a5036210ed5e83f182598e623c7fc06ac379c761bb9ea6dad034e628b145d8a",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-actions-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Author and manage workflows \u00b7 caselet 3 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-actions-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-3-1": {
+    "sha256": "145d5fb856323a1e87cf62400d600a67f38614eebb244fceb7892982438921de",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Copilot features \u00b7 caselet 3 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-3-2",
+      "github-copilot-case-3-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-5-1": {
+    "sha256": "a3d6a54474e8d89feb7688ddb2aada140fc66e0ac056ec7e75fc53cc51226608",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Data and architecture \u00b7 caselet 5 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-5-2",
+      "github-copilot-case-5-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-7-1": {
+    "sha256": "f737890877243143bc0678fa764423503177900dfaf5b7fd66e0c1ffcd87ef8f",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Prompt engineering and context \u00b7 caselet 7 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-7-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-9-1": {
+    "sha256": "e1dcba9f70ac8b48022ab26412ebe3a831b62247188ac11f89f0d824ad3b09db",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Developer productivity \u00b7 caselet 9 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-9-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-1-1": {
+    "sha256": "18584acd7ced1ab683cb6b3d7ef56ca39bc06def541619a2d704e7f9f0322ccd",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Responsible AI use \u00b7 caselet 1 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-1-2",
+      "github-copilot-case-1-3"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-3-2": {
+    "sha256": "9c66b7fda4ada50e32526a5ed212358730c6285136ad241503d5eafa6b6e3cc3",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Copilot features \u00b7 caselet 3 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-5-2": {
+    "sha256": "00c9f80130894ab80a0d67ff577bc80b291d50cdd834ac6beb8c61e519f7205b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Data and architecture \u00b7 caselet 5 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-7-2": {
+    "sha256": "69e06cb745a8168ae497e5f16890eef3bb8a34e97b70317fd3a3314ff292a908",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Prompt engineering and context \u00b7 caselet 7 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-7-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-9-2": {
+    "sha256": "dda34c7efb052cf13bc075220397436eaf931bcf5e189fcaaacd158613a2322d",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Developer productivity \u00b7 caselet 9 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-9-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-10-1": {
+    "sha256": "3c6170f8ea1c2332ef8ab5a18f200b2508e5cb2b30cd9c53971aa601fe75e325",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Privacy and safeguards \u00b7 caselet 10 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-10-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-1-2": {
+    "sha256": "566152d2f3f8c4bb927a51e04e954ed7c83d304b5c24c38309be32db4f0cf198",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Responsible AI use \u00b7 caselet 1 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-3-3": {
+    "sha256": "08968615cee2799b376590f47925677790b895e44680e74c64af30141ba9c53b",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Copilot features \u00b7 caselet 3 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-3-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-5-3": {
+    "sha256": "8f25832729a6283f3238e87065c6b72c92387108612ae1a89d4925e638f9c3b4",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Data and architecture \u00b7 caselet 5 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-5-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-10-2": {
+    "sha256": "56ee27cc254b3a64090122300ae6442a4581b25c405ff26ce02c8322c9aae5db",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Privacy and safeguards \u00b7 caselet 10 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-10-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-1-3": {
+    "sha256": "7f30db79c106bc19742b179efdc3b06620cf60b11a960071d7d5bb20a9224641",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Responsible AI use \u00b7 caselet 1 \u00b7 interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-1-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-4-1": {
+    "sha256": "c2bd691e8e6e4ce4a2a73d09399a2bf172e846c2fc3652aba56bd11f60c72d34",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Copilot features \u00b7 caselet 4 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-4-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-6-1": {
+    "sha256": "f992a6c27e44d4e806dfb574f762ce21a1f68e3d91a9d057266ccd250b3769a0",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Data and architecture \u00b7 caselet 6 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-6-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-2-1": {
+    "sha256": "79c65730d245beb32662fdb634a814b2a33dcd14fdb6ee25e5eb72bd7b72e7c5",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Responsible AI use \u00b7 caselet 2 \u00b7 decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-2-2"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-4-2": {
+    "sha256": "143d28b33fb82277ffd933b9db81b2f8313ae5bfeb23162bbe918a5a17bede34",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Copilot features \u00b7 caselet 4 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-4-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-6-2": {
+    "sha256": "935a09ae319cefbdf796752aadcae27678c4dff6fe4f253c7046f4591c5b02e7",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Data and architecture \u00b7 caselet 6 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-6-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "github-copilot-case-2-2": {
+    "sha256": "0d500678b7d432a4a370189ecb8ff17e903c7ce62dda5db5a6d8519617c910b1",
+    "decision": "Retain: shared case, distinct task",
+    "reason": "Case github-copilot-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item\u2019s task is Responsible AI use \u00b7 caselet 2 \u00b7 verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "github-copilot-case-2-1"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-growth-015": {
+    "sha256": "3a3c201e22abac9fd417db6c17c38552ecc37d769fc2f23f2a3da954444adcf1",
+    "decision": "Retain: distinct metric denominators",
+    "reason": "The pair deliberately contrasts detected/actual positives (recall) with true/predicted positives (precision). Shared numbers are not equivalent evaluation claims.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-growth-016"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  },
+  "ai-testing-growth-016": {
+    "sha256": "1958fab232f7f32ffa0d5b37521e0a552da14eab71d8a64c51e8d4766303aae3",
+    "decision": "Retain: distinct metric denominators",
+    "reason": "The pair deliberately contrasts detected/actual positives (recall) with true/predicted positives (precision). Shared numbers are not equivalent evaluation claims.",
+    "reviewedAt": "2026-11-17",
+    "scope": "Pattern-level wording review; not independent technical validation.",
+    "nearQuestions": [
+      "ai-testing-growth-015"
+    ],
+    "signals": [
+      "Close wording: inspect scenario distinction"
+    ]
+  }
+}
