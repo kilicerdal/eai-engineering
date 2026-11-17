@@ -1,0 +1,8 @@
+'use client';
+import {useRef,useState} from 'react';
+import {createProblem,emptyProblems,parseProblems,type Problem} from '@/lib/engineering-problem';
+import {trackProblemEdit} from '@/lib/problem-polish';
+import {emptyInvestigation} from '@/lib/problem-investigation';
+import InvestigationLoop from './InvestigationLoop';
+function example():Problem{return {...createProblem(emptyProblems(),'broken','temporary-example',0).items[0],brief:'Authored example: a checkout response timed out.',expected:'One intended order after an equivalent retry.',investigation:{...emptyInvestigation(),title:'Temporary retry example',area:'api',access:'interface',experiment:{...emptyInvestigation().experiment,hypothesis:'The operation may have completed before the response was lost.'}}};}
+export default function ProblemDemo(){const [demo,setDemo]=useState(example),[generation,setGeneration]=useState(0),current=useRef(demo);return <section className="problem-demo"><p className="lab-kicker">TEMPORARY EXAMPLE · NOT IN YOUR NOTEBOOK</p><p>Try the controls with a fictional case. Changes stay in this panel and disappear on reload. No AI request or system check runs here.</p><button onClick={()=>{current.current=example();setDemo(current.current);setGeneration(n=>n+1);}}>Reset only this example</button><InvestigationLoop key={`${demo.id}-${generation}`} id="problem-demo-loop" problem={demo} ready onChange={fn=>{const next=trackProblemEdit(current.current,fn(current.current));parseProblems(JSON.stringify({version:1,active:next.id,items:[next]}));current.current=next;setDemo(next);return true;}}/></section>;}

@@ -19,7 +19,8 @@
     "check": "npm test && npm run lint && npm run typecheck && npm run build",
     "audit:certifications": "node scripts/audit-certification-sources.mjs",
     "audit:certification-quality": "node scripts/audit-certification-quality.mjs",
-    "postbuild": "node scripts/reading/audit-packed-build.mjs"
+    "postbuild": "node scripts/reading/audit-packed-build.mjs",
+    "audit:learning-inventory": "node scripts/audit-learning-inventory.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

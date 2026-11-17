@@ -1,5 +1,6 @@
+import {suppliedProblem,type JourneyKind} from './engineering-problem';
 import {allowedEvidence,critiqueRequirements,exploreTradeoff,findLabCase,parseLabAnswer,type LabAnswer,type LabReport} from './investigation-lab';
-export type LabAIContext={tool:'case'|'requirements'|'tradeoff';question:string;title:string;observed:LabReport['observed'];scope:string;message:string;caseId:string|null};
+export type LabAIContext={tool:'case'|'requirements'|'tradeoff'|'problem';question:string;title:string;observed:LabReport['observed'];scope:string;message:string;caseId:string|null};
 export class LabInputError extends Error {constructor(message:string,public status=400){super(message)}}
 const text=(v:unknown,max:number)=>typeof v==='string'&&v.trim().length>0&&v.length<=max;
 export function buildLabContext(body:unknown):LabAIContext{
@@ -7,6 +8,15 @@ export function buildLabContext(body:unknown):LabAIContext{
  const b=body as Record<string,unknown>;
  if(!text(b.question,1000)||String(b.question).trim().length<10)throw new LabInputError('Ask a question of 10–1,000 characters.');
  const question=(b.question as string).trim();
+ if(b.tool==='problem'){
+  if(!b.input||typeof b.input!=='object'||Array.isArray(b.input))throw new LabInputError('Supply your problem details.');
+  const p=b.input as Record<string,unknown>;
+  if(!['broken','compare','understand'].includes(String(p.kind))||!text(p.brief,2000)||String(p.brief).trim().length<10)throw new LabInputError('Supply a question of 10–2,000 characters.');
+  for(const key of ['expected','tried','constraint','optionA','optionB'])if(typeof p[key]!=='string'||String(p[key]).length>1000)throw new LabInputError('Keep each context field within 1,000 characters.');
+  if(p.checks!==undefined&&(!Array.isArray(p.checks)||p.checks.length>3||new Set(p.checks.map(x=>x?.id)).size!==p.checks.length||!p.checks.every(x=>x&&typeof x==='object'&&/^check-[1-3]$/.test(x.id)&&text(x.summary,1800))))throw new LabInputError('Choose up to three bounded check summaries.');
+  const observed=suppliedProblem(p as {kind:JourneyKind;brief:string;expected:string;tried:string;constraint:string;optionA:string;optionB:string;checks?:{id:string;summary:string}[]});
+  return {tool:'problem',question,title:'Engineering problem',observed,scope:'All supplied fields are unverified user statements, not observed execution. Propose a short first step and falsifiable verification check with expected and alternate results. Do not diagnose a proven cause or rank options without evidence. Ask only material missing questions. No URL, repository or private notebook has been inspected. Personal notes and drafts are not supplied. Selected check results, when present, are user-reported and their outcome labels are not independent validation.',message:question+'\n'+observed.map(x=>x.summary).join('\n'),caseId:null};
+ }
  if(b.tool==='case'){
   const c=findLabCase(b.caseId);if(!c)throw new LabInputError('Unknown investigation case.');
   let items;try{items=allowedEvidence(c,b.revealedIds)}catch{throw new LabInputError('Choose valid evidence from this case.')}

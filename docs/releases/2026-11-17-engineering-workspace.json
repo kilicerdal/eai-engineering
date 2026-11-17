@@ -1,0 +1,50 @@
+{
+  "title": "Engineering problem workspace and connected learning improvements",
+  "baseline": "f651bb060d8c72049a73ef7d5f28dae164ed57c0",
+  "scope": "Accumulated owner-approved local release",
+  "improvementAccounting": {
+    "initialWorkspace": 13,
+    "investigationLoop": 20,
+    "recoveryUsability": 15,
+    "latestNewOrStrengthened": 16,
+    "total": 64,
+    "note": "Accumulated implementation and refinement items; not 64 independent new features. Existing overlapping suggestions are reused."
+  },
+  "changes": [
+    "Homepage broken, compare and understand entrances; complete temporary worked example",
+    "Bounded hypothesis, experiment, outcome and decision history",
+    "Resume, explicit save status, guarded restore preview and last-field undo",
+    "Evidence review flags, access-aware checks, unresolved handoff and AI context freshness",
+    "Closing notes, visible stopping condition, effort choice, completed state and fresh-reader summary",
+    "Section-selective reviewed handoff, exact AI request preview and optional-field exclusions",
+    "Shared focus preference, selected study sheets and same-tab activity recovery"
+  ],
+  "preservation": {
+    "certificationPaths": 12,
+    "questions": 1090,
+    "books": 200,
+    "discoveries": 1000,
+    "existingStorageKeys": "unchanged",
+    "bookFilesAndBackgrounds": "unchanged",
+    "privateRepositoryVisibility": "unchanged"
+  },
+  "validation": {
+    "tests": 882,
+    "typecheck": "passed",
+    "lint": "zero errors; existing StudyAccount navigation warning",
+    "productionBuild": "passed",
+    "certificationAudits": "passed",
+    "inventory": "passed",
+    "phoneAndDesktop": "390px and 1280px; no horizontal overflow",
+    "bookDeliveryTraceBytes": 92605158,
+    "paidAICalls": 0
+  },
+  "approval": "Owner explicitly requested publication of all 64 accumulated improvements, preserving existing features and saved work.",
+  "limits": [
+    "AI integration contracts were tested with mocks; no real provider request is claimed.",
+    "Native print dialog was not exercised; selection preview was checked.",
+    "Source inventory validates local metadata and files, not every external claim.",
+    "No independent human usability study is claimed."
+  ],
+  "rollback": "Previous production commit f651bb060d8c72049a73ef7d5f28dae164ed57c0 remains the source baseline. Preserve browser storage and downloaded backups during any rollback; do not clear learner data."
+}
