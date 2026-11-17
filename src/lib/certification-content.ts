@@ -1,3 +1,4 @@
+import {expandedPracticeBank} from './certification-bank1000';
 import {makePracticeBank} from './certification-bank500';
 import {makeDepthQuestions} from './certification-depth';
 import {makeTransferQuestions} from './certification-transfer';
@@ -35,7 +36,7 @@ export const certTracks:CertTrack[]=[
 ];
 certTracks.push(...expandedTracks);
 export const getCert=(id:string)=>certTracks.find(t=>t.id===id);
-export type CertQuestion={id:string;track:CertId;domain:string;objective:string;prompt:string;choices:string[];answer:number;explanations:string[];reviewed:string;source:string;contentRevision?:string};
+export type CertQuestion={id:string;track:CertId;domain:string;objective:string;prompt:string;choices:string[];answer:number;explanations:string[];reviewed:string;source:string;distinction?:string;contentRevision?:string};
 const bank:CertQuestion[]=[];
 function add(track:CertId,domain:string,objective:string,prompt:string,options:[string,string,string,string],why:[string,string,string,string]){const index=bank.filter(q=>q.track===track).length; // Rotate correct answers so position is not a cue.
  const shift=index%4,choices=options.map((_,i)=>options[(i+shift)%4]),explanations=why.map((_,i)=>why[(i+shift)%4]);bank.push({id:`${track}-${String(index+1).padStart(2,'0')}`,track,domain,objective,prompt,choices,answer:(4-shift)%4,explanations,reviewed:CONTENT_REVIEWED,source:getCert(track)!.domains.find(d=>d.id===domain)!.source});}
@@ -117,7 +118,7 @@ add(T,'tools','§6.2','A team automates thousands of weak assertions. What risk 
 add(T,'tools','§6.1','Which tool primarily helps coordinate test cases, runs and their status?', ['A test management tool','A DNS registrar','A text-to-speech engine','A hardware power switch'],['Test management tools organize test activities and evidence.','Domain registration does not manage test runs.','Speech synthesis has a different primary function.','A power switch does not organize test cases and status.']);
 add(T,'tools','§6.2','Before rolling out a new automation tool widely, which approach is most sensible?', ['Pilot it against representative needs and maintenance constraints','Assume vendor claims prove suitability','Purchase it and remove all existing checks immediately','Measure success only by generated script count'],['A pilot provides evidence about fit, costs and limitations.','Claims need evaluation in the intended context.','Immediate replacement without evidence introduces risk.','Script count alone does not establish value.']);
 const preservedQuestions=[...bank,...expandedQuestions,...makeTransferQuestions(certTracks),...makeDepthQuestions(certTracks)];
-export const certQuestions:readonly CertQuestion[]=[...preservedQuestions,...makePracticeBank(certTracks,preservedQuestions)];
+export const certQuestions:readonly CertQuestion[]=[...preservedQuestions,...makePracticeBank(certTracks,preservedQuestions),...expandedPracticeBank(certTracks)];
 // Audit correction: this existing enrichment scenario belongs to advanced tool evaluation.
 const enrichment=certQuestions.find(q=>q.id==='istqb-foundation-25');
 if(enrichment){enrichment.objective='Practical enrichment · CTAL-TAE §2.2';enrichment.source='https://istqb.org/?download_id=3435&sdm_process_download=1#page=20';}
