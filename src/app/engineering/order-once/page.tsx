@@ -1,3 +1,4 @@
+import EvidenceReceipt from "@/components/EvidenceReceipt";
 import CaseRouteMap from "@/components/engineering/CaseRouteMap";
 import "../main-showcase.css";
 import CaseDiscussion from "@/components/engineering/CaseDiscussion";
@@ -473,7 +474,7 @@ ${capture.reproduction}`}</pre>
           requests, call an AI model or start cloud services.
         </p>
       </section>
-      <CaseDiscussion name="order-once" />
+      <div className="case-receipt-wrap"><EvidenceReceipt kind="Historical checkout record" performed="Bundled healthy and seeded-fault observations. The record labels its origin authored-offline-example; inspect the full record and pinned source." notPerformed="Viewing this page does not rerun checkout, PostgreSQL, tests or an AI model." source="/evidence/order-once.json" sourceLabel="Inspect the original record" recordedAt={capture.generatedAt}/><Link href="/engineering/change-story">Follow one public capture change →</Link></div><CaseDiscussion name="order-once" />
       <footer className="failure-footer">
         <Link href="/">eAI / Intelligence Engineered</Link>
         <p>Built by Erdal Kilic · Quality engineering &amp; applied AI</p>

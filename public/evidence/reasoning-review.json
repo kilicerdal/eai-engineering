@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-11-16",
+  "scope": "Local ten-improvement reasoning and recovery batch; no publication",
+  "tests": {"passed":713,"failed":0,"log":"/private/tmp/reasoning-tests-final.log"},
+  "lint": "Passed with zero errors and one existing StudyAccount navigation warning",
+  "typecheck": "Passed; /private/tmp/reasoning-types-final.log",
+  "productionBuild": "Passed; /private/tmp/reasoning-build.log. Final metadata build follows separately.",
+  "books": {"retained":200,"packedFiles":400,"packedBytes":90791154},
+  "limitations": ["No live AI requests executed; lifecycle and draft protections tested locally", "42 selected source links checked in earlier audit, not a complete content audit", "Physical mobile keyboard testing still recommended"],
+  "deployment": "Not performed"
+}

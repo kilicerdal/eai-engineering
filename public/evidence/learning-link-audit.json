@@ -1,0 +1,328 @@
+{
+  "checkedAt": "2026-11-16T06:30:10.089Z",
+  "scope": "Public official certification references and sources used in workshop/Explore models. HTTP health only; not source-content or claim verification.",
+  "candidateCount": 42,
+  "checkedCount": 42,
+  "unscannedCount": 0,
+  "counts": {
+    "reachable": 38,
+    "redirected": 3,
+    "redirect-needs-review": 1
+  },
+  "results": [
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html",
+      "redirects": []
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "redirects": []
+    },
+    {
+      "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+      "status": "redirected",
+      "httpStatus": 200,
+      "finalUrl": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+      "redirects": [
+        {
+          "status": 302,
+          "to": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+      "redirects": []
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "redirects": []
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "redirects": []
+    },
+    {
+      "url": "https://istqb.org/certifications/gen-ai/",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://istqb.org/certifications/gen-ai/",
+      "redirects": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-200",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-200",
+      "redirects": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "redirects": []
+    },
+    {
+      "url": "https://istqb.org/?download_id=3435&sdm_process_download=1",
+      "status": "redirected",
+      "httpStatus": 200,
+      "finalUrl": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTAL-TAE_Syllabus_v2.0.pdf",
+      "redirects": [
+        {
+          "status": 302,
+          "to": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTAL-TAE_Syllabus_v2.0.pdf"
+        }
+      ]
+    },
+    {
+      "url": "https://istqb.org/?download_id=9558&sdm_process_download=1",
+      "status": "redirected",
+      "httpStatus": 200,
+      "finalUrl": "https://istqb.org/wp-content/uploads/2026/05/ISTQB-_CTAI_Syllabus_v2.0_Release.pdf",
+      "redirects": [
+        {
+          "status": 302,
+          "to": "https://istqb.org/wp-content/uploads/2026/05/ISTQB-_CTAI_Syllabus_v2.0_Release.pdf"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain3.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain3.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain1.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain1.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain2.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain2.html",
+      "redirects": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain4.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain4.html",
+      "redirects": []
+    },
+    {
+      "url": "https://istqb.org/?download_id=6295&sdm_process_download=1",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://istqb.org/?download_id=6295&sdm_process_download=1",
+      "redirects": []
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "redirects": []
+    },
+    {
+      "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+      "redirects": []
+    },
+    {
+      "url": "https://www.nature.com/articles/nature05357",
+      "status": "redirect-needs-review",
+      "httpStatus": 303,
+      "finalUrl": "https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fnature05357",
+      "redirects": [
+        {
+          "status": 303,
+          "to": "https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fnature05357"
+        }
+      ]
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+      "redirects": []
+    },
+    {
+      "url": "https://openstax.org/books/college-physics-2e/pages/9-5-simple-machines",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openstax.org/books/college-physics-2e/pages/9-5-simple-machines",
+      "redirects": []
+    },
+    {
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/16-5-interference-of-waves",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openstax.org/books/university-physics-volume-1/pages/16-5-interference-of-waves",
+      "redirects": []
+    },
+    {
+      "url": "https://openstax.org/books/university-physics-volume-2/pages/9-4-ohms-law",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openstax.org/books/university-physics-volume-2/pages/9-4-ohms-law",
+      "redirects": []
+    },
+    {
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed",
+      "redirects": []
+    },
+    {
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/13-4-satellite-orbits-and-energy",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openstax.org/books/university-physics-volume-1/pages/13-4-satellite-orbits-and-energy",
+      "redirects": []
+    },
+    {
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "redirects": []
+    },
+    {
+      "url": "https://www.antikythera-mechanism.gr/bibliography/35",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.antikythera-mechanism.gr/bibliography/35",
+      "redirects": []
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+'use client';
+import {useState} from 'react';
+import Link from 'next/link';
+export default function ProjectLens(){const [technical,setTechnical]=useState(false);return <div className="workshop-demo"><label><input type="checkbox" checked={technical} onChange={e=>setTechnical(e.target.checked)}/>Show technical wording</label><p>{technical?'The capture script added a replay case: statuses [201, 200], one distinct order identity and stock 20 → 18 at the pinned commit. This does not establish concurrency safety.':'The change added a check for submitting the same purchase again. In the recorded run it reused one order and removed only two items from stock. Other failure cases remain unproven.'}</p><p>Same historical evidence, different wording. <Link href="/engineering/change-story">Inspect the source and recorded capture →</Link></p></div>;}

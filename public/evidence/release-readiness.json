@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-11-16T06:33:40.968693+00:00",
+  "decision": "Local checks pass; do not publish yet. Confirm Vercel deployment headroom and live AI/provider behavior before release.",
+  "published": false,
+  "baselineCommit": "eb9a78db30eb669241c088931e98f807b3afc684",
+  "checks": {
+    "tests": {
+      "passed": 717,
+      "failed": 0,
+      "log": "/private/tmp/release-readiness-tests-final.log"
+    },
+    "typecheck": {
+      "status": "passed",
+      "log": "/private/tmp/release-readiness-types-final.log"
+    },
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 1,
+      "note": "StudyAccount full-page navigation after account restore intentionally reloads browser state.",
+      "log": "/private/tmp/release-readiness-lint-final.log"
+    },
+    "certificationQuality": {
+      "questions": 500,
+      "issues": 0,
+      "scope": "Structural, domain/source-owner mapping and answer identity; not independent expert validation of every claim."
+    },
+    "sourceLinks": {
+      "checked": 42,
+      "reachable": 38,
+      "redirected": 3,
+      "authenticationRedirect": 1,
+      "scope": "Official certification and workshop/Explore links; HTTP health only."
+    },
+    "books": {
+      "books": 200,
+      "files": 400,
+      "status": "All original uncompressed bytes match the pre-optimization baseline, including licenses.",
+      "originalBytes": 244872989,
+      "packedBytes": 90791154
+    },
+    "backgrounds": "No tracked background/image assets changed in this local batch."
+  },
+  "fixed": [
+    "Full-length five-field handovers now save and restore without truncation; oversized drafts fail explicitly.",
+    "All context selected for a handover can be reviewed in full before inclusion.",
+    "Unwritten meaning notes remain flagged across item changes and can be downloaded together.",
+    "Unsaved writing prompts before page close or reload.",
+    "Prepared tutor requests enforce the same 3000-character limit as the receiver; rejected composer additions no longer claim success."
+  ],
+  "vercel": {
+    "scope": "Owner-only capacity review; account usage details are kept in the local owner report, not site output.",
+    "currentRetainedBytesConfirmed": false,
+    "releaseCapacityReviewRequired": true,
+    "changesPerformed": false
+  },
+  "browserReview": {
+    "readingBackup": "Existing local reading backup downloaded and previewed without applying a restore; no duplicate additions.",
+    "home": "G\u00f6bekli Tepe / Leonardo introduction and existing navigation rendered.",
+    "curiosity": "1000 discoveries; Focus, interests, collections, trails and backup controls rendered.",
+    "certifications": "All ten paths and existing practice review rendered without replacing answers.",
+    "explore": "All nine experiences and saved lever setup rendered.",
+    "scope": "Local browser profile only; does not inspect or migrate visitors\u2019 browser data.",
+    "fullLengthHandover": {
+      "characters": 6066,
+      "reloadPreserved": true,
+      "earlierWritingRestoredAfterTest": true
+    },
+    "narrowViewport": {
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "overrideReset": true
+    }
+  },
+  "remainingLimits": [
+    "No live AI-provider request or account cloud restore executed.",
+    "Real physical mobile keyboard testing not performed.",
+    "Vercel current retained storage and enforcement headroom still require confirmation."
+  ],
+  "build": {
+    "status": "passed",
+    "log": "/private/tmp/release-readiness-build.log",
+    "books": 200,
+    "packedFiles": 400,
+    "archiveBundleCopies": 1,
+    "bookDeliveryTraceBytes": 92593859
+  },
+  "liveReadOnlyHealth": {
+    "apexRedirect": 308,
+    "canonical": "https://www.eai.engineering",
+    "checks": [
+      {
+        "path": "/",
+        "status": 200
+      },
+      {
+        "path": "/study",
+        "status": 200
+      },
+      {
+        "path": "/study/reading",
+        "status": 200
+      },
+      {
+        "path": "/study/curiosity",
+        "status": 200
+      },
+      {
+        "path": "/study/certifications",
+        "status": 200
+      },
+      {
+        "path": "/reading/11.json",
+        "status": 200
+      }
+    ]
+  }
+}

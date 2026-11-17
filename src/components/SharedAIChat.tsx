@@ -1,4 +1,7 @@
 "use client";
+import {useRequestRecovery} from "./useRequestRecovery";
+import {startRequest,settleRequest,recoverSubmittedDraft,requestRecoveryLabel} from "@/lib/tutor-request-recovery";
+import {ACTIVITY_HANDOFF,parseActivityHandoff,offerTutorDraft} from "@/lib/learning-activities";
 import {passageHandoff,DISCUSSION_KEY} from '@/lib/reading/library';
 import Link from "next/link";
 import TutorReplyWorkbench from "./TutorReplyWorkbench";
@@ -249,6 +252,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
   const [activeId, setActiveId] = useState("");
   const [openPanel, setOpenPanel] = useState<"history" | "settings" | null>(null);
   const [loading, setLoading] = useState(false);
+  const recovery=useRequestRecovery();
   const [pendingReply, setPendingReply] = useState<{id:string; messages:Message[]} | null>(null);
   const [hydrated, setHydrated] = useState(false);
   const [requestError, setRequestError] = useState<{ id: string; message: string;retry?:boolean } | null>(null);
@@ -339,7 +343,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
 
   const workspace=active?.workspace||{};
   function patchWorkspace(patch:Partial<TutorWorkspace>){if(active)updateConversation(active.id,c=>({...c,workspace:{...c.workspace,...patch}}));}
-  function prepareTool(text:string){prepareStarter(text,practiceTime());setSelectedText("");setMobilePanel("conversation");}
+  function prepareTool(text:string){const accepted=prepareStarter(text,practiceTime());if(accepted){setSelectedText("");setMobilePanel("conversation");}return accepted;}
   useEffect(()=>{if(!focus)return;const old=document.body.style.overflow;document.body.style.overflow="hidden";const hidden:{el:HTMLElement;inert:boolean}[]=[];let node=workspaceRoot.current;while(node&&node!==document.body){for(const sibling of Array.from(node.parentElement?.children||[])){if(sibling!==node&&sibling instanceof HTMLElement){hidden.push({el:sibling,inert:sibling.inert});sibling.inert=true;}}node=node.parentElement;}const escape=(event:KeyboardEvent)=>{if(event.key==="Escape"){setFocus(false);requestAnimationFrame(()=>workspaceRoot.current?.querySelector<HTMLButtonElement>('#tutor-focus-toggle')?.focus());}};document.addEventListener('keydown',escape);return()=>{document.body.style.overflow=old;hidden.forEach(({el,inert})=>{el.inert=inert;});document.removeEventListener('keydown',escape);};},[focus]);
   useEffect(()=>{queueMicrotask(()=>{setSelectedText("");setAudio(null);const pending=pendingReplyTool.current;setReplyIndex(pending?.sessionId===activeId?pending.index:null);pendingReplyTool.current=null;setShowOlder(false);setOpenCheck(0);setOpenCheckTarget('');});},[activeId]);
   useEffect(()=>()=>abortControllerRef.current?.abort(),[]);
@@ -402,11 +406,11 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
   }
 
   function prepareStarter(suggestion:string,stamp:number){
-    if(!active||loading||!hydrated)return;
-    const draft=active.draft?.trim()?`${active.draft}\n\n${suggestion}`:suggestion;
-    if(draft.length>3000){setRequestError({id:active.id,retry:false,message:"Your draft is full. Edit it before adding an example prompt."});return;}
+    if(!active||loading||!hydrated)return false;
+    let draft:string;try{draft=offerTutorDraft(active.draft||"",suggestion);}catch(error){setRequestError({id:active.id,retry:false,message:error instanceof Error?error.message:"The draft could not be added."});return false;}
     updateConversation(active.id,c=>({...c,draft,updatedAt:inputTime(stamp)}));setRequestError(null);
     requestAnimationFrame(()=>workspaceRoot.current?.querySelector<HTMLTextAreaElement>("#tutor-message-input")?.focus());
+    return true;
   }
   function closeTutorHelp(){setShowTutorHelp(false);requestAnimationFrame(()=>workspaceRoot.current?.querySelector<HTMLButtonElement>("#tutor-help-trigger")?.focus());}
 
@@ -414,9 +418,11 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
     if(localPreviewOnly){setResumeNotice("This local preview has no AI service credentials. Your draft is preserved; learning tools and saved-session controls remain available.");return;}
     const question = text.trim();
 
-    if (!question || loading || !active) return;
+    if (!question || loading || abortControllerRef.current || !active) return;
 
     const id = active.id;
+    const requestId=crypto.randomUUID(), startedAt=practiceTime(), submittedDraft=clearDraft?(active.draft||""):"";
+    recovery.update(d=>startRequest(d,{id:requestId,session:id,state:"pending",question,originalDraft:submittedDraft,startedAt,updatedAt:startedAt}));
     followLatest.current = true;
     const lastUserIndex = active.messages.findLastIndex(message => message.role === "user");
     const preceding=regenerate?active.messages.slice(0,lastUserIndex):active.messages;
@@ -454,12 +460,13 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
         },
         body: JSON.stringify({
           message: question,
-          history,
+          history:workspace.sourceOnly?[]:history,
+          sourceOnly:workspace.sourceOnly===true,
           subject: mode,
-          learning: active.learning,
+          learning: workspace.sourceOnly?{...active.learning,goal:""}:active.learning,
           source: requestSource,
           checkpoint:active.useContinuity!==false?active.checkpoint:undefined,
-          continuity:{enabled:active.useContinuity!==false,note:active.useContinuity!==false?active.continuityNote||"":"",earlier:active.useContinuity!==false?earlierStudyContext(preceding):[],check,practiceEvidence},
+          continuity:workspace.sourceOnly?undefined:{enabled:active.useContinuity!==false,note:active.useContinuity!==false?active.continuityNote||"":"",earlier:active.useContinuity!==false?earlierStudyContext(preceding):[],check,practiceEvidence},
         }),
       });
 
@@ -470,7 +477,10 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
         ...conversation, updatedAt:Date.now(),
         messages:[...baseMessages, {role:"assistant", content:answer}],
       }));
+      recovery.update(d=>settleRequest(d,id,requestId,"complete",practiceTime()));
     } catch (error) {
+      updateConversation(id,c=>({...c,draft:recoverSubmittedDraft(c.draft||"",submittedDraft,clearDraft)}));
+      recovery.update(d=>settleRequest(d,id,requestId,controller.signal.aborted?"stopped":"failed",practiceTime()));
       const message = controller.signal.aborted ? "Response stopped. You can retry your question."
         : error instanceof Error && error.name === "TimeoutError" ? "The tutor timed out. You can retry your question."
         : error instanceof Error ? error.message : "The tutor could not complete your request. Please try again.";
@@ -592,6 +602,14 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
     if (hydrated && !loading) queueMicrotask(() => {
       if (!mounted) return;
       const url = new URL(window.location.href);
+      if(url.searchParams.get("activity")==="learning"){
+        let prompt=null;try{prompt=parseActivityHandoff(sessionStorage.getItem(ACTIVITY_HANDOFF));}catch{}
+        if(prompt&&conversations.length>=30){setResumeNotice("Your activity draft is waiting. Back up sessions before making room for a new one; existing drafts are unchanged.");return;}
+        if(!prompt){setResumeNotice("The activity draft is unavailable. Your saved work is unchanged.");url.searchParams.delete("activity");window.history.replaceState(null,"",url);return;}
+        receivePracticePrompt(new CustomEvent("eai-study-prompt",{detail:prompt}));
+        try{sessionStorage.removeItem(ACTIVITY_HANDOFF);}catch{}
+        url.searchParams.delete("activity");window.history.replaceState(null,"",url);setResumeNotice("A separate activity session is ready. Earlier drafts are preserved. Review this draft before choosing Send.");return;
+      }
       if (url.searchParams.get("reading") === "passage") {
         let prompt=null;
         try {prompt=passageHandoff(sessionStorage.getItem(DISCUSSION_KEY));} catch { /* Leave existing drafts untouched. */ }
@@ -902,6 +920,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
                   </button>
                 )}
 
+              <details><summary>Reply status & submitted draft</summary><p role="status">{requestRecoveryLabel(recovery.data.records[activeId],loading,!!active?.messages.some(m=>m.role==="user")&&active?.messages.at(-1)?.role==="assistant")}</p>{recovery.error&&<p role="alert">{recovery.error}</p>}{recovery.data.records[activeId]&&<><p>Last submitted question:</p><blockquote>{recovery.data.records[activeId].question}</blockquote><p>Original submitted draft:</p><pre style={{whiteSpace:"pre-wrap"}}>{recovery.data.records[activeId].originalDraft||"No composer draft was cleared for this request."}</pre><button type="button" disabled={loading} onClick={()=>prepareTool(recovery.data.records[activeId].originalDraft||recovery.data.records[activeId].question)}>Review in composer</button></>}</details>
               {!loading && active?.messages.at(-1)?.role === "user" && requestError?.id !== activeId && (
                 <div role="status" className="mb-3">
                   <p>Your last question has no completed reply.</p>
@@ -955,7 +974,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
               <details className="tutor-request-note"><summary>About AI requests and account saving</summary><p>Send, the older follow-up buttons and regeneration request an AI response. Learning tools, hint steps and example prompts only prepare a draft. Scratchpad and recap text are not automatically sent. A selected source is sent only while its checkbox is on. {accountConfigured && <>Manage optional account saving on the <a href="/study/account">Account page</a>.</>}</p></details>
             </div>
           </div>
-          {workspace.source&&<aside className="tutor-source-panel" aria-label="Pinned question or source"><div className="tutor-panel-heading"><h3>{workspace.source.kind==='problem'?'Your question':'Source [S1]'}</h3><button onClick={()=>{patchWorkspace({source:undefined,useSource:false});setMobilePanel('conversation');}}>Unpin</button></div><strong>{workspace.source.title}</strong><p className="tutor-preserve-text">{workspace.source.text}</p>{workspace.source.href&&<Link href={workspace.source.href}>Open original location ↗</Link>}<label><input type="checkbox" checked={!!workspace.useSource} disabled={loading} onChange={e=>patchWorkspace({useSource:e.target.checked})}/>Attach this exact text to my next question</label><p>Only this excerpt is supplied. Other parts of the document are not available to this conversation. Source labels identify supplied text; they are not independent fact-checks. Earlier submitted excerpts can still appear in recent session history, even when this checkbox is off.</p></aside>}
+          {workspace.source&&<aside className="tutor-source-panel" aria-label="Pinned question or source"><div className="tutor-panel-heading"><h3>{workspace.source.kind==='problem'?'Your question':'Source [S1]'}</h3><button onClick={()=>{patchWorkspace({source:undefined,useSource:false,sourceOnly:false});setMobilePanel('conversation');}}>Unpin</button></div><strong>{workspace.source.title}</strong><p className="tutor-preserve-text">{workspace.source.text}</p>{workspace.source.href&&<Link href={workspace.source.href}>Open original location ↗</Link>}<label><input type="checkbox" checked={!!workspace.useSource} disabled={loading} onChange={e=>patchWorkspace({useSource:e.target.checked,...(!e.target.checked?{sourceOnly:false}:{})})}/>Attach this exact text to my next question</label><label><input type="checkbox" checked={!!workspace.sourceOnly} disabled={loading||!workspace.useSource} onChange={e=>patchWorkspace({sourceOnly:e.target.checked})}/>Study only this source</label>{workspace.sourceOnly&&<p>Earlier dialogue and reference material are excluded from the next AI request. Check important claims against the excerpt; this mode cannot guarantee a correct answer.</p>}<p>Only this excerpt is supplied. Other parts of the document are not available to this conversation. Source labels identify supplied text; they are not independent fact-checks. Earlier submitted excerpts can still appear in recent session history, even when this checkbox is off.</p></aside>}
           </div>
         </div>
         {practice && <LessonCheckpoint key={practice.key} context={practice.context} openRequest={openCheckTarget===practice.key?openCheck:0} sessionId={practice.key} kind="chat" disabled={loading||localPreviewOnly} recentWork={practice.recentWork}/>}

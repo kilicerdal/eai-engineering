@@ -1,0 +1,3 @@
+'use client';
+import Link from 'next/link';
+export default function ErrorPage({reset}:{error:Error&{digest?:string};reset:()=>void}){return <main className="your-space"><div className="space-wrap"><h1>This page needs another try.</h1><p>The page could not finish loading. This screen has not cleared your saved work.</p><p>If another tab contains an unsaved draft, copy or export it before reloading that tab.</p><div className="companion-actions"><button onClick={()=>reset()}>Try loading again</button><Link href="/your-space">Return to your saved work →</Link><Link href="/guide">Saving and recovery help</Link></div></div></main>;}

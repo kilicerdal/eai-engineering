@@ -1,5 +1,6 @@
 "use client";
 
+import YourNextStep from "@/components/YourNextStep";
 import AIPhilosophy from "@/components/engineering/AIPhilosophy";
 import "./engineering/ai-atlas.css";
 import {StartHere, FlagshipProjects, RecordedReplay, FieldNotes} from "@/components/engineering/MainShowcase";
@@ -50,6 +51,7 @@ export default function Home() {
    <p className="atlas-caption">Göbekli Tepe, Türkiye · An imagined bridge to tomorrow</p>
   </section>
 
+  <YourNextStep />
   <StartHere />
   <section className="explore-home-entry" aria-labelledby="explore-entry-title"><div><p className="atlas-eyebrow">NEW / eAI EXPLORE</p><h2 id="explore-entry-title">See an idea move.</h2><p>Move a pivot. Make waves. Train a tiny AI. Discover nine interactive experiences in engineering and beyond.</p></div><Link href="/explore">Show me how it works →</Link></section>
   <section className="lab-signature-entry" aria-labelledby="lab-entry-title"><div className="lab-entry-wrap"><div><p className="atlas-eyebrow">NEW / THE eAI INVESTIGATION LAB</p><h2 id="lab-entry-title">Something went wrong.<br/>Can you find out why?</h2><p>Step inside an engineering case. Make a prediction, inspect the evidence, and challenge the explanation—with an optional AI companion and a notebook for your discoveries.</p><div className="lab-entry-links"><Link className="atlas-button primary" href="/engineering/lab">Enter the Investigation Lab →</Link><Link href="/engineering/lab?view=project">Ask about a project ↗</Link></div></div><div className="lab-entry-method"><div><span>OBSERVED</span>What do the records establish?</div><div><span>INTERPRETATION</span>What might explain it?</div><div><span>MISSING EVIDENCE</span>What don’t we know yet?</div><div><span>NEXT CHECK</span>How could we test that?</div><p>Three recorded cases · One authored exercise · No services executed</p></div></div></section>

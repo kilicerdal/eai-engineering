@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-15",
+  "reviewScope": "Public commit diff, pinned capture script and related regression source inspected. Repository tests were not rerun for this website update.",
+  "repository": "https://github.com/kilicerdal/playwright-ai-automation",
+  "commit": "1ddd99a55c7e6b6a7ca4859662b05b26267a6b73",
+  "message": "feat: include baseline stock observations in replay capture",
+  "committedAt": "2026-11-06T17:02:30Z",
+  "commitUrl": "https://github.com/kilicerdal/playwright-ai-automation/commit/1ddd99a55c7e6b6a7ca4859662b05b26267a6b73",
+  "changedFile": "scripts/capture-checkout-scenarios.ts",
+  "patch": "@@ -7,7 +7,7 @@ if (execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' }).trim())\n   throw new Error('Commit capture source first so its source pin is exact');\n const commit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();\n const cases = [];\n-for (const scenario of ['concurrent', 'changed-payload'] as const) {\n+for (const scenario of ['replay', 'concurrent', 'changed-payload'] as const) {\n   const db = await databaseHarness();\n   try {\n     const buyer = await db.login();\n@@ -23,7 +23,7 @@ for (const scenario of ['concurrent', 'changed-payload'] as const) {\n         : [\n             await buyer.checkout(key),\n             await buyer.checkout(key, {\n-              name: 'Changed Synthetic Name',\n+              name: scenario === 'changed-payload' ? 'Changed Synthetic Name' : 'Alex Engineer',\n               address: '100 Test Avenue',\n             }),\n           ];\n@@ -36,7 +36,11 @@ for (const scenario of ['concurrent', 'changed-payload'] as const) {\n     const cart = await (await buyer.cart()).json();\n     assert.deepEqual(\n       scenario === 'concurrent' ? [...statuses].sort() : statuses,\n-      scenario === 'concurrent' ? [200, 200, 201] : [201, 409],\n+      scenario === 'concurrent'\n+        ? [200, 200, 201]\n+        : scenario === 'changed-payload'\n+          ? [201, 409]\n+          : [201, 200],\n     );\n     assert.equal(orders.length, 1);\n     assert.equal(stock, baseline - 2);\n@@ -76,5 +80,5 @@ const record = {\n await mkdir('artifacts', { recursive: true });\n await writeFile('artifacts/checkout-scenarios.json', JSON.stringify(record, null, 2) + '\\n');\n console.log(\n-  'Captured concurrent and changed-payload checkout: one order, stock reduced by two, empty cart.',\n+  'Captured replay, concurrent and changed-payload checkout: one order, stock reduced by two, empty cart.',\n );",
+  "testFile": "tests/postgres/commerce.spec.ts",
+  "testBlob": "2156e33d12a4c9de13189483f12dd69ad66feaf0",
+  "evidence": "/evidence/checkout-scenarios.json",
+  "currentBranchChecked": false
+}

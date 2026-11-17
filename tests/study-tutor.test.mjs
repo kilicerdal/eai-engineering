@@ -92,6 +92,7 @@ function loadRoute(protect, stream) {
     "../../../../lib/ai-security": { protectAIRequest: protect, logAIRequest() {} },
     "../../cloudflare": { streamCloudflare: stream },
     "@/lib/tutor-workspace": loadStudyModule("tutor-workspace"),
+    "@/lib/tutor-source": loadStudyModule("tutor-source"),
     "@/lib/study-tutor": { normalizeLearningProfile, normalizeStudyHistory, buildTutorSystem },
     "@/lib/study-continuity": loadStudyModule("study-continuity"),
     "@/lib/study-reference": { getStudyReferenceContext },
@@ -419,3 +420,5 @@ test('real tutor route sends only explicitly included valid source text, never p
  await call({source:{kind:'passage',title:'Too large',text:'x'.repeat(4001)}});assert.doesNotMatch(upstream[1],/supplied source excerpt/);
  await call({});assert.doesNotMatch(upstream[1],/The gate remained shut/);
 });
+
+test('source-only mode excludes earlier dialogue and reference context and fails closed without an excerpt',async()=>{let upstream,calls=0;const post=loadRoute(async()=>null,async(...args)=>{calls++;upstream=args;return sse('data: {"response":"ok"}\n\n');});const call=body=>post(new Request('https://example.test/api/study/chat',{method:'POST',body:JSON.stringify({message:'Explain the gate',...body})}));const r=await call({sourceOnly:true,source:{kind:'passage',title:'Gate',text:'The gate remained shut.'},history:[{role:'user',content:'PRIVATE EARLIER CONTEXT'}],continuity:{enabled:true,note:'PRIVATE NOTE',earlier:[{role:'user',content:'PRIVATE EARLIER'}]}});assert.equal(r.status,200);assert.deepEqual(upstream[2].history,[]);assert.match(upstream[0],/SOURCE-ONLY STUDY/);assert.match(upstream[1],/The gate remained shut/);assert.doesNotMatch(upstream.join(' '),/PRIVATE EARLIER|PRIVATE NOTE/);assert.equal((await call({sourceOnly:true})).status,400);assert.equal((await call({sourceOnly:'yes'})).status,400);assert.equal(calls,1);});

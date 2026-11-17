@@ -1,0 +1,5 @@
+'use client';
+import {useEffect,useRef,useState} from 'react';
+import {REQUEST_STATE_KEY,parseRequestStates,type RequestStates} from '@/lib/tutor-request-recovery';
+import {writeStudyCopy} from '@/lib/study-safe-storage';
+export function useRequestRecovery(){const [data,setData]=useState<RequestStates>({version:1,records:{}}),[error,setError]=useState('');const raw=useRef<string|null>(null),value=useRef<RequestStates>({version:1,records:{}}),blocked=useRef(true);useEffect(()=>{queueMicrotask(()=>{try{raw.current=localStorage.getItem(REQUEST_STATE_KEY);value.current=parseRequestStates(raw.current);setData(value.current);blocked.current=false;}catch{setError('Earlier request metadata is unreadable and has been preserved. Session saving remains separate.');}});},[]);function update(fn:(d:RequestStates)=>RequestStates){if(blocked.current)return;try{const next=fn(value.current);raw.current=writeStudyCopy(localStorage,REQUEST_STATE_KEY,raw.current,next);value.current=next;setData(next);}catch{blocked.current=true;setError('Request status could not be saved. Keep your session backup; no retry runs automatically.');}}return {data,error,update};}

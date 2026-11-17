@@ -1,3 +1,4 @@
+import EvidenceReceipt from "@/components/EvidenceReceipt";
 import CaseRouteMap from "@/components/engineering/CaseRouteMap";
 import "../main-showcase.css";
 import CaseDiscussion from "@/components/engineering/CaseDiscussion";
@@ -394,7 +395,7 @@ npm run showcase:capture`}</pre>
           started by this page.
         </p>
       </section>
-      <CaseDiscussion name="claim-twice" />
+      <div className="case-receipt-wrap"><EvidenceReceipt kind="Historical synthetic capture" performed="A bundled local PostgreSQL and Moto simulation capture with injected acknowledgement loss, tied to its public source commit." notPerformed="No real patient data, live AWS request, clinical decision or fresh service execution occurs on this page." source="/evidence/claim-redelivery.json" sourceLabel="Inspect the recorded scope and source" recordedAt={capture.capturedAt}/></div><CaseDiscussion name="claim-twice" />
       <footer className="failure-footer">
         <Link href="/">eAI / Intelligence Engineered</Link>
         <p>Built by Erdal Kilic · Quality engineering &amp; applied AI</p>

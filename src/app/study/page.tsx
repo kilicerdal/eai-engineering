@@ -1,5 +1,6 @@
 "use client";
 
+import YourNextStep from "@/components/YourNextStep";
 import StudyGuide from "@/components/StudyGuide";
 import { accountConfigured } from "@/lib/study-account";
 import SharedAIChat from "@/components/SharedAIChat";
@@ -71,6 +72,7 @@ export default function StudyPage() {
         </div>
         <a href="#ai-assistant" className="studio-hero-scroll">MEET YOUR AI TUTOR <span aria-hidden="true">↓</span></a>
       </section>
+      <section className="studio-start-invitation"><p>Not sure where to begin? One small choice is enough.</p><Link href="/start">Explore, read or practice →</Link></section><YourNextStep />
       <SharedAIChat />
       <LearningHome />
       <GoalLearning />
