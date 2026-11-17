@@ -3,7 +3,8 @@
   "git": {
     "deploymentEnabled": {
       "codex/repository-quality": false,
-      "codex/clean-setup-review": false
+      "codex/clean-setup-review": false,
+      "codex/browser-monitoring": false
     }
   }
 }

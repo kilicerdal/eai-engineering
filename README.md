@@ -88,3 +88,7 @@ Next.js App Router, React, TypeScript, Tailwind CSS, Cloudflare Workers AI, Supa
 Active development. I design and maintain the interface, server-side integrations, learning workflows, case-study presentations and regression checks. Employer source code and confidential data are not included.
 
 The source is [MIT licensed](LICENSE), copyright 2026 Erdal Kilic. External services, dependencies and model providers retain their own terms. [Contribution guide](CONTRIBUTING.md) · [Security policy](SECURITY.md).
+
+## Automated browser checks and monitoring
+
+[Browser regression](https://github.com/kilicerdal/eai-engineering/actions/workflows/browser.yml) runs the engineering and study journeys for pull requests and main. [Production monitor](https://github.com/kilicerdal/eai-engineering/actions/workflows/production-monitor.yml) checks public routes, frontend assets, and critical desktop/mobile flows every 30 minutes and after successful Vercel deployment statuses. [Setup, evidence, notification settings, and incident response](docs/BROWSER_MONITORING.md).

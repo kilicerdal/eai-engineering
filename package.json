@@ -20,7 +20,11 @@
     "audit:certifications": "node scripts/audit-certification-sources.mjs",
     "audit:certification-quality": "node scripts/audit-certification-quality.mjs",
     "postbuild": "node scripts/reading/audit-packed-build.mjs",
-    "audit:learning-inventory": "node scripts/audit-learning-inventory.mjs"
+    "audit:learning-inventory": "node scripts/audit-learning-inventory.mjs",
+    "test:browser:ci": "playwright test --config=playwright.ci.config.ts",
+    "test:monitor": "node --test tests/production-monitor.test.mjs",
+    "monitor:http": "node scripts/monitor-production.mjs",
+    "monitor:browser": "playwright test --config=playwright.production.config.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
