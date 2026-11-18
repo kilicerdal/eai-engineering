@@ -62,7 +62,7 @@ test('tutor preserves a synthetic unsent draft across reload',async({page})=>{
 test('study navigation reaches the reading room',async({page},info)=>{
  await page.goto('/study');
  if(info.project.name==='mobile')await page.locator('#study-menu-toggle').click();
- await page.locator('#study-navigation-links').getByRole('link',{name:'Reading room',exact:true}).click();
+ await page.locator('#study-navigation-links').getByRole('link',{name:/^Reading room$/i}).click();
  await expect(page).toHaveURL(/\/study\/reading$/);
  await expect(page.getByRole('heading',{name:'A quiet place. A world of stories.'})).toBeVisible();
 });
