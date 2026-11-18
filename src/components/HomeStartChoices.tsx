@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function HomeStartChoices(){return <nav className="home-start-choices" aria-label="Choose your first step"><span>Choose one thing. No account needed to explore.</span><Link href="/engineering/problem">Solve a problem →</Link><Link href="/study">Learn something →</Link><Link href="/explore">Explore an idea →</Link><Link className="home-start-help" href="/start">Help me choose</Link></nav>;}

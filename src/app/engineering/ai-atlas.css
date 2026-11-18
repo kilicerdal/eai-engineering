@@ -62,3 +62,5 @@
 #about.ai-philosophy .atlas-project-example a{color:#dfb584;font-size:14px;text-decoration:underline;text-underline-offset:5px}
 #about.ai-philosophy .atlas-project-example>p:last-child{font-size:12px;line-height:1.8;color:#bcc9d7;margin:12px 0 0}
 @media(max-width:760px){#about.ai-philosophy .intro.philosophy-editorial{grid-template-columns:minmax(0,1fr);padding:48px 0 32px;gap:30px}#about.ai-philosophy .philosophy-editorial h2{font-size:38px;max-width:580px}#about.ai-philosophy .philosophy-summary{font-size:14px!important}#about.ai-philosophy .philosophy-principles{padding:0 18px}#about.ai-philosophy .philosophy-principles>a{padding:20px 0;gap:12px}#about.ai-philosophy .philosophy-principles h3{font-size:22px}#about.ai-philosophy .philosophy-bridge>p:not(.eyebrow){font-size:24px}}
+/* Keep filter labels readable throughout selection; avoid interpolating dark text over a dark surface. */
+#about.ai-philosophy .filters button{transition:none;min-height:44px}

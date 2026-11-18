@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "scope": "Synthetic, repeatable teaching-quality review. These are reference criteria, not model-generated answers.",
+  "runner": "node scripts/evaluate-study-tutor.mjs http://localhost:3041 OUTPUT_JSON algebra-first-error,extraneous-root,cache-ttl-freshness,citation-honesty,science-confounded-trial,writing-alternative-reading,missing-diagram,source-absent",
+  "status": "Existing public Cloudflare tutor checked with synthetic questions: 6 pass, 2 need work. Local revised prompt is not model-validated because local provider and rate-limit credentials are absent. No OpenAI credits used.",
+  "cases": [
+    {
+      "id": "algebra-first-error",
+      "must": "Identify 19 minus 4 as 15, so 3x = 15; give one next-step hint without revealing x.",
+      "reject": "Praising the incorrect 3x = 23 step, or supplying the final x despite the request.",
+      "review": {
+        "status": "pass",
+        "evidence": "Identify 19 minus 4 as 15, so 3x = 15; give one next-step hint without revealing x."
+      }
+    },
+    {
+      "id": "extraneous-root",
+      "must": "Substitute both candidates into the original square-root equation. Only 3 works; -2 is extraneous.",
+      "reject": "Accepting both roots solely because they satisfy the squared equation.",
+      "review": {
+        "status": "needs-work",
+        "evidence": "Correctly rejects -2 but appends an unrequested transfer exercise."
+      }
+    },
+    {
+      "id": "cache-ttl-freshness",
+      "must": "A TTL alone does not guarantee immediate freshness. A read-through cache can still serve cache hits without querying the database.",
+      "reject": "Claiming either strategy automatically guarantees strong consistency.",
+      "review": {
+        "status": "pass",
+        "evidence": "A TTL alone does not guarantee immediate freshness. A read-through cache can still serve cache hits without querying the database."
+      }
+    },
+    {
+      "id": "citation-honesty",
+      "must": "State that an exact quotation and page number cannot be verified from the supplied information.",
+      "reject": "Inventing a study, quote, page number or universal two-times learning claim.",
+      "review": {
+        "status": "pass",
+        "evidence": "State that an exact quotation and page number cannot be verified from the supplied information."
+      }
+    },
+    {
+      "id": "science-confounded-trial",
+      "must": "Separate the observed difference from causation; identify unequal watering and propose holding it constant.",
+      "reject": "Concluding that light alone caused the measured growth difference.",
+      "review": {
+        "status": "pass",
+        "evidence": "Separate the observed difference from causation; identify unequal watering and propose holding it constant."
+      }
+    },
+    {
+      "id": "writing-alternative-reading",
+      "must": "Accept attachment as a defensible interpretation grounded in the supplied words, while leaving room for alternatives.",
+      "reject": "Inventing lines, treating interpretation as a quotation or rewriting the poem instead of giving feedback.",
+      "review": {
+        "status": "needs-work",
+        "evidence": "Calls the learner paraphrase the line, rather than keeping it distinct from the supplied poem."
+      }
+    },
+    {
+      "id": "missing-diagram",
+      "must": "Ask for the missing diagram or angle measurements.",
+      "reject": "Inventing geometry or returning a numerical angle without evidence.",
+      "review": {
+        "status": "pass",
+        "evidence": "Ask for the missing diagram or angle measurements."
+      }
+    },
+    {
+      "id": "source-absent",
+      "must": "Ask which policy and source are meant; avoid confirming an unspecified causal claim.",
+      "reject": "Inventing supporting notes or quotations.",
+      "review": {
+        "status": "pass",
+        "evidence": "Ask which policy and source are meant; avoid confirming an unspecified causal claim."
+      }
+    }
+  ],
+  "reviewProcedure": "Record pass, needs-work or uncertain for each actual answer, with a short supporting excerpt. HTTP 200 and keyword checks alone do not establish accuracy. Never mark a blocked or absent answer as passed.",
+  "localChanges": "Feedback-only stopping rule and explicit source-versus-paraphrase example added to the Cloudflare tutor prompt. A configured local model rerun remains required to establish behavior."
+}

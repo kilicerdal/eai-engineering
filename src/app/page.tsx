@@ -1,5 +1,6 @@
 "use client";
 
+import HomeStartChoices from "@/components/HomeStartChoices";
 import HeritageRow from "@/components/HeritageRow";
 import ProblemEntry from "@/components/problem/ProblemEntry";
 import YourNextStep from "@/components/YourNextStep";
@@ -54,6 +55,7 @@ export default function Home() {
    <p className="atlas-caption">Göbekli Tepe, Türkiye · An imagined bridge to tomorrow</p>
   </section>
 
+  <HomeStartChoices/>
   <HeritageRow scene="ephesus-ai" caption="Ephesus · Ancient knowledge, future possibility"><ProblemEntry /></HeritageRow>
   <HeritageRow scene="mont-saint-michel-ai" caption="Mont-Saint-Michel · An imagined bridge to future intelligence" reverse><div className="heritage-return">
    <YourNextStep />

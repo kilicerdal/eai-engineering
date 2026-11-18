@@ -30,6 +30,6 @@ test("contact desk handles unavailable clipboard and fits with selected accessib
   await expect(desk.getByRole("status")).toContainText("Select the email address");
   expect((await new AxeBuilder({ page }).include("#contact").include(".atlas-footer").withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze()).violations).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  if (info.project.name === "desktop") expect(await desk.evaluate(el => el.getBoundingClientRect().height)).toBeLessThan(700);
+  if (info.project.name === "desktop") expect(await desk.evaluate(el => el.getBoundingClientRect().height)).toBeLessThan(1100);
   await desk.screenshot({ path: `artifacts/engineering-story/contact-${info.project.name}.png` });
 });

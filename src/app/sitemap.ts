@@ -1,0 +1,2 @@
+import type {MetadataRoute} from 'next';
+export default function sitemap():MetadataRoute.Sitemap{return ['','/start','/engineering','/engineering/projects','/engineering/tour','/engineering/lab','/engineering/practice','/explore','/study','/study/reading','/study/certifications','/study/journeys','/artworks','/updates','/guide'].map(path=>({url:'https://www.eai.engineering'+path,changeFrequency:'monthly',priority:path===''?1:0.6}));}

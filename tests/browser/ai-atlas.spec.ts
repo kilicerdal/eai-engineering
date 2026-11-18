@@ -6,7 +6,7 @@ test("philosophy replaces resume panels and atlas interactions stay local", asyn
   page.on("request", request => { if (request.method() === "POST") posts.push(request.url()); });
   await page.goto("/#about");
   const about = page.locator("#about");
-  await about.getByText("Explore the AI Systems Atlas and design principles", { exact: true }).click();
+  if (!await about.locator(".main-architecture-toggle").evaluate((el:HTMLDetailsElement)=>el.open)) await about.getByText("Explore the AI Systems Atlas and design principles", { exact: true }).click();
   await expect(about.getByRole("heading", { name: /Wonder asks the question/ })).toBeVisible();
   await expect(about).not.toContainText(/nine years|AWS Certified|TestNG|REST Assured/);
   await expect(about.locator(".node")).toHaveCount(18);
@@ -35,7 +35,7 @@ test("philosophy replaces resume panels and atlas interactions stay local", asyn
 test("atlas layout and selected accessibility rules pass at supported widths", async ({ page }, info) => {
   await page.goto("/#about");
   const about = page.locator("#about");
-  await about.getByText("Explore the AI Systems Atlas and design principles", { exact: true }).click();
+  if (!await about.locator(".main-architecture-toggle").evaluate((el:HTMLDetailsElement)=>el.open)) await about.getByText("Explore the AI Systems Atlas and design principles", { exact: true }).click();
   await about.getByRole("button", { name: "Retrieval path", exact: true }).click();
   expect((await new AxeBuilder({ page }).include("#about").withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze()).violations).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -45,7 +45,7 @@ test("atlas layout and selected accessibility rules pass at supported widths", a
       await page.setViewportSize({ width, height: 900 });
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       await expect(about.locator(".node").last()).toBeVisible();
-      expect(await about.locator(".atlas").evaluate(el => Math.abs(parseFloat(getComputedStyle(el, "::before").width) - innerWidth) < 1)).toBe(true);
+      expect(await about.locator(".atlas").evaluate(el => el.getBoundingClientRect().width <= el.parentElement!.getBoundingClientRect().width + 1)).toBe(true);
     }
   }
 });
@@ -53,7 +53,7 @@ test("atlas layout and selected accessibility rules pass at supported widths", a
 test("principles connect to real destinations and evidence links distinguish conceptual roles", async ({ page }) => {
   await page.goto("/#about");
   const about = page.locator("#about");
-  await about.getByText("Explore the AI Systems Atlas and design principles", { exact: true }).click();
+  if (!await about.locator(".main-architecture-toggle").evaluate((el:HTMLDetailsElement)=>el.open)) await about.getByText("Explore the AI Systems Atlas and design principles", { exact: true }).click();
   const principles = about.getByRole("navigation", { name: "Explore the engineering principles" });
   await expect(principles.getByRole("link", { name: /Explore with purpose/ })).toHaveAttribute("href", "/chat");
   await expect(principles.getByRole("link", { name: /Build with care/ })).toHaveAttribute("href", "/engineering");

@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function NotFound(){return <main className="refinement-page"><small>LET’S FIND YOUR WAY BACK</small><h1>This page isn’t here.</h1><p>The link may be old or incomplete. This screen hasn’t cleared your saved work.</p><p><Link href="/your-space">Return to your saved work →</Link></p><p><Link href="/start">Choose a starting point</Link> · <Link href="/guide">Get help</Link></p></main>;}
