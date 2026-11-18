@@ -24,9 +24,14 @@ test('homepage showcases three projects without horizontal overflow',async({page
 
 test('Atlas is interactive after hydration',async({page})=>{
  await page.goto('/#about');const about=page.locator('#about');
- await about.getByText('Explore the AI Systems Atlas and design principles',{exact:true}).click();
- await about.getByRole('button',{name:'Retrieval path',exact:true}).click();
+ const disclosure=about.locator('details.main-architecture-toggle');
+ if(!(await disclosure.evaluate((node:HTMLDetailsElement)=>node.open)))await disclosure.locator('summary').click();
+ await expect(about.getByRole('heading',{name:'Intelligence, connected.',exact:true})).toBeVisible();
+ const retrieval=about.getByRole('button',{name:'Retrieval path',exact:true});
+ await retrieval.click();
+ await expect(retrieval).toHaveAttribute('aria-pressed','true');
  await expect(about.locator('[data-node="retrieve"]')).not.toHaveClass(/dim/);
+ await expect(about.locator('[data-node="runtime"]')).toHaveClass(/dim/);
  await about.getByRole('button',{name:/Output validation schema/}).click();
  await expect(about.locator('#ai-atlas-detail')).toContainText('Check schema validity');
 });

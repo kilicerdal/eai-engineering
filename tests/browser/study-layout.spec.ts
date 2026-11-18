@@ -567,7 +567,10 @@ test('tutor keeps the reading position when another part of a long reply arrives
         start(controller) {
           const encoder = new TextEncoder();
           const append = (text:string) => controller.enqueue(encoder.encode('data: '+JSON.stringify({response:text})+'\n\n'));
-          append(Array.from({length:65},(_,i)=>'Paragraph '+i+' explains the method.').join('\n\n'));
+          window.addEventListener('test-start-explanation',()=>{
+            append(Array.from({length:65},(_,i)=>'Paragraph '+i+' explains the method.').join('\n\n'));
+          },{once:true});
+          window.addEventListener('test-append-explanation',event=>append((event as CustomEvent<string>).detail));
           window.addEventListener('test-finish-explanation',()=>{
             append('\n\nFinal observation.');
             controller.enqueue(encoder.encode('data: [DONE]\n\n'));
@@ -582,14 +585,39 @@ test('tutor keeps the reading position when another part of a long reply arrives
   const tutor = page.locator('#ai-assistant');
   await tutor.getByLabel('Your message').fill('Walk through a long example.');
   await tutor.getByRole('button',{name:'Send',exact:true}).click();
+  await expect(tutor.getByRole('button',{name:/Stop Generating/})).toBeVisible();
   const log = tutor.getByRole('log');
+  const bottomGap=()=>log.evaluate(el=>el.scrollHeight-el.scrollTop-el.clientHeight);
+  const readingPosition=()=>log.evaluate(el=>new Promise<number>(resolve=>{
+    // Observe after rendering and passive scroll effects, not before they run.
+    requestAnimationFrame(()=>requestAnimationFrame(()=>resolve(el.scrollTop)));
+  }));
+  const pauseReading=async()=>{
+    // A native scroll event must reach the app before the next stream chunk.
+    await log.evaluate(el=>new Promise<void>(resolve=>{
+      el.addEventListener('scroll',()=>requestAnimationFrame(()=>resolve()),{once:true});
+      el.scrollTo({top:0,behavior:'instant'});
+    }));
+    await expect.poll(readingPosition).toBeLessThan(40);
+  };
+  await page.evaluate(()=>window.dispatchEvent(new Event('test-start-explanation')));
+  await expect(log).toContainText('Paragraph 64 explains the method.');
+  await expect.poll(bottomGap).toBeLessThan(2);
   await expect.poll(()=>log.evaluate(el=>el.scrollTop)).toBeGreaterThan(100);
-  await log.focus();
-  await log.press('Control+Home');
-  await log.evaluate(el=>{el.scrollTop=0;el.dispatchEvent(new Event('scroll'));});
+  await pauseReading();
+  await page.evaluate(()=>window.dispatchEvent(new CustomEvent('test-append-explanation',{detail:'\n\nAn additional streamed observation.'})));
+  await expect(log).toContainText('An additional streamed observation.');
+  await expect.poll(readingPosition).toBeLessThan(40);
+  await tutor.getByRole('button',{name:'Latest reply ↓',exact:true}).click();
+  await expect.poll(bottomGap).toBeLessThan(2);
+  await page.evaluate(()=>window.dispatchEvent(new CustomEvent('test-append-explanation',{detail:'\n\nResumed streaming observation.'})));
+  await expect(log).toContainText('Resumed streaming observation.');
+  await expect.poll(bottomGap).toBeLessThan(2);
+  await pauseReading();
   await page.evaluate(()=>window.dispatchEvent(new Event('test-finish-explanation')));
+  await expect(log).toContainText('Final observation.');
   await expect(tutor.getByRole('button',{name:/Regenerate Response/})).toBeVisible();
-  expect(await log.evaluate(el=>el.scrollTop)).toBeLessThan(40);
+  await expect.poll(readingPosition).toBeLessThan(40);
 });
 
 test('study shortcuts close the expanded menu and retain keyboard focus', async ({page}) => {
