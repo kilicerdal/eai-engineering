@@ -1,6 +1,6 @@
 # eAI Engineering
 
-[![Quality](https://github.com/kilicerdal/eai-engineering/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/kilicerdal/eai-engineering/actions/workflows/quality.yml) [![Browser regression](https://github.com/kilicerdal/eai-engineering/actions/workflows/browser.yml/badge.svg?branch=main)](https://github.com/kilicerdal/eai-engineering/actions/workflows/browser.yml) [![Production monitor](https://github.com/kilicerdal/eai-engineering/actions/workflows/production-monitor.yml/badge.svg?branch=main)](https://github.com/kilicerdal/eai-engineering/actions/workflows/production-monitor.yml)
+[![Quality](https://github.com/kilicerdal/eai-engineering/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/kilicerdal/eai-engineering/actions/workflows/quality.yml) [![Browser regression](https://github.com/kilicerdal/eai-engineering/actions/workflows/browser.yml/badge.svg?branch=main)](https://github.com/kilicerdal/eai-engineering/actions/workflows/browser.yml)
 ![Node 24](https://img.shields.io/badge/Node-24-339933?logo=nodedotjs) [![MIT license](https://img.shields.io/github/license/kilicerdal/eai-engineering)](LICENSE)
 
 An independent engineering portfolio and AI learning platform by **Erdal Kilic, Senior SDET / QA Automation Engineer**. The project combines interactive learning tools, an engineering assistant, and case studies backed by executable automation projects.
