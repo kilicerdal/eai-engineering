@@ -40,7 +40,8 @@ test('resources pair correctly and planner steps remain usable without generatio
  await expect(resources.getByRole('link',{name:'Open your library'})).toHaveAttribute('href','/study/materials');
  await expect(resources.getByRole('link',{name:'Enter the Reading Room'})).toHaveAttribute('href','/study/reading');
  const cards=resources.locator('article');
- const a=await cards.nth(0).boundingBox(),b=await cards.nth(1).boundingBox();
+ await expect.poll(()=>cards.evaluateAll(es=>{const a=es[0].getBoundingClientRect(),b=es[1].getBoundingClientRect();return innerWidth<=760?b.y>=a.bottom:Math.abs(a.y-b.y)<1;})).toBe(true);
+ const [a,b]=await cards.evaluateAll(es=>es.slice(0,2).map(e=>e.getBoundingClientRect().toJSON()));
  if(info.project.name==='mobile')expect(b!.y).toBeGreaterThan(a!.y+a!.height);else expect(a!.y).toBeCloseTo(b!.y,0);
  const planner=page.locator('#learning-goal');
  await planner.locator('#learning-achievement').fill('Understand how database transactions prevent duplicate orders');
