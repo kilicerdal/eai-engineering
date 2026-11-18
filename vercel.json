@@ -7,7 +7,8 @@
       "codex/browser-monitoring": false,
       "codex/recruiter-tour": false,
       "codex/repository-trust": false,
-      "dependabot/**": false
+      "dependabot/**": false,
+      "codex/reviewer-journey": false
     }
   }
 }
