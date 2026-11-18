@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SettlementLab assurance report</title><style>body{background:#0a111c;color:#dbe6ef;font:14px/1.6 system-ui;margin:40px auto;padding:0 24px;max-width:1250px}h1{font-size:36px;color:#a3dfca}a,.passed{color:#a3dfca}.failed{color:#f0ad91}.skipped{color:#d9c788}table{border-collapse:collapse;width:100%}td,th{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #304050}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}summary{cursor:pointer}.scroll{overflow:auto}small{color:#9baebe}.facts{display:grid;grid-template-columns:minmax(90px,1fr) minmax(0,3fr);gap:8px}.facts dd{margin:0}.facts dt{color:#9baebe}li{scroll-margin-top:20px;margin-bottom:24px}nav{padding:20px;border:1px solid #304050}td:nth-child(2){overflow-wrap:anywhere} @media(max-width:600px){body{padding:0 12px}h1{font-size:28px}.facts{display:block}.facts dt{margin-top:12px}}</style><main id="report-top"><h1>SettlementLab / Assurance evidence</h1><p>PASSED · 1 cases · 0 failed · Target: owned-api</p><small>2026-11-18T15:04:27.938100+00:00 · Python 3.13.18</small><p><a href="results.json">JSON evidence</a> · <a href="junit.xml">JUnit evidence</a></p><p>Executed synthetic controls; not a model-accuracy or production-readiness claim. Expected rejection is distinct from an unexpected failure.</p><nav aria-label="Failure navigation"><h2>Failures first</h2><p>No unexpected failures recorded.</p></nav><div class="scroll"><table><thead><tr><th>Suite</th><th>Case</th><th>Status</th><th>Duration</th><th>Details</th></tr></thead><tbody><tr id="case-1"><td>scenarios</td><td>CUSTOM-01</td><td class="passed">passed</td><td>0.014s</td><td><details><summary>Evidence</summary><pre></pre><dl class="facts"><dt>target</dt><dd><pre>&quot;owned-api&quot;</pre></dd><dt>source</dt><dd><pre>&quot;reservation.json&quot;</pre></dd><dt>control</dt><dd><pre>&quot;reservation-once&quot;</pre></dd><dt>environment</dt><dd><pre>{
+  &quot;mode&quot;: &quot;external-http&quot;,
+  &quot;base_url&quot;: &quot;http://127.0.0.1:61373&quot;,
+  &quot;timeout&quot;: 10
+}</pre></dd></dl><ol><li id="case-1-step-1"><strong>Step 1 / http / passed</strong><dl class="facts"><dt>control</dt><dd><pre>&quot;reservation-once&quot;</pre></dd><dt>request</dt><dd><pre>{
+  &quot;method&quot;: &quot;POST&quot;,
+  &quot;path&quot;: &quot;/inventory&quot;,
+  &quot;status&quot;: 201,
+  &quot;duration&quot;: 0.0016900830087251961
+}</pre></dd></dl></li><li id="case-1-step-2"><strong>Step 2 / http / passed</strong><dl class="facts"><dt>control</dt><dd><pre>&quot;reservation-once&quot;</pre></dd><dt>request</dt><dd><pre>{
+  &quot;method&quot;: &quot;POST&quot;,
+  &quot;path&quot;: &quot;/reservations&quot;,
+  &quot;status&quot;: 201,
+  &quot;duration&quot;: 0.001097167027182877
+}</pre></dd></dl></li><li id="case-1-step-3"><strong>Step 3 / http / passed</strong><dl class="facts"><dt>control</dt><dd><pre>&quot;replay-original-id&quot;</pre></dd><dt>request</dt><dd><pre>{
+  &quot;method&quot;: &quot;POST&quot;,
+  &quot;path&quot;: &quot;/reservations&quot;,
+  &quot;status&quot;: 200,
+  &quot;duration&quot;: 0.00059179199161008
+}</pre></dd></dl></li><li id="case-1-step-4"><strong>Step 4 / http / passed</strong><dl class="facts"><dt>control</dt><dd><pre>&quot;debit-once&quot;</pre></dd><dt>request</dt><dd><pre>{
+  &quot;method&quot;: &quot;GET&quot;,
+  &quot;path&quot;: &quot;/inventory/PACK-DADD771219B6&quot;,
+  &quot;status&quot;: 200,
+  &quot;duration&quot;: 0.0005094159860163927
+}</pre></dd></dl></li></ol><a href="#report-top">Back to summary</a></details></td></tr></tbody></table></div></main></html>
