@@ -1,0 +1,2 @@
+import {certTracks,certQuestions} from './certification-content';import {extraQuestions} from './certification-extra-questions';import {newPaths,newPathQuestions} from './certification-new-paths';
+export function practiceCoverage(){const questions=[...certQuestions,...extraQuestions,...newPathQuestions];return [...certTracks,...newPaths].map(t=>({id:t.id,title:t.title,code:t.code,total:questions.filter(q=>q.track===t.id).length,domains:t.domains.map(d=>({id:d.id,title:d.title,count:questions.filter(q=>q.track===t.id&&q.domain===d.id).length}))}));}

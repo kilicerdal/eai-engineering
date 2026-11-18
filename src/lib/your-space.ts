@@ -5,7 +5,7 @@ export const destinations=[
  {title:'Learn something',href:'/study',detail:'Read a book, follow a discovery, or work with your tutor.'},
  {title:'Prepare for certification',href:'/study/certifications',detail:'Choose a path, practice a little, and understand your mistakes.'},
 ];
-export const rooms=[['Guided journeys','/study/journeys'],['AI Tutor','/study#ai-assistant'],['Reading Room','/study/reading'],['Curiosity Room','/study/curiosity'],['Certifications','/study/certifications'],['Explore','/explore'],['Investigation Lab','/engineering/lab']] as const;
+export const rooms=[['Guided journeys','/study/journeys'],['AI Tutor','/study#ai-assistant'],['Reading Room','/study/reading'],['Curiosity Room','/study/curiosity'],['Certifications','/study/certifications'],['Explore','/explore'],['Investigation Lab','/engineering/lab'],['Practice Lab','/engineering/practice']] as const;
 const tracks:Record<string,string>={'cloud-practitioner':'AWS Cloud Practitioner','ai-practitioner':'AWS AI Practitioner','istqb-foundation':'ISTQB Foundation','solutions-architect':'AWS Solutions Architect','developer-associate':'AWS Developer','test-automation':'ISTQB Test Automation','ai-testing':'ISTQB AI Testing','generative-ai-testing':'ISTQB Generative AI Testing','github-actions':'GitHub Actions','github-copilot':'GitHub Copilot'};
 const models:Record<string,string>={bridge:'Build a bridge',waves:'Make waves',circuit:'Light a circuit',fall:'Watch things fall','tiny-ai':'Train a tiny AI',route:'Find a path',orbit:'Follow an orbit',retries:'Send a message twice',lever:'Move a pivot'};
 const obj=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v);

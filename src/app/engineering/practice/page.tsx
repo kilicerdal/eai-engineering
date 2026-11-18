@@ -1,0 +1,1 @@
+import type {Metadata} from 'next';import PracticeHome from '@/components/practice-lab/PracticeHome';export const metadata:Metadata={title:'Engineering Practice Lab | eAI',description:'Small fictional engineering cases, bounded interactive models and a private learning notebook.'};export default function Page(){return <PracticeHome/>}

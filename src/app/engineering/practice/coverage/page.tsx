@@ -1,0 +1,1 @@
+import {practiceCoverage} from '@/lib/practice-lab-coverage';import CoverageView from '@/components/practice-lab/CoverageView';export default function Page(){return <CoverageView tracks={practiceCoverage()}/>}
