@@ -18,18 +18,18 @@ export function parseSaved(raw: string | null): string[] {
   return [...new Set(data.ids.filter((id): id is string => typeof id === 'string' && ids.has(id)))];
 }
 
-export function discoveries(view: View, saved: string[]) {
-  const trail=discoveryTrail(view.trailId);
-  const collection = trail ? trail.steps.flatMap(step=>facts.find(fact=>fact.id===step.id)||[]) : view.personalId ? (view.personalIds || []).flatMap(id=>facts.find(fact=>fact.id===id)||[]) : view.daily ? view.dailyIds ? view.dailyIds.flatMap(id => facts.find(fact => fact.id === id) || []) : dailyFacts(view.dailyDate || localDay()) : facts;
-  return collection.filter(fact => (!view.newOnly || !!view.newIds?.includes(fact.id)) && (!view.collection || fact.collection === view.collection) && (!view.savedOnly || saved.includes(fact.id)) && (view.category === categories[0] || fact.category === view.category) && matchesDiscovery(fact, view.query));
+export function discoveries(view: View, saved: string[], catalog:typeof facts=facts) {
+  const trail=discoveryTrail(view.trailId),currentById=new Map(catalog.map(f=>[f.id,f]));
+  const collection = trail ? trail.steps.flatMap(step=>catalog.find(fact=>fact.id===step.id)||[]) : view.personalId ? (view.personalIds || []).flatMap(id=>catalog.find(fact=>fact.id===id)||[]) : view.daily ? view.dailyIds ? view.dailyIds.flatMap(id => facts.find(fact => fact.id === id) || []) : dailyFacts(view.dailyDate || localDay()) : catalog;
+  return collection.map(f=>currentById.get(f.id)??f).filter(fact => (!view.newOnly || !!view.newIds?.includes(fact.id)) && (!view.collection || fact.collection === view.collection) && (!view.savedOnly || saved.includes(fact.id)) && (view.category === categories[0] || fact.category === view.category) && matchesDiscovery(fact, view.query));
 }
 
-export function normalizeView(view: View, saved: string[]): View {
-  const list = discoveries(view, saved);
+export function normalizeView(view: View, saved: string[], catalog:typeof facts=facts): View {
+  const list = discoveries(view, saved, catalog);
   return list.some(fact => fact.id === view.factId) ? view : { ...view, factId: list[0]?.id || '', revealed: false };
 }
 
-export function parseResume(raw: string | null, saved: string[]): View | null {
+export function parseResume(raw: string | null, saved: string[], catalog:typeof facts=facts): View | null {
   if (!raw) return null;
   const data: unknown = JSON.parse(raw);
   if (!data || typeof data !== 'object' || !('version' in data) || data.version !== 1 || !('view' in data) || !data.view || typeof data.view !== 'object') return null;
@@ -48,24 +48,24 @@ export function parseResume(raw: string | null, saved: string[]): View | null {
   if ('daily' in view && typeof view.daily !== 'boolean') return null;
   if ('dailyDate' in view && (typeof view.dailyDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(view.dailyDate))) return null;
   if ('dailyIds' in view && (!Array.isArray(view.dailyIds) || view.dailyIds.length !== 5 || new Set(view.dailyIds).size !== 5 || view.dailyIds.some(id => typeof id !== 'string' || !ids.has(id)) || new Set(view.dailyIds.map(id => facts.find(fact => fact.id === id)?.category)).size !== 5)) return null;
-  if ('daily' in view && view.daily === true && (!('dailyDate' in view) || view.dailyDate !== localDay())) return normalizeView({ ...initialView, daily: true, dailyDate: localDay(), dailyIds: dailyFacts(localDay()).map(fact => fact.id), factId: '' }, saved);
+  if ('daily' in view && view.daily === true && (!('dailyDate' in view) || view.dailyDate !== localDay())) return normalizeView({ ...initialView, daily: true, dailyDate: localDay(), dailyIds: dailyFacts(localDay()).map(fact => fact.id), factId: '' }, saved, catalog);
   // Pre-expansion daily sessions stored only their current card. Reconstruct that day's
   // original five from the unchanged V1.3 catalog, then retain their identities on save.
   if ('daily' in view && view.daily === true && !('dailyIds' in view)) {
     const legacy = dailyFacts(localDay(), facts.slice(0, 60));
-    if (legacy.some(fact => fact.id === view.factId)) return normalizeView({ ...(view as View), dailyIds: legacy.map(fact => fact.id) }, saved);
+    if (legacy.some(fact => fact.id === view.factId)) return normalizeView({ ...(view as View), dailyIds: legacy.map(fact => fact.id) }, saved, catalog);
   }
-  return normalizeView(view as View, saved);
+  return normalizeView(view as View, saved, catalog);
 }
 
-export function readMemory(arrivalIds?: string[], personalCollections?: PersonalCollection[]) {
+export function readMemory(arrivalIds?: string[], personalCollections?: PersonalCollection[], catalog:typeof facts=facts) {
   let saved: string[] = [], view = initialView, restored = false, warning = '';
   try { saved = parseSaved(localStorage.getItem(SAVED_KEY)); }
   catch { warning = 'Saving is unavailable or saved discoveries could not be read. You can still explore.'; }
   try {
-    let resume = parseResume(localStorage.getItem(RESUME_KEY), saved);
-    if (resume?.personalId && personalCollections) {const item=personalCollections.find(item=>item.id===resume?.personalId);resume=item?normalizeView({...resume,personalName:item.name,personalIds:item.ids},saved):normalizeView(initialView,saved);}
-    if (resume?.newOnly && arrivalIds) resume = normalizeView({...resume,newIds:arrivalIds},saved);
+    let resume = parseResume(localStorage.getItem(RESUME_KEY), saved, catalog);
+    if (resume?.personalId && personalCollections) {const item=personalCollections.find(item=>item.id===resume?.personalId);resume=item?normalizeView({...resume,personalName:item.name,personalIds:item.ids},saved,catalog):normalizeView(initialView,saved,catalog);}
+    if (resume?.newOnly && arrivalIds) resume = normalizeView({...resume,newIds:arrivalIds},saved,catalog);
     if (resume?.factId) { view = resume; restored = true; }
   } catch { warning = 'Your place could not be restored. You can still explore.'; }
   // An explicit fact link takes priority over browser resume, without changing favorites.

@@ -1,0 +1,2 @@
+'use client';import {useState,useSyncExternalStore} from 'react';import {browseStore50,PRACTICE_BROWSE50_KEY} from '@/lib/practice-browse50';
+export function useBrowse50(){const [store]=useState(()=>browseStore50(()=>localStorage.getItem(PRACTICE_BROWSE50_KEY),s=>localStorage.setItem(PRACTICE_BROWSE50_KEY,s)));const state=useSyncExternalStore(store.subscribe,store.get,()=>store.server);return {...state,patch:store.patch};}

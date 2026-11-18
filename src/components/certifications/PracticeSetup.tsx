@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import {InstructionGuide} from './SimpleLearning';
 import {PredictionPreference} from './JudgmentPractice';
 import {lowEnergyQuestions} from '@/lib/certification-judgment';
@@ -15,7 +16,7 @@ export default function PracticeSetup({id,ready,onStart,onSequence,study,childre
  const [domain,setDomain]=useState(getCert(id)!.domains[0].id),[style,setStyle]=useState<PracticeStyle>('test'),[count,setCount]=useState<PracticeCount>(10),[topicOpen,setTopicOpen]=useState(false),[advancedDomain,setAdvancedDomain]=useState('all');
  const [goal,setGoal]=useState<'new'|'revisit'|'mix'>('new'),[notice,setNotice]=useState('');
  function chosen(){const ids=goalQuestions(study,count,advancedDomain,goal,Date.now());if(!ids.length){setNotice(goal==='revisit'?'No latest retained mistakes in this focus. Try a new topic instead.':'No unseen questions remain in this focus. Choose a mix or another topic.');return;}setNotice('');onSequence(ids,style,goal);}
- return <section className="cert-practice-setup"><h2>One small step. A clearer idea.</h2><p>{questionCount(id)} original questions in this path. Choose how you want to learn today.</p>
+ return <section className="cert-practice-setup"><h2>One small step. A clearer idea.</h2><details><summary>What this practice covers</summary><p>Choose a topic and set size below. This original practice samples selected objectives; it is not the full official exam. Read each item’s selection instruction and source basis. Counts cannot predict a passing score.</p><p><Link href={'/guide/learning-quality/'+id}>Inspect this path’s question formats, objective mappings and sample balance →</Link></p></details><p>{questionCount(id)} original questions in this path. Choose how you want to learn today.</p>
   <div className="cert-practice-starts"><button className="cert-primary" aria-expanded={topicOpen} onClick={()=>setTopicOpen(x=>!x)}>Learn a topic</button><button className="cert-primary" disabled={!ready} onClick={()=>onStart(5,'learn','all')}>Quick practice — 5 questions</button><button className="cert-primary" disabled={!ready} onClick={()=>onStart(10,'test','all')}>Practice test — 10 questions</button></div>
   <p className="cert-small">Learn a topic begins with an explanation. Quick practice explains each answer. Practice test holds feedback until you finish. All are untimed and save as you go.</p>
   {topicOpen&&<section className="cert-topic-start" aria-label="Learn a topic"><label htmlFor="cert-learn-topic">Choose one topic</label><select id="cert-learn-topic" value={domain} onChange={e=>setDomain(e.target.value)}>{getCert(id)!.domains.map(d=><option value={d.id} key={d.id}>{d.title}</option>)}</select><TopicWorkshop key={domain} data={study} domain={domain} ready={ready} onStart={onSequence}/></section>}

@@ -1,0 +1,17 @@
+{
+  "commit": "6ad498a870266a752dcb57881e5f0f1c2ea95035",
+  "scope": "Measured before this batch is built; raw browser assets and existing artwork. Budgets permit bounded code growth but no new book archive or artwork copies.",
+  "javascript": {
+    "bytes": 7581391,
+    "count": 88
+  },
+  "css": {
+    "bytes": 510436,
+    "count": 21
+  },
+  "images": {
+    "bytes": 7877075,
+    "count": 37
+  },
+  "bookPackedBytes": 90791154
+}

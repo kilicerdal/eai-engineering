@@ -61,3 +61,6 @@ test('study navigation reaches the reading room',async({page},info)=>{
  await expect(page).toHaveURL(/\/study\/reading$/);
  await expect(page.getByRole('heading',{name:'A quiet place. A world of stories.'})).toBeVisible();
 });
+
+// Read-only interaction: no learner writing, model request, import or mutation.
+test('Practice Lab opens an authored case and its bounded tool',async({page})=>{await page.goto('/engineering/practice');await expect(page.getByRole('heading',{name:/A small case/})).toBeVisible();await page.getByRole('link',{name:'Start with one small case →',exact:true}).click();await page.getByRole('button',{name:'Try a tool',exact:true}).click();await expect(page.getByRole('combobox',{name:/Choose one small tool/})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);});

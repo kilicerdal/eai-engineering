@@ -19,12 +19,14 @@
     "check": "npm test && npm run lint && npm run typecheck && npm run build",
     "audit:certifications": "node scripts/audit-certification-sources.mjs",
     "audit:certification-quality": "node scripts/audit-certification-quality.mjs",
-    "postbuild": "node scripts/reading/audit-packed-build.mjs",
+    "postbuild": "node scripts/reading/audit-packed-build.mjs && node scripts/check-learning50-size.mjs",
     "audit:learning-inventory": "node scripts/audit-learning-inventory.mjs",
     "test:browser:ci": "playwright test --config=playwright.ci.config.ts",
     "test:monitor": "node --test tests/production-monitor.test.mjs",
     "monitor:http": "node scripts/monitor-production.mjs",
-    "monitor:browser": "playwright test --config=playwright.production.config.ts"
+    "monitor:browser": "playwright test --config=playwright.production.config.ts",
+    "audit:learning50": "node scripts/audit-reading50.mjs && node scripts/audit-learning-inventory.mjs",
+    "audit:learning50-sources": "node scripts/audit-learning50-sources.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

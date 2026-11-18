@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import NextConnection from '@/components/NextConnection';
 import CarryToTutor from '@/components/CarryToTutor';
-import { facts } from './facts';
+import { facts as originalFacts } from './facts';
 import { discoveryQuestion, insights, relatedDiscoveries } from './insights';
 import { INTERESTS_KEY, parseInterests, personalOrder, readInterests, topics, type Interest, type TopicPreferences } from './interests';
 import { dailyFacts, discoveryLink, guesses, localDay } from './journey';
@@ -23,6 +23,8 @@ import {ShareCardPanel} from './share-card-panel';
 import {COLLECTIONS_KEY,readCollections,parseCollections,createCollection,renameCollection,deleteCollection,putInCollection,type PersonalCollection} from './collections';
 import { readArrivals } from './arrivals';
 import { ConcernReport } from './concern-report';
+import {connectionReason50,currentDiscovery50} from '@/lib/discovery-polish50';
+import DiscoveryEvidence50 from '@/components/DiscoveryEvidence50';
 import DiscoveryHistory from '@/components/DiscoveryHistory';
 import { sourceDetails } from './provenance';
 
@@ -39,6 +41,7 @@ const subscribeToHydration = () => () => {};
 const clientReady = () => true;
 const serverReady = () => false;
 const scenes: Record<string,string> = { Learning:'02-study-v1.webp', 'Food & Drink':'03-library-v1.webp', 'Earth & Weather':'04-observatory-v1.webp', 'Computing & AI':'03-library-v1.webp', 'Ancient ingenuity':'01-academy-v1.webp', Space:'04-observatory-v1.webp', Nature:'04-observatory-v1.webp', 'Patterns & invention':'03-library-v1.webp' };
+const facts=originalFacts.map(f=>({...currentDiscovery50(f),question:discoveryQuestion(f)}));
 export default function CuriosityRoom() {
   const hydrated = useSyncExternalStore(subscribeToHydration, clientReady, serverReady);
   return hydrated ? <RememberedRoom /> : <main className="curiosity-feed" aria-busy="true"><p className="curiosity-loading">Opening the Curiosity Room…</p></main>;
@@ -58,7 +61,7 @@ function RememberedRoom() {
   const [collectionsOpen,setCollectionsOpen]=useState(false);
   const collectionsToggle=useRef<HTMLButtonElement>(null);
   const [removedCollection,setRemovedCollection]=useState<PersonalCollection|null>(null);
-  const [memory, setMemory] = useState(()=>readMemory(arrivals.ids,collections.items));
+  const [memory, setMemory] = useState(()=>readMemory(arrivals.ids,collections.items,facts));
   const [reading, setReading] = useState(readReading);
   const [interests, setInterests] = useState(readInterests);
   const [interestsOpen, setInterestsOpen] = useState(false);
@@ -112,9 +115,9 @@ function RememberedRoom() {
   const [guess, setGuess] = useState<{id:string;choice:number}|null>(null);
   const [copyFallback, setCopyFallback] = useState('');
   function remember(next: View, nextSaved = saved) {
-    let normalized = normalizeView(next, nextSaved);
+    let normalized = normalizeView(next, nextSaved,facts);
     if (!next.factId && !next.daily && !next.savedOnly && !next.personalId && !next.trailId) {
-      const first = personalOrder(discoveries(next,nextSaved),next.category === categories[0] && !next.query ? interests.topics : {},reading.seen,reading.preferences.unreadFirst)[0];
+      const first = personalOrder(discoveries(next,nextSaved,facts),next.category === categories[0] && !next.query ? interests.topics : {},reading.seen,reading.preferences.unreadFirst)[0];
       normalized = {...normalized,factId:first?.id || '',revealed:false};
       setSessionSeen(reading.seen);setAnchor('');
     }
@@ -137,7 +140,7 @@ function RememberedRoom() {
   function applyRestored(data:Snapshot,place:boolean){
     let next=place && data.resume?data.resume:view;
     if(next.personalId){const item=data.collections.find(item=>item.id===next.personalId);if(item)next={...next,personalName:item.name,personalIds:item.ids};}
-    next=normalizeView(next,data.saved);
+    next=normalizeView(next,data.saved,facts);
     setMemory({view:next,saved:data.saved,warning:'',restored:false});
     setCollections({items:data.collections,warning:''});collectionSessionOnly.current=false;
     setReading({seen:data.seen,preferences:data.reading,warning:''});
@@ -175,7 +178,7 @@ function RememberedRoom() {
     const nextSaved = removing ? latest.filter(id => id !== selected.id) : [...latest, selected.id];
     try { localStorage.setItem(SAVED_KEY, JSON.stringify({ version: 1, ids: nextSaved })); }
     catch { issue = 'This change is kept for this visit only. Browser saving is unavailable.'; }
-    const nextList = discoveries(view, nextSaved);
+    const nextList = discoveries(view,nextSaved,facts);
     const nextId = nextList.some(fact => fact.id === selected.id) ? selected.id : nextList[Math.min(currentIndex, nextList.length - 1)]?.id || '';
     setNotice(issue || (removing ? 'Removed from saved discoveries.' : 'Discovery saved in this browser.'));
     setMore(false);
@@ -195,7 +198,7 @@ function RememberedRoom() {
   const gesture = useRef({ amount:0, last:0, changed:0 });
   const activeTrail=discoveryTrail(view.trailId);
   const personalized = !view.trailId && !view.personalId && !view.daily && !savedOnly && category === categories[0] && !query.trim();
-  const visible = activeTrail ? discoveries(view,saved) : personalized ? personalOrder(discoveries(view,saved),interests.topics,sessionSeen,reading.preferences.unreadFirst,anchor) : readingOrder(discoveries(view, saved),sessionSeen,reading.preferences.unreadFirst && !view.personalId && !view.daily && !savedOnly,anchor);
+  const visible = activeTrail ? discoveries(view,saved,facts) : personalized ? personalOrder(discoveries(view,saved,facts),interests.topics,sessionSeen,reading.preferences.unreadFirst,anchor) : readingOrder(discoveries(view,saved,facts),sessionSeen,reading.preferences.unreadFirst && !view.personalId && !view.daily && !savedOnly,anchor);
   const currentIndex = Math.max(0, visible.findIndex(fact => fact.id === view.factId));
   const selected = visible[currentIndex];
   const quiz = selected ? guesses[selected.id] : null;
@@ -348,13 +351,13 @@ function RememberedRoom() {
         <h2 tabIndex={-1}>{discoveryQuestion(selected)}</h2>
         {!revealed ? <><p className={`curiosity-tease ${quiz ? 'curiosity-quiz-tease' : ''}`}>{quiz ? 'What’s your guess? No scores—just curiosity.' : 'Take a guess. Then discover the story.'}</p><div className={quiz ? "curiosity-guess-row" : "curiosity-reveal-row"}>{quiz && <div className="curiosity-guess-options" aria-label="Make a guess">{quiz.options.map((option,choice)=><button key={option} onClick={()=>{setGuess({id:selected.id,choice});remember({...view,revealed:true});}}>{option}</button>)}</div>}<button className={quiz ? 'curiosity-skip-guess' : 'curiosity-reveal'} onClick={()=>remember({ ...view, revealed: true })}>{quiz ? 'Reveal without guessing' : 'Reveal the fact'} <span aria-hidden="true">✧</span></button></div></> : <div className="curiosity-answer">{quiz && guess?.id === selected.id && <p className="curiosity-guess-feedback">{guess.choice === quiz.correct ? 'You spotted it.' : `A surprising answer: ${quiz.options[quiz.correct]}.`}</p>}<h3>{selected.title}</h3><p>{selected.text}</p><button className="curiosity-more" aria-expanded={more} aria-controls="curiosity-extra" onClick={()=>setMore(!more)}>{more?'Close exploration −':'Try a thought experiment +'}</button>{more && <div className="curiosity-extra" id="curiosity-extra" tabIndex={0}><p>{selected.explore}</p></div>}</div>}
         {saved.includes(selected.id)&&<WhyKept itemRef={"discovery:"+selected.id} title={selected.title}/>}<div className="curiosity-fact-actions"><button className="curiosity-save" aria-pressed={saved.includes(selected.id)} onClick={toggleSaved}>{saved.includes(selected.id) ? '♥ Saved' : '♡ Save discovery'}</button><Link className="curiosity-ask" href={`/study?curiosity=${selected.id}#ai-assistant`}>Ask dAI ↗</Link><button className="curiosity-share" onClick={shareDiscovery}>Copy link ↗</button><button className="curiosity-share" onClick={()=>{setTrailsOpen(false);setBackupOpen(false);setOptionsOpen(false);setInterestsOpen(false);setCollectionsOpen(true);}}>Add to collection</button><a className="curiosity-citation" href={selected.url} target="_blank" rel="noopener noreferrer">Source: {selected.source} ↗</a></div>
-        <div className="curiosity-depth curiosity-source-details"><DiscoveryHistory fact={selected}/><details><summary>Try the idea as a model · optional</summary><p>A discovery invites a question; a bounded model helps inspect one assumption. Neither proves the other.</p><Link href="/engineering/practice/cache">Inspect freshness and cache age →</Link><p><Link href="/engineering/practice/concurrency">Inspect overlapping actions →</Link></p><Link href="/explore">Choose another interactive experience →</Link></details><details><summary>Source details</summary><dl><div><dt>Publisher / institution</dt><dd>{provenance?.publisher}</dd></div><div><dt>Source</dt><dd><a href={selected.url} target="_blank" rel="noopener noreferrer">{selected.source} ↗</a><small>{provenance?.host}</small></dd></div><div><dt>Source reviewed</dt><dd>{provenance?.reviewedOn ? <time dateTime={provenance?.reviewedOn}>{provenance?.reviewedOn}</time> : 'Review date not recorded for this earlier discovery.'}</dd></div></dl><p className="curiosity-source-note">The review date records our source check, not the source’s publication date. Questions, connections, and thought experiments are editorial.</p></details></div>
+        <div className="curiosity-depth curiosity-source-details"><DiscoveryHistory fact={selected}/><DiscoveryEvidence50 fact={selected}/><details><summary>Try the idea as a model · optional</summary><p>A discovery invites a question; a bounded model helps inspect one assumption. Neither proves the other.</p><Link href="/engineering/practice/cache">Inspect freshness and cache age →</Link><p><Link href="/engineering/practice/concurrency">Inspect overlapping actions →</Link></p><Link href="/explore">Choose another interactive experience →</Link></details><details><summary>Source details</summary><dl><div><dt>Publisher / institution</dt><dd>{provenance?.publisher}</dd></div><div><dt>Source</dt><dd><a href={selected.url} target="_blank" rel="noopener noreferrer">{selected.source} ↗</a><small>{provenance?.host}</small></dd></div><div><dt>Source reviewed</dt><dd>{provenance?.reviewedOn ? <time dateTime={provenance?.reviewedOn}>{provenance?.reviewedOn}</time> : 'Review date not recorded for this earlier discovery.'}</dd></div></dl><p className="curiosity-source-note">The review date records our source check, not the source’s publication date. Questions, connections, and thought experiments are editorial.</p></details></div>
         <ShareCardPanel key={`share-${selected.id}`} fact={selected} background={`/images/study/${scenes[selected.category] || '04-observatory-v1.webp'}`}/><ConcernReport key={selected.id} fact={selected}/>
         {revealed && <div className="curiosity-topic-feedback" aria-label={`Tune your ${selected.category} discoveries`}><button aria-pressed={interests.topics[selected.category] === 'more'} onClick={()=>rateTopic(selected.category,'more',true)}>More like this <span aria-hidden="true">↑</span></button><button aria-pressed={interests.topics[selected.category] === 'less'} onClick={()=>rateTopic(selected.category,'less',true)}>Less of this <span aria-hidden="true">↓</span></button><span>{selected.category}</span></div>}
         {revealed&&<div className="curiosity-depth"><details className="curiosity-next-room"><summary>Take this idea a little further</summary><NextConnection/><CarryToTutor key={selected.id} title={selected.title} parts={[{id:"discovery",label:"This public discovery and its source",text:selected.text+" Source: "+selected.url}]}/></details></div>}
         {revealed && context && <div className="curiosity-depth">
           <details className="curiosity-why"><summary>Why does this matter?</summary><p>{context.why}</p></details>
-          <details className="curiosity-related"><summary>Related discoveries <span>2 to explore</span></summary><p className="curiosity-related-note">Follow a connection in Explore all. Your saved discoveries and preferences stay with you.</p><div className="curiosity-related-grid">{related.map(fact => <button key={fact.id} onClick={()=>followRelated(fact.id)}><span>{fact.category}</span><strong>{discoveryQuestion(fact)}</strong><span aria-hidden="true">Explore →</span></button>)}</div></details>
+          <details className="curiosity-related"><summary>Related discoveries <span>2 to explore</span></summary><p className="curiosity-related-note">Follow a connection in Explore all. Your saved discoveries and preferences stay with you.</p><div className="curiosity-related-grid">{related.map(fact => <button key={fact.id} onClick={()=>followRelated(fact.id)}><span>{fact.category}</span><strong>{discoveryQuestion(fact)}</strong><small>{connectionReason50(selected,fact)}</small><span aria-hidden="true">Explore →</span></button>)}</div></details>
         </div>}
         {copyFallback && <label className="curiosity-copy-fallback">Discovery link<input value={copyFallback} readOnly onFocus={event=>event.target.select()} /></label>}
         {activeTrail && currentIndex === visible.length-1 && revealed && <p className="curiosity-daily-finish">You’ve reached the end of {activeTrail.title}. Take a connection with you, or choose another trail.</p>}

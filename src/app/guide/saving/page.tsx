@@ -1,0 +1,2 @@
+import Link from 'next/link';import BackupCoverage50 from '@/components/BackupCoverage50';import '../../engineering/practice/practice.css';
+export const metadata={title:'Your room backups | eAI'};export default function Page(){return <main className="practice-page"><div className="practice-wrap"><Link href="/your-space">← Your space</Link><h1>Your work belongs to you.</h1><BackupCoverage50/></div></main>}

@@ -1,0 +1,611 @@
+{
+  "checkedAt": "2026-11-18T02:19:33.477Z",
+  "paths": 12,
+  "questions": 1090,
+  "documents": [
+    {
+      "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+      "finalURL": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+      "status": 200,
+      "hash": "9b0057b44f026d533aa6158340f5791a5a59c3932c85b47d8bc2c5fcdb220ca1",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 2
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html",
+      "finalURL": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html",
+      "status": 200,
+      "hash": "70347b6672fe3dd3fa1aae4d2f8e2aa983db8c72664118acfc310f592b8132e0",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html",
+      "finalURL": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html",
+      "status": 200,
+      "hash": "aeecb3d543c60ab3e2eecb6e315072cd7b50e827e852dfc1738cfe5abd8d763e",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html",
+      "finalURL": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html",
+      "status": 200,
+      "hash": "391f57b2cde2c204076677a9c87e31ce9425f522225190bc6992e85b70729379",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+      "finalURL": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+      "status": 200,
+      "hash": "9cbab1239a03144e94a4daa162c5fc1673e973251059410604320f0f9dcadd89",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+      "finalURL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+      "status": 200,
+      "hash": "18690ff8fc786b0c7dce0b78905172aa7cf51096ea48a6c631084fd39395a61b",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 2
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "status": 200,
+      "hash": "0d5de2096fec0dd56f5f8e378c75db24e65a922ba6909dc43fc0cd16ef37f320",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 21
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "status": 200,
+      "hash": "3868285bc3f5697ff97838eb6a4e44eee20e0a5feeb6cb965ea35f33a11fb715",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 18
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "status": 200,
+      "hash": "e411be9feb50d1ab08146a54557a2f20f567d25c27bd8cca7ee6b7cd6951a98c",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 19
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "status": 200,
+      "hash": "02b5afa9a0e3113fed8f2830879b89409ccc7a17bc166598d7d1740ca048d0be",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 20
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html",
+      "status": 200,
+      "hash": "e95fddd61edbf3ccb7a4402d2f16186bbeb905cb3fe885d34497131c7415fc38",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 20
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "status": 200,
+      "hash": "3acb407583a88c8aa0fe0d28ad50db7dbb4812ea9c07f687f044b5c81232b207",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 0
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "status": 200,
+      "hash": "7508c74feabe62360d1b510b3bd6e239cd62fa993981bacdfed195e5f8c18b68",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 21
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "status": 200,
+      "hash": "7b4cfc34717f63e0d5a78d11ccdde44ba787fbe4d00056bdbe60a4720247c132",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 24
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "status": 200,
+      "hash": "196775d425b07ead8bf16e5768d0486f212864791ed3d47359e0a9309746989b",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 29
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "status": 200,
+      "hash": "51561a84ee63228b35606488f49674de0e0760e0039649e4dadf47cab384a654",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 24
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "status": 200,
+      "hash": "5823e1beecc12074706ffa200dc4c5584bedee6dc0225816a3fc24e6a4f7e808",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 0
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain1.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain1.html",
+      "status": 200,
+      "hash": "a2b386dacaf91c65a3ee326daa8686080fdbfced2a471cb8786abc378d5b2161",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 9
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain2.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain2.html",
+      "status": 200,
+      "hash": "d1457f4b93321faf0bf0713a043bbb730b72d8e9952cd71241a97e9862d20b4e",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 9
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain3.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain3.html",
+      "status": 200,
+      "hash": "aab8db403eeb0436ad6e1b71f1d77d8ffd36dc175fc4bc0713c2708f9862a105",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 9
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain4.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03-domain4.html",
+      "status": 200,
+      "hash": "8f05b3144aa1a63477330bc358b498bc077cf547c39e2a349f78ecf920a1c7a7",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 8
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+      "status": 200,
+      "hash": "4b83db25c510b9502a03d5e1861d7ffdd7ca037c9b7ed1e2d72f7a67dcd3ffe3",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 61
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.html",
+      "status": 200,
+      "hash": "e4c66792905bb4be48c5f779fdb4425738c76a4d81749be4f3f4072d8bb6b456",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 9
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html",
+      "status": 200,
+      "hash": "ed2c7962b2774f051e35114cfb9c5cfef5f67a7b945811e3d084f5a121fc84fd",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 9
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.html",
+      "status": 200,
+      "hash": "dec652bef639602512e857f2eac335d19c1320ca2281fa2de25a18b393e1791c",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 8
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html",
+      "status": 200,
+      "hash": "c60d3b60f495238ffbd746b64a9ec2a4671976101253304fed907bf35208bb5c",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 8
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "status": 200,
+      "hash": "bdde182108fc66995c8ae5b948c10a82cad1441562e2ace92f925c5ffdd5f7b6",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 63
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02.html",
+      "finalURL": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02.html",
+      "status": 200,
+      "hash": "7fa70b670405548c03d54ece6479f57c442541471dc6d0baef2391db10560a45",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 0
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html",
+      "finalURL": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html",
+      "status": 200,
+      "hash": "09080cd90bd6308aef789b8b6b6e7c73a45165794cb1d8cb48f7c1e63649957b",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-trail-organization.html",
+      "finalURL": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-trail-organization.html",
+      "status": 200,
+      "hash": "b94034751995046c51a858d89d8b986378d38f9f09831351738fab6cac4b8178",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html",
+      "finalURL": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html",
+      "status": 200,
+      "hash": "a3dcc9578f20baa6e9718b9bea5902a746597aa35fffb07711461eac4d95791a",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 7
+    },
+    {
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+      "finalURL": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+      "status": 200,
+      "hash": "c3d2641b78532223920d2c50b8ed7987f1d4acf941bf2a3baa64a62d3abe2c12",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 2
+    },
+    {
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html",
+      "finalURL": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html",
+      "status": 200,
+      "hash": "7e17276627e6d7a9d0eb4899946281e6ca2a2113664faa064f056a12100106e0",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html",
+      "finalURL": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html",
+      "status": 200,
+      "hash": "416fefdbffb098e97014071943ca67dfdf25ac8af4628662cd37eb60d357a003",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 3
+    },
+    {
+      "url": "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html",
+      "finalURL": "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html",
+      "status": 200,
+      "hash": "303fe7f735f8275a547f386f8309e3595f22001cecec3a9e8caae16e188e810b",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html",
+      "finalURL": "https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html",
+      "status": 200,
+      "hash": "98edb62e3793b1afc41d569e65ed508fd69349f7afbf681cd7b9386114014b87",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+      "finalURL": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+      "status": 200,
+      "hash": "d1e7fb4db3923865b9581499172c8c4a1a2c244dc2882b5f336633d149ab3bed",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 2
+    },
+    {
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html",
+      "finalURL": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html",
+      "status": 200,
+      "hash": "2ca669a37131cda4e340622b0882f1dbb0e17a8e3dff954c683a90249ae55615",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html",
+      "finalURL": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html",
+      "status": 200,
+      "hash": "b967623fc55a0414f184e750811feac81bb9a22e2c0a3c52ac3ad6cfb9146a93",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 2
+    },
+    {
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+      "finalURL": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+      "status": 200,
+      "hash": "06f40e617dcf8b1caf10208db2068d87f669246c76312dfebd3e32c2be954dd5",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 6
+    },
+    {
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+      "finalURL": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+      "status": 200,
+      "hash": "643ca97d9e446679a1440c62a52454eafd2bcdf128861a16d154d6abe8aafefb",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 3
+    },
+    {
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html",
+      "finalURL": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html",
+      "status": 200,
+      "hash": "6e32af67a11153e1b3f553b9edcd9681473656b8f77ca932ade4e1e509afcdd5",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html",
+      "finalURL": "https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html",
+      "status": 200,
+      "hash": "9032afbf6a7582259387c0876d161adaa07619ea49568ea63d388ea79dde96a4",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html",
+      "finalURL": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html",
+      "status": 200,
+      "hash": "e08e205f8f49dcbaeba7123f1dbe5c43303b723e095a6d26c88b309254272456",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html",
+      "finalURL": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html",
+      "status": 200,
+      "hash": "61f5edf84c53f3291816a29e3010dc768d8cadb1a6eafce6f9cce55a23373ebc",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 2
+    },
+    {
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/strangler-fig.html",
+      "finalURL": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/strangler-fig.html",
+      "status": 200,
+      "hash": "5808b33b630986c7d3ac49f8980b0227c77f6529751d3c2ff29a2056d233ec5d",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html",
+      "finalURL": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html",
+      "status": 200,
+      "hash": "d3e90cac16aa51e407dbec18aed30388aa086d5b376b7d24f360faac7b94495d",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html",
+      "finalURL": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html",
+      "status": 200,
+      "hash": "38ee952676cada4329df398e091ebe19decd6211cf1ee45c2c167a1000c0211e",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html",
+      "finalURL": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html",
+      "status": 200,
+      "hash": "23c444205228284fe890efd3373ba5481049ed860a79f689e5191712f30ec4d0",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html",
+      "finalURL": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html",
+      "status": 200,
+      "hash": "b7b696b661836d099842eb44aa152da2987f1e6853a1dfdd274691d2423feecb",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
+      "finalURL": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
+      "status": 200,
+      "hash": "b62555262ed1f73ac1bc37ac0f52a453d01d6c7144c4b2e14d02efdaebcc315c",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/plan-for-disaster-recovery-dr.html",
+      "finalURL": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/plan-for-disaster-recovery-dr.html",
+      "status": 200,
+      "hash": "0da91b5b79acdb5c6f93d0314a3e0d02c2cdf7a1a76682ed9022fde344ed3da2",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 7
+    },
+    {
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html",
+      "finalURL": "https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html",
+      "status": 200,
+      "hash": "521172b84133969b9fe2df865e06d0d990a5f3a54456715db6f125195a633377",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 1
+    },
+    {
+      "url": "https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows",
+      "finalURL": "https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows",
+      "status": 200,
+      "hash": "fafb4f03523e74d2ba650287641f43c3d19481c0648aad20fb55a9aee50ed494",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 3
+    },
+    {
+      "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+      "finalURL": "https://docs.github.com/en/actions/reference/security/secure-use",
+      "status": 200,
+      "hash": "051e0bf55203d903f561b01dc72c0e06b52cea27e716a004f5620f78900db4d6",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 7
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
+      "finalURL": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
+      "status": 200,
+      "hash": "9c07ef880c02ceb137f9f16a402d070357a4a15c06be6cdd2d98e639afb3bbb7",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 4
+    },
+    {
+      "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+      "status": 200,
+      "hash": "3b072f81db5c7671aadacc42553e726faa93913a969cc7a89e9dc28c2318d1f1",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": true,
+      "questions": 104
+    },
+    {
+      "url": "https://istqb.org/?download_id=3435&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTAL-TAE_Syllabus_v2.0.pdf",
+      "status": 200,
+      "hash": "b6cce409fafd779fd5a854da2f3521a8273724214c5a4f92af89483f8c5d0809",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": true,
+      "questions": 38
+    },
+    {
+      "url": "https://istqb.org/?download_id=6295&sdm_process_download=1",
+      "finalURL": "https://istqb.org/?download_id=6295&sdm_process_download=1",
+      "status": 200,
+      "hash": "b507d433eee2bcb9914321785e22cbf201ab215df003dbeb7f75ec93e9945b86",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 33
+    },
+    {
+      "url": "https://istqb.org/?download_id=9324&sdm_process_download=1",
+      "finalURL": "https://istqb.org/?download_id=9324&sdm_process_download=1",
+      "status": 200,
+      "hash": "048dffe3fb25242592acfc7e82dcb1338c9bd57057fdaac138b1c88cdbbf5b6b",
+      "review": "No prior baseline; source-section review required",
+      "redirected": false,
+      "questions": 25
+    },
+    {
+      "url": "https://istqb.org/?download_id=9558&sdm_process_download=1",
+      "finalURL": "https://istqb.org/wp-content/uploads/2026/05/ISTQB-_CTAI_Syllabus_v2.0_Release.pdf",
+      "status": 200,
+      "hash": "02160246f3d243aee76af79d7c1c0394c35d10ccc44484f24960e0229302fa83",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": true,
+      "questions": 38
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "finalURL": "https://istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "status": 200,
+      "hash": "72caf012ffe66d34470be2fa6de3948616b5a6f760b1356adda37ccd7160a772",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 68
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "finalURL": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "status": 200,
+      "hash": "9f260a4b0ee4bf76419347a4e9e7d7aa94f2d9323b4cf33b1c55a3a268391c4b",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 66
+    },
+    {
+      "url": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "finalURL": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "status": 200,
+      "hash": "53aff3b5cabeb9e351cd578c545279cc37db9c11b2053e3d535e3386e74dfb1e",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 0
+    },
+    {
+      "url": "https://istqb.org/certifications/gen-ai/",
+      "finalURL": "https://istqb.org/certifications/gen-ai/",
+      "status": 200,
+      "hash": "88ec64f74c56022fdccf9169a68d3c39d84c7929ae0902c107875bfb2d5b6e8e",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 71
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-200",
+      "finalURL": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-200",
+      "status": 200,
+      "hash": "b3c1e03fa7367a1636e3d5e6d08880ff65af7f34deea1398be4de6889e78cabb",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 90
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "finalURL": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "status": 200,
+      "hash": "3a058856e1cf7832bf2d091b3766ae0bcc87d55b4b01473714b07ddbe9db9499",
+      "review": "Fingerprint matches prior baseline",
+      "redirected": false,
+      "questions": 96
+    }
+  ],
+  "scope": "Public source availability and bounded PDF-byte/HTML-heading fingerprints. Never changes an answer, review date, official version or learner record. A working link or matching headings do not verify every claim."
+}
