@@ -2,7 +2,7 @@
 
 ## Before merging
 
-The **Browser regression** workflow runs on pull requests targeting main, pushes to main, and manual dispatch. `npm run test:browser:ci` builds once, starts its own production-mode server on loopback port 3040, and runs the existing engineering and study suites together: 214 desktop/mobile journeys. It does not reuse an unrelated server. Retries are disabled; failure evidence is retained rather than retried away.
+The **Browser regression** workflow runs on pull requests targeting main, pushes to main, and manual dispatch. `npm run test:browser:ci` builds once, starts its own production-mode server on loopback port 3040, and runs the existing engineering and study suites together: 218 desktop/mobile journeys. It does not reuse an unrelated server. Retries are disabled; failure evidence is retained rather than retried away.
 
 GitHub installs the lockfile dependencies and Chromium with Linux system dependencies. No AI, mail, account, or production database credentials are supplied. Provider-dependent tests use synthetic fixtures and request mocks. The browser check appears alongside the existing Node/build quality workflow; this change does not configure a branch-protection requirement or prevent Vercel deploying main before Actions finishes.
 
@@ -20,9 +20,9 @@ Open the **browser-regression** run artifact for the HTML/JSON report, screensho
 
 The **Production monitor** workflow runs at minutes 17 and 47 of every hour (UTC), on a successful Vercel commit status associated with main, and through **Run workflow** in Actions. The observed Vercel integration uses commit statuses rather than GitHub Deployment objects. Preview statuses and unrelated checks are excluded. The monitor always checks the fixed canonical domain, `https://www.eai.engineering`, and checks out main without persisting credentials.
 
-`npm run monitor:http` checks 15 public pages for successful HTML responses with application main content, discovers up to 40 homepage JavaScript/CSS assets and checks their HTTP availability, verifies the apex-domain redirect, and requires an unknown route to return 404. Requests time out after 15 seconds, with a shared three-minute HTTP deadline so an outage still leaves time to write evidence and run browser checks. A failed check returns a nonzero process exit code and writes both JSON and a readable summary.
+`npm run monitor:http` checks 16 public pages for successful HTML responses with application main content, discovers up to 40 homepage JavaScript/CSS assets and checks their HTTP availability, verifies the apex-domain redirect, and requires an unknown route to return 404. Requests time out after 15 seconds, with a shared three-minute HTTP deadline so an outage still leaves time to write evidence and run browser checks. A failed check returns a nonzero process exit code and writes both JSON and a readable summary.
 
-`npm run monitor:browser` checks six critical journeys at desktop/mobile sizes (12 checks): flagship projects and viewport fit, Atlas hydration/interaction, recorded retry evidence, hyphenated book search, synthetic unsent tutor draft persistence, and study navigation. It never presses Send. All API requests are intercepted; any attempted non-read request fails the smoke test. Browser state is isolated and discarded. These checks do not verify authenticated accounts, email delivery, live model quality, or production database writes.
+`npm run monitor:browser` checks seven critical journeys at desktop/mobile sizes (14 checks): flagship projects and viewport fit, Atlas hydration/interaction, recorded retry evidence, hyphenated book search, synthetic unsent tutor draft persistence, study navigation, and the shareable recruiter tour. It never presses Send. All API requests are intercepted; any attempted non-read request fails the smoke test. Browser state is isolated and discarded. These checks do not verify authenticated accounts, email delivery, live model quality, or production database writes.
 
 ```sh
 npm run test:monitor  # deterministic failure controls; no network

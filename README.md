@@ -85,7 +85,9 @@ Next.js App Router, React, TypeScript, Tailwind CSS, Cloudflare Workers AI, Supa
 
 ## Project status and ownership
 
-Active development. I design and maintain the interface, server-side integrations, learning workflows, case-study presentations and regression checks. Employer source code and confidential data are not included.
+I set the direction and priorities for this personal portfolio. I use AI assistance for implementation, test development and documentation. The interface, integrations, learning workflows and regression checks are available for inspection; dated evidence records state what was actually exercised. Employer source code and confidential data are not included.
+
+[Five-minute project tour](https://www.eai.engineering/engineering/tour): three flagship projects, the decisions to inspect, public evidence and ownership scope. [Tour design and evidence boundaries](docs/RECRUITER_TOUR.md).
 
 The source is [MIT licensed](LICENSE), copyright 2026 Erdal Kilic. External services, dependencies and model providers retain their own terms. [Contribution guide](CONTRIBUTING.md) · [Security policy](SECURITY.md).
 
