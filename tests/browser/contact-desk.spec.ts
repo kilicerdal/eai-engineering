@@ -30,6 +30,18 @@ test("contact desk handles unavailable clipboard and fits with selected accessib
   await expect(desk.getByRole("status")).toContainText("Select the email address");
   expect((await new AxeBuilder({ page }).include("#contact").include(".atlas-footer").withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze()).violations).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  if (info.project.name === "desktop") expect(await desk.evaluate(el => el.getBoundingClientRect().height)).toBeLessThan(700);
+  // The split artwork layout stacks the contact content. Check containment,
+  // rather than imposing the retired two-column layout's fixed height.
+  const bounds = await desk.boundingBox();
+  expect(bounds).not.toBeNull();
+  for (const control of await desk.locator("a, button, [role=status]").all()) {
+    await expect(control).toBeVisible();
+    const box = await control.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box!.x).toBeGreaterThanOrEqual(bounds!.x - 1);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(bounds!.x + bounds!.width + 1);
+    expect(box!.y).toBeGreaterThanOrEqual(bounds!.y - 1);
+    expect(box!.y + box!.height).toBeLessThanOrEqual(bounds!.y + bounds!.height + 1);
+  }
   await desk.screenshot({ path: `artifacts/engineering-story/contact-${info.project.name}.png` });
 });
