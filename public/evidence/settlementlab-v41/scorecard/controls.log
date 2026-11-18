@@ -1,0 +1,260 @@
+......................127.0.0.1 - - [18/Nov/2026 10:04:02] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:02] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:02] "POST /reservations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:02] "GET /inventory/PACK-C6CDD37B1CAD HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:02] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:02] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:02] "POST /reservations HTTP/1.1" 201 -
+....SHOWCASE FAILED: [Errno 2] No such file or directory: '/var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmpudye7sgz/manifest.json'
+...................................................................................127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /api/snapshot HTTP/1.1" 409 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /api/trades/SL-000001/readiness HTTP/1.1" 409 -
+.127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /api/trades/SL-000001/readiness HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /api/trades/UNKNOWN/readiness HTTP/1.1" 404 -
+.127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /operations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /operations.js HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /operations.css HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/operations/worker/kill HTTP/1.1" 404 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /api/operations HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/operations/batches HTTP/1.1" 422 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/operations/batches HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/operations/batches HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/operations/batches HTTP/1.1" 202 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/operations/batches HTTP/1.1" 202 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "GET /api/operations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:11] "POST /api/operations/batches HTTP/1.1" 409 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/operations/batches HTTP/1.1" 202 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/operations/jobs/J-8021a6203bc44b7096fb7b6de4277645/requeue HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/operations/jobs/J-8021a6203bc44b7096fb7b6de4277645/requeue HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/operations/events/E-d8aef1ef78de49bb9bebe4d808c9f024/redeliver HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/operations/events/E-d8aef1ef78de49bb9bebe4d808c9f024/retry HTTP/1.1" 409 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /reservations HTTP/1.1" 201 -
+...127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /reservations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /inventory/PACK-D66BA46AEEE1 HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /error HTTP/1.1" 503 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /invalid HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /large HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 61165)
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.18/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.18/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.18/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.18/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.18/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/Users/erdalkilic/.codex/worktrees/settlementlab-framework-upgrade/python automation/tests/api/test_generic_transport.py", line 17, in do_GET
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.18/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /redirect HTTP/1.1" 302 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /style.css HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/analyze HTTP/1.1" 409 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/analyze HTTP/1.1" 503 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /api/snapshot HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades HTTP/1.1" 422 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /missing HTTP/1.1" 404 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/allocate HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/affirm HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/fund HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/settle HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/reconcile HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/request-affirmation HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/approve HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/approve HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/treasury/fund HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/treasury/fund HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/settle HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /api/treasury HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/treasury/fund HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /api/session HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "GET /api/matching-policy HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/session HTTP/1.1" 422 -
+127.0.0.1 - - [18/Nov/2026 10:04:12] "POST /api/treasury/fund HTTP/1.1" 403 -
+..127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/RECOVERY HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 409 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/RECOVERY HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/RECOVERY HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /truncated HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-D82307C5E877 HTTP/1.1" 200 -
+..127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 409 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-93196991F824 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations/R-37F44C08018F41A9/release HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations/R-37F44C08018F41A9/release HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-93196991F824 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 409 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-F1E483B86E7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations/R-45A199B8B5B14060/release HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations/R-45A199B8B5B14060/release HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-F1E483B86E7D HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+.127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-5FD923F5EF2F HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-EBD3F870B83D HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 409 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-D188DAAB7EC2 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations/R-3EDF1FF4D9EB4DD0/release HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations/R-3EDF1FF4D9EB4DD0/release HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-D188DAAB7EC2 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /inventory HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /reservations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /inventory/ASSET-077318F4B515 HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+.127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /api/session HTTP/1.1" 200 -
+..127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /api/health HTTP/1.1" 400 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /operations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /operations.js HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /operations.css HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /api/operations HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /../../pyproject.toml HTTP/1.1" 404 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [18/Nov/2026 10:04:13] "GET /api/operations/kill HTTP/1.1" 404 -
+.127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/batches HTTP/1.1" 400 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/batches HTTP/1.1" 400 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/batches HTTP/1.1" 422 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/batches HTTP/1.1" 413 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/batches HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/batches HTTP/1.1" 400 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/batches HTTP/1.1" 400 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/batches HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/jobs/unknown/requeue HTTP/1.1" 422 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/events/unknown/retry HTTP/1.1" 422 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/operations/events/unknown/redeliver HTTP/1.1" 422 -
+.
+----------------------------------------------------------------------
+Ran 141 tests in 11.719s
+
+OK
+127.0.0.1 - - [18/Nov/2026 10:04:14] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/request-affirmation HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/approve HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/approve HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/settle HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/treasury/fund HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/treasury/fund HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/settle HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/request-affirmation HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/approve HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/approve HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/settle HTTP/1.1" 409 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/manager HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/request-affirmation HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/approve HTTP/1.1" 403 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/approve HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "POST /api/trades/SL-000001/settle HTTP/1.1" 409 -
+127.0.0.1 - - [18/Nov/2026 10:04:14] "GET /api/snapshot HTTP/1.1" 200 -
+PASSED: adversarial rubric review
+PASSED: offline rubric review; zero model calls
+EVALUATION FAILED: Each response needs explicit reviewed labels for every criterion
+FAILED: invalid configuration; see generated report
+{"path": "/var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmp4kz3vnw9/second.db", "schema_version": 5, "sha256": "ab9368079732de220f3a9178590026a11705bfdd22d681520916625d3bffe99c", "integrity": "ok"}
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmpo679xgel/reports
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmp0ktf448k/reports
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmpmktl_gab/reports
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmpor81dxou/reports
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmp96pjlxze/reports
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmpyn9_2129/reports
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmp433nxoi1/reports
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmpaid556ul/reports
+FAILED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmp0gvevks7/reports
+PASSED: 1 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmp1geeq429/reports
+FAILED: 2 cases; reports in /var/folders/5v/qrnkx0td7h378qbh_k7jmgxc0000gn/T/tmpwdecllxp
+PASSED: 145 cases; reports in /Users/erdalkilic/.codex/worktrees/settlementlab-framework-upgrade/python automation/artifacts/reviewer-ready/controls

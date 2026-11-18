@@ -1,0 +1,56 @@
+Name                                                        Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------------------------------------------
+src/settlementlab/__init__.py                                   1      0      0      0   100%
+src/settlementlab/adapters/__init__.py                          0      0      0      0   100%
+src/settlementlab/adapters/ai.py                               48     11     14      0    79%   37-51
+src/settlementlab/adapters/http.py                            157      9     70      2    95%   38-39, 83-85, 204->208, 229, 248-250
+src/settlementlab/ai.py                                         5      0      0      0   100%
+src/settlementlab/application/__init__.py                       0      0      0      0   100%
+src/settlementlab/application/operations.py                   145      4     34      3    96%   29, 118, 179, 219
+src/settlementlab/application/ports.py                         58      0    110     55    67%   7->exit, 8->exit, 9->exit, 10->exit, 11->exit, 12->exit, 13->exit, 14->exit, 15->exit, 16->exit, 17->exit, 18->exit, 19->exit, 20->exit, 21->exit, 22->exit, 23->exit, 24->exit, 25->exit, 26->exit, 27->exit, 28->exit, 29->exit, 30->exit, 31->exit, 32->exit, 33->exit, 34->exit, 35->exit, 36->exit, 37->exit, 38->exit, 39->exit, 40->exit, 41->exit, 43->exit, 45->exit, 46->exit, 47->exit, 48->exit, 49->exit, 50->exit, 51->exit, 52->exit, 53->exit, 54->exit, 55->exit, 56->exit, 57->exit, 58->exit, 59->exit, 60->exit, 61->exit, 62->exit, 66->exit
+src/settlementlab/application/service.py                      309     24    154     24    90%   51, 56, 59, 65, 69, 74, 84, 112, 164, 176, 180, 209, 222, 263, 290, 294, 303, 343, 356, 429, 432, 437, 452, 476
+src/settlementlab/assurance/__init__.py                         0      0      0      0   100%
+src/settlementlab/assurance/ai_review.py                       57      2     12      2    94%   125, 131
+src/settlementlab/assurance/campaign.py                       154     15     38     11    86%   87-88, 105, 109->108, 114-116, 164, 185, 188, 193, 196, 221, 233, 249, 289
+src/settlementlab/assurance/catalogs.py                        92     12     68     11    84%   28, 30, 48-49, 67, 80, 86, 90, 96, 103, 115, 130
+src/settlementlab/assurance/client.py                          17      0      0      0   100%
+src/settlementlab/assurance/data.py                            20      0      0      0   100%
+src/settlementlab/assurance/durable_data.py                    22      1      8      1    93%   48
+src/settlementlab/assurance/evaluation.py                      84      8     20      6    87%   67, 72, 87, 128, 131, 192-193, 201
+src/settlementlab/assurance/fixtures.py                        47      7      2      1    84%   45-47, 66-68, 77
+src/settlementlab/assurance/http_steps.py                      60      4     26      4    91%   38, 72, 78, 89
+src/settlementlab/assurance/oracle.py                          62      3     34      4    93%   18, 60, 63->67, 68
+src/settlementlab/assurance/reporting.py                       52      1     18      2    96%   51, 80->82
+src/settlementlab/assurance/runner.py                         110     14     26      8    84%   32-33, 36-37, 47, 48->exit, 52-53, 56-57, 77, 93, 102->113, 105, 114, 124
+src/settlementlab/assurance/scenarios.py                      102      7     50      8    90%   35, 113->121, 117, 122, 144->147, 148, 154, 157->159, 163-164
+src/settlementlab/assurance/targets.py                         38      3     18      3    89%   24, 37, 52
+src/settlementlab/assurance/transport.py                       88      6     24      5    90%   28, 44, 61, 74, 101, 113
+src/settlementlab/bootstrap.py                                 38     16      0      0    58%   37-63
+src/settlementlab/configuration.py                             53      5     22      3    89%   28, 41, 47, 61-62
+src/settlementlab/core/__init__.py                              0      0      0      0   100%
+src/settlementlab/core/calendar.py                            103      3     44      6    94%   26->exit, 27->exit, 51, 55, 68->74, 132
+src/settlementlab/core/durable.py                              22      0      6      0   100%
+src/settlementlab/core/evidence.py                             21      2     10      3    84%   18->20, 21-22, 36->38
+src/settlementlab/core/identity.py                              9      0      2      0   100%
+src/settlementlab/core/matching.py                             57      6     30      6    86%   34, 41, 49, 69, 73, 76
+src/settlementlab/core/postings.py                             26      2     14      3    88%   16->23, 28, 39
+src/settlementlab/core/validation.py                           27      1      8      1    94%   21
+src/settlementlab/domain.py                                    14      0      0      0   100%
+src/settlementlab/identity.py                                   4      0      0      0   100%
+src/settlementlab/infrastructure/__init__.py                    0      0      0      0   100%
+src/settlementlab/infrastructure/backup.py                     37      5      8      3    82%   23, 25, 46-47, 51
+src/settlementlab/infrastructure/clock.py                       6      0      0      0   100%
+src/settlementlab/infrastructure/demo_sessions.py              32      1      4      1    94%   37
+src/settlementlab/infrastructure/journal.py                    90      6     32      4    90%   56, 60, 72-74, 94
+src/settlementlab/infrastructure/operations_repository.py     145      4     34      4    96%   68, 167, 191, 278
+src/settlementlab/infrastructure/operations_schema.py           4      0      2      0   100%
+src/settlementlab/infrastructure/repository.py                 94      0      0      0   100%
+src/settlementlab/infrastructure/schema.py                     23      0      8      0   100%
+src/settlementlab/infrastructure/store.py                      28      0      0      0   100%
+src/settlementlab/journal.py                                   12      0      0      0   100%
+src/settlementlab/matching.py                                   6      6      0      0     0%   3-8
+src/settlementlab/server.py                                     6      6      2      0     0%   3-13
+src/settlementlab/validation.py                                 4      4      0      0     0%   3-6
+src/settlementlab/worker.py                                    53      3     18      3    92%   67-68, 87->71, 94
+-------------------------------------------------------------------------------------------------------
+TOTAL                                                        2642    201    970    187    89%

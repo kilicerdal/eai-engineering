@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00:00.500 --> 00:00:02.267
+An accepted batch is persisted before settlement effects.
+
+00:00:02.267 --> 00:00:04.199
+A worker exits before commit; partial effects roll back.
+
+00:00:04.199 --> 00:00:05.980
+New workers recover the accepted jobs and settle once.
+
+00:00:05.980 --> 00:00:07.988
+The observer commits, then loses its delivery acknowledgement.
+
+00:00:07.988 --> 00:00:09.881
+Duplicate delivery is ignored by the durable inbox.
+
+00:00:09.881 --> 00:00:11.988
+A funding shortage remains visible for checker review.
+
+00:00:11.988 --> 00:00:13.488
+Explicit funding and reviewed requeue recover generation two.
+

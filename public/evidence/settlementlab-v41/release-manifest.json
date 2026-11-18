@@ -1,0 +1,21 @@
+{
+  "version": "4.1.0",
+  "source": {
+    "commit": "774522de8f8e50078269f62fc4e502e7fd477da2",
+    "dirty": false
+  },
+  "assets": {
+    "settlementlab-4.1.0-py3-none-any.whl": {
+      "bytes": 108199,
+      "sha256": "313ab0886e4e70b98b3214dea55d8093cf6eef9a44a1a1ca98e5ce62abdc29d6"
+    },
+    "settlementlab-v41-scorecard.zip": {
+      "bytes": 108892,
+      "sha256": "5d0ae49b9918a00c1a587d4d09d3e646f12207775718d269fcff84fdc12fda4c"
+    },
+    "settlementlab-v41-walkthrough.zip": {
+      "bytes": 5572178,
+      "sha256": "8d3f4820fbb9c19b804717637f39d747aac939f4244310d028f5639c8b1fff82"
+    }
+  }
+}
