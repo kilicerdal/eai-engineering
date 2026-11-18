@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import HeritageRow from "@/components/HeritageRow";
 import { atlasRows, atlasEdges, type AtlasFlow } from "@/lib/ai-atlas";
 
 const projectExamples: Record<string, { label: string; href: string; scope: string }> = {
@@ -60,11 +61,12 @@ export default function AIPhilosophy() {
   return <section id="about" className="ai-philosophy" aria-labelledby="ai-philosophy-title">
     <div className="backdrop" aria-hidden="true" />
     <div className="sheet">
-      <div className="intro philosophy-editorial">
+      <div className="about-artwork-entry"><HeritageRow scene="orbital-score" caption="The Orbital Score · Painted geometry becomes a future world" imageWidth={1774} imageHeight={887}><div className="intro philosophy-editorial">
         <div className="philosophy-statement"><p className="eyebrow">THE THINKING BEHIND eAI</p><h2 id="ai-philosophy-title">Wonder asks the question.<br /><em>Engineering carries it forward.</em></h2><p className="philosophy-summary">eAI explores how software, automation, and artificial intelligence can turn ambitious questions into useful systems.</p></div>
         <nav className="philosophy-principles" aria-label="Explore the engineering principles">{principles.map((principle, index) => <Link key={principle.title} href={principle.href}><span className="principle-number">0{index + 1}</span><div><h3>{principle.title}</h3><p>{principle.detail}</p><span className="principle-destination">{principle.destination}</span></div><span className="principle-arrow" aria-hidden="true">↗</span></Link>)}</nav>
       </div>
-      <div className="main-bio"><p className="eyebrow">MEET THE ENGINEER</p><h3>Built by Erdal Kilic.</h3><p>I build and test software systems, explore local AI, and make the evidence behind the work visible. Here you can follow checkout and claim retries, inspect a settlement simulator, or bring your own question to an engineering tool.</p><p>My aim is practical: make the rule clear, show where it breaks, and explain the trade-off. The public cases use synthetic data and distinguish captured results from live execution.</p><Link href="/engineering/projects">Explore my work ↗</Link></div><details className="main-architecture-toggle"><summary>Explore the AI Systems Atlas and design principles</summary><div className="philosophy-bridge"><p className="eyebrow">FROM PRINCIPLE TO SYSTEM DESIGN</p><p>How those principles shape an AI system.</p><span>A conceptual map, with links to related work where demonstrated.</span></div>
+      </HeritageRow></div>
+      <div className="main-bio artwork-bio" id="meet-the-engineer"><HeritageRow scene="face-outlived-paper" caption="The Face That Outlived Paper · From Renaissance drawing to future sculpture"><div className="bio-copy"><p className="eyebrow">MEET THE ENGINEER</p><h3>Built by Erdal Kilic.</h3><p>I build and test software systems, explore local AI, and make the evidence behind the work visible. Here you can follow checkout and claim retries, inspect a settlement simulator, or bring your own question to an engineering tool.</p><p>My aim is practical: make the rule clear, show where it breaks, and explain the trade-off. The public cases use synthetic data and distinguish captured results from live execution.</p><Link href="/engineering/projects">Explore my work ↗</Link></div></HeritageRow></div><div className="atlas-artwork-entry" id="explore-ai-atlas"><HeritageRow scene="city-in-the-drips" caption="The City in the Drips · Painted gestures become connected systems" imageWidth={1024} imageHeight={1536} reverse><details open className="main-architecture-toggle"><summary>Explore the AI Systems Atlas and design principles</summary><div className="philosophy-bridge"><p className="eyebrow">FROM PRINCIPLE TO SYSTEM DESIGN</p><p>How those principles shape an AI system.</p><span>A conceptual map, with links to related work where demonstrated.</span></div>
       <section className="atlas" aria-labelledby="ai-atlas-title">
         <div className="atlas-head"><div><p className="eyebrow">THE AI SYSTEMS ATLAS</p><h3 id="ai-atlas-title">Intelligence, connected.</h3></div><small>CONCEPTUAL ARCHITECTURE<br />RETRIEVE / REASON / ACT / VERIFY</small></div>
         <div className="filters" role="group" aria-label="Highlight an architecture path">{filters.map(filter => <button key={filter.flow} type="button" aria-pressed={flow === filter.flow} onClick={() => setFlow(filter.flow)}>{filter.title}</button>)}</div>
@@ -75,7 +77,7 @@ export default function AIPhilosophy() {
         </div>
         <div className="trace-detail" id="ai-atlas-detail" aria-live="polite" aria-atomic="true"><strong>{selectedNode.title.toUpperCase()}</strong><p>{selectedNode.detail}</p></div>
         {example && <aside className="atlas-project-example" aria-label="Related project evidence"><p className="eyebrow">RELATED PROJECT EVIDENCE</p><Link href={example.href}>{example.label} <span aria-hidden="true">↗</span></Link><p>{example.scope}</p></aside>}
-      </section></details>
+      </section></details></HeritageRow></div>
       <div className="foot"><span>Founded by Erdal Kilic</span><Link href="/engineering">Explore the Engineering Studio <span aria-hidden="true">↗</span></Link></div>
       <p className="caption">Illustrative AI system design · No live execution or performance metrics<br />Barcelona, Spain · Casa Batlló and the Sagrada Família reimagined</p>
     </div>
