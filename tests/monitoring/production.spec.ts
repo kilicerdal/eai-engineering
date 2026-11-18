@@ -64,3 +64,11 @@ test('study navigation reaches the reading room',async({page},info)=>{
 
 // Read-only interaction: no learner writing, model request, import or mutation.
 test('Practice Lab opens an authored case and its bounded tool',async({page})=>{await page.goto('/engineering/practice');await expect(page.getByRole('heading',{name:/A small case/})).toBeVisible();await page.getByRole('link',{name:'Start with one small case →',exact:true}).click();await page.getByRole('button',{name:'Try a tool',exact:true}).click();await expect(page.getByRole('combobox',{name:/Choose one small tool/})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);});
+
+test('recruiter tour opens a shareable project stop and advances',async({page})=>{
+ await page.goto('/engineering/tour#checkout');
+ await expect(page.getByRole('heading',{name:'One checkout. Even when the request repeats.',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Next stop →',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'A claim can arrive twice without becoming two claims.',exact:true})).toBeVisible();
+ await expect(page.getByRole('link',{name:'Open the dated redelivery record ↗',exact:true})).toHaveAttribute('href','/evidence/claim-redelivery.json');
+});

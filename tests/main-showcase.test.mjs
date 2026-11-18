@@ -8,12 +8,12 @@ test('every category is useful, excludes other categories and All restores the d
  assert.equal(filterShowcase('All').length,showcaseProjects.length);
  for(const group of projectGroups.slice(1)) { const result=filterShowcase(group);assert.ok(result.length);assert.ok(result.every(p=>p.group===group)); }
 });
-test('only the three explicitly public repositories expose source links',()=>{
+test('public repositories expose source links while private recruiter material stays absent',()=>{
  const sources=showcaseProjects.filter(p=>p.repository);
- assert.deepEqual(sources.map(p=>p.id),['playwright','healthcare','settlement']);
+ assert.deepEqual(sources.map(p=>p.id),['playwright','healthcare','settlement','quality-lab']);
  for(const p of sources)assert.ok(p.repository.startsWith('https://github.com/kilicerdal/'));
  const lab=showcaseProjects.find(p=>p.id==='quality-lab');
- assert.equal(lab.repository,undefined);assert.match(lab.visibility,/Private source/);assert.match(lab.detail,/illustration/);
+ assert.equal(lab.repository,'https://github.com/kilicerdal/healthcare-quality-lab');assert.match(lab.visibility,/Public source/);assert.match(lab.detail,/separate authored design illustration/);
  assert.ok(!JSON.stringify(showcaseProjects).includes('eai-recruiter-ai'));
 });
 test('project entries resolve to local routes and existing artwork',()=>{
@@ -21,7 +21,8 @@ test('project entries resolve to local routes and existing artwork',()=>{
 });
 test('field notes and tour point to real routes, and deep links match their supporting evidence',()=>{
  for(const item of [...fieldNotes,...tourSteps]){const [path,hash]=item.href.split('#');const page=new URL(`src/app${path}/page.tsx`,root);assert.ok(existsSync(page));if(hash){const content=readFileSync(page,'utf8')+readFileSync(new URL('src/components/engineering/EngineeringStudio.tsx',root),'utf8')+readFileSync(new URL('src/components/engineering/MainShowcase.tsx',root),'utf8');assert.ok(content.includes(hash));}}
- assert.equal(tourSteps.length,4);
+ assert.equal(tourSteps.length,5);assert.equal(tourSteps.reduce((sum,s)=>sum+s.seconds,0),300);assert.equal(new Set(tourSteps.map(s=>s.id)).size,5);
+ for(const step of tourSteps.filter(s=>s.evidenceHref))assert.ok(existsSync(new URL(`public${step.evidenceHref}`,root)));
 });
 test('homepage featured discovery preserves the curated wording and source',()=>{
  const home=readFileSync(new URL('src/app/page.tsx',root),'utf8');
