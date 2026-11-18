@@ -138,7 +138,7 @@ test("studio fits desktop and mobile and passes selected accessibility checks", 
 });
 
 
-test("Studio and homepage backgrounds reach both viewport edges on wide displays", async ({ page }, info) => {
+test("Studio backgrounds and homepage artwork rows reach both viewport edges on wide displays", async ({ page }, info) => {
   if (info.project.name !== "desktop") return;
   for (const route of ["/", "/engineering"]) {
     await page.goto(route);
@@ -147,7 +147,10 @@ test("Studio and homepage backgrounds reach both viewport edges on wide displays
       const ids = route === "/" ? ["engineering", "recorded-replay"] : ["case-studies", "projects", "tools"];
       for (const id of ids) {
         const bounds = await page.locator(`#${id}`).evaluate((el, homepage) => {
-          const rect = el.getBoundingClientRect();
+          // Project sections may use display:contents inside an artwork row.
+          // Its row is the full-width surface, not the section's empty CSS box.
+          const surface = homepage ? el.closest(".heritage-row")! : el;
+          const rect = surface.getBoundingClientRect();
           const imageWidth = homepage ? rect.width : parseFloat(getComputedStyle(el, "::before").width);
           return { width: imageWidth, left: rect.left + rect.width / 2 - imageWidth / 2 };
         }, route === "/");

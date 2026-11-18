@@ -49,3 +49,41 @@ test('project ownership links real work and keeps the lab illustration separate'
  await expect(page.getByRole('main')).toContainText('separate authored illustration');
  await expect(page.getByRole('link',{name:'Inspect the public Healthcare Quality Lab repository ↗',exact:true})).toHaveAttribute('href','https://github.com/kilicerdal/healthcare-quality-lab');
 });
+
+test('SettlementLab V4.1 presents dated economic evidence and a playable recovery record',async({page,request},info)=>{
+ await page.goto('/engineering/settlementlab');
+ await expect(page).toHaveTitle(/SettlementLab V4.1/);
+ await expect(page.locator('h1')).toHaveText('Every trade.Accounted for.');
+ await expect(page.locator('.v41-stats')).toContainText('145');
+ await expect(page.locator('.v41-stats')).toContainText('89.04%');
+ await expect(page.locator('.v41-stats')).toContainText('240');
+ await expect(page.locator('.v41-stats')).toContainText('60');
+ await expect(page.getByRole('link',{name:'View V4.1 release ↗',exact:true})).toHaveAttribute('href','https://github.com/kilicerdal/settlementlab/releases/tag/v4.1.0');
+ await page.getByText('Source provenance and measured worker workloads',{exact:true}).click();
+ await expect(page.getByRole('table',{name:'Observed local throughput, including worker startup and shutdown'})).toBeVisible();
+ const measurements=page.getByRole('region',{name:'Worker measurements, scroll horizontally'});
+ if(await measurements.evaluate(node=>node.scrollWidth>node.clientWidth)){
+  await measurements.focus();await page.keyboard.press('ArrowRight');
+  await expect.poll(()=>measurements.evaluate(node=>node.scrollLeft)).toBeGreaterThan(0);
+ }
+ await expect(page.locator('#ai')).toContainText('Fresh sampling: not run');
+ await expect(page.locator('#ai')).toContainText('Offline label agreement is not model accuracy');
+ await expect(page.locator('.v41-history')).not.toHaveAttribute('open','');
+ for(const url of ['/evidence/settlementlab-v41/scorecard/index.html','/evidence/settlementlab-v41/scorecard/economic-oracle.json','/evidence/settlementlab-v41/scorecard/reuse/injected-defect/index.html','/evidence/settlementlab-v41/recovery.vtt']){
+  const response=await request.get(url);expect(response.status()).toBe(200);
+ }
+ const video=page.locator('#recovery video');
+ await video.scrollIntoViewIfNeeded();
+ await video.evaluate(async(node:HTMLVideoElement)=>{node.muted=true;await node.play();});
+ await expect.poll(()=>video.evaluate((node:HTMLVideoElement)=>node.currentTime)).toBeGreaterThan(.2);
+ await video.evaluate((node:HTMLVideoElement)=>node.pause());
+ expect((await new AxeBuilder({page}).include('main.settlement-v41').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.screenshot({path:`artifacts/engineering-story/settlementlab-v41-${info.project.name}.png`,fullPage:true});
+ await page.getByRole('link',{name:'Inspect the V4.1 scorecard ↗',exact:true}).click();
+ await expect(page).toHaveURL(/\/evidence\/settlementlab-v41\/scorecard\/index.html$/);
+ await expect(page.getByRole('heading',{name:'Measured worker workloads'})).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.goto('/engineering/settlementlab#reuse-v26');
+ await expect(page.locator('#reuse-v26')).toBeVisible();
+});

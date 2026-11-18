@@ -1,0 +1,205 @@
+{
+  "version": "4.1.0",
+  "generated_at": "2026-11-18T15:04:01.790429+00:00",
+  "source": {
+    "commit": "774522de8f8e50078269f62fc4e502e7fd477da2",
+    "dirty": false
+  },
+  "environment": {
+    "python": "3.13.18",
+    "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "sqlite": "3.54.1",
+    "cpu_count": 10
+  },
+  "controls": {
+    "status": "passed",
+    "cases": 145,
+    "generated_conservation_cases": 2000,
+    "generated_financial_sequences": 24
+  },
+  "load": [
+    {
+      "financial_oracle": {
+        "status": "passed",
+        "expected_settlements": 40,
+        "journal_batches": 120,
+        "journal_lines": 320,
+        "findings": [],
+        "comparisons": [],
+        "scope": "Independent expected DVP terms; full read-only SQLite snapshot; funding conservation only"
+      },
+      "performance": {
+        "workers_requested": 1,
+        "workers_with_claims": 1,
+        "completed": 40,
+        "elapsed_seconds": 0.2848708330420777,
+        "settlements_per_second": 140.41451549408598,
+        "attempt_seconds": {
+          "p50": 0.004028797149658203,
+          "p95": 0.0046539306640625,
+          "maximum": 0.004677772521972656
+        },
+        "measurement": "Wall time includes worker startup/shutdown; attempt time includes transaction work, not queue wait"
+      },
+      "seed": 410
+    },
+    {
+      "financial_oracle": {
+        "status": "passed",
+        "expected_settlements": 40,
+        "journal_batches": 120,
+        "journal_lines": 320,
+        "findings": [],
+        "comparisons": [],
+        "scope": "Independent expected DVP terms; full read-only SQLite snapshot; funding conservation only"
+      },
+      "performance": {
+        "workers_requested": 4,
+        "workers_with_claims": 2,
+        "completed": 40,
+        "elapsed_seconds": 0.3032397920032963,
+        "settlements_per_second": 131.90880964449806,
+        "attempt_seconds": {
+          "p50": 0.003919839859008789,
+          "p95": 0.00456690788269043,
+          "maximum": 0.004705905914306641
+        },
+        "measurement": "Wall time includes worker startup/shutdown; attempt time includes transaction work, not queue wait"
+      },
+      "seed": 410
+    }
+  ],
+  "contention": {
+    "status": "passed",
+    "held_writer_seconds_at_least": 0.05,
+    "completion_seconds": 0.07122287497622892,
+    "oracle": {
+      "status": "passed",
+      "expected_settlements": 1,
+      "journal_batches": 3,
+      "journal_lines": 8,
+      "findings": [],
+      "comparisons": [],
+      "scope": "Independent expected DVP terms; full read-only SQLite snapshot; funding conservation only"
+    },
+    "scope": "Controlled writer lock, one waiting worker, no production contention SLA"
+  },
+  "coverage_percent": 89.03654485049834,
+  "day": {
+    "seed": 410,
+    "planned_trades": 240,
+    "opening_trades": 180,
+    "price_corrections": 18,
+    "shortages": 60,
+    "reviewed_recoveries": 60,
+    "exact_totals": {
+      "trades": 240,
+      "receipts": 300,
+      "inbox": 300,
+      "delivered": 300,
+      "observer": 240
+    },
+    "reconciliation": "BALANCED",
+    "opening_performance": {
+      "workers_requested": 4,
+      "workers_with_claims": 3,
+      "completed": 180,
+      "elapsed_seconds": 2.616705499996897,
+      "settlements_per_second": 68.78878803908711,
+      "attempt_seconds": {
+        "p50": 0.011761188507080078,
+        "p95": 0.014638900756835938,
+        "maximum": 2.256422758102417
+      },
+      "measurement": "Wall time includes worker startup/shutdown; attempt time includes transaction work, not queue wait"
+    },
+    "backup": {
+      "schema_version": 5,
+      "integrity": "ok"
+    },
+    "scope": "Synthetic fixed business date, not a wall-clock market session; no production capacity claim"
+  },
+  "restore_seconds": 2.516073459002655,
+  "oracle_sample": {
+    "trade_id": "SL-000001",
+    "accepted_terms": {
+      "quantity": 76,
+      "price_cents": 10179,
+      "symbol": "NOVA",
+      "buyer_id": "SYN-ALPHA",
+      "seller_id": "SYN-BROKER"
+    },
+    "expected_movements": [
+      {
+        "participant": "SYN-ALPHA",
+        "asset": "CASH:USD",
+        "delta": -773604,
+        "count": 1
+      },
+      {
+        "participant": "SYN-ALPHA",
+        "asset": "SEC:NOVA",
+        "delta": 76,
+        "count": 1
+      },
+      {
+        "participant": "SYN-BROKER",
+        "asset": "CASH:USD",
+        "delta": 773604,
+        "count": 1
+      },
+      {
+        "participant": "SYN-BROKER",
+        "asset": "SEC:NOVA",
+        "delta": -76,
+        "count": 1
+      }
+    ],
+    "observed_movements": [
+      {
+        "participant": "SYN-ALPHA",
+        "asset": "CASH:USD",
+        "delta": -773604,
+        "count": 1
+      },
+      {
+        "participant": "SYN-ALPHA",
+        "asset": "SEC:NOVA",
+        "delta": 76,
+        "count": 1
+      },
+      {
+        "participant": "SYN-BROKER",
+        "asset": "CASH:USD",
+        "delta": 773604,
+        "count": 1
+      },
+      {
+        "participant": "SYN-BROKER",
+        "asset": "SEC:NOVA",
+        "delta": -76,
+        "count": 1
+      }
+    ],
+    "settlement_batches": 1,
+    "movements_match": true
+  },
+  "ai": {
+    "live_local": {
+      "status": "not-run",
+      "reason": "Opt in with --model for an already installed local Ollama model; no download or paid API"
+    },
+    "adversarial": {
+      "responses_meeting_rubric": 1,
+      "responses_not_meeting_rubric": 6,
+      "status": "passed"
+    },
+    "historical": {
+      "responses_meeting_rubric": 2,
+      "responses_not_meeting_rubric": 7,
+      "status": "passed"
+    }
+  },
+  "release": "https://github.com/kilicerdal/settlementlab/releases/tag/v4.1.0"
+}

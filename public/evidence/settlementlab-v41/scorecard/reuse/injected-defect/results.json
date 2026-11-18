@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "target": "owned-api",
+  "generated_at": "2026-11-18T15:04:28.002534+00:00",
+  "python": "3.13.18",
+  "status": "failed",
+  "duration": 0.010627750016283244,
+  "cases": [
+    {
+      "id": "CUSTOM-01",
+      "suite": "scenarios",
+      "target": "owned-api",
+      "name": "A user-owned reservation replay contract",
+      "status": "failed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "http",
+          "status": "passed",
+          "assertions": 0,
+          "request": {
+            "method": "POST",
+            "path": "/inventory",
+            "status": 201,
+            "duration": 0.0014284169883467257
+          },
+          "duration": 0.0014782080543227494
+        },
+        {
+          "index": 2,
+          "action": "http",
+          "status": "passed",
+          "assertions": 0,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 201,
+            "duration": 0.0010168330045416951
+          },
+          "duration": 0.0010527090053074062
+        },
+        {
+          "index": 3,
+          "action": "http",
+          "status": "failed",
+          "control": "replay-original-id",
+          "detail": "HTTP status differs from contract: {'kind': 'http_status', 'expected': 200, 'actual': 201}",
+          "failure": {
+            "kind": "http_status",
+            "expected": 200,
+            "actual": 201
+          },
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 201,
+            "duration": 0.001005540951155126
+          },
+          "duration": 0.0010371250100433826
+        }
+      ],
+      "duration": 0.010356332990340889,
+      "control": "reservation-once",
+      "source": "reservation.json",
+      "environment": {
+        "mode": "external-http",
+        "base_url": "http://127.0.0.1:61378",
+        "timeout": 10
+      },
+      "detail": "Step 3: HTTP status differs from contract: {'kind': 'http_status', 'expected': 200, 'actual': 201}"
+    }
+  ]
+}

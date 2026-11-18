@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "target": "owned-api",
+  "generated_at": "2026-11-18T15:04:27.938100+00:00",
+  "python": "3.13.18",
+  "status": "passed",
+  "duration": 0.01487791701219976,
+  "cases": [
+    {
+      "id": "CUSTOM-01",
+      "suite": "scenarios",
+      "target": "owned-api",
+      "name": "A user-owned reservation replay contract",
+      "status": "passed",
+      "steps": [
+        {
+          "index": 1,
+          "action": "http",
+          "status": "passed",
+          "assertions": 0,
+          "request": {
+            "method": "POST",
+            "path": "/inventory",
+            "status": 201,
+            "duration": 0.0016900830087251961
+          },
+          "duration": 0.0018622080096974969
+        },
+        {
+          "index": 2,
+          "action": "http",
+          "status": "passed",
+          "assertions": 0,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 201,
+            "duration": 0.001097167027182877
+          },
+          "duration": 0.0011388750281184912
+        },
+        {
+          "index": 3,
+          "action": "http",
+          "status": "passed",
+          "control": "replay-original-id",
+          "assertions": 1,
+          "request": {
+            "method": "POST",
+            "path": "/reservations",
+            "status": 200,
+            "duration": 0.00059179199161008
+          },
+          "duration": 0.0006196670001372695
+        },
+        {
+          "index": 4,
+          "action": "http",
+          "status": "passed",
+          "control": "debit-once",
+          "assertions": 1,
+          "request": {
+            "method": "GET",
+            "path": "/inventory/PACK-DADD771219B6",
+            "status": 200,
+            "duration": 0.0005094159860163927
+          },
+          "duration": 0.0005332090076990426
+        }
+      ],
+      "duration": 0.01440462499158457,
+      "control": "reservation-once",
+      "source": "reservation.json",
+      "environment": {
+        "mode": "external-http",
+        "base_url": "http://127.0.0.1:61373",
+        "timeout": 10
+      }
+    }
+  ]
+}
