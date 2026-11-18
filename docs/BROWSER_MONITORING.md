@@ -18,7 +18,7 @@ Open the **browser-regression** run artifact for the HTML/JSON report, screensho
 
 ## Live production checks
 
-The **Production monitor** workflow runs at minutes 17 and 47 of every hour (UTC), on a successful Vercel commit status associated with main, and through **Run workflow** in Actions. The observed Vercel integration uses commit statuses rather than GitHub Deployment objects. Preview statuses and unrelated checks are excluded. The monitor always checks the fixed canonical domain, `https://www.eai.engineering`, and checks out main without persisting credentials.
+The **Production monitor** workflow runs at minutes 17 and 47 of every hour (UTC), on a successful Vercel commit status associated with main, and through **Run workflow** in Actions. The observed Vercel integration uses commit statuses rather than GitHub Deployment objects. Preview statuses and unrelated checks are excluded. The monitor always checks the fixed canonical domain, `https://www.eai.engineering`, and checks out the deployed commit for a Vercel status event, or main for scheduled/manual checks, without persisting credentials.
 
 `npm run monitor:http` checks 16 public pages for successful HTML responses with application main content, discovers up to 40 homepage JavaScript/CSS assets and checks their HTTP availability, verifies the apex-domain redirect, and requires an unknown route to return 404. Requests time out after 15 seconds, with a shared three-minute HTTP deadline so an outage still leaves time to write evidence and run browser checks. A failed check returns a nonzero process exit code and writes both JSON and a readable summary.
 
@@ -46,3 +46,7 @@ When a check fails:
 GitHub schedules can be delayed or dropped under load and public-repository schedules may be disabled after 60 days of repository inactivity. A 30-minute cron is not a guaranteed 30-minute detection SLA or an independent 24/7 uptime service. Check the Actions schedule periodically, especially after a long period without repository activity.
 
 References: [Playwright CI](https://playwright.dev/docs/ci-intro), [GitHub workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows), [GitHub workflow notifications](https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs).
+
+### Update-branch noise
+
+Monitor concurrency is job-scoped so skipped, unrelated status events do not replace a queued live-health job. Vercel-status runs use the event commit; scheduled/manual runs use main. Future `dependabot/**` branches disable Vercel preview deployment through [documented minimatch rules](https://vercel.com/docs/project-configuration/git-configuration); dependency changes still run GitHub checks and deploy normally if reviewed and merged to main. The README uses the quality/browser badges rather than treating skipped monitor events as uptime results.

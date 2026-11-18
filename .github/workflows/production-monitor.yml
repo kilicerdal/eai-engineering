@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-concurrency:
-  group: production-monitor
-  cancel-in-progress: false
 jobs:
   monitor:
+    concurrency:
+      group: production-monitor
+      cancel-in-progress: false
     # This Vercel integration emits commit statuses, not GitHub Deployment objects.
     if: >-
       github.event_name != 'status' ||
@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'status' && github.event.sha || 'main' }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:

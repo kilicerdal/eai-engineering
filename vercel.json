@@ -5,7 +5,10 @@
       "codex/repository-quality": false,
       "codex/clean-setup-review": false,
       "codex/browser-monitoring": false,
-      "codex/recruiter-tour": false
+      "codex/recruiter-tour": false,
+      "codex/repository-trust": false,
+      "dependabot/**": false,
+      "codex/reviewer-journey": false
     }
   }
 }
