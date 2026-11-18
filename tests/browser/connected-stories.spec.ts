@@ -96,17 +96,14 @@ test("selected healthcare card opens its case study while preserving a source li
   page,
 }) => {
   await page.goto("/");
-  const selected = page.locator("#project-0");
-  await expect(
-    selected.getByRole("link", { name: "Repository" }),
-  ).toHaveAttribute(
-    "href",
-    "https://github.com/kilicerdal/ai-healthcare-quality-platform",
-  );
-  await selected
-    .getByRole("link", { name: "Case study" })
-    .click();
+  const selected = page.locator(".main-project").filter({
+    has: page.getByRole("link", { name: "Explore AI Healthcare Quality Platform", exact: true }),
+  });
+  await selected.getByRole("link", { name: "Follow the story", exact: false }).click();
   await expect(page).toHaveURL(/\/engineering\/claim-twice$/);
+  await expect(page.getByRole("link", { name: "Explore the healthcare repository" })).toHaveAttribute(
+    "href", "https://github.com/kilicerdal/ai-healthcare-quality-platform",
+  );
 });
 test("invitation initialization strips a synthetic fragment without sending verification", async ({
   page,

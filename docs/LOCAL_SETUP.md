@@ -34,10 +34,16 @@ The default local portal origin is http://localhost:3000. Production origin rest
 - `npm run test:engineering-browser`: configured desktop/mobile Playwright journeys on loopback.
 - `npm run test:study-layout`: separate study browser checks.
 
+Browser suites build and launch their own production-mode server on port 3040. Leave that port free; an unrelated running server is rejected. API routes are mocked in provider-dependent journeys. This avoids development hot-reload replacing a composer during an interaction.
+
 Install Chromium with `npx playwright install chromium` before browser checks. The quality workflow runs deterministic checks and a build; it does not imply that browser suites or live-provider checks ran. Existing lint warnings are distinct from errors. Do not silence a rule globally to make a check appear clean.
 
 ## Branch and deployment handling
 
 Vercel is connected separately from GitHub Actions. A branch push may create a preview deployment, and pushing to the production branch may deploy the live site. To prepare changes without any deployment, keep the branch local. Review the complete diff and check the current deployment configuration before publishing or merging. No deployment credentials are needed by the quality workflow.
 
-The `codex/repository-quality` review branch explicitly disables automatic Vercel deployments in vercel.json. That exact branch rule leaves other branches at their existing default behavior. This prevents its review push from creating a preview deployment; it does not authorize a merge into the production branch. See [Vercel Git configuration](https://vercel.com/docs/project-configuration/git-configuration#gitdeploymentenabled).
+The `codex/repository-quality` and `codex/clean-setup-review` review branches explicitly disables automatic Vercel deployments in vercel.json. That exact branch rule leaves other branches at their existing default behavior. This prevents its review push from creating a preview deployment; it does not authorize a merge into the production branch. See [Vercel Git configuration](https://vercel.com/docs/project-configuration/git-configuration#gitdeploymentenabled).
+
+## Automated checks
+
+The full engineering/study browser suites now also run together in GitHub Actions. A separate production monitor checks public HTTP responses and critical desktop/mobile journeys. See [browser checks, monitoring, alerts, and incident response](BROWSER_MONITORING.md).

@@ -119,3 +119,11 @@ test('V3.0 speech chunks retain every source character including very long unbro
 test('V3.0 collections and queues can include all 200 books while retaining old memberships',()=>{const lib=sample(),ids=readingBooks.map(b=>b.id);lib.collections=[{id:'all',name:'All my books',bookIds:ids,createdAt:1}];lib.readingQueue=ids;assert.deepEqual(parseReadingBackup(exportReading(store(lib))).library,lib);const state={...initialBrowse(false),style:'Beautiful language',discoverPage:17};assert.deepEqual(readBrowse(JSON.stringify(state)),state);assert.equal(readBrowse(JSON.stringify({...state,style:'unknown'})),null);});
 
 test('book passage intents preserve the quotation and ask rather than answer when requested',()=>{const base={bookId:'11',section:0,quote:'A supplied passage.'};assert.match(passageHandoff(JSON.stringify({...base,intent:'question'})).message,/ONE question/);assert.match(passageHandoff(JSON.stringify({...base,intent:'challenge'})).message,/without assuming an error/);assert.match(passageHandoff(JSON.stringify({...base,intent:'unknown'})).message,/Explain this passage/);});
+
+
+test('book search matches title punctuation while retaining author and genre constraints',()=>{
+ const book=readingBooks.find(book=>book.id==='2701');
+ for(const query of ['Melville Moby-Dick','Melville Moby–Dick','Melville Moby Dick'])assert.ok(readingMatches(book,query,'All','Any mood','All books'));
+ assert.equal(readingMatches(book,'Austen Moby-Dick','All','Any mood','All books'),false);
+ assert.equal(readingMatches(book,'Melville Moby-Dick','Fantasy','Any mood','All books'),false);
+});

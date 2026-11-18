@@ -53,8 +53,9 @@ export function estimateLength(words:number){const min=Math.ceil(words/250),max=
 export const readingCollections=['All books','Short reads','Big ideas','Journeys into imagination'] as const;
 export function inReadingCollection(id:BookId,collection:string){const info=readingEditions[id];return collection==='All books'||collection==='Short reads'&&info.words<=45000||collection==='Big ideas'&&(['Philosophy','Essays','Political thought'].includes(readingBooks.find(b=>b.id===id)!.genre)||['84','35','36','97','132','2680','205','23','174'].includes(id))||collection==='Journeys into imagination'&&(['Fantasy','Science fiction','Fairy tales','Epic'].includes(readingBooks.find(b=>b.id===id)!.genre)||['11','55','289','35','36','120','113','97'].includes(id));}
 export function readingMatches(book:typeof readingBooks[number],query:string,genre:string,mood:string,collection:string){
- const info=readingEditions[book.id];const text=`${book.title} ${book.author} ${book.genre} ${book.note} ${info.why} ${info.moods.join(' ')}`.toLowerCase().replace(/[’']/g,'');
- return (genre==='All'||genre===book.genre)&&(mood==='Any mood'||(info.moods as readonly string[]).includes(mood))&&inReadingCollection(book.id,collection)&&query.toLowerCase().replace(/[’']/g,'').split(/\s+/).filter(Boolean).every(w=>text.includes(w));
+ const normalizeSearch=(value:string)=>value.toLowerCase().replace(/[’']/g,'').replace(/[-\u2010-\u2015]/g,' ');
+ const info=readingEditions[book.id];const text=normalizeSearch(`${book.title} ${book.author} ${book.genre} ${book.note} ${info.why} ${info.moods.join(' ')}`);
+ return (genre==='All'||genre===book.genre)&&(mood==='Any mood'||(info.moods as readonly string[]).includes(mood))&&inReadingCollection(book.id,collection)&&normalizeSearch(query).split(/\s+/).filter(Boolean).every(w=>text.includes(w));
 }
 export function unexpectedBook(candidates:readonly typeof readingBooks[number][],shelf:Record<string,ReadingStatus>,random:number,last?:string){
  const fresh=candidates.filter(b=>!shelf[b.id]&&b.id!==last);const pool=fresh.length?fresh:candidates.filter(b=>b.id!==last);const choices=pool.length?pool:candidates;

@@ -1,0 +1,55 @@
+name: Production monitor
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+  status:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: production-monitor
+  cancel-in-progress: false
+jobs:
+  monitor:
+    # This Vercel integration emits commit statuses, not GitHub Deployment objects.
+    if: >-
+      github.event_name != 'status' ||
+      (github.event.context == 'Vercel' && github.event.state == 'success' &&
+      contains(github.event.branches.*.name, 'main'))
+    name: Live website health
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Verify monitoring failure controls
+        run: npm run test:monitor
+      - run: npx playwright install --with-deps chromium
+      - name: Check public HTTP pages and assets
+        run: npm run monitor:http
+      - name: Check critical live browser journeys
+        if: ${{ !cancelled() }}
+        run: npm run monitor:browser
+      - name: Publish monitoring summary
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -f artifacts/production/http-summary.md ]; then
+            cat artifacts/production/http-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo 'Browser results, screenshots and traces are in the production-monitor artifact. Failed steps fail this run; notifications use your GitHub Actions preferences.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Keep monitoring evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-monitor-${{ github.run_attempt }}
+          path: |
+            artifacts/production/
+            test-results/production/
+          retention-days: 7
