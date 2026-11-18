@@ -1,8 +1,22 @@
 # eAI Engineering
 
+[![Quality](https://github.com/kilicerdal/eai-engineering/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/kilicerdal/eai-engineering/actions/workflows/quality.yml) [![Browser regression](https://github.com/kilicerdal/eai-engineering/actions/workflows/browser.yml/badge.svg?branch=main)](https://github.com/kilicerdal/eai-engineering/actions/workflows/browser.yml) [![Production monitor](https://github.com/kilicerdal/eai-engineering/actions/workflows/production-monitor.yml/badge.svg?branch=main)](https://github.com/kilicerdal/eai-engineering/actions/workflows/production-monitor.yml)
+![Node 24](https://img.shields.io/badge/Node-24-339933?logo=nodedotjs) [![MIT license](https://img.shields.io/github/license/kilicerdal/eai-engineering)](LICENSE)
+
 An independent engineering portfolio and AI learning platform by **Erdal Kilic, Senior SDET / QA Automation Engineer**. The project combines interactive learning tools, an engineering assistant, and case studies backed by executable automation projects.
 
 [Live website](https://www.eai.engineering) · [Engineering Studio](https://www.eai.engineering/engineering) · [Learning Studio](https://www.eai.engineering/study) · [Setup](docs/LOCAL_SETUP.md) · [Contributing](CONTRIBUTING.md)
+
+## Repository map
+
+| Purpose | What belongs here | Review |
+|---|---|---|
+| Production website | Next.js pages, server routes and optional authenticated/provider integrations | [Runtime boundaries](#architecture-and-boundaries), [setup](docs/LOCAL_SETUP.md) |
+| Engineering portfolio | Public case presentations and dated synthetic evidence; the reference systems live in separate repositories | [Five-minute project tour](https://www.eai.engineering/engineering/tour), public/evidence/ |
+| Experiments and practice | Investigation/Practice Lab exercises and authored learning material; not production customer outcomes | src/app/engineering/practice/, src/components/practice-lab/ |
+| Automated validation | Deterministic Node/build checks, browser regression, and read-only production monitoring | tests/, .github/workflows/, [monitoring](docs/BROWSER_MONITORING.md) |
+
+The checked-in compressed reading library under `data/reading/` is roughly 87 MiB; images and dated evidence add storage too. GitHub repository size also includes history and is not a browser JavaScript download measurement. See [the repository guide](docs/REPOSITORY_MAP.md) before proposing a split.
 
 ## Explore the work
 
@@ -50,7 +64,7 @@ npm run test:engineering-browser
 npm run test:study-layout
 ```
 
-Browser configuration starts a local development server on 127.0.0.1:3040 and records failure traces/screenshots. It must not target production for write operations. Some historical evidence under docs/ and public/evidence/ records earlier runs; those records are not results of the command you just executed.
+Browser configuration builds and starts an isolated production-mode server on 127.0.0.1:3040 and records failure traces/screenshots. It must not target production for write operations. Some historical evidence under docs/ and public/evidence/ records earlier runs; those records are not results of the command you just executed.
 
 The [repository quality workflow](.github/workflows/quality.yml) runs Node tests, lint, type checking and a production build with read-only repository permissions and no service credentials. It does not deploy. Vercel deployment is a separate existing integration; pushing a branch can still trigger that integration independently.
 
@@ -94,3 +108,7 @@ The source is [MIT licensed](LICENSE), copyright 2026 Erdal Kilic. External serv
 ## Automated browser checks and monitoring
 
 [Browser regression](https://github.com/kilicerdal/eai-engineering/actions/workflows/browser.yml) runs the engineering and study journeys for pull requests and main. [Production monitor](https://github.com/kilicerdal/eai-engineering/actions/workflows/production-monitor.yml) checks public routes, frontend assets, and critical desktop/mobile flows every 30 minutes and after successful Vercel deployment statuses. [Setup, evidence, notification settings, and incident response](docs/BROWSER_MONITORING.md).
+
+## Compatibility and maintenance
+
+[Supported versions, quick/full checks, dependency decisions and upgrade policy](docs/MAINTENANCE.md). Historical evidence stays dated; current CI status is linked above.
