@@ -4,6 +4,7 @@ import "./globals.css";
 import "./experience.css";
 import RoomWayfinding from "@/components/RoomWayfinding";
 import "./site-refinement.css";
+import HomeVitals from "@/components/HomeVitals";
 import SiteCompanion from "@/components/SiteCompanion";
 
 const geistSans = Geist({
@@ -50,7 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col"><RoomWayfinding/>{children}<SiteCompanion/></body>
+      <body className="min-h-full flex flex-col"><HomeVitals/><RoomWayfinding/>{children}<SiteCompanion/></body>
     </html>
   );
 }

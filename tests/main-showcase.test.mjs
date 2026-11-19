@@ -25,7 +25,7 @@ test('field notes and tour point to real routes, and deep links match their supp
  for(const step of tourSteps.filter(s=>s.evidenceHref))assert.ok(existsSync(new URL(`public${step.evidenceHref}`,root)));
 });
 test('homepage featured discovery preserves the curated wording and source',()=>{
- const home=readFileSync(new URL('src/app/page.tsx',root),'utf8');
+ const home=readFileSync(new URL('src/app/HomePage.tsx',root),'utf8');
  const facts=readFileSync(new URL('src/app/study/curiosity/facts.ts',root),'utf8');
  const factLine=facts.split('\n').find(line=>line.includes("fact('drawing-memory'"));
  const words=['A sketch can be a memory tool.','Experiments have found a memory advantage for drawing studied items compared with writing them. Artistic skill is not the goal: representing the idea is.','https://pubmed.ncbi.nlm.nih.gov/29873039/'];

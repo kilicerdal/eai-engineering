@@ -36,26 +36,18 @@ export default function AIPhilosophy() {
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
-    let frame = 0;
-    const draw = () => {
-      const bounds = map.getBoundingClientRect();
-      setPaths(atlasEdges.map(([from, to]) => {
-        const a = map.querySelector<HTMLElement>(`[data-node="${from}"]`)!.getBoundingClientRect();
-        const b = map.querySelector<HTMLElement>(`[data-node="${to}"]`)!.getBoundingClientRect();
-        const ax = a.left + a.width / 2 - bounds.left, ay = a.bottom - bounds.top;
-        const bx = b.left + b.width / 2 - bounds.left, by = b.top - bounds.top;
-        if (by < ay - 80) return `M${a.right - bounds.left} ${a.top + a.height / 2 - bounds.top} H${bounds.width - 3} V${b.top + b.height / 2 - bounds.top} H${b.right - bounds.left}`;
-        if (Math.abs(ay - by) < 90 && Math.abs(ax - bx) > 60) return `M${a.right - bounds.left} ${a.top + a.height / 2 - bounds.top} H${b.left - bounds.left}`;
-        return `M${ax} ${ay} V${(ay + by) / 2} H${bx} V${by}`;
-      }));
+    let disposed = false;
+    let cleanup: (() => void) | undefined;
+    const load = () => {
+      void import("./atlas-drawing").then(({mountAtlasDrawing}) => {
+        if (!disposed) cleanup = mountAtlasDrawing(map, atlasEdges, setPaths);
+      }).catch(() => { /* The accessible HTML diagram remains usable without decorative wires. */ });
     };
-    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(draw); };
-    const observer = new ResizeObserver(schedule);
-    observer.observe(map);
-    // Recalculate when wrapping changes with late-loaded fonts or viewport width.
-    map.querySelectorAll(".node").forEach(node => observer.observe(node));
-    schedule();
-    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+    const observer = typeof IntersectionObserver === "undefined" ? null : new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) { observer?.disconnect(); load(); }
+    }, {rootMargin:"600px"});
+    if (observer) observer.observe(map); else load();
+    return () => { disposed = true; observer?.disconnect(); cleanup?.(); };
   }, []);
 
   const inFlow = (id: string) => flow === "all" || allNodes.find(node => node.id === id)!.groups.includes(flow);
