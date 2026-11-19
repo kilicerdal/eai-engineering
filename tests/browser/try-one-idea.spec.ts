@@ -83,3 +83,17 @@ test('lab tables and architecture are accessible and fit narrow screens',async({
  }
  for(const width of [390,1440]){await page.setViewportSize({width,height:1000});await page.goto('/study/journeys/try?activity=architecture-puzzle');await expect(page.getByLabel('My prediction, attempt or explanation')).toBeEnabled();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);await page.screenshot({path:`artifacts/site-refinement/practice-labs-${width}.png`,fullPage:true});}
 });
+
+ test('quiet entry, topic collection, structured feedback and saved resume work together',async({page})=>{
+ await page.goto('/study/journeys/try');
+ await expect(page.getByRole('navigation',{name:'Three ways to begin'}).getByRole('button')).toHaveCount(3);
+ await page.getByRole('button',{name:'Try an AWS decision →',exact:true}).click();
+ await page.getByRole('radio').first().check();await page.getByRole('button',{name:'Inspect the idea →',exact:true}).click();
+ for(const name of ['What worked','What to reconsider','One next step'])await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Save practice draft',exact:true}).click();await page.reload();
+ await page.getByText('Resume saved practice · this browser',{exact:true}).click();
+ await expect(page.getByRole('button',{name:/Resume AWS/})).toBeVisible();
+ await page.locator('.idea-picker > summary').click();
+ expect(await page.locator('.idea-picker optgroup').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('label')))).toEqual(['Engineering','AWS','Testing','Everyday Learning']);
+ await expect(page.getByRole('region',{name:'Activity explanation'})).toBeVisible();
+ });

@@ -185,9 +185,9 @@ test('returning-user shortcut resumes valid saved work without sending or starti
  window.dispatchEvent(new Event('eai-study-progress-change'));
  },time);
  const resume=page.getByRole('link',{name:'Resume learning',exact:false});
- await expect(resume).toHaveAttribute('href','#my-learning');
+ await expect(resume).toHaveAttribute('href','/your-space');
  await resume.click();
- await expect(page).toHaveURL(/#my-learning$/);
+ await expect(page).toHaveURL(/\/your-space$/);
  const record=await page.evaluate(()=>JSON.parse(localStorage.getItem('eai-daily-sessions-v1')!));
  expect(record.sessions).toHaveLength(1);expect(record.sessions[0].stage).toBe(1);
  expect(posts).toBe(0);

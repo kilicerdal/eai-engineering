@@ -83,3 +83,5 @@ html[data-artwork-visibility="quiet"] :is(.rr-hero-art,.rr-curiosity-art){visibi
 .lab-timeline{padding-left:1.4rem;}.lab-timeline li{padding:.4rem;}.lab-timeline li>div{display:flex;gap:.3rem;}.lab-timeline button{min-width:44px;}
 .lab-result{border-top:1px solid #b99e6655;padding-top:1rem;}
 @media(max-width:650px){.lab-fields{grid-template-columns:1fr;}.lab-diagram{flex-direction:column;align-items:stretch;}.lab-diagram span{flex:auto;}.lab-diagram b{align-self:center;transform:rotate(90deg);}.lab-timeline button{width:auto;}.practice-lab{padding:.75rem;}}
+
+.idea-start{margin:1.5rem 0;padding:1rem 0;border-bottom:1px solid #b99e6644}.idea-start>p{color:#ead7a5}.idea-start>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}.idea-start button{text-align:left}.idea-feedback h3{font-size:1.1rem;margin-top:1rem}.idea-resume button{display:block}@media(max-width:600px){.idea-start>div{grid-template-columns:1fr}}

@@ -20,6 +20,6 @@ export default function StudyResumeShortcut(){
   queueMicrotask(refresh);window.addEventListener("eai-study-progress-change",refresh);window.addEventListener("storage",refresh);window.addEventListener("focus",refresh);
   return()=>{cancelled=true;window.removeEventListener("eai-study-progress-change",refresh);window.removeEventListener("storage",refresh);window.removeEventListener("focus",refresh);};
  },[]);
- if(!destination)return null;
- return <div className="study-resume-shortcut"><span>Your saved work is ready.</span><a href={destination}>Resume learning <span aria-hidden="true">→</span></a></div>;
+ if(!destination)return <div className="study-resume-shortcut"><a href="/start">Start here <span aria-hidden="true">→</span></a></div>;
+ return <div className="study-resume-shortcut"><span>Your saved work is ready.</span><a href="/your-space">Continue learning <span aria-hidden="true">→</span></a></div>;
 }
