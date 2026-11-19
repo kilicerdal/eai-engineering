@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import HeritageRow from "@/components/HeritageRow";
 import { atlasRows, atlasEdges, type AtlasFlow } from "@/lib/ai-atlas";
 
@@ -59,7 +60,7 @@ export default function AIPhilosophy() {
 
   const inFlow = (id: string) => flow === "all" || allNodes.find(node => node.id === id)!.groups.includes(flow);
   return <section id="about" className="ai-philosophy" aria-labelledby="ai-philosophy-title">
-    <div className="backdrop" aria-hidden="true" />
+    <div className="backdrop" aria-hidden="true"><Image src="/images/threshold/barcelona-future.webp" alt="" fill sizes="100vw" loading="lazy" /></div>
     <div className="sheet">
       <div className="about-artwork-entry"><HeritageRow scene="orbital-score" caption="The Orbital Score · Painted geometry becomes a future world" imageWidth={1774} imageHeight={887}><div className="intro philosophy-editorial">
         <div className="philosophy-statement"><p className="eyebrow">THE THINKING BEHIND eAI</p><h2 id="ai-philosophy-title">Wonder asks the question.<br /><em>Engineering carries it forward.</em></h2><p className="philosophy-summary">eAI explores how software, automation, and artificial intelligence can turn ambitious questions into useful systems.</p></div>
