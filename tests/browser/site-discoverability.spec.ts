@@ -79,7 +79,7 @@ test('real performance callback sends only allowlisted data and honors opt-out',
  await page.goto('/');await finalizeMetric(page);await page.goto('/privacy');
  await expect.poll(()=>events.length).toBeGreaterThan(0);
  await expect(page.locator('.studio-account-card')).toHaveCSS('background-color','rgb(16, 26, 40)');
- for(const event of events)expect(Object.keys(event as object).sort()).toEqual(['device','metric','value']);
+ for(const event of events)expect(Object.keys(event as object).sort()).toEqual(['context','device','metric','value']);
  await page.getByRole('button',{name:'Disable performance measurement',exact:true}).click();await expect(page.getByRole('region',{name:'Your choice'}).getByRole('status')).toContainText('disabled');
  events.length=0;await page.goto('/');await finalizeMetric(page);await page.goto('/privacy');await page.waitForTimeout(500);expect(events).toEqual([]);
  await expect(page.getByRole('button',{name:'Allow performance measurement',exact:true})).toHaveAttribute('aria-pressed','true');
@@ -98,4 +98,14 @@ test('browser performance events reach the actual same-origin intake without coo
  page.on('request',request=>{if(request.url().endsWith('/api/performance')){expect(request.headers()['cookie']).toBeUndefined();expect(request.headers()['referer']||'').toBe('');}});
  page.on('response',response=>{if(response.url().endsWith('/api/performance'))statuses.push(response.status());});
  await page.goto('/');await finalizeMetric(page);await expect.poll(()=>statuses.length).toBeGreaterThan(0);expect(statuses.every(status=>status===204)).toBe(true);
+});
+
+test('performance samples distinguish reports after app navigation without sending the route',async({page})=>{
+ await page.addInitScript(()=>{Object.defineProperty(navigator,'webdriver',{get:()=>false});Object.defineProperty(navigator,'doNotTrack',{get:()=>null});Object.defineProperty(navigator,'globalPrivacyControl',{get:()=>false});});
+ const events:{context:string;[key:string]:unknown}[]=[];
+ await page.route('**/api/performance',async route=>{events.push(route.request().postDataJSON());await route.fulfill({status:204});});
+ await page.goto('/');await page.locator('.footer-destinations').getByRole('link',{name:'Website privacy',exact:true}).click();await expect(page).toHaveURL(/\/privacy$/);
+ await page.evaluate(()=>{Object.defineProperty(document,'visibilityState',{configurable:true,get:()=> 'hidden'});window.dispatchEvent(new Event('visibilitychange'));});
+ await expect.poll(()=>events.some(event=>event.context==='after-navigation')).toBe(true);
+ for(const event of events){expect(Object.keys(event).sort()).toEqual(['context','device','metric','value']);expect(['home-so-far','after-navigation']).toContain(event.context);expect(JSON.stringify(event)).not.toContain('/privacy');}
 });

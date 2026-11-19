@@ -1,0 +1,81 @@
+{
+  "reviewedOn": "2026-11-19",
+  "policy": "Website case versions, preview images and walkthrough versions are separate from repository releases. Latest-release observations are dated snapshots, not live status or claims that a case covers newer releases.",
+  "projects": [
+    {
+      "capturedAt": "2026-11-06T16:26:01.895Z",
+      "caseKind": "bundled-historical-record",
+      "caseRoute": "/engineering/order-once",
+      "caseVersion": "v5.0.0",
+      "evidence": "/evidence/order-once.json",
+      "id": "playwright",
+      "note": "An authored scenario with bundled healthy/fault records. The origin field is authored-offline-example; the record note describes local PostgreSQL execution. Viewing this site does not independently rerun or verify that execution.",
+      "previewVersion": "V5 case artwork",
+      "releaseObserved": "mutation-showcase-2026-11-17",
+      "releaseUrl": "https://github.com/kilicerdal/playwright-ai-automation/releases/tag/mutation-showcase-2026-11-17",
+      "repository": "https://github.com/kilicerdal/playwright-ai-automation",
+      "sourceCommit": "dbcbb6e2a773a37b1325af4f8a58bdd89369cc02",
+      "walkthroughVersion": "v5.0.0"
+    },
+    {
+      "capturedAt": "2026-11-06T16:58:01.348Z",
+      "caseKind": "recorded-synthetic-local-capture",
+      "caseRoute": "/engineering/claim-twice",
+      "caseVersion": "Pinned claim capture",
+      "evidence": "/evidence/claim-redelivery.json",
+      "id": "healthcare",
+      "note": "PostgreSQL capture with simulated S3/SQS, no patient data or live AWS execution. No latest release was returned by the public releases API; that is not a repository visibility claim.",
+      "previewVersion": "Claim case artwork",
+      "releaseObserved": null,
+      "releaseUrl": null,
+      "repository": "https://github.com/kilicerdal/ai-healthcare-quality-platform",
+      "sourceCommit": "b175a55d882658583e617a95b4a8631b87fd069a",
+      "walkthroughVersion": "Repository main (mutable)"
+    },
+    {
+      "capturedAt": "2026-11-18T15:04:01.790429+00:00",
+      "caseKind": "recorded-synthetic-local-capture",
+      "caseRoute": "/engineering/settlementlab",
+      "caseVersion": "v4.1.0",
+      "evidence": "/evidence/settlementlab-v41/summary.json",
+      "id": "settlement",
+      "note": "The website case presents V4.1, including 145 deterministic cases, 240 synthetic trades and recorded coverage. The V3 preview, recording and historical archive are not V4.1 evidence. The repository release observed during review was V4.2.",
+      "previewVersion": "Historical V3 screenshot (unchanged)",
+      "releaseObserved": "v4.2.0",
+      "releaseUrl": "https://github.com/kilicerdal/settlementlab/releases/tag/v4.2.0",
+      "repository": "https://github.com/kilicerdal/settlementlab",
+      "sourceCommit": "774522de8f8e50078269f62fc4e502e7fd477da2",
+      "walkthroughVersion": "v3.0.0 historical recording"
+    },
+    {
+      "capturedAt": null,
+      "caseKind": "authored-design-illustration",
+      "caseRoute": "/engineering/private-lab",
+      "caseVersion": "Authored illustration",
+      "evidence": null,
+      "id": "quality-lab",
+      "note": "The website illustration is not a repository capture or measured AI-quality result. The separately linked public release has its own artifacts and provenance.",
+      "previewVersion": "Authored illustration (unchanged)",
+      "releaseObserved": "v8.0.0",
+      "releaseUrl": "https://github.com/kilicerdal/healthcare-quality-lab/releases/tag/v8.0.0",
+      "repository": "https://github.com/kilicerdal/healthcare-quality-lab",
+      "sourceCommit": null,
+      "walkthroughVersion": null
+    },
+    {
+      "capturedAt": null,
+      "caseKind": "exploratory",
+      "caseRoute": "/engineering#tools",
+      "caseVersion": "In development",
+      "evidence": null,
+      "id": "ai-lab",
+      "note": "Exploratory tools, not a benchmarked product or a verified release.",
+      "previewVersion": null,
+      "releaseObserved": null,
+      "releaseUrl": null,
+      "repository": null,
+      "sourceCommit": null,
+      "walkthroughVersion": null
+    }
+  ]
+}

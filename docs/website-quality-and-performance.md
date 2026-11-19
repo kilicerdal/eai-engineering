@@ -14,7 +14,7 @@ The homepage skip link now stays on the page and focuses its heading. Mobile nav
 
 The built-in `next/web-vitals` client reports LCP, CLS and INP to the first-party `/api/performance` endpoint for documents initially opened at `/`. Core Web Vitals are document-lifecycle measurements; subsequent client navigation remains part of that entry document, not an individual route score. INP requires an interaction and some metrics finalize when the page becomes hidden. Automated browsers, DNT, GPC, blocked storage and the local opt-out suppress reporting.
 
-The payload contains only metric name, numeric value and a mobile/desktop viewport bucket. Server code validates ranges and exact field names, rejects cross-origin requests, bounds the actual body to 512 bytes and applies a best-effort cap of 300 intake attempts per minute per server instance without collecting IPs or visitor identifiers. It logs only `homepage_web_vital`, document scope, allowlisted values, rating and deployment SHA. Public telemetry can be spoofed; it must not drive security or billing decisions. The cap is not a distributed rate limiter.
+The payload contains only metric name, numeric value, a mobile/desktop viewport bucket and an allowlisted context label: `home-so-far` or `after-navigation`. The label says whether another app route had been visited by report time, not which route. Old payloads remain accepted and are labelled `legacy-document`. Server code validates ranges and exact field names, rejects cross-origin requests, bounds the actual body to 512 bytes and applies a best-effort cap of 300 intake attempts per minute per server instance without collecting IPs or visitor identifiers. It logs only `homepage_web_vital`, document scope, allowlisted values, rating and deployment SHA. Public telemetry can be spoofed; it must not drive security or billing decisions. The cap is not a distributed rate limiter.
 
 No analytics cookies, IDs, drafts, messages, saved work, query strings or fragments are sent in metric events. Fetch omits credentials and referrer. Hosting infrastructure separately has its normal request logging. `/privacy` describes this and offers an immediate browser opt-out; learning privacy remains available separately.
 
@@ -26,8 +26,10 @@ In the hosting project's runtime Logs, search for `homepage_web_vital` and selec
 node scripts/summarize-web-vitals.mjs /path/to/exported-runtime-logs.ndjson
 ```
 
-The output groups metrics by deployment and viewport category, with sample count, nearest-rank p75 and range. It explicitly labels samples under 20 as small. Do not interpret the export as unique visitors, a complete population or proof of field Core Web Vitals compliance. No genuine visitor results are claimed at deployment; wait for actual usage.
+The output groups metrics by deployment, viewport category and context, with sample count, nearest-rank p75 and range. It explicitly labels samples under 20 as small. Do not interpret the export as unique visitors, a complete population or proof of field Core Web Vitals compliance. No genuine visitor results are claimed at deployment; wait for actual usage.
 
 Run `npm test`, `npm run lint`, `npm run typecheck`, `npm run build`, and `npm run test:browser:ci` before deployment. The production monitor remains read-only; it also checks `/privacy`. The browser regression suite validates SEO files, sharing-image responses, keyboard behavior, accessibility, deferred atlas startup, telemetry privacy controls and the three-project route.
 
 Reference: [Next.js web vitals](https://nextjs.org/docs/app/api-reference/functions/use-report-web-vitals), [lazy loading](https://nextjs.org/docs/app/guides/lazy-loading).
+
+Do not mix legacy document-wide samples with home-so-far or after-navigation samples when interpreting a suspected homepage shift. A context flag is not exact route attribution, and a handful of events cannot establish a stable field percentile. No route, query, fragment or navigation history is transmitted.
