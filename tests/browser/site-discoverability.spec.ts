@@ -22,7 +22,8 @@ test('homepage canonical, profile data and route-specific sharing previews are s
   const canonical=html.match(/rel="canonical" href="([^"]+)"/);expect(canonical).not.toBeNull();expect(new URL(canonical![1]).href).toBe(new URL(path,'https://www.eai.engineering').href);
   expect(html).toContain('property="og:title"');expect(html).toContain('name="twitter:card" content="summary_large_image"');
   const match=html.match(/property="og:image" content="([^"]+)"/);expect(match).not.toBeNull();
-  const image=await request.get(match![1]);expect(image.status()).toBe(200);expect(image.headers()['content-type']).toMatch(/^image\//);const imageBody=await image.body();expect(imageBody.byteLength).toBeGreaterThan(1000);expect(imageBody.byteLength).toBeLessThan(5*1024*1024);
+  const shareImage=new URL(match![1]);expect(shareImage.origin).toBe('https://www.eai.engineering');
+  const image=await request.get(shareImage.pathname+shareImage.search);expect(image.status()).toBe(200);expect(image.headers()['content-type']).toMatch(/^image\//);const imageBody=await image.body();expect(imageBody.byteLength).toBeGreaterThan(1000);expect(imageBody.byteLength).toBeLessThan(5*1024*1024);
   expect(image.headers()['content-type']).toContain('image/png');
   expect(imageBody.readUInt32BE(16)).toBeGreaterThanOrEqual(1200);expect(imageBody.readUInt32BE(20)).toBeGreaterThanOrEqual(627);
   if(path==='/'){expect(html).toContain('"@type":"ProfilePage"');expect(html).toContain('"name":"Erdal Kilic"');}
