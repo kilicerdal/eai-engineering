@@ -34,3 +34,7 @@
  .threshold .home-jump-nav a{padding:8px 4px;font-size:14px}
  .threshold .heritage-row--projects .home-professional-intro{padding:0 24px;margin-bottom:16px}
 }
+
+/* Keyboard-only affordances preserve the resting composition. */
+.threshold :is(a,button,summary,input,textarea,select):focus-visible{outline:3px solid #f4cf96;outline-offset:4px}
+.threshold #hero-title:focus{outline:none}

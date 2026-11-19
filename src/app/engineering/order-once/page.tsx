@@ -19,6 +19,7 @@ const capture: OrderOnceCapture = recorded;
 const summary = summarizeOrderOnce(capture);
 const sources = storySources(capture.source.commit);
 export const metadata: Metadata = {
+  twitter: {card:"summary_large_image",title:'One order. Two requests. Inspect the engineering.',description:"Recorded synthetic engineering evidence and source you can inspect.",images:["/images/engineering/order-once-share.png"]},
   title: "The order that should happen only once | eAI Engineering",
   description:
     "Predict a checkout retry, compare a protected implementation with an injected duplicate-order defect, and inspect recorded PostgreSQL evidence and pinned source code.",

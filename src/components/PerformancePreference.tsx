@@ -1,0 +1,6 @@
+'use client';
+import {useSyncExternalStore,useState} from 'react';
+const key='eai-performance-disabled';
+function subscribe(update:()=>void){window.addEventListener('storage',update);window.addEventListener('performance-preference',update);return()=>{window.removeEventListener('storage',update);window.removeEventListener('performance-preference',update);};}
+function snapshot(){try{return localStorage.getItem(key)==='true';}catch{return true;}}
+export default function PerformancePreference(){const disabled=useSyncExternalStore(subscribe,snapshot,()=>false);const [notice,setNotice]=useState('');return <section aria-labelledby="performance-choice"><h2 id="performance-choice">Your choice</h2><p>Measurement is {disabled?'disabled':'allowed'} in this browser. Do Not Track and Global Privacy Control also disable it.</p><button aria-pressed={disabled} onClick={()=>{try{localStorage.setItem(key,String(!disabled));window.dispatchEvent(new Event('performance-preference'));setNotice(disabled?'Performance measurement is allowed.':'Performance measurement is disabled.');}catch{setNotice('Browser storage is unavailable. Measurement stays disabled.');}}}>{disabled?'Allow performance measurement':'Disable performance measurement'}</button><p role="status">{notice}</p></section>;}

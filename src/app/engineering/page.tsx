@@ -1,3 +1,4 @@
+import { publicPageMetadata } from "@/lib/public-metadata";
 import {RecordedReplay, Walkthroughs} from "@/components/engineering/MainShowcase";
 import "./main-showcase.css";
 import type { Metadata } from "next";
@@ -6,7 +7,7 @@ import EngineeringStudio from "@/components/engineering/EngineeringStudio";
 import "../threshold.css";
 import "./studio.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = {...publicPageMetadata('/engineering','Engineering Studio | eAI','Inspect engineering case studies, recorded evidence and public source by Erdal Kilic.'),
   title: "Engineering Studio | eAI",
   description:
     "Explore eAI engineering case studies, inspect the projects and recorded evidence, and try the engineering tools in one place.",
