@@ -39,6 +39,14 @@ export default function Home() {
    };
    sync(); window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync);
  }, [router]);
+ useEffect(() => {
+   if (!menuOpen) return;
+   const closeOutside = (event: PointerEvent) => {
+     if (!(event.target as Element).closest(".atlas-header")) setMenuOpen(false);
+   };
+   document.addEventListener("pointerdown", closeOutside);
+   return () => document.removeEventListener("pointerdown", closeOutside);
+ }, [menuOpen]);
  function focusHomeSection(event: MouseEvent<HTMLElement>) {
    const link = (event.target as HTMLElement).closest("a");
    if (!link) return;
@@ -50,11 +58,11 @@ export default function Home() {
    });
  }
  return <main className="threshold" id="top">
-  <a href="/chat" className="atlas-skip-link">Skip to eAI chat</a>
+  <a href="#hero-title" className="atlas-skip-link">Skip to main content</a>
   <header className="atlas-header">
    <a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a>
    <span className="atlas-chapter">THE THRESHOLD</span>
-   <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onKeyDown={e => {if(e.key === "Escape") setMenuOpen(false);}} onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
+   <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onKeyDown={e => {if(e.key === "Escape") setMenuOpen(false); else if(e.key === "ArrowDown"){e.preventDefault();setMenuOpen(true);requestAnimationFrame(()=>document.querySelector<HTMLAnchorElement>("#atlas-nav a")?.focus());}}} onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onKeyDown={e=>{if(e.key === "Escape"){setMenuOpen(false);document.querySelector<HTMLButtonElement>(".atlas-menu")?.focus();}}} onClick={focusHomeSection}>
     <a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Solve</a><a href="/study" aria-label="Learning Studio">Learn</a><Link href="/explore">Explore</Link><a href="#about" aria-current={navSection === "about" ? "location" : undefined}>About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
    </nav>
@@ -65,7 +73,7 @@ export default function Home() {
    <div className="atlas-hero-shade"/>
    <div className="atlas-hero-copy">
     <p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p>
-    <h1 id="hero-title">From the first questions <br/>to the next intelligence.</h1>
+    <h1 id="hero-title" tabIndex={-1}>From the first questions <br/>to the next intelligence.</h1>
     <p className="home-purpose">Inspect engineering projects, learn with dAI, or work through a question with your AI assistant.</p>
     <div className="atlas-actions home-primary-actions">
      <Link className="atlas-button primary" href="/engineering">Explore Engineering Studio <span aria-hidden="true">→</span></Link>
