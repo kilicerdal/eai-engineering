@@ -1,0 +1,4 @@
+import type {CertStudy} from '@/lib/certification-study';
+import {practiceQuestion} from '@/lib/certification-quality';
+import {correctedAnswers} from '@/lib/learning-evidence';
+export default function VisibleProgress({data}:{data:CertStudy}){const items=correctedAnswers(data.attempts,(id,revision)=>{try{return practiceQuestion(id,revision);}catch{return undefined;}});if(!items.length)return null;return <details className="cert-more connected-progress"><summary>A change you can see · {items.length} recent {items.length===1?'correction':'corrections'}</summary><p>You answered these same-edition questions correctly after an earlier incorrect choice.</p><ul>{items.map(i=><li key={i.id}>{i.prompt}</li>)}</ul><p>This describes retained question history, not mastery, an independent transfer test or proof that no hints were used.</p></details>;}

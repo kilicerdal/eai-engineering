@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import StudyNavigation from '@/components/StudyNavigation';
 import CuriosityRoom from './room';
 import './room.css';
 
 export const metadata: Metadata = { title: 'The Curiosity Room | dAI Learning Studio', description: '1,000 sourced discoveries with optional five-discovery trails, including A Thousand Reasons to Wonder, Nature’s Ingenious Solutions, Hidden in Plain Sight, A World Worth Wondering About, Small Things, Big Surprises, Your World, Hidden Connections, Everyday Wonders and Sounds Made Up: surprising fun facts with sources, explanations, and connections to explore.', robots: { index: false, follow: false } };
-export default function Page() { return <div className="curiosity-preview"><StudyNavigation /><CuriosityRoom /></div>; }
+export default function Page() { return <div className="curiosity-preview"><StudyNavigation /><CuriosityRoom /><aside className="idea-entry"><Link href="/study/journeys/try?activity=discovery-experiment">Try a small, safe activity about remembering →</Link></aside></div>; }
