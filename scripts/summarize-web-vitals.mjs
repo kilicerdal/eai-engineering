@@ -8,7 +8,8 @@ export function summarizeVitals(lines) {
   if(item.event!=='homepage_web_vital'||item.scope!=='homepage-entry-document')continue;
   const metric=normalizeHomeVital({metric:item.metric,value:item.value,device:item.device});if(!metric)continue;
   const revision=/^[a-f0-9]{7,40}$/.test(item.revision)?item.revision:'unknown';
-  const key=`${revision}/${metric.device}/${metric.metric}`;const values=groups.get(key)||[];values.push(metric.value);groups.set(key,values);
+  const context=item.context??'legacy-document';if(!['home-so-far','after-navigation','legacy-document'].includes(context))continue;
+  const key=`${revision}/${metric.device}/${context}/${metric.metric}`;const values=groups.get(key)||[];values.push(metric.value);groups.set(key,values);
  }
  return [...groups].map(([group,values])=>{values.sort((a,b)=>a-b);return {group,samples:values.length,p75:values[Math.ceil(values.length*.75)-1],min:values[0],max:values.at(-1),interpretation:values.length<20?'Small sample; do not treat as a stable field percentile.':'Observed log sample; not a population guarantee.'};});
 }

@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   const metric=normalizeHomeVital(await readVitalBody(request));
   if(!metric)return new Response(null,{status:400});
   // Deliberately do not log the request or its headers, URL, IP, or any client-supplied fields.
-  console.info(JSON.stringify({event:'homepage_web_vital',scope:'homepage-entry-document',...metric,revision:process.env.VERCEL_GIT_COMMIT_SHA?.slice(0,40)||'local'}));
+  console.info(JSON.stringify({event:'homepage_web_vital',scope:'homepage-entry-document',...metric,context:metric.context||'legacy-document',revision:process.env.VERCEL_GIT_COMMIT_SHA?.slice(0,40)||'local'}));
   return new Response(null,{status:204,headers:{'Cache-Control':'no-store'}});
  } catch(error) {return new Response(null,{status:error instanceof RangeError?413:400});}
 }
