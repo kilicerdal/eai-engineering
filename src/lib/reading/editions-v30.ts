@@ -1859,7 +1859,7 @@ export const v30ReadingEditions={
     "paragraphs": 803,
     "excerptKind": "passage",
     "startSection": 1,
-    "startParagraph": "p65"
+    "startParagraph": "p66"
   },
   "3420": {
     "words": 86490,

@@ -5,6 +5,7 @@ import {ACTIVITY_HANDOFF,parseActivityHandoff,offerTutorDraft} from "@/lib/learn
 import {passageHandoff,DISCUSSION_KEY} from '@/lib/reading/library';
 import Link from "next/link";
 import TutorSourceEvidence from "./TutorSourceEvidence";
+import TutorReturn from "./TutorReturn";
 import {TutorFirstQuestion,TutorResumeCard,TutorPauseHere} from "./TutorVisit";
 import TutorRequestPreview from "./TutorRequestPreview";
 import {tutorPayload} from "@/lib/tutor-payload";
@@ -23,6 +24,8 @@ import {packPracticeEvidence,matchingPractice} from "@/lib/study-recovery";
 
 import { accountConfigured } from "@/lib/study-account";
 import {
+  lazy,
+  Suspense,
   useMemo,
   useEffect,
   useLayoutEffect,
@@ -42,7 +45,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+const SyntaxHighlighter=lazy(()=>import("react-syntax-highlighter/dist/esm/prism"));
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { defaultLearningProfile, learningLevels, learningApproaches, normalizeSavedStudyMessages, type LearningProfile } from "@/lib/study-tutor";
@@ -154,7 +157,7 @@ function CodeBlock({
         <CopyCodeButton code={code} />
       </div>
       <div className="overflow-x-auto">
-        <SyntaxHighlighter
+        <Suspense fallback={<pre className="p-4 text-sm whitespace-pre-wrap"><code>{code}</code></pre>}><SyntaxHighlighter
           language={language || "text"}
           style={oneDark}
           customStyle={{
@@ -165,7 +168,7 @@ function CodeBlock({
           }}
         >
           {code}
-        </SyntaxHighlighter>
+        </SyntaxHighlighter></Suspense>
       </div>
     </div>
   );
@@ -718,7 +721,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
           <div className="tutor-heading-row"><h2 id="tutor-heading">Your AI Tutor</h2><button id="tutor-help-trigger" type="button" className="tutor-how-button" aria-expanded={showTutorHelp} aria-controls="tutor-help-guide" onClick={()=>setShowTutorHelp(!showTutorHelp)}>Tutor guide <span aria-hidden="true">?</span></button></div>
           <p>Ask a question, work through a problem, or review your reasoning.</p>
           {!dedicated&&<Link className="tutor-workspace-link" href={activeId?`/study/tutor?session=${encodeURIComponent(activeId)}`:'/study/tutor'}>Open full workspace ↗</Link>}
-          {dedicated&&<Link className="tutor-workspace-link" href={activeId?`/study?session=${encodeURIComponent(activeId)}#ai-assistant`:'/study#ai-assistant'}>← Back to the Learning Studio</Link>}
+          <TutorReturn/>{dedicated&&<Link className="tutor-workspace-link" href={activeId?`/study?session=${encodeURIComponent(activeId)}#ai-assistant`:'/study#ai-assistant'}>← Back to the Learning Studio</Link>}
           {showTutorHelp&&<div id="tutor-help-guide" className="tutor-help-guide" role="region" aria-label="How to use your AI Tutor"><div className="tutor-help-heading"><h3>Start with a question. Build understanding.</h3><button type="button" aria-label="Close tutor guide" onClick={closeTutorHelp}>Close</button></div><ol><li><strong>Tell the tutor what you need.</strong><p>Share a subject, paste a problem or show your attempt. Add your level or goal if useful; you can begin with one question.</p></li><li><strong>Choose how to work.</strong><p><b>Guide me</b> asks guiding questions. <b>Explain</b> clarifies an idea. <b>Quiz me</b> offers practice. <b>Check my work</b> reviews your attempt. <b>Study plan</b> helps structure a goal.</p></li><li><strong>Review your message, then Send.</strong><p>Example prompts only fill your draft. Edit them freely. Follow-up and regeneration buttons request another tutor response.</p></li><li><strong>Keep learning at your pace.</strong><p>Ask for a different explanation, try a fresh question or use Recent sessions to return later. Use New session for a separate topic. To study from a document, <a href="/study/materials">open your personal library</a>.</p></li></ol><p className="tutor-help-saving">Sessions and unsent drafts are saved in this browser. {accountConfigured?<>Choose <a href="/study/account">optional account saving</a> to keep an account copy.</>:"No account is required."} Check important facts and calculations against your materials.</p></div>}
         </div>
         <div className="tutor-focus-shell" onKeyDown={event => { if(event.key === "Escape" && openPanel) { event.preventDefault(); workspaceRoot.current?.querySelector<HTMLButtonElement>(`#tutor-${openPanel}-trigger`)?.focus(); setOpenPanel(null); } }}>
@@ -781,7 +784,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
             </div>
           </section>}
           {openPanel === "settings" && <section id="tutor-session-settings" aria-label="Session settings" className="tutor-focus-panel">
-            <div className="tutor-panel-heading"><h3>Session settings</h3><button type="button" onClick={()=>setOpenPanel(null)}>Done</button></div>
+            <div className="tutor-panel-heading"><h3>Session settings</h3><button type="button" onClick={()=>setOpenPanel(null)}>Done</button></div><details><summary>Keep a session backup</summary><p>Export the sessions currently open in this browser. Reader preferences and other rooms use separate controls. Check the downloaded file before leaving.</p><button type="button" disabled={!hydrated||loading} onClick={downloadSessions}>Download session backup</button></details>
             <label className="tutor-subject-label">Subject
               <select
                 value={active?.mode || "general"}

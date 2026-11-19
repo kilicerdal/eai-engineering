@@ -1,0 +1,3 @@
+import {bookStartQuestions} from './start-questions';
+import {readingBooks} from '../study-reading';
+export function readingOrientation(id:string){const book=readingBooks.find(b=>b.id===id);if(!book)return null;return {question:bookStartQuestions[id]??`As you read ${book.title}, what does one choice, claim or image make you reconsider?`,challenge:book.genre==='Poetry'?'Read a short passage aloud. Notice one image or rhythm before trying to interpret the whole poem.':'If names or older language slow you down, follow one person or argument for a page. You can revisit unfamiliar details later.'};}

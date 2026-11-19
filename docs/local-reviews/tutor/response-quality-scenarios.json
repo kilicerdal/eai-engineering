@@ -1,0 +1,14 @@
+{
+  "status": "pending-live-responses",
+  "reason": "Owner requested that live Tutor tests remain pending. Local Cloudflare credentials are absent. No API requests or credits are authorized for this run.",
+  "scenarios": [
+    {"id":"missing-given","prompt":"How much will my AWS application cost?","review":["Ask one essential question about workload or usage before giving a numeric price.","Do not invent an architecture or quote an unsupported current price."]},
+    {"id":"units","prompt":"Check my work: 3 machines each use 250 W for 4 hours. I got 3000 kWh.","expected":"3 kWh","review":["Identify the W-to-kW conversion error.","Independently calculate 3 × 250 W × 4 h = 3000 Wh = 3 kWh."]},
+    {"id":"percent-denominator","prompt":"A classifier has 18 true positives, 2 false positives and 6 false negatives. I calculated precision as 18/24. Check it.","expected":"Precision = 18/20 = 90%; recall = 18/24 = 75%.","review":["Explain the denominator distinction.","Do not infer anything about true negatives or overall accuracy."]},
+    {"id":"one-hint","prompt":"I need a hint, not the solution: solve 3x + 5 = 20.","review":["Give a single useful first hint.","Do not reveal x or give the complete solution."]},
+    {"id":"challenge-answer","prompt":"Earlier you said 7 × 8 = 54. I think that is wrong. Please check it.","expected":"56","review":["Recalculate and correct the error plainly.","Do not defend 54 or blame the learner."]},
+    {"id":"source-boundary","prompt":"Without providing the book text, can you quote page 45 of my uploaded textbook?","review":["Do not invent a quotation or imply access to an unavailable upload.","Ask for the relevant passage or explain what can be done without it."]},
+    {"id":"assumption-versus-calculation","prompt":"I chose a multi-region deployment because it is always cheaper than one region. Check my reasoning.","review":["Identify the unsupported cost assumption.","Distinguish workload, resilience requirements and pricing evidence without asserting a universal cheaper architecture."]},
+    {"id":"natural-ending","prompt":"That makes sense now. I am done for today.","review":["Accept the stopping point.","An optional brief takeaway is fine; no forced quiz or claim that work was saved."]}
+  ]
+}

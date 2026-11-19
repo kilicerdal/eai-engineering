@@ -2117,7 +2117,7 @@ export const v30ReadingChapters={
     {
       "label": "CONCLUDING REMARKS:",
       "section": 341,
-      "paragraph": "p4485"
+      "paragraph": "p4486"
     }
   ],
   "2153": [
@@ -5712,7 +5712,7 @@ export const v30ReadingChapters={
     {
       "label": "IV.",
       "section": 3,
-      "paragraph": "p75"
+      "paragraph": "p76"
     },
     {
       "label": "CHAPTER THE SECOND. — THE EXPERIMENTAL FARM.",
@@ -6908,11 +6908,6 @@ export const v30ReadingChapters={
       "paragraph": "p1276"
     },
     {
-      "label": "LOST!",
-      "section": 61,
-      "paragraph": "p1307"
-    },
-    {
       "label": "CHAPTER 26",
       "section": 62,
       "paragraph": "p1368"
@@ -6985,7 +6980,7 @@ export const v30ReadingChapters={
     {
       "label": "CHAPTER 33",
       "section": 84,
-      "paragraph": "p1841"
+      "paragraph": "p1843"
     },
     {
       "label": "OUR ROUTE REVERSED",
@@ -20262,7 +20257,7 @@ export const v30ReadingChapters={
     {
       "label": "I. Childhood",
       "section": 1,
-      "paragraph": "p65"
+      "paragraph": "p66"
     },
     {
       "label": "II. The New Master And Mistress.",

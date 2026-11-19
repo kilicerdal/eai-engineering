@@ -1,0 +1,175 @@
+{
+  "scope": "Ten individually inspected questions only. This file does not sign off the remaining bank.",
+  "records": [
+    {
+      "id": "github-actions-01",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs#defining-prerequisite-jobs",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "Dependency plus normal success behavior is correct.",
+        "YAML display order supplies no dependency.",
+        "A display name is not scheduling.",
+        "A schedule is an event, not a prerequisite."
+      ],
+      "scope": "Normal success conditions, not a job with an overriding always condition.",
+      "fingerprint": "06f8c2df5f5a405f8dd154c363f617d526d4c880e8eabb97bb38ae73d80e37ee"
+    },
+    {
+      "id": "github-actions-02",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations#adding-a-matrix-strategy-to-your-workflow-job",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "A step name does not expand execution.",
+        "A comment does not create runs.",
+        "One combination cannot cover four combinations.",
+        "Two axes of two values create four variants before explicit exclusions."
+      ],
+      "scope": "Default Cartesian matrix, without exclusions or duplicate include entries.",
+      "fingerprint": "42e8bf961da79dc31c5d34228fd4d7164b102da6e83cd838fbc457de68cdde64"
+    },
+    {
+      "id": "github-actions-03",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/tutorials/store-and-share-data#passing-data-between-jobs-in-a-workflow",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "A comment does not upload a file.",
+        "Renaming cannot transfer bytes.",
+        "Upload/download is the documented job file handoff.",
+        "Independent runner workspaces are not shared storage."
+      ],
+      "scope": "The explicit constraints in the stored question.",
+      "fingerprint": "33e9286120c382a80d93f1d0c5980cb685a209cc9e28ea43a52e18765ca1e246"
+    },
+    {
+      "id": "github-actions-04",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow#using-filters",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "Retention applies after execution.",
+        "Event and filter matching governs eligibility.",
+        "Cache work occurs after a job starts.",
+        "Display order cannot satisfy an event filter."
+      ],
+      "scope": "The explicit constraints in the stored question.",
+      "fingerprint": "ecee91fac95272a1056cd192b9e22dc3977ff12c386fb1969f9a45bbf6d97879"
+    },
+    {
+      "id": "github-actions-05",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/tutorials/create-actions/create-a-composite-action#composite-actions-and-reusable-workflows",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "Composite packages steps for a caller job.",
+        "Issue templates do not run commands.",
+        "Branch protection does not package steps.",
+        "Project boards do not implement executable actions."
+      ],
+      "scope": "The explicit constraints in the stored question.",
+      "fingerprint": "a1637b9e0491dc235b5898db435bc47e9de8200d59af9c3ad0d29d79d3fea44b"
+    },
+    {
+      "id": "github-actions-06",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/create-and-publish-actions/release-and-maintain-actions#developing-and-releasing-actions",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "Silent breakage gives consumers no migration boundary.",
+        "Deleting consumers is destructive, not compatibility.",
+        "Hiding documentation conceals rather than repairs the contract.",
+        "Versioned releases and migration guidance fit an output contract change."
+      ],
+      "scope": "The explicit constraints in the stored question.",
+      "fingerprint": "275b79076e34f6daf12a6f39bb4e2f83d69a2d598a32f946d8d5462146fff989"
+    },
+    {
+      "id": "github-actions-07",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/reference/security/secure-use#hardening-for-self-hosted-runners",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "A runner name is not an isolation control.",
+        "A pass badge does not prove isolation.",
+        "Persistent self-hosted execution can expose host state and credentials.",
+        "Public contribution is not a trust grant."
+      ],
+      "scope": "The explicit constraints in the stored question.",
+      "fingerprint": "21db0753e7c46d100108f0b5e65327efb140081357d4515d8d61d465fc751b70"
+    },
+    {
+      "id": "github-actions-08",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#creating-a-reusable-workflow",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "Deleting history impedes controlled change.",
+        "Reusable workflows centralize a parameterized contract; permissions still matter.",
+        "Independent copied changes create drift.",
+        "Administrator credentials are unnecessary for reuse."
+      ],
+      "scope": "The explicit constraints in the stored question.",
+      "fingerprint": "f935bd9c2448a4b39c96d3ff318a62cdfc8dd66b94b3a624d0ba078087052c42"
+    },
+    {
+      "id": "github-actions-09",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/concepts/security/openid-connect#understanding-the-oidc-token",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "OIDC can replace a permanent key when cloud trust and job permissions are correctly scoped.",
+        "A secret rename does not shorten its lifetime.",
+        "Secret disclosure is not a necessary diagnostic step.",
+        "More privilege does not solve permanent credential exposure."
+      ],
+      "scope": "Configured provider trust, scoped token claims and job permission are prerequisites.",
+      "fingerprint": "6181f4499122f923ca9de0f71befbfea60321fbb931caa6929238329aeaae7d0"
+    },
+    {
+      "id": "github-actions-10",
+      "edition": "quality-v13",
+      "checkedOn": "2026-11-19",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/reference/security/secure-use#good-practices-for-mitigating-script-injection-attacks",
+      "sourceInspection": "Official GitHub documentation read during this review; section is linked. No official exam endorsement or independent human accreditation is claimed.",
+      "choiceChecks": [
+        "Attacker-controlled titles may contain shell syntax.",
+        "Extra permission enlarges impact.",
+        "Output hiding does not prevent execution.",
+        "Keep the expression out of generated shell syntax; use data and safe quoting."
+      ],
+      "scope": "The explicit constraints in the stored question.",
+      "fingerprint": "1f0fee53fcbc5b2adcee4cf0d28389f8e8e0c7b480e2fd8e2fe0119c02845243"
+    }
+  ]
+}

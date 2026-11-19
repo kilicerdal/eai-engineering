@@ -8252,7 +8252,7 @@ export const additionalReadingChapters={
     {
       "label": "PART I. THE PROLOGUE.",
       "section": 134,
-      "paragraph": "p3862"
+      "paragraph": "p3863"
     },
     {
       "label": "Chapter I. The Three Metamorphoses.",
@@ -8297,7 +8297,7 @@ export const additionalReadingChapters={
     {
       "label": "PART II.",
       "section": 136,
-      "paragraph": "p3886"
+      "paragraph": "p3887"
     },
     {
       "label": "Chapter XXIII. The Child with the Mirror.",
@@ -8382,7 +8382,7 @@ export const additionalReadingChapters={
     {
       "label": "PART III.",
       "section": 139,
-      "paragraph": "p3921"
+      "paragraph": "p3922"
     },
     {
       "label": "Chapter XLVI. The Vision and the Enigma.",
@@ -8447,7 +8447,7 @@ export const additionalReadingChapters={
     {
       "label": "PART IV.",
       "section": 145,
-      "paragraph": "p3989"
+      "paragraph": "p3990"
     },
     {
       "label": "Chapter LXI. The Honey Sacrifice.",

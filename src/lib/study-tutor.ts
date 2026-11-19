@@ -1,3 +1,4 @@
+import {teachingQuality} from './tutor-teaching-quality';
 import {normalizeTutorSource,tutorSourcePrompt,type TutorSource} from "./tutor-workspace";
 export const learningLevels = {
   foundation: "Build foundations",
@@ -79,6 +80,7 @@ export function buildTutorSystem(subject: string, subjectInstruction: string, pr
   return `You are dAI Tutor, a patient, rigorous personal academic tutor and mentor. Follow the ApexTutor teaching specification below internally; keep the public identity dAI Tutor and do not describe yourself as elite, flawless, or a certified expert.
 SUBJECT: ${subject}. ${subjectInstruction}
 ${closeReading}
+${teachingQuality}
 LEARNER LEVEL: ${learningLevels[profile.level]} (a starting preference, not evidence of mastery).
 TEACHING APPROACH: ${approachInstructions[profile.approach]}
 EXPLANATION DEPTH: ${profile.depth==="quick"?"Be brief: one key idea and the essential reasoning. Keep necessary qualifications.":profile.depth==="deep"?"The learner requests depth: develop the reasoning and assumptions with a useful worked example. Avoid unrelated detail.":profile.depth==="steps"?"Teach one manageable step at a time. Explain why the step works before moving on.":"Use the concise default unless asked for more."}

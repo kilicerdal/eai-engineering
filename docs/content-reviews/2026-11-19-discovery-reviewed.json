@@ -1,0 +1,170 @@
+{
+  "scope": "Fifteen individually inspected discoveries. These are source-scoped agent reviews, not independent accreditation or a completed review of all 1,000 discoveries. All 81 keyword-flagged entries received wording triage; unreviewed source claims remain open.",
+  "records": [
+    {
+      "id": "mobius-strip",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://www.physics.wisc.edu/ingersollmuseum/exhibits/mechanics/mobiusstrip/",
+      "finding": "The exhibition describes a half-turn joining operation and its single connected surface.",
+      "evidenceType": "Mathematical construction",
+      "scope": "One continuous side in the ideal joined strip; not a claim about the physical thickness of paper.",
+      "fingerprint": "43eb372f980fc1f1f29b949d8912a21220504980c27d9e78888c125b0ae7dcb5"
+    },
+    {
+      "id": "web-scientists",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/",
+      "finding": "CERN locates the proposal in 1989 and describes international scientific information sharing.",
+      "evidenceType": "Institutional history",
+      "scope": "The Web is distinct from the pre-existing Internet.",
+      "fingerprint": "9d9bed012f04a323da6a278643a86d233e86a3e097c833a7ab3058cb1d88a7a6"
+    },
+    {
+      "id": "web-editor",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://www.w3.org/People/Berners-Lee/WorldWideWeb.html",
+      "finding": "The inventor describes WorldWideWeb as a NeXT browser-editor.",
+      "evidenceType": "Firsthand historical account",
+      "scope": "The superlative concerns Web browsers; the current display edition narrows the title and source.",
+      "fingerprint": "868b137e1a2264e51dcc521407a80961b691f66703d06cd9fb835cc76692a24b"
+    },
+    {
+      "id": "first-website",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/",
+      "finding": "CERN identifies info.cern.ch and its WWW project introduction.",
+      "evidenceType": "Institutional history",
+      "scope": "First website, not the first networked information service of any kind.",
+      "fingerprint": "bf8a381b44084e249fcbb784aa382c873ee06fe9eef9c93e6f5b01d285eccb5e"
+    },
+    {
+      "id": "regular-tilings",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://mathworld.wolfram.com/Tessellation.html",
+      "finding": "MathWorld identifies three regular tilings; triangles, squares and hexagons satisfy the full-turn angle condition.",
+      "evidenceType": "Mathematical classification",
+      "scope": "Euclidean plane; congruent regular polygons, edge-to-edge regular tiling.",
+      "fingerprint": "88f74cfe0c5ea71078975152b91489ddbbdfa3ef93047c2369f8e4fb04dbc4ed"
+    },
+    {
+      "id": "jupiter-fast-spin",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://science.nasa.gov/jupiter/jupiter-facts/",
+      "finding": "NASA reports about 9.9 hours per rotation and about 12 Earth years per orbit.",
+      "evidenceType": "Institutional astronomy explanation",
+      "scope": "Comparison is among the planets of our solar system; approximate rotation, not an exact universal clock.",
+      "fingerprint": "52f6dc80bb12305116efa1d0962d3ba10d7a286ca0905e1cb7b7b8c135b5a192"
+    },
+    {
+      "id": "jupiter-dark-rings",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://science.nasa.gov/jupiter/jupiter-facts/",
+      "finding": "NASA attributes the faint dark-particle rings to Voyager 1 discovery in 1979.",
+      "evidenceType": "Institutional astronomy explanation",
+      "scope": "Ring visibility depends on lighting and observation geometry.",
+      "fingerprint": "ddbf281e528ba273c5662f72a5993988681c69356bccaed7cefc17668692a3ae"
+    },
+    {
+      "id": "uranus-telescope",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://science.nasa.gov/uranus/facts/",
+      "finding": "NASA records Herschel in 1781 and the later recognition as a planet.",
+      "evidenceType": "Institutional history of astronomy",
+      "scope": "First telescope-assisted planet discovery; not its first possible human observation.",
+      "fingerprint": "544aa7028da5836ae9d3f6fbb384ae17b4000b1838f2d9fc273f8a317853e90e"
+    },
+    {
+      "id": "mars-olympus",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://science.nasa.gov/mars/facts/",
+      "finding": "NASA describes Olympus Mons as the solar system’s largest volcano with an Arizona-scale base.",
+      "evidenceType": "Institutional planetary explanation",
+      "scope": "Comparison is volcanoes in our solar system; no unsupported exact height is added.",
+      "fingerprint": "4d2c14f09d934357895acbb83cd6d0eb2adf2145c14d0f300d9ebc55d5d94856"
+    },
+    {
+      "id": "skin-organ",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://www.niams.nih.gov/health-topics/educational-resources/health-lesson-learning-about-skin",
+      "finding": "NIAMS identifies skin as the biggest organ and lists protective and sensory functions.",
+      "evidenceType": "Institutional health education",
+      "scope": "General organ-level comparison, not a diagnosis or treatment recommendation.",
+      "fingerprint": "f3ac281fd4f6e0ab699c6a525eff517c901a4adc1f77fca3f9643bcd7a8a0dce"
+    },
+    {
+      "id": "earth-freshwater",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://www.usgs.gov/water-science-school/science/how-much-water-there-earth",
+      "finding": "The USGS table separates saline groundwater from freshwater and supports a rounded roughly 2.5 percent total fresh share.",
+      "evidenceType": "Institutional data summary",
+      "scope": "Freshwater share of all water, not the fraction immediately accessible for drinking; percentage is approximate.",
+      "fingerprint": "685cf0fe4da0576c63ee61ef35649981184392efb9fed0e636633b7626cff8bb"
+    },
+    {
+      "id": "microwave-giant",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://www.aps.org/apsnews/2015/10/first-patent-for-microwave",
+      "finding": "APS caption states over 300 kg and water cooling for the first Radarange.",
+      "evidenceType": "Professional society historical explanation",
+      "scope": "Early commercial Radarange; no claim about every experimental oven.",
+      "fingerprint": "8e3a4a76745bb35c2628b061b8bb83e85e629e366ce6ad4ea9f07bdaac076e91"
+    },
+    {
+      "id": "manchester-baby",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://www.computerhistory.org/timeline/1948/",
+      "finding": "The museum records 17 instructions on 21 June 1948 and its digital electronic stored-program qualification.",
+      "evidenceType": "Museum history",
+      "scope": "Retain all three qualifiers; do not broaden to first computation or first programmable machine.",
+      "fingerprint": "5186b861f776b76412383a401753c681022bf03c3c445c3b1997411a143c36f9"
+    },
+    {
+      "id": "nautilus-room",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://oceanservice.noaa.gov/facts/nautilus.html",
+      "finding": "NOAA distinguishes the occupied largest chamber from the shell’s other buoyancy compartments.",
+      "evidenceType": "Institutional marine explanation",
+      "scope": "Anatomical chamber comparison, not all cephalopods.",
+      "fingerprint": "927c1e63f74353fa6d1bcbc0d3265bf46866c33458b8eda8ec6734f6db201dd8"
+    },
+    {
+      "id": "jikji-metal-type",
+      "reviewer": "Codex agent source-and-wording review",
+      "checkedOn": "2026-11-19",
+      "status": "supported-with-stated-scope",
+      "source": "https://www.bnf.fr/en/jikji-treasure-world-printing",
+      "finding": "BnF records the 1377 Korean printing and oldest-known surviving metal-type book distinction.",
+      "evidenceType": "Collection-holding institution history",
+      "scope": "Known surviving book and movable metal type; not first printing of all kinds.",
+      "fingerprint": "a0358b4fbf54788cb7f3c2fcf4ace0a00642d340d9a946f93816478fd3163001"
+    }
+  ]
+}

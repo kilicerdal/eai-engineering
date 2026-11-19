@@ -74,6 +74,8 @@ test('mobile menu supports keyboard dismissal and readable tutor controls',async
  await page.locator('#study-navigation-links').getByRole('link',{name:'My learning',exact:true}).click();
  await expect(page.locator('#study-navigation-links')).toBeHidden();
  }
+ const embedded=page.locator('summary').filter({hasText:'Ask your Tutor here'});if(await embedded.count())await embedded.click();
+ await expect(page.locator('.tutor-focus-tools')).toBeVisible();
  const shell=await page.locator('.tutor-focus-shell').boundingBox();
  const tools=await page.locator('.tutor-focus-tools').boundingBox();
  expect(tools!.x+tools!.width).toBeLessThanOrEqual(shell!.x+shell!.width);

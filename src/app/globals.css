@@ -29,3 +29,20 @@ body {
 @media print{body:has(>.eai-print-sheet)>*:not(.eai-print-sheet){display:none!important}body>.eai-print-sheet{display:block!important;color:#111;background:white;padding:1cm;font:12pt Georgia,serif;overflow-wrap:anywhere}body>.eai-print-sheet h1{font-size:22pt}body>.eai-print-sheet h2{font-size:16pt}body>.eai-print-sheet section{break-inside:avoid}body:has(>.eai-print-sheet){background:white!important}}
 
 html[data-comfort-focus=on] main :is(p,blockquote,pre){max-width:72ch}html[data-comfort-focus=on] .companion-main details{display:none}html[data-comfort-focus=on] .continuity-strip{box-shadow:none}.comfort-focus-exit{position:fixed;bottom:1rem;right:1rem;z-index:110;padding:.8rem 1rem;background:#f0d59a;color:#102332;border:2px solid #7d683f;border-radius:8px;font:inherit;max-width:calc(100vw - 2rem)}.comfort-focus-exit:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* Learning depth: optional, contained and keyboard-readable. */
+.learning-depth li {margin-block:.65rem;line-height:1.65}
+.learning-depth pre,.learning-depth .prepared-request pre {white-space:pre-wrap;overflow-wrap:anywhere}
+.cert-judgment-activity pre {white-space:pre-wrap;overflow-wrap:anywhere}
+.tutor-return {display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center}
+.tutor-return small {color:#b8c4ce}
+.rr-inline-orientation {font-size:.9em;line-height:1.6;color:var(--rr-muted,#b8c4ce);margin-block:1rem}
+.curiosity-pause {margin-block:1rem;border-top:1px solid #c6a76b55;padding-top:1rem}
+.curiosity-pause label,.curiosity-pause small {display:block;margin-block:.65rem}
+.curiosity-pause textarea {display:block;width:100%;max-width:42rem;background:#102737;color:#f5eedf;border:1px solid #b9985d;border-radius:.4rem;padding:.7rem}
+.curiosity-pause button,.curiosity-pause a {display:inline-block;margin:.5rem .8rem .5rem 0}
+.project-decision-identity {font-weight:600;line-height:1.6}
+.learning-depth :is(button,a,input,textarea,select):focus-visible,.curiosity-pause :is(button,a,textarea):focus-visible {outline:3px solid #e0bb75;outline-offset:4px}
+@media(max-width:600px){.tutor-tool-grid {flex-wrap:wrap}.learning-depth {overflow-wrap:anywhere}.curiosity-pause button {min-height:44px}}
+
+.learning-depth h2 {font-size:1.35rem;line-height:1.4}.learning-depth h3 {font-size:1.1rem;line-height:1.5}

@@ -1,14 +1,29 @@
 import {certQuestions,getCert,type CertId,type CertQuestion} from './certification-content';
 import {officialSection} from './certification-resources';
 import {workedSteps} from './certification-practice-v9';
-import {practiceQuestion,QUALITY_REVISION} from './certification-quality';
+import {activityLevel,practiceQuestion,QUALITY_REVISION} from './certification-quality';
+import {practiceCaseByQuestion} from './certification-bank500';
 import {extraFor,getExtra,extraQuestions} from './certification-extra-questions';
 export type MistakeKind='concept'|'reading';
 export function shortLesson(q:CertQuestion){const domain=getCert(q.track)!.domains.find(d=>d.id===q.domain)!;return {title:domain.title,text:domain.lesson,application:q.explanations[q.answer],question:domain.check,source:officialSection(q.track,q.domain)};}
 export function missingStep(q:CertQuestion){const steps=workedSteps(q);return {before:steps[0],ask:'Which mismatch would you rule out, and why?',reveal:steps[1],after:steps[2]};}
 export function sourceFocus(q:CertQuestion){const section=officialSection(q.track,q.domain);return {section,lookFor:`Find the definition or constraint behind “${q.objective}”. Compare its scope with this question’s requirement.`,scope:'The link targets a mapped topic section, not an exact supporting sentence. PDF page hints depend on the cited document version.'};}
 // Stable independent forms. Four disjoint 25-question samples cover the unchanged core bank per path.
-export function testForms(id:CertId){const pool=certQuestions.filter(q=>q.track===id);return Array.from({length:4},(_,i)=>({id:`core-${i+1}`,title:`Practice set ${String.fromCharCode(65+i)}`,questions:pool.filter((_,n)=>n%4===i).map(q=>q.id)}));}
+export function testForms(id:CertId){
+ const pool=certQuestions.filter(q=>q.track===id),groups=new Map<string,CertQuestion[]>(),forms:string[][]=[[],[],[],[]],families=Array.from({length:4},()=>new Map<string,number>());
+ for(const q of pool){const key=q.domain+':'+activityLevel(q);groups.set(key,[...(groups.get(key)??[]),q]);}
+ let cursor=0;
+ for(const key of [...groups.keys()].sort()){
+  const group=groups.get(key)!,quota=[0,0,0,0];
+  for(let i=0;i<group.length;i++)quota[cursor++%4]++;
+  for(const q of group){
+   const family=practiceCaseByQuestion[q.id]??q.id;
+   const available=[0,1,2,3].filter(i=>quota[i]>0).sort((a,b)=>(families[a].get(family)??0)-(families[b].get(family)??0)||forms[a].length-forms[b].length||a-b);
+   const target=available[0];forms[target].push(q.id);quota[target]--;families[target].set(family,(families[target].get(family)??0)+1);
+  }
+ }
+ return forms.map((questions,i)=>({id:`core-${i+1}`,title:`Practice set ${String.fromCharCode(65+i)}`,questions}));
+}
 export type ExtraAnswer={selected:number[];note:string;checked:boolean};
 export type ExtraRound={id:string;revision:'extra-v1';questions:string[];mode:'learn'|'test';index:number;answers:Record<string,ExtraAnswer>;startedAt:number;finishedAt:number|null;paused:boolean};
 export type ExtraWork={version:1;rounds:ExtraRound[];active:string|null};

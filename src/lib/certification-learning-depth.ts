@@ -1,0 +1,29 @@
+import {type CertQuestion} from './certification-content';
+import {smallLesson} from './certification-small-lessons';
+import {practiceCaseByQuestion} from './certification-bank500';
+import {practiceQuestion} from './certification-quality';
+import type {CertSession} from './certification-study';
+export const conceptRefreshers:Record<string,{before:string;contrast:string;check:string}>={
+ elasticity:{before:'Capacity is how much work a system can handle; demand is the work arriving.',contrast:'Adding capacity addresses load. An independent recovery path addresses failure. One does not prove the other.',check:'Would the design still work if the only component failed?'},
+ availability:{before:'Capacity describes how much work can be handled. Availability concerns whether the service can still be used.',contrast:'Adding capacity at one location can handle more load but still depend on that location. An independent alternative also needs a working failover path.',check:'If the named dependency fails, what evidence shows the service can continue?'},
+ identity:{before:'Authentication checks identity; authorization decides allowed actions.',contrast:'MFA adds a sign-in factor. A scoped role constrains permitted actions and can provide temporary credentials.',check:'Is the scenario missing stronger sign-in, narrower permissions, or credential lifecycle handling?'},
+ cost:{before:'Forecasts, budget targets and observed costs describe different things.',contrast:'Estimate before a change; use configured notifications for targets; investigate actual charges with cost analysis.',check:'Does the question ask for a forecast, an alert or an explanation of existing spend?'},
+ purchase:{before:'A commitment creates an obligation; interruptible capacity can be reclaimed.',contrast:'Restartable flexible work may tolerate Spot reclamation. A non-interruptible short task needs a different purchasing constraint.',check:'Is interruption acceptable, and is sustained usage established?'},
+ storage:{before:'Objects use keys, file systems expose files, and block storage exposes a device.',contrast:'S3 object access and a shared file-system mount solve different access requirements. Choose the interface before comparing price.',check:'What access method and sharing behavior does this application require?'},
+ queue:{before:'A successful database commit and a queue acknowledgement are separate events.',contrast:'Standard SQS can redeliver a message; idempotent business processing handles a repeated intent. A queue alone does not prove one business effect.',check:'What happens if storage succeeds and acknowledgement fails?'},
+ delivery:{before:'DNS resolves names; a content cache returns stored responses.',contrast:'Route 53 name resolution and CloudFront content delivery address different parts of a request.',check:'Is the requirement about resolving a name or delivering cached content?'},
+ confirmation:{before:'A defect fix and an unintended side effect are different test targets.',contrast:'Confirmation checks the reported fix. Regression looks for adverse effects elsewhere.',check:'What changed, and what adjacent behavior could it affect?'},
+ boundary:{before:'A partition groups values expected to behave similarly; a boundary is its edge.',contrast:'Sampling an interior value and exercising a limit provide different evidence.',check:'Are the domain, inclusive limits and neighboring valid values stated?'},
+ validation:{before:'Verification checks specified requirements; validation examines intended use.',contrast:'Passing specified checks can coexist with solving the wrong user problem.',check:'Which user need is the available evidence actually testing?'},
+ static:{before:'A work product can be examined before software is executed.',contrast:'A review can expose contradictions; executing a test exercises behavior. Neither activity replaces the other.',check:'Does this record show inspection of a document or execution of software?'},
+ risk:{before:'Risk combines likelihood and impact; an untested area remains uncertain.',contrast:'A passing percentage does not describe the importance of missing coverage.',check:'Which consequential behavior is absent from these results?'},
+ coverage:{before:'Coverage is measured against a defined model and denominator.',contrast:'Statement coverage counts statements; branch coverage counts decision outcomes. Executing all statements need not exercise every outcome.',check:'What was counted, and which modeled outcomes remain unexecuted?'},
+ automation:{before:'An automated check needs an observable expected result.',contrast:'A script finishing is different from an assertion detecting the relevant fault.',check:'Would the check fail for the defect it claims to detect?'}
+};
+export function learningDepth(q:CertQuestion){const lesson=smallLesson(q);return lesson?conceptRefreshers[lesson.id]??null:null;}
+export function scenarioRecaps(session:CertSession){if(session.finishedAt===null)return [];const groups=new Map<string,string[]>();for(const id of session.questions){const family=practiceCaseByQuestion[id];if(family)groups.set(family,[...(groups.get(family)??[]),id]);}return [...groups].filter(([,ids])=>ids.length>1).map(([family,ids])=>({family,items:ids.map(id=>{const q=practiceQuestion(id,session.contentRevision);return {id,objective:q.objective,explanation:q.explanations[q.answer],answered:session.answers[id]?.selected!==null&&session.answers[id]?.selected!==undefined};})}));}
+export function sourceQuestions(q:CertQuestion){return [
+ 'Find the source definition or rule behind: '+q.objective+'.',
+ 'Check that its assumptions match the scenario, including service variant, limits and document version.',
+ 'Identify what supports the fitting answer, then check the constraint that rules out each alternative.'
+];}

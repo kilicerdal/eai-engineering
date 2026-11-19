@@ -1,0 +1,9 @@
+# Learning depth and whole-site refinements — November 19, 2026
+
+Owner authorized release of the current tested local work after being told that 89 tracked improvement items are not all complete. This release publishes the implemented changes, not a claim of completion of every accepted editorial task.
+
+Changes include authored concept refreshers and transfer checks, balanced practice forms, preserved historical question editions through quality-v13, clearer source scope and answer-review controls, optional Tutor explanation steps and return links, book starting questions and comparative recommendations, corrected contents targets, consolidated discovery evidence and scoped cross-topic bridges, guided room backups, simpler materials entry and deferred secondary tools. Existing artwork and original book files remain intact.
+
+Validation: 1,028 unit tests, all 133 local production browser checks, TypeScript, production build and packed-book/asset budgets pass. Inventory remains 12 certification paths, 1,090 questions, 200 books and 1,000 discoveries. Saved editions, attempts, notes, reading positions, bookmarks and storage keys are preserved. No model requests or API spending occurred. Temporary reports and the unrelated reading-audit timestamp change are excluded.
+
+Limits: the new individual certification ledger records 10 scoped agent reviews and 1,080 pending editorial signoffs. Source retrieval and automated overlap triage are not independent factual validation. Book contents reconciliation covers 8,390 entries, not every narrative paragraph. Fifteen discovery source reviews do not verify all 1,000 discoveries. Owner feedback was “looks good”; physical-device details were not supplied. Live Tutor response evaluation stays pending by owner instruction. See the local review records for exact boundaries.
