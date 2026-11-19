@@ -168,3 +168,25 @@ test('the original About background loads near its section rather than at first 
   await expect(original).toHaveAttribute('src', /barcelona-future\.webp/);
   await expect.poll(() => original.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
 });
+
+test("hero preserves original artwork and starts one high-priority image request", async ({ page, context }) => {
+  const session = await context.newCDPSession(page);
+  await session.send("Network.enable");
+  await session.send("Network.setCacheDisabled", { cacheDisabled: true });
+  const requests: { url: string; priority: string }[] = [];
+  session.on("Network.requestWillBeSent", event => {
+    if (event.request.url.includes("gobekli-intelligence-vitruvian-v2.webp")) {
+      requests.push({ url: event.request.url, priority: event.request.initialPriority });
+    }
+  });
+  await page.goto("/");
+  const hero = page.locator(".atlas-landscape");
+  await expect(hero).toHaveAttribute("fetchpriority", "high");
+  await expect(hero).toHaveAttribute("loading", "eager");
+  await expect.poll(() => hero.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  expect(requests).toHaveLength(1);
+  expect(requests[0].priority).toBe("High");
+  const imageUrl = new URL(requests[0].url);
+  expect(imageUrl.searchParams.get("url")).toBe("/images/threshold/gobekli-intelligence-vitruvian-v2.webp");
+  expect(imageUrl.searchParams.get("q")).toBe("75");
+});

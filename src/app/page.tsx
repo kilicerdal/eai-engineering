@@ -60,7 +60,7 @@ export default function Home() {
    <a className="atlas-dai-entry" href="/study" aria-label="Explore dAI Learning Studio">Explore dAI <span aria-hidden="true">→</span></a>
   </header>
   <section className="atlas-hero" aria-labelledby="hero-title">
-   <Image src="/images/threshold/gobekli-intelligence-vitruvian-v2.webp" alt="" fill preload sizes="100vw" className="atlas-landscape" />
+   <Image src="/images/threshold/gobekli-intelligence-vitruvian-v2.webp" alt="" fill loading="eager" fetchPriority="high" sizes="100vw" className="atlas-landscape" />
    <div className="atlas-hero-shade"/>
    <div className="atlas-hero-copy">
     <p className="atlas-eyebrow">ANCIENT CURIOSITY. FUTURE POSSIBILITY.</p>
