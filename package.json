@@ -57,7 +57,7 @@
     "eslint-config-next": "16.4.6",
     "playwright-core": "1.64.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^7"
   },
   "overrides": {
     "@vercel/cli-config": {
