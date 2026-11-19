@@ -1,4 +1,5 @@
 "use client";
+import QuietChapter from "@/components/QuietChapter";
 import ShortCaseResume from '@/components/ShortCaseResume';
 
 import HeritageRow from "@/components/HeritageRow";
@@ -87,11 +88,11 @@ export default function Home() {
 
   <nav className="home-jump-nav" aria-label="Homepage sections" onClick={focusHomeSection}>
    <span>Jump to</span>
-   {[['project-work','Projects'],['learning','Learning'],['artwork','Artwork'],['contact','Contact']].map(([id,label])=><a key={id} href={`#${id}`} aria-current={navSection===id?'location':undefined}>{label}</a>)}
+   {[['project-work','Projects'],['learning','Learning'],['artwork','Solve & explore'],['contact','Contact']].map(([id,label])=><a key={id} href={`#${id}`} aria-current={navSection===id?'location':undefined}>{label}</a>)}
   </nav>
   <HeritageRow id="project-work" scene="colosseum-engineering" caption="Colosseum · Engineering across time" projects><FlagshipProjects /></HeritageRow>
   <HeritageRow scene="measure-of-time" caption="The Measure of Time · Ancient geometry, future precision" imageWidth={1122} imageHeight={1402} reverse><RecordedReplay /></HeritageRow>
-  <HeritageRow id="artwork" scene="ephesus-ai" caption="Ephesus · Ancient knowledge, future possibility"><ProblemEntry /></HeritageRow>
+  <QuietChapter title="Solve a problem or explore an idea" description="Engineering workspace, interactive experiences and the Investigation Lab">  <HeritageRow id="artwork" scene="ephesus-ai" caption="Ephesus · Ancient knowledge, future possibility"><ProblemEntry /></HeritageRow>
   <HeritageRow scene="mont-saint-michel-ai" caption="Mont-Saint-Michel · An imagined bridge to future intelligence" reverse><div className="heritage-return">
    <YourNextStep />
    <details className="main-wrap problem-other-starts"><summary>Other ways to explore eAI and dAI</summary><StartHere /></details>
@@ -99,12 +100,14 @@ export default function Home() {
   </div></HeritageRow>
   <HeritageRow scene="taj-mahal-ai" caption="Taj Mahal · Imagination carried into the future"><section className="explore-home-entry" aria-labelledby="explore-entry-title"><div><p className="atlas-eyebrow">NEW / eAI EXPLORE</p><h2 id="explore-entry-title">See an idea move.</h2><p>Move a pivot. Make waves. Train a tiny AI. Discover nine interactive experiences in engineering and beyond.</p></div><Link href="/explore">Show me how it works →</Link><p className="heritage-scene-caption">Taj Mahal · Imagination carried into the future</p></section></HeritageRow>
   <HeritageRow scene="acropolis-ai" caption="Acropolis · From first principles to future intelligence" reverse><section className="lab-signature-entry" aria-labelledby="lab-entry-title"><div className="lab-entry-wrap"><div><p className="atlas-eyebrow">NEW / THE eAI INVESTIGATION LAB</p><h2 id="lab-entry-title">Something went wrong.<br/>Can you find out why?</h2><p>Step inside an engineering case. Make a prediction, inspect the evidence, and challenge the explanation—with an optional AI companion and a notebook for your discoveries.</p><div className="lab-entry-links"><Link className="atlas-button primary" href="/engineering/lab">Enter the Investigation Lab →</Link><Link href="/engineering/lab?view=project">Ask about a project ↗</Link></div></div><div className="lab-entry-method"><div><span>OBSERVED</span>What do the records establish?</div><div><span>INTERPRETATION</span>What might explain it?</div><div><span>MISSING EVIDENCE</span>What don’t we know yet?</div><div><span>NEXT CHECK</span>How could we test that?</div><p>Three recorded cases · One authored exercise · No services executed</p></div></div><p className="heritage-scene-caption">Acropolis · From first principles to future intelligence</p></section></HeritageRow>
+</QuietChapter>
   <section id="learning" className="atlas-dai-invitation" aria-labelledby="dai-invitation-title">
    <div className="atlas-dai-art"><Image src="/images/study/library-horizon.webp" alt="" fill sizes="(max-width: 760px) 100vw, 44vw" /></div>
    <div className="atlas-dai-copy"><p className="atlas-eyebrow">dAI LEARNING STUDIO</p><h2 id="dai-invitation-title">Turn curiosity into understanding.</h2><p>Learn with an AI tutor, work from your materials, and prepare with purpose.</p><ul aria-label="Learning Studio features"><li>Personal learning plans</li><li>AI tutoring</li><li>PSAT &amp; SAT practice</li><li>Reading Room</li></ul><a className="atlas-button primary" href="/study">Explore the Learning Studio <span aria-hidden="true">→</span></a><p className="atlas-dai-note">Start without an account.</p><nav className="main-learning-links" aria-label="Learning rooms"><a href="/study#ai-assistant">AI Tutor ↗</a><Link href="/study/reading">Reading Room ↗</Link><Link href="/study/curiosity">Curiosity Room ↗</Link><Link href="/study/materials">Your materials ↗</Link><Link href="/study/certifications">Certification Studio ↗</Link></nav><aside className="main-discovery"><p className="atlas-eyebrow">ONE SMALL DISCOVERY</p><h3>A sketch can be a memory tool.</h3><p>Experiments have found a memory advantage for drawing studied items compared with writing them. Artistic skill is not the goal: representing the idea is.</p><p><a href="https://pubmed.ncbi.nlm.nih.gov/29873039/" target="_blank" rel="noreferrer">Source: Psychonomic Bulletin &amp; Review · 2018 ↗</a></p><Link href="/study/curiosity?fact=drawing-memory">Explore this discovery →</Link></aside></div>
   </section>
-  <HeritageRow scene="baalbek-suspended" caption="Baalbek · From stone columns to suspended structures"><FieldNotes /></HeritageRow>
+  <QuietChapter title="The ideas and artwork behind eAI" description="Field notes, the engineer, and the AI Systems Atlas">  <HeritageRow scene="baalbek-suspended" caption="Baalbek · From stone columns to suspended structures"><FieldNotes /></HeritageRow>
   <AIPhilosophy />
+</QuietChapter>
   <HeritageRow scene="hegra-knowledge" caption="Hegra · A future of knowledge within the earth" reverse><ContactDesk /></HeritageRow>
   <div id="artwork-footer" className="artwork-footer"><HeritageRow scene="room-that-remembers" caption="The Room That Remembers · Art becomes a place for reflection" imageWidth={1774} imageHeight={887}><footer className="atlas-footer"><a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a><nav className="footer-destinations" aria-label="Footer navigation"><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">GitHub ↗</a><Link href="/study">Learning Studio ↗</Link><Link href="/study/privacy">Learning privacy</Link></nav><small>© 2026 eAI · Erdal Kilic</small></footer></HeritageRow></div>
  </main>;

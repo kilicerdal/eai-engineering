@@ -1,10 +1,11 @@
+import {foundationEdition} from './certification-foundation-quality';
 import {qualityPassEdition,qualityPassChanges} from './certification-quality-pass-edition';
 import {workshopEdition} from './certification-workshop-edition';
 import {purposeEdition} from './certification-purpose-edition';
 import {certQuestions,getQuestion,getCert,type CertQuestion} from './certification-content';
 import type {CertStudy,CertSession} from './certification-study';
-export const QUALITY_REVISION='quality-v10';
-export function validQualityRevision(value:unknown){return value===undefined||value==='quality-v7'||value==='quality-v8'||value==='quality-v9'||value===QUALITY_REVISION;}
+export const QUALITY_REVISION='quality-v11';
+export function validQualityRevision(value:unknown){return value===undefined||value==='quality-v7'||value==='quality-v8'||value==='quality-v9'||value==='quality-v10'||value===QUALITY_REVISION;}
 // The original bank stays immutable for old saved attempts. Only new sessions use this revision.
 const replacements:Record<string,string[]>={
  'ai-practitioner-13':['Retrieving approved passages into an inference prompt','Adding output examples to the current prompt','Caching a previously generated response'],
@@ -43,7 +44,8 @@ const previous=new Map(certQuestions.map(q=>[q.id,improved(q)]));
 const purpose=new Map([...previous].map(([id,q])=>[id,purposeEdition(q)]));
 const workshop=new Map([...purpose].map(([id,q])=>[id,workshopEdition(q)]));
 const current=new Map([...workshop].map(([id,q])=>[id,qualityPassEdition(q)]));
-export function practiceQuestion(id:string,revision?:string):CertQuestion{const q=getQuestion(id);if(!q)throw Error('Unknown question');if(!validQualityRevision(revision))throw Error('Unsupported question revision');return revision===QUALITY_REVISION?current.get(id)!:revision==='quality-v9'?workshop.get(id)!:revision==='quality-v8'?purpose.get(id)!:revision==='quality-v7'?previous.get(id)!:q;}
+const foundation=new Map([...current].map(([id,q])=>[id,foundationEdition(q)]));
+export function practiceQuestion(id:string,revision?:string):CertQuestion{const q=getQuestion(id);if(!q)throw Error('Unknown question');if(!validQualityRevision(revision))throw Error('Unsupported question revision');return revision===QUALITY_REVISION?foundation.get(id)!:revision==='quality-v10'?current.get(id)!:revision==='quality-v9'?workshop.get(id)!:revision==='quality-v8'?purpose.get(id)!:revision==='quality-v7'?previous.get(id)!:q;}
 export function activityLevel(q:CertQuestion):'Understand'|'Apply'|'Investigate'{return /verification|interpretation|diagnos|troubleshoot|investigat|which metric|what.*coverage/i.test(q.objective+' '+q.prompt)?'Investigate':/which.*service|what.*learning approach|what is this|which.*capability|which.*benefit/i.test(q.prompt)?'Understand':'Apply';}
 export function decidingDetail(q:CertQuestion){const scene=q.prompt.split(/\?\s*/)[0];const match=scene.match(/\b(?:must|only|without|but|cannot|needs|requires|tolerates|tolerate|unanswered|omits|fails|failed)\b[^.!?]*/i);return cleaned(match?.[0]??scene.split(/[.!]/)[0]);}
 export function simplerExplanation(q:CertQuestion){const plain=q.explanations[q.answer].replace(/Persistent deduplication can protect the business side effect across retries\./,'Remembering completed operations can stop a retried request from creating a second payment.').replace(/idempotency/gi,'protection against duplicate effects').replace(/atomic duplicate check/gi,'one indivisible check-and-record step').replace(/inference time/gi,'when the model answers').replace(/retention/gi,'how long data is kept').replace(/provenance/gi,'a record of where the information came from').replace(/RTO/g,'recovery-time target').replace(/RPO/g,'data-loss target');return cleaned(plain+' Check the requirement first, then ask what the other choices leave unresolved.');}

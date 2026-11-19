@@ -1,0 +1,2808 @@
+{
+  "revision": "quality-v11",
+  "reviewed": "2026-11-19",
+  "reviewer": "Codex editorial pass",
+  "scope": "Targeted editorial and source navigation review; not independent expert validation.",
+  "records": [
+    {
+      "id": "cloud-practitioner-01",
+      "previousHash": "657d7f044b03c3fee4e9d91f75e969a7cb8b908e95c9569fc149b7bb74aeacbb",
+      "currentHash": "eec316dd9fb5df9e4960ac29b42c578223b235f3458f5e684dcc28f0f0567b6e",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": true,
+        "explanations": true,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "elasticity"
+    },
+    {
+      "id": "cloud-practitioner-02",
+      "previousHash": "4898ab03bb3d92ca5ee34cb01a62b499ccc58aab438557519ab4a89097f9b4a6",
+      "currentHash": "dd37bdfedf339be0429dd124ed671e60922b4e778c2081ad4865b4f884c67fa3",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "availability"
+    },
+    {
+      "id": "cloud-practitioner-03",
+      "previousHash": "d50bfdd4d95ec08087aa5a8ff30c2c48b18362f5bd93d182f00a36b92a661138",
+      "currentHash": "8f6dc0ab5ad0a4f93bcaf2cf0bdfba5567f66b6b4fe24f9e11ed1a93507f7cd3",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-04",
+      "previousHash": "e21b28535f07ee1fa4c15ecf9ea2e1b75a8581acac88448a0b89959702842175",
+      "currentHash": "9428546964068462be11a4d3f6a6d8955b75d9d3986d037fd48e07aac9ce69b3",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-05",
+      "previousHash": "20de8d387c439b5538b1f730495b665d6310353f14fc1490a0323b087aab4a32",
+      "currentHash": "2a834917db9d497f83e340b0d1c10c37534131157a7e8692cb7acca307b29188",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-06",
+      "previousHash": "836cb770089e77a84e28465b703b0b3ba1a8cff931a8eaf13a0b1e4ea0fbd911",
+      "currentHash": "c7b8a1b1ed8b23658b64e91aed8f68419339a8842ed791ea6a5beeceff8acf85",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-07",
+      "previousHash": "4cf2e985a15a4e12a888a1135c3b836c4edd27c51cc3c335ccbad4d0e3e28cb4",
+      "currentHash": "6e158157ce33e96b966c75a63fda30582fd782f231ee2ca81d1487af72672c52",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-08",
+      "previousHash": "91abcb2416f7467e50461f0666a38f96d2b4e4ef456eaa40f85a613f5e1bb756",
+      "currentHash": "fd67ff8f3b4e8b4805028896576cea0681c942501c1773a48c2f2d6e89f01a1b",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-09",
+      "previousHash": "58abf0863c9f259768fccd434cd0aa21fd9a4d825394ea8e4af36c147d5dc47d",
+      "currentHash": "a18eb4762b9417bae36b5df544d100aad611ecd4db9e72955b020619f19662bc",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "cloud-practitioner-10",
+      "previousHash": "115aac70aa17a456e39c616efbba10a6de863d6928837fd8cae9ea5a54a537f4",
+      "currentHash": "23b853729383ca2eac64678312b7222d2fe00bef1fa2fb8c5a6d95f244fb0fed",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-11",
+      "previousHash": "8afc947febeb2d2455b7b41344e5146bbe1efc05212b1ce8db59575a587d0650",
+      "currentHash": "254beecacbd58678fa59f3a0daf76b5b003937861b92bd0cebb1056d92fa2632",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-12",
+      "previousHash": "80e164b5e386c410e1440fe60c917eab183c9d71c0e7c0a5c1a4ac9c52fc1025",
+      "currentHash": "6d858f4344a30ad12fe91fdd31bba912ea72a5c57e03e7afffc576dcac374650",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "cloud-practitioner-13",
+      "previousHash": "ec5ffb5665f564a292c13ac69d5ee29ad95736f1755c56bfe604ad6277bae423",
+      "currentHash": "00d4de7a452b912eed7b5e4824a5d3f1fb4263258b6d3de66e280930a0ef8c38",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "cloud-practitioner-14",
+      "previousHash": "58a29640a81054ee1a2750f4448dba0e2a3a15da275976cc3ac860dc3f63f591",
+      "currentHash": "65916de280f3493501dcb734ef8276d71be4b5432de2db5dd23a4a2b591b7fbb",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-15",
+      "previousHash": "0c28b519404f33dcda6f75c224c80e36f9ef951badd48fb387857e9e0fe104aa",
+      "currentHash": "6af0026f25c10a899f34d9b010db81f44396e371322b6f59a933581f5dab9aff",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-16",
+      "previousHash": "37be1afa7e9423fc59616e49f4bad3f1898488927c0e086ba8d2233f9c5cfa59",
+      "currentHash": "61a825cac4a83f0a2756b852610dddafcb150cd0d5c6bb190ef38266bb26921c",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-17",
+      "previousHash": "1181b22754e8037038706ecce8fe62d020fd96e29bf717f38bca2b985aff1ab1",
+      "currentHash": "5b45abb851097885a6812b7c477c6a097c97cbc67ca27d77e3ad876379fa9fb0",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "delivery"
+    },
+    {
+      "id": "cloud-practitioner-18",
+      "previousHash": "fee4f913f359578a91cf6127b4a02b5f6be80ad46e2310515f411785f074bfd4",
+      "currentHash": "df23e7c2a9e05b9ae1bcc69178d2ea576f48cd412df815b1e633b7389de34c94",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "queue"
+    },
+    {
+      "id": "cloud-practitioner-19",
+      "previousHash": "fdd270b45562015626a6bce9a66a1e70676a945f6f16c90d16dc0f0fddb7e8e5",
+      "currentHash": "13b2e3aea9c91f82c2bf74a49645b737f3e3bb4ca8d4585390bda75ae82097df",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "availability"
+    },
+    {
+      "id": "cloud-practitioner-20",
+      "previousHash": "65d02e0c5d1ae32d2a42e86b27a85dd0a1b9232d71b6c5a532cf42f3b43d7f01",
+      "currentHash": "81ec3a31470cca6531f7fedfb28d5a3e5c502ade2d79e6a8a5c0e3c248a58874",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-21",
+      "previousHash": "7e19d342c44dcc877831aaa70ff8e2e9cf853ff1019c979410682f58d9062170",
+      "currentHash": "5011fb7e62537dae8e41b89aa12268aa1720cd483cac8a70d4ab379fae0699f0",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-22",
+      "previousHash": "5921d8f57f5a46736c81f6e9734cc4edf4669d469b249fe664744e5e1db426f3",
+      "currentHash": "e507bad633bf68183a470a83a8fefc62f8d24c28cfb9949d04900ed44d64cd1b",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-23",
+      "previousHash": "c577e21e33f21aa24d276e5b5e9f5997cef091b92d4921121fd7949cca6713e9",
+      "currentHash": "77320e55b40990ea610745861412a5eca5bd251a81373b0a9d970974e4492762",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-24",
+      "previousHash": "a55f9494041957550fd78245a54bc71921339be9ef41ef249031991def71e5e8",
+      "currentHash": "4b74aa28a3dcfb323ebbff4ec17552fd202cc5bf1e74aa9304fe5e198e52cacc",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "purchase"
+    },
+    {
+      "id": "cloud-practitioner-25",
+      "previousHash": "dc97b53232f6f1c981cca321576859f5eb9fa497b3ca157b47f3c61f0a9f9985",
+      "currentHash": "328457d851791fb5b60cdfc4a81522cad25fc8b38d3889138279f98696073ea6",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-01",
+      "previousHash": "fe612c5aef25eb68baf73f70867487dc6f05fcba8187e4950c2e551a6211141d",
+      "currentHash": "05bc7f593cddf1e20bc71478841f92313e36819f628ff09b2f8abb9e1918ec03",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=15",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-02",
+      "previousHash": "7cf0860e31f4127dff9a5006e6b641f373b4b4bfcc1c8b12f8d3b8571cfe63a2",
+      "currentHash": "972d030992051486727beb816a523e54dcee20ef024f55d70645a2355c13520b",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-03",
+      "previousHash": "39d58b10d95fd1a7b3117c5e23e73669361547466a062596aba884422cb31ddb",
+      "currentHash": "486c532e3aeb83185a4685707bb0848ab640b4e6956bd414c20c577ae56f6203",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-04",
+      "previousHash": "60a9626badd707b6783b50674890c25d5b3ecc2ee584a05a4a09e9d40f61a8b3",
+      "currentHash": "4404af961014c8af6cf76a2c35e4031f79fb25a2c9190b9e7fdf810c9e06c7ae",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=16",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-05",
+      "previousHash": "a8d32ccaf4bc2560fa6893f2077ca48182b481fe7c9a432b8a3c804035cdb7ae",
+      "currentHash": "ffddbddef01d58adb11c5556fbb47719c0e69286a567d8d0cbf231cb37ca5045",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "validation"
+    },
+    {
+      "id": "istqb-foundation-06",
+      "previousHash": "5237888e68fe00532d9d5f7bc197c366303cc50ad8d37b8a7a986e63ba0db8b5",
+      "currentHash": "2013b58d7a90fd2de6bae65c1a61e817452f510c97cae00189bed09d022f712a",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=30",
+      "changes": {
+        "wording": false,
+        "choices": true,
+        "explanations": true,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "confirmation"
+    },
+    {
+      "id": "istqb-foundation-07",
+      "previousHash": "44c97c1e8855299547566c5b87ec00a813fdd94df506a2920857bdcec1df9e05",
+      "currentHash": "9c1b6970154f2bc14f34ca46f87a5f1acfe59917ad28b161d5229a268573f1d8",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=30",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "confirmation"
+    },
+    {
+      "id": "istqb-foundation-08",
+      "previousHash": "a14a1e2b48ad7507a6a7414bcdd68364b109dc044995dc5cc721611f3d4b8667",
+      "currentHash": "e7d923576d399ea7d602e0bb45e58023ea812ba9f9b9a73231aedef61100e379",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=27",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-09",
+      "previousHash": "80f5545a907785f30ab5e0d7144df7bd40bff45fbe6bd31418ab913deda4a08d",
+      "currentHash": "5ca23e972da7956be53682babd16177eae81c605cf95daf25023ecf53d7d37d0",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=28",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-10",
+      "previousHash": "71987ad6b895f8e73dcad4a35aaa9f56923f539288686d951974d8c11bb5a747",
+      "currentHash": "8f61bb703a04d79f088a116d92fda595e36bde9df09032b4a89072b6895a8859",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=33",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-11",
+      "previousHash": "beeb8841fa54a148ffc439f53e200be44631616095285fc9a9e03ccf59b55488",
+      "currentHash": "b57be3871532f26208ea3b7dbc445bb5890833875b71ba455d3c1f6bd557ded9",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=33",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-12",
+      "previousHash": "ba138e227fdddb6d5e36da8f98002aa3e1269706c3804b53521bd6fd198f2c50",
+      "currentHash": "6ed51717e7881af5e0eeaa8e606a329a355e3593c60e1c454a57771ed33df42c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=36",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": true,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-13",
+      "previousHash": "17b61810acca80a27d4a7d8d51af738b49bc5880cf17f9710ea8e2069fc1c553",
+      "currentHash": "abd860de8fd95ae0928ef4efb6e83329062106e5ae638849fac330fa7187b3bc",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=37",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-14",
+      "previousHash": "cee4039e648a45239889828fce3cda7f193f97a8d73d3ba442ecb5684bea011a",
+      "currentHash": "de9281a10fdf76491b907693b5d71d29f0f6ca31ee82efc3c27346f5f321e507",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=39",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-15",
+      "previousHash": "4baaed07d2f7a19275842a6ad9e6bf64e5402d1e2ec5a58ab21e4ef7fea9b47c",
+      "currentHash": "4fff954b0dfca798e4c326d500c75a3c953915713bfd063b7937d0a8a3a0876e",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=40",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "boundary"
+    },
+    {
+      "id": "istqb-foundation-16",
+      "previousHash": "ad525f260f081b37bed39d334a1b79ce0feed39507c48354ddcaf0ee00020c20",
+      "currentHash": "ae63916058f1cf5c56858b326881da3034e717d7ca5eff77db35cb6aa093d6a6",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=41",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-17",
+      "previousHash": "3011bbc752daa45ede9496d3c2cfb249b8d539b534e719346b82fe920573f8c8",
+      "currentHash": "9fd17c274c3ea84e815b3c26e13d052a5fdc8a33ee88dc98187bb40a88bb76d4",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=43",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "coverage"
+    },
+    {
+      "id": "istqb-foundation-18",
+      "previousHash": "4084b061969cc837c1c43c0416098e9edaf2a9e7da7bb81e3fe7b081c3dbb200",
+      "currentHash": "4fa543a6f7d1c2150cbd1bb00594b3e3aaf0e1d5f5b7b8064f6803b62d29334c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=52",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "risk"
+    },
+    {
+      "id": "istqb-foundation-19",
+      "previousHash": "aa6e58bac112e3eae335da1f3a14193c1e03864113b4fb78fa50d2aa6063909d",
+      "currentHash": "628df40b6be998d0b10932d6cf9d8c695c16a98157beffd914c8a271936319fb",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=54",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "risk"
+    },
+    {
+      "id": "istqb-foundation-20",
+      "previousHash": "614a35349b28f0d241d9c224bee29f307b2f26925204fe1014c13d3413d82b98",
+      "currentHash": "7e1adc3909d6fd4575468b1e28eb83c5da8dad89fadfe1e227dfdf12628e51d7",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=56",
+      "changes": {
+        "wording": false,
+        "choices": true,
+        "explanations": true,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-21",
+      "previousHash": "eb839b36a710baa2da80c8ca1b01a4cb9b0e8a3ab1538b82f3b75c99403fd30d",
+      "currentHash": "35e336be4548ab6e94b92fdb6318e5950640ad8b5e3d8cbbc39c878e1b4a53ea",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=56",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-22",
+      "previousHash": "8b548a9a6eaab883d1109c4f5d0f83d41c251c4b3f441faa64d08225a55c7d09",
+      "currentHash": "d9fa88b6fa9006e28963d53a0872e3cc7df17ef7cab5bfc5046c1d37a81eaf4a",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "automation"
+    },
+    {
+      "id": "istqb-foundation-23",
+      "previousHash": "04f3d064bc276e7c989e626ae3958b6d870924b85a775d6a13a75fd6095d1775",
+      "currentHash": "e461b2e21c6ff873226681ea642f89d10ee86fef467b938a045bed898eea1943",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "automation"
+    },
+    {
+      "id": "istqb-foundation-24",
+      "previousHash": "09215fb1cc5c0d06262104d69fd6c80350254abcf789f33a63dd982e59eb82fc",
+      "currentHash": "d5b16e4c029a417eb80f07e25d07cb93c33c073da1460cd66b0d26ad32c1483d",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-25",
+      "previousHash": "512a439926f4b04ac5f9555d4f4d41d78c29ef043a5947e8bf6128d66cf7637d",
+      "currentHash": "ecd2c7532b616dffe4cf2e7818bc10ef3b8856776bb9841838317988e3a34d17",
+      "source": "https://istqb.org/?download_id=3435&sdm_process_download=1#page=20",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-transfer-1",
+      "previousHash": "100e5daeddccb3c6c0d158b9487afa89b1ef6ad0cef99789941f6c95992cbf0d",
+      "currentHash": "a5814b576df30824506cd60d1576b41a98618d880fed1e85fca0bdd6298eef76",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "elasticity"
+    },
+    {
+      "id": "cloud-practitioner-transfer-2",
+      "previousHash": "4b70af00f740642d2d14c4760ce21c0f828f5d2d4d3342ae0326054c2d869eed",
+      "currentHash": "5f73655bc003bc1664cd0961780f868998f355036d1c89a9bbc5bcefe87c4d23",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "istqb-foundation-transfer-1",
+      "previousHash": "183e3cfe545ab50b7be33097aa6a4a12e31863fd2607294ce1653f1bc0e384a7",
+      "currentHash": "0decaff83384452f9dd9d199ed9cfd428030fc681b98f625e54c5e5c41a83fa2",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=40",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "boundary"
+    },
+    {
+      "id": "istqb-foundation-transfer-2",
+      "previousHash": "6c401a38aa0ad625d128fa173766a5f5466fd34edcaa904646bb7739f4df283b",
+      "currentHash": "459f45e68896863b5fb42263f8481cbbea40628cc8e0ea118ad8d0e24a8f57d5",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=30",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "confirmation"
+    },
+    {
+      "id": "cloud-practitioner-case-8-1",
+      "previousHash": "7761eb64518b23351fce53c653f6e59bb5a5f3914a23f332930c25dd199f5047",
+      "currentHash": "05d9b66ec9990123f64b1cd1a85697bb14d17d5708a5616649d6b5f15475275c",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-case-8-2",
+      "previousHash": "1fed2cd6d3634aeef6a2e59b97872c9725cab754b793230108dcfaa4b186f689",
+      "currentHash": "8485a9beb42970b9709cc2535185469a2b104d93dcc2b62fd0e3d592f75ed845",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-case-4-1",
+      "previousHash": "60a7317d92f88b092d5ef21871085b8c672f6d50469ce66471f340bdcf5158b0",
+      "currentHash": "2449588c894f595d8e1660689fa7cd85126442f5fc26a8f010f3e74b423e8f0b",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "cloud-practitioner-case-6-1",
+      "previousHash": "937735215f04b167fceee9f15c2763d7b5a249e336c4c1e294aebbcec9590c49",
+      "currentHash": "d991fbac95678f3da00b46f2018d2a632e2db5e378bd949cab3e124d1d8b83e9",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-case-8-3",
+      "previousHash": "da43d62d6c490897a328d403b60557902ec997696170fb99a0f66c27b5bc805e",
+      "currentHash": "20e652c27017619ca7497a2e22c43f548198c23f0f285bfb3386d41eaf91c218",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-case-1-1",
+      "previousHash": "af46ea69335fe3631201280c4ea874194b67a0c22cb466714364a0d69066016c",
+      "currentHash": "98e782284c2e5240ea735c433e57662c0f0bf34ea02d608bb85ec56f50aef57e",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-case-4-2",
+      "previousHash": "a2128b09447e7ca55d7f477276ff59611680ed29d1605e0a8107c0f5f01542f6",
+      "currentHash": "e7b179076de358e0dc682567d09d645cef53c31fa770c342fcb345f905241c88",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "cloud-practitioner-case-6-2",
+      "previousHash": "e236e11937ee3711d6d04dfa2e83166e3142faa0dc40ec74b0065add655c830d",
+      "currentHash": "4027bc772884c1387c3d571a956d7cd0afc4d248f56dee29cdd82c98e655117e",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-case-9-1",
+      "previousHash": "23f05f90872cc5edf141535a4a158dc8c092c3798519a958229bd3ce069ac983",
+      "currentHash": "aa13052e575f2782e36821092014fcde4e0d5346c482c55415f4c174c04a79db",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-case-1-2",
+      "previousHash": "a5984b3a5aee982dcb7ffdd9671d01bc4fc39b10abc022f78ddc5a3638320928",
+      "currentHash": "a5a3b41332c5c0d893471bbed8ca8930b857007d6a958388154eb5497274791b",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-case-4-3",
+      "previousHash": "03de25fe9b673120fe8a13d77f2381bcd95e890a7b4717fe83cde0a068642e4a",
+      "currentHash": "8c0404fff70c597e52a585286e03b63fd37c5620d2b5826ccc8a6845ab12bac7",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "cloud-practitioner-case-6-3",
+      "previousHash": "abe8ab7a215657b2172c38a644aeaad1529b18a236fe9ced564722c81cabe85a",
+      "currentHash": "8120b7e71a810bce2a411c05004c47cca78c899ef5c5d0d6e920168959d2cb65",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-case-9-2",
+      "previousHash": "fa7fc1c4e6b24efaf334ac0bf26ef3ac3145ba3fd970fc39e228b094ac410714",
+      "currentHash": "7183750fad737f4a827dc5751bf19e612a94015c03f1b32a275a21971eaf6133",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-case-1-3",
+      "previousHash": "a424b71a6ae1e208ad5532f0659e62d430d46e221eef38e15d0cbad10dedfc49",
+      "currentHash": "60a8a8eb7724ca5976953bb871b08e7dea9a5e692bc82b1619e3c708c95e312c",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-case-5-1",
+      "previousHash": "0a346e8c42dede16df483e3519b72bc8808ab76ac82655958ea74832704ca7e7",
+      "currentHash": "87e041fe72d2d1b077d000c041fc20c62f8820b86ce631ea607685a09b0eba27",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-case-7-1",
+      "previousHash": "3a6aeb4422bc4da92f1639c12530eee8485ced57786b6cf396d19708a618c5c4",
+      "currentHash": "2334fdcf00bc7349671325bb237357600e355e616629c216e27030e2a59f0012",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-case-9-3",
+      "previousHash": "bbb8665a79fbd5993b29a4bbe66038023dbda478f5448e9836d02dcd5f5ac6e2",
+      "currentHash": "e1a2eb997139d032fdb6be490ae68de91705e331959fbce9c95528245f9da763",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-case-2-1",
+      "previousHash": "5c9d0ac23bfd5a75c091e154e61a25ab9015b71de1cfda338d959b47f4675338",
+      "currentHash": "8ace5705b301ef731a26b3c40b62f054e92c906dc3962efc6aad41f562ea933a",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "availability"
+    },
+    {
+      "id": "cloud-practitioner-case-5-2",
+      "previousHash": "b7765b75ee36fee2d8786ec91e993361b397edf494d1c584744ce33c66673a12",
+      "currentHash": "2a348dfa24d851e369e19face8806403a33f38ecc1333fd66c3dc1851f177012",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-case-7-2",
+      "previousHash": "2a78157e3c905ae7c18496d353ea5abb7b9dae181d299cefcf9f73150506e2e5",
+      "currentHash": "ade3cdd3a4f25194846c9320606eeef7c9d5090f1b05505bb86c4edf4401a731",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-case-10-1",
+      "previousHash": "77fa8a77c0844520410168b6d92c80c93037f7466a7394f0565316c03cd995fe",
+      "currentHash": "13e1e1de2e8cfcec77ccfb352e4873981b34e05a45eec22ed7868a371e4891ad",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-case-2-2",
+      "previousHash": "3e0c8253d9a185ae5d85840ed3068c35287ae97bb391fc2f3c5e6f79f01b4ad1",
+      "currentHash": "f819197ea614d44cfe148212f280942afe4589c75a39949fe6e0f0b34103ac69",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "availability"
+    },
+    {
+      "id": "cloud-practitioner-case-5-3",
+      "previousHash": "94ac2730ed80988e8a4bd8173d800b9a610f15b3346d16fd4becea8167a42615",
+      "currentHash": "d06841b680ef8f5f7c8aa05a07b72276bd83e641e1c669b553790834b4917aa5",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-5-1",
+      "previousHash": "0ea348085402eca75a2cb1dc4a51ede99203c689c43a70b93878c2662e03ccb6",
+      "currentHash": "65ff0708622814f418673acaa7c3b1f45daad4b61a3ae573766ddfe4d4a8f02c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=33",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-case-9-1",
+      "previousHash": "b7d2a50e4edc019f0a940af0100a71d7b6f1495ffec5cb3288d9945d107ec7a8",
+      "currentHash": "f36286e71400321eb214a927960bdf2911ab8a9cc4b75d8e4830bce265d6d542",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=54",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "risk"
+    },
+    {
+      "id": "istqb-foundation-case-10-1",
+      "previousHash": "566761cc34421621e0ec6f7de3bd976648bd8b08721c875441fcfdbcede5082e",
+      "currentHash": "d22a27841da7af71a418d6be93aa07e32d22e27e91c787bdeb099a316ff5c656",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "automation"
+    },
+    {
+      "id": "istqb-foundation-case-1-1",
+      "previousHash": "a36c3d0a18ace5d974fee389bfff512ec88b45006a5cb2b4161d6974e76f63d2",
+      "currentHash": "581cac12d95dd2440fff832524a2c9f31f2ff345910416bde0689b0a996152b4",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-3-1",
+      "previousHash": "e827071bc91a5fee5282bcc6e9c043847753d06f64f319c799a8b16b7541025b",
+      "currentHash": "34097a52864829bdcf277d1ae1a4f313b453ed61f0970a58e346e8171fb389e5",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=27",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-case-5-2",
+      "previousHash": "e3fd75163eaf474d7c2d4eaa48217f72beebfc529a10c727ab8299475444cf8b",
+      "currentHash": "f8cacabf9e83644df1280b3b868b6783ef4dc8f72a3df752ee4b408c04412bbe",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=33",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-case-7-1",
+      "previousHash": "71de73acb61090560ae283628f28edc32d41146279c6c931ee46b2c59c132a4f",
+      "currentHash": "dc927e435dfa2e5da2877f60c4964db0484572b35abc5b0aef730dd489118b98",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=41",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-9-2",
+      "previousHash": "f11fe67e090d14c58451e09392157dcc3aaf5c3c33c21c62b06ccfdc46f31cce",
+      "currentHash": "23bcbe9c280b9aee95792f9c7e540b485c042c630d132e8d468343c8ed6a7ba3",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=54",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "risk"
+    },
+    {
+      "id": "istqb-foundation-case-10-2",
+      "previousHash": "e77e7d59ff8840dc8a6bd7866d5c55b1577e53829ea455f5f841526a780a7a22",
+      "currentHash": "4312a73e0c6c32b3586758a7e49a9cb5b39d07c3ed44c3d4cb540bdca1740f98",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "automation"
+    },
+    {
+      "id": "istqb-foundation-case-1-2",
+      "previousHash": "acbb2348df5dabb6b3f6d31647b97ce7119b7ef3be6a4bcdc7076272147f07fd",
+      "currentHash": "bd15c64344f912d8e474e402166b6c798c088ffe0d9f4f3a86834ed7f0196942",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-3-2",
+      "previousHash": "42f0339553abb48696f03c0569e30da6ee56f1304444084be41d24601f26fb64",
+      "currentHash": "54d109e4198861b792fc9e27bf92a7aafd21ac0f677eef0eb4e7892581cfb3af",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=27",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-case-5-3",
+      "previousHash": "52480c3484590e8526fb54b9f14b3705ae56ced6a72c1a3812997f8c599c9e52",
+      "currentHash": "024b9d4eb677690ff8e90670e9c0b98ed5ee2bc0847fc2e1630b4c15bb5844d8",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=33",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-case-7-2",
+      "previousHash": "70a2448e2e56b2c88d1571b6691143f310bd85cbc09b554192fa7265b368ed6b",
+      "currentHash": "e6a95b2f78533aeb79e78fdd96552e94485a3a4e33e0022229f4aa8667bdae1c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=41",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-9-3",
+      "previousHash": "a805d3b3df6c51e0f220ac981347a6e76daa451e73c40df484d122b9ada99288",
+      "currentHash": "5e282021bfe688d69c6e8eaea4089391b6c23baff526da11f958ae39e9eded9f",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=54",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "risk"
+    },
+    {
+      "id": "istqb-foundation-case-10-3",
+      "previousHash": "b89c16b87fbbc2f7f9d1b88650311776b46be0d0b3f9deb91f3432700c2c2110",
+      "currentHash": "459d93209a8e0d8e027f6b2e95d8fd9d5a3470409a57428d20f70f35320ae65b",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "automation"
+    },
+    {
+      "id": "istqb-foundation-case-1-3",
+      "previousHash": "d43bce89d030cf8dba1814afe23608009e19b8e003f255231fb7a1c81d663642",
+      "currentHash": "bb0c31096f2ba1c47dcd82acda19ae88a21f1f6e185c92142c375d12d10868f6",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-3-3",
+      "previousHash": "a13c27ce3d9641807c5d959e42b4d8dcda5f3847a429cf6a12a15338fe4fa2c8",
+      "currentHash": "2aca93e996011755fd92cfb3054d29c57703285dcd230237fa869d2678133461",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=27",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-case-6-1",
+      "previousHash": "ad74925894b17266b5d68a27f61b58219c2adab7016f728d333c52cf0f991c01",
+      "currentHash": "6b3b5533a39f4b913a6060d896ef1cc612859f1188dfda55cbe0272aa8fd6413",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=35",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-7-3",
+      "previousHash": "b2c020e9485cbdcf511b258e982013dc234abf564671f8aab34ef8ed19c560fc",
+      "currentHash": "1eae91caced7f7716544cf6bf0cde8e24156346ebf68a421ab3648fd7956c8de",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=41",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-2-1",
+      "previousHash": "75d396ef921af2f122ba40a5c974e9466bfc97465f9fea8640eedc2a2b76e9ea",
+      "currentHash": "ac0ca29a6d766151f9730ef34e059402cd657fdb2b41e3b6a80b16e48b62d217",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-4-1",
+      "previousHash": "373ceb817302c2e58df0588952788cdaf2dbce727a174a99296b031da2fd1d6a",
+      "currentHash": "84c7ac3dd167b46e64825ff5bb117d12884188644e867a9743f72ef605738cc4",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=30",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "confirmation"
+    },
+    {
+      "id": "istqb-foundation-case-6-2",
+      "previousHash": "61f539e4db74ce34cd6e94c31f874ce3b1b13d09a0deefb081e6b2c5ab9fbfb6",
+      "currentHash": "c4d600e2969357eebeca7079ffeabeabd600fd15b1c9924538e2a9e44251807b",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=35",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-case-8-1",
+      "previousHash": "d8e0418c16549740e1a417c74825a7311e249e0d0f766ac343106d5889130ab5",
+      "currentHash": "3c5d7180710fc59ce5be9be339d96c570f5898d34e1983437aab78b89dfaa1f7",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=41",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-001",
+      "previousHash": "9c90aad92fb9b3cec93ba1ef871326594f70376837a67ca58695797f409c738a",
+      "currentHash": "c0276cdbbc9f6bfea97acc1a1ac548a78b9b2db846408a903fb4bf766043be2b",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "elasticity"
+    },
+    {
+      "id": "cloud-practitioner-growth-002",
+      "previousHash": "a86440f40bb29e2c946140fc306dd100eb96303799ea5ce6b9a65deec5d2b1cb",
+      "currentHash": "46ab78c426a84f8cc5805fc11668269122bf59f3a648b9a00f362f93a34ecb3b",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-003",
+      "previousHash": "35020ddcd269fbd42a95f97db1d68725fb762480fb63754876d3d960d8664591",
+      "currentHash": "3b876033da0abf9be5440614140999e51ed1377a64c1df7aeb7133ce0bf0a5a3",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-004",
+      "previousHash": "37d92c834d1bf93846343e3ebe1ca00b87e074e71bda2dd6dea4ee038bbb4456",
+      "currentHash": "d6ecdffb9db8c88891ad84fb20d462269bb6361f822877921d3ade695f0f1d5e",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-005",
+      "previousHash": "222be6677f587e5b58e1fae58d97798fd9506a15e625e69b3f44e3a45964f18d",
+      "currentHash": "6b6d28d64e03e8e4825974c1ed62786d4643e9526555d26a72c7ff08449a7803",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "availability"
+    },
+    {
+      "id": "cloud-practitioner-growth-006",
+      "previousHash": "139b90c57e0176d13a1740a2e6d4d8bc063cb82e91d271bf0ddd4e0609d56fd2",
+      "currentHash": "69d20c7c4c96f5e045a52b87b3d924737e26caa1db8c77ebf79616742711e3c8",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-007",
+      "previousHash": "95fc5fc0bde1b6ea0cabcb9194a7bfd642129aac4ab4464cfe3b029992a25e45",
+      "currentHash": "e8822a67f117d4eaf6cd5bd38478e73d027512392fde4f85ce58a4e5dd49991a",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": true,
+        "explanations": true,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-008",
+      "previousHash": "779784ecc1aae739834011d292b0479e975de7be1755596099c974b8ba33cd8f",
+      "currentHash": "480f01df01b518bf2e3efcddecba23fbfe17c0e6c02f771bb86ddaf450e63408",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html",
+      "changes": {
+        "wording": false,
+        "choices": true,
+        "explanations": true,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-009",
+      "previousHash": "b86520990bd6eb318eebaf9f0f3c8c5319fe74ff18f0d4d1f80d8777cfc4b558",
+      "currentHash": "dd71ff74f7e4a2bd581643e7529d06852bafbed3393e1386523dc649ac2389c9",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-010",
+      "previousHash": "db361b9b0c6dadbb2efa09661cd19d8392b266340cdfb16f23e31059beefc46f",
+      "currentHash": "62a4c6daf77b8b75152c65c96e7ab34d74dd28620d3f99fd68b4c6c86089c091",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-011",
+      "previousHash": "fc2828630906e363f35e7ccac7d28a1d87666ae562cf8b708981a86bb603d62b",
+      "currentHash": "13cd8ac1e7caa9fc68d420fc745bda4a7e03729c25870102179a52acc2e70a54",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-012",
+      "previousHash": "bd9e4900d87ef04986bb118f641e5d817275e138946d8bc3964116d1542397cc",
+      "currentHash": "da9a637408df46ad604da737c2ec90f0bc18c4e9525aef575905a724464d56ab",
+      "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "cloud-practitioner-growth-013",
+      "previousHash": "6162e127ed899747e818c1ede68dc83e736280d8baf004e51219f4df852253a1",
+      "currentHash": "bd8b8e110cef18827365e8df6f87f91489c6a25b88905b40410a3bee59bfef1c",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "identity"
+    },
+    {
+      "id": "cloud-practitioner-growth-014",
+      "previousHash": "d6c033362c4b3adfacad5511c4b2fbece7ff94ddd57be1b95e49edf3d6f570b1",
+      "currentHash": "33c82a2a7f9044cecc7e69f51f94d4fde76214b3c62934c141eca81519022b22",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-015",
+      "previousHash": "cc05c217770d6533de9c4b937aec43dbce2199e7cafa72f17dbf04e91526b1dd",
+      "currentHash": "18444d605bde9e78d17baa388afe1a4b876c30944bb511ea2519fe46cdac610a",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-016",
+      "previousHash": "fbc0edbfb239c1cd461381cac6d4d48d5136fcea87368ba79f36d6e8ea557042",
+      "currentHash": "5ff29a7cbda461c1fa0997eabd57f70254aec3ba4777a150968af0f5b60e30a1",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-017",
+      "previousHash": "32a7dc4317e0af48ab262be071a59dcba5306b2dfc7d66de2ea0dffe4a1ca971",
+      "currentHash": "43a9de1f47b98127158eb47bd1111b9b8cd6dc090626bdf43e58e337a2d6ef36",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-018",
+      "previousHash": "838e11deecb018de3584334bd779c46f4c25e86d82bb2a936e8d58d5eeba8054",
+      "currentHash": "b574a7fdbacb717f6e264a68bc73a5e3fbf8aeb007f63b84cc8750bb2ffd315a",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-019",
+      "previousHash": "f816a02ac5c79f9ef4a6e91094010b515baa4a7afc7e322a89115a83a92aa50f",
+      "currentHash": "8e33c2e54c768916d3efe0af4de33584acde074b1626055f897bd2dd48854656",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-020",
+      "previousHash": "1a7c74d36314107abfc5abbdd5a53624221345e87e0415ca04d3e2fe015a2a1b",
+      "currentHash": "5fe6ad57c9339c6131199deafd85a0295ccd6871630f987147f022d56c846ce1",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-021",
+      "previousHash": "bf5b9d9568891a8f489b2c4f1b8d1b4b80d20782b705941e57dd8328cfa4ad90",
+      "currentHash": "659be626a0ef1b083794be8b4536834cc71c68391564f22ffe9d1c17a3ae7801",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-022",
+      "previousHash": "89c44a62f6d7ced2af84ab098bd95044b49a30a927a70c1f65e6c933b979a780",
+      "currentHash": "70455320462d87732df4822fb09f20f1411c353a6b0430ac237b0ef91262d56c",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-023",
+      "previousHash": "35112d28db0a08feaf83f3d57934c816d1adf747ec08278e569d5ca39ef6f1d1",
+      "currentHash": "77c2b60e4428b5f7d14599b897a508862d05aa5326c5c5c8d916b9908f4e5a32",
+      "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-growth-024",
+      "previousHash": "a68cb52c27f4133f72491cbe4557a65509f90839643bdc9a606d531887309cf1",
+      "currentHash": "942bbead74cefdf7fb464455c654b301fcf0ed52bf04c847e5f29b972daadcfc",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-growth-025",
+      "previousHash": "da8f5633a62aa1e00f82ddc4aba1bdc09d34a4f9f65fc4b67ec780abe2cee531",
+      "currentHash": "667fad1bb82ea7e7e38eb89878cf0ab13addf34b9c1bd64f03e6455cc13f7d19",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": true,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-growth-026",
+      "previousHash": "35e0e1da29b2edbc831925dedc837c86570e881a28d8317c26f8b0184b5570f4",
+      "currentHash": "4ab9037ee67fabc63a55f958a4b1aad62b826f06d11764500ca7602ef4faba37",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-growth-027",
+      "previousHash": "d054c5d9629e9333d81b18d5f59bde789ddad98a9fa8a6644068e4f52d630ec4",
+      "currentHash": "4924089ebe844959f6189c65958be32425f1ed9171c3a5024151e705a73963e0",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "storage"
+    },
+    {
+      "id": "cloud-practitioner-growth-028",
+      "previousHash": "cc4b1fcf6a1b88408ab86017680ad07439aab1dd7daa4c0d3325e21c34cb85a4",
+      "currentHash": "dbc4516a7fac43eea8f02af1da2902b94ec4ab56c8d0bfd0da5947734777787f",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "queue"
+    },
+    {
+      "id": "cloud-practitioner-growth-029",
+      "previousHash": "afac70698b85f5c1a3a2a7fbaa9a65895ee47fca8408af3651d742480c93df65",
+      "currentHash": "7ee5aac5d714644e6c1a7058be0a288ee6751953f4f5662003bbc1d577fa0014",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-030",
+      "previousHash": "c17d5087aaf47d4e0383e07cc452695bfec98a837957d720d93baaaf1a92410f",
+      "currentHash": "63bc0326cd3ef459754014e149e657d12dc571fd0ccf59b3b102b39e339ffed4",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "delivery"
+    },
+    {
+      "id": "cloud-practitioner-growth-031",
+      "previousHash": "89cea9383c8e4a69342e73631b50dda0ae5bae7ecbf3b8ee967fe67d98eb9e6a",
+      "currentHash": "e04433801dfafffecac62977c7a40b1dd0035a879c5d78daaedd7f852d7bbfbe",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "delivery"
+    },
+    {
+      "id": "cloud-practitioner-growth-032",
+      "previousHash": "8409e91f31215e4f5384153fca033930b586e8ed578c9bdd773420cdc04a273d",
+      "currentHash": "51ef48d1ae9dd2ed3d7117801ed59afff8cf4effae3e8a44b9c21bb15a530f12",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-033",
+      "previousHash": "2dba8d556803595c7686ad520bc037f14aeb3c609c69739f0a746127a2980f8e",
+      "currentHash": "8a1f5d41e4ffd01908986730300b0e3f3083cb650531416dbf297419f05ed14c",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-034",
+      "previousHash": "0948a69b307b2dc7912b53b41e7d40fcaf66595205e8bdfa82f11d399f35bfaa",
+      "currentHash": "3b7d84c4256b2fd8c6bab2cce32b86719737e265f5ad32fe98041e80c690b4d0",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-035",
+      "previousHash": "a54895ec3c3cf61afd81bdb37e1f66ce63321757dd5d5e59fd99db932baf6b93",
+      "currentHash": "7e25fc594019a90e1138145fe6c0db7fb9e4f6964420ff995ba2348d9108112c",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-036",
+      "previousHash": "ec34f3e97beb9761b508cc2397b4b11f1324e87631225731de4f7d9122ecd90b",
+      "currentHash": "ea3ec8f4a127e46fec044c97abe18ff79a29e09bb157dde3619260adb541b5e7",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-037",
+      "previousHash": "e820a8f24bbe63ead0aff2a3c9a68043d4c2cd5a2bb2bebec174d10585f7458f",
+      "currentHash": "b97285b0641a9cf18766ff653eade23f5ccf8aa1652f2537115bf3d615ee3406",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-038",
+      "previousHash": "8a0e210ff5287912003dfcb365572ff28576f16d8eaed6cf3d55c14b462be9ff",
+      "currentHash": "d098b852fbc0850d5ad5820726fb81a05766a407da95383255dc984928ab23ec",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-039",
+      "previousHash": "ce17e60a7466258c91f4f090f204bf64150223cf529aecfa053c0d655d72bffa",
+      "currentHash": "41c78a28c3afc89f2b926f5e146e1b77af94c7cc6cfa9ba959f6accb63eb8fc8",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-growth-040",
+      "previousHash": "cf04a193933d94850747d4d635954accf0102d15279eae20fd8031ea9c742fed",
+      "currentHash": "6b5957ccbfb6fb135679cc1611899643f658dc2bbc57186c83a2b2019566cae6",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-growth-041",
+      "previousHash": "f16d23b7be6bd76a3e110f98a8df8e4b3246a01748631a266d16723fe3d4e3ca",
+      "currentHash": "e3dcbeba25d63da992cd418ed24f0df5a1ee9f35bd6a45bc62741ce1b766a72c",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-growth-042",
+      "previousHash": "fd98c6823907405ee57dc618632498af0586b33051d1e66994a80c643547e06a",
+      "currentHash": "4acfb43d2f08ffd54b7a69d845369bef1d44cc291d1c9ab24ee4f0a2a8a1c399",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "purchase"
+    },
+    {
+      "id": "cloud-practitioner-growth-043",
+      "previousHash": "9172f3c33fa8b164a23a0ee1f686fcc3b05ccfb1086ee275a7baeebe19fe855d",
+      "currentHash": "a87e844e44bda43e213be9f5111d001e3bd3638daedab00fbf4eb5a709e13579",
+      "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html",
+      "changes": {
+        "wording": true,
+        "choices": false,
+        "explanations": true,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "purchase"
+    },
+    {
+      "id": "cloud-practitioner-growth-044",
+      "previousHash": "08647a00302ae073e185b57e7bc1907f494f7dfb1e53bb64899e7894b0f68524",
+      "currentHash": "1d7aa123af28a7c70549e2771425603b1ee4e4004377adc851e508c2c932b768",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "purchase"
+    },
+    {
+      "id": "cloud-practitioner-growth-045",
+      "previousHash": "a43f310ddbafd8f0e96832c2d30e0416d74988fec48d3627dda426c2be249264",
+      "currentHash": "fcec133bc0e17ad5a3935b1f41b5f21879b1bd2137d4443983c2e21f6b6d058e",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-046",
+      "previousHash": "d338f1e6a43a11af0e7cd1e11203608fc876fdb28e25083265794916b2b17489",
+      "currentHash": "8d61605c6417b97b3e8239ed05286cb855d024c53e73024a05b2f24e01c7ec33",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-047",
+      "previousHash": "0c719c2070e971a4784e4e5ee0d7c1abadfc482b054b0619fd6915513c8c4275",
+      "currentHash": "3478cf24019ffc22f7369d477c388e1a071934f5b1b4479a16d3988609ccb9bc",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "cloud-practitioner-growth-048",
+      "previousHash": "bf505d08d82e4bc8c227a98980127bdbf32ffc4668094599a1ae627b0aa6f124",
+      "currentHash": "3deebe0ca08ebb300484ee7dd3f9208b7ca36af92753c8c5ae97e2c3078d4847",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-growth-049",
+      "previousHash": "65d56640caaf686c9d1708faedb4874782d44339ee8d29c0875bc333a486c179",
+      "currentHash": "b7d0398737bf5dd22feebb9c1dcecd759ceb7babb01b4509499e9a4c8e817e27",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "cost"
+    },
+    {
+      "id": "cloud-practitioner-growth-050",
+      "previousHash": "a24f652a5bef200ae9c102efe780bb0e70e1b41eca6f504dd89be176d5505260",
+      "currentHash": "935ba567f148d6fdbee7aa1ed1d3cc155e2aaf6a73a81a3b31fcfbb33b189cb5",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": "purchase"
+    },
+    {
+      "id": "istqb-foundation-growth-001",
+      "previousHash": "a36607d6a2b1b95f327a6ee0e3fc8a79e60595a548dd7730c98c25aa7a19e6e4",
+      "currentHash": "15125fccbd5ecf0cb23cb8be6edb8111c26f1bba6f9f252ac72976f13fa06403",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "validation"
+    },
+    {
+      "id": "istqb-foundation-growth-002",
+      "previousHash": "5f322980637012b996751f2cf3aedc8f48b5e0dade175ec030362a7b35483d8c",
+      "currentHash": "9a797e78d649c8ed2d361c2dbf64902da1bc4deb7f9c984c7eafe8024528ecc3",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-003",
+      "previousHash": "9a46ad776d50ba7ddf9005dc41306e2fe8dc3bc7f9e601c0cab1ca0956bfe318",
+      "currentHash": "d4379a318fa09bd6d475febb37a67b63eb5a758784c4c1de9a3b44303319c18c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-004",
+      "previousHash": "6e316095a70a5e19fc3877efae97170ce0407f197b78bdababf0a7f8d3097b92",
+      "currentHash": "c1c834ead8abef01fade2cb2b575505a13d7d441f2e307dde19a44f37f28772a",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-005",
+      "previousHash": "5d140ab382d4e48803a3ae59c80ddd53cf94a654fba3db592b0d57f6e96c611c",
+      "currentHash": "38b67a384b308f2eaad0528c14d079aaed510ab5cae57820bf459c7db606a21c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-006",
+      "previousHash": "aea1482fabbcaf00eb9f7b702a3e8117c1c7c763be7f9d36be7b7e39e240cc43",
+      "currentHash": "1cf9d7ca4602d02310e0aceea042474d3b6c029bbc1328401ca228b14abf7b81",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=16",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-007",
+      "previousHash": "6daa719c47b4b079ddb288dce16424b945e84df4e26cdc27bd7ff3de3d1864ba",
+      "currentHash": "4f91b84d4e547264710773f175d49cfc66607cf08514d995b7d19d13edf0b15c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-008",
+      "previousHash": "d26a177e150183d7df09655be1ec8f09af7bf8f74b7344d9fad269dfd18a0fd2",
+      "currentHash": "3ec89478d30d046ec8a8bdb75f396e76fb9c512b39395c6457eef2fb47785fb0",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-009",
+      "previousHash": "abb851a8f88744a55f3f3ee2028a75f64215b67d245ee277d8189b6fb93c4c18",
+      "currentHash": "d171d07f02dd9331e9d1bcd9e759cba62e150a50e8dbcbec1e194906a0df1157",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=22",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-010",
+      "previousHash": "c64811bb4b6050701e89b0ace290f44c4f81563e31c9ceb0a131af77ebfe8c98",
+      "currentHash": "efee4f89ab4af077ec97661e6613ac22013f777f6e9739e395bd280c48fda766",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=20",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-011",
+      "previousHash": "d7da39e3f5b1c87a1655281219409b40e7bd8f4271effcf1fb7a1b007d098e90",
+      "currentHash": "29d363421fd771657f953b3e1087e78af459d0e956c7eb40f77dc58b81a21952",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=30",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "confirmation"
+    },
+    {
+      "id": "istqb-foundation-growth-012",
+      "previousHash": "5c1a454e18c795d396e55677c070788a057b4a825100cc1a9e944d8458e887c5",
+      "currentHash": "1cf7328e36e117cd550e84760d4aa7af5ff65277b7ec1914a4fe9969e04d71ab",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=30",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "confirmation"
+    },
+    {
+      "id": "istqb-foundation-growth-013",
+      "previousHash": "0401c865346786bed5b8350fd0908f56831363b483f170b4648d7edcc59c23bc",
+      "currentHash": "57e87786b3deccd365724e6d172b56f03b96a679b14edec3954d96468c275d2f",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=28",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-014",
+      "previousHash": "69685fef6607d6491de9d0f2e676345e6d7546e4ca566bede1eec49c5f78127e",
+      "currentHash": "30da1af6c4ca8076ce25c17400e35f39b0c9a91ad691db9521857ff29730c582",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=28",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-015",
+      "previousHash": "e241772205e2de8a6bac638650edb61279cf03e2d85011077af53fde2708a7c0",
+      "currentHash": "0f57519a86c629be5391f19f0992cfa8ffa17b59f4f8a1f7a41d89dc5923da9f",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=28",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-016",
+      "previousHash": "e5fbd935a8a4e600763889b02d63f3e08afd0970e4cc4d4e7fe2ec22fd525922",
+      "currentHash": "53e316de093a7d3908ff34b4abc863d984120f55665f69defd180408a0efa801",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=28",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-017",
+      "previousHash": "5cf2077b26d74476ec069509ad8fca91b61477c336334ae1d9d9f525acac228b",
+      "currentHash": "535e6e39c0487f35ea9f628c18c124f5d5f9b42b69e29a1473413d907d7a6a98",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=27",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-018",
+      "previousHash": "e9c8a27e7edf6dec6936e96cd8ce9aa2dbd3d56d7f7faa4fdc9e12c79e73ef4e",
+      "currentHash": "410905d89021e9da01d1bd522ad2f3829a0d6cb28f25a11e22707cda7e9bde2f",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-019",
+      "previousHash": "38aade1817cc3d43daf9210c602cacd54f6f77c09bc665aa2e8ac0a30c73e783",
+      "currentHash": "dc4f0e220632a9b34465fddc89233608a7e08e7284a329d11d4f1bff2674b731",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=33",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "static"
+    },
+    {
+      "id": "istqb-foundation-growth-020",
+      "previousHash": "81d00a257a40566ef102a047fb6470a76a467ce14a6101b1ae35c0c946800529",
+      "currentHash": "2b97b5de4837ed1c59980a10f70f4eb3a8bc494561119cfdf54c801fdc07d8ed",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=34",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-021",
+      "previousHash": "44f07c28a490a8e76e4a4b86fdbc0f41d26cd3d5d3e987101eec16cc52f1419f",
+      "currentHash": "ffb0754baf07c4c9528bc59ee56ee2462a731af305ed1cd273a318e5f383b03c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=36",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-022",
+      "previousHash": "08a258973d1a7ba12bcaf6df8db145bfafe7102f5d86bc5e801645d766a264e4",
+      "currentHash": "57c59bafc0d7a11cb2c9e7d075ac370c60ad5ecf2a5d1d20ed4ee51b83c73e54",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=36",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-023",
+      "previousHash": "ddf3f361d459d471d78dd197d156f98b351ee98bf6041f9b935c2c00772e6b3c",
+      "currentHash": "cb0b29d66795a79290cc3e8d43ab9523475098978ccef8e8e41abd2630131e99",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=36",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-024",
+      "previousHash": "27d26d394b8ea85db8d5f76f6c91159964d8524f946c8c7648cf27b06b752ad1",
+      "currentHash": "853299e5f917f2a6808384345c740e867e1946920c388a0a1a2af767c9b952cf",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=36",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-025",
+      "previousHash": "9f8575c455f13efe7d65abaddd97d25b69adc67052aa91f2ac018b09381b1077",
+      "currentHash": "bb8fb61cd185fe62350a37c09c681683e0cba59472023ce7411e6d3780efff1c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=36",
+      "changes": {
+        "wording": true,
+        "choices": true,
+        "explanations": true,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-026",
+      "previousHash": "53cd3fdde40e80e8b4a197f564aee127e6c8c63155714a105823f918df42fff0",
+      "currentHash": "211490bc890c913cc466cc23764b037755633ee169d05f0aa646d9b9c2a85ca4",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=39",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-027",
+      "previousHash": "19d59f2e8c2f76818dd3ddcb3c4510a84e83ce845bdb9f8c3c6bdd4c1b503108",
+      "currentHash": "4be27faf5507cbf68dd38c2de59eb2fee1b96a8bcda2a9fb34a2a98e805bd39c",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=40",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "boundary"
+    },
+    {
+      "id": "istqb-foundation-growth-028",
+      "previousHash": "84c703e7417ec92fc53d01c804ad810a41133f703c0d06d6c8a462ac5f8ae671",
+      "currentHash": "292d3702b26a31943b8699f5cb7ed421e150e99c6a7332e5be5308f001efdf5d",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=41",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-029",
+      "previousHash": "d12b1c03dd7e064d557f34758cc358a7de3764c8a7fee0538225aa4e33e5c8f3",
+      "currentHash": "7d76f3c3d80797146ada47cf2fcb8096e07902b345ac3947e39c54cf9c50b2cd",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=41",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-030",
+      "previousHash": "d5165b901fb212dd0a0ce01b8f58646444b769806ae3a00e64a058a00119e9f8",
+      "currentHash": "af09ee4f2da326e2652fe763d7fdcdc4bb741ed93ebcdc16d9cf81c74e5b41ac",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=42",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "coverage"
+    },
+    {
+      "id": "istqb-foundation-growth-031",
+      "previousHash": "d01487cc1e20b036bd1000f5b6b9740f03f4abe40895dbc48a7107198e1daf52",
+      "currentHash": "ed4636b86ae3bc04330b9ab47ee7a51aedd4c6db09a4c7b0beab8a013583382b",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=43",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "coverage"
+    },
+    {
+      "id": "istqb-foundation-growth-032",
+      "previousHash": "d2b3de7815d8d75799e2574f25928b995eaee23b6b037b6f67a2c45d3036e886",
+      "currentHash": "4cecedeedeb1254b4f4a27e14ac4166d7f4acbef8ff8ead95b11d66c4c207938",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=43",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-033",
+      "previousHash": "7bb7b7c81f5dab97351e7bb7cb479c75903a19a852951a2a6d1cd3d6d4f8b554",
+      "currentHash": "1ffe37be67fccb323cc26d7b661f56efd22f3ec7a0f40117f4c665f36cf2a9b3",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=44",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-034",
+      "previousHash": "6a570f7ee64b75f6ffbfd19a9b523313711f599b95a6ee00c525ee5914dbe577",
+      "currentHash": "f68d24bc9b51279547f49895afe0c76b543ccf67f5c25b8278e6108400bbf398",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=44",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-035",
+      "previousHash": "e5781a5c80802cd9ae933d7f79dacc2aeb84f02528967ecda1c59e7859f7c3fd",
+      "currentHash": "26fe5a05812c6c3f0891e37b0de17b639a3bf8d09b5a1eb43423e2f14f04eb52",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=46",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-036",
+      "previousHash": "517444c33fdb737b05045adac19cc2e8016cecc141ff4831a5ec95ea408967a9",
+      "currentHash": "91742a55d69f455d986f1159be186de91912de0577fb92f1eea208074e43b343",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=40",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "boundary"
+    },
+    {
+      "id": "istqb-foundation-growth-037",
+      "previousHash": "79c00102d405db222ffcf286d1f3b4c2f7ee020a99a4323284e45874e6d947d5",
+      "currentHash": "9a53e720780c73df40719cc648599f02ecbc751531bbba1b3d13ee1865a5a1ba",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=17",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "validation"
+    },
+    {
+      "id": "istqb-foundation-growth-038",
+      "previousHash": "5396d4aff3c34545b07180a0d15697aae0dfb60991afcfdf5bf2b5fdfbfdbe65",
+      "currentHash": "24587235f61a2673fcf47bfa8d97e64addf8ec6512a3993173c79176739afdf3",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=52",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-039",
+      "previousHash": "933dd78feba7c108f8739a82ce7bb54ef78277c9a93748fa9a28f9ce4417da29",
+      "currentHash": "bdf6bd9b4e370e0f1a7080392ba29c0335a3e8657248f9cfd0abe46fd3aa543d",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=52",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-040",
+      "previousHash": "12306ea74154585cacd5ed4ffa645917ec2fd2545f1fbb8a344b2e07623b4eef",
+      "currentHash": "2913526ea59bbed25866fb178373fed4bc949f7ac013c24303b71c173a273bcc",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=52",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "risk"
+    },
+    {
+      "id": "istqb-foundation-growth-041",
+      "previousHash": "aff48fab119726891faa2c39e287a4605b4e7e506b738e8dd25fcb39369d46a3",
+      "currentHash": "53b5fdf116fdf6514c6fab1df0eb2e84060ce839af9d4dd80e1b247ff3219538",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=49",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-042",
+      "previousHash": "353ec69b7a761598044b5b87a53f3de3d598997519727a99c1656261e73472bd",
+      "currentHash": "37c4fac55925b24a61404ebedbc614ec4deccb9c6f808e173adb82251b526351",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=49",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-043",
+      "previousHash": "945e7eb32830ea61a06c677ef139616ebb04f9a90cb9c55b9a44059b1ff9798f",
+      "currentHash": "e731e71816041aaf262c53555966cf0e1e1c06366ad72b96eb0e55cf55defb3b",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=53",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "risk"
+    },
+    {
+      "id": "istqb-foundation-growth-044",
+      "previousHash": "639069264d5acd7f8a6fed58fdde32c9274f87a44ce1c4aa21fed6e4d25f4864",
+      "currentHash": "cc6f444836b9e51f71cca8759cf42b0025397c26984a0546107c8b73ce0e661d",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=53",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "risk"
+    },
+    {
+      "id": "istqb-foundation-growth-045",
+      "previousHash": "5d78a01d01846cade39c4fbbf3eac1d15b80585ba61e726929c47862ae45482e",
+      "currentHash": "9c914d21aa1c65a1d5eacae663df90237f44a134dfebea630885b2fd79d33cd0",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=56",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-046",
+      "previousHash": "ca7fe3914915068809967f0206f39282a688519e5603312d4bd83aaae7154a8d",
+      "currentHash": "5b306fce9378a55ec30b1ad23dc11ba1d4f2c37e17e7e3ab040f54295213d86a",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=56",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-047",
+      "previousHash": "8bd80b0cc209aadac8692015be297b713b71e5e7c98175cab2cfb8c61ed8ac62",
+      "currentHash": "b9f079611c25a0316f38d2644e7dba7f854d7fc744c8f80b2583affda60ffcad",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": "automation"
+    },
+    {
+      "id": "istqb-foundation-growth-048",
+      "previousHash": "4004162445cd35a5438304e64a5b2cb8b24a52e6a05f2001f9283173cfe43032",
+      "currentHash": "84b0470ea0ff34debdd7d566d5fa58660549f976e6b7bfa25e91f7fcd166eb56",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": false
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-049",
+      "previousHash": "5d3fb1e48032bf31daf5ab5e6f5661273cce07a97a615ec316e5ea6675616ac6",
+      "currentHash": "0279be6a01b2934eb164919b9d1d3250cba6fc2a1999b2e46fb5e93515790e28",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    },
+    {
+      "id": "istqb-foundation-growth-050",
+      "previousHash": "d8f0f5c1414a19c45a4a0e7078b358eeebc50e1c132f0c9d9a250056ae80acfb",
+      "currentHash": "7bcd413dfaf7278099de3cf0d977e66cdd157de66b2b244d62bf9ada51b2821f",
+      "source": "https://istqb.org/?download_id=3345&sdm_process_download=1#page=59",
+      "changes": {
+        "wording": false,
+        "choices": false,
+        "explanations": false,
+        "objective": false,
+        "source": true
+      },
+      "lesson": null
+    }
+  ]
+}

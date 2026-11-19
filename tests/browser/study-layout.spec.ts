@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 test('one session decision preserves duration, progress and backup without calling AI',async({page})=>{
  let modelCalls=0;
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')modelCalls++;return route.fulfill({status:503,body:'{}'});});
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  const home=page.locator('#my-learning'),session=page.locator('#daily-study-session');
  await expect(session.getByRole('heading',{name:'Your next session.',exact:true})).toBeVisible();
  await expect(home.locator('.learning-next')).toHaveCount(1);
@@ -22,7 +22,7 @@ test('one session decision preserves duration, progress and backup without calli
  expect(modelCalls).toBe(0);
 });
 test('scenery spans the viewport and controls fit at narrow and wide sizes',async({page},info)=>{
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  for(const width of info.project.name==='mobile'?[390]:[1280,2560]){
  await page.setViewportSize({width,height:900});
  const box=await page.locator('#my-learning .studio-landmark-banner').boundingBox();
@@ -35,7 +35,8 @@ test('scenery spans the viewport and controls fit at narrow and wide sizes',asyn
 test('resources pair correctly and planner steps remain usable without generation',async({page},info)=>{
  let posts=0;
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
- await page.goto('/study');
+ await page.goto('/study#my-learning');
+ await page.locator('.quiet-chapter').filter({has:page.getByText('More ways to learn',{exact:true})}).locator(':scope > summary').click();
  const resources=page.locator('#learning-resources');
  await expect(resources.getByRole('link',{name:'Open your library'})).toHaveAttribute('href','/study/materials');
  await expect(resources.getByRole('link',{name:'Enter the Reading Room'})).toHaveAttribute('href','/study/reading');
@@ -60,7 +61,7 @@ test('resources pair correctly and planner steps remain usable without generatio
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 test('mobile menu supports keyboard dismissal and readable tutor controls',async({page},info)=>{
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  if(info.project.name==='mobile'){
  const menu=page.locator('#study-menu-toggle');
  await menu.click();
@@ -89,7 +90,8 @@ test('tutor keeps examples as unsent drafts and finished sessions collapsed',asy
  const time=Date.now()-60000;
  localStorage.setItem('eai-daily-sessions-v1',JSON.stringify({version:1,activeId:'finished-sample',sessions:[{id:'finished-sample',minutes:20,target:{kind:'plan',title:'Choose a focus'},startedAt:time,updatedAt:time+1000,finishedAt:time+1000,stage:3,completed:[0,1,2,3],reflection:'A saved reflection survives the visual update.'}]}));
  });
- await page.goto('/study');
+ await page.goto('/study#my-learning');
+ await page.locator('.quiet-chapter > summary').filter({hasText:'Ask your Tutor here'}).click();
  const tutor=page.locator('#ai-assistant');
  await tutor.getByLabel("Your message").scrollIntoViewIfNeeded();
  await expect(tutor.getByLabel("Your message")).toBeInViewport();
@@ -108,7 +110,7 @@ test('tutor keeps examples as unsent drafts and finished sessions collapsed',asy
 test('V3 exam actions have one primary route and secondary resources remain reachable',async({page},info)=>{
  let posts=0;
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  const exams=page.locator('.exam-prep-controls');
  await expect(exams.getByRole('link',{name:'Start SAT practice'})).toHaveAttribute('href','/study/exams?exam=sat');
  await expect(exams.locator('.goal-primary')).toHaveCount(1);
@@ -119,7 +121,7 @@ test('V3 exam actions have one primary route and secondary resources remain reac
  await expect(exams.locator('.goal-primary')).toHaveCount(1);
  await expect(exams.getByRole('link',{name:'Start SAT practice'})).toHaveCount(0);
  expect(posts).toBe(0);
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  await page.screenshot({path:`artifacts/engineering-story/refinement-hero-${info.project.name}.png`});
  await page.locator('#ai-assistant').scrollIntoViewIfNeeded();
  await page.screenshot({path:`artifacts/engineering-story/refinement-final-tutor-${info.project.name}.png`});
@@ -129,7 +131,7 @@ test('accepted plan is compact, preserves legacy lessons and keeps editing avail
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
  const saved={settings:{goal:'Understand the economic causes of the French Revolution',level:'college',minutes:20,sessions:3,deadline:''},plan:{title:'Economic causes',overview:'A saved overview that remains available without dominating the page.',lessons:[1,2,3].map(n=>({id:`lesson-${n}`,title:`Economic cause ${n}`,objective:'Compare causes and consequences.',activity:'Discuss the economic causes in pairs.',checkpoint:'Explain one cause in your own words.',sourceIds:[]}))},sources:[],completed:['lesson-1'],accepted:true,dirty:false};
  await page.addInitScript(value=>localStorage.setItem('eai-goal-journey-v1',JSON.stringify(value)),saved);
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  const planner=page.locator('#learning-goal');
  await expect(planner).toHaveAttribute('data-plan-view','accepted');
  await expect(planner.getByRole('list',{name:'Plan creation steps'})).toBeHidden();
@@ -147,7 +149,7 @@ test('accepted plan is compact, preserves legacy lessons and keeps editing avail
  await planner.getByRole('button',{name:'Edit plan',exact:true}).click();
  await expect(planner.getByLabel('Lesson 1 activity',{exact:true})).toHaveValue('Discuss the economic causes in pairs.');
  expect(posts).toBe(0);
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  const session=page.locator('#daily-study-session');
  await expect(session.locator('.session-focus-evidence')).not.toHaveAttribute('open','');
  await expect(session.locator('.session-plan-context')).not.toHaveAttribute('open','');
@@ -160,7 +162,7 @@ test('mobile approach selector exposes every mode and changes only an unsent pre
  if(info.project.name!=='mobile')return;
  let posts=0;
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  const selector=page.getByRole('combobox',{name:'Learning approach',exact:true});
  await expect(selector).toBeVisible();
  await expect(selector.locator('option')).toHaveCount(5);
@@ -176,7 +178,7 @@ test('mobile approach selector exposes every mode and changes only an unsent pre
 test('returning-user shortcut resumes valid saved work without sending or starting a session',async({page})=>{
  let posts=0;
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  await expect(page.locator('#tutor-message-input')).toBeEnabled();
  await expect(page.getByRole('link',{name:'Continue learning',exact:false})).toHaveCount(0);
  const time=Date.now()-1000;
@@ -199,7 +201,7 @@ test('saved check statuses distinguish uncertainty from incorrect work and keep 
  const journey={settings:{goal,level:'college',minutes:20,sessions:3,deadline:''},plan:{title:'A saved evidence plan',overview:'A concise saved plan overview.',lessons},sources:[],completed:[],accepted:true,dirty:false};
  const checks=lessons.map((lesson,i)=>({id:`status-${i}`,context:{goal,lesson},question:{question:'What evidence supports this cause?',criterion:'Explain the evidence.'},answer:'My saved reasoning.',helpUsed:i===2,result:{decision:['uncertain','needs_work','meets','meets'][i],feedback:'Compare this review with the original source.',reasoningGap:'A recorded reasoning observation.',nextStep:'Check a fresh example.',method:'ai'},submittedAt:Date.now()-1000}));
  await page.addInitScript(({journey,checks})=>{localStorage.setItem('eai-goal-journey-v1',JSON.stringify(journey));localStorage.setItem('eai-lesson-checks-v1',JSON.stringify(checks));},{journey,checks});
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  const saved=page.getByLabel('Saved lesson checks',{exact:true});
  await saved.locator('summary').first().click();
  for(const outcome of ['uncertain','practice','helped','independent'])await expect(saved.locator(`[data-outcome=${outcome}]`)).toHaveCount(1);
@@ -219,7 +221,7 @@ test('notebook summaries retain labeled capture fields and open for review hando
  const time=Date.now()-86400000;
  const entry={id:'review-sample',exam:'SAT',question:'Solve 3x + 4 = 19.',answer:'I need to check my operation.',expected:'',reflection:'Saved notes remain intact.',createdAt:time,reviewAt:time,reviews:0};
  await page.addInitScript(entry=>localStorage.setItem('eai-exam-mistakes-v1',JSON.stringify([entry])),entry);
- await page.goto('/study');
+ await page.goto('/study#my-learning');
  const notebook=page.locator('#mistake-notebook');
  await expect(notebook.locator('.notebook-capture-disclosure')).not.toHaveAttribute('open','');
  await expect(notebook.locator('.notebook-saved-work')).not.toHaveAttribute('open','');
@@ -268,7 +270,7 @@ test('a sample attempt becomes an editable tutor draft and survives a refresh', 
 });
 
 test('a damaged lesson handoff is reported once and the materials library reopens normally', async ({page}) => {
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   await page.evaluate(() => sessionStorage.setItem('eai-lesson-material-handoff-v1','{'));
   await page.goto('/study/materials');
   const notice = page.getByText(/The prepared lesson could not be read/);
@@ -333,7 +335,7 @@ test('removing the selected material keeps a pending question from using unrelat
 });
 
 test('adding a planning file preserves notes until the student saves them', async ({page}) => {
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   const planner = page.locator('#learning-goal');
   await planner.locator('#learning-achievement').fill('Understand how water moves through soil.');
   await planner.getByRole('button', {name:'Continue →', exact:true}).click();
@@ -353,7 +355,7 @@ test('adding a planning file preserves notes until the student saves them', asyn
 test('planner asks for a new source selection when another tab removes a selected file', async ({page,context}) => {
   let requests=0;
   await page.route('**/api/study/plan',route=>{requests++;return route.abort();});
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   const planner=page.locator('#learning-goal');
   await planner.locator('#learning-achievement').fill('Understand how groundwater moves through sand.');
   await planner.getByRole('button',{name:'Continue →',exact:true}).click();
@@ -435,7 +437,7 @@ test('writing studio preserves a newer essay from a second tab and the unsaved l
 });
 
 test('unreadable essay and feedback remain recoverable after opening the writing studio',async({page})=>{
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   await page.evaluate(()=>{
     localStorage.setItem('eai-writing-studio-v1','{"content":42}');
     localStorage.setItem('eai-writing-chat-v1','{');
@@ -622,7 +624,7 @@ test('tutor keeps the reading position when another part of a long reply arrives
 
 test('study shortcuts close the expanded menu and retain keyboard focus', async ({page}) => {
   await page.setViewportSize({width:390,height:844});
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   const menu=page.locator('#study-menu-toggle');
   await menu.click();
   await page.locator('.studio-mobile-shortcuts').getByRole('link',{name:'Read',exact:true}).click();
@@ -803,7 +805,7 @@ test('practice plan keeps unreadable settings and protects a newer saved choice'
 
 test('daily backup exports the original damaged record and distinguishes unavailable storage', async ({page}) => {
   await page.addInitScript(()=>localStorage.setItem('eai-daily-sessions-v1',''));
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   const session=page.locator('#daily-study-session');
   await session.getByText('Saving & backups',{exact:true}).click();
   const backup=session.getByRole('button',{name:'Export session backup'});
@@ -943,7 +945,7 @@ test('exam handoff supersedes a pending plan and retains its deadline through re
     if(goals.length===1)await gate;
     await route.fulfill({json:{sources:[],plan:{title,overview:'Work through one example at a time.',lessons:[1,2,3].map(n=>({title:'Lesson '+n,objective:'Understand the problem.',activity:'Work through an example.',checkpoint:'Explain the reasoning.'}))}}});
   });
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   const planner=page.locator('#learning-goal'),exam=page.locator('.exam-prep-controls');
   await planner.locator('#learning-achievement').fill('Understand an unrelated topic.');
   await planner.getByRole('button',{name:'Continue →',exact:true}).click();
@@ -969,7 +971,7 @@ test('exam handoff supersedes a pending plan and retains its deadline through re
 test('exam tutor draft includes the chosen exam date without sending a message',async({page})=>{
   let calls=0;
   await page.route('**/api/study/chat',route=>{calls++;return route.abort();});
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   const exam=page.locator('.exam-prep-controls');
   await exam.getByLabel('Exam study focus').fill('Compare claims and supporting evidence');
   await exam.getByLabel('Exam date').fill('2027-04-03');
@@ -984,7 +986,7 @@ test('planner keeps an unreadable saved record when generating a temporary outli
   await page.route('**/api/study/plan',route=>route.fulfill({json:{sources:[],plan:{
     title:'Temporary outline',overview:'Work through these examples.',lessons:[1,2,3].map(n=>({title:'Example '+n,objective:'Identify the idea.',activity:'Try an example.',checkpoint:'Explain your answer.'}))
   }}}));
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   const planner=page.locator('#learning-goal');
   await expect(planner.getByText(/Your saved plan could not be read/)).toBeVisible();
   await planner.locator('#learning-achievement').fill('Learn how to compare two passages.');
@@ -1006,7 +1008,7 @@ for (const entry of ['plan','home']) test('starting a long lesson from '+entry+'
     localStorage.setItem('eai-goal-journey-v1',JSON.stringify(journey));
     localStorage.setItem('eai-lesson-checks-v1',JSON.stringify([check]));
   },{journey,check});
-  await page.goto('/study');
+  await page.goto('/study#my-learning');
   if(entry==='home'){
     const home=page.locator('#my-learning');
     await home.getByText('Plan progress & other options',{exact:true}).click();

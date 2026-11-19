@@ -1,6 +1,6 @@
 "use client";
 
-import YourNextStep from "@/components/YourNextStep";
+import QuietChapter from "@/components/QuietChapter";
 import StudyGuide from "@/components/StudyGuide";
 import { accountConfigured } from "@/lib/study-account";
 import SharedAIChat from "@/components/SharedAIChat";
@@ -67,17 +67,16 @@ export default function StudyPage() {
           <h1 id="studio-title">Explore what you<br className="studio-desktop-break" /> don’t yet know.</h1>
           <p className="studio-hero-subtitle">Ask questions. Study your sources. Put ideas into practice.</p>
           <p className="studio-hero-description">Work through a question with your AI tutor, learn from your own materials, or build a focused study plan.</p>
-          <div className="studio-hero-actions"><a className="studio-button-gold" href="#ai-assistant">Start with your AI Tutor <span aria-hidden="true">↗</span></a><Link className="studio-button-glass" href="/study/sample">Try a 5-minute lesson</Link><Link className="studio-button-glass" href="/study/materials">Bring your materials</Link></div>
           <p className="studio-hero-note">No account needed · {accountConfigured ? <Link href="/study/account">Optional account saving ↗</Link> : "Your work stays in this browser"}</p>
         </div>
-        <a href="#ai-assistant" className="studio-hero-scroll">MEET YOUR AI TUTOR <span aria-hidden="true">↓</span></a>
+        <a href="#learning-rooms" className="studio-hero-scroll">FIND YOUR ROOM <span aria-hidden="true">↓</span></a>
       </section>
-      <section className="studio-start-invitation"><p>Not sure where to begin? One small choice is enough.</p><Link href="/start">Explore, read or practice →</Link></section><YourNextStep />
-      <SharedAIChat />
-      <LearningHome />
-      <GoalLearning />
-      <LearningResources />
-      <ExamPreparation />
+      <nav id="learning-rooms" className="quiet-rooms" aria-label="Choose a learning room">{[
+['AI Tutor','Work through one question.','/study/tutor'],['Reading Room','Find a book and settle in.','/study/reading'],['Curiosity Room','Discover something surprising.','/study/curiosity'],['Certification Studio','Practice an engineering decision.','/study/certifications'],['Your materials','Study from your own sources.','/study/materials'],['Writing Studio','Give an idea your own words.','/study/writing']
+].map(([name,detail,href])=><Link key={href} href={href}><strong>{name} <span aria-hidden="true">↗</span></strong><span>{detail}</span></Link>)}</nav>
+      <QuietChapter title="Your learning and plans" description="Return to sessions, shape a plan, or prepare for an exam"><LearningHome/><GoalLearning/><ExamPreparation/></QuietChapter>
+      <QuietChapter title="Ask your Tutor here" description="The full embedded workspace, including your existing sessions"><SharedAIChat/></QuietChapter>
+      <QuietChapter title="More ways to learn" description="Your library, reading resources and subject shortcuts"><LearningResources/>
       <section id="explore" className="studio-explore">
         <div className="studio-section-title"><div><p className="studio-eyebrow">CHOOSE A SUBJECT</p><h2>Explore by subject.</h2></div><p>Across subjects.<br />At your pace.</p></div>
         <StudyGuide section="Explore subjects">Pick a subject to set the tutor’s focus, then type your question. Writing opens a separate workspace where you can draft and revise an essay.</StudyGuide><div className="studio-subjects" aria-label="Explore learning subjects">
@@ -106,6 +105,7 @@ export default function StudyPage() {
 
 
     
+      </QuietChapter>
       <div className="studio-footer">
         <div className="studio-footer-statement"><p>Ask a better question.<br/>Build a clearer understanding.</p><span>dAI Learning Studio · From eAI Engineering</span></div><nav aria-label="Learning Studio footer"><Link href="/">eAI Engineering</Link><Link href="/study/privacy">Privacy & saved learning</Link><span>Need a hand?{" "}
         <a

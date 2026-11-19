@@ -3,11 +3,11 @@ import AxeBuilder from '@axe-core/playwright';
 
 test('homepage leads with proof and keeps all heritage scenes and destinations',async({page})=>{
  await page.goto('/');
- const ids=await page.locator('main.threshold > .heritage-row').evaluateAll(es=>es.map(e=>e.querySelector('img')?.getAttribute('src')));
+ const ids=await page.locator('main.threshold .heritage-row').evaluateAll(es=>es.map(e=>e.querySelector('img')?.getAttribute('src')));
  expect(ids[0]).toContain('colosseum-engineering');expect(ids[1]).toContain('measure-of-time');expect(ids.length).toBeGreaterThanOrEqual(8);
  await expect(page.locator('.home-start-choices')).toHaveCount(0);
  await expect(page.getByRole('link',{name:'Try eAI in two minutes →',exact:true})).toBeVisible();
- await page.locator('.problem-other-starts > summary').click();await expect(page.getByRole('heading',{name:'What brings you here?'})).toBeVisible();
+ await page.locator('.quiet-chapter').first().locator(':scope > summary').click();await page.locator('.problem-other-starts > summary').click();await expect(page.getByRole('heading',{name:'What brings you here?'})).toBeVisible();
  await expect(page.locator('.main-project')).toHaveCount(3);
  for(const article of await page.locator('.main-project').all()){await article.getByText('Decision, evidence & limitation',{exact:true}).click();await expect(article.locator('dt')).toHaveText(['Decision','Evidence','Limitation']);}
 });

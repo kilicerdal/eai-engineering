@@ -1,5 +1,7 @@
 "use client";
 import {useEffect,useState} from "react";
+import {projectSavedWork} from '@/lib/your-space';
+import {readingBooks} from '@/lib/study-reading';
 import {openStudyWork} from "@/lib/study-open-work";
 import {restoreJourney} from "@/lib/study-progress";
 import {DAILY_SESSION_KEY,openDailySession,readDailyRecord} from "@/lib/study-daily-session";
@@ -14,6 +16,7 @@ export default function StudyResumeShortcut(){
    try{const raw=read(DAILY_SESSION_KEY);if(raw){const record=readDailyRecord(raw);if(openDailySession(record,now)||record.sessions.some(s=>s.startedAt<=now))href="#my-learning";}}catch{/* Unreadable records do not create a resume promise. */}
    if(!href){const journey=restoreJourney(read("eai-goal-journey-v1"));if(journey?.accepted)href="#my-learning";}
    if(!href){const work=openStudyWork(read("eai-study-conversations-v1"),read("eai-exam-prep-v1"),now);if(work.length)href=work[0].href;}
+   if(!href){try{const work=projectSavedWork(k=>localStorage.getItem(k),readingBooks);if(work.recent.length||work.mapItems.length||work.discoveries.length)href='/your-space';}catch{/* Storage access may be unavailable. */}}
    if(!cancelled)setDestination(href);
    if(!href)void loadMaterialLibrary().then(library=>{if(!cancelled&&revision===current&&library.documents.length)setDestination("/study/materials");}).catch(()=>{});
   }
