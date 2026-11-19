@@ -4,9 +4,15 @@ import {startRequest,settleRequest,recoverSubmittedDraft,requestRecoveryLabel} f
 import {ACTIVITY_HANDOFF,parseActivityHandoff,offerTutorDraft} from "@/lib/learning-activities";
 import {passageHandoff,DISCUSSION_KEY} from '@/lib/reading/library';
 import Link from "next/link";
+import TutorSourceEvidence from "./TutorSourceEvidence";
+import {TutorFirstQuestion,TutorResumeCard,TutorPauseHere} from "./TutorVisit";
+import TutorRequestPreview from "./TutorRequestPreview";
+import {tutorPayload} from "@/lib/tutor-payload";
+import {useWritingStatus} from "./WritingStatus";
+import TutorAdaptation from "./TutorAdaptation";
 import TutorReplyWorkbench from "./TutorReplyWorkbench";
 import TutorTakeawayNotebook from "./TutorTakeawayNotebook";
-import {TUTOR_PREFS_KEY,defaultTutorPreferences,normalizeTutorPreferences,appendTakeaway,replyContext,editSavedTakeaway,takeawayReviewPrompt,warmupPrompt,type TutorPreferences,type TakeawayDraft,type TutorTakeaway} from "@/lib/tutor-v12";
+import {TUTOR_PREFS_KEY,defaultTutorPreferences,normalizeTutorPreferences,appendTakeaway,replyContext,editSavedTakeaway,takeawayReviewPrompt,type TutorPreferences,type TakeawayDraft,type TutorTakeaway} from "@/lib/tutor-v12";
 import TutorLearningTools from "./TutorLearningTools";
 import ReadingAudio from "./ReadingAudio";
 import {tutorActions,selectedExplanation,visibleSessions,type TutorWorkspace} from "@/lib/tutor-workspace";
@@ -240,7 +246,7 @@ function MarkdownMessage({ content }: { content: string }) {
 function practiceTime(){return Date.now();}
 function useTutorPractice(id:string|undefined,messages:Message[]|undefined,planned:boolean){return useMemo(()=>id&&messages&&!planned?chatPractice(id,messages):null,[id,messages,planned]);}
 export default function SharedAIChat({dedicated=false,initialSession,localPreviewOnly=false}:{dedicated?:boolean;initialSession?:string;localPreviewOnly?:boolean}={}) {
-  const [focus,setFocus]=useState(false),[textSize,setTextSize]=useState(16),[wide,setWide]=useState(false),[toolsOpen,setToolsOpen]=useState(false),[historyQuery,setHistoryQuery]=useState(""),[mobilePanel,setMobilePanel]=useState("conversation"),[selectedText,setSelectedText]=useState(""),[audio,setAudio]=useState<{id:string;text:string}|null>(null);
+  const [focus,setFocus]=useState(false),[textSize,setTextSize]=useState(16),[wide,setWide]=useState(false),[toolsOpen,setToolsOpen]=useState(false),[toolTab,setToolTab]=useState("support"),[historyQuery,setHistoryQuery]=useState(""),[mobilePanel,setMobilePanel]=useState("conversation"),[selectedText,setSelectedText]=useState(""),[audio,setAudio]=useState<{id:string;text:string}|null>(null);
   const workspaceRoot=useRef<HTMLElement>(null);
   const [preferences,setPreferences]=useState<TutorPreferences>(defaultTutorPreferences),[preferenceNotice,setPreferenceNotice]=useState(''),[replyIndex,setReplyIndex]=useState<number|null>(null),[showOlder,setShowOlder]=useState(false),[openCheck,setOpenCheck]=useState(0),[openCheckTarget,setOpenCheckTarget]=useState(''),[replyToolVersion,setReplyToolVersion]=useState(0);
   const pendingReplyTool=useRef<{sessionId:string;index:number}|null>(null);
@@ -343,6 +349,8 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
 
   const workspace=active?.workspace||{};
   function patchWorkspace(patch:Partial<TutorWorkspace>){if(active)updateConversation(active.id,c=>({...c,workspace:{...c.workspace,...patch}}));}
+  function focusComposer(){setMobilePanel("conversation");requestAnimationFrame(()=>workspaceRoot.current?.querySelector<HTMLTextAreaElement>("#tutor-message-input")?.focus());}
+  function useOwnMaterial(){setToolsOpen(true);setToolTab("source");requestAnimationFrame(()=>{const panel=workspaceRoot.current?.querySelector<HTMLElement>("#tutor-learning-tools-panel");panel?.scrollIntoView({block:"center"});panel?.querySelector<HTMLTextAreaElement>("textarea")?.focus();});}
   function prepareTool(text:string){const accepted=prepareStarter(text,practiceTime());if(accepted){setSelectedText("");setMobilePanel("conversation");}return accepted;}
   useEffect(()=>{if(!focus)return;const old=document.body.style.overflow;document.body.style.overflow="hidden";const hidden:{el:HTMLElement;inert:boolean}[]=[];let node=workspaceRoot.current;while(node&&node!==document.body){for(const sibling of Array.from(node.parentElement?.children||[])){if(sibling!==node&&sibling instanceof HTMLElement){hidden.push({el:sibling,inert:sibling.inert});sibling.inert=true;}}node=node.parentElement;}const escape=(event:KeyboardEvent)=>{if(event.key==="Escape"){setFocus(false);requestAnimationFrame(()=>workspaceRoot.current?.querySelector<HTMLButtonElement>('#tutor-focus-toggle')?.focus());}};document.addEventListener('keydown',escape);return()=>{document.body.style.overflow=old;hidden.forEach(({el,inert})=>{el.inert=inert;});document.removeEventListener('keydown',escape);};},[focus]);
   useEffect(()=>{queueMicrotask(()=>{setSelectedText("");setAudio(null);const pending=pendingReplyTool.current;setReplyIndex(pending?.sessionId===activeId?pending.index:null);pendingReplyTool.current=null;setShowOlder(false);setOpenCheck(0);setOpenCheckTarget('');});},[activeId]);
@@ -405,6 +413,13 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
     abortControllerRef.current?.abort();
   }
 
+  useWritingStatus(!!storageWarning,storageWarning);
+  function requestBody(text:string,regenerate=false){
+    if(!active)return null;
+    let check:LessonCheck|null=null,practiceEvidence=null;
+    if(active.useContinuity!==false&&active.checkpoint){try{check=readCurrentContinuityCheck(active.checkpoint,active.learning.goal);if(!active.learning.goal.trim()||active.learning.goal.trim()===active.checkpoint.goal.trim().slice(0,300))practiceEvidence=packPracticeEvidence(active.checkpoint,readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items,practiceTime());}catch{/* Unreadable evidence is not included. */}}
+    return tutorPayload(active,workspace,text,regenerate,check,practiceEvidence);
+  }
   function prepareStarter(suggestion:string,stamp:number){
     if(!active||loading||!hydrated)return false;
     let draft:string;try{draft=offerTutorDraft(active.draft||"",suggestion);}catch(error){setRequestError({id:active.id,retry:false,message:error instanceof Error?error.message:"The draft could not be added."});return false;}
@@ -425,13 +440,8 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
     recovery.update(d=>startRequest(d,{id:requestId,session:id,state:"pending",question,originalDraft:submittedDraft,startedAt,updatedAt:startedAt}));
     followLatest.current = true;
     const lastUserIndex = active.messages.findLastIndex(message => message.role === "user");
-    const preceding=regenerate?active.messages.slice(0,lastUserIndex):active.messages;
-    const history=preceding.slice(-12);
-    let check:LessonCheck|null=null;let practiceEvidence=null;
-    if(active.useContinuity!==false&&active.checkpoint){try{check=readCurrentContinuityCheck(active.checkpoint,active.learning.goal);if(!active.learning.goal.trim()||active.learning.goal.trim()===active.checkpoint.goal.trim().slice(0,300))practiceEvidence=packPracticeEvidence(active.checkpoint,readSavedArray(localStorage,CHECK_KEY,normalizeLessonChecks).items,practiceTime());}catch{/* Continue without unreadable feedback; never replace it. */}}
     const requestSource=regenerate?active.messages[lastUserIndex]?.source:workspace.useSource?workspace.source:undefined;
     const baseMessages = regenerate ? active.messages.slice(0, lastUserIndex + 1) : [...active.messages, { role: "user" as const, content: question, ...(requestSource?{source:requestSource}:{}) }];
-    const mode = active.mode;
 
     updateConversation(id, (conversation) => ({
       ...conversation,
@@ -458,16 +468,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          message: question,
-          history:workspace.sourceOnly?[]:history,
-          sourceOnly:workspace.sourceOnly===true,
-          subject: mode,
-          learning: workspace.sourceOnly?{...active.learning,goal:""}:active.learning,
-          source: requestSource,
-          checkpoint:active.useContinuity!==false?active.checkpoint:undefined,
-          continuity:workspace.sourceOnly?undefined:{enabled:active.useContinuity!==false,note:active.useContinuity!==false?active.continuityNote||"":"",earlier:active.useContinuity!==false?earlierStudyContext(preceding):[],check,practiceEvidence},
-        }),
+        body: JSON.stringify(requestBody(question,regenerate)),
       });
 
       const answer = await readStudyStream(response, text => {
@@ -799,11 +800,11 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
               <label className="tutor-continuity-note">Carry-forward note for this session<textarea aria-label="Session carry-forward note" rows={3} maxLength={1000} disabled={!active||loading} value={active?.continuityNote||""} onChange={event=>active&&updateConversation(active.id,c=>({...c,continuityNote:event.target.value}))} placeholder="Keep a useful detail or the step you want to revisit…"/></label>
               <label className="tutor-continuity-choice"><input type="checkbox" aria-label="Use extra session context" checked={active?.useContinuity!==false} disabled={!active||loading} onChange={event=>active&&updateConversation(active.id,c=>({...c,useContinuity:event.target.checked}))}/>Use my carry-forward note, earlier session excerpts and up to four matching saved lesson checks.</label><p className="tutor-continuity-fine">Only this session is used. Recent messages and your current goal are still included when this is off. This does not create a mastery score or unrestricted memory.</p>
           </section>}
-          {active&&<TutorLearningTools key={active.id} workspace={workspace} patch={patchWorkspace} prepare={prepareTool} messages={active.messages} disabled={loading||!hydrated} open={toolsOpen} toggle={()=>setToolsOpen(!toolsOpen)} notebook={<TutorTakeawayNotebook sessions={conversations} disabled={loading||!hydrated} review={reviewTakeaway} mark={(sessionId,id)=>{const at=practiceTime();updateConversation(sessionId,c=>({...c,workspace:{...c.workspace,takeaways:c.workspace?.takeaways?.map(item=>item.id===id?{...item,reviewedAt:Math.max(at,item.createdAt)}:item)}}));}} continueDraft={continueTakeawayDraft} edit={editTakeaway}/>}/>}
+          {active&&<TutorLearningTools key={active.id} workspace={workspace} patch={patchWorkspace} prepare={prepareTool} messages={active.messages} disabled={loading||!hydrated} selectedTab={toolTab} onTabChange={setToolTab} open={toolsOpen} toggle={()=>setToolsOpen(!toolsOpen)} notebook={<TutorTakeawayNotebook sessions={conversations} disabled={loading||!hydrated} review={reviewTakeaway} mark={(sessionId,id)=>{const at=practiceTime();updateConversation(sessionId,c=>({...c,workspace:{...c.workspace,takeaways:c.workspace?.takeaways?.map(item=>item.id===id?{...item,reviewedAt:Math.max(at,item.createdAt)}:item)}}));}} continueDraft={continueTakeawayDraft} edit={editTakeaway}/>}/>}
           {workspace.source&&<div className="tutor-mobile-panel-tabs" role="group" aria-label="Tutor workspace view"><button aria-pressed={mobilePanel==='conversation'} onClick={()=>setMobilePanel('conversation')}>Conversation</button><button aria-pressed={mobilePanel==='source'} onClick={()=>setMobilePanel('source')}>{workspace.source.kind==='problem'?'Question':'Source passage'}</button></div>}
           <div className={`tutor-work-area ${workspace.source?'tutor-has-source':''}`} data-mobile-panel={mobilePanel}>
           <div id="tutor-chat-workspace" className="tutor-focus-main">
-            {active?.messages.some(m=>m.role==='user')&&<details className="tutor-return-card"><summary>Pick up where you paused</summary><p><strong>Your last question</strong></p><p>{active.messages.filter(m=>m.role==='user').at(-1)?.content.slice(0,600)}</p>{workspace.nextStep&&<p><strong>Your next step:</strong> {workspace.nextStep}</p>}{workspace.recap&&<p className="tutor-preserve-text">{workspace.recap}</p>}<button disabled={loading} onClick={()=>workspaceRoot.current?.querySelector<HTMLTextAreaElement>('#tutor-message-input')?.focus()}>Continue this session</button><button disabled={loading} onClick={()=>prepareTool(warmupPrompt(workspace.recap||'',active.messages.filter(m=>m.role==='user').at(-1)?.content||''))}>Warm up with one recall question</button><button disabled={loading} onClick={newConversation}>Start fresh · keep this session</button></details>}
+            {active?.messages.some(m=>m.role==='user')&&<TutorResumeCard session={active} focus={focusComposer} prepare={prepareTool} fresh={newConversation} disabled={loading||!hydrated}/>}
             {resumeNotice&&<p className="goal-notice" role="status">{resumeNotice}</p>}
             {storageWarning&&<p className="goal-notice" role="status">{storageWarning} <button type="button" onClick={downloadSessions}>Download session backup</button></p>}
             {active&&<details className="tutor-continuity-preview"><summary>What the tutor can use {active.useContinuity===false?"· extra context off":`· ${earlier.length} earlier excerpts${savedCheck?" + saved feedback":""}`}</summary><p>Recent messages, your selected level and current goal are sent with your question. Earlier excerpts stay within this session. Saved checks must match its exact objective and source version; excerpts may be shortened.</p>{active.useContinuity!==false?<>{active.continuityNote&&<div><strong>Your carry-forward note</strong><p>{active.continuityNote}</p></div>}{earlier.map((item,index)=><div key={index}><strong>{item.role==="user"?"Your earlier words":"Earlier tutor response · may contain mistakes"}</strong><p>{item.content}</p></div>)}{savedCheck&&<div><strong>Latest matching check · {checkLabel(savedCheck)} · {checkReviewMethod(savedCheck)}</strong><p>{savedCheck.result.reasoningGap}</p><p>{savedCheck.result.nextStep}</p></div>}{savedPractice.length>1&&<div><strong>{savedPractice.length} matching practice checks</strong><p>The tutor can compare these attempts for this same objective and source version. Matching outcomes alone do not establish the same misconception.</p>{savedPractice.map(c=><p key={c.id}>{checkLabel(c)} · {c.question.question.slice(0,180)}</p>)}</div>}{!active.continuityNote&&!earlier.length&&!savedCheck&&<p>No extra context yet. Add a carry-forward note in Session settings when useful.</p>}</>:<p>Your extra context is off for this session. Change this in Session settings.</p>}</details>}
@@ -822,7 +823,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
               <p className="text-xs text-slate-400">{learningApproaches[active?.learning.approach || "guided"].description}</p>
             </div>
 
-            {presentedMessages.some(({message})=>message.role==='user')&&<nav className="tutor-conversation-navigation" aria-label="Conversation navigation"><label>Jump to question<select aria-label="Jump to question" value="" onChange={e=>{if(e.target.value)jumpQuestion(Number(e.target.value));}}><option value="">Choose a question</option>{presentedMessages.filter(({message})=>message.role==='user').map(({message,index},i)=><option key={index} value={index}>{i+1}. {message.content.slice(0,80)}</option>)}</select></label><button onClick={()=>{followLatest.current=true;const log=chatContainerRef.current;log?.scrollTo({top:log.scrollHeight,behavior:'instant'});}}>Latest reply ↓</button>{showOlder&&presentedMessages.length>8&&<button onClick={()=>{setShowOlder(false);requestAnimationFrame(()=>{const log=chatContainerRef.current;log?.scrollTo({top:log.scrollHeight});});}}>Collapse older exchanges</button>}</nav>}
+            {presentedMessages.some(({message})=>message.role==='user')&&<nav className="tutor-conversation-navigation" aria-label="Conversation navigation"><label>Jump to question<select aria-label="Jump to question" value="" onChange={e=>{if(e.target.value)jumpQuestion(Number(e.target.value));}}><option value="">Choose a question</option>{presentedMessages.filter(({message})=>message.role==='user').map(({message,index},i)=><option key={index} value={index}>{i+1}. {message.content.slice(0,80)}</option>)}</select></label><button onClick={focusComposer}>Write a question ↓</button><button onClick={()=>jumpQuestion(active!.messages.findLastIndex(m=>m.role==='user'))}>Back to my question ↑</button><button onClick={()=>{followLatest.current=true;const log=chatContainerRef.current;log?.scrollTo({top:log.scrollHeight,behavior:'instant'});}}>Latest reply ↓</button>{showOlder&&presentedMessages.length>8&&<button onClick={()=>{setShowOlder(false);requestAnimationFrame(()=>{const log=chatContainerRef.current;log?.scrollTo({top:log.scrollHeight});});}}>Collapse older exchanges</button>}</nav>}
             <div
               ref={chatContainerRef}
               onScroll={event => {
@@ -836,7 +837,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
               role="log"
               aria-live="polite"
             >
-              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><StudyGlyph kind="general"/><h3>What would you like to understand?</h3><p>Start with a subject, a question or a problem. Add your level or what you’ve tried if useful.</p><div className="tutor-start-paths">{[['Understand something','explain','I want to understand…'],['Solve a problem','guided','Help me work through this problem…'],['Practice what I know','practice','Give me one practice question about…']].map(([label,approach,draft])=><button key={approach} disabled={!hydrated||loading} onClick={()=>{changeLearning({approach:approach as LearningProfile['approach']});prepareTool(draft);}}>{label}<span aria-hidden="true">↗</span></button>)}</div></div> : <>{hiddenCount>0&&<button className="tutor-older-exchanges" onClick={()=>setShowOlder(true)}>Show earlier exchanges · {hiddenCount} messages</button>}{presentedMessages.slice(hiddenCount).map(({message,index}) => (
+              {!active?.messages.some(message => message.role === "user") ? <div className="tutor-empty-state"><TutorFirstQuestion disabled={!hydrated||loading} focus={focusComposer} source={useOwnMaterial} example={(text,approach)=>{if(prepareTool(text))changeLearning({approach});}}/></div> : <>{hiddenCount>0&&<button className="tutor-older-exchanges" onClick={()=>setShowOlder(true)}>Show earlier exchanges · {hiddenCount} messages</button>}{presentedMessages.slice(hiddenCount).map(({message,index}) => (
                 <div
                   key={index}
                   data-tutor-message-index={index} tabIndex={-1}
@@ -856,7 +857,8 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
                   >
                     {message.role === "assistant" ? (
                       <>
-                        <MarkdownMessage content={message.content} />
+                        <MarkdownMessage content={message.content} />{message===active?.messages.at(-1)&&!loading&&replyContext(active.messages,index)?.source&&<TutorSourceEvidence key={activeId+":"+index} reply={message.content} source={replyContext(active.messages,index)!.source!}/>}
+                        {message===active?.messages.at(-1)&&message.content.trim()&&<TutorAdaptation key={activeId+":"+index} messages={active.messages} question={replyContext(active.messages,index)?.question||""} reply={message.content} prepare={prepareTool} disabled={loading||!hydrated}/>}
                         <div className="tutor-response-actions"><button type="button" disabled={loading} onClick={()=>openReply(index)}>Work with this reply</button>{message===active?.messages.at(-1)&&(practice||active?.checkpoint)&&<button disabled={loading} onClick={openUnderstanding}>Check my understanding</button>}<details><summary>More reply actions</summary>
                         <button type="button" className="tutor-listen-button" disabled={loading} onClick={()=>setAudio({id:activeId,text:message.content.replace(/```[\s\S]*?```/g,' [Code block omitted from read-aloud.] ').replace(/[#*_`]/g,'')})}>Listen to this explanation</button><button type="button" className="tutor-listen-button" disabled={loading} onClick={()=>setSelectedText(message.content.slice(0,1000))}>Ask about a part</button>
                         {message === active?.messages.at(-1) && message.content.trim() && !loading && <div className="tutor-starter-prompts">
@@ -881,7 +883,8 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
             {replyIndex!==null&&reply?.role==='assistant'&&<TutorReplyWorkbench key={`${activeId}-${replyIndex}-${replyToolVersion}`} index={replyIndex} question={selectedReply?.question||''} reply={reply.content} source={selectedReply?.source} workspace={workspace} patch={patchWorkspace} save={saveTakeaway} prepare={prepareTool} close={()=>setReplyIndex(null)} disabled={loading||!hydrated}/>}
             {selectedText&&<aside className="tutor-selection" aria-label="Selected tutor passage"><label>Exact part to explain<textarea aria-label="Selected tutor text to explain" rows={3} maxLength={1000} value={selectedText} onChange={e=>setSelectedText(e.target.value)}/></label><button disabled={loading||!selectedText.trim()} onClick={()=>prepareTool(selectedExplanation(selectedText))}>Explain this selection</button><button onClick={()=>setSelectedText('')}>Dismiss selection</button></aside>}
             {audio?.id===activeId&&<ReadingAudio context="tutor" key={audio.text} paragraphs={[{id:'explanation',text:audio.text}]} paragraph="explanation" onClose={()=>setAudio(null)}/>}
-            <div className="tutor-composer">
+            {active?.messages.some(m=>m.role==='user')&&<TutorPauseHere key={active.id} session={active} patch={patchWorkspace} disabled={loading||!hydrated}/>}
+            <div className="tutor-composer">{active&&<TutorRequestPreview payload={requestBody(active.draft||'')||{}}/>}
               {!active?.messages.some(message => message.role === "user") && <details className="tutor-example-drawer"><summary>Try an example question</summary><div className="tutor-starter-prompts"><p className="tutor-starter-caption">Use an example to start a draft, then edit and Send.</p>
                 {suggestions[active?.mode || "general"].map(
                   (suggestion) => (
@@ -935,13 +938,13 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
                     ["Explain differently", "Explain the current concept using a different example or analogy."],
                     ["Try a similar problem", "Give me one similar practice problem. Wait for my attempt before showing the answer."],
                     ["Summarize this session", "Summarize what we covered, the gaps shown in my attempts, and what I should practice next. Do not invent progress or scores."],
-                  ].map(([label, prompt]) => <button key={label} type="button" onClick={() => void sendMessage(prompt)} className="rounded-lg border border-white/15 px-3 py-2 text-xs text-cyan-200 hover:bg-white/5">{label}</button>)}
+                  ].filter(([label])=>active?.messages.at(-1)?.role!=='assistant'||!['Give me a hint','Explain differently'].includes(label)).map(([label, prompt]) => <button key={label} type="button" onClick={() => prepareTool(prompt)} className="rounded-lg border border-white/15 px-3 py-2 text-xs text-cyan-200 hover:bg-white/5">{label}</button>)}
                 </div></details>
               )}
-              <button type="button" className="tutor-stuck" disabled={loading||!hydrated} onClick={()=>prepareTool(tutorActions.stuck)}>I’m stuck · help with this step</button>
+              <button type="button" hidden={active?.messages.at(-1)?.role==='assistant'} className="tutor-stuck" disabled={loading||!hydrated} onClick={()=>prepareTool(tutorActions.stuck)}>I’m stuck · help with this step</button>
               {requestError?.id === activeId && (
                 <div role="alert" className="mb-4 rounded-xl border border-amber-400/30 bg-amber-400/10 p-3 text-sm text-amber-100">
-                  <p>{requestError.message}</p>
+                  <p>{requestError.message}</p><p>Your question remains in this session. A manual retry makes a new AI request; an interrupted request may already have been processed. It does not run automatically.</p><button type="button" onClick={()=>prepareTool(active?.messages.findLast(m=>m.role==='user')?.content||'')}>Review last question in composer</button>
                   {requestError.retry!==false?<button type="button" disabled={loading} onClick={regenerateResponse} className="mt-2 font-semibold underline disabled:opacity-50">Retry last question</button>:<button type="button" onClick={downloadSessions} className="mt-2 font-semibold underline">Download session backup</button>}
                 </div>
               )}

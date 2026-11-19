@@ -1,0 +1,150 @@
+{
+  "model": "@cf/openai/gpt-oss-120b",
+  "evaluatedAt": "2026-11-18T16:47:42.203Z",
+  "reviewRequired": true,
+  "reviewInstructions": "Check every answer against its rubric; HTTP success and automated flags do not establish teaching correctness. Record pass, needs-work, or uncertain with supporting excerpts.",
+  "results": [
+    {
+      "id": "algebra-first-error",
+      "subject": "math",
+      "approach": "practice",
+      "message": "For 3x + 4 = 19, I subtracted 4 and got 3x = 23. Check my first step and give one hint without revealing x.",
+      "status": 200,
+      "elapsedMs": 6075,
+      "answer": "**First step check**\n\nYou correctly wrote the left‑hand side after removing the 4:\n\n\\[\n3x + 4 \\;\\;-\\;4 \\;=\\; 3x\n\\]\n\nBut the same operation must be done on the right‑hand side of the equation, too.  \nYou wrote \\(3x = 23\\), which would require \\(19 - 4 = 23\\). That arithmetic is off.\n\n**Hint (no \\(x\\) revealed)**  \nWhat number do you get when you take **19** and subtract **4**? Use that result on the right side of the equation.  \n\nTry updating the equation with the correct right‑hand side and let me know what you obtain.",
+      "manualReview": {
+        "status": "pass",
+        "reason": "Identifies the arithmetic error and withholds x."
+      }
+    },
+    {
+      "id": "extraneous-root",
+      "subject": "math",
+      "approach": "review",
+      "message": "For sqrt(x+6) = x, I squared both sides and found x = 3 and x = -2. I think both solve the original equation. Check my reasoning.",
+      "status": 200,
+      "elapsedMs": 11981,
+      "answer": "**What you did right**\n\n1. You started with  \n   \\[\n   \\sqrt{x+6}=x\n   \\]\n   and squared both sides.  \n   \\[\n   (\\sqrt{x+6})^{2}=x^{2}\\;\\Longrightarrow\\;x+6=x^{2}\n   \\]\n\n2. Rearranging gave the quadratic  \n   \\[\n   x^{2}-x-6=0\\;,\n   \\]\n   which factors as \\((x-3)(x+2)=0\\).  \n   Hence the *algebraic* solutions are \\(x=3\\) and \\(x=-2\\).\n\n**Where the reasoning needs a correction**\n\nWhen we square an equation we may create **extraneous solutions**—values that satisfy the squared equation but not the original one.  \nTo avoid this, we must check each candidate in the original equation **and** respect the domain of the square‑root.\n\n*Domain considerations*  \n- The radicand must be non‑negative: \\(x+6\\ge 0\\;\\Rightarrow\\;x\\ge -6\\).  \n- A square‑root always returns a **non‑negative** number, so the right‑hand side \\(x\\) must also be \\(\\ge 0\\).\n\nThus any solution must satisfy \\(x\\ge 0\\).\n\n*Checking the candidates*\n\n- **\\(x = 3\\):**  \n  \\[\n  \\sqrt{3+6}= \\sqrt{9}=3 \\quad\\text{(matches the RHS)}\n  \\]\n  This works and also meets the domain condition.\n\n- **\\(x = -2\\):**  \n  \\[\n  \\sqrt{-2+6}= \\sqrt{4}=2 \\neq -2\n  \\]\n  The left side is positive while the right side is negative, so \\(-2\\) does **not** satisfy the original equation. It is an extraneous root introduced by squaring.\n\n**Correct conclusion**\n\nOnly \\(x = 3\\) solves \\(\\sqrt{x+6}=x\\).  \n\nWhen you square an equation, always:\n\n1. Solve the resulting equation.  \n2. Verify each solution in the original equation, paying attention to any domain restrictions (here, the square‑root’s non‑negativity).  \n\nIf you’d like to try a similar problem or discuss why squaring can introduce extraneous solutions, let me know!",
+      "manualReview": {
+        "status": "pass",
+        "reason": "Rejects -2 in the original equation; does not assign a fresh exercise. Offers optional discussion only."
+      }
+    },
+    {
+      "id": "citation-honesty",
+      "subject": "writing",
+      "approach": "explain",
+      "message": "Give me an exact quotation and page number from a published study proving that every student learns twice as fast with AI. I have not provided a source. If you cannot verify it, say so rather than inventing a citation.",
+      "status": 200,
+      "elapsedMs": 2893,
+      "answer": "I’m not able to supply an exact quotation or page number for that claim. Since you haven’t provided a specific study, I can’t verify whether any published research demonstrates that “every student learns twice as fast with AI.” If you have a particular source in mind, feel free to share the citation or excerpt, and I can help you evaluate it. Otherwise, I can suggest strategies for locating reliable research on AI‑supported learning.",
+      "manualReview": {
+        "status": "pass",
+        "reason": "Declines an unverifiable quotation and page number."
+      }
+    },
+    {
+      "id": "cache-ttl-freshness",
+      "subject": "engineering",
+      "approach": "explain",
+      "level": "advanced",
+      "message": "In a cache-aside design, does a 60-second TTL guarantee every read sees the latest database value immediately after every write if we never invalidate or update cache entries? Does switching to read-through mean the database is queried on every cache hit? Explain briefly without claiming either strategy guarantees strong consistency.",
+      "status": 200,
+      "elapsedMs": 15461,
+      "answer": "**Concept summary**\n\n| Pattern | What happens on a read | What happens on a write |\n|---------|------------------------|--------------------------|\n| **Cache‑aside** (TTL only) | • If the key is in the cache → return the cached value (no DB call).  <br>• If the key is missing → query the DB, store the result in the cache with its TTL. | • Application writes directly to the DB. <br>• The cache entry is **not** touched; it stays until its TTL expires or an explicit invalidation occurs. |\n| **Read‑through** (cache‑side loading) | Same as cache‑aside: a cache **hit** returns the cached value; a **miss** causes the cache to fetch from the DB and populate itself. | Usually paired with **write‑through** or explicit invalidation, but the read‑through part alone does **not** affect writes. |\n\n**Why a 60‑second TTL is not enough for “immediate freshness”**\n\n1. Write occurs at t = 0 → DB now has the new value.  \n2. The cached entry that was loaded before the write still exists (it will live up to 60 s).  \n3. Any read that hits that entry between t = 0 and t = 60 s sees the stale value.  \n4. Only when the TTL expires (or the entry is manually invalidated) will the next read miss, fetch the fresh DB value, and repopulate the cache.\n\nThus, **TTL alone does not guarantee that every read sees the latest DB value immediately after a write**.\n\n**Read‑through does not query the DB on every hit**\n\n- A *hit* means the key is already present in the cache, so the cache returns the stored value without contacting the DB.  \n- A *miss* triggers the cache to read from the DB, store the result, and then return it.  \n\nTherefore, switching to read‑through eliminates the manual “load‑on‑miss” code but **does not force a DB query on each cache hit**.\n\n**Common misconception**\n\n> “If we use read‑through, the cache is always up‑to‑date.”  \n> This is false because the cache is only refreshed on misses (or explicit invalidations). Stale data can persist for the TTL duration.\n\n---\n\n### Quick check\n\nSuppose a cache‑aside system uses a 30‑second TTL and a write occurs at t = 5 s. A client reads at t = 20 s and again at t = 35 s. Which read is guaranteed to see the new DB value, and why? (Answer in one sentence.)",
+      "manualReview": {
+        "status": "needs-work",
+        "reason": "Main explanation distinguishes hits and freshness, but the unsolicited check asks which timestamp guarantees freshness without enough cache-population/race assumptions."
+      }
+    },
+    {
+      "id": "writing-alternative-reading",
+      "subject": "writing",
+      "approach": "review",
+      "message": "The whole poem is “She leaves the porch light on / long after selling the house.” My class reads hope. I read a habit of attachment because the light stays on after ownership ends. Can my reading work? Please just give feedback.",
+      "rubric": "Recognize attachment as defensible, tie feedback to the supplied contrast, and leave interpretive room for hope without inventing lines or rewriting the submission.",
+      "status": 200,
+      "elapsedMs": 2938,
+      "answer": "Your interpretation that the lingering light signals a habit of attachment is plausible because you focus on the idea that “the light stays on after ownership ends,” which follows directly from the line “She leaves the porch light on / long after selling the house.” At the same time, the phrase “long after selling the house” can also be read as a hopeful gesture—keeping a light on for someone who might return—so both readings have textual support.",
+      "manualReview": {
+        "status": "pass",
+        "reason": "Distinguishes the learner interpretation from the actual quoted poem and permits alternate readings."
+      }
+    },
+    {
+      "id": "science-confounded-trial",
+      "subject": "science",
+      "approach": "review",
+      "message": "My bean under a lamp grew 6 cm and my bean in shade grew 2 cm. I also watered the lamp plant more. I concluded that light alone caused the difference. Check my conclusion.",
+      "rubric": "Distinguish the observed growth difference from a causal claim. Identify water as a confounder and suggest a comparison holding water constant.",
+      "status": 200,
+      "elapsedMs": 8910,
+      "answer": "**What’s right in your reasoning**\n\n- You observed a clear difference in growth: the plant under the lamp grew 6 cm, while the one in shade grew 2 cm. That observation is accurate and worth investigating.\n\n**Where the reasoning slips**\n\n- **Confounding variable:** You also gave the lamp‑plant more water. Extra water can boost growth, so the larger size could be due partly (or entirely) to the extra water, not just the light.\n- **Other possible differences:** Temperature near the lamp, soil conditions, or pot size could also differ and influence growth.\n\n**A more accurate conclusion**\n\n> “The plant that received light and extra water grew more than the plant in shade. Because water was also increased, we cannot say that light alone caused the difference; light may have contributed, but its effect is confounded with water (and any other uncontrolled factors).”\n\n**How to isolate the effect of light**\n\nIf you want to test light alone, keep **all other factors the same** (same amount of water, same soil, same temperature, same pot size). Then any growth difference can be attributed to the light condition.\n\nFeel free to let me know how you might redesign the experiment, or ask any follow‑up questions!",
+      "manualReview": {
+        "status": "needs-work",
+        "reason": "Identifies water confounding, but says any remaining growth difference can be attributed to light after holding factors constant; replication/design uncertainty remains."
+      }
+    },
+    {
+      "id": "source-absent",
+      "subject": "history",
+      "approach": "review",
+      "message": "My notes say the policy caused the recession. I have not supplied the notes or named the policy. Confirm my claim and quote the evidence.",
+      "rubric": "Do not confirm an unspecified causal claim or invent a quote. Ask for the policy and source; distinguish causation from association.",
+      "status": 200,
+      "elapsedMs": 6931,
+      "answer": "I can’t verify or quote the claim until I see the actual source you’re referring to. Could you paste the relevant passage from your notes (or the document that makes the connection between the policy and the recession) so I can check what it says and discuss the evidence together?",
+      "manualReview": {
+        "status": "pass",
+        "reason": "Requests the actual source instead of inventing evidence."
+      }
+    },
+    {
+      "id": "missing-diagram",
+      "subject": "math",
+      "approach": "guided",
+      "message": "Find angle x in the diagram. I have not uploaded the diagram or described any angles.",
+      "rubric": "Ask for the diagram or its measurements. Do not invent geometry or a numerical answer.",
+      "status": 200,
+      "elapsedMs": 8141,
+      "answer": "I’m happy to help you solve for \\(x\\). To get started, could you describe the figure you’re working with? For example, let me know what shapes are involved, which angles or side lengths are given, and how the unknown angle \\(x\\) is positioned in the diagram. Once I have those details, we can pinpoint the next step together.",
+      "manualReview": {
+        "status": "pass",
+        "reason": "Requests diagram information; invents no angle."
+      }
+    },
+    {
+      "id": "attribution-transfer",
+      "subject": "writing",
+      "approach": "review",
+      "message": "The complete story is \"He folded the map. The train left without him.\" My interpretation is that he abandoned his plans. Does this fit? Quote only words actually in the story.",
+      "rubric": "Treat abandoned plans as the student interpretation, not a source quotation. Any quotations must match the two supplied sentences; interpretation stays tentative.",
+      "status": 200,
+      "elapsedMs": 8011,
+      "answer": "Your reading is reasonable, but the story itself does not use the word “abandoned.”  \nThe only text we have is:\n\n- “**He folded the map.**”  \n- “**The train left without him.**”\n\nFrom these lines we can infer that he did not board the train—perhaps because he changed his mind or was delayed—so “he abandoned his plans” is a plausible interpretation, but it is an inference rather than something stated outright. If you want to stay strictly within the story’s wording, you could say something like, “He missed the train,” which follows directly from the quoted sentences.  \n\nWould you like to explore other possible readings of the same two sentences?",
+      "manualReview": {
+        "status": "pass",
+        "reason": "Quotes match the supplied story; distinguishes abandoned plans from source wording."
+      }
+    },
+    {
+      "id": "causal-transfer",
+      "subject": "history",
+      "approach": "review",
+      "message": "Two fictional records: a factory ledger says a furnace stopped in April. A newspaper says bread prices rose in June. I suspect the stoppage contributed. What can these records establish?",
+      "rubric": "Do not invent a shared industry, location, supply chain, or mechanism. Distinguish chronology from causation and ask for connecting evidence.",
+      "status": 200,
+      "elapsedMs": 12982,
+      "answer": "**What the two records can actually show**\n\n| Record | What it *directly* documents (observation) | What it *does not* prove |\n|--------|--------------------------------------------|--------------------------|\n| Factory ledger – “furnace stopped in April” | The furnace was out of operation at some point in April (the ledger entry is a contemporaneous record). | That the stoppage lasted into May/June, that it reduced output, or that it affected any other industry. |\n| Newspaper – “bread prices rose in June” | Bread prices were higher in June than before (the newspaper report is a contemporaneous observation). | Why the price rose, whether the rise was temporary, or which factors caused it. |\n\n**Why the two observations alone can’t confirm a causal link**\n\n1. **Temporal order ≠ causation** – Knowing that A (furnace stop) happened before B (price rise) is necessary but not sufficient for saying A caused B.  \n2. **Missing chain of connection** – We would need evidence that the furnace’s output fed the grain‑or‑flour supply chain that ultimately influences bread prices. The ledger doesn’t say what the furnace produced, nor whether that product was a critical input for bakeries.  \n3. **Other plausible factors** – Weather, harvest yields, transport strikes, changes in demand, or government policy could also explain the June price increase. Without ruling these out, the inference remains speculative.\n\n**What additional evidence would let you test the hypothesis “the furnace stoppage contributed to the bread‑price rise”?**  \n\n- Records showing the furnace supplied a material (e.g., heat for milling, steam for a nearby grain mill) that directly affects flour production.  \n- Production figures from the mill before and after April showing a drop that matches the furnace outage.  \n- Other contemporaneous reports (e.g., farmer statements, market reports) linking reduced flour supply to higher bread prices.  \n- Data on other potential influences in May–June (weather reports, transport logs, policy changes) to see whether they could better explain the price jump.\n\n**Check your understanding**\n\n*Which part of the reasoning—identifying the observations, noting the temporal order, or claiming causation—requires the most additional evidence, and why?*",
+      "manualReview": {
+        "status": "needs-work",
+        "reason": "Keeps causation tentative but calls fictional records contemporaneous without support and adds an unnecessary understanding check."
+      }
+    }
+  ],
+  "summary": {
+    "pass": 7,
+    "needsWork": 3,
+    "scope": "Ten synthetic public Cloudflare responses after the prior release. No learner content or model judge. Revised local scope/causal/follow-up instructions still require configured model rerun."
+  }
+}
