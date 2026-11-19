@@ -914,7 +914,10 @@ test('a pending notebook review preserves newer notes and uses the complete save
   });
   await page.goto('/study#mistake-notebook');
   const book=page.locator('#mistake-notebook');
-  await book.getByText(/Review saved attempts/).click();
+  await expect(book.getByText(/Review saved attempts · 1/)).toBeVisible();
+  const savedAttempts=book.locator('.notebook-saved-work');
+  if(await savedAttempts.getAttribute('open')===null)await savedAttempts.locator(':scope > summary').click();
+  await expect(savedAttempts).toHaveAttribute('open');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await book.getByRole('button',{name:'Review my reasoning again'}).click();
   try {
