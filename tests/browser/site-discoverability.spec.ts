@@ -75,6 +75,7 @@ test('real performance callback sends only allowlisted data and honors opt-out',
  await page.route('**/api/performance',async route=>{events.push(route.request().postDataJSON());expect(route.request().headers()['cookie']).toBeUndefined();expect(route.request().headers()['referer']||'').toBe('');await route.fulfill({status:204});});
  await page.goto('/');await finalizeMetric(page);await page.goto('/privacy');
  await expect.poll(()=>events.length).toBeGreaterThan(0);
+ await expect(page.locator('.studio-account-card')).toHaveCSS('background-color','rgb(16, 26, 40)');
  for(const event of events)expect(Object.keys(event as object).sort()).toEqual(['device','metric','value']);
  await page.getByRole('button',{name:'Disable performance measurement',exact:true}).click();await expect(page.getByRole('region',{name:'Your choice'}).getByRole('status')).toContainText('disabled');
  events.length=0;await page.goto('/');await finalizeMetric(page);await page.goto('/privacy');await page.waitForTimeout(500);expect(events).toEqual([]);
