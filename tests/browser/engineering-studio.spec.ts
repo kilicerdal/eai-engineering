@@ -6,7 +6,7 @@ test("homepage leads to the dedicated studio and keeps chat and learning distinc
 }) => {
   await page.goto("/");
   await expect(page.locator(".main-project")).toHaveCount(3);
-  await expect(page.locator(".atlas-hero .primary")).toHaveAttribute("href", "/chat");
+  await expect(page.locator(".atlas-hero .primary")).toHaveAttribute("href", "/engineering");
   await expect(page.locator(".atlas-dai-invitation")).toBeVisible();
   await page.getByRole("link", { name: "Explore Engineering Studio", exact: true }).click();
   await expect(page).toHaveURL(/\/engineering$/);

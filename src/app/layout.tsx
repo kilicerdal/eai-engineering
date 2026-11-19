@@ -8,11 +8,13 @@ import SiteCompanion from "@/components/SiteCompanion";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  preload: false,
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  preload: false,
   subsets: ["latin"],
 });
 

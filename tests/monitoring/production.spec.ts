@@ -24,9 +24,14 @@ test('homepage showcases three projects without horizontal overflow',async({page
 
 test('Atlas is interactive after hydration',async({page})=>{
  await page.goto('/#about');const about=page.locator('#about');
- await about.getByText('Explore the AI Systems Atlas and design principles',{exact:true}).click();
- await about.getByRole('button',{name:'Retrieval path',exact:true}).click();
+ const disclosure=about.locator('details.main-architecture-toggle');
+ if(!(await disclosure.evaluate((node:HTMLDetailsElement)=>node.open)))await disclosure.locator('summary').click();
+ await expect(about.getByRole('heading',{name:'Intelligence, connected.',exact:true})).toBeVisible();
+ const retrieval=about.getByRole('button',{name:'Retrieval path',exact:true});
+ await retrieval.click();
+ await expect(retrieval).toHaveAttribute('aria-pressed','true');
  await expect(about.locator('[data-node="retrieve"]')).not.toHaveClass(/dim/);
+ await expect(about.locator('[data-node="runtime"]')).toHaveClass(/dim/);
  await about.getByRole('button',{name:/Output validation schema/}).click();
  await expect(about.locator('#ai-atlas-detail')).toContainText('Check schema validity');
 });
@@ -57,7 +62,7 @@ test('tutor preserves a synthetic unsent draft across reload',async({page})=>{
 test('study navigation reaches the reading room',async({page},info)=>{
  await page.goto('/study');
  if(info.project.name==='mobile')await page.locator('#study-menu-toggle').click();
- await page.locator('#study-navigation-links').getByRole('link',{name:'Reading room',exact:true}).click();
+ await page.locator('#study-navigation-links').getByRole('link',{name:/^Reading room$/i}).click();
  await expect(page).toHaveURL(/\/study\/reading$/);
  await expect(page.getByRole('heading',{name:'A quiet place. A world of stories.'})).toBeVisible();
 });

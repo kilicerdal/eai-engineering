@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 test('five-minute tour is reachable, shareable and keyboard navigable',async({page},info)=>{
  await page.goto('/#engineering');
- await page.getByRole('link',{name:'Recruiters: take the five-minute project tour →',exact:true}).click();
+ await page.locator('.home-professional-intro').getByRole('link',{name:'Take the five-minute project tour →',exact:true}).click();
  await expect(page).toHaveURL(/\/engineering\/tour$/);
  await expect(page.getByRole('heading',{name:'Three projects. Decisions you can inspect.',exact:true})).toBeVisible();
  await expect(page.getByRole('button',{name:'← Previous',exact:true})).toBeDisabled();

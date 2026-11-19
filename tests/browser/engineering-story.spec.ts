@@ -116,13 +116,15 @@ test("the revealed story and expanded evidence fit the viewport and selected acc
     fullPage: true,
   });
 });
-test("homepage keeps chat primary and offers the working case-study entry", async ({
+test("homepage offers clear engineering and learning entries with chat available", async ({
   page,
 }) => {
   await page.goto("/");
   await expect(
     page.locator(".atlas-hero .atlas-button.primary"),
-  ).toHaveAttribute("href", "/chat");
+  ).toHaveAttribute("href", "/engineering");
+  await expect(page.locator('.atlas-hero .atlas-learning-entry')).toHaveAttribute('href','/study');
+  await expect(page.locator('.atlas-hero .home-chat-link')).toHaveAttribute('href','/chat');
   await expect(
     page.getByRole("link", { name: "Explore Engineering Studio", exact: true }),
   ).toHaveAttribute("href", "/engineering");
@@ -132,4 +134,59 @@ test("homepage keeps chat primary and offers the working case-study entry", asyn
       name: "Engineering you can inspect.",
     }),
   ).toBeVisible();
+});
+
+test('homepage section links support keyboard jumps without legacy route redirects', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  const navigation = page.getByRole('navigation', { name: 'Homepage sections' });
+  for (const [name, id] of [['Projects', 'project-work'], ['Learning', 'learning'], ['Artwork', 'artwork'], ['Contact', 'contact']]) {
+    await navigation.getByRole('link', { name, exact: true }).focus();
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL(new RegExp(`/#${id}$`));
+    await expect(page.locator(`#${id}`)).toBeFocused();
+    const bounds = await page.locator(`#${id}`).boundingBox();
+    expect(bounds).not.toBeNull();
+    expect(bounds!.y).toBeGreaterThanOrEqual(50);
+    expect(bounds!.y).toBeLessThan(150);
+    await expect(navigation.getByRole('link', { name, exact: true })).toHaveAttribute('aria-current', 'location');
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('the original About background loads near its section rather than at first paint', async ({ page }) => {
+  const artworkRequests: string[] = [];
+  page.on('request', request => {
+    if (request.url().includes('barcelona-future.webp')) artworkRequests.push(request.url());
+  });
+  await page.goto('/');
+  await expect(page.locator('.home-primary-actions')).toBeVisible();
+  expect(artworkRequests).toHaveLength(0);
+  await page.locator('#about').scrollIntoViewIfNeeded();
+  await expect.poll(() => artworkRequests.length).toBeGreaterThan(0);
+  const original = page.locator('#about .backdrop img');
+  await expect(original).toHaveAttribute('src', /barcelona-future\.webp/);
+  await expect.poll(() => original.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+});
+
+test("hero preserves original artwork and starts one high-priority image request", async ({ page, context }) => {
+  const session = await context.newCDPSession(page);
+  await session.send("Network.enable");
+  await session.send("Network.setCacheDisabled", { cacheDisabled: true });
+  const requests: { url: string; priority: string }[] = [];
+  session.on("Network.requestWillBeSent", event => {
+    if (event.request.url.includes("gobekli-intelligence-vitruvian-v2.webp")) {
+      requests.push({ url: event.request.url, priority: event.request.initialPriority });
+    }
+  });
+  await page.goto("/");
+  const hero = page.locator(".atlas-landscape");
+  await expect(hero).toHaveAttribute("fetchpriority", "high");
+  await expect(hero).toHaveAttribute("loading", "eager");
+  await expect.poll(() => hero.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  expect(requests).toHaveLength(1);
+  expect(requests[0].priority).toBe("High");
+  const imageUrl = new URL(requests[0].url);
+  expect(imageUrl.searchParams.get("url")).toBe("/images/threshold/gobekli-intelligence-vitruvian-v2.webp");
+  expect(imageUrl.searchParams.get("q")).toBe("75");
 });
