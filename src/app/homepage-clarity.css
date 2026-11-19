@@ -1,0 +1,36 @@
+/* A readable opening and quick access through the existing artwork journey. */
+.threshold .atlas-hero{height:auto;min-height:760px;max-height:none;padding:132px 5.5% 82px}
+.threshold .atlas-hero-copy{margin:0;padding:28px;max-width:760px;background:linear-gradient(100deg,#061321f5,#061321dc);border:1px solid #d9ac7955;border-radius:8px}
+.threshold .atlas-hero h1{font-size:clamp(2.25rem,4.2vw,4rem);line-height:1.08;margin:0 0 20px}
+.threshold .atlas-hero-copy .home-purpose{font:400 18px/1.6 Arial,Helvetica,sans-serif;color:#eee8db;max-width:54ch;margin:0 0 22px;text-shadow:none}
+.threshold .home-primary-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
+.threshold .home-primary-actions .atlas-button{min-height:48px;padding:12px 14px;gap:10px;font:400 15px/1.4 Arial,Helvetica,sans-serif;text-align:center}
+.threshold .atlas-learning-entry{background:#102b3b;color:#f0ece5;border-color:#d9ac7999}
+.threshold .atlas-learning-entry:hover{background:#1b3b4e}
+.threshold .home-chat-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin:10px 0 0;color:#edc58c;text-underline-offset:4px}
+.threshold .home-artwork-story{border-top:1px solid #d9ac7940;margin-top:8px}
+.threshold .home-artwork-story summary{display:list-item;min-height:44px;padding:10px 0;font:400 14px/1.7 Arial,Helvetica,sans-serif;color:#d4c5ae;cursor:pointer}
+.threshold .atlas-hero-copy .home-artwork-story .atlas-heritage{font:400 15px/1.65 Georgia,serif;margin:6px 0 0;color:#eee0cb;border-left:2px solid #d9ac7999;padding-left:14px;text-shadow:none}
+.threshold .home-jump-nav{display:flex;justify-content:center;align-items:center;gap:12px;padding:8px 20px;background:#091b2a;border-block:1px solid #bda57455}
+.threshold .home-jump-nav>span{font-size:12px;color:#b9c5ce;margin-right:12px}
+.threshold .home-jump-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:8px 20px;color:#e8c38d;text-decoration:none;border-radius:4px}
+.threshold .home-jump-nav a:hover,.threshold .home-jump-nav a[aria-current=location]{background:#193447;color:#fff1db}
+.threshold :is(#project-work,#learning,#artwork,#contact){scroll-margin-top:72px}
+.threshold .heritage-row--projects .home-professional-intro{padding:0 32px;margin:0 0 20px;align-self:start}
+.threshold .home-professional-intro p{font-size:14px;line-height:1.65;margin:0 0 10px}
+.threshold .home-professional-intro strong{color:#eee8db}
+.threshold .home-professional-intro>div{display:flex;gap:8px 20px;flex-wrap:wrap}
+.threshold .home-professional-intro a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:#e8c38d;text-underline-offset:4px}
+@media(max-width:760px){
+ .threshold .atlas-hero{min-height:0;padding:112px 16px 58px;align-items:flex-start}
+ .threshold .atlas-hero-copy{margin:0;padding:20px;width:100%;background:#061321eb}
+ .threshold .atlas-hero h1{font-size:clamp(2rem,9.4vw,2.5rem);margin-bottom:16px}
+ .threshold .atlas-hero-copy .home-purpose{font-size:16px;line-height:1.6;margin-bottom:18px}
+ .threshold .atlas-hero-copy .atlas-eyebrow{margin-bottom:14px}
+ .threshold .home-primary-actions{grid-template-columns:1fr;gap:8px}
+ .threshold .home-primary-actions .atlas-button{font-size:15px}
+ .threshold .home-jump-nav{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;padding:4px 8px;box-shadow:0 3px 12px #0004}
+ .threshold .home-jump-nav>span{display:none}
+ .threshold .home-jump-nav a{padding:8px 4px;font-size:14px}
+ .threshold .heritage-row--projects .home-professional-intro{padding:0 24px;margin-bottom:16px}
+}
