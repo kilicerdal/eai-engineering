@@ -7,3 +7,9 @@
 
 /* Recruiter tour and contribution scope share the existing project palette. */
 .tour-projects{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.main-tour .tour-scope{margin-top:24px;padding-top:18px;border-top:1px solid #c5a26744;font-size:.9rem}.project-ownership{width:100%;min-width:0}.project-ownership details{font-size:.9rem}.project-ownership dl{margin:16px 0}.project-ownership dd{margin:6px 0 18px}.project-ownership a{overflow-wrap:anywhere}.main-tour-controls button{min-width:0}.main-tour .main-replay-panel h3{font-size:1.1rem}@media(max-width:760px){.tour-projects{display:grid;grid-template-columns:1fr}.tour-projects button{text-align:left}.main-tour-controls{flex-wrap:wrap}}
+
+.tour-review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:16px 0}
+.tour-review-grid article{padding:16px;border:1px solid #d9ac7955;border-radius:6px;background:#0b2030}
+.tour-review-grid h2{font-size:20px!important;line-height:1.3!important}
+.tour-review-grid .main-link-row a{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:760px){.tour-review-grid{grid-template-columns:1fr}}

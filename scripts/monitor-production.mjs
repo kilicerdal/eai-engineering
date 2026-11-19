@@ -2,7 +2,7 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 
 export const PRODUCTION='https://www.eai.engineering';
-export const ROUTES=['/','/engineering','/engineering/tour','/engineering/order-once','/engineering/claim-twice','/engineering/settlementlab','/engineering/problem','/chat','/study','/study/reading','/study/reading/2701','/study/materials','/study/writing','/start','/guide','/study/privacy','/engineering/practice','/engineering/practice/retry','/guide/saving'];
+export const ROUTES=['/','/engineering','/engineering/tour','/engineering/order-once','/engineering/claim-twice','/engineering/settlementlab','/engineering/problem','/chat','/study','/study/reading','/study/reading/2701','/study/materials','/study/writing','/start','/guide','/study/privacy','/privacy','/engineering/practice','/engineering/practice/retry','/guide/saving'];
 export function frontendAssets(html){
  return [...new Set([...html.matchAll(/(?:src|href)="([^"<>]+)"/g)].map(m=>m[1]))]
   .filter(path=>path.startsWith('/_next/static/')&&!path.startsWith('//')&&/\.(js|css)(?:\?|$)/.test(path)).slice(0,40);

@@ -26,9 +26,11 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium firefox webkit
       - name: Run all engineering and study journeys
         run: npm run test:browser:ci
+      - name: Cross-browser recruiter journeys
+        run: npm run test:recruiter-browser
       - name: Keep browser results and failure evidence
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
@@ -37,4 +39,6 @@ jobs:
           path: |
             artifacts/browser-ci/
             test-results/browser-ci/
+            artifacts/recruiter-review/
+            test-results/recruiter-review/
           retention-days: 7

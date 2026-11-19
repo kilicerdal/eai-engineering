@@ -12,6 +12,7 @@ const capture: ClaimCapture = recorded;
 checkedClaims(capture);
 const source = `${capture.source.repository}/blob/${capture.source.commit}`;
 export const metadata: Metadata = {
+  twitter: {card:"summary_large_image",title:'The claim that arrived twice',description:"Recorded synthetic engineering evidence and source you can inspect.",images:["/images/engineering/claim-twice-share.png"]},
   title: "The claim that arrived twice | eAI Engineering",
   description:
     "Follow a synthetic healthcare claim through an injected acknowledgement failure, local queue redelivery and PostgreSQL deduplication. Inspect recorded evidence and pinned source.",

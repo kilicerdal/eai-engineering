@@ -5,6 +5,7 @@ import "./experience.css";
 import RoomWayfinding from "@/components/RoomWayfinding";
 import "./site-refinement.css";
 import "./signature-package.css";
+import HomeVitals from "@/components/HomeVitals";
 import SiteCompanion from "@/components/SiteCompanion";
 
 const geistSans = Geist({
@@ -25,8 +26,8 @@ export const metadata: Metadata = {
     "Explore engineering evidence, interactive models and the dAI Learning Studio. Bring a question, inspect an idea and keep your understanding.",
   applicationName: "eAI",
   metadataBase: new URL("https://www.eai.engineering"),
-  openGraph: {title:"eAI | Intelligence Engineered",description:"Explore engineering, learning and the ideas that connect them.",type:"website",siteName:"eAI",images:[{url:"/images/heritage/orbital-score.webp",width:1774,height:887,alt:"The Orbital Score: painted geometry becomes a future world"}]},
-  twitter: {card:"summary_large_image",title:"eAI | Intelligence Engineered",description:"Bring a question. Explore an idea. Build understanding.",images:["/images/heritage/orbital-score.webp"]},
+  openGraph: {title:"eAI | Intelligence Engineered",description:"Explore engineering, learning and the ideas that connect them.",type:"website",siteName:"eAI",images:[{url:"/social/site-card",width:1200,height:630,alt:"eAI: engineering projects, public source and recorded evidence"}]},
+  twitter: {card:"summary_large_image",title:"eAI | Intelligence Engineered",description:"Bring a question. Explore an idea. Build understanding.",images:["/social/site-card"]},
   keywords: [
     "eAI",
     "Erdal Kilic",
@@ -51,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col"><RoomWayfinding/>{children}<SiteCompanion/></body>
+      <body className="min-h-full flex flex-col"><HomeVitals/><RoomWayfinding/>{children}<SiteCompanion/></body>
     </html>
   );
 }
