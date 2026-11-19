@@ -525,7 +525,7 @@ test('tutor keeps completed replies on failed regeneration and retries without d
   const question = 'Why does the sequence converge?';
   await tutor.getByLabel('Your message').fill(question);
   await tutor.getByRole('button',{name:'Send',exact:true}).click();
-  await expect(tutor.getByText('Original complete explanation.',{exact:true})).toBeVisible();
+  await expect(tutor.getByRole('log').getByText('Original complete explanation.',{exact:true})).toBeVisible();
   body = 'data: {"response":"Unfinished replacement"}\n\n';
   await tutor.getByRole('button',{name:/Regenerate Response/}).click();
   await expect(tutor.getByRole('alert')).toContainText('interrupted');
