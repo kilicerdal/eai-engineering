@@ -20,8 +20,8 @@ test('field summary groups revisions and devices without inventing samples or co
  assert.equal(rows.length,1);assert.equal(rows[0].samples,4);assert.equal(rows[0].p75,3000);assert.match(rows[0].interpretation,/Small sample/);assert.deepEqual(summarizeVitals(''),[]);
 });
 test('coarse navigation context is optional, allowlisted and never accepts a URL',()=>{
- assert.equal(normalizeHomeVital({metric:'CLS',value:.177,device:'desktop',context:'home-so-far'}).context,'home-so-far');
- assert.equal(normalizeHomeVital({metric:'CLS',value:.177,device:'desktop',context:'/private?message=secret'}),null);
- const row=context=>JSON.stringify({event:'homepage_web_vital',scope:'homepage-entry-document',metric:'CLS',value:.177,device:'desktop',revision:'abcdef123',...(context?{context}:{})});
+ assert.equal(normalizeHomeVital({metric:'CLS',value:.15,device:'desktop',context:'home-so-far'}).context,'home-so-far');
+ assert.equal(normalizeHomeVital({metric:'CLS',value:.15,device:'desktop',context:'/private?message=secret'}),null);
+ const row=context=>JSON.stringify({event:'homepage_web_vital',scope:'homepage-entry-document',metric:'CLS',value:.15,device:'desktop',revision:'abcdef123',...(context?{context}:{})});
  const groups=summarizeVitals([row('home-so-far'),row('after-navigation'),row(),row('/private')].join('\n'));assert.equal(groups.length,3);assert.ok(groups.every(g=>g.samples===1));
 });
