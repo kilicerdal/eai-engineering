@@ -23,7 +23,7 @@ const source = `${repository}/blob/v4.1.0`;
 const evidence = "/evidence/settlementlab-v41";
 const recordedDate = "November 18, 2026";
 export const metadata: Metadata = {
-  twitter: {card:"summary_large_image",title:'SettlementLab — Independent financial assurance',description:"Recorded synthetic engineering evidence and source you can inspect.",images:["/images/engineering/settlementlab-desktop.png"]},
+  twitter: {card:"summary_large_image",title:'SettlementLab — Independent financial assurance',description:"Recorded synthetic engineering evidence and source you can inspect.",images:["/social/settlement-card"]},
   title: "SettlementLab V4.1 | Independent financial assurance | eAI Engineering",
   description: "Inspect a Python financial assurance framework: independent cash and securities verification, durable workers, crash recovery, 240 synthetic trades, and reproducible evidence.",
   alternates: { canonical: "https://www.eai.engineering/engineering/settlementlab" },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "SettlementLab V4.1 — Every trade. Accounted for.",
     description: "Independent financial verification. Durable recovery. Evidence you can reproduce.",
     url: "https://www.eai.engineering/engineering/settlementlab",
-    images: [{ url: "/images/engineering/settlementlab-desktop.png", alt: "SettlementLab engineering project preview" }],
+    images: [{ url: "/social/settlement-card", alt: "SettlementLab engineering project preview" }],
   },
 };
 const readingGuide = [["The problem", "brief"], ["The evidence", "evidence"], ["Recovery", "recovery"], ["Architecture", "architecture"], ["AI review", "ai"], ["Run it", "source"]];

@@ -4,7 +4,7 @@
 
 The homepage retains its approved artwork and composition. Existing project links lead to `/engineering/tour`, which now offers direct Demo, Source and Evidence links for the three selected projects, followed by the existing guided stops. All results are labelled recorded and synthetic. The tour does not execute production services.
 
-`/robots.txt` advertises the sitemap and excludes API, authentication, recruiter and personal-work routes. This is crawler guidance, not an access control. The sitemap is an explicit public-page allowlist; it excludes drafts, private invitations and account content. Primary public pages have scoped canonicals and route-specific sharing metadata. Existing case-study images are reused; no artwork assets are changed. Social crawlers can cache previews, so an existing LinkedIn post may require a fresh scrape to reflect new metadata.
+`/robots.txt` advertises the sitemap and excludes API, authentication, recruiter and personal-work routes. This is crawler guidance, not an access control. The sitemap is an explicit public-page allowlist; it excludes drafts, private invitations and account content. Primary public pages have scoped canonicals and route-specific sharing metadata. The existing checkout and claim PNGs are reused; general links and SettlementLab use 1200×630 PNG cards rendered by the built-in ImageResponse API so a tall dashboard screenshot is not cropped into a social thumbnail. No artwork assets are changed. Social crawlers can cache previews, so an existing LinkedIn post may require a fresh scrape to reflect new metadata.
 
 ## Accessibility and deferred work
 
