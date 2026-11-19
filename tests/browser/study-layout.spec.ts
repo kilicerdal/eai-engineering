@@ -178,13 +178,13 @@ test('returning-user shortcut resumes valid saved work without sending or starti
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
  await page.goto('/study');
  await expect(page.locator('#tutor-message-input')).toBeEnabled();
- await expect(page.getByRole('link',{name:'Resume learning',exact:false})).toHaveCount(0);
+ await expect(page.getByRole('link',{name:'Continue learning',exact:false})).toHaveCount(0);
  const time=Date.now()-1000;
  await page.evaluate(time=>{
  localStorage.setItem('eai-daily-sessions-v1',JSON.stringify({version:1,activeId:'resume-sample',sessions:[{id:'resume-sample',minutes:20,target:{kind:'plan',title:'A saved focus'},startedAt:time,updatedAt:time,finishedAt:null,stage:1,completed:[0],reflection:''}]}));
  window.dispatchEvent(new Event('eai-study-progress-change'));
  },time);
- const resume=page.getByRole('link',{name:'Resume learning',exact:false});
+ const resume=page.getByRole('link',{name:'Continue learning',exact:false});
  await expect(resume).toHaveAttribute('href','/your-space');
  await resume.click();
  await expect(page).toHaveURL(/\/your-space$/);

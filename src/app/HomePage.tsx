@@ -56,7 +56,7 @@ export default function Home() {
    <span className="atlas-chapter">THE THRESHOLD</span>
    <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onKeyDown={e => {if(e.key === "Escape") setMenuOpen(false);}} onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onKeyDown={e=>{if(e.key === "Escape"){setMenuOpen(false);document.querySelector<HTMLButtonElement>(".atlas-menu")?.focus();}}} onClick={focusHomeSection}>
-    <a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Solve</a><a href="/study" aria-label="Learning Studio">Learn</a><a href="/explore">Explore</a><a href="#about" aria-current={navSection === "about" ? "location" : undefined}>About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
+    <a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Solve</a><a href="/study" aria-label="Learning Studio">Learn</a><Link href="/explore">Explore</Link><a href="#about" aria-current={navSection === "about" ? "location" : undefined}>About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
    </nav>
    <a className="atlas-dai-entry" href="/study" aria-label="Explore dAI Learning Studio">Explore dAI <span aria-hidden="true">→</span></a>
   </header>

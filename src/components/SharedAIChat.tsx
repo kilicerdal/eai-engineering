@@ -688,6 +688,27 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
     void sendMessage(active?.draft||"",false,true);
   }
 
+  const composer=(<form onSubmit={handleSubmit} className="tutor-input-row">
+                <textarea
+                  id="tutor-message-input"
+                  disabled={!hydrated || !active}
+                  rows={2}
+                  value={active?.draft||""}
+                  onChange={(event) => {if(active){const value=event.target.value,at=inputTime(event.timeStamp);updateConversation(active.id,c=>({...c,draft:value,updatedAt:at}));}}}
+                  placeholder="Tell me what you want to understand, or paste a problem…"
+                  maxLength={3000}
+                  aria-label="Your message"
+                  className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"
+                />
+
+                <button
+                  type="submit"
+                  disabled={localPreviewOnly || loading || !hydrated || !active?.draft?.trim()}
+                  className="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 disabled:opacity-50"
+                >
+                  Send
+                </button>
+              </form>);
   return (
     <section ref={workspaceRoot} id="ai-assistant" aria-labelledby="tutor-heading" className={`tutor-v11 border-t border-white/10 py-24 ${dedicated?'tutor-dedicated':''} ${focus?'tutor-focus-active':''} ${wide?'tutor-wide':''}`} style={{'--tutor-font-size':`${textSize}px`} as React.CSSProperties}>
 
@@ -709,6 +730,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
               <button type="button" disabled={!hydrated || loading} className="tutor-new-session" onClick={()=>{setOpenPanel(null);newConversation();}}>+ New session</button>
             </div>
           </header>
+          {dedicated&&!active?.messages.some(message=>message.role==='user')&&composer}
           {localPreviewOnly&&<p className="tutor-preview-notice" role="status">Local preview · Learning tools and saving are ready. Live tutor replies require the AI service configuration used by the live site. Your draft stays here.</p>}
           <details className="tutor-display-drawer"><summary>Reading & explanation settings</summary><div className="tutor-comfort-bar" aria-label="Tutor reading controls"><button id="tutor-focus-toggle" aria-pressed={focus} onClick={()=>setFocus(!focus)}>{focus?'Exit Focus mode':'Focus mode'}</button><button aria-label="Smaller tutor text" disabled={textSize<=16} onClick={()=>{const size=Math.max(16,textSize-2);setTextSize(size);rememberPreferences({textSize:size});}}>A−</button><span aria-live="polite">{textSize}px</span><button aria-label="Larger tutor text" disabled={textSize>=24} onClick={()=>{const size=Math.min(24,textSize+2);setTextSize(size);rememberPreferences({textSize:size});}}>A+</button><button className="tutor-width-toggle" aria-pressed={wide} onClick={()=>{setWide(!wide);rememberPreferences({wide:!wide});}}>{wide?'Comfortable width':'Wider conversation'}</button><label>Explanation<select aria-label="Explanation depth" disabled={!hydrated||loading} value={active?.learning.depth||'default'} onChange={e=>changeLearning({depth:e.target.value==='default'?undefined:e.target.value as LearningProfile['depth']})}><option value="default">Automatic · concise</option><option value="quick">Quick explanation</option><option value="steps">Step by step</option><option value="deep">Go deeper</option></select></label></div></details>
           {openPanel === "history" && <section id="tutor-session-history" aria-label="Recent sessions" className="tutor-focus-panel">
@@ -948,27 +970,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
                   {requestError.retry!==false?<button type="button" disabled={loading} onClick={regenerateResponse} className="mt-2 font-semibold underline disabled:opacity-50">Retry last question</button>:<button type="button" onClick={downloadSessions} className="mt-2 font-semibold underline">Download session backup</button>}
                 </div>
               )}
-              <form onSubmit={handleSubmit} className="tutor-input-row">
-                <textarea
-                  id="tutor-message-input"
-                  disabled={!hydrated || !active}
-                  rows={2}
-                  value={active?.draft||""}
-                  onChange={(event) => {if(active){const value=event.target.value,at=inputTime(event.timeStamp);updateConversation(active.id,c=>({...c,draft:value,updatedAt:at}));}}}
-                  placeholder="Tell me what you want to understand, or paste a problem…"
-                  maxLength={3000}
-                  aria-label="Your message"
-                  className="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-cyan-400"
-                />
-
-                <button
-                  type="submit"
-                  disabled={localPreviewOnly || loading || !hydrated || !active?.draft?.trim()}
-                  className="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 disabled:opacity-50"
-                >
-                  Send
-                </button>
-              </form>
+{!(dedicated&&!active?.messages.some(message=>message.role==='user'))&&composer}
 
               {workspace.source&&<p className="tutor-source-receipt">{workspace.useSource?'Attached to next question: ':'No new source attached: '}{workspace.source.title} · <button type="button" onClick={()=>setMobilePanel('source')}>View exact text</button></p>}
               <p className="mt-3 text-center text-xs text-slate-500">
