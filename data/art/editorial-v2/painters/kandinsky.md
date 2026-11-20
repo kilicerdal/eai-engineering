@@ -28,3 +28,8 @@ Treating abstraction as a puzzle with a hidden answer can be as limiting as dism
 Kandinsky was a major participant in the emergence of abstraction, not its sole origin. Other artists pursued nonrepresentational approaches through distinct intellectual and cultural routes. A selective collection should acknowledge that wider history instead of presenting one European career as the universal beginning of abstract art.
 
 His significance remains substantial without that claim. He developed both paintings and an extensive account of why their elements could matter. The strongest encounter with the work keeps the two in dialogue: theory provides historical context, while the particular painting must still earn its expressive force through what its forms actually do.
+
+## Theory and the resistance of particular paintings | interpretation |
+A theoretical vocabulary can orient a reader, but it should not impose a fixed emotional dictionary on every circle, triangle or color. Compare a crowded, forceful field with a later composition of more distinct geometric elements. Their relations of weight, interval and direction need to be described before a verbal theory can explain them.
+
+The changing institutional settings of the career matter too. Collaboration, teaching and displacement do not sit outside the art as background anecdotes. They help frame different ways of organizing a visual practice. Yet a historical account must still allow a particular painting to exceed an illustration of the artist’s writing. The most useful explanation connects theory and circumstance with close observation while preserving the differences between them.

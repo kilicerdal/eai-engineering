@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element -- Original proportions and licensed local reproductions. */
 import {useEffect,useState} from 'react';
 import Link from 'next/link';
-import {useRouter} from 'next/navigation';
+import {useRouter,useSearchParams} from 'next/navigation';
 import {artArtists,artEras} from '@/lib/art/artists';import {artPaintings,type ArtPainting} from '@/lib/art/collection';
 import {artMoods,inMood,artTours} from '@/lib/art/looking';import {ART_RETURN_KEY} from '@/lib/art/personal';
 import {useArtGallery} from './useArtGallery';import {useArtPersonal} from './useArtPersonal';import {ArtPersonalLibrary} from './ArtPersonalTools';
@@ -10,9 +10,10 @@ import portraits from '../../../data/art/portraits.json';
 type View='paintings'|'painters'|'eras'|'gallery'|'tours';
 export function ArtThumbnail({painting:p}:{painting:ArtPainting}){const {personal,ready}=useArtPersonal();return p.contentNote&&(!ready||personal.notices)?<span className="art-thumbnail-notice">Subject notice<br/><small>Open to read before viewing</small></span>:<img src={p.thumbnail} width={p.width} height={p.height} alt={p.alt} loading="lazy"/>;}
 export default function ArtCollection(){
- const router=useRouter();
+ const router=useRouter(),requestedView=useSearchParams().get('view');
  const [view,setView]=useState<View>('paintings'),[artist,setArtist]=useState('all'),[era,setEra]=useState('all'),[page,setPage]=useState(0),[query,setQuery]=useState(''),[mood,setMood]=useState('all'),[restored,setRestored]=useState(false);const {gallery,ready,error,notice,toggle,download}=useArtGallery();
  useEffect(()=>{let cancelled=false;queueMicrotask(()=>{if(cancelled)return;try{const raw=sessionStorage.getItem(ART_RETURN_KEY);if(raw){const v=JSON.parse(raw);if(['paintings','painters','eras','gallery','tours'].includes(v.view))setView(v.view);if(artArtists.some(a=>a.id===v.artist))setArtist(v.artist);if(artEras.some(e=>e.id===v.era))setEra(v.era);if(Number.isInteger(v.page)&&v.page>=0&&v.page<9)setPage(v.page);if(typeof v.query==='string')setQuery(v.query.slice(0,100));if(artMoods.includes(v.mood))setMood(v.mood);}}catch{}const initial=new URLSearchParams(location.search).get('view');if(['paintings','painters','eras','gallery','tours'].includes(initial??''))setView(initial as View);setRestored(true);});return()=>{cancelled=true;};},[]);
+ useEffect(()=>{let cancelled=false;if(['paintings','painters','eras','gallery','tours'].includes(requestedView??''))queueMicrotask(()=>{if(!cancelled)setView(requestedView as View);});return()=>{cancelled=true;};},[requestedView]);
  useEffect(()=>{if(restored)try{sessionStorage.setItem(ART_RETURN_KEY,JSON.stringify({view,artist,era,page,query,mood}));}catch{}},[restored,view,artist,era,page,query,mood]);
  const matching=artPaintings.filter(p=>(view!=='gallery'||gallery.ids.includes(p.id))&&(artist==='all'||p.artist===artist)&&(era==='all'||p.era===era)&&inMood(p.id,mood)&&`${p.title} ${artArtists.find(a=>a.id===p.artist)!.name}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));const pages=Math.max(1,Math.ceil(matching.length/12)),current=Math.min(page,pages-1),shown=matching.slice(current*12,current*12+12);
  function changeView(next:View){setView(next);setPage(0);setQuery('');setArtist('all');setEra('all');setMood('all');}

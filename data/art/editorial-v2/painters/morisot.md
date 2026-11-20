@@ -24,3 +24,8 @@ These are useful starting points for discussing gender and spectatorship. They d
 Descriptions of Morisot as delicate, charming or instinctive can obscure the professional rigor of her work. Such language has a history in criticism and deserves scrutiny rather than automatic repetition. Speed of appearance is not absence of decision, and domestic subject matter is not evidence of limited intellectual ambition.
 
 The significance of her career lies partly in expanding what could count as a serious account of modern experience. Her paintings expose how a scene is shaped by a person’s position within it. Their apparent openness keeps that position active, making the viewer attend to the relations among bodies, surfaces and spaces rather than consume an uncomplicated image of intimacy.
+
+## A serious practice of selection | interpretation |
+Abbreviated handling can look informal while governing attention with precision. In Morisot, the contrast between a more definite face and a loosely articulated surrounding passage can make a gaze or bodily relation especially consequential. A thin or open area is not automatically a failure to finish; its role needs to be examined within the particular composition.
+
+The social situation of the painter and her subjects also matters. Access to spaces, training and professional networks shaped opportunity, but a domestic setting should not be mistaken for a narrow intellectual horizon. A scene of care, waiting or looking can examine the relation between people and the conditions under which they are visible. Treating that subject as merely charming would repeat the very reduction that a fuller account of her career should challenge.

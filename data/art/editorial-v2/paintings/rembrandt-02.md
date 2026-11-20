@@ -1,6 +1,7 @@
 # Knowledge staged around a body
 > The Anatomy Lesson of Dr Nicolaes Tulp represents a professional community by organizing its attention around a demonstration and a dead man.
 @source Mauritshuis · Anatomy Lesson|https://www.mauritshuis.nl/en/our-collection/artworks/146-the-anatomy-lesson-of-dr-nicolaes-tulp/|Sitter, commission, date and anatomical demonstration
+@source Mauritshuis · The Anatomy Lesson|https://www.mauritshuis.nl/en/our-collection/artworks/146-the-anatomy-lesson-of-dr-nicolaes-tulp|Object identity, recorded dating and dimensions
 ## A professional occasion | history | 1
 The painting records an anatomy lesson associated with the Amsterdam surgeons’ guild in 1632. Tulp demonstrates structures in the arm of an executed man. The work therefore belongs to the history of medical instruction and professional self-presentation, but also to a social order in which a condemned person’s body could become material for public knowledge.
 

@@ -26,3 +26,8 @@ Illness and changes in vision belong to the later biography, but they should not
 The same restraint applies to the idea that Monet was an unconscious pioneer of abstraction. Later audiences may find productive connections, but his persistent engagement with particular places remains central. The work’s historical identity does not disappear when its surface becomes less immediately descriptive.
 ## What the collection reveals | analysis |
 Move from Women in the Garden to the coastal and station pictures, then to The Japanese Footbridge. The subjects and practical conditions change, but the question of how a surface holds a visual experience remains active. Monet’s achievement is not an endless sequence of pretty moments. It is a sustained inquiry into how a painting can make time, atmosphere and material form perceptible together.
+
+## Repetition without repetition of experience | interpretation |
+The harbor, the garden and the railway station present distinct problems of visibility. Haze, reflection and steam complicate the separation of things, but their sources and social settings differ. Monet’s attention to those differences makes the repeated investigation of a motif an intellectual practice rather than a refusal to change subjects.
+
+His biography should therefore avoid presenting each canvas as a spontaneous impression untouched by work. Observation can be followed by revision, and an apparently fleeting effect can depend on a carefully balanced arrangement. Nor does later familiarity with water lilies explain the whole career. The paintings of modern public spaces and the increasingly sustained attention to a cultivated environment offer related but distinct ways of asking what a painting can make perceptible.

@@ -1,0 +1,20 @@
+{
+  "monet-01": {
+    "image": "/images/art/monet-01-detail.webp",
+    "width": 2100,
+    "height": 1629,
+    "bytes": 274690,
+    "source": "https://commons.wikimedia.org/wiki/File:Monet_-_Impression,_Sunrise.jpg",
+    "rights": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+  },
+  "gentileschi-05": {
+    "image": "/images/art/gentileschi-05-detail.webp",
+    "width": 2020,
+    "height": 2100,
+    "bytes": 347702,
+    "source": "https://commons.wikimedia.org/wiki/File:Self-Portrait_as_Saint_Catherine_of_Alexandria_(Gentileschi).jpg",
+    "rights": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+  }
+}

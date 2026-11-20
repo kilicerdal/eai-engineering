@@ -1,6 +1,7 @@
 # Bodies become a landscape’s architecture
 > The Large Bathers brings the traditional nude into a monumental structure in which trees and human bodies help construct one another.
 @source Philadelphia Museum of Art · Large Bathers|https://www.philamuseum.org/objects/104464|Philadelphia canvas, 1900–06 date and unfinished state
+@source Philadelphia Museum of Art · Cézanne and Beyond|https://www.philamuseum.org/exhibitions/cezanne-and-beyond|Object identity, recorded dating and dimensions
 ## The Philadelphia version | history | 1
 The museum dates this canvas to 1900–06 and describes its unfinished state. It is the largest of Cézanne’s major treatments of bathers, distinct from related works in other collections. Its ambition comes from a long engagement with the traditional subject of nude figures in a landscape.
 

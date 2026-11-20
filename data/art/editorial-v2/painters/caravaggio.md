@@ -23,3 +23,8 @@ The distinction matters especially when reading scenes of suffering. An image ca
 Artists across Europe adapted aspects of Caravaggio’s naturalism, lighting and close staging. Their responses were selective. A shared use of strong contrast does not prove direct contact, and it does not make every related painter a subordinate imitator. Artemisia Gentileschi, for instance, deserves analysis of her own narrative choices and professional circumstances.
 
 The useful question is what each artist does with the viewer’s position. Caravaggio repeatedly makes spectators feel near an event before allowing them to settle what it means. His achievement is not darkness by itself, but the disciplined transformation of light, material detail and bodily action into a compelling demand for attention.
+
+## Proximity is an artistic construction | interpretation |
+The Calling of Saint Matthew and the Judith canvas use darkness to different ends. In the chapel painting, attention begins to shift before an action is complete. In Judith, bodily effort becomes sharply legible at a decisive instant. Their shared intensity does not amount to one repeatable recipe: each work organizes distance, visibility and agency around a particular narrative.
+
+The painter’s troubled biography is consequential, but it should not swallow his professional choices. Patrons commissioned objects for particular rooms and audiences, and those commissions demanded solutions. A face selected from ordinary experience can acquire a complex pictorial role through pose and illumination. The resulting image is neither a neutral report of street life nor a confession whose meaning can be read directly from the artist’s legal history.

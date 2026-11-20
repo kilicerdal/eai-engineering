@@ -19,19 +19,15 @@
     "medium": "Oil on poplar panel",
     "location": "Louvre",
     "dimensions": "77 × 53 cm",
-    "alt": "Mona Lisa by Leonardo da Vinci. The hands form a quiet anchor.",
+    "alt": "Mona Lisa by Leonardo da Vinci. A sitter turns toward us while a distant landscape opens behind her.",
     "sources": [
       {
-        "title": "Reference record · Mona Lisa",
-        "url": "https://en.wikipedia.org/wiki/Mona_Lisa"
+        "title": "Louvre · Collection record: Lisa Gherardini",
+        "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.louvre.fr/en/oeuvre-notices/mona-lisa-–-portrait-lisa-gherardini-wife-francesco-del-giocondo"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.louvre.fr/en/oeuvre-notices/mona-lisa-portrait-lisa-gherardini-wife-francesco-del-giocondo"
+        "title": "Louvre · From the Mona Lisa to the Wedding Feast at Cana",
+        "url": "https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana"
       }
     ],
     "checked": "2026-11-19",
@@ -65,19 +61,19 @@
     "medium": "Tempera on gesso, pitch, and mastic, on wall plaster",
     "location": "Santa Maria delle Grazie",
     "dimensions": "460 × 880 cm",
-    "alt": "The Last Supper by Leonardo da Vinci. The vanishing point centers on Christ.",
+    "alt": "The Last Supper by Leonardo da Vinci. A meal becomes a moment of collective shock after Christ announces that one disciple will betray him.",
     "sources": [
       {
-        "title": "Reference record · The Last Supper",
-        "url": "https://en.wikipedia.org/wiki/The_Last_Supper_%28Leonardo%29"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Museo del Cenacolo Vinciano",
         "url": "https://cenacolovinciano.org/en/"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.moma.org/collection/works/117141"
+        "title": "National Gallery · Leonardo da Vinci",
+        "url": "https://www.nationalgallery.org.uk/artists/leonardo-da-vinci"
+      },
+      {
+        "title": "Museo del Cenacolo Vinciano · The Last Supper",
+        "url": "https://cenacolovinciano.org/en/museum/the-works/the-last-supper-leonardo-da-vinci-1452-1519/"
       }
     ],
     "checked": "2026-11-19",
@@ -111,11 +107,15 @@
     "medium": "Oil on walnut panel",
     "location": "Czartoryski Museum",
     "dimensions": "54.8 × 40.3 cm",
-    "alt": "Lady with an Ermine by Leonardo da Vinci. The animal’s paws are carefully described.",
+    "alt": "Lady with an Ermine by Leonardo da Vinci. A young woman holds an ermine while turning away from the direction of her body.",
     "sources": [
       {
-        "title": "Reference record · Lady with an Ermine",
-        "url": "https://en.wikipedia.org/wiki/Lady_with_an_Ermine"
+        "title": "National Museum in Kraków · Lady with an Ermine",
+        "url": "https://mnk.pl/en/collections/lady-with-an-ermine/"
+      },
+      {
+        "title": "National Gallery · Leonardo",
+        "url": "https://www.nationalgallery.org.uk/artists/leonardo-da-vinci"
       }
     ],
     "checked": "2026-11-19",
@@ -149,19 +149,15 @@
     "medium": "Oil on canvas",
     "location": "Louvre",
     "dimensions": "199 × 122 cm",
-    "alt": "Virgin of the Rocks · Louvre version by Leonardo da Vinci. Hands connect the central figures.",
+    "alt": "Virgin of the Rocks · Louvre version by Leonardo da Vinci. The Virgin, two children and an angel gather in a rocky enclosure.",
     "sources": [
       {
-        "title": "Reference record · Virgin of the Rocks · Louvre version",
-        "url": "https://en.wikipedia.org/wiki/Virgin_of_the_Rocks"
+        "title": "National Gallery · Leonardo and the Virgin of the Rocks",
+        "url": "https://www.nationalgallery.org.uk/exhibitions/past/leonardo-experience-a-masterpiece/leonardo-and-the-virgin-of-the-rocks"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.nationalgallery.org.uk/paintings/learn-about-art/paintings-in-depth/the-hidden-leonardo"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nationalgallery.org.uk/leonardo-virgin-of-the-rocks-back-on-display"
+        "title": "Louvre · Leonardo exhibition guide",
+        "url": "https://mini-site.louvre.fr/trimestriel/2019/l%C3%A9onard_de_vinciGB/files/assets/common/downloads/publication.pdf"
       }
     ],
     "checked": "2026-11-19",
@@ -195,15 +191,15 @@
     "medium": "Oil and tempera on poplar panel",
     "location": "Uffizi",
     "dimensions": "98 × 217 cm",
-    "alt": "Annunciation by Leonardo da Vinci. The angel’s wings have visible structure.",
+    "alt": "Annunciation by Leonardo da Vinci. An angel addresses Mary across a garden, turning a religious announcement into a carefully arranged encounter.",
     "sources": [
       {
-        "title": "Reference record · Annunciation",
-        "url": "https://en.wikipedia.org/wiki/Annunciation_%28Leonardo%29"
+        "title": "Uffizi · Annunciation",
+        "url": "https://www.uffizi.it/en/artworks/annunciation"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.uffizi.it/en/artworks/annunciation"
+        "title": "National Gallery · Leonardo",
+        "url": "https://www.nationalgallery.org.uk/artists/leonardo-da-vinci"
       }
     ],
     "checked": "2026-11-19",
@@ -237,19 +233,15 @@
     "medium": "Oil on canvas",
     "location": "National Gallery of Art",
     "dimensions": "38.1 × 37 cm",
-    "alt": "Ginevra de' Benci by Leonardo da Vinci. Juniper fills much of the background.",
+    "alt": "Ginevra de' Benci by Leonardo da Vinci. A young woman appears against a dense juniper bush.",
     "sources": [
       {
-        "title": "Reference record · Ginevra de' Benci",
-        "url": "https://en.wikipedia.org/wiki/Ginevra_de%27_Benci"
+        "title": "National Gallery of Art · Ginevra de’ Benci",
+        "url": "https://www.nga.gov/artworks/50724-ginevra-de-benci"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://archive.today/20141116235406/https://www.nga.gov/fcgi-bin/tinfo_f?object=50724.0&detail=none"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/collection/art-object-page.50724.html"
+        "title": "National Gallery · Leonardo",
+        "url": "https://www.nationalgallery.org.uk/artists/leonardo-da-vinci"
       }
     ],
     "checked": "2026-11-19",
@@ -283,11 +275,15 @@
     "medium": "Oil on walnut wood",
     "location": "Louvre",
     "dimensions": "69 × 57 cm",
-    "alt": "Saint John the Baptist by Leonardo da Vinci. The raised finger redirects attention.",
+    "alt": "Saint John the Baptist by Leonardo da Vinci. A figure emerges from darkness and points upward.",
     "sources": [
       {
-        "title": "Reference record · Saint John the Baptist",
-        "url": "https://en.wikipedia.org/wiki/Saint_John_the_Baptist_%28Leonardo%29"
+        "title": "Louvre · Leonardo exhibition guide",
+        "url": "https://mini-site.louvre.fr/trimestriel/2019/l%C3%A9onard_de_vinciGB/files/assets/common/downloads/publication.pdf"
+      },
+      {
+        "title": "Louvre · Saint John the Baptist loan dossier",
+        "url": "https://presse.louvre.fr/wp-content/uploads/2022/10/PR_Louvre_MajorLoan_5yearsLAD.pdf"
       }
     ],
     "checked": "2026-11-19",
@@ -321,11 +317,15 @@
     "medium": "Oil on canvas",
     "location": "Uffizi",
     "dimensions": "",
-    "alt": "Doni Tondo (Doni Madonna) by Michelangelo. The figures turn in different directions.",
+    "alt": "Doni Tondo (Doni Madonna) by Michelangelo. The Holy Family fills a circular panel with bodies that turn and connect.",
     "sources": [
       {
-        "title": "Reference record · Doni Tondo (Doni Madonna)",
-        "url": "https://en.wikipedia.org/wiki/Doni_Tondo"
+        "title": "Uffizi · Holy Family, known as the Doni Tondo",
+        "url": "https://www.uffizi.it/en/artworks/holy-family-known-as-the-doni-tondo"
+      },
+      {
+        "title": "Uffizi · Raphael, Michelangelo and private patrons",
+        "url": "https://www.uffizi.it/en/events/new-room-showcases-the-work-by-raphael-and-michelangelo"
       }
     ],
     "checked": "2026-11-19",
@@ -359,15 +359,15 @@
     "medium": "Fresco",
     "location": "Sistine Chapel",
     "dimensions": "280 × 570 cm",
-    "alt": "The Creation of Adam by Michelangelo. The fingertips remain slightly separated.",
+    "alt": "The Creation of Adam by Michelangelo. Two reaching hands nearly meet in a scene from the Sistine Chapel ceiling.",
     "sources": [
       {
-        "title": "Reference record · The Creation of Adam",
-        "url": "https://en.wikipedia.org/wiki/The_Creation_of_Adam"
+        "title": "Vatican Museums · Creation of Adam",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta/storie-centrali/creazione-di-adamo.html"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.clevelandart.org/exhibitions/michelangelo-mind-master"
+        "title": "Vatican Museums · Sistine Chapel",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina.html"
       }
     ],
     "checked": "2026-11-19",
@@ -400,16 +400,16 @@
     "era": "renaissance",
     "medium": "Fresco",
     "location": "Sistine Chapel",
-    "dimensions": "13.7 × 12 cm",
-    "alt": "The Last Judgment by Michelangelo. The center concentrates raised gestures.",
+    "dimensions": "1370 × 1200 cm",
+    "alt": "The Last Judgment by Michelangelo. A vast assembly of bodies surrounds the central figure of Christ in a vision of judgment.",
     "sources": [
       {
-        "title": "Reference record · The Last Judgment",
-        "url": "https://en.wikipedia.org/wiki/The_Last_Judgment_%28Michelangelo%29"
+        "title": "Vatican Museums · The Last Judgment",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/giudizio-universale.html"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://mv.vatican.va/3_EN/pages/x-Schede/CSNs/CSNs_G_Giud.html"
+        "title": "Vatican Museums · Sistine Chapel",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina.html"
       }
     ],
     "checked": "2026-11-19",
@@ -443,11 +443,15 @@
     "medium": "Fresco",
     "location": "Sistine Chapel",
     "dimensions": "",
-    "alt": "Separation of Light from Darkness by Michelangelo. The torso twists dramatically.",
+    "alt": "Separation of Light from Darkness by Michelangelo. A commanding figure divides light from darkness within a scene on the Sistine Chapel ceiling.",
     "sources": [
       {
-        "title": "Reference record · Separation of Light from Darkness",
-        "url": "https://en.wikipedia.org/wiki/Separation_of_Light_from_Darkness"
+        "title": "Vatican Museums · Separation of Light from Darkness",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta/storie-centrali.html"
+      },
+      {
+        "title": "Vatican Museums · Sistine Chapel ceiling",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta.html"
       }
     ],
     "checked": "2026-11-19",
@@ -478,14 +482,18 @@
     "title": "The School of Athens",
     "date": "1509–1511",
     "era": "renaissance",
-    "medium": "Oil on canvas",
+    "medium": "Fresco",
     "location": "Apostolic Palace, Vatican Museums",
     "dimensions": "500 × 770 cm",
-    "alt": "The School of Athens by Raphael. Two central figures gesture differently.",
+    "alt": "The School of Athens by Raphael. Philosophers gather in an imagined classical building.",
     "sources": [
       {
-        "title": "Reference record · The School of Athens",
-        "url": "https://en.wikipedia.org/wiki/The_School_of_Athens"
+        "title": "Vatican Museums · School of Athens",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello/stanza-della-segnatura/scuola-di-atene.html"
+      },
+      {
+        "title": "Metropolitan Museum · Raphael: Sublime Poetry",
+        "url": "https://www.metmuseum.org/exhibitions/raphael-sublime-poetry"
       }
     ],
     "checked": "2026-11-19",
@@ -519,11 +527,11 @@
     "medium": "Oil on canvas",
     "location": "Gemäldegalerie Alte Meister",
     "dimensions": "265 × 196 cm",
-    "alt": "Sistine Madonna by Raphael. The upper figures stand on clouds.",
+    "alt": "Sistine Madonna by Raphael. Mary and the child appear above a lower group of saints and two small cherubs.",
     "sources": [
       {
-        "title": "Reference record · Sistine Madonna",
-        "url": "https://en.wikipedia.org/wiki/Sistine_Madonna"
+        "title": "Staatliche Kunstsammlungen Dresden · Sistine Madonna",
+        "url": "https://gemaeldegalerie.skd.museum/en/exhibitions/sistine-madonna/"
       }
     ],
     "checked": "2026-11-19",
@@ -557,19 +565,11 @@
     "medium": "Oil tempera on wood",
     "location": "Pinacoteca Vaticana",
     "dimensions": "410 × 279 cm",
-    "alt": "The Transfiguration by Raphael. Light defines the upper figure.",
+    "alt": "The Transfiguration by Raphael. Two episodes share the same picture: an elevated revelation and an urgent scene below.",
     "sources": [
       {
-        "title": "Reference record · The Transfiguration",
-        "url": "https://en.wikipedia.org/wiki/Transfiguration_%28Raphael%29"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Vatican Museums · Transfiguration",
         "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-transfiguration-of-our-lord/eed62f0d-1fb1-44c6-af98-96301160b7f2"
       }
     ],
     "checked": "2026-11-19",
@@ -600,14 +600,22 @@
     "title": "The Marriage of the Virgin",
     "date": "1504",
     "era": "renaissance",
-    "medium": "Oil on canvas",
+    "medium": "Oil on panel",
     "location": "Pinacoteca di Brera",
     "dimensions": "174 × 121 cm",
-    "alt": "The Marriage of the Virgin by Raphael. Paving lines converge toward the building.",
+    "alt": "The Marriage of the Virgin by Raphael. A marriage ceremony takes place before a centrally planned building.",
     "sources": [
       {
-        "title": "Reference record · The Marriage of the Virgin",
-        "url": "https://en.wikipedia.org/wiki/The_Marriage_of_the_Virgin_%28Raphael%29"
+        "title": "Pinacoteca di Brera · Raphael room",
+        "url": "https://breraplus.org/en/story/the-raphael-room-and-more/"
+      },
+      {
+        "title": "Pinacoteca di Brera · Marriage of the Virgin description",
+        "url": "https://pinacotecabrera.org/wp-content/uploads/2019/04/ROOM-24-Raphaels-Marriage-of-the-Virgin-DescriVedendo-TEXT.pdf"
+      },
+      {
+        "url": "https://pinacotecabrera.org/en/collezioni/collezione-on-line/the-marriage-of-the-virgin/",
+        "title": "Pinacoteca di Brera · collection record and medium"
       }
     ],
     "checked": "2026-11-19",
@@ -641,11 +649,11 @@
     "medium": "Oil on wood",
     "location": "Galleria degli Uffizi",
     "dimensions": "107 × 77 cm",
-    "alt": "Madonna of the Goldfinch by Raphael. The bird joins the children’s attention.",
+    "alt": "Madonna of the Goldfinch by Raphael. Mary watches two children share a small bird.",
     "sources": [
       {
-        "title": "Reference record · Madonna of the Goldfinch",
-        "url": "https://en.wikipedia.org/wiki/Madonna_del_Cardellino"
+        "title": "Uffizi Galleries · Painting collection",
+        "url": "https://www.uffizi.it/en/the-uffizi/painting"
       }
     ],
     "checked": "2026-11-19",
@@ -679,19 +687,11 @@
     "medium": "Oil on canvas",
     "location": "Louvre",
     "dimensions": "82 × 67 cm",
-    "alt": "Portrait of Baldassare Castiglione by Raphael. The hands remain low and composed.",
+    "alt": "Portrait of Baldassare Castiglione by Raphael. The writer and courtier Baldassare Castiglione is shown without a theatrical setting.",
     "sources": [
       {
-        "title": "Reference record · Portrait of Baldassare Castiglione",
-        "url": "https://en.wikipedia.org/wiki/Portrait_of_Baldassare_Castiglione"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://gallerycollections.courtauld.ac.uk/object-p-1978-pg-373"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.louvre.fr/en/oeuvre-notices/portrait-baldassare-castiglione-1478%E2%80%931529?selection=44896"
+        "title": "Louvre · Collections",
+        "url": "https://collections.louvre.fr/en/recherche?q=Rapha%C3%ABl%20Castiglione"
       }
     ],
     "checked": "2026-11-19",
@@ -722,18 +722,18 @@
     "title": "The Triumph of Galatea",
     "date": "c. 1512",
     "era": "renaissance",
-    "medium": "Oil on canvas",
+    "medium": "Fresco",
     "location": "Villa Farnesina",
     "dimensions": "295 × 225 cm",
-    "alt": "The Triumph of Galatea by Raphael. Galatea’s gaze turns upward.",
+    "alt": "The Triumph of Galatea by Raphael. Galatea moves through a crowded mythological sea scene.",
     "sources": [
       {
-        "title": "Reference record · The Triumph of Galatea",
-        "url": "https://en.wikipedia.org/wiki/Galatea_%28Raphael%29"
+        "title": "Villa Farnesina · Official museum",
+        "url": "https://www.villafarnesina.it/"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/features/slideshows/raphael.html#:~:text=Raphael%27s%20artistic%20evolution%20continued%20when%20he%20moved%20to%20Rome%20in%201508.%20There%20he%20was%20influenced%20not%20only%20by%20the%20idealized%2C%20classical%20art%20of%20the%20city%27s%20ancient%20past%20but%20also%20by%20the%20more%20energetic%20and%20physical%20style%20of%20Michelangelo%2C%20whose%20works%20he%20also%20had%20studied%20in%20Florence."
+        "url": "https://www.villafarnesina.it/en/percorso-di-visita/the-loggia-of-galatea/",
+        "title": "Villa Farnesina · Loggia of Galatea"
       }
     ],
     "checked": "2026-11-19",
@@ -767,11 +767,15 @@
     "medium": "Oil on canvas",
     "location": "San Luigi dei Francesi",
     "dimensions": "322 × 340 cm",
-    "alt": "The Calling of Saint Matthew by Caravaggio. The light crosses the group diagonally.",
+    "alt": "The Calling of Saint Matthew by Caravaggio. A gesture interrupts a group gathered around a table.",
     "sources": [
       {
-        "title": "Reference record · The Calling of Saint Matthew",
-        "url": "https://en.wikipedia.org/wiki/The_Calling_of_Saint_Matthew"
+        "title": "Metropolitan Museum of Art · Caravaggio and his followers",
+        "url": "https://www.metmuseum.org/essays/caravaggio-michelangelo-merisi-1571-1610-and-his-followers"
+      },
+      {
+        "title": "College Board · Art History commentary on the Calling",
+        "url": "https://secure-media.collegeboard.org/digitalServices/pdf/ap/apcentral/ap16_art_history_q2.pdf"
       }
     ],
     "checked": "2026-11-19",
@@ -805,15 +809,11 @@
     "medium": "Oil on canvas",
     "location": "National Gallery",
     "dimensions": "141 × 196.2 cm",
-    "alt": "Supper at Emmaus · London version by Caravaggio. An arm extends toward us.",
+    "alt": "Supper at Emmaus · London version by Caravaggio. Two companions recognize the risen Christ during a meal.",
     "sources": [
       {
-        "title": "Reference record · Supper at Emmaus · London version",
-        "url": "https://en.wikipedia.org/wiki/Supper_at_Emmaus_%28Caravaggio%2C_London%29"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/met-publications/painters-of-reality-the-legacy-of-leonardo-and-caravaggio-in-lombardy"
+        "title": "National Gallery · Supper at Emmaus",
+        "url": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus"
       }
     ],
     "checked": "2026-11-19",
@@ -847,19 +847,11 @@
     "medium": "oil on canvas",
     "location": "Uffizi",
     "dimensions": "95 × 85 cm",
-    "alt": "Bacchus by Caravaggio. The glass is held outward.",
+    "alt": "Bacchus by Caravaggio. A youthful Bacchus offers wine while fruit and fabric fill the foreground.",
     "sources": [
       {
-        "title": "Reference record · Bacchus",
-        "url": "https://en.wikipedia.org/wiki/Bacchus_%28Caravaggio%29"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/toah/hd/pape/hd_pape.htm"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.uffizi.it/en/artworks/bacchus"
+        "title": "Uffizi Galleries · Bacchus",
+        "url": "https://www.uffizi.it/en/artworks/caravaggio-bacchus"
       }
     ],
     "checked": "2026-11-19",
@@ -893,11 +885,15 @@
     "medium": "Oil on canvas",
     "location": "Galleria Nazionale d'Arte Antica at Palazzo Barberini",
     "dimensions": "145 × 195 cm",
-    "alt": "Judith Beheading Holofernes by Caravaggio. Judith’s arms extend into the action.",
+    "alt": "Judith Beheading Holofernes by Caravaggio. Judith and a companion confront Holofernes in a violent biblical episode.",
     "sources": [
       {
-        "title": "Reference record · Judith Beheading Holofernes",
-        "url": "https://en.wikipedia.org/wiki/Judith_Beheading_Holofernes_%28Caravaggio%29"
+        "title": "Gallerie Nazionali Barberini Corsini · Official collection",
+        "url": "https://barberinicorsini.org/"
+      },
+      {
+        "title": "Metropolitan Museum of Art · Caravaggio",
+        "url": "https://www.metmuseum.org/essays/caravaggio-michelangelo-merisi-1571-1610-and-his-followers"
       }
     ],
     "checked": "2026-11-19",
@@ -931,11 +927,15 @@
     "medium": "Oil on canvas",
     "location": "Sanssouci Picture Gallery",
     "dimensions": "107 × 146 cm",
-    "alt": "The Incredulity of Saint Thomas by Caravaggio. Several heads form a tight group.",
+    "alt": "The Incredulity of Saint Thomas by Caravaggio. Thomas examines Christ’s wound while other figures lean in.",
     "sources": [
       {
-        "title": "Reference record · The Incredulity of Saint Thomas",
-        "url": "https://en.wikipedia.org/wiki/The_Incredulity_of_Saint_Thomas_%28Caravaggio%29"
+        "title": "Prussian Palaces and Gardens Foundation · Collections",
+        "url": "https://www.spsg.de/en/palaces-gardens/"
+      },
+      {
+        "title": "Metropolitan Museum of Art · Caravaggio",
+        "url": "https://www.metmuseum.org/essays/caravaggio-michelangelo-merisi-1571-1610-and-his-followers"
       }
     ],
     "checked": "2026-11-19",
@@ -969,19 +969,11 @@
     "medium": "Oil on canvas",
     "location": "Pinacoteca Vaticana",
     "dimensions": "300 × 203 cm",
-    "alt": "The Entombment of Christ by Caravaggio. The stone corner projects outward.",
+    "alt": "The Entombment of Christ by Caravaggio. A group lowers Christ’s body near a projecting stone.",
     "sources": [
       {
-        "title": "Reference record · The Entombment of Christ",
-        "url": "https://en.wikipedia.org/wiki/The_Entombment_of_Christ_%28Caravaggio%29"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.museodelprado.es/en/exhibitions/exhibitions/at-the-museum/la-obra-invitada-emel-descendimientoem-caravaggio/la-obra/"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://library.nga.gov/permalink/01NGA_INST/1p5jkvq/alma991742533804896"
+        "title": "Vatican Museums · Deposition",
+        "url": "https://www.museivaticani.va/content/museivaticani/it/collezioni/musei/la-pinacoteca/sala-xii---secolo-xvii/caravaggio--deposizione-dalla-croce.html"
       }
     ],
     "checked": "2026-11-19",
@@ -1015,11 +1007,11 @@
     "medium": "oil on canvas",
     "location": "Biblioteca Ambrosiana",
     "dimensions": "46 × 64.5 cm",
-    "alt": "Basket of Fruit by Caravaggio. Some leaves curl or dry.",
+    "alt": "Basket of Fruit by Caravaggio. A basket of fruit occupies a surprisingly concentrated field.",
     "sources": [
       {
-        "title": "Reference record · Basket of Fruit",
-        "url": "https://en.wikipedia.org/wiki/Basket_of_Fruit_%28Caravaggio%29"
+        "title": "Pinacoteca Ambrosiana · Basket of Fruit",
+        "url": "https://www.ambrosiana.it/en/discover/masterpieces/basket-of-fruit/"
       }
     ],
     "checked": "2026-11-19",
@@ -1052,20 +1044,28 @@
     "era": "baroque",
     "medium": "Oil on canvas",
     "location": "Amsterdam Museum on permanent loan to Rijksmuseum in Amsterdam, Netherlands",
-    "dimensions": "363 × 437 cm",
-    "alt": "The Night Watch by Rembrandt van Rijn. The central figures appear to move forward.",
+    "dimensions": "379.5 × 453.5 cm",
+    "alt": "The Night Watch by Rembrandt van Rijn. A civic guard company becomes an animated gathering rather than a row of evenly presented portraits.",
     "sources": [
       {
-        "title": "Reference record · The Night Watch",
-        "url": "https://en.wikipedia.org/wiki/The_Night_Watch"
+        "title": "Rijksmuseum · Rembrandt",
+        "url": "https://www.rijksmuseum.nl/en/stories/dutch-masters/story/rembrandt-rijn-10"
       },
       {
-        "title": "Museum / collection reference",
+        "title": "Rijksmuseum · The Night Watch, original margins",
+        "url": "https://www.rijksmuseum.nl/en/press/press-releases/for-the-first-time-in-300-years-the-night-watch-is-complete-again"
+      },
+      {
+        "title": "National Gallery · Gerrit Lundens after Rembrandt",
+        "url": "https://www.nationalgallery.org.uk/paintings/gerrit-lundens-after-rembrandt-the-company-of-captain-banning-cocq-the-nightwatch"
+      },
+      {
+        "title": "Rijksmuseum · Operation Night Watch",
+        "url": "https://www.rijksmuseum.nl/en/stories/operation-night-watch"
+      },
+      {
+        "title": "Rijksmuseum · Night Watch object record",
         "url": "https://www.rijksmuseum.nl/en/collection/object/The-Night-Watch-Militia-Company-of-District-II-under-the-Command-of-Captain-Frans-Banninck-Cocq--3137deb45cd7765f9a76084a16c99544"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.rijksmuseum.nl/en/explore-the-collection/overview/rembrandt-harmensz-van-rijn/objects#/SK-C-5,1"
       }
     ],
     "checked": "2026-11-19",
@@ -1098,15 +1098,15 @@
     "era": "baroque",
     "medium": "Oil on canvas",
     "location": "Mauritshuis",
-    "dimensions": "216.5 × 169.5 cm",
-    "alt": "The Anatomy Lesson of Dr. Nicolaes Tulp by Rembrandt van Rijn. The illuminated body lies diagonally.",
+    "dimensions": "169.5 × 216.5 cm",
+    "alt": "The Anatomy Lesson of Dr. Nicolaes Tulp by Rembrandt van Rijn. A public anatomy demonstration becomes a carefully arranged group portrait.",
     "sources": [
       {
-        "title": "Reference record · The Anatomy Lesson of Dr. Nicolaes Tulp",
-        "url": "https://en.wikipedia.org/wiki/The_Anatomy_Lesson_of_Dr._Nicolaes_Tulp"
+        "title": "Mauritshuis · Anatomy Lesson",
+        "url": "https://www.mauritshuis.nl/en/our-collection/artworks/146-the-anatomy-lesson-of-dr-nicolaes-tulp/"
       },
       {
-        "title": "Museum / collection reference",
+        "title": "Mauritshuis · The Anatomy Lesson",
         "url": "https://www.mauritshuis.nl/en/our-collection/artworks/146-the-anatomy-lesson-of-dr-nicolaes-tulp"
       }
     ],
@@ -1141,19 +1141,11 @@
     "medium": "Oil on canvas",
     "location": "Rijksmuseum",
     "dimensions": "121.5 × 166.5 cm",
-    "alt": "The Jewish Bride by Rembrandt van Rijn. One hand rests on the other figure.",
+    "alt": "The Jewish Bride by Rembrandt van Rijn. Two figures share a quiet gesture of contact.",
     "sources": [
       {
-        "title": "Reference record · The Jewish Bride",
-        "url": "https://en.wikipedia.org/wiki/The_Jewish_Bride"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.rijksmuseum.nl/en/rijksstudio/artists/rembrandt-van-rijn/objects#/SK-C-216,2"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.rijksmuseum.nl/aria/aria_assets/SK-C-216?page=1&lang=en&context_space=&context_id="
+        "title": "Rijksmuseum · Rembrandt",
+        "url": "https://www.rijksmuseum.nl/en/stories/dutch-masters/story/rembrandt-rijn-10"
       }
     ],
     "checked": "2026-11-19",
@@ -1187,11 +1179,15 @@
     "medium": "Oil on canvas",
     "location": "Hermitage Museum",
     "dimensions": "262 × 205 cm",
-    "alt": "The Return of the Prodigal Son by Rembrandt van Rijn. The kneeling figure’s clothing looks worn.",
+    "alt": "The Return of the Prodigal Son by Rembrandt van Rijn. A father receives a returning son in a biblical scene of forgiveness.",
     "sources": [
       {
-        "title": "Reference record · The Return of the Prodigal Son",
-        "url": "https://en.wikipedia.org/wiki/The_Return_of_the_Prodigal_Son_%28Rembrandt%29"
+        "title": "State Hermitage Museum · Official collection",
+        "url": "https://www.hermitagemuseum.org/"
+      },
+      {
+        "title": "Metropolitan Museum of Art · Rembrandt paintings",
+        "url": "https://www.metmuseum.org/essays/rembrandt-van-rijn-1606-1669-paintings"
       }
     ],
     "checked": "2026-11-19",
@@ -1225,11 +1221,11 @@
     "medium": "Oil on canvas",
     "location": "Whereabouts unknown since 1990",
     "dimensions": "160 × 128 cm",
-    "alt": "The Storm on the Sea of Galilee by Rembrandt van Rijn. A sail catches the light.",
+    "alt": "The Storm on the Sea of Galilee by Rembrandt van Rijn. A boat and its passengers face a violent sea in a biblical narrative.",
     "sources": [
       {
-        "title": "Reference record · The Storm on the Sea of Galilee",
-        "url": "https://en.wikipedia.org/wiki/The_Storm_on_the_Sea_of_Galilee"
+        "title": "Isabella Stewart Gardner Museum · Christ in the Storm",
+        "url": "https://www.gardnermuseum.org/experience/collection/10953"
       }
     ],
     "checked": "2026-11-19",
@@ -1263,19 +1259,11 @@
     "medium": "Oil on canvas",
     "location": "Rijksmuseum",
     "dimensions": "191.5 × 279 cm",
-    "alt": "The Sampling Officials by Rembrandt van Rijn. Several faces turn toward the viewer.",
+    "alt": "The Sampling Officials by Rembrandt van Rijn. The officials of a cloth guild seem interrupted in the middle of their work.",
     "sources": [
       {
-        "title": "Reference record · The Sampling Officials",
-        "url": "https://en.wikipedia.org/wiki/Syndics_of_the_Drapers%27_Guild"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.rijksmuseum.nl/en/my/collections/138928--bernard-de-groot/gilde/objecten#/SK-C-6,0"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.rijksmuseum.nl/nl/collectie/SK-C-6"
+        "title": "Rijksmuseum · Rembrandt",
+        "url": "https://www.rijksmuseum.nl/en/stories/dutch-masters/story/rembrandt-rijn-10"
       }
     ],
     "checked": "2026-11-19",
@@ -1309,19 +1297,11 @@
     "medium": "Oil on canvas",
     "location": "National Gallery, London",
     "dimensions": "",
-    "alt": "Belshazzar's Feast by Rembrandt van Rijn. A vessel tips in the disturbance.",
+    "alt": "Belshazzar's Feast by Rembrandt van Rijn. A feast is interrupted by mysterious writing in a biblical story of judgment.",
     "sources": [
       {
-        "title": "Reference record · Belshazzar's Feast",
-        "url": "https://en.wikipedia.org/wiki/Belshazzar%27s_Feast_%28Rembrandt%29"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "National Gallery · Belshazzar’s Feast",
         "url": "https://www.nationalgallery.org.uk/paintings/rembrandt-belshazzar-s-feast"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nationalgallery.org.uk/cgi-bin/WebObjects.dll/CollectionPublisher.woa/wa/work?workNumber=NG6350"
       }
     ],
     "checked": "2026-11-19",
@@ -1354,20 +1334,12 @@
     "era": "baroque",
     "medium": "Oil on canvas",
     "location": "Mauritshuis",
-    "dimensions": "",
-    "alt": "Girl with a Pearl Earring by Johannes Vermeer. The lips are slightly parted.",
+    "dimensions": "44.5 × 39 cm",
+    "alt": "Girl with a Pearl Earring by Johannes Vermeer. An unnamed figure turns toward us, wearing an elaborate head covering and a luminous earring.",
     "sources": [
       {
-        "title": "Reference record · Girl with a Pearl Earring",
-        "url": "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.mauritshuis.nl/en/explore/the-collection/artworks/girl-with-a-pearl-earring-670/"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.mauritshuis.nl/nl-nl/verdiep/de-collectie/kunstwerken/meisje-met-de-parel-670/"
+        "title": "Mauritshuis · Girl with a Pearl Earring",
+        "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring"
       }
     ],
     "checked": "2026-11-19",
@@ -1401,19 +1373,11 @@
     "medium": "Oil on canvas",
     "location": "Rijksmuseum",
     "dimensions": "",
-    "alt": "The Milkmaid by Johannes Vermeer. The pouring stream is narrow.",
+    "alt": "The Milkmaid by Johannes Vermeer. A woman pours milk in a room arranged around ordinary work.",
     "sources": [
       {
-        "title": "Reference record · The Milkmaid",
-        "url": "https://en.wikipedia.org/wiki/The_Milkmaid_%28Vermeer%29"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Rijksmuseum · The Milkmaid",
         "url": "https://www.rijksmuseum.nl/en/collection/SK-A-2344"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/exhibitions/listings/2009/vermeer"
       }
     ],
     "checked": "2026-11-19",
@@ -1447,19 +1411,11 @@
     "medium": "Oil on canvas",
     "location": "Mauritshuis",
     "dimensions": "96.5 × 115.7 cm",
-    "alt": "View of Delft by Johannes Vermeer. Water reflects the city unevenly.",
+    "alt": "View of Delft by Johannes Vermeer. Delft is seen across water, with buildings grouped beneath a large sky.",
     "sources": [
       {
-        "title": "Reference record · View of Delft",
-        "url": "https://en.wikipedia.org/wiki/View_of_Delft"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.mauritshuis.nl/en/our-collection/artworks/92-view-of-delft/"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/art/collection/search/348313"
+        "title": "Mauritshuis · View of Delft",
+        "url": "https://www.mauritshuis.nl/en/our-collection/artworks/92-view-of-delft"
       }
     ],
     "checked": "2026-11-19",
@@ -1493,19 +1449,15 @@
     "medium": "Oil on canvas",
     "location": "Kunsthistorisches Museum",
     "dimensions": "120 × 100 cm",
-    "alt": "The Art of Painting by Johannes Vermeer. The curtain creates a theatrical entrance.",
+    "alt": "The Art of Painting by Johannes Vermeer. An artist paints a model in a carefully furnished room.",
     "sources": [
       {
-        "title": "Reference record · The Art of Painting",
-        "url": "https://en.wikipedia.org/wiki/The_Art_of_Painting"
+        "title": "Kunsthistorisches Museum · Official collection",
+        "url": "https://www.khm.at/en/visit/only-in-vienna"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/exhibitions/verm_3.shtm"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/exhibitions/verm_6.shtm"
+        "title": "Metropolitan Museum of Art · Vermeer",
+        "url": "https://www.metmuseum.org/essays/johannes-vermeer-1632-1675"
       }
     ],
     "checked": "2026-11-19",
@@ -1539,15 +1491,11 @@
     "medium": "Oil on canvas",
     "location": "National Gallery of Art",
     "dimensions": "42.5 × 38 cm",
-    "alt": "A Woman Holding a Balance by Johannes Vermeer. The balance is held carefully.",
+    "alt": "A Woman Holding a Balance by Johannes Vermeer. A woman holds a small balance while a painting of judgment hangs behind her.",
     "sources": [
       {
-        "title": "Reference record · A Woman Holding a Balance",
-        "url": "https://en.wikipedia.org/wiki/Woman_Holding_a_Balance"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/collection/highlights/vermeer-woman-holding-a-balance.html"
+        "title": "National Gallery of Art · Woman Holding a Balance",
+        "url": "https://www.nga.gov/artworks/1236-woman-holding-balance"
       }
     ],
     "checked": "2026-11-19",
@@ -1581,18 +1529,10 @@
     "medium": "Oil on canvas",
     "location": "Louvre, Paris",
     "dimensions": "24.5 × 21 cm",
-    "alt": "The Lacemaker by Johannes Vermeer. The hands gather around the work.",
+    "alt": "The Lacemaker by Johannes Vermeer. A young woman works on lace in a small, concentrated image.",
     "sources": [
       {
-        "title": "Reference record · The Lacemaker",
-        "url": "https://en.wikipedia.org/wiki/The_Lacemaker_%28Vermeer%29"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/art/collection/search/461684"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Louvre · The Lacemaker",
         "url": "https://collections.louvre.fr/en/ark:/53355/cl010064918"
       }
     ],
@@ -1627,11 +1567,11 @@
     "medium": "Oil on canvas",
     "location": "Gemäldegalerie",
     "dimensions": "83 × 64.5 cm",
-    "alt": "Girl Reading a Letter at an Open Window by Johannes Vermeer. A face is reflected in the window.",
+    "alt": "Girl Reading a Letter at an Open Window by Johannes Vermeer. A woman reads beside an open window.",
     "sources": [
       {
-        "title": "Reference record · Girl Reading a Letter at an Open Window",
-        "url": "https://en.wikipedia.org/wiki/Girl_Reading_a_Letter_at_an_Open_Window"
+        "title": "Staatliche Kunstsammlungen Dresden · Vermeer on Reflection",
+        "url": "https://vermeer.skd.museum/en/narration/"
       }
     ],
     "checked": "2026-11-19",
@@ -1665,14 +1605,10 @@
     "medium": "Oil on canvas",
     "location": "Uffizi",
     "dimensions": "",
-    "alt": "Judith Slaying Holofernes · Florence version by Artemisia Gentileschi. The two women act together.",
+    "alt": "Judith Slaying Holofernes · Florence version by Artemisia Gentileschi. Judith and her companion use coordinated physical force in a violent biblical episode.",
     "sources": [
       {
-        "title": "Reference record · Judith Slaying Holofernes · Florence version",
-        "url": "https://en.wikipedia.org/wiki/Judith_Slaying_Holofernes_%28Artemisia_Gentileschi%2C_Florence%29"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Uffizi Galleries · Judith Beheading Holofernes",
         "url": "https://www.uffizi.it/en/artworks/judith-beheading-holofernes"
       }
     ],
@@ -1707,19 +1643,11 @@
     "medium": "Oil on canvas",
     "location": "Royal Collection, United Kingdom",
     "dimensions": "98.6 × 75.2 cm",
-    "alt": "Self-Portrait as the Allegory of Painting by Artemisia Gentileschi. The raised arm reaches toward the work.",
+    "alt": "Self-Portrait as the Allegory of Painting by Artemisia Gentileschi. A painter turns toward her work in a pose that also invokes the traditional personification of Painting.",
     "sources": [
       {
-        "title": "Reference record · Self-Portrait as the Allegory of Painting",
-        "url": "https://en.wikipedia.org/wiki/Self-Portrait_as_the_Allegory_of_Painting"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.royalcollection.org.uk/eGallery/object.asp?maker=12024&object=405551&row=0&detail=about"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.rct.uk/collection/search#/1/collection/405551/self-portrait-as-the-allegory-of-painting-la-pittura"
+        "title": "Royal Collection Trust · La Pittura",
+        "url": "https://www.rct.uk/collection/405551/self-portrait-as-the-allegory-of-painting-la-pittura"
       }
     ],
     "checked": "2026-11-19",
@@ -1753,11 +1681,11 @@
     "medium": "oil on canvas",
     "location": "Schloss Weißenstein",
     "dimensions": "170 × 119 cm",
-    "alt": "Susanna and the Elders by Artemisia Gentileschi. Susanna twists away from the men.",
+    "alt": "Susanna and the Elders by Artemisia Gentileschi. Susanna recoils from the unwanted attention of two men.",
     "sources": [
       {
-        "title": "Reference record · Susanna and the Elders",
-        "url": "https://en.wikipedia.org/wiki/Susanna_and_the_Elders_%28Artemisia_Gentileschi%2C_Pommersfelden%29"
+        "title": "National Gallery · Artemisia Gentileschi",
+        "url": "https://www.nationalgallery.org.uk/paintings/artemisia-gentileschi"
       }
     ],
     "checked": "2026-11-19",
@@ -1791,19 +1719,15 @@
     "medium": "Oil on canvas",
     "location": "Detroit Institute of Arts",
     "dimensions": "",
-    "alt": "Judith and Her Maidservant · Detroit version by Artemisia Gentileschi. A hand shields or interrupts the light.",
+    "alt": "Judith and Her Maidservant · Detroit version by Artemisia Gentileschi. Judith and her maid pause with the aftermath of a violent act.",
     "sources": [
       {
-        "title": "Reference record · Judith and Her Maidservant · Detroit version",
-        "url": "https://en.wikipedia.org/wiki/Judith_and_Her_Maidservant_%28Artemisia_Gentileschi%2C_Detroit%29"
+        "title": "Detroit Institute of Arts · Collection",
+        "url": "https://www.dia.org/art/collection"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.dia.org/art/collection/object/judith-and-her-maidservant-head-holofernes-45746"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/art/metpublications/Orazio_and_Artemisia_Gentileschi"
+        "title": "National Gallery · Artemisia Gentileschi",
+        "url": "https://www.nationalgallery.org.uk/paintings/artemisia-gentileschi"
       }
     ],
     "checked": "2026-11-19",
@@ -1837,18 +1761,10 @@
     "medium": "Oil on canvas",
     "location": "National Gallery, London",
     "dimensions": "",
-    "alt": "Self-Portrait as Saint Catherine of Alexandria by Artemisia Gentileschi. The wheel helps identify the saint.",
+    "alt": "Self-Portrait as Saint Catherine of Alexandria by Artemisia Gentileschi. The artist presents herself with attributes associated with Saint Catherine.",
     "sources": [
       {
-        "title": "Reference record · Self-Portrait as Saint Catherine of Alexandria",
-        "url": "https://en.wikipedia.org/wiki/Self-Portrait_as_Saint_Catherine_of_Alexandria"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nationalgallery.org.uk/paintings/rare-self-portrait-by-artemisia-gentileschi-enters-the-collection"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "National Gallery · Self Portrait as Saint Catherine",
         "url": "https://www.nationalgallery.org.uk/paintings/artemisia-gentileschi-self-portrait-as-saint-catherine-of-alexandria"
       }
     ],
@@ -1883,19 +1799,11 @@
     "medium": "Oil on canvas",
     "location": "The J. Paul Getty Museum",
     "dimensions": "92.9 × 72.7 cm",
-    "alt": "Lucretia by Artemisia Gentileschi. The hands carry the action.",
+    "alt": "Lucretia by Artemisia Gentileschi. Lucretia appears at a charged moment from a Roman story of sexual violence and death.",
     "sources": [
       {
-        "title": "Reference record · Lucretia",
-        "url": "https://en.wikipedia.org/wiki/Lucretia_%28Artemisia_Gentileschi%2C_Los_Angeles%29"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://blogs.getty.edu/iris/artemisia-gentileschi-joins-gettys-collection/"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.getty.edu/art/collection/objects/354660/artemisia-gentileschi-lucretia-italian-about-1627/"
+        "title": "Getty · Artemisia Gentileschi, the woman and artist",
+        "url": "https://www.getty.edu/news/artemisia-gentileschi-the-woman-the-artist/"
       }
     ],
     "checked": "2026-11-19",
@@ -1929,19 +1837,19 @@
     "medium": "Oil on canvas",
     "location": "Museo del Prado",
     "dimensions": "268 × 347 cm",
-    "alt": "The Third of May 1808 by Francisco de Goya. The central civilian raises his arms.",
+    "alt": "The Third of May 1808 by Francisco de Goya. A firing squad confronts civilians in an image of the violence following the Madrid uprising of 1808.",
     "sources": [
       {
-        "title": "Reference record · The Third of May 1808",
-        "url": "https://en.wikipedia.org/wiki/The_Third_of_May_1808"
+        "title": "Museo del Prado · Collection",
+        "url": "https://www.museodelprado.es/en/the-collection"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.museodelprado.es/coleccion/galeria-on-line/galeria-on-line/obra/el-3-de-mayo-de-1808-en-madrid-los-fusilamientos-en-la-montana-del-principe-pio/"
+        "title": "Metropolitan Museum of Art · Goya and the Spanish Enlightenment",
+        "url": "https://www.metmuseum.org/essays/francisco-de-goya-1746-1828-and-the-spanish-enlightenment"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.moma.org/exhibitions/2006/Manet/detail_the_third_of_may.htm"
+        "title": "Museo del Prado · The 3rd of May 1808",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-3rd-of-may-1808-in-madrid-or-the-executions/5e177409-2993-4240-97fb-847a02c6496c"
       }
     ],
     "checked": "2026-11-19",
@@ -1975,15 +1883,15 @@
     "medium": "Oil on canvas",
     "location": "Museo del Prado",
     "dimensions": "266 × 345 cm",
-    "alt": "The Second of May 1808 (The Charge of the Mamelukes) by Francisco de Goya. Bodies overlap in several directions.",
+    "alt": "The Second of May 1808 (The Charge of the Mamelukes) by Francisco de Goya. People and mounted troops clash in a crowded image of the Madrid uprising.",
     "sources": [
       {
-        "title": "Reference record · The Second of May 1808 (The Charge of the Mamelukes)",
-        "url": "https://en.wikipedia.org/wiki/The_Second_of_May_1808"
+        "title": "Museo del Prado · Collection",
+        "url": "https://www.museodelprado.es/en/the-collection"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.museodelprado.es/coleccion/galeria-on-line/galeria-on-line/obra/el-2-de-mayo-de-1808-en-madrid-la-lucha-con-los-mamelucos/"
+        "title": "Metropolitan Museum of Art · Goya",
+        "url": "https://www.metmuseum.org/essays/francisco-de-goya-1746-1828-and-the-spanish-enlightenment"
       }
     ],
     "checked": "2026-11-19",
@@ -2017,14 +1925,10 @@
     "medium": "Mixed media mural transferred to canvas",
     "location": "Museo del Prado",
     "dimensions": "143.5 × 81.4 cm",
-    "alt": "Saturn Devouring His Son by Francisco de Goya. Hands grip the body tightly.",
+    "alt": "Saturn Devouring His Son by Francisco de Goya. A terrifying figure consumes a body in one of Goya’s Black Paintings.",
     "sources": [
       {
-        "title": "Reference record · Saturn Devouring His Son",
-        "url": "https://en.wikipedia.org/wiki/Saturn_Devouring_His_Son"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Museo del Prado · Saturn",
         "url": "https://www.museodelprado.es/en/the-collection/art-work/saturn/18110a75-b0e7-430c-bc73-2a4d55893bd6"
       }
     ],
@@ -2059,15 +1963,11 @@
     "medium": "Oil on canvas",
     "location": "Museo del Prado",
     "dimensions": "131.5 × 79.3 cm",
-    "alt": "The Dog by Francisco de Goya. Only part of the dog is visible.",
+    "alt": "The Dog by Francisco de Goya. A small dog’s head appears within a largely empty field.",
     "sources": [
       {
-        "title": "Reference record · The Dog",
-        "url": "https://en.wikipedia.org/wiki/The_Dog_%28Goya%29"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.museodelprado.es/en/ingles/collection/on-line-gallery/on-line-gallery/obra/dog-half-submerged/"
+        "title": "Museo del Prado · Collection",
+        "url": "https://www.museodelprado.es/en/the-collection"
       }
     ],
     "checked": "2026-11-19",
@@ -2101,14 +2001,10 @@
     "medium": "Oil on canvas",
     "location": "Museo del Prado",
     "dimensions": "280 × 336 cm",
-    "alt": "Charles IV of Spain and His Family by Francisco de Goya. The painter appears deeper in shadow.",
+    "alt": "Charles IV of Spain and His Family by Francisco de Goya. The Spanish royal family appears together in a formal group portrait.",
     "sources": [
       {
-        "title": "Reference record · Charles IV of Spain and His Family",
-        "url": "https://en.wikipedia.org/wiki/Charles_IV_of_Spain_and_His_Family"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Museo del Prado · The Family of Carlos IV",
         "url": "https://www.museodelprado.es/en/the-collection/art-work/the-family-of-carlos-iv/f47898fc-aa1c-48f6-a779-71759e417e74"
       }
     ],
@@ -2143,15 +2039,15 @@
     "medium": "Oil on canvas",
     "location": "Museo del Prado",
     "dimensions": "104 × 152 cm",
-    "alt": "The Parasol by Francisco de Goya. The parasol frames the seated figure.",
+    "alt": "The Parasol by Francisco de Goya. Two figures occupy a bright outdoor scene designed as a tapestry cartoon.",
     "sources": [
       {
-        "title": "Reference record · The Parasol",
-        "url": "https://en.wikipedia.org/wiki/The_Parasol"
+        "title": "Museo del Prado · Collection",
+        "url": "https://www.museodelprado.es/en/the-collection"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.museodelprado.es"
+        "title": "Metropolitan Museum of Art · Goya",
+        "url": "https://www.metmuseum.org/essays/francisco-de-goya-1746-1828-and-the-spanish-enlightenment"
       }
     ],
     "checked": "2026-11-19",
@@ -2185,14 +2081,10 @@
     "medium": "Oil on canvas",
     "location": "Museo del Prado",
     "dimensions": "97 × 190 cm",
-    "alt": "The Clothed Maja by Francisco de Goya. The arms frame the head.",
+    "alt": "The Clothed Maja by Francisco de Goya. A reclining woman looks directly toward the viewer.",
     "sources": [
       {
-        "title": "Reference record · The Clothed Maja",
-        "url": "https://en.wikipedia.org/wiki/La_maja_vestida"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Museo del Prado · The Clothed Maja",
         "url": "https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0"
       }
     ],
@@ -2227,18 +2119,10 @@
     "medium": "Oil on canvas",
     "location": "National Gallery",
     "dimensions": "90.7 × 121.6 cm",
-    "alt": "The Fighting Temeraire, tugged to her last Berth to be broken up, 1838 by J. M. W. Turner. The tug is small but active.",
+    "alt": "The Fighting Temeraire, tugged to her last Berth to be broken up, 1838 by J. M. W. Turner. An old warship is towed by a small steam tug beneath an evening sky.",
     "sources": [
       {
-        "title": "Reference record · The Fighting Temeraire, tugged to her last Berth to be broken up, 1838",
-        "url": "https://en.wikipedia.org/wiki/The_Fighting_Temeraire"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-the-fighting-temeraire"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "National Gallery · The Fighting Temeraire",
         "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-the-fighting-temeraire"
       }
     ],
@@ -2273,14 +2157,10 @@
     "medium": "oil on canvas",
     "location": "National Gallery, London",
     "dimensions": "91 × 121.8 cm",
-    "alt": "Rain, Steam, and Speed – The Great Western Railway by J. M. W. Turner. The track drives into the foreground.",
+    "alt": "Rain, Steam, and Speed – The Great Western Railway by J. M. W. Turner. A train advances across a bridge through rain and atmosphere.",
     "sources": [
       {
-        "title": "Reference record · Rain, Steam, and Speed – The Great Western Railway",
-        "url": "https://en.wikipedia.org/wiki/Rain%2C_Steam_and_Speed_%E2%80%93_The_Great_Western_Railway"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "National Gallery · Rain, Steam, and Speed",
         "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-rain-steam-and-speed-the-great-western-railway"
       }
     ],
@@ -2315,19 +2195,11 @@
     "medium": "Oil on canvas",
     "location": "Museum of Fine Arts",
     "dimensions": "91 × 123 cm",
-    "alt": "The Slave Ship by J. M. W. Turner. The ship remains in the distance.",
+    "alt": "The Slave Ship by J. M. W. Turner. A ship recedes beneath a violent sunset while bodies and limbs appear in the sea.",
     "sources": [
       {
-        "title": "Reference record · The Slave Ship",
-        "url": "https://en.wikipedia.org/wiki/The_Slave_Ship"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://collections.mfa.org/objects/31102"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.mfa.org/collections/object/slave-ship-slavers-throwing-overboard-the-dead-and-dying-typhoon-coming-on-31102"
+        "title": "Museum of Fine Arts Boston · Slave Ship",
+        "url": "https://collections.mfa.org/objects/31102/slave-ship-slavers-throwing-overboard-the-dead-and-dying-t"
       }
     ],
     "checked": "2026-11-19",
@@ -2361,11 +2233,15 @@
     "medium": "Oil on canvas",
     "location": "Tate Britain",
     "dimensions": "91.5 × 122 cm",
-    "alt": "Snow Storm by J. M. W. Turner. A dark form marks the ship.",
+    "alt": "Snow Storm by J. M. W. Turner. A steamship struggles within swirling weather.",
     "sources": [
       {
-        "title": "Reference record · Snow Storm",
-        "url": "https://en.wikipedia.org/wiki/Snow_Storm%3A_Steam-Boat_off_a_Harbour%27s_Mouth"
+        "title": "Tate · Turner collection",
+        "url": "https://www.tate.org.uk/art/artists/joseph-mallord-william-turner-558"
+      },
+      {
+        "title": "MFA Boston · Turner’s Modern World",
+        "url": "https://www.mfa.org/exhibition/turners-modern-world"
       }
     ],
     "checked": "2026-11-19",
@@ -2399,11 +2275,11 @@
     "medium": "Oil on canvas",
     "location": "Tate Britain",
     "dimensions": "90.8 × 121.9 cm",
-    "alt": "Norham Castle, Sunrise by J. M. W. Turner. The castle is only partly defined.",
+    "alt": "Norham Castle, Sunrise by J. M. W. Turner. A castle and river appear within luminous morning atmosphere.",
     "sources": [
       {
-        "title": "Reference record · Norham Castle, Sunrise",
-        "url": "https://en.wikipedia.org/wiki/Norham_Castle%2C_Sunrise"
+        "title": "Tate · Turner collection",
+        "url": "https://www.tate.org.uk/art/artists/joseph-mallord-william-turner-558"
       }
     ],
     "checked": "2026-11-19",
@@ -2437,18 +2313,10 @@
     "medium": "Oil on canvas",
     "location": "Cleveland Museum of Art",
     "dimensions": "",
-    "alt": "The Burning of the Houses of Lords and Commons by J. M. W. Turner. Fire rises beside dark silhouettes.",
+    "alt": "The Burning of the Houses of Lords and Commons by J. M. W. Turner. Fire transforms the Houses of Parliament and the surrounding river into a spectacle of light.",
     "sources": [
       {
-        "title": "Reference record · The Burning of the Houses of Lords and Commons",
-        "url": "https://en.wikipedia.org/wiki/The_Burning_of_the_Houses_of_Lords_and_Commons"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.philamuseum.org/collections/permanent/103831.html"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Cleveland Museum of Art · Burning of Parliament",
         "url": "https://www.clevelandart.org/art/1942.647"
       }
     ],
@@ -2483,19 +2351,11 @@
     "medium": "Oil on canvas",
     "location": "National Gallery",
     "dimensions": "155.5 × 260 cm",
-    "alt": "Dido Building Carthage by J. M. W. Turner. Architecture rises on both sides.",
+    "alt": "Dido Building Carthage by J. M. W. Turner. An imagined ancient city rises around water and human activity.",
     "sources": [
       {
-        "title": "Reference record · Dido Building Carthage",
-        "url": "https://en.wikipedia.org/wiki/Dido_building_Carthage"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "National Gallery · Dido Building Carthage",
         "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-dido-building-carthage"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nationalgallery.org.uk/visiting/floorplans/level-2/room-36"
       }
     ],
     "checked": "2026-11-19",
@@ -2528,12 +2388,16 @@
     "era": "impressionism",
     "medium": "Oil on canvas",
     "location": "Musée Marmottan Monet",
-    "dimensions": "48 × 63 cm",
-    "alt": "Impression, Sunrise by Claude Monet. The orange sun has a narrow reflection.",
+    "dimensions": "50 × 65 cm",
+    "alt": "Impression, Sunrise by Claude Monet. Boats and harbor structures emerge through morning atmosphere at Le Havre.",
     "sources": [
       {
-        "title": "Reference record · Impression, Sunrise",
-        "url": "https://en.wikipedia.org/wiki/Impression%2C_Sunrise"
+        "title": "Musée Marmottan Monet · Impression, soleil levant",
+        "url": "https://www.marmottan.fr/en/notice/4014/"
+      },
+      {
+        "title": "Metropolitan Museum of Art · Impressionism",
+        "url": "https://www.metmuseum.org/essays/impressionism-art-and-modernity"
       }
     ],
     "checked": "2026-11-19",
@@ -2567,15 +2431,11 @@
     "medium": "Canvas",
     "location": "National Gallery of Art",
     "dimensions": "100 × 81 cm",
-    "alt": "Woman with a Parasol – Madame Monet and Her Son by Claude Monet. The parasol tilts above the figure.",
+    "alt": "Woman with a Parasol – Madame Monet and Her Son by Claude Monet. A woman and child stand outdoors beneath a parasol.",
     "sources": [
       {
-        "title": "Reference record · Woman with a Parasol – Madame Monet and Her Son",
-        "url": "https://en.wikipedia.org/wiki/Woman_with_a_Parasol_%E2%80%93_Madame_Monet_and_Her_Son"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/collection/art-object-page.61379.html"
+        "title": "National Gallery of Art · Woman with a Parasol",
+        "url": "https://www.nga.gov/artworks/61379-woman-parasol-madame-monet-and-her-son"
       }
     ],
     "checked": "2026-11-19",
@@ -2609,19 +2469,15 @@
     "medium": "Oil on canvas",
     "location": "Musée d'Orsay",
     "dimensions": "89 × 130 cm",
-    "alt": "The Magpie by Claude Monet. The small bird punctuates the fence.",
+    "alt": "The Magpie by Claude Monet. A bird sits on a gate within a snow-covered landscape.",
     "sources": [
       {
-        "title": "Reference record · The Magpie",
-        "url": "https://en.wikipedia.org/wiki/The_Magpie_%28Monet%29"
+        "title": "Musée d’Orsay · Monet, what the eye cannot see",
+        "url": "https://www.musee-orsay.fr/en/magazine/2026-10-09/monet-what-eye-cant-see"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.musee-orsay.fr/en/collections/index-of-works/notice.html?no_cache=1&nnumid=805"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.musee-orsay.fr/fr/collections/catalogue-des-oeuvres/notice.html?nnumid=715"
+        "title": "Metropolitan Museum of Art · Monet",
+        "url": "https://www.metmuseum.org/essays/claude-monet-1840-1926"
       }
     ],
     "checked": "2026-11-19",
@@ -2655,19 +2511,11 @@
     "medium": "Oil on canvas",
     "location": "Musée d'Orsay, Paris, France",
     "dimensions": "75 × 105 cm",
-    "alt": "The Saint-Lazare Station · Orsay version by Claude Monet. Roof beams create a framework.",
+    "alt": "The Saint-Lazare Station · Orsay version by Claude Monet. Railway architecture encloses clouds of steam in a view of Paris’s Saint-Lazare station.",
     "sources": [
       {
-        "title": "Reference record · The Saint-Lazare Station · Orsay version",
-        "url": "https://en.wikipedia.org/wiki/Gare_Saint-Lazare_%28Monet_series%29"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Musée d’Orsay · La gare Saint-Lazare",
         "url": "https://www.musee-orsay.fr/fr/oeuvres/la-gare-saint-lazare-10897"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nationalgallery.org.uk/paintings/claude-oscar-monet-the-gare-st-lazare"
       }
     ],
     "checked": "2026-11-19",
@@ -2701,10 +2549,10 @@
     "medium": "Oil on canvas",
     "location": "National Gallery of Art, Washington",
     "dimensions": "",
-    "alt": "The Japanese Footbridge by Claude Monet. The arch crosses high in the image.",
+    "alt": "The Japanese Footbridge by Claude Monet. A Japanese-style footbridge crosses Monet’s water garden at Giverny.",
     "sources": [
       {
-        "title": "Reference record · The Japanese Footbridge",
+        "title": "National Gallery of Art · Japanese Footbridge",
         "url": "https://www.nga.gov/artworks/74796-japanese-footbridge"
       }
     ],
@@ -2739,15 +2587,11 @@
     "medium": "Oil on canvas",
     "location": "National Museum Cardiff",
     "dimensions": "65.2 × 92.4 cm",
-    "alt": "San Giorgio Maggiore at Dusk by Claude Monet. The tower forms a clear vertical.",
+    "alt": "San Giorgio Maggiore at Dusk by Claude Monet. The church of San Giorgio Maggiore appears across Venetian water in evening light.",
     "sources": [
       {
-        "title": "Reference record · San Giorgio Maggiore at Dusk",
-        "url": "https://en.wikipedia.org/wiki/San_Giorgio_Maggiore_at_Dusk"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.musee-orsay.fr/en/events/exhibitions/extramural/exhibitions/article/manet-ritorno-a-venezia-36755.html?tx_ttnews%5BbackPid%5D=253&cHash=b2bbf4444d"
+        "title": "Museum Wales · San Giorgio Maggiore, Twilight",
+        "url": "https://museum.wales/collections/online/object/8a1e055e-3ab2-38ba-9f30-bb61ac94c5cc/"
       }
     ],
     "checked": "2026-11-19",
@@ -2781,19 +2625,15 @@
     "medium": "Oil on canvas",
     "location": "Musée d’Orsay, Paris",
     "dimensions": "",
-    "alt": "Women in the Garden by Claude Monet. Dappled shadows move across fabric.",
+    "alt": "Women in the Garden by Claude Monet. Women in pale dresses occupy a garden, where patches of sun and shade make clothing a complex surface.",
     "sources": [
       {
-        "title": "Reference record · Women in the Garden",
-        "url": "https://en.wikipedia.org/wiki/Women_in_the_Garden"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.musee-orsay.fr/en/collections/works-in-focus/painting/commentaire_id/mujeres-en-el-jardin-3300.html?S=&tx_commentaire_pi1%5BpidLi%5D=509&tx_commentaire_pi1%5Bfrom%5D=841&cHash=3072993a63"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Musée d’Orsay · Women in the Garden",
         "url": "https://www.musee-orsay.fr/en/artworks/femmes-au-jardin-807"
+      },
+      {
+        "title": "Musée d’Orsay · Monet, what the eye cannot see",
+        "url": "https://www.musee-orsay.fr/en/magazine/2026-10-09/monet-what-eye-cant-see"
       }
     ],
     "checked": "2026-11-19",
@@ -2827,11 +2667,15 @@
     "medium": "Oil on canvas",
     "location": "Musée d’Orsay, Paris",
     "dimensions": "56 × 46 cm",
-    "alt": "The Cradle by Berthe Morisot. The veil makes a translucent boundary.",
+    "alt": "The Cradle by Berthe Morisot. A woman watches a sleeping infant in a cradle.",
     "sources": [
       {
-        "title": "Reference record · The Cradle",
-        "url": "https://en.wikipedia.org/wiki/The_Cradle_%28Morisot%29"
+        "title": "Musée d’Orsay · Collection",
+        "url": "https://www.musee-orsay.fr/en/collections"
+      },
+      {
+        "title": "National Gallery · Berthe Morisot",
+        "url": "https://www.nationalgallery.org.uk/artists/berthe-morisot"
       }
     ],
     "checked": "2026-11-19",
@@ -2865,14 +2709,10 @@
     "medium": "Oil on canvas",
     "location": "National Gallery",
     "dimensions": "45.7 × 75.2 cm",
-    "alt": "Summer's Day by Berthe Morisot. The women look in different directions.",
+    "alt": "Summer's Day by Berthe Morisot. Two women sit in a boat during a moment of leisure.",
     "sources": [
       {
-        "title": "Reference record · Summer's Day",
-        "url": "https://en.wikipedia.org/wiki/Summer%27s_Day"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "National Gallery · Summer’s Day",
         "url": "https://www.nationalgallery.org.uk/paintings/berthe-morisot-summer-s-day"
       }
     ],
@@ -2907,15 +2747,15 @@
     "medium": "Oil on canvas",
     "location": "National Gallery of Art, Washington",
     "dimensions": "43.5 × 73 cm",
-    "alt": "The Harbor at Lorient by Berthe Morisot. The dress catches broad light.",
+    "alt": "The Harbor at Lorient by Berthe Morisot. A seated woman looks across a harbor scene at Lorient.",
     "sources": [
       {
-        "title": "Reference record · The Harbor at Lorient",
-        "url": "https://en.wikipedia.org/wiki/The_Harbor_at_Lorient"
+        "title": "National Gallery of Art · Collection",
+        "url": "https://www.nga.gov/collection"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/collection/art-object-page.52192.html#provenance"
+        "title": "National Gallery · Berthe Morisot",
+        "url": "https://www.nationalgallery.org.uk/artists/berthe-morisot"
       }
     ],
     "checked": "2026-11-19",
@@ -2949,10 +2789,10 @@
     "medium": "Oil on canvas",
     "location": "Cleveland Museum of Art",
     "dimensions": "",
-    "alt": "Reading by Berthe Morisot. The book creates a small focus.",
+    "alt": "Reading by Berthe Morisot. A seated woman holds a book; pale clothing and surrounding greenery are described with loose, abbreviated brushwork.",
     "sources": [
       {
-        "title": "Reference record · Reading",
+        "title": "Cleveland Museum of Art · Reading",
         "url": "https://www.clevelandart.org/art/1950.89"
       }
     ],
@@ -2987,14 +2827,10 @@
     "medium": "Oil on canvas",
     "location": "Thyssen-Bornemisza National Museum, Madrid",
     "dimensions": "65 × 54 cm",
-    "alt": "The Psyché Mirror by Berthe Morisot. The mirror repeats part of the figure.",
+    "alt": "The Psyché Mirror by Berthe Morisot. A young woman stands before a tall mirror.",
     "sources": [
       {
-        "title": "Reference record · The Psyché Mirror",
-        "url": "https://en.wikipedia.org/wiki/The_Psyche_Mirror"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Museo Thyssen-Bornemisza · Psyche Mirror",
         "url": "https://www.museothyssen.org/en/collection/artists/morisot-berthe/psyche-mirror"
       }
     ],
@@ -3029,15 +2865,15 @@
     "medium": "Oil on canvas",
     "location": "National Gallery of Art, Washington",
     "dimensions": "61.3 × 50 cm",
-    "alt": "In the Dining Room by Berthe Morisot. Light objects interrupt darker furniture.",
+    "alt": "In the Dining Room by Berthe Morisot. A domestic interior becomes a place for looking at work, surfaces and human presence.",
     "sources": [
       {
-        "title": "Reference record · In the Dining Room",
-        "url": "https://en.wikipedia.org/wiki/In_the_Dining_Room"
+        "title": "National Gallery of Art · Collection",
+        "url": "https://www.nga.gov/collection"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/collection/art-object-page.46660.html"
+        "title": "National Gallery · Berthe Morisot",
+        "url": "https://www.nationalgallery.org.uk/artists/berthe-morisot"
       }
     ],
     "checked": "2026-11-19",
@@ -3071,11 +2907,15 @@
     "medium": "oil on canvas",
     "location": "Musée Marmottan Monet",
     "dimensions": "38.1 × 46 cm",
-    "alt": "Eugène Manet on the Isle of Wight by Berthe Morisot. The window divides near and far.",
+    "alt": "Eugène Manet on the Isle of Wight by Berthe Morisot. Eugène Manet sits beside a window on the Isle of Wight.",
     "sources": [
       {
-        "title": "Reference record · Eugène Manet on the Isle of Wight",
-        "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Manet_on_the_Isle_of_Wight"
+        "title": "Musée Marmottan Monet · Official collection",
+        "url": "https://www.marmottan.fr/"
+      },
+      {
+        "title": "National Gallery · Berthe Morisot",
+        "url": "https://www.nationalgallery.org.uk/artists/berthe-morisot"
       }
     ],
     "checked": "2026-11-19",
@@ -3109,19 +2949,11 @@
     "medium": "Oil on canvas",
     "location": "Museum of Modern Art",
     "dimensions": "73.7 × 92.1 cm",
-    "alt": "The Starry Night by Vincent van Gogh. A cypress rises through the foreground.",
+    "alt": "The Starry Night by Vincent van Gogh. A village lies beneath a sky of sweeping stars and clouds.",
     "sources": [
       {
-        "title": "Reference record · The Starry Night",
-        "url": "https://en.wikipedia.org/wiki/The_Starry_Night"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Museum of Modern Art · The Starry Night",
         "url": "https://www.moma.org/collection/works/79802"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.vangoghmuseum.nl/en/art-and-stories/stories/all-stories/where-is-the-starry-night"
       }
     ],
     "checked": "2026-11-19",
@@ -3155,19 +2987,11 @@
     "medium": "Oil on canvas",
     "location": "Van Gogh Museum",
     "dimensions": "82 × 114 cm",
-    "alt": "The Potato Eaters by Vincent van Gogh. Hands connect work and eating.",
+    "alt": "The Potato Eaters by Vincent van Gogh. A rural family shares a meal in a dim room.",
     "sources": [
       {
-        "title": "Reference record · The Potato Eaters",
-        "url": "https://en.wikipedia.org/wiki/The_Potato_Eaters"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Van Gogh Museum · The Potato Eaters",
         "url": "https://www.vangoghmuseum.nl/en/collection/s0005V1962"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.vangoghmuseum.nl/vgm/index.jsp?page=4987&lang=en"
       }
     ],
     "checked": "2026-11-19",
@@ -3201,11 +3025,15 @@
     "medium": "Oil on canvas",
     "location": "Van Gogh Museum",
     "dimensions": "72 × 90 cm",
-    "alt": "The Bedroom · Amsterdam version by Vincent van Gogh. The bed pushes diagonally inward.",
+    "alt": "The Bedroom · Amsterdam version by Vincent van Gogh. An uncluttered bedroom becomes an experiment in color, perspective and the feeling of rest.",
     "sources": [
       {
-        "title": "Reference record · The Bedroom · Amsterdam version",
-        "url": "https://en.wikipedia.org/wiki/Bedroom_in_Arles"
+        "title": "Van Gogh Museum · Collection",
+        "url": "https://www.vangoghmuseum.nl/en/art-and-stories/art/vincent-van-gogh"
+      },
+      {
+        "title": "Van Gogh Museum · Letters",
+        "url": "https://www.vangoghmuseum.nl/en/art-and-stories/stories/all-stories/van-goghs-letters"
       }
     ],
     "checked": "2026-11-19",
@@ -3239,14 +3067,10 @@
     "medium": "Oil on canvas",
     "location": "Kröller-Müller Museum",
     "dimensions": "80.7 × 65.3 cm",
-    "alt": "Café Terrace at Night by Vincent van Gogh. Yellow light fills the café area.",
+    "alt": "Café Terrace at Night by Vincent van Gogh. A café terrace glows beneath a night sky in Arles.",
     "sources": [
       {
-        "title": "Reference record · Café Terrace at Night",
-        "url": "https://en.wikipedia.org/wiki/Caf%C3%A9_Terrace_at_Night"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Kröller-Müller Museum · Terrace of a Café at Night",
         "url": "https://krollermuller.nl/en/vincent-van-gogh-terrace-of-a-cafe-at-night-place-du-forum-1"
       }
     ],
@@ -3281,11 +3105,15 @@
     "medium": "Oil on canvas",
     "location": "Yale University Art Gallery",
     "dimensions": "",
-    "alt": "The Night Café by Vincent van Gogh. The billiard table occupies the center.",
+    "alt": "The Night Café by Vincent van Gogh. A largely empty café contains a billiard table, seated customers and hanging lights.",
     "sources": [
       {
-        "title": "Reference record · The Night Café",
-        "url": "https://en.wikipedia.org/wiki/The_Night_Caf%C3%A9"
+        "title": "Yale University Art Gallery · Collection",
+        "url": "https://artgallery.yale.edu/collections"
+      },
+      {
+        "title": "Van Gogh Museum · Letters",
+        "url": "https://www.vangoghmuseum.nl/en/art-and-stories/stories/all-stories/van-goghs-letters"
       }
     ],
     "checked": "2026-11-19",
@@ -3319,19 +3147,15 @@
     "medium": "Oil on canvas",
     "location": "J. Paul Getty Museum",
     "dimensions": "71 × 93 cm",
-    "alt": "Irises by Vincent van Gogh. One pale flower breaks the blue pattern.",
+    "alt": "Irises by Vincent van Gogh. Irises spread across the foreground in a painting made at Saint-Rémy.",
     "sources": [
       {
-        "title": "Reference record · Irises",
-        "url": "https://en.wikipedia.org/wiki/Irises_%28painting%29"
+        "title": "Getty Museum · Irises",
+        "url": "https://www.getty.edu/art/collection/object/103JNH"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/toah/hd/gogh/hd_gogh.htm"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.getty.edu/art/exhibitions/ultra-violet"
+        "title": "Getty · Color change research",
+        "url": "https://www.getty.edu/news/getty-investigates-color-change-of-van-goghs-irises/"
       }
     ],
     "checked": "2026-11-19",
@@ -3365,15 +3189,11 @@
     "medium": "Oil on canvas",
     "location": "Van Gogh Museum",
     "dimensions": "50.2 × 103 cm",
-    "alt": "Wheatfield with Crows by Vincent van Gogh. Paths divide and change direction.",
+    "alt": "Wheatfield with Crows by Vincent van Gogh. Paths cut through a wheatfield beneath an unsettled sky as crows move across it.",
     "sources": [
       {
-        "title": "Reference record · Wheatfield with Crows",
-        "url": "https://en.wikipedia.org/wiki/Wheatfield_with_Crows"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.vangoghmuseum.nl/vgm/index.jsp?page=3343&lang=en#moretotell"
+        "title": "Van Gogh Museum · Wheatfield with Crows",
+        "url": "https://www.vangoghmuseum.nl/en/collection/s0149V1962"
       }
     ],
     "checked": "2026-11-19",
@@ -3407,11 +3227,11 @@
     "medium": "Oil on canvas",
     "location": "Art Institute of Chicago",
     "dimensions": "65 × 80 cm",
-    "alt": "The Basket of Apples by Paul Cézanne. The basket tilts toward the table.",
+    "alt": "The Basket of Apples by Paul Cézanne. Apples, a bottle, cloth and a tilted basket occupy a tabletop that does not behave like a single photographic viewpoint.",
     "sources": [
       {
-        "title": "Reference record · The Basket of Apples",
-        "url": "https://en.wikipedia.org/wiki/The_Basket_of_Apples"
+        "title": "Art Institute of Chicago · Basket of Apples",
+        "url": "https://www.artic.edu/artworks/111436/the-basket-of-apples"
       }
     ],
     "checked": "2026-11-19",
@@ -3445,11 +3265,15 @@
     "medium": "Oil on canvas",
     "location": "Musée d'Orsay",
     "dimensions": "47.5 × 57 cm",
-    "alt": "The Card Players · Orsay version by Paul Cézanne. The bottle divides and joins the figures.",
+    "alt": "The Card Players · Orsay version by Paul Cézanne. Two men attend to a game of cards in a restrained interior.",
     "sources": [
       {
-        "title": "Reference record · The Card Players · Orsay version",
-        "url": "https://en.wikipedia.org/wiki/The_Card_Players"
+        "title": "Musée d’Orsay · Collection",
+        "url": "https://www.musee-orsay.fr/en/collections"
+      },
+      {
+        "title": "Metropolitan Museum of Art · Cézanne",
+        "url": "https://www.metmuseum.org/essays/paul-cezanne-1839-1906"
       }
     ],
     "checked": "2026-11-19",
@@ -3478,24 +3302,20 @@
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Paul_C%C3%A9zanne%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "commonsTitle": "File:Paul Cézanne, French - The Large Bathers - Google Art Project.jpg",
     "title": "The Large Bathers · Philadelphia version",
-    "date": "c. 1898–1905",
+    "date": "1900–1906",
     "era": "post-impressionism",
     "medium": "Oil on canvas",
     "location": "Philadelphia Museum of Art",
     "dimensions": "210.5 × 250.8 cm",
-    "alt": "The Large Bathers · Philadelphia version by Paul Cézanne. Trees lean toward one another.",
+    "alt": "The Large Bathers · Philadelphia version by Paul Cézanne. Bathers occupy a landscape arranged into a large, structured composition.",
     "sources": [
       {
-        "title": "Reference record · The Large Bathers · Philadelphia version",
-        "url": "https://en.wikipedia.org/wiki/The_Bathers_%28C%C3%A9zanne%29"
+        "title": "Philadelphia Museum of Art · Large Bathers",
+        "url": "https://www.philamuseum.org/objects/104464"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.philamuseum.org/collection/object/104464"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nationalgallery.org.uk/paintings/paul-cezanne-bathers-les-grandes-baigneuses"
+        "title": "Philadelphia Museum of Art · Cézanne and Beyond",
+        "url": "https://www.philamuseum.org/exhibitions/cezanne-and-beyond"
       }
     ],
     "checked": "2026-11-19",
@@ -3529,11 +3349,15 @@
     "medium": "Oil on canvas",
     "location": "Foundation E.G. Bührle",
     "dimensions": "80 × 64.5 cm",
-    "alt": "The Boy in the Red Vest by Paul Cézanne. The torso leans toward an arm.",
+    "alt": "The Boy in the Red Vest by Paul Cézanne. A seated boy in a red vest leans into an absorbed pose.",
     "sources": [
       {
-        "title": "Reference record · The Boy in the Red Vest",
-        "url": "https://en.wikipedia.org/wiki/The_Boy_in_the_Red_Vest"
+        "title": "Foundation E. G. Bührle · Collection",
+        "url": "https://www.buehrle.ch/en/collection/"
+      },
+      {
+        "title": "Metropolitan Museum of Art · Cézanne",
+        "url": "https://www.metmuseum.org/essays/paul-cezanne-1839-1906"
       }
     ],
     "checked": "2026-11-19",
@@ -3567,15 +3391,15 @@
     "medium": "Oil on canvas",
     "location": "The Courtauld, London",
     "dimensions": "",
-    "alt": "Mont Sainte-Victoire with Large Pine by Paul Cézanne. A pine frames the nearer view.",
+    "alt": "Mont Sainte-Victoire with Large Pine by Paul Cézanne. Mont Sainte-Victoire appears within a landscape built from related color patches.",
     "sources": [
       {
-        "title": "Reference record · Mont Sainte-Victoire with Large Pine",
-        "url": "https://en.wikipedia.org/wiki/Mont_Sainte-Victoire_%28C%C3%A9zanne%29"
+        "title": "Courtauld · Collection",
+        "url": "https://courtauld.ac.uk/gallery/collection/"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/art/metpublications/The_Annenberg_Collection_Masterpieces_of_Impressionism_and_Post_Impressionism"
+        "title": "Metropolitan Museum of Art · Cézanne",
+        "url": "https://www.metmuseum.org/essays/paul-cezanne-1839-1906"
       }
     ],
     "checked": "2026-11-19",
@@ -3609,11 +3433,11 @@
     "medium": "Oil on canvas",
     "location": "The Courtauld, London",
     "dimensions": "",
-    "alt": "Still Life with Plaster Cupid by Paul Cézanne. The pale sculpture catches light.",
+    "alt": "Still Life with Plaster Cupid by Paul Cézanne. A plaster Cupid shares a tabletop with fruit and studio objects.",
     "sources": [
       {
-        "title": "Reference record · Still Life with Plaster Cupid",
-        "url": "https://courtauld.ac.uk/highlights/still-life-with-plaster-cupid/"
+        "title": "Courtauld · Still Life with Plaster Cupid",
+        "url": "https://gallerycollections.courtauld.ac.uk/object-p-1948-sc-59"
       }
     ],
     "checked": "2026-11-19",
@@ -3647,18 +3471,10 @@
     "medium": "Oil on canvas",
     "location": "Musée d'Orsay",
     "dimensions": "55 × 66 cm",
-    "alt": "The Hanged Man's House by Paul Cézanne. The road rises between structures.",
+    "alt": "The Hanged Man's House by Paul Cézanne. A cluster of houses and a steep route form an enclosed landscape.",
     "sources": [
       {
-        "title": "Reference record · The Hanged Man's House",
-        "url": "https://en.wikipedia.org/wiki/The_Hanged_Man%27s_House"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.musee-orsay.fr/en/collections/works-in-focus/search/commentaire/commentaire_id/la-maison-du-pendu-8824.html?no_cache=1&cHash=702eaca4ea"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Musée d’Orsay · House of the Hanged Man",
         "url": "https://www.musee-orsay.fr/en/artworks/la-maison-du-pendu-auvers-sur-oise-1476"
       }
     ],
@@ -3693,19 +3509,11 @@
     "medium": "Oil on canvas",
     "location": "Art Institute of Chicago",
     "dimensions": "100.3 × 66.1 cm",
-    "alt": "The Child's Bath by Mary Cassatt. The basin forms a clear circle.",
+    "alt": "The Child's Bath by Mary Cassatt. An adult washes a child in a closely observed domestic act.",
     "sources": [
       {
-        "title": "Reference record · The Child's Bath",
-        "url": "https://en.wikipedia.org/wiki/The_Child%27s_Bath"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/art/collection/search/352206"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.metmuseum.org/art/collection/search/45477"
+        "title": "Art Institute of Chicago · The Child’s Bath",
+        "url": "https://www.artic.edu/artworks/111442/the-childs-bath"
       }
     ],
     "checked": "2026-11-19",
@@ -3739,19 +3547,11 @@
     "medium": "Oil on canvas",
     "location": "National Gallery of Art",
     "dimensions": "89.5 × 129.8 cm",
-    "alt": "Little Girl in a Blue Armchair by Mary Cassatt. Chairs repeat across the room.",
+    "alt": "Little Girl in a Blue Armchair by Mary Cassatt. A child occupies a large room of blue upholstered chairs.",
     "sources": [
       {
-        "title": "Reference record · Little Girl in a Blue Armchair",
-        "url": "https://en.wikipedia.org/wiki/Little_Girl_in_a_Blue_Armchair"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "National Gallery of Art · Little Girl in a Blue Armchair",
         "url": "https://www.nga.gov/artworks/61368-little-girl-blue-armchair"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.nga.gov/collection/art-object-page.61368.html#overview"
       }
     ],
     "checked": "2026-11-19",
@@ -3785,19 +3585,11 @@
     "medium": "Oil on canvas",
     "location": "National Gallery of Art",
     "dimensions": "",
-    "alt": "The Boating Party by Mary Cassatt. The boatman faces away.",
+    "alt": "The Boating Party by Mary Cassatt. A boatman, a woman and a child occupy a tightly cropped view of a boat.",
     "sources": [
       {
-        "title": "Reference record · The Boating Party",
-        "url": "https://en.wikipedia.org/wiki/The_Boating_Party"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "National Gallery of Art · The Boating Party",
         "url": "https://www.nga.gov/artworks/46569-boating-party"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.guggenheim.org/arts-curriculum/topic/aestheticism-and-japans"
       }
     ],
     "checked": "2026-11-19",
@@ -3831,19 +3623,11 @@
     "medium": "Oil on canvas",
     "location": "Museum of Fine Arts",
     "dimensions": "",
-    "alt": "In the Loge by Mary Cassatt. Opera glasses extend the woman’s gaze.",
+    "alt": "In the Loge by Mary Cassatt. A woman looks through opera glasses in a theater while another spectator looks toward her.",
     "sources": [
       {
-        "title": "Reference record · In the Loge",
-        "url": "https://en.wikipedia.org/wiki/In_the_Loge"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://collections.mfa.org/objects/273912"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://collections.mfa.org/objects/31365"
+        "title": "Museum of Fine Arts Boston · In the Loge",
+        "url": "https://collections.mfa.org/objects/31365/in-the-loge"
       }
     ],
     "checked": "2026-11-19",
@@ -3877,14 +3661,10 @@
     "medium": "Oil on canvas",
     "location": "Metropolitan Museum of Art",
     "dimensions": "92.4 × 73.7 cm",
-    "alt": "Young Mother Sewing by Mary Cassatt. The adult’s hands remain occupied.",
+    "alt": "Young Mother Sewing by Mary Cassatt. A woman sews while a child leans against her.",
     "sources": [
       {
-        "title": "Reference record · Young Mother Sewing",
-        "url": "https://en.wikipedia.org/wiki/Young_Mother_Sewing_%28Mary_Cassatt%29"
-      },
-      {
-        "title": "Museum / collection reference",
+        "title": "Metropolitan Museum of Art · Young Mother Sewing",
         "url": "https://www.metmuseum.org/art/collection/search/10425"
       }
     ],
@@ -3919,10 +3699,10 @@
     "medium": "Oil on canvas",
     "location": "The Huntington, California",
     "dimensions": "",
-    "alt": "Breakfast in Bed by Mary Cassatt. The mother looks toward the child.",
+    "alt": "Breakfast in Bed by Mary Cassatt. A mother holds a child in bed, but their gazes lead in different directions.",
     "sources": [
       {
-        "title": "Reference record · Breakfast in Bed",
+        "title": "The Huntington · Breakfast in Bed",
         "url": "https://www.huntington.org/collections/mus-5291"
       }
     ],
@@ -3957,11 +3737,11 @@
     "medium": "Oil on canvas",
     "location": "Terra Foundation for American Art",
     "dimensions": "",
-    "alt": "Summertime by Mary Cassatt. The boat’s rim cuts a strong curve.",
+    "alt": "Summertime by Mary Cassatt. Two women share a small boat on summer water.",
     "sources": [
       {
-        "title": "Reference record · Summertime",
-        "url": "https://conversations.terraamericanart.org/artworks/summertime/"
+        "title": "Terra Foundation · Summertime",
+        "url": "https://collection.terraamericanart.org/objects/85/summertime"
       }
     ],
     "checked": "2026-11-19",
@@ -3995,15 +3775,15 @@
     "medium": "oil on canvas",
     "location": "Tretyakov Gallery",
     "dimensions": "200.6 × 302.2 cm",
-    "alt": "Composition VII by Wassily Kandinsky. Curves and diagonals collide.",
+    "alt": "Composition VII by Wassily Kandinsky. Dense color and interwoven forms resist a single recognizable scene.",
     "sources": [
       {
-        "title": "Reference record · Composition VII",
-        "url": "https://en.wikipedia.org/wiki/Composition_VII"
+        "title": "State Tretyakov Gallery · New Tretyakov",
+        "url": "https://www.tretyakovgallery.ru/for-visitors/museums/novaya-tretyakovka/"
       },
       {
-        "title": "Museum / collection reference",
-        "url": "https://www.centrepompidou.fr/id/cMejBMj/r65b86k/fr"
+        "title": "Centre Pompidou · Kandinsky monograph",
+        "url": "https://mediation.centrepompidou.fr/education/ressources/ENS-kandinsky-mono-EN/ENS-kandinsky-monographie-EN.html"
       }
     ],
     "checked": "2026-11-19",
@@ -4037,10 +3817,10 @@
     "medium": "Oil on canvas",
     "location": "Solomon R. Guggenheim Museum, New York",
     "dimensions": "",
-    "alt": "Composition VIII by Wassily Kandinsky. Large and small circles create different weights.",
+    "alt": "Composition VIII by Wassily Kandinsky. Circles, lines and angular forms interact on a pale ground.",
     "sources": [
       {
-        "title": "Reference record · Composition VIII",
+        "title": "Guggenheim · Composition 8",
         "url": "https://www.guggenheim.org/artwork/1924"
       }
     ],
@@ -4075,11 +3855,11 @@
     "medium": "Oil on canvas",
     "location": "Centre Pompidou, Paris",
     "dimensions": "",
-    "alt": "Yellow–Red–Blue by Wassily Kandinsky. Yellow dominates a more angular area.",
+    "alt": "Yellow–Red–Blue by Wassily Kandinsky. A yellow angular zone and a large blue circular form occupy contrasting areas, with red and many smaller elements connecting them.",
     "sources": [
       {
-        "title": "Reference record · Yellow–Red–Blue",
-        "url": "https://en.wikipedia.org/wiki/Wassily_Kandinsky"
+        "title": "Centre Pompidou · Yellow–Red–Blue dossier",
+        "url": "https://mediation.centrepompidou.fr/education/ressources/ENS-Kandinsky-jaune-rouge-bleu/ENS-Kandinsky-jaune-rouge-bleu-part1.html"
       }
     ],
     "checked": "2026-11-19",
@@ -4113,10 +3893,10 @@
     "medium": "Oil on canvas",
     "location": "Solomon R. Guggenheim Museum, New York",
     "dimensions": "",
-    "alt": "Several Circles by Wassily Kandinsky. Some circles overlap transparently.",
+    "alt": "Several Circles by Wassily Kandinsky. Colored circles overlap against a dark field.",
     "sources": [
       {
-        "title": "Reference record · Several Circles",
+        "title": "Guggenheim · Several Circles",
         "url": "https://www.guggenheim.org/artwork/1992"
       }
     ],
@@ -4151,11 +3931,15 @@
     "medium": "Oil on canvas",
     "location": "Collection E. G. Bührle, Zurich",
     "dimensions": "",
-    "alt": "The Blue Rider by Wassily Kandinsky. The rider forms a compact accent.",
+    "alt": "The Blue Rider by Wassily Kandinsky. A rider crosses a landscape in a small painting from before Kandinsky’s mature abstraction.",
     "sources": [
       {
-        "title": "Reference record · The Blue Rider",
-        "url": "https://en.wikipedia.org/wiki/The_Blue_Rider_(Kandinsky_painting)"
+        "title": "Foundation E. G. Bührle · Collection",
+        "url": "https://www.buehrle.ch/en/collection/"
+      },
+      {
+        "title": "Guggenheim · Kandinsky biography",
+        "url": "https://www.guggenheim.org/artwork/artist/vasily-kandinsky"
       }
     ],
     "checked": "2026-11-19",
@@ -4189,19 +3973,11 @@
     "medium": "oil on canvas",
     "location": "Musée National d'Art Moderne",
     "dimensions": "105 × 98 cm",
-    "alt": "On White II by Wassily Kandinsky. Dark diagonals establish opposing directions.",
+    "alt": "On White II by Wassily Kandinsky. Angular dark forms and colored elements cross a pale field.",
     "sources": [
       {
-        "title": "Reference record · On White II",
-        "url": "https://en.wikipedia.org/wiki/Auf_Weiss_II_%28Sur_blanc_II%29"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.centrepompidou.fr/en/ressources/oeuvre/cKaan6A"
-      },
-      {
-        "title": "Museum / collection reference",
-        "url": "https://www.centrepompidou.fr/fr/ressources/oeuvre/cgj9ap9"
+        "title": "Centre Pompidou · Kandinsky monograph",
+        "url": "https://mediation.centrepompidou.fr/education/ressources/ENS-kandinsky-mono-EN/ENS-kandinsky-monographie-EN.html"
       }
     ],
     "checked": "2026-11-19",
