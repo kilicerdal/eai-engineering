@@ -1,0 +1,51 @@
+{
+  "checked": "2026-11-20",
+  "scope": "Object identity and public-domain designation checked for these particular reproductions.",
+  "images": [
+    {
+      "image": "/images/art/comparison-bedroom-chicago.webp",
+      "width": 1000,
+      "height": 791,
+      "credit": "Vincent van Gogh, The Bedroom, 1889 · Art Institute of Chicago, Helen Birch Bartlett Memorial Collection, 1926.417",
+      "record": "https://commons.wikimedia.org/wiki/File:1926.417_-_The_Bedroom_Vincent_van_Gogh_1889.jpg",
+      "rights": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:1926.417_-_The_Bedroom_Vincent_van_Gogh_1889.jpg"
+    },
+    {
+      "image": "/images/art/comparison-lundens.webp",
+      "width": 1000,
+      "height": 784,
+      "credit": "Gerrit Lundens, after Rembrandt · The Nightwatch, after 1642 · National Gallery, NG289",
+      "record": "https://commons.wikimedia.org/wiki/File:Lundens_-_Nachtwache-Kopie.jpg",
+      "rights": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Lundens_-_Nachtwache-Kopie.jpg"
+    },
+    {
+      "image": "/images/art/comparison-rouen-a.webp",
+      "width": 646,
+      "height": 1000,
+      "credit": "Claude Monet, Rouen Cathedral, West Façade, 1894 · NGA, Chester Dale Collection, 1963.10.49",
+      "record": "https://www.nga.gov/artworks/46524-rouen-cathedral-west-facade",
+      "rights": "Public domain",
+      "licenseUrl": "https://www.nga.gov/artworks/46524-rouen-cathedral-west-facade"
+    },
+    {
+      "image": "/images/art/comparison-rouen-b.webp",
+      "width": 655,
+      "height": 1000,
+      "credit": "Claude Monet, Rouen Cathedral, West Façade, Sunlight, 1894 · NGA",
+      "record": "https://www.nga.gov/artworks/46654-rouen-cathedral-west-facade-sunlight",
+      "rights": "Public domain",
+      "licenseUrl": "https://www.nga.gov/artworks/46654-rouen-cathedral-west-facade-sunlight"
+    },
+    {
+      "image": "/images/art/comparison-cards-met.webp",
+      "width": 599,
+      "height": 477,
+      "credit": "Paul Cézanne, The Card Players, 1890–92 · The Met, Bequest of Stephen C. Clark, 1960, 61.101.1",
+      "record": "https://www.metmuseum.org/art/collection/search/435868",
+      "rights": "Public domain",
+      "licenseUrl": "https://www.metmuseum.org/art/collection/search/435868"
+    }
+  ]
+}

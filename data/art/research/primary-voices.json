@@ -1,0 +1,61 @@
+[
+  {
+    "artist": "Vincent van Gogh",
+    "work": "van-gogh-02",
+    "date": "30 April 1885",
+    "type": "Letter to Theo · translated excerpt",
+    "quote": "they have thus honestly earned their food",
+    "source": "https://vangoghletters.org/vg/letters/let497/letter.html",
+    "sourceTitle": "Van Gogh Letters · letter 497, edited scholarly edition",
+    "context": "Van Gogh is describing what he hoped The Potato Eaters would communicate about labor. The letter is an argument addressed to his brother and professional supporter, not a detached social survey.",
+    "limit": "The artist’s intention does not establish the models’ own experience or guarantee the effect on every viewer. The English wording is a translation. Read the complete letter and editorial notes before generalizing from this short excerpt.",
+    "corroboration": "https://www.moma.org/collection/artists/2206"
+  },
+  {
+    "artist": "Jackson Pollock",
+    "work": "pollock-02",
+    "date": "1947",
+    "type": "Artist’s statement, quoted in the museum record",
+    "quote": "large movable pictures which will function between the easel and the mural",
+    "source": "https://www.metmuseum.org/art/collection/search/488978",
+    "sourceTitle": "The Met · Autumn Rhythm object record",
+    "context": "The museum quotes Pollock’s statement to connect large portable paintings with the ambitions of mural scale. It predates Autumn Rhythm by three years; it is context for a practice, not a report of this canvas’s exact execution.",
+    "limit": "A public statement can frame an ambition without explaining every later material choice. The museum supplies the quoted passage; this display does not claim direct examination of an original manuscript.",
+    "companion": {
+      "name": "James Coddington and Jennifer Hickey",
+      "date": "2013 · later conservation account",
+      "text": "Their treatment report distinguishes Pollock’s original materials from restoration paint, and explains a decision to retain much aging-related cracking. This gives a material counterpoint to the artist’s earlier ambition for large portable pictures.",
+      "source": "https://www.moma.org/explore/inside_out/2013/05/29/momas-jackson-pollock-conservation-project-wrapping-up-treatment-of-one-number-31-1950/",
+      "limit": "This is a paraphrase of later technical witnesses, not criticism contemporary with Pollock or a quotation of his intentions."
+    }
+  },
+  {
+    "artist": "Claude Monet",
+    "work": "monet-05",
+    "date": "1893 · garden project context",
+    "type": "Artist’s words, quoted by the holding institution",
+    "quote": "for the pleasure of the eye and also for motifs to paint",
+    "source": "https://www.metmuseum.org/art/collection/search/437127",
+    "sourceTitle": "The Met · Bridge over a Pond of Water Lilies",
+    "context": "The institution places these words in its account of Monet’s acquisition and development of the Giverny water garden. The setting was something made for looking as well as a source of motifs; landscape and pictorial project were connected.",
+    "limit": "This is a short institutional quotation about the garden, not an assertion that the NGA bridge canvas was commissioned in 1893. The cited Met painting is a different work in the series. The full archival document has not been reproduced here."
+  },
+  {
+    "artist": "Alfred H. Barr Jr.",
+    "work": "picasso-01",
+    "date": "1939",
+    "type": "Museum advocacy · director’s words in the institutional history",
+    "quote": "one of the few pictures in the history of modern art",
+    "source": "https://www.moma.org/research/conservation/demoiselles/analysis_2_c.html",
+    "sourceTitle": "MoMA · Les Demoiselles acquisition and 1939 exhibition",
+    "context": "The excerpt begins Barr’s argument for acquiring Les Demoiselles. Read the complete sentence in the source: his praise helped persuade museum trustees and belongs to a specific institutional decision.",
+    "limit": "This is a director’s advocacy more than three decades after the painting’s making. It does not record Picasso’s intention, every visitor’s response or an impartial consensus.",
+    "companion": {
+      "name": "A different evidentiary question",
+      "date": "1907–1916 · making and first public exhibition",
+      "text": "The museum’s object entry separates early studio reactions from the first public exhibition. Comparing that chronology with the 1939 acquisition prevents later institutional praise from being projected backward onto the initial encounter.",
+      "source": "https://www.moma.org/collection/works/79766",
+      "limit": "This companion is an editorial comparison of documented stages, not a newly discovered contemporary quotation."
+    }
+  }
+]

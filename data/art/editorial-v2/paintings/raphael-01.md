@@ -37,3 +37,18 @@ That context complicates an easy opposition between secular learning and religio
 
 ## What a comparison can responsibly show | interpretation |
 Place the fresco beside Leonardo’s Last Supper and consider how each makes a large group coherent. Both establish a strong center and distribute differentiated actions around it. Raphael, however, permits several simultaneous forms of attention rather than organizing everyone around a single disruptive announcement. The comparison reveals alternative ways to picture collective intelligence; it does not make the works interchangeable statements about harmony.
+
+## An argument to test through looking | analysis |
+The architectural center is immediately persuasive, but the painting becomes richer when the viewer leaves it. Around the central pair, people read, calculate, listen, write and address one another. The gestures organize small communities of attention. These groups do not look like interchangeable units added to fill a grand room. Each proposes a different way in which knowledge becomes visible: through demonstration, reflection, dispute or an encounter between a teacher and a learner.
+
+Raphael’s achievement is to maintain a shared field without making those activities identical. The steps divide the space into levels, while diagonals of arms, bodies and gazes join one group to another. A viewer can follow local exchanges and still recover the large symmetry. Intellectual order is thus experienced as a relationship between parts and whole. It is not merely announced by the dignity of the building or by attaching famous names to faces.
+
+## Architecture, authority and the imagined gathering | analysis |
+The setting performs more than a decorative service. Repeated openings make the central axis feel continuous beyond the foreground figures. The space offers the promise of a world that can be traversed and understood. Against this regularity, the variety of bodily attitudes becomes especially noticeable. A reclining person on the steps interrupts the ascent; a bent reader concentrates attention downward; an extended arm establishes a different direction. The ordered architecture gives those deviations a legible measure.
+
+This is an invented assembly made for a Renaissance room, not a recovered record of ancient conversation. Its historical reach is part of its ambition. Think about the cultural work involved in bringing figures from different times into one visual present. The image can make inherited learning appear available to a new institution and audience. That does not mean every person shown endorses the same argument, or that the fresco substitutes for the difficult texts it evokes.
+
+## Reading the center without stopping there | analysis |
+The contrasting gestures of Plato and Aristotle are often used as a compact explanation of their philosophies. They provide a useful first orientation, but no hand can summarize a whole philosophical system. The gestures work pictorially because they diverge while the figures continue to walk together. Their common scale and position hold the contrast in balance. To stop at a simple opposition between sky and earth would miss the image’s larger concern with coexistence.
+
+Return to a peripheral group after studying the central pair. Ask whether learning there appears solitary, conversational or demonstrative. Then locate the visual connection back to the broader scene. The fresco invites this oscillation: the center supplies orientation, while the margins supply intellectual texture. It may be more productive to ask how Raphael stages the conditions of inquiry than to treat the wall as a puzzle in which the only task is identifying every historical person.

@@ -14,3 +14,5 @@ Color differentiates the bodies and drapery into emphatic areas. The surfaces se
 The sharply articulated volumes invite comparison with Michelangelo’s sculptural practice. This is a comparison of formal means, not a claim that paint and marble behave identically. Here changes of hue, illumination and contour provide the means of constructing a body. The painting’s intensity comes from using those resources to make forms both solid and dynamically interdependent.
 ## Beyond a single symbolic solution | interpretation |
 The background nudes and the small Baptist have prompted different accounts of the image’s religious structure. Those proposals should be attributed and distinguished from the immediately visible action of the family. The work remains compelling before the debate is resolved: it turns a familiar sacred grouping into an investigation of how several bodies can form one coherent action. That is an artistic argument made through composition, not merely a display of anatomical virtuosity.
+
+@source Uffizi · Doni Tondo|https://www.uffizi.it/en/artworks/holy-family-known-as-the-doni-tondo|Support, medium and individual object record

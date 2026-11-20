@@ -13,3 +13,5 @@ This imbalance is the painting’s principal action. A small, specific presence 
 The work has encouraged readings about isolation, fear and human insignificance. Those responses can be supported by its scale relations, but none should be presented as a recovered caption written by Goya. Its openness is not a license to claim that every interpretation is equally evidenced.
 
 The painting demonstrates how absence can carry intensity. By withholding the dog’s complete circumstances, Goya makes the act of looking outward more consequential than a fully narrated event. The apparent simplicity is therefore a highly demanding organization of attention.
+
+@source Fundación Goya en Aragón · Half-submerged Dog|https://www.fundaciongoyaenaragon.org/eng/obra/perro-semihundido/671?print=1|Support, medium and individual object record

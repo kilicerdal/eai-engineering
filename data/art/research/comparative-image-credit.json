@@ -1,0 +1,15 @@
+{
+  "title": "Potato Eaters",
+  "artist": "Vincent van Gogh",
+  "date": "1885",
+  "institution": "National Gallery of Art, Washington",
+  "credit": "Rosenwald Collection",
+  "accession": "1951.10.33",
+  "medium": "crayon lithograph with scraping printed in dark brown on thin wove paper",
+  "source": "https://www.nga.gov/artworks/39824-potato-eaters",
+  "download": "https://api.nga.gov/iiif/6b705026-f679-437a-b6a8-063fb59eaa75/full/1200,/0/default.jpg",
+  "rights": "Public domain; NGA object page explicitly identifies its media as free and public domain",
+  "derivative": "/images/art/potato-eaters-lithograph-nga.webp",
+  "processing": "Resized museum JPEG converted to WebP; no generative alteration",
+  "bytes": 468622
+}

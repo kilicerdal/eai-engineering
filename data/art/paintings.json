@@ -230,7 +230,7 @@
     "title": "Ginevra de' Benci",
     "date": "c. 1474–1478",
     "era": "renaissance",
-    "medium": "Oil on canvas",
+    "medium": "Oil on panel",
     "location": "National Gallery of Art",
     "dimensions": "38.1 × 37 cm",
     "alt": "Ginevra de' Benci by Leonardo da Vinci. A young woman appears against a dense juniper bush.",
@@ -242,6 +242,10 @@
       {
         "title": "National Gallery · Leonardo",
         "url": "https://www.nationalgallery.org.uk/artists/leonardo-da-vinci"
+      },
+      {
+        "title": "National Gallery of Art · Ginevra de’ Benci",
+        "url": "https://www.nga.gov/artworks/50724-ginevra-de-benci-obverse"
       }
     ],
     "checked": "2026-11-19",
@@ -314,7 +318,7 @@
     "title": "Doni Tondo (Doni Madonna)",
     "date": "c. 1507",
     "era": "renaissance",
-    "medium": "Oil on canvas",
+    "medium": "Tempera grassa on wood",
     "location": "Uffizi",
     "dimensions": "",
     "alt": "Doni Tondo (Doni Madonna) by Michelangelo. The Holy Family fills a circular panel with bodies that turn and connect.",
@@ -1646,8 +1650,8 @@
     "alt": "Self-Portrait as the Allegory of Painting by Artemisia Gentileschi. A painter turns toward her work in a pose that also invokes the traditional personification of Painting.",
     "sources": [
       {
-        "title": "Royal Collection Trust · La Pittura",
-        "url": "https://www.rct.uk/collection/405551/self-portrait-as-the-allegory-of-painting-la-pittura"
+        "title": "Royal Collection Trust · Artemisia Gentileschi and La Pittura",
+        "url": "https://www.rct.uk/collection/stories/artemisia-gentileschi"
       }
     ],
     "checked": "2026-11-19",
@@ -1960,7 +1964,7 @@
     "title": "The Dog",
     "date": "c. 1819–1823",
     "era": "romanticism",
-    "medium": "Oil on canvas",
+    "medium": "Oil on plaster, transferred to canvas",
     "location": "Museo del Prado",
     "dimensions": "131.5 × 79.3 cm",
     "alt": "The Dog by Francisco de Goya. A small dog’s head appears within a largely empty field.",
@@ -1968,6 +1972,10 @@
       {
         "title": "Museo del Prado · Collection",
         "url": "https://www.museodelprado.es/en/the-collection"
+      },
+      {
+        "title": "Fundación Goya en Aragón · Half-submerged Dog",
+        "url": "https://www.fundaciongoyaenaragon.org/eng/obra/perro-semihundido/671?print=1"
       }
     ],
     "checked": "2026-11-19",
@@ -2428,7 +2436,7 @@
     "title": "Woman with a Parasol – Madame Monet and Her Son",
     "date": "1875",
     "era": "impressionism",
-    "medium": "Canvas",
+    "medium": "Oil on canvas",
     "location": "National Gallery of Art",
     "dimensions": "100 × 81 cm",
     "alt": "Woman with a Parasol – Madame Monet and Her Son by Claude Monet. A woman and child stand outdoors beneath a parasol.",
@@ -3990,5 +3998,473 @@
       "White remains an active interval."
     ],
     "question": "How can empty-looking space take part in a composition?"
+  },
+  {
+    "id": "picasso-01",
+    "artist": "picasso",
+    "index": 100,
+    "title": "Les Demoiselles d’Avignon",
+    "date": "1907",
+    "era": "modernism",
+    "medium": "Oil on canvas",
+    "dimensions": "243.9 × 233.7 cm",
+    "location": "Museum of Modern Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.moma.org/collection/works/79766",
+    "imageSource": "https://www.moma.org/collection/works/79766",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "Five figures occupy a compressed interior. Faces do not share one descriptive language, and the angular planes make the surrounding space press forward rather than recede. The encounter concerns the viewer’s position as much as the represented bodies.",
+    "how": "The bodies refuse a single smooth progression from light into shadow. Angular changes can make a limb seem constructed from separate surfaces. Rather than searching for anatomically correct volume, attend to the sequence by which your eye recognizes a torso, loses its continuity and reconstructs it. The surrounding fragments participate in that work: background and body are not cleanly separated into passive setting and active subject.",
+    "details": [
+      "The bodies refuse a single smooth progression from light into shadow. Angular changes can make a limb seem constructed from separate surfaces. Rather than searching for anatomically correct volume, attend to the sequence by which your eye recognizes a torso, loses its continuity and reconstructs it. The surrounding fragments participate in that work: background and body are not cleanly separated into passive setting and active subject.",
+      "The figures’ address makes distance difficult to maintain. Several look outward, while the seated figure complicates the relation between a turned body and a confronting face. That discrepancy puts the spectator in a position of uncertainty. Is the picture an invitation, an accusation or a demonstration of pictorial power? Each is an interpretive proposal. None follows automatically from the fact that the figures look toward us.",
+      "The small still-life group at the bottom creates another threshold. Its pointed forms can appear to advance into the viewer’s space even as the figures flatten into the surface. Compare that local projection with the refusal of a stable room. The painting can produce force without providing a coherent stage, and its confrontation depends on that contradiction rather than on formal innovation alone."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museum of Modern Art, New York · Les Demoiselles d’Avignon",
+        "url": "https://www.moma.org/collection/works/79766"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "Contains nudity.",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "picasso-02",
+    "artist": "picasso",
+    "index": 101,
+    "title": "Girl before a Mirror",
+    "date": "1932",
+    "era": "modernism",
+    "medium": "Oil on canvas",
+    "dimensions": "162.3 × 130.2 cm",
+    "location": "Museum of Modern Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.moma.org/collection/works/78311",
+    "imageSource": "https://www.moma.org/collection/works/78311",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "A figure reaches toward a reflection that does not simply repeat her. Curved divisions, saturated color and emphatic outlines turn resemblance into a negotiation between surface and imagined interior.",
+    "how": "The oval mirror establishes an enclosure within the canvas. Follow the arm that bridges the figure and its reflected counterpart: the gesture promises contact, but the two zones do not behave as a mechanically consistent optical system. The border of the mirror is therefore more than furniture. It is a device for arranging different kinds of depiction within a single field.",
+    "details": [
+      "The oval mirror establishes an enclosure within the canvas. Follow the arm that bridges the figure and its reflected counterpart: the gesture promises contact, but the two zones do not behave as a mechanically consistent optical system. The border of the mirror is therefore more than furniture. It is a device for arranging different kinds of depiction within a single field.",
+      "Color can be read as a construction of bodily volume and as a refusal of ordinary flesh. The face is divided, the torso patterned, and the reflection darker and differently articulated. These differences make a literal comparison possible without settling its meaning. A viewer may associate the changes with time, fear or self-scrutiny, but should first describe which changes in contour and color support that association.",
+      "The patterned background competes with the body rather than providing neutral space. It is worth temporarily ignoring facial expression and following repeated curves instead. Their recurrence connects figure, mirror and setting. The surface then reads as one organized structure, even as the subject proposes a division between an outward appearance and another image of the self."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museum of Modern Art, New York · Girl before a Mirror",
+        "url": "https://www.moma.org/collection/works/78311"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "Contains nudity.",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "dali-01",
+    "artist": "dali",
+    "index": 102,
+    "title": "The Persistence of Memory",
+    "date": "1931",
+    "era": "surrealism",
+    "medium": "Oil on canvas",
+    "dimensions": "24.1 × 33 cm",
+    "location": "Museum of Modern Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.moma.org/collection/works/79018",
+    "imageSource": "https://www.moma.org/collection/works/79018",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "A very small painting gives improbable objects the clarity of evidence. The landscape appears stable while the things used to measure time lose their resistance.",
+    "how": "Begin with the relationship between the near plane and the distant cliffs. The horizon gives the eye a familiar spatial anchor. Against that reassurance, the soft watches interrupt the distinction between a rigid manufactured object and yielding organic matter. The impossible event is persuasive because surrounding surfaces continue to behave with descriptive consistency.",
+    "details": [
+      "Begin with the relationship between the near plane and the distant cliffs. The horizon gives the eye a familiar spatial anchor. Against that reassurance, the soft watches interrupt the distinction between a rigid manufactured object and yielding organic matter. The impossible event is persuasive because surrounding surfaces continue to behave with descriptive consistency.",
+      "The pale form at the center is difficult to name securely. A closed eye and eyelash-like forms encourage a bodily reading, while its low position and slack contour make it resemble something left on the ground. Rather than deciding immediately whether it is a portrait, trace the contour and notice where recognition becomes uncertain. That hesitation is an observable viewing experience, not proof of a particular dream.",
+      "The separation of hard and soft forms can produce an uneven tempo of looking. Sharp edges bring the gaze to a stop; sagging contours send it downward. Consider how a watch draped over an edge both repeats that edge and denies its firmness. Time is not simply illustrated by the presence of clocks. Its ordinary measuring instruments are placed in a material world where their authority becomes doubtful."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museum of Modern Art, New York · The Persistence of Memory",
+        "url": "https://www.moma.org/collection/works/79018"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "dali-02",
+    "artist": "dali",
+    "index": 103,
+    "title": "Metamorphosis of Narcissus",
+    "date": "1937",
+    "era": "surrealism",
+    "medium": "Oil on canvas",
+    "dimensions": "51.1 × 78.1 cm",
+    "location": "Tate, London",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/",
+    "imageSource": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "A crouched figure and a hand holding an egg share a contour. Seeing one form prepares the eye to discover another, making transformation an operation performed by the viewer.",
+    "how": "The doubled masses ask for a comparison of outlines before an interpretation of symbols. The bent figure creates an enclosed shape that the adjacent hand repeats. Follow the outer silhouette from top to base, then compare the internal divisions. Repetition makes a visual equivalence possible even though the two forms belong to different categories of object.",
+    "details": [
+      "The doubled masses ask for a comparison of outlines before an interpretation of symbols. The bent figure creates an enclosed shape that the adjacent hand repeats. Follow the outer silhouette from top to base, then compare the internal divisions. Repetition makes a visual equivalence possible even though the two forms belong to different categories of object.",
+      "The egg and emerging flower make transformation appear both fragile and precisely staged. Their delicacy contrasts with the weight of the hand and the stillness of the crouching figure. The image does not need to depict continuous motion. Instead it places different states beside each other and allows the eye to produce the passage between them.",
+      "The distant figures and architectural elements give the central comparison a larger theatrical environment. Shift attention to them and then return to the foreground pair. The dominant forms may become less self-evident after that interruption. This makes the act of recognition available for reflection: what seemed immediately visible can depend on a procedure, an expectation or a helpful verbal prompt."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Tate, London · Metamorphosis of Narcissus",
+        "url": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "pollock-01",
+    "artist": "pollock",
+    "index": 104,
+    "title": "One: Number 31, 1950",
+    "date": "1950",
+    "era": "abstract-expressionism",
+    "medium": "Oil and enamel paint on canvas",
+    "dimensions": "269.5 × 530.8 cm",
+    "location": "Museum of Modern Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.moma.org/collection/works/78386/",
+    "imageSource": "https://www.moma.org/collection/works/78386/",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "The network is neither an illustration nor an undifferentiated accident. Dense crossings, suspended lines and exposed canvas produce an extended field in which attention keeps changing scale.",
+    "how": "Try to find a single line and follow it without deciding what it represents. At a crossing it may disappear, continue under another mark or become indistinguishable from a neighboring trace. This makes looking an activity of provisional reconstruction. A network can be organized without offering a central figure, and it can be difficult to follow without being formless.",
+    "details": [
+      "Try to find a single line and follow it without deciding what it represents. At a crossing it may disappear, continue under another mark or become indistinguishable from a neighboring trace. This makes looking an activity of provisional reconstruction. A network can be organized without offering a central figure, and it can be difficult to follow without being formless.",
+      "The unpainted or less densely painted intervals matter as much as the thickest accumulations. They let the material ground register and create pauses within the field. If a reproduction makes these openings look like a flat background color, remind yourself that they belong to the object’s material surface. Different media and layers may behave differently under light.",
+      "The horizontal extension allows several local centers to coexist. Rather than insisting that the eye must travel along one prescribed route, compare two distant passages and ask how density and direction connect them. The edges are especially useful: do lines appear to end, turn or continue beyond the rectangle? Those choices affect whether the painting feels bounded, expansive or interrupted."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museum of Modern Art, New York · One: Number 31, 1950",
+        "url": "https://www.moma.org/collection/works/78386/"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "pollock-02",
+    "artist": "pollock",
+    "index": 105,
+    "title": "Autumn Rhythm: Number 30, 1950",
+    "date": "1950",
+    "era": "abstract-expressionism",
+    "medium": "Oil-modified alkyd resin on canvas",
+    "dimensions": "269.9 × 528.3 cm",
+    "location": "Metropolitan Museum of Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.metmuseum.org/art/collection/search/488978",
+    "imageSource": "https://www.metmuseum.org/art/collection/search/488978",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "An extended web of marks holds open spaces within its movement. Rhythm emerges through uneven recurrence rather than through a repeated decorative unit.",
+    "how": "Look for the space between two dark lines, then follow how that interval widens and narrows. This reverses the usual temptation to attend only to the active mark. The painting’s rhythm can depend on an opening, a thinning of density or an exposed portion of canvas. These pauses allow movement to be perceived rather than merely counted.",
+    "details": [
+      "Look for the space between two dark lines, then follow how that interval widens and narrows. This reverses the usual temptation to attend only to the active mark. The painting’s rhythm can depend on an opening, a thinning of density or an exposed portion of canvas. These pauses allow movement to be perceived rather than merely counted.",
+      "The relationship between dark and lighter marks creates more than a simple figure against ground. Some crossings encourage one layer to appear nearer, while others flatten into the larger field. The result can suggest depth without building an illusionistic room. Ask whether a passage feels layered, tangled or suspended, and identify the particular overlap that produces that sensation.",
+      "The width of the canvas makes a single fixed viewpoint inadequate. A viewer nearby encounters traces and their material differences; a viewer farther away can compare the disposition of denser and more open areas. In a digital reproduction, alternate between the whole image and a detail while recognizing that enlargement does not recover physical scale. The two encounters complement rather than replace one another."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Metropolitan Museum of Art, New York · Autumn Rhythm: Number 30, 1950",
+        "url": "https://www.metmuseum.org/art/collection/search/488978"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "matisse-01",
+    "artist": "matisse",
+    "index": 106,
+    "title": "The Red Studio",
+    "date": "1911",
+    "era": "modernism",
+    "medium": "Oil on canvas",
+    "dimensions": "181 × 219.1 cm",
+    "location": "Museum of Modern Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.moma.org/collection/works/78389",
+    "imageSource": "https://www.moma.org/collection/works/78389",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "Red joins the surfaces of a room without erasing every object inside it. The studio becomes an arrangement of intervals, outlines and paintings within the painting.",
+    "how": "Begin with a piece of furniture and trace its outline. At some points the boundary is formed by an interruption in the red rather than by a dark contour drawn over it. The result can make an object seem both present and excavated from a continuous field. Space is suggested, but the field repeatedly returns the eye to the surface.",
+    "details": [
+      "Begin with a piece of furniture and trace its outline. At some points the boundary is formed by an interruption in the red rather than by a dark contour drawn over it. The result can make an object seem both present and excavated from a continuous field. Space is suggested, but the field repeatedly returns the eye to the surface.",
+      "The paintings represented within the room have their own colors and internal spaces. They act as interruptions, miniature worlds that the larger red environment contains without fully absorbing. Compare a represented canvas with the wall around it. The distinction between an object in the studio and an image on a surface becomes a theme enacted by the picture itself.",
+      "The empty intervals are not neutral leftovers. They give the objects room to remain separate while allowing the red to connect them. Ask how the composition would change if one large interval were filled. The studio’s apparent stillness may depend on a carefully maintained distribution of active and quiet areas rather than on an absence of pictorial events."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museum of Modern Art, New York · The Red Studio",
+        "url": "https://www.moma.org/collection/works/78389"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "matisse-02",
+    "artist": "matisse",
+    "index": 107,
+    "title": "Dance (I)",
+    "date": "1909",
+    "era": "modernism",
+    "medium": "Oil on canvas",
+    "dimensions": "259.7 × 390.1 cm",
+    "location": "Museum of Modern Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.moma.org/collection/works/79124/",
+    "imageSource": "https://www.moma.org/collection/works/79124/",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "Five figures turn a ring into a precarious structure. The open handclasp and leaning bodies keep equilibrium visibly under negotiation.",
+    "how": "Follow the chain of linked hands until you reach a gap. That interruption makes the circle feel constructed rather than automatic. The bodies lean and extend as though the rhythm must be actively maintained. A simple outline can therefore carry a complicated relation between connection, momentum and the risk of losing contact.",
+    "details": [
+      "Follow the chain of linked hands until you reach a gap. That interruption makes the circle feel constructed rather than automatic. The bodies lean and extend as though the rhythm must be actively maintained. A simple outline can therefore carry a complicated relation between connection, momentum and the risk of losing contact.",
+      "The ground and sky are large fields with little descriptive detail. Their simplicity allows the figures’ contours to determine much of the motion. Yet the sloping ground also destabilizes the ring: it is not a horizontal platform on which identical dancers stand. Compare the placement of feet and ask how each figure appears supported, suspended or carried forward.",
+      "The figures are neither a set of anatomical demonstrations nor interchangeable silhouettes. Their differently bent limbs produce distinct pressures in the chain. Trace one body without naming its parts, treating it as an arrangement of directions. Then return to the whole and notice how those directions cooperate. The picture can feel immediate while its balance remains intricate."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museum of Modern Art, New York · Dance (I)",
+        "url": "https://www.moma.org/collection/works/79124/"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "Contains nudity.",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "kahlo-01",
+    "artist": "kahlo",
+    "index": 108,
+    "title": "Self-Portrait with Cropped Hair",
+    "date": "1940",
+    "era": "modernism",
+    "medium": "Oil on canvas",
+    "dimensions": "40 × 27.9 cm",
+    "location": "Museum of Modern Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.moma.org/collection/works/78333",
+    "imageSource": "https://www.moma.org/collection/works/78333",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "A seated figure, loose suit, scissors and scattered hair make appearance look deliberately made and unmade. An inscription complicates the relation between an image and the voice attributed to it.",
+    "how": "The suit occupies more space than a fitted garment would. Its folds and broad outline create a relationship between the body and a borrowed or chosen public appearance. The seated posture is frontal, while the face addresses the viewer with restraint. Describe that arrangement before deciding whether it represents defiance, grief or freedom.",
+    "details": [
+      "The suit occupies more space than a fitted garment would. Its folds and broad outline create a relationship between the body and a borrowed or chosen public appearance. The seated posture is frontal, while the face addresses the viewer with restraint. Describe that arrangement before deciding whether it represents defiance, grief or freedom.",
+      "The cut hair spreads across the ground in separate strands. Their dispersal contrasts with the concentrated figure and the cutting instrument held near the body. The painting shows the aftermath of an action rather than its continuous performance. That interval matters: a viewer must reconstruct what happened from the arrangement of surviving evidence.",
+      "The inscription above the figure introduces language and music into an otherwise quiet room. Its position resembles a caption but does not simply identify what is visible. Consider whether it supplies a social voice against which the figure positions herself. A text inside a painting can be quoted, questioned or staged; its presence does not mean that every word is an unqualified statement of the artist’s own belief."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museum of Modern Art, New York · Self-Portrait with Cropped Hair",
+        "url": "https://www.moma.org/collection/works/78333"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "kahlo-02",
+    "artist": "kahlo",
+    "index": 109,
+    "title": "The Two Fridas",
+    "date": "1939",
+    "era": "modernism",
+    "medium": "Oil on canvas",
+    "dimensions": "173.5 × 173 cm",
+    "location": "Museo de Arte Moderno, Mexico City",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg",
+    "imageSource": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "Two seated self-images join hands while their exposed hearts remain connected. The double portrait makes identity relational, bodily and socially clothed.",
+    "how": "The joined hands form a low bridge between the figures. Above them, the connecting vessel creates another route, one that carries bodily implications quite different from a social gesture. Compare these two connections. The painting gives its doubled protagonists more than one kind of relation, and the viewer must negotiate the tenderness and vulnerability of that arrangement.",
+    "details": [
+      "The joined hands form a low bridge between the figures. Above them, the connecting vessel creates another route, one that carries bodily implications quite different from a social gesture. Compare these two connections. The painting gives its doubled protagonists more than one kind of relation, and the viewer must negotiate the tenderness and vulnerability of that arrangement.",
+      "The white dress makes the blood particularly visible. Its expanses of fabric also create a broad light shape against the stormy setting. Clothing is therefore doing several jobs at once: cultural identification, formal contrast and a surface on which the represented bodily event can register. Reducing it to a label would miss those simultaneous functions.",
+      "The figures occupy comparable positions without becoming duplicates. Their clothing and bodily details differ, while their shared features invite recognition as two presentations of one person. Ask whether the doubling produces conflict, solidarity or a relation that cannot be resolved into either. The question should remain attached to the visible organization rather than to a compulsory emotional response."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museo de Arte Moderno, Mexico City · The Two Fridas",
+        "url": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "Contains exposed hearts and blood.",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "magritte-01",
+    "artist": "magritte",
+    "index": 110,
+    "title": "The False Mirror",
+    "date": "1929",
+    "era": "surrealism",
+    "medium": "Oil on canvas",
+    "dimensions": "54 × 80.9 cm",
+    "location": "Museum of Modern Art, New York",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://www.moma.org/collection/works/78938",
+    "imageSource": "https://www.moma.org/collection/works/78938",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "An eye becomes a place where a sky appears. The image asks whether vision gives access to the world, constructs it, or becomes an object under another gaze.",
+    "how": "The eye occupies most of the field, leaving little surrounding face to establish an individual identity. The enlarged scale makes a familiar organ strange without making it unrecognizable. Attend to the transition between the eyelids and the sky. The boundary proposes a contained interior while the clouds suggest an expanse that cannot normally fit inside it.",
+    "details": [
+      "The eye occupies most of the field, leaving little surrounding face to establish an individual identity. The enlarged scale makes a familiar organ strange without making it unrecognizable. Attend to the transition between the eyelids and the sky. The boundary proposes a contained interior while the clouds suggest an expanse that cannot normally fit inside it.",
+      "The black pupil remains a concentrated interruption within the cloudy field. It can look like an opening, a flat disk or an opaque refusal of information. These are different perceptual possibilities. Try each in turn and notice how it changes the relationship between a body that sees and a surface that is seen.",
+      "The title encourages a relation to reflection, but the image does not behave as a straightforward mirror. A real reflected sky would depend on light and the eye’s curved surface; this painted sky replaces much of the iris with another pictorial field. Magritte turns a supposed instrument of direct access into a constructed image that complicates access itself."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Museum of Modern Art, New York · The False Mirror",
+        "url": "https://www.moma.org/collection/works/78938"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "magritte-02",
+    "artist": "magritte",
+    "index": 111,
+    "title": "The Treachery of Images",
+    "date": "1929",
+    "era": "surrealism",
+    "medium": "Oil on canvas",
+    "dimensions": "60.3 × 81.1 cm",
+    "location": "Los Angeles County Museum of Art",
+    "image": "",
+    "thumbnail": "",
+    "width": 0,
+    "height": 0,
+    "credit": "Reproduction not hosted · consult the holding institution",
+    "rights": "Image permission not established for this site",
+    "licenseUrl": "https://collections.lacma.org/object/31931",
+    "imageSource": "https://collections.lacma.org/object/31931",
+    "originalUrl": "",
+    "commonsTitle": "",
+    "alt": "",
+    "story": "A painted pipe and a sentence do not agree in the way a label usually promises. The encounter separates an object, its depiction and the language used to identify it.",
+    "how": "The pipe is isolated and given enough modeling to appear familiar and tangible. Its presentation resembles a demonstration: no elaborate room distracts us from recognizing the thing. That recognition is precisely what the writing unsettles. If the pipe were visually obscure, the sentence would have much less work to do.",
+    "details": [
+      "The pipe is isolated and given enough modeling to appear familiar and tangible. Its presentation resembles a demonstration: no elaborate room distracts us from recognizing the thing. That recognition is precisely what the writing unsettles. If the pipe were visually obscure, the sentence would have much less work to do.",
+      "The text sits beneath the depiction in a position normally associated with identification. Instead it refuses the simplest identification a viewer might make. Read the sentence as a statement about the material painting before treating it as a riddle. A representation can show a pipe without being an object that could be filled or smoked.",
+      "The neutral ground allows the image and sentence to operate together without a narrative setting that would explain them away. Yet the combination does not eliminate ambiguity. What does the demonstrative word point to: the depicted pipe, the painted form or the entire canvas? The painting makes pointing itself seem less secure than an ordinary label assumes."
+    ],
+    "question": "Which visible relationship supports your interpretation, and which part still needs documentary evidence?",
+    "sources": [
+      {
+        "title": "Los Angeles County Museum of Art · The Treachery of Images",
+        "url": "https://collections.lacma.org/object/31931"
+      }
+    ],
+    "checked": "2026-11-20",
+    "contentNote": "",
+    "imageStatus": "reference-only"
   }
 ]

@@ -1,0 +1,127 @@
+[
+  {
+    "id": "paint-to-print",
+    "title": "A meal translated into print",
+    "left": {
+      "image": "/images/art/van-gogh-02.webp",
+      "width": 1400,
+      "height": 990,
+      "credit": "Digital reproduction via Wikimedia Commons · Vincent van Gogh",
+      "record": "https://commons.wikimedia.org/wiki/File:De_aardappeleters_-_s0005V1962_-_Van_Gogh_Museum.jpg",
+      "rights": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    "right": {
+      "image": "/images/art/potato-eaters-lithograph-nga.webp",
+      "width": 1200,
+      "height": 1005,
+      "credit": "Vincent van Gogh, Potato Eaters, lithograph, 1885 · NGA, Rosenwald Collection, 1951.10.33",
+      "record": "https://www.nga.gov/artworks/39824-potato-eaters",
+      "rights": "Public domain",
+      "licenseUrl": "https://www.nga.gov/artworks/39824-potato-eaters"
+    },
+    "source": "https://www.nga.gov/artworks/39824-potato-eaters",
+    "text": "The lithograph reverses the arrangement and replaces painted color with printed tonal marks. Follow the hanging lamp and the hands before comparing faces. This is a related printed treatment, not an infrared image and not automatic evidence of the canvas’s preparatory sequence.",
+    "limit": "A print can clarify choices of emphasis without recording every stage of a painting. Equal viewing areas do not imply equal physical dimensions."
+  },
+  {
+    "id": "bedroom-versions",
+    "title": "A room painted again",
+    "left": {
+      "image": "/images/art/van-gogh-03.webp",
+      "width": 960,
+      "height": 762,
+      "credit": "Digital reproduction via Wikimedia Commons · Vincent van Gogh",
+      "record": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project.jpg",
+      "rights": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    "right": {
+      "image": "/images/art/comparison-bedroom-chicago.webp",
+      "width": 1000,
+      "height": 791,
+      "credit": "Vincent van Gogh, The Bedroom, 1889 · Art Institute of Chicago, Helen Birch Bartlett Memorial Collection, 1926.417",
+      "record": "https://commons.wikimedia.org/wiki/File:1926.417_-_The_Bedroom_Vincent_van_Gogh_1889.jpg",
+      "rights": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:1926.417_-_The_Bedroom_Vincent_van_Gogh_1889.jpg"
+    },
+    "source": "https://www.artic.edu/artworks/28560/the-bedroom",
+    "text": "The Amsterdam canvas dates to 1888; the Chicago version to 1889. Compare the wall pictures, outlines of furniture and relations between floor and wall. Repetition is not mechanical duplication: the same room becomes a fresh arrangement of directions and intervals.",
+    "limit": "The versions have different histories and changing pigments. Differences in a digital pair cannot be attributed entirely to a new artistic intention or treated as a calibrated color comparison."
+  },
+  {
+    "id": "nightwatch-margins",
+    "title": "The margins an early copy preserves",
+    "left": {
+      "image": "/images/art/rembrandt-01.webp",
+      "width": 1280,
+      "height": 1041,
+      "credit": "Digital reproduction via Wikimedia Commons · Rembrandt van Rijn",
+      "record": "https://commons.wikimedia.org/wiki/File:La_ronda_de_noche,_por_Rembrandt_van_Rijn.jpg",
+      "rights": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    "right": {
+      "image": "/images/art/comparison-lundens.webp",
+      "width": 1000,
+      "height": 784,
+      "credit": "Gerrit Lundens, after Rembrandt · The Nightwatch, after 1642 · National Gallery, NG289",
+      "record": "https://commons.wikimedia.org/wiki/File:Lundens_-_Nachtwache-Kopie.jpg",
+      "rights": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Lundens_-_Nachtwache-Kopie.jpg"
+    },
+    "source": "https://www.nationalgallery.org.uk/paintings/gerrit-lundens-after-rembrandt-the-company-of-captain-banning-cocq-the-nightwatch",
+    "text": "Lundens’s small painted copy records a wider composition than the trimmed Rembrandt. Locate the figures at the left and the drummer at the right. The missing margins change the balance of the company and its architectural setting. A copy made by another hand is historical evidence, not a photograph of a lost original state.",
+    "limit": "The National Gallery dates its work after 1642. Do not describe the copy as Rembrandt’s preparatory sketch, or transfer its color and handling directly to the original."
+  },
+  {
+    "id": "rouen-series",
+    "title": "A façade, two painted situations",
+    "left": {
+      "image": "/images/art/comparison-rouen-a.webp",
+      "width": 646,
+      "height": 1000,
+      "credit": "Claude Monet, Rouen Cathedral, West Façade, 1894 · NGA, Chester Dale Collection, 1963.10.49",
+      "record": "https://www.nga.gov/artworks/46524-rouen-cathedral-west-facade",
+      "rights": "Public domain",
+      "licenseUrl": "https://www.nga.gov/artworks/46524-rouen-cathedral-west-facade"
+    },
+    "right": {
+      "image": "/images/art/comparison-rouen-b.webp",
+      "width": 655,
+      "height": 1000,
+      "credit": "Claude Monet, Rouen Cathedral, West Façade, Sunlight, 1894 · NGA, Chester Dale Collection, 1963.10.179",
+      "record": "https://www.nga.gov/artworks/46654-rouen-cathedral-west-facade-sunlight",
+      "rights": "Public domain",
+      "licenseUrl": "https://www.nga.gov/artworks/46654-rouen-cathedral-west-facade-sunlight"
+    },
+    "source": "https://www.nga.gov/artworks/46654-rouen-cathedral-west-facade-sunlight",
+    "text": "Compare the depth of the portal, the distribution of blue and warmer passages, and the point at which architecture turns into a field of strokes. These are separate paintings within Monet’s cathedral series, both dated 1894. The recurring motif makes differences in handling and atmosphere especially legible.",
+    "limit": "A series is not a time-lapse photograph. These images cannot establish exact weather, elapsed minutes or the sequence of every studio revision."
+  },
+  {
+    "id": "card-player-variants",
+    "title": "A gathering becomes a concentrated pair",
+    "left": {
+      "image": "/images/art/comparison-cards-met.webp",
+      "width": 599,
+      "height": 477,
+      "credit": "Paul Cézanne, The Card Players, 1890–92 · The Met, Bequest of Stephen C. Clark, 1960, 61.101.1",
+      "record": "https://www.metmuseum.org/art/collection/search/435868",
+      "rights": "Public domain",
+      "licenseUrl": "https://www.metmuseum.org/art/collection/search/435868"
+    },
+    "right": {
+      "image": "/images/art/cezanne-02.webp",
+      "width": 1400,
+      "height": 1148,
+      "credit": "Digital reproduction via Wikimedia Commons · Paul Cézanne",
+      "record": "https://commons.wikimedia.org/wiki/File:Les_Joueurs_de_cartes,_par_Paul_C%C3%A9zanne.jpg",
+      "rights": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    "source": "https://www.metmuseum.org/art/collection/search/435868",
+    "text": "The Met composition includes players and a standing observer; the Orsay version concentrates the encounter around two figures. Follow the table edges, interval between heads and position of the bottle. A reduction in the number of figures changes the architecture of attention, rather than simply deleting incidental detail.",
+    "limit": "The Met relates its canvas to figure studies and subsequent variants. This comparison does not turn every compositional difference into a securely dated step or claim that one version is the definitive solution."
+  }
+]

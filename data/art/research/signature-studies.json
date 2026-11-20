@@ -1,0 +1,606 @@
+{
+  "leonardo-01": {
+    "title": "Presence is constructed, not captured",
+    "evidence": [
+      {
+        "claim": "The Louvre identifies the sitter as Lisa Gherardini and records the painting on a poplar panel.",
+        "status": "Documented record",
+        "source": {
+          "title": "Louvre · Mona Lisa object record",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
+        },
+        "limit": "Identity does not tell us what she was thinking."
+      },
+      {
+        "claim": "Thin transitions make the face less sharply bounded than the silhouette of the hands.",
+        "status": "Visual reading",
+        "source": {
+          "title": "Louvre · Mona Lisa object record",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
+        },
+        "limit": "This is our comparison of visible effects, not a quotation from Leonardo."
+      },
+      {
+        "claim": "The interpretation of the transparent veil remains debated.",
+        "status": "Open interpretation",
+        "source": {
+          "title": "Louvre · Mona Lisa object record",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
+        },
+        "limit": "Costume alone is not sufficient evidence for a pregnancy or mourning narrative."
+      }
+    ],
+    "description": [
+      [
+        "Composition",
+        "A seated woman turns toward the viewer, her joined hands low in the image. Her upper body forms a broad, stable mass."
+      ],
+      [
+        "Space and light",
+        "A ledge separates her from distant winding water, roads and rocky terrain. The face is softly illuminated; the eyes, mouth and veil have delicate boundaries."
+      ],
+      [
+        "Handling",
+        "Gradual changes in tone differ from the more legible edges of clothing and hands. A digital reproduction can obscure the thinnest transitions."
+      ]
+    ],
+    "technique": [
+      "A wood panel supplies a rigid support; its identity comes from the object record, not from the photograph.",
+      "Thin, translucent paint transitions soften the modeling. Compare a cheek with a hand rather than treating every edge as equally dissolved.",
+      "Oxidized varnish affects present color. Our screen reproduction is not a reconstruction of the original palette."
+    ],
+    "provenance": [
+      [
+        "Royal collection",
+        "The Louvre records the work as formerly belonging to the French Crown.",
+        {
+          "title": "Louvre · Mona Lisa object record",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
+        }
+      ],
+      [
+        "1793",
+        "The object record gives 1793 as the museum acquisition date.",
+        {
+          "title": "Louvre · Mona Lisa object record",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
+        }
+      ]
+    ],
+    "room": {
+      "kind": "portrait",
+      "caption": "Conceptual domestic encounter: a person meets a relatively small panel. Original furnishings and hanging height are not reconstructed."
+    },
+    "reception": [
+      {
+        "voice": "Historical reception · source summary",
+        "text": "The Louvre traces early admiration, copies and later literary mythmaking. These are different stages of reputation, not evidence of a single timeless response.",
+        "source": {
+          "title": "Louvre · Mona Lisa object record",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
+        }
+      },
+      {
+        "voice": "Our question today",
+        "text": "Can you look at the structure of a portrait already surrounded by expectations?",
+        "source": null
+      }
+    ],
+    "study": {
+      "title": "Prado · Workshop copy of the Mona Lisa",
+      "url": "https://www.museodelprado.es/en/the-collection/art-work/mona-lisa/80c9b279-5c80-4d29-b72d-b19cdca6601c"
+    },
+    "studyNote": "A workshop copy is evidence of a related making process, not a preparatory drawing or an interchangeable version of the Louvre panel.",
+    "conservation": {
+      "title": "Louvre · Material, varnish and infrared discussion",
+      "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
+    },
+    "before": "leonardo-03",
+    "after": "raphael-06",
+    "relation": "Compare earlier portrait experiments and a later Renaissance portrait. This sequence is an editorial comparison; it does not establish a direct chain of borrowing.",
+    "palette": [
+      [
+        "#55452c",
+        "Dark clothing",
+        "A broad anchoring mass"
+      ],
+      [
+        "#b49a63",
+        "Warm modeling",
+        "Gradual facial transitions"
+      ],
+      [
+        "#65766b",
+        "Distant coolness",
+        "A recession into landscape"
+      ]
+    ],
+    "reviewed": "2026-11-20",
+    "reviewScope": "Selected claims checked against the linked institutional records; visual readings are editorial interpretations. Not an independent specialist endorsement."
+  },
+  "leonardo-02": {
+    "title": "A wall that answers a room",
+    "evidence": [
+      {
+        "claim": "The work occupies the refectory of Santa Maria delle Grazie in Milan.",
+        "status": "Documented setting",
+        "source": {
+          "title": "Museo del Cenacolo Vinciano · The Last Supper",
+          "url": "https://cenacolovinciano.org/en/museum/the-works/the-last-supper-leonardo-da-vinci-1452-1519/"
+        },
+        "limit": "Its current museum access is not the original experience of communal dining."
+      },
+      {
+        "claim": "Leonardo worked on dry wall rather than using the standard wet-plaster fresco process.",
+        "status": "Documented technique",
+        "source": {
+          "title": "Museo del Cenacolo Vinciano · The Last Supper",
+          "url": "https://cenacolovinciano.org/en/museum/the-works/the-last-supper-leonardo-da-vinci-1452-1519/"
+        },
+        "limit": "Do not use a generic fresco diagram to explain this painting."
+      },
+      {
+        "claim": "The central stillness is intensified by the reactions around it.",
+        "status": "Visual reading",
+        "source": {
+          "title": "Museo del Cenacolo Vinciano · The Last Supper",
+          "url": "https://cenacolovinciano.org/en/museum/the-works/the-last-supper-leonardo-da-vinci-1452-1519/"
+        },
+        "limit": "Gestures support an argument about composition, not access to the apostles’ private thoughts."
+      }
+    ],
+    "description": [
+      [
+        "Composition",
+        "Thirteen men sit or gather behind a long table. The central figure is framed by a distant opening; the others lean, turn and gesture in clustered groups."
+      ],
+      [
+        "Space and light",
+        "Ceiling and side-wall lines narrow toward the center. The table forms a horizontal barrier across the foreground."
+      ],
+      [
+        "Handling and condition",
+        "The surface is uneven and interrupted by losses. The surviving image and its conservation history must be considered together."
+      ]
+    ],
+    "technique": [
+      "The painting begins with an architectural wall, not a portable canvas.",
+      "A dry-wall process gave Leonardo scope to work gradually; it also differs materially from pigment binding into wet plaster.",
+      "The surviving surface has experienced damage and conservation. A complete-looking reproduction is not proof of an untouched surface."
+    ],
+    "provenance": [
+      [
+        "Original setting",
+        "The mural remains tied to the Milanese refectory for which it was made.",
+        {
+          "title": "Museo del Cenacolo Vinciano · The Last Supper",
+          "url": "https://cenacolovinciano.org/en/museum/the-works/the-last-supper-leonardo-da-vinci-1452-1519/"
+        }
+      ],
+      [
+        "A different kind of history",
+        "For a wall painting, the history of the building and surface replaces a simple sequence of private owners.",
+        {
+          "title": "Museo del Cenacolo Vinciano · The Last Supper",
+          "url": "https://cenacolovinciano.org/en/museum/the-works/the-last-supper-leonardo-da-vinci-1452-1519/"
+        }
+      ]
+    ],
+    "room": {
+      "kind": "refectory",
+      "caption": "Conceptual refectory: the painted table faces a room used for meals. Diagram omits the actual room dimensions, doors and furnishings."
+    },
+    "reception": [
+      {
+        "voice": "Institutional account · source summary",
+        "text": "The museum treats subject, working method and conservation together; the visible composition cannot be separated entirely from its fragile support.",
+        "source": {
+          "title": "Museo del Cenacolo Vinciano · The Last Supper",
+          "url": "https://cenacolovinciano.org/en/museum/the-works/the-last-supper-leonardo-da-vinci-1452-1519/"
+        }
+      },
+      {
+        "voice": "Our question today",
+        "text": "How does a picture of a shared meal change when you imagine eating in front of it?",
+        "source": null
+      }
+    ],
+    "study": {
+      "title": "Royal Collection Trust · Leonardo drawings",
+      "url": "https://www.rct.uk/collection/stories/leonardo-in-the-royal-collection/top-10-leonardo-drawings-in-the-royal-collection"
+    },
+    "studyNote": "The Royal Collection presents preparatory drawing within Leonardo’s practice. Consult each object’s description; not every drawing is a study for this mural.",
+    "conservation": {
+      "title": "Cenacolo · Work, technique and conservation",
+      "url": "https://cenacolovinciano.org/en/museum/the-works/the-last-supper-leonardo-da-vinci-1452-1519/"
+    },
+    "before": "leonardo-05",
+    "after": "raphael-01",
+    "relation": "Compare different ways bodies and architecture organize a group. The later work offers a comparison of pictorial problems, not a claim of identical purpose.",
+    "palette": [
+      [
+        "#8d826d",
+        "Neutral architecture",
+        "A shared spatial order"
+      ],
+      [
+        "#9a5143",
+        "Warm clothing",
+        "Separated accents across the group"
+      ],
+      [
+        "#6c8390",
+        "Cool distance",
+        "An opening beyond the interior"
+      ]
+    ],
+    "reviewed": "2026-11-20",
+    "reviewScope": "Selected claims checked against the linked institutional records; visual readings are editorial interpretations. Not an independent specialist endorsement."
+  },
+  "rembrandt-01": {
+    "title": "The commission becomes an event",
+    "evidence": [
+      {
+        "claim": "Technical research revealed an underlying painted sketch.",
+        "status": "Documented research",
+        "source": {
+          "title": "Rijksmuseum · Underlying sketch research, 7 December 2021",
+          "url": "https://www.rijksmuseum.nl/en/press/press-releases/preparatory-sketch-discovered-beneath-the-night-watch"
+        },
+        "limit": "A research image detects materials; it is not a photograph of an earlier complete painting."
+      },
+      {
+        "claim": "The sketch uses a light, chalk-rich paint over a brown ground.",
+        "status": "Documented technique",
+        "source": {
+          "title": "Rijksmuseum · Underlying sketch research, 7 December 2021",
+          "url": "https://www.rijksmuseum.nl/en/press/press-releases/preparatory-sketch-discovered-beneath-the-night-watch"
+        },
+        "limit": "This finding concerns this object; it is not a universal recipe for Rembrandt."
+      },
+      {
+        "claim": "Illumination assigns unequal prominence within the company.",
+        "status": "Visual reading",
+        "source": {
+          "title": "Rijksmuseum · Underlying sketch research, 7 December 2021",
+          "url": "https://www.rijksmuseum.nl/en/press/press-releases/preparatory-sketch-discovered-beneath-the-night-watch"
+        },
+        "limit": "Unequal visibility is not proof of dissatisfaction among the sitters."
+      }
+    ],
+    "description": [
+      [
+        "Composition",
+        "A crowded armed company fills an architectural setting. A dark-clothed officer with a red sash and a pale-clothed officer lead the foreground."
+      ],
+      [
+        "Space and light",
+        "Bright patches pick out faces, cloth and a smaller girl among much darker figures. Weapons and raised arms cross the gathering."
+      ],
+      [
+        "Handling",
+        "Differences in finish and brightness compete with the density of bodies. The painting demands movement of the eye rather than a single scan along a row."
+      ]
+    ],
+    "technique": [
+      "A prepared canvas carries a brown ground.",
+      "Technical examination identifies a light painted compositional sketch beneath the visible surface.",
+      "Subsequent painting changes and elaborates that arrangement. A diagram is a reading aid, not a replacement for technical imaging."
+    ],
+    "provenance": [
+      [
+        "Commission",
+        "A civic guard company commissioned the group portrait for an Amsterdam assembly setting.",
+        {
+          "title": "Rijksmuseum · original margins",
+          "url": "https://www.rijksmuseum.nl/en/press/press-releases/for-the-first-time-in-300-years-the-night-watch-is-complete-again"
+        }
+      ],
+      [
+        "1715",
+        "The painting was trimmed for a new placement. An early copy helps researchers discuss the missing margins.",
+        {
+          "title": "National Gallery · Lundens after Rembrandt",
+          "url": "https://www.nationalgallery.org.uk/paintings/gerrit-lundens-after-rembrandt-the-company-of-captain-banning-cocq-the-nightwatch"
+        }
+      ]
+    ],
+    "room": {
+      "kind": "hall",
+      "caption": "Conceptual public hall: a large commissioned group portrait addresses a room. This is not a measured reconstruction of the Kloveniersdoelen."
+    },
+    "reception": [
+      {
+        "voice": "Technical research · source summary",
+        "text": "The discovery of an underlying sketch changes the evidence available for discussing planning and revision.",
+        "source": {
+          "title": "Rijksmuseum · Underlying sketch research, 7 December 2021",
+          "url": "https://www.rijksmuseum.nl/en/press/press-releases/preparatory-sketch-discovered-beneath-the-night-watch"
+        }
+      },
+      {
+        "voice": "Our question today",
+        "text": "What does a group portrait owe to its individual subjects—and what can it do as a painting?",
+        "source": null
+      }
+    ],
+    "study": {
+      "title": "Rijksmuseum · Preparatory sketch research",
+      "url": "https://www.rijksmuseum.nl/en/press/press-releases/preparatory-sketch-discovered-beneath-the-night-watch"
+    },
+    "studyNote": "The museum’s technical images address a sketch beneath the paint. They are not detached preparatory drawings and are not reproduced here without a cleared image record.",
+    "conservation": {
+      "title": "Rijksmuseum · Missing margins and reconstruction",
+      "url": "https://www.rijksmuseum.nl/en/press/press-releases/for-the-first-time-in-300-years-the-night-watch-is-complete-again"
+    },
+    "before": "rembrandt-02",
+    "after": "rembrandt-03",
+    "relation": "An earlier public commission and a later intimate narrative make different demands on bodies and attention. Chronology is not a story of continuous improvement.",
+    "palette": [
+      [
+        "#30281e",
+        "Dark field",
+        "Depth and withheld information"
+      ],
+      [
+        "#c8b476",
+        "Light clothing",
+        "A concentrated foreground emphasis"
+      ],
+      [
+        "#8e372b",
+        "Red sash",
+        "Direction across the leading body"
+      ]
+    ],
+    "reviewed": "2026-11-20",
+    "reviewScope": "Selected claims checked against the linked institutional records; visual readings are editorial interpretations. Not an independent specialist endorsement."
+  },
+  "vermeer-01": {
+    "title": "An encounter without a biography",
+    "evidence": [
+      {
+        "claim": "The museum classifies the work as a tronie, a study of a type or character.",
+        "status": "Documented classification",
+        "source": {
+          "title": "Mauritshuis · Girl with a Pearl Earring",
+          "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring"
+        },
+        "limit": "An underlying model may have existed; her identity is not established by the image."
+      },
+      {
+        "claim": "The earring is suggested through a small number of bright touches.",
+        "status": "Documented observation",
+        "source": {
+          "title": "Mauritshuis · Girl with a Pearl Earring",
+          "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring"
+        },
+        "limit": "The effect does not establish that the depicted object was a natural pearl."
+      },
+      {
+        "claim": "Research suggests a green curtain originally occupied the background.",
+        "status": "Research interpretation",
+        "source": {
+          "title": "Mauritshuis · Girl in the Spotlight findings",
+          "url": "https://www.mauritshuis.nl/en/what-s-on/exhibitions/who-is-that-girl-with-a-pearl-earring"
+        },
+        "limit": "The curtain is an interpretation supported by technical evidence; we do not recolor the painting to simulate it."
+      },
+      {
+        "claim": "The turn of the head creates an encounter without settling a narrative.",
+        "status": "Visual reading",
+        "source": {
+          "title": "Mauritshuis · Girl with a Pearl Earring",
+          "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring"
+        },
+        "limit": "This describes an effect of the arrangement, not a documented incident in the sitter’s life."
+      }
+    ],
+    "description": [
+      [
+        "Composition",
+        "A young figure turns her head over a shoulder toward the viewer. The face, pale collar and earring emerge against a nearly dark field."
+      ],
+      [
+        "Clothing and light",
+        "Blue and yellow fabric wraps the head. The brown jacket is described more broadly than the softly modeled face."
+      ],
+      [
+        "Handling",
+        "Highlights on lips and earring are sharply concentrated. Much of the face is built through gradual transitions rather than explicit outlines."
+      ]
+    ],
+    "technique": [
+      "A canvas support and prepared layers precede the visible image.",
+      "The face and clothing are handled differently; soft modeling need not imply equal finish throughout.",
+      "Research into altered layers helps explain why the present dark field is not a secure guide to the original background."
+    ],
+    "provenance": [
+      [
+        "Before 1881",
+        "The museum describes substantial gaps in the early ownership history.",
+        {
+          "title": "Mauritshuis · Acquisition and early conservation",
+          "url": "https://www.mauritshuis.nl/en/our-collection/restoration-and-research/closer-to-vermeer-and-the-girl/girl-with-a-blog/how-much-is-the-girl-with-a-pearl-earring-of-vermeer-worth"
+        }
+      ],
+      [
+        "1881 and 1903",
+        "Arnoldus Andries des Tombe purchased the painting in 1881; it entered the Mauritshuis through his bequest in 1903.",
+        {
+          "title": "Mauritshuis · Girl with a Pearl Earring",
+          "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring"
+        }
+      ]
+    ],
+    "room": {
+      "kind": "portrait",
+      "caption": "Conceptual intimate viewing of a small canvas. No original commission or domestic placement is asserted."
+    },
+    "reception": [
+      {
+        "voice": "Abraham Bredius · 1885, English wording published by the museum",
+        "text": "“Vermeer overshadows all the rest”",
+        "source": {
+          "title": "Mauritshuis · Girl with a Pearl Earring",
+          "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring"
+        }
+      },
+      {
+        "voice": "Our question today",
+        "text": "The early praise and later technical findings concern different things: an experience of presence and the material evidence of its making. How do they change one another?",
+        "source": null
+      }
+    ],
+    "study": {
+      "title": "Mauritshuis · Research and technical images",
+      "url": "https://www.mauritshuis.nl/en/our-collection/restoration-and-research/closer-to-vermeer-and-the-girl"
+    },
+    "studyNote": "Technical images disclose layers and changes. No securely identified preparatory drawing for this work is presented in this collection.",
+    "conservation": {
+      "title": "Mauritshuis · Research presentation",
+      "url": "https://www.mauritshuis.nl/en/what-s-on/exhibitions/who-is-that-girl-with-a-pearl-earring"
+    },
+    "before": "vermeer-02",
+    "after": "vermeer-07",
+    "relation": "Compare concentration, scale and different kinds of encounter within Vermeer’s practice. These neighboring works are not preparatory stages of the tronie.",
+    "palette": [
+      [
+        "#28332c",
+        "Dark field",
+        "Isolation of illuminated forms"
+      ],
+      [
+        "#426c92",
+        "Blue turban",
+        "A cool chromatic anchor"
+      ],
+      [
+        "#d8c794",
+        "Warm fabric and light",
+        "Warm/cool exchange near the face"
+      ]
+    ],
+    "reviewed": "2026-11-20",
+    "reviewScope": "Selected claims checked against the linked institutional records; visual readings are editorial interpretations. Not an independent specialist endorsement."
+  },
+  "van-gogh-01": {
+    "title": "Observation becomes a constructed night",
+    "evidence": [
+      {
+        "claim": "MoMA dates the painting to June 1889 at Saint-Rémy.",
+        "status": "Documented record",
+        "source": {
+          "title": "MoMA · The Starry Night",
+          "url": "https://www.moma.org/collection/works/79802"
+        },
+        "limit": "The record does not prove that every depicted feature was visible at one moment."
+      },
+      {
+        "claim": "The painting was made in daytime sessions and combines observed and invented features.",
+        "status": "Documented making",
+        "source": {
+          "title": "MoMA · The Starry Night",
+          "url": "https://www.moma.org/collection/works/79802"
+        },
+        "limit": "It should not be described as a literal nocturnal snapshot."
+      },
+      {
+        "claim": "The cypress links the landscape and sky through its rising shape.",
+        "status": "Visual reading",
+        "source": {
+          "title": "MoMA · The Starry Night",
+          "url": "https://www.moma.org/collection/works/79802"
+        },
+        "limit": "This relationship does not diagnose a medical condition or establish a single symbol."
+      }
+    ],
+    "description": [
+      [
+        "Composition",
+        "A large blue night sky occupies most of the canvas. Circular stars and a crescent moon glow above a compact village and low hills."
+      ],
+      [
+        "Space and movement",
+        "A dark cypress rises close to the left edge. The church steeple repeats a smaller vertical within the village."
+      ],
+      [
+        "Handling",
+        "Short directional strokes curve around bright forms and run across the land. Geometric roofs contrast with the sky’s broad movement."
+      ]
+    ],
+    "technique": [
+      "Oil paint on canvas allows a visible, directional handling of the surface.",
+      "Short marks articulate forms while also making the eye travel along the painted surface.",
+      "Daytime work, memory and observation contribute to the construction. Visible energy is not evidence of an unplanned or instantaneous execution."
+    ],
+    "provenance": [
+      [
+        "1889",
+        "Made during Van Gogh’s stay at Saint-Rémy.",
+        {
+          "title": "MoMA · The Starry Night",
+          "url": "https://www.moma.org/collection/works/79802"
+        }
+      ],
+      [
+        "1941",
+        "MoMA records acquisition through the Lillie P. Bliss Bequest, by exchange.",
+        {
+          "title": "MoMA · The Starry Night",
+          "url": "https://www.moma.org/collection/works/79802"
+        }
+      ]
+    ],
+    "room": {
+      "kind": "easel",
+      "caption": "Conceptual easel painting: a constructed image can be developed apart from the time and conditions it depicts. This does not reconstruct Van Gogh’s room."
+    },
+    "reception": [
+      {
+        "voice": "Van Gogh · a short excerpt from a letter, English translation cited by MoMA",
+        "text": "“the morning star, which looked very big”",
+        "source": {
+          "title": "MoMA · The Starry Night",
+          "url": "https://www.moma.org/collection/works/79802"
+        }
+      },
+      {
+        "voice": "Our question today",
+        "text": "A remembered observation supplies evidence for a starting point, not a key that translates every mark into a biographical message.",
+        "source": null
+      }
+    ],
+    "study": {
+      "title": "MoMA · Observation and imagination",
+      "url": "https://www.moma.org/collection/works/79802"
+    },
+    "studyNote": "Use the museum’s discussion to distinguish the window view from the constructed village. No speculative preparatory image is substituted for a documented study.",
+    "conservation": {
+      "title": "MoMA · Object, images and interpretive resources",
+      "url": "https://www.moma.org/collection/works/79802"
+    },
+    "before": "van-gogh-04",
+    "after": "van-gogh-07",
+    "relation": "Compare different night scenes and a later landscape through directional paint. This is a sequence of questions, not a diagnosis or claim of a final testament.",
+    "palette": [
+      [
+        "#243b68",
+        "Blue field",
+        "An expansive cool structure"
+      ],
+      [
+        "#dfc673",
+        "Yellow light",
+        "Repeated luminous accents"
+      ],
+      [
+        "#263b35",
+        "Cypress",
+        "A near vertical interrupting the sky"
+      ]
+    ],
+    "reviewed": "2026-11-20",
+    "reviewScope": "Selected claims checked against the linked institutional records; visual readings are editorial interpretations. Not an independent specialist endorsement."
+  }
+}

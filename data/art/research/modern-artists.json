@@ -1,0 +1,206 @@
+[
+  {
+    "id": "picasso",
+    "name": "Pablo Picasso",
+    "life": "1881–1973",
+    "place": "Spain and France",
+    "era": "modernism",
+    "tagline": "Representation becomes a problem worth reopening.",
+    "story": "The figures do not wait quietly to be recognized. Picasso makes looking feel like a negotiation: between incompatible views, between a body and its painted boundary, and between a sitter’s presence and the authority of the artist who represents her.",
+    "turningPoint": "In the 1907 group, disagreement occurs within the bodies and between their different descriptive languages. In the 1932 mirror painting, disagreement is staged between a figure and another image of her. The first compresses an encounter with several figures; the second makes looking at oneself the subject of an unstable exchange. Compare what a contour separates before deciding that both paintings simply distort reality.",
+    "recognize": [
+      "Five figures occupy a compressed interior. Faces do not share one descriptive language, and the angular planes make the surrounding space press forward rather than recede. The encounter concerns the viewer’s position as much as the represented bodies.",
+      "A figure reaches toward a reflection that does not simply repeat her. Curved divisions, saturated color and emphatic outlines turn resemblance into a negotiation between surface and imagined interior.",
+      "Compare the two selected works before extending a claim to the whole career."
+    ],
+    "facts": [
+      "Les Demoiselles was first exhibited publicly in 1916, years after its making.",
+      "The two selected paintings are separated by twenty-five years, not a continuous survey of Cubism.",
+      "Girl before a Mirror dates to 1932, well after the 1907 group represented here."
+    ],
+    "sources": [
+      {
+        "title": "Les Demoiselles d’Avignon · collection record",
+        "url": "https://www.moma.org/collection/works/79766"
+      },
+      {
+        "title": "Girl before a Mirror · collection record",
+        "url": "https://www.moma.org/collection/works/78311"
+      },
+      {
+        "title": "Career context · institutional account",
+        "url": "https://www.moma.org/research/conservation/demoiselles/history.html"
+      }
+    ]
+  },
+  {
+    "id": "dali",
+    "name": "Salvador Dalí",
+    "life": "1904–1989",
+    "place": "Catalonia, Paris and the United States",
+    "era": "surrealism",
+    "tagline": "Exact description makes an impossible world persuasive.",
+    "story": "A watch can look exquisitely described while ceasing to behave like a watch. Dalí’s peculiarity lies in this alliance between visual assurance and material impossibility: the confidence of the description makes the uncertainty harder to dismiss.",
+    "turningPoint": "The Persistence of Memory makes solidity unreliable while keeping much of the landscape legible. Metamorphosis of Narcissus asks a different kind of labor from the eye: a related contour becomes a figure and then a hand with an egg. One painting contradicts the expected behavior of a familiar thing; the other makes resemblance carry a transformation. Neither needs to be reduced to a dictionary of symbols.",
+    "recognize": [
+      "A very small painting gives improbable objects the clarity of evidence. The landscape appears stable while the things used to measure time lose their resistance.",
+      "A crouched figure and a hand holding an egg share a contour. Seeing one form prepares the eye to discover another, making transformation an operation performed by the viewer.",
+      "Compare the two selected works before extending a claim to the whole career."
+    ],
+    "facts": [
+      "The Persistence of Memory measures only 24.1 × 33 cm in MoMA’s record.",
+      "Narcissus builds recognition through related forms; softness alone cannot explain the pairing.",
+      "The two selected works place different demands on recognition: changed material behavior and a repeated contour."
+    ],
+    "sources": [
+      {
+        "title": "The Persistence of Memory · collection record",
+        "url": "https://www.moma.org/collection/works/79018"
+      },
+      {
+        "title": "Metamorphosis of Narcissus · collection record",
+        "url": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/"
+      },
+      {
+        "title": "Career context · institutional account",
+        "url": "https://www.guggenheim.org/artwork/artist/salvador-dali"
+      }
+    ]
+  },
+  {
+    "id": "pollock",
+    "name": "Jackson Pollock",
+    "life": "1912–1956",
+    "place": "United States",
+    "era": "abstract-expressionism",
+    "tagline": "A painted surface records decisions without becoming a diary.",
+    "story": "The first impression may be of an unbroken web. Stay longer and differences appear: a passage opens, a dark line interrupts another rhythm, an exposed interval becomes a place to rest. Pollock makes the distribution of attention a material problem.",
+    "turningPoint": "One and Autumn Rhythm share the year 1950 and an ambition for an extended field, but their networks should not be treated as a repeated pattern. Follow a local crossing in each, then compare how much exposed ground surrounds it. The useful distinction is not controlled versus uncontrolled. It concerns the different ways recurrence, interruption and scale let the eye move without a single governing figure.",
+    "recognize": [
+      "The network is neither an illustration nor an undifferentiated accident. Dense crossings, suspended lines and exposed canvas produce an extended field in which attention keeps changing scale.",
+      "An extended web of marks holds open spaces within its movement. Rhythm emerges through uneven recurrence rather than through a repeated decorative unit.",
+      "Compare the two selected works before extending a claim to the whole career."
+    ],
+    "facts": [
+      "Peggy Guggenheim’s contract began in 1943 and continued through 1947.",
+      "The 2013 treatment of One distinguishes Pollock’s paint from later restoration.",
+      "Both represented canvases date to 1950; the comparison cannot be described as a long career progression."
+    ],
+    "sources": [
+      {
+        "title": "One: Number 31, 1950 · collection record",
+        "url": "https://www.moma.org/collection/works/78386/"
+      },
+      {
+        "title": "Autumn Rhythm: Number 30, 1950 · collection record",
+        "url": "https://www.metmuseum.org/art/collection/search/488978"
+      },
+      {
+        "title": "Career context · institutional account",
+        "url": "https://www.guggenheim.org/artwork/artist/jackson-pollock/"
+      }
+    ]
+  },
+  {
+    "id": "matisse",
+    "name": "Henri Matisse",
+    "life": "1869–1954",
+    "place": "France",
+    "era": "modernism",
+    "tagline": "Color organizes an experience rather than copying a room.",
+    "story": "The room seems to surrender to red, yet its contents remain distinct. Matisse’s economy is demanding rather than effortless: a narrow unpainted interval can do the work that a modeled shadow or a firm perspective construction might do elsewhere.",
+    "turningPoint": "The Red Studio establishes relationships among objects through a continuous color field and the intervals that interrupt it. Dance (I) organizes bodies through contact, lean and an incomplete-looking handclasp. Compare the dependency of each form on its neighbor. Both works ask how a whole can hold together without describing every transition, yet the bodily rhythm of the dance is not the same operation as the studio’s red continuity.",
+    "recognize": [
+      "Red joins the surfaces of a room without erasing every object inside it. The studio becomes an arrangement of intervals, outlines and paintings within the painting.",
+      "Five figures turn a ring into a precarious structure. The open handclasp and leaning bodies keep equilibrium visibly under negotiation.",
+      "Compare the two selected works before extending a claim to the whole career."
+    ],
+    "facts": [
+      "Dance (I) here is the 1909 MoMA canvas, not the 1910 Hermitage version.",
+      "Technical examination of The Red Studio found earlier colors beneath its red.",
+      "The Red Studio dates to 1911, two years after the represented Dance (I)."
+    ],
+    "sources": [
+      {
+        "title": "The Red Studio · collection record",
+        "url": "https://www.moma.org/collection/works/78389"
+      },
+      {
+        "title": "Dance (I) · collection record",
+        "url": "https://www.moma.org/collection/works/79124/"
+      },
+      {
+        "title": "Career context · institutional account",
+        "url": "https://www.moma.org/interactives/exhibitions/2014/matisse/about-matisse.html"
+      }
+    ]
+  },
+  {
+    "id": "kahlo",
+    "name": "Frida Kahlo",
+    "life": "1907–1954",
+    "place": "Mexico",
+    "era": "modernism",
+    "tagline": "Self-representation becomes a deliberate public construction.",
+    "story": "A suit, scissors and cut hair are not incidental accessories. Kahlo stages identity through objects that can be worn, handled and discarded. The self-portrait offers a deliberate encounter, not transparent access to the artist’s private life.",
+    "turningPoint": "Self-Portrait with Cropped Hair concentrates a performance of identity in one seated body. The Two Fridas divides self-representation between two figures connected through hands and exposed anatomy. Compare how clothing marks difference and how a small connection prevents separation from becoming absolute. Biography can inform the encounter, but neither picture is exhausted by a single episode of injury or marriage.",
+    "recognize": [
+      "A seated figure, loose suit, scissors and scattered hair make appearance look deliberately made and unmade. An inscription complicates the relation between an image and the voice attributed to it.",
+      "Two seated self-images join hands while their exposed hearts remain connected. The double portrait makes identity relational, bodily and socially clothed.",
+      "Compare the two selected works before extending a claim to the whole career."
+    ],
+    "facts": [
+      "Cropped Hair is a small oil on canvas, 40 × 27.9 cm.",
+      "MoMA records the work as a gift of Edgar Kaufmann Jr.; it is not an anonymous discovery.",
+      "The Two Fridas is a double self-portrait; the second figure is not identified here as a separate historical sitter."
+    ],
+    "sources": [
+      {
+        "title": "Self-Portrait with Cropped Hair · collection record",
+        "url": "https://www.moma.org/collection/works/78333"
+      },
+      {
+        "title": "The Two Fridas · collection record",
+        "url": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg"
+      },
+      {
+        "title": "Career context · institutional account",
+        "url": "https://www.moma.org/collection/works/78333"
+      }
+    ]
+  },
+  {
+    "id": "magritte",
+    "name": "René Magritte",
+    "life": "1898–1967",
+    "place": "Belgium and France",
+    "era": "surrealism",
+    "tagline": "An ordinary image unsettles the act of recognition.",
+    "story": "The pipe is easy to recognize. That is precisely why the sentence beneath it can become troublesome. Magritte lets ordinary visual competence expose a confusion between identifying a depiction and possessing the thing depicted.",
+    "turningPoint": "The False Mirror places a sky where the viewer expects an iris; The Treachery of Images places a sentence where a caption might normally confirm an object’s identity. One unsettles an organ of perception, the other a convention of naming. Together they ask how images produce confidence. Their similar clarity should not hide the different mechanism of each encounter.",
+    "recognize": [
+      "An eye becomes a place where a sky appears. The image asks whether vision gives access to the world, constructs it, or becomes an object under another gaze.",
+      "A painted pipe and a sentence do not agree in the way a label usually promises. The encounter separates an object, its depiction and the language used to identify it.",
+      "Compare the two selected works before extending a claim to the whole career."
+    ],
+    "facts": [
+      "LACMA publishes a provenance with Mesens and the Copleys among its recorded owners.",
+      "The current MoMA date used for The False Mirror is 1929; older dating remains flagged for review.",
+      "The pipe painting’s French inscription belongs to the image, not merely to the museum caption."
+    ],
+    "sources": [
+      {
+        "title": "The False Mirror · collection record",
+        "url": "https://www.moma.org/collection/works/78938"
+      },
+      {
+        "title": "The Treachery of Images · collection record",
+        "url": "https://collections.lacma.org/object/31931"
+      },
+      {
+        "title": "Career context · institutional account",
+        "url": "https://collections.lacma.org/object/31931"
+      }
+    ]
+  }
+]

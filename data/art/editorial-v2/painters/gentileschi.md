@@ -30,3 +30,13 @@ Modern recovery has restored attention to an artist long marginalized in familia
 The range between a forceful narrative and a self-portrait matters. In the former, the allocation of effort can make women central agents; in the latter, costume, pose and the tools of painting negotiate artistic identity. Neither problem is adequately explained by treating every canvas as a direct retelling of personal trauma.
 
 Her professional ambition also requires attention to opportunity: access to training, patrons and institutions shaped the conditions under which a woman could sustain a career. Those conditions did not erase her capacity to choose subjects, revise models or construct a public identity. Looking closely at the difference between two versions of a narrative is therefore as important as learning the life story. The biography illuminates the work most effectively when it enlarges the questions, rather than dictating one answer.
+
+## Working circumstances and the evidence of pictures | analysis |
+Susanna, Judith and the self-portraits give the reader several different problems: the placement of a vulnerable figure, the distribution of decisive action and the construction of an artistic identity. Biography matters, especially where professional opportunity and reception were unequal. It cannot establish a single autobiographical meaning for every image of a woman. Ask what each commission and composition permits the figure to do before translating a narrative directly into an episode from the artist’s life.
+
+@source Institutional artist biography|https://www.nationalgallery.org.uk/artists/artemisia-gentileschi|Training, career and professional context
+
+## Training, mobility and professional recognition | history | 4
+The National Gallery records Gentileschi’s training with Orazio and her work for patrons across several European centers. This is a career of changing professional circumstances, not one fixed domestic setting. In reading her paintings, distinguish the opportunities and constraints documented by that history from the specific decisions visible on a canvas. Access to training helps explain how a practice became possible; it does not predetermine the composition of every work.
+
+Her self-representation as Painting is especially useful here. The profession is claimed through a body at work, with a reach and turn that make artistic concentration visible. That relationship allows biography to enter the discussion without displacing the painting. Ask what kind of public authority is being fashioned, and what visible decisions make that authority convincing.

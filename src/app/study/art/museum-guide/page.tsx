@@ -1,0 +1,2 @@
+import Link from 'next/link';import StudyNavigation from '@/components/StudyNavigation';import ArtRoomFrame from '@/components/art/ArtRoomFrame';import ArtMuseumGuide from '@/components/art/ArtMuseumGuide';import '../art-room.css';
+export default function Guide(){return <ArtRoomFrame><StudyNavigation/><nav className="art-trail"><Link href="/study/art">← Art Room</Link></nav><ArtMuseumGuide/></ArtRoomFrame>}

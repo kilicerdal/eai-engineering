@@ -1,0 +1,547 @@
+{
+  "reviewed": "2026-11-20",
+  "profiles": {
+    "picasso": {
+      "title": "Picasso · who controls the encounter?",
+      "opening": "The figures do not wait quietly to be recognized. Picasso makes looking feel like a negotiation: between incompatible views, between a body and its painted boundary, and between a sitter’s presence and the authority of the artist who represents her.",
+      "pairTitle": "Confrontation and reflection",
+      "pair": "In the 1907 group, disagreement occurs within the bodies and between their different descriptive languages. In the 1932 mirror painting, disagreement is staged between a figure and another image of her. The first compresses an encounter with several figures; the second makes looking at oneself the subject of an unstable exchange. Compare what a contour separates before deciding that both paintings simply distort reality.",
+      "label": "Cubism helps identify a challenge to consistent representation, but Girl before a Mirror should not be treated as the predictable result of a single Cubist formula.",
+      "context": "MoMA’s history traces Les Demoiselles through Picasso’s studios, Jacques Doucet’s collection and its own acquisition. Dealers and museum directors helped turn a private studio experiment into a public landmark. These institutions did not make the picture, but they changed who could encounter it and the authority attached to it.",
+      "source": "https://www.moma.org/research/conservation/demoiselles/history.html",
+      "facts": [
+        "Les Demoiselles was first exhibited publicly in 1916, years after its making.",
+        "The two selected paintings are separated by twenty-five years, not a continuous survey of Cubism."
+      ]
+    },
+    "dali": {
+      "title": "Dalí · precision in the service of uncertainty",
+      "opening": "A watch can look exquisitely described while ceasing to behave like a watch. Dalí’s peculiarity lies in this alliance between visual assurance and material impossibility: the confidence of the description makes the uncertainty harder to dismiss.",
+      "pairTitle": "Softness and double recognition",
+      "pair": "The Persistence of Memory makes solidity unreliable while keeping much of the landscape legible. Metamorphosis of Narcissus asks a different kind of labor from the eye: a related contour becomes a figure and then a hand with an egg. One painting contradicts the expected behavior of a familiar thing; the other makes resemblance carry a transformation. Neither needs to be reduced to a dictionary of symbols.",
+      "label": "Surrealism situates the work within a movement, but it does not make every object a transcription of a dream or establish a psychiatric explanation.",
+      "context": "The Guggenheim’s career account places Dalí’s Surrealist publications and exhibitions within a changing artistic network, and records his censure in 1934. That date should not be silently equated with every account of his later estrangement from the group. Public controversy, collaboration and self-presentation belong to the professional history alongside the paintings.",
+      "source": "https://www.guggenheim.org/artwork/artist/salvador-dali",
+      "facts": [
+        "The Persistence of Memory measures only 24.1 × 33 cm in MoMA’s record.",
+        "Narcissus builds recognition through related forms; softness alone cannot explain the pairing."
+      ]
+    },
+    "pollock": {
+      "title": "Pollock · a field made through decisions",
+      "opening": "The first impression may be of an unbroken web. Stay longer and differences appear: a passage opens, a dark line interrupts another rhythm, an exposed interval becomes a place to rest. Pollock makes the distribution of attention a material problem.",
+      "pairTitle": "Two fields, two kinds of openness",
+      "pair": "One and Autumn Rhythm share the year 1950 and an ambition for an extended field, but their networks should not be treated as a repeated pattern. Follow a local crossing in each, then compare how much exposed ground surrounds it. The useful distinction is not controlled versus uncontrolled. It concerns the different ways recurrence, interruption and scale let the eye move without a single governing figure.",
+      "label": "Abstract Expressionism supplies an institutional and critical setting. It does not mean that every trace records an unmediated emotion or a single uninterrupted performance.",
+      "context": "The Guggenheim records Pollock’s training with Thomas Hart Benton, his participation in Siqueiros’s experimental workshop, and Peggy Guggenheim’s 1943 contract and solo exhibition. Financial support and exhibition space were practical conditions of making. Lee Krasner was a fellow artist with her own practice, not merely a biographical accessory to his achievement.",
+      "source": "https://www.guggenheim.org/artwork/artist/jackson-pollock/",
+      "facts": [
+        "Peggy Guggenheim’s contract began in 1943 and continued through 1947.",
+        "The 2013 treatment of One distinguishes Pollock’s paint from later restoration."
+      ]
+    },
+    "matisse": {
+      "title": "Matisse · making space with color",
+      "opening": "The room seems to surrender to red, yet its contents remain distinct. Matisse’s economy is demanding rather than effortless: a narrow unpainted interval can do the work that a modeled shadow or a firm perspective construction might do elsewhere.",
+      "pairTitle": "A room held open; a ring held together",
+      "pair": "The Red Studio establishes relationships among objects through a continuous color field and the intervals that interrupt it. Dance (I) organizes bodies through contact, lean and an incomplete-looking handclasp. Compare the dependency of each form on its neighbor. Both works ask how a whole can hold together without describing every transition, yet the bodily rhythm of the dance is not the same operation as the studio’s red continuity.",
+      "label": "Fauvism names an important period of color experimentation. It does not explain the entire career or erase the deliberate construction behind apparent simplicity.",
+      "context": "MoMA places Matisse’s training with Gustave Moreau after an initial career in law and describes financial difficulty alongside early Salon participation. Training and material circumstances complicate a myth of spontaneous color. The Red Studio’s later life in a London club further shows how a work’s setting can change before museum recognition.",
+      "source": "https://www.moma.org/interactives/exhibitions/2014/matisse/about-matisse.html",
+      "facts": [
+        "Dance (I) here is the 1909 MoMA canvas, not the 1910 Hermitage version.",
+        "Technical examination of The Red Studio found earlier colors beneath its red."
+      ]
+    },
+    "kahlo": {
+      "title": "Kahlo · the self-portrait as a public construction",
+      "opening": "A suit, scissors and cut hair are not incidental accessories. Kahlo stages identity through objects that can be worn, handled and discarded. The self-portrait offers a deliberate encounter, not transparent access to the artist’s private life.",
+      "pairTitle": "One self, two selves",
+      "pair": "Self-Portrait with Cropped Hair concentrates a performance of identity in one seated body. The Two Fridas divides self-representation between two figures connected through hands and exposed anatomy. Compare how clothing marks difference and how a small connection prevents separation from becoming absolute. Biography can inform the encounter, but neither picture is exhausted by a single episode of injury or marriage.",
+      "label": "Surrealist reception is part of Kahlo’s public history. Treating that label as her only identity can obscure the Mexican cultural forms and deliberate self-presentation discussed in her own museum’s account.",
+      "context": "MoMA links Cropped Hair to the period after Kahlo’s late-1939 divorce and to her intention to support herself through selling work. Economic agency matters here alongside the interpretation of dress. The institutional record also names Edgar Kaufmann Jr. as donor; acquisition is another stage in the making of a public reputation, not a substitute for the sitter-artist’s own choices.",
+      "source": "https://www.moma.org/collection/works/78333",
+      "facts": [
+        "Cropped Hair is a small oil on canvas, 40 × 27.9 cm.",
+        "MoMA records the work as a gift of Edgar Kaufmann Jr.; it is not an anonymous discovery."
+      ]
+    },
+    "magritte": {
+      "title": "Magritte · recognition becomes a question",
+      "opening": "The pipe is easy to recognize. That is precisely why the sentence beneath it can become troublesome. Magritte lets ordinary visual competence expose a confusion between identifying a depiction and possessing the thing depicted.",
+      "pairTitle": "An eye and a sentence",
+      "pair": "The False Mirror places a sky where the viewer expects an iris; The Treachery of Images places a sentence where a caption might normally confirm an object’s identity. One unsettles an organ of perception, the other a convention of naming. Together they ask how images produce confidence. Their similar clarity should not hide the different mechanism of each encounter.",
+      "label": "Surrealism describes an artistic context, not a requirement that these images abandon careful reasoning. Their ordinary appearance is essential to the problem they construct.",
+      "context": "LACMA’s record identifies a succession of collectors and dealers for the pipe painting, while MoMA’s catalogue of Magritte’s work shows that his practice extended beyond the two motifs represented here. The private collection, gallery and museum are different settings for the same conceptual provocation. Its subsequent influence should not be confused with evidence of what its first viewers thought.",
+      "source": "https://collections.lacma.org/object/31931",
+      "facts": [
+        "LACMA publishes a provenance with Mesens and the Copleys among its recorded owners.",
+        "The current MoMA date used for The False Mirror is 1929; older dating remains flagged for review."
+      ]
+    }
+  },
+  "cases": {
+    "picasso-01": {
+      "title": "A private experiment becomes a public landmark",
+      "naming": "The current title was attached around the first public exhibition in 1916, rather than securely identifying the words Picasso used while painting in 1907. A later title helps frame a subject, but cannot stand in for the circumstances of every earlier studio encounter.",
+      "scale": "At roughly 244 × 234 cm, the group can confront a standing spectator at something approaching bodily scale. A small screen reduces that confrontation and lets the five figures be surveyed more easily than they may be encountered nearby.",
+      "color": "Warm flesh-like planes repeatedly meet cooler angular intervals. Compare an edge against the adjacent field: a contour can seem to divide two bodies, then to continue into the surrounding space. This is a visual reading, not a pigment identification.",
+      "making": [
+        "Separate the work’s 1907 making from its later exhibition and naming.",
+        "Study the present contours before consulting the museum’s technical history of revisions.",
+        "Use the conservation account for material sequence; the reproduced surface alone cannot date a change."
+      ],
+      "challenge": "A securely identified preparatory study or dated studio photograph could change an account of how the figures developed. A resemblance to an African object alone cannot establish a particular encounter or a maker’s identity.",
+      "story": "The familiar claim that the painting changed art instantly compresses different moments. Studio responses, first public exhibition and eventual museum acquisition are separate events with different witnesses.",
+      "people": "Jacques Doucet’s collecting and Alfred H. Barr Jr.’s museum advocacy shaped the work’s public life. Neither role should erase the colonial displacement of African objects discussed by MoMA or make their makers anonymous sources of European genius.",
+      "source": "https://www.moma.org/collection/works/79766",
+      "journey": [
+        [
+          "1907",
+          "Making in Paris; the subsequent studio audience was not equivalent to a public exhibition."
+        ],
+        [
+          "1916",
+          "First public exhibition and the period in which the present title emerged."
+        ],
+        [
+          "1924",
+          "Acquired by Jacques Doucet, according to MoMA’s treatment history."
+        ],
+        [
+          "1939",
+          "Acquired by MoMA after its appearance in New York; the institutional credit identifies the Bliss Bequest exchange."
+        ]
+      ],
+      "reception": [
+        [
+          "Studio and first exhibition",
+          "MoMA distinguishes early visitors’ shock from the significance some viewers later attached to the 1916 showing."
+        ],
+        [
+          "1939 museum advocacy",
+          "Barr’s advocacy helped establish the painting as a museum landmark; institutional commitment is evidence of reception, not a universal contemporary verdict."
+        ]
+      ],
+      "extraSource": "https://www.moma.org/research/conservation/demoiselles/analysis_2_c.html"
+    },
+    "matisse-01": {
+      "title": "The studio was not always red",
+      "naming": "The English and French titles identify a studio organized through red. They describe the final visible proposition; they do not imply that every part was red from the first application of paint.",
+      "scale": "The canvas is approximately 181 × 219 cm. Its breadth permits furniture, paintings and empty intervals to compete across a field larger than an intimate still life. A digital overview can obscure the bodily reach of the room.",
+      "color": "Red behaves as a connective field, while narrow intervals preserve the identity of furnishings. Look for the difference between a line painted onto a color and an interval left between areas. A screen cannot identify the chemistry or original saturation of either.",
+      "making": [
+        "First stage: technical examination identifies earlier blue, ochre and pink areas associated with walls, furniture and floor.",
+        "Revision: Matisse covered much of that structure with red; some earlier colors remain visible as boundaries around forms.",
+        "Final surface: the technical study identifies a pencil line applied over the red near the window. This gives a local sequence, not a complete diary of every gesture."
+      ],
+      "challenge": "Additional technical evidence could refine the sequence of changes. It would not automatically settle why a viewer experiences the red as flat, spatial or both.",
+      "story": "Calling the red effortless hides the work’s revision. The present surface is an outcome of decisions, not proof that the complete conception appeared fully formed.",
+      "people": "Sergei Shchukin’s rejection, David Tennant’s ownership and the museum’s later acquisition belong to different histories of reception. A collector’s refusal should not be rewritten as an aesthetic judgment shared by everyone.",
+      "source": "https://www.youtube.com/watch?v=SnvIv4bWW_w",
+      "journey": [
+        [
+          "1911",
+          "Made by Matisse; the subsequent history includes its rejection by Shchukin."
+        ],
+        [
+          "1912–1913",
+          "Exhibited in London and at the Armory Show, as documented in the conservation study."
+        ],
+        [
+          "1927",
+          "Acquired by David Tennant for the Gargoyle Club."
+        ],
+        [
+          "1941–1949",
+          "Passed through the Redfern Gallery before MoMA’s acquisition in 1949."
+        ]
+      ],
+      "reception": [
+        [
+          "An initial refusal",
+          "Shchukin’s response places the painting within a specific patron relationship."
+        ],
+        [
+          "Club and museum",
+          "The shift from a club interior to MoMA changes the setting in which a viewer interprets the studio."
+        ]
+      ],
+      "extraSource": "https://www.nature.com/articles/s40494-022-00797-0"
+    },
+    "pollock-01": {
+      "title": "Aging, restoration and the limits of a pristine surface",
+      "naming": "The retained number and the title One do not supply a reliable order of execution for all the 1950 paintings. Numbering is part of the public identity of a work, not an automatic studio chronology.",
+      "scale": "At 269.5 × 530.8 cm, the painting exceeds an ordinary nearby field of vision. Local crossings and the overall disposition require different distances. Digital zoom can help investigate a passage but cannot reproduce the bodily negotiation.",
+      "color": "Follow the contrasts between pale lines, darker crossings and exposed canvas. The ground is a material surface, not merely an electronically uniform background. Color differences in photographs can reflect lighting and the history of treatment.",
+      "making": [
+        "Begin with Pollock’s original materials and the museum’s documented object examination.",
+        "Distinguish later restoration paint from Pollock’s own network.",
+        "Read the 2013 treatment decision before interpreting the current surface as an untouched record of 1950."
+      ],
+      "challenge": "A technical finding about a particular layer may revise a proposed sequence of application. It cannot turn every visible crossing into a securely dated record of a bodily gesture.",
+      "story": "The claim that a drip painting is simply accidental ignores choices in distribution and subsequent material history. The opposite claim that a spectator can reconstruct every action is equally unsupported.",
+      "people": "Lee Krasner’s independent artistic practice and Peggy Guggenheim’s financial and exhibition support belong in the account. The 2013 conservators James Coddington and Jennifer Hickey also become witnesses to the object’s later material life.",
+      "source": "https://www.moma.org/collection/works/78386",
+      "journey": [
+        [
+          "1950",
+          "Making of this specific canvas; numbering is not treated as a complete production diary."
+        ],
+        [
+          "Before 1968",
+          "Later overpaint identified by the museum belongs to a restoration history, not Pollock’s making."
+        ],
+        [
+          "1968",
+          "MoMA acquisition through the Sidney and Harriet Janis Collection Fund by exchange."
+        ],
+        [
+          "2013",
+          "Published conservation account of removing later overpaint and limiting retouching."
+        ]
+      ],
+      "reception": [
+        [
+          "1947 ambition",
+          "Pollock’s statement on portable pictures between easel and mural predates this painting."
+        ],
+        [
+          "2013 care",
+          "The conservation team allowed much aging-related cracking to remain visible rather than restoring a uniformly unblemished appearance."
+        ]
+      ],
+      "extraSource": "https://www.moma.org/explore/inside_out/2013/05/29/momas-jackson-pollock-conservation-project-wrapping-up-treatment-of-one-number-31-1950/"
+    },
+    "kahlo-01": {
+      "title": "Clothing, independence and a public self",
+      "naming": "The title identifies cropped hair, but the painting also contains a suit, scissors and a song inscription. A title is an entrance to the work, not a complete account of what it asks the viewer to consider.",
+      "scale": "The 40 × 27.9 cm canvas invites an intimate encounter. Enlarging it to fill a large monitor can give the figure a monumentality different from the physical painting.",
+      "color": "Compare the dark suit with the quieter ground and the small dispersed locks of hair. Their differences in size and contrast distribute attention between a seated figure and the evidence of an action. The appearance of a lock does not establish how recently it was cut.",
+      "making": [
+        "Use the museum’s oil-on-canvas record to establish the object.",
+        "Distinguish the represented act of cutting from evidence about the studio’s actual working sequence.",
+        "Read dress and inscription together before reducing the image to a single biographical incident."
+      ],
+      "challenge": "A dated letter or securely connected account of the commission could refine a biographical reading. Clothing and a facial expression alone cannot establish the artist’s mental state.",
+      "story": "A divorce can provide historical context without explaining away the composition. A professional self-image also concerns agency, selling work and choosing how to address an audience.",
+      "people": "Kahlo is both maker and represented subject. MoMA’s interpretation connects the image with financial independence, while its credit identifies Edgar Kaufmann Jr. as donor. These are different kinds of agency in the painting’s public life.",
+      "source": "https://www.moma.org/collection/works/78333",
+      "journey": [
+        [
+          "1940",
+          "Painted after the late-1939 divorce; no month of execution is asserted here."
+        ],
+        [
+          "1943",
+          "MoMA accession 3.1943 records the gift of Edgar Kaufmann Jr."
+        ],
+        [
+          "Present record",
+          "The institutional entry supplies medium, dimensions and credit; a complete intervening exhibition history is not reconstructed here."
+        ]
+      ],
+      "reception": [
+        [
+          "Historical circumstances",
+          "The museum places the picture in the period of separation and a declared wish for economic independence."
+        ],
+        [
+          "Later interpretation",
+          "MoMA’s fashion-history response examines clothing; it is a later attributed reading rather than a contemporary witness to execution."
+        ]
+      ],
+      "extraSource": "https://www.youtube.com/watch?v=n7suE3-0Z6g"
+    },
+    "magritte-02": {
+      "title": "A caption that refuses to behave like a caption",
+      "naming": "LACMA records both The Treachery of Images and the parenthetical This is Not a Pipe, alongside the French forms. The inscription is part of the painting, while the catalogue title is also a device for identifying and discussing it.",
+      "scale": "The image is readily legible at screen size, but a written sentence remains a painted material event on a canvas. Ease of recognition should not make the support disappear from the account.",
+      "color": "The restrained background makes the pipe and sentence comparatively isolated. Look at the space between them: the interval lets a reader move from confident recognition to a proposition about what recognition has supplied.",
+      "making": [
+        "Identify the oil-on-canvas object before treating it as a freely interchangeable philosophical diagram.",
+        "Distinguish the depicted pipe from the paint that makes it visible.",
+        "Do not infer a particular underdrawing or sequence of lettering without technical evidence."
+      ],
+      "challenge": "A documented change to the title, inscription or exhibition context could alter the history of reception. The visible sentence alone cannot establish every viewer’s response or one exhaustive philosophical conclusion.",
+      "story": "Recognizing the pipe does not refute the sentence. The work depends on the difference between an object and its depiction, not on viewers failing a trick question.",
+      "people": "E. L. T. Mesens and William and Noma Copley appear in LACMA’s published provenance. Their roles make the painting’s passage through collections more specific than a claim that museums simply discovered its significance.",
+      "source": "https://collections.lacma.org/object/31931",
+      "journey": [
+        [
+          "Artist and early gallery",
+          "LACMA lists the artist and a bracketed Galerie Le Centaure entry. Brackets in the source are retained as a reason to consult the complete record."
+        ],
+        [
+          "1932",
+          "Recorded sale to E. L. T. Mesens."
+        ],
+        [
+          "1957",
+          "Recorded sale to William and Noma Copley."
+        ],
+        [
+          "1978",
+          "Published Sotheby’s auction reference followed by LACMA; no sale price is supplied."
+        ]
+      ],
+      "reception": [
+        [
+          "2021 museum label",
+          "LACMA frames the work through the relation among word, image and object."
+        ],
+        [
+          "Subsequent influence",
+          "The museum names later artists affected by Magritte’s use of text. Influence is not a substitute for a record of the first audience."
+        ]
+      ],
+      "extraSource": "https://collections.lacma.org/object/31931"
+    },
+    "dali-01": {
+      "title": "A small canvas with a vast public image",
+      "naming": "The Persistence of Memory is the institutional title used here. Its suggestiveness does not turn each object into a fixed translation of the word memory; the work remains more specific than an abstract theme.",
+      "scale": "MoMA records 24.1 × 33 cm. The image’s fame and repeated enlargement can conceal that smallness. Try looking at the museum image in a modest window before enlarging it for detail.",
+      "color": "Compare the dark foreground with the distant illuminated cliffs. A stable spatial setting makes the watches’ improbable softness more conspicuous. The clarity of a painted object is not evidence that its depicted behavior is possible.",
+      "making": [
+        "Establish the 1931 oil-on-canvas record.",
+        "Examine how precise description supports improbable combinations.",
+        "Keep claims about a hidden layer, exact studio sequence or particular dream separate from what the record establishes."
+      ],
+      "challenge": "A documented preparatory drawing or contemporary account could test a proposed origin story. A later anecdote should be dated and attributed rather than treated as an independently observed studio event.",
+      "story": "The picture is often encountered as a general emblem of dream or time. That familiarity can conceal its small scale and the contrast between a recognizable coast and impossible objects.",
+      "people": "The anonymous gift recorded by MoMA leaves the donor unnamed in the public credit. That gap should remain a gap; recognition does not justify inventing a patron.",
+      "source": "https://www.moma.org/collection/works/79018",
+      "journey": [
+        [
+          "1931",
+          "Making of the oil-on-canvas painting."
+        ],
+        [
+          "1932",
+          "MoMA’s artist account identifies its New York exhibition in January."
+        ],
+        [
+          "1934",
+          "MoMA accession 162.1934 records an anonymous gift; no private donor identity is asserted."
+        ]
+      ],
+      "reception": [
+        [
+          "1932 New York",
+          "MoMA’s artist account describes the exhibition as a rapid public success."
+        ],
+        [
+          "Digital familiarity",
+          "The present essay asks how reproduction changes the experience of scale; this is an editorial question, not a measured audience survey."
+        ]
+      ],
+      "extraSource": "https://www.moma.org/artists/1364-salvador-dali"
+    }
+  },
+  "routes": [
+    {
+      "id": "reflections",
+      "title": "Can an image return a gaze?",
+      "intro": "A face turned toward a spectator, an iris replaced by sky and a reflection that refuses to repeat its source make three different promises of recognition. This route asks what looking establishes, rather than treating every direct gaze as an invitation to know a person.",
+      "conclusion": "Choose one boundary between observer and observed. What did that boundary permit you to describe, and what did you initially assume beyond the evidence?",
+      "works": [
+        {
+          "id": "vermeer-01",
+          "question": "How much personality do you infer from a painted turn?",
+          "transition": "Begin with the difference between a convincing presence and a documented identity."
+        },
+        {
+          "id": "magritte-01",
+          "question": "What changes when the organ of looking becomes an image of sky?",
+          "transition": "The encounter shifts from a represented person to the means of perception itself."
+        },
+        {
+          "id": "picasso-02",
+          "question": "Where does the reflection diverge from the figure?",
+          "transition": "Doubling now produces a difference that recognition cannot quietly remove."
+        }
+      ]
+    },
+    {
+      "id": "care-and-distance",
+      "title": "How does a painting place us near another person?",
+      "intro": "Care is not a color or a universal facial expression. It becomes visible through distances, barriers, tasks and the spectator’s position. These works let a close relationship remain structured rather than merely sentimental.",
+      "conclusion": "Which gesture or interval best supported your reading? Could the same visible fact sustain a less comforting interpretation? Keep both possibilities if the evidence warrants them.",
+      "works": [
+        {
+          "id": "morisot-01",
+          "question": "What does the veil separate, and what does it connect?",
+          "transition": "A barrier can make closeness perceptible without granting complete access."
+        },
+        {
+          "id": "cassatt-01",
+          "question": "How does looking down reorganize the relation between bodies?",
+          "transition": "Test the role of viewpoint before naming the feeling of the scene."
+        },
+        {
+          "id": "vermeer-02",
+          "question": "How is attention made visible through ordinary work?",
+          "transition": "The question widens from care between figures to the care of an action."
+        }
+      ]
+    },
+    {
+      "id": "constructed-space",
+      "title": "When does a room stop behaving like a room?",
+      "intro": "A room can organize a convincing action while resisting a perfectly consistent reconstruction. These three works move from an expressive interior through unstable support to a space held together by color. This is a comparison of pictorial problems, not a claim of direct influence.",
+      "conclusion": "Describe one spatial inconsistency without calling it a mistake. What does it allow the painting to do that a more conventional room might not?",
+      "works": [
+        {
+          "id": "van-gogh-05",
+          "question": "How do converging directions change your relation to the interior?",
+          "transition": "Begin with the sensation of entering, then find the visible relations that produce it."
+        },
+        {
+          "id": "cezanne-01",
+          "question": "Can every part of the table be reconciled into a single viewpoint?",
+          "transition": "Support itself becomes less secure while individual objects remain insistently present."
+        },
+        {
+          "id": "matisse-01",
+          "question": "How do intervals preserve objects within a continuous color field?",
+          "transition": "Color now does work that tonal modeling and recession often perform elsewhere."
+        }
+      ]
+    },
+    {
+      "id": "marks-and-authority",
+      "title": "What makes a painted mark convincing?",
+      "intro": "A mark can describe a thing, establish a relation or declare a material event. Follow three different organizations of conviction. The route does not treat nonrepresentational painting as a final stage that earlier artists were trying to reach.",
+      "conclusion": "Choose a mark whose role changes when you move from detail to whole. What would be lost if it were described only as a trace of emotion?",
+      "works": [
+        {
+          "id": "turner-01",
+          "question": "How much description can be relinquished while an event remains legible?",
+          "transition": "Begin where atmosphere and recognizable action coexist."
+        },
+        {
+          "id": "kandinsky-02",
+          "question": "Which intervals matter when recognition of a scene no longer governs the field?",
+          "transition": "Compare unequal weights rather than searching for hidden objects."
+        },
+        {
+          "id": "pollock-02",
+          "question": "How does a crossing contribute to a field wider than one glance?",
+          "transition": "The relation between a local trace and a larger disposition becomes the central problem."
+        }
+      ]
+    }
+  ],
+  "details": [
+    {
+      "id": "turn-and-presence",
+      "title": "A head turned; an infant observed",
+      "left": "vermeer-01",
+      "right": "morisot-01",
+      "leftPoint": [
+        50,
+        42
+      ],
+      "rightPoint": [
+        63,
+        43
+      ],
+      "leftText": "The turn and the direction of attention give a strong impression of presence. That impression does not identify the sitter or document a conversation.",
+      "rightText": "The veil and inclined head organize a relation between looking and access. Compare the boundary across which attention is directed.",
+      "argument": "These are different forms of address: one meets a spectator, the other directs attention within a relation. Neither requires a claim that the artist recorded a private thought."
+    },
+    {
+      "id": "enclosed-attention",
+      "title": "A shared meal; a concentrated task",
+      "left": "van-gogh-02",
+      "right": "vermeer-02",
+      "leftPoint": [
+        50,
+        52
+      ],
+      "rightPoint": [
+        47,
+        58
+      ],
+      "leftText": "Follow the meeting of hands, table and shared light. The arrangement makes a group’s attention visible without offering testimony from each model.",
+      "rightText": "A smaller action concentrates attention around handled objects. Do not mistake apparent quiet for an absence of compositional decisions.",
+      "argument": "The comparison concerns the distribution of attention between bodies and a task, not a claim that the represented people occupied the same social circumstances."
+    },
+    {
+      "id": "intervals-and-forms",
+      "title": "A geometric interval; an unstable support",
+      "left": "kandinsky-02",
+      "right": "cezanne-01",
+      "leftPoint": [
+        48,
+        43
+      ],
+      "rightPoint": [
+        50,
+        61
+      ],
+      "leftText": "Compare an overlap with the interval beside it. A diagrammatic form can have unequal visual weight without depicting a familiar object.",
+      "rightText": "The table’s supporting planes do not settle effortlessly into a single construction. Weight and uncertainty coexist.",
+      "argument": "One work loosens the requirement to recognize a scene; the other keeps recognizable objects while complicating their support. The comparison is editorial, not evidence of a documented exchange."
+    }
+  ],
+  "conservation": [
+    {
+      "work": "pollock-01",
+      "question": "Should the surface be made to look unblemished?",
+      "evidence": "MoMA’s 2013 treatment account identifies later overpaint and describes examination of cracking underneath it. The conservators separated an aging original surface from earlier attempts to disguise that aging.",
+      "decision": "The team removed later overpaint, retained much visible cracking and used limited watercolor retouching where losses or separated cracks disrupted coherence.",
+      "limit": "This account concerns One, not a rule for cleaning every Pollock. It neither authorizes home treatment nor claims that the present surface is unchanged since 1950.",
+      "source": "https://www.moma.org/explore/inside_out/2013/05/29/momas-jackson-pollock-conservation-project-wrapping-up-treatment-of-one-number-31-1950/"
+    },
+    {
+      "work": "matisse-01",
+      "question": "What can the hidden colors tell us?",
+      "evidence": "MoMA’s named conservation team describes imaging and a microscopic sample that revealed earlier colored passages beneath the red. The evidence concerns a sequence in this particular object.",
+      "decision": "Interpret the final red as a revised pictorial decision while preserving the original surface. The local page links to the museum’s technical imagery rather than fabricating a restored earlier state.",
+      "limit": "An earlier layer does not automatically disclose the artist’s reason for changing it. Technical findings and an argument about the effect of color answer related but distinct questions.",
+      "source": "https://www.youtube.com/watch?v=SnvIv4bWW_w"
+    }
+  ],
+  "rights": {
+    "checked": "2026-11-20",
+    "policy": "https://www.moma.org/collection/about/licensing",
+    "picassoPolicy": "https://www.museepicassoparis.fr/en/image-rights/",
+    "status": "Permission not obtained; no request sent",
+    "next": "Institutional records list copyright and reproduction contacts. A museum photograph licence and permission for the underlying artwork may be separate. Rights must be established for this site and its intended use before a reproduction is hosted."
+  },
+  "changes": [
+    {
+      "date": "2026-11-20",
+      "type": "Catalogue clarification",
+      "work": "magritte-01",
+      "before": "Older references can give 1928.",
+      "after": "The study follows MoMA’s current 1929 dating and keeps the discrepancy visible for review.",
+      "source": "https://www.moma.org/collection/works/78938"
+    },
+    {
+      "date": "2026-11-20",
+      "type": "Version identification",
+      "work": "matisse-02",
+      "before": "The title Dance alone can lead to confusion between versions.",
+      "after": "This collection identifies MoMA’s Dance (I), 1909; it is not the Hermitage canvas of 1910.",
+      "source": "https://www.moma.org/collection/works/79124"
+    },
+    {
+      "date": "2026-11-20",
+      "type": "Expanded provenance",
+      "work": "magritte-02",
+      "before": "The earlier local account named the present collection without a staged ownership route.",
+      "after": "Added the published Mesens, Copley and 1978 auction milestones; no unrecorded sale price is supplied.",
+      "source": "https://collections.lacma.org/object/31931"
+    },
+    {
+      "date": "2026-11-20",
+      "type": "Material history",
+      "work": "pollock-01",
+      "before": "A general discussion of layering did not explain the later restoration.",
+      "after": "Added the institution’s 2013 treatment decision and the distinction between original paint and overpaint.",
+      "source": "https://www.moma.org/explore/inside_out/2013/05/29/momas-jackson-pollock-conservation-project-wrapping-up-treatment-of-one-number-31-1950/"
+    }
+  ]
+}

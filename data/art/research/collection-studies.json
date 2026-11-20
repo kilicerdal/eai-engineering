@@ -1,0 +1,597 @@
+{
+  "leonardo-06": {
+    "argument": "The portrait makes a public claim to distinction while withholding easy personal access: an uncompromising gaze, carefully articulated surface and dense juniper screen turn likeness into a negotiation of presence.",
+    "audience": "The National Gallery identifies the sitter as Ginevra de’ Benci. Its account discusses both her marriage and Bernardo Bembo’s association with the work; the precise occasion and patronage should not be reduced to a single certain story.",
+    "limit": "The lower part of the panel was cut away. The present crop is therefore evidence of the surviving object, not proof of Leonardo’s original framing.",
+    "debate": [
+      [
+        "A likeness with social ambitions",
+        "The controlled appearance can be read as a claim to cultivation and distinction, rather than a transparent record of personality."
+      ],
+      [
+        "The limits of the expression",
+        "The unsmiling face can feel distant, but seriousness does not establish unhappiness, reluctance or a specific relationship."
+      ]
+    ],
+    "points": [
+      {
+        "x": 48,
+        "y": 36,
+        "title": "The gaze",
+        "text": "Compare the direction of the eyes with the turn of the shoulders before assigning an emotion."
+      },
+      {
+        "x": 71,
+        "y": 27,
+        "title": "Juniper as a screen",
+        "text": "The clustered pointed forms make the smoother face seem unusually continuous."
+      },
+      {
+        "x": 87,
+        "y": 55,
+        "title": "An opening into distance",
+        "text": "The pale landscape creates extension beside the densely enclosed head."
+      }
+    ],
+    "source": {
+      "title": "National Gallery of Art · Ginevra de’ Benci",
+      "url": "https://www.nga.gov/artworks/50724-ginevra-de-benci"
+    },
+    "scholarship": {
+      "name": "Eve Straussman-Pflanzer · National Gallery of Art curator",
+      "text": "In the museum’s audio transcript, Straussman-Pflanzer contrasts a familiar description of Ginevra as austere or remote with the possibility of confidence and composure. The disagreement concerns how viewers receive an expression; neither reading establishes Ginevra’s actual thoughts. Compare the direction of the gaze and the controlled modeling before choosing your own words.",
+      "url": "https://www.nga.gov/artworks/50724-ginevra-de-benci-obverse"
+    }
+  },
+  "michelangelo-02": {
+    "argument": "The nearly touching hands acquire their force from an opposition between Adam’s supported weight and the approaching group’s concentrated momentum.",
+    "audience": "This is a ceiling image in the Sistine Chapel, made within Michelangelo’s larger commission for Julius II. Its first architectural audience looked upward at a sequence of sacred histories, not at an isolated rectangular reproduction.",
+    "limit": "Contemporary medical or anatomical analogies for the enclosing form are interpretations. The image does not by itself prove a coded anatomical intention.",
+    "debate": [
+      [
+        "An image of dependence",
+        "The different conditions of the two bodies can support a theological reading of life received rather than self-generated."
+      ],
+      [
+        "A celebration of bodily capacity",
+        "Adam’s monumental physique also makes the human body a powerful expressive resource. These emphases need not cancel one another."
+      ]
+    ],
+    "points": [
+      {
+        "x": 39,
+        "y": 43,
+        "title": "The interval",
+        "text": "The almost meeting fingertips concentrate the contrast between the larger bodies."
+      },
+      {
+        "x": 16,
+        "y": 66,
+        "title": "Supported weight",
+        "text": "Adam rests through a chain of limbs and terrain rather than floating toward the other group."
+      },
+      {
+        "x": 72,
+        "y": 39,
+        "title": "Gathered momentum",
+        "text": "Overlapping bodies and fabric make the approach feel collective and directed."
+      }
+    ],
+    "source": {
+      "title": "Vatican Museums · Creation of Adam",
+      "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta/storie-centrali/creazione-di-adamo.html"
+    }
+  },
+  "raphael-01": {
+    "argument": "Raphael makes intellectual difference legible within a shared architecture: the gathering is coherent because it accommodates distinct kinds of attention, not because everyone agrees.",
+    "audience": "The fresco belongs to the Stanza della Segnatura in the Vatican. The room’s wider programme places philosophy in relation to other forms of knowledge and authority; the wall is not a photograph of an ancient meeting.",
+    "limit": "The Vatican identifies many figures, but the fresco is an invented historical assembly. Not every portrait identification has the same documentary standing.",
+    "debate": [
+      [
+        "Order as an intellectual ideal",
+        "The broad architecture can be read as a claim that different forms of inquiry inhabit an intelligible common world."
+      ],
+      [
+        "Difference within that order",
+        "Reclining, writing, teaching and solitary figures complicate the idea that a centered composition expresses unanimity."
+      ]
+    ],
+    "points": [
+      {
+        "x": 50,
+        "y": 48,
+        "title": "Two gestures, one center",
+        "text": "The central figures diverge in gesture while sharing the architectural axis."
+      },
+      {
+        "x": 78,
+        "y": 73,
+        "title": "Demonstration",
+        "text": "A bent body and attentive surrounding figures make knowledge a visible activity."
+      },
+      {
+        "x": 56,
+        "y": 65,
+        "title": "An interruption on the steps",
+        "text": "The reclining figure breaks a simple ceremonial procession toward the center."
+      }
+    ],
+    "source": {
+      "title": "Vatican Museums · School of Athens",
+      "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello/stanza-della-segnatura/scuola-di-atene.html"
+    }
+  },
+  "caravaggio-02": {
+    "argument": "The painting stages recognition as a sudden reorganization of ordinary space: bodies, objects and light reach toward a viewer who occupies the meal’s missing side.",
+    "audience": "The National Gallery records Ciriaco Mattei’s commission in 1601. This was a domestic religious picture for an elite patron, rather than a church altarpiece seen from a distant nave.",
+    "limit": "The biblical episode gives the subject; it does not settle every proposed symbolic reading of food, gesture or shadow.",
+    "debate": [
+      [
+        "Devotional recognition",
+        "The blessing and startled responses give a visible form to the disciples’ recognition of the risen Christ."
+      ],
+      [
+        "The unsettled spectator",
+        "The projecting gestures and precarious basket also make the viewer negotiate the painting’s threshold as a physical encounter."
+      ]
+    ],
+    "points": [
+      {
+        "x": 50,
+        "y": 43,
+        "title": "The quiet action at the center",
+        "text": "The blessing is relatively contained beside the surrounding expansion of gesture."
+      },
+      {
+        "x": 83,
+        "y": 55,
+        "title": "A gesture across the threshold",
+        "text": "The outstretched arms measure a space that seems to approach our own."
+      },
+      {
+        "x": 57,
+        "y": 79,
+        "title": "The basket and the edge",
+        "text": "The projecting object tests the table’s boundary before any symbolic interpretation is added."
+      }
+    ],
+    "source": {
+      "title": "National Gallery · Supper at Emmaus",
+      "url": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus"
+    }
+  },
+  "rembrandt-02": {
+    "argument": "The group portrait presents professional authority as a visible demonstration, while the illuminated corpse exposes the unequal positions on which that authority depends.",
+    "audience": "The Mauritshuis records a commission by members of Amsterdam’s Surgeons’ Guild for Tulp’s January 1632 anatomy lesson. The sitters contributed toward the fee; the body belonged to the executed Adriaen Adriaensz, known as Aris Kindt.",
+    "limit": "The painting is a composed group portrait, not a neutral photograph of the dissection’s sequence or an endorsement of its treatment of the dead.",
+    "debate": [
+      [
+        "A professional achievement",
+        "The composition can be read as a persuasive image of learned cooperation and the lecturer’s authority."
+      ],
+      [
+        "An unequal distribution of personhood",
+        "The named, clothed professionals acquire public identity through a demonstration performed on another person’s exposed body."
+      ]
+    ],
+    "points": [
+      {
+        "x": 79,
+        "y": 37,
+        "title": "Explanation as gesture",
+        "text": "The lecturer’s hand makes a claim to intelligibility beside the exposed arm."
+      },
+      {
+        "x": 36,
+        "y": 34,
+        "title": "Several kinds of attention",
+        "text": "The sitters look in different directions rather than merging into a uniform response."
+      },
+      {
+        "x": 45,
+        "y": 64,
+        "title": "An unequal encounter",
+        "text": "The pale exposed body is offered to inspection while the surrounding figures retain clothing and public identity."
+      }
+    ],
+    "source": {
+      "title": "Mauritshuis · Anatomy Lesson",
+      "url": "https://www.mauritshuis.nl/en/our-collection/artworks/146-the-anatomy-lesson-of-dr-nicolaes-tulp/"
+    }
+  },
+  "vermeer-05": {
+    "argument": "The suspended balance connects an ordinary act of assessment with a larger question of judgment, while the painting’s stillness prevents that question from becoming a simple moral slogan.",
+    "audience": "The National Gallery records the work in its Widener Collection. The original commissioner and precise first domestic placement are not established here; an intimate scale should not be mistaken for a documented viewing room.",
+    "limit": "The pans are empty, according to the museum’s technical interpretation. The visible relationship to the Last Judgment image invites readings, but it does not document a private intention or the sitter’s state of mind.",
+    "debate": [
+      [
+        "An ethical allegory",
+        "The balance and Last Judgment can support a reading about conduct, value and the assessment of a life."
+      ],
+      [
+        "An experience of measured attention",
+        "The scene also makes stillness, intervals and suspended action available to perception without requiring every object to become a fixed moral symbol."
+      ]
+    ],
+    "points": [
+      {
+        "x": 49,
+        "y": 48,
+        "title": "A suspended assessment",
+        "text": "The small balance occupies an interval rather than completing an obvious transaction."
+      },
+      {
+        "x": 72,
+        "y": 23,
+        "title": "The image behind the figure",
+        "text": "The background Last Judgment supplies a second register without mechanically fixing the foreground meaning."
+      },
+      {
+        "x": 28,
+        "y": 71,
+        "title": "Objects and light",
+        "text": "The tabletop’s concentrated material details contrast with the surrounding stillness."
+      }
+    ],
+    "source": {
+      "title": "National Gallery of Art · Woman Holding a Balance",
+      "url": "https://www.nga.gov/artworks/1236-woman-holding-balance"
+    },
+    "scholarship": {
+      "name": "Arthur K. Wheelock Jr. · NGA scholarly catalogue",
+      "text": "The catalogue traces genuinely different readings: Herbert Rudolph emphasized vanitas; P. T. A. Swillens described adjustment of the scales; Lawrence Gowing related the figure to the weighing of souls. The empty pans complicate accounts of literal weighing. These are historical interpretations summarized in the catalogue, not demonstrated statements of Vermeer’s intention.",
+      "url": "https://www.nga.gov/research/publications/online-editions/dutch-paintings-seventeenth-century-woman-holding-balance-c"
+    }
+  },
+  "gentileschi-02": {
+    "argument": "Gentileschi joins the act of making to the authority of an allegory: the working artist and the personification of Painting become inseparable without losing the physical effort of the pose.",
+    "audience": "The Royal Collection connects this work with Gentileschi’s English period and explains its relationship to Cesare Ripa’s personification of Painting. The precise circumstances should retain the institution’s qualifications rather than become an invented scene of presentation at court.",
+    "limit": "A self-representation is a constructed professional statement, not direct access to the artist’s private feelings. Not every emblem need match a handbook mechanically.",
+    "debate": [
+      [
+        "A claim to artistic authority",
+        "The painter embodies a female allegory that a male self-portrait could not occupy in the same literal way."
+      ],
+      [
+        "Work before emblem",
+        "The extended arm, turned head and practical clothing also insist on painting as physical concentration rather than only elevated symbolism."
+      ]
+    ],
+    "points": [
+      {
+        "x": 62,
+        "y": 31,
+        "title": "Attention turned toward work",
+        "text": "The head’s turn gives priority to an activity rather than to a frontal exchange with us."
+      },
+      {
+        "x": 37,
+        "y": 45,
+        "title": "The reaching arm",
+        "text": "The diagonal makes artistic action the organizing movement of the picture."
+      },
+      {
+        "x": 56,
+        "y": 69,
+        "title": "Clothing in motion",
+        "text": "Folds and color give intellectual personification a working body."
+      }
+    ],
+    "source": {
+      "title": "Royal Collection Trust · Artemisia Gentileschi and La Pittura",
+      "url": "https://www.rct.uk/collection/stories/artemisia-gentileschi"
+    }
+  },
+  "goya-01": {
+    "argument": "Goya makes visibility morally consequential but practically powerless: the brightest exposed figure cannot interrupt the repeated mechanism of execution.",
+    "audience": "The Prado dates the painting to 1814, looking back to the executions of 1808. It is a retrospective construction of historical violence, not an eyewitness snapshot produced during the event.",
+    "limit": "The central gesture can evoke religious imagery without proving that a particular victim was posed as a specific sacred figure. Documentary history and iconographic interpretation require different evidence.",
+    "debate": [
+      [
+        "Martyrdom and moral witness",
+        "Raised arms and intense light can make the victim’s exposure resonate with established images of suffering."
+      ],
+      [
+        "Violence without consolation",
+        "The dead bodies, waiting captives and obscured soldiers prevent the central gesture from resolving the scene into a reassuring victory."
+      ]
+    ],
+    "points": [
+      {
+        "x": 38,
+        "y": 47,
+        "title": "Exposed visibility",
+        "text": "The shirt concentrates attention without giving the captive control."
+      },
+      {
+        "x": 78,
+        "y": 55,
+        "title": "Repeated force",
+        "text": "The similar postures organize lethal power as a mechanism."
+      },
+      {
+        "x": 28,
+        "y": 83,
+        "title": "The event extends in time",
+        "text": "The foreground dead prevent the central instant from becoming an isolated emblem."
+      }
+    ],
+    "source": {
+      "title": "Museo del Prado · The 3rd of May 1808",
+      "url": "https://www.museodelprado.es/en/the-collection/art-work/the-3rd-of-may-1808-in-madrid-or-the-executions/5e177409-2993-4240-97fb-847a02c6496c"
+    }
+  },
+  "turner-01": {
+    "argument": "Turner turns a ship’s removal into an argument about historical memory, using a pale, elevated sailing vessel and a compact working tug to make the past depend physically on the present.",
+    "audience": "The National Gallery records exhibition at the Royal Academy in 1839 and the ship’s final journey for dismantling in 1838. The painting addresses a public exhibition audience through an arranged historical image.",
+    "limit": "The actual tow and the painted arrangement are not identical. Sunset, scale and direction should be read as pictorial decisions, not navigational documentation.",
+    "debate": [
+      [
+        "An elegy for an older order",
+        "The pale sailing ship and setting sun support a reading of loss and historical departure."
+      ],
+      [
+        "A less simple modernity",
+        "The tug’s work also makes the old ship’s final movement possible. The contrast is more complicated than an opposition between beautiful past and worthless present."
+      ]
+    ],
+    "points": [
+      {
+        "x": 33,
+        "y": 37,
+        "title": "A pale historical presence",
+        "text": "The tall vessel’s tonal lightness differs from its represented mass."
+      },
+      {
+        "x": 46,
+        "y": 66,
+        "title": "Work that makes departure possible",
+        "text": "The compact tug supplies the action on which the larger ship depends."
+      },
+      {
+        "x": 83,
+        "y": 46,
+        "title": "The ending spreads across the sky",
+        "text": "The sunset’s warmth organizes historical feeling rather than simply locating a time of day."
+      }
+    ],
+    "source": {
+      "title": "National Gallery · The Fighting Temeraire",
+      "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-the-fighting-temeraire"
+    }
+  },
+  "monet-02": {
+    "argument": "The painting makes a family portrait behave like an encounter with weather: figure, fabric, grass and sky participate in the same moving field of light.",
+    "audience": "The National Gallery identifies Camille Monet and their son Jean and records the painting in 1875. A recognizable family subject does not mean that every change of clothing or position records a spontaneous instant.",
+    "limit": "Visible, abbreviated brushwork can create immediacy. It cannot by itself establish the exact duration, number of sessions or sequence in which a painting was made.",
+    "debate": [
+      [
+        "A family encounter",
+        "Recognizable figures give the picture a personal subject and a close social distance."
+      ],
+      [
+        "A study of mobile light",
+        "The figures also serve a broader pictorial experiment in which light and air challenge the stability of outlines."
+      ]
+    ],
+    "points": [
+      {
+        "x": 48,
+        "y": 28,
+        "title": "The parasol’s curved plane",
+        "text": "The broad shape anchors the figure while interrupting the sky."
+      },
+      {
+        "x": 49,
+        "y": 66,
+        "title": "White is not one color",
+        "text": "Warm and cool touches articulate fabric under outdoor light."
+      },
+      {
+        "x": 23,
+        "y": 58,
+        "title": "A second depth",
+        "text": "The smaller figure’s partial emergence helps establish the bank and our low viewpoint."
+      }
+    ],
+    "source": {
+      "title": "National Gallery of Art · Woman with a Parasol",
+      "url": "https://www.nga.gov/artworks/61379-woman-parasol-madame-monet-and-her-son"
+    }
+  },
+  "morisot-02": {
+    "argument": "Morisot makes modern leisure both accessible and incomplete: the close boat, uneven attention of the sitters and mobile water offer proximity without a finished social explanation.",
+    "audience": "The National Gallery places the work in the Bois de Boulogne and considers it very likely to have been exhibited in the fifth Impressionist exhibition in 1880. The sitters may be models; their identity should remain qualified.",
+    "limit": "Different directions of gaze do not establish boredom, dissatisfaction or a definite conversation. Those are possible responses to the arrangement, not documented emotions.",
+    "debate": [
+      [
+        "Social proximity",
+        "The close framing can make the spectator feel admitted into a contemporary outing."
+      ],
+      [
+        "A boundary to that access",
+        "The divided attention and restless handling withhold a complete account of the women’s relationship or their thoughts."
+      ]
+    ],
+    "points": [
+      {
+        "x": 44,
+        "y": 42,
+        "title": "Attention divides",
+        "text": "The figures’ differing orientations complicate a simple shared mood."
+      },
+      {
+        "x": 51,
+        "y": 80,
+        "title": "The boat as a threshold",
+        "text": "The close cropped edge brings us near without assigning us a seat."
+      },
+      {
+        "x": 78,
+        "y": 56,
+        "title": "Water as an active surface",
+        "text": "Broken touches make movement and reflection difficult to isolate."
+      }
+    ],
+    "source": {
+      "title": "National Gallery · Summer’s Day",
+      "url": "https://www.nationalgallery.org.uk/paintings/berthe-morisot-summer-s-day"
+    }
+  },
+  "cassatt-01": {
+    "argument": "Cassatt makes an act of care intelligible through a tightly organized relation of hands, feet, vessel and surrounding pattern, giving domestic labor the authority of a major pictorial subject.",
+    "audience": "The Art Institute dates the painting to 1893 and relates Cassatt’s high viewpoints and flattened patterns to her engagement with Japanese prints. The work does not identify every domestic scene as a portrait of the artist’s own family.",
+    "limit": "An intimate subject does not establish a precise kinship between the models. Care can be described visibly without inventing the sitter’s identity or private affection.",
+    "debate": [
+      [
+        "Intimacy through touch",
+        "The linked gestures make dependence and care visible as a bodily relation."
+      ],
+      [
+        "Pattern as structure",
+        "The compressed viewpoint and patterned surroundings organize the same encounter as a sophisticated arrangement of surfaces."
+      ]
+    ],
+    "points": [
+      {
+        "x": 47,
+        "y": 60,
+        "title": "Care as coordination",
+        "text": "Follow the supporting hands toward the child’s foot and basin."
+      },
+      {
+        "x": 40,
+        "y": 48,
+        "title": "A high viewpoint",
+        "text": "The elevated angle allows the action and surrounding surfaces to occupy one concentrated field."
+      },
+      {
+        "x": 73,
+        "y": 69,
+        "title": "Pattern is structural",
+        "text": "The fabric’s stripes help organize mass and direction, rather than merely decorating it."
+      }
+    ],
+    "source": {
+      "title": "Art Institute of Chicago · The Child’s Bath",
+      "url": "https://www.artic.edu/artworks/111442/the-childs-bath"
+    }
+  },
+  "cezanne-01": {
+    "argument": "The still life sustains a convincing encounter with objects while letting their local relationships disturb a single consistent viewpoint; coherence is built through paint rather than guaranteed by perspective.",
+    "audience": "The Art Institute records the work around 1893 and discusses its unusual spatial construction. A still life assembled for painting should not be mistaken for an unarranged report of a meal.",
+    "limit": "The image supports discussion of incompatible alignments, but it does not establish one exact sequence of eye movements or prove a simple plan to invent a later movement.",
+    "debate": [
+      [
+        "An active construction of seeing",
+        "Shifting alignments can be read as evidence that pictorial coherence need not duplicate a camera-like view."
+      ],
+      [
+        "A particular arrangement before a universal theory",
+        "The work also demands attention as a specific balance of bottle, cloth, basket and fruit; its value is not exhausted by calling it a precursor to Cubism."
+      ]
+    ],
+    "points": [
+      {
+        "x": 45,
+        "y": 35,
+        "title": "The tipped basket",
+        "text": "Its direction generates pressure against the steadier dark bottle."
+      },
+      {
+        "x": 51,
+        "y": 70,
+        "title": "The cloth interrupts geometry",
+        "text": "Folds both support the objects and conceal the table’s continuity."
+      },
+      {
+        "x": 78,
+        "y": 50,
+        "title": "Local agreements",
+        "text": "Round forms and color relationships make coherence without a single easy spatial solution."
+      }
+    ],
+    "source": {
+      "title": "Art Institute of Chicago · Basket of Apples",
+      "url": "https://www.artic.edu/artworks/111436/the-basket-of-apples"
+    }
+  },
+  "van-gogh-02": {
+    "argument": "The meal becomes a tightly connected circuit of hands, faces and light: the painting gives laboring bodies pictorial gravity while exposing the artist’s deliberate construction of that gravity.",
+    "audience": "The Van Gogh Museum places the work in Nuenen in 1885 and relates it to the painter’s sustained studies of peasant heads and hands. The represented household is not an unmediated voice for all rural workers.",
+    "limit": "Van Gogh’s ambitions and the visible result are related but not identical. A viewer need not accept every claim made by an artist about what their picture achieves.",
+    "debate": [
+      [
+        "An argument for earned sustenance",
+        "The attention to working hands and a shared meal supports a connection between labor and food."
+      ],
+      [
+        "The difficulty of representing another life",
+        "The emphatic roughness also invites questions about how an artist constructs a social type for an audience outside the depicted household."
+      ]
+    ],
+    "points": [
+      {
+        "x": 49,
+        "y": 20,
+        "title": "The limited source of light",
+        "text": "The lamp concentrates a social space instead of illuminating everything equally."
+      },
+      {
+        "x": 49,
+        "y": 63,
+        "title": "Hands link the meal",
+        "text": "A chain of gestures connects people, implements and food."
+      },
+      {
+        "x": 51,
+        "y": 74,
+        "title": "A partial position for the spectator",
+        "text": "The nearer figure and table give us access without unrestricted possession of the scene."
+      }
+    ],
+    "source": {
+      "title": "Van Gogh Museum · The Potato Eaters",
+      "url": "https://www.vangoghmuseum.nl/en/collection/s0005V1962"
+    }
+  },
+  "kandinsky-02": {
+    "argument": "The painting makes direction, interval and unequal visual weight carry an experience that recognizable objects would otherwise organize; abstraction becomes a system of active relations rather than an absence of subject.",
+    "audience": "The Guggenheim identifies Composition 8 as a work of 1923 and places it within Kandinsky’s Bauhaus period. A teaching context helps locate its concerns but does not turn the painting into a standardized classroom exercise.",
+    "limit": "Color and shape can invite musical analogies. There is no requirement that each mark translate into a particular note or possess a universal emotional meaning.",
+    "debate": [
+      [
+        "A visual counterpoint",
+        "Intervals, repeated shapes and contrasting directions can be understood through analogy with musical relations."
+      ],
+      [
+        "A surface with its own conditions",
+        "The analogy is incomplete: color, scale, overlap and placement operate simultaneously on a visible field rather than unfolding as a fixed score in time."
+      ]
+    ],
+    "points": [
+      {
+        "x": 20,
+        "y": 23,
+        "title": "An anchor, not the whole answer",
+        "text": "The large dark circle supplies visual weight that smaller structures answer."
+      },
+      {
+        "x": 64,
+        "y": 49,
+        "title": "Crossing directions",
+        "text": "Diagonals organize an event without depicting a moving object."
+      },
+      {
+        "x": 77,
+        "y": 76,
+        "title": "Intervals are active",
+        "text": "Pale spaces separate forces and let different routes through the field remain possible."
+      }
+    ],
+    "source": {
+      "title": "Guggenheim Bilbao · Cosmic Realms: Russia to the Bauhaus",
+      "url": "https://www.guggenheim-bilbao.eus/en/exhibition/cosmic-realms-russia-to-the-bauhaus-gallery-307"
+    }
+  }
+}

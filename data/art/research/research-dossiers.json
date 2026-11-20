@@ -1,0 +1,602 @@
+{
+  "leonardo-01": {
+    "materials": "An oil painting on a poplar panel, not a canvas. Soft transitions at the mouth and eyes work with the thinly layered surface; a screen cannot establish the exact sequence or condition of those layers.",
+    "patronage": "The Louvre identifies Lisa Gherardini, wife of Francesco del Giocondo. The traditional portrait commission and Leonardo’s continued possession of the work should not be collapsed into a documented delivery to its intended household.",
+    "ownership": "The Louvre records the former French royal collection and museum acquisition in 1793. The route between Leonardo’s workshop and royal possession requires archival distinctions; the painting’s later fame is not evidence of a continuous public audience.",
+    "reception": "Reception ranges from a portrait encounter to the modern museum’s crowded confrontation with an icon. Copying, theft and reproduction have helped form that afterlife. They do not establish what an early viewer understood by the sitter’s expression.",
+    "unresolved": "The sitter’s identification, the extent of execution over time and the meaning of the expression answer different questions. The Louvre’s object identification is institutional evidence; a psychological account of the smile remains interpretation.",
+    "source": {
+      "title": "Louvre · Collection record: Lisa Gherardini",
+      "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The Louvre identifies Lisa Gherardini, wife of Francesco del Giocondo. The traditional portrait commission and Leonardo’s continued possession of the work should not be collapsed into a documented delivery to its intended household."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The Louvre records the former French royal collection and museum acquisition in 1793. The route between Leonardo’s workshop and royal possession requires archival distinctions; the painting’s later fame is not evidence of a continuous public audience."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The sitter’s identification, the extent of execution over time and the meaning of the expression answer different questions. The Louvre’s object identification is institutional evidence; a psychological account of the smile remains interpretation."
+      }
+    ],
+    "observation": "The hands form a quiet anchor.",
+    "documented": "Oil on poplar panel · c. 1503–1517 · Louvre",
+    "interpretation": "The painting’s celebrity can conceal its achievement. Leonardo makes a firmly organized seated figure feel responsive through subtle transitions of light, an ambiguous expression and a landscape that extends far beyond the sitter’s immediate world.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "leonardo-02": {
+    "materials": "The Last Supper is a wall painting made with an experimental technique on a dry surface, rather than a conventional execution entirely in buon fresco. Its condition and restoration history are therefore fundamental to what survives.",
+    "patronage": "The mural belongs to the Dominican refectory at Santa Maria delle Grazie, within the setting of Ludovico Sforza’s patronage. The act of looking originally occurred in a communal dining space, not a white-walled picture gallery.",
+    "ownership": "This object has a history of a building and a surface rather than a normal sequence of sales. Damage, repair and changes to the refectory belong in its journey. The museum’s conservation account is the authority for distinguishing original paint from treatment.",
+    "reception": "The composition’s fame includes copies that transmit its grouping under conditions unlike those of the wall. A copy can document a feature while changing scale, color and handling; it is not an unproblematic replacement for the surviving original.",
+    "unresolved": "Individual gestures can support narrative readings without providing a transcript of every apostle’s thought. The relation between a visible passage today and Leonardo’s original surface must be qualified by conservation evidence.",
+    "source": {
+      "title": "Museo del Cenacolo Vinciano",
+      "url": "https://cenacolovinciano.org/en/"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The mural belongs to the Dominican refectory at Santa Maria delle Grazie, within the setting of Ludovico Sforza’s patronage. The act of looking originally occurred in a communal dining space, not a white-walled picture gallery."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "This object has a history of a building and a surface rather than a normal sequence of sales. Damage, repair and changes to the refectory belong in its journey. The museum’s conservation account is the authority for distinguishing original paint from treatment."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "Individual gestures can support narrative readings without providing a transcript of every apostle’s thought. The relation between a visible passage today and Leonardo’s original surface must be qualified by conservation evidence."
+      }
+    ],
+    "observation": "The vanishing point centers on Christ.",
+    "documented": "Tempera on gesso, pitch, and mastic, on wall plaster · c. 1495–1498 · Santa Maria delle Grazie",
+    "interpretation": "Leonardo transforms a long table into a field of individual reactions. The drama depends on a group responding to the same announcement while each person appears to understand and express it differently.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "rembrandt-01": {
+    "materials": "Oil on canvas permits broad dark passages and locally emphatic light, while the scale turns a group portrait into an environmental encounter. Later trimming changed the boundaries within which those relationships operate.",
+    "patronage": "The civic guard portrait was commissioned for a company associated with Captain Frans Banning Cocq. It belonged to a culture of paid group representation and public status, not a spontaneous snapshot of soldiers assembling.",
+    "ownership": "The picture moved from the Kloveniersdoelen to the town hall in 1715 and was cut down for its new setting. Lundens’s early copy records a wider arrangement; the comparison in the research room identifies both objects separately.",
+    "reception": "The familiar title The Night Watch is later than the commission and should not establish the time of day represented. Contemporary institutional prestige, later admiration and modern conservation publicity are separate stages of reception.",
+    "unresolved": "The action of the company and several subsidiary figures remain interpretive problems. An early copy is evidence for lost margins, not proof of every color or an exact reconstruction of the appearance in 1642.",
+    "source": {
+      "title": "Rijksmuseum · Rembrandt",
+      "url": "https://www.rijksmuseum.nl/en/stories/dutch-masters/story/rembrandt-rijn-10"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The civic guard portrait was commissioned for a company associated with Captain Frans Banning Cocq. It belonged to a culture of paid group representation and public status, not a spontaneous snapshot of soldiers assembling."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The picture moved from the Kloveniersdoelen to the town hall in 1715 and was cut down for its new setting. Lundens’s early copy records a wider arrangement; the comparison in the research room identifies both objects separately."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The action of the company and several subsidiary figures remain interpretive problems. An early copy is evidence for lost margins, not proof of every color or an exact reconstruction of the appearance in 1642."
+      }
+    ],
+    "observation": "The central figures appear to move forward.",
+    "documented": "Oil on canvas · 1642 · Amsterdam Museum on permanent loan to Rijksmuseum in Amsterdam, Netherlands",
+    "interpretation": "The Night Watch turns the display of a militia company into a crowded event in which authority has to emerge through movement.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "vermeer-01": {
+    "materials": "This oil painting concentrates light in a few abbreviated touches. The earring’s effect depends on bright marks and surrounding shadow; a material claim about the represented jewel cannot be established from its apparent luminosity alone.",
+    "patronage": "The work is a tronie, an exploration of a head and character rather than necessarily a commissioned portrait of a named person. No identified sitter or original patron should be supplied to make the narrative feel complete.",
+    "ownership": "Its early ownership has gaps. Des Tombe purchased it in 1881; his bequest brought it to the Mauritshuis in 1903. Those secure later points do not fill the untraced interval after the seventeenth century.",
+    "reception": "The modern title and extraordinary familiarity invite stories about a particular young woman. Such stories belong to reception when not independently documented. The painting’s direct address can be analyzed without converting a fictional biography into fact.",
+    "unresolved": "Who modeled, what kind of ornament is depicted, and how the original background appeared are distinct questions. Mauritshuis technical research can revise a material account without identifying a sitter.",
+    "source": {
+      "title": "Mauritshuis · Girl with a Pearl Earring",
+      "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The work is a tronie, an exploration of a head and character rather than necessarily a commissioned portrait of a named person. No identified sitter or original patron should be supplied to make the narrative feel complete."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "Its early ownership has gaps. Des Tombe purchased it in 1881; his bequest brought it to the Mauritshuis in 1903. Those secure later points do not fill the untraced interval after the seventeenth century."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "Who modeled, what kind of ornament is depicted, and how the original background appeared are distinct questions. Mauritshuis technical research can revise a material account without identifying a sitter."
+      }
+    ],
+    "observation": "The lips are slightly parted.",
+    "documented": "Oil on canvas · c. 1665 · Mauritshuis",
+    "interpretation": "Girl with a Pearl Earring turns a simple head movement into a powerful address, while withholding the information that would make it a conventional portrait.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "van-gogh-01": {
+    "materials": "Oil on canvas records directional brushwork that connects sky, cypress and village. The visible handling is evidence of pictorial construction; it is not a clinical record of the artist’s mental state.",
+    "patronage": "Painted during the Saint-Rémy period in 1889, the work is not presented here as a documented commission. A studio production can address an imagined audience and a professional correspondence without having an identified paying patron.",
+    "ownership": "MoMA records acquisition in 1941 through the Lillie P. Bliss Bequest by exchange. Earlier custody and transactions must be read through the collection’s provenance rather than inferred from the eventual institution.",
+    "reception": "The painting’s current status as an emblem of Van Gogh is a history of reception. Its reproducibility can make the broad rhythm instantly familiar while obscuring the particular scale and painted surface.",
+    "unresolved": "The relation between the observed landscape and imagined village remains important to interpretation. A visible swirl can be described securely; a claim that it encodes one scientific model or private feeling needs additional evidence.",
+    "source": {
+      "title": "Museum of Modern Art · The Starry Night",
+      "url": "https://www.moma.org/collection/works/79802"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "Painted during the Saint-Rémy period in 1889, the work is not presented here as a documented commission. A studio production can address an imagined audience and a professional correspondence without having an identified paying patron."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "MoMA records acquisition in 1941 through the Lillie P. Bliss Bequest by exchange. Earlier custody and transactions must be read through the collection’s provenance rather than inferred from the eventual institution."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The relation between the observed landscape and imagined village remains important to interpretation. A visible swirl can be described securely; a claim that it encodes one scientific model or private feeling needs additional evidence."
+      }
+    ],
+    "observation": "A cypress rises through the foreground.",
+    "documented": "Oil on canvas · 1889 · Museum of Modern Art",
+    "interpretation": "The Starry Night joins an observed sky to an invented arrangement, making color and directional brushwork carry an experience beyond topographical accuracy.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "leonardo-06": {
+    "materials": "Oil on panel carries a double-sided object: the portrait on one face and an emblematic design on the reverse. The support is cut down, so the present lower edge cannot stand for the original full composition.",
+    "patronage": "The sitter is identified as Ginevra de’ Benci. Marriage-related patronage and an association with Bernardo Bembo have been discussed in scholarship; the portrait’s social function should remain more precise than an unqualified love-story explanation.",
+    "ownership": "The National Gallery of Art acquired the work from the Liechtenstein collection in 1967. The reverse, the altered support and its collection history are parts of one object’s journey. A current museum encounter privileges the obverse unless the reader deliberately considers both sides.",
+    "reception": "The sitter’s reserve has supported different readings of demeanor. Eve Straussman-Pflanzer’s NGA discussion offers a way to reconsider the appearance of remoteness. An attributed modern reading is valuable without being evidence of Ginevra’s inner state.",
+    "unresolved": "The degree to which the commission commemorated marriage or another relationship is not settled by the juniper alone. A proposed symbolic association should be weighed with the reverse and documentary chronology.",
+    "source": {
+      "title": "National Gallery of Art · Ginevra de’ Benci",
+      "url": "https://www.nga.gov/artworks/50724-ginevra-de-benci"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The sitter is identified as Ginevra de’ Benci. Marriage-related patronage and an association with Bernardo Bembo have been discussed in scholarship; the portrait’s social function should remain more precise than an unqualified love-story explanation."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The National Gallery of Art acquired the work from the Liechtenstein collection in 1967. The reverse, the altered support and its collection history are parts of one object’s journey. A current museum encounter privileges the obverse unless the reader deliberately considers both sides."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The degree to which the commission commemorated marriage or another relationship is not settled by the juniper alone. A proposed symbolic association should be weighed with the reverse and documentary chronology."
+      }
+    ],
+    "observation": "Juniper fills much of the background.",
+    "documented": "Oil on panel · c. 1474–1478 · National Gallery of Art",
+    "interpretation": "The portrait makes a public claim to distinction while withholding easy personal access: an uncompromising gaze, carefully articulated surface and dense juniper screen turn likeness into a negotiation of presence.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "michelangelo-02": {
+    "materials": "The image is fresco within the Sistine ceiling program. Its boundaries, the neighboring scenes and its position above the viewer matter; reproducing the hands alone removes much of the pictorial and architectural argument.",
+    "patronage": "Pope Julius II’s ceiling commission establishes the institutional setting. The image belongs to a larger scriptural program and a working relationship between artist and papal patronage, rather than an autonomous easel painting.",
+    "ownership": "The fresco remains in the Sistine Chapel. Conservation and the building’s ritual use replace a chain of private sales as the important later history. Restoration images need their own dates and institutional descriptions.",
+    "reception": "The near-touching hands circulate independently as a modern emblem. That reception can suggest instantaneous contact even though the full composition depends on a charged interval and on Adam’s bodily weight.",
+    "unresolved": "Proposals identifying a brain or other anatomical structure inside the surrounding form should be attributed to their advocates, not presented as Vatican-confirmed intention. The visible outline and the proposed anatomical meaning are different kinds of claim.",
+    "source": {
+      "title": "Vatican Museums · Creation of Adam",
+      "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta/storie-centrali/creazione-di-adamo.html"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "Pope Julius II’s ceiling commission establishes the institutional setting. The image belongs to a larger scriptural program and a working relationship between artist and papal patronage, rather than an autonomous easel painting."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The fresco remains in the Sistine Chapel. Conservation and the building’s ritual use replace a chain of private sales as the important later history. Restoration images need their own dates and institutional descriptions."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "Proposals identifying a brain or other anatomical structure inside the surrounding form should be attributed to their advocates, not presented as Vatican-confirmed intention. The visible outline and the proposed anatomical meaning are different kinds of claim."
+      }
+    ],
+    "observation": "The fingertips remain slightly separated.",
+    "documented": "Fresco · c. 1512 · Sistine Chapel",
+    "interpretation": "The nearly touching hands acquire their force from an opposition between Adam’s supported weight and the approaching group’s concentrated momentum.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "raphael-01": {
+    "materials": "The fresco is integrated into the Stanza della Segnatura. Painted architecture expands the room’s intellectual and spatial program; isolating the two central philosophers changes the experience of the ensemble.",
+    "patronage": "Julius II’s papal apartments provide the commission context. Ancient philosophy appears within a Christian patron’s larger arrangement of knowledge. The image does not simply document a historical meeting that actually took place.",
+    "ownership": "The work remains in its Vatican setting. The history of access, conservation and reproduction is more relevant than an invented sequence of collectors. An image of the cartoon would represent a separate object and stage of work.",
+    "reception": "The painting has become a standard image of philosophical discussion. Its ordered architecture can make consensus appear more complete than the varied gestures and disconnected groups actually show.",
+    "unresolved": "Plato and Aristotle have comparatively secure conventional identifications; many peripheral figures remain disputed. Recognizing a contemporary likeness is not enough to prove the identity of an ancient philosopher or the artist’s intended program.",
+    "source": {
+      "title": "Vatican Museums · School of Athens",
+      "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello/stanza-della-segnatura/scuola-di-atene.html"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "Julius II’s papal apartments provide the commission context. Ancient philosophy appears within a Christian patron’s larger arrangement of knowledge. The image does not simply document a historical meeting that actually took place."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The work remains in its Vatican setting. The history of access, conservation and reproduction is more relevant than an invented sequence of collectors. An image of the cartoon would represent a separate object and stage of work."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "Plato and Aristotle have comparatively secure conventional identifications; many peripheral figures remain disputed. Recognizing a contemporary likeness is not enough to prove the identity of an ancient philosopher or the artist’s intended program."
+      }
+    ],
+    "observation": "Two central figures gesture differently.",
+    "documented": "Fresco · 1509–1511 · Apostolic Palace, Vatican Museums",
+    "interpretation": "Raphael makes intellectual difference legible within a shared architecture: the gathering is coherent because it accommodates distinct kinds of attention, not because everyone agrees.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "caravaggio-02": {
+    "materials": "Oil on canvas makes abrupt light and strongly projecting objects work together. The table edge, basket and reaching arm negotiate the boundary between the represented room and the spectator.",
+    "patronage": "Ciriaco Mattei commissioned the 1601 painting. The supper’s religious subject and domestic scale belong to elite collecting and devotional interpretation, not necessarily to a public church installation.",
+    "ownership": "The National Gallery records purchase in 1839. The object’s earlier Mattei setting and later collecting history should be distinguished from the different Emmaus composition now in Milan, painted at another moment.",
+    "reception": "The theatrical gestures can be admired as a demonstration of naturalism, but they also organize recognition within a religious narrative. Later comparisons with photographic realism miss the staged relation between spectator and event.",
+    "unresolved": "The balance between deliberately ordinary figures and the miraculous subject supports different accounts of sacred presence. The Milan version is a comparison, not an earlier state of this canvas.",
+    "source": {
+      "title": "National Gallery · Supper at Emmaus",
+      "url": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "Ciriaco Mattei commissioned the 1601 painting. The supper’s religious subject and domestic scale belong to elite collecting and devotional interpretation, not necessarily to a public church installation."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The National Gallery records purchase in 1839. The object’s earlier Mattei setting and later collecting history should be distinguished from the different Emmaus composition now in Milan, painted at another moment."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The balance between deliberately ordinary figures and the miraculous subject supports different accounts of sacred presence. The Milan version is a comparison, not an earlier state of this canvas."
+      }
+    ],
+    "observation": "An arm extends toward us.",
+    "documented": "Oil on canvas · 1601 · National Gallery",
+    "interpretation": "The painting stages recognition as a sudden reorganization of ordinary space: bodies, objects and light reach toward a viewer who occupies the meal’s missing side.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "rembrandt-02": {
+    "materials": "Oil on canvas joins a public demonstration to a professional group portrait. Hands, tendons, a book and multiple lines of sight organize instruction without making the image a transparent record of a single instant.",
+    "patronage": "The 1632 commission belongs to Amsterdam’s surgeons’ guild and the professional standing of Nicolaes Tulp. The body of the executed Aris Kindt introduces the legal and social inequality underlying the instructional scene.",
+    "ownership": "The Mauritshuis records acquisition in 1828. Its earlier guild ownership and the museum’s later custody represent different uses: professional commemoration and public art-historical display.",
+    "reception": "The work’s fame as an anatomy lesson can conceal its function as paid group portraiture. The men’s arrangement makes intellectual attention visible while also making their membership and status memorable.",
+    "unresolved": "How far anatomical inconsistencies result from pictorial construction, practical demonstration or later changes requires specific research. A painted tendon is evidence within an image, not an adequate substitute for a medical or conservation examination.",
+    "source": {
+      "title": "Mauritshuis · Anatomy Lesson",
+      "url": "https://www.mauritshuis.nl/en/our-collection/artworks/146-the-anatomy-lesson-of-dr-nicolaes-tulp/"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The 1632 commission belongs to Amsterdam’s surgeons’ guild and the professional standing of Nicolaes Tulp. The body of the executed Aris Kindt introduces the legal and social inequality underlying the instructional scene."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The Mauritshuis records acquisition in 1828. Its earlier guild ownership and the museum’s later custody represent different uses: professional commemoration and public art-historical display."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "How far anatomical inconsistencies result from pictorial construction, practical demonstration or later changes requires specific research. A painted tendon is evidence within an image, not an adequate substitute for a medical or conservation examination."
+      }
+    ],
+    "observation": "The illuminated body lies diagonally.",
+    "documented": "Oil on canvas · 1632 · Mauritshuis",
+    "interpretation": "The group portrait presents professional authority as a visible demonstration, while the illuminated corpse exposes the unequal positions on which that authority depends.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "vermeer-05": {
+    "materials": "Oil on canvas brings an empty balance, a luminous jacket and a picture of the Last Judgment into relation. NGA technical and catalogue research should govern material claims; the tiny scales cannot be read as visibly loaded with coins.",
+    "patronage": "The original patron is not securely identified in this study. The religious image within an affluent domestic setting creates a question about value, judgment and conduct without naming an original purchaser’s beliefs.",
+    "ownership": "The National Gallery of Art’s Widener Collection credit supplies a secure museum context. The full earlier provenance must be read in the catalogue, including uncertainty where historical descriptions could identify more than one work.",
+    "reception": "The NGA catalogue discusses different readings by Rudolph, Swillens and Gowing. These historical positions are evidence of reception and changing interpretation, not three equally documented descriptions of what Vermeer privately intended.",
+    "unresolved": "Rudolph emphasized vanitas, Swillens the practical adjustment of balance, and Gowing a relation to the weighing of souls. The empty pans make the choice consequential: a reading must explain an interval before weighing rather than assume an ongoing count of treasure.",
+    "source": {
+      "title": "National Gallery of Art · Woman Holding a Balance",
+      "url": "https://www.nga.gov/artworks/1236-woman-holding-balance"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The original patron is not securely identified in this study. The religious image within an affluent domestic setting creates a question about value, judgment and conduct without naming an original purchaser’s beliefs."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The National Gallery of Art’s Widener Collection credit supplies a secure museum context. The full earlier provenance must be read in the catalogue, including uncertainty where historical descriptions could identify more than one work."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "Rudolph emphasized vanitas, Swillens the practical adjustment of balance, and Gowing a relation to the weighing of souls. The empty pans make the choice consequential: a reading must explain an interval before weighing rather than assume an ongoing count of treasure."
+      }
+    ],
+    "observation": "The balance is held carefully.",
+    "documented": "Oil on canvas · c. 1662–1663 · National Gallery of Art",
+    "interpretation": "The suspended balance connects an ordinary act of assessment with a larger question of judgment, while the painting’s stillness prevents that question from becoming a simple moral slogan.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "gentileschi-02": {
+    "materials": "Oil on canvas makes the act of painting a subject through the turned body, working arm and concentrated direction of attention. The allegorical attributes and the physical labor must be read together.",
+    "patronage": "The work is associated with Gentileschi’s English period and royal collecting. Its relation to Cesare Ripa’s description of Painting helps explain why a woman painter could combine self-representation and a female personification.",
+    "ownership": "The Royal Collection is the present institutional home. The royal context is documented more securely than every circumstance of the original commission; association with a court should not be expanded into a payment story without a record.",
+    "reception": "The painting’s modern importance includes the claim to professional agency made by the self-portrait/allegory relationship. That reading should not reduce a complex practice to a single triumph over biography.",
+    "unresolved": "How literal the likeness is and how closely each attribute follows allegorical convention remain questions for interpretation. A working pose communicates activity, but does not document an unposed moment in the studio.",
+    "source": {
+      "title": "Royal Collection Trust · Artemisia Gentileschi and La Pittura",
+      "url": "https://www.rct.uk/collection/stories/artemisia-gentileschi"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The work is associated with Gentileschi’s English period and royal collecting. Its relation to Cesare Ripa’s description of Painting helps explain why a woman painter could combine self-representation and a female personification."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The Royal Collection is the present institutional home. The royal context is documented more securely than every circumstance of the original commission; association with a court should not be expanded into a payment story without a record."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "How literal the likeness is and how closely each attribute follows allegorical convention remain questions for interpretation. A working pose communicates activity, but does not document an unposed moment in the studio."
+      }
+    ],
+    "observation": "The raised arm reaches toward the work.",
+    "documented": "Oil on canvas · 1638–1639 · Royal Collection, United Kingdom",
+    "interpretation": "Gentileschi joins the act of making to the authority of an allegory: the working artist and the personification of Painting become inseparable without losing the physical effort of the pose.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "goya-01": {
+    "materials": "Oil on canvas uses a concentrated light source, exposed white clothing and the soldiers’ repeated backs to produce an unequal confrontation. The arrangement is retrospective construction rather than eyewitness photography.",
+    "patronage": "Painted in 1814 about the executions of 1808, the work belongs to a postwar commemorative project. Its relation to official remembrance matters even when its force exceeds a simple celebration of state authority.",
+    "ownership": "The Prado holds the work. Its institutional and restoration history should be distinguished from the event represented six years before its making. No sale price or complete early display itinerary is supplied here without documentary confirmation.",
+    "reception": "The work’s later authority as an antiwar image should not erase the specific Madrid event or make every subsequent use equivalent. Its anonymous victims and regimented executioners support broader readings through a particular composition.",
+    "unresolved": "The identity of the central victim is not securely established by the recognizable pose. Christian associations may illuminate the extended arms, but a visual analogy is not proof of one exclusive iconographic program.",
+    "source": {
+      "title": "Museo del Prado · The 3rd of May 1808",
+      "url": "https://www.museodelprado.es/en/the-collection/art-work/the-3rd-of-may-1808-in-madrid-or-the-executions/5e177409-2993-4240-97fb-847a02c6496c"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "Painted in 1814 about the executions of 1808, the work belongs to a postwar commemorative project. Its relation to official remembrance matters even when its force exceeds a simple celebration of state authority."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The Prado holds the work. Its institutional and restoration history should be distinguished from the event represented six years before its making. No sale price or complete early display itinerary is supplied here without documentary confirmation."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The identity of the central victim is not securely established by the recognizable pose. Christian associations may illuminate the extended arms, but a visual analogy is not proof of one exclusive iconographic program."
+      }
+    ],
+    "observation": "The central civilian raises his arms.",
+    "documented": "Oil on canvas · 1814 · Museo del Prado",
+    "interpretation": "Goya makes visibility morally consequential but practically powerless: the brightest exposed figure cannot interrupt the repeated mechanism of execution.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "turner-01": {
+    "materials": "Oil on canvas places the pale warship against the dark tug and luminous sunset. Color and position create an argument about passage and obsolescence, not a mechanically exact report of the tow.",
+    "patronage": "Turner’s 1839 exhibition picture is not presented as a commissioned naval record. The ship’s public history gave it an audience, while the painter’s choices transformed a specific tow into an imaginative farewell.",
+    "ownership": "The National Gallery holds the work through the Turner Bequest of 1856. The journey from retained studio painting to national collection is different from a sequence of speculative market sales.",
+    "reception": "The subject invites nostalgia for a naval past, yet the tug is an active agent rather than merely a villain. Later reception often repeats an opposition between sail and steam that the light, water and actual labor make more complicated.",
+    "unresolved": "The ship’s orientation, tow and atmospheric effects should be checked against historical evidence before calling the image documentary. Formal alterations can serve an argument without showing that Turner misremembered the event.",
+    "source": {
+      "title": "National Gallery · The Fighting Temeraire",
+      "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-the-fighting-temeraire"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "Turner’s 1839 exhibition picture is not presented as a commissioned naval record. The ship’s public history gave it an audience, while the painter’s choices transformed a specific tow into an imaginative farewell."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The National Gallery holds the work through the Turner Bequest of 1856. The journey from retained studio painting to national collection is different from a sequence of speculative market sales."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The ship’s orientation, tow and atmospheric effects should be checked against historical evidence before calling the image documentary. Formal alterations can serve an argument without showing that Turner misremembered the event."
+      }
+    ],
+    "observation": "The tug is small but active.",
+    "documented": "Oil on canvas · 1839 · National Gallery",
+    "interpretation": "Turner turns a ship’s removal into an argument about historical memory, using a pale, elevated sailing vessel and a compact working tug to make the past depend physically on the present.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "monet-02": {
+    "materials": "Oil on canvas combines a low viewpoint with visible strokes in the grass, clothing and sky. Descriptive form and the sensation of a passing instant coexist; loose handling does not prove an entire canvas was completed without revision.",
+    "patronage": "The figures are identified as Camille Monet and their son Jean. Family participation is part of the making context, but does not by itself establish a paid commission or the sitters’ private emotional response.",
+    "ownership": "The National Gallery of Art acquired the work through the Collection of Mr. and Mrs. Paul Mellon. The museum record provides the fuller provenance; family subject matter should not be mistaken for an unbroken family ownership chain.",
+    "reception": "The apparent informality has helped make the painting an emblem of Impressionist outdoor life. Its low viewpoint and the parasol’s broad shape also show how thoroughly the encounter is organized for a viewer.",
+    "unresolved": "How much of the scene records a brief outdoor session and how much reflects reworking cannot be settled by lively brushwork alone. The figure’s glance is observable; an account of affection or spontaneity remains an interpretation.",
+    "source": {
+      "title": "National Gallery of Art · Woman with a Parasol",
+      "url": "https://www.nga.gov/artworks/61379-woman-parasol-madame-monet-and-her-son"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The figures are identified as Camille Monet and their son Jean. Family participation is part of the making context, but does not by itself establish a paid commission or the sitters’ private emotional response."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The National Gallery of Art acquired the work through the Collection of Mr. and Mrs. Paul Mellon. The museum record provides the fuller provenance; family subject matter should not be mistaken for an unbroken family ownership chain."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "How much of the scene records a brief outdoor session and how much reflects reworking cannot be settled by lively brushwork alone. The figure’s glance is observable; an account of affection or spontaneity remains an interpretation."
+      }
+    ],
+    "observation": "The parasol tilts above the figure.",
+    "documented": "Oil on canvas · 1875 · National Gallery of Art",
+    "interpretation": "The painting makes a family portrait behave like an encounter with weather: figure, fabric, grass and sky participate in the same moving field of light.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "morisot-02": {
+    "materials": "Oil on canvas lets strokes register both water and a screen of passing sensations. Cropping and the boat’s diagonal organize a restricted social space rather than simply reproducing a scenic lake.",
+    "patronage": "The boating subject belongs to modern leisure and the gendered conditions of access to public space. No specific original patron is established here. The represented women should not automatically be identified with members of Morisot’s family.",
+    "ownership": "The National Gallery records a bequest by Hugh Lane in 1917 and its later institutional arrangements. The current collection label should be checked before assuming a permanent gallery location or an uninterrupted display history.",
+    "reception": "Morisot’s handling has sometimes been reduced to an impression of feminine delicacy. A more productive reading asks how cropping, movement and the viewer’s position actively construct the encounter.",
+    "unresolved": "The identification of a particular exhibition title and date can affect an account of reception. A lake scene in a catalogue is not automatically this canvas; the National Gallery’s object discussion is the starting point for that question.",
+    "source": {
+      "title": "National Gallery · Summer’s Day",
+      "url": "https://www.nationalgallery.org.uk/paintings/berthe-morisot-summer-s-day"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The boating subject belongs to modern leisure and the gendered conditions of access to public space. No specific original patron is established here. The represented women should not automatically be identified with members of Morisot’s family."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The National Gallery records a bequest by Hugh Lane in 1917 and its later institutional arrangements. The current collection label should be checked before assuming a permanent gallery location or an uninterrupted display history."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The identification of a particular exhibition title and date can affect an account of reception. A lake scene in a catalogue is not automatically this canvas; the National Gallery’s object discussion is the starting point for that question."
+      }
+    ],
+    "observation": "The women look in different directions.",
+    "documented": "Oil on canvas · 1879 · National Gallery",
+    "interpretation": "Morisot makes modern leisure both accessible and incomplete: the close boat, uneven attention of the sitters and mobile water offer proximity without a finished social explanation.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "cassatt-01": {
+    "materials": "Oil on canvas joins patterned fabrics and a high viewpoint to the physical actions of bathing. Flattened color relationships do not remove bodily weight; the hands remain crucial points of support and contact.",
+    "patronage": "The painting belongs to Cassatt’s professional investigation of care and domestic labor, rather than evidence that she depicted her own motherhood. A paid commission or named mother and child is not established here.",
+    "ownership": "The Art Institute of Chicago records the Robert A. Waller Fund acquisition in 1910. The work’s earlier journey should follow the museum record rather than treating its later public setting as its intended first destination.",
+    "reception": "Japanese prints offer a documented context for Cassatt’s thinking about viewpoint and pattern. Their influence should be discussed through specific conventions and encounters, rather than an anonymous claim that the composition looks Eastern.",
+    "unresolved": "The identities and exact relation of the models are different questions from the intimate relation the painting constructs. A depicted gesture of care supports an interpretation without certifying the models’ biography.",
+    "source": {
+      "title": "Art Institute of Chicago · The Child’s Bath",
+      "url": "https://www.artic.edu/artworks/111442/the-childs-bath"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The painting belongs to Cassatt’s professional investigation of care and domestic labor, rather than evidence that she depicted her own motherhood. A paid commission or named mother and child is not established here."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The Art Institute of Chicago records the Robert A. Waller Fund acquisition in 1910. The work’s earlier journey should follow the museum record rather than treating its later public setting as its intended first destination."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The identities and exact relation of the models are different questions from the intimate relation the painting constructs. A depicted gesture of care supports an interpretation without certifying the models’ biography."
+      }
+    ],
+    "observation": "The basin forms a clear circle.",
+    "documented": "Oil on canvas · 1893 · Art Institute of Chicago",
+    "interpretation": "Cassatt makes an act of care intelligible through a tightly organized relation of hands, feet, vessel and surrounding pattern, giving domestic labor the authority of a major pictorial subject.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "cezanne-01": {
+    "materials": "Oil on canvas makes competing tilts of table, bottle and dish coexist. Technical examination can discuss revisions, but a tilted edge in the visible image is not itself a complete account of how or why a form changed.",
+    "patronage": "A studio still life can be ambitious without representing a commission or a rare set of possessions. This entry does not identify a first paying patron. The arrangement makes ordinary things into a test of pictorial coherence.",
+    "ownership": "The Art Institute of Chicago holds the work in the Helen Birch Bartlett Memorial Collection. That collecting context supplies a secure institutional stage; earlier transactions require the catalogue’s own distinctions.",
+    "reception": "The painting’s canonical role in accounts of modernism often emphasizes its apparent instability. The equally important question is how repeated curves, weights and colors make those instabilities hang together.",
+    "unresolved": "Multiple-viewpoint explanations are useful arguments, not direct access to Cézanne’s eye movements. The visible evidence is the mismatch between certain edges; the model used to explain it remains open to examination.",
+    "source": {
+      "title": "Art Institute of Chicago · Basket of Apples",
+      "url": "https://www.artic.edu/artworks/111436/the-basket-of-apples"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "A studio still life can be ambitious without representing a commission or a rare set of possessions. This entry does not identify a first paying patron. The arrangement makes ordinary things into a test of pictorial coherence."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The Art Institute of Chicago holds the work in the Helen Birch Bartlett Memorial Collection. That collecting context supplies a secure institutional stage; earlier transactions require the catalogue’s own distinctions."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "Multiple-viewpoint explanations are useful arguments, not direct access to Cézanne’s eye movements. The visible evidence is the mismatch between certain edges; the model used to explain it remains open to examination."
+      }
+    ],
+    "observation": "The basket tilts toward the table.",
+    "documented": "Oil on canvas · c. 1893 · Art Institute of Chicago",
+    "interpretation": "The still life sustains a convincing encounter with objects while letting their local relationships disturb a single consistent viewpoint; coherence is built through paint rather than guaranteed by perspective.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "van-gogh-02": {
+    "materials": "Oil on canvas builds a dark interior from earthy tones and a hanging lamp. Heads and hands carry labor’s visibility. The related lithograph translates that arrangement into printed marks rather than revealing hidden paint.",
+    "patronage": "The Nuenen work of 1885 was an ambitious professional statement rather than a securely identified paid commission. Van Gogh’s correspondence with Theo describes his intentions, which must be distinguished from the models’ own testimony.",
+    "ownership": "The Van Gogh Museum holds the canvas. Its journey through the artist’s family and the foundation collection is different from a work repeatedly exchanged on an auction market. The object record supplies the authoritative provenance.",
+    "reception": "Van Gogh’s own defense of the roughness matters to reception, as do responses that did not share his ambitions. The painting’s later fame should not turn that professional argument into an uncomplicated story of immediate success.",
+    "unresolved": "The artist’s claim to convey honestly earned food is a statement of intention. It cannot demonstrate the models’ circumstances by itself, nor make an intentionally constructed interior equivalent to a neutral social document.",
+    "source": {
+      "title": "Van Gogh Museum · The Potato Eaters",
+      "url": "https://www.vangoghmuseum.nl/en/collection/s0005V1962"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "The Nuenen work of 1885 was an ambitious professional statement rather than a securely identified paid commission. Van Gogh’s correspondence with Theo describes his intentions, which must be distinguished from the models’ own testimony."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The Van Gogh Museum holds the canvas. Its journey through the artist’s family and the foundation collection is different from a work repeatedly exchanged on an auction market. The object record supplies the authoritative provenance."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "The artist’s claim to convey honestly earned food is a statement of intention. It cannot demonstrate the models’ circumstances by itself, nor make an intentionally constructed interior equivalent to a neutral social document."
+      }
+    ],
+    "observation": "Hands connect work and eating.",
+    "documented": "Oil on canvas · 1885 · Van Gogh Museum",
+    "interpretation": "The meal becomes a tightly connected circuit of hands, faces and light: the painting gives laboring bodies pictorial gravity while exposing the artist’s deliberate construction of that gravity.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  },
+  "kandinsky-02": {
+    "materials": "Oil on canvas organizes circles, diagonals, angular groups and large open areas. Geometric clarity can be described without pretending that every form is a diagram of a named object or a fixed musical note.",
+    "patronage": "Made in 1923 during the Bauhaus period, the work belongs to a professional debate about abstraction and teaching. No original commission is established here. Its educational context does not make the composition a classroom exercise.",
+    "ownership": "The work belongs to the Solomon R. Guggenheim Museum collection. The Guggenheim institutional history is a secure part of its later reception, while details of earlier custody should follow the catalogue rather than an assumed direct artist-to-museum transfer.",
+    "reception": "The language of music and spirituality offers a historical context for abstraction. Later viewers may experience a precise visual system, but that experience does not settle the artist’s relation between geometry and inner necessity.",
+    "unresolved": "Kandinsky’s theoretical writings are evidence of a developing practice. A passage from another year should not become an automatic key to every shape in this painting, and a formal resemblance is not a proven code.",
+    "source": {
+      "title": "Guggenheim Bilbao · Cosmic Realms: Russia to the Bauhaus",
+      "url": "https://www.guggenheim-bilbao.eus/en/exhibition/cosmic-realms-russia-to-the-bauhaus-gallery-307"
+    },
+    "journey": [
+      {
+        "date": "Making and first setting",
+        "text": "Made in 1923 during the Bauhaus period, the work belongs to a professional debate about abstraction and teaching. No original commission is established here. Its educational context does not make the composition a classroom exercise."
+      },
+      {
+        "date": "Later custody / institutional history",
+        "text": "The work belongs to the Solomon R. Guggenheim Museum collection. The Guggenheim institutional history is a secure part of its later reception, while details of earlier custody should follow the catalogue rather than an assumed direct artist-to-museum transfer."
+      },
+      {
+        "date": "Open documentary question",
+        "text": "Kandinsky’s theoretical writings are evidence of a developing practice. A passage from another year should not become an automatic key to every shape in this painting, and a formal resemblance is not a proven code."
+      }
+    ],
+    "observation": "Large and small circles create different weights.",
+    "documented": "Oil on canvas · 1923 · Solomon R. Guggenheim Museum, New York",
+    "interpretation": "The painting makes direction, interval and unequal visual weight carry an experience that recognizable objects would otherwise organize; abstraction becomes a system of active relations rather than an absence of subject.",
+    "reviewed": "2026-11-20",
+    "scope": "Editorial dossier: object-specific context and explicitly retained gaps. Not a claim of complete provenance or independent specialist peer review."
+  }
+}
