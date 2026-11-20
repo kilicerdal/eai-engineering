@@ -1,0 +1,254 @@
+{
+  "cloud-practitioner-case-8-1": {
+    "sha256": "059d6979a80016b271b057313a8eaf9b9ac4b1387888e9c73818182fb9a0b148",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-8 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Billing, Pricing, and Support · caselet 8 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-8-2": {
+    "sha256": "69ac079c57f2f09af5def0fe61540401dbb5028f5eaf910aa82e9edf857882ab",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Console presence and the original estimate deliberately lack recipient-delivery evidence. A lower bill also does not prove delivery. The limitation is relevant to the stated verification task, not a claim that budget configuration is inherently useless.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-4-1": {
+    "sha256": "bc399b28b7a5126ceb74a0519dc94b1ecfc3729c65dc35f5a1a1a830cdd97d32",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Security and Compliance · caselet 4 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-6-1": {
+    "sha256": "592d7aff1ff5714dd527dffb776e8306afa91e62857801be7ce1b57467186e19",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Technology and Services · caselet 6 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-1-1": {
+    "sha256": "1dcda99a3feaa34f197895ac6cc5971abc80fbbcbeb2a41e2a1ca4f64292d700",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Concepts · caselet 1 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-4-2": {
+    "sha256": "646dea71f09505bed97b7f59741ff6c7513d8f31d7cdd63c4fbaa07991f7317d",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-4 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Security and Compliance · caselet 4 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-6-2": {
+    "sha256": "a3fcdc51a9fb92705795bdfa933be53e9eaeeaf39a4703fd8307f536694c5cfe",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Technology and Services · caselet 6 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-9-1": {
+    "sha256": "71de3f54c9ee3136018656df50732a182914a8e5f92025fc83d7c5f3e9c82dd4",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Billing, Pricing, and Support · caselet 9 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-1-2": {
+    "sha256": "870abe6933bde817a1e7b03f736e23ca38398e896374d244251c73a620187496",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Concepts · caselet 1 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-6-3": {
+    "sha256": "a5afb0174bbc502b31f5bedf641c16639c5632d102a6640ab0219a0adf7309cd",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-6 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Technology and Services · caselet 6 · interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-9-2": {
+    "sha256": "4c24040f67b9a0d89606b97df31555063c390ff9791cbd8b87b0db4324054a70",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Billing, Pricing, and Support · caselet 9 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-1-3": {
+    "sha256": "957bcc90b19a08644ff8927e2fb30fae5a69da25f6100c7016cfef0ac3076921",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Concepts · caselet 1 · interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-5-1": {
+    "sha256": "e407833bfc3e5462aa37035cc48924e518bed85b57aa1ebcfb4744ea70745502",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Security and Compliance · caselet 5 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-7-1": {
+    "sha256": "fdb78a6e08d1f0c9e2582851670ce11af73707e8ebb8f81420638f3eed67c783",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Technology and Services · caselet 7 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-2-1": {
+    "sha256": "fd8a4e9ab6d212c6fb5b24f04949d7beb110a3183f2579ca61694b33245d9140",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Concepts · caselet 2 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-5-2": {
+    "sha256": "f7cd2452b9585bbdef0d0a0e0f0dbb3f0bc49523abed2613659e2c1a7dad8260",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Security and Compliance · caselet 5 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-7-2": {
+    "sha256": "6daae86926dd6648b15b5e18f52e2b73ffe761057cb095f3a85c40a84b22d7fd",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Technology and Services · caselet 7 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-2-2": {
+    "sha256": "3b955d8470139712120961bd9dfddd836cead797428d568fd16af6b22ded5172",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-2 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Cloud Concepts · caselet 2 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "cloud-practitioner-case-5-3": {
+    "sha256": "5a6330587d230bb96d67e67bab679855ed0ad467296c058a74a467aaa3935b06",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case cloud-practitioner-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Security and Compliance · caselet 5 · interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-5-1": {
+    "sha256": "55816963c36365fab83318a3901c04a7797e492f3a951d19ddf9ab6dd0a11418",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Static Testing · caselet 5 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-9-1": {
+    "sha256": "ea982131bc6797a702371eab219aefa4990927bf2ea1eedddccf7c2d0770dfb0",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Managing Test Activities · caselet 9 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-10-1": {
+    "sha256": "6038149b9cc23af01a649e4aa14f996b2db0df2d399370a1b11d0960418f4ad3",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Test Tools · caselet 10 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-1-1": {
+    "sha256": "9fec65699a70e06a2279bf4a0469cb53545679355244e7cecaadacfab99f3a76",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Fundamentals of Testing · caselet 1 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-3-1": {
+    "sha256": "f7e9db3c6137638f1f58079a8f5043dc81f3145a8eca6dbdf0ba312ef4560d9c",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Testing Through the Lifecycle · caselet 3 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-5-2": {
+    "sha256": "0971197fda63b86da8f17b309823f3c112c3f48556cf7f33ea8c7ccc874b3849",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-5 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Static Testing · caselet 5 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-7-1": {
+    "sha256": "5b1abdc40d7eb5824bce28d738847cff180db5192e002eaba60df734d535650c",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Test Analysis and Design · caselet 7 · decision. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-9-2": {
+    "sha256": "41a664c4333934f81ca00575fa3b0b44edfb08bf3b602001e0979c0b1a6f52c7",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Managing Test Activities · caselet 9 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-10-2": {
+    "sha256": "a41d5aa1a22dc26ec331665e8ed699ca85228f655eb93e9de79cc80cbc941117",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Page-load counts, assertion counts and runtime each omit evidence that a business fault is detected. The correct choice challenges a known failure alongside a passing control. These are intentionally insufficient measures, not impossible alternatives.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-1-2": {
+    "sha256": "3e7139628968a1467a57021d7d306ccc593deab8900b079a5facaee1dbec25b0",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-1 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Fundamentals of Testing · caselet 1 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-3-2": {
+    "sha256": "d13720c608564d81cc5fece454b53d1e70059199c51ff6060ef828c4e6959cfb",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-3 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Testing Through the Lifecycle · caselet 3 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-7-2": {
+    "sha256": "af48b302b267f7d014ff51808ebce1cfec20687ba1634c4d9a350b11ba96a3ac",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-7 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Test Analysis and Design · caselet 7 · verification. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-9-3": {
+    "sha256": "9fb71f097aa7d573f62d4d8c2bed585991a4bcb843cbb834c0d8b55788547e4c",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-9 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Managing Test Activities · caselet 9 · interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-10-3": {
+    "sha256": "738f47d5add82f67e010a047562c292e85b3ac920f58be351c410d08a8cdc54f",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Case istqb-foundation-case-10 intentionally supplies shared context for different decision, verification or interpretation tasks. This item’s task is Test Tools · caselet 10 · interpretation. The sampler prefers unfamiliar cases and the interface labels a familiar case even when this particular task is new. This resolves the close-wording signal, not independent technical truth validation.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "istqb-foundation-case-4-1": {
+    "sha256": "663eae6787161d7c4cc2f4b720326a13660c9b8232624a52a0e704d30c31c488",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "Repeating the original reproduction remains confirmation, and an unrelated suite does not address affected behavior. The question explicitly establishes missing regression coverage; confirmation plus appropriate regression resolves it.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "ai-testing-growth-015": {
+    "sha256": "4a7c2e3ad0c41740705e3502eb8352512b99113798e02d77d5d9bb65a21d7147",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "The pair deliberately contrasts detected/actual positives (recall) with true/predicted positives (precision). Shared numbers are not equivalent evaluation claims.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  },
+  "ai-testing-growth-016": {
+    "sha256": "6a7b5a26218b79db28433c03992c942a4e33f82f4309f3806ed6f5e2aeeef944",
+    "decision": "Retain: bounded wording distinction reviewed",
+    "reason": "The pair deliberately contrasts detected/actual positives (recall) with true/predicted positives (precision). Shared numbers are not equivalent evaluation claims.",
+    "reviewedAt": "2026-11-19",
+    "reviewer": "Codex editorial signal review; not independent subject-matter or exam-owner validation"
+  }
+}

@@ -65,7 +65,7 @@ export default function Home() {
    <span className="atlas-chapter">THE THRESHOLD</span>
    <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onKeyDown={e => {if(e.key === "Escape") setMenuOpen(false); else if(e.key === "ArrowDown"){e.preventDefault();setMenuOpen(true);requestAnimationFrame(()=>document.querySelector<HTMLAnchorElement>("#atlas-nav a")?.focus());}}} onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onKeyDown={e=>{if(e.key === "Escape"){setMenuOpen(false);document.querySelector<HTMLButtonElement>(".atlas-menu")?.focus();}}} onClick={focusHomeSection}>
-    <a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Solve</a><a href="/study" aria-label="Learning Studio">Learn</a><Link href="/explore">Explore</Link><a href="#about" aria-current={navSection === "about" ? "location" : undefined}>About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
+    <a href="#engineering" aria-current={["engineering","projects","platform"].includes(navSection) ? "location" : undefined}>Solve</a><a href="/study" aria-label="Learn · Learning Studio">Learn</a><Link href="/explore">Explore</Link><a href="#about" aria-current={navSection === "about" ? "location" : undefined}>About</a><a href="#contact" aria-current={navSection === "contact" ? "location" : undefined}>Contact</a>
    </nav>
    <a className="atlas-dai-entry" href="/study" aria-label="Explore dAI Learning Studio">Explore dAI <span aria-hidden="true">→</span></a>
   </header>
@@ -109,6 +109,6 @@ export default function Home() {
   <AIPhilosophy />
 </QuietChapter>
   <HeritageRow scene="hegra-knowledge" caption="Hegra · A future of knowledge within the earth" reverse><ContactDesk /></HeritageRow>
-  <div id="artwork-footer" className="artwork-footer"><HeritageRow scene="room-that-remembers" caption="The Room That Remembers · Art becomes a place for reflection" imageWidth={1774} imageHeight={887}><footer className="atlas-footer"><a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a><nav className="footer-destinations" aria-label="Footer navigation"><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">GitHub ↗</a><Link href="/study">Learning Studio ↗</Link><Link href="/study/privacy">Learning privacy</Link></nav><small>© 2026 eAI · Erdal Kilic</small></footer></HeritageRow></div>
+  <div id="artwork-footer" className="artwork-footer"><HeritageRow scene="room-that-remembers" caption="The Room That Remembers · Art becomes a place for reflection" imageWidth={1774} imageHeight={887}><footer className="atlas-footer"><a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a><nav className="footer-destinations" aria-label="Footer navigation"><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">GitHub ↗</a><Link href="/study">Learning Studio ↗</Link><Link href="/study/privacy">Learning privacy</Link><Link href="/privacy">Website privacy</Link></nav><small>© 2026 eAI · Erdal Kilic</small></footer></HeritageRow></div>
  </main>;
 }

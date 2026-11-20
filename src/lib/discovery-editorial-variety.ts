@@ -1,0 +1,23 @@
+// Authored reflections on existing cards. These add no new factual claims or ordering rules.
+export const discoveryReflections:Record<string,{kind:'Try it gently'|'Read the evidence'|'Change your perspective';prompt:string}>={
+ 'retrieval-practice':{kind:'Try it gently',prompt:'After reading a short paragraph, look away and recall one idea. Then reopen it and check what you missed. Treat this as a small experiment, not a score.'},
+ 'drawing-memory':{kind:'Try it gently',prompt:'Sketch one relationship in your notes. Can you explain why two parts connect? Artistic accuracy is not the task.'},
+ 'spaced-learning':{kind:'Try it gently',prompt:'Choose one idea to revisit another day. Write a question now that will let you check your recall when you return.'},
+ 'gobekli-builders':{kind:'Read the evidence',prompt:'What surviving material could support a claim about how people built together? Separate that from a story about what every builder believed.'},
+ 'gobekli-symbols':{kind:'Read the evidence',prompt:'Describe a visible feature before interpreting it. What additional evidence would help distinguish two possible meanings?'},
+ 'stonehenge-transport':{kind:'Read the evidence',prompt:'Separate evidence about a stone’s origin from a proposed route. Which observation would discriminate between transport explanations?'},
+ 'rosetta-scripts':{kind:'Change your perspective',prompt:'Imagine recognizing a repeated pattern without knowing its meaning. What independent clue would help you move from matching to interpretation?'},
+ 'antikythera-gears':{kind:'Change your perspective',prompt:'If a mechanism represents a cycle, what must its designer choose to simplify? Compare the model with the thing being modeled.'},
+ 'venus-rotation':{kind:'Read the evidence',prompt:'Before comparing a day with a year, write down what each interval measures. Would a different reference point change the comparison?'},
+ 'moon-rotation':{kind:'Change your perspective',prompt:'Imagine describing the same motion from two viewpoints. What would each observer need to state so the descriptions can be compared?'},
+ 'sunlight-travel':{kind:'Change your perspective',prompt:'What changes in your interpretation when an observation arrives after the event? Keep signal travel separate from the source’s behavior.'},
+ 'bat-echoes':{kind:'Change your perspective',prompt:'Which part of an echo supplies a timing clue? How does that question differ from asking what produced the sound?'},
+ 'jacquard-patterns':{kind:'Change your perspective',prompt:'Compare a visible pattern with instructions for making one. What would an encoding need to preserve to reproduce the intended result?'},
+ 'braille-cell':{kind:'Try it gently',prompt:'Draw a small pattern using raised-dot positions on paper. Which differences are easy to describe, and which require an agreed notation? This is reflection, not Braille instruction.'},
+ 'roman-concrete':{kind:'Read the evidence',prompt:'A surviving structure can invite several explanations. What evidence would connect a material property to its durability in a particular setting?'},
+ 'coral-builders':{kind:'Change your perspective',prompt:'Compare a structure with the process that maintains it. Which questions concern the finished shape, and which concern change over time?'},
+ 'art-infrared':{kind:'Read the evidence',prompt:'An image can reveal a material difference without revealing the maker’s intention. What can be observed, and what still needs interpretation?'},
+ 'art-xrays':{kind:'Read the evidence',prompt:'Separate what the imaging method records from an explanation of why the artist changed something. What other evidence could help?'},
+ 'web-editor':{kind:'Change your perspective',prompt:'How does your experience of a tool change when you can create with it as well as read through it? Think of one modern example without assuming it works the same way.'},
+ 'first-website':{kind:'Change your perspective',prompt:'If you were introducing a new way to share information, what would your first explanatory page need to teach its visitors?'},
+};

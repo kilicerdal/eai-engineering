@@ -85,3 +85,13 @@ html[data-artwork-visibility="quiet"] :is(.rr-hero-art,.rr-curiosity-art){visibi
 @media(max-width:650px){.lab-fields{grid-template-columns:1fr;}.lab-diagram{flex-direction:column;align-items:stretch;}.lab-diagram span{flex:auto;}.lab-diagram b{align-self:center;transform:rotate(90deg);}.lab-timeline button{width:auto;}.practice-lab{padding:.75rem;}}
 
 .idea-start{margin:1.5rem 0;padding:1rem 0;border-bottom:1px solid #b99e6644}.idea-start>p{color:#ead7a5}.idea-start>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}.idea-start button{text-align:left}.idea-feedback h3{font-size:1.1rem;margin-top:1rem}.idea-resume button{display:block}@media(max-width:600px){.idea-start>div{grid-template-columns:1fr}}
+/* A dependable route back, independent of history or the More menu. */
+.room-wayfinding nav{align-items:center}.room-wayfinding .room-back-link{display:inline-flex;align-items:center;min-height:44px;padding:7px 12px;border:1px solid #bba47780;border-radius:5px;background:#183245;color:#f4dfb9;font-weight:600;text-decoration:none}.room-wayfinding .room-back-link:hover{background:#25465a}.room-home-link{display:inline-flex;align-items:center;min-height:44px}.foundation-contrast{border-left:2px solid #d4b278;padding-left:16px;margin:20px 0}.foundation-contrast p{max-width:72ch}.cert-session .quiet-next{font-weight:700}.main-project-story dl{display:grid;gap:6px}.main-project-story dt{font-weight:700;color:#e6c58b}.main-project-story dd{margin:0 0 12px;max-width:65ch}
+@media(max-width:600px){.room-wayfinding nav{gap:4px 12px}.room-wayfinding .room-back-link{padding:7px 10px}.room-wayfinding nav>span{flex-basis:100%}}
+.curiosity-editorial-reflection{border-left:2px solid #c7aa74;padding-left:14px}.curiosity-editorial-reflection small{display:block;margin-top:8px;font-size:.8em;opacity:.8}
+.cert-study-support{margin-top:24px;border-top:1px solid #bba47755;padding-top:12px}.cert-study-support>summary{min-height:44px;cursor:pointer;color:#e6c58b;display:list-item;padding:10px 0}.cert-study-support[open]{padding-bottom:16px}
+
+.welcome-start-help{margin:20px 0 28px;border-bottom:1px solid #b79a6140;padding:12px 0}
+.welcome-start-help>summary{cursor:pointer;min-height:44px;color:#e3bd78}
+.welcome-home .welcome-entrances{scroll-margin-top:24px}
+@media(max-width:640px){.welcome-home .space-wrap{padding-top:24px}.welcome-home header h1{font-size:36px;line-height:1.15}.welcome-home .welcome-entrances article{padding:20px}.welcome-home .welcome-line{font-size:20px}}

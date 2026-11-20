@@ -9,7 +9,7 @@ test('homepage leads with proof and keeps all heritage scenes and destinations',
  await expect(page.getByRole('link',{name:'Try eAI in two minutes →',exact:true})).toBeVisible();
  await page.locator('.quiet-chapter').first().locator(':scope > summary').click();await page.locator('.problem-other-starts > summary').click();await expect(page.getByRole('heading',{name:'What brings you here?'})).toBeVisible();
  await expect(page.locator('.main-project')).toHaveCount(3);
- for(const article of await page.locator('.main-project').all()){await article.getByText('Decision, evidence & limitation',{exact:true}).click();await expect(article.locator('dt')).toHaveText(['Decision','Evidence','Limitation']);}
+ for(const article of await page.locator('.main-project').all()){await article.getByText('Problem, decision, evidence & limitation',{exact:true}).click();await expect(article.locator('dt')).toHaveText(['Problem','Decision','Evidence','Limitation']);}
 });
 test('two-minute introduction compares recorded outcomes without API calls',async({page})=>{
  const mutations:string[]=[];page.on('request',r=>{if(r.method()==='POST')mutations.push(r.url());});

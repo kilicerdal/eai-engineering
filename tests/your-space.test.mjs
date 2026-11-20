@@ -17,3 +17,14 @@ test('understanding versions and stopping points are projected read-only without
 test('public destinations remove sensitive queries and reject browser-normalized external paths',()=>{for(const path of ['/study?session=private#notes','/study#private'])assert.equal(publicPageLink(path),'https://www.eai.engineering/study');for(const path of ['//other.example/path','/\\other.example','https://other.example','/study\nprivate'])assert.equal(publicPageLink(path),'https://www.eai.engineering/');});
 test('new certification saves use their original separate key and remain unchanged',()=>{for(const id of ['solutions-architect-professional','agile-tester']){const raw=JSON.stringify({version:1,track:id,active:'round1',rounds:[{id:'round1',startedAt:8,finishedAt:null}],notebook:{q1:{note:'My reasoning',reviewed:false}},lastChangedAt:9});const data=projectSavedWork(k=>k==='eai-certification-new-path-v1:'+id?raw:null,[],10);assert.equal(data.recent[0].href,'/study/certifications/'+id);assert.equal(data.notes[0].href,'/study/certifications/'+id+'#notebook');assert.match(data.notes[0].detail,/My reasoning/);assert.equal(JSON.parse(raw).active,'round1');}});
 test('the active engineering question resumes the existing notebook without creating or sharing it',()=>{const raw=JSON.stringify({version:1,active:'p1',items:[{id:'p1',brief:'Check this boundary',updatedAt:9}]});const result=projectSavedWork(k=>k==='eai-engineering-problems-v1'?raw:null,[],10);assert.equal(result.recent[0].title,'Check this boundary');assert.equal(result.recent[0].href,'/engineering/problem');assert.doesNotMatch(result.recent[0].href,/boundary|p1/);assert.equal(JSON.parse(raw).items.length,1);});
+
+test('Continue chooses an unfinished book before history deduplication and never changes saves',()=>{
+ const data={'dai-reading-shelf-v1':JSON.stringify({'11':'Finished','12':'Reading'}),'dai-reading-library-v1':JSON.stringify({version:1,positions:{11:{section:5,updatedAt:100},12:{section:2,updatedAt:90}}})};
+ const before=JSON.stringify(data),result=projectSavedWork(k=>data[k]??null,[{id:'11',title:'Finished book'},{id:'12',title:'Current book'}],200);
+ assert.equal(result.continueItem.href,'/study/reading/12');assert.equal(result.recent[0].href,'/study/reading/11');assert.equal(JSON.stringify(data),before);
+});
+test('a completed test or finished book alone does not create an unfinished Continue card',()=>{
+ const records={'dai-reading-shelf-v1':JSON.stringify({'11':'Finished'}),'dai-reading-library-v1':JSON.stringify({version:1,positions:{11:{section:5,updatedAt:8}}}),'eai-certification-v1:cloud-practitioner':JSON.stringify({track:'cloud-practitioner',session:{startedAt:7,finishedAt:9}})};
+ assert.equal(projectSavedWork(k=>records[k]??null,books,10).continueItem,null);
+ assert.equal(projectSavedWork(()=>{throw Error('Blocked');},books,10).continueItem,null);
+});

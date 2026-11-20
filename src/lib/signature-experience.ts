@@ -9,9 +9,9 @@ export function nextPracticeDestination(id:string){
  return {href:'/engineering/order-once',label:'Follow a complete engineering case'};
 }
 export const projectStories={
- 'playwright':{decision:'Keep a logical operation identity consistent with its durable effect.',evidence:'Captured API, database and browser checks, including a controlled retry fault.',limit:'A recorded synthetic case; opening the story does not execute a service.'},
- 'healthcare':{decision:'Preserve the stored claim across redelivery and reject conflicting content.',evidence:'Pinned synthetic claim records and queue-simulation results.',limit:'Local simulation evidence, not a healthcare production deployment.'},
- 'settlement':{decision:'Use independent matching and review controls before value moves.',evidence:'A captured synthetic settlement showcase and its traceable records.',limit:'A local simulator, not a live trading or settlement service.'},
+ 'playwright':{problem:'A response can be lost after checkout commits, so a retry risks creating a second order.',decision:'Keep a logical operation identity consistent with its durable effect.',evidence:'Captured API, database and browser checks, including a controlled retry fault.',limit:'A recorded synthetic case; opening the story does not execute a service.'},
+ 'healthcare':{problem:'Queue acknowledgement can fail after a claim is stored, causing the same message to return.',decision:'Preserve the stored claim across redelivery and reject conflicting content.',evidence:'Pinned synthetic claim records and queue-simulation results.',limit:'Local simulation evidence, not a healthcare production deployment.'},
+ 'settlement':{problem:'Matching records can still share a mistake or move value without an independent check.',decision:'Use independent matching and review controls before value moves.',evidence:'A captured synthetic settlement showcase and its traceable records.',limit:'A local simulator, not a live trading or settlement service.'},
 } as const;
 export const visitorWalkthroughs=[
  {id:'first-visit',title:'First-time visitor',tasks:['From the homepage, explain what eAI offers in your own words.','Open the two-minute case, make a prediction and inspect the result.','Find the full evidence without help.'],success:'Can describe the purpose and reach the evidence without guessing which Studio to open.'},

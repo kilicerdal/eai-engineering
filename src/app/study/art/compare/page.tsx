@@ -1,0 +1,5 @@
+import {Suspense} from 'react';import Link from 'next/link';import ArtRoomFrame from '@/components/art/ArtRoomFrame';import ArtCompare from '@/components/art/ArtCompare';import StudyNavigation from '@/components/StudyNavigation';import {artPaintings} from '@/lib/art/collection';import '../art-room.css';
+export const metadata={title:'Two Paintings, One Idea | The Art Room'};
+type Query=Promise<{left?:string;right?:string}>;
+async function SelectedPair({query}:{query:Query}){const q=await query;return <ArtCompare key={`${q.left}-${q.right}`} initialLeft={artPaintings.some(p=>p.id===q.left)?q.left:undefined} initialRight={artPaintings.some(p=>p.id===q.right)?q.right:undefined}/>;}
+export default function ComparePage({searchParams}:{searchParams:Query}){return <ArtRoomFrame><StudyNavigation/><nav className="art-trail" aria-label="Art Room breadcrumb"><Link href="/study/art#collection">← Return to the gallery</Link></nav><Suspense fallback={<p className="art-comparison" role="status">Preparing the two paintings…</p>}><SelectedPair query={searchParams}/></Suspense></ArtRoomFrame>;}

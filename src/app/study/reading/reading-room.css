@@ -86,3 +86,10 @@
 .rr-library-settings>div{width:min(420px,calc(100vw - 36px));max-height:75svh;overflow:auto;overscroll-behavior:contain}
 
 .rr-hero{position:relative;isolation:isolate}.rr-hero>.rr-hero-art{object-fit:cover;z-index:0}.rr-hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#061420eb 0%,#071521ac 48%,#07152119 100%),linear-gradient(0deg,#071521,transparent 35%)}.rr-hero>:not(img){position:relative;z-index:2}
+
+@media(max-width:640px){
+.rr-hero{min-height:0;gap:20px;padding:28px 20px;align-items:flex-start}
+.rr-hero h1{font-size:40px;line-height:1.1;margin:12px 0}
+.rr-hero-copy p{font-size:16px;line-height:1.5}
+.rr-hero-inscription{display:none}
+}

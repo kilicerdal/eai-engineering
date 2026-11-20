@@ -225,3 +225,19 @@
 /* Keep the complete Studio menu readable as destinations grow. */
 @media(min-width:761px) and (max-width:1400px){.eai-study-studio .studio-nav{flex-wrap:wrap;gap:8px}.eai-study-studio .studio-nav nav{width:100%;justify-content:space-between;gap:12px;flex-wrap:wrap}}
 @media(max-width:760px){.eai-study-studio .studio-mobile-shortcuts{gap:18px;flex-wrap:wrap}.eai-study-studio .studio-mobile-shortcuts a[aria-current]{color:#edc578;text-decoration:underline;text-underline-offset:5px}}
+
+/* Shorter first visits: the room choices follow the introduction directly. */
+.eai-study-studio .studio-intro-details{margin:14px 0;max-width:640px;font-size:16px}
+.eai-study-studio .studio-intro-details summary{cursor:pointer;color:#e3bd78;min-height:44px;display:flex;align-items:center}
+.eai-study-studio .studio-hero-scroll{position:relative;display:block;inset:auto;transform:none;width:fit-content;margin:0 auto;padding:12px 20px}
+.eai-study-studio .study-resume-shortcut{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.eai-study-studio .resume-all-work{font-size:14px;text-decoration:underline}
+@media(max-width:640px){
+.eai-study-studio .studio-hero{min-height:0;padding-bottom:18px}
+.eai-study-studio .studio-hero-copy{padding:24px 5% 12px}
+.eai-study-studio .studio-hero-copy h1{font-size:clamp(36px,9vw,48px);line-height:1.12;margin:14px 0}
+.eai-study-studio .studio-hero-subtitle{font-size:17px;line-height:1.5;margin:12px 0}
+.eai-study-studio .studio-hero-note{font-size:13px;margin:10px 0}
+.eai-study-studio .studio-hero-description{font-size:16px;line-height:1.5}
+.eai-study-studio .quiet-rooms>a{padding:16px 20px;min-height:76px}
+}

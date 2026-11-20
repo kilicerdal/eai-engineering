@@ -76,3 +76,9 @@ page.backup.txt
 
 # Personal editor snapshots
 *.about-backup
+
+# Local artwork acquisition caches and scratch previews
+/tmp/
+/data/art/research.json
+/data/art/rights.json
+/data/art/portraits-research.json

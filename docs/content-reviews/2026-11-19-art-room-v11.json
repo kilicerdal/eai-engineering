@@ -1,0 +1,192 @@
+{
+  "name": "Art Room V1.1 \u00b7 Learn to See",
+  "status": "local preview only; not published",
+  "features": [
+    {
+      "number": 1,
+      "name": "Three gallery entrances"
+    },
+    {
+      "number": 2,
+      "name": "Choose a painting for me"
+    },
+    {
+      "number": 3,
+      "name": "Mood browsing"
+    },
+    {
+      "number": 4,
+      "name": "Five-minute visits"
+    },
+    {
+      "number": 5,
+      "name": "Remember gallery browsing position"
+    },
+    {
+      "number": 6,
+      "name": "Recently viewed paintings"
+    },
+    {
+      "number": 7,
+      "name": "Look first read second"
+    },
+    {
+      "number": 8,
+      "name": "Layered explanations"
+    },
+    {
+      "number": 9,
+      "name": "Reviewed image markers"
+    },
+    {
+      "number": 10,
+      "name": "Contextual visual vocabulary"
+    },
+    {
+      "number": 11,
+      "name": "Interactive technique diagrams"
+    },
+    {
+      "number": 12,
+      "name": "Recorded facts versus interpretation"
+    },
+    {
+      "number": 13,
+      "name": "Original-scale indicators where dimensions exist"
+    },
+    {
+      "number": 14,
+      "name": "Original setting notes where documented"
+    },
+    {
+      "number": 15,
+      "name": "Five-moment painter timelines"
+    },
+    {
+      "number": 16,
+      "name": "Earlier and later work comparisons"
+    },
+    {
+      "number": 17,
+      "name": "Sourced painter connections"
+    },
+    {
+      "number": 18,
+      "name": "Documented painter facts"
+    },
+    {
+      "number": 19,
+      "name": "Materials and methods context"
+    },
+    {
+      "number": 20,
+      "name": "Historical era context"
+    },
+    {
+      "number": 21,
+      "name": "Themed gallery trails"
+    },
+    {
+      "number": 22,
+      "name": "Two-work comparisons"
+    },
+    {
+      "number": 23,
+      "name": "Cross-era connections"
+    },
+    {
+      "number": 24,
+      "name": "Compact era timeline"
+    },
+    {
+      "number": 25,
+      "name": "Related works with reasons"
+    },
+    {
+      "number": 26,
+      "name": "Modern visual-method connections"
+    },
+    {
+      "number": 27,
+      "name": "Private painting notes"
+    },
+    {
+      "number": 28,
+      "name": "Personal collections"
+    },
+    {
+      "number": 29,
+      "name": "Gentle viewing history"
+    },
+    {
+      "number": 30,
+      "name": "Backup and previewed merge restore"
+    },
+    {
+      "number": 31,
+      "name": "Copy painting links"
+    },
+    {
+      "number": 32,
+      "name": "Next-visit bookmark"
+    },
+    {
+      "number": 33,
+      "name": "Reproduction resolution details"
+    },
+    {
+      "number": 34,
+      "name": "Consistent source and credit links"
+    },
+    {
+      "number": 35,
+      "name": "Concern email drafts"
+    },
+    {
+      "number": 36,
+      "name": "Subject notices before sensitive images"
+    },
+    {
+      "number": 37,
+      "name": "Text size and quiet viewing"
+    },
+    {
+      "number": 38,
+      "name": "Desktop and phone visual consistency"
+    }
+  ],
+  "coverage": {
+    "paintings": 100,
+    "painters": 15,
+    "creditedPortraits": 15,
+    "tours": 8,
+    "markers": "3 image markers on each of 8 placement-reviewed works; written looking prompts remain on all 100",
+    "originalSettings": "10 documented settings; other records explicitly state the gap instead of inventing a commission",
+    "timeline": "Birth, three dated selected works, and recorded end of life; not a complete biography",
+    "collectionLimit": 30,
+    "noteCharacterLimit": 3000
+  },
+  "checks": {
+    "unitTests": 1042,
+    "build": "passed including size budgets",
+    "lint": "0 errors; 1 pre-existing StudyAccount warning",
+    "inventory": {
+      "books": 200,
+      "discoveries": 1000,
+      "paths": 12,
+      "questions": 1090
+    },
+    "scopedBrowserTests": 34,
+    "visualReview": [
+      "Gallery and painting desktop",
+      "Guided looking markers against original reproductions",
+      "Phone gallery, comparison and short tour",
+      "Painter portraits and timeline"
+    ]
+  },
+  "preservation": "Existing My Gallery v1 key retained; new notes/collections/preferences/history use a separate validated v1 key. Original gallery exports remain importable. Restore previews and merges; current notes win by default. Other rooms are not rewritten.",
+  "releaseCaveats": [
+    "Historical wider release-suite failures documented in the earlier Art Room review remain outside this local package; no full-site release-ready claim.",
+    "Live provider tests remain pending by owner instruction."
+  ]
+}

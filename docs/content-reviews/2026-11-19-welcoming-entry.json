@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-19",
+  "scope": "Eight local simplification improvements; not published",
+  "changes": [
+    "Three consistent starts: solve a problem, learn something, explore an idea; specialist entrances retained.",
+    "Continue opens the original activity directly; finished books are excluded from the primary suggestion while retained in history.",
+    "Start and Studio introduce a choice, put activities next, and keep optional guidance afterward.",
+    "Shared navigation uses Saved work and Comfort & room help.",
+    "Empty reading notebook offers an example prompt and an explicit way to choose a book; no synthetic note is saved.",
+    "Global saving, privacy, public-link and recovery guidance share one panel; saving errors remain visible.",
+    "Shorter Studio and Reading Room phone introductions; original artwork retained.",
+    "Finished-book screen acknowledges the finish and keeps reflection and further reading optional."
+  ],
+  "validation": {
+    "unit": "1034 passed",
+    "browser": "139 passed in full run, remaining saving-warning check passed after selector correction",
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "lint": "0 errors; 1 existing StudyAccount navigation warning",
+    "inventory": {
+      "paths": 12,
+      "questions": 1090,
+      "books": 200,
+      "discoveries": 1000
+    },
+    "visual": "Start, Studio, Reading Room and notebook inspected; phone screenshots inspected",
+    "diffCheck": "passed"
+  },
+  "pending": "Live Tutor provider response comparison remains pending by owner instruction. No API spending or deployment."
+}

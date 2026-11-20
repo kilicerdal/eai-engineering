@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-19",
+  "scope": [
+    "All pending earlier local simplification and welcoming-entry work",
+    "Certification quality-v14 and edition-preserving source/rationale updates",
+    "Art Room V1 and Learn to See V1.1",
+    "Homepage accessibility and privacy-link repair",
+    "Current-layout desktop/mobile and recruiter regression coverage"
+  ],
+  "validation": {
+    "unitTests": 1042,
+    "desktopMobileChecks": {
+      "passedInitial": 464,
+      "correctedPhoneTestsPassed": 2,
+      "total": 466
+    },
+    "chromiumWebkitRecruiterChecks": 20,
+    "firefox": "Local binary cannot create its profile; Linux CI remains the verification environment.",
+    "build": "Passed with packed-book and asset budgets",
+    "typecheck": "Passed",
+    "lint": "Zero errors; one preexisting StudyAccount navigation warning",
+    "certificationAudits": "Quality, purpose, workshop, simple, quality-pass and new-path audits passed"
+  },
+  "inventory": {
+    "certificationPaths": 12,
+    "questions": 1090,
+    "books": 200,
+    "discoveries": 1000,
+    "paintings": 100,
+    "painters": 15
+  },
+  "retentionVerified": {
+    "previewDays": 7,
+    "productionDays": 14,
+    "canceledDays": 1,
+    "erroredDays": 7,
+    "deploymentsToKeep": 10
+  },
+  "preservation": "Existing storage keys and saved question editions retained; Art Room uses separate keys. No private user storage migrated or cleared. No repository visibility changed. Live AI-provider comparison remains pending as previously requested.",
+  "editorialScope": "Automated structural checks and bounded Codex editorial reviews, not independent expert or exam-owner validation. Historical review fingerprints are checked against their actual edition; current signal dispositions bind exact quality-v14 content."
+}

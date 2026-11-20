@@ -1,4 +1,5 @@
 'use client';
+import {discoveryReflections} from '@/lib/discovery-editorial-variety';
 import {WhyKept} from '@/components/ReasoningTools';
 
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
@@ -358,7 +359,7 @@ function RememberedRoom() {
         {revealed && <div className="curiosity-topic-feedback" aria-label={`Tune your ${selected.category} discoveries`}><button aria-pressed={interests.topics[selected.category] === 'more'} onClick={()=>rateTopic(selected.category,'more',true)}>More like this <span aria-hidden="true">↑</span></button><button aria-pressed={interests.topics[selected.category] === 'less'} onClick={()=>rateTopic(selected.category,'less',true)}>Less of this <span aria-hidden="true">↓</span></button><span>{selected.category}</span></div>}
         {revealed&&<div className="curiosity-depth"><details className="curiosity-next-room"><summary>Take this idea a little further</summary><NextConnection/><CarryToTutor key={selected.id} title={selected.title} parts={[{id:"discovery",label:"This public discovery and its source",text:selected.text+" Source: "+selected.url}]}/></details></div>}
         {revealed && context && <div className="curiosity-depth">
-          <details className="curiosity-why"><summary>Why does this matter?</summary><p>{context.why}</p></details>
+          <details className="curiosity-why"><summary>Why does this matter?</summary><p>{context.why}</p>{discoveryReflections[selected.id]&&<p className="curiosity-editorial-reflection"><strong>{discoveryReflections[selected.id].kind}:</strong> {discoveryReflections[selected.id].prompt}<small>Editorial reflection · not an additional fact or a graded activity.</small></p>}</details>
           <details className="curiosity-related"><summary>Related discoveries <span>{related.length} to explore</span></summary><p className="curiosity-related-note">Follow a connection in Explore all. Your saved discoveries and preferences stay with you.</p><div className="curiosity-related-grid">{related.map(fact => <button key={fact.id} onClick={()=>followRelated(fact.id)}><span>{fact.category}</span><strong>{discoveryQuestion(fact)}</strong><small>{connectionReason50(selected,fact)}</small><span aria-hidden="true">Explore →</span></button>)}</div></details>
         </div>}
         {revealed&&<DiscoveryPause fact={selected}/>}

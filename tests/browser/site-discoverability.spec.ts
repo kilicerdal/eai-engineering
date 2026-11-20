@@ -60,7 +60,7 @@ test('homepage passes accessibility checks with reduced motion and visible keybo
 
 test('atlas drawing is deferred until near the viewport while its accessible content is present',async({page})=>{
  await page.goto('/');const map=page.locator('.ai-philosophy .map');await expect(map).not.toHaveAttribute('data-connections','ready');await expect(page.locator('#ai-atlas-title')).toHaveText('Intelligence, connected.');
- await map.scrollIntoViewIfNeeded();await expect(map).toHaveAttribute('data-connections','ready');await expect(map.locator('path').first()).toHaveAttribute('d',/^M/);
+ await page.goto('/#about');const disclosure=page.locator('#about details.main-architecture-toggle');if(!await disclosure.evaluate((node:HTMLDetailsElement)=>node.open))await disclosure.locator('summary').click();await map.scrollIntoViewIfNeeded();await expect(map).toHaveAttribute('data-connections','ready');await expect(map.locator('path').first()).toHaveAttribute('d',/^M/);
  await page.getByRole('button',{name:'Retrieval path',exact:true}).click();await expect(page.locator('[data-node="runtime"]')).toHaveClass(/dim/);
 });
 

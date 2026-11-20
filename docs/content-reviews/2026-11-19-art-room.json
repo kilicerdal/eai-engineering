@@ -1,0 +1,57 @@
+{
+  "scope": "Art Room local preview only; not published",
+  "paintings": 100,
+  "painters": 15,
+  "eras": 6,
+  "images": "100 historical reproductions plus 100 thumbnails; individual Commons rights and reference records",
+  "features": [
+    "Painting stories and looking prompts",
+    "Painter biographies and interesting facts",
+    "Era browsing and optional filters",
+    "Original-proportion fullscreen viewing and zoom",
+    "My Gallery browser saves and gallery download"
+  ],
+  "checks": {
+    "unitTests": 1037,
+    "scopedBrowserTests": 22,
+    "build": "passed",
+    "inventory": {
+      "books": 200,
+      "discoveries": 1000,
+      "certificationPaths": 12,
+      "questions": 1090
+    },
+    "visualReview": [
+      "100 artwork contact-sheet entries",
+      "Gallery desktop and 390px phone",
+      "Painting detail desktop",
+      "Painter profile desktop and phone"
+    ],
+    "size": {
+      "artImageBytes": 29256446,
+      "artImageAllowanceBytes": 31457280,
+      "checkedAt": "2026-11-20T03:14:51.445Z",
+      "baselineCommit": "6ad498a870266a752dcb57881e5f0f1c2ea95035",
+      "current": {
+        "javascript": 8521267,
+        "css": 579304,
+        "images": 43239820,
+        "bookPackedBytes": 90791154
+      },
+      "limits": {
+        "javascript": 8629967,
+        "css": 641508,
+        "images": 45625811,
+        "bookPackedBytes": 90791154
+      },
+      "issues": [],
+      "homepageArtworkAllowanceBytes": 6291456,
+      "scope": "Includes a bounded 6 MiB allowance for the owner-approved November 18 homepage artwork. Adds a bounded 30 MiB for 100 licensed Art Room reproductions and thumbnails and 256 KiB for its catalog UI. Local raw asset budgets; not Vercel account usage or a promise about future bills."
+    }
+  },
+  "releaseCaveats": [
+    "Broad historical browser suite was interrupted after failures involving older homepage expectations, invitation setup, source/status text and performance checks. No claim of a full-suite pass; investigate before publication.",
+    "Live AI provider tests remain pending by owner instruction."
+  ],
+  "savedWork": "Art Gallery uses a new separate versioned key; existing rooms storage records are not rewritten."
+}

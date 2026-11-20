@@ -13,16 +13,18 @@ export default function StudyResumeShortcut(){
  useEffect(()=>{let cancelled=false,revision=0;
   function read(key:string){try{return JSON.parse(localStorage.getItem(key)||"null");}catch{return null;}}
   function refresh(){const current=++revision,now=Date.now();let href:string|null=null;
-   try{const raw=read(DAILY_SESSION_KEY);if(raw){const record=readDailyRecord(raw);if(openDailySession(record,now)||record.sessions.some(s=>s.startedAt<=now))href="#my-learning";}}catch{/* Unreadable records do not create a resume promise. */}
+   const saved=projectSavedWork(k=>localStorage.getItem(k),readingBooks,now).continueItem;
+   const work=openStudyWork(read("eai-study-conversations-v1"),read("eai-exam-prep-v1"),now)[0];
+   if(saved||work)href=work&&(!saved||work.updatedAt>saved.at)?work.href:saved!.href;
+   if(!href)try{const raw=read(DAILY_SESSION_KEY);if(raw&&openDailySession(readDailyRecord(raw),now))href="#my-learning";}catch{/* Keep unreadable records untouched. */}
    if(!href){const journey=restoreJourney(read("eai-goal-journey-v1"));if(journey?.accepted)href="#my-learning";}
-   if(!href){const work=openStudyWork(read("eai-study-conversations-v1"),read("eai-exam-prep-v1"),now);if(work.length)href=work[0].href;}
-   if(!href){try{const work=projectSavedWork(k=>localStorage.getItem(k),readingBooks);if(work.recent.length||work.mapItems.length||work.discoveries.length)href='/your-space';}catch{/* Storage access may be unavailable. */}}
+   if(!href){const data=projectSavedWork(k=>localStorage.getItem(k),readingBooks,now);if(data.mapItems.length||data.discoveries.length)href='/your-space';}
    if(!cancelled)setDestination(href);
    if(!href)void loadMaterialLibrary().then(library=>{if(!cancelled&&revision===current&&library.documents.length)setDestination("/study/materials");}).catch(()=>{});
   }
-  queueMicrotask(refresh);window.addEventListener("eai-study-progress-change",refresh);window.addEventListener("storage",refresh);window.addEventListener("focus",refresh);
-  return()=>{cancelled=true;window.removeEventListener("eai-study-progress-change",refresh);window.removeEventListener("storage",refresh);window.removeEventListener("focus",refresh);};
+  queueMicrotask(refresh);window.addEventListener("eai-study-progress-change",refresh);window.addEventListener("storage",refresh);window.addEventListener("focus",refresh);window.addEventListener("dai-browser-save",refresh);
+  return()=>{cancelled=true;window.removeEventListener("eai-study-progress-change",refresh);window.removeEventListener("storage",refresh);window.removeEventListener("focus",refresh);window.removeEventListener("dai-browser-save",refresh);};
  },[]);
  if(!destination)return <div className="study-resume-shortcut"><a href="/start">Start here <span aria-hidden="true">→</span></a></div>;
- return <div className="study-resume-shortcut"><span>Your saved work is ready.</span><a href="/your-space">Continue learning <span aria-hidden="true">→</span></a></div>;
+ return <div className="study-resume-shortcut"><span>Your saved work is ready.</span><a href={destination}>Continue learning <span aria-hidden="true">→</span></a><a href="/your-space" className="resume-all-work">All saved work</a></div>;
 }

@@ -1,0 +1,137 @@
+[
+  {
+    "id": "leonardo",
+    "image": "/images/art/portrait-leonardo.webp",
+    "width": 363,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo_(colour_correction).png",
+    "rights": "Public domain",
+    "description": ""
+  },
+  {
+    "id": "michelangelo",
+    "image": "/images/art/portrait-michelangelo.webp",
+    "width": 449,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Michelangelo_Daniele_da_Volterra_(dettaglio).jpg",
+    "rights": "Public domain",
+    "description": ""
+  },
+  {
+    "id": "raphael",
+    "image": "/images/art/portrait-raphael.webp",
+    "width": 381,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Raffaello_Sanzio.jpg",
+    "rights": "Public domain",
+    "description": "<div class=\"description\">\nSelf-portrait of Raphael, aged approximately 23</div>"
+  },
+  {
+    "id": "caravaggio",
+    "image": "/images/art/portrait-caravaggio.webp",
+    "width": 372,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Bild-Ottavio_Leoni,_Caravaggio.jpg",
+    "rights": "Public domain",
+    "description": "<div class=\"description\">\nA portrait of the Italian painter <a href=\"https://en.wikipedia.org/wiki/Caravaggio\" class=\"extiw\" title=\"en:Caravaggio\">Michelangelo Merisi da Caravaggio</a></div>"
+  },
+  {
+    "id": "rembrandt",
+    "image": "/images/art/portrait-rembrandt.webp",
+    "width": 401,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg",
+    "rights": "Public domain",
+    "description": ""
+  },
+  {
+    "id": "vermeer",
+    "image": "/images/art/portrait-vermeer.webp",
+    "width": 374,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Cropped_version_of_Jan_Vermeer_van_Delft_002.jpg",
+    "rights": "Public domain",
+    "description": "The only supposed portrait of Jan Vermeer."
+  },
+  {
+    "id": "gentileschi",
+    "image": "/images/art/portrait-gentileschi.webp",
+    "width": 385,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Self-portrait_as_the_Allegory_of_Painting_(La_Pittura)_-_Artemisia_Gentileschi.jpg",
+    "rights": "Public domain",
+    "description": "<div class=\"description\">\nDepicted person:  <a href=\"https://en.wikipedia.org/wiki/en:Artemisia_Gentileschi\" class=\"extiw\" title=\"w:en:Artemisia Gentileschi\"><span title=\"Italian Baroque painter (1593-1651)\">Artemisia Gentileschi</span></a></div>"
+  },
+  {
+    "id": "goya",
+    "image": "/images/art/portrait-goya.webp",
+    "width": 421,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Vicente_L%C3%B3pez_Porta%C3%B1a_-_el_pintor_Francisco_de_Goya.jpg",
+    "rights": "Public domain",
+    "description": ""
+  },
+  {
+    "id": "turner",
+    "image": "/images/art/portrait-turner.webp",
+    "width": 390,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Turner_selfportrait_(cropped).jpg",
+    "rights": "Public domain",
+    "description": ""
+  },
+  {
+    "id": "monet",
+    "image": "/images/art/portrait-monet.webp",
+    "width": 390,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Claude_Monet_1899_Nadar_crop.jpg",
+    "rights": "Public domain",
+    "description": "Portrait photograph of the French impressionist painter <a href=\"https://en.wikipedia.org/wiki/Claude_Monet\" class=\"extiw\" title=\"en:Claude Monet\">Claude Monet</a> by <a href=\"https://en.wikipedia.org/wiki/Nadar_(photographer)\" class=\"extiw\" title=\"en:Nadar (photographer)\">Nadar</a>"
+  },
+  {
+    "id": "morisot",
+    "image": "/images/art/portrait-morisot.webp",
+    "width": 311,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Morisot_berthe_photo.jpg",
+    "rights": "Public domain",
+    "description": "<div class=\"description\">\n<a href=\"//commons.wikimedia.org/wiki/Berthe_Morisot\" title=\"Berthe Morisot\">Berthe Morisot</a> (1841-1895)</div>"
+  },
+  {
+    "id": "van-gogh",
+    "image": "/images/art/portrait-van-gogh.webp",
+    "width": 412,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_(454045).jpg",
+    "rights": "Public domain",
+    "description": ""
+  },
+  {
+    "id": "cezanne",
+    "image": "/images/art/portrait-cezanne.webp",
+    "width": 250,
+    "height": 333,
+    "source": "https://commons.wikimedia.org/wiki/File:Paul-Cezanne.jpg",
+    "rights": "Public domain",
+    "description": "Paul Cezanne"
+  },
+  {
+    "id": "cassatt",
+    "image": "/images/art/portrait-cassatt.webp",
+    "width": 520,
+    "height": 450,
+    "source": "https://commons.wikimedia.org/wiki/File:Mary_Cassatt_photograph_1913.jpg",
+    "rights": "Public domain",
+    "description": "Cassatt seated in a chair with an umbrella. Verso reads \"The only photograph for which she ever posed. Courtesy of Durand-Ruel.\""
+  },
+  {
+    "id": "kandinsky",
+    "image": "/images/art/portrait-kandinsky.webp",
+    "width": 374,
+    "height": 520,
+    "source": "https://commons.wikimedia.org/wiki/File:Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg",
+    "rights": "Public domain",
+    "description": "Kandinsky - Vassily Kandinsky by Adolf Elnain Photo credits - Georges Meguerditchian"
+  }
+]

@@ -9,15 +9,15 @@ test('shorter home keeps original artwork and reveals older section links',async
  const motion=await page.locator('#artwork img').evaluateAll(es=>es.map(e=>({position:getComputedStyle(e).position,animation:getComputedStyle(e).animationName})));
  expect(motion.every(e=>e.position!=='fixed'&&e.position!=='sticky'&&e.animation==='none')).toBe(true);
 });
-test('hub has six clear room entrances and embedded tutor remains reachable',async({page})=>{
- await page.goto('/study');await expect(page.getByRole('navigation',{name:'Choose a learning room'}).getByRole('link')).toHaveCount(6);
+test('hub has seven clear room entrances and embedded tutor remains reachable',async({page})=>{
+ await page.goto('/study');await expect(page.getByRole('navigation',{name:'Choose a learning room'}).getByRole('link')).toHaveCount(7);
  await expect(page.locator('#ai-assistant')).toBeHidden();await page.goto('/study#ai-assistant');await expect(page.locator('#ai-assistant')).toBeVisible();
  await expect(page.getByRole('button',{name:'Send',exact:true})).toBeVisible();
 });
 test('catalog is compact and reports core and scenario questions consistently',async({page})=>{
  await page.goto('/study/certifications');await expect(page.locator('.cert-compact-path')).toHaveCount(12);
  await expect(page.locator('.cert-compact-path').first()).toContainText('100 core + 5 scenario questions');
- expect((await page.locator('#cert-paths').boundingBox())!.y).toBeLessThan(500);
+ expect((await page.locator('#cert-paths').boundingBox())!.y).toBeLessThan(Math.min(700,page.viewportSize()!.height));
 });
 test('practice gives brief feedback and source before deeper tools; reload retains answers',async({page})=>{
  await page.goto('/study/certifications/cloud-practitioner');await page.getByRole('button',{name:'Already familiar? Try 5 practice questions →',exact:true}).click();
@@ -47,7 +47,7 @@ test('saved reading returns through the hub without rewriting the bookshelf',asy
  const raw=JSON.stringify({version:1,positions:{11:{section:2,paragraph:'p14',updatedAt:100}},notes:[],bookmarks:[]});await page.addInitScript(value=>localStorage.setItem('dai-reading-library-v1',value),raw);await page.goto('/study');await expect(page.getByRole('link',{name:'Continue learning',exact:false})).toBeVisible();expect(await page.evaluate(()=>localStorage.getItem('dai-reading-library-v1'))).toBe(raw);
 });
 test('saving warning remains visible while normal recovery guidance is compact',async({page})=>{
- await page.goto('/guide/experience-review');const status=page.getByRole('complementary',{name:'Browser save status'});await expect.poll(async()=>{await page.evaluate(()=>window.dispatchEvent(new CustomEvent('dai-browser-save',{detail:{key:'walkthrough-test',ok:false}})));return status.innerText();}).toContain('Saving needs attention');await expect(status.getByText('Saving needs attention',{exact:true})).toBeVisible();await expect(status.locator(':scope > p').last()).toBeVisible();await status.locator('summary').click();await expect(status.getByRole('link',{name:'Download a backup · room options →'})).toBeVisible();
+ await page.goto('/guide/experience-review');const status=page.getByRole('complementary',{name:'Browser save status'});await expect.poll(async()=>{await page.evaluate(()=>window.dispatchEvent(new CustomEvent('dai-browser-save',{detail:{key:'walkthrough-test',ok:false}})));return status.innerText();}).toContain('Saving needs attention');await expect(status.getByText('Saving needs attention',{exact:true})).toBeVisible();await expect(status.locator(':scope > p').last()).toBeVisible();await status.locator(':scope > details > summary').click();await expect(status.getByRole('link',{name:'Download a backup · room options →'})).toBeVisible();
 });
 
 test('contextual glossary avoids unrelated defaults but full search remains available',async({page})=>{

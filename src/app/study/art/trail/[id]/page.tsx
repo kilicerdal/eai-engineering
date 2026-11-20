@@ -1,0 +1,4 @@
+import {notFound} from 'next/navigation';import Link from 'next/link';import ArtRoomFrame from '@/components/art/ArtRoomFrame';import ArtTrail from '@/components/art/ArtTrail';import StudyNavigation from '@/components/StudyNavigation';import {artTours} from '@/lib/art/looking';import '../../art-room.css';
+export function generateStaticParams(){return artTours.map(t=>({id:t.id}));}
+export async function generateMetadata({params}:{params:Promise<{id:string}>}){const {id}=await params;return {title:(artTours.find(t=>t.id===id)?.title??'Gallery visit')+' | The Art Room'};}
+export default async function TrailPage({params}:{params:Promise<{id:string}>}){const {id}=await params,tour=artTours.find(t=>t.id===id);if(!tour)notFound();return <ArtRoomFrame><StudyNavigation/><nav className="art-trail" aria-label="Art Room breadcrumb"><Link href="/study/art?view=tours#collection">← All short tours</Link></nav><ArtTrail key={tour.id} tour={tour}/></ArtRoomFrame>;}

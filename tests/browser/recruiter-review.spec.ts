@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 
 test('recruiter shortcut exposes the three project demos, evidence and source in one step',async({page})=>{
- await page.goto('/');const shortcut=page.locator('.home-start-help');await expect(shortcut).toHaveText('For recruiters');await shortcut.click();await expect(page).toHaveURL(/\/engineering\/tour$/);const cards=page.locator('.tour-review-grid article');await expect(cards).toHaveCount(3);
+ await page.goto('/');const shortcut=page.locator('.home-professional-intro').getByRole('link',{name:'Take the five-minute project tour →',exact:true});await expect(shortcut).toBeVisible();await shortcut.click();await expect(page).toHaveURL(/\/engineering\/tour$/);const cards=page.locator('.tour-review-grid article');await expect(cards).toHaveCount(3);
  for(let i=0;i<3;i++){await expect(cards.nth(i).getByRole('link',{name:'Demo →',exact:true})).toHaveAttribute('href',/^\/engineering\//);await expect(cards.nth(i).getByRole('link',{name:'Source ↗',exact:true})).toHaveAttribute('href',/^https:\/\/github.com\/kilicerdal\//);await expect(cards.nth(i).getByRole('link',{name:'Evidence →',exact:true})).toHaveAttribute('href',/#evidence$/);}
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

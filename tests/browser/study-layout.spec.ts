@@ -164,7 +164,7 @@ test('mobile approach selector exposes every mode and changes only an unsent pre
  if(info.project.name!=='mobile')return;
  let posts=0;
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')posts++;return route.fulfill({status:503,body:'{}'});});
- await page.goto('/study#my-learning');
+ await page.goto('/study/tutor');
  const selector=page.getByRole('combobox',{name:'Learning approach',exact:true});
  await expect(selector).toBeVisible();
  await expect(selector.locator('option')).toHaveCount(5);
@@ -189,9 +189,9 @@ test('returning-user shortcut resumes valid saved work without sending or starti
  window.dispatchEvent(new Event('eai-study-progress-change'));
  },time);
  const resume=page.getByRole('link',{name:'Continue learning',exact:false});
- await expect(resume).toHaveAttribute('href','/your-space');
+ await expect(resume).toHaveAttribute('href','#my-learning');
  await resume.click();
- await expect(page).toHaveURL(/\/your-space$/);
+ await expect(page).toHaveURL(/\/study#my-learning$/);
  const record=await page.evaluate(()=>JSON.parse(localStorage.getItem('eai-daily-sessions-v1')!));
  expect(record.sessions).toHaveLength(1);expect(record.sessions[0].stage).toBe(1);
  expect(posts).toBe(0);

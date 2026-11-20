@@ -66,13 +66,13 @@ export default function StudyPage() {
           <p className="studio-eyebrow">THE ART OF UNDERSTANDING</p>
           <h1 id="studio-title">Explore what you<br className="studio-desktop-break" /> don’t yet know.</h1>
           <p className="studio-hero-subtitle">Ask questions. Study your sources. Put ideas into practice.</p>
-          <p className="studio-hero-description">Work through a question with your AI tutor, learn from your own materials, or build a focused study plan.</p>
+          <details className="studio-intro-details"><summary>What can I do here?</summary><p className="studio-hero-description">Work through a question with your AI tutor, learn from your own materials, or build a focused study plan.</p></details>
           <p className="studio-hero-note">No account needed · {accountConfigured ? <Link href="/study/account">Optional account saving ↗</Link> : "Your work stays in this browser"}</p>
         </div>
-        <a href="#learning-rooms" className="studio-hero-scroll">FIND YOUR ROOM <span aria-hidden="true">↓</span></a>
+        <a href="#learning-rooms" className="studio-hero-scroll">Choose a room <span aria-hidden="true">↓</span></a>
       </section>
-      <nav id="learning-rooms" className="quiet-rooms" aria-label="Choose a learning room">{[
-['AI Tutor','Work through one question.','/study/tutor'],['Reading Room','Find a book and settle in.','/study/reading'],['Curiosity Room','Discover something surprising.','/study/curiosity'],['Certification Studio','Practice an engineering decision.','/study/certifications'],['Your materials','Study from your own sources.','/study/materials'],['Writing Studio','Give an idea your own words.','/study/writing']
+      <nav id="learning-rooms" tabIndex={-1} className="quiet-rooms" aria-label="Choose a learning room">{[
+['AI Tutor','Work through one question.','/study/tutor'],['Reading Room','Find a book and settle in.','/study/reading'],['Curiosity Room','Discover something surprising.','/study/curiosity'],['Art Room','A painting, a story, a new way to see.','/study/art'],['Certification Studio','Practice an engineering decision.','/study/certifications'],['Your materials','Study from your own sources.','/study/materials'],['Writing Studio','Give an idea your own words.','/study/writing']
 ].map(([name,detail,href])=><Link key={href} href={href}><strong>{name} <span aria-hidden="true">↗</span></strong><span>{detail}</span></Link>)}</nav>
       <QuietChapter title="Your learning and plans" description="Return to sessions, shape a plan, or prepare for an exam"><LearningHome/><GoalLearning/><ExamPreparation/></QuietChapter>
       <QuietChapter title="Ask your Tutor here" description="The full embedded workspace, including your existing sessions"><SharedAIChat/></QuietChapter>

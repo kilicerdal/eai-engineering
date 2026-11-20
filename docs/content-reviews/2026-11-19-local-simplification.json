@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-19",
+  "status": "local preview verified; not published",
+  "preview": "http://127.0.0.1:3038/study",
+  "ownerFeedback": {
+    "text": "to be honest all",
+    "interpretation": "Apply task-first simplification and dependable return navigation across the learning experience.",
+    "device": null,
+    "measuredUsabilityResult": null
+  },
+  "changes": {
+    "navigation": "Visible parent return button plus eAI home link on nested Learning Studio pages; explicit destinations rather than browser history.",
+    "practice": "Active task precedes optional progress, path details and backups. Existing controls remain mounted and available.",
+    "questionEdition": "quality-v14",
+    "foundationQuestionsIndividuallyAgentReviewed": 200,
+    "sourceChanges": 120,
+    "rationaleChanges": 51,
+    "choiceChanges": 7,
+    "bookComparisonsAdded": 30,
+    "totalBookComparisons": 60,
+    "optionalDiscoveryReflections": 20,
+    "projectNarrative": "Problem, decision, evidence and limitation for all three homepage projects."
+  },
+  "validation": {
+    "unit": {
+      "passed": 1032,
+      "failed": 0
+    },
+    "browser": {
+      "passed": 137,
+      "failed": 0
+    },
+    "productionBuild": "passed",
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 1
+    },
+    "inventory": {
+      "paths": 12,
+      "questions": 1090,
+      "books": 200,
+      "discoveries": 1000
+    },
+    "visualChecks": [
+      "Learning Studio desktop navigation and background",
+      "Loaded active certification practice desktop",
+      "Checked-answer mobile screenshot",
+      "Optional curiosity reflection",
+      "Bleak House to Hard Times companion recommendation"
+    ],
+    "savedEditionNavigation": "Retained quality-v13 session and written reasoning remained equal before leaving and after returning.",
+    "historicalContent": "Earlier editions remain immutable; correct-answer IDs and strings retained."
+  },
+  "limits": [
+    "Agent content review is scoped source-and-rationale inspection, not independent accreditation or psychometric validation.",
+    "210 of 1,090 bank questions have explicit individual agent review records, including 10 GitHub Actions questions reviewed previously; 880 remain in the editorial queue.",
+    "Some introductory recognition questions still have easy alternatives; no measured difficulty claim is made.",
+    "Live Tutor response checks remain pending by owner instruction.",
+    "No new phone/browser details or task measurements were supplied by the owner."
+  ],
+  "publication": {
+    "committed": false,
+    "pushed": false,
+    "deployed": false
+  }
+}
