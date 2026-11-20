@@ -104,7 +104,7 @@
         }
       ],
       "words": 798,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -227,7 +227,7 @@
         }
       ],
       "words": 906,
-      "minutes": 5,
+      "minutes": 6,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -346,13 +346,13 @@
         }
       ],
       "words": 803,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "dali": {
       "title": "Dalí · precision in the service of uncertainty",
-      "lead": "A watch can look exquisitely described while ceasing to behave like a watch. Dalí’s peculiarity lies in this alliance between visual assurance and material impossibility: the confidence of the description makes the uncertainty harder to dismiss.",
+      "lead": "Dalí joined exact description to impossible relations. These studies follow a shift from the materially unstable objects of The Persistence of Memory to the double image of Metamorphosis of Narcissus: two ways of making the viewer’s confidence in recognition become the source of uncertainty.",
       "sections": [
         {
           "id": "section-1",
@@ -480,7 +480,7 @@
           "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 699,
+      "words": 707,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -615,7 +615,7 @@
         }
       ],
       "words": 990,
-      "minutes": 5,
+      "minutes": 6,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -738,7 +738,7 @@
     },
     "kahlo": {
       "title": "Kahlo · the self-portrait as a public construction",
-      "lead": "A suit, scissors and cut hair are not incidental accessories. Kahlo stages identity through objects that can be worn, handled and discarded. The self-portrait offers a deliberate encounter, not transparent access to the artist’s private life.",
+      "lead": "Kahlo constructed self-images in which clothing, bodily exposure, inscriptions and handled objects carry public meaning. These two studies consider different kinds of self-presentation without treating the paintings as transparent records of private feeling or reducing a complex practice to a single biographical event.",
       "sections": [
         {
           "id": "section-1",
@@ -830,7 +830,7 @@
           "title": "Professional circumstances and public identity",
           "kind": "history",
           "sources": [
-            2
+            0
           ],
           "paragraphs": [
             "MoMA links Cropped Hair to the period after Kahlo’s late-1939 divorce and to her intention to support herself through selling work. Economic agency matters here alongside the interpretation of dress. The institutional record also names Edgar Kaufmann Jr. as donor; acquisition is another stage in the making of a public reputation, not a substitute for the sitter-artist’s own choices."
@@ -871,15 +871,10 @@
           "title": "The Two Fridas · collection record",
           "url": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg",
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
-        },
-        {
-          "title": "Career context · institutional account",
-          "url": "https://www.moma.org/collection/works/78333",
-          "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 735,
-      "minutes": 4,
+      "words": 742,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -1116,7 +1111,7 @@
     },
     "magritte": {
       "title": "Magritte · recognition becomes a question",
-      "lead": "The pipe is easy to recognize. That is precisely why the sentence beneath it can become troublesome. Magritte lets ordinary visual competence expose a confusion between identifying a depiction and possessing the thing depicted.",
+      "lead": "Magritte made familiar depictions disturb the assumptions that normally support recognition. The painted eye and the painted pipe remain readily identifiable; their relations to sky and language make that very clarity difficult to explain. His work asks what a representation can offer, and what it cannot supply.",
       "sections": [
         {
           "id": "section-1",
@@ -1208,7 +1203,7 @@
           "title": "Professional circumstances and public identity",
           "kind": "history",
           "sources": [
-            2
+            1
           ],
           "paragraphs": [
             "LACMA’s record identifies a succession of collectors and dealers for the pipe painting, while MoMA’s catalogue of Magritte’s work shows that his practice extended beyond the two motifs represented here. The private collection, gallery and museum are different settings for the same conceptual provocation. Its subsequent influence should not be confused with evidence of what its first viewers thought."
@@ -1249,21 +1244,16 @@
           "title": "The Treachery of Images · collection record",
           "url": "https://collections.lacma.org/object/31931",
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
-        },
-        {
-          "title": "Career context · institutional account",
-          "url": "https://collections.lacma.org/object/31931",
-          "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 733,
-      "minutes": 4,
+      "words": 746,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "matisse": {
       "title": "Matisse · making space with color",
-      "lead": "The room seems to surrender to red, yet its contents remain distinct. Matisse’s economy is demanding rather than effortless: a narrow unpainted interval can do the work that a modeled shadow or a firm perspective construction might do elsewhere.",
+      "lead": "Matisse made color and contour bear work conventionally assigned to modeling and perspective. The Red Studio and Dance (I) approach that problem through different structures—a room of separate objects and a ring of connected bodies—so that economy becomes a demanding form of pictorial construction.",
       "sections": [
         {
           "id": "section-1",
@@ -1403,8 +1393,8 @@
           "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 743,
-      "minutes": 4,
+      "words": 748,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -1511,7 +1501,7 @@
         }
       ],
       "words": 805,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -1632,7 +1622,7 @@
         }
       ],
       "words": 837,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -1757,13 +1747,13 @@
         }
       ],
       "words": 921,
-      "minutes": 5,
+      "minutes": 6,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "picasso": {
       "title": "Picasso · who controls the encounter?",
-      "lead": "The figures do not wait quietly to be recognized. Picasso makes looking feel like a negotiation: between incompatible views, between a body and its painted boundary, and between a sitter’s presence and the authority of the artist who represents her.",
+      "lead": "Picasso repeatedly remade the terms on which a painted body could be recognized. These two studies trace that problem from the confrontational space of Les Demoiselles d’Avignon to the incompatible appearances of Girl before a Mirror. Biography matters here, but it cannot settle what each pictorial construction asks of its viewer.",
       "sections": [
         {
           "id": "section-1",
@@ -1891,14 +1881,14 @@
           "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 727,
-      "minutes": 4,
+      "words": 738,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "pollock": {
       "title": "Pollock · a field made through decisions",
-      "lead": "The first impression may be of an unbroken web. Stay longer and differences appear: a passage opens, a dark line interrupts another rhythm, an exposed interval becomes a place to rest. Pollock makes the distribution of attention a material problem.",
+      "lead": "Pollock made the distribution of attention a material problem. Two large canvases of 1950 allow sustained comparison: marks overlap, openings interrupt density, and rhythm emerges without a regular unit. Studying their differences keeps a recognizable technique from becoming a substitute for looking.",
       "sections": [
         {
           "id": "section-1",
@@ -2038,8 +2028,8 @@
           "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 746,
-      "minutes": 4,
+      "words": 748,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -2146,7 +2136,7 @@
         }
       ],
       "words": 786,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -2258,7 +2248,7 @@
         }
       ],
       "words": 796,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -2381,7 +2371,7 @@
         }
       ],
       "words": 817,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -2617,7 +2607,7 @@
         }
       ],
       "words": 801,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     }
@@ -2805,7 +2795,7 @@
         }
       ],
       "words": 739,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -2898,8 +2888,8 @@
       ],
       "sources": [
         {
-          "title": "Gallerie Nazionali Barberini Corsini · Official collection",
-          "url": "https://barberinicorsini.org/",
+          "title": "Kimbell Art Museum · Caravaggio’s Judith Beheading Holofernes, institutional loan account",
+          "url": "https://kimbellart.org/caravaggio-judith-beheading-holofernes",
           "scope": "Collection and Caravaggio context"
         },
         {
@@ -3841,7 +3831,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "A small canvas made in 1931, acquired in 1934",
           "kind": "history",
           "sources": [
             0
@@ -3852,7 +3842,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "A stable horizon holds unstable objects",
           "kind": "analysis",
           "sources": [
             0
@@ -3863,7 +3853,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "The pale central form resists a secure name",
           "kind": "analysis",
           "sources": [
             0
@@ -3874,7 +3864,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "Hard edges and soft bodies alter the pace of looking",
           "kind": "analysis",
           "sources": [
             0
@@ -3885,7 +3875,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Later anecdotes are not contemporary evidence",
           "kind": "interpretation",
           "sources": [
             0
@@ -3896,13 +3886,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Minute description and material impossibility",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 24.1 × 33 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 24.1 × 33 cm.",
+            "The small oil painting asks the eye to move close. Precise boundaries and apparently smooth modeling lend credibility to objects whose behavior is impossible; the persuasive finish is part of the contradiction, rather than a neutral vehicle for a symbol."
           ]
         },
         {
@@ -3914,19 +3905,28 @@
           ],
           "paragraphs": [
             "The painting’s small dimensions alter the kind of attention it asks for. The forms are not encountered at the scale of actual clocks in an expansive environment; they are compressed into an object a viewer approaches. The contrast between that intimate physical scale and the apparently extensive landscape is worth retaining. When the digital image fills a large screen, the landscape can dominate and the concentrated workmanship can become merely an effect of resolution. The record of dimensions restores a different possibility of looking.",
-            "The hardness of the ledge and the softness of the watches make each other perceptible. A yielding form would be less surprising without a boundary over which it could sag. Conversely, the firm edge becomes especially insistent when another object seems unable to maintain its own shape. This reciprocal organization is more precise than a broad claim that the painting shows time becoming fluid. The title and clocks invite that interpretation, but the effect is made through concrete contrasts of material behavior."
+            "The hardness of the ledge and the softness of the watches make each other perceptible. A yielding form would be less surprising without a boundary over which it could sag. Conversely, the firm edge becomes especially insistent when another object seems unable to maintain its own shape. This reciprocal organization is more precise than a broad claim that the painting shows time becoming fluid. The title and clocks invite that interpretation, but the effect is made through concrete contrasts of material behavior.",
+            "The sparse environment also controls the spectator’s search for causes. There is little ordinary activity through which the strange objects might be explained. Shadows and distant formations offer a coherent setting while withholding an event that could account for what lies before us. The viewer receives descriptive certainty and causal uncertainty at the same time. That combination is a central source of the picture’s power."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "Making, acquisition and later testimony",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The sparse environment also controls the spectator’s search for causes. There is little ordinary activity through which the strange objects might be explained. Shadows and distant formations offer a coherent setting while withholding an event that could account for what lies before us. The viewer receives descriptive certainty and causal uncertainty at the same time. That combination is a central source of the picture’s power.",
             "The work’s museum acquisition in 1934 belongs to a different chronology from its making in 1931. Keeping the two moments apart prevents a familiar masterpiece from appearing to have existed outside professional circulation. No exact first-owner sequence or restoration history is supplied here without the relevant record. For the same reason, a later explanation of a motif must be identified as later testimony. It may illuminate the artist’s presentation of the work without replacing a direct account of the surface or becoming a contemporary diary of its creation."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Look once more from the distant cliffs to the nearest soft watch. The setting offers order while the object frustrates it: descriptive confidence can make uncertainty more persistent."
           ]
         }
       ],
@@ -3937,7 +3937,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 683,
+      "words": 707,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -3948,7 +3948,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "The 1937 painting and its associated poem",
           "kind": "history",
           "sources": [
             0
@@ -3959,7 +3959,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "A crouched figure becomes a hand through contour",
           "kind": "analysis",
           "sources": [
             0
@@ -3970,7 +3970,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "The egg and flower make metamorphosis fragile",
           "kind": "analysis",
           "sources": [
             0
@@ -3981,7 +3981,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "Distant figures turn transformation into a staged encounter",
           "kind": "analysis",
           "sources": [
             0
@@ -3992,7 +3992,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Myth gives a framework, not a single solution",
           "kind": "interpretation",
           "sources": [
             0
@@ -4003,13 +4003,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Painted contours make the double image possible",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 51.1 × 78.1 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 51.1 × 78.1 cm.",
+            "The doubled contour depends on legibility: the bent figure and the hand must remain different objects while becoming comparable shapes. The painted boundary does the work of transformation. Trace it in each half before assigning a symbolic meaning to the egg."
           ]
         },
         {
@@ -4021,19 +4022,28 @@
           ],
           "paragraphs": [
             "The double image requires both resemblance and difference. If the adjacent forms matched exactly, their relation might become a diagram; if they were wholly unlike, the transformation would be difficult to perceive. Dalí works within that interval. A repeated outer profile helps the eye transfer recognition, while altered internal structures allow the second object to retain a distinct identity. The viewer moves between them instead of arriving once at a final correct image.",
-            "The flower’s emergence can support the mythic narrative of change, but its pictorial role is also structural. It produces an upward accent above a heavy enclosure and makes a fragile event appear to come from an apparently inert form. Compare that accent with the figure’s downward concentration. Direction carries part of the transformation, so the work can be discussed through visible relations before its symbolic possibilities are pursued."
+            "The flower’s emergence can support the mythic narrative of change, but its pictorial role is also structural. It produces an upward accent above a heavy enclosure and makes a fragile event appear to come from an apparently inert form. Compare that accent with the figure’s downward concentration. Direction carries part of the transformation, so the work can be discussed through visible relations before its symbolic possibilities are pursued.",
+            "The associated poem is a primary artifact with its own medium and sequence. A reader encounters its words over time; a spectator can move among the painted forms in several orders. Treating the poem as a caption that fixes every feature would suppress that difference. It is more useful to ask what the text encourages the viewer to notice and what the picture continues to withhold or complicate."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "A poem and a painting have different sequences",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The associated poem is a primary artifact with its own medium and sequence. A reader encounters its words over time; a spectator can move among the painted forms in several orders. Treating the poem as a caption that fixes every feature would suppress that difference. It is more useful to ask what the text encourages the viewer to notice and what the picture continues to withhold or complicate.",
             "The Foundation catalogue’s Edward James provenance supplies named stages of custody, but it should not be silently converted into a complete account of the original commission. An owner, patron and intended audience can be related without being identical roles. The present Tate location is another stage, not the original destination inferred backward. Similarly, a catalogue exhibition listing identifies an appearance in a particular setting; it does not establish a universal response. These distinctions keep a complex professional and interpretive history open to further research."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Move between the figure and the hand one final time. Transformation occurs through your comparison of their contours; it is an activity of looking, not only a myth represented on canvas."
           ]
         }
       ],
@@ -4044,7 +4054,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 653,
+      "words": 681,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -4173,7 +4183,7 @@
         }
       ],
       "words": 728,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -4516,7 +4526,7 @@
         }
       ],
       "words": 1225,
-      "minutes": 6,
+      "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -4837,7 +4847,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "The 1940 self-portrait and its 1943 acquisition",
           "kind": "history",
           "sources": [
             0
@@ -4848,7 +4858,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "An oversized suit changes the figure’s silhouette",
           "kind": "analysis",
           "sources": [
             0
@@ -4859,7 +4869,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "Scattered hair records an action already over",
           "kind": "analysis",
           "sources": [
             0
@@ -4870,7 +4880,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "The inscription introduces a voice above the figure",
           "kind": "analysis",
           "sources": [
             0
@@ -4881,7 +4891,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Dress and gesture do not authorize a diagnosis",
           "kind": "interpretation",
           "sources": [
             0
@@ -4892,13 +4902,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Fine strands against an emphatic clothed body",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 40 × 27.9 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 40 × 27.9 cm.",
+            "The fine, dispersed strands of hair remain legible against a relatively open ground, while the suit reads as a broad clothed mass. The contrast gives a small canvas a sequence of attention: body, tool, scattered consequence. That is a visible organization, not a reconstruction of the order in which Kahlo painted it."
           ]
         },
         {
@@ -4910,19 +4921,28 @@
           ],
           "paragraphs": [
             "The chair gives the seated figure an ordinary support while the scattered hair makes the surrounding floor unusually active. Compare the vertical stability of the body with the dispersed, curling remnants. The action of cutting is not shown continuously; its consequences have been arranged for inspection. The viewer therefore encounters a performed aftermath, not an accidental glimpse of private life.",
-            "The hand holding scissors is especially important because it connects the figure to the means of transformation. That connection may support an account of agency, yet agency need not be equated with an uncomplicated mood of triumph. The stillness of the pose and the surrounding text can complicate the emotional tone. Describe how they do so before choosing a word such as liberated or desolate. The painting’s sophistication lies partly in permitting those terms to be questioned rather than delivering one as an answer."
+            "The hand holding scissors is especially important because it connects the figure to the means of transformation. That connection may support an account of agency, yet agency need not be equated with an uncomplicated mood of triumph. The stillness of the pose and the surrounding text can complicate the emotional tone. Describe how they do so before choosing a word such as liberated or desolate. The painting’s sophistication lies partly in permitting those terms to be questioned rather than delivering one as an answer.",
+            "A song fragment inside a painting introduces a voice whose relation to the depicted person needs interpretation. It can be a remembered social expectation, a pointed quotation or a statement placed under pressure by the image. The inscription should not automatically be identified as a direct confession. Painting and quoted language can answer each other, and neither needs to supply a complete explanation of the other."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "A song fragment within a public self-image",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "A song fragment inside a painting introduces a voice whose relation to the depicted person needs interpretation. It can be a remembered social expectation, a pointed quotation or a statement placed under pressure by the image. The inscription should not automatically be identified as a direct confession. Painting and quoted language can answer each other, and neither needs to supply a complete explanation of the other.",
             "The museum’s recorded 1943 acquisition marks one stage in the work’s public life. Later uses of Kahlo’s image have created other audiences with different expectations about identity and resilience. Those audiences can bring valuable questions while also flattening a particular painting into a general icon. Returning to its small size, clothing, scissors and spatial arrangement makes room for the individual work again. The biographical context remains available, but it no longer does all the interpretive work on the viewer’s behalf."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Return to the scissors and follow a strand of hair toward the floor. The portrait holds an action and its aftermath together, while leaving the viewer responsible for distinguishing visible evidence from a story about the artist."
           ]
         }
       ],
@@ -4933,7 +4953,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 651,
+      "words": 696,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -4944,7 +4964,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "A double portrait of 1939 in a Mexican collection",
           "kind": "history",
           "sources": [
             0
@@ -4955,7 +4975,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "Joined hands and a connecting vessel offer two routes",
           "kind": "analysis",
           "sources": [
             0
@@ -4966,7 +4986,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "White fabric gives blood a heightened visibility",
           "kind": "analysis",
           "sources": [
             0
@@ -4977,7 +4997,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "Similar poses hold distinct clothed identities",
           "kind": "analysis",
           "sources": [
             0
@@ -4988,7 +5008,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Cultural identity exceeds a simple two-part opposition",
           "kind": "interpretation",
           "sources": [
             0
@@ -4999,13 +5019,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "A nearly square canvas gives both figures equal room",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 173.5 × 173 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 173.5 × 173 cm.",
+            "A nearly square support allows the two seated figures to occupy comparable territory. Broad light fabric and narrow red connections operate at different visual scales: one stabilizes a body, the other draws the gaze across and between bodies. Follow both systems without treating painted anatomy as a clinical record."
           ]
         },
         {
@@ -5017,19 +5038,28 @@
           ],
           "paragraphs": [
             "The double portrait offers a particularly strong test of the assumption that identity is represented by a single coherent appearance. Similar faces invite the recognition of one person, but the clothing and bodily details establish distinctions that remain visible. The figures can appear opposed without becoming independent. Their clasped hands and connecting vessel make a relationship that neither dissolves difference nor allows complete separation.",
-            "The stormy setting supplies a broad atmosphere while withholding the reassuring specificity of a domestic room. Without that furniture and architecture, the relation between the seated figures becomes the main structure of the scene. The bench supports them together, and the nearly symmetrical placement makes departures from symmetry consequential. Study those departures rather than assigning one side an entirely positive identity and the other an entirely negative one."
+            "The stormy setting supplies a broad atmosphere while withholding the reassuring specificity of a domestic room. Without that furniture and architecture, the relation between the seated figures becomes the main structure of the scene. The bench supports them together, and the nearly symmetrical placement makes departures from symmetry consequential. Study those departures rather than assigning one side an entirely positive identity and the other an entirely negative one.",
+            "The representation of exposed organs changes the ethics of looking. A viewer may feel invited into an intimate bodily condition, but the painting remains a deliberate construction with a public address. It is possible to discuss vulnerability without treating the image as a medical exhibit or assuming that visibility confers unrestricted knowledge of the artist’s suffering. The distinction protects the complexity of both the work and the historical person."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "Collection history and the ethics of looking",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The representation of exposed organs changes the ethics of looking. A viewer may feel invited into an intimate bodily condition, but the painting remains a deliberate construction with a public address. It is possible to discuss vulnerability without treating the image as a medical exhibit or assuming that visibility confers unrestricted knowledge of the artist’s suffering. The distinction protects the complexity of both the work and the historical person.",
             "The Museo de Arte Moderno’s record anchors this particular object, its date and its collection context. The painting’s later international familiarity should not turn that account into a universal story of divided identity detached from Mexico. Interpretations of dress require historical and cultural specificity, while autobiographical readings need their own sources. The two figures make a powerful visual argument precisely because they can sustain relationships more complex than a simple opposition between an authentic self and an adopted appearance."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Follow the joined hands, then the connecting vessel. Neither route permits the two figures to become entirely separate; their difference is constructed within a shared bodily and pictorial system."
           ]
         }
       ],
@@ -5040,7 +5070,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 633,
+      "words": 667,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -5493,7 +5523,7 @@
         }
       ],
       "words": 1179,
-      "minutes": 6,
+      "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -5619,7 +5649,7 @@
         }
       ],
       "words": 1211,
-      "minutes": 6,
+      "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -5911,7 +5941,7 @@
         }
       ],
       "words": 805,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -5986,7 +6016,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "The institutional dating of a familiar eye",
           "kind": "history",
           "sources": [
             0
@@ -5997,7 +6027,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "An enlarged eye withholds the rest of a face",
           "kind": "analysis",
           "sources": [
             0
@@ -6008,7 +6038,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "The pupil interrupts the sky",
           "kind": "analysis",
           "sources": [
             0
@@ -6019,7 +6049,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "A title about reflection without a straightforward mirror",
           "kind": "analysis",
           "sources": [
             0
@@ -6030,7 +6060,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Dating requires catalogue evidence, not a philosophical answer",
           "kind": "interpretation",
           "sources": [
             0
@@ -6041,13 +6071,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "A painted sky where an iris should be",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 54 × 80.9 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 54 × 80.9 cm.",
+            "Paint gives a cloud-filled sky the location normally occupied by an iris. The surrounding flesh and concentrated pupil make that substitution legible. The visual paradox depends on an image that can be recognized before its internal arrangement can be explained."
           ]
         },
         {
@@ -6059,19 +6090,28 @@
           ],
           "paragraphs": [
             "A painted eye can place a viewer under an imagined gaze. The image may seem to look back even though its enormous pupil supplies no identifiable person behind it. That combination of apparent address and missing identity makes the usual relation between spectator and portrait uncertain. We see an eye without acquiring the biographical confidence that a conventional face might invite.",
-            "The cloudy field complicates the eye’s expected interior. Instead of a patterned iris surrounding an aperture, the spectator encounters a pictured environment around a black center. Ask whether the center appears to interrupt the sky, open behind it or lie on its surface. Each possibility gives the image a different organization. The painting’s uncertainty is therefore not merely a subject to name; it is an effect a viewer can test by changing the relation imagined between those forms."
+            "The cloudy field complicates the eye’s expected interior. Instead of a patterned iris surrounding an aperture, the spectator encounters a pictured environment around a black center. Ask whether the center appears to interrupt the sky, open behind it or lie on its surface. Each possibility gives the image a different organization. The painting’s uncertainty is therefore not merely a subject to name; it is an effect a viewer can test by changing the relation imagined between those forms.",
+            "The title offers a verbal complication rather than a reliable technical description of reflection. A mirror suggests the return of an external appearance, while this eye presents an expansive image where the structure of an iris might be expected. It is useful to keep those operations apart. Otherwise the title can make a viewer overlook what the painted relation actually does."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "A dated object behind the philosophical image",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The title offers a verbal complication rather than a reliable technical description of reflection. A mirror suggests the return of an external appearance, while this eye presents an expansive image where the structure of an iris might be expected. It is useful to keep those operations apart. Otherwise the title can make a viewer overlook what the painted relation actually does.",
             "MoMA’s current 1929 dating is retained with an editorial flag for older 1928 descriptions. That flag is not a declaration that every older source is worthless. It identifies a question requiring catalogue evidence and a clear record of revision. Similarly, the 1935 acquisition belongs to the particular canvas’s collecting history, not to all later images of eyes in Magritte’s practice. Exact identification prevents a compelling philosophical account from floating free of the object that occasioned it."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Return to the pupil within the cloudy field. The image gives you something easy to identify and difficult to account for: an eye that makes the act of seeing itself available for inspection."
           ]
         }
       ],
@@ -6082,7 +6122,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 631,
+      "words": 660,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -6093,7 +6133,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "LACMA’s record identifies this particular pipe",
           "kind": "history",
           "sources": [
             0
@@ -6104,7 +6144,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "Modeled familiarity makes the pipe convincing",
           "kind": "analysis",
           "sources": [
             0
@@ -6115,7 +6155,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "A sentence occupies the place of a label",
           "kind": "analysis",
           "sources": [
             0
@@ -6126,7 +6166,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "A neutral ground keeps language beside depiction",
           "kind": "analysis",
           "sources": [
             0
@@ -6137,7 +6177,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "A visual argument exceeds a clever slogan",
           "kind": "interpretation",
           "sources": [
             0
@@ -6148,13 +6188,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Oil paint simulates an object that remains unavailable",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 60.3 × 81.1 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 60.3 × 81.1 cm.",
+            "The pipe’s modeled surface encourages recognition, while the sentence keeps that recognition from becoming possession of the object. Both are oil paint on the same support. Their different functions—depiction and statement—are made to confront one another within a single painted field."
           ]
         },
         {
@@ -6166,19 +6207,28 @@
           ],
           "paragraphs": [
             "The painted sentence adopts the position and clarity of an explanation. A viewer expects that writing beneath an object will identify it, perhaps confirming something already recognized. The refusal therefore depends on a familiar display convention. Magritte does not have to make the pipe difficult to see; he makes the act of saying what it is unexpectedly difficult to justify.",
-            "The distinction can be pursued without converting the picture into an examination question. A viewer who says that the painting is not a real pipe has identified one useful relation, but the material canvas, the painted likeness and the word still occupy different positions. The demonstrative statement may seem to point to one of them or to the whole arrangement. The surface holds those possibilities together without supplying a final diagram of their relations."
+            "The distinction can be pursued without converting the picture into an examination question. A viewer who says that the painting is not a real pipe has identified one useful relation, but the material canvas, the painted likeness and the word still occupy different positions. The demonstrative statement may seem to point to one of them or to the whole arrangement. The surface holds those possibilities together without supplying a final diagram of their relations.",
+            "The plain ground contributes to that controlled uncertainty. It removes a social scene that might turn the sentence into a character’s remark or an incident within a story. The spectator confronts image and text directly. Even so, the apparently neutral presentation is a designed rhetorical situation, not the absence of style. The finish, isolation and placement make the contradiction available to attention."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "The neutral ground and the object record",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The plain ground contributes to that controlled uncertainty. It removes a social scene that might turn the sentence into a character’s remark or an incident within a story. The spectator confronts image and text directly. Even so, the apparently neutral presentation is a designed rhetorical situation, not the absence of style. The finish, isolation and placement make the contradiction available to attention.",
             "LACMA’s accession 78.7 identifies the specific 1929 object studied here. A later pipe image, a book illustration or a reproduction with substituted lettering would not provide an equivalent basis for analysis. The collection credit records museum acquisition support; the complete earlier ownership chain must still be read in the institutional provenance. This precision keeps philosophical discussion attached to a painting with materials, dimensions and a history, rather than allowing it to become a portable slogan detached from the work."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Look from the modeled pipe to the sentence and back. Each remains legible, yet their conjunction unsettles the ordinary confidence with which a viewer identifies a thing in an image."
           ]
         }
       ],
@@ -6189,8 +6239,8 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 626,
-      "minutes": 3,
+      "words": 653,
+      "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -6200,7 +6250,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "A studio at Issy and a painting acquired in 1949",
           "kind": "history",
           "sources": [
             0
@@ -6211,7 +6261,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "Interrupted outlines hold the furniture in place",
           "kind": "analysis",
           "sources": [
             0
@@ -6222,7 +6272,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "Paintings within the painting interrupt the red",
           "kind": "analysis",
           "sources": [
             0
@@ -6233,7 +6283,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "Empty intervals become active relations",
           "kind": "analysis",
           "sources": [
             0
@@ -6244,7 +6294,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Later prominence should not erase changing audiences",
           "kind": "interpretation",
           "sources": [
             0
@@ -6255,13 +6305,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "A colored field carries the work of modeling",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 181 × 219.1 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 181 × 219.1 cm.",
+            "Furniture can be held by narrow interruptions within the dominant red rather than by conventional shadow. Follow one such interval: it can suggest an object’s boundary without enclosing a separately modeled solid. The effect is visible; technical findings about how the red was applied require the museum’s investigation."
           ]
         },
         {
@@ -6278,7 +6329,7 @@
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "Exhibition research makes the depicted studio specific",
           "kind": "history",
           "sources": [
             0
@@ -6286,6 +6337,15 @@
           "paragraphs": [
             "The 2022 museum research matters because it connected the depicted objects with surviving works and with the canvas’s changing circumstances. Such an exhibition can alter reception by making a familiar image newly concrete: a generalized idea of an artist’s studio becomes a particular assembly with its own histories. That research does not make the red environment a literal photograph or settle every question about why Matisse chose it.",
             "The recorded 1949 acquisition is an institutional milestone, while the painting’s earlier destinations and responses require the exhibition research’s own chronology. Refusal, delayed recognition and later admiration should not become a simple legend in which genius is always misunderstood and eventually vindicated. The more interesting question is what a particular setting or audience could make of this unusual relation between colored field, depicted artworks and the public construction of an artistic practice."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Trace one furniture outline until it disappears into red. The room is held together through the economy of such intervals; absence of conventional modeling is an active construction."
           ]
         }
       ],
@@ -6296,7 +6356,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 651,
+      "words": 683,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -6307,7 +6367,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "An early Dance made in relation to Shchukin’s commission",
           "kind": "history",
           "sources": [
             0
@@ -6318,7 +6378,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "An open handclasp interrupts the ring",
           "kind": "analysis",
           "sources": [
             0
@@ -6329,7 +6389,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "Simplified ground and sky expose the contour",
           "kind": "analysis",
           "sources": [
             0
@@ -6340,7 +6400,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "Leaning bodies make balance provisional",
           "kind": "analysis",
           "sources": [
             0
@@ -6351,7 +6411,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "An early version has a distinct object history",
           "kind": "interpretation",
           "sources": [
             0
@@ -6362,37 +6422,47 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Broad color fields make each bodily edge consequential",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 259.7 × 390.1 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 260.4 × 390.4 cm.",
+            "Broad fields leave the contours of the figures unusually exposed. A change in the angle of a limb alters the pressure of the whole ring because relatively little descriptive setting intervenes. Color and edge carry the task of balancing bodies, rather than simply filling an already complete narrative drawing."
           ]
         },
         {
           "id": "section-7",
-          "title": "The circle depends on an interruption",
+          "title": "A ring held together through imbalance",
           "kind": "analysis",
           "sources": [
             0
           ],
           "paragraphs": [
             "The gap between hands can be treated as the point where the ring’s order becomes visibly conditional. The figures do not simply illustrate togetherness. They show the work required to maintain a connection under the pressure of movement. A leaning body can seem carried by the group and at risk of falling out of it. Those possibilities coexist within a very economical arrangement of forms.",
-            "The broad color fields let the contours do much of the structural work. This does not mean that color is secondary. The boundary between green and blue establishes a horizon-like division that each body crosses differently. Feet may belong to the ground while torsos extend toward the sky, so the ring becomes a relation between color areas as well as between people. Follow those crossings and the simplicity of the palette becomes an active constraint rather than a lack of information."
+            "The broad color fields let the contours do much of the structural work. This does not mean that color is secondary. The boundary between green and blue establishes a horizon-like division that each body crosses differently. Feet may belong to the ground while torsos extend toward the sky, so the ring becomes a relation between color areas as well as between people. Follow those crossings and the simplicity of the palette becomes an active constraint rather than a lack of information.",
+            "The commission context helps explain why scale and decoration matter, but the word decorative should not be used as a dismissal. A painting conceived in relation to an architectural setting must organize sustained attention across a large surface and negotiate the conditions of a patron’s environment. Dance (I) can be read as an ambitious solution within that negotiation even while its relationship with a later version remains important."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "Version, commission and later recognition",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The commission context helps explain why scale and decoration matter, but the word decorative should not be used as a dismissal. A painting conceived in relation to an architectural setting must organize sustained attention across a large surface and negotiate the conditions of a patron’s environment. Dance (I) can be read as an ambitious solution within that negotiation even while its relationship with a later version remains important.",
             "The distinction between the 1909 MoMA work and the 1910 Hermitage work must survive every caption and comparison. A more saturated reproduction found online may show another canvas, not a better photograph of this one. Exact version identification therefore precedes an argument about changed color or contour. The 1963 gift credit belongs to the first canvas’s museum journey and must not be attached to the other version. Catalog precision is part of sophisticated looking, not an administrative task separate from it."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Return to the gap between the hands. The ring does not express balance by being secure; it makes balance visible as something the leaning bodies must continually negotiate."
           ]
         }
       ],
@@ -6403,7 +6473,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 646,
+      "words": 679,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -6467,11 +6537,6 @@
           "title": "Uffizi · Raphael, Michelangelo and private patrons",
           "url": "https://www.uffizi.it/en/events/new-room-showcases-the-work-by-raphael-and-michelangelo",
           "scope": "Doni commission and the dialogue with sculpture"
-        },
-        {
-          "title": "Uffizi · Doni Tondo",
-          "url": "https://www.uffizi.it/en/artworks/holy-family-known-as-the-doni-tondo",
-          "scope": "Support, medium and individual object record"
         }
       ],
       "words": 351,
@@ -6610,7 +6675,7 @@
         }
       ],
       "words": 1291,
-      "minutes": 7,
+      "minutes": 8,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -6851,7 +6916,7 @@
         }
       ],
       "words": 767,
-      "minutes": 4,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -6927,11 +6992,6 @@
           "title": "National Gallery of Art · Woman with a Parasol",
           "url": "https://www.nga.gov/artworks/61379-woman-parasol-madame-monet-and-her-son",
           "scope": "Camille and Jean Monet, 1875 work record"
-        },
-        {
-          "title": "National Gallery of Art · Woman with a Parasol",
-          "url": "https://www.nga.gov/artworks/61379-woman-parasol-madame-monet-and-her-son",
-          "scope": "Support, medium and individual object record"
         }
       ],
       "words": 709,
@@ -6949,11 +7009,13 @@
           "kind": "history",
           "sources": [
             0,
-            1
+            1,
+            2
           ],
           "paragraphs": [
             "Painted in 1868–69, the work places a bird on a gate within a snow-covered landscape. The modest incident gives the scene a point of attention without turning it into an animal narrative. It belongs to Monet’s sustained investigation of outdoor light before the independent exhibition associated with the Impressionist name.",
-            "Snow offered a demanding subject because its appearance changes with illumination, reflection and shadow. The painting treats those differences as the substance of the scene rather than as minor variations upon a white ground."
+            "Snow offered a demanding subject because its appearance changes with illumination, reflection and shadow. The painting treats those differences as the substance of the scene rather than as minor variations upon a white ground.",
+            "The Musée d’Orsay records an acquisition in 1984, a distinct event from the painting’s making in 1868–69. The long interval between those dates is not filled with an assumed sequence of owners. The object record establishes a museum milestone; it does not turn this study into a complete provenance."
           ]
         },
         {
@@ -6987,9 +7049,14 @@
           "title": "Metropolitan Museum of Art · Monet",
           "url": "https://www.metmuseum.org/essays/claude-monet-1840-1926",
           "scope": "Landscape practice and career context"
+        },
+        {
+          "title": "Musée d’Orsay · The Magpie, object record",
+          "url": "https://www.musee-orsay.fr/en/artworks/la-pie-715",
+          "scope": "Object date, medium, dimensions and the recorded 1984 acquisition. Checked 20 November 2026; this record does not supply a complete ownership chain."
         }
       ],
-      "words": 269,
+      "words": 318,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -7552,7 +7619,8 @@
           ],
           "paragraphs": [
             "Morisot painted her husband Eugène Manet during their 1875 visit to the Isle of Wight. The work connects a specific journey with her sustained interest in interiors and thresholds. Eugène’s presence is part of her subject matter, not an explanation that makes her own authorship secondary to his family name.",
-            "The window connects the room to a coastal setting. The painting’s social and spatial interest lies in that relation: a person sits inside while attention and visibility extend beyond the domestic boundary."
+            "The window connects the room to a coastal setting. The painting’s social and spatial interest lies in that relation: a person sits inside while attention and visibility extend beyond the domestic boundary.",
+            "The museum identifies the setting as the Globe Cottage hotel at Cowes during the couple’s English honeymoon, and records the canvas as part of Annie Rouart’s 1993 bequest. These are two distinct contexts: a private journey in which Eugène posed for Morisot, and the later formation of a public collection. Neither circumstance removes the painting’s compositional interest in a figure held at the edge of a view through glass."
           ]
         },
         {
@@ -7578,8 +7646,8 @@
       ],
       "sources": [
         {
-          "title": "Musée Marmottan Monet · Official collection",
-          "url": "https://www.marmottan.fr/",
+          "title": "Musée Marmottan Monet · Eugène Manet on the Isle of Wight, inv. 6029",
+          "url": "https://www.marmottan.fr/notice/6029/",
           "scope": "Painting and Morisot collection context"
         },
         {
@@ -7588,7 +7656,7 @@
           "scope": "Marriage, travel and artistic career"
         }
       ],
-      "words": 279,
+      "words": 348,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -7599,7 +7667,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "A 1907 canvas and its later institutional authority",
           "kind": "history",
           "sources": [
             0
@@ -7610,7 +7678,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "Angular bodies resist continuous modeling",
           "kind": "analysis",
           "sources": [
             0
@@ -7621,7 +7689,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "An encounter that refuses a comfortable distance",
           "kind": "analysis",
           "sources": [
             0
@@ -7632,7 +7700,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "The still life advances toward the viewer",
           "kind": "analysis",
           "sources": [
             0
@@ -7643,7 +7711,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Sexual setting, representation and the modernist canon",
           "kind": "interpretation",
           "sources": [
             0
@@ -7654,13 +7722,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Painted planes at a bodily scale",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 243.9 × 233.7 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 243.9 × 233.7 cm.",
+            "At more than two meters in each dimension, the canvas makes the confrontation bodily as well as optical. Oil paint here constructs angular transitions that can read as both modeling and a break in modeling; follow a cheek into its adjacent plane before deciding that all the faces use one system."
           ]
         },
         {
@@ -7672,19 +7741,28 @@
           ],
           "paragraphs": [
             "The painting makes several ordinarily cooperative conventions pull against one another. A figure can be frontal without occupying a stable frontal space. A facial contour can announce a recognizable head while resisting the modeled volume normally attached to it. The viewer is therefore not simply presented with unusual appearances; the viewer is made to perform the work of holding those appearances together. That effort is an important part of the encounter’s force. It gives the surface a resistance that a quick account of broken perspective can miss.",
-            "The represented women also make a purely formal account insufficient. Their address is inseparable from the sexualized situation and from the power of the person who constructs and controls the image. Admiring the arrangement does not require treating its subjects as neutral raw material. A serious reading should ask who is granted a position of mastery, how that position is challenged, and whether the painting’s aggression belongs to the figures, the artist’s representation or the viewer’s own experience. These alternatives cannot be resolved by a stylistic label."
+            "The represented women also make a purely formal account insufficient. Their address is inseparable from the sexualized situation and from the power of the person who constructs and controls the image. Admiring the arrangement does not require treating its subjects as neutral raw material. A serious reading should ask who is granted a position of mastery, how that position is challenged, and whether the painting’s aggression belongs to the figures, the artist’s representation or the viewer’s own experience. These alternatives cannot be resolved by a stylistic label.",
+            "The move into a museum collection gave this large, difficult canvas a different kind of public authority. Its eventual status as a point of origin for modern art can tempt us to read every earlier study as a step toward an inevitable result. Preparation should instead be understood as evidence of choices that might have gone otherwise. A finished work does not make its own route of development necessary."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "Museum recognition and the problem of origins",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The move into a museum collection gave this large, difficult canvas a different kind of public authority. Its eventual status as a point of origin for modern art can tempt us to read every earlier study as a step toward an inevitable result. Preparation should instead be understood as evidence of choices that might have gone otherwise. A finished work does not make its own route of development necessary.",
-            "When returning to the museum record, separate the date of making, the date of institutional acquisition and the history of public recognition. Each has a different evidential basis. A chronology of owners would need to identify actual transfers, not simply place the painter and the museum at opposite ends of a blank interval. That interval is kept open here. The pictorial argument is developed at length, while the absence of a transcribed complete provenance remains visible rather than disguised as a complete history."
+            "The MoMA acquisition record belongs to the painting’s institutional history, not to its moment of making in 1907. Its later position in histories of modernism should not make every preparatory decision appear inevitable. The complete ownership sequence is not transcribed here; follow the museum record rather than treating an unfilled interval as an uninterrupted chain."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Return to the fruit at the lower edge, then to a face. The pressure of this encounter is made between those thresholds: the image offers recognizable bodies while withholding an easy position from which to possess them."
           ]
         }
       ],
@@ -7695,8 +7773,8 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 717,
-      "minutes": 4,
+      "words": 733,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -7706,7 +7784,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "A dated encounter with Marie-Thérèse Walter",
           "kind": "history",
           "sources": [
             0
@@ -7717,7 +7795,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "The reaching arm bridges two unequal appearances",
           "kind": "analysis",
           "sources": [
             0
@@ -7728,7 +7806,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "Color divides the face rather than explaining a mood",
           "kind": "analysis",
           "sources": [
             0
@@ -7739,7 +7817,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "Pattern competes with the figure",
           "kind": "analysis",
           "sources": [
             0
@@ -7750,7 +7828,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "A named sitter does not settle the reflection",
           "kind": "interpretation",
           "sources": [
             0
@@ -7761,13 +7839,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Oil paint makes incompatible surfaces coexist",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil on canvas, and the stated dimensions are 162.3 × 130.2 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil on canvas, and the stated dimensions are 162.3 × 130.2 cm.",
+            "The repeated outlines carry a different kind of authority from softly graded flesh. Color can assert the body’s presence while refusing to make its reflection obey the same description. Compare an enclosed patch on the figure with a corresponding patch inside the mirror."
           ]
         },
         {
@@ -7779,19 +7858,28 @@
           ],
           "paragraphs": [
             "A mirror normally authorizes an explanation: one body produces two appearances according to a consistent optical relation. Here that expectation becomes a point of departure. Differences in contour and color make the reflection an active counterpart rather than a passive confirmation. It may seem to expose another condition of the sitter, but that impression is an effect constructed for a viewer. We do not gain access to Marie-Thérèse Walter’s private understanding merely by recognizing her image.",
-            "The reach toward the mirror is especially consequential. It places a gesture of connection across a boundary that the surrounding pictorial languages keep asserting. If the reflection appears alien or troubling, the hand complicates a simple division between an acceptable exterior and a rejected interior. The scene can sustain attraction, curiosity or ambivalence without requiring us to settle which emotion is its definitive content. What matters first is that contact is proposed across a visibly differentiated field."
+            "The reach toward the mirror is especially consequential. It places a gesture of connection across a boundary that the surrounding pictorial languages keep asserting. If the reflection appears alien or troubling, the hand complicates a simple division between an acceptable exterior and a rejected interior. The scene can sustain attraction, curiosity or ambivalence without requiring us to settle which emotion is its definitive content. What matters first is that contact is proposed across a visibly differentiated field.",
+            "The figure’s patterned environment is part of the argument, not an ornamental distraction. Repeated curves and enclosed shapes make the sitter seem connected to the whole surface even as the mirror divides that surface into regions. This double operation produces a useful tension: the subject proposes an individual confronting herself, while the composition treats body and setting as interdependent painted forms. Follow that relationship before assigning fixed meanings to particular hues."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "The museum record and the limits of biography",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The figure’s patterned environment is part of the argument, not an ornamental distraction. Repeated curves and enclosed shapes make the sitter seem connected to the whole surface even as the mirror divides that surface into regions. This double operation produces a useful tension: the subject proposes an individual confronting herself, while the composition treats body and setting as interdependent painted forms. Follow that relationship before assigning fixed meanings to particular hues.",
             "The museum’s gift credit establishes a documented institutional stage in the work’s journey. It should not be expanded into a full history of purchase, first display or the sitter’s response without further documents. Likewise, a widely repeated psychological interpretation may belong to the painting’s reception rather than its original circumstances. The distinction makes the study more exact: a documented person, a dated object and an argument about reflection can be considered together without being treated as the same kind of evidence."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Return to the hand that reaches toward the mirror. It joins the two appearances without making them equivalent; that unresolved connection is more useful than assigning a fixed emotional meaning to every color."
           ]
         }
       ],
@@ -7802,7 +7890,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 664,
+      "words": 696,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -7813,7 +7901,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "A 1950 canvas acquired through the Janis collection",
           "kind": "history",
           "sources": [
             0
@@ -7824,7 +7912,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "Follow a line until another crossing interrupts it",
           "kind": "analysis",
           "sources": [
             0
@@ -7835,7 +7923,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "Open intervals give density its counterweight",
           "kind": "analysis",
           "sources": [
             0
@@ -7846,7 +7934,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "Horizontal extension permits several centers",
           "kind": "analysis",
           "sources": [
             0
@@ -7857,7 +7945,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Control and contingency require more than an anecdote",
           "kind": "interpretation",
           "sources": [
             0
@@ -7868,13 +7956,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Oil and enamel distinguish line, accumulation and ground",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil and enamel paint on canvas, and the stated dimensions are 269.5 × 530.8 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil and enamel paint on canvas, and the stated dimensions are 269.5 × 530.8 cm.",
+            "Oil and enamel are the recorded media. In the image, a line can remain distinct at one crossing and disappear into an accumulation at another. Following those changes makes density a sequence of local decisions to inspect, rather than a single label attached to the entire canvas."
           ]
         },
         {
@@ -7886,19 +7975,28 @@
           ],
           "paragraphs": [
             "The term all-over can be helpful if it describes a distribution of attention rather than an absence of difference. The surface contains areas of varied density, changes in directional emphasis and different relations between exposed ground and marks. Those differences are what make the field worth traversing. A viewer can return to the same passage and find a new route because the network does not organize every crossing into a single hierarchy.",
-            "A line may suggest a gesture, but the suggestion is not a measurement of the original movement. A continuous-looking trace may be interrupted or overlapped; a dramatic crossing may result from separate moments. Technical examination can investigate particular materials and sequences, whereas a spectator’s reconstruction remains provisional. This does not make looking futile. It identifies what looking can responsibly contribute: a careful account of the relationships now available on the surface."
+            "A line may suggest a gesture, but the suggestion is not a measurement of the original movement. A continuous-looking trace may be interrupted or overlapped; a dramatic crossing may result from separate moments. Technical examination can investigate particular materials and sequences, whereas a spectator’s reconstruction remains provisional. This does not make looking futile. It identifies what looking can responsibly contribute: a careful account of the relationships now available on the surface.",
+            "The horizontal scale also changes the relation between composition and bodily orientation. The painting can exceed a nearby viewer’s comfortable field of attention, requiring a negotiation between local inspection and a broader disposition. That physical negotiation is difficult to reproduce digitally. A screen comparison is most useful when it states its own limits and encourages a change between whole image and detail without suggesting that magnification restores the original encounter."
           ]
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "A numbered work with a particular collecting history",
           "kind": "history",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The horizontal scale also changes the relation between composition and bodily orientation. The painting can exceed a nearby viewer’s comfortable field of attention, requiring a negotiation between local inspection and a broader disposition. That physical negotiation is difficult to reproduce digitally. A screen comparison is most useful when it states its own limits and encourages a change between whole image and detail without suggesting that magnification restores the original encounter.",
             "The museum’s recorded acquisition in 1968 is a secure institutional milestone. The title’s number should not be treated as a complete production chronology, and the canvas should not be made interchangeable with other large works of 1950. Comparing it with Autumn Rhythm is valuable precisely because similarity of date and scale allows differences in openness, density and tonal organization to matter. The aim is to describe the specificity of this painting, not merely to recognize an example of a famous technique."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Choose one opening in the web, then widen your attention to the field around it. The painting’s unity depends on differences of density and interruption that a general label such as all-over cannot replace."
           ]
         }
       ],
@@ -7909,7 +8007,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 663,
+      "words": 700,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -7920,7 +8018,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "The particular object",
+          "title": "A 1950 painting acquired by the Met in 1957",
           "kind": "history",
           "sources": [
             0
@@ -7931,7 +8029,7 @@
         },
         {
           "id": "section-2",
-          "title": "How the image organizes attention",
+          "title": "Follow the space between two dark lines",
           "kind": "analysis",
           "sources": [
             0
@@ -7942,7 +8040,7 @@
         },
         {
           "id": "section-3",
-          "title": "A second relationship",
+          "title": "Crossings complicate figure and ground",
           "kind": "analysis",
           "sources": [
             0
@@ -7953,7 +8051,7 @@
         },
         {
           "id": "section-4",
-          "title": "Space, surface and the viewer",
+          "title": "A five-meter field exceeds a single close viewpoint",
           "kind": "analysis",
           "sources": [
             0
@@ -7964,7 +8062,7 @@
         },
         {
           "id": "section-5",
-          "title": "What remains an argument",
+          "title": "Critical frameworks ask different questions",
           "kind": "interpretation",
           "sources": [
             0
@@ -7975,13 +8073,14 @@
         },
         {
           "id": "section-6",
-          "title": "Materials and the limits of a reproduction",
+          "title": "Alkyd paint and the visibility of a moving line",
           "kind": "technical",
           "sources": [
             0
           ],
           "paragraphs": [
-            "The recorded medium is oil-modified alkyd resin on canvas, and the stated dimensions are 269.9 × 528.3 cm. These identify the object’s support and scale; they do not, by themselves, reveal the exact sequence of execution. A statement about underdrawing, pigment chemistry or a concealed earlier state requires a specific technical examination. This study does not infer those findings from a photograph."
+            "The recorded medium is oil-modified alkyd resin on canvas, and the stated dimensions are 269.9 × 528.3 cm.",
+            "The Met identifies oil-modified alkyd resin on canvas. Uneven recurrences and open intervals allow a moving line to participate in a large field without becoming a regular pattern. The medium record is documentary; the account of rhythm is an interpretation of visible relationships."
           ]
         },
         {
@@ -7998,7 +8097,7 @@
         },
         {
           "id": "section-8",
-          "title": "A public life without an invented chain",
+          "title": "Mural practice and the particular canvas",
           "kind": "history",
           "sources": [
             0
@@ -8006,6 +8105,15 @@
           "paragraphs": [
             "The Met’s connection with mural practice provides a professional context for scale without making the canvas a mural fixed permanently to a wall. Portability permits exhibition, sale and acquisition, while the size can still address the spectator’s body. The object thus participates in more than one kind of institution: the studio, the commercial and critical circulation of modern painting, and eventually the museum collection.",
             "The acquisition in 1957, shortly after Pollock’s death, is a documented stage in that circulation. It is not evidence that every contemporary spectator accepted the work or that every later account described its achievement in the same terms. Critics’ emphasis on action, pictorial organization or cultural identity should be attributed when developed as historical positions. The present study offers a formal reading, not a composite quotation that makes several critics speak with a single voice."
+          ]
+        },
+        {
+          "id": "return-to-the-work",
+          "title": "Return to the work",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Follow an interval rather than a line. Its changing width makes rhythm a relation between marks and the spaces they leave, not a decorative unit repeated across the canvas."
           ]
         }
       ],
@@ -8016,7 +8124,7 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 648,
+      "words": 676,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -8162,7 +8270,7 @@
         }
       ],
       "words": 1305,
-      "minutes": 7,
+      "minutes": 8,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -8430,7 +8538,8 @@
           ],
           "paragraphs": [
             "Raphael painted Galatea for the Roman villa associated with the banker Agostino Chigi. The fresco belongs to a decorative environment in which classical mythology, patronal ambition and artistic display intersect. It was not designed as an isolated museum picture: its architecture and neighboring images formed part of the experience.",
-            "Galatea is a sea nymph associated with the story of the Cyclops Polyphemus. Raphael’s scene emphasizes her passage across the sea rather than presenting the whole narrative. Mythological knowledge enriches the image, but the fresco also offers the patron’s audience an immediately legible spectacle of beauty, motion and cultivated reference."
+            "Galatea is a sea nymph associated with the story of the Cyclops Polyphemus. Raphael’s scene emphasizes her passage across the sea rather than presenting the whole narrative. Mythological knowledge enriches the image, but the fresco also offers the patron’s audience an immediately legible spectacle of beauty, motion and cultivated reference.",
+            "Villa Farnesina’s account places Raphael’s Galatea within a loggia decorated by several artists, including Peruzzi and Sebastiano del Piombo. Its subsequent history includes conservation campaigns, rather than an untouched passage from Renaissance commission to present display. The institution distinguishes work on the vault, painted panels and later landscapes; a restoration date for the room should not automatically be assigned to every surface within it."
           ]
         },
         {
@@ -8456,13 +8565,13 @@
       ],
       "sources": [
         {
-          "title": "Villa Farnesina · Official museum",
-          "url": "https://www.villafarnesina.it/",
+          "title": "Villa Farnesina · The Loggia of Galatea",
+          "url": "https://www.villafarnesina.it/en/percorso-di-visita/the-loggia-of-galatea/",
           "scope": "Villa, patronage and fresco setting"
         }
       ],
-      "words": 307,
-      "minutes": 2,
+      "words": 371,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -8599,7 +8708,7 @@
         }
       ],
       "words": 1180,
-      "minutes": 6,
+      "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -8776,8 +8885,8 @@
       ],
       "sources": [
         {
-          "title": "State Hermitage Museum · Official collection",
-          "url": "https://www.hermitagemuseum.org/",
+          "title": "Hermitage Foundation UK · The Prodigal Son, Geraldine Norman",
+          "url": "https://www.hermitagefoundation.co.uk/prodigal-son-rembrandt",
           "scope": "Collection context"
         },
         {
@@ -9425,7 +9534,7 @@
         }
       ],
       "words": 1110,
-      "minutes": 6,
+      "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -9901,7 +10010,7 @@
         }
       ],
       "words": 1210,
-      "minutes": 6,
+      "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },

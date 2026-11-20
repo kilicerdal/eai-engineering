@@ -3,7 +3,7 @@
   "profiles": {
     "picasso": {
       "title": "Picasso · who controls the encounter?",
-      "opening": "The figures do not wait quietly to be recognized. Picasso makes looking feel like a negotiation: between incompatible views, between a body and its painted boundary, and between a sitter’s presence and the authority of the artist who represents her.",
+      "opening": "Picasso repeatedly remade the terms on which a painted body could be recognized. These two studies trace that problem from the confrontational space of Les Demoiselles d’Avignon to the incompatible appearances of Girl before a Mirror. Biography matters here, but it cannot settle what each pictorial construction asks of its viewer.",
       "pairTitle": "Confrontation and reflection",
       "pair": "In the 1907 group, disagreement occurs within the bodies and between their different descriptive languages. In the 1932 mirror painting, disagreement is staged between a figure and another image of her. The first compresses an encounter with several figures; the second makes looking at oneself the subject of an unstable exchange. Compare what a contour separates before deciding that both paintings simply distort reality.",
       "label": "Cubism helps identify a challenge to consistent representation, but Girl before a Mirror should not be treated as the predictable result of a single Cubist formula.",
@@ -16,7 +16,7 @@
     },
     "dali": {
       "title": "Dalí · precision in the service of uncertainty",
-      "opening": "A watch can look exquisitely described while ceasing to behave like a watch. Dalí’s peculiarity lies in this alliance between visual assurance and material impossibility: the confidence of the description makes the uncertainty harder to dismiss.",
+      "opening": "Dalí joined exact description to impossible relations. These studies follow a shift from the materially unstable objects of The Persistence of Memory to the double image of Metamorphosis of Narcissus: two ways of making the viewer’s confidence in recognition become the source of uncertainty.",
       "pairTitle": "Softness and double recognition",
       "pair": "The Persistence of Memory makes solidity unreliable while keeping much of the landscape legible. Metamorphosis of Narcissus asks a different kind of labor from the eye: a related contour becomes a figure and then a hand with an egg. One painting contradicts the expected behavior of a familiar thing; the other makes resemblance carry a transformation. Neither needs to be reduced to a dictionary of symbols.",
       "label": "Surrealism situates the work within a movement, but it does not make every object a transcription of a dream or establish a psychiatric explanation.",
@@ -29,7 +29,7 @@
     },
     "pollock": {
       "title": "Pollock · a field made through decisions",
-      "opening": "The first impression may be of an unbroken web. Stay longer and differences appear: a passage opens, a dark line interrupts another rhythm, an exposed interval becomes a place to rest. Pollock makes the distribution of attention a material problem.",
+      "opening": "Pollock made the distribution of attention a material problem. Two large canvases of 1950 allow sustained comparison: marks overlap, openings interrupt density, and rhythm emerges without a regular unit. Studying their differences keeps a recognizable technique from becoming a substitute for looking.",
       "pairTitle": "Two fields, two kinds of openness",
       "pair": "One and Autumn Rhythm share the year 1950 and an ambition for an extended field, but their networks should not be treated as a repeated pattern. Follow a local crossing in each, then compare how much exposed ground surrounds it. The useful distinction is not controlled versus uncontrolled. It concerns the different ways recurrence, interruption and scale let the eye move without a single governing figure.",
       "label": "Abstract Expressionism supplies an institutional and critical setting. It does not mean that every trace records an unmediated emotion or a single uninterrupted performance.",
@@ -42,7 +42,7 @@
     },
     "matisse": {
       "title": "Matisse · making space with color",
-      "opening": "The room seems to surrender to red, yet its contents remain distinct. Matisse’s economy is demanding rather than effortless: a narrow unpainted interval can do the work that a modeled shadow or a firm perspective construction might do elsewhere.",
+      "opening": "Matisse made color and contour bear work conventionally assigned to modeling and perspective. The Red Studio and Dance (I) approach that problem through different structures—a room of separate objects and a ring of connected bodies—so that economy becomes a demanding form of pictorial construction.",
       "pairTitle": "A room held open; a ring held together",
       "pair": "The Red Studio establishes relationships among objects through a continuous color field and the intervals that interrupt it. Dance (I) organizes bodies through contact, lean and an incomplete-looking handclasp. Compare the dependency of each form on its neighbor. Both works ask how a whole can hold together without describing every transition, yet the bodily rhythm of the dance is not the same operation as the studio’s red continuity.",
       "label": "Fauvism names an important period of color experimentation. It does not explain the entire career or erase the deliberate construction behind apparent simplicity.",
@@ -55,7 +55,7 @@
     },
     "kahlo": {
       "title": "Kahlo · the self-portrait as a public construction",
-      "opening": "A suit, scissors and cut hair are not incidental accessories. Kahlo stages identity through objects that can be worn, handled and discarded. The self-portrait offers a deliberate encounter, not transparent access to the artist’s private life.",
+      "opening": "Kahlo constructed self-images in which clothing, bodily exposure, inscriptions and handled objects carry public meaning. These two studies consider different kinds of self-presentation without treating the paintings as transparent records of private feeling or reducing a complex practice to a single biographical event.",
       "pairTitle": "One self, two selves",
       "pair": "Self-Portrait with Cropped Hair concentrates a performance of identity in one seated body. The Two Fridas divides self-representation between two figures connected through hands and exposed anatomy. Compare how clothing marks difference and how a small connection prevents separation from becoming absolute. Biography can inform the encounter, but neither picture is exhausted by a single episode of injury or marriage.",
       "label": "Surrealist reception is part of Kahlo’s public history. Treating that label as her only identity can obscure the Mexican cultural forms and deliberate self-presentation discussed in her own museum’s account.",
@@ -68,7 +68,7 @@
     },
     "magritte": {
       "title": "Magritte · recognition becomes a question",
-      "opening": "The pipe is easy to recognize. That is precisely why the sentence beneath it can become troublesome. Magritte lets ordinary visual competence expose a confusion between identifying a depiction and possessing the thing depicted.",
+      "opening": "Magritte made familiar depictions disturb the assumptions that normally support recognition. The painted eye and the painted pipe remain readily identifiable; their relations to sky and language make that very clarity difficult to explain. His work asks what a representation can offer, and what it cannot supply.",
       "pairTitle": "An eye and a sentence",
       "pair": "The False Mirror places a sky where the viewer expects an iris; The Treachery of Images places a sentence where a caption might normally confirm an object’s identity. One unsettles an organ of perception, the other a convention of naming. Together they ask how images produce confidence. Their similar clarity should not hide the different mechanism of each encounter.",
       "label": "Surrealism describes an artistic context, not a requirement that these images abandon careful reasoning. Their ordinary appearance is essential to the problem they construct.",
@@ -336,6 +336,246 @@
         ]
       ],
       "extraSource": "https://www.moma.org/artists/1364-salvador-dali"
+    },
+    "picasso-02": {
+      "title": "A reflection that refuses to duplicate",
+      "naming": "The mirror in the title promises a second view, but the painting does not offer a neutral likeness beside an altered one. Examine how the upright frame divides patterned fields before deciding which side should represent truth.",
+      "scale": "The canvas exceeds a metre and a half in height. A body can therefore confront a standing visitor differently from a handheld reproduction. The mirror remains part of the painting’s constructed space, rather than an actual reflected viewing position.",
+      "color": "Compare the figure’s pale areas with the darker, saturated passages inside the oval. The contrast changes the pressure of adjacent contours. Calling one side youthful and the other aged is an interpretation; color alone cannot establish a biographical episode.",
+      "making": [
+        "Trace the repeated contours on both sides of the oval before assigning them a symbolic meaning.",
+        "Compare areas where pattern describes clothing with areas where it competes with a body’s boundary.",
+        "Consult technical research before treating an overlap visible in a reproduction as proof of a dated revision."
+      ],
+      "challenge": "A documented preparatory sequence might clarify when a particular contour changed. It would not, by itself, make a single emotional reading obligatory or identify every pattern with an incident in the sitter’s life.",
+      "story": "A mirror is often assumed to reveal an inner self. Here that expectation is the problem to examine: the painter controls both images. Neither the depicted person’s private feelings nor her agreement with the representation can be recovered from the surface alone.",
+      "people": "MoMA identifies the work with Picasso’s major 1931–32 series, while its credit records Mrs. Simon Guggenheim’s gift. Sitter, painter, donor and museum occupy distinct positions; none supplies an unmediated explanation of the others.",
+      "journey": [
+        [
+          "1932",
+          "MoMA dates the painting to March 14 in Paris."
+        ],
+        [
+          "1938",
+          "The museum accession and gift credit document its entry into MoMA."
+        ],
+        [
+          "Present collection",
+          "The current institutional record provides object details and installation history; it does not constitute a complete earlier ownership chain."
+        ]
+      ],
+      "reception": [
+        [
+          "Museum framing",
+          "MoMA places the work within a major series and offers installation records through which its later presentation can be investigated."
+        ],
+        [
+          "A present-day question",
+          "Compare your initial reading of the mirror with the institution’s interpretation. Agreement is not a prerequisite for a careful observation."
+        ]
+      ],
+      "source": "https://www.moma.org/collection/works/78311",
+      "extraSource": "https://www.moma.org/collection/works/78311"
+    },
+    "dali-02": {
+      "title": "Two recognitions held in suspense",
+      "naming": "Narcissus supplies a mythic framework, but the title does not do the visual work for us. Attend to the resemblance between the bending figure and the hand-like form: recognition depends on moving between related shapes rather than identifying a fixed inventory of symbols.",
+      "scale": "At 51.1 by 78.1 centimetres, the painting rewards close attention to a relatively compact field. A large screen can make it feel monumental, so separate the painted scale relationships from the physical size of the object.",
+      "color": "Golden and stony passages help connect forms that belong to different imagined materials. Test whether similar values or matching contours first produce the double recognition; the two mechanisms need not operate at exactly the same moment.",
+      "making": [
+        "Identify the principal repeated silhouette without assuming that every echo carries equal weight.",
+        "Compare sharply described foreground forms with the more dispersed activity behind them.",
+        "Use the catalogue’s medium and signature record as object evidence; a smooth reproduction does not establish the order or duration of the painting process."
+      ],
+      "challenge": "A securely linked drawing could revise an account of the design’s development. A later explanation by the artist would still need its date and audience considered rather than being treated as a transparent record of the first conception.",
+      "story": "The image is sometimes approached as a dream to decode. Its deliberate repetitions also make it an exercise in recognition. The myth and the artist’s literary interests are contexts for looking, not a guarantee that every visible object has one authorized translation.",
+      "people": "The foundation catalogue names Edward James and the Edward James Foundation in its provenance. Patronage belongs to the work’s history, but the abbreviated ownership list does not supply transaction dates or justify inventing a full chain of custody.",
+      "journey": [
+        [
+          "1937",
+          "The foundation catalogue records the date and a signed, dated inscription."
+        ],
+        [
+          "1937 exhibitions",
+          "The catalogue lists Paris and Pittsburgh presentations in that year."
+        ],
+        [
+          "Tate collection",
+          "The record identifies Tate as the present collection and names the James provenance; unspecified transfers remain unspecified."
+        ]
+      ],
+      "reception": [
+        [
+          "Exhibition history",
+          "The catalogue documents repeated international exhibitions, establishing circulation rather than universal agreement about the work."
+        ],
+        [
+          "Recognition as a question",
+          "A viewer may notice the doubling before recalling the myth. That order offers a useful alternative to beginning with symbolic definitions."
+        ]
+      ],
+      "source": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/",
+      "extraSource": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/"
+    },
+    "pollock-02": {
+      "title": "A field larger than a single glance",
+      "naming": "The title combines a seasonal association with a number and date. Hold those different invitations apart: the word autumn can guide attention toward rhythm or color, but does not establish that the marks illustrate a particular landscape.",
+      "scale": "More than five metres wide, the canvas asks for lateral looking as well as close inspection. A small reproduction gathers the whole field into one glance and can conceal differences between a long trajectory and a short local interruption.",
+      "color": "Dark, pale and brownish traces establish a changing density against exposed ground. Follow a single passage until it crosses another, then ask whether your sense of depth comes from overlap, contrast or the interruption of a line.",
+      "making": [
+        "Examine the relation between exposed support and the accumulated traces.",
+        "Distinguish what an overlap permits you to observe locally from a complete reconstruction of working order.",
+        "The Met identifies oil-modified alkyd resin; general descriptions of drip painting should not replace object-specific material evidence."
+      ],
+      "challenge": "A technical study could distinguish materials or clarify a local sequence of applications. That evidence would test claims about procedure, without converting every movement visible in a line into a recoverable psychological state.",
+      "story": "Spontaneity and deliberation are often treated as opposites. Instead ask where repeated gestures establish a structure and where interruptions resist it. A photographed demonstration of Pollock working is not automatically documentation of every passage in this canvas.",
+      "people": "The Met connects the painting to mural traditions and records its acquisition through the George A. Hearn Fund. Those contexts enlarge an account centered on the solitary painter, while remaining distinct from evidence of a specific assistant’s participation.",
+      "journey": [
+        [
+          "1950",
+          "The Met dates the work to 1950."
+        ],
+        [
+          "1957",
+          "The museum records its acquisition through the George A. Hearn Fund."
+        ],
+        [
+          "Museum presentation",
+          "The institutional entry provides provenance and exhibition sections for further investigation; the brief timeline here does not reproduce every transfer."
+        ]
+      ],
+      "reception": [
+        [
+          "Institutional acquisition",
+          "The Met discusses its 1957 acquisition as evidence of the rapid institutional recognition of Pollock’s practice."
+        ],
+        [
+          "Distance and attention",
+          "Try a whole-field view and a local crossing. A persuasive account should explain their relationship rather than valuing only one."
+        ]
+      ],
+      "source": "https://www.metmuseum.org/art/collection/search/488978",
+      "extraSource": "https://www.metmuseum.org/art/collection/search/488978"
+    },
+    "matisse-02": {
+      "title": "A circle with a vulnerable connection",
+      "naming": "The parenthetical numeral matters: Dance (I) identifies this particular canvas, rather than every version of Matisse’s dance subject. Keep the museum record beside comparisons so differences between works do not become imaginary changes within one object.",
+      "scale": "MoMA’s current record gives 260.4 by 390.4 centimetres. The figures occupy a broad wall-sized field; their apparent simplicity on screen can disguise the reach of an arm or the span between two participants.",
+      "color": "The broad blue and green zones make contour unusually consequential. Look where a figure’s outline runs against each field: the boundary can seem to stabilize the ground or propel the body away from it. This reading concerns relationships, not measured original pigments.",
+      "making": [
+        "Follow the chain of hands and the interval where a connection appears most exposed.",
+        "Compare the treatment of bodies with the relatively broad surrounding fields.",
+        "Consult documented versions before turning differences of finish into a speculative sequence of changes to this canvas."
+      ],
+      "challenge": "A documented study may clarify an intention at one stage, but a later version does not erase the earlier canvas’s particular effects. Compare intervals and contours, not just labels such as unfinished or complete.",
+      "story": "A first version is not merely an unsuccessful final picture. Treat this work as a sustained proposition about connected bodies and a limited field, then ask how another version changes the terms of that proposition.",
+      "people": "The museum credit identifies Nelson A. Rockefeller’s gift in honor of Alfred H. Barr Jr. The later gift and museum framing belong to its institutional history; they should be distinguished from the circumstances of its making.",
+      "journey": [
+        [
+          "Early 1909",
+          "MoMA locates the making in Paris, Boulevard des Invalides."
+        ],
+        [
+          "1963",
+          "The museum accession records Rockefeller’s gift in honor of Barr."
+        ],
+        [
+          "Current record",
+          "Object details and exhibition records remain available from MoMA; this selection does not fill undocumented ownership intervals."
+        ]
+      ],
+      "reception": [
+        [
+          "A version in its own right",
+          "The museum’s identification preserves the distinction between this canvas and later treatments of the subject."
+        ],
+        [
+          "Comparing with care",
+          "Ask how a change in contour alters balance, rather than assuming that later automatically means better."
+        ]
+      ],
+      "source": "https://www.moma.org/collection/works/79124/",
+      "extraSource": "https://www.moma.org/collection/works/79124/"
+    },
+    "kahlo-02": {
+      "title": "Two bodies, one continuous problem",
+      "naming": "The plural title makes doubling explicit but leaves the relation between the figures open to examination. Begin with what connects them physically and compositionally before assigning one a fixed cultural identity and the other its opposite.",
+      "scale": "The near-square format allows two seated bodies to occupy a shared field without one functioning simply as a subsidiary portrait. Consider the joined hands as a bridge across the interval and the exposed anatomy as another, differently unsettling connection.",
+      "color": "White fabric gives small red passages a conspicuous force, while the darker costume organizes attention differently. Distinguish a visible contrast from a claim about emotional meaning: neither color grants direct access to the artist’s private experience.",
+      "making": [
+        "Trace the hands, exposed hearts and connecting vessel separately before combining them into an interpretation.",
+        "Compare the construction of each costume with the treatment of the shared sky.",
+        "The museum identifies oil on canvas; no sampled layer sequence or undocumented restoration is supplied here."
+      ],
+      "challenge": "A dated statement or preparatory drawing could alter the weight assigned to a biographical interpretation. Such evidence would still need context: an explanation made later for a particular audience is not identical to the first act of painting.",
+      "story": "The museum relates the picture to Kahlo’s separation from Rivera. That documented context should not reduce every visual choice to a direct illustration of marital events. The doubling also structures how a self-portrait can address another person looking at it.",
+      "people": "Rivera appears in the museum’s contextual interpretation, while Breton and the 1940 exhibition belong to its public reception. Kahlo remains the maker of a deliberately constructed image, rather than simply the subject of other people’s descriptions.",
+      "journey": [
+        [
+          "1939",
+          "The museum dates the canvas to 1939."
+        ],
+        [
+          "1947",
+          "MAM’s published account records acquisition directly from Kahlo by INBA."
+        ],
+        [
+          "1966",
+          "The same account records transfer to MAM on December 28."
+        ]
+      ],
+      "reception": [
+        [
+          "1940 exhibition",
+          "MAM identifies its presentation at the International Exhibition of Surrealism in Mexico."
+        ],
+        [
+          "Biographical interpretation",
+          "Compare the museum’s account with the visible connections between the figures; context supports a reading without exhausting the painting."
+        ]
+      ],
+      "source": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg",
+      "extraSource": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg"
+    },
+    "magritte-01": {
+      "title": "An eye that becomes a landscape",
+      "naming": "Calling an eye a false mirror introduces a problem rather than solving it. The circular field can be read as an iris and as a sky; examine where those descriptions fit together and where their incompatible scales remain visible.",
+      "scale": "The work is 54 by 80.9 centimetres, not an architectural mural. An enlarged reproduction can overwhelm the viewer in a different way, so keep the object’s size separate from the enormous eye constructed within it.",
+      "color": "The dark centre interrupts the clouded blue field sharply. Ask whether it seems to belong to an eye, to the sky, or to the picture’s surface. That oscillation depends on context and contrast rather than a change in the painted marks.",
+      "making": [
+        "Follow the eyelids as a framing device around the circular field.",
+        "Compare the treatment of clouds with the hard boundary of the dark centre.",
+        "A precise descriptive style does not establish that the painting depicts an observed eye or a specific real landscape."
+      ],
+      "challenge": "A documented source image might clarify one reference without resolving the conjunction of eye and sky. Evidence of a borrowed motif cannot alone explain how the painted relation changes a viewer’s expectations.",
+      "story": "The painting is often treated as a direct statement about inner vision. It also complicates the ordinary promise of a picture as a window onto the world: the organ that sees becomes something seen, and the view within it remains materially painted.",
+      "people": "The painter, the museum and the present spectator each frame an encounter with the eye differently. MoMA’s purchase credit supplies an institutional fact; it does not authorize attribution of a viewer’s sense of surveillance or introspection to Magritte.",
+      "journey": [
+        [
+          "1929",
+          "MoMA dates the painting to Paris in 1929."
+        ],
+        [
+          "1936 accession",
+          "MoMA’s object number and purchase credit identify its institutional accession."
+        ],
+        [
+          "Present record",
+          "The collection entry links installation and exhibition resources. Earlier ownership details should be checked there rather than invented here."
+        ]
+      ],
+      "reception": [
+        [
+          "Institutional presentation",
+          "MoMA presents the work through object details, audio and exhibition resources, which provide different forms of interpretation."
+        ],
+        [
+          "A looking exercise",
+          "Move between iris and sky. Describe what remains unchanged in the image while your identification changes."
+        ]
+      ],
+      "source": "https://www.moma.org/collection/works/78938",
+      "extraSource": "https://www.moma.org/collection/works/78938"
     }
   },
   "routes": [

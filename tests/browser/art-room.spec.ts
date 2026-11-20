@@ -5,11 +5,11 @@ test('gallery offers 112 works, painter and era routes, and saves without touchi
  await page.goto('/study/art');await expect(page.getByRole('status').filter({hasText:/^112 paintings$/})).toBeVisible();
  await expect(page.locator('.art-tile')).toHaveCount(12);
  await page.getByRole('button',{name:'Save Mona Lisa to My Gallery',exact:true}).click();
- await page.getByRole('button',{name:/^My Gallery/ }).click();await expect(page.locator('.art-tile')).toHaveCount(1);
- await page.reload();await page.getByRole('button',{name:/^My Gallery/ }).click();await expect(page.locator('.art-tile h3')).toHaveText('Mona Lisa');
+ await page.getByRole('link',{name:/^My Art ·/}).click();await expect(page.locator('.art-my-art .art-tile')).toHaveCount(1);
+ await page.reload();await expect(page.locator('.art-tile h3')).toHaveText('Mona Lisa →');
  expect(await page.evaluate(()=>localStorage.getItem('existing-work-check'))).toBe('preserve me');
- await page.getByRole('button',{name:'Meet the painters',exact:true}).click();await expect(page.locator('.art-painter-card')).toHaveCount(21);
- await page.getByRole('button',{name:'Through the eras',exact:true}).click();await expect(page.locator('.art-timeline article')).toHaveCount(9);
+ await page.getByRole('link',{name:'Painters',exact:true}).click();await expect(page.locator('.art-painter-card')).toHaveCount(21);
+ await page.getByRole('link',{name:'Paintings',exact:true}).click();await page.getByRole('button',{name:'Through the eras',exact:true}).click();await expect(page.locator('.art-timeline article')).toHaveCount(9);
  await page.getByRole('button',{name:'See these paintings →'}).first().click();await expect(page.getByRole('status').filter({hasText:/^18 paintings$/})).toBeVisible();
 });
 test('painting keeps proportions, fullscreen supports Escape and restores focus',async({page})=>{

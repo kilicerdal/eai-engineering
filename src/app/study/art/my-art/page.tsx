@@ -1,0 +1,1 @@
+import ArtRoomFrame from '@/components/art/ArtRoomFrame';import ArtMyArt from '@/components/art/ArtMyArt';import '../art-room.css';export const metadata={title:'My Art | The Art Room'};export default function Page(){return <ArtRoomFrame><ArtMyArt/></ArtRoomFrame>}
