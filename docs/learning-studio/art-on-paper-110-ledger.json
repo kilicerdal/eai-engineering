@@ -1,0 +1,1646 @@
+{
+  "scope": "110 requested outcomes, including overlapping refinements of existing features. Existing capabilities are to be verified, not counted as newly built. No item is complete merely because a UI label exists.",
+  "status": "110 requested outcomes mapped to local implementation, refinements or retained capabilities. Final verification results and limits are recorded in the progress report; these are not 110 newly built features.",
+  "release": "Local only. No commit, push or deployment in this finishing pass.",
+  "cutoffForHourlyLocalReviews": "2026-11-22T10:00:00-05:00",
+  "items": [
+    {
+      "id": "A01",
+      "outcome": "Twelve documented drawing-to-painting comparisons",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "A02",
+      "outcome": "Independent drawing studies",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A03",
+      "outcome": "Sketchbook encounters",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/notebook-encounters.json",
+        "data/art/research/paper-process-evidence.json",
+        "src/app/study/art/on-paper/page.tsx"
+      ],
+      "reviewNote": "Two V&A notebook encounters address ordering, mechanical inquiry and documented rejection. Stage design is connected to practical representation without claiming that a proposed machine was built.",
+      "delivery": "implemented"
+    },
+    {
+      "id": "A04",
+      "outcome": "Abandoned decisions",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/notebook-encounters.json",
+        "data/art/research/paper-process-evidence.json",
+        "src/app/study/art/on-paper/page.tsx"
+      ],
+      "reviewNote": "Two V&A notebook encounters address ordering, mechanical inquiry and documented rejection. Stage design is connected to practical representation without claiming that a proposed machine was built.",
+      "delivery": "implemented"
+    },
+    {
+      "id": "A05",
+      "outcome": "Alternative compositions",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "A06",
+      "outcome": "Drawing material explanations",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A07",
+      "outcome": "Reading a mark",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A08",
+      "outcome": "Paper as part of the artwork",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A09",
+      "outcome": "Working and presentation drawings",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "A10",
+      "outcome": "Documented engineering connections",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/notebook-encounters.json",
+        "data/art/research/paper-process-evidence.json",
+        "src/app/study/art/on-paper/page.tsx"
+      ],
+      "reviewNote": "Two V&A notebook encounters address ordering, mechanical inquiry and documented rejection. Stage design is connected to practical representation without claiming that a proposed machine was built.",
+      "delivery": "implemented"
+    },
+    {
+      "id": "A11",
+      "outcome": "Specific essay openings",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/curator-openings.json",
+        "data/art/research/reading-refinements.json",
+        "src/app/study/art/painting/[id]/page.tsx"
+      ],
+      "reviewNote": "Specific opening encounters are retained for the twenty signature studies, with additional object orientation in the expanded collection.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A12",
+      "outcome": "Composition analysis",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A13",
+      "outcome": "Color analysis",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A14",
+      "outcome": "Light analysis",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A15",
+      "outcome": "Surface and handling",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A16",
+      "outcome": "Physical scale and viewing distance",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A17",
+      "outcome": "Original setting",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A18",
+      "outcome": "Commission and payment",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A19",
+      "outcome": "First audiences",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A20",
+      "outcome": "Attributed unresolved questions",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "A21",
+      "outcome": "Career timelines",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A22",
+      "outcome": "Training and workshop practice",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A23",
+      "outcome": "Collaborators and assistants",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A24",
+      "outcome": "Patrons and networks",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A25",
+      "outcome": "Documented travel and encounters",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A26",
+      "outcome": "Relevant personal circumstances",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A27",
+      "outcome": "Changing reputations",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A28",
+      "outcome": "Primary voices",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/primary-voices.json",
+        "src/app/study/art/voices/page.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Four short attributed primary-voice encounters retain context, translation or mediation notes and limitations. Later commentary is not relabeled as contemporary testimony.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A29",
+      "outcome": "Correct common myths",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A30",
+      "outcome": "Balanced accounts of achievement",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/editorial-v2.json",
+        "data/art/research/career-developments.json",
+        "src/components/art/ArtCareerTimeline.tsx",
+        "src/app/study/art/painter/[id]/page.tsx",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "Retained biographies, sourced career sections, selected-work timelines and new four-painter studies preserve career context. Chronology is selective, not an assertion that the first and last represented works begin and end a career.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A31",
+      "outcome": "Audit every image",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "scripts/art/audit-curated-collection.mjs",
+        "scripts/art/audit-paper-package.mjs",
+        "artifacts/art-room/curated-collection-review.json",
+        "artifacts/art-room/paper-package-review.json",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "All 124 catalog records plus 26 paper-side photographs receive geometry, source and reuse-field checks. Two retained higher-resolution detail variants are available. Rights-conflicted O’Keeffe images remain reference-only; no original licensed image is removed to force an upgrade.",
+      "delivery": "audited and refined"
+    },
+    {
+      "id": "A32",
+      "outcome": "Replace weak reproductions where permitted",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "scripts/art/audit-curated-collection.mjs",
+        "scripts/art/audit-paper-package.mjs",
+        "artifacts/art-room/curated-collection-review.json",
+        "artifacts/art-room/paper-package-review.json",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "All 124 catalog records plus 26 paper-side photographs receive geometry, source and reuse-field checks. Two retained higher-resolution detail variants are available. Rights-conflicted O’Keeffe images remain reference-only; no original licensed image is removed to force an upgrade.",
+      "delivery": "audited and refined"
+    },
+    {
+      "id": "A33",
+      "outcome": "Preserve full compositions",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A34",
+      "outcome": "Fullscreen controls",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/useArtHiddenImageRequest.ts",
+        "docs/learning-studio/2026-11-21-hourly-art-review-0436.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A35",
+      "outcome": "Restore reading and viewing place",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A36",
+      "outcome": "Locate details within the whole",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A37",
+      "outcome": "Honest magnification",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "A38",
+      "outcome": "Mobile comparisons",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtCompare.tsx",
+        "tests/browser/art-on-paper.spec.ts",
+        "tests/browser/art-research-expansion.spec.ts"
+      ],
+      "reviewNote": "Independent comparison surfaces, whole-work return, 390px/1440px layouts and retained zoom controls are covered by browser tests.",
+      "delivery": "implemented and verified"
+    },
+    {
+      "id": "A39",
+      "outcome": "Descriptive alternatives",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtResearchStudy.tsx",
+        "src/components/art/ArtPaintingScene.tsx",
+        "src/components/art/ArtPaperConnectionImage.tsx",
+        "src/lib/art/paper-viewing.ts",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Descriptions, reference-only notices and the saved optional image-hiding preference are preserved. The new connection view uses the same preference and local reveals do not overwrite it.",
+      "delivery": "refined and verified"
+    },
+    {
+      "id": "A40",
+      "outcome": "Explain unavailable images",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtResearchStudy.tsx",
+        "src/components/art/ArtPaintingScene.tsx",
+        "src/components/art/ArtPaperConnectionImage.tsx",
+        "src/lib/art/paper-viewing.ts",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Descriptions, reference-only notices and the saved optional image-hiding preference are preserved. The new connection view uses the same preference and local reveals do not overwrite it.",
+      "delivery": "refined and verified"
+    },
+    {
+      "id": "A41",
+      "outcome": "Collection introduction",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/app/study/art/sources/page.tsx",
+        "src/app/study/art/collection-notes/page.tsx"
+      ],
+      "reviewNote": "Selection, reproduction constraints, omissions and connections are explained without claiming a universal history of painting.",
+      "delivery": "refined"
+    },
+    {
+      "id": "A42",
+      "outcome": "Expandable essay outlines",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/essay-outlines.json",
+        "src/components/art/ArtEssay.tsx"
+      ],
+      "reviewNote": "Expandable outlines and descriptive section headings remain attached to stable paragraph and section anchors.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A43",
+      "outcome": "Descriptive section headings",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/essay-outlines.json",
+        "src/components/art/ArtEssay.tsx"
+      ],
+      "reviewNote": "Expandable outlines and descriptive section headings remain attached to stable paragraph and section anchors.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A44",
+      "outcome": "Return to filtered results",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtTrail.tsx",
+        "src/lib/art/navigation.ts",
+        "tests/browser/art-research-expansion.spec.ts"
+      ],
+      "reviewNote": "Return to the filtered and paginated collection is preserved and tested.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A45",
+      "outcome": "Search vocabulary",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/lib/art/search.ts",
+        "src/components/art/ArtReadingText.tsx",
+        "src/app/study/art/vocabulary/page.tsx"
+      ],
+      "reviewNote": "Title/artist/material search, accent normalization, contextual vocabulary and the full vocabulary reference remain available.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A46",
+      "outcome": "Passage search results",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/lib/art/scholarship.ts",
+        "src/app/study/art/scholarship/page.tsx",
+        "tests/art-research-expansion.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Passage search now includes drawing process accounts, notebook encounters and individual documented connections with distinct result types and exact opening anchors.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "A47",
+      "outcome": "Specific related-work reasons",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtResearchStudy.tsx",
+        "src/app/study/art/connections/page.tsx",
+        "src/components/art/ArtCompare.tsx"
+      ],
+      "reviewNote": "Specific neighboring-work arguments, contextual comparisons and independent comparison controls remain available; chronology alone is not presented as proof of influence.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A48",
+      "outcome": "Distinguish search result types",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/lib/art/scholarship.ts",
+        "src/app/study/art/scholarship/page.tsx",
+        "tests/art-research-expansion.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Passage search now includes drawing process accounts, notebook encounters and individual documented connections with distinct result types and exact opening anchors.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "A49",
+      "outcome": "Calmer My Art",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtMyArt.tsx",
+        "tests/browser/art-curatorial-workspace.spec.ts",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "The saved-work-first My Art view and optional management tools are retained; backup merging preserves notes and personal collection introductions.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A50",
+      "outcome": "Navigation consistency",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtNavigation.tsx",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/browser/art-room.spec.ts"
+      ],
+      "reviewNote": "Drawings now has a direct entry in the existing Art Room navigation; collection, Studio return, sheet/group and source navigation remain available.",
+      "delivery": "refined"
+    },
+    {
+      "id": "A51",
+      "outcome": "Facts for four new painters",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/facts/collection.json",
+        "data/art/facts/numeric-review.json",
+        "src/components/art/ArtFacts.tsx",
+        "tests/art-facts.test.mjs"
+      ],
+      "reviewNote": "Added 48 focused entries for four painters and twelve works, bringing the retained collection to 253 entries. Each separates evidence category, significance and source scope. Empty further-entry disclosures are suppressed.",
+      "delivery": "implemented"
+    },
+    {
+      "id": "A52",
+      "outcome": "Artwork-specific facts",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/facts/collection.json",
+        "data/art/facts/numeric-review.json",
+        "src/components/art/ArtFacts.tsx",
+        "tests/art-facts.test.mjs"
+      ],
+      "reviewNote": "Added 48 focused entries for four painters and twelve works, bringing the retained collection to 253 entries. Each separates evidence category, significance and source scope. Empty further-entry disclosures are suppressed.",
+      "delivery": "implemented"
+    },
+    {
+      "id": "A53",
+      "outcome": "Context for facts",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/facts/collection.json",
+        "data/art/facts/numeric-review.json",
+        "src/components/art/ArtFacts.tsx",
+        "tests/art-facts.test.mjs"
+      ],
+      "reviewNote": "Added 48 focused entries for four painters and twelve works, bringing the retained collection to 253 entries. Each separates evidence category, significance and source scope. Empty further-entry disclosures are suppressed.",
+      "delivery": "implemented"
+    },
+    {
+      "id": "A54",
+      "outcome": "Evidence distinctions",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/facts/collection.json",
+        "data/art/facts/numeric-review.json",
+        "src/components/art/ArtFacts.tsx",
+        "tests/art-facts.test.mjs"
+      ],
+      "reviewNote": "Added 48 focused entries for four painters and twelve works, bringing the retained collection to 253 entries. Each separates evidence category, significance and source scope. Empty further-entry disclosures are suppressed.",
+      "delivery": "implemented"
+    },
+    {
+      "id": "A55",
+      "outcome": "Cross-era comparisons",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtResearchStudy.tsx",
+        "src/app/study/art/connections/page.tsx",
+        "src/components/art/ArtCompare.tsx"
+      ],
+      "reviewNote": "Specific neighboring-work arguments, contextual comparisons and independent comparison controls remain available; chronology alone is not presented as proof of influence.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A56",
+      "outcome": "Provenance and gaps",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A57",
+      "outcome": "Conservation claim review",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/research-dossiers.json",
+        "data/art/research/signature-studies.json",
+        "data/art/research/collection-studies.json",
+        "src/components/art/ArtResearchDossier.tsx",
+        "src/components/art/ArtResearchStudy.tsx",
+        "tests/art-research-expansion.test.mjs"
+      ],
+      "reviewNote": "Twenty five-part dossiers and the retained extended studies connect composition, material, scale, audiences and ownership with explicit gaps. Color swatches and room diagrams are conceptual, never presented as measured pigment or reconstructed architecture.",
+      "delivery": "retained and verified"
+    },
+    {
+      "id": "A58",
+      "outcome": "Exact source links",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "scripts/art/check-reference-health.mjs",
+        "data/art/research/source-health.json",
+        "src/app/study/art/editorial-review/page.tsx",
+        "data/art/paintings.json"
+      ],
+      "reviewNote": "Exact Spinners and Peasant Wedding record links replace broad collection destinations. Drawing and notebook references enter maintenance checks. Restricted access and text changes remain visible editorial flags, not false validation.",
+      "delivery": "refined and audited"
+    },
+    {
+      "id": "A59",
+      "outcome": "Metadata and rights conflicts",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "scripts/art/audit-curated-collection.mjs",
+        "scripts/art/audit-paper-package.mjs",
+        "artifacts/art-room/curated-collection-review.json",
+        "artifacts/art-room/paper-package-review.json",
+        "tests/art-four-painters.test.mjs"
+      ],
+      "reviewNote": "All 124 catalog records plus 26 paper-side photographs receive geometry, source and reuse-field checks. Two retained higher-resolution detail variants are available. Rights-conflicted O’Keeffe images remain reference-only; no original licensed image is removed to force an upgrade.",
+      "delivery": "audited and refined"
+    },
+    {
+      "id": "A60",
+      "outcome": "Editorial and usability review",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "artifacts/art-room/on-paper/package-visual-review.json",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Final local checks cover compilation, source/asset integrity, preserved saving, responsive screenshots and browser interaction. This does not claim human specialist peer review.",
+      "delivery": "local review"
+    },
+    {
+      "id": "B01",
+      "outcome": "Twenty-four works on paper",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B02",
+      "outcome": "Six complementary drawing practices",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/app/study/art/on-paper/page.tsx",
+        "data/art/research/on-paper.json",
+        "src/components/art/ArtCompare.tsx",
+        "src/components/art/ArtObservationNotebook.tsx",
+        "tests/browser/art-on-paper.spec.ts",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B03",
+      "outcome": "Preparatory and independent works",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B04",
+      "outcome": "Different drawing purposes",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B05",
+      "outcome": "Unfinished sheets",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B06",
+      "outcome": "Worked-over sheets",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B07",
+      "outcome": "Drawings made for circulation",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B08",
+      "outcome": "Different degrees of finish",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B09",
+      "outcome": "Distinguish studies from copies",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B10",
+      "outcome": "Explain selection limits",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B11",
+      "outcome": "Where the artist began",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B12",
+      "outcome": "Repeated contours",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B13",
+      "outcome": "Pressure and emphasis",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B14",
+      "outcome": "Visible erased passages",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B15",
+      "outcome": "Resolved and unresolved areas",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B16",
+      "outcome": "Negative space",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B17",
+      "outcome": "Untouched paper",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B18",
+      "outcome": "Overlapping studies",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B19",
+      "outcome": "Do not infer speed from appearance",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/app/study/art/on-paper/page.tsx",
+        "data/art/research/on-paper.json",
+        "src/components/art/ArtCompare.tsx",
+        "src/components/art/ArtObservationNotebook.tsx",
+        "tests/browser/art-on-paper.spec.ts",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B20",
+      "outcome": "When to stop",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B21",
+      "outcome": "Documented sequences of studies",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B22",
+      "outcome": "Drawing-to-print comparisons",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B23",
+      "outcome": "Drawing-to-sculpture comparisons",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B24",
+      "outcome": "Drawing-to-architecture comparisons",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B25",
+      "outcome": "Individual figures and larger compositions",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B26",
+      "outcome": "Changes in viewpoint",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B27",
+      "outcome": "Changes in gesture",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B28",
+      "outcome": "Changes in spacing",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B29",
+      "outcome": "Studies and unrealized projects",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B30",
+      "outcome": "Missing stages",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-connections.json",
+        "src/components/art/ArtPaperConnections.tsx",
+        "tests/art-on-paper.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Fifteen individually qualified relationships: twelve with paintings and three with other media. Preparatory, workshop, indirect and later-response relationships remain distinct. These are not twelve newly licensed image pairs; uncleared target images remain institutional links.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B31",
+      "outcome": "Recto and verso",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/components/art/ArtViewer.tsx",
+        "src/lib/art/paper-viewing.ts",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Two verified reverse photographs have separate dimensions and front/back labels. The paired Kollwitz photograph remains explicitly identified; front markers are removed on the reverse and inspect returns to the front.",
+      "delivery": "implemented and verified"
+    },
+    {
+      "id": "B32",
+      "outcome": "Sheet edges and margins",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B33",
+      "outcome": "Inscriptions and annotations",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B34",
+      "outcome": "Collectors marks",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/paper-process-evidence.json",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "reviewNote": "Object-specific documentary contexts distinguish revisions, presentation, transfer and circulation; named attribution disagreements remain attributed. Inferred pressure, first marks, stopping decisions and collector identities are explicitly limited where evidence cannot establish them.",
+      "delivery": "implemented and refined"
+    },
+    {
+      "id": "B35",
+      "outcome": "Mounts and later additions",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B36",
+      "outcome": "Transfer methods",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B37",
+      "outcome": "Paper preparation",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B38",
+      "outcome": "Supported fading and discoloration",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B39",
+      "outcome": "Fragility and display",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B40",
+      "outcome": "Reproduction limitations",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B41",
+      "outcome": "Read the sheet prompts",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B42",
+      "outcome": "Removable annotations",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/app/study/art/on-paper/page.tsx",
+        "data/art/research/on-paper.json",
+        "src/components/art/ArtCompare.tsx",
+        "src/components/art/ArtObservationNotebook.tsx",
+        "tests/browser/art-on-paper.spec.ts",
+        "src/components/art/ArtViewer.tsx",
+        "docs/learning-studio/2026-11-21-hourly-art-review-0339.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B43",
+      "outcome": "Whole-sheet and detail switching",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/app/study/art/on-paper/page.tsx",
+        "data/art/research/on-paper.json",
+        "src/components/art/ArtCompare.tsx",
+        "src/components/art/ArtObservationNotebook.tsx",
+        "tests/browser/art-on-paper.spec.ts",
+        "src/components/art/useArtHiddenImageRequest.ts",
+        "docs/learning-studio/2026-11-21-hourly-art-review-0436.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B44",
+      "outcome": "Independent comparison zoom",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/app/study/art/on-paper/page.tsx",
+        "data/art/research/on-paper.json",
+        "src/components/art/ArtCompare.tsx",
+        "src/components/art/ArtObservationNotebook.tsx",
+        "tests/browser/art-on-paper.spec.ts",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/art-on-paper.test.mjs"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B45",
+      "outcome": "Front and back labels",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/components/art/ArtViewer.tsx",
+        "src/lib/art/paper-viewing.ts",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "reviewNote": "Two verified reverse photographs have separate dimensions and front/back labels. The paired Kollwitz photograph remains explicitly identified; front markers are removed on the reverse and inspect returns to the front.",
+      "delivery": "implemented and verified"
+    },
+    {
+      "id": "B46",
+      "outcome": "Detail notes with previews",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "src/components/art/ArtObservationNotebook.tsx",
+        "src/components/art/ArtStudyNotebook.tsx",
+        "src/components/art/useArtNoteDraft.ts",
+        "src/lib/art/personal.ts",
+        "src/lib/art/paper-viewing.ts",
+        "data/art/research/paper-notebook-index.json",
+        "tests/art-research-expansion.test.mjs",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented and verified",
+      "reviewNote": "Drawing-specific first/later responses and three coordinate notes now use the existing private notebook and backup merge. Gallery IDs remain the original 124; only the observation allowlist extends to the 24 known paper IDs. Note positions explicitly refer to the front or paired locator, not an unrecorded reverse."
+    },
+    {
+      "id": "B47",
+      "outcome": "Materials glossary",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B48",
+      "outcome": "Three short drawing routes",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B49",
+      "outcome": "Consistent evidence notes",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    },
+    {
+      "id": "B50",
+      "outcome": "Check against invented process",
+      "status": "addressed locally; verification and scope recorded",
+      "evidence": [
+        "data/art/research/on-paper.json",
+        "src/app/study/art/on-paper/page.tsx",
+        "tests/art-on-paper.test.mjs",
+        "docs/learning-studio/2026-11-21-on-paper-progress.md",
+        "src/components/art/ArtPaperStudy.tsx",
+        "src/components/art/ArtViewer.tsx",
+        "tests/browser/art-on-paper.spec.ts"
+      ],
+      "delivery": "implemented earlier; reviewed in this package",
+      "reviewNote": "Retained paper-room capability checked with the individually sourced accounts, bounded material/mark explanations and browser tests. It is not counted as a new additional feature in this pass."
+    }
+  ],
+  "hourlyReviews": [
+    {
+      "at": "2026-11-21T08:39:12Z",
+      "issue": "Duplicate drawing-marker caption IDs with multiple sheets open",
+      "outcome": "Fixed locally; 29 focused browser checks and build checks passed",
+      "record": "docs/learning-studio/2026-11-21-hourly-art-review-0339.md"
+    },
+    {
+      "at": "2026-11-21T09:36:12Z",
+      "issue": "Looking-tool commands were inert when an artwork image was hidden by the optional preference",
+      "outcome": "Added an explicit next-step announcement and reveal-button focus without changing preferences; 24 focused browser checks passed",
+      "record": "docs/learning-studio/2026-11-21-hourly-art-review-0436.md"
+    },
+    {
+      "at": "2026-11-21T10:39:13Z",
+      "issue": "Front-only looking guidance incorrectly described a paired recto/verso source photograph",
+      "outcome": "Institutionally verified side labels added locally; four data checks, nine browser checks and production build checks passed",
+      "record": "docs/learning-studio/2026-11-21-hourly-art-review-0539.md"
+    },
+    {
+      "at": "2026-11-21T11:39:44Z",
+      "issue": "Closed paper disclosures immediately requested all 24 full reproductions at high priority",
+      "outcome": "Native lazy loading defers paper images until needed; 30 focused browser checks and production build checks passed",
+      "record": "docs/learning-studio/2026-11-21-hourly-art-review-0639.md"
+    },
+    {
+      "at": "2026-11-21T12:38:44Z",
+      "issue": "Mobile readers lacked direct sheet/account navigation and all process sections shared one ID",
+      "outcome": "Added object-specific focusable sheet/account anchors; 11 browser checks and production build checks passed",
+      "record": "docs/learning-studio/2026-11-21-hourly-art-review-0738.md"
+    },
+    {
+      "at": "2026-11-21T13:42:15Z",
+      "issue": "Drawing and print looking controls incorrectly described their objects as paintings",
+      "outcome": "Sheet-specific labels added while retaining existing painting labels; 20 browser checks and build checks passed",
+      "record": "docs/learning-studio/2026-11-21-hourly-art-review-0842.md"
+    },
+    {
+      "at": "2026-11-21T14:38:16Z",
+      "issue": "Dark fullscreen viewer buttons had insufficient text contrast on hover",
+      "outcome": "Scoped hover/pressed colors corrected; computed contrast and 21 browser checks passed with production build checks",
+      "record": "docs/learning-studio/2026-11-21-hourly-art-review-0938.md"
+    },
+    {
+      "at": "2026-11-21T15:41:16Z",
+      "issue": "Largest-text mobile study and viewer accessibility review",
+      "outcome": "Scoped rendered audits found zero violations and no horizontal overflow; no speculative application changes made",
+      "record": "docs/learning-studio/2026-11-21-hourly-art-review-1041.md"
+    }
+  ],
+  "editorialLimits": [
+    "A museum access restriction is not a broken-link verdict. Publisher text changes remain queued for human editorial comparison.",
+    "Institutional source links and original editorial looking prompts are not independent specialist authentication.",
+    "Uncleared images remain reference-only. No generated scan, invented ownership stage or speculative reverse photograph is used."
+  ],
+  "verification": {
+    "date": "2026-11-21",
+    "unitTests": {
+      "passed": 1117,
+      "failed": 0
+    },
+    "browserTests": {
+      "passed": 114,
+      "failed": 0
+    },
+    "visualReview": "Desktop 1440px and phone 390px screenshots inspected; scoped axe checks have zero violations and no horizontal overflow.",
+    "imageAudit": {
+      "catalogRecords": 124,
+      "paperObjects": 24,
+      "paperSidePhotographs": 26,
+      "issues": 0
+    },
+    "savedWork": "Original catalog/gallery IDs remain 124. The separate observation allowlist adds only 24 known paper IDs; backup, merge and notebook return tests pass. Existing book notes, bookmarks, certification responses and discovery navigation are covered by retained regressions.",
+    "sources": {
+      "checked": 129,
+      "hardBroken": 0,
+      "scope": "HTTP access maintenance; blocked records and publisher changes remain visible in the editorial reference desk. Not independent scholarly verification."
+    },
+    "deployment": "None"
+  }
+}

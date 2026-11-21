@@ -1,6 +1,9 @@
 import {normalizeArtText} from './navigation';
 // Alternate names aid discovery; object titles and attributions remain unchanged.
 const aliases:Record<string,string>={
+ 'velazquez-01':'Las Meninas Maids of Honour', 'velazquez-03':'Las Hilanderas Fable of Arachne',
+ 'bosch-02':'Haywain Hay Wagon', 'okeeffe-02':'Black Iris III O Keeffe OKeeffe',
+ 'okeeffe-01':'O Keeffe OKeeffe', 'okeeffe-03':'O Keeffe OKeeffe pastel',
  'leonardo-01':'La Gioconda La Joconde', 'leonardo-02':'Il Cenacolo L Ultima Cena',
  'rembrandt-01':'De Nachtwacht Nightwatch', 'vermeer-01':'Meisje met de parel',
  'vermeer-02':'Het melkmeisje', 'monet-01':'Impression soleil levant',

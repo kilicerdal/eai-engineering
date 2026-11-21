@@ -2,7 +2,7 @@
 
 > The painter’s body takes the place of an abstract emblem. Self-Portrait as the Allegory of Painting makes professional authorship and the personification of an art meet in one concentrated, physically demanding pose.
 
-@source Royal Collection Trust · La Pittura|https://www.rct.uk/collection/stories/artemisia-gentileschi|Attribution, allegorical attributes and work record
+@source Royal Collection Trust · La Pittura|https://www.rct.uk/articles/artemisia-gentileschis-life-and-art|Attribution, allegorical attributes and work record
 
 ## Profession and personification | history | 1
 

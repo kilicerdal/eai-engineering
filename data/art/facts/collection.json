@@ -1669,6 +1669,194 @@
         "editorialReviewed": "2026-11-20",
         "relatedWork": "vermeer-05"
       }
+    ],
+    "bosch": [
+      {
+        "id": "bosch-fact-1",
+        "title": "A name attached to a town",
+        "kind": "documented",
+        "category": "Professional identity",
+        "text": "Bosch’s adopted name connects him with ’s-Hertogenbosch. The National Gallery identifies his father as a painter and places most of his career in that town.",
+        "why": "A professional identity has a local and familial setting; the fantastic imagery did not emerge outside social life.",
+        "source": {
+          "title": "National Gallery · Hieronymus Bosch",
+          "url": "https://www.nationalgallery.org.uk/artists/hieronymus-bosch",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bosch-fact-2",
+        "title": "A precursor is not a member",
+        "kind": "documented",
+        "category": "Changing reputation",
+        "text": "Twentieth-century Surrealists looked back to Bosch. That later reception does not make him a member of their movement or establish that his religious imagery had their aims.",
+        "why": "Separate the conditions of production from the uses later viewers make of an artwork.",
+        "source": {
+          "title": "National Gallery · Hieronymus Bosch",
+          "url": "https://www.nationalgallery.org.uk/artists/hieronymus-bosch",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bosch-fact-3",
+        "title": "A symbol is not a dictionary entry",
+        "kind": "research-limit",
+        "category": "Interpretive restraint",
+        "text": "Recognizing an object does not establish one fixed meaning throughout Bosch’s work. Position, neighboring figures and the triptych’s larger argument must be considered before proposing a reading.",
+        "why": "An interpretation becomes stronger when it explains relationships, rather than merely assigning labels.",
+        "source": {
+          "title": "National Gallery · Hieronymus Bosch",
+          "url": "https://www.nationalgallery.org.uk/artists/hieronymus-bosch",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "bruegel": [
+      {
+        "id": "bruegel-fact-1",
+        "title": "A season belongs to a larger project",
+        "kind": "documented",
+        "category": "Commission and sequence",
+        "text": "Hunters in the Snow belongs to a six-part seasonal cycle, as identified by the Kunsthistorisches Museum’s exhibition research. Its winter landscape was conceived in relation to other parts of the year.",
+        "why": "A celebrated individual image can conceal the structure of the project for which it was made.",
+        "source": {
+          "title": "KHM · Hunters in the Snow",
+          "url": "https://www.bruegel2018.at/en/the-hunters-in-the-snow/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bruegel-fact-2",
+        "title": "Small figures organize large spaces",
+        "kind": "observation",
+        "category": "Composition",
+        "text": "In the selected landscapes, movements of people and inclinations of buildings help connect foreground labor with distant terrain. Trace these intervals before treating the figures as independent anecdotes.",
+        "why": "Narrative detail and spatial construction can work together; one need not distract from the other.",
+        "source": {
+          "title": "KHM · Hunters in the Snow",
+          "url": "https://www.bruegel2018.at/en/the-hunters-in-the-snow/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bruegel-fact-3",
+        "title": "A scene is not a population survey",
+        "kind": "research-limit",
+        "category": "Social history",
+        "text": "A wedding or hunting scene is an arranged picture, not an unedited record of every participant’s social position or private opinion. Its observational richness does not eliminate artistic selection.",
+        "why": "Historical evidence requires asking what a representation selects, exaggerates or leaves out.",
+        "source": {
+          "title": "KHM · Hunters in the Snow",
+          "url": "https://www.bruegel2018.at/en/the-hunters-in-the-snow/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "velazquez": [
+      {
+        "id": "velazquez-fact-1",
+        "title": "Training was a professional institution",
+        "kind": "documented",
+        "category": "Workshop formation",
+        "text": "The National Gallery identifies Francisco Pacheco as Velázquez’s teacher in Seville. His apprenticeship connected technique with a workshop, a theorist and a professional network. These relationships preceded his later employment at the royal court.",
+        "why": "The later court career can be read against an earlier formation in drawing, portraiture and material practice.",
+        "source": {
+          "title": "National Gallery · Diego Velázquez",
+          "url": "https://www.nationalgallery.org.uk/artists/diego-velazquez",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "velazquez-fact-2",
+        "title": "Court work involved more than painting",
+        "kind": "documented",
+        "category": "Patronage and office",
+        "text": "Velázquez’s career combined royal portraiture with responsibilities at court. Institutional employment affected access, time and standing as well as the subjects he painted. Those demands belong within an account of artistic production.",
+        "why": "Patronage is a working relationship with obligations, not simply the name of a person paying for a picture.",
+        "source": {
+          "title": "National Gallery · Diego Velázquez",
+          "url": "https://www.nationalgallery.org.uk/artists/diego-velazquez",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "velazquez-fact-3",
+        "title": "Looking does not settle the mirror",
+        "kind": "research-limit",
+        "category": "Interpretation",
+        "text": "A reflected pair in Las Meninas is visible evidence. The precise viewing arrangement and the larger claim made by that reflection require an argument; they are not supplied by visibility alone.",
+        "why": "Distinguishing an object from an explanation allows competing readings to be assessed fairly.",
+        "source": {
+          "title": "National Gallery · Diego Velázquez",
+          "url": "https://www.nationalgallery.org.uk/artists/diego-velazquez",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "okeeffe": [
+      {
+        "id": "okeeffe-fact-1",
+        "title": "Drawing preceded the familiar flowers",
+        "kind": "documented",
+        "category": "Formation",
+        "text": "The Met’s career account places O’Keeffe’s abstract charcoal drawings of 1915–16 before the flower paintings for which she became widely known. Drawing was central to her emergence.",
+        "why": "A career organized only around signature subjects misses the experiments that made those subjects possible.",
+        "source": {
+          "title": "The Met · Georgia O’Keeffe",
+          "url": "https://www.metmuseum.org/essays/georgia-okeeffe-1887-1986",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "okeeffe-fact-2",
+        "title": "A Storm is a work on paper",
+        "kind": "documented",
+        "category": "Material range",
+        "text": "The Met classifies A Storm as a drawing: pastel on paper mounted on illustration board. It is not an oil painting, despite appearing within this collection’s painting-centered selection.",
+        "why": "A shared catalog location must not erase a work’s actual material identity.",
+        "source": {
+          "title": "The Met · A Storm · object and material record",
+          "url": "https://www.metmuseum.org/art/collection/search/482299",
+          "scope": "Object classification and pastel-on-paper materials; not a claim about an oil-painting technique."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "okeeffe-fact-3",
+        "title": "A title does not disclose every intention",
+        "kind": "research-limit",
+        "category": "Interpretive restraint",
+        "text": "Titles such as Blue and Green Music invite connections between visual and musical experience. They do not provide a note-by-note translation or prove one exclusive symbolic program.",
+        "why": "A suggestive title can guide attention while leaving room for carefully supported interpretation.",
+        "source": {
+          "title": "The Met · Georgia O’Keeffe",
+          "url": "https://www.metmuseum.org/essays/georgia-okeeffe-1887-1986",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
     ]
   },
   "paintings": {
@@ -3127,6 +3315,570 @@
         },
         "reviewScope": "Editorial comparison with the existing cited collection account; not a claim of new independent primary research.",
         "editorialReviewed": "2026-11-20"
+      }
+    ],
+    "bosch-01": [
+      {
+        "id": "bosch-01-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "The Garden of Earthly Delights is catalogued as oil and grisaille on oak panels. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-garden-of-earthly-delights-triptych/02388242-6d6a-4e9e-a992-e1311eab3609",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bosch-01-fact-2",
+        "title": "The opening changes the encounter",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "The central field of bodies, animals and oversized forms is framed by two differently organized wings. Follow the changes in density across the three panels before selecting one curious creature.",
+        "why": "A triptych creates relationships across panels; a cropped detail cannot carry the entire argument.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-garden-of-earthly-delights-triptych/02388242-6d6a-4e9e-a992-e1311eab3609",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bosch-01-fact-3",
+        "title": "A crowded image does not yield one agreed key",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "No single emblem-by-emblem reading is established here. Consult the Prado’s account, then distinguish its interpretation from what the reproduction itself makes visible. Compare a proposed explanation with the adjoining panels.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-garden-of-earthly-delights-triptych/02388242-6d6a-4e9e-a992-e1311eab3609",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "bosch-02": [
+      {
+        "id": "bosch-02-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "The Haywain Triptych is catalogued as oil on oak panels. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-haywain-triptych/7673843a-d2b6-497a-ac80-16242b36c3ce",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bosch-02-fact-2",
+        "title": "The cart gives competing actions one center",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "The large load of hay anchors numerous surrounding actions. Trace who approaches it, who travels alongside it and how the crowd is distributed before interpreting any single figure.",
+        "why": "A central object can connect many episodes without making every participant equivalent.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-haywain-triptych/7673843a-d2b6-497a-ac80-16242b36c3ce",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bosch-02-fact-3",
+        "title": "Identify the version before comparing details",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "Use the Prado object record to identify this triptych before borrowing observations from another version or reproduction. A shared title alone does not establish identical execution.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-haywain-triptych/7673843a-d2b6-497a-ac80-16242b36c3ce",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "bosch-03": [
+      {
+        "id": "bosch-03-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "The Adoration of the Magi Triptych is catalogued as oil on oak panels. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-adoration-of-the-magi-triptych/666788cc-c522-421b-83f0-5ad84b9377f7",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bosch-03-fact-2",
+        "title": "Ceremony and unease coexist",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "The gathering around the Virgin and Child occupies a visibly fragile setting. Examine the threshold, the differences in dress and the distribution of onlookers before deciding how secure the scene feels.",
+        "why": "The sacred narrative does not exhaust the painting’s attention to social position and spatial instability.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-adoration-of-the-magi-triptych/666788cc-c522-421b-83f0-5ad84b9377f7",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bosch-03-fact-3",
+        "title": "A donor’s appearance is not a private biography",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "Clothing, posture and position are visible. Personal motives, private belief and an undocumented commission history cannot be reconstructed from those features alone. The account must distinguish appearance from documentary identification.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-adoration-of-the-magi-triptych/666788cc-c522-421b-83f0-5ad84b9377f7",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "bruegel-01": [
+      {
+        "id": "bruegel-01-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "Hunters in the Snow is catalogued as oil on oak panel. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.bruegel2018.at/en/the-hunters-in-the-snow/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bruegel-01-fact-2",
+        "title": "A diagonal carries the eye into winter",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "The hunters and dogs occupy the near slope while the landscape opens toward frozen water and distant settlements. Follow the descending direction before examining the tiny activities below.",
+        "why": "A deep view can be constructed through a carefully weighted foreground, rather than simply a large area of distance.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.bruegel2018.at/en/the-hunters-in-the-snow/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bruegel-01-fact-3",
+        "title": "A season is not a dated weather report",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "The scene should not be used to infer a particular day’s meteorological measurements. Its relation to a seasonal cycle provides a firmer context than an invented eyewitness narrative.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.bruegel2018.at/en/the-hunters-in-the-snow/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "bruegel-02": [
+      {
+        "id": "bruegel-02-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "The Tower of Babel (Vienna version) is catalogued as oil on oak panel. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.khm.at/en/objectdb/detail/323/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bruegel-02-fact-2",
+        "title": "The unfinished building exposes a system",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "Open arches, ramps and occupied levels interrupt the tower’s apparent solidity. Move from its broad silhouette to the small routes through which materials and people circulate.",
+        "why": "A monumental structure becomes intelligible through labor, access and the repeated organization of its parts.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.khm.at/en/objectdb/detail/323/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bruegel-02-fact-3",
+        "title": "A biblical tower is not a construction survey",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "Its architecture invites scrutiny, but the painted project is not evidence that this exact building existed or could have been constructed as shown. Its biblical framework changes the status of that apparent evidence.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.khm.at/en/objectdb/detail/323/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "bruegel-03": [
+      {
+        "id": "bruegel-03-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "The Peasant Wedding is catalogued as oil on oak panel. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.khm.at/en/objectdb/detail/330/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bruegel-03-fact-2",
+        "title": "Serving creates a route through the room",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "Carried dishes and the long table direct attention through the crowded interior. Compare the spacing of standing servers with the tighter arrangement of seated guests.",
+        "why": "The painting’s account of a collective event is organized through movements and intervals, not merely individual faces.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.khm.at/en/objectdb/detail/330/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "bruegel-03-fact-3",
+        "title": "Do not invent a guest list",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "Individual figures cannot be assigned names, family relationships or personal attitudes merely because their faces are distinctive. A persuasive reading identifies the limits of recognition.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Kunsthistorisches Museum, Vienna · object record",
+          "url": "https://www.khm.at/en/objectdb/detail/330/",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "velazquez-01": [
+      {
+        "id": "velazquez-01-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "Las Meninas is catalogued as oil on canvas. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "velazquez-01-fact-2",
+        "title": "The back wall is an active boundary",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "The mirror, doorway and hanging pictures complicate the room’s far edge. Compare their different kinds of brightness and their positions relative to the figures in the foreground.",
+        "why": "Depth is also an argument about access and attention: different openings do different work.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "velazquez-01-fact-3",
+        "title": "Perspective does not remove interpretive disagreement",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "The room offers visual evidence, but claims about what is being painted or the viewer’s exact role require comparison with documented scholarship. The competing arguments should remain identifiable to readers.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "velazquez-02": [
+      {
+        "id": "velazquez-02-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "The Met dates Juan de Pareja to 1650 and identifies the sitter as a painter enslaved in Velázquez’s household. His later emancipation and independent career belong to the account of the person, not merely to the portrait’s subsequent fame.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/437869",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "velazquez-02-fact-2",
+        "title": "A turn complicates a frontal encounter",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "The sitter’s head, shoulders and visible hand do not repeat one identical direction. Follow the resulting tensions between bodily turn, direct gaze and the dark surrounding field.",
+        "why": "Portraiture can establish presence through a few relationships without describing every surface equally.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/437869",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "velazquez-02-fact-3",
+        "title": "A powerful likeness does not erase enslavement",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "Pareja’s relationship to Velázquez included enslavement. The portrait’s force must not be used to invent equal studio conditions or treat later freedom as already achieved when it was painted.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/437869",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "velazquez-03": [
+      {
+        "id": "velazquez-03-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "The Spinners, or The Fable of Arachne is catalogued as oil on canvas. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-spinners-or-the-fable-of-arachne/3d8e510d-2acf-4efb-af0c-8ffd665acd8d",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "velazquez-03-fact-2",
+        "title": "Two zones ask to be read together",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "Foreground workers and the more luminous rear scene occupy different spatial registers. Trace the passages that connect them before reducing the picture to either labor or mythology alone.",
+        "why": "A layered narrative depends on how its zones communicate, not just the identification of their subjects.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-spinners-or-the-fable-of-arachne/3d8e510d-2acf-4efb-af0c-8ffd665acd8d",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "velazquez-03-fact-3",
+        "title": "A later enlargement is part of the object’s history",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "The Prado’s presentation discusses later additions to the canvas. Distinguish the historical object’s changing extent from the composition attributed to Velázquez; do not call a display frame a painted restoration.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Museo Nacional del Prado, Madrid · object record",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-spinners-or-the-fable-of-arachne/3d8e510d-2acf-4efb-af0c-8ffd665acd8d",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "okeeffe-01": [
+      {
+        "id": "okeeffe-01-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "Blue and Green Music is catalogued as oil on canvas. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "Art Institute of Chicago · object record",
+          "url": "https://www.artic.edu/artworks/24306/blue-and-green-music",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "okeeffe-01-fact-2",
+        "title": "A boundary can behave like a melody",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "At the holding museum’s reproduction, follow how blue and green shapes widen, narrow and fold against one another. The interest lies in changing relationships, not a literal illustrated instrument.",
+        "why": "An abstract painting can organize duration-like attention through successive visual changes.",
+        "source": {
+          "title": "Art Institute of Chicago · object record",
+          "url": "https://www.artic.edu/artworks/24306/blue-and-green-music",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "okeeffe-01-fact-3",
+        "title": "Public viewing is not permission to republish",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "The institutional record is linked for viewing. Permission to reproduce its image in this site has not been established, so this study deliberately remains reference-only.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "Art Institute of Chicago · object record",
+          "url": "https://www.artic.edu/artworks/24306/blue-and-green-music",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "okeeffe-02": [
+      {
+        "id": "okeeffe-02-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "Black Iris is catalogued as oil on canvas. Its material description belongs to this particular object and should be retained when it is compared with works in other media.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/489813",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "okeeffe-02-fact-2",
+        "title": "A flower becomes an environment",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "At the Met’s reproduction, examine how closely the iris is framed and how dark folds interrupt luminous petals. The flower exceeds a small botanical specimen’s ordinary pictorial role.",
+        "why": "Enlargement and close framing change the bodily scale at which a familiar subject is encountered.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/489813",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "okeeffe-02-fact-3",
+        "title": "A flower does not prove one symbolic reading",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "Botanical recognition does not settle the painting’s meaning. Proposed psychological or bodily associations should be identified as interpretations rather than silently presented as the artist’s intention.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/489813",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      }
+    ],
+    "okeeffe-03": [
+      {
+        "id": "okeeffe-03-fact-1",
+        "title": "Begin with the actual object",
+        "kind": "documented",
+        "category": "Object and material",
+        "text": "The Met dates A Storm to 1922 and identifies pastel on paper mounted on illustration board. Its classification as a drawing is retained here; the surface should not be described as brushwork in oil.",
+        "why": "Material identity sets the terms of comparison and guards against generic descriptions.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/482299",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "okeeffe-03-fact-2",
+        "title": "An angular interruption divides a soft field",
+        "kind": "observation",
+        "category": "Looking closely",
+        "text": "At the Met’s reproduction, compare the lightning’s angular path with the broader dark fields around it. Keep the marks’ visual contrast distinct from any claim about the exact weather observed.",
+        "why": "A forceful visual event can depend on differences in edge and direction as much as on the subject named by the title.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/482299",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
+      },
+      {
+        "id": "okeeffe-03-fact-3",
+        "title": "Probable location is not an established eyewitness account",
+        "kind": "research-limit",
+        "category": "Evidence and limits",
+        "text": "The Met suggests Lake George as a likely setting. That qualified association does not establish an exact date, viewpoint or sequence of weather observations. Retain the museum’s qualification when describing the setting.",
+        "why": "A useful explanation states where its evidence stops, allowing the next question to remain open.",
+        "source": {
+          "title": "The Metropolitan Museum of Art, New York · object record",
+          "url": "https://www.metmuseum.org/art/collection/search/482299",
+          "scope": "Institutional context and object identification; visual interpretations are original editorial looking prompts."
+        },
+        "editorialReviewed": "2026-11-21",
+        "reviewScope": "Editorial check against the cited institutional record and collection study; not independent specialist authentication."
       }
     ]
   }

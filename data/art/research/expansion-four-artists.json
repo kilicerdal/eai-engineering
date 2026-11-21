@@ -1,0 +1,138 @@
+[
+  {
+    "id": "bosch",
+    "name": "Hieronymus Bosch",
+    "life": "About 1450–1516",
+    "place": "’s-Hertogenbosch, Brabant",
+    "era": "renaissance",
+    "tagline": "The familiar world becomes strange enough to require judgment.",
+    "story": "Bosch worked within a Christian visual culture while developing an unusually inventive language of bodies, objects and imagined environments. His paintings reward the spectator’s curiosity and then make that curiosity part of a moral problem. The uncertain dating of much of his work is a reason for careful comparison, not an invitation to replace missing evidence with a legend of the isolated visionary.",
+    "turningPoint": "Compare the structured devotional meeting in the Adoration with the dispersed attention of the Garden and the collective pursuit in the Haywain. These differences are more secure starting points than a supposedly exact sequence for every surviving work.",
+    "recognize": [
+      "Small incidents organized within a much larger narrative",
+      "Familiar objects transformed through scale and function",
+      "Devotional clarity beside disturbing marginal invention"
+    ],
+    "facts": [
+      "His familiar name refers to ’s-Hertogenbosch.",
+      "His surviving chronology is not fully secure.",
+      "Later collectors and artists changed the way his inventions were encountered."
+    ],
+    "sources": [
+      {
+        "title": "National Gallery · Hieronymus Bosch",
+        "url": "https://www.nationalgallery.org.uk/artists/hieronymus-bosch"
+      },
+      {
+        "title": "Prado · The Garden of Earthly Delights",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-garden-of-earthly-delights-triptych/02388242-6d6a-4e9e-a992-e1311eab3609"
+      },
+      {
+        "title": "Prado · The Adoration of the Magi",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-adoration-of-the-magi-triptych/666788cc-c522-421b-83f0-5ad84b9377f7"
+      }
+    ]
+  },
+  {
+    "id": "bruegel",
+    "name": "Pieter Bruegel the Elder",
+    "life": "About 1525–1569",
+    "place": "The Low Countries; Antwerp and Brussels",
+    "era": "renaissance",
+    "tagline": "Ordinary activities become a way to imagine an entire world.",
+    "story": "Bruegel builds large social and environmental relationships from small actions. A returning hunter, a server carrying bowls or a figure beside an immense tower can become an entry into questions about work, collective ambition and the spectator’s place. His rural subjects should not be mistaken for unmediated accounts by or for peasants: the circumstances of patronage and collecting are central to their sophistication.",
+    "turningPoint": "The seasonal cycle of 1565 makes human activity part of an encompassing landscape. In the later wedding, a single interior carries a similarly complex distribution of actions and attention.",
+    "recognize": [
+      "Elevated viewpoints and routes that lead into a populated space",
+      "Many activities held within a clear larger arrangement",
+      "Human effort set against an environment or collective undertaking"
+    ],
+    "facts": [
+      "Hunters in the Snow belonged to a six-part seasonal cycle.",
+      "The Vienna and Rotterdam towers are distinct works.",
+      "The title “Peasant Bruegel” describes only part of his range."
+    ],
+    "sources": [
+      {
+        "title": "KHM · Bruegel exhibition research",
+        "url": "https://www.bruegel2018.at/en/"
+      },
+      {
+        "title": "KHM · Hunters in the Snow",
+        "url": "https://www.bruegel2018.at/en/the-hunters-in-the-snow/"
+      },
+      {
+        "title": "Flemish Art Collection · Peasants’ Bruegel",
+        "url": "https://vlaamsekunstcollectie.be/en/collections/pieter-bruegel-the-elder/boerenbruegel"
+      }
+    ]
+  },
+  {
+    "id": "velazquez",
+    "name": "Diego Velázquez",
+    "life": "1599–1660",
+    "place": "Seville and Madrid; journeys to Italy",
+    "era": "baroque",
+    "tagline": "A convincing presence can make the conditions of representation uncertain.",
+    "story": "Velázquez’s career joined extraordinary pictorial economy to service within the Spanish royal household. His images create a strong sense of encounter while exposing differences of status, access and visibility. Studying his achievement also requires attention to workshop labor and to Juan de Pareja as a historical person and painter, rather than treating everyone around the master as background to his reputation.",
+    "turningPoint": "The appointment to Philip IV’s court in 1623 transformed the circumstances of his work. Later portraits and mythological scenes bring that institutional world into increasingly complex relationships with looking and artistic labor.",
+    "recognize": [
+      "Selective precision rather than equal detail everywhere",
+      "Figures that seem to meet a spectator in a shared space",
+      "Images within images and differences between making and viewing"
+    ],
+    "facts": [
+      "His career began in Seville before the move to Madrid.",
+      "Royal service included administrative responsibilities as well as painting.",
+      "Juan de Pareja developed a career as a painter after his manumission."
+    ],
+    "sources": [
+      {
+        "title": "National Gallery · Diego Velázquez",
+        "url": "https://www.nationalgallery.org.uk/artists/diego-velazquez"
+      },
+      {
+        "title": "The Met · Juan de Pareja",
+        "url": "https://www.metmuseum.org/art/collection/search/437869"
+      },
+      {
+        "title": "Prado · Las Meninas",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f"
+      }
+    ]
+  },
+  {
+    "id": "okeeffe",
+    "name": "Georgia O’Keeffe",
+    "life": "1887–1986",
+    "place": "United States; Wisconsin, New York and New Mexico",
+    "era": "modernism",
+    "tagline": "Close observation and abstraction can belong to the same act of attention.",
+    "story": "O’Keeffe developed a sustained practice across painting, drawing and pastel. Her repeated subjects do not make the works interchangeable: scale, contour and the particular relation between a form and its surrounding field produce distinct encounters. This opening selection concentrates on the early New York years, not the whole of her later New Mexico practice, and makes room for a work on paper beside the canvases.",
+    "turningPoint": "The circulation and exhibition of her abstract drawings helped establish her professional visibility in the 1910s. The works selected here show how abstraction, natural subjects and changes of scale continued to interact.",
+    "recognize": [
+      "Strong contours set against softer or deeper surrounding fields",
+      "Enlargement that makes a familiar subject spatially demanding",
+      "Series and variations that test a visual problem across different objects"
+    ],
+    "facts": [
+      "Her practice includes charcoal, watercolor and pastel as well as oil painting.",
+      "Blue and Green Music has an early history of variant titles.",
+      "The catalogue title Black Iris has also appeared as Black Iris III."
+    ],
+    "sources": [
+      {
+        "title": "The Met · Georgia O’Keeffe",
+        "url": "https://www.metmuseum.org/essays/georgia-okeeffe-1887-1986"
+      },
+      {
+        "title": "National Gallery of Art · Georgia O’Keeffe",
+        "url": "https://www.nga.gov/artists/2311-georgia-okeeffe"
+      },
+      {
+        "title": "O’Keeffe Museum · Blue and Green Music",
+        "url": "https://access-ok.okeeffemuseum.org/object/8445/"
+      }
+    ]
+  }
+]

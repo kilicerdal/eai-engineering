@@ -1,0 +1,20 @@
+[
+  {
+    "id": "forster-design",
+    "title": "A notebook is not a tidy chronology",
+    "object": "Leonardo · Forster Codices · V&A",
+    "documented": "The V&A holds five notebooks bound in three volumes. Their surviving binding is not a reliable chronological order; the institution identifies notes about water, weights and geometry among the contents.",
+    "looking": "Open the museum’s page viewer. Follow a diagram and its neighboring writing, then compare another page. Record which relationship is actually visible and which depends on the cataloguer’s explanation.",
+    "limit": "A present-day page sequence cannot establish the order of every idea. These are linked institutional viewers; their images have not been copied into our collection.",
+    "source": "https://www.vam.ac.uk/articles/leonardo-da-vincis-notebooks"
+  },
+  {
+    "id": "forster-rejected",
+    "title": "Investigation can include rejection",
+    "object": "Leonardo · Codex Forster II · V&A",
+    "documented": "The V&A discusses Leonardo’s investigation and eventual rejection of perpetual motion. The notebook brings mathematical and mechanical questions into the same physical working object.",
+    "looking": "Use the institutional viewer to examine folio 91 verso. Distinguish a diagram’s proposal from evidence that a machine worked. Consider what would have to be tested before accepting the design.",
+    "limit": "The museum’s account concerns the investigation; it does not supply a successful perpetual-motion mechanism. No animated reconstruction here pretends otherwise.",
+    "source": "https://www.vam.ac.uk/articles/leonardo-da-vincis-notebooks"
+  }
+]

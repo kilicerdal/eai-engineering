@@ -1,0 +1,1030 @@
+{
+  "materials": [
+    {
+      "term": "Silverpoint",
+      "text": "A metal stylus leaves a fine trace on a prepared ground. It is not simply a pale pencil and is not readily erased in the same way."
+    },
+    {
+      "term": "Prepared paper",
+      "text": "A coating or colored ground changes how a drawing material catches on the support. Its color can participate in the modeling."
+    },
+    {
+      "term": "Red chalk",
+      "text": "A naturally occurring iron-rich drawing material capable of both fine strokes and broad tonal passages. A red drawing is not automatically a preparatory sketch."
+    },
+    {
+      "term": "Black chalk and charcoal",
+      "text": "Distinct carbon or mineral-based materials may look similar in a photograph. Retain catalog uncertainty rather than identifying a medium from color alone."
+    },
+    {
+      "term": "Pen and ink",
+      "text": "A nib deposits liquid marks. Pressure, speed, loading and the support affect the result; they do not provide a complete psychological portrait of the maker."
+    },
+    {
+      "term": "Wash",
+      "text": "Diluted liquid medium applied with a brush can create tonal areas alongside drawn lines."
+    },
+    {
+      "term": "Heightening",
+      "text": "Light-colored material, often white, adds highlights to a support that already supplies a middle tone."
+    },
+    {
+      "term": "Squaring",
+      "text": "A grid can help organize, enlarge or transfer an image. Its presence does not establish that the finished work repeated every detail."
+    },
+    {
+      "term": "Stylus incision",
+      "text": "A pointed tool can indent a support. Catalogued incisions may be difficult to see in a normal-light photograph."
+    },
+    {
+      "term": "Tracing paper",
+      "text": "A translucent support can facilitate comparison or transfer. A specific sequence of tracing must still be demonstrated."
+    },
+    {
+      "term": "Etching",
+      "text": "A printmaking process in which acid bites exposed lines into a metal plate. The final sheet carries an inked impression, not the plate itself."
+    },
+    {
+      "term": "Lithography",
+      "text": "A planographic printing process based on the different behavior of grease and water, often allowing marks that resemble drawing."
+    }
+  ],
+  "studies": {
+    "leonardo-paper-1": {
+      "id": "leonardo-paper-1",
+      "role": "Compositional exploration",
+      "observation": "The sheet contains several small groups rather than one enlarged, resolved composition. Kneeling bodies, inclined heads and a geometrical diagram share the surface. Compare the open spaces between the figures: a slight adjustment changes whether the encounter feels enclosed or accessible.",
+      "documented": "The Met identifies silverpoint reinforced with pen and ink on prepared pink paper. Its account connects the groups to a composition known through contemporary copies, while the lower-right diagram concerns perspectival projection.",
+      "limit": "This is not proof that the sheet directly prepared either surviving Virgin of the Rocks. Related subject matter and a documented preparatory relationship are different claims.",
+      "process": "The page lets alternative arrangements remain available together. Metalpoint and ink coexist, but their appearance alone cannot supply a complete chronology of every correction.",
+      "paper": "The prepared ground is part of the drawing method, not merely a colored backdrop. Pale metalpoint can be difficult to distinguish from discoloration in a screen image.",
+      "material": "Silverpoint, partly reworked by the artist with pen and dark brown ink on pink prepared paper; lines ruled with metalpoint (recto); pen and brown ink (verso). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Rogers Fund, 1917. Accession 17.142.1. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 27,
+          "y": 32,
+          "title": "A compact group",
+          "text": "Follow the relationship between the bowed head and the smaller figure."
+        },
+        {
+          "x": 44,
+          "y": 66,
+          "title": "Another arrangement",
+          "text": "Compare the opening left between the bodies with the group above."
+        },
+        {
+          "x": 78,
+          "y": 82,
+          "title": "Geometrical thinking",
+          "text": "Find the ruled projection diagram without treating it as a decorative symbol."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 17.142.1",
+          "url": "https://www.metmuseum.org/art/collection/search/337494"
+        }
+      ]
+    },
+    "leonardo-paper-2": {
+      "id": "leonardo-paper-2",
+      "role": "A head developed through tone",
+      "observation": "The lowered eyelids and inclined face are built through transitions rather than a continuous enclosing outline. Darker passages gather under the brow and around the hair, while the cheek seems to emerge from the light surface.",
+      "documented": "The Met relates the drawing to the Virgin in the Louvre’s Virgin and Child with Saint Anne. Its technical account distinguishes several drawing materials and later framing lines that are not by Leonardo.",
+      "limit": "The history of attribution includes disagreement. Delicacy, left-handed hatching or a resemblance to a painting cannot independently settle authorship.",
+      "process": "Compare the changing density of marks around the cheek and hair. These differences make modeling visible without requiring the viewer to imagine a single decisive, uninterrupted gesture.",
+      "paper": "The catalog’s question mark about traces of white chalk is retained. A bright area in the reproduction is not, by itself, evidence of applied white pigment.",
+      "material": "Black chalk, charcoal, and red chalk, with some traces of white chalk (?); some remains of framing lines in pen and brown ink at upper right (not by Leonardo). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Harris Brisbane Dick Fund, 1951. Accession 51.90. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 49,
+          "y": 44,
+          "title": "The lowered gaze",
+          "text": "Examine how little line is needed to make the eyelid legible."
+        },
+        {
+          "x": 61,
+          "y": 67,
+          "title": "A turning cheek",
+          "text": "Follow the gradual passage from light into shadow."
+        },
+        {
+          "x": 29,
+          "y": 24,
+          "title": "Hair and surrounding dark",
+          "text": "Compare the density of the hair with the softer modeling of the face."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 51.90",
+          "url": "https://www.metmuseum.org/art/collection/search/337496"
+        }
+      ]
+    },
+    "leonardo-paper-3": {
+      "id": "leonardo-paper-3",
+      "role": "A profile as an investigation",
+      "observation": "The narrow sheet concentrates attention on a strongly articulated profile. The forehead, nose and chin make an emphatic outside edge, while the curled hair and shaded neck create a quite different density within that boundary.",
+      "documented": "The Met catalogs the drawing as pen and brown ink over soft black chalk, dated 1490–94, rather than identifying it as a portrait of a named sitter.",
+      "limit": "The face’s specificity does not establish a sitter’s identity. Calling it a character study is an interpretation of its function, not a recovered commission.",
+      "process": "Look for the difference between contour and repeated internal hatching. One establishes the profile against the empty paper; the other gives weight to the head without describing every surface equally.",
+      "paper": "The small recorded dimensions matter. Enlarging the digital reproduction can make a compact sheet seem monumental and exaggerate the apparent breadth of its marks.",
+      "material": "Pen and brown ink, over soft black chalk. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Rogers Fund, 1909. Accession 10.45.1. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 38,
+          "y": 34,
+          "title": "The profile",
+          "text": "Trace the forehead-to-nose transition without assigning a personality to it."
+        },
+        {
+          "x": 69,
+          "y": 22,
+          "title": "A field of curls",
+          "text": "Compare repeated curves with the firmer outline."
+        },
+        {
+          "x": 64,
+          "y": 75,
+          "title": "Head and neck",
+          "text": "Notice how the shaded neck supports the lighter face."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 10.45.1",
+          "url": "https://www.metmuseum.org/art/collection/search/339116"
+        }
+      ]
+    },
+    "leonardo-paper-4": {
+      "id": "leonardo-paper-4",
+      "role": "Allegory and theatrical design",
+      "observation": "A small circular scene and writing occupy only part of a largely open sheet. The figures are compact, and the surrounding paper makes their arrangement feel like an idea being held for further consideration rather than a finished narrative panel.",
+      "documented": "The Met identifies the front as an allegory involving a lizard and fidelity; the back contains a stage-setting study associated with La Danae in 1496.",
+      "limit": "A connection between the allegory and the theatrical material is an argument, not a securely documented explanation of why both occupy the same sheet.",
+      "process": "Treat the two recorded subjects as separate uses of one support before trying to unify them. Design notation and a small narrative image need not obey the conventions of a finished painting.",
+      "paper": "Faint inscriptions require an institutional transcription. Their presence can be observed here, but handwriting should not be guessed from indistinct pixels.",
+      "material": "Pen and brown ink (recto and verso). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Rogers Fund, 1917. Accession 17.142.2. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 61,
+          "y": 40,
+          "title": "The circular field",
+          "text": "Look at the frame that contains the small scene."
+        },
+        {
+          "x": 65,
+          "y": 47,
+          "title": "Figure relationships",
+          "text": "Describe relative positions before naming the allegory."
+        },
+        {
+          "x": 61,
+          "y": 17,
+          "title": "Writing and image",
+          "text": "Notice where the notes sit; use the source record for their interpretation."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 17.142.2",
+          "url": "https://www.metmuseum.org/art/collection/search/339130"
+        }
+      ],
+      "reverse": {
+        "image": "/images/art/paper/leonardo-paper-4-verso.webp",
+        "width": 1200,
+        "height": 820,
+        "source": "https://www.metmuseum.org/art/collection/search/339130",
+        "originalUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/339130/1417756/main-image",
+        "rights": "CC0",
+        "licenseUrl": "https://www.metmuseum.org/hubs/open-access",
+        "bytes": 107570,
+        "checked": "2026-11-21",
+        "caption": "Stage design: a plan and elevation associated with the production of La Danae, rather than a second view of the allegorical figure on the front."
+      }
+    },
+    "michelangelo-paper-1": {
+      "id": "michelangelo-paper-1",
+      "role": "A monumental project on a small sheet",
+      "observation": "An architectural structure rises through lightly drawn levels. Columns, projecting ledges and small figures establish a hierarchy of scale. The drawing asks the eye to imagine how bodies and architecture might occupy a single monument.",
+      "documented": "The Met currently attributes this tomb design to Michelangelo and dates it 1505–6. The object’s attribution has changed and remains a subject of published disagreement.",
+      "limit": "The drawing cannot be treated as a straightforward photograph of a monument that was subsequently built unchanged. The Julius II project underwent major reductions.",
+      "process": "Follow the vertical supports and the horizontal divisions separately, then ask how the figures interrupt the architecture. Ruling and freer marks perform different design tasks.",
+      "paper": "The pale lines are particularly vulnerable to screen contrast. Increasing the display brightness does not recover information absent from the source photograph.",
+      "material": "Pen and brown ink, brush and brown wash, over stylus ruling and leadpoint. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Rogers Fund, 1962. Accession 62.93.1. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 38,
+          "y": 22,
+          "title": "Vertical supports",
+          "text": "Follow a column through the upper structure."
+        },
+        {
+          "x": 52,
+          "y": 57,
+          "title": "A horizontal division",
+          "text": "Compare the projection of the ledge with the plane below."
+        },
+        {
+          "x": 50,
+          "y": 73,
+          "title": "The scale of figures",
+          "text": "Use the small bodies to judge the imagined architectural dimensions."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 62.93.1",
+          "url": "https://www.metmuseum.org/art/collection/search/334655"
+        }
+      ]
+    },
+    "michelangelo-paper-2": {
+      "id": "michelangelo-paper-2",
+      "role": "A body studied for a painted figure",
+      "observation": "A large twisting torso dominates the sheet, but feet, heads and smaller bodily studies remain visible around it. The red chalk gives the main body exceptional weight while allowing the surrounding fragments to remain exploratory.",
+      "documented": "The Met connects the sheet with the Libyan Sibyl on the Sistine Chapel ceiling. Its account identifies a male model used in developing the female painted figure and records different drawing materials on the reverse.",
+      "limit": "A preparatory relationship does not mean the finished fresco reproduces the model unchanged. The sheet also cannot disclose every stage between a studio pose and a ceiling painting.",
+      "process": "Compare the main shoulder and turning back with the isolated details. A large pose can be investigated through smaller problems rather than solved in one complete drawing.",
+      "paper": "The Met documents historical darkening and a 1925 fixative treatment. The current tone should not be presented as untouched evidence of the paper’s original color.",
+      "material": "Red chalk, with small accents of white chalk on the left shoulder of the figure in the main study (recto); soft black chalk, or less probably charcoal (verso). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Purchase, Joseph Pulitzer Bequest, 1924. Accession 24.197.2. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 47,
+          "y": 29,
+          "title": "A turning shoulder",
+          "text": "Follow the changing direction from upper arm into back."
+        },
+        {
+          "x": 39,
+          "y": 83,
+          "title": "An isolated foot",
+          "text": "Compare the concentrated detail with the much larger torso."
+        },
+        {
+          "x": 23,
+          "y": 65,
+          "title": "A separate head",
+          "text": "Notice how the page keeps smaller investigations beside the principal pose."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 24.197.2",
+          "url": "https://www.metmuseum.org/art/collection/search/337497"
+        }
+      ]
+    },
+    "michelangelo-paper-3": {
+      "id": "michelangelo-paper-3",
+      "role": "Anatomy within a school tradition",
+      "observation": "Opened anatomical forms occupy the center of a closely worked sheet. Curving bands and overlapping lines make the leg legible as a system of connected structures rather than a smooth exterior silhouette.",
+      "documented": "The Met catalogs this object as School of Michelangelo. Its medium combines pen and brown ink with red chalk on the front, and its broad date range should not be converted into a precise year.",
+      "limit": "This is not a securely autograph Michelangelo drawing. A school attribution does not identify an individual assistant, establish a direct lesson, or prove that Michelangelo supervised this sheet.",
+      "process": "Read the internal divisions before relating them to the body’s outside edge. The shift from exposed structure to bodily form is a visual problem, independent of an uncertain maker’s identity.",
+      "paper": "The reproduction shows the recto. The catalog also records a leg on the verso; an unshown reverse must not be reconstructed from this front image.",
+      "material": "Pen and brown ink, and red chalk (recto); pen and brown ink (verso). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Gift of Herbert N. Straus, 1921. Accession 21.15.1. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 49,
+          "y": 31,
+          "title": "Internal divisions",
+          "text": "Follow one long curved structure through the upper leg."
+        },
+        {
+          "x": 52,
+          "y": 62,
+          "title": "Overlapping marks",
+          "text": "Separate the different directions rather than treating them as a single contour."
+        },
+        {
+          "x": 69,
+          "y": 76,
+          "title": "The lower termination",
+          "text": "Consider where description becomes abbreviated."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 21.15.1",
+          "url": "https://www.metmuseum.org/art/collection/search/340787"
+        }
+      ]
+    },
+    "michelangelo-paper-4": {
+      "id": "michelangelo-paper-4",
+      "role": "A design transmitted after an artist",
+      "observation": "A compact architectural design is surrounded by several visible borders. Its central structure combines repeated supports and small sculptural figures; the surrounding mount makes the surviving object different from an isolated design on blank paper.",
+      "documented": "The Met identifies the sheet as After Michelangelo and gives no specific date. That designation concerns dependence on his work, rather than authorship by him.",
+      "limit": "Neither the mount nor the architectural vocabulary proves who made the drawing or when. The absence of a date is information to retain, not an invitation to supply one.",
+      "process": "Compare the clarity of the architectural outline with the abbreviated figures. A copy can preserve relationships useful to another maker even when it does not preserve an original act of invention.",
+      "paper": "The photographed mount and framing lines belong to the object’s later presentation unless separately documented. They should not be described as Michelangelo’s compositional border.",
+      "material": "Pen and brown ink. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Edward Pearce Casey Fund, 1994. Accession 1994.6. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 49,
+          "y": 44,
+          "title": "An architectural center",
+          "text": "Find the main vertical axis of the design."
+        },
+        {
+          "x": 41,
+          "y": 64,
+          "title": "Repeated supports",
+          "text": "Compare the spacing of the columns."
+        },
+        {
+          "x": 15,
+          "y": 21,
+          "title": "Mount and drawing",
+          "text": "Distinguish the sheet from the borders around it."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 1994.6",
+          "url": "https://www.metmuseum.org/art/collection/search/363335"
+        }
+      ]
+    },
+    "raphael-paper-1": {
+      "id": "raphael-paper-1",
+      "role": "An image prepared for transfer",
+      "observation": "The standing figure extends outward through drapery and gesture. Lightly established construction and firmer ink coexist, so that the body appears both carefully organized and open to movement.",
+      "documented": "The Met records pen and brown ink over black chalk, partial stylus incision on the front, and black chalk rubbed on the reverse for transfer.",
+      "limit": "Transfer evidence supports a practical function but does not establish that every line was copied, or that a surviving later image reproduces the drawing without alteration.",
+      "process": "Follow the movement of the limbs and then the direction of the drapery. Those systems cooperate without becoming identical: the fabric can amplify a gesture while obscuring part of the body.",
+      "paper": "Incision and reverse-side rubbing are technical observations from the catalog. They may not be clearly visible at this reproduction’s resolution.",
+      "material": "Pen and brown ink over black chalk, partially incised with a stylus (recto); rubbed with black chalk for transfer (verso). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Purchase, Lila Acheson Wallace Gift, 1997. Accession 1997.153. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 50,
+          "y": 24,
+          "title": "A turning head",
+          "text": "Examine the relation between the face and the shoulder."
+        },
+        {
+          "x": 36,
+          "y": 50,
+          "title": "Drapery in motion",
+          "text": "Follow a fold that carries attention across the torso."
+        },
+        {
+          "x": 52,
+          "y": 83,
+          "title": "Support and balance",
+          "text": "Find where the extended figure meets the ground."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 1997.153",
+          "url": "https://www.metmuseum.org/art/collection/search/337075"
+        }
+      ]
+    },
+    "raphael-paper-2": {
+      "id": "raphael-paper-2",
+      "role": "A group worked out through relationships",
+      "observation": "The Virgin and two children form a close group beneath small, separate studies along the top. The children’s reaching gestures make the intervals between bodies as important as their individual outlines.",
+      "documented": "The Met identifies this as a composition study for the Madonna in the Meadow in Vienna and dates the sheet about 1506–7. The finished painting changes the handling of the Virgin’s left arm through heavier drapery.",
+      "limit": "The source discusses a lost full-scale cartoon. A lost intermediate stage cannot be replaced with an imagined reconstruction, and this drawing should not be mislabeled as La Belle Jardinière.",
+      "process": "Compare the small arm and drapery investigations above with the central group. The page holds local problems beside a larger arrangement, allowing the two scales of decision to coexist.",
+      "paper": "Red chalk meets the visible texture and discoloration of the sheet. The uneven surface is not a uniform wash of flesh color.",
+      "material": "Red chalk (recto); pen and brown ink (verso). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Rogers Fund, 1964. Accession 64.47. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 58,
+          "y": 40,
+          "title": "The inclined head",
+          "text": "Follow the Virgin’s gaze down into the group."
+        },
+        {
+          "x": 40,
+          "y": 70,
+          "title": "A reaching interval",
+          "text": "Notice how the children communicate across the intervening space."
+        },
+        {
+          "x": 72,
+          "y": 17,
+          "title": "Studies above",
+          "text": "Compare the detached detail with the central composition."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 64.47",
+          "url": "https://www.metmuseum.org/art/collection/search/340577"
+        }
+      ],
+      "reverse": {
+        "image": "/images/art/paper/raphael-paper-2-verso.webp",
+        "width": 869,
+        "height": 1200,
+        "source": "https://www.metmuseum.org/art/collection/search/340577",
+        "originalUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/340577/2532097/main-image",
+        "rights": "CC0",
+        "licenseUrl": "https://www.metmuseum.org/hubs/open-access",
+        "bytes": 237386,
+        "checked": "2026-11-21",
+        "caption": "Anatomical study of a torso. This is a separate subject on the reverse of the Madonna-and-Child sheet, not an alternate photograph of its front."
+      }
+    },
+    "raphael-paper-3": {
+      "id": "raphael-paper-3",
+      "role": "A gesture explored in fragments",
+      "observation": "The sheet places several studies of a small child’s body at different scales and degrees of completion. Rounded limbs are built with red chalk, while the spaces between the studies keep each experiment distinct.",
+      "documented": "The Met dates these studies 1513–14 and relates them to Holy Family compositions with the infant Saint John, including painted versions substantially executed by assistants.",
+      "limit": "The workshop relationship matters: a Raphael design and a painting entirely executed by Raphael are not interchangeable descriptions.",
+      "process": "Compare how the body turns and reaches in the separate studies. A change of arm position can affect both the anatomy of one figure and its connection to another figure outside the study.",
+      "paper": "Unworked paper gives the rounded forms their light. The image should not be digitally filled in to make the fragments appear like a complete child.",
+      "material": "Red chalk. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Purchase, Florence B. Selden Bequest, 1997. Accession 1997.75. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 35,
+          "y": 24,
+          "title": "One small torso",
+          "text": "Follow the shoulder into the lifted arm."
+        },
+        {
+          "x": 69,
+          "y": 43,
+          "title": "A second investigation",
+          "text": "Compare the bend of the leg with the neighboring study."
+        },
+        {
+          "x": 34,
+          "y": 73,
+          "title": "Abbreviated marks",
+          "text": "Notice where a few lines carry the place of a more finished form."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 1997.75",
+          "url": "https://www.metmuseum.org/art/collection/search/340579"
+        }
+      ]
+    },
+    "raphael-paper-4": {
+      "id": "raphael-paper-4",
+      "role": "A fragment with an uncertain attribution",
+      "observation": "A child’s bent leg is described on a narrow sheet with a visible mount. The most concentrated passages gather around the joints; other stretches of contour remain light and incomplete.",
+      "documented": "The Met catalogs the drawing as Attributed to Raphael. Its listed materials distinguish pen and ink, black chalk and a stylus underdrawing.",
+      "limit": "The attribution qualifier is essential. A convincing anatomical fragment does not identify its maker, and the record does not provide a secure date to add here.",
+      "process": "Compare the firmness of the knee with the more open continuation of the limb. The study isolates a problem without supplying a complete composition around it.",
+      "paper": "The surrounding borders are part of the photographed presentation. Do not mistake a mount edge for an original ruled framework used to design the figure.",
+      "material": "Pen and brown ink over black chalk and stylus underdrawing. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Purchase, Charles and Jessie Price Gift, 2002. Accession 2002.73. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 53,
+          "y": 36,
+          "title": "The knee",
+          "text": "Compare overlapping turns around the joint."
+        },
+        {
+          "x": 42,
+          "y": 61,
+          "title": "An incomplete contour",
+          "text": "Find where the boundary fades rather than closes."
+        },
+        {
+          "x": 13,
+          "y": 18,
+          "title": "Sheet and mount",
+          "text": "Keep the support separate from its later framing."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 2002.73",
+          "url": "https://www.metmuseum.org/art/collection/search/352280"
+        }
+      ]
+    },
+    "rembrandt-paper-1": {
+      "id": "rembrandt-paper-1",
+      "role": "Reading as a concentrated action",
+      "observation": "A seated woman bends over a book or open surface. Broad washes hold the figure together, while the hand and inclined head direct attention toward the act of reading.",
+      "documented": "The Met lists pen and brown ink with brush and brown wash, together with framing lines. Its broad date range should not be presented as a year established by the drawing.",
+      "limit": "The descriptive title does not identify the woman or prove whether the artist worked from a sitter, memory or another source.",
+      "process": "Trace the diagonal made by the head and the working hand. The economy of the surrounding furniture makes the action readable without filling every part of the room.",
+      "paper": "Washes spread differently from pen lines. Their softer edges are visible material differences, not signs that the reproduction has gone out of focus.",
+      "material": "Pen and brown ink, brush and brown wash; framing lines in pen and brown ink. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Rogers Fund, 1926. Accession 26.208. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 57,
+          "y": 34,
+          "title": "The bowed head",
+          "text": "Follow the angle that directs attention downward."
+        },
+        {
+          "x": 28,
+          "y": 59,
+          "title": "The hand and surface",
+          "text": "Notice the small action within the broader wash."
+        },
+        {
+          "x": 75,
+          "y": 72,
+          "title": "Abbreviated surroundings",
+          "text": "Look at what remains undescribed."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 26.208",
+          "url": "https://www.metmuseum.org/art/collection/search/347891"
+        }
+      ]
+    },
+    "rembrandt-paper-2": {
+      "id": "rembrandt-paper-2",
+      "role": "A page of separate encounters",
+      "observation": "Several figures share a sheet without forming one continuous scene. Strong dark marks describe garments and small bodily turns, leaving large intervals of bare paper between the studies.",
+      "documented": "The Met titles the object Study Sheet with Three Women and a Boy and dates it about 1638–39. The catalog identifies pen and brown ink.",
+      "limit": "The figures’ proximity on a page does not establish that they stood together in one place or that they prepared a particular painting.",
+      "process": "Compare the upright figure with the crouched or seated forms. Each small drawing tests how posture can be conveyed through a few selected changes of direction.",
+      "paper": "The open paper is an active interval between studies. It should not be cropped away simply to make a denser, more spectacular composition.",
+      "material": "Pen and brown ink. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · From the Collection of Rita and Frits Markus, Bequest of Rita Markus, 2005. Accession 2005.330.16. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 53,
+          "y": 25,
+          "title": "An upright figure",
+          "text": "Follow the outer contour down from the head."
+        },
+        {
+          "x": 24,
+          "y": 63,
+          "title": "A lower posture",
+          "text": "Compare the compressed body with the standing figure."
+        },
+        {
+          "x": 68,
+          "y": 58,
+          "title": "Dark accents",
+          "text": "Observe where a small dense mark makes a turn legible."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 2005.330.16",
+          "url": "https://www.metmuseum.org/art/collection/search/370468"
+        }
+      ]
+    },
+    "rembrandt-paper-3": {
+      "id": "rembrandt-paper-3",
+      "role": "Studying another artist’s invention",
+      "observation": "The red-chalk drawing restages a long table and a group of reacting figures within a broad architectural frame. The scale of the room and the rhythm of gestures can be studied without the colors of the mural.",
+      "documented": "The Met identifies the sheet as Rembrandt’s Last Supper after Leonardo da Vinci, dated 1634–35. It is a later artist’s engagement with the composition, not Leonardo’s preparatory sheet.",
+      "limit": "A copy after an image does not prove that the copyist stood before its original. The means of transmission must be established through research rather than assumed from resemblance.",
+      "process": "Compare the distribution of bodies across the table with the upper architectural lines. Copying here can be considered a selective investigation of another composition’s organization.",
+      "paper": "The red chalk makes a different tonal system from Leonardo’s wall painting. Treat that change of medium as part of the encounter, not a defective imitation.",
+      "material": "Red chalk. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Robert Lehman Collection, 1975. Accession 1975.1.794. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 50,
+          "y": 61,
+          "title": "The table as a boundary",
+          "text": "Follow the horizontal that organizes the group."
+        },
+        {
+          "x": 25,
+          "y": 53,
+          "title": "A cluster of reactions",
+          "text": "Look at the different directions of neighboring bodies."
+        },
+        {
+          "x": 59,
+          "y": 22,
+          "title": "The architectural frame",
+          "text": "Compare the height of the room with the figures."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 1975.1.794",
+          "url": "https://www.metmuseum.org/art/collection/search/459194"
+        }
+      ]
+    },
+    "rembrandt-paper-4": {
+      "id": "rembrandt-paper-4",
+      "role": "A landscape built through revisions",
+      "observation": "A cottage occupies the center of a wide sheet while surrounding trees, fences and ground are rendered with different degrees of density. The building is stable enough to orient the scene without sealing it into a single hard outline.",
+      "documented": "The Met dates the sheet 1644 and records several inks, washes, corrections in white and red-chalk additions. Its discussion of a later owner through the artist Lambert Doomer remains conjectural.",
+      "limit": "The present appearance of white corrections has changed through oxidation and abrasion. It is unsafe to read their current color as the artist’s original effect.",
+      "process": "Follow where a line continues into a wash and where a correction interrupts the description. Revision need not erase the drawing’s earlier decisions completely.",
+      "paper": "The breadth of the sheet makes the landscape more than an isolated building study. Preserve the whole image before enlarging the cottage.",
+      "material": "Pen and inks ranging from light to dark brown, brown washes, corrected in white (oxidized, partially abraded), and touches of red chalk (in added structures to the left of the main cottage).. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Robert Lehman Collection, 1975. Accession 1975.1.792. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 50,
+          "y": 48,
+          "title": "The cottage",
+          "text": "Compare the roof’s edges with the softer surrounding ground."
+        },
+        {
+          "x": 23,
+          "y": 52,
+          "title": "Added structures",
+          "text": "Look for different densities of line at the side."
+        },
+        {
+          "x": 80,
+          "y": 43,
+          "title": "Wooded space",
+          "text": "Follow the shifting boundary between tree and empty paper."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 1975.1.792",
+          "url": "https://www.metmuseum.org/art/collection/search/459238"
+        }
+      ]
+    },
+    "degas-paper-1": {
+      "id": "degas-paper-1",
+      "role": "A figure carried into another composition",
+      "observation": "The violinist bends forward, holding the instrument close to the body. Dark charcoal and colored pastel make the head, shoulder and instrument overlap, so that the action depends on their compressed relationship.",
+      "documented": "The Met identifies this as a study for The Dance Lesson, about 1878–79, and records charcoal squaring alongside pastel and charcoal. Letterpress printing is recorded on the reverse.",
+      "limit": "Squaring indicates a means of organizing or transferring proportions; it does not prove that a later painting repeated every contour at a mechanically fixed scale.",
+      "process": "Compare the instrument’s diagonal with the bowed head. The figure is an arrangement of working relationships rather than an isolated portrait posed to meet the spectator.",
+      "paper": "The reused printed reverse complicates the romantic idea that every drawing begins on untouched, specially prepared paper.",
+      "material": "Pastel and charcoal; squared in charcoal; letterpress printing on verso. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Rogers Fund, 1918. Accession 19.51.1. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 60,
+          "y": 27,
+          "title": "Head and instrument",
+          "text": "Follow their compressed overlap."
+        },
+        {
+          "x": 43,
+          "y": 57,
+          "title": "The working arm",
+          "text": "Notice the diagonal that carries the action."
+        },
+        {
+          "x": 47,
+          "y": 83,
+          "title": "A compact silhouette",
+          "text": "Compare the lower dark shape with the lighter surrounding ground."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 19.51.1",
+          "url": "https://www.metmuseum.org/art/collection/search/333807"
+        }
+      ]
+    },
+    "degas-paper-2": {
+      "id": "degas-paper-2",
+      "role": "Tracing paper as a working support",
+      "observation": "The dancer leans forward with the arms extended along a support. The curved back and bent head bring the body close to the horizontal line, while repeated charcoal contours make the pose feel investigated rather than polished.",
+      "documented": "The Met lists charcoal on tracing paper laid down on card and dates the work 1884–1900. It relates the figure to the long development of Dancers at the Barre in the Phillips Collection.",
+      "limit": "The broad date range and repeated related drawings resist a simple before-and-after story. This sheet does not establish a single moment when the painting’s design was solved.",
+      "process": "Compare the back’s long arc with the smaller adjustments of the hands. Transparent supports could assist repetition and reworking, but the exact operation used on this sheet requires evidence.",
+      "paper": "The backing card is part of the surviving object. Its present color should not be described as a deliberate pastel background.",
+      "material": "Charcoal on tracing paper laid down on card. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Gift of the Drue Heinz Charitable Trust, in celebration of the Museum's 150th Anniversary, 2019. Accession 2019.598. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 49,
+          "y": 31,
+          "title": "An arcing back",
+          "text": "Follow the length of the curve before examining the joints."
+        },
+        {
+          "x": 75,
+          "y": 49,
+          "title": "The hands",
+          "text": "Compare their small adjustments with the larger pose."
+        },
+        {
+          "x": 38,
+          "y": 69,
+          "title": "Repeated boundaries",
+          "text": "Find where several charcoal lines investigate one edge."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 2019.598",
+          "url": "https://www.metmuseum.org/art/collection/search/834320"
+        }
+      ]
+    },
+    "degas-paper-3": {
+      "id": "degas-paper-3",
+      "role": "Color on a prepared sheet",
+      "observation": "The dancer’s dark upper body meets a skirt whose strokes spread outward across a pink ground. The tilted figure and extended leg establish an unstable balance that differs from a formally posed portrait.",
+      "documented": "The Met dates the sheet about 1873 and identifies oil with opaque watercolor on prepared pink paper on the front, with two dancer studies in oil on the back.",
+      "limit": "This is a work on paper, but its front is not a charcoal sketch or pastel simply because Degas frequently used those materials elsewhere.",
+      "process": "Compare the concentrated upper body with the more widely distributed skirt strokes. The support’s color participates between the marks without becoming a fully described room.",
+      "paper": "Both sides have recorded designs. The title’s recto and verso refer to the physical sheet, not to two stages that must be placed into a chronological sequence.",
+      "material": "Oil with opaque watercolor on prepared pink paper (recto); oil on prepared pink paper (verso). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Robert Lehman Collection, 1975. Accession 1975.1.611. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 48,
+          "y": 29,
+          "title": "A concentrated torso",
+          "text": "Follow the darker shape around the shoulders."
+        },
+        {
+          "x": 58,
+          "y": 53,
+          "title": "The spreading skirt",
+          "text": "Compare the direction and spacing of its strokes."
+        },
+        {
+          "x": 55,
+          "y": 77,
+          "title": "An extended leg",
+          "text": "Notice how a thin form changes the balance of the whole figure."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 1975.1.611",
+          "url": "https://www.metmuseum.org/art/collection/search/460062"
+        }
+      ]
+    },
+    "degas-paper-4": {
+      "id": "degas-paper-4",
+      "role": "Drapery learned through tonal contrast",
+      "observation": "The draped figure is constructed against gray paper, with white highlights lifting the folds and darker graphite defining their intervals. The sheet makes cloth’s volume available through contrast rather than local color.",
+      "documented": "The Met dates the study 1857–58 and identifies graphite heightened with white gouache. It belongs to a different phase of Degas’s practice from the later dancer studies.",
+      "limit": "A classical-looking figure does not by itself establish the precise sculpture or painting copied. A source relationship requires a catalogued identification.",
+      "process": "Compare the bright fold ridges with the dark spaces beside them. The gray support provides a middle value, allowing both light and shadow to be added.",
+      "paper": "The irregular edges and empty ground remain visible parts of the sheet. The digital image has not been extended to invent a setting for the figure.",
+      "material": "Graphite heightened with white gouache. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Metropolitan Museum of Art · Rogers Fund, 1975. Accession 1975.5. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 43,
+          "y": 27,
+          "title": "A turning upper body",
+          "text": "Look at how light defines the shoulder."
+        },
+        {
+          "x": 59,
+          "y": 52,
+          "title": "White on gray",
+          "text": "Follow a highlighted fold beside a darker interval."
+        },
+        {
+          "x": 49,
+          "y": 83,
+          "title": "The fall of cloth",
+          "text": "Compare the narrow lower folds with the broader forms above."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art · object 1975.5",
+          "url": "https://www.metmuseum.org/art/collection/search/334332"
+        }
+      ]
+    },
+    "kollwitz-paper-1": {
+      "id": "kollwitz-paper-1",
+      "role": "A difficult subject on a reused sheet",
+      "observation": "The collection photograph presents a standing woman and lighter studies of a child on the other side. The contrast between a dense standing form and abbreviated smaller bodies invites a comparison of concentration and openness, without turning either side into an illustration of the other.",
+      "documented": "Cleveland dates the sheet about 1926 and catalogs the medium cautiously as black chalk or charcoal, rubbed in places. Its title identifies a pregnant woman contemplating suicide on the front and three child studies on the back.",
+      "limit": "The historical title is not a diagnosis of an identifiable person. The sheet should not be used to invent the sitter’s experience or claim access to the artist’s private intention.",
+      "process": "Read the two sides as separate uses of one physical support. Their coexistence is documented; an exact sequence or a narrative connecting them is not established here.",
+      "paper": "The source photograph is a paired view of front and reverse. It is explicitly labeled as such, rather than presented as a single composition assembled by the artist.",
+      "material": "black chalk or charcoal? (rubbed in places). The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Cleveland Museum of Art · Gift of The Print Club of Cleveland in honor of Leona E. Prasse. Accession 1962.291. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 20,
+          "y": 48,
+          "title": "The standing figure",
+          "text": "Describe posture and dark accents before interpreting mood."
+        },
+        {
+          "x": 70,
+          "y": 45,
+          "title": "Studies on the reverse",
+          "text": "Compare the lighter, more abbreviated marks."
+        },
+        {
+          "x": 46,
+          "y": 51,
+          "title": "Two photographed sides",
+          "text": "The division belongs to the reproduction, not to an original central border."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cleveland Museum of Art · object 1962.291",
+          "url": "https://clevelandart.org/art/1962.291"
+        }
+      ],
+      "imageView": "paired"
+    },
+    "kollwitz-paper-2": {
+      "id": "kollwitz-paper-2",
+      "role": "A printed image of labor",
+      "observation": "The woman’s head bends close to the blade while her hands and arms occupy much of the foreground. Dense dark passages restrict the space around her, concentrating attention on the relationship between bodily effort and the tool.",
+      "documented": "Cleveland catalogs Sharpening the Scythe as an etching of 1905. It is a print, not a unique charcoal drawing, even where the printed marks resemble rapid strokes.",
+      "limit": "A reproduced impression does not reveal the whole sequence of plate states or establish the exact appearance of every impression in an edition.",
+      "process": "Compare the curved blade with the bent head and the force of the hands. Their closeness makes the tool part of the figure’s action rather than a neutral accessory.",
+      "paper": "Printed plate marks, ink density and paper margins belong to the material study of an impression. They are not interchangeable with evidence of the artist drawing directly on this sheet.",
+      "material": "etching. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Cleveland Museum of Art · Gift of The Print Club of Cleveland. Accession 1950.205. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 62,
+          "y": 34,
+          "title": "Head and blade",
+          "text": "Examine the narrow interval between the face and the tool."
+        },
+        {
+          "x": 38,
+          "y": 53,
+          "title": "The hands",
+          "text": "Follow the direction of pressure suggested by their position."
+        },
+        {
+          "x": 55,
+          "y": 76,
+          "title": "Dense printed dark",
+          "text": "Compare the different densities around the body."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cleveland Museum of Art · object 1950.205",
+          "url": "https://clevelandart.org/art/1950.205"
+        }
+      ]
+    },
+    "kollwitz-paper-3": {
+      "id": "kollwitz-paper-3",
+      "role": "Color concentrated within a print",
+      "observation": "The woman turns downward within a narrow, irregularly bounded field. The blue shawl establishes a broad area against which the face and folded body become legible through smaller changes of tone.",
+      "documented": "Cleveland catalogs Working Woman with a Blue Shawl as a color lithograph of 1903. The image belongs to a reproducible printing process rather than to an oil painting on canvas.",
+      "limit": "The title names a social identity without establishing a sitter’s name. Color in one digitized impression cannot define the appearance of every impression.",
+      "process": "Compare the area occupied by the shawl with the smaller, illuminated parts of the face. The image’s force depends on unequal emphasis rather than equal description of every feature.",
+      "paper": "The visible boundary of the colored field should be retained. Cropping it into a conventional portrait rectangle would change how the figure sits on the support.",
+      "material": "color lithograph. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Cleveland Museum of Art · Gift of The Print Club of Cleveland. Accession 1932.320. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 53,
+          "y": 29,
+          "title": "The lowered face",
+          "text": "Look at the small light areas that make the features readable."
+        },
+        {
+          "x": 59,
+          "y": 63,
+          "title": "The shawl",
+          "text": "Compare its broad color field with the more intricate head."
+        },
+        {
+          "x": 18,
+          "y": 80,
+          "title": "A printed boundary",
+          "text": "Follow the irregular limit of the image against the paper."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cleveland Museum of Art · object 1932.320",
+          "url": "https://clevelandart.org/art/1932.320"
+        }
+      ]
+    },
+    "kollwitz-paper-4": {
+      "id": "kollwitz-paper-4",
+      "role": "The artist looks back",
+      "observation": "The face meets the spectator directly, but its boundary is not continuous. Dark printed marks gather around the eyes and hair, while the lighter surrounding paper keeps the head open rather than enclosing it in a finished setting.",
+      "documented": "Cleveland identifies the lithograph as a Self-Portrait of 1915. The object record distinguishes the printed medium from the drawing processes through which such an image might have been developed.",
+      "limit": "The year alone does not turn every mark into a transparent record of grief. Biography supplies context; it does not replace an account of how the image addresses the viewer.",
+      "process": "Compare the concentrated gaze with the more dispersed treatment of the lower face. The changing density of marks produces emphasis without uniform finish.",
+      "paper": "The inscription beneath the image belongs to the surviving impression. Its wording and authorship should be checked against the source transcription rather than guessed here.",
+      "material": "lithograph. The catalog description is retained, including qualifications; it is not an identification made from this digital image.",
+      "provenance": "The Cleveland Museum of Art · Mr. and Mrs. Lewis B. Williams Collection. Accession 1941.493. This acquisition credit does not supply an uninterrupted ownership history. Use the institutional record for any earlier named owners and gaps.",
+      "inscription": "Consult the institutional inscriptions record for a transcription and attribution of marks. A signature, collector’s mark and later annotation are different kinds of evidence.",
+      "prompts": [
+        {
+          "x": 44,
+          "y": 38,
+          "title": "The gaze",
+          "text": "Compare the two eyes and the dark accents around them."
+        },
+        {
+          "x": 58,
+          "y": 67,
+          "title": "An opening boundary",
+          "text": "Notice how the face fades toward the surrounding paper."
+        },
+        {
+          "x": 54,
+          "y": 88,
+          "title": "The inscription",
+          "text": "Observe its placement; consult the institution for transcription."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cleveland Museum of Art · object 1941.493",
+          "url": "https://clevelandart.org/art/1941.493"
+        }
+      ]
+    }
+  },
+  "connections": [],
+  "practices": [
+    {
+      "id": "leonardo",
+      "title": "Investigations that share a page",
+      "text": "Leonardo’s sheets bring several forms of inquiry into proximity: figure groups and perspective, facial modeling and the edge of a profile, an allegory and a theatrical design on opposite sides. This is not evidence that all his drawings served one unified project. Begin by asking what each passage does. A ruled diagram establishes different relations from a shaded cheek; the appearance of both within a drawing practice does not make them interchangeable. Compare the small groups on the first sheet before following the separate, more concentrated account of the Virgin’s head.",
+      "source": "https://www.metmuseum.org/art/collection/search/337494"
+    },
+    {
+      "id": "michelangelo",
+      "title": "Bodies, monuments and the transmission of designs",
+      "text": "The Libyan Sibyl studies and the Julius II tomb design investigate different scales of work: a twisting body and an imagined architectural monument. The two other sheets widen the question to what survives through a school tradition or a drawing made after Michelangelo. Those qualifiers remain attached to the objects. A recognizable anatomical or architectural vocabulary is not a substitute for attribution. Compare how a joint is investigated within a body with how figures are positioned inside an architectural framework; the comparison concerns different kinds of construction, not a claim that all four sheets were drawn by the same hand.",
+      "source": "https://www.metmuseum.org/art/collection/search/337497"
+    },
+    {
+      "id": "raphael",
+      "title": "A gesture belongs to a larger relationship",
+      "text": "Raphael’s figure studies make a useful distinction between describing a body and arranging an encounter. The Madonna group connects three figures through their intervals and reaching gestures; studies of the Christ Child isolate a turning body without supplying the entire surrounding composition. Lucretia introduces the material evidence of transfer. The attributed leg fragment adds a separate problem: its relationship to a name is less secure than its visible investigation of form. Follow these differences without turning every sheet into the same story of a sketch inevitably becoming a masterpiece.",
+      "source": "https://www.metmuseum.org/art/collection/search/340577"
+    },
+    {
+      "id": "rembrandt",
+      "title": "Selection, abbreviation and another artist’s invention",
+      "text": "A reading figure, several small encounters, a landscape and a copy after Leonardo make different demands on the page. In the woman reading, a few relationships establish an activity. In the cottage, changes of ink and correction complicate the idea of a single effortless gesture. The Last Supper sheet belongs to Rembrandt’s study of another artist’s composition; it is not evidence from Leonardo’s own workshop. Compare what each drawing selects, and distinguish a passage left open from a passage whose information has been lost or changed through the object’s later history.",
+      "source": "https://www.metmuseum.org/art/collection/search/459238"
+    },
+    {
+      "id": "degas",
+      "title": "Repetition is a method, not a failure to finish",
+      "text": "The draped figure uses graphite and white against a middle-toned support. The later violinist and dancer studies bring charcoal, pastel, oil, opaque watercolor and tracing paper into different working situations. It would obscure those differences to call them all quick charcoal sketches. The barre study’s long date range also cautions against a tidy sequence in which a single preliminary drawing leads directly to a final canvas. Compare the larger movement of a body with small revisions to its boundaries, and ask which relationships remain important when Degas returns to a pose.",
+      "source": "https://www.metmuseum.org/art/collection/search/834320"
+    },
+    {
+      "id": "kollwitz",
+      "title": "Drawing and the printed encounter",
+      "text": "Kollwitz’s group deliberately includes one drawing and three prints. A lithographic mark can resemble a drawing stroke, but the sheet records an impression made through a printing process. Sharpening the Scythe concentrates attention on a body and a tool, while the self-portrait directs the encounter toward the spectator. The paired photograph of a drawing’s front and reverse asks a different question about reuse and the physical sheet. These distinctions matter before an account of political commitment or private experience is allowed to explain every dark passage.",
+      "source": "https://www.clevelandart.org/art/1950.205"
+    }
+  ]
+}

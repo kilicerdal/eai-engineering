@@ -19,8 +19,8 @@ test('reading estimates agree with revised essays and the manuscript compiler',(
  for(const entries of Object.values(editorial))for(const e of Object.values(entries)){const words=[e.lead,...e.sections.flatMap(s=>s.paragraphs)].join(' ').split(/\s+/).length;assert.equal(e.words,words);assert.equal(e.minutes,Math.ceil(words/180));}
  assert.match(readFileSync('scripts/art/build-editorial.mjs','utf8'),/Math.ceil\(words\/180\)/);
 });
-test('all 112 studies and 21 biographies remain present; historical distinctions stay specific',()=>{
- assert.equal(Object.keys(editorial.paintings).length,112);assert.equal(Object.keys(editorial.painters).length,21);
+test('all 124 studies and 25 biographies remain present; historical distinctions stay specific',()=>{
+ assert.equal(Object.keys(editorial.paintings).length,124);assert.equal(Object.keys(editorial.painters).length,25);
  assert.match(context['turner-01'].naming,/1838.*1839/);assert.match(context['caravaggio-02'].naming,/London.*Milan/);assert.match(context['vermeer-01'].researchNext,/curtain.*identification/);
  assert.match(editorial.paintings['turner-01'].sections[0].paragraphs.at(-1),/Royal Academy in 1839.*later popularity/);
 });

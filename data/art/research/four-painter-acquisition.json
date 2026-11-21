@@ -1,0 +1,183 @@
+{
+  "checked": "2026-11-21",
+  "scope": "Twelve file records checked through Commons image metadata. Institution records and accessible scholarly accounts support identification; some direct Prado and Chicago pages restrict automated access. No universal copyright clearance or independent specialist review is claimed. O’Keeffe file records declare United States public-domain status; Met pages retain separate rights notices.",
+  "artists": [
+    "bosch",
+    "bruegel",
+    "velazquez",
+    "okeeffe"
+  ],
+  "images": [
+    {
+      "id": "bosch-01",
+      "title": "The Garden of Earthly Delights",
+      "width": 1920,
+      "height": 1093,
+      "file": "File:The Garden of earthly delights.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:The_Garden_of_earthly_delights.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/9/96/The_Garden_of_earthly_delights.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 621828
+    },
+    {
+      "id": "bosch-02",
+      "title": "The Haywain Triptych",
+      "width": 1920,
+      "height": 1346,
+      "file": "File:Bosch - Haywain Triptych (1512-1515).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Bosch_-_Haywain_Triptych_(1512-1515).jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Bosch_-_Haywain_Triptych_%281512-1515%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 579740
+    },
+    {
+      "id": "bosch-03",
+      "title": "Adoration of the Magi (Bosch, Madrid)",
+      "width": 1920,
+      "height": 1673,
+      "file": "File:Hieronymus Bosch - Triptych of the Adoration of the Magi - WGA2606.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Hieronymus_Bosch_-_Triptych_of_the_Adoration_of_the_Magi_-_WGA2606.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/2/21/Hieronymus_Bosch_-_Triptych_of_the_Adoration_of_the_Magi_-_WGA2606.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 719664
+    },
+    {
+      "id": "bruegel-01",
+      "title": "The Hunters in the Snow",
+      "width": 1920,
+      "height": 1366,
+      "file": "File:Pieter Bruegel the Elder - Hunters in the Snow (Winter) - Google Art Project.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_(Winter)_-_Google_Art_Project.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 662988
+    },
+    {
+      "id": "bruegel-02",
+      "title": "The Tower of Babel (Bruegel)",
+      "width": 1920,
+      "height": 1405,
+      "file": "File:Pieter Bruegel the Elder - The Tower of Babel (Vienna) - Google Art Project - edited.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project_-_edited.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 736458
+    },
+    {
+      "id": "bruegel-03",
+      "title": "The Peasant Wedding",
+      "width": 1920,
+      "height": 1327,
+      "file": "File:Pieter Bruegel the Elder - Peasant Wedding - Google Art Project 2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/7/70/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 615516
+    },
+    {
+      "id": "velazquez-01",
+      "title": "Las Meninas",
+      "width": 1920,
+      "height": 2210,
+      "file": "File:Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Las_Meninas,_by_Diego_Vel%C3%A1zquez,_from_Prado_in_Google_Earth.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 390818
+    },
+    {
+      "id": "velazquez-02",
+      "title": "Portrait of Juan de Pareja",
+      "width": 1920,
+      "height": 2231,
+      "file": "File:Retrato de Juan Pareja, by Diego Velázquez.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Retrato_de_Juan_Pareja,_by_Diego_Vel%C3%A1zquez.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/0/06/Retrato_de_Juan_Pareja%2C_by_Diego_Vel%C3%A1zquez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 606598
+    },
+    {
+      "id": "velazquez-03",
+      "title": "Las Hilanderas",
+      "width": 1920,
+      "height": 1324,
+      "file": "File:Velazquez-las hilanderas.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Velazquez-las_hilanderas.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Velazquez-las_hilanderas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "Public-domain historical artwork; faithful reproduction",
+      "checked": "2026-11-21",
+      "bytes": 812490
+    },
+    {
+      "id": "okeeffe-01",
+      "title": "Blue and Green Music",
+      "width": 642,
+      "height": 768,
+      "file": "File:Blue and Green Music by Georgia O'Keeffe, 1921.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Blue_and_Green_Music_by_Georgia_O%27Keeffe,_1921.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/8/84/Blue_and_Green_Music_by_Georgia_O%27Keeffe%2C_1921.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "United States; Commons public-domain designation is not a worldwide license",
+      "checked": "2026-11-21",
+      "bytes": 42084
+    },
+    {
+      "id": "okeeffe-02",
+      "title": "Black Iris (painting)",
+      "width": 1920,
+      "height": 2297,
+      "file": "File:Georgia O'Keeffe - Black Iris 1926 MET.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Georgia_O%27Keeffe_-_Black_Iris_1926_MET.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Georgia_O%27Keeffe_-_Black_Iris_1926_MET.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "United States; Commons public-domain designation is not a worldwide license",
+      "checked": "2026-11-21",
+      "bytes": 756316
+    },
+    {
+      "id": "okeeffe-03",
+      "title": "A Storm",
+      "width": 600,
+      "height": 458,
+      "file": "File:A Storm DT1394.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:A_Storm_DT1394.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/a/aa/A_Storm_DT1394.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "Public domain",
+      "territory": "United States; Commons public-domain designation is not a worldwide license",
+      "checked": "2026-11-21",
+      "bytes": 25814
+    }
+  ],
+  "substitutions": [
+    {
+      "artist": "okeeffe",
+      "insteadOf": [
+        "Cow’s Skull: Red, White, and Blue",
+        "Sky Above Clouds IV"
+      ],
+      "selected": [
+        "Blue and Green Music",
+        "Black Iris",
+        "A Storm"
+      ],
+      "reason": "Early-career comparison with locally prepared historical reproductions; A Storm is explicitly labeled pastel, not oil painting."
+    }
+  ]
+}

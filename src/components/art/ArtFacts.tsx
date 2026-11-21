@@ -29,7 +29,7 @@ export default function ArtFacts({id,kind}:{id:string;kind:'painters'|'paintings
  return <section id="facts" className="art-facts" aria-label={kind==='painters'?'Facts about the painter':'Facts about this painting'}>
   <header><p className="art-kicker">ANOTHER WAY INTO THE {kind==='painters'?'CAREER':'PAINTING'}</p><h2>Details that change the encounter.</h2><p>Choose a detail to explore. Each entry distinguishes historical context, visible evidence or an open question from our explanation of why it matters.</p></header>
   <div className="art-facts-grid">{entries.slice(0,3).map(f=><Entry key={f.id} fact={f} returnTo={returnTo}/>)}</div>
-  <details className="art-facts-more"><summary>More to discover · {entries.length-3} further entries</summary><div className="art-facts-grid">{entries.slice(3).map(f=><Entry key={f.id} fact={f} returnTo={returnTo}/>)}</div></details>
+  {entries.length>3&&<details className="art-facts-more"><summary>More to discover · {entries.length-3} further entries</summary><div className="art-facts-grid">{entries.slice(3).map(f=><Entry key={f.id} fact={f} returnTo={returnTo}/>)}</div></details>}
   <p className="art-small"><Link href="/study/art/sources">Sources, evidence standards & corrections →</Link> · The full study develops the argument behind these shorter encounters.</p>
  </section>;
 }

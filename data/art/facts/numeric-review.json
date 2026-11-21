@@ -1,6 +1,6 @@
 {
-  "reviewed": "2026-11-20",
-  "scope": "Review of numerals in the 205 fact bodies. This is a bounded documentary comparison, not independent specialist peer review or a certificate covering every interpretive claim. Numeric titles and approximate dates are distinguished from dates of execution.",
+  "reviewed": "2026-11-21",
+  "scope": "Bounded review of numeral-bearing fact bodies in the expanded collection. Dates of making, publication and later events are distinguished. This is editorial comparison, not specialist peer review.",
   "records": [
     {
       "fact": "caravaggio-fact-4",
@@ -494,6 +494,42 @@
       "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
       "result": "Retained",
       "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "okeeffe-fact-1",
+      "subject": "okeeffe",
+      "kind": "painters",
+      "numbers": [
+        "1915–16"
+      ],
+      "reference": "https://www.metmuseum.org/essays/georgia-okeeffe-1887-1986",
+      "method": "Compared the date and its event type with the cited institutional text.",
+      "result": "Retained",
+      "limit": "This review supports only the numerical claim in this entry; it does not authenticate every interpretation."
+    },
+    {
+      "fact": "velazquez-02-fact-1",
+      "subject": "velazquez-02",
+      "kind": "paintings",
+      "numbers": [
+        "1650"
+      ],
+      "reference": "https://www.metmuseum.org/art/collection/search/437869",
+      "method": "Compared the date and its event type with the cited institutional text.",
+      "result": "Retained",
+      "limit": "This review supports only the numerical claim in this entry; it does not authenticate every interpretation."
+    },
+    {
+      "fact": "okeeffe-03-fact-1",
+      "subject": "okeeffe-03",
+      "kind": "paintings",
+      "numbers": [
+        "1922"
+      ],
+      "reference": "https://www.metmuseum.org/art/collection/search/482299",
+      "method": "Compared the date and its event type with the cited institutional text.",
+      "result": "Retained",
+      "limit": "This review supports only the numerical claim in this entry; it does not authenticate every interpretation."
     }
   ]
 }

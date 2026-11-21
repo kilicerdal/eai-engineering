@@ -1,0 +1,122 @@
+{
+  "scope": "All 13 current changed-text flags were examined through primary institutional pages or an attempted retrieval. Ten have bounded readable-page checks; three remain access-limited. Original hash and access flags are retained. No new image permissions are inferred.",
+  "records": [
+    {
+      "url": "https://www.boijmans.nl/en/collection/artworks/58186/Study-for-the-Kneeling-Infant-St-John-in-%2527The-Alba-Madonna%2527",
+      "title": "A kneeling child within a circular composition",
+      "checked": "2026-11-21",
+      "result": "Reviewed object entry and Albert Elen’s catalogue discussion",
+      "scope": "The object is metalpoint on white prepared paper, about 1509–1511; I 110 (PK). A proposed lost-book connection is qualified, not established.",
+      "sourceLayer": "Later institutional catalogue scholarship; not Raphael’s own testimony.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.guggenheim.org/artwork/artist/salvador-dali",
+      "title": "Dalí · precision in the service of uncertainty",
+      "checked": "2026-11-21",
+      "result": "Still needs manual access",
+      "scope": "The retrieved response is a JavaScript/cookie screen. No artist-specific claims were verified from it.",
+      "sourceLayer": "Access result only; keep the editorial flag.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.museepicassoparis.fr/en/image-rights/",
+      "title": "Image reproduction guidance",
+      "checked": "2026-11-21",
+      "result": "Reviewed current image-permission guidance",
+      "scope": "Educational use still requires the relevant permission process. No additional Picasso images were hosted.",
+      "sourceLayer": "Rights guidance, not historical evidence about the paintings.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/",
+      "title": "Metamorphosis of Narcissus",
+      "checked": "2026-11-21",
+      "result": "Reviewed catalogue raisonné entry P 455",
+      "scope": "The record identifies Metamorphosis of Narcissus as 1937, oil on canvas, and retains its Edward James provenance.",
+      "sourceLayer": "Modern catalogue record; dated signature is reported by the catalogue, not inspected independently.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://cenacolovinciano.org/en/",
+      "title": "Museo del Cenacolo Vinciano",
+      "checked": "2026-11-21",
+      "result": "Reviewed museum homepage and works index",
+      "scope": "The homepage mixes visitor notices with collection information. Use the works index for collection context; neither establishes every technical claim.",
+      "sourceLayer": "Institutional navigation, not a commission document or conservation report.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus",
+      "title": "National Gallery · Supper at Emmaus",
+      "checked": "2026-11-21",
+      "result": "Reviewed exact painting record",
+      "scope": "The Supper at Emmaus is NG172, 1601; The Fighting Temeraire is NG524, 1839. The latter’s imagined voyage is distinguished from eyewitness reporting.",
+      "sourceLayer": "Modern curatorial explanation; symbolic readings are institutional interpretation.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-the-fighting-temeraire",
+      "title": "National Gallery · The Fighting Temeraire",
+      "checked": "2026-11-21",
+      "result": "Reviewed exact painting record",
+      "scope": "The Supper at Emmaus is NG172, 1601; The Fighting Temeraire is NG524, 1839. The latter’s imagined voyage is distinguished from eyewitness reporting.",
+      "sourceLayer": "Modern curatorial explanation; symbolic readings are institutional interpretation.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.guggenheim.org/artwork/artist/jackson-pollock/",
+      "title": "Pollock · a field made through decisions",
+      "checked": "2026-11-21",
+      "result": "Still needs manual access",
+      "scope": "The retrieved response is a JavaScript/cookie screen. No artist-specific claims were verified from it.",
+      "sourceLayer": "Access result only; keep the editorial flag.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.rct.uk/collection/stories/artemisia-gentileschi",
+      "title": "Royal Collection Trust · Artemisia Gentileschi and La Pittura",
+      "checked": "2026-11-21",
+      "result": "Reviewed redirect and institutional topic page",
+      "scope": "The former story URL now resolves to a topic hub; the linked Life and Art article is a more specific biographical reference.",
+      "sourceLayer": "Modern museum account; hub availability alone is not work-level evidence.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.nature.com/articles/s40494-022-00797-0",
+      "title": "The studio was not always red",
+      "checked": "2026-11-21",
+      "result": "Still needs manual access",
+      "scope": "The reference redirected to an inaccessible authorization response. Its substantive text was not checked.",
+      "sourceLayer": "Access result only; keep the editorial flag.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg",
+      "title": "The Two Fridas",
+      "checked": "2026-11-21",
+      "result": "Reviewed holding-museum supplied account",
+      "scope": "The Two Fridas is dated 1939. The MAM account records acquisition by INBA in 1947 and transfer to MAM in 1966.",
+      "sourceLayer": "Museum-supplied later account; interpretation of identity is not a direct quotation from Kahlo.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta/storie-centrali/creazione-di-adamo.html",
+      "title": "Vatican Museums · Creation of Adam",
+      "checked": "2026-11-21",
+      "result": "Reviewed exact work account",
+      "scope": "The Creation of Adam and School of Athens accounts remain accessible. Their figure identifications are attributed museum readings rather than surviving artist explanations.",
+      "sourceLayer": "Modern museum interpretation; biblical text cited in the Adam entry is a different source layer.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    },
+    {
+      "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello/stanza-della-segnatura/scuola-di-atene.html",
+      "title": "Vatican Museums · School of Athens",
+      "checked": "2026-11-21",
+      "result": "Reviewed exact work account",
+      "scope": "The Creation of Adam and School of Athens accounts remain accessible. Their figure identifications are attributed museum readings rather than surviving artist explanations.",
+      "sourceLayer": "Modern museum interpretation; biblical text cited in the Adam entry is a different source layer.",
+      "limit": "A bounded check of the current page, not a complete textual diff or independent attribution review. The automated changed-hash flag is retained."
+    }
+  ]
+}

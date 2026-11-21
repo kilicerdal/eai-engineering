@@ -3,14 +3,14 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const read=p=>JSON.parse(readFileSync(p,'utf8'));
 const facts=read('data/art/facts/collection.json'),editorial=read('data/art/editorial-v2.json');
-test('facts keep stable subject IDs and provide five distinct entries for 21 painters and 20 signature paintings',()=>{
- assert.equal(Object.keys(facts.painters).length,21);assert.equal(Object.keys(facts.paintings).length,20);
+test('facts keep stable subject IDs and provide retained five-entry studies and three-entry additions for 25 painters and 32 paintings',()=>{
+ assert.equal(Object.keys(facts.painters).length,25);assert.equal(Object.keys(facts.paintings).length,32);
  const ids=new Set(),bodies=new Set();let count=0;
- for(const kind of ['painters','paintings'])for(const [id,entries]of Object.entries(facts[kind])){assert.ok(editorial[kind][id],id);assert.equal(entries.length,5,id);for(const f of entries){assert.ok(!ids.has(f.id),f.id);ids.add(f.id);assert.ok(!bodies.has(f.text),f.id);bodies.add(f.text);assert.ok(f.id.startsWith(id+'-fact-'));count++;}}
- assert.equal(count,205);
+ for(const kind of ['painters','paintings'])for(const [id,entries]of Object.entries(facts[kind])){assert.ok(editorial[kind][id],id);assert.equal(entries.length,['bosch','bruegel','velazquez','okeeffe'].some(a=>id===a||id.startsWith(a+'-'))?3:5,id);for(const f of entries){assert.ok(!ids.has(f.id),f.id);ids.add(f.id);assert.ok(!bodies.has(f.text),f.id);bodies.add(f.text);assert.ok(f.id.startsWith(id+'-fact-'));count++;}}
+ assert.equal(count,253);
 });
 test('each entry separates evidence status, editorial significance and a retrievable source',()=>{
- for(const kind of ['painters','paintings'])for(const entries of Object.values(facts[kind]))for(const f of entries){assert.ok(['documented','observation','research-limit'].includes(f.kind));assert.ok(f.text.split(/\s+/).length>=25,f.id);assert.ok(f.why.length>55,f.id);assert.notEqual(f.text,f.why);assert.ok(f.source.title.length>8);const u=new URL(f.source.url);assert.equal(u.protocol,'https:');assert.ok(u.pathname!=='/',f.id);assert.equal(f.editorialReviewed,'2026-11-20');assert.match(f.reviewScope,/not a claim of new independent primary research/);assert.equal(f.checked,undefined);}
+ for(const kind of ['painters','paintings'])for(const entries of Object.values(facts[kind]))for(const f of entries){assert.ok(['documented','observation','research-limit'].includes(f.kind));assert.ok(f.text.split(/\s+/).length>=25,f.id);assert.ok(f.why.length>55,f.id);assert.notEqual(f.text,f.why);assert.ok(f.source.title.length>8);const u=new URL(f.source.url);assert.equal(u.protocol,'https:');assert.ok(u.pathname!=='/',f.id);assert.match(f.editorialReviewed,/^2026-11-(20|21)$/);assert.match(f.reviewScope,/not a claim of new independent primary research|not independent specialist authentication/);assert.equal(f.checked,undefined);}
 });
 test('the facts preserve historical distinctions rather than promoting legends to evidence',()=>{
  const text=id=>facts.paintings[id].map(f=>f.text+' '+f.why).join(' ');

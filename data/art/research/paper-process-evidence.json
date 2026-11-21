@@ -1,0 +1,72 @@
+[
+  {
+    "sheet": "leonardo-paper-2",
+    "title": "Revisions beneath a unified face",
+    "theme": "Revision and attribution",
+    "documented": "Carmen C. Bambach’s Met account identifies partly erased alternatives in the hair. She argues for Leonardo’s authorship using technical examination, against earlier doubts including Walter Vitzthum’s.",
+    "looking": "Look for competing directions near the crown, while accepting that the reproduction may not resolve the layers. A dark line alone does not prove greater pressure: material, reinforcement and photography also affect it.",
+    "limit": "The report of erased chalk comes from examination of the object. We have not digitally exposed an earlier state. The ink .T. on the reverse resembles a collection marking; resemblance is not certain identification of an owner.",
+    "source": "https://www.metmuseum.org/art/collection/search/337496",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "sheet": "michelangelo-paper-1",
+    "title": "An unrealized proposal, not an unfinished sketch",
+    "theme": "Presentation and changing commission",
+    "documented": "The Met presents this as a demonstration drawing for the Julius II tomb, connecting precise construction with patron and workshop use. Its account attributes the early dating argument to Michael Hirst and notes Charles de Tolnay’s rejection of the attribution.",
+    "looking": "Compare the repeated niches and the presentation of figures with the smaller exploratory sheets nearby. Highly resolved representation does not guarantee that the building was executed.",
+    "limit": "The tomb installed in 1545 was a reduced project in a different church. This sheet is not a reliable picture of the monument as finally built, nor proof of every figure originally intended.",
+    "source": "https://www.metmuseum.org/art/collection/search/334655",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "sheet": "leonardo-paper-4",
+    "title": "A page becomes a stage plan",
+    "theme": "Engineering, annotation and viewpoint",
+    "documented": "The Met connects the reverse with the staging of La Danae in 1496. Names, spatial arrangements and notes give the page practical functions beyond the allegorical image on the front.",
+    "looking": "Switch to Back (verso). Compare plan-like relationships with indications of elevation: a shift in viewpoint can answer a design question rather than represent a new place.",
+    "limit": "A design records a proposal. It does not prove that every mechanism or position was built exactly as drawn; the two sides need not form one continuous narrative.",
+    "source": "https://www.metmuseum.org/art/collection/search/339130",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "sheet": "raphael-paper-1",
+    "title": "A design acquires another public",
+    "theme": "Drawing and print circulation",
+    "documented": "The Met discusses this Lucretia in relation to Raimondi’s engraving and a subsequent painting in the Courtauld collection. The painting follows the print; it is not simply the direct execution of this sheet.",
+    "looking": "Compare contour, orientation and the relation of gesture to empty space. Reproduction can carry a design beyond a single drawing while changing its scale and details.",
+    "limit": "The route from drawing to print to painting must not be shortened into a direct commission. Transfer evidence and later repairs also belong to different moments.",
+    "source": "https://www.metmuseum.org/art/collection/search/337075",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "sheet": "raphael-paper-2",
+    "title": "The missing stage matters",
+    "theme": "Study sequence and reverse",
+    "documented": "The Met connects this red-chalk composition to Madonna in the Meadow and discusses a final cartoon that has not survived. The reverse photograph records a different anatomical investigation.",
+    "looking": "Compare the main group’s spacing with the marginal arm studies, then switch sides. Separate a page’s physical adjacency from a demonstrated sequence of making.",
+    "limit": "A lost cartoon is an evidential gap, not an invitation to invent its appearance. The reverse is not automatically a rejected alternative to the front.",
+    "source": "https://www.metmuseum.org/art/collection/search/340577",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "sheet": "degas-paper-1",
+    "title": "A study between other decisions",
+    "theme": "Working drawing and transfer",
+    "documented": "The Met identifies the violinist as an intermediate study for The Dance Lesson. Squaring served a transfer-related purpose; the finished work is pastel on joined papers.",
+    "looking": "Follow how the grid intersects the figure. Compare the studied bodily action with the complete scene through the documented-connections link.",
+    "limit": "An intermediate position in a documented project does not reveal the first mark or exact point when Degas decided to stop. Loose passages should not be called abandoned without evidence.",
+    "source": "https://www.metmuseum.org/art/collection/search/333807",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "sheet": "degas-paper-2",
+    "title": "The contour remains negotiable",
+    "theme": "Worked-over passages and variants",
+    "documented": "The Met places this tracing-paper study within a group related to Dancers at the Barre in the Phillips Collection. The relationship involves variants rather than one securely reconstructed linear sequence.",
+    "looking": "Follow the repeated contour around the body and distinguish it from the surrounding support. Changes of gesture can be investigated without deciding which visible line came first.",
+    "limit": "The reproduction cannot measure pressure, reconstruct an erased pose or prove that a particular contour was the final one Degas accepted.",
+    "source": "https://www.metmuseum.org/art/collection/search/834320",
+    "reviewed": "2026-11-21"
+  }
+]

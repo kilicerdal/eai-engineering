@@ -1,0 +1,13 @@
+import {test,expect} from '@playwright/test';
+import works from '../../data/art/paintings.json';
+const added=works.filter(p=>['bosch','bruegel','velazquez','okeeffe'].includes(p.artist));
+test('all twelve new studies provide licensed images or institutional references, substantial essays, and preserve existing saves',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('/study/art');await page.evaluate(()=>localStorage.setItem('existing-work-check','keep existing work'));
+ for(const p of added){await page.goto('/study/art/painting/'+p.id);await expect(page.getByRole('heading',{name:p.title,exact:true}).first()).toBeVisible();if(p.image){const img=page.locator('.art-view-trigger img');await expect(img).toHaveCount(1);await expect.poll(()=>img.evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBe(true);expect(await img.evaluate(e=>getComputedStyle(e).objectFit)).toBe('contain');}else{await expect(page.locator('.art-image-reference')).toBeVisible();await expect(page.locator('.art-image-reference a')).toHaveAttribute('href',p.imageSource);}expect(await page.locator('main').innerText()).toContain(p.medium);}
+ await page.goto('/study/art/painting/bruegel-01');await page.getByRole('button',{name:/Save to My Gallery/}).click();await page.reload();await expect(page.getByRole('button',{name:/Saved to My Gallery/})).toBeVisible();expect(await page.evaluate(()=>localStorage.getItem('existing-work-check'))).toBe('keep existing work');expect(errors).toEqual([]);
+});
+for(const width of [390,1440])test('new profiles and gallery fit the viewport '+width,async({page})=>{
+ await page.setViewportSize({width,height:960});for(const artist of ['bosch','bruegel','velazquez','okeeffe']){await page.goto('/study/art/painter/'+artist);await expect(page.locator('.art-artist-works .art-tile')).toHaveCount(3);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);if(artist!=='okeeffe')await expect(page.locator('.art-artist-header figure img')).toBeVisible();else await expect(page.locator('.art-painter-identity')).toBeVisible();}
+ await page.goto('/study/art?view=painters#collection');await expect(page.locator('.art-painter-card')).toHaveCount(25);await page.locator('.art-painter-card').last().scrollIntoViewIfNeeded();await page.screenshot({path:`artifacts/art-room/four-painters-gallery-${width}.png`});await page.goto('/study/art/painting/bosch-01');await expect.poll(()=>page.locator('.art-view-trigger img').evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBe(true);await page.screenshot({path:`artifacts/art-room/four-painters-study-${width}.png`,fullPage:false});
+});

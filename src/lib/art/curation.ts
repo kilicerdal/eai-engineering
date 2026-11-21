@@ -1,7 +1,7 @@
 import 'server-only';
 import {collectionStudies} from './collection-studies';
 import detailImages from '../../../data/art/detail-images.json';
-export type DetailImage={image:string;width:number;height:number;bytes:number;source:string;rights:string;licenseUrl:string};
+export type DetailImage={caption?:string;image:string;width:number;height:number;bytes:number;source:string;rights:string;licenseUrl:string};
 export const artDetailImages=detailImages as Record<string,DetailImage>;
 export type ArtAnnotation={x:number;y:number;title:string;text:string};
 export const flagshipIds=['leonardo-01','leonardo-02','rembrandt-01','vermeer-01','van-gogh-01',...Object.keys(collectionStudies)];

@@ -4466,5 +4466,512 @@
     "checked": "2026-11-20",
     "contentNote": "",
     "imageStatus": "reference-only"
+  },
+  {
+    "id": "bosch-01",
+    "artist": "bosch",
+    "index": 1,
+    "title": "The Garden of Earthly Delights",
+    "date": "1490–1500",
+    "era": "renaissance",
+    "medium": "Oil and grisaille on oak panels",
+    "location": "Museo Nacional del Prado, Madrid",
+    "dimensions": "Open triptych: approximately 185.8 × 325.5 cm; measurements exclude framing",
+    "image": "/images/art/bosch-01.webp",
+    "thumbnail": "/images/art/bosch-01-thumb.webp",
+    "width": 1800,
+    "height": 1025,
+    "credit": "Hieronymus Bosch · Museo Nacional del Prado, Madrid · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:The_Garden_of_earthly_delights.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:The_Garden_of_earthly_delights.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/The_Garden_of_earthly_delights.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:The Garden of earthly delights.jpg",
+    "alt": "The Garden of Earthly Delights by Hieronymus Bosch. Begin with the movement from left to right.",
+    "story": "A world of pleasure becomes a problem of judgment. Bosch makes the spectator move between fascination with individual inventions and anxiety about the larger sequence that contains them.",
+    "how": "Begin with the movement from left to right. A relatively sparse garden gives way to an immense, densely populated middle field, then to a dark landscape of punishment. The central panel repeatedly draws the eye away from any stable protagonist. Pale bodies, oversized fruit, birds and translucent enclosures create local episodes that appear connected by movement rather than by a single action. Compare the size of a person with the object beside them: altered scale is one of the means by which ordinary recognition becomes unreliable.",
+    "details": [
+      "Begin with the movement from left to right.",
+      "Choose a small group in the middle panel and follow its contours before assigning a symbolic meaning.",
+      "The juxtaposition of creation, pleasure and punishment supports a moral reading."
+    ],
+    "question": "How does the meaning of a delightful detail change when you read it within the whole triptych?",
+    "sources": [
+      {
+        "title": "Museo Nacional del Prado, Madrid · object record",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-garden-of-earthly-delights-triptych/02388242-6d6a-4e9e-a992-e1311eab3609"
+      },
+      {
+        "title": "National Gallery · Hieronymus Bosch",
+        "url": "https://www.nationalgallery.org.uk/artists/hieronymus-bosch"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": "Includes nudity and imagined scenes of punishment and violence."
+  },
+  {
+    "id": "bosch-02",
+    "artist": "bosch",
+    "index": 2,
+    "title": "The Haywain Triptych",
+    "date": "1512–1515",
+    "era": "renaissance",
+    "medium": "Oil on oak panels",
+    "location": "Museo Nacional del Prado, Madrid",
+    "dimensions": "Open triptych: approximately 135 × 200 cm; see the institution for individual panel dimensions",
+    "image": "/images/art/bosch-02.webp",
+    "thumbnail": "/images/art/bosch-02-thumb.webp",
+    "width": 1800,
+    "height": 1262,
+    "credit": "Hieronymus Bosch · Museo Nacional del Prado, Madrid · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Bosch_-_Haywain_Triptych_(1512-1515).jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Bosch_-_Haywain_Triptych_(1512-1515).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Bosch_-_Haywain_Triptych_%281512-1515%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Bosch - Haywain Triptych (1512-1515).jpg",
+    "alt": "The Haywain Triptych by Hieronymus Bosch. The great pile occupies a commanding position, while surrounding bodies reach, struggle and follow.",
+    "story": "A load of hay becomes a structure of desire. The remarkable question is not simply what people want, but how pursuit of the same object makes a society move together toward danger.",
+    "how": "The great pile occupies a commanding position, while surrounding bodies reach, struggle and follow. Rather than organizing the crowd through a single face, Bosch makes the object itself coordinate attention. Trace the procession’s direction across the central panel and into the right wing. The image asks the viewer to see more than its figures appear to notice. Their local actions concern possession; the wider structure concerns destination. That difference between a participant’s field of attention and a spectator’s overview gives the painting much of its critical force.",
+    "details": [
+      "The great pile occupies a commanding position, while surrounding bodies reach, struggle and follow.",
+      "Look at the varieties of clothing, posture and social position gathered around the procession.",
+      "A moral allegory makes an argument through invented relations."
+    ],
+    "question": "Who sees where the cart is going, and who can see only the hay?",
+    "sources": [
+      {
+        "title": "Museo Nacional del Prado, Madrid · object record",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-haywain-triptych/7673843a-d2b6-497a-ac80-16242b36c3ce"
+      },
+      {
+        "title": "National Gallery · Hieronymus Bosch",
+        "url": "https://www.nationalgallery.org.uk/artists/hieronymus-bosch"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": "Includes violent conflict, nudity and imagined punishment."
+  },
+  {
+    "id": "bosch-03",
+    "artist": "bosch",
+    "index": 3,
+    "title": "The Adoration of the Magi Triptych",
+    "date": "About 1494",
+    "era": "renaissance",
+    "medium": "Oil on oak panels",
+    "location": "Museo Nacional del Prado, Madrid",
+    "dimensions": "Approximately 138 × 144 cm open; panel measurements vary",
+    "image": "/images/art/bosch-03.webp",
+    "thumbnail": "/images/art/bosch-03-thumb.webp",
+    "width": 1800,
+    "height": 1568,
+    "credit": "Hieronymus Bosch · Museo Nacional del Prado, Madrid · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Hieronymus_Bosch_-_Triptych_of_the_Adoration_of_the_Magi_-_WGA2606.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Hieronymus_Bosch_-_Triptych_of_the_Adoration_of_the_Magi_-_WGA2606.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Hieronymus_Bosch_-_Triptych_of_the_Adoration_of_the_Magi_-_WGA2606.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Hieronymus Bosch - Triptych of the Adoration of the Magi - WGA2606.jpg",
+    "alt": "The Adoration of the Magi Triptych by Hieronymus Bosch. Begin with the kings’ gifts, the arrangement of their bodies and the seated Virgin and Child.",
+    "story": "A familiar sacred encounter unfolds inside an unsettled world. Bosch places ceremonious attention, donors, spectators and troubling marginal figures within one continuous landscape.",
+    "how": "Begin with the kings’ gifts, the arrangement of their bodies and the seated Virgin and Child. The central meeting gathers attention into a relatively legible devotional episode. Richly differentiated fabrics and objects give the act of offering a material presence. The building around the group is unstable and incomplete, however, so the scene does not acquire the security of a closed ceremonial chamber. Compare the foreground encounter with the space behind it. The sacred event takes place within a world whose boundaries are unusually permeable.",
+    "details": [
+      "Begin with the kings’ gifts, the arrangement of their bodies and the seated Virgin and Child.",
+      "People peer, lean and gather around the shelter rather than all taking part in the same manner.",
+      "Some marginal figures have generated elaborate explanations, including readings that connect them with evil or false belief."
+    ],
+    "question": "Which figures participate in the encounter, and which make its surroundings feel uncertain?",
+    "sources": [
+      {
+        "title": "Museo Nacional del Prado, Madrid · object record",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-adoration-of-the-magi-triptych/666788cc-c522-421b-83f0-5ad84b9377f7"
+      },
+      {
+        "title": "National Gallery · Hieronymus Bosch",
+        "url": "https://www.nationalgallery.org.uk/artists/hieronymus-bosch"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": ""
+  },
+  {
+    "id": "bruegel-01",
+    "artist": "bruegel",
+    "index": 1,
+    "title": "Hunters in the Snow",
+    "date": "1565",
+    "era": "renaissance",
+    "medium": "Oil on oak panel",
+    "location": "Kunsthistorisches Museum, Vienna",
+    "dimensions": "116.3 × 162.5 cm",
+    "image": "/images/art/bruegel-01.webp",
+    "thumbnail": "/images/art/bruegel-01-thumb.webp",
+    "width": 1800,
+    "height": 1281,
+    "credit": "Pieter Bruegel the Elder · Kunsthistorisches Museum, Vienna · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_(Winter)_-_Google_Art_Project.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_(Winter)_-_Google_Art_Project.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Pieter Bruegel the Elder - Hunters in the Snow (Winter) - Google Art Project.jpg",
+    "alt": "Hunters in the Snow by Pieter Bruegel the Elder. The dark hunters and dogs enter from the left foreground, moving down a snowy slope.",
+    "story": "Winter is organized as a lived environment rather than an empty spectacle. The returning hunters, tiny skaters and wide valley offer different scales of effort, leisure and dependence.",
+    "how": "The dark hunters and dogs enter from the left foreground, moving down a snowy slope. Their bodies and the bare trees establish strong accents against the pale ground. Follow the slope toward the inhabited valley, where roads, roofs and frozen surfaces distribute attention across a much larger space. The eye moves from the bodily weight of the foreground to the apparent lightness of distant activities. That transition makes the landscape feel extensive without making its people disappear from its meaning.",
+    "details": [
+      "The dark hunters and dogs enter from the left foreground, moving down a snowy slope.",
+      "The returning group does not appear triumphant.",
+      "The image feels coherent because its routes, color contrasts and repeated forms hold together, not because every feature necessarily records one identifiable viewpoint."
+    ],
+    "question": "How does the descent from the hunters into the valley change your sense of winter?",
+    "sources": [
+      {
+        "title": "Kunsthistorisches Museum, Vienna · object record",
+        "url": "https://www.bruegel2018.at/en/the-hunters-in-the-snow/"
+      },
+      {
+        "title": "KHM · Bruegel exhibition research",
+        "url": "https://www.bruegel2018.at/en/"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": ""
+  },
+  {
+    "id": "bruegel-02",
+    "artist": "bruegel",
+    "index": 2,
+    "title": "The Tower of Babel (Vienna version)",
+    "date": "1563",
+    "era": "renaissance",
+    "medium": "Oil on oak panel",
+    "location": "Kunsthistorisches Museum, Vienna",
+    "dimensions": "114 × 155 cm",
+    "image": "/images/art/bruegel-02.webp",
+    "thumbnail": "/images/art/bruegel-02-thumb.webp",
+    "width": 1800,
+    "height": 1317,
+    "credit": "Pieter Bruegel the Elder · Kunsthistorisches Museum, Vienna · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project_-_edited.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project_-_edited.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Pieter Bruegel the Elder - The Tower of Babel (Vienna) - Google Art Project - edited.jpg",
+    "alt": "The Tower of Babel (Vienna version) by Pieter Bruegel the Elder. The tower combines excavated mass with repeated arched structures.",
+    "story": "An unfinished tower becomes an image of organized ambition. Bruegel lets us admire construction while questioning the authority, scale and human coordination on which it depends.",
+    "how": "The tower combines excavated mass with repeated arched structures. Its immense turning form dominates a landscape of water, settlement and routes. At the lower left, a small ceremonial group introduces a scale of political authority distinct from the scale of the building. Compare the figures with one of the tower’s openings. Human bodies become tiny units within an organization they appear to command. That disparity is essential to the image’s grandeur and to the unease that grandeur can produce.",
+    "details": [
+      "The tower combines excavated mass with repeated arched structures.",
+      "Follow the scaffolding, ramps, work areas and groups distributed across the structure.",
+      "It is possible to admire the ingenuity while recognizing the narrative’s critique of overreaching ambition."
+    ],
+    "question": "Does the tower look like a triumph of cooperation or a project already carrying its failure?",
+    "sources": [
+      {
+        "title": "Kunsthistorisches Museum, Vienna · object record",
+        "url": "https://www.khm.at/en/objectdb/detail/323/"
+      },
+      {
+        "title": "KHM · Bruegel exhibition research",
+        "url": "https://www.bruegel2018.at/en/"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": ""
+  },
+  {
+    "id": "bruegel-03",
+    "artist": "bruegel",
+    "index": 3,
+    "title": "The Peasant Wedding",
+    "date": "About 1568",
+    "era": "renaissance",
+    "medium": "Oil on oak panel",
+    "location": "Kunsthistorisches Museum, Vienna",
+    "dimensions": "114 × 164 cm",
+    "image": "/images/art/bruegel-03.webp",
+    "thumbnail": "/images/art/bruegel-03-thumb.webp",
+    "width": 1800,
+    "height": 1244,
+    "credit": "Pieter Bruegel the Elder · Kunsthistorisches Museum, Vienna · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Pieter Bruegel the Elder - Peasant Wedding - Google Art Project 2.jpg",
+    "alt": "The Peasant Wedding by Pieter Bruegel the Elder. The long table angles into the crowded interior, while the foreground servers carry a broad tray loaded with bowls.",
+    "story": "A wedding feast is built from service, appetite and exchanged attention. Bruegel’s carefully arranged room makes ordinary collective life an ambitious subject for painting.",
+    "how": "The long table angles into the crowded interior, while the foreground servers carry a broad tray loaded with bowls. These large, legible shapes guide the spectator into a room full of smaller incidents. The bride’s relatively still presence contrasts with the active movement of food and people around her. Follow the tray’s diagonal and then the table’s recession. The picture’s apparent spontaneity depends on a disciplined organization of routes, pauses and overlapping bodies.",
+    "details": [
+      "The long table angles into the crowded interior, while the foreground servers carry a broad tray loaded with bowls.",
+      "The feast requires people to carry, pour, play and serve.",
+      "Viewers have read these peasant gatherings as humorous, critical, sympathetic or some combination of those attitudes."
+    ],
+    "question": "Who keeps the feast moving, and who receives most of the viewer’s attention?",
+    "sources": [
+      {
+        "title": "Kunsthistorisches Museum, Vienna · object record",
+        "url": "https://www.khm.at/en/objectdb/detail/330/"
+      },
+      {
+        "title": "KHM · Bruegel exhibition research",
+        "url": "https://www.khm.at/en/objectdb/detail/330/"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": ""
+  },
+  {
+    "id": "velazquez-01",
+    "artist": "velazquez",
+    "index": 1,
+    "title": "Las Meninas",
+    "date": "1656",
+    "era": "baroque",
+    "medium": "Oil on canvas",
+    "location": "Museo Nacional del Prado, Madrid",
+    "dimensions": "318 × 276 cm",
+    "image": "/images/art/velazquez-01.webp",
+    "thumbnail": "/images/art/velazquez-01-thumb.webp",
+    "width": 1564,
+    "height": 1800,
+    "credit": "Diego Velázquez · Museo Nacional del Prado, Madrid · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Las_Meninas,_by_Diego_Vel%C3%A1zquez,_from_Prado_in_Google_Earth.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Las_Meninas,_by_Diego_Vel%C3%A1zquez,_from_Prado_in_Google_Earth.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg",
+    "alt": "Las Meninas by Diego Velázquez. The light dress of the Infanta provides a powerful visual center, yet glances and positions draw attention outward.",
+    "story": "A royal portrait becomes a question about representation itself. Velázquez distributes presence among people, painted surfaces, a mirror and the place occupied by the spectator.",
+    "how": "The light dress of the Infanta provides a powerful visual center, yet glances and positions draw attention outward. The painter stands beside a large canvas whose working face is hidden from us. A bright doorway opens at the back. These elements establish different depths and different kinds of visibility. Follow the light from the foreground figure toward the distant opening. The room becomes a space that can be entered imaginatively, while the image also repeatedly reminds us that we cannot see everything inside it.",
+    "details": [
+      "The light dress of the Infanta provides a powerful visual center, yet glances and positions draw attention outward.",
+      "The small image of the king and queen at the rear is central to the work’s puzzle.",
+      "Edges and surfaces are not described with equal precision."
+    ],
+    "question": "Who is being portrayed, and where must the viewer stand for the scene to make sense?",
+    "sources": [
+      {
+        "title": "Museo Nacional del Prado, Madrid · object record",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f"
+      },
+      {
+        "title": "National Gallery · Diego Velázquez",
+        "url": "https://www.nationalgallery.org.uk/artists/diego-velazquez"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": ""
+  },
+  {
+    "id": "velazquez-02",
+    "artist": "velazquez",
+    "index": 2,
+    "title": "Juan de Pareja",
+    "date": "1650",
+    "era": "baroque",
+    "medium": "Oil on canvas",
+    "location": "The Metropolitan Museum of Art, New York",
+    "dimensions": "81.3 × 69.9 cm",
+    "image": "/images/art/velazquez-02.webp",
+    "thumbnail": "/images/art/velazquez-02-thumb.webp",
+    "width": 1549,
+    "height": 1800,
+    "credit": "Diego Velázquez · The Metropolitan Museum of Art, New York · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Retrato_de_Juan_Pareja,_by_Diego_Vel%C3%A1zquez.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Retrato_de_Juan_Pareja,_by_Diego_Vel%C3%A1zquez.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/06/Retrato_de_Juan_Pareja%2C_by_Diego_Vel%C3%A1zquez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Retrato de Juan Pareja, by Diego Velázquez.jpg",
+    "alt": "Juan de Pareja by Diego Velázquez. Pareja’s torso and head do not share exactly the same direction.",
+    "story": "A commanding portrait demands attention to the person represented and to the unequal conditions under which the image was made. Visual presence and legal freedom must not be confused.",
+    "how": "Pareja’s torso and head do not share exactly the same direction. The turn produces a poised relationship between the sitter and the spectator, while the light collar separates the face from the dark clothing. The background offers little descriptive distraction. This concentration gives the head, gaze and stance unusual authority. Describe the interval between the shoulders and the edge of the canvas: the figure seems substantial without filling every part of the surface with emphatic detail.",
+    "details": [
+      "Pareja’s torso and head do not share exactly the same direction.",
+      "The direct gaze and compressed mouth can prompt descriptions such as proud, guarded or self-possessed.",
+      "Calling the portrait dignified can acknowledge its visual force, but it should not imply that dignity was bestowed by the painter."
+    ],
+    "question": "How can the portrait’s force be acknowledged without allowing it to conceal the sitter’s enslavement?",
+    "sources": [
+      {
+        "title": "The Metropolitan Museum of Art, New York · object record",
+        "url": "https://www.metmuseum.org/art/collection/search/437869"
+      },
+      {
+        "title": "National Gallery · Diego Velázquez",
+        "url": "https://www.nationalgallery.org.uk/artists/diego-velazquez"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": "The study discusses the sitter’s enslavement and unequal workshop conditions."
+  },
+  {
+    "id": "velazquez-03",
+    "artist": "velazquez",
+    "index": 3,
+    "title": "The Spinners, or The Fable of Arachne",
+    "date": "1655–1660",
+    "era": "baroque",
+    "medium": "Oil on canvas",
+    "location": "Museo Nacional del Prado, Madrid",
+    "dimensions": "Current canvas approximately 220 × 289 cm, including later additions",
+    "image": "/images/art/velazquez-03.webp",
+    "thumbnail": "/images/art/velazquez-03-thumb.webp",
+    "width": 1800,
+    "height": 1241,
+    "credit": "Diego Velázquez · Museo Nacional del Prado, Madrid · faithful reproduction via Wikimedia Commons",
+    "rights": "Public-domain artwork; faithful reproduction (Commons file record)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Velazquez-las_hilanderas.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Velazquez-las_hilanderas.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Velazquez-las_hilanderas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Velazquez-las hilanderas.jpg",
+    "alt": "The Spinners, or The Fable of Arachne by Diego Velázquez. The foreground figures occupy a darker space of activity.",
+    "story": "The labor of making textiles opens onto a contest about art. Velázquez connects working bodies, moving tools and a more distant image whose status changes how the foreground can be read.",
+    "how": "The foreground figures occupy a darker space of activity. Farther back, light and a raised setting make another group appear almost theatrical. These zones are connected but do not present themselves with the same clarity. Follow a figure’s bent posture toward an adjacent tool, then move into the illuminated distance. The viewer’s recognition changes during that movement. The painting makes a transition from making to showing available as a spatial experience, rather than explaining the transition through a written label.",
+    "details": [
+      "The foreground figures occupy a darker space of activity.",
+      "A spinning wheel and the workers’ actions invite the eye to perceive continuing movement.",
+      "The story of Arachne creates a context in which skill, rivalry and punishment become connected."
+    ],
+    "question": "How does the distant scene change the meaning of the work taking place in front of it?",
+    "sources": [
+      {
+        "title": "Museo Nacional del Prado, Madrid · object record",
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-spinners-or-the-fable-of-arachne/3d8e510d-2acf-4efb-af0c-8ffd665acd8d"
+      },
+      {
+        "title": "National Gallery · Diego Velázquez",
+        "url": "https://www.nationalgallery.org.uk/artists/diego-velazquez"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": ""
+  },
+  {
+    "id": "okeeffe-01",
+    "artist": "okeeffe",
+    "index": 1,
+    "title": "Blue and Green Music",
+    "date": "1919–1921",
+    "era": "modernism",
+    "medium": "Oil on canvas",
+    "location": "Art Institute of Chicago",
+    "dimensions": "58.4 × 48.3 cm",
+    "image": "",
+    "thumbnail": "",
+    "width": 642,
+    "height": 768,
+    "credit": "Georgia O’Keeffe · Art Institute of Chicago · faithful reproduction via Wikimedia Commons",
+    "rights": "Image reproduction permission not established for this site; earlier Commons public-domain claims were territorial, not a worldwide rights assurance.",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Blue_and_Green_Music_by_Georgia_O%27Keeffe,_1921.jpg",
+    "imageSource": "https://www.artic.edu/artworks/24306/blue-and-green-music",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Blue_and_Green_Music_by_Georgia_O%27Keeffe%2C_1921.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Blue and Green Music by Georgia O'Keeffe, 1921.jpg",
+    "alt": "Blue and Green Music by Georgia O’Keeffe. Follow the blue and green shapes as they rise, narrow, curl and overlap.",
+    "story": "Color and contour take on the work of rhythm. O’Keeffe makes a compact canvas feel expansive by setting sharp directional forms against shapes that fold, swell and turn.",
+    "how": "Follow the blue and green shapes as they rise, narrow, curl and overlap. A forceful diagonal can abruptly redirect a slower rounded passage. Dark accents create intervals that separate forms without making the whole arrangement feel inert. The composition asks the eye to change pace. These are observable relations in the image, while words such as musical, organic or atmospheric are ways of interpreting their effect. No single object needs to be identified before those relations become available.",
+    "details": [
+      "Follow the blue and green shapes as they rise, narrow, curl and overlap.",
+      "A hard boundary can make one color seem to cut into another.",
+      "The connection between color and music has attracted many artists, but it does not supply a universal key in which blue means one note and green another."
+    ],
+    "question": "What makes an arrangement of color feel rhythmic without illustrating a particular piece of music?",
+    "sources": [
+      {
+        "title": "Art Institute of Chicago · object record",
+        "url": "https://www.artic.edu/artworks/24306/blue-and-green-music"
+      },
+      {
+        "title": "The Met · Georgia O’Keeffe",
+        "url": "https://www.metmuseum.org/essays/georgia-okeeffe-1887-1986"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "okeeffe-02",
+    "artist": "okeeffe",
+    "index": 2,
+    "title": "Black Iris",
+    "date": "1926",
+    "era": "modernism",
+    "medium": "Oil on canvas",
+    "location": "The Metropolitan Museum of Art, New York",
+    "dimensions": "91.4 × 75.9 cm",
+    "image": "",
+    "thumbnail": "",
+    "width": 1920,
+    "height": 2297,
+    "credit": "Georgia O’Keeffe · The Metropolitan Museum of Art, New York · faithful reproduction via Wikimedia Commons",
+    "rights": "Image reproduction permission not established for this site; earlier Commons public-domain claims were territorial, not a worldwide rights assurance.",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Georgia_O%27Keeffe_-_Black_Iris_1926_MET.jpg",
+    "imageSource": "https://www.metmuseum.org/art/collection/search/489813",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Georgia_O%27Keeffe_-_Black_Iris_1926_MET.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:Georgia O'Keeffe - Black Iris 1926 MET.jpg",
+    "alt": "Black Iris by Georgia O’Keeffe. The flower extends beyond the ordinary scale of a flower held in the hand.",
+    "story": "Enlargement makes a familiar flower difficult to take for granted. O’Keeffe brings the spectator into a field where petals become boundaries, shadows become depth and recognition remains unsettled.",
+    "how": "The flower extends beyond the ordinary scale of a flower held in the hand. Light petals bend around a dark center, and close cropping prevents the viewer from standing back into a broader garden scene. Follow a pale edge toward a darker fold. Recognition of the subject remains possible, but spatial relationships become more demanding as the eye moves inward. The work makes attention to a small natural form feel like an encounter with an encompassing environment.",
+    "details": [
+      "The flower extends beyond the ordinary scale of a flower held in the hand.",
+      "The center appears to recede because light and dark passages turn around one another, not because the picture provides a conventional architectural perspective.",
+      "Sexual readings of O’Keeffe’s flower paintings have been influential, but they should not be presented as the only possible meaning or as the artist’s unqualified explanation."
+    ],
+    "question": "At what point does the flower become an arrangement of space and color rather than a small botanical object?",
+    "sources": [
+      {
+        "title": "The Metropolitan Museum of Art, New York · object record",
+        "url": "https://www.metmuseum.org/art/collection/search/489813"
+      },
+      {
+        "title": "The Met · Georgia O’Keeffe",
+        "url": "https://www.metmuseum.org/essays/georgia-okeeffe-1887-1986"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": "",
+    "imageStatus": "reference-only"
+  },
+  {
+    "id": "okeeffe-03",
+    "artist": "okeeffe",
+    "index": 3,
+    "title": "A Storm",
+    "date": "1922",
+    "era": "modernism",
+    "medium": "Pastel on paper, mounted on illustration board",
+    "location": "The Metropolitan Museum of Art, New York",
+    "dimensions": "47 × 62.2 cm",
+    "image": "",
+    "thumbnail": "",
+    "width": 600,
+    "height": 458,
+    "credit": "Georgia O’Keeffe · The Metropolitan Museum of Art, New York · faithful reproduction via Wikimedia Commons",
+    "rights": "Image reproduction permission not established for this site; earlier Commons public-domain claims were territorial, not a worldwide rights assurance.",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:A_Storm_DT1394.jpg",
+    "imageSource": "https://www.metmuseum.org/art/collection/search/482299",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/A_Storm_DT1394.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "commonsTitle": "File:A Storm DT1394.jpg",
+    "alt": "A Storm by Georgia O’Keeffe. The lightning makes a jagged, concentrated interruption in a broad dark field.",
+    "story": "A sharp bolt cuts through a soft field of darkness. In this pastel, O’Keeffe makes the contrast between abrupt event and surrounding atmosphere carry the experience of a storm.",
+    "how": "The lightning makes a jagged, concentrated interruption in a broad dark field. Its warmer color distinguishes it from the surrounding blues, so contrast works through temperature as well as brightness. Trace the bolt’s changes of direction before looking at the lower bands. The event is compressed into a narrow path while its setting extends laterally. That disparity makes the lightning feel decisive: a small amount of the surface appears capable of changing the atmosphere of the whole.",
+    "details": [
+      "The lightning makes a jagged, concentrated interruption in a broad dark field.",
+      "Pastel’s appearance can differ markedly from a smoothly glazed oil painting.",
+      "The lower areas introduce another kind of light, broader and less directional than the central bolt."
+    ],
+    "question": "How does the lightning feel sudden when the entire image is stationary?",
+    "sources": [
+      {
+        "title": "The Metropolitan Museum of Art, New York · object record",
+        "url": "https://www.metmuseum.org/art/collection/search/482299"
+      },
+      {
+        "title": "The Met · Georgia O’Keeffe",
+        "url": "https://www.metmuseum.org/essays/georgia-okeeffe-1887-1986"
+      }
+    ],
+    "checked": "2026-11-21",
+    "contentNote": "",
+    "imageStatus": "reference-only"
   }
 ]

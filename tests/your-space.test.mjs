@@ -28,3 +28,17 @@ test('a completed test or finished book alone does not create an unfinished Cont
  assert.equal(projectSavedWork(k=>records[k]??null,books,10).continueItem,null);
  assert.equal(projectSavedWork(()=>{throw Error('Blocked');},books,10).continueItem,null);
 });
+
+test('saved notes and bookmarks reopen exact validated source coordinates without rewriting records',()=>{
+ const raw=JSON.stringify({version:1,notes:[{id:'n1',bookId:'11',section:2,paragraph:'p14',quote:'The passage',text:'My thought',createdAt:4}],bookmarks:[{id:'b1',bookId:'11',section:3,paragraph:'p20',createdAt:5}]});
+ const result=projectSavedWork(k=>k==='dai-reading-library-v1'?raw:null,books,10);
+ assert.equal(result.notes.find(n=>n.id==='note-n1').href,'/study/reading/11?section=2&paragraph=p14');
+ assert.equal(result.notes.find(n=>n.id==='mark-b1').href,'/study/reading/11?section=3&paragraph=p20');
+ assert.equal(JSON.parse(raw).notes[0].text,'My thought');
+});
+test('invalid source coordinates fall back to the book without emitting unsafe query data',()=>{
+ const raw=JSON.stringify({version:1,notes:[{id:'n1',bookId:'11',section:-2,paragraph:'javascript:bad',createdAt:4},{id:'n2',bookId:'11',section:2,paragraph:'<script>',createdAt:5}]});
+ const result=projectSavedWork(k=>k==='dai-reading-library-v1'?raw:null,books,10);
+ assert.equal(result.notes.find(n=>n.id==='note-n1').href,'/study/reading/11');
+ assert.equal(result.notes.find(n=>n.id==='note-n2').href,'/study/reading/11?section=2');
+});

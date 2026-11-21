@@ -1,5 +1,6 @@
 "use client";
 
+import type {ReactNode} from "react";
 import QuietChapter from "@/components/QuietChapter";
 import StudyGuide from "@/components/StudyGuide";
 import { accountConfigured } from "@/lib/study-account";
@@ -54,7 +55,7 @@ const subjects = [
 
 ];
 
-export default function StudyPage() {
+export default function StudyPage({entrance}:{entrance:ReactNode}) {
   return (
     <main className="studio-home">
       <section className="studio-hero" aria-labelledby="studio-title">
@@ -71,10 +72,11 @@ export default function StudyPage() {
         </div>
         <a href="#learning-rooms" className="studio-hero-scroll">Choose a room <span aria-hidden="true">↓</span></a>
       </section>
+      {entrance}
       <nav id="learning-rooms" tabIndex={-1} className="quiet-rooms" aria-label="Choose a learning room">{[
 ['AI Tutor','Work through one question.','/study/tutor'],['Reading Room','Find a book and settle in.','/study/reading'],['Curiosity Room','Discover something surprising.','/study/curiosity'],['Art Room','A painting, a story, a new way to see.','/study/art'],['Certification Studio','Practice an engineering decision.','/study/certifications'],['Your materials','Study from your own sources.','/study/materials'],['Writing Studio','Give an idea your own words.','/study/writing']
 ].map(([name,detail,href])=><Link key={href} href={href}><strong>{name} <span aria-hidden="true">↗</span></strong><span>{detail}</span></Link>)}</nav>
-      <QuietChapter title="Your learning and plans" description="Return to sessions, shape a plan, or prepare for an exam"><LearningHome/><GoalLearning/><ExamPreparation/></QuietChapter>
+      <QuietChapter title="Your learning and plans" description="Sessions, plans and exam preparation"><LearningHome/><GoalLearning/><ExamPreparation/></QuietChapter>
       <QuietChapter title="Ask your Tutor here" description="The full embedded workspace, including your existing sessions"><SharedAIChat/></QuietChapter>
       <QuietChapter title="More ways to learn" description="Your library, reading resources and subject shortcuts"><LearningResources/>
       <section id="explore" className="studio-explore">
