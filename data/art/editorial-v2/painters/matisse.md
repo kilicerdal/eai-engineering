@@ -1,11 +1,13 @@
 # Matisse · making space with color
 
-> The room seems to surrender to red, yet its contents remain distinct. Matisse’s economy is demanding rather than effortless: a narrow unpainted interval can do the work that a modeled shadow or a firm perspective construction might do elsewhere.
+> Matisse reassigned to color and contour much of the work usually carried by modeling and perspective. A red studio and a ring of dancers test different consequences of that decision: how separate objects inhabit a field, and how joined bodies make a continuous movement.
 
-@source The Red Studio · collection record | https://www.moma.org/collection/works/78389 | Object records for the two selected works; broader discussion is an editorial synthesis.
-@source Dance (I) · collection record | https://www.moma.org/collection/works/79124/ | Object records for the two selected works; broader discussion is an editorial synthesis.
+@source The Red Studio · collection record|https://www.moma.org/collection/works/78389|Object records for the two selected works; broader discussion is an editorial synthesis.
 
-@source Career context · institutional account | https://www.moma.org/interactives/exhibitions/2014/matisse/about-matisse.html | Professional circumstances and reception; the paired reading remains editorial analysis.
+@source Dance (I) · collection record|https://www.moma.org/collection/works/79124/|Object records for the two selected works; broader discussion is an editorial synthesis.
+
+@source Career context · institutional account|https://www.moma.org/interactives/exhibitions/2014/matisse/about-matisse.html|Professional circumstances and reception; the paired reading remains editorial analysis.
+
 ## A professional practice | history | 1,2
 
 Matisse made color an architectural force. A field of red can join floor and wall; a green slope can support a ring of bodies while denying the reassuring depth of an ordinary landscape. These effects are often described as simplification. The word is useful only if it does not suggest that the resulting relationships were easy or inevitable. Removing descriptive detail puts greater pressure on every surviving contour, interval and expanse of color.
@@ -35,7 +37,6 @@ A sophisticated account of Matisse should also allow ease and friction to coexis
 ## A first encounter worth extending | analysis | 1,2
 
 Begin by drawing an imaginary route around each composition. Which shape initiates the movement, which sustains it and where does it hesitate? In the studio, a represented artwork may arrest the eye within the red field. In the dance, a hand or a foot may put the circle’s momentum under pressure. These are concrete points at which an account of harmony can acquire detail. They also help distinguish a pleasurable first response from a developed explanation. The initial pleasure remains valuable; close looking gives the reader words for some of the decisions through which that pleasure has been constructed.
-
 
 ## Professional circumstances and public identity | history | 3
 

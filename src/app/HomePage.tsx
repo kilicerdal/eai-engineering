@@ -1,4 +1,5 @@
 "use client";
+import BrandWordmark from "@/components/BrandWordmark";
 import QuietChapter from "@/components/QuietChapter";
 import ShortCaseResume from '@/components/ShortCaseResume';
 
@@ -61,7 +62,7 @@ export default function Home() {
  return <main className="threshold" id="top">
   <a href="#hero-title" className="atlas-skip-link">Skip to main content</a>
   <header className="atlas-header">
-   <a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a>
+   <a className="atlas-brand" href="#top"><BrandWordmark/></a>
    <span className="atlas-chapter">THE THRESHOLD</span>
    <button className="atlas-menu" aria-expanded={menuOpen} aria-controls="atlas-nav" onKeyDown={e => {if(e.key === "Escape") setMenuOpen(false); else if(e.key === "ArrowDown"){e.preventDefault();setMenuOpen(true);requestAnimationFrame(()=>document.querySelector<HTMLAnchorElement>("#atlas-nav a")?.focus());}}} onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? "−" : "+"}</button>
    <nav id="atlas-nav" className={menuOpen ? "is-open" : ""} aria-label="Main navigation" onKeyDown={e=>{if(e.key === "Escape"){setMenuOpen(false);document.querySelector<HTMLButtonElement>(".atlas-menu")?.focus();}}} onClick={focusHomeSection}>
@@ -109,6 +110,6 @@ export default function Home() {
   <AIPhilosophy />
 </QuietChapter>
   <HeritageRow scene="hegra-knowledge" caption="Hegra · A future of knowledge within the earth" reverse><ContactDesk /></HeritageRow>
-  <div id="artwork-footer" className="artwork-footer"><HeritageRow scene="room-that-remembers" caption="The Room That Remembers · Art becomes a place for reflection" imageWidth={1774} imageHeight={887}><footer className="atlas-footer"><a className="atlas-brand" href="#top"><span>eAI</span><small>Intelligence Engineered</small></a><nav className="footer-destinations" aria-label="Footer navigation"><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">GitHub ↗</a><Link href="/study">Learning Studio ↗</Link><Link href="/study/privacy">Learning privacy</Link><Link href="/privacy">Website privacy</Link></nav><small>© 2026 eAI · Erdal Kilic</small></footer></HeritageRow></div>
+  <div id="artwork-footer" className="artwork-footer"><HeritageRow scene="room-that-remembers" caption="The Room That Remembers · Art becomes a place for reflection" imageWidth={1774} imageHeight={887}><footer className="atlas-footer"><a className="atlas-brand" href="#top"><BrandWordmark/></a><nav className="footer-destinations" aria-label="Footer navigation"><a href="https://github.com/kilicerdal" target="_blank" rel="noreferrer">GitHub ↗</a><Link href="/study">Learning Studio ↗</Link><Link href="/study/privacy">Learning privacy</Link><Link href="/privacy">Website privacy</Link></nav><small>© 2026 eAI · Erdal Kilic</small></footer></HeritageRow></div>
  </main>;
 }

@@ -2,7 +2,7 @@
   "painters": {
     "caravaggio": {
       "title": "Caravaggio: the event brought into our space",
-      "lead": "Caravaggio makes representation feel like an encounter. His figures occupy a physical world of weight, vulnerable flesh and concentrated gestures, while light turns a familiar room into a place of recognition or crisis.",
+      "lead": "Caravaggio’s commissions required religious narratives to work within particular chapels and private collections. He answered with bodies, gestures and concentrated light that bring the spectator close to an event while making access to its meaning uneven.",
       "sections": [
         {
           "id": "section-1",
@@ -103,14 +103,14 @@
           "scope": "The London painting, patronage and narrative construction"
         }
       ],
-      "words": 798,
+      "words": 801,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "cassatt": {
       "title": "Mary Cassatt: intimacy, observation and artistic authority",
-      "lead": "Cassatt transformed scenes of looking and care into exacting compositional problems. Her work connects private experience to the public conditions of modern art, while treating figures as participants in relationships rather than decorative subjects.",
+      "lead": "For Mary Cassatt, subjects of looking and care became a means of asserting artistic authority. The decisive issue is how a painter makes intimate activity public through viewpoint, pattern and the demanding conditions of exhibiting modern art.",
       "sections": [
         {
           "id": "section-1",
@@ -226,14 +226,14 @@
           "scope": "Composition, subject and Japanese-print context"
         }
       ],
-      "words": 906,
+      "words": 909,
       "minutes": 6,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "cezanne": {
       "title": "Paul Cézanne: perception made structurally uncertain",
-      "lead": "Cézanne’s paintings make looking feel like a process rather than an instant. Forms acquire weight through color, yet their edges and viewpoints can refuse the seamless agreement expected of conventional pictorial space.",
+      "lead": "Cézanne returned to familiar motifs because recognition did not settle the problem of painting them. A table, mountain or group of bathers could test whether color and local alignments would sustain a world without a seamless, fixed viewpoint.",
       "sections": [
         {
           "id": "section-1",
@@ -345,14 +345,14 @@
           "scope": "The broader bathers project; distinct from the Philadelphia canvas shown here"
         }
       ],
-      "words": 803,
+      "words": 809,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "dali": {
       "title": "Dalí · precision in the service of uncertainty",
-      "lead": "Dalí joined exact description to impossible relations. These studies follow a shift from the materially unstable objects of The Persistence of Memory to the double image of Metamorphosis of Narcissus: two ways of making the viewer’s confidence in recognition become the source of uncertainty.",
+      "lead": "Dalí made exact description carry events that exact description could not explain. The Persistence of Memory and Metamorphosis of Narcissus reveal distinct professional strategies: destabilizing familiar matter, then organizing a double image whose recognition must be negotiated.",
       "sections": [
         {
           "id": "section-1",
@@ -480,14 +480,14 @@
           "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 707,
+      "words": 700,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "gentileschi": {
       "title": "Artemisia Gentileschi: authority, ambition and the painted heroine",
-      "lead": "Artemisia Gentileschi made an international career in a profession that restricted women’s training and opportunities. Her achievement demands attention to narrative intelligence, patronage and artistic labor as well as to the violence recorded in her biography.",
+      "lead": "Artemisia Gentileschi pursued training, commissions and professional standing within institutions that constrained women’s access. Her narrative decisions and self-presentation deserve to be read as the work of an ambitious painter, alongside—and never wholly explained by—the violence documented in her life.",
       "sections": [
         {
           "id": "section-1",
@@ -614,14 +614,14 @@
           "scope": "Training, career and professional context"
         }
       ],
-      "words": 990,
+      "words": 994,
       "minutes": 6,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "goya": {
       "title": "Goya: images made within a world under pressure",
-      "lead": "Goya’s career holds courtly representation, popular entertainment and profoundly unsettling private images in the same field of inquiry. His importance lies partly in refusing to make power, reason or human behavior consistently reassuring.",
+      "lead": "Goya worked within the demands of court representation while also making images for very different audiences and settings. The tension between public commission, historical witness and private experiment gives his changing practice its difficulty; no single mood can describe the career.",
       "sections": [
         {
           "id": "section-1",
@@ -731,14 +731,14 @@
           "scope": "The Black Paintings, original wall setting and later history"
         }
       ],
-      "words": 847,
+      "words": 855,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "kahlo": {
       "title": "Kahlo · the self-portrait as a public construction",
-      "lead": "Kahlo constructed self-images in which clothing, bodily exposure, inscriptions and handled objects carry public meaning. These two studies consider different kinds of self-presentation without treating the paintings as transparent records of private feeling or reducing a complex practice to a single biographical event.",
+      "lead": "Kahlo made self-representation a constructed public act. Costume, exposed bodies and carried objects organize the two paintings studied here; their relation to biography requires evidence, while the painter’s arrangement of that evidence remains an artistic decision.",
       "sections": [
         {
           "id": "section-1",
@@ -873,14 +873,14 @@
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
         }
       ],
-      "words": 742,
+      "words": 735,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "kandinsky": {
       "title": "Wassily Kandinsky: the organization of an inner necessity",
-      "lead": "Kandinsky sought a painting whose expressive force did not depend on the description of recognizable objects. Color, line, interval and movement became subjects of inquiry, shaped by changing institutions and an ambitious theory of artistic experience.",
+      "lead": "Kandinsky’s move toward abstraction changed what could count as a pictorial subject. His writing and changing institutional settings provide a history for that ambition, while the paintings test how color, line and interval can establish relationships without describing a recognizable scene.",
       "sections": [
         {
           "id": "section-1",
@@ -997,14 +997,14 @@
           "scope": "The work record and the Bauhaus-period context"
         }
       ],
-      "words": 855,
+      "words": 860,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "leonardo": {
       "title": "Leonardo da Vinci: painting as an investigation",
-      "lead": "Leonardo’s importance lies in the relationship between observation and invention. His paintings make the visible world convincing while asking how bodies, emotions and natural processes can be understood through images.",
+      "lead": "Leonardo made painting answer questions that also occupied observation, drawing and invention. His portrait and refectory commissions demanded different negotiations between a convincing body, a coherent space and the unstable relation between an outward gesture and an inward state.",
       "sections": [
         {
           "id": "section-1",
@@ -1104,14 +1104,14 @@
           "scope": "Portrait practice and the Washington painting"
         }
       ],
-      "words": 841,
+      "words": 850,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "magritte": {
       "title": "Magritte · recognition becomes a question",
-      "lead": "Magritte made familiar depictions disturb the assumptions that normally support recognition. The painted eye and the painted pipe remain readily identifiable; their relations to sky and language make that very clarity difficult to explain. His work asks what a representation can offer, and what it cannot supply.",
+      "lead": "Magritte retained recognizable objects while making recognition itself unreliable. These studies of an eye and a pipe examine how image, language and context change what a representation can claim, without treating his paintings as riddles with one concealed answer.",
       "sections": [
         {
           "id": "section-1",
@@ -1246,14 +1246,14 @@
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
         }
       ],
-      "words": 746,
+      "words": 738,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "matisse": {
       "title": "Matisse · making space with color",
-      "lead": "Matisse made color and contour bear work conventionally assigned to modeling and perspective. The Red Studio and Dance (I) approach that problem through different structures—a room of separate objects and a ring of connected bodies—so that economy becomes a demanding form of pictorial construction.",
+      "lead": "Matisse reassigned to color and contour much of the work usually carried by modeling and perspective. A red studio and a ring of dancers test different consequences of that decision: how separate objects inhabit a field, and how joined bodies make a continuous movement.",
       "sections": [
         {
           "id": "section-1",
@@ -1400,7 +1400,7 @@
     },
     "michelangelo": {
       "title": "Michelangelo: the body as architecture and argument",
-      "lead": "Michelangelo gave the human figure a structural and intellectual force that reaches beyond anatomical description. His bodies bear weight, organize narratives and make theological questions physically immediate.",
+      "lead": "Michelangelo’s painted bodies were made for demanding architectural and patronal settings. Their scale, weight and turns organize theological narratives; studying the relationship between body and wall explains more than treating isolated figures as demonstrations of anatomical prowess.",
       "sections": [
         {
           "id": "section-1",
@@ -1500,14 +1500,14 @@
           "scope": "Doni patronage and the relationship between painting and sculpture"
         }
       ],
-      "words": 805,
+      "words": 815,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "monet": {
       "title": "Claude Monet: the sustained work of seeing",
-      "lead": "Monet’s paintings make changing appearance a serious artistic subject. What seems immediate was sustained by repeated observation, material decisions and a career-long negotiation between the individual canvas and the larger series.",
+      "lead": "Monet turned changing appearance into sustained professional work. Repeated observation and series practice complicate the idea of a single captured instant, while the distinction between a painting’s depicted weather and its actual making remains essential to understanding his achievement.",
       "sections": [
         {
           "id": "section-1",
@@ -1621,14 +1621,14 @@
           "scope": "The Orsay station painting and its industrial subject"
         }
       ],
-      "words": 837,
+      "words": 845,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "morisot": {
       "title": "Berthe Morisot: modern life from a situated viewpoint",
-      "lead": "Morisot’s light touch is a demanding form of construction. Her paintings make intimacy, social position and the act of looking visible through abbreviated marks, unstable boundaries and carefully chosen viewpoints.",
+      "lead": "Morisot made a professional exhibition practice from subjects shaped by her social access and viewpoint. Abbreviated marks and closely framed encounters carry deliberate pictorial authority; apparent lightness should not be confused with slight ambition or effortless execution.",
       "sections": [
         {
           "id": "section-1",
@@ -1746,14 +1746,14 @@
           "scope": "Setting, composition and exhibition history"
         }
       ],
-      "words": 921,
+      "words": 928,
       "minutes": 6,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "picasso": {
       "title": "Picasso · who controls the encounter?",
-      "lead": "Picasso repeatedly remade the terms on which a painted body could be recognized. These two studies trace that problem from the confrontational space of Les Demoiselles d’Avignon to the incompatible appearances of Girl before a Mirror. Biography matters here, but it cannot settle what each pictorial construction asks of its viewer.",
+      "lead": "Picasso repeatedly changed the terms on which a painted body could be recognized. Les Demoiselles d’Avignon and Girl before a Mirror offer two consequential arrangements of that problem: confrontation across a compressed space, and identity divided by incompatible appearances.",
       "sections": [
         {
           "id": "section-1",
@@ -1881,14 +1881,14 @@
           "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 738,
+      "words": 726,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "pollock": {
       "title": "Pollock · a field made through decisions",
-      "lead": "Pollock made the distribution of attention a material problem. Two large canvases of 1950 allow sustained comparison: marks overlap, openings interrupt density, and rhythm emerges without a regular unit. Studying their differences keeps a recognizable technique from becoming a substitute for looking.",
+      "lead": "Pollock’s large canvases make technique inseparable from choices about density, interval and the distribution of attention. Comparing the two works of 1950 prevents the story of a recognizable working method from replacing the particular decisions that distinguish one painting from another.",
       "sections": [
         {
           "id": "section-1",
@@ -2028,14 +2028,14 @@
           "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
         }
       ],
-      "words": 748,
+      "words": 747,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "raphael": {
       "title": "Raphael: the intelligence of a composed world",
-      "lead": "Raphael’s apparent ease is a demanding artistic achievement. His paintings bring distinct figures, emotions and intellectual positions into relationships that remain legible without becoming mechanically symmetrical.",
+      "lead": "Raphael’s commissions required complex narratives and intellectual programs to remain legible at architectural scale. The apparent ease of his groups emerges from negotiations among gesture, spacing and workshop ambition; clarity is an achievement rather than a lack of complexity.",
       "sections": [
         {
           "id": "section-1",
@@ -2135,14 +2135,14 @@
           "scope": "Papal commissions and the room programs"
         }
       ],
-      "words": 786,
+      "words": 799,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "rembrandt": {
       "title": "Rembrandt: attention, material and the public image",
-      "lead": "Rembrandt’s paintings combine theatrical intelligence with an extraordinary sensitivity to the material behavior of paint. Faces, hands and surfaces acquire meaning through what is illuminated, withheld or left unresolved.",
+      "lead": "Rembrandt negotiated commissions for public identity while exploring how paint, illumination and withheld detail could shape an encounter. His group portraits make professional and civic visibility a pictorial problem; the individual likeness does not operate independently of the company around it.",
       "sections": [
         {
           "id": "section-1",
@@ -2247,14 +2247,14 @@
           "scope": "Training, artistic emulation and collecting contexts"
         }
       ],
-      "words": 796,
+      "words": 808,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "turner": {
       "title": "J. M. W. Turner: atmosphere and the costs of progress",
-      "lead": "Turner made landscape a vehicle for historical imagination, material experiment and the experience of forces larger than the individual. His light can reveal a world while making its stability difficult to trust.",
+      "lead": "Turner made public exhibition pictures and exploratory canvases answer different questions about atmosphere and history. Ships, weather and new transport allowed him to examine change without resolving its costs into either uncomplicated nostalgia or a celebration of progress.",
       "sections": [
         {
           "id": "section-1",
@@ -2370,14 +2370,14 @@
           "scope": "The painting’s subject, title and historical context"
         }
       ],
-      "words": 817,
+      "words": 823,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "van-gogh": {
       "title": "Vincent van Gogh: expression built through sustained work",
-      "lead": "Van Gogh’s paintings are often approached through the drama of his biography. A fuller account begins with his labor: repeated study, exchanges with other artists, close attention to materials and a deliberate search for expressive form.",
+      "lead": "Van Gogh’s short painting career was built through repeated study, correspondence and deliberate changes of method. The movement from rural supper to constructed night sky is a history of pictorial labor, not a license to diagnose every image through the dramatic events of his life.",
       "sections": [
         {
           "id": "section-1",
@@ -2495,14 +2495,14 @@
           "scope": "Nuenen, the peasants and the ambition of the early work"
         }
       ],
-      "words": 873,
+      "words": 882,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "vermeer": {
       "title": "Vermeer: the constructed intimacy of a room",
-      "lead": "Vermeer’s interiors seem quiet, but their quiet is built. Light, measured intervals, suspended actions and carefully placed objects turn a modest room into an unusually concentrated experience of looking.",
+      "lead": "Vermeer worked across histories, cityscape, domestic scenes and the tronie, rather than one timeless formula of quiet rooms. His selective description makes intimacy possible both through specified circumstances and their removal; the limited documentary record should sharpen that distinction rather than invite an invented household biography.",
       "sections": [
         {
           "id": "section-1",
@@ -2606,7 +2606,7 @@
           "scope": "Composition and interpretive context"
         }
       ],
-      "words": 801,
+      "words": 818,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -2722,7 +2722,7 @@
     },
     "caravaggio-02": {
       "title": "The instant recognition becomes physical",
-      "lead": "Caravaggio’s London Supper at Emmaus gives revelation the force of a body rising, an arm extending and a table almost breached.",
+      "lead": "A basket projects beyond the table as a disciple’s arms open across it. In the London Supper at Emmaus, recognition is made spatial: an ordinary meal appears suddenly to exceed the room that contains it.",
       "sections": [
         {
           "id": "section-1",
@@ -2758,7 +2758,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: The instant recognition becomes physical",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -2783,7 +2783,7 @@
           "sources": [],
           "paragraphs": [
             "Knowing that the work was commissioned as a domestic religious picture changes how its address can be imagined. The viewer need not be far away across a chapel. At close range the sudden gestures and carefully differentiated objects can become part of an intimate act of looking. That circumstance does not tell us exactly how every early spectator responded, but it makes the relationship between painted scale and viewing distance worth considering.",
-            "The picture’s sophistication lies in the agreement it asks the spectator to renegotiate. We recognize a meal before understanding the particular event, just as the narrative concerns recognition delayed and then transformed. The viewer’s position at the unoccupied side of the table becomes significant without being literally assigned a named role. After looking at the whole scene, return to the basket and the outstretched hands. Their proximity is not an ornamental display of skill; it contributes to the experience of something familiar becoming newly charged."
+            "The meal becomes revelation through changes in bodily and spatial relations. Return to the basket after following the outstretched hands: the spectator’s proximity has become part of the event. That implication is an editorial reading of the composition, not evidence that every historical viewer experienced the same religious response."
           ]
         }
       ],
@@ -2794,8 +2794,8 @@
           "scope": "1601 version, commission and Gospel narrative"
         }
       ],
-      "words": 739,
-      "minutes": 5,
+      "words": 717,
+      "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -3058,7 +3058,7 @@
     },
     "cassatt-01": {
       "title": "Care organized through pattern and touch",
-      "lead": "The Child’s Bath makes a practical act of care the center of a composition whose flattened space and intricate patterns require unusually sophisticated control.",
+      "lead": "Touch remains legible within an intricate field of pattern. The Child’s Bath uses a high viewpoint and compressed depth to make a practical act of care carry the authority of an ambitious pictorial construction.",
       "sections": [
         {
           "id": "section-1",
@@ -3094,7 +3094,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: Care organized through pattern and touch",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -3119,7 +3119,7 @@
           "sources": [],
           "paragraphs": [
             "The painting does not need an exceptional incident to justify sustained attention. Its subject is an arrangement of care that depends on bodily coordination. One person supports, another is supported; a small vessel receives the action. Such relations can carry artistic complexity without being disguised as mythological grandeur. That choice matters within a history in which everyday domestic work was often treated as culturally secondary.",
-            "At the same time, a responsible reading avoids equating the subject with the painter’s private experience. The picture is not made more valuable by inventing a family relationship between its models or assuming a maternal identity for its maker. Its authority resides in decisions we can examine: the viewpoint, the joined limbs, the compressed depth, the firm interruption of patterns around living contact. Compare the hands with the surrounding stripes, then step back. The work’s intimacy is not opposed to its formal intelligence; each is made possible through the other."
+            "The patterns do not dissolve the bodily relationship; they make its interruptions more exact. Return to the joined hands after following the stripes and basin: care is articulated through pressure, support and space. The models’ private relationship need not be invented for that constructed intimacy to remain compelling."
           ]
         }
       ],
@@ -3130,7 +3130,7 @@
           "scope": "1893 painting, subject and Japanese-print context"
         }
       ],
-      "words": 704,
+      "words": 672,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -3431,7 +3431,7 @@
     },
     "cezanne-01": {
       "title": "A still life that will not settle into one viewpoint",
-      "lead": "The Basket of Apples makes familiar objects convincing while allowing the table that supports them to become conspicuously difficult.",
+      "lead": "The apples have weight, although their table resists a continuous explanation. The Basket of Apples makes ordinary recognition coexist with incompatible alignments, asking how a painted world holds together when its local agreements do not quite match.",
       "sections": [
         {
           "id": "section-1",
@@ -3467,7 +3467,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: A still life that will not settle into one viewpoint",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -3492,7 +3492,7 @@
           "sources": [],
           "paragraphs": [
             "It is tempting to explain every spatial disturbance as a stepping stone toward a later artistic movement. Historical consequences matter, but that approach can make the painting’s own problem disappear. The canvas does not exist only to announce what other painters would do afterward. Its specific achievement is to keep material objects present while making their relations less obedient to a single, disembodied viewpoint.",
-            "Try tracing the table edge, then stop and look at the fruit again. The failure of one continuous alignment need not prevent a convincing sense of weight or a sustained path of attention. That difference is at the heart of the picture. It encourages a more exact account of seeing: one in which attention is gathered locally, revised as it travels, and held together by relationships that remain active rather than mechanically predetermined. Ordinary objects become a demanding test of what a painted world needs in order to feel coherent."
+            "The fruit remains convincing even where the table’s continuity becomes difficult. Trace its edge once more, then let the cloth redirect your attention: coherence can emerge through local relations rather than one seamless viewpoint. Calling those tensions deliberate is a reading of their effect, not a recovered record of every studio decision."
           ]
         }
       ],
@@ -3503,7 +3503,7 @@
           "scope": "Work record and spatial construction"
         }
       ],
-      "words": 714,
+      "words": 694,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -4110,7 +4110,7 @@
     },
     "gentileschi-02": {
       "title": "A painter embodies painting",
-      "lead": "Self-Portrait as the Allegory of Painting turns a convention that personified art as a woman into an unusually powerful claim of professional authorship.",
+      "lead": "The painter’s body takes the place of an abstract emblem. Self-Portrait as the Allegory of Painting makes professional authorship and the personification of an art meet in one concentrated, physically demanding pose.",
       "sections": [
         {
           "id": "section-1",
@@ -4146,7 +4146,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: A painter embodies painting",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -4171,7 +4171,7 @@
           "sources": [],
           "paragraphs": [
             "Gender matters to the work’s relationship with its allegorical model, but a professional reading should not stop at the discovery that its maker was a woman. The composition gives specific answers to pictorial problems: how to direct attention away from frontal likeness, how to convey a reaching body without losing coherence, and how to make clothing register both movement and material distinction. These are artistic decisions that deserve sustained description.",
-            "Nor should biographical adversity be used as a universal key that supposedly explains every pose. The work offers evidence of a carefully made professional identity; it does not authorize us to assign a private emotion to every gesture. Return to the face after following the arm and shoulder. The expression now belongs to an integrated account of concentration. What first looked like an unusual portrait becomes an argument about the inseparability of a painter’s thinking, working body and public claim to accomplishment."
+            "The pose joins an idea of Painting to the labor of a painter. Return to the face after following the shoulder and raised arm: concentration is carried by an entire bodily arrangement. How literally the image records an act of self-portraiture remains distinct from the professional claim that the composition makes visible."
           ]
         }
       ],
@@ -4182,8 +4182,8 @@
           "scope": "Attribution, allegorical attributes and work record"
         }
       ],
-      "words": 728,
-      "minutes": 5,
+      "words": 707,
+      "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -4391,7 +4391,7 @@
     },
     "goya-01": {
       "title": "History without a triumphant hero",
-      "lead": "The Third of May 1808 makes the machinery of execution confront the irreducible presence of the people it destroys.",
+      "lead": "The firing squad repeats a posture; those facing it do not. The Third of May 1808 makes that opposition between mechanism and individual response the structure of a historical image that offers no comfortable position from which to witness it.",
       "sections": [
         {
           "id": "section-1",
@@ -4479,7 +4479,7 @@
         },
         {
           "id": "section-9",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: History without a triumphant hero",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -4504,7 +4504,7 @@
           "sources": [],
           "paragraphs": [
             "Because the work was painted years after the event, its force must be understood as an act of representation. This does not make the historical subject less real. It means that emphasis, arrangement and remembered consequence are part of the painting’s work. The spectator is invited to consider what it means to make such an event publicly visible, and how a picture can preserve accusation without pretending to restore the lives it represents.",
-            "A religious analogy can illuminate the central pose, but it should be tested against the rest of the canvas. The accumulating bodies and the unbroken line of weapons make easy redemption difficult to sustain. Look away from the white shirt toward the hands, faces and darkened edges. The picture’s ethical force comes from these relationships as much as from the central figure’s prominence. It makes looking necessary while refusing to let looking count as an adequate intervention."
+            "The repeated rifles and differentiated faces remain in confrontation when the central figure is no longer your only focus. Follow the line toward those waiting behind him: the image holds several times of violence together. It constructs remembrance rather than providing a transparent eyewitness record, leaving its ethical force to be argued through the arrangement."
           ]
         }
       ],
@@ -4525,7 +4525,7 @@
           "scope": "Object record: date, medium, dimensions and historical subject"
         }
       ],
-      "words": 1225,
+      "words": 1224,
       "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -5132,7 +5132,7 @@
     },
     "kandinsky-02": {
       "title": "Geometry becomes expressive",
-      "lead": "Composition VIII makes circles, diagonals and angular forms interact as distinct forces rather than as a neutral collection of geometric shapes.",
+      "lead": "Geometric forms do not behave neutrally when they share a field. Composition VIII makes circles, diagonals and open intervals establish competing directions, replacing the security of a depicted room with relationships that must be followed across the surface.",
       "sections": [
         {
           "id": "section-1",
@@ -5168,7 +5168,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: Geometry becomes expressive",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -5193,7 +5193,7 @@
           "sources": [],
           "paragraphs": [
             "A musical comparison can help describe contrast, rhythm and counterpoint, but it becomes misleading if used as a dictionary in which a particular color must equal a particular feeling or sound. The painting’s relations are available at once, and a viewer can change the sequence of attention. That freedom is one reason its experience differs from following a fixed performance through time.",
-            "The Bauhaus context provides another useful connection, but the picture should not be reduced to a demonstration of geometric rules. Its geometries are deliberately uneven in emphasis, scale and distribution. Knowledge of circles and triangles alone cannot predict the effect of their placement here. After following one diagonal, look at the nearest open area, then the largest circle again. The painting’s subject may be approached through this continual negotiation of forces: an order that can be experienced without being summarized as a single depicted thing."
+            "The field holds together through unequal emphases, not a formula for arranging geometry. Return to the large circle after tracing a diagonal across an open interval: a different route can change which form seems to lead. Musical analogy offers a language for that experience without proving a fixed correspondence between a color and a sound."
           ]
         }
       ],
@@ -5204,7 +5204,7 @@
           "scope": "1923 work and geometric development"
         }
       ],
-      "words": 693,
+      "words": 680,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -5413,7 +5413,7 @@
     },
     "leonardo-01": {
       "title": "Mona Lisa: the construction of an enduring presence",
-      "lead": "The painting’s celebrity can conceal its achievement. Leonardo makes a firmly organized seated figure feel responsive through subtle transitions of light, an ambiguous expression and a landscape that extends far beyond the sitter’s immediate world.",
+      "lead": "The hands seem settled; the expression does not. Mona Lisa holds those two experiences together, using a stable seated body to make the face’s elusive boundaries unusually consequential.",
       "sections": [
         {
           "id": "section-1",
@@ -5506,7 +5506,7 @@
             "A useful first move is to suspend the question of whether the smile can be explained. Begin lower in the picture, where the hands overlap and the forearms establish a broad support. Then follow the turn through the shoulders to the face. The pose is neither an entirely frontal declaration nor a profile withdrawn from the viewer. Its effect depends on a body that seems to have turned within a space, although the painted arrangement remains extraordinarily contained. Looking is an encounter built from several coordinated decisions, not simply a reaction to the mouth.",
             "The landscape changes the terms of that encounter. The figure belongs to a near space whose scale we understand through a body; beyond it, water and difficult terrain carry attention into distances that resist ordinary measurement. These two registers need one another. The remote world gives the seated figure an unusual extent of surrounding time and space, while the hands and torso prevent the image from dissolving into atmosphere. A reading that treats the background as merely decorative misses this exchange between an immediately legible presence and a much less accessible distance.",
             "Reproduction introduces another complication. A large screen enlargement can make the surface seem expansive, yet the original panel asks for a different bodily relationship. Enlargement can help distinguish a veil from hair, but it cannot recover unavailable paint information or remove the effect of varnish. The full-image view, the physical-scale comparison and a detail study answer different questions. Moving among them should make the argument more precise rather than allow a magnified fragment to stand for the entire work.",
-            "This is why an explanation should remain open at the point where evidence becomes interpretation. The sitter’s recorded identity, the support and the collection history can be checked. The sense of welcome, reserve or movement is something the reader tests against the arrangement. A persuasive response connects that experience to a visible decision and acknowledges what another viewer might notice differently. The portrait’s achievement can remain significant without a secret that turns every feature into a code."
+            "The portrait’s responsiveness begins in that unequal agreement between hands and face. Return to the mouth after following the overlapping fingers: what seemed a passing expression belongs to a durable arrangement. Whether the sitter appears welcoming or reserved remains a response to test, rather than a feeling recovered from the historical person."
           ]
         }
       ],
@@ -5522,14 +5522,14 @@
           "scope": "Royal collection, museum setting and the 1911 theft"
         }
       ],
-      "words": 1179,
+      "words": 1147,
       "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "leonardo-02": {
       "title": "The Last Supper: a shared event made psychologically distinct",
-      "lead": "Leonardo transforms a long table into a field of individual reactions. The drama depends on a group responding to the same announcement while each person appears to understand and express it differently.",
+      "lead": "A single announcement does not produce a single reaction. Across The Last Supper, hands, torsos and exchanged looks turn a shared table into a sequence of different understandings, held around a comparatively still center.",
       "sections": [
         {
           "id": "section-1",
@@ -5627,7 +5627,7 @@
             "The long table provides an unusually firm condition for a scene of disturbance. It makes the gathering continuous while the bodies above it split into local exchanges. If the viewer reads only the central figure, the quiet triangle can seem self-sufficient. If the viewer begins at one end and follows the hands, however, stillness becomes something produced by contrast. The compositional center needs the surrounding agitation; the agitation needs the long horizontal measure against which it can be understood. The image coordinates difference rather than making twelve responses interchangeable.",
             "The room matters as much as this organization within the painted rectangle. In a refectory, the represented meal confronted people engaged in a related ordinary action. That relationship did not make them participants in the pictured event, but it placed daily repetition beside a narrative moment of exceptional consequence. Our conceptual room diagram therefore describes a relationship rather than pretending to restore an original interior. It asks where a picture addresses a body, and what changes when a work remains bound to a building instead of moving among collections.",
             "Technique complicates the attractive idea of a perfectly resolved design. The museum’s account of dry-wall painting should be held beside the present surface, where loss and intervention condition what can be seen. An illustration of wet-plaster fresco would offer an easy explanation but the wrong one. Likewise, a smooth digital image can conceal the distinction between composition as an arrangement and surviving material as historical evidence. Neither a diagram nor an enlargement should silently become a reconstruction of paint no longer there.",
-            "The interpretive question is how a common announcement becomes differently understood. A hand can direct attention, a torso can recoil and a neighboring figure can lean into another’s space. These are visible relations, but a precise emotional label remains a proposal. Following a gesture through its group is more useful than assigning a fixed adjective to every person. It allows the work to retain the complexity of an event in which attention, response and understanding do not arrive evenly or at the same time."
+            "The table binds the participants while their gestures separate their responses. Follow one exchange back toward the center: coherence here accommodates unequal understanding. A gesture can support an account of surprise or resistance, but it cannot recover every participant’s private thought—or erase the surviving wall’s material history."
           ]
         }
       ],
@@ -5648,7 +5648,7 @@
           "scope": "1495–1498, refectory, dry wall-painting, dimensions and working method"
         }
       ],
-      "words": 1211,
+      "words": 1176,
       "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -5848,7 +5848,7 @@
     },
     "leonardo-06": {
       "title": "Ginevra de’ Benci: reserve, identity and the portrait as an object",
-      "lead": "This small portrait creates a strikingly concentrated presence. The face seems available for scrutiny while the sitter’s reserved expression prevents the encounter from becoming an easy exchange.",
+      "lead": "A face can be fully available to sight and still resist intimacy. In Ginevra de’ Benci, the tightly bounded head and enclosing juniper turn portraiture into an exacting negotiation between presence, reserve and the surviving object.",
       "sections": [
         {
           "id": "section-1",
@@ -5894,7 +5894,7 @@
         },
         {
           "id": "section-5",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: Ginevra de’ Benci: reserve, identity and the portrait as an object",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -5919,7 +5919,7 @@
           "sources": [],
           "paragraphs": [
             "Consider the tension between the sitter’s individuality and the portrait’s economy. The features are particular, yet the image does not provide the successive expressions through which a living acquaintance becomes familiar. A painted face condenses an encounter instead of reproducing a whole person. The temptation to supply a private emotional history is strongest where the image is most restrained. Holding that temptation in check does not diminish the painting; it lets its management of reserve become part of the achievement.",
-            "Compare this work with Mona Lisa without treating the earlier portrait as an incomplete rehearsal. Each establishes a different agreement between sitter, surroundings and spectator. In Ginevra, sharp vegetation and tightly bounded facial features create a comparatively exacting address. In Mona Lisa, bodily support, softened transitions and a wider landscape redistribute attention. The productive question is not which face seems more lifelike. It is how different pictorial arrangements make different kinds of encounter possible."
+            "The portrait’s reserve emerges through the meeting of flesh, foliage and frame. Return to the cheek after examining the juniper’s sharper forms: proximity does not guarantee intimacy. The surviving panel and its reverse provide historical evidence, but neither allows us to recover the sitter’s unspoken attitude."
           ]
         }
       ],
@@ -5940,7 +5940,7 @@
           "scope": "Support, medium and individual object record"
         }
       ],
-      "words": 805,
+      "words": 786,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -6546,7 +6546,7 @@
     },
     "michelangelo-02": {
       "title": "The Creation of Adam: the interval that carries the event",
-      "lead": "The celebrated gap between two fingers is the result of a larger compositional argument. Michelangelo contrasts a body resting on the earth with an approaching concentration of movement, making the interval between them the scene’s decisive point.",
+      "lead": "The famous fingertips occupy only a small part of a much larger bodily argument. In The Creation of Adam, a grounded recline confronts an approaching group, and the narrow interval between hands concentrates their unequal conditions.",
       "sections": [
         {
           "id": "section-1",
@@ -6633,7 +6633,7 @@
         },
         {
           "id": "section-9",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: The Creation of Adam: the interval that carries the event",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -6658,7 +6658,7 @@
           "sources": [],
           "paragraphs": [
             "The Vatican Museums explain the episode through the transmission of life and the relationship between human and divine likeness. That account establishes the sacred narrative being represented. It does not require every contour to be translated into a hidden object. A visual resemblance can be worth discussing without becoming evidence that Michelangelo intended a particular modern discovery or message. The most persuasive interpretation returns repeatedly to the visible organization of the whole.",
-            "The painting also asks how ideal bodies can communicate unequal conditions. Adam is physically magnificent but dependent; bodily perfection does not make him the source of the approaching action. The reaching figure appears vigorous but acts through a remarkably precise, restrained extension of the hand. Monumentality and delicacy coexist. Look again at the narrow interval after examining the legs, supporting arm and surrounding crowd. The detail now carries the weight of a whole arrangement rather than only the familiarity of an icon."
+            "The interval matters because the bodies prepare it. Look from Adam’s supported torso toward the approaching arm, then return to the hands: delicacy and monumentality act together. Modern anatomical analogies may provoke inquiry, but a visual resemblance alone cannot establish Michelangelo’s intended hidden diagram."
           ]
         }
       ],
@@ -6674,8 +6674,8 @@
           "scope": "Commission, architecture and surrounding narrative program"
         }
       ],
-      "words": 1291,
-      "minutes": 8,
+      "words": 1252,
+      "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -6922,7 +6922,7 @@
     },
     "monet-02": {
       "title": "A family encounter shaped by wind",
-      "lead": "Woman with a Parasol makes familiar figures feel briefly encountered, using viewpoint and moving fabric to give a posed painting the energy of an interruption.",
+      "lead": "The figures are recognizable, but the world around them will not settle. Woman with a Parasol makes a family portrait coexist with wind, shifting fabric and a viewpoint that gives encounter priority over an inventory of likeness.",
       "sections": [
         {
           "id": "section-1",
@@ -6958,7 +6958,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: A family encounter shaped by wind",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -6983,7 +6983,7 @@
           "sources": [],
           "paragraphs": [
             "The family identification supplies a historical anchor, but the picture need not be reduced to an affectionate anecdote. It proposes a way of painting people without pretending that their surroundings have stopped changing. Clothing, sky and vegetation remain visibly active. The human subject holds attention while sharing the surface with an atmosphere whose effects are just as deliberately studied.",
-            "Compare the painting with a more controlled indoor portrait. Here a pose does not require a stable enclosure, an even illumination or an inventory of personal belongings. Recognition coexists with sensory interruption. The work’s apparent ease is a demanding pictorial balance: enough concentration for the figures to hold their presence, enough openness for weather to remain an organizing condition. The useful question is not whether Monet caught an untouched instant, but how paint makes the encounter feel newly available each time it is looked at."
+            "The figures hold their presence without arresting the weather. Return to the veil after tracing the hill and clouds: fabric and brushwork make air part of the portrait’s structure. The sensation of a brief encounter is a pictorial achievement, not proof that the canvas was completed in one uninterrupted instant."
           ]
         }
       ],
@@ -6994,7 +6994,7 @@
           "scope": "Camille and Jean Monet, 1875 work record"
         }
       ],
-      "words": 709,
+      "words": 686,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -7320,7 +7320,7 @@
     },
     "morisot-02": {
       "title": "Leisure held on an unstable surface",
-      "lead": "Summer’s Day makes an ordinary boating scene feel immediate through cropping, shifting reflections and figures who do not resolve into a single shared mood.",
+      "lead": "The boat brings the figures close, yet their attention does not become a single shared mood. Summer’s Day turns modern leisure into a problem of proximity, abbreviated marks and a surface that keeps the encounter unsettled.",
       "sections": [
         {
           "id": "section-1",
@@ -7356,7 +7356,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: Leisure held on an unstable surface",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -7381,7 +7381,7 @@
           "sources": [],
           "paragraphs": [
             "The broken handling should not be confused with an inability to finish. Some passages are more concentrated than others because attention is deliberately distributed. The eye encounters faces, fabric, boat and water through different degrees of definition. The painting’s openness depends on these differences. Uniformly sharpening everything would not complete the same experience; it would make a different picture.",
-            "Compare the scene with Cassatt’s The Boating Party. Both use a boat and the pressure of a close frame, but they organize the spectator’s access differently. Morisot’s surface seems to keep the encounter in motion through numerous abbreviated touches; Cassatt’s larger shapes offer another kind of structural insistence. The comparison is useful precisely because a shared subject does not entail a shared solution. Modernity becomes visible through the decisions each painter makes about nearness, attention and the boundaries of the frame."
+            "The close frame gives access without explaining every relationship. Follow the boat’s curve back toward the two faces: the encounter remains open because their directions do not settle into one exchange. Leisure is the depicted occasion; the painting’s precise handling is the professional work through which that occasion reaches us."
           ]
         }
       ],
@@ -7392,7 +7392,7 @@
           "scope": "Boating subject and work record"
         }
       ],
-      "words": 682,
+      "words": 663,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -8131,7 +8131,7 @@
     },
     "raphael-01": {
       "title": "The School of Athens: philosophy given a public architecture",
-      "lead": "Raphael makes intellectual activity visible through an assembly of bodies in a shared space. The composition’s order does not eliminate disagreement; it gives different forms of thought a coherent setting in which to coexist.",
+      "lead": "An orderly room contains many different acts of attention. The School of Athens makes intellectual community visible through a shared architecture, while local gestures prevent that order from becoming unanimity.",
       "sections": [
         {
           "id": "section-1",
@@ -8228,7 +8228,7 @@
         },
         {
           "id": "section-10",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: The School of Athens: philosophy given a public architecture",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -8253,7 +8253,7 @@
           "sources": [],
           "paragraphs": [
             "The contrasting gestures of Plato and Aristotle are often used as a compact explanation of their philosophies. They provide a useful first orientation, but no hand can summarize a whole philosophical system. The gestures work pictorially because they diverge while the figures continue to walk together. Their common scale and position hold the contrast in balance. To stop at a simple opposition between sky and earth would miss the image’s larger concern with coexistence.",
-            "Return to a peripheral group after studying the central pair. Ask whether learning there appears solitary, conversational or demonstrative. Then locate the visual connection back to the broader scene. The fresco invites this oscillation: the center supplies orientation, while the margins supply intellectual texture. It may be more productive to ask how Raphael stages the conditions of inquiry than to treat the wall as a puzzle in which the only task is identifying every historical person."
+            "The center gives orientation; the peripheral groups make inquiry varied. Follow a diagram, a reader or a conversation back into the architecture before returning to the central pair. Identifications enrich that movement, but uncertain names need not prevent close analysis of how the gathering distributes authority and attention."
           ]
         }
       ],
@@ -8269,7 +8269,7 @@
           "scope": "Roman commissions and the artist’s compositional practice"
         }
       ],
-      "words": 1305,
+      "words": 1273,
       "minutes": 8,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -8577,7 +8577,7 @@
     },
     "rembrandt-01": {
       "title": "A civic portrait put into motion",
-      "lead": "The Night Watch turns the display of a militia company into a crowded event in which authority has to emerge through movement.",
+      "lead": "A group portrait promises recognition, yet The Night Watch makes recognition compete with motion, overlap and shadow. The company appears to assemble in front of us, while the painting distributes visibility with considerable deliberation.",
       "sections": [
         {
           "id": "section-1",
@@ -8676,7 +8676,7 @@
             "A commissioned group portrait faces a practical difficulty: a company consists of distinct people, but a painting must establish relationships among them. An evenly illuminated row would make names and faces easier to distribute. Here, light, overlap and direction make recognition more demanding. The foreground officers provide an initial structure, yet the surrounding figures continually redirect attention. The company is represented as a public body in formation rather than as a list of equally legible identities. That pictorial decision does not, by itself, establish how particular patrons received the result.",
             "A viewer can test the arrangement by comparing visual importance with physical size. The smaller bright figure among the guards can compete with larger, nearer bodies. A diagonal weapon carries attention across faces instead of allowing a steady horizontal reading. Light does not merely explain the architecture of a room; it assigns emphasis inside a dense social image. A useful comparison therefore moves between the leaders, a secondary bright accent and the crowded edges, asking how each alters the significance of the others.",
             "Research into the underlying painted sketch introduces a different kind of evidence. It can support a discussion of planning and revision without turning the visible surface into a transparent window onto the artist’s first idea. A detected material may belong to a stage of work, but it must be interpreted within the technical investigation. Our process sequence names those distinctions and links to the museum’s account. It does not simulate an infrared image, invent a preparatory drawing or present a simplified layer diagram as the actual stratigraphy of every part of the canvas.",
-            "The trimmed margins make the present boundaries equally important to question. The surviving painting and an early copy answer different historical questions. A reconstruction may help discuss a lost arrangement, but reconstructed imagery is not recovered original paint. Readers should therefore be able to follow the evidence beyond a dramatic before-and-after effect. The value of conservation history is not merely that it reveals something spectacular; it makes the conditions and limits of our present viewing more explicit."
+            "The company becomes legible without becoming a row. Look again at someone partly obscured after studying the illuminated leaders: the painting’s collective action depends on unequal access to individuals. How the original margins altered that balance remains a historical question, distinct from the effect of the surviving canvas."
           ]
         }
       ],
@@ -8707,14 +8707,14 @@
           "scope": "Object identity, recorded dating and dimensions"
         }
       ],
-      "words": 1180,
+      "words": 1163,
       "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "rembrandt-02": {
       "title": "Knowledge staged around a body",
-      "lead": "The Anatomy Lesson of Dr Nicolaes Tulp represents a professional community by organizing its attention around a demonstration and a dead man.",
+      "lead": "The men can look at the demonstration; the exposed body cannot return their gaze. The Anatomy Lesson of Dr Nicolaes Tulp makes that imbalance central to an image of professional knowledge and public standing.",
       "sections": [
         {
           "id": "section-1",
@@ -8750,7 +8750,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: Knowledge staged around a body",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -8775,7 +8775,7 @@
           "sources": [],
           "paragraphs": [
             "The museum identifies the corpse as Aris Kindt and explains the judicial circumstances through which his body reached the guild. This information prevents the body from becoming an anonymous prop in a story exclusively about Rembrandt’s success. It also complicates the pleasure of admiring the painting’s organization. A later viewer can recognize extraordinary pictorial invention while asking what forms of exclusion made the represented event possible.",
-            "Neither admiration nor critique requires pretending that the canvas records every detail of an actual session. The arrangement is deliberately composed. The more useful task is to observe how it asks us to understand seeing itself: the lecturer demonstrates, the surgeons attend in different ways, and we look at all of them. The image creates several levels of spectatorship. Its force comes partly from our ability to move among those positions without ever occupying them on equal terms."
+            "The chain of looking is also a distribution of power. Compare the demonstrating hand with the body it examines, then consider your own view of both. The professional occasion can be documented; the degree to which the painting questions or affirms that hierarchy remains an interpretation requiring more than the identification of its participants."
           ]
         }
       ],
@@ -8791,7 +8791,7 @@
           "scope": "Object identity, recorded dating and dimensions"
         }
       ],
-      "words": 699,
+      "words": 687,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -9049,7 +9049,7 @@
     },
     "turner-01": {
       "title": "An old warship and a new source of power",
-      "lead": "The Fighting Temeraire turns a journey to the breaker’s yard into a meditation on technological change, national memory and the staging of an ending.",
+      "lead": "The small tug supplies the movement; the great ship carries the memory. The Fighting Temeraire makes technological change visible through that uneasy dependence, while a luminous farewell complicates any simple celebration of progress.",
       "sections": [
         {
           "id": "section-1",
@@ -9060,7 +9060,8 @@
           ],
           "paragraphs": [
             "The Temeraire had served at Trafalgar before being towed for dismantling. Turner exhibited the painting in 1839, representing the previous year’s final journey. The scene is a deliberate pictorial reconstruction rather than an exact nautical report: the ship’s appearance, the tug’s role and the sunset contribute to an elegiac arrangement.",
-            "The picture therefore joins an actual historical ending to an artistic argument. Its subject is not simply an obsolete object. The vessel carries associations of service, naval power and public memory that the smaller working tug does not share in the same way."
+            "The picture therefore joins an actual historical ending to an artistic argument. Its subject is not simply an obsolete object. The vessel carries associations of service, naval power and public memory that the smaller working tug does not share in the same way.",
+            "The National Gallery distinguishes the work’s favorable reception at the Royal Academy in 1839 from its later popularity in the national collection. Early reviewers responded to its poetic and patriotic associations. Turner retained the canvas despite offers to purchase it; its eventual place in the Turner Bequest belongs to a later institutional history, not to the original exhibition occasion."
           ]
         },
         {
@@ -9085,7 +9086,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: An old warship and a new source of power",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -9110,7 +9111,7 @@
           "sources": [],
           "paragraphs": [
             "The historical occasion matters, but the canvas is not best judged by treating every depicted relation as a record of the actual tow. The National Gallery distinguishes the event from Turner’s arrangement. That distinction protects the painting’s ambition. It is an account of how a public might remember a ship and the world associated with it, not simply an illustration attached to a date in naval history.",
-            "Nor does the contrast settle into a completely uncomplicated rejection of steam. The tug’s smoke and dark body may feel intrusive, but its work supplies the scene’s action. The old vessel cannot enact its elegiac departure without it. This dependence gives the image a more searching relation to change than straightforward nostalgia would allow. Look again at the proportions of ship, tug, sky and water: historical memory is being made through relationships of scale, light and labor rather than through the subject’s name alone."
+            "The old ship’s departure depends on the machine that seems to displace it. Return to the tug after following the pale masts: nostalgia and propulsion share the scene. The National Gallery’s account of Turner’s alterations helps separate poetic construction from an exact record of the journey; the painting’s attitude toward change remains open to argument."
           ]
         }
       ],
@@ -9118,11 +9119,11 @@
         {
           "title": "National Gallery · The Fighting Temeraire",
           "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-the-fighting-temeraire",
-          "scope": "Ship history, 1839 exhibition and invented arrangement"
+          "scope": "Object record, 1839 exhibition reception, altered ship and tug, title, date and Turner Bequest"
         }
       ],
-      "words": 697,
-      "minutes": 4,
+      "words": 736,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -9428,7 +9429,7 @@
     },
     "van-gogh-01": {
       "title": "Observation transformed into a night world",
-      "lead": "The Starry Night joins an observed sky to an invented arrangement, making color and directional brushwork carry an experience beyond topographical accuracy.",
+      "lead": "The village rests beneath a sky that seems unable to rest. The Starry Night makes those contrary rhythms inhabit one painted field, so that the familiar distinction between solid ground and moving atmosphere becomes a problem of marks and color.",
       "sections": [
         {
           "id": "section-1",
@@ -9522,7 +9523,7 @@
             "The sky invites a rapid reading because its curved marks appear to move before the eye has identified the whole arrangement. Slower examination reveals a set of contrasts that makes this activity intelligible. The cypress rises near the left edge, the steeple repeats a smaller vertical and the village collects relatively compact shapes below. The moving field depends on these interruptions. Describing the painting as simply turbulent risks missing the structure that makes turbulence available as an experience.",
             "Follow one passage of repeated strokes before returning to the whole. At close range, a mark has a direction, length, thickness and relationship to its neighbor. At a greater distance, those decisions become a curve, a halo or a band of sky. The viewer moves between these scales of recognition. A digital enlargement can assist that movement, but it should retain the painting’s complete proportions and acknowledge its pixel limit. Magnification cannot turn a reproduction into direct access to the original surface.",
             "The documented combination of observation and construction makes an equally useful comparison. A remembered or observed feature can provide a starting point while the painted image reorganizes its place, proximity and rhythm. This is not a choice between truth and invention. Painting has its own requirements of coherence, emphasis and relation. The village, cypress and sky can be understood together as a constructed image without using a medical narrative as a universal explanation of every visible decision.",
-            "A short extract from a letter offers a more limited, and more valuable, kind of personal evidence. It records an observation in words. It does not automatically explain the final composition or establish the meaning of every star. Read beside a technical record and a visual analysis, the excerpt helps distinguish the artist’s documented language from later interpretations. That distinction allows biography to deepen the painting rather than consume it. The enduring question is how a surface made of deliberate touches can sustain an experience of a world larger than its material boundaries."
+            "The sky’s activity gains force from the settlement’s contrasting rhythms. Follow one curved band down toward the roofs before deciding where stability lies. The relationship can sustain an interpretation of the painting’s intensity; it cannot convert every star into a diagnostic symptom or every painted form into a literal view from a window."
           ]
         }
       ],
@@ -9533,14 +9534,14 @@
           "scope": "June 1889, Saint-Rémy, observation and constructed village"
         }
       ],
-      "words": 1110,
+      "words": 1088,
       "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "van-gogh-02": {
       "title": "A meal and the labor behind it",
-      "lead": "The Potato Eaters makes a shared supper carry Van Gogh’s early ambition to represent rural labor with gravity rather than picturesque polish.",
+      "lead": "A shared supper becomes an ambitious statement about labor, but the people represented do not control that statement. The Potato Eaters makes the circuit of hands, food and lamplight bear both pictorial gravity and the risks of speaking for others.",
       "sections": [
         {
           "id": "section-1",
@@ -9576,7 +9577,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: A meal and the labor behind it",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -9601,7 +9602,7 @@
           "sources": [],
           "paragraphs": [
             "The painting asks serious questions about representing lives different from the painter’s own. Attention to hard work and ordinary food can resist idealized leisure, yet it can also become a persuasive image made for other people to contemplate. This tension should remain visible. Respect for the subject does not require treating the picture as transparent social evidence, and critique does not require dismissing the labor of observation that went into it.",
-            "Compare this work with a later Van Gogh interior or landscape. The change in palette is immediately striking, but another continuity may be more instructive: visible marks continue to organize a world whose emotional weight depends on their direction and density. In The Potato Eaters, weight is gathered through earth colors, restricted light and a circuit of bodily actions. Its intensity arises from a particular arrangement, not from an assumption that dark paint or coarse features automatically communicate truth."
+            "The hands connect labor to supper through the scene’s concentrated light. Return to one face after following that circuit: dignity is being constructed through paint, rather than simply extracted from a supposedly unmediated rural life. The painter’s stated ambition and the sitters’ own experience remain different kinds of evidence."
           ]
         }
       ],
@@ -9612,7 +9613,7 @@
           "scope": "1885 painting, rural subject and artistic intention"
         }
       ],
-      "words": 714,
+      "words": 702,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -9883,7 +9884,7 @@
     },
     "vermeer-01": {
       "title": "An encounter without a biography",
-      "lead": "Girl with a Pearl Earring turns a simple head movement into a powerful address, while withholding the information that would make it a conventional portrait.",
+      "lead": "A shoulder turns away as a face turns back. Girl with a Pearl Earring builds an encounter from that small disagreement, offering an unusually persuasive presence without the identifying circumstances of a commissioned likeness.",
       "sections": [
         {
           "id": "section-1",
@@ -9925,8 +9926,8 @@
             0
           ],
           "paragraphs": [
-            "The Mauritshuis identifies the work as a tronie rather than a commissioned likeness of a known individual. The turban and oversized jewel belong to an imaginative costume. A model may have been involved, but identifying a person who might have sat does not change the type of image into a documented biographical portrait.",
-            "This distinction makes the encounter more, not less, sophisticated. Vermeer can construct an arresting presence without supplying the social information that a commissioned portrait might emphasize. No household setting, inscription or securely identifying attribute fixes a narrative. The viewer’s impulse to invent one reveals how strongly a turned face can generate imagined intimacy."
+            "The headdress changes the terms on which the face can be read. Its broad blue and yellow shapes set off the skin, while its folds carry the turn beyond the head. The costume gives the figure a striking specificity without supplying a documented name or occupation.",
+            "A commissioned likeness can introduce someone through belongings, dress or setting. Here those ordinary routes to social identification are curtailed. The museum’s distinction between portrait and tronie is therefore useful as a historical category, while the costume’s visual work can still be examined without guessing who the model was."
           ]
         },
         {
@@ -9993,7 +9994,7 @@
             "The turned shoulder establishes a movement that the face appears to complete. The figure looks outward, but the surrounding setting supplies remarkably little narrative information. There is no depicted conversation partner whose reaction would settle the meaning of the turn. This withholding is productive: the viewer supplies a sense of encounter in the absence of a documented episode. Calling the work a tronie helps explain the category, but it should not close the visual question by replacing one label with another.",
             "Look at the difference between the face and the garment. Soft modeling makes the head convincingly substantial without giving every feature an equally insistent contour. The clothing is more abbreviated. The luminous earring is more abbreviated still, although it attracts extraordinary attention. These different degrees of description are not failures to finish uniformly. They distribute the work of recognition. The viewer sees a convincing relationship among material effects even where the marks themselves remain few and selective.",
             "The dark background can appear to explain the painting’s timelessness, but technical research makes that apparent certainty unstable. Evidence for a curtain concerns the historical state of the painted layers. It does not authorize an arbitrary recoloring of the reproduction, and it does not identify the sitter. A responsible account can hold these questions apart: what the image now looks like, what research proposes about its earlier appearance, and what remains unknown about the person who may have posed. Each requires a different kind of argument.",
-            "Reception adds another separation. A historical admirer’s response tells us how a viewer valued the work; it is not a technical account of how every effect was made. The museum’s English quotation and the material research can illuminate one another without becoming the same evidence. A private notebook is useful here precisely because it can preserve a first response beside a later one. The reader can notice what changed after learning more, while retaining the right to find the painting persuasive, distant, theatrical or unresolved."
+            "The turn remains persuasive even when an imagined conversation is set aside. Compare the garment’s broad shapes with the face’s soft boundaries and the jewel’s few bright marks: recognition depends on unequal amounts of description. Evidence for a changed background complicates the encounter’s history, while the model’s identity remains a separate uncertainty."
           ]
         }
       ],
@@ -10009,7 +10010,7 @@
           "scope": "Technical imaging, a green curtain, paint changes and revised understanding of the background"
         }
       ],
-      "words": 1210,
+      "words": 1175,
       "minutes": 7,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -10169,7 +10170,7 @@
     },
     "vermeer-05": {
       "title": "The pause before judgment",
-      "lead": "Woman Holding a Balance joins a delicate physical equilibrium to a larger question about the weighing of a life.",
+      "lead": "The balance is held before a visible result, while a second picture hangs behind the woman. Woman Holding a Balance makes a minute physical interval carry a much larger question about the relationship between material and moral value.",
       "sections": [
         {
           "id": "section-1",
@@ -10205,7 +10206,7 @@
         },
         {
           "id": "section-4",
-          "title": "An argument to test through looking",
+          "title": "The visual argument: The pause before judgment",
           "kind": "analysis",
           "sources": [],
           "paragraphs": [
@@ -10230,7 +10231,7 @@
           "sources": [],
           "paragraphs": [
             "At the original painting’s relatively modest size, this carefully controlled action demands close attention. On a screen the image can be enlarged until every detail seems equally prominent, but that changes the pace at which the eye discovers it. Begin again with the whole. Notice how much of the surface is given to wall, cloth and shadow. These quieter areas are active participants in the scene’s economy of attention.",
-            "Compare the work with The Milkmaid. Both give a hand-held action considerable pictorial authority, but the action has a different duration and relation to nearby objects. Pouring introduces a visible continuity between vessel and task. Holding a balance arrests the moment before a clear outcome. The distinction shows how Vermeer can give ordinary activity different intellectual and emotional weight through the relation of gesture, surrounding space and the time implied by a painted instant."
+            "The suspended action keeps value from resolving into a simple equation. Compare the held balance with the objects below it and the picture behind: their relation supports an ethical reading without dictating one private intention. What the woman is thinking remains outside the evidence of her stillness."
           ]
         }
       ],
@@ -10241,7 +10242,7 @@
           "scope": "Objects, Last Judgment and interpretive context"
         }
       ],
-      "words": 690,
+      "words": 682,
       "minutes": 4,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"

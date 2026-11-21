@@ -1,11 +1,13 @@
 # Picasso · who controls the encounter?
 
-> The figures do not wait quietly to be recognized. Picasso makes looking feel like a negotiation: between incompatible views, between a body and its painted boundary, and between a sitter’s presence and the authority of the artist who represents her.
+> Picasso repeatedly changed the terms on which a painted body could be recognized. Les Demoiselles d’Avignon and Girl before a Mirror offer two consequential arrangements of that problem: confrontation across a compressed space, and identity divided by incompatible appearances.
 
-@source Les Demoiselles d’Avignon · collection record | https://www.moma.org/collection/works/79766 | Object records for the two selected works; broader discussion is an editorial synthesis.
-@source Girl before a Mirror · collection record | https://www.moma.org/collection/works/78311 | Object records for the two selected works; broader discussion is an editorial synthesis.
+@source Les Demoiselles d’Avignon · collection record|https://www.moma.org/collection/works/79766|Object records for the two selected works; broader discussion is an editorial synthesis.
 
-@source Career context · institutional account | https://www.moma.org/research/conservation/demoiselles/history.html | Professional circumstances and reception; the paired reading remains editorial analysis.
+@source Girl before a Mirror · collection record|https://www.moma.org/collection/works/78311|Object records for the two selected works; broader discussion is an editorial synthesis.
+
+@source Career context · institutional account|https://www.moma.org/research/conservation/demoiselles/history.html|Professional circumstances and reception; the paired reading remains editorial analysis.
+
 ## A professional practice | history | 1,2
 
 Picasso’s career resists a single signature. A painter trained in academic drawing could make a figure insistently sculptural, dismantle it into facets, or return to an apparently classical contour. These decisions were not a clean march from realism toward abstraction. Different pictorial languages coexisted, and their coexistence asks us to reconsider what stylistic consistency should mean. The two works selected here make that question concrete: the confrontation of a large group in 1907 and the intimate, unstable reflection of a single figure in 1932.
@@ -31,7 +33,6 @@ The professional question is therefore not whether a viewer can recognize the ar
 ## A first encounter worth extending | analysis | 1,2
 
 Return to the relation between the standing and seated figures in the 1907 canvas, then to the reach toward the mirror in 1932. In one, a body and its address seem difficult to reconcile; in the other, a hand proposes contact across a difference of depiction. These are useful starting points for a reader who wants more than a chronology of styles. Write an explanation that names a visible boundary and states what it does. Then ask what historical fact would strengthen that explanation. A formal observation can remain persuasive while the larger historical account is still incomplete, provided that the distinction is kept explicit.
-
 
 ## Professional circumstances and public identity | history | 3
 

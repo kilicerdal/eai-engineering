@@ -1,11 +1,13 @@
 # Dalí · precision in the service of uncertainty
 
-> A watch can look exquisitely described while ceasing to behave like a watch. Dalí’s peculiarity lies in this alliance between visual assurance and material impossibility: the confidence of the description makes the uncertainty harder to dismiss.
+> Dalí made exact description carry events that exact description could not explain. The Persistence of Memory and Metamorphosis of Narcissus reveal distinct professional strategies: destabilizing familiar matter, then organizing a double image whose recognition must be negotiated.
 
-@source The Persistence of Memory · collection record | https://www.moma.org/collection/works/79018 | Object records for the two selected works; broader discussion is an editorial synthesis.
-@source Metamorphosis of Narcissus · collection record | https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/ | Object records for the two selected works; broader discussion is an editorial synthesis.
+@source The Persistence of Memory · collection record|https://www.moma.org/collection/works/79018|Object records for the two selected works; broader discussion is an editorial synthesis.
 
-@source Career context · institutional account | https://www.guggenheim.org/artwork/artist/salvador-dali | Professional circumstances and reception; the paired reading remains editorial analysis.
+@source Metamorphosis of Narcissus · collection record|https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/|Object records for the two selected works; broader discussion is an editorial synthesis.
+
+@source Career context · institutional account|https://www.guggenheim.org/artwork/artist/salvador-dali|Professional circumstances and reception; the paired reading remains editorial analysis.
+
 ## A professional practice | history | 1,2
 
 Dalí made technical clarity serve perceptual uncertainty. Objects often retain a polished, almost demonstrative solidity even when their behavior is impossible. A clock can fold like fabric; a body can share its outline with a hand and an egg. The strange event is not hidden by loose brushwork. It is made credible through the conventions that normally reassure us: modeling, cast shadows, a legible horizon and minute detail.
@@ -31,7 +33,6 @@ There is also a difference between a persuasive image and a verified proposition
 ## A first encounter worth extending | analysis | 1,2
 
 For a first sustained encounter, compare how long it takes you to name the central form in each painting. In the clock picture, identification may be immediate but the object’s behavior is impossible. In the Narcissus picture, recognition itself may shift as a second form becomes available. The distinction reveals two kinds of uncertainty. It also keeps the discussion close to what the painting asks a spectator to do, rather than substituting an anecdote about its maker. A good interpretation should survive that return to the surface and become more precise through it, even when the final meaning remains open.
-
 
 ## Professional circumstances and public identity | history | 3
 

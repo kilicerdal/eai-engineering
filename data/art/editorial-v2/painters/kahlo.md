@@ -1,11 +1,11 @@
 # Kahlo · the self-portrait as a public construction
 
-> A suit, scissors and cut hair are not incidental accessories. Kahlo stages identity through objects that can be worn, handled and discarded. The self-portrait offers a deliberate encounter, not transparent access to the artist’s private life.
+> Kahlo made self-representation a constructed public act. Costume, exposed bodies and carried objects organize the two paintings studied here; their relation to biography requires evidence, while the painter’s arrangement of that evidence remains an artistic decision.
 
-@source Self-Portrait with Cropped Hair · collection record | https://www.moma.org/collection/works/78333 | Object records for the two selected works; broader discussion is an editorial synthesis.
-@source The Two Fridas · collection record | https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg | Object records for the two selected works; broader discussion is an editorial synthesis.
+@source Self-Portrait with Cropped Hair · collection record|https://www.moma.org/collection/works/78333|Object records for the two selected works; broader discussion is an editorial synthesis.
 
-@source Career context · institutional account | https://www.moma.org/collection/works/78333 | Professional circumstances and reception; the paired reading remains editorial analysis.
+@source The Two Fridas · collection record|https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg|Object records for the two selected works; broader discussion is an editorial synthesis.
+
 ## A professional practice | history | 1,2
 
 Kahlo’s self-portraits are composed encounters, not transparent windows onto a life. Dress, posture, inscription and bodily exposure are selected pictorial means. Biography matters, including relationships, illness, political commitments and the professional conditions of making art in Mexico. But a sequence of biographical events cannot automatically explain every visual decision. The task is to ask what the painting makes available to a viewer rather than to diagnose the person who made it.
@@ -36,8 +36,7 @@ An ethical reading should distinguish curiosity about a person from entitlement 
 
 One useful starting point is the different treatment of remnants and connections. Hair cut from a body remains scattered around a seated figure; a vessel joins two bodies that remain distinct. The comparison need not turn into a diagnosis or a claim that both paintings communicate the same emotion. It can instead ask how separation becomes visible and how a connection is maintained. That is a specific visual problem with historical implications. It allows the reader to take autobiography seriously while refusing the assumption that an artist’s life supplies an uncomplicated caption for every form she chose to paint.
 
-
-## Professional circumstances and public identity | history | 3
+## Professional circumstances and public identity | history | 1
 
 MoMA links Cropped Hair to the period after Kahlo’s late-1939 divorce and to her intention to support herself through selling work. Economic agency matters here alongside the interpretation of dress. The institutional record also names Edgar Kaufmann Jr. as donor; acquisition is another stage in the making of a public reputation, not a substitute for the sitter-artist’s own choices.
 

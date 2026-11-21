@@ -1,11 +1,13 @@
 # Pollock · a field made through decisions
 
-> The first impression may be of an unbroken web. Stay longer and differences appear: a passage opens, a dark line interrupts another rhythm, an exposed interval becomes a place to rest. Pollock makes the distribution of attention a material problem.
+> Pollock’s large canvases make technique inseparable from choices about density, interval and the distribution of attention. Comparing the two works of 1950 prevents the story of a recognizable working method from replacing the particular decisions that distinguish one painting from another.
 
-@source One: Number 31, 1950 · collection record | https://www.moma.org/collection/works/78386/ | Object records for the two selected works; broader discussion is an editorial synthesis.
-@source Autumn Rhythm: Number 30, 1950 · collection record | https://www.metmuseum.org/art/collection/search/488978 | Object records for the two selected works; broader discussion is an editorial synthesis.
+@source One: Number 31, 1950 · collection record|https://www.moma.org/collection/works/78386/|Object records for the two selected works; broader discussion is an editorial synthesis.
 
-@source Career context · institutional account | https://www.guggenheim.org/artwork/artist/jackson-pollock/ | Professional circumstances and reception; the paired reading remains editorial analysis.
+@source Autumn Rhythm: Number 30, 1950 · collection record|https://www.metmuseum.org/art/collection/search/488978|Object records for the two selected works; broader discussion is an editorial synthesis.
+
+@source Career context · institutional account|https://www.guggenheim.org/artwork/artist/jackson-pollock/|Professional circumstances and reception; the paired reading remains editorial analysis.
+
 ## A professional practice | history | 1,2
 
 Pollock shifted attention toward the behavior of paint across an extended surface. Lines pour, thicken, break and cross; exposed canvas remains active between them. It is tempting to equate those traces with a direct transcription of emotion. Yet a trace records a material event, not an unmediated psychological state. Speed, viscosity, gravity, distance and revision intervene between the moving body and the mark we see.
@@ -35,7 +37,6 @@ The paintings also challenge the habit of treating a reproduction as a complete 
 ## A first encounter worth extending | analysis | 1,2
 
 A productive first visit can concentrate on one quiet interval near an edge and one dense passage nearer the middle. Describe their difference before deciding whether the field has a center. Next, compare the same kinds of passage in the second painting. The exercise is optional, but its precision can replace the unhelpful demand that an abstract painting immediately disclose what it represents. Description is not a retreat from interpretation. It establishes the relationships through which an interpretation might become persuasive, and gives another spectator a way to disagree with an actual claim rather than with an undefined impression.
-
 
 ## Professional circumstances and public identity | history | 3
 

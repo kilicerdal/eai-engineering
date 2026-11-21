@@ -1,0 +1,142 @@
+{
+  "leonardo-01": {
+    "question": "Follow the upper edge of the nearer hand, then the boundary between mouth and cheek. Where is a contour easiest to locate, and where does it become uncertain?",
+    "reproduction": "A fitted screen image can make this small panel feel monumental. Enlarging the mouth reveals pixels as well as transitions; it cannot establish the thickness, transparency or condition of Leonardo’s painted layers.",
+    "naming": "Mona Lisa and La Gioconda name this Louvre portrait; the institutional record identifies Lisa Gherardini. The familiar titles do not document the sitter’s expression.",
+    "description": "A seated woman has folded hands in the foreground, dark clothing, a translucent veil and a landscape of winding routes and water behind her.",
+    "researchNext": "A documented transfer or workshop record could clarify custody and execution over time. It would not, by itself, establish a sitter’s momentary feeling."
+  },
+  "leonardo-02": {
+    "question": "Choose one group beside the central figure. Which hand begins a movement, and which neighboring body continues or interrupts it?",
+    "reproduction": "The reproduction compresses a wall painting into a portable rectangle. Its present appearance includes a long material and conservation history; brightness on a screen cannot distinguish original paint from every later intervention.",
+    "naming": "The Last Supper refers here to the wall painting in the refectory of Santa Maria delle Grazie, Milan, rather than a later copy or movable canvas.",
+    "description": "A long table crosses a painted room. A central seated figure is flanked by groups whose hands and bodies turn in different directions.",
+    "researchNext": "Material examination and conservation documentation can refine accounts of surviving paint. Assigning each gesture a single emotion remains a separate interpretive task."
+  },
+  "rembrandt-01": {
+    "question": "Trace the captain’s extended hand and the overlapping bodies behind it. Which figures can you follow clearly, and where does another body interrupt the view?",
+    "reproduction": "Fitting the canvas to a screen reduces the bodily scale of a commissioned group portrait. The present edges are historically altered; an image showing reconstructed margins must not be mistaken for surviving original paint.",
+    "naming": "The Night Watch is a later, familiar title. It should not be treated as proof that the depicted company assembles at night.",
+    "description": "A crowded company carries weapons and banners. Two men stand prominently in front; patches of light pick out faces, hands and a small figure among darker bodies.",
+    "researchNext": "Comparison with the early copy and documented material findings can inform lost margins and revisions. A reconstructed image cannot supply missing original paint."
+  },
+  "vermeer-01": {
+    "question": "Compare the light on the collar with the bright marks of the earring. Which edges are fully described, and which do you complete for yourself?",
+    "reproduction": "The apparent darkness is a present surface, not a transparent record of the original background. Screen contrast can deepen it further; the museum’s technical investigation, rather than an edited reproduction, supports discussion of the curtain.",
+    "naming": "The title identifies the familiar work, not a securely identified sitter or a verified natural pearl. The Mauritshuis classifies the image as a tronie.",
+    "description": "A young figure turns her head toward the viewer over one shoulder. A blue-and-yellow headdress, white collar and bright hanging ornament stand against a dark background.",
+    "researchNext": "An archival identification would require evidence connecting a named person with this particular image. Technical findings about the curtain address its surface history, not that identification."
+  },
+  "van-gogh-01": {
+    "question": "Compare the direction of marks around the bright stars with those across the village roofs. Where does the movement change direction or pause?",
+    "reproduction": "A bright display can flatten differences between the pale stars and surrounding blue. Even a high-resolution image cannot reproduce the paint’s relief or your changing distance from the canvas.",
+    "naming": "The Starry Night is the MoMA canvas discussed here. Other night paintings by Van Gogh have distinct settings and histories.",
+    "description": "A cypress rises at the left before a village of small roofs and a church spire. Bright stars and curved bands cross a blue night sky above distant hills.",
+    "researchNext": "Letters can document an observation or stated ambition; comparison with the canvas tests how it was transformed. Neither automatically establishes the meaning of every star."
+  },
+  "leonardo-06": {
+    "question": "Compare the edges of the cheek, the hair and the nearest juniper leaves. How does each boundary separate the face from what surrounds it?",
+    "reproduction": "A frontal reproduction suppresses the panel’s reverse and can disguise the significance of its altered extent. The visible portrait is not the complete physical object encountered from every side.",
+    "naming": "Ginevra de’ Benci names the identified sitter; study the National Gallery of Art’s record for the panel and its reverse, rather than assuming the front image is the entire object.",
+    "description": "A pale-faced woman with curling hair appears before dense juniper foliage, with a more distant landscape visible at the sides.",
+    "researchNext": "Object examination and records concerning the panel’s alteration would bear on its lost extent. They cannot recover an undocumented private exchange with the sitter."
+  },
+  "michelangelo-02": {
+    "question": "Follow Adam’s arm back to his shoulder and supporting body, then do the same for the reaching figure opposite. What supports each reach?",
+    "reproduction": "The isolated image removes neighboring ceiling scenes and the upward angle of viewing. A screen-sized pair of hands cannot reproduce the fresco’s architectural scale or the viewer’s position below it.",
+    "naming": "The Creation of Adam identifies a scene within the Sistine Chapel ceiling, not an independent easel painting.",
+    "description": "A reclining nude man extends one arm toward an older, bearded figure approaching from the right within a group enclosed by billowing fabric. Their fingertips do not meet.",
+    "researchNext": "A claim about a deliberately concealed anatomical form would need evidence beyond resemblance, such as a relevant drawing or contemporary account. The resemblance remains a proposal without that link."
+  },
+  "raphael-01": {
+    "question": "Choose a group near the steps rather than the central pair. Which gestures join its members, and what connects it visually to the larger space?",
+    "reproduction": "A reduced rectangle makes the center easier to scan while diminishing peripheral gestures. The fresco belongs to a room with other painted walls; an isolated reproduction omits that larger arrangement of knowledge.",
+    "naming": "The School of Athens is the conventional title for this Vatican fresco. Individual identifications vary in certainty and should not be treated as equally documented.",
+    "description": "Figures gather beneath high vaults and a central arch. Two men occupy the middle, while smaller groups read, converse and attend to a diagram on and around broad steps.",
+    "researchNext": "A proposed figure identification becomes stronger when supported by contemporary documentation or a securely related study. Compositional role and personal identity remain different questions."
+  },
+  "caravaggio-02": {
+    "question": "Compare the basket’s overhanging edge with the nearest arm and the chair. Which elements project toward your position, and which hold the group back?",
+    "reproduction": "The apparent nearness of the basket depends on the picture’s scale and your position. A reduced reproduction preserves the arrangement but weakens the bodily reach of its projections.",
+    "naming": "This study concerns the National Gallery, London, version of Supper at Emmaus; Caravaggio’s later treatment in Milan is a different painting.",
+    "description": "Four figures surround a table set with food and a projecting basket. One seated figure opens both arms; another grips a chair while the central figure raises a hand.",
+    "researchNext": "The collection record can establish the particular version and its history. A reconstruction of every first viewer’s religious response would require additional contemporary testimony."
+  },
+  "rembrandt-02": {
+    "question": "Follow the eyes of two standing men, then the lecturer’s hands. Do they direct your attention to the same place?",
+    "reproduction": "At reduced scale the faces can read as one attentive group. Enlarging individual heads helps compare their directions, but does not establish that the arrangement records a single observed instant.",
+    "naming": "The title names Tulp and the anatomy demonstration; the painting is also a commissioned group portrait, not a neutral medical illustration.",
+    "description": "A pale body lies diagonally across the foreground. A man at the right demonstrates with its exposed forearm while a clustered group of men looks on.",
+    "researchNext": "Commission records and material research illuminate the professional image’s making. They do not prove that every pose reproduces one moment of an actual demonstration."
+  },
+  "vermeer-05": {
+    "question": "Locate the balance between the hand and the table. How do its small horizontal and vertical lines relate to the frame of the picture behind the woman?",
+    "reproduction": "The small balance can disappear in a thumbnail, while a bright display may exaggerate the dark interior’s contrasts. Enlargement assists observation but cannot turn an uncertain mark into a securely identified object.",
+    "naming": "Woman Holding a Balance describes the held instrument; the title should not be used to assume that jewels are being weighed in its pans.",
+    "description": "A woman stands beside a table bearing small objects and jewelry. She holds a balance near the center; a framed scene of the Last Judgment hangs behind her.",
+    "researchNext": "The institutional account and examination can support identification of depicted objects. A claim about the woman’s private judgment requires another kind of evidence."
+  },
+  "gentileschi-02": {
+    "question": "Follow the diagonal from shoulder to raised hand. Which parts of the body turn toward the work, and which remain available to the spectator?",
+    "reproduction": "The turning pose is easy to flatten into an emblem on a small screen. The original surface and bodily scale matter to its sense of effort; the reproduction alone does not reveal the entire working setup.",
+    "naming": "The Royal Collection title identifies the work as Self-Portrait as the Allegory of Painting (La Pittura). The title’s interpretive and identifying claims should be read with that collection record.",
+    "description": "A dark-haired woman leans forward with one arm raised and her head turned toward her work. Her body forms a diagonal across the dark field.",
+    "researchNext": "The collection record supports discussion of identification and allegory. Reconstructing the exact working pose would require evidence beyond the final painted arrangement."
+  },
+  "goya-01": {
+    "question": "Compare the visible faces and hands on the left with the repeated backs and weapons on the right. Where does repetition stop, and where does difference become visible?",
+    "reproduction": "The large canvas becomes deceptively manageable on a screen. Reduced scale can turn distant waiting figures and foreground bodies into peripheral detail, although they change the account of time and violence.",
+    "naming": "The date in The Third of May 1808 names the commemorated events, not the year the painting was made.",
+    "description": "A line of soldiers aims rifles at a group of men beside a mound. A man in a white shirt raises his arms; bodies lie in the foreground and other figures wait behind him.",
+    "researchNext": "Commission and exhibition records can clarify the conditions of commemoration. They should not be substituted for evidence that the painter personally witnessed this execution."
+  },
+  "turner-01": {
+    "question": "Compare the tug’s dark hull and smoke with the pale ship’s masts. Which carries more visual weight, and which carries the direction of travel?",
+    "reproduction": "The sunset may dominate on a luminous display. In the original, differences of paint handling and surface relief also matter; screen color alone cannot establish how the atmosphere was built.",
+    "naming": "The full institutional title refers to the ship’s last berth in 1838; the painting itself dates to 1839. These dates name different events.",
+    "description": "A dark steam tug pulls a much larger pale sailing ship across calm water. A bright sunset fills the right side while a small crescent moon appears above the ship.",
+    "researchNext": "The National Gallery documents departures from the ship’s actual appearance and journey. Those departures support analysis of pictorial construction, while the balance of elegy and acceptance remains arguable."
+  },
+  "monet-02": {
+    "question": "Compare the directions of the veil, dress, grass and clouds. Which movements agree, and where does a figure interrupt them?",
+    "reproduction": "The painting’s visible marks can merge into smooth weather in a thumbnail. A larger image reveals their directions, although neither size recreates the original canvas’s surface.",
+    "naming": "Woman with a Parasol—Madame Monet and Her Son refers to this National Gallery of Art canvas, rather than Monet’s other parasol paintings.",
+    "description": "A woman holding a green parasol stands on a grassy rise against a cloud-filled sky. A smaller boy appears farther back to the left.",
+    "researchNext": "A dated working record could clarify sessions and revisions. The depicted gust and the sensation of an interruption do not establish how quickly the whole canvas was completed."
+  },
+  "morisot-02": {
+    "question": "Compare the two figures’ directions of attention with the curve of the boat and the marks on the water. Which connections are visible without assigning either figure an emotion?",
+    "reproduction": "Small reproductions can merge the water’s broken marks and obscure how the boat cuts the frame. Enlarging them shows abbreviation, not evidence that the work lacked sustained decisions.",
+    "naming": "Summer’s Day identifies the National Gallery boating scene discussed here. Its title supplies an occasion rather than a complete account of the figures’ thoughts.",
+    "description": "Two women sit close together in a cropped rowing boat. Loose marks of green and blue water surround the dark curved edge of the boat.",
+    "researchNext": "Exhibition and object records can place the work’s public life. The figures’ differing attention does not settle their private thoughts or relationship at that moment."
+  },
+  "cassatt-01": {
+    "question": "Follow the hands around the child’s foot, then the stripes of the adult’s dress. Where does pattern continue, and where does bodily contact interrupt it?",
+    "reproduction": "Reduction can make the patterns appear decorative and the contact between hands and foot difficult to distinguish. A flat reproduction also cannot show how paint lies across those different surfaces.",
+    "naming": "The Child’s Bath names the depicted activity. The relationship of the models is not established by treating the title as a family record.",
+    "description": "Viewed from above, an adult holds a child on her lap beside a basin. Their hands meet near the child’s foot amid a striped dress and patterned floor.",
+    "researchNext": "Documents identifying models would bear on their relationship. The title and depicted closeness alone cannot turn a constructed scene into an established family biography."
+  },
+  "cezanne-01": {
+    "question": "Trace the table edge on either side of the cloth. How do those segments align, and what happens when you follow the bottle’s vertical instead?",
+    "reproduction": "A small image can conceal discontinuities by making the still life read as one familiar arrangement. Enlargement makes edges easier to trace but cannot reconstruct the sequence in which Cézanne painted them.",
+    "naming": "The Basket of Apples refers to the Art Institute of Chicago canvas. Cézanne’s other apple still lifes are separate objects, not interchangeable versions of this record.",
+    "description": "A tipped basket of apples, a dark bottle and a plate of biscuits occupy a table partly covered by a white cloth. The table edge appears in separated segments.",
+    "researchNext": "Technical examination could illuminate changes in the arrangement. The effect of discontinuous edges is visible, but a detailed account of the order of studio decisions needs additional evidence."
+  },
+  "van-gogh-02": {
+    "question": "Follow the light from the hanging lamp to the hands around the dish and cups. Which connections make the group continuous, and which faces remain partly separate?",
+    "reproduction": "The restricted palette can close into near-black on a dim display. Brightening a screen may reveal relations without recovering the painting’s original tones or its full surface texture.",
+    "naming": "The Potato Eaters here refers to the major Van Gogh Museum composition, not every preparatory study associated with the subject.",
+    "description": "Five figures gather around a table beneath a hanging lamp in a dark room. Hands reach toward a shared dish, cups and a pouring vessel.",
+    "researchNext": "The artist’s letters establish an ambition addressed to a particular correspondent. Evidence about the models’ own experience would need their testimony or other relevant records."
+  },
+  "kandinsky-02": {
+    "question": "Follow one diagonal toward the largest dark circle. Which intervening forms interrupt it, and where does open space change the strength of the connection?",
+    "reproduction": "A bright display can intensify colored shapes while reducing the effect of pale intervals. The reproduction preserves placement more reliably than the exact relation of pigments, surface and ambient light.",
+    "naming": "Composition VIII is a numbered title, not an instruction to decode eight objects or a direct transcription of a musical score.",
+    "description": "Circles, straight diagonals, angular shapes and small curved lines occupy a pale field. A large dark circle sits near the upper left among forms of different sizes and colors.",
+    "researchNext": "A proposed correspondence between a shape, color and sound would require a specific textual or documentary basis. A compelling musical analogy alone does not establish such a code."
+  }
+}

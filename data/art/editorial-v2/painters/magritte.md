@@ -1,11 +1,11 @@
 # Magritte · recognition becomes a question
 
-> The pipe is easy to recognize. That is precisely why the sentence beneath it can become troublesome. Magritte lets ordinary visual competence expose a confusion between identifying a depiction and possessing the thing depicted.
+> Magritte retained recognizable objects while making recognition itself unreliable. These studies of an eye and a pipe examine how image, language and context change what a representation can claim, without treating his paintings as riddles with one concealed answer.
 
-@source The False Mirror · collection record | https://www.moma.org/collection/works/78938 | Object records for the two selected works; broader discussion is an editorial synthesis.
-@source The Treachery of Images · collection record | https://collections.lacma.org/object/31931 | Object records for the two selected works; broader discussion is an editorial synthesis.
+@source The False Mirror · collection record|https://www.moma.org/collection/works/78938|Object records for the two selected works; broader discussion is an editorial synthesis.
 
-@source Career context · institutional account | https://collections.lacma.org/object/31931 | Professional circumstances and reception; the paired reading remains editorial analysis.
+@source The Treachery of Images · collection record|https://collections.lacma.org/object/31931|Object records for the two selected works; broader discussion is an editorial synthesis.
+
 ## A professional practice | history | 1,2
 
 Magritte’s pictures often begin with something readily recognizable. A pipe looks like a pipe, an eye like an eye, and clouds like clouds. Their familiarity is essential. If recognition were already impossible, the painting could not expose the assumptions by which we normally connect an image to a thing, a word to a meaning, or a visible surface to an inner experience.
@@ -36,8 +36,7 @@ The question is particularly relevant when a museum label or a digital interface
 
 Try describing each image twice: once as if explaining what is depicted, and once as if explaining how depiction itself becomes a problem. The second account should not simply replace ordinary nouns with abstract philosophical terms. It should identify a visible arrangement, such as the relation between an eye and a sky or between a pipe and a sentence. That discipline makes the conceptual ambition accessible without making it shallow. A viewer can understand the initial proposition quickly and still find that the painted relationship rewards a much slower reconsideration of what recognition had seemed to settle.
 
-
-## Professional circumstances and public identity | history | 3
+## Professional circumstances and public identity | history | 2
 
 LACMA’s record identifies a succession of collectors and dealers for the pipe painting, while MoMA’s catalogue of Magritte’s work shows that his practice extended beyond the two motifs represented here. The private collection, gallery and museum are different settings for the same conceptual provocation. Its subsequent influence should not be confused with evidence of what its first viewers thought.
 
