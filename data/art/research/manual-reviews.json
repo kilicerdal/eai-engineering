@@ -1,0 +1,50 @@
+{
+  "scope": "Bounded checks of four displayed quotations and one catalogue discrepancy; not approval of every reference or historical claim.",
+  "records": [
+    {
+      "work": "van-gogh-02",
+      "checked": "2026-11-21",
+      "kind": "Short quotation and immediate attribution",
+      "source": "https://vangoghletters.org/vg/letters/let497/letter.html",
+      "result": "Wording and context compared",
+      "method": "Compared with the institutional page text indexed by the search service; direct page serves a JavaScript gate.",
+      "limit": "The artist’s intention does not establish the models’ own experience or guarantee the effect on every viewer. The English wording is a translation. Read the complete letter and editorial notes before generalizing from this short excerpt."
+    },
+    {
+      "work": "pollock-02",
+      "checked": "2026-11-21",
+      "kind": "Short quotation and immediate attribution",
+      "source": "https://www.metmuseum.org/art/collection/search/488978",
+      "result": "Wording and context compared",
+      "method": "Compared with the institutional page text.",
+      "limit": "A public statement can frame an ambition without explaining every later material choice. The museum supplies the quoted passage; this display does not claim direct examination of an original manuscript."
+    },
+    {
+      "work": "monet-05",
+      "checked": "2026-11-21",
+      "kind": "Short quotation and immediate attribution",
+      "source": "https://www.metmuseum.org/art/collection/search/437127",
+      "result": "Wording and context compared",
+      "method": "Compared with the institutional page text.",
+      "limit": "This is a short institutional quotation about the garden, not an assertion that the NGA bridge canvas was commissioned in 1893. The cited Met painting is a different work in the series. The full archival document has not been reproduced here."
+    },
+    {
+      "work": "picasso-01",
+      "checked": "2026-11-21",
+      "kind": "Short quotation and immediate attribution",
+      "source": "https://www.moma.org/research/conservation/demoiselles/analysis_2_c.html",
+      "result": "Wording and context compared",
+      "method": "Compared with the institutional page text.",
+      "limit": "This is a director’s advocacy more than three decades after the painting’s making. It does not record Picasso’s intention, every visitor’s response or an impartial consensus."
+    },
+    {
+      "work": "magritte-01",
+      "checked": "2026-11-21",
+      "kind": "Catalogue date discrepancy",
+      "source": "https://www.moma.org/collection/works/78938",
+      "result": "1929 retained; earlier 1928 recorded",
+      "method": "Compared the current object record, MoMA’s 2019 checklist and its older 2013 collection post. The records disagree; no unsupported explanation for the revision is supplied.",
+      "limit": "Current dating is distinguished from the publication history. This check does not independently resolve the object’s execution date."
+    }
+  ]
+}

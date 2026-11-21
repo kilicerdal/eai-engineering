@@ -1,0 +1,8 @@
+import {test,expect} from '@playwright/test';
+test('a term opens its exact definition and returns focus to the originating sentence',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.goto('/study/art/painting/vermeer-01');const term=page.locator('#essay .art-term-link').filter({hasText:'tronie'}).first(),origin=await term.locator('..').getAttribute('id'),target=await term.getAttribute('href');
+ expect(target).toMatch(/-terms-tronie$/);await term.focus();await page.keyboard.press('Enter');const definition=page.locator(target!);await expect(definition).toBeVisible();await expect(definition.locator('dt')).toHaveText('tronie');await expect(definition.locator('xpath=ancestor::details[1]')).toHaveAttribute('open','');await page.screenshot({path:'artifacts/art-definition-phone.png'});await definition.getByRole('link',{name:'← Return to the passage you were reading'}).click();await expect(page).toHaveURL(new RegExp('#'+origin+'$'));await expect(page.locator('#'+origin)).toBeFocused();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+});
+test('a direct definition link reveals the study after introduction mode was saved',async({page})=>{
+ await page.goto('/study/art/painting/vermeer-01');const target=await page.locator('#essay .art-term-link').filter({hasText:'tronie'}).first().getAttribute('href');await page.getByRole('button',{name:/Introduction ·/}).click();await page.goto('/study/art/painting/vermeer-01'+target);await expect(page.locator('main.art-room')).toHaveAttribute('data-reading-depth','full');await expect(page.locator(target!)).toBeVisible();await expect(page.locator(target!).locator('xpath=ancestor::details[1]')).toHaveAttribute('open','');
+});

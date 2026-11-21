@@ -356,19 +356,21 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "A professional practice",
+          "title": "Making impossible matter look tangible",
           "kind": "history",
           "sources": [
             0,
-            1
+            1,
+            2
           ],
           "paragraphs": [
-            "Dalí made technical clarity serve perceptual uncertainty. Objects often retain a polished, almost demonstrative solidity even when their behavior is impossible. A clock can fold like fabric; a body can share its outline with a hand and an egg. The strange event is not hidden by loose brushwork. It is made credible through the conventions that normally reassure us: modeling, cast shadows, a legible horizon and minute detail."
+            "Dalí made technical clarity serve perceptual uncertainty. Objects often retain a polished, almost demonstrative solidity even when their behavior is impossible. A clock can fold like fabric; a body can share its outline with a hand and an egg. The strange event is not hidden by loose brushwork. It is made credible through the conventions that normally reassure us: modeling, cast shadows, a legible horizon and minute detail.",
+            "Dalí’s cultivation of extraordinary appearances developed through recognizable professional institutions. He entered the academy in Madrid in 1921, held a solo exhibition in Barcelona in 1925, and was expelled from the academy in 1926. The Guggenheim’s chronology also records Surrealist censure in 1934. These are separate events with different consequences. They locate an ambitious career within schools, galleries and an artistic group; none gives a complete explanation of the later paintings’ meticulously constructed impossibilities."
           ]
         },
         {
           "id": "section-2",
-          "title": "History and the stories we inherit",
+          "title": "Surrealism, affiliation and disagreement",
           "kind": "history",
           "sources": [
             0,
@@ -380,7 +382,7 @@
         },
         {
           "id": "section-3",
-          "title": "A way of looking",
+          "title": "Public performance and the evidence of a painting",
           "kind": "analysis",
           "sources": [
             0,
@@ -392,7 +394,7 @@
         },
         {
           "id": "section-4",
-          "title": "The limits of a signature",
+          "title": "Small scale and double recognition",
           "kind": "analysis",
           "sources": [
             0,
@@ -475,13 +477,13 @@
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
         },
         {
-          "title": "Career context · institutional account",
+          "title": "Guggenheim · Salvador Dalí",
           "url": "https://www.guggenheim.org/artwork/artist/salvador-dali",
-          "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
+          "scope": "Career chronology: Madrid academy, first solo exhibition, expulsion and Surrealist censure. Censure in 1934 is distinguished from later accounts of final estrangement."
         }
       ],
-      "words": 700,
-      "minutes": 4,
+      "words": 774,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -742,19 +744,21 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "A professional practice",
+          "title": "Self-portraiture as a deliberate public address",
           "kind": "history",
           "sources": [
             0,
-            1
+            1,
+            2
           ],
           "paragraphs": [
-            "Kahlo’s self-portraits are composed encounters, not transparent windows onto a life. Dress, posture, inscription and bodily exposure are selected pictorial means. Biography matters, including relationships, illness, political commitments and the professional conditions of making art in Mexico. But a sequence of biographical events cannot automatically explain every visual decision. The task is to ask what the painting makes available to a viewer rather than to diagnose the person who made it."
+            "Kahlo’s self-portraits are composed encounters, not transparent windows onto a life. Dress, posture, inscription and bodily exposure are selected pictorial means. Biography matters, including relationships, illness, political commitments and the professional conditions of making art in Mexico. But a sequence of biographical events cannot automatically explain every visual decision. The task is to ask what the painting makes available to a viewer rather than to diagnose the person who made it.",
+            "Kahlo began painting while recovering from the serious accident of 1925. The fact belongs to her artistic formation, but it does not make a later canvas an involuntary symptom. MoMA places her intimate, repeatedly staged self-images beside the monumental public ambitions of Mexican muralism. That contrast helps define a professional choice of address: a small or closely encountered body could carry historical and cultural questions without taking the form of a public wall. Bodily constraint and pictorial deliberation must remain distinguishable."
           ]
         },
         {
           "id": "section-2",
-          "title": "History and the stories we inherit",
+          "title": "Two bodies, a haircut and an inscribed song",
           "kind": "history",
           "sources": [
             0,
@@ -766,7 +770,7 @@
         },
         {
           "id": "section-3",
-          "title": "A way of looking",
+          "title": "Mexican modernism and the meanings of dress",
           "kind": "analysis",
           "sources": [
             0,
@@ -778,7 +782,7 @@
         },
         {
           "id": "section-4",
-          "title": "The limits of a signature",
+          "title": "What celebrity changes about the encounter",
           "kind": "analysis",
           "sources": [
             0,
@@ -871,9 +875,14 @@
           "title": "The Two Fridas · collection record",
           "url": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg",
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
+        },
+        {
+          "title": "MoMA · Frida Kahlo",
+          "url": "https://www.moma.org/artists/2963-frida-kahlo",
+          "scope": "Biographical formation after the 1925 accident and the relationship of intimate self-portraiture to Mexican muralism; not a clinical explanation of individual motifs."
         }
       ],
-      "words": 735,
+      "words": 816,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -1115,7 +1124,7 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "A professional practice",
+          "title": "Recognition supplies the starting point",
           "kind": "history",
           "sources": [
             0,
@@ -1127,19 +1136,21 @@
         },
         {
           "id": "section-2",
-          "title": "History and the stories we inherit",
+          "title": "Brussels, Paris and a public Surrealist career",
           "kind": "history",
           "sources": [
             0,
-            1
+            1,
+            2
           ],
           "paragraphs": [
-            "The False Mirror and The Treachery of Images make those assumptions available for inspection. The first places a sky where the patterned iris of an eye might be expected. The second joins a carefully rendered object to a sentence that refuses the identity a viewer may casually assign it. These are different operations: one changes the relationship between seeing and being seen, while the other tests the relationship among representation, language and material object."
+            "The False Mirror and The Treachery of Images make those assumptions available for inspection. The first places a sky where the patterned iris of an eye might be expected. The second joins a carefully rendered object to a sentence that refuses the identity a viewer may casually assign it. These are different operations: one changes the relationship between seeing and being seen, while the other tests the relationship among representation, language and material object.",
+            "The apparent isolation of Magritte’s objects can conceal the social life of the practice. His Brussels exhibition at Galerie Le Centaure and his residence near Paris from 1927 to 1930 brought the work into distinct professional settings and exchanges with Surrealism. MoMA’s exhibition account follows these years through the autobiographical lecture he delivered in 1938. That later account is evidence of how he presented his career. It should be read alongside the paintings and contemporary records rather than allowed to settle every earlier motive."
           ]
         },
         {
           "id": "section-3",
-          "title": "A way of looking",
+          "title": "A demonstrative finish that unsettles certainty",
           "kind": "analysis",
           "sources": [
             0,
@@ -1151,7 +1162,7 @@
         },
         {
           "id": "section-4",
-          "title": "The limits of a signature",
+          "title": "Interpretation without a dictionary of symbols",
           "kind": "analysis",
           "sources": [
             0,
@@ -1244,9 +1255,14 @@
           "title": "The Treachery of Images · collection record",
           "url": "https://collections.lacma.org/object/31931",
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
+        },
+        {
+          "title": "MoMA · Magritte: The Mystery of the Ordinary",
+          "url": "https://www.moma.org/interactives/exhibitions/2013/magritte/",
+          "scope": "Brussels exhibition context, residence near Paris from 1927 to 1930, and the 1938 autobiographical lecture. The lecture is a retrospective account, not independent evidence of every earlier intention."
         }
       ],
-      "words": 738,
+      "words": 822,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -1257,19 +1273,21 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "A professional practice",
+          "title": "Color takes on the work of architecture",
           "kind": "history",
           "sources": [
             0,
-            1
+            1,
+            2
           ],
           "paragraphs": [
-            "Matisse made color an architectural force. A field of red can join floor and wall; a green slope can support a ring of bodies while denying the reassuring depth of an ordinary landscape. These effects are often described as simplification. The word is useful only if it does not suggest that the resulting relationships were easy or inevitable. Removing descriptive detail puts greater pressure on every surviving contour, interval and expanse of color."
+            "Matisse made color an architectural force. A field of red can join floor and wall; a green slope can support a ring of bodies while denying the reassuring depth of an ordinary landscape. These effects are often described as simplification. The word is useful only if it does not suggest that the resulting relationships were easy or inevitable. Removing descriptive detail puts greater pressure on every surviving contour, interval and expanse of color.",
+            "Matisse’s economy of means followed a change of vocation and sustained study. He first pursued law, took up painting during a period of convalescence, and studied with Gustave Moreau, who encouraged attention to older painting. The later emphasis on broad fields of color should therefore be understood alongside an education in inherited pictorial resources. Simplification did not mean having little available to describe. It meant deciding which conventions to retain, which to transform, and where a reduced description could carry more force."
           ]
         },
         {
           "id": "section-2",
-          "title": "History and the stories we inherit",
+          "title": "A studio and a decorative commission",
           "kind": "history",
           "sources": [
             0,
@@ -1281,7 +1299,7 @@
         },
         {
           "id": "section-3",
-          "title": "A way of looking",
+          "title": "Patrons, destinations and the question of acceptance",
           "kind": "analysis",
           "sources": [
             0,
@@ -1293,7 +1311,7 @@
         },
         {
           "id": "section-4",
-          "title": "The limits of a signature",
+          "title": "The labor concealed by apparent ease",
           "kind": "analysis",
           "sources": [
             0,
@@ -1388,12 +1406,12 @@
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
         },
         {
-          "title": "Career context · institutional account",
+          "title": "MoMA · Henri Matisse: About Matisse",
           "url": "https://www.moma.org/interactives/exhibitions/2014/matisse/about-matisse.html",
-          "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
+          "scope": "The artist’s move from law to painting and his study with Gustave Moreau; the relation between training and the paintings is an editorial argument."
         }
       ],
-      "words": 748,
+      "words": 830,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -1757,19 +1775,21 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "A professional practice",
+          "title": "Academic training and the refusal of a single style",
           "kind": "history",
           "sources": [
             0,
-            1
+            1,
+            3
           ],
           "paragraphs": [
-            "Picasso’s career resists a single signature. A painter trained in academic drawing could make a figure insistently sculptural, dismantle it into facets, or return to an apparently classical contour. These decisions were not a clean march from realism toward abstraction. Different pictorial languages coexisted, and their coexistence asks us to reconsider what stylistic consistency should mean. The two works selected here make that question concrete: the confrontation of a large group in 1907 and the intimate, unstable reflection of a single figure in 1932."
+            "Picasso’s career resists a single signature. A painter trained in academic drawing could make a figure insistently sculptural, dismantle it into facets, or return to an apparently classical contour. These decisions were not a clean march from realism toward abstraction. Different pictorial languages coexisted, and their coexistence asks us to reconsider what stylistic consistency should mean. The two works selected here make that question concrete: the confrontation of a large group in 1907 and the intimate, unstable reflection of a single figure in 1932.",
+            "Before the fractured bodies came an education in drawing them. Picasso studied in La Coruña, entered La Llotja in Barcelona in 1895, and attended the academy in Madrid from 1897. MoMA’s account describes training through copied models and life drawing. The later departures from a unified body therefore followed familiarity with academic conventions. That sequence matters: the paintings ask which inherited methods remain useful and which must be put under pressure, rather than presenting an artist who never learned to draw conventionally."
           ]
         },
         {
           "id": "section-2",
-          "title": "History and the stories we inherit",
+          "title": "Paris, collecting and unequal encounters",
           "kind": "history",
           "sources": [
             0,
@@ -1781,7 +1801,7 @@
         },
         {
           "id": "section-3",
-          "title": "A way of looking",
+          "title": "How an edge changes a body",
           "kind": "analysis",
           "sources": [
             0,
@@ -1793,7 +1813,7 @@
         },
         {
           "id": "section-4",
-          "title": "The limits of a signature",
+          "title": "A reputation larger than a sequence of breakthroughs",
           "kind": "analysis",
           "sources": [
             0,
@@ -1879,9 +1899,14 @@
           "title": "Career context · institutional account",
           "url": "https://www.moma.org/research/conservation/demoiselles/history.html",
           "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
+        },
+        {
+          "title": "MoMA · Picasso Sculpture, opening chapter",
+          "url": "https://www.moma.org/d/pdfs/W1siZiIsIjIwMTgvMDYvMTMvODAwcmJrZXo0X01vTUFfUGljYXNzb1NjdWxwdHVyZV9QUkVWSUVXLnBkZiJdXQ/MoMA_PicassoSculpture_PREVIEW.pdf?sha=162132aae1e259a0",
+          "scope": "Opening chapter, “Prelude, 1892–1901”: training in La Coruña, Barcelona and Madrid; the formal reading of the selected paintings remains editorial."
         }
       ],
-      "words": 726,
+      "words": 808,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -1892,19 +1917,21 @@
       "sections": [
         {
           "id": "section-1",
-          "title": "A professional practice",
+          "title": "A painted trace is a material event",
           "kind": "history",
           "sources": [
             0,
-            1
+            1,
+            2
           ],
           "paragraphs": [
-            "Pollock shifted attention toward the behavior of paint across an extended surface. Lines pour, thicken, break and cross; exposed canvas remains active between them. It is tempting to equate those traces with a direct transcription of emotion. Yet a trace records a material event, not an unmediated psychological state. Speed, viscosity, gravity, distance and revision intervene between the moving body and the mark we see."
+            "Pollock shifted attention toward the behavior of paint across an extended surface. Lines pour, thicken, break and cross; exposed canvas remains active between them. It is tempting to equate those traces with a direct transcription of emotion. Yet a trace records a material event, not an unmediated psychological state. Speed, viscosity, gravity, distance and revision intervene between the moving body and the mark we see.",
+            "A sequence of working circumstances precedes the familiar images of Pollock painting. His New York experience included the Federal Art Project and Siqueiros’s experimental workshop. Peggy Guggenheim’s contract, beginning in 1943 and continuing through 1947, provided support that allowed greater concentration on painting. These conditions do not mechanically produce the later canvases. They explain how sustained experimentation became possible, bringing employment, material exchange and patronage back into a career too often reduced to a photograph of individual action."
           ]
         },
         {
           "id": "section-2",
-          "title": "History and the stories we inherit",
+          "title": "Scale changes the act of looking",
           "kind": "history",
           "sources": [
             0,
@@ -1916,7 +1943,7 @@
         },
         {
           "id": "section-3",
-          "title": "A way of looking",
+          "title": "Portable canvases and the mural tradition",
           "kind": "analysis",
           "sources": [
             0,
@@ -1928,7 +1955,7 @@
         },
         {
           "id": "section-4",
-          "title": "The limits of a signature",
+          "title": "Professional support behind the solitary-genius story",
           "kind": "analysis",
           "sources": [
             0,
@@ -2023,12 +2050,12 @@
           "scope": "Object records for the two selected works; broader discussion is an editorial synthesis."
         },
         {
-          "title": "Career context · institutional account",
+          "title": "Guggenheim · Jackson Pollock",
           "url": "https://www.guggenheim.org/artwork/artist/jackson-pollock/",
-          "scope": "Professional circumstances and reception; the paired reading remains editorial analysis."
+          "scope": "Career chronology: Federal Art Project, Siqueiros workshop and the 1943–47 Guggenheim contract; these establish working circumstances, not the precise making of every later canvas."
         }
       ],
-      "words": 747,
+      "words": 825,
       "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -3246,7 +3273,8 @@
           ],
           "paragraphs": [
             "The 1878 painting belongs to Cassatt’s exploration of modern public life. A theater audience did more than watch a performance: its members also watched one another. Dress, position and behavior could become part of a social spectacle distributed across the auditorium.",
-            "The woman uses opera glasses, giving her a purposeful activity. She is not simply arranged as an attractive figure in a box. Her participation in the culture of spectatorship is explicit."
+            "The woman uses opera glasses, giving her a purposeful activity. She is not simply arranged as an attractive figure in a box. Her participation in the culture of spectatorship is explicit.",
+            "The theater gives looking a social structure: people gather to watch a performance while also becoming visible to one another. Cassatt makes that second condition pictorially consequential. The foreground woman is occupied with her own act of looking, rather than arranged principally to meet the spectator’s gaze. The historical setting therefore helps explain a relationship that is already present in the composition. It should not become a license to invent either the woman’s private thoughts or the background observer’s intentions."
           ]
         },
         {
@@ -3256,7 +3284,8 @@
           "sources": [],
           "paragraphs": [
             "The dark costume gives the foreground figure a strong silhouette against the lighter auditorium. Her raised arm and glasses direct attention away from us. In the background, a man’s optical attention appears directed toward her, creating a crossing relation that the spectator can perceive even if she does not respond to it.",
-            "The curved boxes and cropped architecture establish a public environment without opening a view of the stage. What is nominally the theater’s principal event remains outside the picture. Looking itself takes its place as the central subject."
+            "The curved boxes and cropped architecture establish a public environment without opening a view of the stage. What is nominally the theater’s principal event remains outside the picture. Looking itself takes its place as the central subject.",
+            "The opera glasses connect the woman’s hands and face to something beyond the frame. The background observer establishes another direction of attention, one that returns toward her. These directions do not form a simple reciprocal exchange: she is not shown acknowledging his scrutiny. The unequal scale of the two figures makes the second gaze easy to overlook initially. Finding it changes the foreground action from an isolated portrait into an encounter structured by several acts of seeing."
           ]
         },
         {
@@ -3266,7 +3295,8 @@
           "sources": [],
           "paragraphs": [
             "The woman is both an observer and someone observable. Neither condition entirely cancels the other. Cassatt makes that doubleness visible without reducing her to passive display or imagining that public participation removes social scrutiny.",
-            "The painting’s modernity lies in the structure of its viewpoints. The artist gives the woman purposeful attention, then shows the unequal conditions around that attention. A social space becomes legible through intersecting gazes rather than through an explanatory anecdote."
+            "The painting’s modernity lies in the structure of its viewpoints. The artist gives the woman purposeful attention, then shows the unequal conditions around that attention. A social space becomes legible through intersecting gazes rather than through an explanatory anecdote.",
+            "The painting’s force depends on holding agency and exposure together. The woman can pursue her own attention and still be subjected to another person’s view. Neither condition cancels the other. That tension is more specific than a general claim that the picture represents independence. Ask what evidence would be needed to move from this visible arrangement to a stronger historical claim about an identified sitter, an actual performance or the intentions of the man in the background."
           ]
         }
       ],
@@ -3277,14 +3307,14 @@
           "scope": "1878 painting, theater context and reception"
         }
       ],
-      "words": 256,
-      "minutes": 2,
+      "words": 490,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "cassatt-05": {
       "title": "Two people, two kinds of concentration",
-      "lead": "Young Mother Sewing makes care visible without requiring the adult and child to merge into one uninterrupted emotional state.",
+      "lead": "The mother looks down at her sewing; the child turns outward. Cassatt builds a picture of care around two people whose bodies remain close while their attention goes in different directions.",
       "sections": [
         {
           "id": "section-1",
@@ -3315,7 +3345,8 @@
           "sources": [],
           "paragraphs": [
             "The work suggests that care can continue while attention is distributed. The adult’s task does not remove her bodily availability, and the child’s outward gaze does not dissolve their closeness. A practical relationship carries the intimacy.",
-            "Cassatt’s achievement is to represent this ordinary complexity without turning it into a dramatic conflict. The picture distinguishes people within a bond. It gives domestic experience intellectual seriousness by refusing the assumption that affection must make every participant feel or do the same thing."
+            "Cassatt’s achievement is to represent this ordinary complexity without turning it into a dramatic conflict. The picture distinguishes people within a bond. It gives domestic experience intellectual seriousness by refusing the assumption that affection must make every participant feel or do the same thing.",
+            "Follow the route from the working hands to the child’s outward-facing head. The composition asks the eye to change its attention just as the two figures distribute theirs. This is a formal relationship that can be examined, not proof of a particular family’s feelings. Cassatt’s picture makes room for an intimacy maintained through ordinary work. Its force lies in how much connection survives without a shared gaze or a conspicuous declaration of affection."
           ]
         }
       ],
@@ -3326,7 +3357,7 @@
           "scope": "1900 painting, model context and work record"
         }
       ],
-      "words": 262,
+      "words": 347,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -3393,7 +3424,8 @@
           ],
           "paragraphs": [
             "The Terra painting dates to 1894 and is related to another Summertime in the Hammer collection. They are different canvases with different framing and spatial relationships. This version’s proximity is central to its effect and should not be explained through a description of the other work.",
-            "Cassatt’s engagement with Japanese prints informs the compressed perspective and strong design. Influence here means an active rethinking of pictorial possibilities, not the mechanical borrowing of a decorative motif."
+            "Cassatt’s engagement with Japanese prints informs the compressed perspective and strong design. Influence here means an active rethinking of pictorial possibilities, not the mechanical borrowing of a decorative motif.",
+            "The version distinction matters because a shared title can conceal different arrangements. The account here belongs to the Terra painting; a related boating composition elsewhere cannot automatically provide its details or history. Before making a comparison, establish which figure placements, boundaries and reflections belong to each object. This modest act of identification protects the discussion from a frequent error: transferring an interpretation that fits one composition onto another merely because both show the same broad subject."
           ]
         },
         {
@@ -3403,7 +3435,8 @@
           "sources": [],
           "paragraphs": [
             "The boat and figures occupy a close, cropped space. Reflections spread across the water in broken strokes, making the surrounding field as active as the people. The absence of a dominant, distant horizon reduces the conventional division between a principal subject and a recessive background.",
-            "The figures’ postures connect them to the boat’s structure while their heads establish separate points of attention. The surface remains busy without losing those bodily anchors. Cassatt makes the eye move among patterned water, clothing and human presence."
+            "The figures’ postures connect them to the boat’s structure while their heads establish separate points of attention. The surface remains busy without losing those bodily anchors. Cassatt makes the eye move among patterned water, clothing and human presence.",
+            "The boat gives the figures a local support, while the surrounding water resists a simple, stable description. Reflections and repeated touches of color make the surface active even where the represented activity appears quiet. The cropping keeps the encounter close rather than offering an expansive scenic survey. Following the boundary between boat and water shows how a firm edge can organize a field of broken color without making that field subordinate or visually empty."
           ]
         },
         {
@@ -3413,7 +3446,8 @@
           "sources": [],
           "paragraphs": [
             "The subject is accessible, but the composition does not offer an entirely effortless spatial overview. The viewer must negotiate the close framing and the equivalence between reflections and solid forms. Pleasure and perceptual demand coexist.",
-            "The painting shows why an intimate or recreational subject need not produce minor art. Cassatt uses the outing to reconsider the organization of the entire image. Its modernity lies in the relation between a familiar experience and a surface that insists on being read as a constructed design."
+            "The painting shows why an intimate or recreational subject need not produce minor art. Cassatt uses the outing to reconsider the organization of the entire image. Its modernity lies in the relation between a familiar experience and a surface that insists on being read as a constructed design.",
+            "Leisure is the subject of the scene, but ease is not an adequate description of its construction. The viewer must negotiate compressed space and an animated surface. This distinction prevents a domestic or recreational subject from being treated as a minor formal achievement. Return to one reflection and ask how confidently it can be assigned to an object. The uncertainty belongs to the picture’s way of organizing perception, not necessarily to any hidden narrative."
           ]
         }
       ],
@@ -3424,8 +3458,8 @@
           "scope": "1894 version, related Hammer canvas and Japanese-print context"
         }
       ],
-      "words": 257,
-      "minutes": 2,
+      "words": 481,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -3576,7 +3610,8 @@
           ],
           "paragraphs": [
             "The museum dates this canvas to 1900–06 and describes its unfinished state. It is the largest of Cézanne’s major treatments of bathers, distinct from related works in other collections. Its ambition comes from a long engagement with the traditional subject of nude figures in a landscape.",
-            "The scene does not require a securely identifiable mythological narrative. Its relationship to earlier art is broader: an idealized gathering of bodies becomes a means of considering what a monumental modern painting can be."
+            "The scene does not require a securely identifiable mythological narrative. Its relationship to earlier art is broader: an idealized gathering of bodies becomes a means of considering what a monumental modern painting can be.",
+            "This discussion concerns the Philadelphia canvas, not every painting called The Large Bathers. Its monumental scale and incomplete condition are essential to the encounter. A screen reproduction can make the surface appear more uniformly resolved than it is, while reducing the bodily experience of standing before a very large canvas. The historical account should therefore prepare for differences between reproduction and object, rather than presenting the image on a device as a neutral equivalent of the painting."
           ]
         },
         {
@@ -3586,7 +3621,8 @@
           "sources": [],
           "paragraphs": [
             "Trees rise and lean above the figures, establishing an enclosing triangular structure. Bodies near the sides echo that inclination, making human anatomy participate in the landscape’s larger design. The central opening offers distance while keeping the overall group bound together.",
-            "The figures are not uniformly polished. Contours, color patches and unresolved passages remain visible, and the bodies can feel strange rather than conventionally ideal. Their function is partly relational: each form helps establish intervals, directions and weights across the canvas."
+            "The figures are not uniformly polished. Contours, color patches and unresolved passages remain visible, and the bodies can feel strange rather than conventionally ideal. Their function is partly relational: each form helps establish intervals, directions and weights across the canvas.",
+            "The inclined trees and grouped bodies establish a broad canopy, but the figures do not simply disappear into architecture. Their poses produce smaller rhythms within the larger structure. The central opening gives the eye somewhere to move, while surrounding forms repeatedly draw it back to the surface. Try following one diagonal through a tree and then through a body: the resemblance is compositional, not proof that every figure has a single symbolic role."
           ]
         },
         {
@@ -3596,7 +3632,8 @@
           "sources": [],
           "paragraphs": [
             "The painting’s scale and structure communicate authority even where its surface remains open. That combination complicates the assumption that a major work must conceal every trace of searching or revision.",
-            "Cézanne does not simply return to a timeless classical harmony. He rebuilds the relation between bodies and environment through forms that remain materially and perceptually difficult. The picture’s importance lies in that reconstruction: inherited grandeur is approached through a surface that refuses to pretend the problem has become easy."
+            "Cézanne does not simply return to a timeless classical harmony. He rebuilds the relation between bodies and environment through forms that remain materially and perceptually difficult. The picture’s importance lies in that reconstruction: inherited grandeur is approached through a surface that refuses to pretend the problem has become easy.",
+            "The work’s unfinished state complicates any claim that all its relationships have reached a final resolution. It also prevents incompletion from being dismissed as mere lack: large-scale organization remains forceful alongside unevenly settled passages. The question is how much coherence a painting can establish without uniform finish. An interpretation that celebrates its influence should still return to those particular conditions, rather than allowing later artistic developments to settle the object’s own unresolved encounter."
           ]
         }
       ],
@@ -3612,8 +3649,8 @@
           "scope": "Object identity, recorded dating and dimensions"
         }
       ],
-      "words": 260,
-      "minutes": 2,
+      "words": 483,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -3686,7 +3723,8 @@
           ],
           "paragraphs": [
             "Mont Sainte-Victoire was a recurring subject for Cézanne. Repetition allowed a familiar landscape to become a continuing problem rather than a finished souvenir. This Courtauld painting uses a large pine to establish a particular relationship between the observer’s near position and the mountain beyond.",
-            "The mountain’s recurrence should not make the versions seem equivalent. A shifted foreground, format or viewpoint changes the entire system through which depth and form are constructed."
+            "The mountain’s recurrence should not make the versions seem equivalent. A shifted foreground, format or viewpoint changes the entire system through which depth and form are constructed.",
+            "A recurring subject need not imply a repeated answer. In this painting the conspicuous pine establishes a particular relation between the observer and the distant mountain. That relation distinguishes this composition from other Sainte-Victoire views. Dates, location and the identity of the motif provide necessary orientation, but they cannot substitute for describing the chosen arrangement. A productive comparison would therefore begin with the foreground structure, rather than treating every mountain painting as another version of one interchangeable scene."
           ]
         },
         {
@@ -3696,7 +3734,8 @@
           "sources": [],
           "paragraphs": [
             "The tree’s trunk and branches do more than surround the distant view. Their curves and directions interact with the mountain and the intervening landscape. The foreground form becomes an active measure of the space beyond it.",
-            "Patches of related color move across different depths. Fields, buildings and vegetation remain recognizable, yet their painted construction makes them participate in a broader surface rhythm. The eye travels into distance while repeatedly returning to the canvas’s organization."
+            "Patches of related color move across different depths. Fields, buildings and vegetation remain recognizable, yet their painted construction makes them participate in a broader surface rhythm. The eye travels into distance while repeatedly returning to the canvas’s organization.",
+            "Trace the trunk upward and then let the branches lead your attention across the distance. They do more than ornament a view already complete behind them: they divide the available sky and affect the mountain’s apparent breadth. Near and far remain distinct, yet the painted surface brings their contours into conversation. The work can thus hold two experiences together, an extended landscape and a closely organized field of marks, without reducing one to the other."
           ]
         },
         {
@@ -3706,15 +3745,16 @@
           "sources": [],
           "paragraphs": [
             "The painting does not offer a collection of equally described objects. It asks how each part can contribute to a whole without losing its particular character. Near tree and distant mountain are different in scale, but neither becomes expendable.",
-            "Cézanne’s sustained attention makes familiarity a source of complexity. The more a subject is known, the more its changing pictorial relations can be examined. The work gives a local landscape the seriousness of an extended inquiry into how the world can be built through color."
+            "Cézanne’s sustained attention makes familiarity a source of complexity. The more a subject is known, the more its changing pictorial relations can be examined. The work gives a local landscape the seriousness of an extended inquiry into how the world can be built through color.",
+            "The most useful final question concerns what the tree makes possible. Imagine removing it: the mountain would remain identifiable, but the viewer’s route into the painting would change substantially. This is why naming the landscape’s components is only a beginning. Cézanne’s argument is made through their relations. The scene is neither an inventory of a familiar place nor an abstract design detached from it; the difficulty, and the interest, lies in sustaining both kinds of attention."
           ]
         }
       ],
       "sources": [
         {
-          "title": "Courtauld · Collection",
-          "url": "https://courtauld.ac.uk/gallery/collection/",
-          "scope": "Courtauld painting and collection context"
+          "title": "Courtauld · Montagne Sainte-Victoire with Large Pine",
+          "url": "https://courtauld.ac.uk/highlights/montagne-sainte-victoire-with-large-pine/",
+          "scope": "Specific painting, repeated views and the relationship of foreground branches to mountain contours"
         },
         {
           "title": "Metropolitan Museum of Art · Cézanne",
@@ -3722,14 +3762,14 @@
           "scope": "Repeated Mont Sainte-Victoire motif"
         }
       ],
-      "words": 251,
-      "minutes": 2,
+      "words": 480,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "cezanne-06": {
       "title": "An image of objects, an object among images",
-      "lead": "Still Life with Plaster Cupid makes a studio arrangement unstable by placing a sculpted body, painted pictures and ordinary things within one shifting space.",
+      "lead": "A pale plaster Cupid stands among objects and other pictures. Cézanne gives the cast bodily weight while making the surrounding floor, supports and represented spaces difficult to reconcile.",
       "sections": [
         {
           "id": "section-1",
@@ -3760,7 +3800,8 @@
           "sources": [],
           "paragraphs": [
             "The image can be read as an inquiry into how objects become forms within a picture. The plaster Cupid is solid, but also already an artistic construction. The surrounding images make that construction explicit rather than allowing the spectator to forget it.",
-            "The painting’s sophistication lies in making a studio arrangement think about representation without turning into a diagram. The objects retain their weight and strangeness, while the spatial instability keeps the viewer aware that seeing and painting are active, selective processes."
+            "The painting’s sophistication lies in making a studio arrangement think about representation without turning into a diagram. The objects retain their weight and strangeness, while the spatial instability keeps the viewer aware that seeing and painting are active, selective processes.",
+            "Begin with the cast’s apparent solidity and follow the surfaces that seem to support it. At what point does an edge stop resolving the space and start making it uncertain? That question keeps the argument attached to the arrangement. The painting does not require us to abandon the objects in favor of an abstract theory. It makes their weight and their pictorial construction insist on being considered together, leaving the act of seeing unusually exposed."
           ]
         }
       ],
@@ -3771,7 +3812,7 @@
           "scope": "Work record and studio objects"
         }
       ],
-      "words": 265,
+      "words": 344,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -3789,7 +3830,8 @@
           ],
           "paragraphs": [
             "Painted in 1873, the work belongs to Cézanne’s engagement with Auvers-sur-Oise and the artistic environment around Pissarro. It appeared in the first Impressionist exhibition. Its later title should not be used to invent a depicted execution or a visible tragedy; the image itself presents a landscape without that narrative action.",
-            "The painting connects Cézanne to Impressionism while already revealing a distinctive concern with density and construction. Light matters, but it does not dissolve the buildings into a passing atmospheric effect."
+            "The painting connects Cézanne to Impressionism while already revealing a distinctive concern with density and construction. Light matters, but it does not dissolve the buildings into a passing atmospheric effect.",
+            "The title should not be mistaken for a visible event. Nothing in the pictured scene establishes an execution or authorizes a narrative about the inhabitants. The Auvers setting and the work’s early exhibition history locate it within a consequential period of Cézanne’s development; they do not explain every unusual spatial decision. The strongest historical introduction prepares a viewer to examine those decisions rather than turning the painting into an illustration of a dramatic name."
           ]
         },
         {
@@ -3799,7 +3841,8 @@
           "sources": [],
           "paragraphs": [
             "The foreground route draws the eye inward, yet the close buildings and rising terrain restrict an expansive view. Roofs and walls form interlocking masses. Vegetation adds irregular texture, but it too contributes to the scene’s compressed solidity.",
-            "Visible, substantial strokes make surfaces resistant. The paint’s handling gives the terrain a weight that differs from the loose shimmer often associated with Impressionism. Depth must be negotiated through overlaps and angled planes rather than simply enjoyed as open recession."
+            "Visible, substantial strokes make surfaces resistant. The paint’s handling gives the terrain a weight that differs from the loose shimmer often associated with Impressionism. Depth must be negotiated through overlaps and angled planes rather than simply enjoyed as open recession.",
+            "The route into the scene is repeatedly qualified by nearby walls, buildings and rising ground. Instead of opening smoothly toward a distant horizon, the space feels assembled from surfaces that interrupt one another. Compare the inclination of the path with the principal edges of the houses. Their relationship makes entry possible but not effortless. The material presence of paint reinforces this resistance: the scene asks to be read as constructed form as well as recognizable terrain."
           ]
         },
         {
@@ -3809,7 +3852,8 @@
           "sources": [],
           "paragraphs": [
             "The work is valuable precisely because it does not fit one stylistic label perfectly. It participates in an independent exhibition culture while pursuing a pictorial density that would become increasingly important to Cézanne.",
-            "The landscape’s force comes from how firmly it holds its parts together. The modest village subject becomes a structure of material encounters. Cézanne makes the viewer feel the difficulty of passing through space, turning an apparently quiet view into an exacting problem of orientation and form."
+            "The landscape’s force comes from how firmly it holds its parts together. The modest village subject becomes a structure of material encounters. Cézanne makes the viewer feel the difficulty of passing through space, turning an apparently quiet view into an exacting problem of orientation and form.",
+            "To call the work a threshold in a career is useful only if the painting remains more than a preliminary step toward later fame. Its compressed approach and weighty surfaces are achievements to examine in their own right. The consequential question is how these forms produce a place that seems both accessible and obstructed. A later development in Cézanne’s practice may illuminate that question, but should not make the earlier canvas disappear into a retrospective success story."
           ]
         }
       ],
@@ -3820,8 +3864,8 @@
           "scope": "1873 painting and exhibition context"
         }
       ],
-      "words": 258,
-      "minutes": 2,
+      "words": 485,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -4587,7 +4631,7 @@
     },
     "goya-03": {
       "title": "Power consuming what comes after it",
-      "lead": "Saturn makes an ancient story of succession terrifying by reducing it to a devouring body, a fixed stare and the remains of another body.",
+      "lead": "A ruler grips a damaged body in the dark. In Saturn, the ancient story of threatened succession survives, but Goya withholds the setting and heroic composure that might make its violence easier to contain.",
       "sections": [
         {
           "id": "section-1",
@@ -4618,7 +4662,8 @@
           "sources": [],
           "paragraphs": [
             "Readings involving political tyranny, age, fear and the destruction of the future are plausible because they connect to the story and visible action. They remain interpretive arguments. The painting is not evidence from which to diagnose Goya’s mental state.",
-            "Its distinction lies in the collapse of monumental mythology into an intimate, appalling encounter. The myth’s explanatory structure survives, but the painted form refuses the composure that can make classical violence feel safely remote."
+            "Its distinction lies in the collapse of monumental mythology into an intimate, appalling encounter. The myth’s explanatory structure survives, but the painted form refuses the composure that can make classical violence feel safely remote.",
+            "Return to the hands rather than attempting to decode the stare. Their grip establishes an unmistakable physical action; the darkness leaves its larger circumstances unpictured. That difference sets a useful limit on interpretation. The myth helps name the action, while the painting makes its proximity difficult to endure. An account of tyranny or age becomes convincing only when it explains this particular encounter, rather than substituting a biographical diagnosis for it."
           ]
         }
       ],
@@ -4629,7 +4674,7 @@
           "scope": "Black Painting, original wall setting and transfer history"
         }
       ],
-      "words": 261,
+      "words": 342,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -5271,7 +5316,8 @@
           ],
           "paragraphs": [
             "Painted in 1926, the work belongs to Kandinsky’s Bauhaus years. The Guggenheim connects the recurring circle to his interest in reconciling oppositions through form. That theoretical context explains why such a restricted motif could be an ambitious subject rather than a simple reduction of effort.",
-            "The circles are not identified as a literal astronomical chart. Cosmic associations are possible, but the painting’s structure can be described without assigning every form the name of a planet or celestial body."
+            "The circles are not identified as a literal astronomical chart. Cosmic associations are possible, but the painting’s structure can be described without assigning every form the name of a planet or celestial body.",
+            "The limited vocabulary makes differences unusually consequential. Because the forms share a basic geometry, a change in diameter, overlap or color cannot be explained away as the practical necessity of depicting a different object. The work directs attention toward relations within a constructed visual field. Its historical connection with Kandinsky’s teaching and theoretical interests provides context for that investigation; it does not supply a fixed translation in which each circle must stand for a named idea."
           ]
         },
         {
@@ -5281,7 +5327,8 @@
           "sources": [],
           "paragraphs": [
             "The circles differ in size, color and apparent opacity. Some overlap, creating new areas whose effects make the viewer imagine transparent layers. Others remain isolated against the dark field, acquiring a different degree of presence.",
-            "The largest forms establish a broad balance, while small circles interrupt it locally. Soft edges and brighter halos complicate the relation between flat geometry and an impression of luminous volume. The background feels spacious because the shapes activate it through unequal intervals."
+            "The largest forms establish a broad balance, while small circles interrupt it locally. Soft edges and brighter halos complicate the relation between flat geometry and an impression of luminous volume. The background feels spacious because the shapes activate it through unequal intervals.",
+            "Begin with the largest circular form, then compare the smaller ones that appear to overlap it or remain separate. Some boundaries feel decisive; others suggest transparency. These differences make depth seem available without establishing a conventional room or landscape. The dark ground matters because it allows brightness to register as a spatial event. Whether a form appears to advance or recede depends on its neighbors as well as its own color and size."
           ]
         },
         {
@@ -5291,7 +5338,8 @@
           "sources": [],
           "paragraphs": [
             "The work demonstrates how repetition can sharpen perception. Because the basic shape recurs, differences of placement and color become especially consequential. A small change can alter a form’s apparent weight or its relation to the whole.",
-            "Kandinsky gives abstraction an unusual calm without making it inert. The image remains full of potential movement, but its forces are held in suspension. Its character arises from exact distinctions within a shared vocabulary, making restraint a source of complexity rather than an escape from it."
+            "Kandinsky gives abstraction an unusual calm without making it inert. The image remains full of potential movement, but its forces are held in suspension. Its character arises from exact distinctions within a shared vocabulary, making restraint a source of complexity rather than an escape from it.",
+            "Avoid resolving the painting too quickly into a diagram of planets or an illustration of a theory. Such associations may describe a viewer’s response, but they require attribution if presented as historical intention. The more durable question is how a small family of shapes produces unequal weights, distances and tensions. Its apparent simplicity is an invitation to discriminate more carefully, rather than evidence that there is less to encounter."
           ]
         }
       ],
@@ -5302,14 +5350,14 @@
           "scope": "1926 work and the significance of circles"
         }
       ],
-      "words": 255,
-      "minutes": 2,
+      "words": 473,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "kandinsky-05": {
       "title": "A rider before the language of abstraction",
-      "lead": "The Blue Rider holds a small moving figure within a landscape whose color and handling already matter beyond straightforward description.",
+      "lead": "A pale horse and a blue rider cross a broad slope. Kandinsky makes the small figure recognizable without allowing its possible story to exhaust the landscape’s color and movement.",
       "sections": [
         {
           "id": "section-1",
@@ -5341,7 +5389,8 @@
           "sources": [],
           "paragraphs": [
             "It is useful to connect the work with Kandinsky’s later abstraction, but misleading to treat every early mark as an inevitable step toward one predetermined result. The painting has its own problem: how can a landscape and a passing figure share expressive force?",
-            "Its interest lies in that balance. The recognizable rider gives the viewer a point of entry, while the broad handling makes the experience of painting more than an illustrated anecdote. A later career can enrich the encounter without replacing it."
+            "Its interest lies in that balance. The recognizable rider gives the viewer a point of entry, while the broad handling makes the experience of painting more than an illustrated anecdote. A later career can enrich the encounter without replacing it.",
+            "Try looking first for a rider’s story and then for the directions established by the surrounding strokes. Neither encounter has to cancel the other. The horse provides an orientation; the painted field keeps offering relationships that recognition does not finish. That is the work’s productive tension. It is more revealing to describe where the eye leaves the figure and returns than to assign the canvas a place on an inevitable road to abstraction."
           ]
         }
       ],
@@ -5357,7 +5406,7 @@
           "scope": "Early career and later Blue Rider group"
         }
       ],
-      "words": 262,
+      "words": 344,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -7074,7 +7123,8 @@
           ],
           "paragraphs": [
             "Monet painted several views of the Gare Saint-Lazare in 1877. This is the Orsay canvas, not an interchangeable reproduction of another version. The series made a railway terminal a subject worthy of sustained painterly examination, joining architecture, machinery, crowds and atmosphere.",
-            "The station belongs to the network of transport through which modern Paris connected with its surroundings. Its steam is therefore produced, not simply a natural mist. The environment is both engineered and perceptually unstable."
+            "The station belongs to the network of transport through which modern Paris connected with its surroundings. Its steam is therefore produced, not simply a natural mist. The environment is both engineered and perceptually unstable.",
+            "The series offers a useful distinction between identifying a place and understanding a sustained investigation. Recognizing the terminal gives the subject a name; comparing how its roof, trains and vapor occupy this particular canvas explains the pictorial problem. The station is not an illustrative backdrop for an account of technological progress. Its operations generate the changing conditions that Monet has chosen to paint. Historical context becomes useful when it returns us to that visible interaction."
           ]
         },
         {
@@ -7084,7 +7134,8 @@
           "sources": [],
           "paragraphs": [
             "The roof’s geometry gives the picture a strong framework. Beneath it, vapor interrupts the continuity of trains and buildings. The eye alternates between the legibility of beams and the indeterminacy of steam, repeatedly reconstructing the space.",
-            "Dark locomotives and small figures provide concentrated forms within the pale clouds. The paint does not describe vapor as an empty gap; it gives it color, density and movement. Industrial activity becomes a producer of visual effects that rival those of landscape weather."
+            "Dark locomotives and small figures provide concentrated forms within the pale clouds. The paint does not describe vapor as an empty gap; it gives it color, density and movement. Industrial activity becomes a producer of visual effects that rival those of landscape weather.",
+            "Follow a roof beam until its direction becomes difficult to maintain through the vapor. Then recover the same structural rhythm elsewhere. This small exercise reveals how much continuity the viewer supplies. The picture does not abandon construction in favor of atmosphere: it sets their different kinds of legibility against each other. A reproduction can flatten the pale passages, so the apparent whiteness of the steam should not be mistaken for an absence of painted distinctions."
           ]
         },
         {
@@ -7094,7 +7145,8 @@
           "sources": [],
           "paragraphs": [
             "The picture does more than prove that Impressionists painted contemporary subjects. The station changes what painting has to solve. The painter must represent a space whose defining activity continually obscures its architecture.",
-            "Monet makes this contradiction productive. The engineering holds the scene together while the vapor keeps its appearance in motion. The work asks viewers to understand modern infrastructure not as a fixed collection of objects but as an environment that makes and remakes its own visibility."
+            "Monet makes this contradiction productive. The engineering holds the scene together while the vapor keeps its appearance in motion. The work asks viewers to understand modern infrastructure not as a fixed collection of objects but as an environment that makes and remakes its own visibility.",
+            "The unresolved question is how much stability the image allows its observer. Architecture promises a space that can be measured, while the passing vapor prevents a complete inventory. Neither simply defeats the other. Look again at the points where a dark form becomes distinct and then dissolves into its surroundings. The work’s modernity lies partly in asking us to see a functioning environment through appearances that its own functioning makes provisional."
           ]
         }
       ],
@@ -7105,8 +7157,8 @@
           "scope": "Orsay version and 1877 station series"
         }
       ],
-      "words": 245,
-      "minutes": 2,
+      "words": 466,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -7210,7 +7262,7 @@
     },
     "monet-07": {
       "title": "The large figure painting meets outdoor light",
-      "lead": "Women in the Garden makes a social outdoor scene into an ambitious investigation of sunlight, fabric and the practical limits of painting at scale.",
+      "lead": "Sunlight and broken shadow move across pale dresses in Women in the Garden. Monet makes fashionable outdoor life the subject of a large painting whose ambition depends on unstable conditions of visibility.",
       "sections": [
         {
           "id": "section-1",
@@ -7242,7 +7294,8 @@
           "sources": [],
           "paragraphs": [
             "The painting’s social world is not outside history simply because its mood appears pleasant. Dress, leisure and cultivated space belong to particular conditions of class and access. At the same time, the work’s pictorial problem cannot be reduced to a sociological label.",
-            "Monet uses contemporary figures to test how a large painting can hold the instability of outdoor light. The result is a significant early negotiation between the demands of formal exhibition and the desire to make perception feel immediate."
+            "Monet uses contemporary figures to test how a large painting can hold the instability of outdoor light. The result is a significant early negotiation between the demands of formal exhibition and the desire to make perception feel immediate.",
+            "Compare two passages of white fabric before treating them as one bright mass. Shadow, folds and adjacent vegetation make their light different. The figures’ relative stillness provides something against which those differences can register. The scene’s apparent leisure therefore holds an exacting painterly problem: how can a substantial exhibition picture make changing illumination feel present? Monet’s answer is in the unequal visibility of the dresses, rather than in an anecdote explaining what the women are doing."
           ]
         }
       ],
@@ -7258,7 +7311,7 @@
           "scope": "Technical examination and revisions"
         }
       ],
-      "words": 265,
+      "words": 349,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -7399,7 +7452,7 @@
     },
     "morisot-03": {
       "title": "Two scales of attention at the harbor",
-      "lead": "The Harbor at Lorient places a seated figure beside a working waterfront, allowing intimacy and maritime space to remain in productive contrast.",
+      "lead": "A seated woman gathers light at the edge of a working harbor. Morisot brings an intimate foreground and a more distant world of boats, water and buildings into one field of attention.",
       "sections": [
         {
           "id": "section-1",
@@ -7431,7 +7484,8 @@
           "sources": [],
           "paragraphs": [
             "The painting is neither simply a portrait with scenery nor simply a landscape containing a scale figure. Its interest lies in the proportion of attention granted to each. A private relation and a public place occupy one field without becoming interchangeable meanings.",
-            "Morisot’s early work already demonstrates an ability to make such negotiations subtle. The scene’s apparent quiet depends on a careful balance of proximity and distance, with the seated body acting as an anchor from which the harbor remains open to exploration."
+            "Morisot’s early work already demonstrates an ability to make such negotiations subtle. The scene’s apparent quiet depends on a careful balance of proximity and distance, with the seated body acting as an anchor from which the harbor remains open to exploration.",
+            "Move from the folds of the pale dress to the angular lines beyond it, then return to the seated figure. The change in rhythm makes the near and distant worlds distinct without breaking the picture apart. Her presence gives the harbor a bodily scale; the harbor prevents her presence from becoming the painting’s only subject. This exchange is more specific than a general claim about Impressionist modernity. It describes how Morisot makes a private encounter remain open to a place beyond it."
           ]
         }
       ],
@@ -7447,7 +7501,7 @@
           "scope": "Early career and family context"
         }
       ],
-      "words": 265,
+      "words": 357,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -7465,7 +7519,8 @@
           ],
           "paragraphs": [
             "The Cleveland painting dates to 1873 and represents Edma Morisot reading outdoors. The sitter’s identification supplies a family connection, but the content of the book and the exact course of her thought are not available to the viewer.",
-            "This is a crucial distinction in a work about attention. The painter makes reading visible as an activity while preserving the reader’s absorption. A viewer sees a person engaged in something beyond the spectator’s own presence."
+            "This is a crucial distinction in a work about attention. The painter makes reading visible as an activity while preserving the reader’s absorption. A viewer sees a person engaged in something beyond the spectator’s own presence.",
+            "Knowing the reader’s identity supplies a relationship, not access to her consciousness. The museum identifies Edma, Morisot’s sister; that documentation should remain distinct from any proposal about what she thinks or feels. The book’s presence establishes an activity, while its inaccessible text preserves a limit. The painting’s intimacy is therefore not the same thing as complete knowledge. It offers proximity to a person who remains occupied with something the spectator cannot fully share."
           ]
         },
         {
@@ -7475,7 +7530,8 @@
           "sources": [],
           "paragraphs": [
             "The dress establishes a large light form against the surrounding vegetation. The book provides a smaller, more concentrated area near the hands. These unequal scales make the act of reading legible without requiring a close rendering of individual words.",
-            "The seated posture is relaxed but structured. The body and fabric spread across the foreground, while foliage and ground remain lively through visible strokes. Morisot does not fully seal the figure off from this environment; color and handling allow it to remain permeable to light."
+            "The seated posture is relaxed but structured. The body and fabric spread across the foreground, while foliage and ground remain lively through visible strokes. Morisot does not fully seal the figure off from this environment; color and handling allow it to remain permeable to light.",
+            "The dress creates a broad light area, but its folds and surrounding touches prevent it from behaving like an unmodulated cutout. The smaller book concentrates attention within that larger field. Hands, page and inclined attention give the scene its specific action. Look at how the edges of the figure meet the setting: their changing clarity can bind person and environment together without erasing the difference between a body, fabric and surrounding vegetation."
           ]
         },
         {
@@ -7485,7 +7541,8 @@
           "sources": [],
           "paragraphs": [
             "Unlike a portrait that directly meets the viewer’s gaze, this image asks us to attend to someone whose attention is elsewhere. That arrangement gives the subject a degree of independence from the act of being seen.",
-            "The painting’s seriousness lies in making intellectual absorption compatible with the sensory activity of an outdoor scene. Thought is not illustrated as an emblem or a dramatic revelation. It appears through posture, a book and the concentration of a person who remains partly unavailable to the viewer."
+            "The painting’s seriousness lies in making intellectual absorption compatible with the sensory activity of an outdoor scene. Thought is not illustrated as an emblem or a dramatic revelation. It appears through posture, a book and the concentration of a person who remains partly unavailable to the viewer.",
+            "A reading figure can be familiar enough to escape sustained attention. Morisot counters that familiarity through the relation between public visibility and private occupation. The spectator sees the act of reading but cannot complete it on the sitter’s behalf. The useful question is what the composition permits us to know, and what our interpretation adds. This distinction makes the picture’s restraint an active part of its meaning rather than an absence of narrative."
           ]
         }
       ],
@@ -7496,14 +7553,14 @@
           "scope": "1873 painting, Edma and work record"
         }
       ],
-      "words": 258,
-      "minutes": 2,
+      "words": 476,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "morisot-05": {
       "title": "A mirror and the act of self-presentation",
-      "lead": "The Psyche Mirror gives a familiar dressing-room scene a complex structure of looking, adjustment and reflected space.",
+      "lead": "A woman adjusts her clothing before a tall dressing mirror. Morisot makes this small act of self-presentation a study of who looks, what can be seen, and how private appearance is prepared.",
       "sections": [
         {
           "id": "section-1",
@@ -7534,7 +7591,8 @@
           "sources": [],
           "paragraphs": [
             "The scene can be considered in relation to dress, gender and self-regard without reducing it to an automatic allegory of vanity. The woman’s own attention is active. At the same time, self-presentation occurs within social expectations about appearance.",
-            "Morisot gives this ordinary negotiation formal precision. The painting makes a private adjustment into a structure of distinct viewpoints, demonstrating how a domestic subject can examine the relation between a person’s agency and the image they are expected to produce."
+            "Morisot gives this ordinary negotiation formal precision. The painting makes a private adjustment into a structure of distinct viewpoints, demonstrating how a domestic subject can examine the relation between a person’s agency and the image they are expected to produce.",
+            "Look once more at the turn of the figure and the direction of her attention. We can observe an adjustment and a relationship to the mirror; we cannot observe a thought. Keeping that distinction makes the painting more demanding. The spectator must consider the labor of appearance without pretending to possess the woman’s private judgment of herself. The mirror offers access to another view while preserving the distance between looking at a person and knowing her."
           ]
         }
       ],
@@ -7545,14 +7603,14 @@
           "scope": "1876 work, mirror terminology and 1877 exhibition"
         }
       ],
-      "words": 261,
+      "words": 352,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
     "morisot-06": {
       "title": "The room and the work that sustains it",
-      "lead": "In the Dining Room gives a domestic interior energy through an active figure and brushwork that keeps surfaces open to one another.",
+      "lead": "An occupied dining room is held together by a figure, furniture and quick passages of paint. Morisot makes household activity, rather than a perfectly finished inventory, the measure of the interior.",
       "sections": [
         {
           "id": "section-1",
@@ -7584,7 +7642,8 @@
           "sources": [],
           "paragraphs": [
             "The work’s apparent informality should not hide its control. Morisot selects where a contour needs emphasis and where color can carry a relationship more loosely. The painting’s vitality depends on this unequal distribution of precision.",
-            "Its significance lies in making an ordinary interior a site of pictorial inquiry. The room is not a backdrop for a generalized image of femininity. It is a working environment whose forms, inhabitants and light become inseparable within the painted surface."
+            "Its significance lies in making an ordinary interior a site of pictorial inquiry. The room is not a backdrop for a generalized image of femininity. It is a working environment whose forms, inhabitants and light become inseparable within the painted surface.",
+            "Compare a firmer contour near the figure with a passage where an object is carried by only a few strokes. The difference is not simply a scale from finished to unfinished. It establishes a hierarchy of attention within an occupied space. Morisot lets the viewer recognize a room without inspecting every surface equally. The painting’s apparent ease is the result of those discriminations: it asks us to see an environment through the activity that makes it lived in."
           ]
         }
       ],
@@ -7600,7 +7659,7 @@
           "scope": "Late career and domestic subjects"
         }
       ],
-      "words": 262,
+      "words": 349,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -9380,7 +9439,7 @@
     },
     "turner-07": {
       "title": "An empire seen near its beginning",
-      "lead": "Dido Building Carthage gives monumental architecture the light of apparent promise while asking viewers to know that historical greatness is temporary.",
+      "lead": "A luminous harbor opens between monumental buildings in Dido Building Carthage. Turner gives the founding of an ancient city the promise of a beginning viewed with knowledge of what followed.",
       "sections": [
         {
           "id": "section-1",
@@ -9411,7 +9470,8 @@
           "sources": [],
           "paragraphs": [
             "A viewer familiar with Carthage’s later fate sees more than a foundation scene. The image’s promise is shadowed by historical knowledge, even where destruction is not represented. This temporal doubleness distinguishes a history landscape from a merely attractive imaginary port.",
-            "Turner makes ambition visible through architecture and distance. The work’s grandeur is real, but it need not be mistaken for a guarantee of permanence. The city’s apparent beginning invites reflection on the conditions under which civilizations build, flourish and become objects of memory."
+            "Turner makes ambition visible through architecture and distance. The work’s grandeur is real, but it need not be mistaken for a guarantee of permanence. The city’s apparent beginning invites reflection on the conditions under which civilizations build, flourish and become objects of memory.",
+            "Look from the small waterfront figures toward the buildings and then into the light. Each change of scale makes individual activity seem part of a larger construction. The historical reading depends on that visible enlargement: ambition becomes an environment rather than a single heroic gesture. Yet light and distance also keep the city beyond complete possession. The painting can celebrate what people build while leaving open how little a monumental beginning guarantees about its future."
           ]
         }
       ],
@@ -9422,7 +9482,7 @@
           "scope": "1815 painting, classical subject and relationship to Claude"
         }
       ],
-      "words": 262,
+      "words": 346,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -9779,7 +9839,7 @@
     },
     "van-gogh-06": {
       "title": "Individual flowers within an insistent pattern",
-      "lead": "Irises combines close botanical attention with a compressed, decorative field, making each plant distinct without losing the larger rhythm.",
+      "lead": "Long leaves and irregular blossoms press against the edges of Irises. Van Gogh gives the garden patch the coherence of a pattern while keeping individual plants distinct within it.",
       "sections": [
         {
           "id": "section-1",
@@ -9812,7 +9872,8 @@
           ],
           "paragraphs": [
             "Getty’s research investigates changes in the painting’s pigments and the relation between its present appearance and earlier color relationships. A digital reproduction therefore records an object with an aging material history, not an untouched window into 1889.",
-            "This makes the work especially useful for thinking about preservation. Scientific examination can clarify what has changed without making the present painting cease to be the historical object. Visual analysis and conservation knowledge address different but connected aspects of the same encounter."
+            "This makes the work especially useful for thinking about preservation. Scientific examination can clarify what has changed without making the present painting cease to be the historical object. Visual analysis and conservation knowledge address different but connected aspects of the same encounter.",
+            "Return to the pale blossom and then follow the leaves away from it. The interruption has force because the rest of the field is differentiated, not because every flower must carry a separate symbolic meaning. Conservation adds another question: which relationships belong to the present surface, and which have changed with its materials? Holding these questions together allows close looking to remain attentive to the painting we have, without claiming that a reproduction restores an untouched original appearance."
           ]
         }
       ],
@@ -9828,7 +9889,7 @@
           "scope": "Scientific examination and changing pigments"
         }
       ],
-      "words": 263,
+      "words": 351,
       "minutes": 2,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
@@ -9846,7 +9907,8 @@
           ],
           "paragraphs": [
             "Painted at Auvers in July 1890, the picture is frequently described as Van Gogh’s last work. The Van Gogh Museum explicitly rejects that persistent claim and notes that he made other paintings afterward. The image should not be made to bear the weight of a fabricated final message.",
-            "His letters associate wheatfields under troubled skies with difficult feelings, but also with something sustaining in the countryside. The historical evidence is therefore more complex than a single equation between dark sky and an approaching death."
+            "His letters associate wheatfields under troubled skies with difficult feelings, but also with something sustaining in the countryside. The historical evidence is therefore more complex than a single equation between dark sky and an approaching death.",
+            "Removing the last-painting story changes the task of interpretation. The picture can still be forceful, unsettling or moving, but those responses must answer to its visible organization rather than depend on a supposedly final message. Its placement within July 1890 remains significant without establishing a precise psychological script. Chronology sets limits on the story that can responsibly be told; it does not eliminate the need for close attention to the painting itself."
           ]
         },
         {
@@ -9856,7 +9918,8 @@
           "sources": [],
           "paragraphs": [
             "The wide format spreads the wheat across the foreground. Paths divide it into strong directional areas, while the dark birds punctuate the sky. Blue and yellow-orange meet forcefully, and green edges intensify the warmer path.",
-            "The brushwork gives different regions distinct movements. Wheat, paths and sky remain recognizable, yet their directional marks make the surface feel restless. The eye follows possible routes without receiving a single calm, central destination."
+            "The brushwork gives different regions distinct movements. Wheat, paths and sky remain recognizable, yet their directional marks make the surface feel restless. The eye follows possible routes without receiving a single calm, central destination.",
+            "The unusually wide field gives the paths room to divide rather than directing every movement toward a single destination. Birds punctuate the sky at different points, while the contrast between wheat and blue intensifies the separation of ground and atmosphere. These visible relations support an account of tension, but they do not identify one mandatory emotion. Follow each path separately before treating the whole scene as a single emblem of despair."
           ]
         },
         {
@@ -9866,7 +9929,8 @@
           "sources": [],
           "paragraphs": [
             "The painting can still evoke uncertainty, loneliness or vitality once the last-picture story is removed. Those experiences are better argued through its visible choices than justified by an incorrect chronology. The work does not become less expressive when its history becomes more accurate.",
-            "Its sophistication lies in holding opposed energies together. A productive landscape and a troubled atmosphere share one field. Movement can suggest both life and disturbance. The image remains powerful because those relations do not settle into a single explanatory symbol."
+            "Its sophistication lies in holding opposed energies together. A productive landscape and a troubled atmosphere share one field. Movement can suggest both life and disturbance. The image remains powerful because those relations do not settle into a single explanatory symbol.",
+            "An honest interpretation can acknowledge the viewer’s knowledge of Van Gogh’s death without making that knowledge the only key to the picture. The distinction matters because a compelling retrospective story can become self-confirming: every mark begins to look like evidence for an ending already assumed. Ask which parts of a proposed reading remain persuasive when the last-painting claim is withdrawn. Those are the observations from which a more accountable argument can begin."
           ]
         }
       ],
@@ -9877,8 +9941,8 @@
           "scope": "July 1890, later works and the artist’s qualified account of wheatfields"
         }
       ],
-      "words": 260,
-      "minutes": 2,
+      "words": 475,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -10077,7 +10141,8 @@
           ],
           "paragraphs": [
             "Vermeer depicts Delft from across the water, organizing recognizable buildings within a broad city view. The work belongs to a Dutch culture that valued urban identity, but it should not be mistaken for a mechanically exact survey of every architectural relationship.",
-            "A painted city view combines selection with observation. The artist chooses a position, distribution of light and arrangement of visual emphasis. These decisions can communicate a city’s presence more forcefully than the equal description of every feature."
+            "A painted city view combines selection with observation. The artist chooses a position, distribution of light and arrangement of visual emphasis. These decisions can communicate a city’s presence more forcefully than the equal description of every feature.",
+            "The recognizable city establishes a geographical subject, but the painting is not exhausted by identifying buildings. The separation of near bank, water and distant architecture organizes the conditions under which the city is encountered. This is why a topographical comparison and an account of composition answer different questions. One may help locate a feature; the other explains how the chosen distances, contrasts and intervals make a view persuasive as a painting."
           ]
         },
         {
@@ -10087,7 +10152,8 @@
           "sources": [],
           "paragraphs": [
             "The water establishes separation before the eye reaches the buildings. Small foreground figures provide a human measure without becoming the main narrative. Above, the sky occupies a large portion of the composition, making weather an organizing force rather than a neutral background.",
-            "Dark passages near the waterfront contrast with sunlit architecture farther within the city. This alternation prevents the skyline from becoming a flat silhouette. Reflections extend forms downward, while tiny accents and textured surfaces interrupt the larger horizontal bands."
+            "Dark passages near the waterfront contrast with sunlit architecture farther within the city. This alternation prevents the skyline from becoming a flat silhouette. Reflections extend forms downward, while tiny accents and textured surfaces interrupt the larger horizontal bands.",
+            "The foreground figures provide an immediate measure of human scale while the water prevents a direct passage into the city. Across that interval, differences of illumination make some architectural surfaces more assertive than others. The sky occupies enough space to change the balance of the built forms below it. Calm emerges through these unequal emphases, rather than through a uniformly quiet or evenly lit inventory of urban details."
           ]
         },
         {
@@ -10097,7 +10163,8 @@
           "sources": [],
           "paragraphs": [
             "The view can feel unusually calm, yet its calm depends on many variations: cloud and opening, shadow and illumination, solid building and unstable reflection. Vermeer does not eliminate change; he contains it within a balanced field.",
-            "The painting’s effect is therefore not simply photographic fidelity. It offers a carefully mediated experience of a city at a particular-looking moment. The viewer’s distance, the dominance of the sky and the unequal distribution of light turn familiar architecture into a subject for sustained contemplation."
+            "The painting’s effect is therefore not simply photographic fidelity. It offers a carefully mediated experience of a city at a particular-looking moment. The viewer’s distance, the dominance of the sky and the unequal distribution of light turn familiar architecture into a subject for sustained contemplation.",
+            "The consequential question is how much adjustment an apparently faithful view may contain. Recognition can coexist with selection, and stillness can be made through contrasts. Neither observation proves that a particular building was altered without documentary support. Instead, the painting invites a careful distinction between identifying its subject and accounting for its effect. Its convincing presence does not require us to pretend that a painted city and a surveyed city are the same kind of record."
           ]
         }
       ],
@@ -10108,8 +10175,8 @@
           "scope": "Collection record, subject and dating"
         }
       ],
-      "words": 260,
-      "minutes": 2,
+      "words": 475,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },

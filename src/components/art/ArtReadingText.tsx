@@ -1,18 +1,35 @@
 import Link from 'next/link';
+import type {ReactNode} from 'react';
 const terms=[
 {term:'tronie',meaning:'A study of a type, expression or costume rather than a commissioned portrait of a named sitter.'},
 {term:'patronage',meaning:'The support, commissioning and collecting relationships through which art is funded and given a setting or audience.'},
 {term:'glazing',meaning:'Using thin translucent layers of paint to modify the appearance of underlying color.'},
 {term:'sfumato',meaning:'Soft tonal transitions that make a boundary difficult to locate, often associated with Leonardo.'},
 {term:'chiaroscuro',meaning:'The use of light and dark to model forms or organize a composition.'},
+{term:'impasto',meaning:'Paint applied in raised passages whose thickness is part of the surface. A reproduction cannot reproduce the relief under changing light.'},
+{term:'foreshortening',meaning:'A figure or object directed into depth appears compressed along that direction, helping it project toward or recede from the viewer.'},
+{term:'pentimento',meaning:'A change made during painting, sometimes revealed by aging or technical examination. A visible irregularity alone does not prove one.'},
+{term:'grisaille',meaning:'Painting largely in gray tones, sometimes used to suggest sculptural relief or as part of a layered process.'},
+{term:'picture plane',meaning:'The physical surface of the picture considered in relation to the space represented on it.'},
+{term:'negative space',meaning:'The shaped intervals around or between figures and objects, which can organize attention as actively as the objects.'},
 {term:'provenance',meaning:'An object’s documented ownership history. Gaps in that history should remain explicit.'}
 ];
+export const termDefinitionId=(section:string,term:string)=>section+'-'+term.replaceAll(' ','-');
 export function termsIn(text:string){return terms.filter(t=>new RegExp('\\b'+t.term+'\\b','i').test(text));}
-export function ArtParagraph({text,termsId,paragraphId,works=[]}:{text:string;paragraphId?:string;termsId:string;works?:{id:string;title:string}[]}){
- const work=works.find(w=>text.includes(w.title));
- if(work){const at=text.indexOf(work.title);return <p id={paragraphId}>{text.slice(0,at)}<Link href={'/study/art/painting/'+work.id}>{work.title}</Link>{text.slice(at+work.title.length)}</p>}
- const term=termsIn(text)[0];if(!term)return <p id={paragraphId}>{text}</p>;const match=new RegExp('\\b'+term.term+'\\b','i').exec(text)!;
- return <p id={paragraphId}>{text.slice(0,match.index)}<a className="art-term-link" href={'#'+termsId} aria-label={match[0]+': definition in this section'}>{match[0]}</a>{text.slice(match.index+match[0].length)}</p>;
+export function ArtParagraph({text,termsId,paragraphId,works=[],origin}:{origin?:string;text:string;paragraphId?:string;termsId:string;works?:{id:string;title:string}[]}){
+ const tokens:{start:number;end:number;node:ReactNode}[]=[];
+ // Link the first occurrence of each title or term, preserving the full paragraph.
+ // Longest titles win when one title contains another; no nested links are made.
+ for(const work of [...works].sort((a,b)=>b.title.length-a.title.length)){
+  const start=text.indexOf(work.title);if(start<0)continue;const end=start+work.title.length;
+  if(!tokens.some(t=>start<t.end&&end>t.start))tokens.push({start,end,node:<Link key={'work-'+start} href={'/study/art/painting/'+work.id+(origin&&paragraphId?'?from=biography&origin='+encodeURIComponent(origin)+'&passage='+encodeURIComponent(paragraphId):'')}>{work.title}</Link>});
+ }
+ for(const term of termsIn(text)){
+  const match=new RegExp('\\b'+term.term+'\\b','i').exec(text)!;const start=match.index,end=start+match[0].length;
+  if(!tokens.some(t=>start<t.end&&end>t.start))tokens.push({start,end,node:<a key={'term-'+start} className="art-term-link" href={'#'+termDefinitionId(termsId,term.term)} aria-label={match[0]+': go to its definition'}>{match[0]}</a>});
+ }
+ const nodes:ReactNode[]=[];let at=0;for(const t of tokens.sort((a,b)=>a.start-b.start)){nodes.push(text.slice(at,t.start),t.node);at=t.end;}nodes.push(text.slice(at));
+ return <p id={paragraphId}>{nodes}</p>;
 }
 
 // Contextual examples are visual readings; they do not infer unexamined paint layers.

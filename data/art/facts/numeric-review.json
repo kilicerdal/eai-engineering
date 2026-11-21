@@ -1,0 +1,499 @@
+{
+  "reviewed": "2026-11-20",
+  "scope": "Review of numerals in the 205 fact bodies. This is a bounded documentary comparison, not independent specialist peer review or a certificate covering every interpretive claim. Numeric titles and approximate dates are distinguished from dates of execution.",
+  "records": [
+    {
+      "fact": "caravaggio-fact-4",
+      "subject": "caravaggio",
+      "kind": "painters",
+      "numbers": [
+        "1606"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/artists/michelangelo-merisi-da-caravaggio/",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "caravaggio-fact-5",
+      "subject": "caravaggio",
+      "kind": "painters",
+      "numbers": [
+        "1599"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/stories/beyond-caravaggio-exhibition-in-focus?viewPage=2",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "dali-fact-3",
+      "subject": "dali",
+      "kind": "painters",
+      "numbers": [
+        "1934"
+      ],
+      "reference": "https://www.guggenheim.org/artwork/artist/salvador-dali",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "gentileschi-fact-3",
+      "subject": "gentileschi",
+      "kind": "painters",
+      "numbers": [
+        "1616"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/catalogues/national-gallery-2024/self-portrait-as-saint-catherine-of-alexandria",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "goya-fact-2",
+      "subject": "goya",
+      "kind": "painters",
+      "numbers": [
+        "1790s"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/artists/francisco-de-goya",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "goya-fact-3",
+      "subject": "goya",
+      "kind": "painters",
+      "numbers": [
+        "1814",
+        "1808"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/artists/francisco-de-goya",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "kahlo-fact-2",
+      "subject": "kahlo",
+      "kind": "painters",
+      "numbers": [
+        "1940",
+        "1939"
+      ],
+      "reference": "https://www.moma.org/collection/works/78333",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "kandinsky-fact-3",
+      "subject": "kandinsky",
+      "kind": "painters",
+      "numbers": [
+        "1922"
+      ],
+      "reference": "https://www.guggenheim.org/artwork/1992",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "kandinsky-fact-4",
+      "subject": "kandinsky",
+      "kind": "painters",
+      "numbers": [
+        "1911"
+      ],
+      "reference": "https://www.moma.org/s/ge/curated_ge/styles/blaue_reiter",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "magritte-fact-2",
+      "subject": "magritte",
+      "kind": "painters",
+      "numbers": [
+        "1929",
+        "1928"
+      ],
+      "reference": "https://www.moma.org/collection/works/78938",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "matisse-fact-3",
+      "subject": "matisse",
+      "kind": "painters",
+      "numbers": [
+        "1911"
+      ],
+      "reference": "https://www.moma.org/collection/works/78389",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "monet-fact-2",
+      "subject": "monet",
+      "kind": "painters",
+      "numbers": [
+        "1874"
+      ],
+      "reference": "https://www.marmottan.fr/en/the-museum/the-museum-and-its-history/",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "morisot-fact-3",
+      "subject": "morisot",
+      "kind": "painters",
+      "numbers": [
+        "1874"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/artists/berthe-morisot",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "picasso-fact-3",
+      "subject": "picasso",
+      "kind": "painters",
+      "numbers": [
+        "1907",
+        "1932"
+      ],
+      "reference": "https://www.moma.org/collection/works/78311",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "pollock-fact-2",
+      "subject": "pollock",
+      "kind": "painters",
+      "numbers": [
+        "1936",
+        "1930s"
+      ],
+      "reference": "https://www.guggenheim.org/artwork/artist/jackson-pollock/",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "pollock-fact-3",
+      "subject": "pollock",
+      "kind": "painters",
+      "numbers": [
+        "1943",
+        "1947"
+      ],
+      "reference": "https://www.guggenheim.org/artwork/artist/jackson-pollock/",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "pollock-fact-5",
+      "subject": "pollock",
+      "kind": "painters",
+      "numbers": [
+        "31",
+        "30",
+        "1950"
+      ],
+      "reference": "https://www.metmuseum.org/art/collection/search/488978",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "raphael-fact-4",
+      "subject": "raphael",
+      "kind": "painters",
+      "numbers": [
+        "1520"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/catalogues/plazzotta-and-henry-2022/raphael",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "van-gogh-fact-4",
+      "subject": "van-gogh",
+      "kind": "painters",
+      "numbers": [
+        "1888"
+      ],
+      "reference": "https://www.vangoghmuseum.nl/en/art-and-stories/vincents-life-1853-1890/south-of-france",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "leonardo-01-fact-3",
+      "subject": "leonardo-01",
+      "kind": "paintings",
+      "numbers": [
+        "1793"
+      ],
+      "reference": "https://collections.louvre.fr/en/ark:/53355/cl010062370",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "rembrandt-01-fact-2",
+      "subject": "rembrandt-01",
+      "kind": "paintings",
+      "numbers": [
+        "1715"
+      ],
+      "reference": "https://www.rijksmuseum.nl/en/press/press-releases/for-the-first-time-in-300-years-the-night-watch-is-complete-again",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "vermeer-01-fact-2",
+      "subject": "vermeer-01",
+      "kind": "paintings",
+      "numbers": [
+        "1881",
+        "1903"
+      ],
+      "reference": "https://www.mauritshuis.nl/ontdek-collectie/kunstwerken/670-meisje-met-de-parel",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "van-gogh-01-fact-1",
+      "subject": "van-gogh-01",
+      "kind": "paintings",
+      "numbers": [
+        "1889"
+      ],
+      "reference": "https://www.moma.org/collection/works/79802",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "van-gogh-01-fact-2",
+      "subject": "van-gogh-01",
+      "kind": "paintings",
+      "numbers": [
+        "1941"
+      ],
+      "reference": "https://www.moma.org/collection/works/79802",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "leonardo-06-fact-3",
+      "subject": "leonardo-06",
+      "kind": "paintings",
+      "numbers": [
+        "1967"
+      ],
+      "reference": "https://www.nga.gov/artworks/50724-ginevra-de-benci-obverse",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "caravaggio-02-fact-1",
+      "subject": "caravaggio-02",
+      "kind": "paintings",
+      "numbers": [
+        "1601"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "caravaggio-02-fact-2",
+      "subject": "caravaggio-02",
+      "kind": "paintings",
+      "numbers": [
+        "1601"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "caravaggio-02-fact-3",
+      "subject": "caravaggio-02",
+      "kind": "paintings",
+      "numbers": [
+        "1839"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "rembrandt-02-fact-1",
+      "subject": "rembrandt-02",
+      "kind": "paintings",
+      "numbers": [
+        "1632"
+      ],
+      "reference": "https://www.mauritshuis.nl/ontdek-collectie/kunstwerken/146-de-anatomische-les-van-dr-nicolaes-tulp",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "rembrandt-02-fact-4",
+      "subject": "rembrandt-02",
+      "kind": "paintings",
+      "numbers": [
+        "1828"
+      ],
+      "reference": "https://www.mauritshuis.nl/ontdek-collectie/kunstwerken/146-de-anatomische-les-van-dr-nicolaes-tulp",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "goya-01-fact-1",
+      "subject": "goya-01",
+      "kind": "paintings",
+      "numbers": [
+        "1808",
+        "1814"
+      ],
+      "reference": "https://www.museodelprado.es/en/whats-on/exhibition/la-quinta-del-sordo-philippe-parreno/3e1bb872-21af-d18f-9b09-a91e406b3505",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "turner-01-fact-1",
+      "subject": "turner-01",
+      "kind": "paintings",
+      "numbers": [
+        "1838",
+        "1839"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/catalogues/egerton-2000/the-fighting-temeraire",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "turner-01-fact-3",
+      "subject": "turner-01",
+      "kind": "paintings",
+      "numbers": [
+        "1856",
+        "1851"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/catalogues/egerton-2000/the-fighting-temeraire",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "turner-01-fact-4",
+      "subject": "turner-01",
+      "kind": "paintings",
+      "numbers": [
+        "1839"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/catalogues/egerton-2000/the-fighting-temeraire",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "morisot-02-fact-1",
+      "subject": "morisot-02",
+      "kind": "paintings",
+      "numbers": [
+        "1879"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/berthe-morisot-summer-s-day",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Qualified",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "morisot-02-fact-3",
+      "subject": "morisot-02",
+      "kind": "paintings",
+      "numbers": [
+        "1917"
+      ],
+      "reference": "https://www.nationalgallery.org.uk/paintings/berthe-morisot-summer-s-day",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Qualified",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "cassatt-01-fact-3",
+      "subject": "cassatt-01",
+      "kind": "paintings",
+      "numbers": [
+        "1910"
+      ],
+      "reference": "https://www.artic.edu/files/e934e6b5-ba45-4db1-bb5b-146368c04c80/AIC_MuseumStudies_02_UPDF.pdf",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "van-gogh-02-fact-1",
+      "subject": "van-gogh-02",
+      "kind": "paintings",
+      "numbers": [
+        "1885"
+      ],
+      "reference": "https://vangoghletters.org/vg/letters/let497/letter.html",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "van-gogh-02-fact-2",
+      "subject": "van-gogh-02",
+      "kind": "paintings",
+      "numbers": [
+        "30",
+        "1885"
+      ],
+      "reference": "https://vangoghletters.org/vg/letters/let497/letter.html",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    },
+    {
+      "fact": "kandinsky-02-fact-1",
+      "subject": "kandinsky-02",
+      "kind": "paintings",
+      "numbers": [
+        "1923"
+      ],
+      "reference": "https://www.guggenheim.org/teaching-materials/selections-from-the-permanent-collection/vasily-kandinsky-1866-1944-composition-8-komposition-8",
+      "method": "Compared with primary institutional text, including indexed primary passages where direct access was restricted.",
+      "result": "Retained",
+      "limit": "Dates of events, execution, exhibition, acquisition and retrospective titles have different meanings; the comparison supports only the numerical claim in this entry."
+    }
+  ]
+}

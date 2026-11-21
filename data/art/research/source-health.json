@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-20T17:07:11.951Z",
-  "scope": "Selected 20-study dossier references, 12 modern object records five comparison contexts, and the Looking Room’s case, biography and licensing references. HTTP status and text hashes are maintenance signals, not verification of claims or attribution. A changed hash can reflect routine page changes; a blocked request is not proof of a broken link.",
+  "checkedAt": "2026-11-21T04:59:17.041Z",
+  "scope": "Selected 20-study dossier references, 12 modern object records, five comparison contexts, the Looking Room’s case, biography and licensing references, and references cited by 205 facts and close-looking entries. HTTP status and text hashes are maintenance signals, not verification of claims or attribution. A changed hash can reflect routine page changes; a blocked request is not proof of a broken link. Content changes compared with the retained pre-pass snapshot remain queued; differences can include extraction changes and require inspection, not automatic historical corrections.",
   "manualFlags": [
     {
       "id": "magritte-01",
@@ -14,13 +14,14 @@
       "usedBy": [
         "rouen-series"
       ],
-      "checkedAt": "2026-11-20T17:07:10.526Z",
+      "checkedAt": "2026-11-21T04:59:13.132Z",
       "status": 403,
       "finalUrl": "https://www.nga.gov/artworks/46654-rouen-cathedral-west-facade-sunlight",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.metmuseum.org/art/collection/search/435868",
@@ -28,13 +29,14 @@
       "usedBy": [
         "card-player-variants"
       ],
-      "checkedAt": "2026-11-20T17:07:10.634Z",
+      "checkedAt": "2026-11-21T04:59:13.152Z",
       "status": 429,
       "finalUrl": "https://www.metmuseum.org/art/collection/search/435868",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.nga.gov/artworks/39824-potato-eaters",
@@ -42,13 +44,14 @@
       "usedBy": [
         "paint-to-print"
       ],
-      "checkedAt": "2026-11-20T17:07:10.367Z",
+      "checkedAt": "2026-11-21T04:59:12.948Z",
       "status": 403,
       "finalUrl": "https://www.nga.gov/artworks/39824-potato-eaters",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/research/conservation/demoiselles/analysis_2_c.html",
@@ -56,13 +59,14 @@
       "usedBy": [
         "picasso-01"
       ],
-      "checkedAt": "2026-11-20T17:07:10.685Z",
+      "checkedAt": "2026-11-21T04:59:13.167Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/research/conservation/demoiselles/analysis_2_c.html",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.artic.edu/artworks/28560/the-bedroom",
@@ -70,13 +74,14 @@
       "usedBy": [
         "bedroom-versions"
       ],
-      "checkedAt": "2026-11-20T17:07:10.423Z",
+      "checkedAt": "2026-11-21T04:59:12.988Z",
       "status": 403,
       "finalUrl": "https://www.artic.edu/artworks/28560/the-bedroom",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/artists/1364-salvador-dali",
@@ -84,13 +89,14 @@
       "usedBy": [
         "dali-01"
       ],
-      "checkedAt": "2026-11-20T17:07:10.848Z",
+      "checkedAt": "2026-11-21T04:59:13.855Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/artists/1364-salvador-dali",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/collection/works/78386",
@@ -98,13 +104,14 @@
       "usedBy": [
         "pollock-01"
       ],
-      "checkedAt": "2026-11-20T17:07:10.775Z",
+      "checkedAt": "2026-11-21T04:59:13.306Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/78386",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/explore/inside_out/2013/05/29/momas-jackson-pollock-conservation-project-wrapping-up-treatment-of-one-number-31-1950/",
@@ -112,55 +119,62 @@
       "usedBy": [
         "pollock-01"
       ],
-      "checkedAt": "2026-11-20T17:07:10.802Z",
+      "checkedAt": "2026-11-21T04:59:13.349Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/explore/inside_out/2013/05/29/momas-jackson-pollock-conservation-project-wrapping-up-treatment-of-one-number-31-1950/",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.artic.edu/artworks/111436/the-basket-of-apples",
       "title": "Art Institute of Chicago · Basket of Apples",
       "usedBy": [
-        "cezanne-01"
+        "cezanne-01",
+        "cezanne"
       ],
-      "checkedAt": "2026-11-20T17:07:09.687Z",
+      "checkedAt": "2026-11-21T04:59:12.466Z",
       "status": 403,
       "finalUrl": "https://www.artic.edu/artworks/111436/the-basket-of-apples",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.artic.edu/artworks/111442/the-childs-bath",
       "title": "Art Institute of Chicago · The Child’s Bath",
       "usedBy": [
-        "cassatt-01"
+        "cassatt-01",
+        "cassatt"
       ],
-      "checkedAt": "2026-11-20T17:07:09.681Z",
+      "checkedAt": "2026-11-21T04:59:12.464Z",
       "status": 403,
       "finalUrl": "https://www.artic.edu/artworks/111442/the-childs-bath",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.metmuseum.org/art/collection/search/488978",
       "title": "Autumn Rhythm: Number 30, 1950",
       "usedBy": [
-        "pollock-02"
+        "pollock-02",
+        "pollock"
       ],
-      "checkedAt": "2026-11-20T17:07:09.941Z",
+      "checkedAt": "2026-11-21T04:59:12.793Z",
       "status": 429,
       "finalUrl": "https://www.metmuseum.org/art/collection/search/488978",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.youtube.com/watch?v=n7suE3-0Z6g",
@@ -168,13 +182,14 @@
       "usedBy": [
         "kahlo-01"
       ],
-      "checkedAt": "2026-11-20T17:07:10.828Z",
+      "checkedAt": "2026-11-21T04:59:13.386Z",
       "status": 200,
       "finalUrl": "https://www.youtube.com/watch?v=n7suE3-0Z6g",
-      "availability": "Reachable",
+      "availability": "Insufficient readable text · inspect the source manually",
       "contentHash": "1228a7e5c0127c7261699df1c7f0d3e70082a907c21170dc2da364645bc8def9",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "1228a7e5c0127c7261699df1c7f0d3e70082a907c21170dc2da364645bc8def9"
     },
     {
       "url": "https://www.guggenheim.org/artwork/artist/salvador-dali",
@@ -182,41 +197,61 @@
       "usedBy": [
         "dali"
       ],
-      "checkedAt": "2026-11-20T17:07:10.930Z",
+      "checkedAt": "2026-11-21T04:59:14.052Z",
       "status": 200,
       "finalUrl": "https://www.guggenheim.org/artwork/artist/salvador-dali",
-      "availability": "Reachable",
-      "contentHash": "d40609ce57b93c179c7780abf81862635b07c2241b90c54d12d99126bd10f523",
-      "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "5d8ba87a9f626cbb2f3a506b79e907549d6df687b339d38ce248fd31311c6115",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "d40609ce57b93c179c7780abf81862635b07c2241b90c54d12d99126bd10f523"
     },
     {
       "url": "https://www.moma.org/collection/works/79124/",
       "title": "Dance (I)",
       "usedBy": [
-        "matisse-02"
+        "matisse-02",
+        "matisse"
       ],
-      "checkedAt": "2026-11-20T17:07:10.202Z",
+      "checkedAt": "2026-11-21T04:59:12.847Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/79124/",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/collection/works/78311",
       "title": "Girl before a Mirror",
       "usedBy": [
-        "picasso-02"
+        "picasso-02",
+        "picasso"
       ],
-      "checkedAt": "2026-11-20T17:07:09.835Z",
+      "checkedAt": "2026-11-21T04:59:12.570Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/78311",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.guggenheim.org/artwork/1924",
+      "title": "Guggenheim · Composition 8",
+      "usedBy": [
+        "kandinsky"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.676Z",
+      "status": 200,
+      "finalUrl": "https://www.guggenheim.org/artwork/1924",
+      "availability": "Reachable",
+      "contentHash": "5d8ba87a9f626cbb2f3a506b79e907549d6df687b339d38ce248fd31311c6115",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "5d8ba87a9f626cbb2f3a506b79e907549d6df687b339d38ce248fd31311c6115"
     },
     {
       "url": "https://www.guggenheim-bilbao.eus/en/exhibition/cosmic-realms-russia-to-the-bauhaus-gallery-307",
@@ -224,13 +259,14 @@
       "usedBy": [
         "kandinsky-02"
       ],
-      "checkedAt": "2026-11-20T17:07:09.760Z",
+      "checkedAt": "2026-11-21T04:59:12.507Z",
       "status": 200,
       "finalUrl": "https://www.guggenheim-bilbao.eus/en/exhibition/cosmic-realms-russia-to-the-bauhaus-gallery-307",
       "availability": "Reachable",
       "contentHash": "833ed469d88b76d9d43327b612efe888e13e4b48e64eabbd700fcce0701733b6",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "833ed469d88b76d9d43327b612efe888e13e4b48e64eabbd700fcce0701733b6"
     },
     {
       "url": "https://www.moma.org/collection/about/licensing",
@@ -238,13 +274,14 @@
       "usedBy": [
         "image-access"
       ],
-      "checkedAt": "2026-11-20T17:07:11.245Z",
+      "checkedAt": "2026-11-21T04:59:14.284Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/about/licensing",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.museepicassoparis.fr/en/image-rights/",
@@ -252,27 +289,45 @@
       "usedBy": [
         "image-access"
       ],
-      "checkedAt": "2026-11-20T17:07:11.292Z",
+      "checkedAt": "2026-11-21T04:59:14.297Z",
       "status": 200,
       "finalUrl": "https://www.museepicassoparis.fr/en/image-rights/",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "9432d2466a741df903f2d6c9c4284364878edc28d0ab69da5cae9bb95f02ecd1",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "67752e4410ec418bccc57bb3d1472f210e56b906aa285dc3841fa3e1f87f4ec4"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/artists/artemisia-gentileschi",
+      "title": "Institutional artist biography",
+      "usedBy": [
+        "gentileschi"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.594Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/artists/artemisia-gentileschi",
       "availability": "Reachable",
-      "contentHash": "67752e4410ec418bccc57bb3d1472f210e56b906aa285dc3841fa3e1f87f4ec4",
+      "contentHash": "313332d81f44c3026da6da1da031641ad8b3c14473a6d99a69ed64198b31295a",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "313332d81f44c3026da6da1da031641ad8b3c14473a6d99a69ed64198b31295a"
     },
     {
       "url": "https://www.moma.org/collection/works/79766",
       "title": "Les Demoiselles d’Avignon",
       "usedBy": [
-        "picasso-01"
+        "picasso-01",
+        "picasso"
       ],
-      "checkedAt": "2026-11-20T17:07:09.797Z",
+      "checkedAt": "2026-11-21T04:59:12.566Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/79766",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370",
@@ -280,13 +335,14 @@
       "usedBy": [
         "leonardo-01"
       ],
-      "checkedAt": "2026-11-20T17:07:08.269Z",
+      "checkedAt": "2026-11-21T04:59:10.919Z",
       "status": 200,
       "finalUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062370",
       "availability": "Reachable",
       "contentHash": "24047e8c9ae9d6cfc2bec595fead09d0851f03670afc5df07016ae08e13cc220",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "24047e8c9ae9d6cfc2bec595fead09d0851f03670afc5df07016ae08e13cc220"
     },
     {
       "url": "https://www.moma.org/interactives/exhibitions/2014/matisse/about-matisse.html",
@@ -294,27 +350,45 @@
       "usedBy": [
         "matisse"
       ],
-      "checkedAt": "2026-11-20T17:07:11.203Z",
+      "checkedAt": "2026-11-21T04:59:14.153Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/interactives/exhibitions/2014/matisse/about-matisse.html",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.mauritshuis.nl/en/our-collection/artworks/146-the-anatomy-lesson-of-dr-nicolaes-tulp/",
       "title": "Mauritshuis · Anatomy Lesson",
       "usedBy": [
-        "rembrandt-02"
+        "rembrandt-02",
+        "rembrandt"
       ],
-      "checkedAt": "2026-11-20T17:07:08.787Z",
+      "checkedAt": "2026-11-21T04:59:11.521Z",
       "status": 403,
       "finalUrl": "https://www.mauritshuis.nl/en/our-collection/artworks/146-the-anatomy-lesson-of-dr-nicolaes-tulp",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.mauritshuis.nl/en/our-collection/restoration-and-research/closer-to-vermeer-and-the-girl",
+      "title": "Mauritshuis · Closer to Vermeer and the Girl",
+      "usedBy": [
+        "vermeer-01"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.717Z",
+      "status": 403,
+      "finalUrl": "https://www.mauritshuis.nl/en/our-collection/restoration-and-research/closer-to-vermeer-and-the-girl",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring",
@@ -322,41 +396,196 @@
       "usedBy": [
         "vermeer-01"
       ],
-      "checkedAt": "2026-11-20T17:07:08.292Z",
+      "checkedAt": "2026-11-21T04:59:10.943Z",
       "status": 403,
       "finalUrl": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring/",
+      "title": "Mauritshuis · Girl with a Pearl Earring",
+      "usedBy": [
+        "vermeer"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.631Z",
+      "status": 403,
+      "finalUrl": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring/",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/",
       "title": "Metamorphosis of Narcissus",
       "usedBy": [
-        "dali-02"
+        "dali-02",
+        "dali"
       ],
-      "checkedAt": "2026-11-20T17:07:09.887Z",
+      "checkedAt": "2026-11-21T04:59:12.615Z",
       "status": 200,
       "finalUrl": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/",
-      "availability": "Reachable",
-      "contentHash": "d5b5231eb9e405faf9d2ddfa94985ad1322ff4565c124296f29dfddb020ee13c",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "a81d082187235ed309b924e75c25fd87b86b2225fadf8fbea5d7caaca30b737a",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "d5b5231eb9e405faf9d2ddfa94985ad1322ff4565c124296f29dfddb020ee13c"
+    },
+    {
+      "url": "https://www.metmuseum.org/essays/claude-monet-1840-1926",
+      "title": "Metropolitan Museum · Claude Monet",
+      "usedBy": [
+        "monet"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.807Z",
+      "status": 429,
+      "finalUrl": "https://www.metmuseum.org/essays/claude-monet-1840-1926",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.metmuseum.org/essays/francisco-de-goya-1746-1828-and-the-spanish-enlightenment",
+      "title": "Metropolitan Museum · Goya and the Spanish Enlightenment",
+      "usedBy": [
+        "goya"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.613Z",
+      "status": 429,
+      "finalUrl": "https://www.metmuseum.org/essays/francisco-de-goya-1746-1828-and-the-spanish-enlightenment",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.metmuseum.org/essays/johannes-vermeer-1632-1675",
+      "title": "Metropolitan Museum · Johannes Vermeer",
+      "usedBy": [
+        "vermeer"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.620Z",
+      "status": 429,
+      "finalUrl": "https://www.metmuseum.org/essays/johannes-vermeer-1632-1675",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.metmuseum.org/essays/mary-stevenson-cassatt-1844-1926",
+      "title": "Metropolitan Museum · Mary Stevenson Cassatt",
+      "usedBy": [
+        "cassatt"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.487Z",
+      "status": 429,
+      "finalUrl": "https://www.metmuseum.org/essays/mary-stevenson-cassatt-1844-1926",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.metmuseum.org/essays/paul-cezanne-1839-1906",
+      "title": "Metropolitan Museum · Paul Cézanne",
+      "usedBy": [
+        "cezanne"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.502Z",
+      "status": 429,
+      "finalUrl": "https://www.metmuseum.org/essays/paul-cezanne-1839-1906",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.metmuseum.org/essays/rembrandt-van-rijn-1606-1669-paintings",
+      "title": "Metropolitan Museum · Rembrandt: Paintings",
+      "usedBy": [
+        "rembrandt"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.262Z",
+      "status": 429,
+      "finalUrl": "https://www.metmuseum.org/essays/rembrandt-van-rijn-1606-1669-paintings",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.moma.org/s/ge/curated_ge/styles/blaue_reiter",
+      "title": "MoMA · German Expressionism: Der Blaue Reiter",
+      "usedBy": [
+        "kandinsky"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.718Z",
+      "status": 403,
+      "finalUrl": "https://www.moma.org/s/ge/curated_ge/styles/blaue_reiter",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.musee-orsay.fr/fr/oeuvres/la-gare-saint-lazare-10897",
+      "title": "Musée d’Orsay · Saint-Lazare Station",
+      "usedBy": [
+        "monet"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.903Z",
+      "status": 403,
+      "finalUrl": "https://www.musee-orsay.fr/fr/oeuvres/la-gare-saint-lazare-10897",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.marmottan.fr/en/notice/4014/",
+      "title": "Musée Marmottan Monet · Impression, Sunrise",
+      "usedBy": [
+        "monet"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.829Z",
+      "status": 200,
+      "finalUrl": "https://www.marmottan.fr/en/notice/4014/",
+      "availability": "Reachable",
+      "contentHash": "235eaddb0f55bb806526223f48c0278ee14f39978db6296c4ba3cb780ef7e013",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "235eaddb0f55bb806526223f48c0278ee14f39978db6296c4ba3cb780ef7e013"
     },
     {
       "url": "https://cenacolovinciano.org/en/",
       "title": "Museo del Cenacolo Vinciano",
       "usedBy": [
-        "leonardo-02"
+        "leonardo-02",
+        "leonardo"
       ],
-      "checkedAt": "2026-11-20T17:07:08.291Z",
+      "checkedAt": "2026-11-21T04:59:10.942Z",
       "status": 200,
       "finalUrl": "https://cenacolovinciano.org/en/",
       "availability": "Publisher text changed · editorial review needed",
-      "contentHash": "1d3b4c0b7dc99ea71c9ea66af6ab6bebafafd96948b68fc829de53744481deca",
+      "contentHash": "d8c073d92f1e72de2a1b219e1fa9cebb4e09d576dbe716854365c6def974eed6",
       "changed": true,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "1d3b4c0b7dc99ea71c9ea66af6ab6bebafafd96948b68fc829de53744481deca"
     },
     {
       "url": "https://www.museodelprado.es/en/the-collection/art-work/the-3rd-of-may-1808-in-madrid-or-the-executions/5e177409-2993-4240-97fb-847a02c6496c",
@@ -364,13 +593,29 @@
       "usedBy": [
         "goya-01"
       ],
-      "checkedAt": "2026-11-20T17:07:09.575Z",
+      "checkedAt": "2026-11-21T04:59:12.188Z",
       "status": 403,
       "finalUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-3rd-of-may-1808-in-madrid-or-the-executions/5e177409-2993-4240-97fb-847a02c6496c",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://collections.mfa.org/objects/31102",
+      "title": "Museum of Fine Arts Boston · Slave Ship",
+      "usedBy": [
+        "turner"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.363Z",
+      "status": 202,
+      "finalUrl": "https://collections.mfa.org/objects/31102",
+      "availability": "Insufficient readable text · inspect the source manually",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "url": "https://www.moma.org/collection/works/79802",
@@ -378,27 +623,195 @@
       "usedBy": [
         "van-gogh-01"
       ],
-      "checkedAt": "2026-11-20T17:07:08.292Z",
+      "checkedAt": "2026-11-21T04:59:10.943Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/79802",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.moma.org/collection/artists/2981",
+      "title": "Museum of Modern Art · Vasily Kandinsky",
+      "usedBy": [
+        "kandinsky"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.672Z",
+      "status": 403,
+      "finalUrl": "https://www.moma.org/collection/artists/2981",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/paintings/johannes-vermeer-a-young-woman-standing-at-a-virginal/",
+      "title": "National Gallery · A Young Woman standing at a Virginal",
+      "usedBy": [
+        "vermeer"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.655Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/paintings/johannes-vermeer-a-young-woman-standing-at-a-virginal/",
+      "availability": "Reachable",
+      "contentHash": "b7dd23f5d032724f62b53e06330f6b75a873d1ea9fab550f93c0572151729838",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "b7dd23f5d032724f62b53e06330f6b75a873d1ea9fab550f93c0572151729838"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/paintings/artemisia-gentileschi",
+      "title": "National Gallery · Artemisia Gentileschi",
+      "usedBy": [
+        "gentileschi"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.563Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/paintings/artemisia-gentileschi",
+      "availability": "Reachable",
+      "contentHash": "008573b5e1b9795169fa2b653e9722f09226cab00283df3ad476e69794cb26f0",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "008573b5e1b9795169fa2b653e9722f09226cab00283df3ad476e69794cb26f0"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/paintings/paul-cezanne-bathers-les-grandes-baigneuses",
+      "title": "National Gallery · Bathers",
+      "usedBy": [
+        "cezanne"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.519Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/paintings/paul-cezanne-bathers-les-grandes-baigneuses",
+      "availability": "Reachable",
+      "contentHash": "42143fb5812592e58d8503cc459d73d36029c0f0d7fb006f878bc9308335aec4",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "42143fb5812592e58d8503cc459d73d36029c0f0d7fb006f878bc9308335aec4"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/artists/berthe-morisot",
+      "title": "National Gallery · Berthe Morisot",
+      "usedBy": [
+        "morisot"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.094Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/artists/berthe-morisot",
+      "availability": "Reachable",
+      "contentHash": "74f013fe8d5239eef73d79b6b639d1e487c64226493f93f721a856f53e45a152",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "74f013fe8d5239eef73d79b6b639d1e487c64226493f93f721a856f53e45a152"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/stories/beyond-caravaggio-exhibition-in-focus?viewPage=2",
+      "title": "National Gallery · Beyond Caravaggio: exhibition in focus",
+      "usedBy": [
+        "caravaggio"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.358Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/stories/beyond-caravaggio-exhibition-in-focus?viewPage=2",
+      "availability": "Reachable",
+      "contentHash": "86987395213e28cedbbf2158406b87d64806a7be2d879dd930c57d545f184b65",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "86987395213e28cedbbf2158406b87d64806a7be2d879dd930c57d545f184b65"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/artists/michelangelo-merisi-da-caravaggio",
+      "title": "National Gallery · Caravaggio",
+      "usedBy": [
+        "caravaggio"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.310Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/artists/michelangelo-merisi-da-caravaggio",
+      "availability": "Reachable",
+      "contentHash": "88db965570ee8a11ce935dad06240796b32d1fb7223f1199e5cb9492cf916b82",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "88db965570ee8a11ce935dad06240796b32d1fb7223f1199e5cb9492cf916b82"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/artists/leonardo-da-vinci",
+      "title": "National Gallery · Leonardo da Vinci",
+      "usedBy": [
+        "leonardo"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.743Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/artists/leonardo-da-vinci",
+      "availability": "Reachable",
+      "contentHash": "86d55877f3da809cc740f0eaf193212516c9c17b22cacd0addbe11e86dfdfd21",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "86d55877f3da809cc740f0eaf193212516c9c17b22cacd0addbe11e86dfdfd21"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/artists/michelangelo",
+      "title": "National Gallery · Michelangelo",
+      "usedBy": [
+        "michelangelo"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.755Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/artists/michelangelo",
+      "availability": "Reachable",
+      "contentHash": "d6d040024ce7bcec5cc2ae38736303919f6f265d88f4286107e4ee7f1d0eeec9",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "d6d040024ce7bcec5cc2ae38736303919f6f265d88f4286107e4ee7f1d0eeec9"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-rain-steam-and-speed-the-great-western-railway",
+      "title": "National Gallery · Rain, Steam and Speed",
+      "usedBy": [
+        "turner"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.301Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-rain-steam-and-speed-the-great-western-railway",
+      "availability": "Reachable",
+      "contentHash": "2dcc292a13fb12eb749a31563600b5e771edbd7686e379528ad9e12a75814843",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "2dcc292a13fb12eb749a31563600b5e771edbd7686e379528ad9e12a75814843"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/artists/raphael",
+      "title": "National Gallery · Raphael",
+      "usedBy": [
+        "raphael"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.106Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/artists/raphael",
+      "availability": "Reachable",
+      "contentHash": "3125ebee6f3667aba0406065e769f8fd1a86d9d6047c365dcc3a4fe21d1b08d0",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "3125ebee6f3667aba0406065e769f8fd1a86d9d6047c365dcc3a4fe21d1b08d0"
     },
     {
       "url": "https://www.nationalgallery.org.uk/paintings/berthe-morisot-summer-s-day",
       "title": "National Gallery · Summer’s Day",
       "usedBy": [
-        "morisot-02"
+        "morisot-02",
+        "morisot"
       ],
-      "checkedAt": "2026-11-20T17:07:09.674Z",
+      "checkedAt": "2026-11-21T04:59:12.433Z",
       "status": 200,
       "finalUrl": "https://www.nationalgallery.org.uk/paintings/berthe-morisot-summer-s-day",
       "availability": "Reachable",
       "contentHash": "f1d048f4f6931ea77b25610e1ca9abe14040808ba5f6556bff01a66c84dc167d",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "f1d048f4f6931ea77b25610e1ca9abe14040808ba5f6556bff01a66c84dc167d"
     },
     {
       "url": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus",
@@ -406,55 +819,92 @@
       "usedBy": [
         "caravaggio-02"
       ],
-      "checkedAt": "2026-11-20T17:07:08.716Z",
+      "checkedAt": "2026-11-21T04:59:11.505Z",
       "status": 200,
       "finalUrl": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus",
-      "availability": "Reachable",
-      "contentHash": "a3d006f20a45dc117d5ea5818a5b4e16f253c82cf5ee2eff656ecca3397436b6",
-      "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "9ec0eed8d913425e3e9bc106c064acf505500a73e92f52702622c97f443c63d1",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "a3d006f20a45dc117d5ea5818a5b4e16f253c82cf5ee2eff656ecca3397436b6"
     },
     {
       "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-the-fighting-temeraire",
       "title": "National Gallery · The Fighting Temeraire",
       "usedBy": [
-        "turner-01"
+        "turner-01",
+        "turner"
       ],
-      "checkedAt": "2026-11-20T17:07:09.625Z",
+      "checkedAt": "2026-11-21T04:59:12.390Z",
       "status": 200,
       "finalUrl": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-the-fighting-temeraire",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "722662214c0fc02f214695c0154da6a4fa792103057f28a95ad72860665a900e",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "67d792afa54bf9c2cc13b9742325d8129f836746645af63ce1635572824527e2"
+    },
+    {
+      "url": "https://www.nationalgallery.org.uk/artists/joseph-mallord-william-turner",
+      "title": "National Gallery · Turner",
+      "usedBy": [
+        "turner"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.296Z",
+      "status": 200,
+      "finalUrl": "https://www.nationalgallery.org.uk/artists/joseph-mallord-william-turner",
       "availability": "Reachable",
-      "contentHash": "67d792afa54bf9c2cc13b9742325d8129f836746645af63ce1635572824527e2",
+      "contentHash": "0b935d9f149c05abbbd8895e876c7e60c70bae72a2102e34e902989c43e2c155",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "0b935d9f149c05abbbd8895e876c7e60c70bae72a2102e34e902989c43e2c155"
     },
     {
       "url": "https://www.nga.gov/artworks/50724-ginevra-de-benci",
       "title": "National Gallery of Art · Ginevra de’ Benci",
       "usedBy": [
-        "leonardo-06"
+        "leonardo-06",
+        "leonardo"
       ],
-      "checkedAt": "2026-11-20T17:07:08.293Z",
+      "checkedAt": "2026-11-21T04:59:10.945Z",
       "status": 403,
       "finalUrl": "https://www.nga.gov/artworks/50724-ginevra-de-benci",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.nga.gov/artworks/74796-japanese-footbridge",
+      "title": "National Gallery of Art · The Japanese Footbridge",
+      "usedBy": [
+        "monet"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.960Z",
+      "status": 403,
+      "finalUrl": "https://www.nga.gov/artworks/74796-japanese-footbridge",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.nga.gov/artworks/1236-woman-holding-balance",
       "title": "National Gallery of Art · Woman Holding a Balance",
       "usedBy": [
-        "vermeer-05"
+        "vermeer-05",
+        "vermeer"
       ],
-      "checkedAt": "2026-11-20T17:07:09.436Z",
+      "checkedAt": "2026-11-21T04:59:11.858Z",
       "status": 403,
       "finalUrl": "https://www.nga.gov/artworks/1236-woman-holding-balance",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.nga.gov/artworks/61379-woman-parasol-madame-monet-and-her-son",
@@ -462,27 +912,30 @@
       "usedBy": [
         "monet-02"
       ],
-      "checkedAt": "2026-11-20T17:07:09.649Z",
+      "checkedAt": "2026-11-21T04:59:12.429Z",
       "status": 403,
       "finalUrl": "https://www.nga.gov/artworks/61379-woman-parasol-madame-monet-and-her-son",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/collection/works/78386/",
       "title": "One: Number 31, 1950",
       "usedBy": [
-        "pollock-01"
+        "pollock-01",
+        "pollock"
       ],
-      "checkedAt": "2026-11-20T17:07:09.903Z",
+      "checkedAt": "2026-11-21T04:59:12.647Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/78386/",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/research/conservation/demoiselles/history.html",
@@ -490,13 +943,14 @@
       "usedBy": [
         "picasso"
       ],
-      "checkedAt": "2026-11-20T17:07:10.881Z",
+      "checkedAt": "2026-11-21T04:59:13.947Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/research/conservation/demoiselles/history.html",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.guggenheim.org/artwork/artist/jackson-pollock/",
@@ -504,13 +958,29 @@
       "usedBy": [
         "pollock"
       ],
-      "checkedAt": "2026-11-20T17:07:11.131Z",
+      "checkedAt": "2026-11-21T04:59:14.056Z",
       "status": 200,
       "finalUrl": "https://www.guggenheim.org/artwork/artist/jackson-pollock/",
-      "availability": "Reachable",
-      "contentHash": "d937a9a2495ce1aaa7f871fce414225a1aaccf07d9e9efab194884699ee25276",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "5d8ba87a9f626cbb2f3a506b79e907549d6df687b339d38ce248fd31311c6115",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "d937a9a2495ce1aaa7f871fce414225a1aaccf07d9e9efab194884699ee25276"
+    },
+    {
+      "url": "https://www.museodelprado.es/en/the-collection/art-work/saturn/18110a75-b0e7-430c-bc73-2a4d55893bd6",
+      "title": "Prado · Saturn",
+      "usedBy": [
+        "goya"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.649Z",
+      "status": 403,
+      "finalUrl": "https://www.museodelprado.es/en/the-collection/art-work/saturn/18110a75-b0e7-430c-bc73-2a4d55893bd6",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.rijksmuseum.nl/en/stories/dutch-masters/story/rembrandt-rijn-10",
@@ -518,13 +988,29 @@
       "usedBy": [
         "rembrandt-01"
       ],
-      "checkedAt": "2026-11-20T17:07:08.291Z",
+      "checkedAt": "2026-11-21T04:59:10.942Z",
       "status": 200,
       "finalUrl": "https://www.rijksmuseum.nl/en/stories/dutch-masters/story/rembrandt-rijn-10",
       "availability": "Reachable",
       "contentHash": "265baa79c3759bd3746086aad045c2a257a9176923230f5ad51863c116037303",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "265baa79c3759bd3746086aad045c2a257a9176923230f5ad51863c116037303"
+    },
+    {
+      "url": "https://www.rijksmuseum.nl/en/press/press-releases/for-the-first-time-in-300-years-the-night-watch-is-complete-again",
+      "title": "Rijksmuseum · the missing sections of The Night Watch",
+      "usedBy": [
+        "rembrandt-01"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.700Z",
+      "status": 200,
+      "finalUrl": "https://www.rijksmuseum.nl/en/press/press-releases/for-the-first-time-in-300-years-the-night-watch-is-complete-again",
+      "availability": "Reachable",
+      "contentHash": "e59215d6ba484b5e1ac72e1e7b822a39def7dc2ea5b333172e5d28e9820cf57f",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "e59215d6ba484b5e1ac72e1e7b822a39def7dc2ea5b333172e5d28e9820cf57f"
     },
     {
       "url": "https://www.rct.uk/collection/stories/artemisia-gentileschi",
@@ -532,41 +1018,76 @@
       "usedBy": [
         "gentileschi-02"
       ],
-      "checkedAt": "2026-11-20T17:07:09.477Z",
+      "checkedAt": "2026-11-21T04:59:12.093Z",
       "status": 200,
       "finalUrl": "https://www.rct.uk/collection/topics/artemisia-gentileschi",
-      "availability": "Reachable",
-      "contentHash": "ab6cd0b10cc7e53f4717985202e40acf778d29fdb5bbf57367b756e99b1577f2",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "23b62b64de44fdb2888d83acfc24208b7ba1c3948cbd2b086dce97f02b93a96e",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "ab6cd0b10cc7e53f4717985202e40acf778d29fdb5bbf57367b756e99b1577f2"
+    },
+    {
+      "url": "https://www.rct.uk/collection/405551/self-portrait-as-the-allegory-of-painting-la-pittura",
+      "title": "Royal Collection Trust · Self-Portrait as the Allegory of Painting",
+      "usedBy": [
+        "gentileschi"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.595Z",
+      "status": 403,
+      "finalUrl": "https://www.rct.uk/collection/405551/self-portrait-as-the-allegory-of-painting-la-pittura",
+      "availability": "Access restricted · verify manually",
+      "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/collection/works/78333",
       "title": "Self-Portrait with Cropped Hair",
       "usedBy": [
-        "kahlo-01"
+        "kahlo-01",
+        "kahlo"
       ],
-      "checkedAt": "2026-11-20T17:07:10.222Z",
+      "checkedAt": "2026-11-21T04:59:12.851Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/78333",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
+    },
+    {
+      "url": "https://www.tate.org.uk/art/artists/joseph-mallord-william-turner-558",
+      "title": "Tate · J. M. W. Turner",
+      "usedBy": [
+        "turner"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.298Z",
+      "status": 200,
+      "finalUrl": "https://www.tate.org.uk/art/artists/joseph-mallord-william-turner-558",
+      "availability": "Reachable",
+      "contentHash": "0e8ccb7839fd8cabb5120ddbb9bc6327bb6218a3066222bff2397f829fa7eeef",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "0e8ccb7839fd8cabb5120ddbb9bc6327bb6218a3066222bff2397f829fa7eeef"
     },
     {
       "url": "https://www.moma.org/collection/works/78938",
       "title": "The False Mirror",
       "usedBy": [
-        "magritte-01"
+        "magritte-01",
+        "magritte"
       ],
-      "checkedAt": "2026-11-20T17:07:10.337Z",
+      "checkedAt": "2026-11-21T04:59:12.895Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/78938",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.nationalgallery.org.uk/paintings/gerrit-lundens-after-rembrandt-the-company-of-captain-banning-cocq-the-nightwatch",
@@ -574,55 +1095,46 @@
       "usedBy": [
         "nightwatch-margins"
       ],
-      "checkedAt": "2026-11-20T17:07:10.492Z",
+      "checkedAt": "2026-11-21T04:59:13.029Z",
       "status": 200,
       "finalUrl": "https://www.nationalgallery.org.uk/paintings/gerrit-lundens-after-rembrandt-the-company-of-captain-banning-cocq-the-nightwatch",
       "availability": "Reachable",
       "contentHash": "3ab6bbbe5acc13be6154c687d9e663e4f110ea712642201974086e7119ef6b94",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "3ab6bbbe5acc13be6154c687d9e663e4f110ea712642201974086e7119ef6b94"
     },
     {
       "url": "https://www.moma.org/collection/works/79018",
       "title": "The Persistence of Memory",
       "usedBy": [
-        "dali-01"
+        "dali-01",
+        "dali"
       ],
-      "checkedAt": "2026-11-20T17:07:09.851Z",
+      "checkedAt": "2026-11-21T04:59:12.608Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/79018",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.moma.org/collection/works/78389",
       "title": "The Red Studio",
       "usedBy": [
-        "matisse-01"
+        "matisse-01",
+        "matisse"
       ],
-      "checkedAt": "2026-11-20T17:07:10.145Z",
+      "checkedAt": "2026-11-21T04:59:12.801Z",
       "status": 403,
       "finalUrl": "https://www.moma.org/collection/works/78389",
       "availability": "Access restricted · verify manually",
       "contentHash": null,
       "changed": false,
-      "editorialReview": "Not independently reviewed"
-    },
-    {
-      "url": "https://www.nature.com/articles/s40494-022-00797-0",
-      "title": "The studio was not always red",
-      "usedBy": [
-        "matisse-01"
-      ],
-      "checkedAt": "2026-11-20T17:07:10.735Z",
-      "status": 200,
-      "finalUrl": "https://idp.nature.com/transit?redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs40494-022-00797-0&code=3c4a03ea-d22d-4f48-af16-83bb89397c18",
-      "availability": "Reachable",
-      "contentHash": "3930213bb30975ed5b9bf440d83a3a160dd698249a8beb71708c1adf0928fdc6",
-      "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": null
     },
     {
       "url": "https://www.youtube.com/watch?v=SnvIv4bWW_w",
@@ -630,55 +1142,137 @@
       "usedBy": [
         "matisse-01"
       ],
-      "checkedAt": "2026-11-20T17:07:10.688Z",
+      "checkedAt": "2026-11-21T04:59:13.173Z",
       "status": 200,
       "finalUrl": "https://www.youtube.com/watch?v=SnvIv4bWW_w",
-      "availability": "Reachable",
+      "availability": "Insufficient readable text · inspect the source manually",
       "contentHash": "db25184062714bd42fb56aa4b3a3916d6e148404229b3dad8daea131f104883c",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "db25184062714bd42fb56aa4b3a3916d6e148404229b3dad8daea131f104883c"
+    },
+    {
+      "url": "https://www.nature.com/articles/s40494-022-00797-0",
+      "title": "The studio was not always red",
+      "usedBy": [
+        "matisse-01"
+      ],
+      "checkedAt": "2026-11-21T04:59:13.210Z",
+      "status": 200,
+      "finalUrl": "https://www.nature.com/articles/s40494-022-00797-0?error=cookies_not_supported&code=97a2e9eb-8dad-4c23-bd47-363b61c671ec",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "2b11103cbab3036b041ba5297d0845b1d40a10ccb77964af4fb6b1a3fa86212b",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "3930213bb30975ed5b9bf440d83a3a160dd698249a8beb71708c1adf0928fdc6"
     },
     {
       "url": "https://collections.lacma.org/object/31931",
       "title": "The Treachery of Images",
       "usedBy": [
-        "magritte-02"
+        "magritte-02",
+        "magritte"
       ],
-      "checkedAt": "2026-11-20T17:07:10.343Z",
+      "checkedAt": "2026-11-21T04:59:12.897Z",
       "status": 200,
       "finalUrl": "https://collections.lacma.org/object/31931",
-      "availability": "Reachable",
+      "availability": "Insufficient readable text · inspect the source manually",
       "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "url": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg",
       "title": "The Two Fridas",
       "usedBy": [
-        "kahlo-02"
+        "kahlo-02",
+        "kahlo"
       ],
-      "checkedAt": "2026-11-20T17:07:10.261Z",
+      "checkedAt": "2026-11-21T04:59:12.858Z",
       "status": 200,
       "finalUrl": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "e728749691bb667c31d962ec6ce5b1132cb7add6d8a458a6891be8c1196c846c",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "7d71e6dac2864a9272b651630915cc4fc85bceb312bfb5191d8009e694997462"
+    },
+    {
+      "url": "https://www.uffizi.it/en/events/new-room-showcases-the-work-by-raphael-and-michelangelo",
+      "title": "Uffizi · Raphael, Michelangelo and their patrons",
+      "usedBy": [
+        "michelangelo"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.781Z",
+      "status": 200,
+      "finalUrl": "https://www.uffizi.it/en/events/new-room-showcases-the-work-by-raphael-and-michelangelo",
       "availability": "Reachable",
-      "contentHash": "7d71e6dac2864a9272b651630915cc4fc85bceb312bfb5191d8009e694997462",
+      "contentHash": "a1a72343ff870f5d4183b0eff6b6068ec4f44e810a9a294bab1efe4012cdfa01",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "a1a72343ff870f5d4183b0eff6b6068ec4f44e810a9a294bab1efe4012cdfa01"
+    },
+    {
+      "url": "https://vangoghletters.org/vg/letters/let497/letter.html",
+      "title": "Van Gogh Letters · letter 497, 30 April 1885",
+      "usedBy": [
+        "van-gogh-02"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.742Z",
+      "status": 200,
+      "finalUrl": "https://vangoghletters.org/detail/urn:mace:huc.knaw.nl:vangogh:let497",
+      "availability": "Access screen · inspect the source manually",
+      "contentHash": "e536fbe2a756c45d44cb7da93b87ebe7c20a4236b315555bf5d7248b416a0bb2",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "e536fbe2a756c45d44cb7da93b87ebe7c20a4236b315555bf5d7248b416a0bb2"
+    },
+    {
+      "url": "https://www.vangoghmuseum.nl/en/art-and-stories/stories/all-stories/van-goghs-letters",
+      "title": "Van Gogh Museum · Letters",
+      "usedBy": [
+        "van-gogh"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.545Z",
+      "status": 200,
+      "finalUrl": "https://www.vangoghmuseum.nl/en/art-and-stories/stories/all-stories/van-goghs-letters",
+      "availability": "Reachable",
+      "contentHash": "83fbbde7d54656752aebf23b02481ba8a4fc5a8446133541ea9c5057cca758ef",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "83fbbde7d54656752aebf23b02481ba8a4fc5a8446133541ea9c5057cca758ef"
     },
     {
       "url": "https://www.vangoghmuseum.nl/en/collection/s0005V1962",
       "title": "Van Gogh Museum · The Potato Eaters",
       "usedBy": [
-        "van-gogh-02"
+        "van-gogh-02",
+        "van-gogh"
       ],
-      "checkedAt": "2026-11-20T17:07:09.750Z",
+      "checkedAt": "2026-11-21T04:59:12.500Z",
       "status": 200,
       "finalUrl": "https://www.vangoghmuseum.nl/en/collection/s0005V1962",
       "availability": "Reachable",
       "contentHash": "6ecf8959fa6d3e83c1fd0d5b07127ca6a9a4fe3b31de64e6c0b2495623b19c9a",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "6ecf8959fa6d3e83c1fd0d5b07127ca6a9a4fe3b31de64e6c0b2495623b19c9a"
+    },
+    {
+      "url": "https://www.vangoghmuseum.nl/en/art-and-stories/vincents-life-1853-1890",
+      "title": "Van Gogh Museum · Vincent’s life",
+      "usedBy": [
+        "van-gogh"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.484Z",
+      "status": 200,
+      "finalUrl": "https://www.vangoghmuseum.nl/en/art-and-stories/vincents-life-1853-1890",
+      "availability": "Reachable",
+      "contentHash": "bc6e288fb7277fcb5c4281e1625fd77f975ac70b7dd3889ca7d5835cabe047b6",
+      "changed": false,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "bc6e288fb7277fcb5c4281e1625fd77f975ac70b7dd3889ca7d5835cabe047b6"
     },
     {
       "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta/storie-centrali/creazione-di-adamo.html",
@@ -686,13 +1280,29 @@
       "usedBy": [
         "michelangelo-02"
       ],
-      "checkedAt": "2026-11-20T17:07:08.592Z",
+      "checkedAt": "2026-11-21T04:59:11.290Z",
       "status": 200,
       "finalUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta/storie-centrali/creazione-di-adamo.html",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "353be612d69bc398ae5125e685df92de88390a555814d44924e344c0e409c601",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "fe2959d6ce73ab393f2972a502383f14300e0dbd4ae20b93510c9877a7d1871a"
+    },
+    {
+      "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello.html",
+      "title": "Vatican Museums · Raphael Rooms",
+      "usedBy": [
+        "raphael"
+      ],
+      "checkedAt": "2026-11-21T04:59:15.217Z",
+      "status": 200,
+      "finalUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello.html",
       "availability": "Reachable",
-      "contentHash": "fe2959d6ce73ab393f2972a502383f14300e0dbd4ae20b93510c9877a7d1871a",
+      "contentHash": "f33f63cc26d8828ae9e9b5ec7bebff07139aca1162296a1da594a292154d8b4b",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "f33f63cc26d8828ae9e9b5ec7bebff07139aca1162296a1da594a292154d8b4b"
     },
     {
       "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello/stanza-della-segnatura/scuola-di-atene.html",
@@ -700,13 +1310,29 @@
       "usedBy": [
         "raphael-01"
       ],
-      "checkedAt": "2026-11-20T17:07:08.692Z",
+      "checkedAt": "2026-11-21T04:59:11.473Z",
       "status": 200,
       "finalUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello/stanza-della-segnatura/scuola-di-atene.html",
-      "availability": "Reachable",
-      "contentHash": "861e3bc6cf564e46969173d5985a44df4478c735980d3ec3ac45dc9745b13ee4",
+      "availability": "Publisher text changed · editorial review needed",
+      "contentHash": "af1aaf79a9b91c45fa3df1602b0664ea6a0ed2af668b865356ded59c36e80275",
+      "changed": true,
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "861e3bc6cf564e46969173d5985a44df4478c735980d3ec3ac45dc9745b13ee4"
+    },
+    {
+      "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina.html",
+      "title": "Vatican Museums · Sistine Chapel",
+      "usedBy": [
+        "michelangelo"
+      ],
+      "checkedAt": "2026-11-21T04:59:14.761Z",
+      "status": 200,
+      "finalUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina.html",
+      "availability": "Insufficient readable text · inspect the source manually",
+      "contentHash": "2cf24fe6efd3a37a33f3c911353d496d8e8b4c047fb6c3a6d22461e248559a4b",
       "changed": false,
-      "editorialReview": "Not independently reviewed"
+      "editorialReview": "Not independently reviewed",
+      "comparisonBaselineHash": "2cf24fe6efd3a37a33f3c911353d496d8e8b4c047fb6c3a6d22461e248559a4b"
     }
   ]
 }
