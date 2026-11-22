@@ -1,5 +1,9 @@
 "use client";
 
+import MaterialImportReview, {MaterialMetadataEditor} from "@/components/MaterialImportReview";
+import MaterialRetrievalReview from "@/components/MaterialRetrievalReview";
+import {materialCoverage,omittedMaterialPages,pageRanges} from "@/lib/material-editorial";
+import type {MaterialExcerpt} from "@/lib/study-materials";
 import LessonCheckpoint from "@/components/LessonCheckpoint";
 import {CHECK_KEY,normalizeLessonChecks,checkLabel,type LessonCheck} from "@/lib/study-checkpoints";
 import {selectStudyPassage,sourceStillAvailable,materialPracticeContext,materialReviewSteps} from "@/lib/study-material-practice";
@@ -20,8 +24,10 @@ function SourceViewer({ document, source, close, choose }: { document: CourseDoc
   const dialog = useRef<HTMLDialogElement>(null);
   const highlight = useRef<HTMLElement>(null);
   const [pageNumber,setPageNumber] = useState(source.page);
+  useEffect(()=>{try{sessionStorage.setItem(`dai-material-page:${document.id}`,String(pageNumber));}catch{/* The source remains usable without session storage. */}},[document.id,pageNumber]);
   useEffect(() => { dialog.current?.showModal(); highlight.current?.scrollIntoView({block:"center"}); },[]);
   const [selection,setSelection]=useState("");
+  const [showOriginal,setShowOriginal]=useState(false);
   const page = document.pages.find(page => page.number === pageNumber);
   const text = normalizeMaterialText(page?.text || "");
   const quote = pageNumber === source.page ? normalizeMaterialText(source.quote) : "";
@@ -36,13 +42,20 @@ function SourceViewer({ document, source, close, choose }: { document: CourseDoc
   return <dialog ref={dialog} onCancel={event=>{event.preventDefault();dismiss();}} aria-labelledby="material-source-heading" className="m-auto max-h-[85vh] w-[92vw] max-w-3xl overflow-y-auto rounded-2xl border border-cyan-300/25 bg-[#101827] p-6 text-white shadow-2xl backdrop:bg-slate-950/80">
     <div className="flex items-start justify-between gap-4"><div className="min-w-0"><p className="text-xs font-semibold uppercase tracking-wider text-cyan-300">SOURCE TEXT</p><h3 id="material-source-heading" className="mt-2 break-words text-lg font-semibold">{document.name}</h3></div><button type="button" onClick={dismiss} className="shrink-0 rounded-lg border border-white/20 px-3 py-2 text-sm">Close source</button></div>
     <label className="mt-5 flex items-center gap-3 text-sm text-slate-300">{document.kind === "pdf" ? "PDF page" : "Notes section"}<select aria-label="Source location" value={pageNumber} onChange={event=>{setPageNumber(Number(event.target.value));setSelection("");}} className="rounded-lg border border-white/15 bg-slate-950 px-3 py-2 text-white">{document.pages.map(page=><option key={page.number} value={page.number}>{page.number}</option>)}</select></label>
+    {page?.label&&<p className="mt-2 text-sm">PDF position {page.number} / printed page {page.label}</p>}
+    {page?.originalText&&<label className="mt-3 block text-sm"><input type="checkbox" checked={showOriginal} onChange={e=>setShowOriginal(e.target.checked)}/>Show original extraction</label>}
+    {showOriginal&&<pre className="mt-3 max-h-64 overflow-auto whitespace-pre-wrap break-words text-sm">{page?.originalText}</pre>}
     <p className="mt-3 text-xs leading-5 text-slate-500">Extracted text from your material. PDF layout, images, and complex notation may not be preserved.</p>
+    <details className="mt-3 text-sm"><summary>Structured extraction: line breaks and lists</summary><pre className="mt-3 whitespace-pre-wrap break-words rounded-lg bg-slate-950 p-3">{page?.text}</pre></details>
     <details className="source-study-picker"><summary>Choose a passage to study</summary><p>Select 30–1,800 characters below, or use this section if it fits. Your original material stays unchanged.</p><textarea aria-label="Select text from this source" readOnly value={text} rows={7} onSelect={event=>setSelection(event.currentTarget.value.slice(event.currentTarget.selectionStart,event.currentTarget.selectionEnd))}/><p>{normalizeMaterialText(selection).length} characters selected</p><div><button type="button" disabled={normalizeMaterialText(selection).length<30||normalizeMaterialText(selection).length>1800} onClick={()=>choose(selectStudyPassage(document,pageNumber,selection))}>Use selected passage</button><button type="button" disabled={text.length<30||text.length>1800} onClick={()=>choose(selectStudyPassage(document,pageNumber,text))}>Use this section</button></div></details>
     <div className="mt-5 whitespace-pre-wrap break-words rounded-xl bg-slate-950 p-5 text-sm leading-8 text-slate-200">{index < 0 ? text : <>{text.slice(0,index)}<mark ref={highlight} className="rounded bg-cyan-300/25 px-1 text-cyan-100">{text.slice(index,index+quote.length)}</mark>{text.slice(index+quote.length)}</>}</div>
   </dialog>;
 }
 
+function MaterialVersionLabel({version}:{version:{id:string;name:string;edition:string}}){const [notice,setNotice]=useState("");return <div className="mt-3 break-words text-xs text-slate-400"><p>{version.name} · {version.edition}</p><button type="button" className="mt-1 min-h-11 text-cyan-200" aria-label={`Copy source identifier for ${version.name}`} onClick={async()=>{try{await navigator.clipboard.writeText(version.id);setNotice("Source identifier copied.");}catch{setNotice("Copy unavailable. Expand the full identifier to select it.");}}}>Copy source identifier</button><details><summary>Full source identifier</summary><code className="break-all">{version.id}</code></details>{notice&&<p role="status">{notice}</p>}</div>;}
 function MaterialResponse({ entry, openSource }: { entry: MaterialEntry; openSource: (source: SourceView) => void }) {
+  const [citationIndex,setCitationIndex]=useState(0),citationElements=useRef<(HTMLDetailsElement|null)[]>([]);
+  function visitCitation(index:number){const element=citationElements.current[index];if(!element)return;setCitationIndex(index);element.open=true;element.scrollIntoView({block:"center",behavior:"smooth"});element.querySelector("summary")?.focus({preventScroll:true});}
   const markdown = normalizeStudyMath(entry.answer).replace(/\[(S\d+)\]/g,(_,id:string)=>`[${id}](#course-source-${id})`);
   return <div className="space-y-4">
     <p className="text-xs font-semibold uppercase tracking-wider text-cyan-300">{entry.supported ? "ANSWER FROM YOUR MATERIALS" : "MORE SOURCE SUPPORT NEEDED"}</p>
@@ -52,7 +65,8 @@ function MaterialResponse({ entry, openSource }: { entry: MaterialEntry; openSou
       a({href,children}) { const id=/^#course-source-(S\d+)$/.exec(href||"")?.[1]; const citation=entry.citations.find(citation=>citation.sourceId===id); return citation ? <button type="button" onClick={()=>openSource(citation)} className="mx-1 rounded border border-cyan-300/30 px-1.5 text-xs font-semibold text-cyan-200 hover:bg-cyan-300/10" aria-label={`Open ${citation.sourceId}: ${citation.name}, ${materialLocation(citation)}`}>{children}</button> : <span>{children}</span>; },
       img(){return null;}, p({children}){return <p className="my-3">{children}</p>;}, h1({children}){return <h4 className="mb-2 mt-5 text-lg font-semibold text-white">{children}</h4>;}, h2({children}){return <h4 className="mb-2 mt-5 text-base font-semibold text-white">{children}</h4>;}, h3({children}){return <h4 className="mb-2 mt-4 font-semibold text-white">{children}</h4>;}, ul({children}){return <ul className="my-3 list-disc space-y-2 pl-5">{children}</ul>;}, ol({children}){return <ol className="my-3 list-decimal space-y-2 pl-5">{children}</ol>;}, pre({children}){return <pre className="my-4 overflow-x-auto rounded-xl bg-slate-950 p-4">{children}</pre>;}, blockquote({children}){return <blockquote className="my-4 border-l-2 border-cyan-300/40 pl-4 text-slate-400">{children}</blockquote>;}, table({children}){return <div className="my-4 overflow-x-auto"><table className="w-full border-collapse text-left">{children}</table></div>;}, th({children}){return <th className="border border-white/15 p-2">{children}</th>;}, td({children}){return <td className="border border-white/15 p-2">{children}</td>;},
     }}>{markdown}</ReactMarkdown></div>
-    {!!entry.citations.length && <div className="library-evidence"><p className="text-xs font-semibold text-slate-400">SUPPORTING EXCERPTS</p>{entry.citations.map(citation=><details key={citation.sourceId}><summary><span>[{citation.sourceId}]</span> Source passage · {citation.name} · {materialLocation(citation)}</summary><blockquote>{citation.quote}</blockquote><button type="button" onClick={()=>openSource(citation)} aria-label={`Open ${citation.sourceId}: ${citation.name}, ${materialLocation(citation)}`}>Open source text ↗</button></details>)}<p className="mt-3 text-xs leading-5 text-slate-500">Quotes are checked against the supplied excerpts. Open a source to assess whether it supports the explanation.</p></div>}
+    {entry.coverage&&<details className="rounded-xl border border-white/15 p-3"><summary>Evidence coverage and source versions</summary><p className="mt-3 text-sm text-slate-400">Selected pages / sections are shown below. This is excerpt coverage, not proof that every source was fully read.</p>{entry.coverage.map(c=>{const used=[...new Set(entry.citations.filter(q=>q.documentId===c.id).map(q=>q.page))];return <div key={c.id}><p className="mt-2 text-sm">{c.name}: sent {c.pages.length?c.pages.join(", "):"none"} of {c.total}; cited {used.length?used.join(", "):"none"}.{entry.task==="guide"&&c.total>1&&c.pages.length>0&&(!c.pages.some(p=>p>c.total/2)||c.pages.length===1)?" Guide coverage is narrow or concentrated in the opening portion.":""}</p>{entry.task==="guide"&&<details className="my-2 text-sm"><summary>Sections not supplied to this guide · {c.name}</summary><p>{omittedMaterialPages(c.total,c.pages).length?`Not supplied: ${pageRanges(omittedMaterialPages(c.total,c.pages))}.`:"Every page / section supplied at least one excerpt; full text was not necessarily included."}</p><p className="mt-1 text-xs text-slate-400">Numbers refer to PDF positions or note sections and may include pages without readable text.</p></details>}</div>;})}{entry.sourceVersions?.map(v=><MaterialVersionLabel key={v.id} version={v}/>)}{entry.citations.length===1&&<p className="mt-3 text-sm text-amber-200">One cited excerpt supports this answer. Check the original before generalizing.</p>}</details>}
+    {!!entry.citations.length && <div className="library-evidence"><p className="text-xs font-semibold text-slate-400">SUPPORTING EXCERPTS</p><nav aria-label="Supporting excerpt navigation" className="material-evidence-nav my-3 flex flex-wrap items-center gap-3"><button type="button" disabled={citationIndex<=0} onClick={()=>visitCitation(citationIndex-1)}>Previous excerpt</button><span>Excerpt {citationIndex+1} of {entry.citations.length}</span><button type="button" disabled={citationIndex>=entry.citations.length-1} onClick={()=>visitCitation(citationIndex+1)}>Next excerpt</button></nav>{entry.citations.map((citation,index)=><details ref={element=>{citationElements.current[index]=element;}} key={citation.sourceId}><summary onClick={()=>setCitationIndex(index)}><span>[{citation.sourceId}]</span> Source passage · {citation.name} · {materialLocation(citation)}</summary><blockquote>{citation.quote}</blockquote><button type="button" onClick={()=>openSource(citation)} aria-label={`Open ${citation.sourceId}: ${citation.name}, ${materialLocation(citation)}`}>Open source text ↗</button></details>)}<p className="mt-3 text-xs leading-5 text-slate-500">Quotes are checked against the supplied excerpts. Open a source to assess whether it supports the explanation.</p></div>}
 
   </div>;
 }
@@ -68,6 +82,11 @@ function answerFocus(entry: MaterialEntry) {
 
 const emptyLibrary: MaterialLibrary = { documents: [], entries: [] };
 export default function CourseMaterials() {
+  const [pendingImports,setPendingImports]=useState<{document:CourseDocument;file?:File}[]>([]);
+  const [failedFiles,setFailedFiles]=useState<{id:string;file:File;reason:string}[]>([]);
+  const uploadAbort=useRef<AbortController|null>(null);
+  const [retrieval,setRetrieval]=useState<{documents:CourseDocument[];excerpts:MaterialExcerpt[];question:string}|null>(null);
+  const [importError,setImportError]=useState("");
   const [reviewLimit,setReviewLimit]=useState(5);
   const [passage,setPassage]=useState<MaterialSource|null>(null),[style,setStyle]=useState<MaterialExplanationStyle>("clear"),[checks,setChecks]=useState<LessonCheck[]>([]),[now,setNow]=useState(0);
   useEffect(()=>{let cancelled=false;function refresh(){if(cancelled)return;try{setChecks(normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]")));setNow(Date.now());}catch{setChecks([]);}}queueMicrotask(refresh);window.addEventListener("eai-study-progress-change",refresh);window.addEventListener("storage",refresh);window.addEventListener("focus",refresh);const timer=setInterval(refresh,60000);return()=>{cancelled=true;window.removeEventListener("eai-study-progress-change",refresh);window.removeEventListener("storage",refresh);window.removeEventListener("focus",refresh);clearInterval(timer);};},[]);
@@ -118,7 +137,7 @@ export default function CourseMaterials() {
       const requestedReview=new URLSearchParams(window.location.search).get("review");
       if(requestedReview){try{const saved=normalizeLessonChecks(JSON.parse(localStorage.getItem(CHECK_KEY)||"[]")),check=materialReviewSteps(saved,value.documents,Date.now()).find(c=>c.context.lesson.id===requestedReview);if(check){const selected=check.context.sources![0];setLessonContext(null);setLessonNotice("");setPassage(selected);setFocus(selected.documentId);setTask("quiz");setActiveEntryId("");requestAnimationFrame(()=>document.getElementById("selected-study-passage")?.scrollIntoView({block:"start"}));}else setLessonNotice("This passage review is unavailable or no longer needs follow-up in this browser. Choose a source to continue.");}catch{setLessonNotice("The saved passage review could not be read. Your original work is unchanged.");}}
       setReady(true);}}).catch(()=>{if(!cancelled){setReady(true);setStorageAvailable(false);}});
-    return ()=>{cancelled=true;abort.current?.abort();};
+    return ()=>{cancelled=true;abort.current?.abort();uploadAbort.current?.abort();};
   },[]);
   useEffect(()=>{
     if(!ready||!storageAvailable) return;
@@ -127,47 +146,54 @@ export default function CourseMaterials() {
     saveMaterialLibrary(library,expected).catch(()=>setStorageAvailable(false));
   },[library,ready,storageAvailable]);
 
-  function addDocument(document: CourseDocument) {
+  async function addDocument(document: CourseDocument) {
     const current=currentLibrary.current;
     if(current.documents.length>=MATERIAL_LIMITS.documents) throw new Error("Your library has five materials. Remove one before adding another.");
     if(current.documents.some(item=>item.id===document.id)) throw new Error("This material is already in your library.");
     const characters=[...current.documents,document].reduce((sum,item)=>sum+item.pages.reduce((sum,page)=>sum+page.text.length,0),0);
     if(characters>MATERIAL_LIMITS.libraryCharacters) throw new Error("This library has reached its text limit. Remove a material or use a shorter selection.");
-    const next={...current,documents:[...current.documents,document]}; currentLibrary.current=next; setLibrary(next);setPassage(null);setFocus(document.id);setActiveEntryId("");
+    const next={...current,documents:[...current.documents,document]};
+    await saveMaterialLibrary(next,current);
+    savedLibrary.current=next;currentLibrary.current=next;setLibrary(next);setPassage(null);setFocus(document.id);setActiveEntryId("");
   }
-  async function uploadFiles(files: FileList|null) {
+  async function updateDocument(updated:CourseDocument){const current=currentLibrary.current,next={...current,documents:current.documents.map(d=>d.id===updated.id?updated:d)};await saveMaterialLibrary(next,current);savedLibrary.current=next;currentLibrary.current=next;setLibrary(next);}
+  async function uploadFiles(files: FileList|File[]|null) {
     if(!files?.length || uploading || loading) return;
     if(currentLibrary.current.documents.length+files.length>MATERIAL_LIMITS.documents){setError("Choose fewer files: the library supports five materials at a time.");return;}
     setUploading(true);setError("");
     const failures: string[] = [];
     for (const file of Array.from(files)) {
+      const controller=new AbortController();uploadAbort.current=controller;
       try {
         setUploadStatus(`Reading ${file.name}…`);
-        addDocument(await importCourseFile(file, setUploadStatus));
+        const imported=await importCourseFile(file,message=>setUploadStatus(`${file.name}: ${message}`),controller.signal);setPendingImports(previous=>[...previous,{document:imported,file}]);setFailedFiles(previous=>previous.filter(row=>row.file!==file));
       } catch (error) {
-        const reason = error instanceof Error ? error.message : "This file could not be read.";
+        const reason = controller.signal.aborted?"Extraction cancelled. The original file is unchanged.":error instanceof Error ? error.message : "This file could not be read.";
+        setFailedFiles(previous=>[...previous.filter(row=>row.file!==file),{id:crypto.randomUUID(),file,reason}]);
         failures.push(`${file.name}: ${reason}`);
       }
     }
+    uploadAbort.current=null;
     setError(failures.join(" "));
     setUploading(false);
     setUploadStatus("");
   }
   async function trySample() {
     if(uploading||loading||!ready)return;
+    const controller=new AbortController();uploadAbort.current=controller;
     setUploading(true);setError("");setUploadStatus("Opening the sample PDF…");
     try {
-      const response=await fetch("/examples/eai-course-sample.pdf");
+      const response=await fetch("/examples/eai-course-sample.pdf",{signal:controller.signal});
       if(!response.ok)throw new Error("The sample could not be opened. Please try again.");
       const file=new File([await response.blob()],"EAI sample course.pdf",{type:"application/pdf"});
-      addDocument(await importCourseFile(file,setUploadStatus));
+      const imported=await importCourseFile(file,setUploadStatus,controller.signal);setPendingImports(previous=>[...previous,{document:imported,file}]);
     }catch(error){setError(error instanceof Error?error.message:"The sample could not be opened.");}
-    finally{setUploading(false);setUploadStatus("");}
+    finally{uploadAbort.current=null;setUploading(false);setUploadStatus("");}
   }
   async function addNotes(event: FormEvent) {
     event.preventDefault();if(!notes.trim()||uploading||loading)return;
     setUploading(true);setError("");
-    try{addDocument(await importCourseNotes(notesName,notes));setNotes("");setNotesName("");setShowNotes(false);}
+    try{const imported=await importCourseNotes(notesName,notes);setPendingImports(previous=>[...previous,{document:imported}]);setNotes("");setNotesName("");setShowNotes(false);}
     catch(error){setError(error instanceof Error?error.message:"These notes could not be added.");}
     finally{setUploading(false);}
   }
@@ -187,7 +213,7 @@ export default function CourseMaterials() {
     setError("");
     setPanel(null);
   }
-  async function ask(event: FormEvent) {
+  async function ask(event: FormEvent,approved?:MaterialExcerpt[]) {
     event.preventDefault();if(loading||uploading||!ready)return;
     const message=question.trim()||(passage&&task==="explain"?"Explain this selected passage, preserving its qualifications.":"")||(task==="guide"?"Create a study guide from the selected material.":task==="quiz"?"Ask me one practice question from the selected material.":"");
     if(!message)return;
@@ -201,7 +227,10 @@ export default function CourseMaterials() {
     const usePriorTopic = question.trim().length > 0 || (task === "quiz" && recent[0]?.task === "quiz");
     let excerpts;
     try{if(passage&&!sourceStillAvailable(passage,library.documents))throw new Error("This passage is no longer available in your library. Choose it again from the source.");excerpts=passage?[passage]:selectMaterialExcerpts(documents,message,task,usePriorTopic ? recent[0]?.question : undefined);}catch(e){setError(e instanceof Error?e.message:"Choose a source passage again.");return;}
-    if(!excerpts.length){setError("I couldn’t find matching text in the selected materials. Try a more specific question or choose another material.");return;}
+    if(approved)excerpts=approved;
+    if(!excerpts.length){setError("No matching excerpt was found. This does not establish that your documents lack the information. Try a more specific question or select a passage directly.");return;}
+    if(!approved){setRetrieval({documents,excerpts,question:message});return;}
+    setRetrieval(null);
     setLoading(true);setError("");const controller=new AbortController();abort.current=controller;
     try{
       let relevantHistory = recent;
@@ -228,18 +257,20 @@ export default function CourseMaterials() {
       if(!response.ok)throw new Error(typeof result?.error==="string"?result.error:"The tutor is temporarily unavailable. Please try again.");
       if(!result||typeof result.answer!=="string"||!Array.isArray(result.citations))throw new Error("The tutor returned an invalid response.");
       const verified=validateMaterialAnswer(result,validateMaterialSources(excerpts));
-      const newEntry:MaterialEntry={...verified,id:crypto.randomUUID(),question:message,task,documentIds:[...new Set(excerpts.map(excerpt=>excerpt.documentId))],createdAt:Date.now()};
+      const newEntry:MaterialEntry={...verified,id:crypto.randomUUID(),question:message,task,documentIds:[...new Set(excerpts.map(excerpt=>excerpt.documentId))],createdAt:Date.now(),coverage:materialCoverage(documents,excerpts),sourceVersions:documents.filter(d=>excerpts.some(e=>e.documentId===d.id)).map(d=>({id:d.id,name:d.metadata?.originalName||d.name,edition:d.metadata?.edition||"Edition unspecified"}))};
       setLibrary(previous=>({...previous,entries:[newEntry,...previous.entries].slice(0,20)}));setActiveEntryId(newEntry.id);setQuestion("");
     }catch(error){if(!controller.signal.aborted)setError(error instanceof Error?error.message:"The tutor could not complete this request.");}
     finally{if(abort.current===controller)abort.current=null;setLoading(false);}
   }
 
   const errorNotice = error && <p role="alert" className="mt-5 rounded-xl border border-amber-300/25 bg-amber-300/5 p-4 text-sm leading-7 text-amber-100">{error}</p>;
-  const busy=uploading||loading;
+  const busy=uploading||loading||pendingImports.length>0||!!retrieval;
   const reviews=materialReviewSteps(checks,library.documents,now);
   function choosePassage(selected:MaterialSource){setLessonContext(null);setLessonNotice("");setPassage(selected);setFocus(selected.documentId);setSource(null);setPanel(null);setActiveEntryId("");setError("");requestAnimationFrame(()=>{const selected=document.getElementById("selected-study-passage");selected?.focus({preventScroll:true});selected?.scrollIntoView({block:"start",behavior:"smooth"});});}
   const sourceDocument=library.documents.find(document=>document.id===source?.documentId);
   return <>
+    {pendingImports[0]&&!uploading&&<><MaterialImportReview key={pendingImports[0].document.id+pendingImports.length} document={pendingImports[0].document} originalFile={pendingImports[0].file} documents={library.documents} remaining={pendingImports.length} error={importError} onSkip={()=>{setPendingImports(p=>p.slice(1));setImportError("");}} onCommit={async d=>{try{await addDocument(d);setPendingImports(p=>p.slice(1));setImportError("");}catch(e){setImportError(e instanceof Error?e.message:"Material could not be added.");}}}/></>}
+    {retrieval&&<MaterialRetrievalReview documents={retrieval.documents} excerpts={retrieval.excerpts} question={retrieval.question} onCancel={()=>setRetrieval(null)} onConfirm={excerpts=>void ask({preventDefault(){}} as FormEvent,excerpts)}/>}
     {lessonContext&&<section className="library-lesson-context" aria-label="Lesson materials context"><div><p className="studio-eyebrow">YOUR LESSON, YOUR SOURCES</p><h2>{lessonContext.title}</h2><p>The question is prepared below. Review the material focus, then select Ask. Only selected excerpts are sent; your full files are not automatically read.</p>{lessonNotice&&<p role="status">{lessonNotice}</p>}</div><button type="button" disabled={busy} onClick={()=>{setLessonContext(null);setLessonNotice("");if(focus==="lesson")setFocus("choose");if(question===lessonContext.question)setQuestion("");}}>Clear lesson context</button><a href="/study#learning-goal">Return to my plan ↗</a></section>}
     {!lessonContext&&lessonNotice&&<p role="status" className="goal-notice">{lessonNotice}</p>}
     <div className="library-focused-shell" onKeyDown={event=>{if(event.key === "Escape" && panel){event.preventDefault();closePanel();}}}>
@@ -260,8 +291,8 @@ export default function CourseMaterials() {
           {!library.documents.length&&<div className="mt-4 rounded-xl bg-slate-950/50 p-3"><button type="button" disabled={busy||!ready} onClick={()=>void trySample()} className="text-xs font-semibold text-cyan-200 disabled:opacity-40">Try a sample PDF</button><p className="mt-1 text-xs leading-5 text-slate-500">Two fictional classroom cases. No personal material needed.</p></div>}
           <button type="button" disabled={busy||!ready} onClick={()=>setShowNotes(value=>!value)} className="mt-3 text-xs font-medium text-cyan-300 underline underline-offset-4 disabled:opacity-40">{showNotes?"Close notes form":"Paste notes instead"}</button>
           {showNotes&&<form onSubmit={addNotes} className="mt-4 space-y-3"><label className="block text-xs text-slate-300">Notes title<input aria-label="Notes title" disabled={busy} maxLength={120} value={notesName} onChange={event=>setNotesName(event.target.value)} placeholder="For example: Biology lecture 3" className="mt-2 w-full rounded-lg border border-white/15 bg-slate-950 px-3 py-2 text-sm text-white" /></label><label className="block text-xs text-slate-300">Course notes<textarea aria-label="Course notes" disabled={busy} rows={7} maxLength={250000} value={notes} onChange={event=>setNotes(event.target.value)} className="mt-2 w-full rounded-lg border border-white/15 bg-slate-950 px-3 py-2 text-sm text-white" /></label><button disabled={busy||!notes.trim()} className="rounded-lg bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 disabled:opacity-40">Add notes</button></form>}
-          {uploading&&<p role="status" className="mt-4 text-xs leading-6 text-cyan-200">{uploadStatus||"Adding your notes…"}</p>}
-          </div><div className="library-document-list">{library.documents.map(document=><div key={document.id} className="rounded-xl border border-white/10 bg-slate-950/50 p-3"><p className="break-words text-sm font-medium text-slate-200">{document.name}</p><p className="mt-1 text-xs text-slate-500">{document.kind==="pdf"?`${document.pages.length} of ${document.pageCount} pages with readable text`:`${document.pages.length} note ${document.pages.length===1?"section":"sections"}`}</p>{document.kind==="pdf"&&document.pages.length<document.pageCount&&<p className="mt-2 text-xs leading-5 text-amber-200">Pages without readable text are not searched.</p>}<div className="mt-3 flex gap-4"><button type="button" onClick={()=>setSource({documentId:document.id,page:document.pages[0].number,quote:""})} className="text-xs text-cyan-300" aria-label={`Read ${document.name}`}>Read</button><button type="button" disabled={busy} onClick={()=>removeDocument(document.id)} className="text-xs text-slate-400 hover:text-red-200 disabled:opacity-40" aria-label={`Remove ${document.name}`}>Remove</button></div></div>)}</div>
+          {uploading&&<p role="status" className="mt-4 text-xs leading-6 text-cyan-200">{uploadStatus||"Adding your notes…"}</p>}{uploading&&uploadStatus&&<button type="button" onClick={()=>uploadAbort.current?.abort()} className="mt-2 min-h-11 text-sm text-amber-200">Cancel current file</button>}{failedFiles.length>0&&<section aria-label="Files needing retry" className="mt-4"><h3 className="text-sm font-semibold">Files needing retry</h3>{failedFiles.map(row=><div key={row.id} className="my-3 rounded border border-white/15 p-3"><p className="break-words text-sm">{row.file.name}: {row.reason}</p><button type="button" disabled={busy} onClick={()=>void uploadFiles([row.file])} className="mr-3 min-h-11 text-sm text-cyan-200" aria-label={`Retry ${row.file.name}`}>Retry this file</button><button type="button" disabled={uploading} onClick={()=>setFailedFiles(previous=>previous.filter(f=>f.id!==row.id))} className="min-h-11 text-sm">Dismiss failure</button></div>)}</section>}
+          </div><div className="library-document-list">{library.documents.map(document=><div key={document.id} className="rounded-xl border border-white/10 bg-slate-950/50 p-3"><p className="break-words text-sm font-medium text-slate-200">{document.name}</p><p className="mt-1 text-xs text-slate-500">{document.kind==="pdf"?`${document.pages.length} of ${document.pageCount} pages with readable text`:`${document.pages.length} note ${document.pages.length===1?"section":"sections"}`}</p>{document.metadata?.revisionOf&&<p className="mt-2 text-xs text-cyan-200">Revised source · earlier version remains separate</p>}<MaterialMetadataEditor key={`${document.id}-${document.name}`} document={document} onSave={updateDocument}/>{document.kind==="pdf"&&document.pages.length<document.pageCount&&<p className="mt-2 text-xs leading-5 text-amber-200">Pages without readable text are not searched.</p>}<div className="mt-3 flex gap-4"><button type="button" onClick={()=>{let page=document.pages[0].number;try{const previous=Number(sessionStorage.getItem(`dai-material-page:${document.id}`));if(document.pages.some(p=>p.number===previous))page=previous;}catch{/* Continue from the first readable page. */}setSource({documentId:document.id,page,quote:""});}} className="text-xs text-cyan-300" aria-label={`Read ${document.name}`}>Read</button><button type="button" disabled={busy} onClick={()=>removeDocument(document.id)} className="text-xs text-slate-400 hover:text-red-200 disabled:opacity-40" aria-label={`Remove ${document.name}`}>Remove</button></div></div>)}</div>
           <p className="mt-5 border-t border-white/10 pt-4 text-xs leading-6 text-slate-500">Extracted text is saved in this browser{accountConfigured ? " and included if you choose account saving" : ""}. Relevant excerpts are sent to the AI provider when you ask a question. Removing a material removes its library answers. Saved practice checks retain their quoted passages in learning history; reviews for unavailable materials are hidden.</p>
           {!storageAvailable&&<p role="status" className="mt-3 text-xs leading-6 text-amber-200">Browser storage is unavailable. Your current materials and answers may not survive a reload.</p>}
         </div>
@@ -274,7 +305,7 @@ export default function CourseMaterials() {
       {!!library.documents.length&&task==="explain"&&<label className="material-explanation-style">How would you like it explained?<select aria-label="Explanation style" value={style} disabled={busy} onChange={event=>setStyle(event.target.value as MaterialExplanationStyle)}>{Object.entries(materialExplanationStyles).map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>}
       {passage&&task==="quiz"?<PassagePractice source={passage} openSource={setSource}/>:<>
       <div className="library-reading-area" aria-live="polite">
-          {entry?<MaterialResponse entry={entry} openSource={setSource}/>:<div className="library-empty"><h2>What would you like to know?</h2><p>Add a source, choose how you want to learn, and follow a question.</p><p className="library-empty-note">Answers use selected excerpts. Scanned pages and images need OCR.</p>{!library.documents.length&&<><button type="button" disabled={busy||!ready} onClick={event=>showPanel("add",event.currentTarget)}>Add your first material ↗</button><a href="/study/sample">Try a short sample lesson →</a></>}</div>}
+          {entry?<MaterialResponse key={entry.id} entry={entry} openSource={setSource}/>:<div className="library-empty"><h2>What would you like to know?</h2><p>Add a source, choose how you want to learn, and follow a question.</p><p className="library-empty-note">Answers use selected excerpts. Scanned pages and images need OCR.</p>{!library.documents.length&&<><button type="button" disabled={busy||!ready} onClick={event=>showPanel("add",event.currentTarget)}>Add your first material ↗</button><a href="/study/sample">Try a short sample lesson →</a></>}</div>}
       </div>
       <div className="library-composer"><form onSubmit={ask}>
             <label className="block text-xs font-medium text-slate-300">Your question<textarea aria-label="Question about your materials" disabled={busy} rows={2} maxLength={3000} value={question} onChange={event=>setQuestion(event.target.value)} placeholder={task==="explain"?"For example: how does this chapter explain cellular respiration?":"Add a topic or leave this blank to use the selected excerpts."} className="mt-2 w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-3 text-sm leading-7 text-white" /></label>

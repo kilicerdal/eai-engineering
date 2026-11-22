@@ -1,7 +1,10 @@
 "use client";
 
+import WritingWorkbench from "@/components/WritingWorkbench";
+import WritingReviewEvidence, {type ReviewEvidence} from "@/components/WritingReviewEvidence";
+import {writingReviews,writingReviewPrompt,reviewCapacity,type WritingBrief} from "@/lib/writing-workbench";
 import StudyGuide from "@/components/StudyGuide";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { readStudyStream, retryDelaySeconds } from "@/lib/study-stream";
 import { writeStudyCopy } from "@/lib/study-safe-storage";
 import StudyNavigation from "@/components/StudyNavigation";
@@ -258,9 +261,19 @@ function EssayScoreDashboard({ feedback }: { feedback: string }) {
   );
 }
 
-type WritingMessage = {role: "user" | "assistant"; content: string; essayTitle?: string};
+type WritingMessage = {role: "user" | "assistant"; content: string; essayTitle?: string; evidence?: ReviewEvidence};
 
 export default function WritingStudioPage() {
+  const editor = useRef<HTMLTextAreaElement>(null);
+  const [brief,setBrief]=useState<WritingBrief>({audience:"",purpose:"",boundaries:"",commentOnly:false});
+  const [selection,setSelection]=useState({start:0,end:0});
+  const [reviewScope,setReviewScope]=useState("opening");
+  const [focusMode,setFocusMode]=useState(false),[templatesOpen,setTemplatesOpen]=useState(false);
+  function returnToEditor(){editor.current?.focus();editor.current?.scrollIntoView({block:"center",behavior:"smooth"});}
+  useEffect(()=>{if(!focusMode)return;const escape=(event:KeyboardEvent)=>{if(event.key==="Escape"){setFocusMode(false);requestAnimationFrame(()=>document.getElementById("writing-focus-toggle")?.focus());}};window.addEventListener("keydown",escape);return()=>window.removeEventListener("keydown",escape);},[focusMode]);
+  const [specialistReview,setSpecialistReview]=useState<string>("Evidence and claim review");
+  function handleRecheck(criticism:string){void requestFeedback(`Recheck current revision against this earlier criticism: ${criticism}`);}
+  function locateQuote(quote:string){const at=content.indexOf(quote);if(at<0)return;editor.current?.focus();editor.current?.setSelectionRange(at,at+quote.length);setSelection({start:at,end:at+quote.length});editor.current?.scrollIntoView({block:"center",behavior:"smooth"});}
   const [title, setTitle] = useState("Untitled Essay");
   const [content, setContent] = useState("");
   const [ready, setReady] = useState(false);
@@ -279,6 +292,8 @@ export default function WritingStudioPage() {
   const [retrySeconds, setRetrySeconds] = useState(0);
   const [followUp, setFollowUp] = useState("");
   const [chatHistory, setChatHistory] = useState<WritingMessage[]>([]);
+  function resetConversation(){setChatHistory([]);setStreamingAnswer("");setAiError("");setFollowUp("");}
+
 
 
 
@@ -394,7 +409,7 @@ export default function WritingStudioPage() {
     return () => window.clearInterval(timer);
   }, [retryUntil]);
 
-  function handleAIRateLimit(response: Response): never {
+  const handleAIRateLimit = useCallback((response: Response): never => {
     if (response.status === 429) {
       const waitSeconds = retryDelaySeconds(response.headers);
       if (waitSeconds) {
@@ -407,19 +422,12 @@ export default function WritingStudioPage() {
     }
 
     throw new Error(`AI request failed (HTTP ${response.status}).`);
-  }
+  }, []);
 
   async function analyzeFullEssay() {
     const essay = content.trim();
 
-    if (!essay || aiLoading || retryUntil > Date.now()) return;
-
-    // V3.0: Use the same evaluation workflow for short essays.
-    // Long essays continue through the existing chunked analysis.
-    if (essay.length <= 2600) {
-      await requestFeedback("Evaluate My Essay");
-      return;
-    }
+    if (!essay || aiLoading || retrySeconds > 0) return;
 
     const chunkSize = 1700;
     const chunks: string[] = [];
@@ -446,7 +454,7 @@ export default function WritingStudioPage() {
           "Evaluate thesis, clarity, structure, evidence, and reasoning. " +
           "Identify strengths and specific improvements. " +
           "Do not assign an overall essay score from this section alone.\n\n" +
-          chunks[i];
+          writingReviewPrompt("Paragraph roles and structure",chunks[i],brief,`Section ${i+1} of ${chunks.length}`);
 
         const response = await fetch("/api/study/chat", {
           method: "POST",
@@ -495,6 +503,9 @@ export default function WritingStudioPage() {
         "Use equal weighting for all four category scores.",
         "Overall score = sum of four category scores multiplied by 2.5.",
         "Explain strengths, weaknesses, and actionable improvements.",
+        "Classify priorities as Required before sharing, Useful refinement, or Optional polish.",
+        `Audience: ${brief.audience}. Purpose: ${brief.purpose}. Preserve: ${brief.boundaries}.`,
+        brief.commentOnly ? "Comment only; do not provide replacement prose." : "For any rewrite explain why and flag changes of meaning.",
         "Do not invent citations or evidence.",
         "",
         sectionSummary,
@@ -525,6 +536,7 @@ export default function WritingStudioPage() {
         {
           role: "assistant" as const,
           essayTitle: title.trim() || "Untitled Essay",
+          evidence:{id:crypto.randomUUID(),title,text:essay,location:`Full essay · ${chunks.length} sections; synthesis based on section feedback`,createdAt:Date.now()},
           content:
             "# Unified Full-Essay Evaluation\n\n" +
             normalizeEssayEvaluation(unifiedFeedback) +
@@ -830,13 +842,13 @@ export default function WritingStudioPage() {
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
-  async function requestFeedback(action: string, isFollowUp = false) {
+  const requestFeedback = useCallback(async (action: string, isFollowUp = false) => {
     if (!content.trim()) {
       setAiError("Write something in the editor before requesting feedback.");
       return;
     }
 
-    if (aiLoading || retryUntil > Date.now()) return;
+    if (aiLoading || retrySeconds > 0) return;
 
     setAiLoading(true);
     setAiError("");
@@ -847,12 +859,14 @@ export default function WritingStudioPage() {
       ? "Use a ## heading and Score: X/10 for each: Thesis Strength, Grammar and Clarity, Organization and Structure, Evidence and Reasoning. Explain each score with exact quotes. Give Top 3 Improvements. The app calculates the overall. State this is an AI estimate."
       : action;
 
-    const message = [
-      isFollowUp ? "Follow-up: " + action : instructions,
-      "Essay title: " + title.trim().slice(0, 96),
-      "Essay excerpt:",
-      content.trim().slice(0, isFollowUp ? 1400 : 2600),
-    ].join("\n\n");
+    const selectedStart=editor.current?.selectionStart??selection.start,selectedEnd=editor.current?.selectionEnd??selection.end;
+    const chosen=reviewScope==="selection"?content.slice(selectedStart,selectedEnd):content;
+    if(!chosen.trim()){setAiLoading(false);setAiError("Select a passage in the editor before reviewing the selection.");return;}
+    const location=reviewScope==="selection"?`Selected characters ${selectedStart+1}–${selectedEnd}`:"Opening excerpt";
+    const capacity=reviewCapacity(isFollowUp?action:instructions,brief,location);
+    const reviewed=chosen.slice(0,capacity);
+    const evidence:ReviewEvidence={id:crypto.randomUUID(),title,text:reviewed,location:`${location}${chosen.length>capacity?` · first ${capacity} characters only`:""}`,createdAt:Date.now(),brief:`Audience: ${brief.audience||"Unspecified"} · Purpose: ${brief.purpose||"Unspecified"} · Preserve: ${brief.boundaries||"No additional boundaries"} · ${brief.commentOnly?"Comments only":"Rewrites permitted"}`};
+    const message=writingReviewPrompt(isFollowUp?action:instructions,reviewed,brief,evidence.location);
 
     const essayTitle = title.trim() || "Untitled Essay";
     const previousHistory: WritingMessage[] = [];
@@ -896,7 +910,7 @@ export default function WritingStudioPage() {
       setChatHistory((current) => [
         ...current,
         { role: "user" as const, content: action },
-        { role: "assistant" as const, content: finalAnswer, essayTitle: title.trim() || "Untitled Essay" },
+        { role: "assistant" as const, content: finalAnswer, evidence, essayTitle: evidence.title.trim() || "Untitled Essay" },
       ].slice(-20));
       if (isFollowUp) setFollowUp(current => current.trim() === action ? "" : current);
     } catch (error) {
@@ -908,7 +922,7 @@ export default function WritingStudioPage() {
     } finally {
       setAiLoading(false);
     }
-  }
+  },[aiLoading,retrySeconds,content,reviewScope,selection,brief,title,chatHistory,handleAIRateLimit,setAiError,setAiLoading,setStreamingAnswer,setChatHistory,setFollowUp]);
 
   function downloadEssay() {
     const blob = new Blob([`${title}\n\n${content}`], {
@@ -929,32 +943,22 @@ export default function WritingStudioPage() {
   }
 
   function applyTemplate(template: string) {
-    if (
-      content.trim() &&
-      !window.confirm(
-        "This will replace your current essay. Continue?"
-      )
-    ) {
-      return;
-    }
-
-    setContent(template);
+    const start=editor.current?.selectionStart??content.length,end=editor.current?.selectionEnd??start;
+    setContent(content.slice(0,start)+(start>0?"\n\n":"")+template+(end<content.length?"\n\n":"")+content.slice(end));setTemplatesOpen(false);
   }
 
   return (
-    <main className="studio-writing min-h-screen bg-[#080d19] text-white">
+    <main className={`studio-writing min-h-screen bg-[#080d19] text-white${focusMode?" writing-focus-mode":""}`}>
       <StudyNavigation />
-      <section className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-5 px-6 pt-10">
+      <section className="writing-hero mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-5 px-6 pt-10">
         <div><p className="text-xs font-semibold tracking-widest text-cyan-300">THE WRITING ROOM</p><h1 className="mt-3 text-4xl">dAI Writing Studio</h1><p className="mt-3 text-sm text-slate-400">Write with confidence. Think critically. Improve your work.</p><StudyGuide section="Writing Studio">Start with a template or write in the editor. Ask for feedback on a specific issue, such as whether your evidence supports your argument. Revise your draft and download it when ready.</StudyGuide></div>
         {feedbackWarning && <p role="status">{feedbackWarning}</p>}
         <button type="button" disabled={!ready} onClick={downloadEssay} className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950">Download Essay ↓</button>
       </section>
 
-      <div className="mx-auto max-w-7xl px-6 py-8">
-        <section className="mb-6 rounded-2xl border border-white/10 bg-[#111a2b] p-5">
-          <h2 className="mb-3 text-sm font-semibold text-slate-200">
-            Start with a Writing Template
-          </h2>
+      <div className="writing-workspace mx-auto max-w-7xl px-6 py-8">
+        <details className="writing-templates mb-6 rounded-2xl border border-white/10 bg-[#111a2b] p-5" open={!content.trim()||templatesOpen} onToggle={e=>{if(content.trim())setTemplatesOpen(e.currentTarget.open);}}>
+          <summary className="mb-3 cursor-pointer text-sm font-semibold text-slate-200">Start with a Writing Template</summary>
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {prompts.map((prompt) => (
@@ -975,11 +979,12 @@ export default function WritingStudioPage() {
               </button>
             ))}
           </div>
-        </section>
+        </details>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(400px,1fr)]">
-          <section className="overflow-hidden rounded-2xl border border-white/10 bg-[#111a2b]">
-            <div className="border-b border-white/10 p-5">
+        <WritingWorkbench title={title} content={content} ready={ready} busy={aiLoading} brief={brief} onBrief={setBrief} onLoad={(t,c)=>{setTitle(t);setContent(c);}} onRecheck={handleRecheck}/>
+        <div className="writing-columns grid items-start gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(400px,1fr)]">
+          <section className="writing-editor-panel overflow-hidden rounded-2xl border border-white/10 bg-[#111a2b]">
+            <div className="border-b border-white/10 p-5"><button id="writing-focus-toggle" type="button" aria-pressed={focusMode} onClick={()=>{setFocusMode(!focusMode);requestAnimationFrame(returnToEditor);}} className="mb-4 rounded-lg border border-white/20 px-3 py-2 text-sm">{focusMode?"Exit focus view":"Focus on writing"}</button>
               <input
                 disabled={!ready}
                 value={title}
@@ -999,17 +1004,20 @@ export default function WritingStudioPage() {
             </div>
 
             <textarea
+              ref={editor}
+              onBlur={e=>setSelection({start:e.currentTarget.selectionStart,end:e.currentTarget.selectionEnd})}
+              onSelect={e=>setSelection({start:e.currentTarget.selectionStart,end:e.currentTarget.selectionEnd})}
               disabled={!ready}
               value={content}
               onChange={(event) => setContent(event.target.value)}
               aria-label="Essay content"
               placeholder="Start writing your essay here..."
               spellCheck
-              className="min-h-[650px] w-full resize-y bg-transparent p-6 text-base leading-8 text-slate-100 outline-none placeholder:text-slate-500"
+              className="writing-editor min-h-[320px] w-full resize-y bg-transparent p-6 text-base leading-8 text-slate-100 outline-none placeholder:text-slate-500"
             />
           </section>
 
-          <aside className="rounded-2xl border border-white/10 bg-[#111a2b] p-6">
+          <aside className="writing-coach rounded-2xl border border-white/10 bg-[#111a2b] p-6"><button type="button" onClick={returnToEditor} className="mb-5 rounded-lg border border-white/20 px-3 py-2 text-sm">Return to editor ↑</button>
             <div className="mb-6">
               <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-300">
                 AI Writing Coach
@@ -1025,35 +1033,14 @@ export default function WritingStudioPage() {
               </p>
             </div>
 
+            <label className="mb-4 block text-sm">Review scope<select aria-label="Review scope" value={reviewScope} onChange={e=>setReviewScope(e.target.value)} className="mt-2 block w-full rounded border border-white/20 bg-slate-950 p-2"><option value="opening">Opening excerpt</option><option value="selection">Selected passage · {selection.end-selection.start} characters</option></select></label>
             {content.length > 2600 && (
               <p className="mb-4 rounded-lg border border-amber-400/20 bg-amber-400/5 p-3 text-xs leading-5 text-amber-200">
-                Essay evaluation currently uses the first 2,600 characters
-                of your essay. Feedback may not reflect later sections.
+                Standard reviews use a bounded excerpt. Select a passage to review later sections, or use full essay analysis. The exact submitted text is attached to each review.
               </p>
             )}
 
-            <div className="space-y-3">
-              {[
-                "Evaluate My Essay",
-                "Review my thesis statement",
-                "Improve clarity and grammar",
-                "Evaluate my argument",
-                "Suggest stronger transitions",
-                "Identify areas needing evidence",
-              ].map((suggestion) => (
-                <button
-                  key={suggestion}
-                  type="button"
-                  disabled={aiLoading || retrySeconds > 0}
-                  onClick={() => void requestFeedback(suggestion)}
-                  className="w-full rounded-xl border border-white/10 bg-[#0c1424] px-4 py-3 text-left text-sm text-slate-300 transition hover:border-cyan-400/50 disabled:opacity-50"
-                >
-                  ✦ {suggestion}
-                </button>
-              ))}
-            </div>
-
-            
+            <div className="my-4 space-y-3"><label className="block text-sm">Review focus<select aria-label="Review focus" className="mt-2 block w-full rounded border border-white/20 bg-slate-950 p-3" value={specialistReview} onChange={e=>setSpecialistReview(e.target.value)}><optgroup label="General review">{["Evaluate My Essay","Review my thesis statement","Improve clarity and grammar","Evaluate my argument","Suggest stronger transitions","Identify areas needing evidence"].map(key=><option key={key}>{key}</option>)}</optgroup><optgroup label="Editorial review">{Object.keys(writingReviews).map(key=><option key={key}>{key}</option>)}</optgroup></select></label><button type="button" disabled={aiLoading||retrySeconds>0||!content.trim()} className="rounded-lg border border-cyan-300/30 px-3 py-3 text-sm text-cyan-200" onClick={()=>void requestFeedback(specialistReview)}>Review: {specialistReview}</button></div>
                 <button
                   type="button"
                   onClick={() => void analyzeFullEssay()}
@@ -1062,7 +1049,7 @@ export default function WritingStudioPage() {
                 >
                   Analyze Full Essay
                 </button>
-<div className="mt-8 rounded-xl border border-cyan-400/20 bg-cyan-400/5 p-4">
+<div className="writing-conversation-panel mt-8 rounded-xl border border-cyan-400/20 bg-cyan-400/5 p-4">
               <h3 className="text-sm font-semibold text-cyan-300">
                 AI Writing Conversation
               </h3>
@@ -1072,6 +1059,7 @@ export default function WritingStudioPage() {
                   {aiError}
                 </p>
               )}
+              {!chatHistory.length&&aiError&&<button type="button" disabled={aiLoading} onClick={resetConversation} className="mt-3 min-h-11 text-sm text-cyan-200">New Conversation</button>}
 
               {retrySeconds > 0 && (
                 <p className="mt-2 text-sm text-amber-300">
@@ -1090,8 +1078,8 @@ export default function WritingStudioPage() {
                 </div>
               )}
 
-              <div className="mt-4 max-h-[650px] space-y-4 overflow-y-auto pr-1">
-                <div className="mb-4">
+              <div className="writing-conversation mt-4 space-y-4">
+                {latestValidEvaluation&&<div className="writing-report-controls mb-4 flex flex-wrap gap-3">
                   <button
                     type="button"
                     onClick={downloadPDFReport}
@@ -1111,14 +1099,14 @@ export default function WritingStudioPage() {
                   className="rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-3 py-2 text-xs font-semibold text-emerald-300 hover:bg-emerald-400/20 disabled:opacity-40"
                 >
                   Download Evaluation Report
-                </button></div>
+                </button></div>}
 {chatHistory.map((message, index) => (
                   <div
                     key={index}
-                    className={
+                    className={"writing-message " + (
                       message.role === "user"
                         ? "ml-6 rounded-xl border border-cyan-400/20 bg-cyan-400/10 p-3"
-                        : "mr-3 rounded-xl border border-white/10 bg-[#0c1424] p-4"
+                        : "rounded-xl border border-white/10 bg-[#0c1424] p-4")
                     }
                   >
                     <p className="mb-2 text-xs font-semibold text-cyan-300">
@@ -1126,14 +1114,15 @@ export default function WritingStudioPage() {
                       {message.role === "assistant" && message.essayTitle && message.essayTitle !== (title.trim() || "Untitled Essay") && ` · ${message.essayTitle}`}
                     </p>
 
-                    <div className="min-w-0 break-words text-sm leading-7 text-slate-200 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_strong]:text-cyan-200">
+                    {message.role==="assistant"&&message.evidence&&<WritingReviewEvidence evidence={message.evidence} feedback={message.content} current={content} onLocate={locateQuote} onRecheck={handleRecheck}/>}
+                    {!message.evidence&&<div className="min-w-0 break-words text-sm leading-7 text-slate-200 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_strong]:text-cyan-200">
                       <ReactMarkdown
                         remarkPlugins={[remarkGfm, remarkMath]}
                         rehypePlugins={[rehypeKatex]}
                       >
                         {message.content}
                       </ReactMarkdown>
-                    </div>
+                    </div>}
                   </div>
                 ))}
 
@@ -1168,7 +1157,7 @@ export default function WritingStudioPage() {
               </div>
             </div>
 
-            <div className="mt-6 border-t border-white/10 pt-5">
+            {chatHistory.length>0&&<div className="mt-6 border-t border-white/10 pt-5">
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-sm font-semibold text-slate-200">
                   Ask a Follow-up Question
@@ -1177,12 +1166,7 @@ export default function WritingStudioPage() {
                 <button
                   type="button"
                   disabled={aiLoading}
-                  onClick={() => {
-                    setChatHistory([]);
-                    setStreamingAnswer("");
-                    setAiError("");
-                    setFollowUp("");
-                  }}
+                  onClick={resetConversation}
                   className="text-xs text-cyan-300 hover:text-cyan-200 disabled:opacity-50"
                 >
                   New Conversation
@@ -1224,7 +1208,7 @@ export default function WritingStudioPage() {
                   {Math.ceil(chatHistory.length / 2)} conversation turn(s)
                 </p>
               )}
-            </div>
+            </div>}
 
             <p className="mt-6 text-xs leading-5 text-slate-500">
               Your draft is saved in this browser, not in a cloud account.

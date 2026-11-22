@@ -1,12 +1,42 @@
 import {examBank,examDomains,examSkillLessons,type ExamDomain,type ExamProfile,type ExamSkill,type ExamBankQuestion} from "./study-exam-bank";
 import type {Mistake} from "./study-exams";
 export const EXAM_PREP_KEY="eai-exam-prep-v1";
-export type ExamAttempt={id:string;exam:ExamProfile;sessionId:string;mode:"diagnostic"|"practice";questionId:string;selectedIndex:number|null;hintsUsed:number;reasoning:string;submittedAt:number};
-export type ExamSession={id:string;mode:"diagnostic"|"practice";questionIds:string[];index:number;startedAt:number;finished:boolean;selectedIndex:number|null;hintsUsed:number;reasoning:string};
+export type ExamSelection={index:number|null;at:number|null};
+export type ExamWork={selectedIndex:number|null;hintsUsed:number;reasoning:string;scratch?:string;estimate?:string;confidence?:"unsure"|"somewhat"|"high";eliminated?:number[];flagged?:boolean;selections?:ExamSelection[];historyTruncated?:boolean};
+export type ExamAttempt={id:string;exam:ExamProfile;sessionId:string;mode:"diagnostic"|"practice";questionId:string;selectedIndex:number|null;hintsUsed:number;reasoning:string;submittedAt:number;scratch?:string;estimate?:string;confidence?:ExamWork["confidence"];selections?:ExamSelection[];historyTruncated?:boolean};
+export type ExamSession={id:string;mode:"diagnostic"|"practice";questionIds:string[];index:number;startedAt:number;finished:boolean;selectedIndex:number|null;hintsUsed:number;reasoning:string;work?:Record<string,ExamWork>};
 export type ExamRecord={version:1;activeExam:ExamProfile;attempts:ExamAttempt[];sessions:{sat:ExamSession|null;psat:ExamSession|null}};
 const id=(v:unknown):v is string=>typeof v==="string"&&v.length>0&&v.length<=100&&v.trim()===v;
 const profile=(v:unknown):v is ExamProfile=>v==="sat"||v==="psat";
 const instant=(v:unknown):v is number=>typeof v==="number"&&Number.isFinite(v)&&v>0;
+function extras(value:unknown,choices:number):Partial<ExamWork>|null{
+ if(!value||typeof value!=="object")return null;const w=value as ExamWork,out:Partial<ExamWork>={};
+ for(const key of ["scratch","estimate"] as const)if(w[key]!==undefined){if(typeof w[key]!=="string"||w[key]!.length>(key==="scratch"?4000:300))return null;out[key]=w[key];}
+ if(w.confidence!==undefined){if(!["unsure","somewhat","high"].includes(w.confidence))return null;out.confidence=w.confidence;}
+ if(w.eliminated!==undefined){if(!Array.isArray(w.eliminated)||w.eliminated.length>choices||new Set(w.eliminated).size!==w.eliminated.length||w.eliminated.some(n=>!Number.isInteger(n)||n<0||n>=choices))return null;out.eliminated=[...w.eliminated];}
+ if(w.historyTruncated!==undefined){if(typeof w.historyTruncated!=="boolean")return null;out.historyTruncated=w.historyTruncated;}
+ if(w.flagged!==undefined){if(typeof w.flagged!=="boolean")return null;out.flagged=w.flagged;}
+ if(w.selections!==undefined){if(!Array.isArray(w.selections)||w.selections.length>100||w.selections.some(e=>!e||!(e.index===null||Number.isInteger(e.index)&&e.index>=0&&e.index<choices)||!(e.at===null||instant(e.at))))return null;out.selections=w.selections.map(e=>({...e}));}
+ return out;
+}
+export function examWork(session:ExamSession,questionId=session.questionIds[session.index]):ExamWork{
+ return session.work?.[questionId]??(questionId===session.questionIds[session.index]?{selectedIndex:session.selectedIndex,hintsUsed:session.hintsUsed,reasoning:session.reasoning}:{selectedIndex:null,hintsUsed:0,reasoning:""});
+}
+export function editExamWork(record:ExamRecord,exam:ExamProfile,patch:Partial<ExamWork>,now:number):ExamRecord{
+ const s=record.sessions[exam];if(!s||!instant(now)||now<s.startedAt)return record;const q=examBank.find(q=>q.id===s.questionIds[s.index])!;
+ const checked=sessionAnswers(record,exam,now).some(a=>a.questionId===q.id);
+ if(checked&&Object.keys(patch).some(k=>k!=="flagged"))return record;
+ const old=examWork(s),next={...old,...patch};
+ if(patch.selectedIndex!==undefined&&patch.selectedIndex!==old.selectedIndex){const prior=old.selections|| (old.selectedIndex!==null?[{index:old.selectedIndex,at:null}]:[]);const event={index:patch.selectedIndex,at:now};if(prior.length>=100){next.selections=[prior[0],...prior.slice(-98),event];next.historyTruncated=true;}else next.selections=[...prior,event];}
+ const optional=extras(next,q.choices.length);if(!optional||!(next.selectedIndex===null||Number.isInteger(next.selectedIndex)&&next.selectedIndex>=0&&next.selectedIndex<q.choices.length)||!Number.isInteger(next.hintsUsed)||next.hintsUsed<old.hintsUsed||next.hintsUsed>q.hints.length||typeof next.reasoning!=="string"||next.reasoning.length>500||next.selectedIndex!==null&&next.eliminated?.includes(next.selectedIndex))return record;
+ const work={selectedIndex:next.selectedIndex,hintsUsed:next.hintsUsed,reasoning:next.reasoning,...optional};
+ return {...record,sessions:{...record.sessions,[exam]:{...s,selectedIndex:work.selectedIndex,hintsUsed:work.hintsUsed,reasoning:work.reasoning,work:{...s.work,[q.id]:work}}}};
+}
+export function navigateExamQuestion(record:ExamRecord,exam:ExamProfile,index:number,now:number):ExamRecord{
+ const s=record.sessions[exam];if(!s||!Number.isInteger(index)||index<0||index>=s.questionIds.length||now<s.startedAt)return record;
+ const work={...s.work,[s.questionIds[s.index]]:examWork(s)},target=work[s.questionIds[index]]??{selectedIndex:null,hintsUsed:0,reasoning:""};
+ return {...record,sessions:{...record.sessions,[exam]:{...s,index,finished:false,selectedIndex:target.selectedIndex,hintsUsed:target.hintsUsed,reasoning:target.reasoning,work}}};
+}
 export const emptyExamRecord=():ExamRecord=>({version:1,activeExam:"sat",attempts:[],sessions:{sat:null,psat:null}});
 export function normalizeExamAttempts(value:unknown):ExamAttempt[]{
  if(!Array.isArray(value))return [];
@@ -14,7 +44,8 @@ export function normalizeExamAttempts(value:unknown):ExamAttempt[]{
  for(const a of value){
   const q=examBank.find(q=>q.id===a?.questionId);
   if(!a||!id(a.id)||seen.has(a.id)||!profile(a.exam)||!id(a.sessionId)||!["diagnostic","practice"].includes(a.mode)||!q||!(a.selectedIndex===null||(Number.isInteger(a.selectedIndex)&&a.selectedIndex>=0&&a.selectedIndex<q.choices.length))||!Number.isInteger(a.hintsUsed)||a.hintsUsed<0||a.hintsUsed>q.hints.length||typeof a.reasoning!=="string"||a.reasoning.length>500||!instant(a.submittedAt))continue;
-  seen.add(a.id);records.push({id:a.id,exam:a.exam,sessionId:a.sessionId,mode:a.mode,questionId:a.questionId,selectedIndex:a.selectedIndex,hintsUsed:a.hintsUsed,reasoning:a.reasoning,submittedAt:a.submittedAt});
+  const optional=extras(a,q.choices.length);if(!optional||optional.selections?.some(e=>e.at!==null&&e.at>a.submittedAt))continue;
+  seen.add(a.id);records.push({id:a.id,exam:a.exam,sessionId:a.sessionId,mode:a.mode,questionId:a.questionId,selectedIndex:a.selectedIndex,hintsUsed:a.hintsUsed,reasoning:a.reasoning,submittedAt:a.submittedAt,...(optional.scratch!==undefined?{scratch:optional.scratch}:{}),...(optional.estimate!==undefined?{estimate:optional.estimate}:{}),...(optional.confidence?{confidence:optional.confidence}:{}),...(optional.selections?{selections:optional.selections}:{}),...(optional.historyTruncated!==undefined?{historyTruncated:optional.historyTruncated}:{})});
  }
  return records.sort((a,b)=>a.submittedAt-b.submittedAt).slice(-1000);
 }
@@ -22,7 +53,9 @@ function normalizeSession(value:unknown):ExamSession|null{
  if(!value||typeof value!=="object")return null;
  const s=value as ExamSession;
  if(!id(s.id)||!["diagnostic","practice"].includes(s.mode)||!Array.isArray(s.questionIds)||!s.questionIds.length||s.questionIds.length>8||new Set(s.questionIds).size!==s.questionIds.length||s.questionIds.some(id=>!examBank.some(q=>q.id===id))||!Number.isInteger(s.index)||s.index<0||s.index>=s.questionIds.length||!instant(s.startedAt)||typeof s.finished!=="boolean"||!(s.selectedIndex===null||(Number.isInteger(s.selectedIndex)&&s.selectedIndex>=0&&s.selectedIndex<4))||!Number.isInteger(s.hintsUsed)||s.hintsUsed<0||s.hintsUsed>2||typeof s.reasoning!=="string"||s.reasoning.length>500)return null;
- return {id:s.id,mode:s.mode,questionIds:[...s.questionIds],index:s.index,startedAt:s.startedAt,finished:s.finished,selectedIndex:s.selectedIndex,hintsUsed:s.hintsUsed,reasoning:s.reasoning};
+ const work:Record<string,ExamWork>={};
+ if(s.work!==undefined){if(!s.work||typeof s.work!=="object"||Array.isArray(s.work)||Object.keys(s.work).some(key=>!s.questionIds.includes(key)))return null;for(const [key,w] of Object.entries(s.work)){const q=examBank.find(q=>q.id===key)!;const optional=extras(w,q.choices.length);if(!optional||!w||!(w.selectedIndex===null||Number.isInteger(w.selectedIndex)&&w.selectedIndex>=0&&w.selectedIndex<q.choices.length)||!Number.isInteger(w.hintsUsed)||w.hintsUsed<0||w.hintsUsed>q.hints.length||typeof w.reasoning!=="string"||w.reasoning.length>500||w.selectedIndex!==null&&optional.eliminated?.includes(w.selectedIndex))return null;work[key]={selectedIndex:w.selectedIndex,hintsUsed:w.hintsUsed,reasoning:w.reasoning,...optional};}const active=work[s.questionIds[s.index]];if(active&&(active.selectedIndex!==s.selectedIndex||active.hintsUsed!==s.hintsUsed||active.reasoning!==s.reasoning))return null;}
+ return {id:s.id,mode:s.mode,questionIds:[...s.questionIds],index:s.index,startedAt:s.startedAt,finished:s.finished,selectedIndex:s.selectedIndex,hintsUsed:s.hintsUsed,reasoning:s.reasoning,...(s.work!==undefined?{work}:{})};
 }
 export function readExamRecord(value:unknown):ExamRecord{
  if(!value||typeof value!=="object"||Array.isArray(value))throw new Error("Your saved exam practice could not be read. The saved copy has not been replaced.");
@@ -77,13 +110,16 @@ export function submitExamAnswer(record:ExamRecord,exam:ExamProfile,skip:boolean
  const s=record.sessions[exam];if(!s||s.finished||now<s.startedAt||!id(attemptId)||!instant(now))return record;
  if(sessionAnswers(record,exam,now).some(a=>a.questionId===s.questionIds[s.index]))return record;
  if(!skip&&s.selectedIndex===null)return record;
- const attempt:ExamAttempt={id:attemptId,exam,sessionId:s.id,mode:s.mode,questionId:s.questionIds[s.index],selectedIndex:skip?null:s.selectedIndex,hintsUsed:s.hintsUsed,reasoning:s.reasoning,submittedAt:now};
+ const currentWork=examWork(s);
+ const attempt:ExamAttempt={id:attemptId,exam,sessionId:s.id,mode:s.mode,questionId:s.questionIds[s.index],selectedIndex:skip?null:s.selectedIndex,hintsUsed:s.hintsUsed,reasoning:s.reasoning,submittedAt:now,...(currentWork.scratch!==undefined?{scratch:currentWork.scratch}:{}),...(currentWork.estimate!==undefined?{estimate:currentWork.estimate}:{}),...(currentWork.confidence?{confidence:currentWork.confidence}:{}),...(currentWork.selections?{selections:currentWork.selections}:{}),...(currentWork.historyTruncated!==undefined?{historyTruncated:currentWork.historyTruncated}:{})};
  return {...record,attempts:normalizeExamAttempts([...record.attempts,attempt])};
 }
 export function advanceExamSession(record:ExamRecord,exam:ExamProfile,now:number):ExamRecord{
  const s=record.sessions[exam];if(!s||!sessionAnswers(record,exam,now).some(a=>a.questionId===s.questionIds[s.index]))return record;
- const next=s.index+1;
- return {...record,sessions:{...record.sessions,[exam]:next>=s.questionIds.length?{...s,finished:true}:{...s,index:next,selectedIndex:null,hintsUsed:0,reasoning:""}}};
+ const answered=new Set(sessionAnswers(record,exam,now).map(a=>a.questionId));
+ if(s.questionIds.every(id=>answered.has(id)))return {...record,sessions:{...record.sessions,[exam]:{...s,finished:true}}};
+ const next=Array.from({length:s.questionIds.length},(_,i)=>(s.index+i+1)%s.questionIds.length).find(i=>!answered.has(s.questionIds[i]))!;
+ return navigateExamQuestion(record,exam,next,now);
 }
 export function examAttemptToMistake(attempt:ExamAttempt,now:number):Mistake{
  const a=normalizeExamAttempts([attempt])[0],q=examBank.find(q=>q.id===a?.questionId);

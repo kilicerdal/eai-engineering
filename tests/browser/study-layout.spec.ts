@@ -1,4 +1,7 @@
-import {test,expect} from '@playwright/test';
+import {test,expect,type Page} from '@playwright/test';
+async function reviewMaterialImports(page:Page,count:number){for(let i=0;i<count;i++){const dialog=page.getByRole('dialog',{name:'Inspect extracted text'});await expect(dialog).toBeVisible();await dialog.getByRole('button',{name:'Add reviewed material',exact:true}).click();}}
+async function confirmMaterialExcerpts(page:Page){const dialog=page.getByRole('dialog',{name:'Review evidence before asking'});await expect(dialog).toBeVisible();await dialog.getByRole('button',{name:/Ask with .* included excerpts/}).click();}
+
 test('one session decision preserves duration, progress and backup without calling AI',async({page})=>{
  let modelCalls=0;
  await page.route('**/api/**',route=>{if(route.request().method()==='POST')modelCalls++;return route.fulfill({status:503,body:'{}'});});
@@ -308,6 +311,7 @@ test('a rejected material identifies the failed file and later files still impor
     {name:'empty.txt', mimeType:'text/plain', buffer:Buffer.alloc(0)},
     {name:'lesson.txt', mimeType:'text/plain', buffer:Buffer.from('Water vapor condenses when air cools.')},
   ]);
+  await reviewMaterialImports(page,1);
   await expect(page.getByRole('complementary', {name:'Manage your materials'}).getByRole('alert').filter({hasText:'empty.txt: This file is empty.'})).toBeVisible();
   await expect(page.getByLabel('Material focus').locator('option:checked')).toHaveText('lesson.txt');
   await page.reload();
@@ -322,6 +326,7 @@ test('removing the selected material keeps a pending question from using unrelat
   await page.getByLabel('Add course files').setInputFiles(['first','second'].map(name=>({
     name:name+'.txt',mimeType:'text/plain',buffer:Buffer.from(name+' set of synthetic notes about the movement of water through soil.'),
   })));
+  await reviewMaterialImports(page,2);
   const focus=page.getByLabel('Material focus');
   await expect(focus.locator('option:checked')).toHaveText('second.txt');
   await page.getByRole('button',{name:'Remove second.txt'}).click();
@@ -382,6 +387,7 @@ test('a question cannot send excerpts removed from another open library tab', as
   await page.getByLabel('Add course files').setInputFiles({
     name:'Rainfall.txt',mimeType:'text/plain',buffer:Buffer.from('Rainfall supplies water to the soil and replenishes shallow aquifers.'),
   });
+  await reviewMaterialImports(page,1);
   const other=await context.newPage();
   await expect(page.getByRole('button',{name:'Remove Rainfall.txt'})).toBeVisible();
   await other.goto('/study/materials');
@@ -393,6 +399,7 @@ test('a question cannot send excerpts removed from another open library tab', as
   const question=page.getByLabel('Question about your materials');
   await question.fill('How does rainfall replenish aquifers?');
   await page.getByRole('button',{name:'Ask about materials'}).click();
+  await confirmMaterialExcerpts(page);
   await expect(page.getByText(/Your selected source changed in another tab/)).toBeVisible();
   await expect(page.getByLabel('Material focus')).toHaveValue('choose');
   await expect(question).toHaveValue('How does rainfall replenish aquifers?');
@@ -403,6 +410,7 @@ test('closing a source returns keyboard focus and selecting a passage moves focu
   await page.goto('/study/materials');
   await page.getByRole('button',{name:'Add your first material'}).click();
   await page.getByLabel('Add course files').setInputFiles({name:'Focus.txt',mimeType:'text/plain',buffer:Buffer.from('A practice passage on how rainfall replenishes shallow aquifers.')});
+  await reviewMaterialImports(page,1);
   const read=page.getByRole('button',{name:'Read Focus.txt'});
   const question=page.getByLabel('Question about your materials');
   await question.fill('How does this connect to groundwater?');
@@ -458,7 +466,8 @@ test('writing feedback survives interrupted responses and accepts a complete ret
   await page.route('**/api/study/chat', route => route.fulfill({ contentType: 'text/event-stream', body: responseBody }));
   await page.goto('/study/writing');
   await page.getByLabel('Essay content').fill('My essay includes a specific example.');
-  const review = page.getByRole('button', { name: 'Improve clarity and grammar' });
+  await page.getByLabel('Review focus').selectOption('Improve clarity and grammar');
+  const review = page.getByRole('button', { name: 'Review: Improve clarity and grammar',exact:true });
   await review.click();
   await expect(page.getByText('Keep the concrete example.', { exact: true })).toBeVisible();
   responseBody = 'data: {"response":"Incomplete review"}\n\n';
@@ -468,6 +477,7 @@ test('writing feedback survives interrupted responses and accepts a complete ret
   await expect(page.getByText('Keep the concrete example.', { exact: true })).toBeVisible();
   await expect(page.getByText('Incomplete review', { exact: true })).toHaveCount(0);
   responseBody = 'data: {"response":"Clarify the final sentence."}\r\n\r\ndata: [DONE]';
+  await page.getByLabel('Review focus').selectOption('Improve clarity and grammar');
   await review.click();
   await expect(page.getByText('Clarify the final sentence.', { exact: true })).toBeVisible();
 });
@@ -476,19 +486,23 @@ test('essay evaluation fits the API limit and failed follow-ups keep the questio
   const requests: string[] = [];
   await page.route('**/api/study/chat', route => {
     requests.push(route.request().postDataJSON().message);
-    return route.fulfill({status: 503, body: '{}'});
+    return requests.length===2?route.fulfill({contentType:'text/event-stream',body:'data: '+JSON.stringify({response:'Review the ending against your thesis.'})+'\n\ndata: [DONE]\n\n'}):route.fulfill({status:503,body:'{}'});
   });
   await page.goto('/study/writing');
   const essay = 'a'.repeat(2591) + 'LAST LINE';
   await page.getByLabel('Essay content').fill(essay);
+  await page.getByLabel('Review focus').selectOption('Evaluate My Essay');
   await page.getByRole('button', { name: /Evaluate My Essay/ }).click();
   await expect(page.getByText(/HTTP 503/)).toBeVisible();
-  expect(requests[0]).toContain(essay);
+  expect(requests[0]).toContain('a'.repeat(1000));
   expect(requests[0].length).toBeLessThanOrEqual(3000);
+  await expect(page.getByLabel('Follow-up question')).toHaveCount(0);
+  await page.getByRole('button',{name:/Evaluate My Essay/}).click();
+  await expect(page.getByText('Review the ending against your thesis.',{exact:true})).toBeVisible();
   const question = page.getByLabel('Follow-up question');
   await question.fill('Does my ending support the thesis?');
   await page.getByRole('button', {name: 'Send Question'}).click();
-  await expect.poll(() => requests.length).toBe(2);
+  await expect.poll(() => requests.length).toBe(3);
   await expect(question).toHaveValue('Does my ending support the thesis?');
 });
 
@@ -656,6 +670,7 @@ test('formatted course notes with a blank section survive reopening the library'
     name:'Formatted notes.txt',mimeType:'text/plain',
     buffer:Buffer.from('First observation.'.padEnd(10000)+'Closing observation.')
   });
+  await reviewMaterialImports(page,1);
   const read=page.getByRole('button',{name:'Read Formatted notes.txt'});
   await expect(read).toBeVisible();
   await read.click();
@@ -713,7 +728,8 @@ test('the writing report stays attributed to the evaluated essay after renaming 
  const title=page.getByLabel('Essay title');
  await title.fill('First Draft');
  await page.getByLabel('Essay content').fill('A synthetic argument about studying in short sessions.');
- await page.getByRole('button',{name:/Evaluate My Essay/}).click();
+ await page.getByLabel('Review focus').selectOption('Evaluate My Essay');
+  await page.getByRole('button',{name:/Evaluate My Essay/}).click();
  await expect(page.getByText('Evaluated draft · First Draft')).toBeVisible();
  await title.fill('Different Essay');
  await page.reload();
@@ -1065,6 +1081,7 @@ test('reopening a library answer uses its own sources and history for follow-ups
   const add = page.getByLabel('Add course files');
   const file = (name:string) => ({name:name+'.txt',mimeType:'text/plain',buffer:Buffer.from(name+' field observations about seasonal rainfall and groundwater recharge.')});
   await add.setInputFiles([file('North'),file('South')]);
+  await reviewMaterialImports(page,2);
   const focus = page.getByLabel('Material focus');
   await expect(focus.locator('option:checked')).toHaveText('South.txt');
   await page.getByRole('button',{name:'Close',exact:true}).click();
@@ -1074,19 +1091,23 @@ test('reopening a library answer uses its own sources and history for follow-ups
   const first = 'Compare the seasonal rainfall observations.';
   await question.fill(first);
   await ask.click();
+  await confirmMaterialExcerpts(page);
   await expect(page.getByRole('heading',{name:first})).toBeVisible();
   await page.getByRole('button',{name:'+ Add materials'}).click();
   await add.setInputFiles(file('West'));
+  await reviewMaterialImports(page,1);
   await expect(focus.locator('option:checked')).toHaveText('West.txt');
   await page.getByRole('button',{name:'Close',exact:true}).click();
   await question.fill('Describe rainfall in the west.');
   await ask.click();
+  await confirmMaterialExcerpts(page);
   await expect(page.getByRole('heading',{name:'Describe rainfall in the west.'})).toBeVisible();
   await page.locator('#library-materials-trigger').click();
   await page.getByRole('button',{name:first,exact:true}).click();
   await expect(focus.locator('option:checked')).toHaveText('Sources for this answer · 2');
   await question.fill('Explain the seasonal rainfall evidence.');
   await ask.click();
+  await confirmMaterialExcerpts(page);
   await expect.poll(()=>sent.length).toBe(3);
   expect(sent[2].excerpts.map(source=>source.name).sort()).toEqual(['North.txt','South.txt']);
   expect(sent[2].history.map(turn=>turn.content)).toContain(first);
@@ -1101,6 +1122,7 @@ test('a numeric source question retrieves only the matching reading', async ({pa
     {name:'Opening.txt',mimeType:'text/plain',buffer:Buffer.from('The fictional observatory opened its doors in 1973.')},
     {name:'Renovation.txt',mimeType:'text/plain',buffer:Buffer.from('The fictional observatory was renovated in 1990.')},
   ]);
+  await reviewMaterialImports(page,2);
   const focus = page.getByLabel('Material focus');
   await expect(focus.locator('option:checked')).toHaveText('Renovation.txt');
   await page.getByRole('button',{name:'Close',exact:true}).click();
@@ -1108,6 +1130,7 @@ test('a numeric source question retrieves only the matching reading', async ({pa
   await page.getByLabel('Question about your materials').fill('1973?');
   const outgoing = page.waitForRequest(request => request.url().endsWith('/api/study/materials'));
   await page.getByRole('button',{name:'Ask about materials'}).click();
+  await confirmMaterialExcerpts(page);
   const {excerpts} = (await outgoing).postDataJSON();
   expect(excerpts.map((excerpt:{name:string})=>excerpt.name)).toEqual(['Opening.txt']);
 });
@@ -1124,15 +1147,18 @@ test('a general study guide covers the selected readings after a narrow question
     {name:'Field notes.txt',mimeType:'text/plain',buffer:Buffer.from('Rainfall measurements. '.repeat(1800)+'Closing observation.')},
     {name:'Methods.txt',mimeType:'text/plain',buffer:Buffer.from('Calibration requires a dry instrument.')},
   ]);
+  await reviewMaterialImports(page,2);
   const focus = page.getByLabel('Material focus');
   await expect(focus.locator('option:checked')).toHaveText('Methods.txt');
   await page.getByRole('button',{name:'Close',exact:true}).click();
   await focus.selectOption('all');
   await page.getByLabel('Question about your materials').fill('Explain rainfall measurements.');
   await page.getByRole('button',{name:'Ask about materials'}).click();
+  await confirmMaterialExcerpts(page);
   await expect(page.getByRole('heading',{name:'Explain rainfall measurements.'})).toBeVisible();
   await page.getByRole('button',{name:'Study guide',exact:true}).click();
   await page.getByRole('button',{name:'Create study guide'}).click();
+  await confirmMaterialExcerpts(page);
   await expect.poll(()=>requests.length).toBe(2);
   expect(requests[0].excerpts.every(source=>source.name==='Field notes.txt')).toBe(true);
   expect(requests[1].excerpts).toHaveLength(6);
@@ -1149,10 +1175,12 @@ test('saved citations highlight the occurrence inside the cited excerpt', async 
   await page.goto('/study/materials');
   await page.getByRole('button',{name:'Add your first material'}).click();
   await page.getByLabel('Add course files').setInputFiles({name:'Protocol.txt',mimeType:'text/plain',buffer:Buffer.from(text)});
+  await reviewMaterialImports(page,1);
   await expect(page.getByLabel('Material focus').locator('option:checked')).toHaveText('Protocol.txt');
   await page.getByRole('button',{name:'Close',exact:true}).click();
   await page.getByLabel('Question about your materials').fill('Explain the evening protocol.');
   await page.getByRole('button',{name:'Ask about materials'}).click();
+  await confirmMaterialExcerpts(page);
   await expect(page.getByRole('heading',{name:'Explain the evening protocol.'})).toBeVisible();
   await page.reload();
   await page.getByRole('button',{name:/Open S1: Protocol.txt/}).first().click();
@@ -1269,6 +1297,7 @@ test('writing actions retain the evaluated report and isolate follow-ups after s
   const title=page.getByLabel('Essay title'),essay=page.getByLabel('Essay content');
   await title.fill('First draft');
   await essay.fill('The first argument examines rainfall.');
+  await page.getByLabel('Review focus').selectOption('Evaluate My Essay');
   await page.getByRole('button',{name:/Evaluate My Essay/}).click();
   await expect.poll(()=>requests.length).toBe(1);
   await title.fill('Second draft');
@@ -1279,6 +1308,7 @@ test('writing actions retain the evaluated report and isolate follow-ups after s
   await page.getByRole('button',{name:'Send Question'}).click();
   await expect.poll(()=>requests.length).toBe(2);
   expect(requests[1].history).toEqual([]);
+  await page.getByLabel('Review focus').selectOption('Suggest stronger transitions');
   await page.getByRole('button',{name:/Suggest stronger transitions/}).click();
   await expect.poll(()=>requests.length).toBe(3);
   await expect(page.getByRole('button',{name:'Send Question'})).toBeDisabled();
@@ -1292,6 +1322,7 @@ test('writing honors a dated retry delay and allows a local conversation reset',
   await page.route('**/api/study/chat',route=>route.fulfill({status:429,headers:{Date:'Wed, 11 Nov 2026 12:00:00 GMT','Retry-After':'Wed, 11 Nov 2026 12:00:15 GMT'},json:{}}));
   await page.goto('/study/writing');
   await page.getByLabel('Essay content').fill('A synthetic draft for a timing check.');
+  await page.getByLabel('Review focus').selectOption('Evaluate My Essay');
   const evaluate=page.getByRole('button',{name:/Evaluate My Essay/});
   await evaluate.click();
   await expect(page.getByText(/AI available again in 0m 1[0-5]s/)).toBeVisible();

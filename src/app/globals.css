@@ -46,3 +46,69 @@ html[data-comfort-focus=on] main :is(p,blockquote,pre){max-width:72ch}html[data-
 @media(max-width:600px){.tutor-tool-grid {flex-wrap:wrap}.learning-depth {overflow-wrap:anywhere}.curiosity-pause button {min-height:44px}}
 
 .learning-depth h2 {font-size:1.35rem;line-height:1.4}.learning-depth h3 {font-size:1.1rem;line-height:1.5}
+
+/* Writing revisions and source inspection share the room's quiet editing controls. */
+.writing-workbench label,.material-editor-fields label {font-size:.875rem;line-height:1.6;min-width:0;display:block}
+.writing-workbench input:not([type=checkbox]),.writing-workbench select,.material-editor-fields input,.material-editor-fields select,.material-import-review select,.studio-writing details input:not([type=checkbox]),.studio-writing details select {display:block;width:100%;min-width:0;margin-top:.35rem;border:1px solid #ffffff30;border-radius:.5rem;background:#080d19;color:#e2e8f0;padding:.65rem .75rem;font:inherit}
+.writing-workbench input[type=checkbox],.material-import-review input[type=checkbox] {width:1rem;height:1rem;margin-right:.5rem;accent-color:#67e8f9}
+.writing-workbench button,.material-import-review button,.material-editor-fields button {min-height:44px;border:1px solid #ffffff30;border-radius:.5rem;padding:.55rem .8rem;margin:.2rem .4rem .2rem 0;font-size:.875rem;text-align:left}
+.writing-workbench button:disabled,.material-import-review button:disabled {opacity:.45}
+.writing-workbench summary,.material-import-review summary {cursor:pointer;min-height:44px;padding:.6rem 0;font-weight:600;color:#a5f3fc}
+.writing-workbench details+details {border-top:1px solid #ffffff15;padding-top:.75rem}
+.material-editor-fields {margin-top:.75rem;display:grid;gap:.75rem;min-width:0}
+.material-import-review {overscroll-behavior:contain}
+.material-import-review :focus-visible,.writing-workbench :focus-visible {outline:2px solid #67e8f9;outline-offset:3px}
+@media(max-width:600px){.writing-workbench,.material-import-review{padding:1rem}.material-import-review button{max-width:100%;overflow-wrap:anywhere}.writing-workbench p{overflow-wrap:anywhere}}
+
+/* Quiet writing workspace and inspected local-source previews. */
+.studio-writing .writing-columns{align-items:start}
+.studio-writing textarea.writing-editor{height:clamp(22rem,55vh,38rem);min-height:20rem}
+.writing-workspace .writing-templates>summary{min-height:44px;cursor:pointer;color:#e7c58a}
+.writing-review-comment h4{margin:.4rem 0 .75rem;font-size:1rem;font-weight:600;color:#e7c58a}
+.writing-review-comment p{margin:.5rem 0}.writing-review-comment ul,.writing-review-comment ol{padding-left:1.25rem;margin:.5rem 0}.writing-review-comment ul{list-style:disc}.writing-review-comment ol{list-style:decimal}
+.draft-preview-list{display:grid;gap:.75rem;margin-top:1rem}.draft-preview-list li{padding:.8rem;border:1px solid #ffffff25;border-radius:.5rem;overflow-wrap:anywhere}
+.writing-focus-mode>:not(.writing-workspace){display:none!important}
+.writing-focus-mode .writing-templates,.writing-focus-mode .writing-workbench,.writing-focus-mode .writing-coach{display:none!important}
+.writing-focus-mode .writing-columns{display:block}.writing-focus-mode .writing-editor-panel{max-width:54rem;margin:auto}.writing-focus-mode textarea.writing-editor{height:70vh;min-height:22rem}
+.material-import-review p,.material-import-review pre,.material-editor-fields p{overflow-wrap:anywhere}
+.material-original-pdf{min-width:0}.material-original-pdf canvas{display:block;max-width:100%;border-radius:.35rem}
+@media(max-width:600px){.studio-writing textarea.writing-editor{height:20rem;min-height:18rem}.writing-focus-mode textarea.writing-editor{height:65vh}.writing-review-evidence{padding:.7rem}.writing-review-evidence article{min-width:0}}
+.writing-review-evidence label{display:block}
+.writing-review-evidence input:not([type=checkbox]),.writing-review-evidence select{display:block;width:100%;min-width:0;min-height:44px;margin:.4rem 0 .75rem;border:1px solid #ffffff30;border-radius:.5rem;background:#080d19;color:#e2e8f0;padding:.65rem .75rem;font:inherit}
+.writing-review-evidence button{min-height:44px;max-width:100%;overflow-wrap:anywhere;border:1px solid #ffffff30;border-radius:.5rem;padding:.5rem .7rem;margin:.4rem 0;text-align:left}
+.writing-report-controls{display:flex;flex-wrap:wrap;gap:.75rem}.writing-report-controls button{min-height:44px;max-width:100%;margin:0;overflow-wrap:anywhere}
+.material-evidence-nav button{min-height:44px;border:1px solid #ffffff30;border-radius:.5rem;padding:.5rem .75rem}.material-evidence-nav button:disabled{opacity:.45}
+@media(max-width:600px){.studio-writing .writing-coach{padding:1rem}.writing-review-evidence{padding:0}.writing-conversation-panel{padding:0;border:0;background:none}.writing-message:has(.writing-review-evidence){padding:0;border:0;background:none}.writing-review-evidence article{padding:.8rem}.writing-review-evidence>details>summary{min-height:44px;padding:.5rem 0}}
+
+/* Exam learning depth remains optional around the checked question. */
+.exam-depth-panel,.exam-reading-source,.exam-question-map{margin:1rem 0;min-width:0}
+.exam-depth-panel{padding:1rem;border:1px solid #b69c6555;border-radius:.65rem;background:#0b202e66}
+.exam-depth-panel>summary{cursor:pointer;min-height:44px;padding:.5rem 0;color:#e3bf7f;font-weight:600}
+.exam-depth-panel h3,.exam-depth-panel h4{margin:1rem 0 .6rem}.exam-depth-panel p{margin:.6rem 0;overflow-wrap:anywhere}
+.exam-depth-panel input:not([type=checkbox]):not([type=radio]),.exam-depth-panel select,.exam-depth-panel textarea{display:block;width:100%;min-width:0;margin:.5rem 0;border:1px solid #ffffff30;border-radius:.4rem;background:#071521;color:#e6e5dd;padding:.65rem;font:inherit}
+.exam-depth-panel button,.exam-solving-toolbar button,.exam-option-with-elimination>button{min-height:44px;padding:.5rem .7rem;border:1px solid #ffffff30;border-radius:.4rem;margin:.4rem .4rem .4rem 0;color:#e3bf7f}
+.exam-depth-panel button:disabled,.exam-option-with-elimination>button:disabled{opacity:.45}
+.exam-solving-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin:1rem 0}
+.exam-option-with-elimination{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.5rem;align-items:center}
+.exam-option-with-elimination[data-eliminated=true] label{opacity:.65;text-decoration:line-through}.exam-option-with-elimination label{min-width:0}
+.exam-question-map ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:.6rem;list-style:none;padding:0}
+.exam-question-map button{width:100%;min-height:64px;padding:.6rem;border:1px solid #ffffff35;border-radius:.4rem;text-align:left;color:#eee7d9;background:#081927}
+.exam-question-map button[aria-current=step]{border:2px solid #e3bf7f}.exam-question-map span{display:block;font-size:.8rem;color:#b9c8d0;margin-top:.3rem}
+.exam-worked-steps{list-style:decimal;padding-left:1.5rem}.exam-worked-steps li{padding:.6rem 0}.exam-worked-steps li>div{font-size:1.1rem;color:#f1d29b}
+.exam-mini-exercise{margin:1.2rem 0;padding:1rem;border:1px solid #ffffff25;border-radius:.5rem}.exam-mini-exercise label{display:block;margin:.6rem 0;line-height:1.8}
+.exam-mini-exercise input[type=radio],.exam-reading-source input[type=checkbox],.exam-solving-toolbar input[type=checkbox]{margin-right:.65rem}
+.exam-math-fragment{display:inline-block;max-width:100%;vertical-align:middle;overflow-x:auto;overflow-y:hidden}.exam-math-fragment .katex{font-size:1.05em}
+.exam-numbered-passage{list-style:none}.exam-numbered-passage li{padding:.6rem 0}.exam-numbered-passage li[data-highlighted=true]{background:#e3bf7f22;outline:2px solid #e3bf7f;outline-offset:3px}.exam-sentence-number{color:#e3bf7f;font-weight:600}
+.exam-choice-comparison{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.exam-choice-comparison article{min-width:0;padding:.8rem;border:1px solid #ffffff30;border-radius:.5rem}
+.exam-visuals figure{margin:1rem 0;padding:.7rem;border:1px solid #ffffff25;border-radius:.5rem}.exam-visuals svg{display:block;width:100%;max-width:540px;height:auto;margin:1rem auto;background:#071521;border-radius:.4rem}.exam-visuals svg text{fill:#e6e5dd;font-size:12px;font-family:Arial,sans-serif}.exam-visuals figcaption{font-size:.9rem;line-height:1.7;color:#beced7}.exam-visuals table{width:100%;border-collapse:collapse;font-size:.85rem}.exam-visuals th,.exam-visuals td{padding:.5rem;border:1px solid #ffffff25;text-align:left;overflow-wrap:anywhere}
+.exam-selection-history{margin:.8rem 0}.exam-selection-history summary{min-height:44px;padding:.5rem 0;cursor:pointer}.exam-selection-history ol{list-style:decimal;padding-left:1.5rem}.exam-confidence-reflection{padding:.8rem;border-left:3px solid #e3bf7f}
+@media(max-width:600px){.exam-option-with-elimination{grid-template-columns:1fr}.exam-option-with-elimination>button{justify-self:end;font-size:.8rem;margin-top:0}.exam-choice-comparison{grid-template-columns:1fr}.exam-depth-panel{padding:.8rem}.exam-mini-exercise{padding:.7rem}.exam-question-map ol{grid-template-columns:repeat(2,minmax(0,1fr))}.exam-visuals figure{padding:.4rem}}
+
+.exam-depth-panel h3{font-size:1.15rem;font-weight:600;color:#eee7d9}.exam-depth-panel h4{font-weight:600;color:#eee7d9}.exam-visuals svg text{font-size:16px}
+/* Source-aware reading, scholarship search and private note development. */
+.reading-scholar label,.reading-note-study label{display:block;margin:.8rem 0;line-height:1.7}.reading-scholar input:not([type=checkbox]),.reading-scholar select,.reading-note-study input,.reading-note-study select,.reading-note-study textarea{display:block;width:100%;min-width:0;max-width:100%;padding:.65rem;margin:.35rem 0;border:1px solid #8c9aa955;border-radius:.4rem;background:transparent;color:inherit;font:inherit}.reading-scholar input[type=checkbox]{margin-right:.6rem}.reading-scholar button,.reading-note-study button,.reading-source-controls button,.reading-inline-note button,.reading-verified-illustration button{min-height:44px;border:1px solid #8498aa55;border-radius:.4rem;padding:.55rem .7rem;margin:.4rem .4rem .4rem 0;color:inherit}.reading-scholar article,.reading-note-study article{padding:.8rem;border:1px solid #8299ac44;border-radius:.5rem;margin:.75rem 0;overflow-wrap:anywhere}.reading-scholar h3,.reading-note-study h4,.discovery-quantity h4,.discovery-quantity h5{font-weight:600;margin:1rem 0 .5rem}.reading-source-context,.reading-drama{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.85}.reading-source-letter{padding-left:1rem;border-left:2px solid #b99b66}.reading-speaker{font-weight:700;letter-spacing:.04em}.reading-stage{font-style:italic}.reading-source-note{padding:.6rem;border-left:2px solid #8ca5b5}.reading-inline-note,.reading-illustration-notice,.reading-verified-illustration{padding:1rem;border:1px solid #899baa55;border-radius:.5rem;margin:1rem 0;font-family:var(--font-sans),Arial,sans-serif;font-size:1rem;line-height:1.7}.reading-inline-note h3{font-size:1.1rem;font-weight:600}.reading-source-controls{margin:1rem auto;max-width:72rem;padding:.5rem 1rem}.reading-note-study{margin:1rem 0;padding:1rem;border:1px solid #8299ac44;border-radius:.5rem}.reading-note-study summary,.reading-source-controls summary,.reading-scholar summary,.discovery-quantity summary{cursor:pointer;min-height:44px;padding:.55rem 0}.reading-note-study button:disabled{opacity:.5}.reading-verified-illustration img{display:block;max-width:100%;height:auto;max-height:75vh;object-fit:contain;margin:1rem auto}.discovery-quantity{border-top:1px solid #ffffff30;margin:1rem 0;padding:.8rem 0}.discovery-quantity p{line-height:1.8}.reading-scholar section{min-width:0}.reading-source-letter p{white-space:pre-wrap}
+@media(max-width:600px){.reading-scholar,.reading-note-study{font-size:1rem}.reading-note-study{padding:.65rem}.reading-note-study select{font-size:16px}.reading-inline-note{padding:.65rem}.reading-scholar article{padding:.6rem}}
+.reading-scholar label:has(input[type=checkbox]){display:flex;align-items:center;gap:.65rem}.reading-scholar input[type=checkbox]{display:inline-block!important;width:18px!important;height:18px;min-width:18px;margin:0;flex-shrink:0}
+.reading-note-study textarea{font-family:Arial,sans-serif;font-size:1rem}.reading-verified-illustration figcaption{line-height:1.7}
+
+.rr-reader-paper p.reading-drama,.rr-reader-paper p.reading-source-letter{white-space:pre-wrap}.rr-reader-paper .reading-drama .reading-speaker{display:block}.rr-reader-paper .reading-source-note{font-size:inherit;line-height:inherit}
