@@ -1,0 +1,558 @@
+{
+  "reviewed": "2026-11-22",
+  "reviewer": "Codex-assisted wording and structure review",
+  "scope": "Disposition of the 34 question, 37 discovery and 18 short catalog-teaser signals. This is not independent technical, historical or scholarly certification. Original archived facts and answer editions are preserved.",
+  "questions": [
+    {
+      "id": "cloud-practitioner-03",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "cloud-practitioner-14",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "istqb-foundation-10",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "istqb-foundation-17",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "istqb-foundation-18",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "istqb-foundation-21",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "test-automation-09",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "test-automation-10",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "ai-testing-11",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "github-actions-02",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "github-copilot-11",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The short source explanation is complemented by the expanded, scenario-specific study takeaway; preserve historical graded wording."
+    },
+    {
+      "id": "test-automation-depth-6",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "ai-practitioner-case-5-1",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "ai-practitioner-case-5-2",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "solutions-architect-case-6-1",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "solutions-architect-case-6-2",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "solutions-architect-case-6-3",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "test-automation-case-10-1",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "test-automation-case-10-2",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "test-automation-case-10-3",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "github-actions-case-6-1",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "github-actions-case-6-2",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "github-actions-case-6-3",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "ai-practitioner-growth-025",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "ai-practitioner-growth-050",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "istqb-foundation-growth-030",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "test-automation-growth-025",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "test-automation-growth-031",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "test-automation-growth-034",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "test-automation-growth-040",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "ai-testing-growth-014",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "generative-ai-testing-growth-014",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "generative-ai-testing-growth-030",
+      "signals": [
+        "Absolute wording: check whether the stated conditions justify it."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The absolute word describes the supplied failure condition or a claim the question asks the learner to challenge. It is not an unconditional promise made by the keyed explanation. Retain with the complete scenario."
+    },
+    {
+      "id": "istqb-foundation-extra-01",
+      "signals": [
+        "Short alternative explanation: inspect whether it explains the requirement."
+      ],
+      "decision": "retain with contextual explanation",
+      "reason": "The existing certification-clarity boundary-value explanation distinguishes accepted endpoints from immediately rejected values; retain the original extra-question record."
+    }
+  ],
+  "discoveries": [
+    {
+      "id": "moon-rotation",
+      "decision": "retain scoped wording",
+      "reason": "Retain: roughly qualifies the visible hemisphere; the statement concerns synchronized rotation, not an exactly fixed lunar appearance."
+    },
+    {
+      "id": "infinite-primes",
+      "decision": "retain scoped wording",
+      "reason": "Retain: never describes a mathematical infinitude, not an empirical generalization from a sample."
+    },
+    {
+      "id": "saturn-hexagon",
+      "decision": "retain scoped wording",
+      "reason": "Retain: first is limited to the observing missions described, not a claim about first existence of the pattern."
+    },
+    {
+      "id": "uranus-telescope",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the instrument-assisted discovery category is explicit; NASA corroborates 1781 and the initially uncertain identification."
+    },
+    {
+      "id": "neptune-sunlight",
+      "decision": "retain scoped wording",
+      "reason": "Retain: average distance and roughly bound the travel-time comparison."
+    },
+    {
+      "id": "neptune-long-year",
+      "decision": "retain scoped wording",
+      "reason": "Retain: first full orbit is explicitly bounded by the 1846 discovery and 2011 anniversary."
+    },
+    {
+      "id": "mars-olympus",
+      "decision": "retain scoped wording",
+      "reason": "Retain as the institutionally described solar-system comparison; do not expand the category to all mountains or all astronomical objects."
+    },
+    {
+      "id": "art-fresco-days",
+      "decision": "retain scoped wording",
+      "reason": "Retain: only concerns the working quantity of finishing plaster, not a claim about every fresco technique."
+    },
+    {
+      "id": "art-stained-glass",
+      "decision": "retain scoped wording",
+      "reason": "Retain: pot-metal glass is the specified process; the contrast does not deny other glass decoration methods."
+    },
+    {
+      "id": "qr-damage",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the text explicitly rejects universal damaged-code recovery and conditions it on correction level and damage."
+    },
+    {
+      "id": "manchester-baby",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the first-program claim specifies a digital electronic stored-program machine; it is not a first-computer claim."
+    },
+    {
+      "id": "ocean-twilight",
+      "decision": "retain scoped wording",
+      "reason": "Retain: generally qualifies the photosynthesis limit; the depth zone is identified by the question and title."
+    },
+    {
+      "id": "comet-coma",
+      "decision": "retain scoped wording",
+      "reason": "Retain: can and some qualify the mechanism and size comparison."
+    },
+    {
+      "id": "teflon-refrigerant",
+      "decision": "retain scoped wording",
+      "reason": "Retain: first research setting contrasts a documented origin with later use, not the first use of all nonstick materials."
+    },
+    {
+      "id": "snow-sixfold",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the passage explicitly distinguishes crystal structure from damaged or combined falling flakes."
+    },
+    {
+      "id": "snow-clumps",
+      "decision": "retain scoped wording",
+      "reason": "Retain: not always rejects the oversimplification rather than asserting a universal shape."
+    },
+    {
+      "id": "anteater-teeth",
+      "decision": "retain scoped wording",
+      "reason": "Retain: not the only is a contrast of feeding mechanisms, not a taxonomic superlative."
+    },
+    {
+      "id": "hippo-teeth",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the passage rejects a universal finished-tooth assumption and scopes the example to enlarged canines."
+    },
+    {
+      "id": "first-upc-gum",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the claim is limited to a UPC supermarket checkout scan and expressly excludes earlier barcode categories."
+    },
+    {
+      "id": "dragonfly-water",
+      "decision": "retain scoped wording",
+      "reason": "Retain: only one stage distinguishes life stages rather than denying exceptions across all insects."
+    },
+    {
+      "id": "microwave-outside",
+      "decision": "retain scoped wording",
+      "reason": "Retain: only to a limited depth rejects inside-out heating as a universal mechanism."
+    },
+    {
+      "id": "woodfrog-freeze",
+      "decision": "retain scoped wording",
+      "reason": "Retain: can and the explicit non-solid-block qualification limit the freezing claim."
+    },
+    {
+      "id": "whale-stall",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the date, approximate effect and idealized-model scope are explicit; the text rejects universal wing improvement."
+    },
+    {
+      "id": "gps-networks",
+      "decision": "retain scoped wording",
+      "reason": "Retain: not only broadens the described timing use without asserting exclusive dependence on GPS."
+    },
+    {
+      "id": "papilio-structure",
+      "decision": "retain scoped wording",
+      "reason": "Retain: contribute and rather than relying only leave room for additional optical mechanisms."
+    },
+    {
+      "id": "zimbabwe-patterns",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the contrast concerns built-in stone arrangements, not all decoration at the site."
+    },
+    {
+      "id": "cheese-rennet",
+      "decision": "retain scoped wording",
+      "reason": "Retain: many and not every explicitly exclude a universal cheese-making claim."
+    },
+    {
+      "id": "blood-no-nucleus",
+      "decision": "retain scoped wording",
+      "reason": "Retain: this is a named cell specialization, not a statement about every human cell."
+    },
+    {
+      "id": "pigeon-reused-nest",
+      "decision": "retain scoped wording",
+      "reason": "Retain: can and successive attempts describe possible accumulation, not an invariant nesting rule."
+    },
+    {
+      "id": "glass-borosilicate",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the text explicitly denies a guarantee against every breakage."
+    },
+    {
+      "id": "cheese-ripening",
+      "decision": "retain scoped wording",
+      "reason": "Retain: some and mainly keep the ripening location conditional."
+    },
+    {
+      "id": "snake-heat-pits",
+      "decision": "retain scoped wording",
+      "reason": "Retain: not every snake expressly limits the taxonomic scope."
+    },
+    {
+      "id": "jikji-metal-type",
+      "decision": "retain scoped wording",
+      "reason": "Retain: surviving volume, known and the named institution qualify the historical comparison."
+    },
+    {
+      "id": "sloth-toes",
+      "decision": "retain scoped wording",
+      "reason": "Retain: only part distinguishes naming convention from the complete anatomical arrangement."
+    },
+    {
+      "id": "mangrove-coast-buffer",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the text explicitly denies protection against every storm."
+    },
+    {
+      "id": "mesa-plaster-colors",
+      "decision": "retain scoped wording",
+      "reason": "Retain: among the first is an erosion-order qualification, not a global first event."
+    },
+    {
+      "id": "clock-sodium-first",
+      "decision": "retain scoped wording",
+      "reason": "Retain: the claim is bounded to a laser-cooled atomic fountain and the late 1980s, not the first atomic clock."
+    }
+  ],
+  "shortArtTeasers": [
+    {
+      "id": "caravaggio-02",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "rembrandt-06",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "vermeer-02",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "turner-02",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "turner-04",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "monet-04",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "monet-05",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "morisot-03",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "morisot-05",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "morisot-07",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "van-gogh-02",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "cassatt-02",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "cassatt-03",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "cassatt-04",
+      "decision": "Retain catalog teaser; substantial visible essay lead and full study already present",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "pollock-02",
+      "decision": "Expanded visible lead",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "matisse-02",
+      "decision": "Expanded visible lead",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "kahlo-02",
+      "decision": "Expanded visible lead",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    },
+    {
+      "id": "magritte-01",
+      "decision": "Expanded visible lead",
+      "reason": "Reviewed the visible study entrance as well as the short catalog field; do not pad a catalog teaser to imitate a scholarly essay."
+    }
+  ]
+}

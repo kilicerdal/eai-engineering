@@ -44,7 +44,7 @@ const subscribeToHydration = () => () => {};
 const clientReady = () => true;
 const serverReady = () => false;
 const scenes: Record<string,string> = { Learning:'02-study-v1.webp', 'Food & Drink':'03-library-v1.webp', 'Earth & Weather':'04-observatory-v1.webp', 'Computing & AI':'03-library-v1.webp', 'Ancient ingenuity':'01-academy-v1.webp', Space:'04-observatory-v1.webp', Nature:'04-observatory-v1.webp', 'Patterns & invention':'03-library-v1.webp' };
-const facts=originalFacts.map(f=>({...currentDiscovery50(f),question:discoveryQuestion(f)}));
+const facts=originalFacts.map(f=>{const current=currentDiscovery50(f);return {...current,question:current.question||discoveryQuestion(f)};});
 export default function CuriosityRoom() {
   const hydrated = useSyncExternalStore(subscribeToHydration, clientReady, serverReady);
   return hydrated ? <RememberedRoom /> : <main className="curiosity-feed" aria-busy="true"><p className="curiosity-loading">Opening the Curiosity Room…</p></main>;

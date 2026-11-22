@@ -1,4 +1,3 @@
-"use client";
 
 import type {ReactNode} from "react";
 import QuietChapter from "@/components/QuietChapter";
@@ -10,6 +9,7 @@ import GoalLearning from "@/components/GoalLearning";
 import ExamPreparation from "@/components/ExamPreparation";
 import Link from "next/link";
 import Image from "next/image";
+import StudySubjectLink from "@/components/StudySubjectLink";
 import StudyGlyph from "@/components/StudyGlyph";
 import StudyResumeShortcut from "@/components/StudyResumeShortcut";
 import LearningResources from "@/components/LearningResources";
@@ -74,8 +74,10 @@ export default function StudyPage({entrance}:{entrance:ReactNode}) {
       </section>
       {entrance}
       <nav id="learning-rooms" tabIndex={-1} className="quiet-rooms" aria-label="Choose a learning room">{[
-['AI Tutor','Work through one question.','/study/tutor'],['Reading Room','Find a book and settle in.','/study/reading'],['Curiosity Room','Discover something surprising.','/study/curiosity'],['Art Room','A painting, a story, a new way to see.','/study/art'],['Certification Studio','Practice an engineering decision.','/study/certifications'],['Your materials','Study from your own sources.','/study/materials'],['Writing Studio','Give an idea your own words.','/study/writing']
-].map(([name,detail,href])=><Link key={href} href={href}><strong>{name} <span aria-hidden="true">↗</span></strong><span>{detail}</span></Link>)}</nav>
+        {title:'Read, look and discover',rooms:[['Reading Room','Find a book and settle in.','/study/reading'],['Art Room','Look closely, meet the artist, follow the story.','/study/art'],['Curiosity Room','Discover something surprising.','/study/curiosity']]},
+        {title:'Understand and practice',rooms:[['AI Tutor','Work through one question.','/study/tutor'],['Certification Studio','Practice an engineering decision.','/study/certifications']]},
+        {title:'Work with your own ideas',rooms:[['Your materials','Study from your own sources.','/study/materials'],['Writing Studio','Give an idea your own words.','/study/writing']]}
+      ].map(group=><section key={group.title}><h2>{group.title}</h2><div>{group.rooms.map(([name,detail,href])=><Link key={href} href={href}><strong>{name} <span aria-hidden="true">↗</span></strong><span>{detail}</span></Link>)}</div></section>)}</nav>
       <QuietChapter title="Your learning and plans" description="Sessions, plans and exam preparation"><LearningHome/><GoalLearning/><ExamPreparation/></QuietChapter>
       <QuietChapter title="Ask your Tutor here" description="The full embedded workspace, including your existing sessions"><SharedAIChat/></QuietChapter>
       <QuietChapter title="More ways to learn" description="Your library, reading resources and subject shortcuts"><LearningResources/>
@@ -85,21 +87,11 @@ export default function StudyPage({entrance}:{entrance:ReactNode}) {
           <svg className="studio-orbit-lines" viewBox="0 0 1100 420" fill="none" aria-hidden="true"><ellipse cx="550" cy="210" rx="405" ry="145"/><ellipse cx="550" cy="210" rx="310" ry="108"/><ellipse cx="550" cy="210" rx="185" ry="70"/><ellipse cx="550" cy="210" rx="440" ry="90" transform="rotate(-10 550 210)"/><path d="M100 210H1000M550 45V375"/><circle cx="550" cy="210" r="39"/><circle cx="550" cy="210" r="53"/><circle cx="372" cy="151" r="3"/><circle cx="735" cy="245" r="4"/><circle cx="816" cy="134" r="2"/><circle cx="250" cy="259" r="3"/></svg>
           <div className="studio-orbit-core" aria-hidden="true"><StudyGlyph kind="general"/><span>dAI</span></div>
           {subjects.map((subject) => (
-            <a
-              key={subject.name}
-              href={subject.name === "Writing Studio" ? "/study/writing" : subject.mode === "exam" ? "#exam-preparation" : "#ai-assistant"}
-              onClick={() => {
-                try { sessionStorage.setItem("eai-study-selected-mode", subject.mode); } catch { /* Navigation still works when storage is unavailable. */ }
-                window.dispatchEvent(new Event("eai-study-mode-change"));
-              }}
-              title={subject.description}
-              aria-label={`${subject.mode === "engineering" ? "Engineering" : subject.mode === "history" ? "History" : subject.mode === "writing" ? "Writing" : subject.name}: ${subject.description}`}
-              className="studio-subject"
-            >
+            <StudySubjectLink key={subject.name} mode={subject.mode} description={subject.description} label={subject.mode === "engineering" ? "Engineering" : subject.mode === "history" ? "History" : subject.mode === "writing" ? "Writing" : subject.name}>
               <span className="studio-subject-glyph"><StudyGlyph kind={subject.mode}/></span>
               <span className="studio-subject-label">{subject.mode === "engineering" ? "Engineering" : subject.mode === "history" ? "History" : subject.mode === "writing" ? "Writing" : subject.name}</span>
               <span className="studio-subject-arrow" aria-hidden="true">↗</span>
-            </a>
+            </StudySubjectLink>
           ))}
         </div>
 

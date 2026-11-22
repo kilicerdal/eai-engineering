@@ -1,0 +1,385 @@
+{
+  "checkedAt": "2026-11-22T05:06:00.076Z",
+  "scope": "Whole-bank lexical, structure and metadata triage. Similarity is not proof of redundancy; URL availability is checked separately. No claims, answers, IDs, saves or review dates are changed.",
+  "counts": {
+    "discoveries": 1000,
+    "questions": 1090,
+    "paintings": 124
+  },
+  "discoveries": {
+    "duplicateTitles": [],
+    "duplicateText": [],
+    "nearDuplicateCount": 0,
+    "nearDuplicates": [],
+    "shortWhy": [],
+    "claimWordingReview": [
+      "moon-rotation",
+      "infinite-primes",
+      "saturn-hexagon",
+      "uranus-telescope",
+      "neptune-sunlight",
+      "neptune-long-year",
+      "mars-olympus",
+      "art-fresco-days",
+      "art-stained-glass",
+      "qr-damage",
+      "manchester-baby",
+      "ocean-twilight",
+      "comet-coma",
+      "teflon-refrigerant",
+      "snow-sixfold",
+      "snow-clumps",
+      "anteater-teeth",
+      "hippo-teeth",
+      "first-upc-gum",
+      "dragonfly-water",
+      "microwave-outside",
+      "woodfrog-freeze",
+      "whale-stall",
+      "gps-networks",
+      "papilio-structure",
+      "zimbabwe-patterns",
+      "cheese-rennet",
+      "blood-no-nucleus",
+      "pigeon-reused-nest",
+      "glass-borosilicate",
+      "cheese-ripening",
+      "snake-heat-pits",
+      "jikji-metal-type",
+      "sloth-toes",
+      "mangrove-coast-buffer",
+      "mesa-plaster-colors",
+      "clock-sodium-first"
+    ]
+  },
+  "questions": {
+    "duplicateStems": [],
+    "nearDuplicateCount": 0,
+    "nearDuplicates": [],
+    "editorialFlags": [
+      {
+        "id": "cloud-practitioner-03",
+        "track": "cloud-practitioner",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "cloud-practitioner-14",
+        "track": "cloud-practitioner",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "istqb-foundation-10",
+        "track": "istqb-foundation",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "istqb-foundation-17",
+        "track": "istqb-foundation",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "istqb-foundation-18",
+        "track": "istqb-foundation",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "istqb-foundation-21",
+        "track": "istqb-foundation",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "test-automation-09",
+        "track": "test-automation",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "test-automation-10",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "ai-testing-11",
+        "track": "ai-testing",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "github-actions-02",
+        "track": "github-actions",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "github-copilot-11",
+        "track": "github-copilot",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      },
+      {
+        "id": "test-automation-depth-6",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "ai-practitioner-case-5-1",
+        "track": "ai-practitioner",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "ai-practitioner-case-5-2",
+        "track": "ai-practitioner",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "solutions-architect-case-6-1",
+        "track": "solutions-architect",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "solutions-architect-case-6-2",
+        "track": "solutions-architect",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "solutions-architect-case-6-3",
+        "track": "solutions-architect",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "test-automation-case-10-1",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "test-automation-case-10-2",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "test-automation-case-10-3",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "github-actions-case-6-1",
+        "track": "github-actions",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "github-actions-case-6-2",
+        "track": "github-actions",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "github-actions-case-6-3",
+        "track": "github-actions",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "ai-practitioner-growth-025",
+        "track": "ai-practitioner",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "ai-practitioner-growth-050",
+        "track": "ai-practitioner",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "istqb-foundation-growth-030",
+        "track": "istqb-foundation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "test-automation-growth-025",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "test-automation-growth-031",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "test-automation-growth-034",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "test-automation-growth-040",
+        "track": "test-automation",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "ai-testing-growth-014",
+        "track": "ai-testing",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "generative-ai-testing-growth-014",
+        "track": "generative-ai-testing",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "generative-ai-testing-growth-030",
+        "track": "generative-ai-testing",
+        "notes": [
+          "Absolute wording: check whether the stated conditions justify it."
+        ]
+      },
+      {
+        "id": "istqb-foundation-extra-01",
+        "track": "istqb-foundation",
+        "notes": [
+          "Short alternative explanation: inspect whether it explains the requirement."
+        ]
+      }
+    ]
+  },
+  "art": {
+    "referenceOnly": [
+      {
+        "id": "picasso-01",
+        "source": "https://www.moma.org/collection/works/79766"
+      },
+      {
+        "id": "picasso-02",
+        "source": "https://www.moma.org/collection/works/78311"
+      },
+      {
+        "id": "dali-01",
+        "source": "https://www.moma.org/collection/works/79018"
+      },
+      {
+        "id": "dali-02",
+        "source": "https://catalogues.salvador-dali.org/catalogues/en/heritageobject/1198-965c/"
+      },
+      {
+        "id": "pollock-01",
+        "source": "https://www.moma.org/collection/works/78386/"
+      },
+      {
+        "id": "pollock-02",
+        "source": "https://www.metmuseum.org/art/collection/search/488978"
+      },
+      {
+        "id": "matisse-01",
+        "source": "https://www.moma.org/collection/works/78389"
+      },
+      {
+        "id": "matisse-02",
+        "source": "https://www.moma.org/collection/works/79124/"
+      },
+      {
+        "id": "kahlo-01",
+        "source": "https://www.moma.org/collection/works/78333"
+      },
+      {
+        "id": "kahlo-02",
+        "source": "https://artsandculture.google.com/asset/the-two-fridas-frida-kahlo/zAHG4EZ1WrwVYg"
+      },
+      {
+        "id": "magritte-01",
+        "source": "https://www.moma.org/collection/works/78938"
+      },
+      {
+        "id": "magritte-02",
+        "source": "https://collections.lacma.org/object/31931"
+      },
+      {
+        "id": "okeeffe-01",
+        "source": "https://www.artic.edu/artworks/24306/blue-and-green-music"
+      },
+      {
+        "id": "okeeffe-02",
+        "source": "https://www.metmuseum.org/art/collection/search/489813"
+      },
+      {
+        "id": "okeeffe-03",
+        "source": "https://www.metmuseum.org/art/collection/search/482299"
+      }
+    ],
+    "missingAttribution": [],
+    "shortIntroductions": [
+      "caravaggio-02",
+      "rembrandt-06",
+      "vermeer-02",
+      "turner-02",
+      "turner-04",
+      "monet-04",
+      "monet-05",
+      "morisot-03",
+      "morisot-05",
+      "morisot-07",
+      "van-gogh-02",
+      "cassatt-02",
+      "cassatt-03",
+      "cassatt-04",
+      "pollock-02",
+      "matisse-02",
+      "kahlo-02",
+      "magritte-01"
+    ]
+  }
+}

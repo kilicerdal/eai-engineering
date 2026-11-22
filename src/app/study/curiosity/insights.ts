@@ -77,6 +77,7 @@ export const insights: Record<string, Insight> = {
   'pigeonhole-months': insight('You can sometimes guarantee a result without knowing the individual details. Counting possibilities can be enough to establish a limit.', 'infinite-primes', 'braille-cell'),
   'regular-tilings': insight('Local rules at a corner determine whether a pattern can continue without gaps. A simple floor design becomes a way to investigate geometry.', 'saturn-hexagon', 'jacquard-patterns'),
   ...Object.fromEntries([...expandedFacts, ...soundsMadeUpFacts, ...everydayWonderFacts, ...hiddenConnectionFacts, ...yourWorldFacts, ...smallThingsFacts, ...worldWonderFacts, ...plainSightFacts, ...natureSolutionFacts, ...thousandFacts].map(fact => [fact.id, { why: fact.why, related: fact.related }])),
+  'pump-spiral-case': insight('A machine’s name can describe one component without telling you how the entire system works. When comparing pump designs, separate the casing, impeller and operating arrangement instead of inferring performance from a familiar silhouette.', 'pump-two-stages', 'mobius-strip'),
 };
 
 const originalQuestions = [

@@ -1,0 +1,11 @@
+{
+  "scope": "Complete question inventory and editorial work queue. Retrieval and wording checks are not factual verification. No question content or historic edition is changed.",
+  "counts": {
+    "questions": 1090,
+    "sourceSnapshots": 1012,
+    "agentReviewedWithScope": 220,
+    "editorialSignoffPending": 870
+  },
+  "method": "All dated scoped review records matched against exact current question fingerprints; supported historical record fields are preserved. Ten additional GitHub Actions questions and every alternative inspected on November 22. Pending records were not approved.",
+  "reviewLedgerCommand": "node scripts/build-certification-review-ledger.mjs /tmp/dai-depth58-certification-ledger.json"
+}

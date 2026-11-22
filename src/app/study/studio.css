@@ -71,7 +71,7 @@
 .eai-study-studio [class*="shadow-2xl"]{box-shadow:0 18px 60px #3a2a1010;}
 .eai-study-studio #ai-assistant{padding-top:65px;padding-bottom:65px;border-top:1px solid #34404c;background:#071522;}
 .eai-study-studio #practice-lab{padding-top:65px;padding-bottom:65px;}
-.eai-study-studio #ai-assistant h2,.eai-study-studio #practice-heading{font-weight:400;}
+.eai-study-studio #ai-assistant :is(h1,h2),.eai-study-studio #practice-heading{font-weight:400;}
 .eai-study-studio button:hover:not(:disabled){filter:brightness(.96);}
 @media(min-width:1600px){.eai-study-studio .studio-hero{min-height:850px;}.eai-study-studio .studio-hero-copy{padding-top:125px;}}
 @media(max-width:800px){.eai-study-studio .studio-nav{padding:18px 5%;gap:12px;flex-wrap:wrap;}.eai-study-studio .studio-nav nav{gap:22px;font-size:14px;}.eai-study-studio .studio-hero{min-height:750px;}.eai-study-studio .studio-hero-copy{padding-top:70px;}.eai-study-studio .studio-hero-image{object-position:61% center;}.eai-study-studio .studio-hero-shade{background:linear-gradient(90deg,#081018e8,#08101880),linear-gradient(0deg,#08101888,transparent);}.eai-study-studio .studio-pathways{grid-template-columns:1fr;gap:12px;}.eai-study-studio .studio-pathways>a{padding:24px;}.eai-study-studio .studio-path-icon{margin-bottom:15px;}.eai-study-studio .studio-pathways p{max-width:none;margin-bottom:15px;}.eai-study-studio .studio-subjects{grid-template-columns:repeat(2,minmax(0,1fr));}.eai-study-studio .studio-section-title>p{display:none;}.eai-study-studio .studio-discover,.eai-study-studio .studio-explore{padding-top:45px;padding-bottom:40px;}}
@@ -206,7 +206,7 @@
 .eai-study-studio #ai-assistant{background:#071522c9;border-color:#a489554d;padding-top:45px;padding-bottom:45px;}
 .eai-study-studio #ai-assistant>div>div:first-child{text-align:left;margin-bottom:25px;}
 .eai-study-studio #ai-assistant>div>div:first-child p{margin-left:0;max-width:690px;font-size:14px;}
-.eai-study-studio #ai-assistant h2{font-size:clamp(30px,3vw,42px);}
+.eai-study-studio #ai-assistant :is(h1,h2){font-size:clamp(30px,3vw,42px);}
 .eai-study-studio [class*="rounded-3xl"],.eai-study-studio [class*="rounded-2xl"]{border-radius:6px;}
 .eai-study-studio [class*="rounded-xl"]{border-radius:4px;}
 .eai-study-studio [class*="bg-cyan-"][class*="/1"],.eai-study-studio [class*="bg-cyan-"][class*="/5"]{background:#d9b9791c;color:#ecd3a4;}
@@ -222,7 +222,7 @@
 @media(max-width:450px){.eai-study-studio .studio-hero-copy{padding-top:55px;}.eai-study-studio .studio-nav nav{gap:6px;}.eai-study-studio .studio-nav-action{padding:7px 10px;}.eai-study-studio .goal-lessons:before{left:12px;}.eai-study-studio .goal-lessons>li{grid-template-columns:26px minmax(0,1fr);gap:12px;}.eai-study-studio .goal-lesson-number{width:26px;height:26px;font-size:14px;}.eai-study-studio #learning-achievement{font-size:19px;}.eai-study-studio .goal-steps{gap:12px;}}
 /* Focused Dialogue: existing tutor controls, progressively disclosed. */
 .eai-study-studio .tutor-section-intro{margin-bottom:25px;}
-.eai-study-studio #ai-assistant .tutor-section-intro h2{margin-top:10px;font-size:clamp(32px,3vw,43px);}
+.eai-study-studio #ai-assistant .tutor-section-intro :is(h1,h2){margin-top:10px;font-size:clamp(32px,3vw,43px);}
 .eai-study-studio .tutor-section-intro>p:last-child{margin-top:10px;font-size:14px;color:#a6b0b9;}
 .eai-study-studio .tutor-focus-shell{position:relative;max-width:1150px;margin:auto;border:1px solid #a4895570;border-radius:7px;background:#081522;box-shadow:0 18px 60px #00000020;}
 .eai-study-studio .tutor-focus-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 22px;border-bottom:1px solid #a4895545;}
@@ -564,7 +564,7 @@
 .eai-study-studio #ai-assistant{position:relative;isolation:isolate;background:#06111d;}
 .eai-study-studio #ai-assistant:before{content:"";position:absolute;inset:0 0 auto;height:clamp(340px,38vw,620px);z-index:-1;pointer-events:none;background-image:linear-gradient(90deg,#06111d80,#06111d33 45%,#06111d22),linear-gradient(0deg,#06111d,transparent 38%),url('/images/study/parthenon-future.webp');background-size:cover;background-position:center;}
 .eai-study-studio #ai-assistant .tutor-section-intro{position:relative;}
-.eai-study-studio #ai-assistant .tutor-section-intro h2{color:#fff4df;text-shadow:0 2px 14px #0009;}
+.eai-study-studio #ai-assistant .tutor-section-intro :is(h1,h2){color:#fff4df;text-shadow:0 2px 14px #0009;}
 .eai-study-studio #ai-assistant .tutor-section-intro>p:last-child{color:#e0e3e5;text-shadow:0 1px 8px #000;}
 @media(max-width:760px){.eai-study-studio #ai-assistant:before{height:340px;background-position:center top;background-image:linear-gradient(90deg,#06111d99,#06111d66),linear-gradient(0deg,#06111d,transparent 50%),url('/images/study/parthenon-future.webp');}}
 /* Reserve a shallow scenic header; the chat shell itself keeps its exact sizing. */

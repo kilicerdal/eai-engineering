@@ -3,7 +3,7 @@ const root='/study/art';
 test('a briefly crossed section never replaces the reading place after leaving it',async({page})=>{
  await page.goto(root+'/painting/leonardo-01');await page.locator('#essay-section-2').evaluate(e=>e.scrollIntoView({block:'start'}));
  const position=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('dai-art-personal-v1')??'{}').reading?.['leonardo-01']?.section);
- await expect.poll(position).toBe('essay-section-2');await page.locator('#essay-section-3').evaluate(e=>e.scrollIntoView({block:'start'}));await page.waitForTimeout(200);await page.locator('#work-image').evaluate(e=>e.scrollIntoView({block:'start'}));await page.waitForTimeout(1700);expect(await position()).toBe('essay-section-2');
+ await expect.poll(position).toBe('essay-section-2');await page.locator('#essay-section-3').evaluate(e=>e.scrollIntoView({block:'start'}));await page.waitForTimeout(200);await page.locator('.art-detail-layout').evaluate(e=>e.scrollIntoView({block:'start'}));await page.waitForTimeout(1700);expect(await position()).toBe('essay-section-2');
 });
 test('research topics open individually and direct source links still reveal their topic',async({page})=>{
  await page.goto(root+'/painting/vermeer-01#research');await page.locator('#study-making>summary').click();await expect(page.locator('#study-making')).toHaveAttribute('open','');await page.locator('#study-history>summary').click();await expect(page.locator('#study-making')).not.toHaveAttribute('open','');await expect(page.locator('#study-history')).toHaveAttribute('open','');await page.goto(root+'/painting/leonardo-01#research-materials');await expect(page.locator('#research-materials')).toBeVisible();

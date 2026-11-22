@@ -1,0 +1,175 @@
+{
+  "scope": "Ten additional GitHub Actions questions individually reviewed. Exact-content fingerprints; remaining questions stay pending.",
+  "records": [
+    {
+      "id": "github-actions-transfer-1",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs#defining-prerequisite-jobs",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Correct: needs establishes the prerequisite and its normal success behavior.",
+        "Incorrect: file order is presentation, not an execution dependency.",
+        "Incorrect: a workflow name does not sequence separate jobs.",
+        "Incorrect: artifact retention governs stored data, not prerequisite success."
+      ],
+      "scope": "Independent jobs are eligible to run independently; runner capacity and other controls can still constrain actual scheduling.",
+      "fingerprint": "7aac23cda6cd90009a7fd67d4233cadfaebfbdfa702182709c3a60a36ae80d93"
+    },
+    {
+      "id": "github-actions-transfer-2",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/reference/security/oidc#oidc-claims-used-to-define-trust-conditions-on-cloud-roles",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Incorrect: changing an environment label alone does not constrain cloud trust.",
+        "Incorrect: log visibility does not restrict the identities accepted by a role.",
+        "Incorrect: a shared administrator key broadens durable credential exposure.",
+        "Correct: audience and subject validation bind role access to intended identities."
+      ],
+      "scope": "Provider-specific claim support and exact subject formats must be checked; scope is the excessively broad issuer trust described, not a complete cloud policy audit.",
+      "fingerprint": "30af079e3489f42ccf337bf32617c86bd0bfa135181891542a608d537314990c"
+    },
+    {
+      "id": "github-actions-depth-1",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs#defining-prerequisite-jobs",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Incorrect: elapsed time says nothing about prerequisite completion or success.",
+        "Correct: needs with the intended success condition establishes the dependency.",
+        "Incorrect: YAML order alone does not create a prerequisite relationship.",
+        "Incorrect: shared display names do not establish execution dependencies."
+      ],
+      "scope": "Normal success behavior is intended; always() or other overriding conditions can change whether a dependent job runs.",
+      "fingerprint": "cc8f88ced5caeee78de30778ab95d2ba0087b8b5029c8a6911733e2844bf2b93"
+    },
+    {
+      "id": "github-actions-depth-2",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs#viewing-logs-to-diagnose-failures",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Correct: compare the failing job evidence and configuration to a passing combination.",
+        "Incorrect: deleting dimensions removes diagnostic variation before identifying a cause.",
+        "Incorrect: a green rerun does not explain the earlier failure and discards evidence.",
+        "Incorrect: platform ownership is a hypothesis requiring evidence, not a conclusion."
+      ],
+      "scope": "The documentation supports job/step log inspection. Choosing a controlled comparison is an editorial debugging judgment, not proof of root cause or an official mandated sequence.",
+      "fingerprint": "8b0ac1b0e08d7813fe5f2eb97a9aa8599f67a5179d094c4ed0ef1fe8669051fb"
+    },
+    {
+      "id": "github-actions-depth-3",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/reference/workflows-and-actions/metadata-syntax#inputs",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Incorrect: repository renaming does not align the action input contract.",
+        "Incorrect: one guessed caller cannot establish which documented interface is intended.",
+        "Incorrect: deleting the README hides the inconsistency without testing behavior.",
+        "Correct: align metadata, documentation and actual input handling, then exercise a caller."
+      ],
+      "scope": "Metadata defines input IDs; consumer testing is an editorial verification recommendation. The scenario concerns an action, not necessarily a reusable workflow.",
+      "fingerprint": "b4885d3fce4a71f800728d2603171f05155f463b44ab8c9a940c0cbe836115d1"
+    },
+    {
+      "id": "github-actions-depth-4",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#using-inputs-and-secrets-in-a-reusable-workflow",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Incorrect: unrelated steps do not preserve the requested shared build pattern.",
+        "Incorrect: sharing administrator credentials does not centralize workflow maintenance.",
+        "Correct: a reusable workflow exposes explicit inputs while centralizing shared jobs.",
+        "Incorrect: unmaintained independent copies multiply opportunities for drift."
+      ],
+      "scope": "A documented reusable workflow fits shared multi-job behavior. Version maintenance and update governance remain necessary; reuse does not automatically guarantee safety.",
+      "fingerprint": "63c53eebf13afaa0880605626c05501f859ebbc39984bf852105a108ff51c9ba"
+    },
+    {
+      "id": "github-actions-depth-5",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/reference/security/secure-use#using-third-party-actions",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Incorrect: deleting logs does not identify or fix a dependency revision.",
+        "Correct: a verified full commit SHA fixes the selected source revision; updates need review.",
+        "Incorrect: newest-branch resolution is mutable and weakens reproducibility.",
+        "Incorrect: a friendly name provides no immutable content identifier."
+      ],
+      "scope": "A fixed revision controls dependency contents, not every build input or runtime behavior. Audit does not guarantee the selected code is defect-free.",
+      "fingerprint": "5e4b4ec88628a99fa19c655e8c8fad2a2853d93200a7b4172a020086b319cd3d"
+    },
+    {
+      "id": "github-actions-case-4-1",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs#viewing-logs-to-diagnose-failures",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Incorrect: input versioning does not investigate this failing execution.",
+        "Correct: inspect the failed job and step before drawing conclusions from unrelated jobs.",
+        "Incorrect here: preserving rerun evidence is useful, but no rerun is the stated problem.",
+        "Incorrect here: repairing action outputs addresses a different unreported interface defect."
+      ],
+      "scope": "Best first response to the specific misplaced investigation described, not a universal claim that other evidence is never relevant.",
+      "fingerprint": "5e6ae0c56868391a652dc8f942215d435cddf41c0798c1c0a17a6cb10ef2eb67"
+    },
+    {
+      "id": "github-actions-case-6-1",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/reference/workflows-and-actions/metadata-syntax#outputs-for-composite-actions",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Incorrect: input versioning does not implement the promised output value.",
+        "Incorrect: centralizing workflows does not repair this action output contract.",
+        "Incorrect: provenance records do not produce the missing execution output.",
+        "Correct: implement the output mapping/value and verify a consuming workflow can read it."
+      ],
+      "scope": "Composite output metadata maps a value, commonly from a step output written through GITHUB_OUTPUT. A declared description alone does not produce the value.",
+      "fingerprint": "eb15ba919d2e5a1497f3ff5e23ae914617f50dbee18b36f272c9c4dc47f8de48"
+    },
+    {
+      "id": "github-actions-case-8-1",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-22",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "reviewed-with-stated-scope",
+      "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows",
+      "sourceInspection": "Official GitHub documentation inspected in this review. Every choice assessed against the stated scenario; editorial judgment and source limitations are identified in scope. No independent human or exam endorsement claimed.",
+      "choiceChecks": [
+        "Incorrect here: pinning dependencies does not centralize the duplicated workflow logic.",
+        "Correct: evaluate reusable workflow inputs and shared behavior to reduce copy-based drift.",
+        "Incorrect here: recording revisions improves traceability but leaves copies to maintain.",
+        "Incorrect here: trust isolation addresses privileges, not the stated duplicated maintenance."
+      ],
+      "scope": "Evaluation includes compatibility, access and update policy. Reuse reduces duplication but calling repositories still need a deliberate version update process.",
+      "fingerprint": "50fb905877c6df9e388046a51204f46202b656b7345705faea4bc347420f2ff7"
+    }
+  ]
+}

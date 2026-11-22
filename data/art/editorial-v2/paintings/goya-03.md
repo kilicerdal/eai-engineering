@@ -1,17 +1,22 @@
 # Power consuming what comes after it
+@reviewed 2026-11-20
+@source {"title":"Museo del Prado · Saturn","url":"https://www.museodelprado.es/en/the-collection/art-work/saturn/18110a75-b0e7-430c-bc73-2a4d55893bd6","scope":"Black Painting, original wall setting and transfer history"}
+
 > A ruler grips a damaged body in the dark. In Saturn, the ancient story of threatened succession survives, but Goya withholds the setting and heroic composure that might make its violence easier to contain.
-@source Museo del Prado · Saturn|https://www.museodelprado.es/en/the-collection/art-work/saturn/18110a75-b0e7-430c-bc73-2a4d55893bd6|Black Painting, original wall setting and transfer history
-## A domestic wall before a museum canvas | history | 1
+
+## A domestic wall before a museum canvas | history | 1 | section-1
 
 Saturn belongs to the works known as the Black Paintings, originally made on the walls of Goya’s house, the Quinta del Sordo. Their later transfer to canvas changed their material condition and setting. The title is a received identification, not an explanatory statement supplied by Goya alongside the image.
 
 The classical story concerns a ruler who consumes his children to prevent a threatened succession. That context supplies a framework, but it does not establish one exclusive political or psychological meaning for this particular treatment.
-## An action without classical distance | analysis |
+
+## An action without classical distance | analysis |  | section-2
 
 The figure emerges from darkness with eyes opened unnaturally wide. Hands grip the victim’s body, whose damaged condition is made impossible to ignore. The rough, abrupt handling of paint intensifies the sense of an act occurring beyond ordinary social restraint.
 
 The composition offers little environment or narrative explanation. Darkness does not simply surround a scene; it withholds the world in which the action might be placed. The viewer confronts a body acting upon another body with almost no mediating distance.
-## Interpretation without diagnosis | interpretation |
+
+## Interpretation without diagnosis | interpretation |  | section-3
 
 Readings involving political tyranny, age, fear and the destruction of the future are plausible because they connect to the story and visible action. They remain interpretive arguments. The painting is not evidence from which to diagnose Goya’s mental state.
 

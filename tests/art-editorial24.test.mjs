@@ -15,9 +15,9 @@ test('signature outlines cover every retained section without repeating the open
 test('authored source manuscripts retain all revised leads, paragraphs and reference records',()=>{
  for(const [kind,ids]of [['paintings',flagships],['painters',Object.keys(editorial.painters)]])for(const id of ids){const e=editorial[kind][id],raw=readFileSync(`data/art/editorial-v2/${kind}/${id}.md`,'utf8');assert.ok(raw.includes('> '+e.lead),id);for(const s of e.sections){assert.ok(raw.includes('## '+s.title),id);for(const p of s.paragraphs)assert.ok(raw.includes(p),id);}for(const s of e.sources)assert.ok(raw.includes(s.url),id);}
 });
-test('reading estimates agree with revised essays and the manuscript compiler',()=>{
+test('reading estimates agree with revised essays and the manuscript compiler',async()=>{
  for(const entries of Object.values(editorial))for(const e of Object.values(entries)){const words=[e.lead,...e.sections.flatMap(s=>s.paragraphs)].join(' ').split(/\s+/).length;assert.equal(e.words,words);assert.equal(e.minutes,Math.ceil(words/180));}
- assert.match(readFileSync('scripts/art/build-editorial.mjs','utf8'),/Math.ceil\(words\/180\)/);
+ const {parseEditorialManuscript}=await import('../scripts/art/editorial-manuscript.mjs');const essay=parseEditorialManuscript('# Work\n> '+Array(181).fill('word').join(' '));assert.equal(essay.words,181);assert.equal(essay.minutes,2);
 });
 test('all 124 studies and 25 biographies remain present; historical distinctions stay specific',()=>{
  assert.equal(Object.keys(editorial.paintings).length,124);assert.equal(Object.keys(editorial.painters).length,25);

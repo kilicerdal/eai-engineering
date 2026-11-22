@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./tests/browser',testMatch:'**/dai-110.spec.ts',workers:2,timeout:45000,projects:[{name:'chromium',use:{browserName:'chromium'}},{name:'webkit',use:{browserName:'webkit'}}],use:{baseURL:'http://127.0.0.1:3038',screenshot:'only-on-failure',serviceWorkers:'block'},reporter:[['list'],['json',{outputFile:'artifacts/dai-110/browser.json'}]],outputDir:'test-results/dai-110'});

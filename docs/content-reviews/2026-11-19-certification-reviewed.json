@@ -1,5 +1,5 @@
 {
-  "scope": "Ten individually inspected questions only. This file does not sign off the remaining bank.",
+  "scope": "Individually recorded agent reviews with exact question fingerprints and per-record scope. This file does not sign off the remaining bank.",
   "records": [
     {
       "id": "github-actions-01",

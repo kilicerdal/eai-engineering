@@ -1,0 +1,482 @@
+{
+  "baseline": "a1e3f5e3f5f8a9a319e5d1794e1ea9798138f356",
+  "scope": "Consolidated implemented change groups present in the current local working tree since its last recorded release. Count one coherent behavior or authored content batch once, even when mentioned by multiple recommendation lists. Individual source URLs, essay paragraphs, reviewed questions, test cases and changed files are not separately counted as improvements. Already-existing behavior merely rechecked is excluded. Tutor prompt changes are implemented instructions, not proof of evaluated live response quality. This is a defined grouping count, not an objective feature-unit metric.",
+  "recommendationBatches": [
+    30,
+    70,
+    58,
+    110
+  ],
+  "recommendationEntriesIncludingOverlap": 268,
+  "implementedChangeGroups": 75,
+  "categories": {
+    "Studio and navigation": 9,
+    "Art content, navigation and presentation": 30,
+    "Drawings": 1,
+    "Reading": 14,
+    "Certification": 8,
+    "Tutor": 4,
+    "Curiosity": 3,
+    "Editorial and performance tooling": 3,
+    "Distinct follow-up refinements": 3
+  },
+  "pendingExcluded": [
+    "870 question reviews and remaining question-quality work",
+    "Live Tutor response evaluation",
+    "Native screen-reader session",
+    "Firefox compatibility verification"
+  ],
+  "changes": [
+    {
+      "id": 1,
+      "category": "Studio and navigation",
+      "change": "Group seven learning rooms under three clear purposes",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 2,
+      "category": "Studio and navigation",
+      "change": "Server-render the static Studio directory while isolating interactive subject links",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 3,
+      "category": "Studio and navigation",
+      "change": "Add Writing access and align Saved work and Exam preparation menu labels",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 4,
+      "category": "Studio and navigation",
+      "change": "Keep parent-room current markers active on nested pages",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 5,
+      "category": "Studio and navigation",
+      "change": "Give the Studio wordmark an explicit return label",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 6,
+      "category": "Studio and navigation",
+      "change": "Correct Writing and Exam room identities",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 7,
+      "category": "Studio and navigation",
+      "change": "Expose room-specific saving guidance",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 8,
+      "category": "Studio and navigation",
+      "change": "Reopen saved Tutor sessions in the dedicated workspace from both saved-work projections",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 9,
+      "category": "Studio and navigation",
+      "change": "Provide route error retry without deleting saved data",
+      "evidence": "src/app/study/StudyHome.tsx; src/components/StudyNavigation.tsx; src/components/RoomWayfinding.tsx; src/lib/site-rooms.ts; src/lib/your-space.ts; src/lib/study-open-work.ts; src/app/study/error.tsx"
+    },
+    {
+      "id": 10,
+      "category": "Art content, navigation and presentation",
+      "change": "Replace twelve generic modern-art opening questions with work-specific questions",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 11,
+      "category": "Art content, navigation and presentation",
+      "change": "Expand four modern-art study entrances with documentary boundaries",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 12,
+      "category": "Art content, navigation and presentation",
+      "change": "Explain attribution, versions, title categories, approximate dates and frame terminology in an object-label guide",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 13,
+      "category": "Art content, navigation and presentation",
+      "change": "Add four source-linked object-reading notes, including later titles and technical findings",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 14,
+      "category": "Art content, navigation and presentation",
+      "change": "Relabel the unsupported Mona Lisa veil dispute as an interpretive question",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 15,
+      "category": "Art content, navigation and presentation",
+      "change": "Replace broad research pointers with precise Royal Collection, Mauritshuis and NGA references",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 16,
+      "category": "Art content, navigation and presentation",
+      "change": "Correct the Magritte acquisition year in both affected passages",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 17,
+      "category": "Art content, navigation and presentation",
+      "change": "Align Bacchus and Milkmaid catalog dates with current institutional records",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 18,
+      "category": "Art content, navigation and presentation",
+      "change": "Expand four shorter painting essays with specific historical and visual analysis",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 19,
+      "category": "Art content, navigation and presentation",
+      "change": "Add dated, source-linked art correction history",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 20,
+      "category": "Art content, navigation and presentation",
+      "change": "Preserve originating study and exact card on secondary related-work links",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 21,
+      "category": "Art content, navigation and presentation",
+      "change": "Return to the whole painting using normal-flow layout rather than a sticky image position",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 22,
+      "category": "Art content, navigation and presentation",
+      "change": "Preserve scholarship query/results and biography passage context when returning from a study",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 23,
+      "category": "Art content, navigation and presentation",
+      "change": "Retain exact evidence and dossier anchors when rendering research details",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 24,
+      "category": "Art content, navigation and presentation",
+      "change": "Rank scholarship results by title, heading and passage relevance",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 25,
+      "category": "Art content, navigation and presentation",
+      "change": "Expand related search wording with explicit disclosure",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 26,
+      "category": "Art content, navigation and presentation",
+      "change": "Index 51 additional evidence, dossier and label-guide passages",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 27,
+      "category": "Art content, navigation and presentation",
+      "change": "Highlight expanded search wording in relevant excerpts",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 28,
+      "category": "Art content, navigation and presentation",
+      "change": "Prioritize exact normalized artwork titles in catalog search",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 29,
+      "category": "Art content, navigation and presentation",
+      "change": "Use descriptive study-card actions and visible result ranges",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 30,
+      "category": "Art content, navigation and presentation",
+      "change": "Provide readable failed-thumbnail fallbacks",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 31,
+      "category": "Art content, navigation and presentation",
+      "change": "Explain empty filtered collections with useful recovery actions",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 32,
+      "category": "Art content, navigation and presentation",
+      "change": "Distinguish viewing-preference image gates from missing images",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 33,
+      "category": "Art content, navigation and presentation",
+      "change": "Clarify limits of self-selected artwork comparisons",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 34,
+      "category": "Art content, navigation and presentation",
+      "change": "Clarify the essay section chooser and full-study navigation purpose",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 35,
+      "category": "Art content, navigation and presentation",
+      "change": "Improve phone touch targets and prevent the comparison tray covering narrow screens",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 36,
+      "category": "Art content, navigation and presentation",
+      "change": "Improve printed study hierarchy, whole-image fit and full essay visibility",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 37,
+      "category": "Art content, navigation and presentation",
+      "change": "Preserve custom section IDs, source mappings, review dates and bibliography deduplication through manuscript compilation",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 38,
+      "category": "Art content, navigation and presentation",
+      "change": "Expand source maintenance to all essay and drawing references while retaining shared-source usage and review flags",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 39,
+      "category": "Art content, navigation and presentation",
+      "change": "Repair the failed Brera PDF destination using the institution\u2019s working HTML guide",
+      "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
+    },
+    {
+      "id": 40,
+      "category": "Drawings",
+      "change": "Limit paper reading-continuity links to sections actually present in each study",
+      "evidence": "src/components/art/ArtPaperStudy.tsx"
+    },
+    {
+      "id": 41,
+      "category": "Reading",
+      "change": "Improve book-tile, reader-header and long-title wrapping",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 42,
+      "category": "Reading",
+      "change": "Show chapter and source-section context beside saved notes",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 43,
+      "category": "Reading",
+      "change": "Return keyboard focus after closing the notes panel",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 44,
+      "category": "Reading",
+      "change": "Explain empty book searches without obstructing chapter navigation",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 45,
+      "category": "Reading",
+      "change": "Expose translator credit and source edition ID in the reader header",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 46,
+      "category": "Reading",
+      "change": "Distinguish publication, translation, electronic release and editorial voices in edition context",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 47,
+      "category": "Reading",
+      "change": "Add four contextual historical-vocabulary notes verified against packed editions",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 48,
+      "category": "Reading",
+      "change": "Separate quotations from private writing in displayed notes and portable exports with full source coordinates",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 49,
+      "category": "Reading",
+      "change": "Load optional passage and word tools only when opened",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 50,
+      "category": "Reading",
+      "change": "Refuse to overwrite a concurrently changed saved note while retaining the learner\u2019s edit",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 51,
+      "category": "Reading",
+      "change": "Register notebook edits with the existing unsaved-writing guard",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 52,
+      "category": "Reading",
+      "change": "Prevent stale failed passage searches overwriting newer notices",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 53,
+      "category": "Reading",
+      "change": "Preserve the visible source paragraph when changing text size or reading width",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 54,
+      "category": "Reading",
+      "change": "Widen phone reading controls so selected values remain readable",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
+    },
+    {
+      "id": 55,
+      "category": "Certification",
+      "change": "Expand ten short study takeaways without rewriting historical answer editions",
+      "evidence": "src/components/certifications/; src/lib/certification-learning-growth.ts; src/lib/certification-practice-v9.ts; src/lib/foundation-contrast.ts; src/app/guide/learning-quality/sources/page.tsx; scripts/audit-certification-sources.mjs; scripts/certification-review-records.mjs; docs/content-reviews/2026-11-22-certification-reviewed.json"
+    },
+    {
+      "id": 56,
+      "category": "Certification",
+      "change": "Show finished-session domain strengths and revisit areas with sample-size limits",
+      "evidence": "src/components/certifications/; src/lib/certification-learning-growth.ts; src/lib/certification-practice-v9.ts; src/lib/foundation-contrast.ts; src/app/guide/learning-quality/sources/page.tsx; scripts/audit-certification-sources.mjs; scripts/certification-review-records.mjs; docs/content-reviews/2026-11-22-certification-reviewed.json"
+    },
+    {
+      "id": 57,
+      "category": "Certification",
+      "change": "Clarify familiarity counts as retained same-edition history",
+      "evidence": "src/components/certifications/; src/lib/certification-learning-growth.ts; src/lib/certification-practice-v9.ts; src/lib/foundation-contrast.ts; src/app/guide/learning-quality/sources/page.tsx; scripts/audit-certification-sources.mjs; scripts/certification-review-records.mjs; docs/content-reviews/2026-11-22-certification-reviewed.json"
+    },
+    {
+      "id": 58,
+      "category": "Certification",
+      "change": "Clarify pausing and longer domain-balanced practice choices",
+      "evidence": "src/components/certifications/; src/lib/certification-learning-growth.ts; src/lib/certification-practice-v9.ts; src/lib/foundation-contrast.ts; src/app/guide/learning-quality/sources/page.tsx; scripts/audit-certification-sources.mjs; scripts/certification-review-records.mjs; docs/content-reviews/2026-11-22-certification-reviewed.json"
+    },
+    {
+      "id": 59,
+      "category": "Certification",
+      "change": "Record assisted official-reference scope reviews and matching monitoring baselines with visible limits",
+      "evidence": "src/components/certifications/; src/lib/certification-learning-growth.ts; src/lib/certification-practice-v9.ts; src/lib/foundation-contrast.ts; src/app/guide/learning-quality/sources/page.tsx; scripts/audit-certification-sources.mjs; scripts/certification-review-records.mjs; docs/content-reviews/2026-11-22-certification-reviewed.json"
+    },
+    {
+      "id": 60,
+      "category": "Certification",
+      "change": "Add concrete requirement-changing counterfactuals for selected numerical and workflow scenarios",
+      "evidence": "src/components/certifications/; src/lib/certification-learning-growth.ts; src/lib/certification-practice-v9.ts; src/lib/foundation-contrast.ts; src/app/guide/learning-quality/sources/page.tsx; scripts/audit-certification-sources.mjs; scripts/certification-review-records.mjs; docs/content-reviews/2026-11-22-certification-reviewed.json"
+    },
+    {
+      "id": 61,
+      "category": "Certification",
+      "change": "Read all dated review files and reject stale or incomplete signoffs",
+      "evidence": "src/components/certifications/; src/lib/certification-learning-growth.ts; src/lib/certification-practice-v9.ts; src/lib/foundation-contrast.ts; src/app/guide/learning-quality/sources/page.tsx; scripts/audit-certification-sources.mjs; scripts/certification-review-records.mjs; docs/content-reviews/2026-11-22-certification-reviewed.json"
+    },
+    {
+      "id": 62,
+      "category": "Certification",
+      "change": "Add ten exact-fingerprint, all-alternative GitHub Actions review records",
+      "evidence": "src/components/certifications/; src/lib/certification-learning-growth.ts; src/lib/certification-practice-v9.ts; src/lib/foundation-contrast.ts; src/app/guide/learning-quality/sources/page.tsx; scripts/audit-certification-sources.mjs; scripts/certification-review-records.mjs; docs/content-reviews/2026-11-22-certification-reviewed.json"
+    },
+    {
+      "id": 63,
+      "category": "Tutor",
+      "change": "Strengthen explanation structure, professional depth and uncertainty instructions",
+      "evidence": "src/lib/tutor-teaching-quality.ts; src/components/TutorAdaptation.tsx; src/components/SharedAIChat.tsx"
+    },
+    {
+      "id": 64,
+      "category": "Tutor",
+      "change": "Name the actual learner question in the follow-up adaptation drawer",
+      "evidence": "src/lib/tutor-teaching-quality.ts; src/components/TutorAdaptation.tsx; src/components/SharedAIChat.tsx"
+    },
+    {
+      "id": 65,
+      "category": "Tutor",
+      "change": "Require constraint continuity, assessment of unconventional solutions and revision against relevant counterevidence",
+      "evidence": "src/lib/tutor-teaching-quality.ts; src/components/TutorAdaptation.tsx; src/components/SharedAIChat.tsx"
+    },
+    {
+      "id": 66,
+      "category": "Tutor",
+      "change": "Use a page-level heading for the dedicated Tutor while retaining the embedded section heading",
+      "evidence": "src/lib/tutor-teaching-quality.ts; src/components/TutorAdaptation.tsx; src/components/SharedAIChat.tsx"
+    },
+    {
+      "id": 67,
+      "category": "Curiosity",
+      "change": "Expand the short pump explanation with a component-versus-system distinction",
+      "evidence": "src/app/study/curiosity/insights.ts; src/app/study/curiosity/room.tsx; src/lib/discovery-depth.ts; src/lib/discovery-polish50.ts"
+    },
+    {
+      "id": 68,
+      "category": "Curiosity",
+      "change": "Add four bounded thematic connections with clear analogy limits",
+      "evidence": "src/app/study/curiosity/insights.ts; src/app/study/curiosity/room.tsx; src/lib/discovery-depth.ts; src/lib/discovery-polish50.ts"
+    },
+    {
+      "id": 69,
+      "category": "Curiosity",
+      "change": "Narrow the pump question to its supported claim and display the dated correction in the feed",
+      "evidence": "src/app/study/curiosity/insights.ts; src/app/study/curiosity/room.tsx; src/lib/discovery-depth.ts; src/lib/discovery-polish50.ts"
+    },
+    {
+      "id": 70,
+      "category": "Editorial and performance tooling",
+      "change": "Add collection-wide editorial structure, citation, repetition and source-scope audits",
+      "evidence": "scripts/audit-dai-cohesion.mjs; scripts/audit-dai-editorial.mjs; scripts/audit-dai-depth58.mjs; scripts/audit-dai-110.mjs; scripts/measure-dai-constrained.mjs"
+    },
+    {
+      "id": 71,
+      "category": "Editorial and performance tooling",
+      "change": "Add whole-bank wording, answer-position and option-length triage reports without automatic factual signoff",
+      "evidence": "scripts/audit-dai-cohesion.mjs; scripts/audit-dai-editorial.mjs; scripts/audit-dai-depth58.mjs; scripts/audit-dai-110.mjs; scripts/measure-dai-constrained.mjs"
+    },
+    {
+      "id": 72,
+      "category": "Editorial and performance tooling",
+      "change": "Add a reproducible constrained-network and CPU local measurement script",
+      "evidence": "scripts/audit-dai-cohesion.mjs; scripts/audit-dai-editorial.mjs; scripts/audit-dai-depth58.mjs; scripts/audit-dai-110.mjs; scripts/measure-dai-constrained.mjs"
+    },
+    {
+      "id": 73,
+      "category": "Distinct follow-up refinements",
+      "change": "Handle canceled and superseded audio callbacks, stop speech when collapsing its introduction and retain usable transcript controls",
+      "evidence": "src/components/art/ArtAudioIntroduction.tsx"
+    },
+    {
+      "id": 74,
+      "category": "Distinct follow-up refinements",
+      "change": "Arrange museum-guide stops in selection order with reorder/removal controls and truthful printed reference/display labels",
+      "evidence": "src/components/art/ArtMuseumGuide.tsx"
+    },
+    {
+      "id": 75,
+      "category": "Distinct follow-up refinements",
+      "change": "Protect unsaved bookmark names on dialog close and navigation, with explicit cancel and clean save behavior",
+      "evidence": "src/components/BookmarkName.tsx; src/components/ReadingDialog.tsx"
+    }
+  ],
+  "additionalTargetedFollowUpGroups": 3
+}

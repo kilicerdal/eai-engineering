@@ -1,0 +1,780 @@
+{
+  "scope": "110 requested improvement outcomes. Existing checked behavior is not counted as a newly implemented improvement. Pending editorial and environment-dependent work is explicit. Local only.",
+  "items": [
+    {
+      "number": 1,
+      "title": "One clear primary action per page",
+      "status": "updated-and-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Dedicated Tutor now has a page-level heading; existing primary actions retained."
+    },
+    {
+      "number": 2,
+      "title": "Consistent room names",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 3,
+      "title": "Clear current room and subsection",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 4,
+      "title": "Preserve search filters and return position",
+      "status": "updated-and-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Art study return links preserve the originating search, filters and exact result anchor."
+    },
+    {
+      "number": 5,
+      "title": "Predictable browser Back",
+      "status": "updated-and-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Browser Back is covered by new Chromium and WebKit journeys."
+    },
+    {
+      "number": 6,
+      "title": "Context-specific return links",
+      "status": "updated-and-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Return labels distinguish scholarship results, painter profiles and previous studies."
+    },
+    {
+      "number": 7,
+      "title": "Descriptive destination labels",
+      "status": "updated-and-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Painting cards now say Read the study."
+    },
+    {
+      "number": 8,
+      "title": "Reduce repeated navigation",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 9,
+      "title": "Keep secondary tools out of crowded toolbars",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 10,
+      "title": "Explain unfamiliar tools in context",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/StudyNavigation.tsx; src/components/art/ArtNavigation.tsx; src/lib/art/return-context.ts",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 11,
+      "title": "Consistent artwork cards",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Card action labels and result-range counts clarified."
+    },
+    {
+      "number": 12,
+      "title": "Retain complete compositions",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 13,
+      "title": "Label cropped details",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 14,
+      "title": "Distinguish image access states",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Failed previews have a readable fallback distinct from rights and viewing-preference states."
+    },
+    {
+      "number": 15,
+      "title": "Institutional image fallback",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Updated in this pass; see implementation evidence and validation report."
+    },
+    {
+      "number": 16,
+      "title": "Visible removable filters",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 17,
+      "title": "Useful empty-search recovery",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Empty filtered collections explain removing filters rather than asking the visitor to save a work."
+    },
+    {
+      "number": 18,
+      "title": "Honest approximate dates",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Bacchus and The Milkmaid dates aligned with current institutional records, with correction notices."
+    },
+    {
+      "number": 19,
+      "title": "Search alternate names",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 20,
+      "title": "Consistent era labels",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtCollection.tsx; src/lib/art/search.ts; data/art/research/editorial-corrections.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 21,
+      "title": "Work-specific study openings",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 22,
+      "title": "Separate close looking and context",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 23,
+      "title": "Specific composition analysis",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 24,
+      "title": "Technique explained through effects",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 25,
+      "title": "Materials support and dimensions",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 26,
+      "title": "Commission audience and original setting",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 27,
+      "title": "Original and later titles distinguished",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 28,
+      "title": "Contemporary versus later reception",
+      "status": "updated-and-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Four shorter studies gained specific reception, collecting or documentary context."
+    },
+    {
+      "number": 29,
+      "title": "Conservation findings and limits",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 30,
+      "title": "Attribute contested interpretations",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 31,
+      "title": "Honest ownership gaps",
+      "status": "updated-and-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Expanded studies explain documented ownership milestones and uncertainty rather than inventing a complete chain."
+    },
+    {
+      "number": 32,
+      "title": "Replace generic repeated prose",
+      "status": "updated-and-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Four artwork-specific essays expanded, preserving their existing sections and source limits."
+    },
+    {
+      "number": 33,
+      "title": "Narrative painter biographies",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 34,
+      "title": "Connect documented life and practice",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 35,
+      "title": "Training workshops and networks",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 36,
+      "title": "Patronage and professional circumstances",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 37,
+      "title": "Changes in methods over time",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 38,
+      "title": "Documented facts versus anecdotes",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 39,
+      "title": "Collaborators and workshop roles",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 40,
+      "title": "Biography links to studied paintings",
+      "status": "updated-and-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Painter-to-work navigation returns to the originating biography section."
+    },
+    {
+      "number": 41,
+      "title": "Specific influence comparisons",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 42,
+      "title": "Biographical uncertainty",
+      "status": "existing-implementation-checked",
+      "evidence": "data/art/editorial-v2/; src/components/art/ArtEssay.tsx; data/art/research/",
+      "note": "Existing essays and evidence labels retained. Four shorter studies deepened in this pass; structural coverage is not independent verification of every historical claim."
+    },
+    {
+      "number": 43,
+      "title": "Purpose of individual drawings",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 44,
+      "title": "Studies versus later copies",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 45,
+      "title": "Drawing materials explained",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 46,
+      "title": "Role of the paper tone",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 47,
+      "title": "Revisions and erasures",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 48,
+      "title": "Documented study-to-painting relationships",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 49,
+      "title": "Drawings versus technical imaging",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 50,
+      "title": "Explain each comparison\u2019s change",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 51,
+      "title": "Label comparable images",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 52,
+      "title": "Uncertain relationships retained",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtPaperStudy.tsx; data/art/research/on-paper.json",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 53,
+      "title": "Sources beside supporting claims",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Compiler preserves custom published citation and passage anchors."
+    },
+    {
+      "number": 54,
+      "title": "Precise institutional references",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Failed Brera PDF replaced with the institution\u2019s accessible HTML guide."
+    },
+    {
+      "number": 55,
+      "title": "Distinguish source types",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 56,
+      "title": "Context for short quotations",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 57,
+      "title": "Translation attribution for primary voices",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 58,
+      "title": "Source access versus factual verification",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Source maintenance now covers all essay and drawing-study references."
+    },
+    {
+      "number": 59,
+      "title": "Changed-source review flags",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Changed-source flags preserved; restricted access remains distinct from broken references."
+    },
+    {
+      "number": 60,
+      "title": "Explanatory corrections",
+      "status": "updated-and-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Correction log records two date changes and the source-destination repair."
+    },
+    {
+      "number": 61,
+      "title": "Image credits and reuse records",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 62,
+      "title": "Unsupported consensus wording",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/art/ArtBibliography.tsx; scripts/art/check-reference-health.mjs; scripts/art/editorial-manuscript.mjs",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 63,
+      "title": "Exact-title search ranking",
+      "status": "updated-and-checked",
+      "evidence": "src/lib/art/search.ts; src/lib/art/scholarship-query.ts; src/app/study/art/scholarship/page.tsx",
+      "note": "Exact normalized title matches outrank incidental wording while unsearched curatorial order stays stable."
+    },
+    {
+      "number": 64,
+      "title": "Accents punctuation and alternate names",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/art/search.ts; src/lib/art/scholarship-query.ts; src/app/study/art/scholarship/page.tsx",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 65,
+      "title": "Disclose expanded search wording",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/art/search.ts; src/lib/art/scholarship-query.ts; src/app/study/art/scholarship/page.tsx",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 66,
+      "title": "Relevant passage snippets",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/art/search.ts; src/lib/art/scholarship-query.ts; src/app/study/art/scholarship/page.tsx",
+      "note": "Updated in this pass; see implementation evidence and validation report."
+    },
+    {
+      "number": 67,
+      "title": "Exact passage destinations",
+      "status": "updated-and-checked",
+      "evidence": "src/lib/art/search.ts; src/lib/art/scholarship-query.ts; src/app/study/art/scholarship/page.tsx",
+      "note": "Search results have stable return anchors and their passage destinations are browser-tested."
+    },
+    {
+      "number": 68,
+      "title": "Preserve search after reading",
+      "status": "updated-and-checked",
+      "evidence": "src/lib/art/search.ts; src/lib/art/scholarship-query.ts; src/app/study/art/scholarship/page.tsx",
+      "note": "Returning from a study restores the exact scholarship result and query."
+    },
+    {
+      "number": 69,
+      "title": "Identify result types",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/art/search.ts; src/lib/art/scholarship-query.ts; src/app/study/art/scholarship/page.tsx",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 70,
+      "title": "Useful empty-result guidance",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/art/search.ts; src/lib/art/scholarship-query.ts; src/app/study/art/scholarship/page.tsx",
+      "note": "Updated in this pass; see implementation evidence and validation report."
+    },
+    {
+      "number": 71,
+      "title": "Publication translation and electronic dates",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 72,
+      "title": "Visible translator and edition",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 73,
+      "title": "Long chapter navigation",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 74,
+      "title": "Reading place after appearance changes",
+      "status": "updated-and-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Text-size and reading-width changes preserve the visible source paragraph."
+    },
+    {
+      "number": 75,
+      "title": "Source quotation versus private note",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 76,
+      "title": "Unambiguous note editing and deletion",
+      "status": "updated-and-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Notebook editing refuses to overwrite a newer saved note and retains the unsaved edit."
+    },
+    {
+      "number": 77,
+      "title": "Invalid saved-passage recovery",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 78,
+      "title": "Phone footnotes and annotations",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 79,
+      "title": "Contextual historical vocabulary",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 80,
+      "title": "Export exact source coordinates",
+      "status": "existing-implementation-checked",
+      "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/lib/reading/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 81,
+      "title": "Review remaining 870 questions",
+      "status": "pending",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "220 of 1,090 have scoped agent reviews; 870 remain pending. This package does not approve them."
+    },
+    {
+      "number": 82,
+      "title": "Scenario-specific answer explanations",
+      "status": "pending",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Existing editions contain improved explanations; a complete rewrite/review of the remaining bank is unfinished."
+    },
+    {
+      "number": 83,
+      "title": "One defensible answer under stated conditions",
+      "status": "pending",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Structural/key checks pass, but every remaining question needs substantive editorial review."
+    },
+    {
+      "number": 84,
+      "title": "Audit accidental answer clues",
+      "status": "pending",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Length and position signals are recorded; difficulty and guessing effects are not psychometrically established."
+    },
+    {
+      "number": 85,
+      "title": "Improve weak distractors",
+      "status": "pending",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Earlier editions improved selected distractors; the remaining bank needs individual review before changes."
+    },
+    {
+      "number": 86,
+      "title": "Explain answer-changing assumptions",
+      "status": "pending",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Selected scenarios have explicit boundaries; coverage of all remaining questions is unfinished."
+    },
+    {
+      "number": 87,
+      "title": "Distinguish knowledge gaps from misreading",
+      "status": "pending",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Existing feedback supplies conditions and contrasts; complete pedagogical evaluation remains unfinished."
+    },
+    {
+      "number": 88,
+      "title": "Saved answer editions preserved",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 89,
+      "title": "Limits of small domain samples",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 90,
+      "title": "Separate session states",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/certification-quality.ts; docs/content-reviews/; scripts/certification-review-records.mjs",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 91,
+      "title": "Tutor preserves learner constraints",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/tutor-teaching-quality.ts; tests/browser/tutor-reliability.spec.ts",
+      "note": "Existing teaching instructions and deterministic request-safety checks retained. Live teaching quality remains unverified."
+    },
+    {
+      "number": 92,
+      "title": "Tutor targets actual misunderstanding",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/tutor-teaching-quality.ts; tests/browser/tutor-reliability.spec.ts",
+      "note": "Existing teaching instructions and deterministic request-safety checks retained. Live teaching quality remains unverified."
+    },
+    {
+      "number": 93,
+      "title": "Facts versus illustrative examples",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/tutor-teaching-quality.ts; tests/browser/tutor-reliability.spec.ts",
+      "note": "Existing teaching instructions and deterministic request-safety checks retained. Live teaching quality remains unverified."
+    },
+    {
+      "number": 94,
+      "title": "Reasoned corrections",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/tutor-teaching-quality.ts; tests/browser/tutor-reliability.spec.ts",
+      "note": "Existing teaching instructions and deterministic request-safety checks retained. Live teaching quality remains unverified."
+    },
+    {
+      "number": 95,
+      "title": "Reduce repeated generic advice",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/tutor-teaching-quality.ts; tests/browser/tutor-reliability.spec.ts",
+      "note": "Existing teaching instructions and deterministic request-safety checks retained. Live teaching quality remains unverified."
+    },
+    {
+      "number": 96,
+      "title": "Evaluate unconventional answers against requirements",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/tutor-teaching-quality.ts; tests/browser/tutor-reliability.spec.ts",
+      "note": "Existing teaching instructions and deterministic request-safety checks retained. Live teaching quality remains unverified."
+    },
+    {
+      "number": 97,
+      "title": "Specific useful uncertainty",
+      "status": "existing-implementation-checked",
+      "evidence": "src/lib/tutor-teaching-quality.ts; tests/browser/tutor-reliability.spec.ts",
+      "note": "Existing teaching instructions and deterministic request-safety checks retained. Live teaching quality remains unverified."
+    },
+    {
+      "number": 98,
+      "title": "Live Tutor response evaluation",
+      "status": "pending",
+      "evidence": "src/lib/tutor-teaching-quality.ts; tests/browser/tutor-reliability.spec.ts",
+      "note": "User left live tests pending credentials. No live model evaluation was run."
+    },
+    {
+      "number": 99,
+      "title": "Interrupted saves and reloads",
+      "status": "updated-and-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Concurrent saved-note change tested in both supported browsers; existing interrupted-save protections retained."
+    },
+    {
+      "number": 100,
+      "title": "Older backup compatibility",
+      "status": "existing-implementation-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 101,
+      "title": "Clear destructive actions",
+      "status": "existing-implementation-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 102,
+      "title": "Protect unsaved writing",
+      "status": "updated-and-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Notebook edits participate in the existing unsaved-writing guard."
+    },
+    {
+      "number": 103,
+      "title": "Keyboard-accessible controls",
+      "status": "existing-implementation-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Existing behavior retained and covered by the local checks; this is not a newly added feature."
+    },
+    {
+      "number": 104,
+      "title": "Return focus after closing",
+      "status": "existing-implementation-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Updated in this pass; see implementation evidence and validation report."
+    },
+    {
+      "number": 105,
+      "title": "Native screen-reader verification",
+      "status": "pending",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Keyboard, focus, role and axe checks are available; no native VoiceOver/NVDA session completed."
+    },
+    {
+      "number": 106,
+      "title": "Text enlargement and narrow reflow",
+      "status": "updated-and-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Phone reading selectors receive enough width to display Comfortable without truncation."
+    },
+    {
+      "number": 107,
+      "title": "Firefox verification",
+      "status": "pending",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Firefox fails before navigation in this environment; Chromium and WebKit checks cannot establish Firefox compatibility."
+    },
+    {
+      "number": 108,
+      "title": "Clear loading empty and error states",
+      "status": "updated-and-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Thumbnail failures have an explicit recovery destination; existing loading/error handling retained."
+    },
+    {
+      "number": 109,
+      "title": "Existing asset budgets",
+      "status": "existing-implementation-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "Final build remains below the unchanged JavaScript, CSS, image and packed-book limits."
+    },
+    {
+      "number": 110,
+      "title": "Desktop and phone visual inspection",
+      "status": "existing-implementation-checked",
+      "evidence": "tests/browser/dai-110.spec.ts; playwright.dai-professional.config.ts; artifacts/dai-110/",
+      "note": "44 representative desktop/phone views captured, mechanically checked and visually inspected, plus targeted changed-state screenshots; not every possible saved state or all 124 essays individually viewed."
+    }
+  ],
+  "counts": {
+    "updated-and-checked": 27,
+    "existing-implementation-checked": 73,
+    "pending": 10
+  }
+}

@@ -147,3 +147,7 @@
 @media(min-width:701px){.art-comparison-views{display:none!important}}
 
 .art-room .art-compare-image>.art-reproduction>img{height:100%;max-height:none;object-fit:contain}
+
+/* Print object context and scholarship as a continuous reading column. */
+@media print{.art-room{background:#fff!important;color:#111!important}.art-room :is(.art-detail-layout,.art-editorial-columns){display:block!important}.art-room :is(h1,h2,h3,h4){break-after:avoid}.art-room :is(figure,blockquote,.art-editorial-sources li){break-inside:avoid}.art-room img{max-height:85vh!important;object-fit:contain!important}.art-room :is(button,.art-trail,.art-writing-tools,.art-looking-controls,.art-reading-place,.art-tool-row,.art-compare-tray,.art-passage-bookmark,.art-return-artwork){display:none!important}.art-room[data-reading-depth] .art-editorial{display:block!important}.art-image-reference{min-height:0!important;padding:12px!important}.art-image-reference h2{font-size:20px}.art-editorial-sources a::after{content:' (' attr(href) ')';overflow-wrap:anywhere}}
+@media(max-width:480px){.art-room :is(button,summary,select){min-height:44px}.art-room :is(.art-trail,.art-tool-row){gap:10px}.art-compare-tray{position:static}}

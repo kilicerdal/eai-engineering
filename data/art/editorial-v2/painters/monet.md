@@ -1,55 +1,52 @@
 # Claude Monet: the sustained work of seeing
+@reviewed 2026-11-20
+@source {"title":"Metropolitan Museum · Claude Monet","url":"https://www.metmuseum.org/essays/claude-monet-1840-1926","scope":"Early training, landscape practice and series"}
+@source {"title":"Musée Marmottan Monet · Impression, Sunrise","url":"https://www.marmottan.fr/en/notice/4014/","scope":"Le Havre, title and exhibition context"}
+@source {"title":"National Gallery of Art · The Japanese Footbridge","url":"https://www.nga.gov/artworks/74796-japanese-footbridge","scope":"Giverny garden and the painting"}
+@source {"title":"Musée d’Orsay · Saint-Lazare Station","url":"https://www.musee-orsay.fr/fr/oeuvres/la-gare-saint-lazare-10897","scope":"The Orsay station painting and its industrial subject"}
 
 > Monet turned changing appearance into sustained professional work. Repeated observation and series practice complicate the idea of a single captured instant, while the distinction between a painting’s depicted weather and its actual making remains essential to understanding his achievement.
 
-@source Metropolitan Museum · Claude Monet|https://www.metmuseum.org/essays/claude-monet-1840-1926|Early training, landscape practice and series
-
-@source Musée Marmottan Monet · Impression, Sunrise|https://www.marmottan.fr/en/notice/4014/|Le Havre, title and exhibition context
-
-@source National Gallery of Art · The Japanese Footbridge|https://www.nga.gov/artworks/74796-japanese-footbridge|Giverny garden and the painting
-
-@source Musée d’Orsay · Saint-Lazare Station|https://www.musee-orsay.fr/fr/oeuvres/la-gare-saint-lazare-10897|The Orsay station painting and its industrial subject
-
-## Learning from the coast | history | 1
+## Learning from the coast | history | 1 | section-1
 
 Born in Paris in 1840 and raised in Normandy, Monet encountered an environment in which changing weather and coastal light could become subjects in their own right. Eugène Boudin’s example helped orient him toward painting outdoors, while encounters with other artists expanded his understanding of landscape. This was an education through observation and professional exchange, rather than the sudden discovery of a method in isolation.
 
 The importance of outdoor work should not be confused with the claim that every canvas was completed entirely before the motif. Painting could involve successive sessions, studio adjustments and comparisons with other works. The visible energy of a brushstroke is not proof of the length or location of the whole working process.
 
-## Modern subjects and independent exhibitions | history | 1,2,4
+## Modern subjects and independent exhibitions | history | 1,2,4 | section-2
 
 Monet’s participation in the independent exhibitions associated with Impressionism placed his work within a collective challenge to established systems of recognition. Impression, Sunrise contributed to the movement’s name through the reception of its title in 1874. The title’s later fame should not obscure the particular image: a working harbor whose structures emerge through a carefully limited range of tones.
 
 Modernity also appears in railways, leisure spaces and the organization of urban life. The Saint-Lazare paintings treat a station’s architecture, steam and changing illumination as pictorial material. These are not landscapes untouched by human activity. Modern industry and the experience of seeing belong to the same field of attention.
 
-## The independence of a painted mark | analysis |
+## The independence of a painted mark | analysis |  | section-3
 
 Monet often allows a mark to describe an object while remaining visibly a piece of paint. A short horizontal stroke can become a reflection; a cooler patch can function as a shadow without being a neutral gray. The viewer moves between recognizing a place and noticing the means by which the place has been constructed.
 
 The Magpie is a useful test of this double attention. Its snow is structured through shifts of warm and cool color, while the small bird establishes a concentrated accent within a much larger field. To call the picture simply a study of white misses the active differences that make the surface readable.
 
-## Repetition as an investigation | history | 1,3
+## Repetition as an investigation | history | 1,3 | section-4
 
 Monet’s serial work makes repetition productive rather than redundant. Returning to a motif under different conditions changes the relationship between the stable subject and its shifting appearance. A site can remain identifiable while illumination transforms its organization. Each canvas is a particular proposition, not merely one interchangeable example of an attractive effect.
 
 At Giverny, the garden also complicates the distinction between found nature and artistic invention. The Japanese footbridge and water garden were cultivated settings, shaped before they were painted. Monet’s attention therefore moves between designing an environment and constructing its representation. A painting of the garden is not simply a transparent record of something naturally occurring.
 
-## Biography without a single optical explanation | interpretation | 1
+## Biography without a single optical explanation | interpretation | 1 | section-5
 
 Illness and changes in vision belong to the later biography, but they should not be used as an automatic explanation for the appearance of every late work. Artistic ambition, scale, the relation among canvases and material experiment also matter. A medical condition cannot by itself account for a compositional decision or establish the meaning of a color.
 
 The same restraint applies to the idea that Monet was an unconscious pioneer of abstraction. Later audiences may find productive connections, but his persistent engagement with particular places remains central. The work’s historical identity does not disappear when its surface becomes less immediately descriptive.
 
-## What the collection reveals | analysis |
+## What the collection reveals | analysis |  | section-6
 
 Move from Women in the Garden to the coastal and station pictures, then to The Japanese Footbridge. The subjects and practical conditions change, but the question of how a surface holds a visual experience remains active. Monet’s achievement is not an endless sequence of pretty moments. It is a sustained inquiry into how a painting can make time, atmosphere and material form perceptible together.
 
-## Repetition without repetition of experience | interpretation |
+## Repetition without repetition of experience | interpretation |  | section-7
 
 The harbor, the garden and the railway station present distinct problems of visibility. Haze, reflection and steam complicate the separation of things, but their sources and social settings differ. Monet’s attention to those differences makes the repeated investigation of a motif an intellectual practice rather than a refusal to change subjects.
 
 His biography should therefore avoid presenting each canvas as a spontaneous impression untouched by work. Observation can be followed by revision, and an apparently fleeting effect can depend on a carefully balanced arrangement. Nor does later familiarity with water lilies explain the whole career. The paintings of modern public spaces and the increasingly sustained attention to a cultivated environment offer related but distinct ways of asking what a painting can make perceptible.
 
-## Working circumstances and the evidence of pictures | analysis |
+## Working circumstances and the evidence of pictures | analysis |  | section-8
 
 A group in a garden, a figure under a parasol and a station filled with steam ask how forms remain legible under different effects of light. The subject’s modernity and the painter’s handling are connected but distinct. A railway station supplies a different structure from a garden; neither can be explained by the label Impressionism alone. Repeated motifs invite comparison, but a series should be tied to actual versions and dates rather than an imagined record of consecutive moments.

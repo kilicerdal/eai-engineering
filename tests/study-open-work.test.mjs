@@ -5,7 +5,7 @@ const w=loadStudyModule('study-open-work'),c=loadStudyModule('study-continuity')
 const now=1700000000000,lesson={id:'l1',title:'Balance equations',objective:'Explain equivalent operations',activity:'Try an equation',checkpoint:'Explain each operation',sourceIds:[]},context={goal:'Learn equations',lesson};
 const session={id:'chat-1',title:'My equations',mode:'math',messages:[{role:'assistant',content:'Welcome'}],updatedAt:now-10,learning:{level:'highSchool',approach:'guided',goal:'Learn equations'},checkpoint:context,draft:'An unsent attempt I want to finish.',continuityNote:'Use a balance analogy.'};
 test('open work links to real saved drafts without exposing draft text in its URL',()=>{
- const items=w.openStudyWork([session],null,now);assert.equal(items.length,1);assert.equal(items[0].kind,'tutor');assert.equal(items[0].href,'/study?session=chat-1#ai-assistant');assert.match(items[0].detail,/unsent/);assert.doesNotMatch(items[0].href,/unsent attempt/);
+ const items=w.openStudyWork([session],null,now);assert.equal(items.length,1);assert.equal(items[0].kind,'tutor');assert.equal(items[0].href,'/study/tutor?session=chat-1#ai-assistant');assert.match(items[0].detail,/unsent/);assert.doesNotMatch(items[0].href,/unsent attempt/);
  assert.equal(c.normalizeStudyConversations([session])[0].draft,session.draft);assert.equal(c.normalizeStudyConversations([{...session,draft:'x'.repeat(3001)}]).length,0);
 });
 test('blank, malformed and future sessions do not invent open work, and only the latest meaningful tutor session is shown',()=>{

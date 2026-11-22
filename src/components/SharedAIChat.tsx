@@ -249,6 +249,7 @@ function MarkdownMessage({ content }: { content: string }) {
 function practiceTime(){return Date.now();}
 function useTutorPractice(id:string|undefined,messages:Message[]|undefined,planned:boolean){return useMemo(()=>id&&messages&&!planned?chatPractice(id,messages):null,[id,messages,planned]);}
 export default function SharedAIChat({dedicated=false,initialSession,localPreviewOnly=false}:{dedicated?:boolean;initialSession?:string;localPreviewOnly?:boolean}={}) {
+ const TutorHeading=dedicated?'h1':'h2';
   const [focus,setFocus]=useState(false),[textSize,setTextSize]=useState(16),[wide,setWide]=useState(false),[toolsOpen,setToolsOpen]=useState(false),[toolTab,setToolTab]=useState("support"),[historyQuery,setHistoryQuery]=useState(""),[mobilePanel,setMobilePanel]=useState("conversation"),[selectedText,setSelectedText]=useState(""),[audio,setAudio]=useState<{id:string;text:string}|null>(null);
   const workspaceRoot=useRef<HTMLElement>(null);
   const [preferences,setPreferences]=useState<TutorPreferences>(defaultTutorPreferences),[preferenceNotice,setPreferenceNotice]=useState(''),[replyIndex,setReplyIndex]=useState<number|null>(null),[showOlder,setShowOlder]=useState(false),[openCheck,setOpenCheck]=useState(0),[openCheckTarget,setOpenCheckTarget]=useState(''),[replyToolVersion,setReplyToolVersion]=useState(0);
@@ -718,7 +719,7 @@ export default function SharedAIChat({dedicated=false,initialSession,localPrevie
       <div className="mx-auto max-w-7xl px-6">
         <div className="tutor-section-intro" onKeyDown={event=>{if(showTutorHelp&&event.key==="Escape"){event.preventDefault();closeTutorHelp();}}}>
           <p className="studio-eyebrow">ASK · EXPLORE · PRACTICE</p>
-          <div className="tutor-heading-row"><h2 id="tutor-heading">Your AI Tutor</h2><button id="tutor-help-trigger" type="button" className="tutor-how-button" aria-expanded={showTutorHelp} aria-controls="tutor-help-guide" onClick={()=>setShowTutorHelp(!showTutorHelp)}>Tutor guide <span aria-hidden="true">?</span></button></div>
+          <div className="tutor-heading-row"><TutorHeading id="tutor-heading">Your AI Tutor</TutorHeading><button id="tutor-help-trigger" type="button" className="tutor-how-button" aria-expanded={showTutorHelp} aria-controls="tutor-help-guide" onClick={()=>setShowTutorHelp(!showTutorHelp)}>Tutor guide <span aria-hidden="true">?</span></button></div>
           <p>Ask a question, work through a problem, or review your reasoning.</p>
           {!dedicated&&<Link className="tutor-workspace-link" href={activeId?`/study/tutor?session=${encodeURIComponent(activeId)}`:'/study/tutor'}>Open full workspace ↗</Link>}
           <TutorReturn/>{dedicated&&<Link className="tutor-workspace-link" href={activeId?`/study?session=${encodeURIComponent(activeId)}#ai-assistant`:'/study#ai-assistant'}>← Back to the Learning Studio</Link>}

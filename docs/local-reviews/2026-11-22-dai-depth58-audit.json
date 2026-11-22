@@ -1,0 +1,830 @@
+{
+  "checkedAt": "2026-11-22T06:09:43.861Z",
+  "scope": "Whole-bank answer-position/length triage and whole-manuscript repetition/consensus-language screening. No automatic answer-key rewrites or claim of blind validation.",
+  "counts": {
+    "questions": 1090,
+    "tracks": 12
+  },
+  "tracks": [
+    {
+      "track": "cloud-practitioner",
+      "questions": 105,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 26,
+        "1": 23,
+        "2": 24,
+        "3": 27
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "ai-practitioner",
+      "questions": 105,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 26,
+        "1": 24,
+        "2": 23,
+        "3": 27
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "istqb-foundation",
+      "questions": 105,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 26,
+        "1": 24,
+        "2": 25,
+        "3": 25
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "solutions-architect",
+      "questions": 105,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 27,
+        "1": 25,
+        "2": 23,
+        "3": 25
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "developer-associate",
+      "questions": 105,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 26,
+        "1": 25,
+        "2": 25,
+        "3": 24
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "test-automation",
+      "questions": 105,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 26,
+        "1": 25,
+        "2": 24,
+        "3": 25
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "ai-testing",
+      "questions": 105,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 27,
+        "1": 24,
+        "2": 23,
+        "3": 26
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "generative-ai-testing",
+      "questions": 105,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 26,
+        "1": 24,
+        "2": 25,
+        "3": 25
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "github-actions",
+      "questions": 100,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 26,
+        "1": 25,
+        "2": 24,
+        "3": 25
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "github-copilot",
+      "questions": 100,
+      "singleChoice": 100,
+      "correctPositions": {
+        "0": 26,
+        "1": 24,
+        "2": 24,
+        "3": 26
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "solutions-architect-professional",
+      "questions": 25,
+      "singleChoice": 25,
+      "correctPositions": {
+        "0": 7,
+        "1": 6,
+        "2": 6,
+        "3": 6
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    },
+    {
+      "track": "agile-tester",
+      "questions": 25,
+      "singleChoice": 25,
+      "correctPositions": {
+        "0": 7,
+        "1": 6,
+        "2": 6,
+        "3": 6
+      },
+      "note": "Distribution only; not a psychometric validation or a measured guessing advantage."
+    }
+  ],
+  "lengthSignals": [
+    {
+      "id": "ai-testing-growth-033",
+      "ratio": 3.75,
+      "correctWords": 5,
+      "otherWords": [
+        1,
+        1,
+        2
+      ],
+      "prompt": "A serving request supplies a string where a numerical feature is required. Which validation applies?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-016",
+      "ratio": 3,
+      "correctWords": 4,
+      "otherWords": [
+        1,
+        1,
+        2
+      ],
+      "prompt": "A model accepts an image plus a written question about it. Which capability is demonstrated?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-027",
+      "ratio": 3,
+      "correctWords": 4,
+      "otherWords": [
+        2,
+        1,
+        1
+      ],
+      "prompt": "A team has already chosen a model and needs to compare two instruction templates on fixed representative cases. Which variable is being tested?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-testing-growth-012",
+      "ratio": 3,
+      "correctWords": 4,
+      "otherWords": [
+        1,
+        1,
+        2
+      ],
+      "prompt": "A model’s fallback must avoid presenting uncertain results as verified facts. Which behavior should be tested?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-testing-growth-028",
+      "ratio": 3,
+      "correctWords": 4,
+      "otherWords": [
+        1,
+        1,
+        2
+      ],
+      "prompt": "An image recognizer should say “unknown” for inputs outside its supported categories. Which behavior must be tested?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-testing-growth-045",
+      "ratio": 3,
+      "correctWords": 4,
+      "otherWords": [
+        1,
+        1,
+        2
+      ],
+      "prompt": "A failure cannot be reproduced because nobody recorded the model, data and transformation versions. What needs to improve?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "cloud-practitioner-growth-039",
+      "ratio": 2.63,
+      "correctWords": 7,
+      "otherWords": [
+        2,
+        3,
+        3
+      ],
+      "prompt": "A proposed workload estimate omits expected data-transfer usage. What must the reviewer address before relying on that forecast?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "solutions-architect-growth-050",
+      "ratio": 2.63,
+      "correctWords": 7,
+      "otherWords": [
+        3,
+        2,
+        3
+      ],
+      "prompt": "A low-cost recovery plan takes longer to restore than the business permits. What should drive redesign?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "cloud-practitioner-growth-012",
+      "ratio": 2.5,
+      "correctWords": 5,
+      "otherWords": [
+        2,
+        2,
+        2
+      ],
+      "prompt": "An application on EC2 needs AWS permissions without credentials embedded in its image. Which identity approach fits?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "istqb-foundation-growth-002",
+      "ratio": 2.5,
+      "correctWords": 5,
+      "otherWords": [
+        2,
+        2,
+        2
+      ],
+      "prompt": "A tester cannot exercise every combination of input, state and timing in a realistic system. Which principle applies?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "solutions-architect-growth-012",
+      "ratio": 2.5,
+      "correctWords": 5,
+      "otherWords": [
+        2,
+        2,
+        2
+      ],
+      "prompt": "An application can assume a role, but its policy permits writes to every bucket. What should the architecture improve?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "solutions-architect-growth-023",
+      "ratio": 2.5,
+      "correctWords": 5,
+      "otherWords": [
+        2,
+        2,
+        2
+      ],
+      "prompt": "A backup job reports success, but nobody knows whether recovery works. Which evidence should be obtained?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-growth-009",
+      "ratio": 2.5,
+      "correctWords": 5,
+      "otherWords": [
+        2,
+        1,
+        3
+      ],
+      "prompt": "Many clients retry throttled requests at the same fixed interval. Which retry approach reduces synchronization?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "github-actions-growth-042",
+      "ratio": 2.5,
+      "correctWords": 5,
+      "otherWords": [
+        2,
+        2,
+        2
+      ],
+      "prompt": "A malicious branch name is interpolated directly into a shell script. What safer handling principle applies?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-022",
+      "ratio": 2.4,
+      "correctWords": 4,
+      "otherWords": [
+        2,
+        2,
+        1
+      ],
+      "prompt": "The remaining gap is a consistent response format and tone. What should the team evaluate before retraining?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-growth-043",
+      "ratio": 2.4,
+      "correctWords": 4,
+      "otherWords": [
+        2,
+        2,
+        1
+      ],
+      "prompt": "An application opens a new service connection for every invocation although a suitable client could be reused. What optimization helps?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-010",
+      "ratio": 2.25,
+      "correctWords": 3,
+      "otherWords": [
+        1,
+        1,
+        2
+      ],
+      "prompt": "A team reports only performance on the examples used to fit the model. What evaluation step is missing?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-011",
+      "ratio": 2.25,
+      "correctWords": 3,
+      "otherWords": [
+        1,
+        1,
+        2
+      ],
+      "prompt": "A chatbot gives a confident answer containing a nonexistent product specification. What is the main observed issue?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-038",
+      "ratio": 2.25,
+      "correctWords": 3,
+      "otherWords": [
+        2,
+        1,
+        1
+      ],
+      "prompt": "A developer claims a lower temperature eliminates false facts. Which issue still requires evidence checks?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "istqb-foundation-growth-035",
+      "ratio": 2.25,
+      "correctWords": 3,
+      "otherWords": [
+        1,
+        2,
+        1
+      ],
+      "prompt": "Business, development and testing representatives agree executable acceptance examples before implementation. Which approach fits?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-testing-growth-018",
+      "ratio": 2.25,
+      "correctWords": 3,
+      "otherWords": [
+        2,
+        1,
+        1
+      ],
+      "prompt": "The target is a continuous temperature value. Which listed measure directly summarizes absolute prediction error?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "github-actions-06",
+      "ratio": 2.2,
+      "correctWords": 11,
+      "otherWords": [
+        6,
+        4,
+        5
+      ],
+      "prompt": "An action changes an output name used by many consumers. How should this be handled?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-testing-07",
+      "ratio": 2.14,
+      "correctWords": 10,
+      "otherWords": [
+        4,
+        7,
+        3
+      ],
+      "prompt": "A generated answer invents a citation. Which evaluation is needed?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "solutions-architect-growth-014",
+      "ratio": 2.14,
+      "correctWords": 5,
+      "otherWords": [
+        3,
+        2,
+        2
+      ],
+      "prompt": "An accidental delete propagates through live replicas. Which recovery mechanism is needed?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "test-automation-depth-8",
+      "ratio": 2,
+      "correctWords": 14,
+      "otherWords": [
+        6,
+        8,
+        7
+      ],
+      "prompt": "The suite’s runtime doubled after adding redundant end-to-end cases. What is the better improvement experiment?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-013",
+      "ratio": 2,
+      "correctWords": 2,
+      "otherWords": [
+        1,
+        1,
+        1
+      ],
+      "prompt": "An application sends very long documents with every short question. Which usage factor should be measured for cost analysis?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-019",
+      "ratio": 2,
+      "correctWords": 2,
+      "otherWords": [
+        1,
+        1,
+        1
+      ],
+      "prompt": "Users care how long they wait from sending a question to receiving its complete response. What should be measured?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-028",
+      "ratio": 2,
+      "correctWords": 2,
+      "otherWords": [
+        1,
+        1,
+        1
+      ],
+      "prompt": "A support assistant must answer from a new private policy released yesterday. Which mechanism directly supplies that policy at inference time?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-046",
+      "ratio": 2,
+      "correctWords": 2,
+      "otherWords": [
+        1,
+        1,
+        1
+      ],
+      "prompt": "A deployed assistant’s errors need to be detected after launch. Which ongoing activity is necessary?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-growth-048",
+      "ratio": 2,
+      "correctWords": 2,
+      "otherWords": [
+        1,
+        1,
+        1
+      ],
+      "prompt": "Debug logs contain prompts long after the approved storage period. Which control needs correction?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-growth-011",
+      "ratio": 2,
+      "correctWords": 4,
+      "otherWords": [
+        3,
+        2,
+        1
+      ],
+      "prompt": "In a supported Lambda batch event integration, only one of ten records fails. Which response feature can avoid retrying every successful record?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "github-actions-growth-008",
+      "ratio": 2,
+      "correctWords": 4,
+      "otherWords": [
+        2,
+        2,
+        2
+      ],
+      "prompt": "A build step computes a version needed by a dependent job. Which workflow mechanism passes that value?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "test-automation-09",
+      "ratio": 1.94,
+      "correctWords": 11,
+      "otherWords": [
+        5,
+        7,
+        5
+      ],
+      "prompt": "A pipeline takes hours before detecting simple contract failures. What could improve feedback?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "github-actions-01",
+      "ratio": 1.94,
+      "correctWords": 11,
+      "otherWords": [
+        7,
+        5,
+        5
+      ],
+      "prompt": "A deploy job must run only after tests succeed. What expresses the dependency?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "test-automation-depth-5",
+      "ratio": 1.88,
+      "correctWords": 10,
+      "otherWords": [
+        7,
+        5,
+        4
+      ],
+      "prompt": "A pipeline blocks release on an automation result produced against yesterday’s build. What evidence is missing?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "solutions-architect-growth-022",
+      "ratio": 1.88,
+      "correctWords": 5,
+      "otherWords": [
+        3,
+        3,
+        2
+      ],
+      "prompt": "Orders for a customer require ordered queue processing. Which queue capability is most relevant?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-growth-036",
+      "ratio": 1.88,
+      "correctWords": 5,
+      "otherWords": [
+        4,
+        2,
+        2
+      ],
+      "prompt": "A request crosses three services and logs cannot be connected. What logging improvement helps?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-growth-040",
+      "ratio": 1.88,
+      "correctWords": 5,
+      "otherWords": [
+        3,
+        2,
+        3
+      ],
+      "prompt": "A Lambda function is CPU-constrained. What tuning approach is appropriate?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-growth-046",
+      "ratio": 1.88,
+      "correctWords": 5,
+      "otherWords": [
+        4,
+        1,
+        3
+      ],
+      "prompt": "A service is healthy, but clients overwhelm it with synchronized retries after a brief outage. Which client behavior should change?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "github-copilot-growth-015",
+      "ratio": 1.88,
+      "correctWords": 5,
+      "otherWords": [
+        3,
+        2,
+        3
+      ],
+      "prompt": "The assistant suggests a patch, but the user has authorized discussion only. What should the system respect?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "github-copilot-transfer-2",
+      "ratio": 1.83,
+      "correctWords": 14,
+      "otherWords": [
+        7,
+        10,
+        6
+      ],
+      "prompt": "A repository exclusion is enabled. A developer wants to paste a production token into a different assistant channel. What is the sound interpretation?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "test-automation-15",
+      "ratio": 1.8,
+      "correctWords": 9,
+      "otherWords": [
+        6,
+        5,
+        4
+      ],
+      "prompt": "Most investigation time comes from one flaky shared fixture. What should be prioritized?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "generative-ai-testing-03",
+      "ratio": 1.8,
+      "correctWords": 9,
+      "otherWords": [
+        6,
+        4,
+        5
+      ],
+      "prompt": "A prompt says only “test this.” What information would most improve it?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "cloud-practitioner-growth-003",
+      "ratio": 1.8,
+      "correctWords": 3,
+      "otherWords": [
+        2,
+        1,
+        2
+      ],
+      "prompt": "A startup avoids buying servers for an uncertain launch. Which financial change is it making?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "cloud-practitioner-growth-006",
+      "ratio": 1.8,
+      "correctWords": 3,
+      "otherWords": [
+        1,
+        2,
+        2
+      ],
+      "prompt": "Many customers share the provider’s large infrastructure purchases. Which economic principle can reduce unit costs?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-growth-033",
+      "ratio": 1.8,
+      "correctWords": 3,
+      "otherWords": [
+        2,
+        2,
+        1
+      ],
+      "prompt": "A deploy job runs even when tests fail because the test command ends with an unconditional success. What control must be repaired?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-testing-growth-047",
+      "ratio": 1.8,
+      "correctWords": 3,
+      "otherWords": [
+        2,
+        2,
+        1
+      ],
+      "prompt": "A production model exceeds agreed safety-error limits. What prepared response should be evaluated?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-transfer-2",
+      "ratio": 1.74,
+      "correctWords": 11,
+      "otherWords": [
+        5,
+        8,
+        6
+      ],
+      "prompt": "A screening model has high average accuracy but low recall for a rare costly event. Which evaluation would best inform its use?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "github-copilot-depth-1",
+      "ratio": 1.74,
+      "correctWords": 11,
+      "otherWords": [
+        6,
+        5,
+        8
+      ],
+      "prompt": "A generated optimization is fast but changes error behavior promised to callers. What should the reviewer prioritize?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-testing-case-6-3",
+      "ratio": 1.74,
+      "correctWords": 11,
+      "otherWords": [
+        5,
+        6,
+        8
+      ],
+      "prompt": "The system has no complete exact-output oracle, but controlled input transformations have known required relationships. What gap does this evidence show?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "ai-practitioner-22",
+      "ratio": 1.71,
+      "correctWords": 8,
+      "otherWords": [
+        5,
+        4,
+        5
+      ],
+      "prompt": "An AI service role needs read access to one approved dataset. What is the appropriate permission scope?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-depth-2",
+      "ratio": 1.71,
+      "correctWords": 12,
+      "otherWords": [
+        5,
+        8,
+        8
+      ],
+      "prompt": "An application logs full authorization headers to investigate an error. What is the better diagnostic change?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "cloud-practitioner-growth-046",
+      "ratio": 1.71,
+      "correctWords": 4,
+      "otherWords": [
+        2,
+        3,
+        2
+      ],
+      "prompt": "Several AWS accounts need their eligible charges combined under central billing. Which capability fits?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "istqb-foundation-growth-005",
+      "ratio": 1.71,
+      "correctWords": 4,
+      "otherWords": [
+        2,
+        3,
+        2
+      ],
+      "prompt": "A medical device and an entertainment prototype need different test priorities. Which principle justifies this?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "developer-associate-growth-045",
+      "ratio": 1.71,
+      "correctWords": 4,
+      "otherWords": [
+        2,
+        3,
+        2
+      ],
+      "prompt": "Invocations are rejected even though the handler succeeds whenever it runs. Which operational constraint should be inspected?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    },
+    {
+      "id": "github-actions-growth-050",
+      "ratio": 1.71,
+      "correctWords": 4,
+      "otherWords": [
+        3,
+        2,
+        2
+      ],
+      "prompt": "A runner pool is reserved for approved deployment workflows, but unrelated repositories can use it. Which access control should be reviewed?",
+      "decision": "Review meaning and parallel construction; length alone is not evidence the keyed answer is wrong."
+    }
+  ],
+  "duplicateLeads": [],
+  "unsupportedConsensus": []
+}

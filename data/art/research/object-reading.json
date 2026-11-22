@@ -1,0 +1,48 @@
+{
+  "reviewed": "2026-11-22",
+  "scope": "Editorial help for reading collection labels. General terminology does not revise any object attribution. Specific claims below link to institutional records; missing title or frame histories are not invented.",
+  "labels": [
+    {
+      "term": "By / attributed to",
+      "text": "A named artist may be presented with different degrees of confidence. “Attributed to” signals uncertainty; removing those words would change the museum’s assessment. Check the holding institution’s own convention.",
+      "source": "https://www.nationalgallery.org.uk/paintings/glossary/attribution"
+    },
+    {
+      "term": "Studio or workshop / follower",
+      "text": "Studio or workshop language can indicate production by pupils or assistants associated with a master. A follower need not have studied with that artist. A stylistic relationship does not establish a personal encounter.",
+      "source": "https://www.nationalgallery.org.uk/paintings/glossary/attribution"
+    },
+    {
+      "term": "After / another version",
+      "text": "A copy after a work is a separate object. An artist’s later treatment, a workshop version and a copy by another maker are different relationships; compare the actual maker, date, medium and institutional record.",
+      "source": "https://www.nationalgallery.org.uk/paintings/gerrit-lundens-after-rembrandt-the-company-of-captain-banning-cocq-the-nightwatch"
+    },
+    {
+      "term": "The frame is part of the history",
+      "text": "A period-appropriate frame is not necessarily the original one. Later frames can also have historical significance. When this study has no frame documentation, it does not reconstruct the artist’s intended border or setting.",
+      "source": "https://www.nationalgallery.org.uk/paintings/glossary/frames"
+    }
+  ],
+  "works": {
+    "rembrandt-01": {
+      "heading": "A familiar title acquired later",
+      "text": "The Rijksmuseum identifies Night Watch as a later name, first documented in 1797, rather than an original title supplied with the 1642 painting. Its fuller collection title identifies the civic company. The popular name belongs to the work’s reception history; it should not make the depicted event automatically nocturnal.",
+      "source": "https://www.rijksmuseum.nl/nl/story/10-things-about-rembrandt-s-night-watch"
+    },
+    "vermeer-01": {
+      "heading": "The visible background has a material history",
+      "text": "The Mauritshuis reports evidence of a green curtain behind the figure. This finding changes how an apparently empty background can be discussed. It is a result of technical investigation, not permission to repaint a screen image or declare every dark passage an intentional void.",
+      "source": "https://www.mauritshuis.nl/en/press-releases/closer-to-vermeer-and-the-girl"
+    },
+    "van-gogh-01": {
+      "heading": "The depicted hour is not the working schedule",
+      "text": "MoMA’s account distinguishes the night observation from several daytime painting sessions and identifies invented or rearranged elements. A convincing nocturnal image does not establish that every stroke was applied outdoors at night or that the village repeats the exact window view.",
+      "source": "https://www.moma.org/collection/works/79802"
+    },
+    "leonardo-06": {
+      "heading": "A surviving crop is not a complete original format",
+      "text": "The study’s institutional account identifies the shortened lower panel. Distinguish that physical alteration from the separate question of its frame. An imagined reconstruction should not be used as documentary evidence for the original hands, border or viewing arrangement.",
+      "source": "https://www.nga.gov/stories/articles/10-surprising-facts-about-leonardo-da-vincis-ginevra-de-benci"
+    }
+  }
+}

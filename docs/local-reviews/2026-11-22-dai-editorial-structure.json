@@ -1,0 +1,880 @@
+{
+  "checkedAt": "2026-11-22T06:21:14.919Z",
+  "scope": "Structure and source-index checks for all 124 painting essays; not independent authentication, rights clearance or historical fact verification.",
+  "counts": {
+    "paintings": 124,
+    "essays": 124,
+    "sections": 590
+  },
+  "issues": [],
+  "introductions": [
+    {
+      "id": "leonardo-01",
+      "catalogWords": 37,
+      "visibleEssayLeadWords": 28,
+      "fullEssayWords": 1147,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "leonardo-02",
+      "catalogWords": 36,
+      "visibleEssayLeadWords": 34,
+      "fullEssayWords": 1176,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "leonardo-03",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 33,
+      "fullEssayWords": 345,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "leonardo-04",
+      "catalogWords": 37,
+      "visibleEssayLeadWords": 37,
+      "fullEssayWords": 343,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "leonardo-05",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 30,
+      "fullEssayWords": 343,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "leonardo-06",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 36,
+      "fullEssayWords": 786,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "leonardo-07",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 30,
+      "fullEssayWords": 347,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "michelangelo-01",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 32,
+      "fullEssayWords": 351,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "michelangelo-02",
+      "catalogWords": 33,
+      "visibleEssayLeadWords": 36,
+      "fullEssayWords": 1252,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "michelangelo-03",
+      "catalogWords": 35,
+      "visibleEssayLeadWords": 29,
+      "fullEssayWords": 346,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "michelangelo-04",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 27,
+      "fullEssayWords": 351,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "raphael-01",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 30,
+      "fullEssayWords": 1273,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "raphael-02",
+      "catalogWords": 33,
+      "visibleEssayLeadWords": 18,
+      "fullEssayWords": 317,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "raphael-03",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 17,
+      "fullEssayWords": 318,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "raphael-04",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 20,
+      "fullEssayWords": 309,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "raphael-05",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 20,
+      "fullEssayWords": 310,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "raphael-06",
+      "catalogWords": 24,
+      "visibleEssayLeadWords": 19,
+      "fullEssayWords": 305,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "raphael-07",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 15,
+      "fullEssayWords": 371,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "caravaggio-01",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 16,
+      "fullEssayWords": 862,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "caravaggio-02",
+      "catalogWords": 22,
+      "visibleEssayLeadWords": 35,
+      "fullEssayWords": 717,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "caravaggio-03",
+      "catalogWords": 31,
+      "visibleEssayLeadWords": 18,
+      "fullEssayWords": 305,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "caravaggio-04",
+      "catalogWords": 23,
+      "visibleEssayLeadWords": 14,
+      "fullEssayWords": 281,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "caravaggio-05",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 22,
+      "fullEssayWords": 289,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "caravaggio-06",
+      "catalogWords": 27,
+      "visibleEssayLeadWords": 20,
+      "fullEssayWords": 295,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "caravaggio-07",
+      "catalogWords": 27,
+      "visibleEssayLeadWords": 20,
+      "fullEssayWords": 294,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "rembrandt-01",
+      "catalogWords": 37,
+      "visibleEssayLeadWords": 34,
+      "fullEssayWords": 1163,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "rembrandt-02",
+      "catalogWords": 25,
+      "visibleEssayLeadWords": 34,
+      "fullEssayWords": 687,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "rembrandt-03",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 22,
+      "fullEssayWords": 278,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "rembrandt-04",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 18,
+      "fullEssayWords": 286,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "rembrandt-05",
+      "catalogWords": 35,
+      "visibleEssayLeadWords": 26,
+      "fullEssayWords": 291,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "rembrandt-06",
+      "catalogWords": 25,
+      "visibleEssayLeadWords": 19,
+      "fullEssayWords": 279,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "rembrandt-07",
+      "catalogWords": 25,
+      "visibleEssayLeadWords": 17,
+      "fullEssayWords": 267,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "vermeer-01",
+      "catalogWords": 33,
+      "visibleEssayLeadWords": 34,
+      "fullEssayWords": 1175,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "vermeer-02",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 14,
+      "fullEssayWords": 279,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "vermeer-03",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 21,
+      "fullEssayWords": 475,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "vermeer-04",
+      "catalogWords": 33,
+      "visibleEssayLeadWords": 24,
+      "fullEssayWords": 287,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "vermeer-05",
+      "catalogWords": 35,
+      "visibleEssayLeadWords": 38,
+      "fullEssayWords": 682,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "vermeer-06",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 17,
+      "fullEssayWords": 274,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "vermeer-07",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 23,
+      "fullEssayWords": 287,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "gentileschi-01",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 19,
+      "fullEssayWords": 271,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "gentileschi-02",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 32,
+      "fullEssayWords": 707,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "gentileschi-03",
+      "catalogWords": 25,
+      "visibleEssayLeadWords": 25,
+      "fullEssayWords": 268,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "gentileschi-04",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 21,
+      "fullEssayWords": 266,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "gentileschi-05",
+      "catalogWords": 24,
+      "visibleEssayLeadWords": 18,
+      "fullEssayWords": 269,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "gentileschi-06",
+      "catalogWords": 31,
+      "visibleEssayLeadWords": 19,
+      "fullEssayWords": 272,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "goya-01",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 40,
+      "fullEssayWords": 1224,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "goya-02",
+      "catalogWords": 35,
+      "visibleEssayLeadWords": 23,
+      "fullEssayWords": 281,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "goya-03",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 34,
+      "fullEssayWords": 342,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "goya-04",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 15,
+      "fullEssayWords": 277,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "goya-05",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 22,
+      "fullEssayWords": 279,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "goya-06",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 17,
+      "fullEssayWords": 272,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "goya-07",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 19,
+      "fullEssayWords": 281,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "turner-01",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 33,
+      "fullEssayWords": 736,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "turner-02",
+      "catalogWords": 23,
+      "visibleEssayLeadWords": 26,
+      "fullEssayWords": 269,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "turner-03",
+      "catalogWords": 36,
+      "visibleEssayLeadWords": 18,
+      "fullEssayWords": 275,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "turner-04",
+      "catalogWords": 21,
+      "visibleEssayLeadWords": 22,
+      "fullEssayWords": 269,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "turner-05",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 19,
+      "fullEssayWords": 271,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "turner-06",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 21,
+      "fullEssayWords": 275,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "turner-07",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 30,
+      "fullEssayWords": 346,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "monet-01",
+      "catalogWords": 34,
+      "visibleEssayLeadWords": 18,
+      "fullEssayWords": 767,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "monet-02",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 37,
+      "fullEssayWords": 686,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "monet-03",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 21,
+      "fullEssayWords": 318,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "monet-04",
+      "catalogWords": 23,
+      "visibleEssayLeadWords": 14,
+      "fullEssayWords": 466,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "monet-05",
+      "catalogWords": 23,
+      "visibleEssayLeadWords": 20,
+      "fullEssayWords": 269,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "monet-06",
+      "catalogWords": 24,
+      "visibleEssayLeadWords": 24,
+      "fullEssayWords": 271,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "monet-07",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 32,
+      "fullEssayWords": 349,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "morisot-01",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 23,
+      "fullEssayWords": 267,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "morisot-02",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 36,
+      "fullEssayWords": 663,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "morisot-03",
+      "catalogWords": 22,
+      "visibleEssayLeadWords": 32,
+      "fullEssayWords": 357,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "morisot-04",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 17,
+      "fullEssayWords": 476,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "morisot-05",
+      "catalogWords": 25,
+      "visibleEssayLeadWords": 32,
+      "fullEssayWords": 352,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "morisot-06",
+      "catalogWords": 27,
+      "visibleEssayLeadWords": 31,
+      "fullEssayWords": 349,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "morisot-07",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 30,
+      "fullEssayWords": 348,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "van-gogh-01",
+      "catalogWords": 27,
+      "visibleEssayLeadWords": 40,
+      "fullEssayWords": 1088,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "van-gogh-02",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 40,
+      "fullEssayWords": 702,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "van-gogh-03",
+      "catalogWords": 25,
+      "visibleEssayLeadWords": 25,
+      "fullEssayWords": 282,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "van-gogh-04",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 19,
+      "fullEssayWords": 280,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "van-gogh-05",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 25,
+      "fullEssayWords": 275,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "van-gogh-06",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 29,
+      "fullEssayWords": 351,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "van-gogh-07",
+      "catalogWords": 34,
+      "visibleEssayLeadWords": 24,
+      "fullEssayWords": 475,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cezanne-01",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 37,
+      "fullEssayWords": 694,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cezanne-02",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 23,
+      "fullEssayWords": 266,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cezanne-03",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 21,
+      "fullEssayWords": 483,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cezanne-04",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 25,
+      "fullEssayWords": 269,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cezanne-05",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 22,
+      "fullEssayWords": 480,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cezanne-06",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 28,
+      "fullEssayWords": 344,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cezanne-07",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 22,
+      "fullEssayWords": 485,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cassatt-01",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 34,
+      "fullEssayWords": 672,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cassatt-02",
+      "catalogWords": 24,
+      "visibleEssayLeadWords": 26,
+      "fullEssayWords": 275,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "cassatt-03",
+      "catalogWords": 27,
+      "visibleEssayLeadWords": 21,
+      "fullEssayWords": 266,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "cassatt-04",
+      "catalogWords": 24,
+      "visibleEssayLeadWords": 22,
+      "fullEssayWords": 490,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "cassatt-05",
+      "catalogWords": 31,
+      "visibleEssayLeadWords": 31,
+      "fullEssayWords": 347,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cassatt-06",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 18,
+      "fullEssayWords": 267,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "cassatt-07",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 16,
+      "fullEssayWords": 481,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "kandinsky-01",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 21,
+      "fullEssayWords": 273,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "kandinsky-02",
+      "catalogWords": 27,
+      "visibleEssayLeadWords": 38,
+      "fullEssayWords": 680,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "kandinsky-03",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 20,
+      "fullEssayWords": 267,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "kandinsky-04",
+      "catalogWords": 22,
+      "visibleEssayLeadWords": 18,
+      "fullEssayWords": 473,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "kandinsky-05",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 29,
+      "fullEssayWords": 344,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "kandinsky-06",
+      "catalogWords": 27,
+      "visibleEssayLeadWords": 28,
+      "fullEssayWords": 276,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "picasso-01",
+      "catalogWords": 38,
+      "visibleEssayLeadWords": 38,
+      "fullEssayWords": 733,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "picasso-02",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 29,
+      "fullEssayWords": 696,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "dali-01",
+      "catalogWords": 25,
+      "visibleEssayLeadWords": 25,
+      "fullEssayWords": 707,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "dali-02",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 29,
+      "fullEssayWords": 681,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "pollock-01",
+      "catalogWords": 27,
+      "visibleEssayLeadWords": 27,
+      "fullEssayWords": 700,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "pollock-02",
+      "catalogWords": 23,
+      "visibleEssayLeadWords": 97,
+      "fullEssayWords": 750,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "matisse-01",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 26,
+      "fullEssayWords": 683,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "matisse-02",
+      "catalogWords": 20,
+      "visibleEssayLeadWords": 90,
+      "fullEssayWords": 749,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "kahlo-01",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 30,
+      "fullEssayWords": 696,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "kahlo-02",
+      "catalogWords": 21,
+      "visibleEssayLeadWords": 88,
+      "fullEssayWords": 734,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "magritte-01",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 93,
+      "fullEssayWords": 732,
+      "decision": "Review visible essay lead and full study; catalog teaser is not the whole explanation."
+    },
+    {
+      "id": "magritte-02",
+      "catalogWords": 30,
+      "visibleEssayLeadWords": 30,
+      "fullEssayWords": 653,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "bosch-01",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 28,
+      "fullEssayWords": 545,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "bosch-02",
+      "catalogWords": 32,
+      "visibleEssayLeadWords": 32,
+      "fullEssayWords": 538,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "bosch-03",
+      "catalogWords": 23,
+      "visibleEssayLeadWords": 23,
+      "fullEssayWords": 526,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "bruegel-01",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 28,
+      "fullEssayWords": 504,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "bruegel-02",
+      "catalogWords": 26,
+      "visibleEssayLeadWords": 26,
+      "fullEssayWords": 497,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "bruegel-03",
+      "catalogWords": 24,
+      "visibleEssayLeadWords": 24,
+      "fullEssayWords": 488,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "velazquez-01",
+      "catalogWords": 25,
+      "visibleEssayLeadWords": 25,
+      "fullEssayWords": 521,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "velazquez-02",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 29,
+      "fullEssayWords": 509,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "velazquez-03",
+      "catalogWords": 31,
+      "visibleEssayLeadWords": 31,
+      "fullEssayWords": 521,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "okeeffe-01",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 28,
+      "fullEssayWords": 499,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "okeeffe-02",
+      "catalogWords": 28,
+      "visibleEssayLeadWords": 28,
+      "fullEssayWords": 501,
+      "decision": "Retain full essay and catalog distinction."
+    },
+    {
+      "id": "okeeffe-03",
+      "catalogWords": 29,
+      "visibleEssayLeadWords": 29,
+      "fullEssayWords": 509,
+      "decision": "Retain full essay and catalog distinction."
+    }
+  ]
+}

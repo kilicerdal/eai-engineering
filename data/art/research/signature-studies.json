@@ -21,13 +21,13 @@
         "limit": "This is our comparison of visible effects, not a quotation from Leonardo."
       },
       {
-        "claim": "The interpretation of the transparent veil remains debated.",
-        "status": "Open interpretation",
+        "claim": "The transparent veil is visible, but appearance alone does not establish its social meaning.",
+        "status": "Interpretive question",
         "source": {
           "title": "Louvre · Mona Lisa object record",
           "url": "https://collections.louvre.fr/en/ark:/53355/cl010062370"
         },
-        "limit": "Costume alone is not sufficient evidence for a pregnancy or mourning narrative."
+        "limit": "The linked object record supports identification and material context. This entry does not attribute a pregnancy, mourning narrative or named scholarly dispute to that record."
       }
     ],
     "description": [
@@ -381,8 +381,8 @@
         "claim": "Research suggests a green curtain originally occupied the background.",
         "status": "Research interpretation",
         "source": {
-          "title": "Mauritshuis · Girl in the Spotlight findings",
-          "url": "https://www.mauritshuis.nl/en/what-s-on/exhibitions/who-is-that-girl-with-a-pearl-earring"
+          "title": "Mauritshuis · Closer to Vermeer and the Girl, research findings",
+          "url": "https://www.mauritshuis.nl/en/press-releases/closer-to-vermeer-and-the-girl"
         },
         "limit": "The curtain is an interpretation supported by technical evidence; we do not recolor the painting to simulate it."
       },

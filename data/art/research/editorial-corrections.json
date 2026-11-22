@@ -1,0 +1,47 @@
+[
+  {
+    "id": "magritte-01-acquisition",
+    "work": "magritte-01",
+    "date": "2026-11-22",
+    "before": "The essay identified the museum acquisition as 1935.",
+    "after": "MoMA’s provenance record identifies its purchase from Man Ray in 1936. Both affected essay passages have been corrected.",
+    "source": "https://www.moma.org/collection/works/78938",
+    "scope": "Correction to an ownership date, not a change to the currently recorded 1929 painting date or an image-rights determination."
+  },
+  {
+    "id": "leonardo-01-veil-scope",
+    "work": "leonardo-01",
+    "date": "2026-11-22",
+    "before": "An evidence-ledger entry described the meaning of the veil as debated without identifying a scholarly dispute.",
+    "after": "The entry now labels an interpretive question and distinguishes visible appearance from an undocumented social or medical narrative.",
+    "source": "https://collections.louvre.fr/en/ark:/53355/cl010062370",
+    "scope": "The object record supports identity and material context; no named scholarly disagreement is attributed to it."
+  },
+  {
+    "id": "caravaggio-03-current-dating",
+    "work": "caravaggio-03",
+    "date": "2026-11-22",
+    "before": "The collection card dated Bacchus to about 1596 while its essay used about 1598.",
+    "after": "The collection card and essay now follow the current Uffizi dating of about 1598.",
+    "source": "https://www.uffizi.it/en/artworks/caravaggio-bacchus",
+    "scope": "An approximate institutional dating, not a newly established exact year; alternative dates may appear in older literature."
+  },
+  {
+    "id": "vermeer-02-current-dating",
+    "work": "vermeer-02",
+    "date": "2026-11-22",
+    "before": "The collection card used about 1657–1658 for The Milkmaid.",
+    "after": "The collection card and expanded essay now follow the current Rijksmuseum dating of about 1660.",
+    "source": "https://www.rijksmuseum.nl/en/collection/SK-A-2344",
+    "scope": "An approximate date aligned with the holding institution’s current record; no claim of exact dating."
+  },
+  {
+    "id": "raphael-04-source-destination",
+    "work": "raphael-04",
+    "date": "2026-11-22",
+    "before": "The DescriVedendo reference pointed to a PDF that returned HTTP 404 in the maintenance check.",
+    "after": "The study now links to the institution’s HTML DescriVedendo guide, which contains the Raphael description.",
+    "source": "https://pinacotecabrera.org/en/educazione/audio-guide/descrivedendo-brera/",
+    "scope": "A source-destination repair. The PDF remains indexed elsewhere; the maintenance result does not establish permanent removal."
+  }
+]

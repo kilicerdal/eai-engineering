@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./tests/browser',testMatch:'**/dai-next-distinct.spec.ts',workers:2,timeout:45000,projects:[{name:'chromium',use:{browserName:'chromium'}},{name:'webkit',use:{browserName:'webkit'}}],use:{baseURL:'http://127.0.0.1:3038',serviceWorkers:'block',screenshot:'only-on-failure'},reporter:[['list'],['json',{outputFile:'artifacts/dai-next-distinct/browser.json'}]],outputDir:'test-results/dai-next-distinct'});

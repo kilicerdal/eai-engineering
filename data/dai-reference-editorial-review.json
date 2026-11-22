@@ -1,0 +1,270 @@
+{
+  "reviewed": "2026-11-22",
+  "scope": "Current official document scope was inspected for the 24 availability/fingerprint signals, then the unchanged inspected versions were captured as monitoring baselines. This is an assisted editorial review, not independent expert validation of every question. Earlier review reports and saved answer editions are unchanged.",
+  "documents": [
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "title": "AIF-C01 scope and question formats",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "changed headings",
+      "observed": "The current guide includes single-choice, multiple-response, ordering and matching questions. The local single-choice bank is practice rather than a format-complete exam simulation.",
+      "boundary": "Retain code and topic mapping; disclose the format limitation. A prior heading fingerprint cannot establish exactly which text changed.",
+      "contentHash": "ef802b7adb61f343073af280ad34920952b20c5004833844faf2ff2b5849c5f9",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html",
+      "title": "CloudFront origin access",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "OAC is the recommended mechanism in this reference. Restricting direct S3 access also needs the appropriate origin and bucket permissions.",
+      "boundary": "Retain scoped origin-access examples; do not treat OAC as a universal access grant.",
+      "contentHash": "2552be9b8473defe9799bb4d5d182f0630a3ecb4d2535819757ebb63b1957a01",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html",
+      "title": "RDS availability versus read scaling",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The reference distinguishes a Multi-AZ DB instance with a non-reading standby from a Multi-AZ DB cluster whose standby instances can serve reads.",
+      "boundary": "Keep the deployment type explicit. A blanket statement that every Multi-AZ standby cannot serve reads would be incorrect.",
+      "contentHash": "fa8f4e53442bbd826a489cffd54583eb029f42de9b9b66dd5fc0b265a2dc7f74",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+      "title": "RDS read replicas",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "Read-replica changes are copied asynchronously; read scaling and failover configuration are distinct questions.",
+      "boundary": "Retain the asynchronous-replication boundary; do not promise zero lag or interchangeable availability behavior.",
+      "contentHash": "cdff902455b7f04879e1a753ab5f603a78b72845f3cb89864a09c8c1ab6e1ed9",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html",
+      "title": "SQS delivery semantics",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The official account explicitly permits repeated delivery and recommends idempotent application handling.",
+      "boundary": "Retain duplicate-delivery examples; queue delivery does not establish exactly-once business writes.",
+      "contentHash": "fd9c94552f3ec07bb0af145b05ebd50052583db8ba55a512174672d19ef0457a",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html",
+      "title": "CloudFormation drift detection",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "Detection concerns supported, explicitly configured properties and does not automatically inspect nested stacks.",
+      "boundary": "Retain detection as evidence with coverage limits, not proof that all live configuration matches intent.",
+      "contentHash": "891c9c6224219235a9ca65fca0af5ba871d02bc36e5c985a53e9173b4826571d",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02.html",
+      "title": "SAP-C02 scope",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The guide retains the four organizational, new-design, improvement and migration domains and includes multiple-response questions.",
+      "boundary": "The 25-question local starter bank does not establish full exam coverage or readiness.",
+      "contentHash": "b10e70a377cbcf2dd3699d17ecce77c354c09349bcf6376c1a8efdd493de82f6",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-trail-organization.html",
+      "title": "CloudTrail organization trails",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The reference distinguishes organization-wide collection from member-account permission to manage a trail.",
+      "boundary": "Retain the collection-versus-administration distinction; coverage depends on configuration.",
+      "contentHash": "0a99865e16968bef4eec0c9fd3a1b4533270cb2c43faeff0cc9473252ab59301",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html",
+      "title": "Compute Optimizer recommendations",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "Rightsizing uses observed configuration and utilization metrics to inform recommendations.",
+      "boundary": "Recommendations require workload and performance review; they are not a guarantee of savings or safe deletion.",
+      "contentHash": "853f99fec8b0ab56af120bc256fe6e01229d626190d24e9c4ca5cf9bd5c4abb2",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html",
+      "title": "Lambda aliases",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "An alias points to a published function version and can be updated or configured for weighted routing.",
+      "boundary": "Retain version-indirection examples; shifting traffic is separate from measuring correctness and rollback readiness.",
+      "contentHash": "f40ea5ddfd2372167e10b5245736b17522762e861d628ec8ab5491be28327f18",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html",
+      "title": "DataSync transfer scope",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The service transfers file and object data across supported storage systems.",
+      "boundary": "Keep file/object movement distinct from database log replication and application acceptance testing.",
+      "contentHash": "03147a5ff3a3ee94a217d2537cd931a0677dcef52ee39fa19304cdb3d3e16d77",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html",
+      "title": "Control Tower governance",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The service orchestrates a governed multi-account landing zone and associated controls.",
+      "boundary": "Retain governance examples; deployment does not establish that every compliance obligation is satisfied.",
+      "contentHash": "a8e24b6df8658de36de9f8c906230001622c648401c0af42b07d487d865065f7",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html",
+      "title": "Organizations SCPs",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "SCPs bound maximum available permissions; they do not independently grant a principal permission to perform an action.",
+      "boundary": "Retain the permission-boundary distinction and the need to consider applicable identity/resource policies.",
+      "contentHash": "e1ebc837c090e12b17d4840b953b850cb5c1e896ca35d8ceb24ae8ca35d2f386",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html",
+      "title": "DMS change data capture",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The current reference explicitly says CDC latency varies and carries no real-time latency guarantee.",
+      "boundary": "Retain ongoing-change capture examples; do not equate CDC with zero-lag replication or a completed cutover.",
+      "contentHash": "4ad73b772f4383092a789d1f80e6bba055468633c8a10297ae86fa456cbf5448",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html",
+      "title": "MGN documentation naming",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The current reference uses AWS Transform MGN and describes block-level server replication.",
+      "boundary": "Recognize the current name alongside older Application Migration Service terminology; do not rewrite historical saved choices.",
+      "contentHash": "06090c4e1c5732d90e947ee0ba6731c21b98eec386eec98e6cb803c2e6845938",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/strangler-fig.html",
+      "title": "Incremental modernization",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The pattern replaces portions of an existing application incrementally, with routing and coexistence implications.",
+      "boundary": "Retain incremental replacement as a design approach, not a promise that every migration becomes simple or risk-free.",
+      "contentHash": "3020a528fe2c1a1b43d25e6fe0b2788aa1d0fac09c382455ad3611935339fce0",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html",
+      "title": "Secrets Manager rotation",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The current overview distinguishes managed rotation, managed external-secret rotation and Lambda-based rotation.",
+      "boundary": "Do not claim every form of automatic rotation requires a Lambda function; updating a stored value alone is not the whole rotation contract.",
+      "contentHash": "720a786b168a473b0a09937b4e585dd9900c8b7d7c3fb2af6ff77138b852ac5e",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html",
+      "title": "S3 gateway endpoint boundaries",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "Gateway endpoints supply VPC-to-S3 routing without an internet gateway or NAT; the reference distinguishes interface endpoint scenarios.",
+      "boundary": "Do not imply the gateway endpoint supplies access from arbitrary on-premises or transit-connected networks.",
+      "contentHash": "b2671753a5abbf0db0c711531eb23528465b00e3a03120ef9acaf21ba55752e6",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html",
+      "title": "IAM Identity Center",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The reference concerns workforce access to applications and AWS accounts, including existing identity-provider integration.",
+      "boundary": "Retain workforce access examples; do not describe it as a substitute for application customer authentication or arbitrary permission grants.",
+      "contentHash": "82c9b5e98d7c8b0f19de7b64b0f83996a168243830dd69e055e7e611115233e4",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html",
+      "title": "X-Ray trace evidence",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "Segments and subsegments describe reported work and are grouped into traces; sampling affects what is observed.",
+      "boundary": "A trace can support an investigation, but sampled telemetry is not proof that every request followed the same path.",
+      "contentHash": "65591c723164e3ebc8fca774e9638215b7405eb830117af5cf60a8cb3df1ef7e",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
+      "title": "Transit Gateway connectivity",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The service supplies a hub for network attachments including VPC and on-premises connectivity.",
+      "boundary": "Routing, attachment configuration and access controls remain necessary; attachment alone is not universal reachability.",
+      "contentHash": "442364a238c05b2ea04140da485972c80e0376454fa945cd3d950bded064f3b7",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/plan-for-disaster-recovery-dr.html",
+      "title": "Historical disaster recovery guidance",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The fetched official document marks itself as historical and points readers to the current Well-Architected Framework. RTO and RPO remain separate objectives.",
+      "boundary": "Keep historical source context visible and direct new preparation to the current framework. A working old URL is not a current-guidance guarantee.",
+      "contentHash": "8c9b804c8b9c6c30a550ce5dc2f68082cc570e98619d240b0ec2e0b7c055c0b7",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html",
+      "title": "Route 53 resolver naming",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The current reference calls the VPC service Route 53 VPC Resolver and distinguishes it from Route 53 Global Resolver.",
+      "boundary": "Keep hybrid DNS and VPC-specific context explicit; retain older names in historical saved editions.",
+      "contentHash": "4a192a97df3471a4607494ac946486bd42faaef93e1b7fcad6ec5265a145d626",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    },
+    {
+      "url": "https://istqb.org/?download_id=9324&sdm_process_download=1",
+      "title": "CTAL-AT v2.0 syllabus",
+      "reviewed": "2026-11-22",
+      "reviewer": "Codex-assisted editorial scope review",
+      "signal": "no baseline",
+      "observed": "The institutional PDF identifies Advanced Level Agile Tester v2.0, released 2026-04-17; the local path already identifies this edition.",
+      "boundary": "Retain the distinction from the older Foundation Agile extension and the limited local sample; no claim of full K4 coverage.",
+      "contentHash": "048dffe3fb25242592acfc7e82dcb1338c9bd57057fdaac138b1c88cdbbf5b6b",
+      "status": "scope-reviewed; monitoring baseline captured; independent review not asserted"
+    }
+  ]
+}

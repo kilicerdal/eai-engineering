@@ -2712,7 +2712,7 @@
       ],
       "words": 538,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "bruegel": {
@@ -2789,7 +2789,7 @@
       ],
       "words": 524,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "velazquez": {
@@ -2868,7 +2868,7 @@
       ],
       "words": 533,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "okeeffe": {
@@ -2947,7 +2947,7 @@
       ],
       "words": 547,
       "minutes": 4,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     }
   },
@@ -3173,6 +3173,28 @@
             "Calling the work realistic describes only one part of its operation. A recognizable body is being staged as a god; apparently ordinary objects acquire meaning through that staging. The painting is neither an unmediated record of a person nor a straightforward transcription of an antique statue.",
             "Its distinction lies in this productive instability. Divinity is brought near enough to seem available, yet the theatrical arrangement remains visible. Caravaggio uses the credibility of surfaces to make an invented situation persuasive, and then leaves the viewer to decide how welcoming, sensual or unsettling that situation feels."
           ]
+        },
+        {
+          "id": "section-4",
+          "title": "A gift, a storeroom and a recovered reputation",
+          "kind": "history",
+          "sources": [
+            0
+          ],
+          "paragraphs": [
+            "The Uffizi’s current record places the painting around 1598. It also traces a later change in its visibility: rediscovery in museum storage in 1913 and attribution by Roberto Longhi. Those events belong to the history of recognition, not the date when the canvas was made. A painting can remain physically preserved while its authorship and public importance fall out of view.",
+            "The museum associates the work with Cardinal del Monte’s patronage and a gift to the Medici connected with the 1608 marriage of Cosimo II. This gives the apparently intimate invitation a courtly setting. It does not identify a particular sitter or resolve every interpretation of the offered wine. The institutional account names Mina Gregori’s reading of the work’s sensuous antiquity; that is an attributed interpretation, not a recovered statement by Caravaggio."
+          ]
+        },
+        {
+          "id": "section-5",
+          "title": "Cloth, glass and the distance of an invitation",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Compare three different kinds of boundary: the shoulder against the dark background, the folded cloth across the torso, and the glass held near the picture’s front. The shoulder establishes bodily presence, the cloth advertises an arranged identity, and the glass seems to extend the arrangement toward someone outside it. Their effects are connected without being interchangeable.",
+            "The fruit occupies the lowest part of this encounter. Its varied silhouettes interrupt the broad pale fabric rather than repeating the body’s smoothness. Notice how much time the eye can spend there before returning to the face. That delay makes the invitation less like a single readable sign and more like a staged exchange whose tone remains unsettled. This is a visual argument based on the reproduction; it does not establish the sitter’s mood or the artist’s private purpose."
+          ]
         }
       ],
       "sources": [
@@ -3182,10 +3204,10 @@
           "scope": "Current dating, early Roman context and documented interpretations"
         }
       ],
-      "words": 305,
-      "minutes": 2,
+      "words": 572,
+      "minutes": 4,
       "edition": "Art Room · editorial V2",
-      "reviewed": "2026-11-20"
+      "reviewed": "2026-11-22"
     },
     "caravaggio-04": {
       "title": "Violence divided among three responses",
@@ -4450,6 +4472,28 @@
             "Calling Judith strong is insufficiently precise. The picture distributes agency through cooperation and bodily commitment. Its distinction becomes especially clear beside Caravaggio’s treatment, where Judith’s torso withdraws more noticeably from the act.",
             "Gentileschi’s version demands attention to the material difficulty of an outcome that the story presents as deliverance. It neither erases the violence nor reduces the women to passive embodiments of an idea. Their capacity to act is constructed through the composition’s exact relationships of force."
           ]
+        },
+        {
+          "id": "section-4",
+          "title": "Payment and the work’s first reception",
+          "kind": "history",
+          "sources": [
+            0
+          ],
+          "paragraphs": [
+            "The Uffizi dates this version to about 1620 and describes its completion in Rome after Gentileschi’s years in Florence. Its account links the canvas to Grand Duke Cosimo II de’ Medici and reports difficulty obtaining the agreed payment. Galileo’s assistance and the delayed settlement belong to the painting’s professional history, alongside the more frequently discussed violence of its subject.",
+            "The museum also describes resistance to exhibiting the picture on its arrival in Florence. That reception complicates any account in which a powerful image simply secured immediate approval. The institution’s summary is evidence for a reported reception history; it does not document the response of every viewer or establish that all resistance had one cause. Commission, payment, display and later acclaim are separate stages of a work’s public life."
+          ]
+        },
+        {
+          "id": "section-5",
+          "title": "Follow the force, then examine the interval",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Start with the attendant’s downward pressure and follow it toward the resisting arm. Then trace Judith’s reach across the bed. These vectors do not settle into an effortless emblem of victory: they compete over a tightly compressed area. The arrangement makes force intelligible through contact rather than through an isolated expression of determination.",
+            "The cloth hanging over the bed’s edge introduces a different movement. Its folds fall away from the concentrated action, leading the eye down into a space where no body supplies an answer. Compare that interval with the crowded hands above. The alternation of compression and release contributes to the scene’s disturbing immediacy. It is a description of pictorial organization, not a claim that a particular fold has a fixed symbolic meaning."
+          ]
         }
       ],
       "sources": [
@@ -4459,10 +4503,10 @@
           "scope": "Florence version and biblical subject"
         }
       ],
-      "words": 271,
-      "minutes": 2,
+      "words": 523,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
-      "reviewed": "2026-11-20"
+      "reviewed": "2026-11-22"
     },
     "gentileschi-02": {
       "title": "A painter embodies painting",
@@ -5317,7 +5361,7 @@
     },
     "kahlo-02": {
       "title": "The Two Fridas · a sustained looking study",
-      "lead": "Two seated self-images join hands while their exposed hearts remain connected. The double portrait makes identity relational, bodily and socially clothed.",
+      "lead": "The Two Fridas places two versions of a seated self beside one another, joined by a handclasp and a visibly exposed circulation. Begin with the contrast between the dresses, then trace the connections across the space separating the bodies. The museum’s account relates the 1939 work to Kahlo’s biography, but biography alone cannot explain how the double portrait works. This study asks how clothing, bodily vulnerability and repeated likeness make identity appear divided and connected at once, while distinguishing the institution’s interpretation from what the image visibly establishes.",
       "sections": [
         {
           "id": "section-1",
@@ -5427,8 +5471,8 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 667,
-      "minutes": 4,
+      "words": 734,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -6373,7 +6417,7 @@
     },
     "magritte-01": {
       "title": "The False Mirror · a sustained looking study",
-      "lead": "An eye becomes a place where a sky appears. The image asks whether vision gives access to the world, constructs it, or becomes an object under another gaze.",
+      "lead": "The False Mirror makes an eye both something we look at and an apparent opening through which we look. The modeled lids suggest a bodily surface, while the sky inside the iris refuses to behave simply as a reflection on that surface. Notice how the opaque pupil interrupts the imagined view. MoMA dates this canvas Paris 1929; its provenance records the museum’s purchase from Man Ray in 1936. The study follows the friction between an optical organ, a depicted landscape and the viewer’s expectation that seeing provides a transparent account of the world.",
       "sections": [
         {
           "id": "section-1",
@@ -6383,7 +6427,7 @@
             0
           ],
           "paragraphs": [
-            "MoMA currently dates this work Paris 1929 and records an acquisition in 1935. Older references sometimes give 1928; this study follows the current holding institution and preserves the discrepancy as a source-maintenance question rather than quietly treating all dates as equivalent. The museum record concerns this object, not every later eye image made by Magritte."
+            "MoMA currently dates this work Paris 1929 and records its purchase from Man Ray in 1936. Older references sometimes give 1928; this study follows the current holding institution and preserves the discrepancy as a source-maintenance question rather than quietly treating all dates as equivalent. The museum record concerns this object, not every later eye image made by Magritte."
           ]
         },
         {
@@ -6463,7 +6507,7 @@
             0
           ],
           "paragraphs": [
-            "MoMA’s current 1929 dating is retained with an editorial flag for older 1928 descriptions. That flag is not a declaration that every older source is worthless. It identifies a question requiring catalogue evidence and a clear record of revision. Similarly, the 1935 acquisition belongs to the particular canvas’s collecting history, not to all later images of eyes in Magritte’s practice. Exact identification prevents a compelling philosophical account from floating free of the object that occasioned it."
+            "MoMA’s current 1929 dating is retained with an editorial flag for older 1928 descriptions. That flag is not a declaration that every older source is worthless. It identifies a question requiring catalogue evidence and a clear record of revision. Similarly, the documented 1936 purchase from Man Ray belongs to the particular canvas’s collecting history, not to all later images of eyes in Magritte’s practice. Exact identification prevents a compelling philosophical account from floating free of the object that occasioned it."
           ]
         },
         {
@@ -6483,8 +6527,8 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 660,
-      "minutes": 4,
+      "words": 732,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -6724,7 +6768,7 @@
     },
     "matisse-02": {
       "title": "Dance (I) · a sustained looking study",
-      "lead": "Five figures turn a ring into a precarious structure. The open handclasp and leaning bodies keep equilibrium visibly under negotiation.",
+      "lead": "A circle of dancers is also a structure at risk of coming apart. In Dance (I), the interval between reaching hands makes continuity something the figures must achieve, rather than a pattern already completed. Follow the pull of the linked arms against the leaning bodies and the broad division of ground and sky. This is MoMA’s early 1909 canvas connected with Shchukin’s commission, not the more saturated 1910 version. Keeping the two objects distinct lets us ask how a seemingly economical arrangement produces such a forceful account of shared movement.",
       "sections": [
         {
           "id": "section-1",
@@ -6834,8 +6878,8 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 679,
-      "minutes": 4,
+      "words": 749,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -8385,7 +8429,7 @@
     },
     "pollock-02": {
       "title": "Autumn Rhythm: Number 30, 1950 · a sustained looking study",
-      "lead": "An extended web of marks holds open spaces within its movement. Rhythm emerges through uneven recurrence rather than through a repeated decorative unit.",
+      "lead": "Autumn Rhythm asks how a painting can sustain movement without arranging it around a single figure or central event. Follow a dark strand until it crosses a lighter passage, then notice the canvas still visible between them. The gaps participate in the rhythm as much as the painted lines. The Met connects the work’s monumental scale with Pollock’s earlier experience of mural painting; that documented context is distinct from treating the seasonal title as a literal landscape. This study examines the tension between bodily movement, material control and an image that offers no fixed route through it.",
       "sections": [
         {
           "id": "section-1",
@@ -8495,8 +8539,8 @@
           "scope": "Object identity, date, medium and institutional account. Visual readings below are original editorial analysis, not museum quotations."
         }
       ],
-      "words": 676,
-      "minutes": 4,
+      "words": 750,
+      "minutes": 5,
       "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-20"
     },
@@ -8789,7 +8833,7 @@
         },
         {
           "title": "Pinacoteca di Brera · Marriage of the Virgin description",
-          "url": "https://pinacotecabrera.org/wp-content/uploads/2019/04/ROOM-24-Raphaels-Marriage-of-the-Virgin-DescriVedendo-TEXT.pdf",
+          "url": "https://pinacotecabrera.org/en/educazione/audio-guide/descrivedendo-brera/",
           "scope": "Subject, architecture and visual description"
         }
       ],
@@ -9533,6 +9577,28 @@
             "The painting can support both excitement about technological power and unease about its intrusion. Neither response requires claiming that Turner supplied one simple judgment on industrial progress. The image’s force comes from making the change perceptually unavoidable.",
             "Compared with The Fighting Temeraire, the railway picture gives modern power a different temporal direction. The tug accompanies a disappearance; the locomotive comes toward the spectator. Turner turns historical change into two distinct visual encounters, demonstrating how composition can think about technology without illustrating a slogan."
           ]
+        },
+        {
+          "id": "section-4",
+          "title": "An engineered place and a detail time has altered",
+          "kind": "history",
+          "sources": [
+            0
+          ],
+          "paragraphs": [
+            "The National Gallery identifies the setting as the Maidenhead railway bridge designed by Isambard Kingdom Brunel. That identification connects the atmospheric image to a particular engineered landscape. The museum does not claim certainty that a journey on this stretch directly inspired the painting; a later passenger anecdote remains an account to assess, rather than a substitute for documentation of its making.",
+            "Its record also discusses a hare once painted on the track, now difficult to see because the paint has become more transparent. An 1859 engraving preserves evidence of the motif. This changes what can responsibly be asked of the screen image: failure to locate the animal is not necessarily inattentive looking. The source connects natural and mechanical speed, but that reading depends partly on documentary evidence beyond what the present reproduction makes legible."
+          ]
+        },
+        {
+          "id": "section-5",
+          "title": "Approach, recession and an unstable viewpoint",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Follow the bridge from the lower right toward the locomotive. The narrowing structure makes depth readable, yet the dark engine appears to advance against that recession. Looking is pulled in opposite directions: into the distance by the route, and toward the foreground by the approaching mass. The sensation of speed depends on that tension as much as on blurred surfaces.",
+            "The lighter bridge on the left offers a useful comparison. Its repeated arches are easier to separate than many forms around the train. Ask how those intervals alter the rhythm of looking across the canvas. A broad claim that everything dissolves in weather misses these surviving differences in legibility. Turner permits orientation and uncertainty to coexist; the viewer can recognize an engineered world while experiencing difficulty holding all of it steadily in view."
+          ]
         }
       ],
       "sources": [
@@ -9542,10 +9608,10 @@
           "scope": "Railway, bridge and 1844 painting"
         }
       ],
-      "words": 269,
-      "minutes": 2,
+      "words": 536,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
-      "reviewed": "2026-11-20"
+      "reviewed": "2026-11-22"
     },
     "turner-03": {
       "title": "The beauty that must not conceal the crime",
@@ -10426,6 +10492,28 @@
             "The woman’s concentration gives the act seriousness, but calling the painting a timeless celebration of domestic virtue would close down its social complexity. The image was made within a culture of unequal household labor. Its formal dignity does not remove that context.",
             "What remains remarkable is the relationship between scale and attention. A modest action occupies the composition completely. Vermeer makes sustained work visible as an event with its own rhythm, precision and material world, without requiring a spectacular narrative to justify the viewer’s interest."
           ]
+        },
+        {
+          "id": "section-4",
+          "title": "The object record and an incomplete ownership chain",
+          "kind": "history",
+          "sources": [
+            0
+          ],
+          "paragraphs": [
+            "The Rijksmuseum’s current record dates The Milkmaid to about 1660 and records oil on canvas measuring 45.5 by 41 centimetres. This is a small object, despite the figure’s imposing presence in an enlarged screen image. The approximate date should remain approximate; it is not evidence for a documented day or year of execution.",
+            "The museum records purchase in 1908 with support from the Vereniging Rembrandt. Its provenance also marks proposed early owners with question marks and includes intervals between documented transactions. Those qualifications matter. A possible association with the Van Ruijven household should not become an established commission merely because later ownership can be traced more securely. The museum acquisition is one documented milestone, not permission to invent a continuous route from the studio to the present collection."
+          ]
+        },
+        {
+          "id": "section-5",
+          "title": "Stillness made from unequal kinds of attention",
+          "kind": "analysis",
+          "sources": [],
+          "paragraphs": [
+            "Compare the dark window frame, the rough-looking wall and the small bright accents on the bread. They offer different amounts of visual information. The frame is readily organized as geometry; the wall seems plain until its irregularities become noticeable; the bread asks for close inspection of many small transitions. The pouring action holds these competing scales of attention together.",
+            "Now look at the figure’s relation to the space on the right. The open wall prevents the composition from becoming a crowded inventory of kitchen objects. Against it, the arm and clothing acquire a firm outline. One can describe that organization without deciding whether the woman represents virtue, desire or an identifiable individual. An interpretation should account for the visible relationships before treating a historical association as a complete explanation."
+          ]
         }
       ],
       "sources": [
@@ -10435,10 +10523,10 @@
           "scope": "Work record and subject"
         }
       ],
-      "words": 279,
-      "minutes": 2,
+      "words": 536,
+      "minutes": 3,
       "edition": "Art Room · editorial V2",
-      "reviewed": "2026-11-20"
+      "reviewed": "2026-11-22"
     },
     "vermeer-03": {
       "title": "A city held between shadow and light",
@@ -10801,7 +10889,7 @@
       ],
       "words": 545,
       "minutes": 4,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "bosch-02": {
@@ -10881,7 +10969,7 @@
       ],
       "words": 538,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "bosch-03": {
@@ -10961,7 +11049,7 @@
       ],
       "words": 526,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "bruegel-01": {
@@ -11041,7 +11129,7 @@
       ],
       "words": 504,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "bruegel-02": {
@@ -11121,7 +11209,7 @@
       ],
       "words": 497,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "bruegel-03": {
@@ -11201,7 +11289,7 @@
       ],
       "words": 488,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "velazquez-01": {
@@ -11281,7 +11369,7 @@
       ],
       "words": 521,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "velazquez-02": {
@@ -11361,7 +11449,7 @@
       ],
       "words": 509,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "velazquez-03": {
@@ -11441,7 +11529,7 @@
       ],
       "words": 521,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "okeeffe-01": {
@@ -11526,7 +11614,7 @@
       ],
       "words": 499,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "okeeffe-02": {
@@ -11611,7 +11699,7 @@
       ],
       "words": 501,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     },
     "okeeffe-03": {
@@ -11696,7 +11784,7 @@
       ],
       "words": 509,
       "minutes": 3,
-      "edition": "Art Room · four-painter expansion",
+      "edition": "Art Room · editorial V2",
       "reviewed": "2026-11-21"
     }
   },

@@ -17,7 +17,20 @@ export function returnReview(data:CertStudy,now:number){
  const missed=[...latest.values()].filter(a=>a.selected!==getQuestion(a.question)!.answer).sort((a,b)=>a.at-b.at);
  return missed.slice(0,3).map(a=>a.question);
 }
-export function learningTakeaway(q:CertQuestion){return q.explanations[q.answer];}
+// Current explanatory notes complement, but never rewrite, a saved answer edition.
+const studyNotes:Record<string,string>={
+ 'cloud-practitioner-03':'The change is from buying capacity upfront toward paying for resources as used. Usage-based spending can vary with demand; it does not transfer ownership of provider facilities or make operation free.',
+ 'cloud-practitioner-14':'The deciding requirement is an object retrieved by a key. S3 provides that interface. Block volumes, shared files and relational tables expose different access models, even though each can store data.',
+ 'istqb-foundation-10':'A review examines a work product without executing it. The other activities require running software, so they are dynamic testing rather than the static review described here.',
+ 'istqb-foundation-17':'Branch coverage uses executed branches divided by total branches: 6 ÷ 8 × 100 = 75%. Counting six branches is not the same as 6%, and reversing the ratio uses the wrong denominator.',
+ 'istqb-foundation-18':'Risk considers both likelihood and impact. With likelihood held equal, the greater business impact warrants more attention; convenience alone does not establish priority.',
+ 'istqb-foundation-21':'A result needs its build, data and test-case versions so someone can identify the configuration actually checked. Traceability supports investigation; it does not promise identical behavior in later builds.',
+ 'test-automation-09':'A reliable fast subset can surface common contract failures earlier. Broader checks still run later because quick feedback and depth address different needs.',
+ 'ai-testing-11':'Using the same independent benchmark holds the evaluation sample constant. Otherwise an apparent improvement could come from an easier test set rather than a better model; model size and names do not resolve that confounder.',
+ 'github-actions-02':'Two runtime values crossed with two operating systems create four environment combinations. A strategy matrix expands those axes into jobs; listing combinations in a comment or step name does not run them.',
+ 'github-copilot-11':'Remove the production secret before supplying context and follow the approved handling process. If it was exposed, use the appropriate credential-response procedure; assuming a filter catches every secret is insufficient.'
+};
+export function learningTakeaway(q:CertQuestion){return studyNotes[q.id]??q.explanations[q.answer];}
 export function questionExhibit(q:CertQuestion):{kind:'code'|'flow'|'table';title:string;text:string}|null{
  if(!q.id.includes('-growth-'))return null;
  if(q.track==='github-actions'&&q.prompt.includes('forced-success'))return {kind:'code',title:'Simplified shell step',text:'run: npm test || true\n# A nonzero test exit is replaced by success.'};

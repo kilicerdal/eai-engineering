@@ -1,0 +1,3 @@
+'use client';
+import Link from 'next/link';
+export default function StudyError({retry}:{error:unknown;retry:()=>void}){return <section className="study-recovery" role="alert" aria-labelledby="study-recovery-title"><h1 id="study-recovery-title">This learning page could not be opened.</h1><p>Try opening it again. This action does not clear browser storage. If an editor is still available, copy any unsaved writing before retrying.</p><button onClick={()=>retry()}>Try this page again</button><p><Link href="/your-space">Find saved work →</Link></p><p><Link href="/study">← Back to Learning Studio</Link></p><p>Previously saved work may still be available in this browser. Unsaved changes cannot be guaranteed.</p></section>;}

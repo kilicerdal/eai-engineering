@@ -1,54 +1,53 @@
 # Mona Lisa: the construction of an enduring presence
+@reviewed 2026-11-20
+@source {"title":"Louvre · Collection record: Lisa Gherardini","url":"https://collections.louvre.fr/en/ark:/53355/cl010062370","scope":"Identity, material, dating and collection history"}
+@source {"title":"Louvre · From the Mona Lisa to the Wedding Feast at Cana","url":"https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana","scope":"Royal collection, museum setting and the 1911 theft"}
 
 > The hands seem settled; the expression does not. Mona Lisa holds those two experiences together, using a stable seated body to make the face’s elusive boundaries unusually consequential.
 
-@source Louvre · Collection record: Lisa Gherardini|https://collections.louvre.fr/en/ark:/53355/cl010062370|Identity, material, dating and collection history
-
-@source Louvre · From the Mona Lisa to the Wedding Feast at Cana|https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana|Royal collection, museum setting and the 1911 theft
-
-## A portrait with a long afterlife | history | 1,2
+## A portrait with a long afterlife | history | 1,2 | section-1
 
 The Louvre identifies the sitter as Lisa Gherardini, the wife of Francesco del Giocondo. The portrait’s prolonged development and later movement into the French royal collection distinguish its history from a straightforward commission delivered to a household. Its present prominence also belongs to a later history of museum display, reproduction and public attention, intensified by its theft in 1911 and subsequent recovery.
 
 These circumstances explain some of its fame without explaining away its pictorial quality. To examine the work is to separate the historical portrait from the cultural icon that now surrounds it.
 
-## Stability beneath uncertainty | analysis |
+## Stability beneath uncertainty | analysis |  | section-2
 
 The folded hands establish a broad, quiet base. The torso turns slightly, while the face returns toward the viewer; this adjustment prevents the figure from becoming a flat, frontal emblem. Dark clothing concentrates attention on the illuminated skin rather than on a display of ornament. The small architectural indications at the sides imply a place of viewing without describing a complete room.
 
 Behind the figure, paths, water and formations carry the eye into a space whose scale is difficult to settle. The body remains close and stable while the landscape opens into uncertainty. That contrast contributes more to the encounter than the smile considered in isolation.
 
-## What sfumato makes possible | technical | 1
+## What sfumato makes possible | technical | 1 | section-3
 
 The oil-painted panel uses exceptionally gradual transitions between tones. The term sfumato describes the smoky softening through which certain edges resist exact location. Around the mouth and eyes, the viewer must infer small changes of form instead of following a hard contour. The surface therefore makes expression something actively perceived rather than fully specified.
 
-## Expression and the limits of interpretation | interpretation |
+## Expression and the limits of interpretation | interpretation |  | section-4
 
 The sitter can seem reserved, amused or attentive depending on where attention falls. Those responses are legitimate experiences of the painting, but they do not establish Lisa’s private feelings or Leonardo’s intention to encode one secret emotion. A persuasive reading explains how the face produces uncertainty and how the hands, turn of the body and distant landscape contain it. The picture’s sophistication lies in that relationship between compositional assurance and perceptual instability.
 
-## A small panel and a demanding encounter | analysis |
+## A small panel and a demanding encounter | analysis |  | section-5
 
 At seventy-seven centimeters high, the work is considerably smaller than its cultural reputation might suggest. Its encounter is intimate rather than architectural. The sitter is near enough for the arrangement of fingers and the turn of the wrist to become consequential, yet the panel opens behind her into an expansive, uninhabited distance. The painting holds those incompatible scales together: the measurable proximity of a body and a world whose recession is difficult to measure.
 
 The parapet is especially important. It gives the arms a support and establishes a boundary between the depicted space and ours. The hands do not simply supply additional anatomical information. Their overlap makes an interval of stillness from which the torso rises. Look from this relatively legible arrangement toward the softened mouth: the eye moves from a structure it can grasp toward an expression it cannot finally settle.
 
-## A landscape that does more than describe a place | analysis |
+## A landscape that does more than describe a place | analysis |  | section-6
 
 The winding paths, water and rock formations should be examined as compositional agents before they become subjects for identification. They lead the gaze laterally and into distance. Their coolness differs from the warmer flesh, while the uneven transitions of land complicate the apparent symmetry of the portrait. The landscape does not merely certify that a woman is sitting outdoors; it makes the scale and duration of the surrounding world feel different from those of the figure.
 
 One useful experiment is to cover the lower half of the reproduction briefly, then restore it. Without the hands and parapet, the face can seem to float as an isolated emblem. With them, the portrait becomes a bodily presence again. This is an observation about the composition, not a reconstruction of Leonardo’s working sequence.
 
-## Fame changes how a painting is encountered | interpretation |
+## Fame changes how a painting is encountered | interpretation |  | section-7
 
 Modern familiarity encourages recognition before attention: one sees the name, the smile or the crowd around the original before considering the work’s relationships. Reproductions can compound that problem by isolating the face. The most productive response is neither to dismiss the celebrity nor to accept it as proof of quality, but to ask what the painting actually permits us to see.
 
 The portrait offers an influential model for thinking about presence through a seated body, an oblique turn and softened boundaries. A comparison with Vermeer’s Girl with a Pearl Earring reveals how different kinds of image can produce an apparently responsive face. It does not establish a direct historical connection between these particular works. That distinction allows comparison to sharpen an argument without inventing a genealogy.
 
-## What remains unresolved | interpretation |
+## What remains unresolved | interpretation |  | section-8
 
 A convincing identification of the sitter does not answer every question about the painting’s extended development, ownership or expressive effect. Equally, uncertainty does not make every proposed secret equally credible. Claims about hidden codes, exact emotional states or concealed narratives need evidence beyond resemblance and personal conviction. The work remains rewarding when those claims are set aside: its reserve is constructed through paint, posture and the unusually sustained negotiation between a firm bodily arrangement and elusive transitions of light.
 
-## Looking beyond a famous expression | analysis |
+## Looking beyond a famous expression | analysis |  | section-9
 
 A useful first move is to suspend the question of whether the smile can be explained. Begin lower in the picture, where the hands overlap and the forearms establish a broad support. Then follow the turn through the shoulders to the face. The pose is neither an entirely frontal declaration nor a profile withdrawn from the viewer. Its effect depends on a body that seems to have turned within a space, although the painted arrangement remains extraordinarily contained. Looking is an encounter built from several coordinated decisions, not simply a reaction to the mouth.
 

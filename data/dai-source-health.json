@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-11-22T05:47:24.255Z",
+  "paths": 12,
+  "available": 67,
+  "documents": 67,
+  "missingSections": 0,
+  "changed": 0,
+  "unbaselined": 0,
+  "scope": "HTTP, section availability and document fingerprints. The linked assisted scope review covers 24 reviewed reference versions; availability and a captured baseline do not independently validate every question or interpretation."
+}

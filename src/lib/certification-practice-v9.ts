@@ -1,4 +1,4 @@
-import {getQuestion,type CertQuestion} from './certification-content';
+import {getCert,getQuestion,type CertQuestion} from './certification-content';
 import type {CertStudy,CertSession} from './certification-study';
 import type {LearningWork} from './certification-learning';
 import {practiceQuestion,decidingDetail} from './certification-quality';
@@ -35,3 +35,11 @@ export const scenarioEvidence:Record<string,{label:string;text:string}>={
  'github-copilot-01':{label:'Review boundary',text:'Copilot suggestion → plausible authentication change\nMerge → not yet performed'},
  'github-copilot-04':{label:'Proposed change scope',text:'Agent proposal → six changed files\nQuestion → developer inspection'},
 };
+
+/** Describes only this completed sample, never readiness or mastery. */
+export function sessionDomainSnapshot(data:CertStudy){
+ const s=data.session;if(!s||s.finishedAt===null)return null;
+ const rows=getCert(data.track)!.domains.map(d=>{const ids=s.questions.filter(id=>practiceQuestion(id,s.contentRevision).domain===d.id);return {id:d.id,title:d.title,total:ids.length,correct:ids.filter(id=>s.answers[id]?.selected===practiceQuestion(id,s.contentRevision).answer).length};}).filter(d=>d.total>0);
+ const ranked=[...rows].sort((a,b)=>(b.correct*a.total-a.correct*b.total)||b.total-a.total);
+ return {strongest:ranked.find(d=>d.correct>0)??null,revisit:[...rows].sort((a,b)=>(a.correct*b.total-b.correct*a.total)||b.total-a.total).find(d=>d.correct<d.total)??null};
+}

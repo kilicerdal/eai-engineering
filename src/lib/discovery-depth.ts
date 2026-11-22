@@ -1,5 +1,9 @@
 // Editorial comparison prompts: a bridge is not evidence that one claim proves another.
 export const discoveryBridges=[
+ {ids:['pump-spiral-case','pump-two-stages'],reason:'Compare a name describing casing shape with a description of stage count. Different labels can describe different aspects of the same machine.'},
+ {ids:['art-infrared','art-xrays'],reason:'Compare what two examination methods can reveal. A newly visible structure still needs evidence before it becomes an explanation of the artist’s intention.'},
+ {ids:['first-website','web-editor'],reason:'Connect the first site’s explanatory purpose with the browser’s ability to create pages. The documents and the tool are distinct parts of the early Web.'},
+ {ids:['drawing-memory','art-infrared'],reason:'Compare a sketch used to support remembering with an image used to examine an object. Similar-looking representations answer different questions and need different evidence.'},
  {ids:['retrieval-practice','spaced-learning'],reason:'Compare the act of recalling with the timing of returning. Which part could you change in a study session?'},
  {ids:['drawing-memory','jacquard-patterns'],reason:'Compare two ways of representing information: a learner’s sketch and an encoded pattern. What is preserved or left out?'},
  {ids:['gobekli-builders','stonehenge-transport'],reason:'Compare making a monument with getting its materials to the site. What evidence would answer each question?'},

@@ -1,0 +1,3 @@
+import {defineConfig} from '@playwright/test';
+import base from './playwright.dai-cohesion.config';
+export default defineConfig({...base,testMatch:[...base.testMatch as string[],'**/dai-professional-pass.spec.ts','**/study-layout.spec.ts','**/art-editorial.spec.ts','**/art-on-paper.spec.ts','**/art-reading-polish.spec.ts','**/art-research-expansion.spec.ts','**/art-museum-studies.spec.ts','**/art-close-reading.spec.ts'],use:{...base.use,serviceWorkers:'block'},reporter:[['list'],['json',{outputFile:'artifacts/dai-professional-pass/browser.json'}]],outputDir:'test-results/dai-professional-pass',globalTimeout:12*60*1000});
