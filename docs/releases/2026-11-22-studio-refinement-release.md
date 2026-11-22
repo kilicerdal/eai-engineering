@@ -28,3 +28,5 @@ Source maintenance checked 243 distinct references. Access restrictions, text ch
 ## Publication handoff
 
 A successful push alone is not a deployment-success claim. The exact main SHA, Vercel status and live route/browser results are verified after publication and reported in the handoff.
+
+Initial publication follow-through: main commit `38b3e89bf25d250d9581203dfbbf5be60fef35d8` received a successful Vercel deployment, Repository quality check and hosted Production monitor. Independent read-only checks passed 20 production pages, 25 frontend assets, redirect/404 behavior and 16 desktop/mobile browser smoke checks. The wider hosted browser suite passed 460 tests and failed six instances of three assertions still expecting old gallery-count/feedback wording. The follow-up test-only correction asserts the exact new result ranges and preserved no-diagnosis meaning; all 50 neighboring local desktop/mobile journeys passed. Hosted checks are repeated for the follow-up SHA before final handoff.
