@@ -14,8 +14,10 @@ async function check([id,source]){
  try{
   let response=await fetch(source.url,{method,redirect:'follow',signal:AbortSignal.timeout(12000),headers:{'user-agent':'eAI Knowledge Source Link Auditor/1.0'}});
   if([401,403,405,429,501].includes(response.status)){method='GET';response=await fetch(source.url,{method,redirect:'follow',signal:AbortSignal.timeout(12000),headers:{range:'bytes=0-0','user-agent':'eAI Knowledge Source Link Auditor/1.0'}});}
-  const ok=response.ok;
-  return {id,title:source.title,url:source.url,status:response.status,finalUrl:response.url,ok,needsManualReview:!ok&&[401,403,429].includes(response.status),method};
+  const finalPath=new URL(response.url).pathname;
+  const landedOnErrorPage=/(?:^|\/)(?:404|not-found|error)(?:\.html)?(?:\/|$)/i.test(finalPath)||/aspxerrorpath=/i.test(response.url);
+  const ok=response.ok&&!landedOnErrorPage;
+  return {id,title:source.title,url:source.url,status:response.status,finalUrl:response.url,ok,needsManualReview:landedOnErrorPage||(!ok&&([401,403,408,429].includes(response.status)||response.status>=500)),...(landedOnErrorPage?{error:'Redirected to a generic error page despite a successful HTTP status.'}:{}),method};
  }catch(error){return {id,title:source.title,url:source.url,ok:false,needsManualReview:true,method,error:error instanceof Error?error.message:String(error)};}
 }
 async function worker(){while(queue.length){const item=queue.shift();if(item)results.push(await check(item));}}
@@ -24,7 +26,8 @@ results.sort((a,b)=>a.id.localeCompare(b.id));
 const checkedAt=new Date().toISOString();
 const audited=results.map(({id,...result})=>{
  const prior=previous[id];
- if(prior?.manualVerified===true&&prior.url===result.url&&!result.ok&&result.status===403){
+ const recentManualCheck=prior?.manualVerifiedAt&&Date.now()-Date.parse(prior.manualVerifiedAt+'T00:00:00Z')<=14*24*60*60*1000;
+ if(prior?.manualVerified===true&&prior.url===result.url&&recentManualCheck&&!result.ok&&result.needsManualReview){
   return [id,{...result,ok:true,needsManualReview:false,manualVerified:true,manualVerifiedAt:prior.manualVerifiedAt,automatedStatus:result.status,automatedMethod:result.method,method:'manual-web'}];
  }
  return [id,result];

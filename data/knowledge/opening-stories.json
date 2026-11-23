@@ -16,8 +16,8 @@
       "checked": "2026-11-22"
     },
     "cdc": {
-      "title": "Robert Gaynes · The Discovery of Penicillin, Emerging Infectious Diseases (2017)",
-      "url": "https://wwwnc.cdc.gov/eid/article/23/5/16-1556_article",
+      "title": "Robert Gaynes · The Discovery of Penicillin—New Insights After More Than 75 Years of Clinical Use, Emerging Infectious Diseases (2017)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5403050/",
       "kind": "Historical research",
       "scope": "Earlier antibacterial treatments, wartime development and the construction of the Fleming story.",
       "checked": "2026-11-22"
@@ -455,6 +455,97 @@
       "kind": "Official governing document",
       "scope": "Formal provisions governing nomination, eligibility and the institutions responsible for prize decisions.",
       "checked": "2026-11-22"
+    },
+    "curie-credit-study": {
+      "title": "Helena M. Pycior · Reaping the Benefits of Collaboration While Avoiding its Pitfalls: Marie Curie's Rise to Scientific Prominence",
+      "url": "https://journals.sagepub.com/doi/10.1177/030631293023002003",
+      "kind": "Peer-reviewed history of science",
+      "scope": "Examines how the Curies’ publication practices and division between individual and joint work shaped the attribution of scientific credit.",
+      "checked": "2026-11-23"
+    },
+    "morrison-beloved-study": {
+      "title": "Connor Lifson · An Ineffable Haunting: Language, Embodiment, and Ghosts in Toni Morrison’s Beloved",
+      "url": "https://doi.org/10.1017/pli.2023.39",
+      "kind": "Peer-reviewed literary scholarship",
+      "scope": "A close reading of how Morrison’s form and language represent haunting, embodiment, and historical memory in Beloved.",
+      "checked": "2026-11-23"
+    },
+    "poverty-validity-review": {
+      "title": "Annual Review of Economics · The Experimental Approach to Development Economics",
+      "url": "https://www.annualreviews.org/content/journals/10.1146/annurev.economics.050708.143235",
+      "kind": "Peer-reviewed research review",
+      "scope": "Reviews the experimental approach in development economics, including the value and limits of causal inference from field settings.",
+      "checked": "2026-11-23"
+    },
+    "waves-thorne-lecture": {
+      "title": "Rainer Weiss and Kip S. Thorne · Nobel lectures on gravitational waves",
+      "url": "https://www.nobelprize.org/prizes/physics/2017/thorne/lecture/",
+      "kind": "Primary source · Nobel lectures",
+      "scope": "First-person technical accounts of the observatory, the detection, and the broad collaboration needed to establish the result.",
+      "checked": "2026-11-23"
+    },
+    "quantum-aps-review": {
+      "title": "American Physical Society · Nobel Prize: Quantum Entanglement Unveiled",
+      "url": "https://physics.aps.org/articles/v15/153",
+      "kind": "Professional physics explainer",
+      "scope": "Explains the 2022 award, the sequence of Bell-test experiments, and how later experiments addressed important loopholes.",
+      "checked": "2026-11-23"
+    },
+    "crispr-jci-review": {
+      "title": "Journal of Clinical Investigation · A CRISPR view of the 2020 Nobel Prize in Chemistry",
+      "url": "https://www.jci.org/articles/view/145214",
+      "kind": "Peer-reviewed perspective",
+      "scope": "Places the CRISPR award in its scientific context and distinguishes the scientific achievement from later patent disputes.",
+      "checked": "2026-11-23"
+    },
+    "battery-nature-retrospective": {
+      "title": "Nature Communications · A retrospective on lithium-ion batteries",
+      "url": "https://doi.org/10.1038/s41467-020-16259-9",
+      "kind": "Peer-reviewed historical account",
+      "scope": "Discusses the sequence of material breakthroughs and the transition from laboratory work toward commercial lithium-ion cells.",
+      "checked": "2026-11-23"
+    },
+    "protein-ebi-context": {
+      "title": "European Bioinformatics Institute · Protein design and structure prediction win the 2024 Nobel Prize",
+      "url": "https://www.ebi.ac.uk/about/news//alphafold-wins-nobel-prize-chemistry-2024/",
+      "kind": "Research-institution explainer",
+      "scope": "Distinguishes David Baker’s computational protein design from Hassabis and Jumper’s protein-structure prediction work.",
+      "checked": "2026-11-23"
+    },
+    "han-literary-context": {
+      "title": "Koreana · Korea’s Literary Titan",
+      "url": "https://koreana.or.kr/koreana/na/ntt/selectNttInfo.do?bbsId=1113&mi=1546&nttSn=130904",
+      "kind": "Literary criticism",
+      "scope": "Discusses the relation between Human Acts, historical context, and fiction; useful for keeping a novel distinct from documentary testimony.",
+      "checked": "2026-11-23"
+    },
+    "ernaux-class-study": {
+      "title": "S. Jamison · Annie Ernaux: politics lived and written",
+      "url": "https://doi.org/10.1177/09571558241231735",
+      "kind": "Peer-reviewed literary scholarship",
+      "scope": "Examines how Ernaux’s autobiographical practice connects lived experience, class, and political analysis.",
+      "checked": "2026-11-23"
+    },
+    "hidankyo-icrc": {
+      "title": "International Committee of the Red Cross · ICRC congratulates Nihon Hidankyo",
+      "url": "https://www.icrc.org/en/news-release/icrc-congratulates-nihon-hidankyo-nobel-peace-prize-work-ensure-nuclear-weapons-are",
+      "kind": "Humanitarian institution statement",
+      "scope": "Describes the humanitarian significance of hibakusha testimony and the ICRC’s perspective on preventing nuclear weapon use.",
+      "checked": "2026-11-23"
+    },
+    "ican-tpnw-review": {
+      "title": "Jean Krasno and Elisabeth Szeli · The Treaty on the Prohibition of Nuclear Weapons: Strengths, Weaknesses and Current Status",
+      "url": "https://doi.org/10.1080/25751654.2024.2364967",
+      "kind": "Peer-reviewed policy analysis",
+      "scope": "Assesses the TPNW’s humanitarian and normative contribution alongside limits to its reach and implementation.",
+      "checked": "2026-11-23"
+    },
+    "institutions-mortality-data": {
+      "title": "J. Albouy · The Colonial Origins of Comparative Development: An Investigation of the Settler Mortality Data",
+      "url": "https://escholarship.org/uc/item/8kt576x8",
+      "kind": "Peer-reviewed methodological critique",
+      "scope": "Re-examines the historical settler-mortality data used in influential institutional research and explains why measurement choices matter to the design.",
+      "checked": "2026-11-23"
     }
   },
   "stories": [
@@ -468,6 +559,7 @@
       "period": "1928–1940s",
       "visual": "penicillin",
       "pair": "1945-penicillin",
+      "pairingNote": "Read together, these accounts follow two different scales of the same story: the discovery study traces the work that carried an antibacterial effect toward dependable treatment, while the Nobel record documents formal recognition shared by Fleming, Chain and Florey. The award citation is an important record of credit, though it is not a complete map of everyone who contributed to penicillin’s development and production.",
       "question": "When does an observation become a treatment?",
       "summary": "In 1928, Alexander Fleming noticed that bacteria were not growing around an invading mould. He investigated the antibacterial substance and called it penicillin. More than a decade later, an Oxford team developed experimental and clinical evidence, while fermentation researchers and manufacturers made a usable supply possible. The surprising part is the distance between noticing an effect and being able to rely on it.",
       "summarySources": [
@@ -659,6 +751,7 @@
       "period": "1887–1916",
       "visual": "light",
       "pair": "1921-einstein",
+      "pairingNote": "Read together, these accounts connect an experimental puzzle to its place in the history of physics: the discovery study follows the evidence and Einstein’s light-quantum explanation, while the Nobel record states the Academy’s formal recognition. The 1921 prize was awarded in 1922, and its citation specifically named the law of the photoelectric effect—a useful reminder that a prize citation is precise, but not a full account of a scientist’s work.",
       "question": "Why can brighter light fail to release an electron?",
       "summary": "Light can eject electrons from a material. In the elementary single-photon account, the energy of each incoming quantum depends on frequency. If that energy is too low for the surface, increasing the number of such photons does not make an individual one more energetic. Einstein’s 1905 explanation connected these distinctions to a testable energy balance. Precise measurements later supported the equation, even as its interpretation remained contested.",
       "summarySources": [
@@ -1003,7 +1096,40 @@
         "What does an award citation preserve, and what does it compress?",
         "Which stages of the penicillin story required different expertise?",
         "How might a museum exhibit show team contributions without losing narrative clarity?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The award’s three-person citation is best read beside the 1941 clinical paper and Oxford’s team history. The records show distinct stages—observation, biochemical work, preparation, clinical evaluation, and scale-up—rather than a single discovery act. The paper’s author list is evidence of collaboration, not a complete census of every contributor.",
+          "sourceIds": [
+            "medicine",
+            "clinical",
+            "team"
+          ]
+        },
+        "afterward": {
+          "text": "Penicillin became a landmark in antibiotic treatment, but turning a promising substance into a dependable medicine required production engineering and continuing clinical judgment. Later histories also show that wartime manufacturing drew on industrial and agricultural research beyond the Oxford laboratory.",
+          "sourceIds": [
+            "cdc",
+            "usda",
+            "acs"
+          ]
+        },
+        "debate": {
+          "text": "The central historical question is how public memory distributed credit across a large research and production effort. It is not a dispute over whether Fleming, Chain, and Florey made important contributions. Contemporary papers, object records, and later histories answer different questions and should be compared rather than collapsed into one definitive list.",
+          "sourceIds": [
+            "cdc",
+            "culture",
+            "clinical"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it makes the gap between a celebrated observation and a usable treatment unusually visible. Read the Nobel citation as a formal boundary around recognition, then use the team and clinical records to see what that boundary leaves outside its frame.",
+          "sourceIds": [
+            "medicine",
+            "team"
+          ]
+        }
+      }
     },
     {
       "slug": "1921-einstein",
@@ -1187,7 +1313,41 @@
         "Why is an award citation useful evidence but not a complete account of a scientist’s work?",
         "How does the 1921 award year differ from the 1922 presentation?",
         "What evidence helps explain why a specific discovery was recognized?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The 1921 award recognized Einstein’s theoretical work, specifically the photoelectric law named in its motivation. Millikan’s measurements supplied an experimental counterpart, even as Millikan remained cautious about the light-quantum interpretation. This distinction between an equation’s predictive success and its interpretation is central to the episode.",
+          "sourceIds": [
+            "nobel-history",
+            "millikan",
+            "holton"
+          ]
+        },
+        "afterward": {
+          "text": "The light-quantum proposal became part of the foundations of quantum physics, while the prize itself became attached in popular memory to relativity. Keeping those histories apart clarifies both the award’s actual wording and Einstein’s broader legacy. Later acceptance does not erase how contested the idea was when tested.",
+          "sourceIds": [
+            "nobel-history",
+            "aps",
+            "einstein-lecture"
+          ]
+        },
+        "debate": {
+          "text": "The award-year/presentation-year distinction is documented; the interpretive tension lies in how a prize for the photoelectric effect came to represent a career strongly associated with relativity. Holton’s historical account also shows why experimental confirmation should not be treated as instant consensus about theory.",
+          "sourceIds": [
+            "holton",
+            "mpg",
+            "einstein-lecture"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included to show how an official prize citation can be narrower than a laureate’s public image. Compare the motivation, the 1916 experiment, and Einstein’s later lecture as separate documents with separate purposes.",
+          "sourceIds": [
+            "nobel-history",
+            "millikan",
+            "einstein-lecture"
+          ]
+        }
+      }
     },
     {
       "slug": "plate-tectonics",
@@ -1871,7 +2031,37 @@
         "Which part of Curie’s work makes the 1911 award specifically a chemistry prize?",
         "How should collaborators’ contributions appear in a concise public account?",
         "What changes when we read historic laboratory practice with present-day safety knowledge?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "Curie’s research combined physical measurement with demanding chemical separation. Pierre Curie and Gustave Bémont collaborated on early work, while André Debierne later worked with Marie on metallic radium. Historical scholarship helps distinguish joint research from the institutional process that assigned individual recognition.",
+          "sourceIds": [
+            "curie-nobel",
+            "curie-credit-study"
+          ]
+        },
+        "afterward": {
+          "text": "The methods and findings opened new research in radioactivity and reshaped chemistry and physics. Radium also entered industrial and medical uses before its hazards were fully understood, so the legacy includes both scientific opportunity and the later recognition of serious exposure risks.",
+          "sourceIds": [
+            "curie-nobel",
+            "curie-facts"
+          ]
+        },
+        "debate": {
+          "text": "Questions of credit are grounded in correspondence, publications, nominations, and prize records; they should not be reduced to a modern verdict about who “really” discovered an element. The evidence also needs historical context: researchers’ knowledge of radiation risk changed over time.",
+          "sourceIds": [
+            "curie-credit-study",
+            "curie-nobel"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it links a precise experimental method to the material and human costs of research. Read its collaborators and award chronology together; neither a lone-genius story nor a retrospective moral judgment captures the full record.",
+          "sourceIds": [
+            "curie-nobel",
+            "curie-credit-study"
+          ]
+        }
+      }
     },
     {
       "slug": "1993-toni-morrison",
@@ -2052,7 +2242,37 @@
         "How can narrative structure make memory part of a reader’s experience?",
         "What might fiction reveal that an official archive does not preserve?",
         "How should a literary prize citation guide interpretation without closing debate?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "Morrison’s achievement is not confined to subject matter: voice, chronology, communal perspective, and the reader’s incomplete knowledge are part of how her fiction reasons about history. Her Nobel recognition names the literary force of the novels, while Morrison’s own lecture offers a primary account of language and responsibility.",
+          "sourceIds": [
+            "morrison-list",
+            "morrison-lecture"
+          ]
+        },
+        "afterward": {
+          "text": "Beloved became a major point of entry into debates about slavery, memory, and the possibilities and limits of literary representation. Its influence is visible in continuing scholarship and readership, but a novel should not be treated as a substitute for historical archives or testimony.",
+          "sourceIds": [
+            "morrison-bio",
+            "morrison-beloved-study"
+          ]
+        },
+        "debate": {
+          "text": "Interpretations of Beloved differ over how its haunting, embodiment, and narrative form represent historical violence. The disagreement is productive because form shapes what a reader can know; it does not make the history itself merely subjective. The scholarly reading linked here is one interpretation, not a final key.",
+          "sourceIds": [
+            "morrison-beloved-study",
+            "morrison-lecture"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included to let readers examine how literary form can carry historical questions without becoming a documentary report. Keep three layers distinct: the historical context, Morrison’s artistic choices, and your own interpretation of the novel.",
+          "sourceIds": [
+            "morrison-list",
+            "morrison-beloved-study"
+          ]
+        }
+      }
     },
     {
       "slug": "2014-children-education",
@@ -2237,7 +2457,39 @@
         "What connected the laureates’ campaigns, and what remained distinct?",
         "How can public recognition keep affected communities visible?",
         "What evidence would you need to assess whether a policy improved children’s lives?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The joint award paired two distinct public careers: Yousafzai’s advocacy for girls’ education and Satyarthi’s organizing against child labour and for children’s access to schooling. The Committee’s shared motivation connects those struggles, while their speeches and biographies preserve different routes into the work.",
+          "sourceIds": [
+            "peace-review",
+            "malala-lecture",
+            "satyarthi-bio"
+          ]
+        },
+        "afterward": {
+          "text": "The prize gave global visibility to children’s rights and the relationship between schooling and exploitation. Public recognition can amplify campaigns, but it cannot itself ensure safe schools, enforce labour protections, or represent every child’s experience. Those outcomes depend on policy, institutions, and local organizing.",
+          "sourceIds": [
+            "peace-review",
+            "satyarthi-bio"
+          ]
+        },
+        "debate": {
+          "text": "The award’s paired structure invites a question about representation: whose work becomes legible through two laureates, and whose remains less visible? This is an editorial and historical question, not a reason to flatten the distinct movements or to treat one biography as standing for all children.",
+          "sourceIds": [
+            "peace-review",
+            "malala-lecture",
+            "satyarthi-bio"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it connects two related rights while preserving the difference between them. Read the award motivation first, then compare each laureate’s account of the work and notice the children and organizers who remain beyond the formal citation.",
+          "sourceIds": [
+            "peace-review",
+            "malala-lecture"
+          ]
+        }
+      }
     },
     {
       "slug": "2019-poverty-experiments",
@@ -2415,7 +2667,37 @@
         "What can a field experiment establish about the setting it studies?",
         "What additional evidence would you require before scaling a local result?",
         "Which policy questions cannot be answered through random assignment?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The prize recognized a research approach associated with Banerjee, Duflo, and Kremer: divide broad development problems into testable questions and evaluate interventions in real settings. Field research also depends on local partners, public systems, and participants; the laureate list does not enumerate all those relationships.",
+          "sourceIds": [
+            "econ-popular",
+            "econ-advanced"
+          ]
+        },
+        "afterward": {
+          "text": "Randomized evaluations became more prominent in policy research and helped sharpen evidence about specific interventions. Their value is strongest when a result is interpreted within its setting; decisions about replication and scale require further evidence about institutions, costs, and affected communities.",
+          "sourceIds": [
+            "econ-advanced",
+            "poverty-validity-review"
+          ]
+        },
+        "debate": {
+          "text": "A randomized design can support causal inference for a studied population and intervention, but external validity is a separate question. Reviewers also debate how well micro-level experiments address structural causes of poverty. These are distinct concerns: generalizing a finding and deciding which questions deserve priority.",
+          "sourceIds": [
+            "econ-advanced",
+            "poverty-validity-review"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it turns “what works?” into a methodological question with both power and boundaries. Treat each intervention as a local piece of evidence, not a universal recipe, and ask who defined the outcome being measured.",
+          "sourceIds": [
+            "econ-advanced",
+            "poverty-validity-review"
+          ]
+        }
+      }
     },
     {
       "slug": "2017-gravitational-waves",
@@ -2579,7 +2861,38 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The Nobel award named Weiss, Barish, and Thorne, but the first detection depended on LIGO’s large collaboration and decades of instrument development. The laureates’ lectures provide first-person accounts of the experimental program; the collaboration’s scientific papers make the distributed work visible.",
+          "sourceIds": [
+            "nobel-physics-2017",
+            "nobel-ligo-background",
+            "waves-thorne-lecture"
+          ]
+        },
+        "afterward": {
+          "text": "Gravitational-wave astronomy added a new way to observe extreme events, including black-hole mergers, and later enabled multi-messenger observations. The first signal was a beginning for a research field, not a one-off confirmation that exhausted what the detectors could reveal.",
+          "sourceIds": [
+            "nobel-ligo-background",
+            "waves-thorne-lecture"
+          ]
+        },
+        "debate": {
+          "text": "The central interpretive limit is attribution: the award recognizes key scientific leadership, while the measurement was a collective achievement. The lectures and collaboration record help explain the distinction without suggesting that laureate recognition and team contribution are mutually exclusive.",
+          "sourceIds": [
+            "nobel-physics-2017",
+            "waves-thorne-lecture"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included to show how an extraordinarily small measured signal can rest on long engineering work and collective verification. Follow the chain from instrument sensitivity to collaboration checks before treating the detection as a single dramatic instant.",
+          "sourceIds": [
+            "nobel-ligo-background",
+            "waves-thorne-lecture"
+          ]
+        }
+      }
     },
     {
       "slug": "2022-quantum-entanglement",
@@ -2743,7 +3056,38 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The award recognized a sequence: Clauser and Aspect tested Bell inequalities with photons, while Zeilinger’s work extended experimental control and helped establish quantum-information applications. Each step built on earlier theory and experiment; the prize citation names key contributions rather than every researcher in the field.",
+          "sourceIds": [
+            "nobel-physics-2022",
+            "nobel-quantum-background",
+            "quantum-aps-review"
+          ]
+        },
+        "afterward": {
+          "text": "Bell-test experiments helped move foundational questions into practical quantum information research, including secure communication and information processing. The path from laboratory demonstration to useful technology remains a separate engineering and deployment story.",
+          "sourceIds": [
+            "nobel-quantum-background",
+            "quantum-aps-review"
+          ]
+        },
+        "debate": {
+          "text": "Early tests faced experimental loopholes; subsequent experiments improved closure of important ones. The historical account should therefore distinguish what a specific experiment established from what later refinements addressed. This makes the progress more impressive, not less: confidence grew through better-controlled tests.",
+          "sourceIds": [
+            "quantum-aps-review",
+            "nobel-quantum-background"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it lets readers watch a foundational dispute become a sequence of increasingly controlled experiments. The most useful path is theory → test design → measured correlation → later applications, without collapsing those stages into “spooky action.”",
+          "sourceIds": [
+            "nobel-physics-2022",
+            "quantum-aps-review"
+          ]
+        }
+      }
     },
     {
       "slug": "2023-mrna-vaccines",
@@ -2912,7 +3256,37 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The prize recognized Karikó and Weissman’s work on nucleoside modifications that changed how cells and the immune system respond to synthetic mRNA. The Nobel scientific background places that contribution within a longer platform history that also includes mRNA research and delivery technologies developed by many groups.",
+          "sourceIds": [
+            "nobel-mrna-press",
+            "nobel-mrna-2023"
+          ]
+        },
+        "afterward": {
+          "text": "The COVID-19 vaccines demonstrated that an mRNA platform could be adapted rapidly to a new pathogen. That achievement relied on prior work in lipid delivery, sequence design, manufacturing, clinical trials, and public-health systems; platform potential does not guarantee equal performance for every future target.",
+          "sourceIds": [
+            "nobel-mrna-2023",
+            "nobel-mrna-2023"
+          ]
+        },
+        "debate": {
+          "text": "The important boundary is between the Nobel-recognized molecular insight and the broader vaccine-development system. The prize does not assign the full clinical, manufacturing, or regulatory achievement to two researchers, nor does success against one pathogen settle every question about future mRNA products.",
+          "sourceIds": [
+            "nobel-mrna-press",
+            "nobel-mrna-2023"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it traces how a basic molecular change became part of a deployable medical platform. Read the award record alongside the scientific background to see both the decisive contribution and the surrounding work it depended on.",
+          "sourceIds": [
+            "nobel-mrna-press",
+            "nobel-mrna-2023"
+          ]
+        }
+      }
     },
     {
       "slug": "2020-crispr-gene-editing",
@@ -3073,7 +3447,37 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The prize recognized Charpentier and Doudna’s work in developing CRISPR-Cas9 into a programmable genome-editing tool. The biological system was first a bacterial defense mechanism; making it a flexible laboratory method required discoveries across microbiology, biochemistry, and tool development.",
+          "sourceIds": [
+            "nobel-crispr-2020",
+            "nobel-crispr-background"
+          ]
+        },
+        "afterward": {
+          "text": "CRISPR accelerated research because guide sequences can direct a nuclease to chosen DNA targets. It also prompted therapeutic research and ethical debate. Laboratory usefulness, clinical safety, and approval for a particular treatment are separate milestones and should not be conflated.",
+          "sourceIds": [
+            "nobel-crispr-background",
+            "crispr-jci-review"
+          ]
+        },
+        "debate": {
+          "text": "A high-profile patent dispute followed the scientific work, but patent decisions answer legal questions about priority and claims; they do not by themselves settle scientific credit or the Nobel Committee’s rationale. The distinction matters when readers encounter headlines that treat those systems as interchangeable.",
+          "sourceIds": [
+            "crispr-jci-review",
+            "nobel-crispr-2020"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included to show how a natural biological mechanism became a general research instrument—and why the tool’s scientific, legal, and ethical histories need separate treatment. Follow the mechanism first; evaluate applications and ownership claims on their own evidence.",
+          "sourceIds": [
+            "nobel-crispr-2020",
+            "crispr-jci-review"
+          ]
+        }
+      }
     },
     {
       "slug": "2019-lithium-ion-battery",
@@ -3246,7 +3650,37 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The prize mapped three complementary material advances: Whittingham’s early battery chemistry, Goodenough’s higher-voltage cathode, and Yoshino’s safer configuration using carbon anodes. The award tells a sequence of enabling contributions rather than a story of a single inventor building the modern cell alone.",
+          "sourceIds": [
+            "nobel-battery-2019",
+            "battery-nature-retrospective"
+          ]
+        },
+        "afterward": {
+          "text": "Commercial lithium-ion batteries made portable electronics and later electric vehicles practical at scale. Laboratory performance had to be translated through manufacturing, safety engineering, supply chains, and repeated improvements; commercialization was an extended industrial process.",
+          "sourceIds": [
+            "nobel-battery-advanced",
+            "battery-nature-retrospective"
+          ]
+        },
+        "debate": {
+          "text": "A recurring historical question is how much of the modern battery should be attributed to foundational electrochemistry versus later engineering and commercialization. The prize highlights key chemistry breakthroughs; it is not a complete industrial history or a measure of every contribution to contemporary cells.",
+          "sourceIds": [
+            "nobel-battery-2019",
+            "battery-nature-retrospective"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it makes technological progress legible as a chain of material constraints being solved. Follow the electrode roles and safety transition, then distinguish the prize’s scientific frame from the industry’s longer path to mass production.",
+          "sourceIds": [
+            "nobel-battery-2019",
+            "battery-nature-retrospective"
+          ]
+        }
+      }
     },
     {
       "slug": "2024-protein-design",
@@ -3408,7 +3842,37 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The Chemistry prize joined two related but distinct achievements: Baker’s computational design of new proteins, and Hassabis and Jumper’s prediction of protein structures through AlphaFold. Prediction helps infer what natural sequences may fold into; design begins with a desired structure or function and seeks a sequence that can realize it.",
+          "sourceIds": [
+            "nobel-proteins-2024",
+            "protein-ebi-context"
+          ]
+        },
+        "afterward": {
+          "text": "Structure prediction has become a widely used resource in biological research, while de novo design aims to create molecules with selected properties. A predicted structure is not by itself proof of function, therapeutic value, or experimental success; those claims require additional validation.",
+          "sourceIds": [
+            "nobel-protein-background",
+            "protein-ebi-context"
+          ]
+        },
+        "debate": {
+          "text": "The award’s two halves should not be merged into a claim that AI has solved protein science. Prediction, design, laboratory validation, and application are different tasks. Current scientific reviews continue to identify challenges around flexibility, function, and designing proteins for complex objectives.",
+          "sourceIds": [
+            "nobel-protein-background",
+            "protein-ebi-context"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it captures two complementary ways computation can change biology: infer structures and propose new ones. Read the award as recognition of distinct advances, then keep computational output separate from experimentally demonstrated function.",
+          "sourceIds": [
+            "nobel-proteins-2024",
+            "protein-ebi-context"
+          ]
+        }
+      }
     },
     {
       "slug": "2024-han-kang",
@@ -3572,7 +4036,38 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The award recognized a literary body of work for its poetic intensity and engagement with historical trauma and human vulnerability. In Human Acts, historical events provide context, but the novel’s voices, structure, and invented elements make it literature rather than documentary testimony.",
+          "sourceIds": [
+            "nobel-han-2024",
+            "nobel-han-lecture",
+            "han-literary-context"
+          ]
+        },
+        "afterward": {
+          "text": "The Nobel recognition brought wider international attention to translated Korean literature and to the history surrounding the Gwangju uprising. That attention can invite readers toward historical records, but the novel cannot replace survivor testimony or specialist histories.",
+          "sourceIds": [
+            "nobel-han-2024",
+            "han-literary-context"
+          ]
+        },
+        "debate": {
+          "text": "Interpretive disagreement concerns how the novel represents violence, memory, and the limits of witnessing. Han’s lecture and literary criticism help keep the distinction clear: fictional form can engage a real history without claiming to be a complete factual account of it.",
+          "sourceIds": [
+            "nobel-han-lecture",
+            "han-literary-context"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included to model careful reading across literature and history. Read the novel for its artistic choices, and consult testimony and historical scholarship for factual reconstruction; each source has a different evidentiary role.",
+          "sourceIds": [
+            "nobel-han-lecture",
+            "han-literary-context"
+          ]
+        }
+      }
     },
     {
       "slug": "2022-annie-ernaux",
@@ -3734,7 +4229,38 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The Nobel recognition emphasizes Ernaux’s transformation of personal memory into an inquiry about social origins. Her autobiographical method treats class, gender, education, and language as forces shaping the self, rather than as scenery around a private story. Her lecture is the clearest primary account of this ambition.",
+          "sourceIds": [
+            "nobel-ernaux-2022",
+            "nobel-ernaux-lecture",
+            "ernaux-class-study"
+          ]
+        },
+        "afterward": {
+          "text": "Ernaux’s work has influenced readers and scholarship interested in life-writing as social analysis. Translation also shapes how class registers and tone travel between languages, making the international reception part of the work’s continuing history.",
+          "sourceIds": [
+            "nobel-ernaux-lecture",
+            "ernaux-class-study"
+          ]
+        },
+        "debate": {
+          "text": "A productive question is how far one life can illuminate a wider social structure. Ernaux’s writing makes its situated perspective visible; it does not claim that her experience represents every person in a class or generation. Readers can examine how form invites generalization while also marking its limits.",
+          "sourceIds": [
+            "nobel-ernaux-lecture",
+            "ernaux-class-study"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it shows how autobiography can become a method of social observation. Read the personal narrative as evidence about one situated life and as a deliberate literary construction—not as a representative survey by itself.",
+          "sourceIds": [
+            "nobel-ernaux-lecture",
+            "ernaux-class-study"
+          ]
+        }
+      }
     },
     {
       "slug": "2024-nihon-hidankyo",
@@ -3891,7 +4417,37 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The 2024 Peace Prize recognized Nihon Hidankyo’s survivor-led organizing and testimony. The Nobel lecture, delivered by Terumi Tanaka on the organization’s behalf, gives a first-person account of the movement’s public work; the organization’s decades-long effort is larger than any single speaker.",
+          "sourceIds": [
+            "nobel-hidankyo-2024",
+            "hidankyo-icrc"
+          ]
+        },
+        "afterward": {
+          "text": "Hibakusha testimony has helped sustain public attention to the human consequences of nuclear weapons and informed humanitarian advocacy. Testimony can shape norms and memory, but it cannot alone create treaty compliance or disarmament; those require political choices and institutions.",
+          "sourceIds": [
+            "nobel-hidankyo-2024",
+            "hidankyo-icrc"
+          ]
+        },
+        "debate": {
+          "text": "The key ethical question is how institutions preserve and transmit testimony as the number of witnesses declines. Accurate preservation needs provenance, consent, and context; no one account should be treated as representing every survivor or every experience of the bombings.",
+          "sourceIds": [
+            "nobel-hidankyo-2024",
+            "hidankyo-icrc"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it treats testimony as both historical evidence and organized peace work. Listen to survivor voices in their own context, then distinguish the moral force of testimony from the legal and political mechanisms needed for disarmament.",
+          "sourceIds": [
+            "nobel-hidankyo-2024",
+            "hidankyo-icrc"
+          ]
+        }
+      }
     },
     {
       "slug": "2017-ican",
@@ -4048,7 +4604,37 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The Nobel Committee recognized ICAN’s campaigning role in drawing attention to humanitarian consequences and supporting treaty negotiations. Civil-society advocacy helped shape the agenda; states negotiated and adopted the Treaty on the Prohibition of Nuclear Weapons. Keeping these roles distinct makes the campaign’s contribution clearer.",
+          "sourceIds": [
+            "nobel-ican-2017",
+            "ican-tpnw-review"
+          ]
+        },
+        "afterward": {
+          "text": "The treaty created a legal prohibition framework for its member states and strengthened humanitarian language in disarmament debate. It did not bind states outside it or itself dismantle nuclear arsenals. Its practical reach depends on participation, implementation, and how states respond to the treaty’s norms.",
+          "sourceIds": [
+            "nobel-ican-2017",
+            "ican-tpnw-review"
+          ]
+        },
+        "debate": {
+          "text": "Supporters emphasize humanitarian norms and the treaty’s capacity to stigmatize nuclear weapons; critics question its effect on nuclear-armed states and existing security arrangements. The peer-reviewed analysis linked here examines both strengths and limits. These are claims about strategy and effect, not a settled forecast.",
+          "sourceIds": [
+            "ican-tpnw-review",
+            "nobel-ican-2017"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it shows a campaign influencing international law without controlling state decisions. Read the prize record, treaty scope, and policy debate separately to see what changed—and what remains contingent.",
+          "sourceIds": [
+            "nobel-ican-2017",
+            "ican-tpnw-review"
+          ]
+        }
+      }
     },
     {
       "slug": "2023-claudia-goldin",
@@ -4210,7 +4796,37 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "Goldin’s work reconstructed long-run U.S. labor-market evidence and used it to explain changing patterns in women’s work and earnings. The research contribution includes archival measurement choices as well as economic analysis: historical categories shaped what official records counted as work.",
+          "sourceIds": [
+            "nobel-goldin-2023",
+            "nobel-goldin-background"
+          ]
+        },
+        "afterward": {
+          "text": "The historical findings changed how economists and policymakers discuss women’s employment, education, family formation, and earnings. Goldin’s research also directs attention to the organization of work, where schedule flexibility and caregiving expectations can shape career outcomes.",
+          "sourceIds": [
+            "nobel-goldin-background",
+            "nobel-goldin-2023"
+          ]
+        },
+        "debate": {
+          "text": "The long-run patterns describe U.S. history and depend on changing data definitions. They do not establish one universal cause of gender gaps or one policy solution for every country. Explanations vary across occupations, institutions, and family policy, so scope matters when applying the findings.",
+          "sourceIds": [
+            "nobel-goldin-background",
+            "nobel-goldin-2023"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it makes measurement itself part of the historical argument. Before reading a trend as social change, ask who was counted, how work was defined, and which parts of the finding travel beyond the U.S. record.",
+          "sourceIds": [
+            "nobel-goldin-background",
+            "nobel-goldin-2023"
+          ]
+        }
+      }
     },
     {
       "slug": "2024-institutions-prosperity",
@@ -4373,7 +4989,38 @@
         "What specific achievement does the official motivation name?",
         "Which people or conditions become visible when you follow the work beyond the citation?",
         "What evidence would help you distinguish an established result from a claim about its later impact?"
-      ]
+      ],
+      "scholarship": {
+        "contribution": {
+          "text": "The award recognized research by Acemoglu, Johnson, and Robinson on institutional origins and prosperity. The broad thesis that institutions matter should be distinguished from particular empirical designs, including colonial comparisons and instrumental-variable estimates, whose assumptions require separate evaluation.",
+          "sourceIds": [
+            "nobel-institutions-2024",
+            "nobel-institutions-background",
+            "institutions-mortality-data"
+          ]
+        },
+        "afterward": {
+          "text": "The work helped make institutional history a central empirical approach in development economics and economic history. Its framework has influenced research and public debate, but it does not by itself yield a universal institutional blueprint or establish institutions as the sole source of prosperity.",
+          "sourceIds": [
+            "nobel-institutions-2024",
+            "nobel-institutions-background"
+          ]
+        },
+        "debate": {
+          "text": "Scholars have scrutinized how historical settler-mortality data were assembled and how well the proposed instrument satisfies causal-identification assumptions. That debate concerns specific measures and causal claims; it should not be compressed into either “the research is disproved” or “the Nobel settles it.”",
+          "sourceIds": [
+            "nobel-institutions-background",
+            "institutions-mortality-data"
+          ]
+        },
+        "editorial": {
+          "text": "This study is included because it invites close reading of how historical evidence supports a causal argument. Follow the proposed mechanism, inspect the data and assumptions, and distinguish a powerful framework from a universal explanation.",
+          "sourceIds": [
+            "nobel-institutions-2024",
+            "institutions-mortality-data"
+          ]
+        }
+      }
     }
   ]
 }

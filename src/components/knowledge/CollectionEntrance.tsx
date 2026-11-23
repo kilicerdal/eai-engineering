@@ -11,8 +11,8 @@ export default function CollectionEntrance({collection}:{collection:Collection})
     <Link className="knowledge-card-visual" href={storyHref(s)} aria-label={'Read '+s.name}><ScientificFigure kind={s.visual} compact/></Link>
     <div className="knowledge-card-copy"><p className="knowledge-kicker">{String(i+1).padStart(2,'0')} / {s.topic}</p>
       <h3><Link href={storyHref(s)}>{s.title} <span aria-hidden="true">↗</span></Link></h3>
-      <p>{s.dek}</p><div className="knowledge-card-meta"><span>{s.period}</span><span>About {readingMinutes(s)} min</span></div>
-      <Link className="knowledge-text-link" href={storyHref(s)}>Read {discovery?'the investigation':'the prize story'} →</Link>
+      <p>{s.dek}</p><div className="knowledge-card-question"><span>QUESTION TO CARRY</span><p>{s.question}</p></div><div className="knowledge-card-meta"><span>{s.period}</span><span>About {readingMinutes(s)} min</span></div>
+      <Link className="knowledge-text-link" href={storyHref(s)}>Explore this question →</Link>
     </div>
   </article>;
   return <>

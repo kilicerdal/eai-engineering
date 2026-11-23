@@ -8,7 +8,7 @@
     110
   ],
   "recommendationEntriesIncludingOverlap": 268,
-  "implementedChangeGroups": 75,
+  "implementedChangeGroups": 76,
   "categories": {
     "Studio and navigation": 9,
     "Art content, navigation and presentation": 30,
@@ -18,7 +18,8 @@
     "Tutor": 4,
     "Curiosity": 3,
     "Editorial and performance tooling": 3,
-    "Distinct follow-up refinements": 3
+    "Distinct follow-up refinements": 3,
+    "Cross-collection scholarship": 1
   },
   "pendingExcluded": [
     "870 question reviews and remaining question-quality work",
@@ -258,7 +259,7 @@
     {
       "id": 39,
       "category": "Art content, navigation and presentation",
-      "change": "Repair the failed Brera PDF destination using the institution\u2019s working HTML guide",
+      "change": "Repair the failed Brera PDF destination using the institution’s working HTML guide",
       "evidence": "src/components/art/; src/lib/art/; src/app/study/art/; data/art/editorial-v2/; data/art/research/; scripts/art/"
     },
     {
@@ -324,7 +325,7 @@
     {
       "id": 50,
       "category": "Reading",
-      "change": "Refuse to overwrite a concurrently changed saved note while retaining the learner\u2019s edit",
+      "change": "Refuse to overwrite a concurrently changed saved note while retaining the learner’s edit",
       "evidence": "src/components/BookReader.tsx; src/components/ReadingNotebook.tsx; src/components/ReadingRoom.tsx; src/components/ReadingBookContext.tsx; src/components/ReadingNotesPanel.tsx; src/components/ReadingUnlinkedNotes.tsx; src/lib/reading/comfort.ts; src/lib/reading/historical-words.ts; src/app/study/reading/reading-room.css"
     },
     {
@@ -476,7 +477,15 @@
       "category": "Distinct follow-up refinements",
       "change": "Protect unsaved bookmark names on dialog close and navigation, with explicit cancel and clean save behavior",
       "evidence": "src/components/BookmarkName.tsx; src/components/ReadingDialog.tsx"
+    },
+    {
+      "id": 76,
+      "category": "Cross-collection scholarship",
+      "change": "Explain why the discovery-to-Nobel companion stories belong together, with careful limits on what award records represent",
+      "evidence": "data/knowledge/opening-stories.json; src/components/knowledge/StoryReader.tsx; src/lib/knowledge/story-types.ts"
     }
   ],
-  "additionalTargetedFollowUpGroups": 3
+  "additionalTargetedFollowUpGroups": 3,
+  "followupImprovementsAfterLedger": 1,
+  "lastUpdated": "2026-11-23"
 }
