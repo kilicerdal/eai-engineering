@@ -287,6 +287,174 @@
       "kind": "Scientific background",
       "scope": "Laureates’ research contributions and methodological challenges, including limits to external validity and scale.",
       "checked": "2026-11-22"
+    },
+    "nobel-physics-2017": {
+      "title": "Nobel Prize · Physics 2017 press release",
+      "url": "https://www.nobelprize.org/prizes/physics/2017/press-release/",
+      "kind": "Official award record",
+      "scope": "Award motivation, recipients and the observation of gravitational waves by LIGO.",
+      "checked": "2026-11-22"
+    },
+    "nobel-ligo-background": {
+      "title": "Royal Swedish Academy of Sciences · Physics 2017 popular science background",
+      "url": "https://www.nobelprize.org/uploads/2018/06/popular-physicsprize2017.pdf",
+      "kind": "Official scientific background",
+      "scope": "The theoretical background, LIGO measurement, binary black-hole signal and instrumental challenge.",
+      "checked": "2026-11-22"
+    },
+    "nobel-physics-2022": {
+      "title": "Nobel Prize · Physics 2022 press release",
+      "url": "https://www.nobelprize.org/prizes/physics/2022/press-release/",
+      "kind": "Official award record",
+      "scope": "Award motivation and the contributions recognized in experimental quantum physics.",
+      "checked": "2026-11-22"
+    },
+    "nobel-quantum-background": {
+      "title": "Royal Swedish Academy of Sciences · Physics 2022 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2026/05/advanced-physicsprize-2022-5.pdf",
+      "kind": "Official scientific background",
+      "scope": "Bell inequalities, experimental tests, entangled photons and the development of quantum information science.",
+      "checked": "2026-11-22"
+    },
+    "nobel-mrna-2023": {
+      "title": "Nobel Assembly · Medicine 2023 advanced information",
+      "url": "https://www.nobelprize.org/prizes/medicine/2023/advanced-information/",
+      "kind": "Official scientific background",
+      "scope": "Nucleoside modifications, mRNA biology, delivery technology and the path to effective COVID-19 vaccines.",
+      "checked": "2026-11-22"
+    },
+    "nobel-mrna-press": {
+      "title": "Nobel Prize · Medicine 2023 press release",
+      "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release/",
+      "kind": "Official award record",
+      "scope": "Award motivation and the Nobel Assembly’s account of Karikó and Weissman’s discoveries.",
+      "checked": "2026-11-22"
+    },
+    "nobel-crispr-2020": {
+      "title": "Nobel Prize · Chemistry 2020 press release",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2020/press-release/",
+      "kind": "Official award record",
+      "scope": "Award motivation and the development of the CRISPR/Cas9 genome-editing method.",
+      "checked": "2026-11-22"
+    },
+    "nobel-crispr-background": {
+      "title": "Royal Swedish Academy of Sciences · Chemistry 2020 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2020/10/advanced-chemistryprize2020.pdf",
+      "kind": "Official scientific background",
+      "scope": "The bacterial CRISPR system, RNA-guided Cas9 and the experiments that made genome editing programmable.",
+      "checked": "2026-11-22"
+    },
+    "nobel-battery-2019": {
+      "title": "Royal Swedish Academy of Sciences · Chemistry 2019 popular science background",
+      "url": "https://www.nobelprize.org/uploads/2019/10/popular-chemistryprize2019.pdf",
+      "kind": "Official scientific background",
+      "scope": "The complementary contributions of Whittingham, Goodenough and Yoshino to lithium-ion battery development.",
+      "checked": "2026-11-22"
+    },
+    "nobel-battery-advanced": {
+      "title": "Royal Swedish Academy of Sciences · Chemistry 2019 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2019/10/advanced-chemistryprize2019-2.pdf",
+      "kind": "Official scientific background",
+      "scope": "Electrochemical principles, materials, battery development and the multidisciplinary nature of the technology.",
+      "checked": "2026-11-22"
+    },
+    "nobel-proteins-2024": {
+      "title": "Nobel Prize · Chemistry 2024 press release",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2024/press-release/",
+      "kind": "Official award record",
+      "scope": "Separate award motivations for computational protein design and protein-structure prediction.",
+      "checked": "2026-11-22"
+    },
+    "nobel-protein-background": {
+      "title": "Royal Swedish Academy of Sciences · Chemistry 2024 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2024/10/advanced-chemistryprize2024.pdf",
+      "kind": "Official scientific background",
+      "scope": "Protein structure prediction, AlphaFold2, computational protein design and the methods’ scientific context.",
+      "checked": "2026-11-22"
+    },
+    "nobel-han-2024": {
+      "title": "Swedish Academy · Literature 2024 press release",
+      "url": "https://www.nobelprize.org/uploads/2024/10/press-literatureprize2024.pdf",
+      "kind": "Official award record",
+      "scope": "Han Kang’s award motivation and the Academy’s account of the literary achievement recognized.",
+      "checked": "2026-11-22"
+    },
+    "nobel-han-lecture": {
+      "title": "Han Kang · Nobel Prize lecture",
+      "url": "https://www.nobelprize.org/prizes/literature/2024/han/lecture/",
+      "kind": "Primary author lecture",
+      "scope": "Han Kang’s own reflections on writing, vulnerability, language and the literary works she discusses.",
+      "checked": "2026-11-22"
+    },
+    "nobel-ernaux-2022": {
+      "title": "Swedish Academy · Literature 2022 press release",
+      "url": "https://www.nobelprize.org/uploads/2022/10/press-literatureprize2022.pdf",
+      "kind": "Official award record",
+      "scope": "Award motivation and the Swedish Academy’s account of Annie Ernaux’s work.",
+      "checked": "2026-11-22"
+    },
+    "nobel-ernaux-lecture": {
+      "title": "Annie Ernaux · Nobel Prize lecture",
+      "url": "https://www.nobelprize.org/uploads/2022/12/ernaux-lecture-english.pdf",
+      "kind": "Primary author lecture",
+      "scope": "Ernaux’s account of writing, class, memory, language and the ethical stakes of autobiography.",
+      "checked": "2026-11-22"
+    },
+    "nobel-hidankyo-2024": {
+      "title": "Norwegian Nobel Committee · Peace Prize 2024 press release",
+      "url": "https://www.nobelprize.org/prizes/peace/2024/press-release/",
+      "kind": "Official award record",
+      "scope": "Award rationale, Nihon Hidankyo’s history, hibakusha testimony and disarmament advocacy.",
+      "checked": "2026-11-22"
+    },
+    "nobel-ican-2017": {
+      "title": "Norwegian Nobel Committee · Peace Prize 2017 press release",
+      "url": "https://www.nobelprize.org/prizes/peace/2017/press-release/",
+      "kind": "Official award record",
+      "scope": "Award rationale for ICAN and its role in efforts to stigmatise and prohibit nuclear weapons.",
+      "checked": "2026-11-22"
+    },
+    "nobel-goldin-2023": {
+      "title": "Royal Swedish Academy of Sciences · Economic Sciences 2023 press release",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2023/press-release/",
+      "kind": "Official award record",
+      "scope": "Award motivation and Goldin’s historical research on women’s labour-market outcomes.",
+      "checked": "2026-11-22"
+    },
+    "nobel-goldin-background": {
+      "title": "Royal Swedish Academy of Sciences · Economic Sciences 2023 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2023/10/advanced-economicsciencesprize2023.pdf",
+      "kind": "Official scientific background",
+      "scope": "Long-run labour-force participation, earnings, family formation, occupational choices and gender gaps.",
+      "checked": "2026-11-22"
+    },
+    "nobel-institutions-2024": {
+      "title": "Royal Swedish Academy of Sciences · Economic Sciences 2024 press release",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2024/press-release/",
+      "kind": "Official award record",
+      "scope": "Award motivation and research on institutional origins and long-run prosperity.",
+      "checked": "2026-11-22"
+    },
+    "nobel-institutions-background": {
+      "title": "Royal Swedish Academy of Sciences · Economic Sciences 2024 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2024/10/advanced-economicsciencesprize2024.pdf",
+      "kind": "Official scientific background",
+      "scope": "Institutions, colonial history, settler mortality and the econometric strategy used in the laureates’ research.",
+      "checked": "2026-11-22"
+    },
+    "nobel-selection-process": {
+      "title": "Nobel Foundation · Annual Review 2022: nomination and selection",
+      "url": "https://www.nobelprize.org/uploads/2023/04/annual-review-2022-2.pdf",
+      "kind": "Official cross-category process overview",
+      "scope": "The Foundation’s overview of nomination, committee assessment, expert consultation, award-body decisions, category-specific differences and the 50-year confidentiality rule.",
+      "checked": "2026-11-22"
+    },
+    "nobel-foundation-statutes": {
+      "title": "Nobel Foundation · Statutes",
+      "url": "https://www.nobelprize.org/about/statutes-of-the-nobel-foundation/",
+      "kind": "Official governing document",
+      "scope": "Formal provisions governing nomination, eligibility and the institutions responsible for prize decisions.",
+      "checked": "2026-11-22"
     }
   },
   "stories": [
@@ -2247,6 +2415,1964 @@
         "What can a field experiment establish about the setting it studies?",
         "What additional evidence would you require before scaling a local result?",
         "Which policy questions cannot be answered through random assignment?"
+      ]
+    },
+    {
+      "slug": "2017-gravitational-waves",
+      "collection": "nobel",
+      "topic": "Physics · 2017",
+      "title": "The universe became measurable in a new way.",
+      "name": "The first direct detection of gravitational waves",
+      "dek": "LIGO turned a century-old prediction into an observation—and a new way of studying the universe.",
+      "period": "Award year · 2017",
+      "visual": "gravitational-waves-award",
+      "question": "How can an instrument detect a change smaller than its own disturbances?",
+      "award": {
+        "year": "2017",
+        "field": "Physics",
+        "recipients": [
+          "Rainer Weiss",
+          "Barry C. Barish",
+          "Kip S. Thorne"
+        ],
+        "citation": "for decisive contributions to the LIGO detector and the observation of gravitational waves",
+        "sourceId": "nobel-physics-2017"
+      },
+      "summary": "The 2017 Physics prize recognized Rainer Weiss, Barry Barish and Kip Thorne for decisive contributions to LIGO and the observation of gravitational waves. The first signal, recorded in September 2015, came from two black holes merging far beyond the Milky Way. It was not simply a predicted ripple waiting to be noticed: detecting it required kilometre-scale instruments, extraordinary control of noise, theoretical models and an international scientific collaboration. The award opens a story about how a difficult measurement became a new form of astronomy—and about the many researchers whose work made that measurement credible.",
+      "summarySources": [
+        "nobel-physics-2017",
+        "nobel-ligo-background"
+      ],
+      "lead": [
+        "The 2017 Physics prize recognized Rainer Weiss, Barry Barish and Kip Thorne for decisive contributions to LIGO and the observation of gravitational waves. The first signal, recorded in September 2015, came from two black holes merging far beyond the Milky Way. It was not simply a predicted ripple waiting to be noticed: detecting it required kilometre-scale instruments, extraordinary control of noise, theoretical models and an international scientific collaboration. The award opens a story about how a difficult measurement became a new form of astronomy—and about the many researchers whose work made that measurement credible.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "prediction",
+          "title": "A prediction had to become an experiment.",
+          "paragraphs": [
+            "Einstein’s general theory of relativity describes gravity through the geometry of spacetime. Under the theory, accelerating masses can produce disturbances that travel outward as gravitational waves. For decades, the central problem was not only whether such waves should exist, but whether any instrument could distinguish their minute effect from vibration, thermal motion, seismic noise and imperfections in its own components.",
+            "LIGO’s design translates that challenge into a comparison of light paths. A passing wave changes the relative lengths of two perpendicular arms by an extraordinarily small amount. The signal is not a visible shake of the whole observatory. It is a calibrated difference in the light returning from the interferometer, extracted from an environment full of competing disturbances."
+          ],
+          "sourceIds": [
+            "nobel-ligo-background"
+          ]
+        },
+        {
+          "id": "instrument",
+          "title": "The detector was an achievement in its own right.",
+          "paragraphs": [
+            "Rainer Weiss developed an early analysis of noise sources and a practical interferometer concept. Kip Thorne helped build the theoretical case for gravitational-wave astronomy, calculated what astrophysical sources might produce, and supported the field’s development. Barry Barish led LIGO through a transformation from a smaller Caltech–MIT project into a large collaboration and guided construction and commissioning of the observatories.",
+            "These roles are not interchangeable, and the project did not begin with its three eventual laureates alone. LIGO required engineers, experimental physicists, data analysts, technicians and collaborators at many institutions. The Academy’s phrase “decisive contributions” identifies major leadership in a collective instrument-building effort; it does not name every person who developed, operated or interpreted the detectors."
+          ],
+          "sourceIds": [
+            "nobel-physics-2017",
+            "nobel-ligo-background"
+          ]
+        },
+        {
+          "id": "signal",
+          "title": "The signal carried a particular cosmic history.",
+          "paragraphs": [
+            "On 14 September 2015, the two LIGO sites recorded a signal whose changing frequency and amplitude matched the predicted “chirp” from a pair of inspiralling black holes. As the objects drew closer, they orbited faster; the wave grew in frequency and strength before the merger. The same pattern appeared at two detectors with a delay consistent with a wave travelling between them.",
+            "No single resemblance was enough. Researchers tested calibration, instrumental glitches, background noise and the consistency of the waveform with general relativity. The collaboration announced the observation in February 2016. Its evidential force came from the agreement among instrument data, independent sites and a physical model—not from a dramatic graph alone."
+          ],
+          "sourceIds": [
+            "nobel-ligo-background"
+          ]
+        },
+        {
+          "id": "new-astronomy",
+          "title": "A new observing channel—and its limits.",
+          "paragraphs": [
+            "The 2015 event showed that gravitational waves could be detected directly and used to study systems that may emit little or no light. Subsequent observations made it possible to compare gravitational signals with electromagnetic observations, including the neutron-star merger detected in 2017. The field now investigates black holes, neutron stars and the populations from which they form.",
+            "The first detection did not prove that every prediction of general relativity is correct, nor did it make LIGO a camera that can resolve a black hole’s surface. The measured waveform supports a specific interpretation under tested models. New instruments, more events and independent observations are needed to refine estimates and probe where current theories may fail."
+          ],
+          "sourceIds": [
+            "nobel-ligo-background",
+            "nobel-physics-2017"
+          ]
+        },
+        {
+          "id": "collaboration",
+          "title": "A signal became credible through shared scrutiny.",
+          "paragraphs": [
+            "An international collaboration is not simply a large list of names. It creates procedures for calibration, independent review, data-quality checks and the comparison of signals across instruments. LIGO’s first observation became persuasive because the teams tested whether an instrumental disturbance could imitate the predicted waveform and because the separated observatories saw a compatible event. The signal had to survive skeptical analysis by researchers who understood both the instrument and the astrophysical models.",
+            "The Nobel selection recognizes three laureates from a far larger scientific enterprise. This is a recurring feature of prize history: awards turn collective work into a legible public account by naming a small number of people. Readers can hold two ideas together—the award’s recognition of decisive leadership and the evidence that the discovery depended on many specialists whose work remains visible in the collaboration’s publications.",
+            "A signal is also a story about careful exclusion. Researchers had to ask not only whether the data resembled a black-hole merger, but whether a known instrumental event could create the same pattern. That negative work—showing why plausible alternatives fail—is part of the evidence."
+          ],
+          "sourceIds": [
+            "nobel-ligo-background"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1916–1918",
+          "title": "A relativistic prediction",
+          "text": "Einstein’s theory leads to the possibility of gravitational waves.",
+          "sourceIds": [
+            "nobel-ligo-background"
+          ]
+        },
+        {
+          "date": "1970s–1990s",
+          "title": "From proposal to observatory",
+          "text": "Interferometer concepts and institutional support advance toward LIGO construction.",
+          "sourceIds": [
+            "nobel-physics-2017"
+          ]
+        },
+        {
+          "date": "14 September 2015",
+          "title": "A signal enters the data",
+          "text": "The two LIGO observatories record the first direct gravitational-wave signal.",
+          "sourceIds": [
+            "nobel-ligo-background"
+          ]
+        },
+        {
+          "date": "2016–2017",
+          "title": "The observation is announced and recognized",
+          "text": "The collaboration publishes the result; the Nobel Prize follows in 2017.",
+          "sourceIds": [
+            "nobel-ligo-background",
+            "nobel-physics-2017"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Rainer Weiss",
+          "role": "Laureate · experimental physics",
+          "text": "Developed an interferometer concept and detailed analysis of the noise sources that could obscure a gravitational-wave signal.",
+          "sourceIds": [
+            "nobel-physics-2017"
+          ]
+        },
+        {
+          "name": "Barry C. Barish",
+          "role": "Laureate · collaboration leadership",
+          "text": "Led LIGO through construction and commissioning and helped organize it as a large scientific collaboration.",
+          "sourceIds": [
+            "nobel-physics-2017"
+          ]
+        },
+        {
+          "name": "Kip S. Thorne",
+          "role": "Laureate · theoretical physics",
+          "text": "Advanced the theoretical foundations of gravitational-wave astronomy and supported the detector programme.",
+          "sourceIds": [
+            "nobel-physics-2017"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "When a discovery depends on theory, an instrument and a large collaboration, what does “decisive contribution” tell us—and what does it leave out?",
+      "uncertainty": "The detection and its agreement with a binary-black-hole waveform are established in the collaboration’s published record. The division of credit in a multi-decade, international instrument programme is necessarily selective. The first signal also did not test every regime of general relativity or reveal every property of the source. Later observations and independent methods continue to refine the picture.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2022-quantum-entanglement",
+      "collection": "nobel",
+      "topic": "Physics · 2022",
+      "title": "A century-old argument became a working technology.",
+      "name": "Experiments with entangled photons",
+      "dek": "Aspect, Clauser and Zeilinger transformed a debate about quantum reality into experiments—and tools.",
+      "period": "Award year · 2022",
+      "visual": "quantum-entanglement-award",
+      "question": "What exactly do experiments establish when two distant measurements are correlated?",
+      "award": {
+        "year": "2022",
+        "field": "Physics",
+        "recipients": [
+          "Alain Aspect",
+          "John F. Clauser",
+          "Anton Zeilinger"
+        ],
+        "citation": "for experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science",
+        "sourceId": "nobel-physics-2022"
+      },
+      "summary": "The 2022 Physics prize recognized experiments with entangled photons that tested Bell inequalities and helped establish quantum information science. The story began as a question about whether quantum mechanics could be a complete description of physical reality. John Clauser built an early test; Alain Aspect improved the experimental design to close important loopholes; Anton Zeilinger and collaborators developed increasingly controlled experiments and demonstrated applications of entanglement. These results do not permit faster-than-light messaging. They show that correlations predicted by quantum theory cannot be explained by the class of local hidden-variable theories tested by Bell’s theorem.",
+      "summarySources": [
+        "nobel-physics-2022",
+        "nobel-quantum-background"
+      ],
+      "lead": [
+        "The 2022 Physics prize recognized experiments with entangled photons that tested Bell inequalities and helped establish quantum information science. The story began as a question about whether quantum mechanics could be a complete description of physical reality. John Clauser built an early test; Alain Aspect improved the experimental design to close important loopholes; Anton Zeilinger and collaborators developed increasingly controlled experiments and demonstrated applications of entanglement. These results do not permit faster-than-light messaging. They show that correlations predicted by quantum theory cannot be explained by the class of local hidden-variable theories tested by Bell’s theorem.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "question",
+          "title": "Einstein’s objection became a testable problem.",
+          "paragraphs": [
+            "Quantum mechanics predicts correlations between entangled systems that cannot be understood by assigning each particle its own independent set of properties. In 1935, Einstein, Boris Podolsky and Nathan Rosen argued that this tension suggested the theory might be incomplete. Niels Bohr rejected their conclusion, and the debate remained difficult to settle because it concerned what a theory says about reality as well as how it predicts measurements.",
+            "In 1964, John Bell derived inequalities that distinguish quantum predictions from a broad class of local hidden-variable explanations. The important move was methodological: an argument about completeness could be connected to observable statistical patterns. Experiments could compare measured correlations with the limits those alternative theories required."
+          ],
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        },
+        {
+          "id": "first-tests",
+          "title": "Clauser made the distinction experimental.",
+          "paragraphs": [
+            "John Clauser and collaborators performed early tests using pairs of photons and polarization measurements. Their results violated a Bell inequality, in agreement with quantum mechanics. This was a major change in the debate: Bell’s mathematical result gave experimental physicists a way to investigate it with actual detections rather than philosophical preference alone.",
+            "Early tests also left potential loopholes. A detector might miss some particles, or the measurement settings might be correlated with hidden variables in ways the experiment failed to exclude. A careful history should neither erase the pioneering result nor pretend that its first form answered every possible objection. The later experimental programme was designed in part to make those alternatives harder to sustain."
+          ],
+          "sourceIds": [
+            "nobel-quantum-background",
+            "nobel-physics-2022"
+          ]
+        },
+        {
+          "id": "closing-loopholes",
+          "title": "The experiments grew more demanding.",
+          "paragraphs": [
+            "Alain Aspect’s experiments used rapid changes in measurement settings to address the concern that the particles could coordinate through an ordinary signal during their flight. Later generations of experiments combined improved detectors and separation with stronger control of the measurement choices. The Nobel scientific background describes this progression as a series of experimental advances, not one decisive laboratory demonstration by a single person.",
+            "Anton Zeilinger’s group used entangled photons in increasingly sophisticated arrangements, including entanglement swapping and experiments relevant to quantum communication. These demonstrations helped move the subject from testing the foundations of quantum mechanics toward controlling entanglement as a resource. The award recognizes both the conceptual test and the pioneering development of quantum information science."
+          ],
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        },
+        {
+          "id": "what-it-means",
+          "title": "Entanglement is not a faster-than-light telephone.",
+          "paragraphs": [
+            "Bell-inequality violations rule out local hidden-variable models under the assumptions used to derive the inequalities. They do not allow one observer to select a message and have it arrive instantaneously at another observer. Individual measurement outcomes remain unpredictable; the correlation appears when results are compared through ordinary communication.",
+            "The practical interest comes from the structure of those correlations. Carefully prepared entangled states support quantum communication, sensing and computation research. The award’s language reflects a foundational result and a technological horizon, but a prize is not evidence that every proposed quantum device is ready for widespread use. The distinctions between a demonstrated experiment, an engineering platform and a commercial promise still matter."
+          ],
+          "sourceIds": [
+            "nobel-quantum-background",
+            "nobel-physics-2022"
+          ]
+        },
+        {
+          "id": "experimental-logic",
+          "title": "The result depends on the design of the comparison.",
+          "paragraphs": [
+            "In a Bell test, researchers prepare pairs of systems, choose measurement settings and compare the correlations between outcomes. The choice of settings and the detection of particles matter because a loophole can leave room for an alternative account. Successive experiments improved these conditions, strengthening the conclusion that observed correlations exceed the limits set by local hidden-variable models under the assumptions of the test.",
+            "This is a useful example of how scientific evidence develops. One experiment can challenge an explanation without closing every possible objection. Later experiments can improve separation, timing and detection, making the inference more robust. The result is not that scientists directly observe a metaphysical picture of reality; it is that specified classes of explanation fail to account for measured data. That distinction makes the achievement more exact and more intellectually interesting.",
+            "Bell’s inequalities do not require an experimenter to choose one interpretation of quantum mechanics. They define measurable limits for certain alternatives. The result is strongest when readers keep that operational statement separate from broader claims about what entanglement means."
+          ],
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1935",
+          "title": "A challenge to quantum completeness",
+          "text": "Einstein, Podolsky and Rosen frame a paradox about separated quantum systems.",
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        },
+        {
+          "date": "1964",
+          "title": "Bell derives inequalities",
+          "text": "A theoretical distinction creates a route to experimental tests.",
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        },
+        {
+          "date": "1970s–1980s",
+          "title": "Early photon tests",
+          "text": "Clauser and Aspect test quantum correlations with increasingly controlled experiments.",
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        },
+        {
+          "date": "2010s–2022",
+          "title": "Loophole-free tests and recognition",
+          "text": "Experimental methods mature and the foundational work receives the 2022 prize.",
+          "sourceIds": [
+            "nobel-physics-2022",
+            "nobel-quantum-background"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "John F. Clauser",
+          "role": "Laureate · experimental physics",
+          "text": "Helped turn Bell’s inequalities into an experimental test using entangled photons.",
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        },
+        {
+          "name": "Alain Aspect",
+          "role": "Laureate · experimental physics",
+          "text": "Developed experiments that addressed key loophole concerns by changing measurement settings during photon travel.",
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        },
+        {
+          "name": "Anton Zeilinger",
+          "role": "Laureate · quantum optics",
+          "text": "Advanced controlled experiments with entangled photons and helped establish quantum information science.",
+          "sourceIds": [
+            "nobel-quantum-background"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "Which is more persuasive: an argument about what a theory must mean, or an experiment that forces competing explanations to make different predictions?",
+      "uncertainty": "The measured violations and their consistency with quantum mechanics are central results. Their interpretation rules out local hidden-variable models under stated assumptions; it does not settle every philosophical interpretation of quantum mechanics. The use of entanglement in future technologies remains an engineering programme, and the existence of a Nobel-recognized foundation should not be confused with proof that every proposed device is practical.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2023-mrna-vaccines",
+      "collection": "nobel",
+      "topic": "Physiology or Medicine · 2023",
+      "title": "A molecular message became a medical platform.",
+      "name": "The mRNA discoveries behind effective vaccines",
+      "dek": "Karikó and Weissman’s work addressed a central barrier: how to deliver an RNA message without provoking the wrong response.",
+      "period": "Award year · 2023",
+      "visual": "mrna-award",
+      "question": "How can a message enter a cell and be read without provoking a harmful response?",
+      "award": {
+        "year": "2023",
+        "field": "Physiology or Medicine",
+        "recipients": [
+          "Katalin Karikó",
+          "Drew Weissman"
+        ],
+        "citation": "for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19",
+        "sourceId": "nobel-mrna-press"
+      },
+      "summary": "The 2023 Nobel Prize in Physiology or Medicine recognized Katalin Karikó and Drew Weissman for discoveries concerning nucleoside base modifications that enabled effective mRNA vaccines against COVID-19. Messenger RNA had long seemed promising as a way to instruct cells to produce a chosen protein, but unmodified laboratory-made mRNA could trigger inflammatory responses and produce protein inefficiently. Their experiments showed that modified nucleosides could change how cells recognized the message. This was a critical contribution to the vaccine platform—not the only one: delivery systems, antigen design, clinical trials, manufacturing and public investment were also essential.",
+      "summarySources": [
+        "nobel-mrna-press",
+        "nobel-mrna-2023"
+      ],
+      "lead": [
+        "The 2023 Nobel Prize in Physiology or Medicine recognized Katalin Karikó and Drew Weissman for discoveries concerning nucleoside base modifications that enabled effective mRNA vaccines against COVID-19. Messenger RNA had long seemed promising as a way to instruct cells to produce a chosen protein, but unmodified laboratory-made mRNA could trigger inflammatory responses and produce protein inefficiently. Their experiments showed that modified nucleosides could change how cells recognized the message. This was a critical contribution to the vaccine platform—not the only one: delivery systems, antigen design, clinical trials, manufacturing and public investment were also essential.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "platform",
+          "title": "A promising idea had several obstacles.",
+          "paragraphs": [
+            "Messenger RNA carries instructions from DNA-related processes to the cellular machinery that makes proteins. Researchers proposed using synthetic mRNA to direct cells to produce a selected protein, potentially including a vaccine antigen. Yet laboratory-made mRNA was unstable, difficult to deliver and capable of provoking innate immune responses that could reduce protein production and cause unwanted inflammation.",
+            "These were not merely engineering details. If the message could not be delivered to cells or if the immune system reacted to the RNA itself in an unhelpful way, the desired protein would not be produced reliably. The platform needed a better understanding of RNA chemistry and of the cell’s recognition systems before its potential could become a practical medical approach."
+          ],
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        },
+        {
+          "id": "modification",
+          "title": "A change to the message altered cellular recognition.",
+          "paragraphs": [
+            "Katalin Karikó pursued RNA-based therapeutic ideas through years when the field attracted limited institutional enthusiasm. Drew Weissman brought expertise in immunology. Their collaboration focused on how cells respond to different RNA molecules. In work published in 2005, they reported that incorporating modified nucleosides could reduce inflammatory signaling while improving protein expression in their experimental systems.",
+            "The Nobel scientific background places this result within a long sequence of advances in mRNA biology and vaccine research. The prize did not recognize the invention of messenger RNA or every component of an mRNA vaccine. It recognized a specific insight about nucleoside modifications that addressed one important biological obstacle. This distinction helps preserve both the significance of their discovery and the wider history it depended on."
+          ],
+          "sourceIds": [
+            "nobel-mrna-2023",
+            "nobel-mrna-press"
+          ]
+        },
+        {
+          "id": "from-lab-to-vaccine",
+          "title": "A platform required more than the Nobel-recognized result.",
+          "paragraphs": [
+            "For a vaccine to work, mRNA must be protected and transported into cells. Lipid nanoparticles and other delivery research helped address that challenge. The SARS-CoV-2 spike protein had to be designed in a form that would elicit a useful immune response. Manufacturing processes, preclinical studies, safety monitoring and large clinical trials were also part of the translation from molecular principle to authorized vaccines.",
+            "The Nobel Assembly’s background explicitly describes this layered development, including delivery systems and antigen stabilization. That makes the history more interesting, not less: a foundational molecular discovery becomes medically consequential when it connects with complementary research, institutions and industrial capability. A popular account that names only two laureates risks making a platform look like a single invention."
+          ],
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        },
+        {
+          "id": "impact-and-boundaries",
+          "title": "What the prize establishes—and what it does not.",
+          "paragraphs": [
+            "The COVID-19 pandemic compressed the timeline between early research and enormous-scale clinical evaluation. Trials showed that mRNA vaccines could be developed quickly and provide substantial protection against symptomatic disease in their studied populations. Their speed reflected decades of basic science, rapid sequencing, funding, manufacturing preparation and a public-health emergency that reshaped how clinical development was organized.",
+            "The award does not establish that every mRNA treatment will be effective, or that one platform can solve every infectious disease. Outcomes depend on the target, formulation, delivery, immune response and trial evidence. The responsible lesson is more precise: a difficult piece of basic research helped make a flexible platform clinically usable, while the successful vaccines emerged from a much broader system of scientific and public work."
+          ],
+          "sourceIds": [
+            "nobel-mrna-2023",
+            "nobel-mrna-press"
+          ]
+        },
+        {
+          "id": "platform-contributions",
+          "title": "The platform was built by complementary discoveries.",
+          "paragraphs": [
+            "The Nobel scientific background traces a longer chain of research: the discovery of messenger RNA, methods for producing it outside cells, lipid-based delivery, improved ionizable lipid nanoparticles and changes to the encoded antigen. Each solved a different bottleneck. A stable message that cannot enter a cell is not a vaccine; an effective delivery system carrying a poorly chosen antigen is not enough either.",
+            "This account of complementarity also helps explain why the COVID-19 vaccines could be developed quickly once the viral sequence was available. The speed reflected years of prior work and an exceptional mobilization of money, infrastructure and clinical participation. It should not be presented as evidence that ordinary safety steps were simply skipped. The award focuses on one enabling discovery; the full medical result belongs to a broader research and public-health history."
+          ],
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1960s onward",
+          "title": "mRNA becomes a research object",
+          "text": "Foundational work establishes how messenger RNA carries information for protein production.",
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        },
+        {
+          "date": "1990s–2000s",
+          "title": "Synthetic mRNA meets biological barriers",
+          "text": "Research explores delivery, stability and unwanted inflammatory responses.",
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        },
+        {
+          "date": "2005",
+          "title": "Nucleoside modifications change the response",
+          "text": "Karikó and Weissman report reduced innate immune recognition and improved expression in experimental systems.",
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        },
+        {
+          "date": "2020",
+          "title": "A platform reaches large-scale testing",
+          "text": "mRNA COVID-19 vaccines enter pivotal clinical trials and receive emergency authorizations.",
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        },
+        {
+          "date": "2023",
+          "title": "The discovery is recognized",
+          "text": "The Nobel Assembly awards the Medicine prize for the nucleoside-modification discoveries.",
+          "sourceIds": [
+            "nobel-mrna-press"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Katalin Karikó",
+          "role": "Laureate · biochemistry and RNA research",
+          "text": "Persisted in mRNA research and co-discovered how modified nucleosides could make synthetic mRNA more suitable for therapeutic use.",
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        },
+        {
+          "name": "Drew Weissman",
+          "role": "Laureate · immunology",
+          "text": "Collaborated on experiments that connected RNA chemistry with innate immune sensing and protein production.",
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        },
+        {
+          "name": "The wider platform teams",
+          "role": "Researchers, clinicians and engineers",
+          "text": "Delivery, antigen design, clinical assessment and production required work across many laboratories, institutions and companies.",
+          "sourceIds": [
+            "nobel-mrna-2023"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "When does a foundational discovery become a practical technology—and which complementary advances make the transition possible?",
+      "uncertainty": "The prize motivation identifies a particular discovery concerning nucleoside modifications. The scientific background describes additional work required for approved vaccines, including lipid delivery, antigen stabilization, clinical evaluation and manufacturing. This account does not attribute all vaccine development or pandemic outcomes to the two laureates; nor does evidence from COVID-19 vaccines guarantee the effectiveness of future mRNA applications.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2020-crispr-gene-editing",
+      "collection": "nobel",
+      "topic": "Chemistry · 2020",
+      "title": "A bacterial defense system became a programmable tool.",
+      "name": "CRISPR-Cas9 and genome editing",
+      "dek": "Charpentier and Doudna helped transform a microbial mechanism into a method researchers could direct to chosen DNA sequences.",
+      "period": "Award year · 2020",
+      "visual": "crispr-award",
+      "question": "How did a bacterial immune mechanism become a tool scientists can program?",
+      "award": {
+        "year": "2020",
+        "field": "Chemistry",
+        "recipients": [
+          "Emmanuelle Charpentier",
+          "Jennifer A. Doudna"
+        ],
+        "citation": "for the development of a method for genome editing",
+        "sourceId": "nobel-crispr-2020"
+      },
+      "summary": "The 2020 Chemistry prize recognized Emmanuelle Charpentier and Jennifer Doudna for the development of a method for genome editing using CRISPR-Cas9. The system originated in bacterial defense against viruses: guide RNA helps direct a Cas enzyme to matching genetic material. Their collaborative work demonstrated that the molecular components could be simplified and programmed to cut DNA at selected sites. The tool made genetic experiments faster and more accessible, but editing is not the same as a perfectly predictable repair. Its clinical, agricultural and ethical uses demand context-specific evidence and oversight.",
+      "summarySources": [
+        "nobel-crispr-2020",
+        "nobel-crispr-background"
+      ],
+      "lead": [
+        "The 2020 Chemistry prize recognized Emmanuelle Charpentier and Jennifer Doudna for the development of a method for genome editing using CRISPR-Cas9. The system originated in bacterial defense against viruses: guide RNA helps direct a Cas enzyme to matching genetic material. Their collaborative work demonstrated that the molecular components could be simplified and programmed to cut DNA at selected sites. The tool made genetic experiments faster and more accessible, but editing is not the same as a perfectly predictable repair. Its clinical, agricultural and ethical uses demand context-specific evidence and oversight.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "bacterial-system",
+          "title": "The first clue came from microbial biology.",
+          "paragraphs": [
+            "Bacteria face attacks from bacteriophages, viruses that infect bacterial cells. CRISPR arrays in bacterial genomes contain repeated sequences separated by fragments related to past invaders. With associated proteins, these sequences contribute to a defense system that can recognize and cut genetic material from a returning virus. What began as an unusual pattern in microbial DNA became a question about a form of adaptive immunity.",
+            "Emmanuelle Charpentier studied Streptococcus pyogenes and identified tracrRNA, a molecule involved in the bacterium’s CRISPR-Cas system. Her work helped establish how the RNA components participated in the defense mechanism. This history matters because the editing tool was not invented from nothing: it came from understanding a biological process shaped by bacteria and their viral environments."
+          ],
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        },
+        {
+          "id": "collaboration",
+          "title": "A collaboration made the mechanism programmable.",
+          "paragraphs": [
+            "In 2011, Charpentier and Jennifer Doudna began a collaboration that combined Charpentier’s work on the bacterial system with Doudna’s expertise in RNA biochemistry. In experiments reported in 2012, they reconstructed the CRISPR-Cas9 machinery in vitro and simplified its RNA components. They then showed that the system could be directed to cut DNA at a chosen sequence rather than only at the targets it naturally encountered in bacterial defense.",
+            "The key conceptual shift was programmability. A researcher could design a guide sequence to bring Cas9 to a selected region of DNA. The break could then be used to disrupt a gene or to support an attempted sequence change through cellular repair. This made a complex molecular process usable as a general research method across many organisms and laboratories."
+          ],
+          "sourceIds": [
+            "nobel-crispr-background",
+            "nobel-crispr-2020"
+          ]
+        },
+        {
+          "id": "what-editing-means",
+          "title": "A cut is not the same as a controlled rewrite.",
+          "paragraphs": [
+            "CRISPR-Cas9 is often described as molecular scissors, but the metaphor leaves out important steps. The guide must match a target; the enzyme must reach the intended cells; and the cell’s repair processes determine what happens after a cut. Those repair outcomes can vary. Researchers therefore measure editing efficiency, unintended changes and biological effects rather than assuming that a designed guide produces a perfectly specified result.",
+            "The Nobel committee emphasized how the method transformed basic research and could contribute to medical treatments and agriculture. That description points to potential, not a blanket assurance of safety or success. Laboratory use, crop development, somatic treatment and heritable human genome editing involve different risks and ethical questions. A tool can be powerful while the appropriateness of a particular use remains contested."
+          ],
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        },
+        {
+          "id": "credit-and-consequence",
+          "title": "The tool sits within a larger history.",
+          "paragraphs": [
+            "The award recognizes Charpentier and Doudna’s development of a programmable method, while the scientific background traces earlier work on CRISPR repeats, bacterial immunity and Cas proteins. A method’s emergence is cumulative: basic microbial research created the knowledge that enabled the molecular redesign, and later laboratories developed variants, delivery strategies and applications.",
+            "The impact has been broad in life-science research because researchers can perturb genes and observe what changes. That does not mean every result is interpretable on its own. Cell type, off-target activity, delivery and experimental controls all matter. Nor does the historical account end with the prize: scientific, legal and public debates about patents, access and applications continue. The most accurate story holds the recognized collaboration and the wider ecosystem in view together."
+          ],
+          "sourceIds": [
+            "nobel-crispr-background",
+            "nobel-crispr-2020"
+          ]
+        },
+        {
+          "id": "method-and-governance",
+          "title": "A method changes what can be asked—and what must be governed.",
+          "paragraphs": [
+            "When gene editing becomes faster and more accessible, researchers can test questions that once required extensive effort. They can disrupt a candidate gene, compare resulting cells and investigate biological mechanisms. That expanded experimental capacity is part of the method’s scientific impact. It also raises questions about which experiments are justified, who bears risk and how results should be shared across institutions and countries.",
+            "The Nobel record describes a method for genome editing; it does not provide an ethical rulebook for every use. Somatic therapies aimed at treating an individual patient, crop engineering and heritable editing have distinct consequences and governance requirements. Public discussion is strongest when it identifies the application precisely rather than treating “CRISPR” as one uniform intervention. Technical possibility and social permission are separate questions."
+          ],
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1980s–2000s",
+          "title": "Repeated DNA sequences draw attention",
+          "text": "Researchers characterize CRISPR arrays and their association with bacterial defense.",
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        },
+        {
+          "date": "2007",
+          "title": "A microbial immune function is demonstrated",
+          "text": "Experiments link CRISPR sequences with protection against bacteriophages.",
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        },
+        {
+          "date": "2011–2012",
+          "title": "A programmable system is reconstituted",
+          "text": "Charpentier and Doudna’s collaboration demonstrates targeted DNA cleavage.",
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        },
+        {
+          "date": "2020",
+          "title": "The method receives the Chemistry prize",
+          "text": "The award recognizes genome-editing method development.",
+          "sourceIds": [
+            "nobel-crispr-2020"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Emmanuelle Charpentier",
+          "role": "Laureate · microbiology",
+          "text": "Identified tracrRNA in a bacterial CRISPR system and co-developed the programmable method with Doudna.",
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        },
+        {
+          "name": "Jennifer A. Doudna",
+          "role": "Laureate · biochemistry",
+          "text": "Brought RNA expertise to the collaboration that simplified and reprogrammed the Cas9 system.",
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        },
+        {
+          "name": "Earlier CRISPR researchers",
+          "role": "Microbiology and molecular genetics",
+          "text": "Researchers who characterized repeated sequences, spacer acquisition and bacterial defense supplied crucial foundations for the method.",
+          "sourceIds": [
+            "nobel-crispr-background"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "Why is understanding a biological system sometimes more powerful than designing a tool from first principles?",
+      "uncertainty": "The award recognized a method for genome editing, not a claim that every edit is exact, safe or ethically acceptable. DNA repair outcomes, delivery and unintended effects vary across settings. This account follows the Nobel scientific background and does not try to resolve the separate patent disputes or policy questions surrounding particular applications.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2019-lithium-ion-battery",
+      "collection": "nobel",
+      "topic": "Chemistry · 2019",
+      "title": "Three material advances made portable power practical.",
+      "name": "The development of the lithium-ion battery",
+      "dek": "Whittingham, Goodenough and Yoshino solved different parts of a materials problem that changed how energy could travel.",
+      "period": "Award year · 2019",
+      "visual": "lithium-battery-award",
+      "question": "How do three different materials decisions turn a chemical possibility into a usable battery?",
+      "award": {
+        "year": "2019",
+        "field": "Chemistry",
+        "recipients": [
+          "M. Stanley Whittingham",
+          "John B. Goodenough",
+          "Akira Yoshino"
+        ],
+        "citation": "for the development of lithium-ion batteries",
+        "sourceId": "nobel-battery-2019"
+      },
+      "summary": "The 2019 Chemistry prize recognized M. Stanley Whittingham, John Goodenough and Akira Yoshino for the development of lithium-ion batteries. The achievement was cumulative: Whittingham demonstrated a high-voltage battery using intercalation chemistry; Goodenough identified a cathode material that raised the voltage; Yoshino developed a safer cell using lithium ions rather than metallic lithium at the anode. Commercialization then required engineering, manufacturing and further materials work. The battery enabled portable electronics and supports electric vehicles and grid storage, while its extraction, recycling, safety and supply-chain impacts remain important questions.",
+      "summarySources": [
+        "nobel-battery-2019",
+        "nobel-battery-advanced"
+      ],
+      "lead": [
+        "The 2019 Chemistry prize recognized M. Stanley Whittingham, John Goodenough and Akira Yoshino for the development of lithium-ion batteries. The achievement was cumulative: Whittingham demonstrated a high-voltage battery using intercalation chemistry; Goodenough identified a cathode material that raised the voltage; Yoshino developed a safer cell using lithium ions rather than metallic lithium at the anode. Commercialization then required engineering, manufacturing and further materials work. The battery enabled portable electronics and supports electric vehicles and grid storage, while its extraction, recycling, safety and supply-chain impacts remain important questions.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "energy-storage",
+          "title": "The challenge was storing energy reversibly.",
+          "paragraphs": [
+            "A rechargeable battery must move ions and electrons through a circuit, then permit the process to run in reverse during charging. To be useful, it needs an adequate voltage and capacity, stable repeated cycling, acceptable safety and materials that can be made at scale. Lithium attracted attention because it is light and readily gives up an electron, but that reactivity also makes cell design demanding.",
+            "In the 1970s, M. Stanley Whittingham developed a battery that used lithium at one electrode and titanium disulfide as a host material for lithium ions at the other. This intercalation approach allowed ions to enter and leave a layered structure. It demonstrated a promising high-voltage principle, while also exposing safety concerns associated with metallic lithium and the practical limits of early materials."
+          ],
+          "sourceIds": [
+            "nobel-battery-2019",
+            "nobel-battery-advanced"
+          ]
+        },
+        {
+          "id": "materials",
+          "title": "Goodenough changed the cathode chemistry.",
+          "paragraphs": [
+            "John Goodenough and colleagues investigated transition-metal oxides as cathode materials. In 1980, his group showed that lithium cobalt oxide could provide substantially higher voltage than the earlier titanium-disulfide system. Its layered structure could accommodate lithium ions as the battery charged and discharged, making a more powerful cell possible.",
+            "The contribution was not a complete consumer battery by itself. A high-voltage cathode had to be paired with a suitable anode, electrolyte and separator, then tested for stability and safety. The importance of Goodenough’s material becomes clear in the system it enabled: it expanded the design space for rechargeable batteries and became part of the foundation for the lithium-ion cells that followed."
+          ],
+          "sourceIds": [
+            "nobel-battery-2019",
+            "nobel-battery-advanced"
+          ]
+        },
+        {
+          "id": "practical-cell",
+          "title": "Yoshino brought the design closer to a practical cell.",
+          "paragraphs": [
+            "Akira Yoshino developed a cell that used a carbonaceous material, including petroleum coke in the Nobel account, to host lithium ions at the anode rather than relying on metallic lithium. Paired with Goodenough’s cathode, the design made a rechargeable cell safer and more practical. The arrangement allowed lithium ions to shuttle between host materials during charging and discharging.",
+            "Commercial products still required further engineering and manufacturing. Companies refined electrodes, electrolytes, separators, packaging and quality control before lithium-ion cells could be produced reliably at scale. The Nobel scientific background stresses the multidisciplinary character of this history. Electrochemistry, inorganic and organic chemistry, materials science and industrial engineering all contributed to making the battery useful outside the laboratory."
+          ],
+          "sourceIds": [
+            "nobel-battery-2019",
+            "nobel-battery-advanced"
+          ]
+        },
+        {
+          "id": "consequences",
+          "title": "Portable power carries material consequences.",
+          "paragraphs": [
+            "Lithium-ion batteries changed the scale and convenience of stored electricity. They enabled mobile phones and laptops, and they are now used in electric vehicles and stationary storage systems. Their role in storing intermittent renewable energy gives them significance beyond personal devices. A relatively compact rechargeable cell altered how electronics, transport and electricity systems could be designed.",
+            "That impact should not be treated as an uncomplicated environmental victory. Battery minerals must be extracted and processed; cells can fail if damaged or improperly managed; and collection, reuse and recycling systems matter. Battery chemistry and supply chains continue to evolve. The Nobel-recognized development explains a foundational technology, but evaluating its full consequences requires examining where materials come from, how products are used and what happens at end of life."
+          ],
+          "sourceIds": [
+            "nobel-battery-2019",
+            "nobel-battery-advanced"
+          ]
+        },
+        {
+          "id": "life-cycle",
+          "title": "The battery’s history continues after the invention.",
+          "paragraphs": [
+            "The rechargeable cell is only one stage in a material system. Lithium and other battery minerals must be mined, refined and transported; factories require energy and quality controls; cells need charging systems and safe enclosures; and end-of-life products must be collected, reused or recycled. The climate value of a battery therefore depends partly on the electricity used to manufacture and charge it, the vehicle or storage system it enables and whether materials return to productive use.",
+            "This wider view does not diminish the Nobel-recognized chemistry. It shows why a technological achievement invites further questions rather than ending them. Battery design is still changing, and different chemistries make different trade-offs in energy density, cost, safety and material use. A careful historical story can connect foundational work to present applications without claiming that one invention resolved the environmental questions around energy storage."
+          ],
+          "sourceIds": [
+            "nobel-battery-advanced"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1970s",
+          "title": "Whittingham tests intercalation chemistry",
+          "text": "A lithium-based rechargeable battery demonstrates high voltage and reveals safety challenges.",
+          "sourceIds": [
+            "nobel-battery-2019"
+          ]
+        },
+        {
+          "date": "1980",
+          "title": "A higher-voltage cathode",
+          "text": "Goodenough’s lithium cobalt oxide material raises the cell’s potential.",
+          "sourceIds": [
+            "nobel-battery-2019",
+            "nobel-battery-advanced"
+          ]
+        },
+        {
+          "date": "1985",
+          "title": "A safer anode design",
+          "text": "Yoshino develops a cell based on lithium ions hosted in carbonaceous material.",
+          "sourceIds": [
+            "nobel-battery-2019"
+          ]
+        },
+        {
+          "date": "1991 onward",
+          "title": "Commercial lithium-ion cells",
+          "text": "Industrial development brings rechargeable cells into portable electronics and later wider applications.",
+          "sourceIds": [
+            "nobel-battery-advanced"
+          ]
+        },
+        {
+          "date": "2019",
+          "title": "The Chemistry prize recognizes the development",
+          "text": "The award honors three complementary contributions to lithium-ion batteries.",
+          "sourceIds": [
+            "nobel-battery-2019"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "M. Stanley Whittingham",
+          "role": "Laureate · electrochemistry",
+          "text": "Demonstrated an early high-voltage rechargeable battery using lithium and intercalation chemistry.",
+          "sourceIds": [
+            "nobel-battery-2019"
+          ]
+        },
+        {
+          "name": "John B. Goodenough",
+          "role": "Laureate · materials chemistry",
+          "text": "Developed a higher-voltage lithium cobalt oxide cathode that enabled more powerful cell designs.",
+          "sourceIds": [
+            "nobel-battery-2019"
+          ]
+        },
+        {
+          "name": "Akira Yoshino",
+          "role": "Laureate · industrial chemistry",
+          "text": "Designed a practical lithium-ion cell that used carbonaceous material in place of metallic lithium at the anode.",
+          "sourceIds": [
+            "nobel-battery-2019"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "When a technology is called “clean,” which stages of its material life cycle should be included in that judgment?",
+      "uncertainty": "The Nobel record recognizes three major contributions to development of lithium-ion batteries. Commercial batteries also depended on industrial scale-up, engineering, manufacturing and subsequent materials improvements. Their benefits in mobility and storage do not erase extraction, fire-safety, reuse or recycling concerns, which depend on supply chains and local systems.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2024-protein-design",
+      "collection": "nobel",
+      "topic": "Chemistry · 2024",
+      "title": "Protein science moved from reading nature to designing new forms.",
+      "name": "Predicting and designing proteins",
+      "dek": "The 2024 prize joined two related but distinct achievements: inferring structure from sequence and designing proteins with chosen properties.",
+      "period": "Award year · 2024",
+      "visual": "protein-structure-award",
+      "question": "What changes when scientists can model a protein’s form—or design a new one?",
+      "award": {
+        "year": "2024",
+        "field": "Chemistry",
+        "recipients": [
+          "David Baker",
+          "Demis Hassabis",
+          "John Jumper"
+        ],
+        "citation": "for computational protein design and for protein structure prediction",
+        "sourceId": "nobel-proteins-2024"
+      },
+      "summary": "The 2024 Chemistry prize recognized two advances in protein science. David Baker was awarded for computational protein design: using methods such as Rosetta to create proteins with desired structures and functions. Demis Hassabis and John Jumper were recognized for protein-structure prediction, particularly the development of AlphaFold2, which predicts three-dimensional structures from amino-acid sequences. These achievements address complementary questions—how a protein may fold, and how to design one—not a single solved problem. Their value is substantial for research, while experimental validation, biological context and limits of prediction remain essential.",
+      "summarySources": [
+        "nobel-proteins-2024",
+        "nobel-protein-background"
+      ],
+      "lead": [
+        "The 2024 Chemistry prize recognized two advances in protein science. David Baker was awarded for computational protein design: using methods such as Rosetta to create proteins with desired structures and functions. Demis Hassabis and John Jumper were recognized for protein-structure prediction, particularly the development of AlphaFold2, which predicts three-dimensional structures from amino-acid sequences. These achievements address complementary questions—how a protein may fold, and how to design one—not a single solved problem. Their value is substantial for research, while experimental validation, biological context and limits of prediction remain essential.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "protein-problem",
+          "title": "A sequence does not make a structure obvious.",
+          "paragraphs": [
+            "Proteins are chains of amino acids that fold into three-dimensional shapes. Their structure strongly influences what they do in cells: bind molecules, catalyze reactions, provide support or carry signals. Determining a structure experimentally can be demanding, so scientists have long asked whether the sequence alone could reveal the folded form well enough to guide further research.",
+            "Prediction is difficult because the interactions among amino acids, the surrounding environment and the protein’s biological setting shape its form. A computational model can offer a powerful hypothesis, but it does not automatically show how a protein behaves in every cell or under every condition. The Chemistry prize recognized advances that made prediction markedly more useful and design newly productive."
+          ],
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        },
+        {
+          "id": "prediction",
+          "title": "AlphaFold2 changed the scale of prediction.",
+          "paragraphs": [
+            "Demis Hassabis and John Jumper led the development of AlphaFold2 at DeepMind. The system used machine-learning methods and information from related protein sequences to predict structures with a level of accuracy that transformed many structural-biology workflows. The scientific background describes the methods and their evaluation in the Critical Assessment of protein Structure Prediction, or CASP, competition.",
+            "The impact was not that every structure became known with certainty. A model’s confidence varies across regions; flexible proteins, complexes and changes in cellular conditions create additional challenges. Predicted structures are valuable starting points for experiments and reasoning. They should be interpreted with confidence measures and checked against available experimental evidence, especially when downstream decisions depend on a precise molecular interaction."
+          ],
+          "sourceIds": [
+            "nobel-protein-background",
+            "nobel-proteins-2024"
+          ]
+        },
+        {
+          "id": "design",
+          "title": "Baker’s work asks a different question.",
+          "paragraphs": [
+            "David Baker’s computational protein-design work uses algorithms to search for amino-acid sequences that can form useful structures. Rather than starting with a natural sequence and asking what shape it takes, design begins from a desired form or function and seeks a protein that could achieve it. Baker’s laboratory developed and extended Rosetta as a platform for predicting structures and designing new proteins.",
+            "Design offers a way to explore molecular possibilities beyond the proteins that evolution has already produced. Researchers can create candidates for binding, catalysis or other functions, then synthesize and test them. The experimental step is crucial: a design is a proposal until it folds and performs as intended. The award’s two parts belong together because prediction informs design, while design tests what computational understanding can make possible."
+          ],
+          "sourceIds": [
+            "nobel-protein-background",
+            "nobel-proteins-2024"
+          ]
+        },
+        {
+          "id": "responsible-use",
+          "title": "A powerful model is not a substitute for biology.",
+          "paragraphs": [
+            "Protein prediction and design can accelerate work in basic biology, medicine, biotechnology and materials research. They help researchers formulate hypotheses and prioritize experiments. The prize foregrounds a shift in what computation can contribute to chemistry: not merely organizing existing data but generating structural predictions and entirely new molecular candidates.",
+            "The limits are equally important. A predicted structure is not a complete account of a protein’s dynamics, its interactions in a living system or its clinical value. Designed proteins require laboratory testing, safety evaluation and evidence in their intended context. The prize documents a major technical achievement; it does not imply that every downstream application is already validated or that computation has replaced experimental science."
+          ],
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        },
+        {
+          "id": "prediction-and-experiment",
+          "title": "Computational insight earns trust through comparison.",
+          "paragraphs": [
+            "Protein-structure prediction became credible through repeated comparison with experimentally determined structures and shared evaluation standards. CASP challenged teams to predict structures before the results were known, allowing performance to be assessed against later experimental evidence. That kind of prospective test matters: a model’s attractive visualization is not itself evidence of accuracy. Benchmarks, confidence estimates and subsequent laboratory work give researchers reasons to trust some predictions more than others.",
+            "Protein design follows a parallel but distinct path. A designed sequence must be synthesized and tested to learn whether it folds, binds or performs the intended function. Computation narrows the search and proposes structures; experiments establish what the molecule actually does under measured conditions. This interplay between prediction and test is the central methodological lesson of the prize. AI expands scientific reach most convincingly when its outputs remain answerable to empirical evidence."
+          ],
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1960s onward",
+          "title": "The structure problem takes shape",
+          "text": "Protein sequences and structures become a central challenge in molecular biology.",
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        },
+        {
+          "date": "1990s onward",
+          "title": "Computational design develops",
+          "text": "Baker’s group builds Rosetta and explores de novo protein design.",
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        },
+        {
+          "date": "2018–2020",
+          "title": "AlphaFold changes prediction performance",
+          "text": "DeepMind’s systems improve markedly at CASP and lead to AlphaFold2.",
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        },
+        {
+          "date": "2024",
+          "title": "Two complementary achievements share the Chemistry prize",
+          "text": "The Academy recognizes protein design and structure prediction separately.",
+          "sourceIds": [
+            "nobel-proteins-2024"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "David Baker",
+          "role": "Laureate · computational protein design",
+          "text": "Developed methods and tools for designing new proteins with structures and possible functions selected by researchers.",
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        },
+        {
+          "name": "Demis Hassabis",
+          "role": "Laureate · computational biology",
+          "text": "Led the development of AlphaFold2, a system for predicting protein structures from amino-acid sequences.",
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        },
+        {
+          "name": "John Jumper",
+          "role": "Laureate · structural biology and machine learning",
+          "text": "Helped lead AlphaFold2’s design and scientific development.",
+          "sourceIds": [
+            "nobel-protein-background"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "Why should a predicted molecular structure remain a hypothesis even when a computational system performs exceptionally well?",
+      "uncertainty": "The prize distinguishes computational protein design from protein-structure prediction. Predicted structures can include uncertainty and do not fully capture protein dynamics, complexes or biological context. Designed candidates require experimental validation. This account does not claim that AI has solved protein function generally or made laboratory evidence unnecessary.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2024-han-kang",
+      "collection": "nobel",
+      "topic": "Literature · 2024",
+      "title": "A body can carry history that public language cannot contain.",
+      "name": "Han Kang and the fragility of human life",
+      "dek": "The Academy recognized an intensely poetic body of work that confronts historical trauma and asks what violence does to the living.",
+      "period": "Award year · 2024",
+      "visual": "han-kang-award",
+      "question": "How can fiction bear witness to violence without pretending to replace testimony or history?",
+      "award": {
+        "year": "2024",
+        "field": "Literature",
+        "recipients": [
+          "Han Kang"
+        ],
+        "citation": "for her intense poetic prose that confronts historical traumas and exposes the fragility of human life",
+        "sourceId": "nobel-han-2024"
+      },
+      "summary": "The Swedish Academy awarded Han Kang the 2024 Nobel Prize in Literature for prose that confronts historical traumas and exposes human vulnerability. Her writing often approaches political violence through intimate experience: the body, family, memory and the boundaries between speech and silence. The prize offers a frame for reading works such as The Vegetarian and Human Acts, but the novels do not function as documentary substitutes for historical records. Their power lies in literary form—voice, structure, image and perspective—and in the ethical pressure they place on readers to consider what can be represented after violence.",
+      "summarySources": [
+        "nobel-han-2024",
+        "nobel-han-lecture"
+      ],
+      "lead": [
+        "The Swedish Academy awarded Han Kang the 2024 Nobel Prize in Literature for prose that confronts historical traumas and exposes human vulnerability. Her writing often approaches political violence through intimate experience: the body, family, memory and the boundaries between speech and silence. The prize offers a frame for reading works such as The Vegetarian and Human Acts, but the novels do not function as documentary substitutes for historical records. Their power lies in literary form—voice, structure, image and perspective—and in the ethical pressure they place on readers to consider what can be represented after violence.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "award-language",
+          "title": "The prize motivation offers a way into the work.",
+          "paragraphs": [
+            "The Swedish Academy’s 2024 motivation names three connected elements: poetic intensity, historical trauma and the fragility of human life. It points to a body of writing rather than rewarding one isolated book. The language is useful as an invitation, but it is not a full interpretation of Han Kang’s work. Readers still need to attend to the different voices, forms and historical settings of individual books.",
+            "In The Vegetarian, a refusal to eat meat unsettles a family and the social expectations around the protagonist’s body. Human Acts turns toward the aftermath of the 1980 Gwangju uprising through multiple perspectives. These examples show how Han uses formal choices to make vulnerability and coercion legible. A responsible account distinguishes fictional construction from historical documentation."
+          ],
+          "sourceIds": [
+            "nobel-han-2024",
+            "nobel-han-lecture"
+          ]
+        },
+        {
+          "id": "form-and-voice",
+          "title": "Form carries part of the argument.",
+          "paragraphs": [
+            "Han’s prose is often described as poetic, but the label should not be mistaken for decorative language. Images, repetition, shifts in perspective and the relation between silence and speech shape how a reader encounters painful material. Form controls proximity: it can bring a scene close, interrupt an account or make a reader feel the limits of what a narrator can know.",
+            "In Human Acts, a sequence of voices prevents one perspective from becoming the entire record of an event and its aftermath. The structure asks readers to assemble a partial history while confronting the losses that cannot be repaired by narrative. This is not the same as a conventional archive. The novel makes a literary claim about memory and responsibility, and the reader should keep that claim distinct from evidence about specific historical events."
+          ],
+          "sourceIds": [
+            "nobel-han-lecture",
+            "nobel-han-2024"
+          ]
+        },
+        {
+          "id": "historical-trauma",
+          "title": "Writing historical trauma means attending to absence.",
+          "paragraphs": [
+            "Historical trauma reaches beyond the moment of violence. It can persist in family memory, in public silence, in the treatment of survivors and in the language available to later generations. Han’s fiction returns to these afterlives, asking how ordinary relationships and bodies are altered by political force. The work does not offer an easy movement from suffering to healing.",
+            "The Nobel lecture provides a primary voice for understanding how Han thinks about literature and vulnerability. It can be read alongside the Academy’s presentation and the texts themselves, while noting that an author’s public lecture is a situated account rather than the final explanation of every novel. Biographical or political context should clarify a reading, not reduce the work to a coded statement about history."
+          ],
+          "sourceIds": [
+            "nobel-han-lecture",
+            "nobel-han-2024"
+          ]
+        },
+        {
+          "id": "reader-responsibility",
+          "title": "The reader is asked to witness carefully.",
+          "paragraphs": [
+            "One reason these books can be difficult is that they refuse the comfort of looking at violence from a safe distance. Their shifts in voice and time make the reader encounter the limits of knowledge and the persistence of grief. The ethical question is not whether fiction can prove what happened; it is what literary imagination can make perceptible about the human consequences of events already documented in historical records.",
+            "When reading Human Acts, pair the novel with reliable histories of the Gwangju uprising rather than using fiction as a sole factual source. When reading The Vegetarian, follow the work’s own structure and the pressure placed on bodily autonomy, rather than turning its central image into a simple symbol. The distinction between literary interpretation and historical evidence protects both the art and the record."
+          ],
+          "sourceIds": [
+            "nobel-han-2024",
+            "nobel-han-lecture"
+          ]
+        },
+        {
+          "id": "reading-with-context",
+          "title": "Read the novel with history, not in place of it.",
+          "paragraphs": [
+            "Human Acts is closely associated with the Gwangju uprising, a historical event that should be studied through documented history and testimony as well as through the novel. Han’s work is not a transcript of survivor accounts. Its structure, invented voices and shifting perspectives create a literary encounter with how violence reverberates through the living. Treating the book as a factual source would confuse the novel’s artistic method with historical documentation.",
+            "The distinction also prevents the reverse mistake: dismissing the novel because it is fiction. Literary form can disclose emotional, ethical and temporal dimensions that a chronology does not aim to capture. Read the award motivation as an orientation, the Nobel lecture as the author’s situated reflection, and the novel as an artwork that generates its own questions. Those sources illuminate one another without becoming interchangeable."
+          ],
+          "sourceIds": [
+            "nobel-han-2024",
+            "nobel-han-lecture"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1993",
+          "title": "A literary career begins",
+          "text": "Han Kang publishes poetry before developing a sustained body of prose work.",
+          "sourceIds": [
+            "nobel-han-lecture"
+          ]
+        },
+        {
+          "date": "2007",
+          "title": "The Vegetarian appears in Korean",
+          "text": "A novel about bodily refusal and family pressure becomes one of her best-known works.",
+          "sourceIds": [
+            "nobel-han-lecture"
+          ]
+        },
+        {
+          "date": "2014",
+          "title": "Human Acts is published",
+          "text": "The novel engages the Gwangju uprising and the lives shaped by its aftermath.",
+          "sourceIds": [
+            "nobel-han-lecture"
+          ]
+        },
+        {
+          "date": "2024",
+          "title": "The Literature prize recognizes her body of work",
+          "text": "The Swedish Academy names poetic prose, historical trauma and human vulnerability.",
+          "sourceIds": [
+            "nobel-han-2024"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Han Kang",
+          "role": "Laureate · novelist and poet",
+          "text": "Builds formally inventive prose around bodily vulnerability, memory, political violence and the limits of language.",
+          "sourceIds": [
+            "nobel-han-2024",
+            "nobel-han-lecture"
+          ]
+        },
+        {
+          "name": "Translators",
+          "role": "Literary collaborators across languages",
+          "text": "Readers encounter Han’s work through translation; the Nobel lecture and translated editions make questions of voice and language especially relevant.",
+          "sourceIds": [
+            "nobel-han-lecture"
+          ]
+        },
+        {
+          "name": "Readers and historical witnesses",
+          "role": "Distinct sources of knowledge",
+          "text": "The novels invite interpretation, while testimony and historical scholarship establish factual accounts of events such as Gwangju.",
+          "sourceIds": [
+            "nobel-han-2024"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "What can a novel help a reader feel or notice about historical violence that a factual chronology alone might not convey?",
+      "uncertainty": "The Academy’s motivation is an interpretive institutional statement, not a complete scholarly consensus about Han Kang. The novels engage historical violence through fiction; they should not be cited as documentary proof of events. Translation also shapes how literary form reaches different readers. This account treats these distinctions as part of the reading rather than as reasons to reduce the work to a single message.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2022-annie-ernaux",
+      "collection": "nobel",
+      "topic": "Literature · 2022",
+      "title": "An individual life became a record of class and collective memory.",
+      "name": "Annie Ernaux and the social life of memory",
+      "dek": "Ernaux’s pared-back autobiographical writing examines how private experience is shaped by class, gender and history.",
+      "period": "Award year · 2022",
+      "visual": "ernaux-award",
+      "question": "When does a personal memory reveal a shared social structure—and where does it remain singular?",
+      "award": {
+        "year": "2022",
+        "field": "Literature",
+        "recipients": [
+          "Annie Ernaux"
+        ],
+        "citation": "for the courage and clinical acuity with which she uncovers the roots, estrangements and collective restraints of personal memory",
+        "sourceId": "nobel-ernaux-2022"
+      },
+      "summary": "Annie Ernaux received the 2022 Literature prize for work that uncovers the roots and social restraints of personal memory. Her books draw on lived experience while resisting the idea that a life is purely private. Class, education, gender, language and historical change shape what can be remembered and how it can be written. Ernaux’s spare style seeks precision and distance rather than conventional confession. That method raises a central question: how can autobiography become social inquiry without claiming to speak for everyone?",
+      "summarySources": [
+        "nobel-ernaux-2022",
+        "nobel-ernaux-lecture"
+      ],
+      "lead": [
+        "Annie Ernaux received the 2022 Literature prize for work that uncovers the roots and social restraints of personal memory. Her books draw on lived experience while resisting the idea that a life is purely private. Class, education, gender, language and historical change shape what can be remembered and how it can be written. Ernaux’s spare style seeks precision and distance rather than conventional confession. That method raises a central question: how can autobiography become social inquiry without claiming to speak for everyone?",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "award-language",
+          "title": "The Academy recognized a method as much as a subject.",
+          "paragraphs": [
+            "The Swedish Academy’s motivation describes Ernaux’s writing as courageous and clinically acute, emphasizing the way she uncovers the roots and constraints of personal memory. The wording points toward a distinctive method: the self is not treated as an isolated source of truth but as a place where class, gender and collective history become visible.",
+            "Ernaux’s books return to formative experiences, family life and social change with a controlled, often stripped-back prose. Rather than dramatize memory through elaborate fictionalization, she examines how social language and inherited expectations shape a person’s understanding of a life. The result can feel documentary, but it remains crafted literature: selection, sequence and style create its meaning."
+          ],
+          "sourceIds": [
+            "nobel-ernaux-2022",
+            "nobel-ernaux-lecture"
+          ]
+        },
+        {
+          "id": "writing-class",
+          "title": "Language records class as well as events.",
+          "paragraphs": [
+            "In her Nobel lecture, Ernaux recalls the aspiration to write in a way that would “avenge” the people and class from which she came. The statement connects literature with a social position: who is educated, whose speech is considered legitimate and which experiences enter the public record. It also shows the limits of individual success; a writer’s achievement cannot erase the historical conditions that shaped a family.",
+            "This attention to language gives her autobiographical work its social reach. A remembered phrase, a school experience or an encounter with a social boundary can reveal the norms of a period. But one person’s experience is not a representative sample. Ernaux’s writing becomes analytically powerful when readers see how her account relates to broader evidence, while preserving the specificity of the life she describes."
+          ],
+          "sourceIds": [
+            "nobel-ernaux-lecture",
+            "nobel-ernaux-2022"
+          ]
+        },
+        {
+          "id": "distance-and-memory",
+          "title": "Distance can sharpen, as well as cool, memory.",
+          "paragraphs": [
+            "Ernaux often writes about past experience with a deliberate distance. That distance is not an absence of feeling. It can help the writer examine embarrassment, desire, grief or ambition as events shaped by a social world, instead of allowing private emotion to close the account around the self. The Nobel lecture itself reflects on finding a sentence that could make public speech possible.",
+            "Memory is not a transparent recording. The writer chooses what to revisit, how to order it and what vocabulary can describe it. Ernaux’s method acknowledges this mediation by making style part of the inquiry. Readers can ask what the spare voice reveals, what it withholds and how the writing positions the narrator in relation to her younger self and to the people around her."
+          ],
+          "sourceIds": [
+            "nobel-ernaux-lecture"
+          ]
+        },
+        {
+          "id": "autobiography-as-inquiry",
+          "title": "A personal account is not a universal explanation.",
+          "paragraphs": [
+            "Ernaux’s work shows how autobiography can investigate structures beyond an individual biography. Her writing brings social mobility, women’s experience, family memory and historical change into the same frame. This does not mean that a singular story stands in for every person who shares a class, gender or generation. The literary achievement lies partly in holding the individual and the collective in tension.",
+            "The prize’s language of collective restraints gives readers a question to carry through the books: which parts of a life are shaped by conditions larger than the self, and which details resist generalization? A careful reading treats Ernaux’s writing as both evidence of a lived perspective and a crafted literary object. It can illuminate a social history, but it does not replace archival research or the testimony of other lives."
+          ],
+          "sourceIds": [
+            "nobel-ernaux-2022",
+            "nobel-ernaux-lecture"
+          ]
+        },
+        {
+          "id": "method-and-position",
+          "title": "The writer makes her position part of the record.",
+          "paragraphs": [
+            "Ernaux’s method asks the writer to examine her own social position rather than treating it as invisible. Education, class mobility and the language learned at home influence what can be said and how a memory is reconstructed. The narrator’s distance from an earlier self makes those conditions available for analysis, but it also creates a tension: the person writing has changed, and the present voice cannot simply become the past one again.",
+            "This tension is one reason her autobiographical work travels beyond confession. It lets readers ask how memory is shaped by social expectations and by the passage of time. Yet the account remains authored and selective. A work can reveal a structure without serving as a survey of everyone subject to it. Close attention to the narrator’s choices keeps the book’s literary form and historical insight in view at once."
+          ],
+          "sourceIds": [
+            "nobel-ernaux-lecture"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1940",
+          "title": "Ernaux is born in Normandy",
+          "text": "Her upbringing in a family-run café and grocery informs later writing about class and social mobility.",
+          "sourceIds": [
+            "nobel-ernaux-lecture"
+          ]
+        },
+        {
+          "date": "1974",
+          "title": "A first novel is published",
+          "text": "Les Armoires vides begins her literary career.",
+          "sourceIds": [
+            "nobel-ernaux-2022"
+          ]
+        },
+        {
+          "date": "1983",
+          "title": "La Place appears",
+          "text": "The book examines her father and the class world from which she came.",
+          "sourceIds": [
+            "nobel-ernaux-lecture"
+          ]
+        },
+        {
+          "date": "2022",
+          "title": "The Literature prize recognizes her work",
+          "text": "The Academy cites memory, class and collective restraints.",
+          "sourceIds": [
+            "nobel-ernaux-2022"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Annie Ernaux",
+          "role": "Laureate · writer",
+          "text": "Uses autobiographical writing and a restrained style to investigate memory, class and social change.",
+          "sourceIds": [
+            "nobel-ernaux-2022",
+            "nobel-ernaux-lecture"
+          ]
+        },
+        {
+          "name": "Her family and community",
+          "role": "Subjects and social context",
+          "text": "Family relationships and the language of working-class life are central to the books, though Ernaux’s narrative remains her own constructed perspective.",
+          "sourceIds": [
+            "nobel-ernaux-lecture"
+          ]
+        },
+        {
+          "name": "Translators and readers",
+          "role": "Mediators of literary voice",
+          "text": "Translation carries Ernaux’s choices of register, distance and social language into new reading contexts.",
+          "sourceIds": [
+            "nobel-ernaux-lecture"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "How can an autobiographical work make social conditions visible without claiming to represent everyone who shares them?",
+      "uncertainty": "Autobiographical writing is neither an unmediated record nor a statistical representation of a whole class or generation. Ernaux’s own Nobel lecture explains her aims, while the works themselves remain open to interpretation. Translation can also alter the register through which class and memory are perceived. This account keeps the author’s stated method distinct from claims about every reader or social group.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2024-nihon-hidankyo",
+      "collection": "nobel",
+      "topic": "Peace · 2024",
+      "title": "Survivors made testimony part of disarmament work.",
+      "name": "Nihon Hidankyo and the witness of the hibakusha",
+      "dek": "The Peace prize recognized a grassroots organization whose survivors turned lived experience into a sustained public warning.",
+      "period": "Award year · 2024",
+      "visual": "hidankyo-award",
+      "question": "What can survivor testimony make visible that strategic language tends to hide?",
+      "award": {
+        "year": "2024",
+        "field": "Peace",
+        "recipients": [
+          "Nihon Hidankyo"
+        ],
+        "citation": "for its efforts to achieve a world free of nuclear weapons and for demonstrating through witness testimony that nuclear weapons must never be used again",
+        "sourceId": "nobel-hidankyo-2024"
+      },
+      "summary": "The Norwegian Nobel Committee awarded the 2024 Peace Prize to Nihon Hidankyo, a Japanese grassroots organization of hibakusha—survivors of the atomic bombings of Hiroshima and Nagasaki. Founded in 1956, the organization has gathered testimony, issued appeals and pressed for a world without nuclear weapons. The prize recognized witness as a form of public action: survivors made the human consequences of nuclear weapons harder to abstract away. Their testimony is indispensable, but it is not the only record needed to understand the bombings, their aftermath or nuclear policy.",
+      "summarySources": [
+        "nobel-hidankyo-2024"
+      ],
+      "lead": [
+        "The Norwegian Nobel Committee awarded the 2024 Peace Prize to Nihon Hidankyo, a Japanese grassroots organization of hibakusha—survivors of the atomic bombings of Hiroshima and Nagasaki. Founded in 1956, the organization has gathered testimony, issued appeals and pressed for a world without nuclear weapons. The prize recognized witness as a form of public action: survivors made the human consequences of nuclear weapons harder to abstract away. Their testimony is indispensable, but it is not the only record needed to understand the bombings, their aftermath or nuclear policy.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "why-testimony",
+          "title": "The committee recognized testimony as peace work.",
+          "paragraphs": [
+            "The Nobel Committee’s motivation emphasizes two connected efforts: pursuing a world free of nuclear weapons and demonstrating, through testimony, why nuclear weapons must never be used again. This framing treats witness not as a private recollection but as public work. Survivors have spoken, organized, documented experience and addressed international audiences over many decades.",
+            "Testimony changes the scale of a debate that can otherwise be conducted through strategic abstractions—deterrence, arsenals, doctrine and national security. It makes the human consequences legible through individual accounts. At the same time, each account is situated. A full history also needs medical, archival, military, political and community records, as well as recognition of the distinct experiences of people in Hiroshima and Nagasaki."
+          ],
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "id": "organization",
+          "title": "A movement formed after years of neglect.",
+          "paragraphs": [
+            "Nihon Hidankyo grew from survivor associations formed in the postwar period. The Nobel Committee dates the formation of the Japan Confederation of A- and H-Bomb Sufferers Organisations to 1956, bringing together local hibakusha groups and people affected by nuclear testing in the Pacific. Survivors organized for recognition, support and the prevention of future nuclear use.",
+            "The organization’s history matters because testimony did not automatically enter public debate. Survivors faced physical injury, social stigma and the burden of revisiting painful experiences. Organizing made individual accounts part of a collective effort: collecting statements, sending delegations and issuing appeals. The award highlights this sustained civic work rather than a single speech or moment of public attention."
+          ],
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "id": "witness-and-policy",
+          "title": "Memory can influence a norm, but it cannot enforce one alone.",
+          "paragraphs": [
+            "The Nobel Committee connects hibakusha testimony with the development of a strong international norm against the use of nuclear weapons. The idea of a “nuclear taboo” describes the moral and political stigma attached to use. Testimony can strengthen that norm by reminding publics and policymakers what a nuclear attack does to people and communities.",
+            "A norm is not the same as a legal prohibition, a verified disarmament agreement or a guarantee of restraint. The committee’s award language recognizes influence and advocacy; it does not claim that testimony by itself has eliminated nuclear danger. Arms control, diplomacy, verification, public pressure and political choices remain part of the wider history. Distinguishing these mechanisms helps explain both the significance and the limits of the movement’s work."
+          ],
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "id": "continuing-witness",
+          "title": "The work passes between generations.",
+          "paragraphs": [
+            "The Committee noted that the number of living hibakusha is declining and emphasized the importance of carrying testimony forward. This raises a practical question for future peace work: how can younger generations preserve the meaning of lived experience without presenting themselves as eyewitnesses? Oral histories, archives, education and public commemoration can transmit accounts while documenting who recorded them and under what conditions.",
+            "The 2024 prize invited renewed attention to the humanitarian consequences of nuclear weapons. Readers can follow the organization’s own statements and survivor lectures alongside the committee’s rationale. They should also remember that a Nobel award is one moment of recognition in a longer movement. The organization’s message and the policy conditions it addresses continue beyond the ceremony."
+          ],
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "id": "archive-of-testimony",
+          "title": "Preserving a witness means preserving its provenance.",
+          "paragraphs": [
+            "Testimony is carried through specific encounters: who speaks, who records, what question is asked, which language is used and where the account will circulate. Preservation should keep those details attached to the words. A translated excerpt, a school lesson and a survivor’s full oral history may serve different purposes; they should not be presented as though they were identical records.",
+            "Nihon Hidankyo’s long campaign made survivor accounts part of international advocacy. As living witnesses become fewer, institutions and younger generations have a responsibility to transmit those accounts accurately and respectfully. The ethical task is not to make testimony stand for every experience, but to keep individual voices legible while situating them within a broader history. The Nobel prize makes that work more visible, but it cannot replace the careful work of archiving and listening."
+          ],
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "August 1945",
+          "title": "Atomic bombs are used against Hiroshima and Nagasaki",
+          "text": "Survivors live with immediate and long-term consequences of the attacks.",
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "date": "1956",
+          "title": "A national organization is formed",
+          "text": "Local hibakusha associations and nuclear-test survivors create Nihon Hidankyo.",
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "date": "Following decades",
+          "title": "Testimony becomes organized advocacy",
+          "text": "Survivors issue appeals, share accounts and address international forums.",
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "date": "2024",
+          "title": "The Peace prize recognizes the movement",
+          "text": "The committee cites its disarmament efforts and witness testimony.",
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Terumi Tanaka",
+          "role": "Survivor and representative",
+          "text": "Delivered the Nobel lecture on behalf of Nihon Hidankyo, carrying the organization’s message to the award ceremony.",
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "name": "Nihon Hidankyo members",
+          "role": "Hibakusha organizers and witnesses",
+          "text": "Survivors built a grassroots organization that collected accounts and advocated against nuclear weapons.",
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        },
+        {
+          "name": "The next generation",
+          "role": "Custodians of memory",
+          "text": "Young people and institutions can preserve testimony while making clear when they are transmitting rather than personally witnessing it.",
+          "sourceIds": [
+            "nobel-hidankyo-2024"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "How can testimony shape public judgment while remaining distinct from policy evidence and strategic analysis?",
+      "uncertainty": "The Nobel Committee presents the movement’s testimony as influential in strengthening opposition to nuclear weapons. The degree to which testimony changes state policy is difficult to isolate from diplomacy, security conditions and other activism. Survivor accounts are essential primary sources but represent particular lives and communities; they should be read with broader historical and medical records.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2017-ican",
+      "collection": "nobel",
+      "topic": "Peace · 2017",
+      "title": "A coalition changed the language of nuclear weapons.",
+      "name": "ICAN and the campaign for a ban treaty",
+      "dek": "The International Campaign to Abolish Nuclear Weapons joined civil-society advocacy with a humanitarian argument about the consequences of nuclear use.",
+      "period": "Award year · 2017",
+      "visual": "ican-award",
+      "question": "How can civil-society advocacy change what governments consider a legitimate policy question?",
+      "award": {
+        "year": "2017",
+        "field": "Peace",
+        "recipients": [
+          "International Campaign to Abolish Nuclear Weapons (ICAN)"
+        ],
+        "citation": "for its work to draw attention to the catastrophic humanitarian consequences of any use of nuclear weapons and for its ground-breaking efforts to achieve a treaty-based prohibition of such weapons",
+        "sourceId": "nobel-ican-2017"
+      },
+      "summary": "The 2017 Peace Prize recognized the International Campaign to Abolish Nuclear Weapons (ICAN) for drawing attention to the humanitarian consequences of nuclear weapons and for efforts toward a treaty-based prohibition. ICAN is a coalition, not a single negotiator or government. Its campaign connected advocacy groups, survivors, medical professionals and sympathetic states, helping shift discussion toward the effects of use rather than only the strategic role of arsenals. The Treaty on the Prohibition of Nuclear Weapons was adopted in 2017, but the award did not eliminate nuclear weapons or create universal participation.",
+      "summarySources": [
+        "nobel-ican-2017"
+      ],
+      "lead": [
+        "The 2017 Peace Prize recognized the International Campaign to Abolish Nuclear Weapons (ICAN) for drawing attention to the humanitarian consequences of nuclear weapons and for efforts toward a treaty-based prohibition. ICAN is a coalition, not a single negotiator or government. Its campaign connected advocacy groups, survivors, medical professionals and sympathetic states, helping shift discussion toward the effects of use rather than only the strategic role of arsenals. The Treaty on the Prohibition of Nuclear Weapons was adopted in 2017, but the award did not eliminate nuclear weapons or create universal participation.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "humanitarian-frame",
+          "title": "The campaign changed the center of the discussion.",
+          "paragraphs": [
+            "Nuclear policy is often discussed through deterrence, alliances, military doctrine and strategic stability. ICAN and its partners emphasized the humanitarian consequences of any use: mass casualties, disruption of health systems, environmental effects and harms that extend across generations. The Nobel Committee highlighted this framing as a reason for the award.",
+            "The campaign’s argument did not require every state to agree on the strategic value of nuclear deterrence before asking what nuclear use would do to people. It created a distinct diplomatic and public pathway centered on humanitarian law and human consequences. The approach made new coalitions possible, while also generating disagreement with states that viewed the proposed prohibition as incompatible with their security doctrines."
+          ],
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "id": "coalition",
+          "title": "ICAN organized a coalition rather than a single voice.",
+          "paragraphs": [
+            "ICAN’s work involved a network of civil-society organizations across countries. It coordinated public advocacy, supported survivors’ participation and worked with governments that pursued negotiations for a prohibition treaty. This coalition structure matters: the campaign’s influence did not come only from a central secretariat but from connecting groups with different expertise and local access.",
+            "Hibakusha and other survivors brought testimony; medical and humanitarian organizations emphasized consequences for health and emergency response; diplomats worked within formal negotiations. These roles are related but not identical. A careful account should name the coalition and its contribution without implying that every organization or participant shared one strategy or that an advocacy network itself negotiated a treaty on behalf of states."
+          ],
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "id": "treaty",
+          "title": "The Treaty on the Prohibition of Nuclear Weapons.",
+          "paragraphs": [
+            "In July 2017, states at a United Nations conference adopted the Treaty on the Prohibition of Nuclear Weapons. The treaty establishes prohibitions for states that join it, addressing development, testing, production, acquisition, possession, stockpiling, use, threat of use and assistance. Its adoption was a diplomatic achievement for the governments and civil-society campaigners who supported it.",
+            "Adoption is not the same as universal acceptance or disarmament. Nuclear-armed states and many states under nuclear umbrellas did not join the negotiations, and the treaty’s influence depends on participation, implementation and interaction with existing security arrangements. The Nobel prize recognized ICAN’s campaign contribution; it did not claim that the treaty had already removed nuclear weapons or resolved disputes about deterrence."
+          ],
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "id": "influence-and-limits",
+          "title": "Recognition is not the same as policy completion.",
+          "paragraphs": [
+            "The prize gave ICAN global visibility and endorsed humanitarian arguments as legitimate contributions to peace work. That recognition can strengthen a campaign, attract attention and shape how future debates are framed. It can also invite scrutiny: what exactly did an organization contribute, how did its partners participate and what results can be attributed to advocacy rather than to state decisions or wider public pressure?",
+            "The treaty remains a political instrument whose practical impact depends on the choices of states and the wider security environment. Supporters see it as a normative and legal step toward delegitimizing nuclear weapons; critics argue it does not address the security calculations of nuclear-armed states. This study presents those positions as distinct claims about a treaty’s strategy and effect, not as a settled verdict on what future disarmament will require."
+          ],
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "id": "treaty-and-participation",
+          "title": "Legal force depends on who joins and implements the treaty.",
+          "paragraphs": [
+            "The Treaty on the Prohibition of Nuclear Weapons creates legal obligations for states that become parties. Its adoption established a new international instrument and a public standard against nuclear weapons. It does not bind states that have not joined it, and it does not itself dismantle existing arsenals. Those boundaries are central to evaluating the treaty’s effect rather than reasons to ignore its political significance.",
+            "ICAN’s strategy sought to build pressure through humanitarian language and coalition advocacy, while treaty negotiations were conducted by states. The relationship between those forms of action is a useful case in how civil society can shape an agenda without controlling the outcome. Supporters stress the treaty’s normative force; critics question whether it changes the security calculations of nuclear-armed states. Evidence about participation and implementation will continue to shape that debate."
+          ],
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2007",
+          "title": "ICAN is launched",
+          "text": "A global civil-society campaign begins building support for a prohibition treaty.",
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "date": "2010s",
+          "title": "Humanitarian consequences shape debate",
+          "text": "Survivors and advocacy groups press governments to focus on the effects of nuclear use.",
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "date": "July 2017",
+          "title": "A prohibition treaty is adopted",
+          "text": "States at a United Nations conference adopt the Treaty on the Prohibition of Nuclear Weapons.",
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "date": "October 2017",
+          "title": "The Peace prize recognizes ICAN",
+          "text": "The committee cites humanitarian advocacy and treaty-based prohibition efforts.",
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "International Campaign to Abolish Nuclear Weapons",
+          "role": "Laureate · civil-society coalition",
+          "text": "Coordinated a transnational campaign that centered humanitarian consequences and supported treaty negotiations.",
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "name": "Survivors and humanitarian organizations",
+          "role": "Campaign partners",
+          "text": "Brought lived experience and health-focused analysis into public and diplomatic debate.",
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        },
+        {
+          "name": "States participating in negotiations",
+          "role": "Treaty-making actors",
+          "text": "Governments adopted the prohibition treaty through a United Nations process; the campaign’s advocacy and states’ legal action are connected but distinct roles.",
+          "sourceIds": [
+            "nobel-ican-2017"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "What counts as progress in disarmament: a new legal norm, a change in public legitimacy, fewer weapons, or some combination?",
+      "uncertainty": "The Nobel Committee attributes an important role to ICAN in drawing attention to humanitarian consequences and advancing treaty-based prohibition. The extent of a campaign’s influence is hard to isolate from participating states, survivors, other organizations and the wider diplomatic climate. The 2017 treaty applies to states that join it; it has not resulted in universal participation or the elimination of nuclear arsenals.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2023-claudia-goldin",
+      "collection": "nobel",
+      "topic": "Economic Sciences · 2023",
+      "title": "Two centuries of records revealed a changing pattern of work.",
+      "name": "Claudia Goldin and the history of women’s work",
+      "dek": "Goldin reconstructed long-run labour-market histories to explain both change and persistent gender gaps.",
+      "period": "Award year · 2023",
+      "visual": "goldin-award",
+      "question": "What becomes visible when employment histories include unpaid work and incomplete records?",
+      "award": {
+        "year": "2023",
+        "field": "Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel",
+        "recipients": [
+          "Claudia Goldin"
+        ],
+        "citation": "for having advanced our understanding of women’s labour market outcomes",
+        "sourceId": "nobel-goldin-2023"
+      },
+      "summary": "Claudia Goldin received the 2023 Prize in Economic Sciences for advancing understanding of women’s labour-market outcomes. By assembling historical data across more than two centuries in the United States, she documented a U-shaped pattern in women’s labour-force participation and examined how education, technology, family formation, social expectations and workplace structures shaped change. The work is economic history as well as labour economics: imperfect records must be reconstructed before trends can be interpreted. Goldin’s research helps explain patterns, but it does not reduce the gender pay gap to one cause or imply that a U.S. history represents every country.",
+      "summarySources": [
+        "nobel-goldin-2023",
+        "nobel-goldin-background"
+      ],
+      "lead": [
+        "Claudia Goldin received the 2023 Prize in Economic Sciences for advancing understanding of women’s labour-market outcomes. By assembling historical data across more than two centuries in the United States, she documented a U-shaped pattern in women’s labour-force participation and examined how education, technology, family formation, social expectations and workplace structures shaped change. The work is economic history as well as labour economics: imperfect records must be reconstructed before trends can be interpreted. Goldin’s research helps explain patterns, but it does not reduce the gender pay gap to one cause or imply that a U.S. history represents every country.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "archives",
+          "title": "The research began with a data problem.",
+          "paragraphs": [
+            "Historical labour-force statistics do not neatly record every form of work. Earlier censuses often used categories that missed seasonal, unpaid or family-based labour, and standards for what counted as an occupation changed over time. Goldin’s research involved reconstructing evidence across more than two centuries, asking not only what the figures showed but also whom the categories had counted.",
+            "This archival work is part of the intellectual achievement. A time series built from inconsistent records can create false continuity or hide whole forms of economic activity. Goldin compared multiple sources and interpreted the limits of each. The Nobel Committee describes her as providing the first comprehensive account of women’s earnings and labour-force participation through the centuries in the United States."
+          ],
+          "sourceIds": [
+            "nobel-goldin-2023",
+            "nobel-goldin-background"
+          ]
+        },
+        {
+          "id": "u-shape",
+          "title": "The U-shaped pattern is a historical finding, not a universal law.",
+          "paragraphs": [
+            "Goldin documented a U-shaped relationship between economic development and women’s market participation in U.S. history. In an early phase, economic change could move production out of the home and reduce women’s measured market work. Later, the expansion of education and service occupations, shifts in family size and changing expectations helped participation rise. The shape becomes visible across generations, not in a simple one-year comparison.",
+            "The pattern challenges the assumption that modernization automatically brings continuous progress in women’s paid employment. It also demonstrates why historical context matters: shifts in technology, schooling and household organization interact. The research describes a long-run sequence for a particular national history; comparative work is needed before treating the curve as a general path all societies must follow."
+          ],
+          "sourceIds": [
+            "nobel-goldin-background"
+          ]
+        },
+        {
+          "id": "earnings-and-family",
+          "title": "The remaining gap has a changing structure.",
+          "paragraphs": [
+            "Goldin’s later research examines why gender differences in earnings persist even as women’s education and labour-force participation have changed. Occupational choices, work schedules, expectations around caregiving and the premium attached to long or inflexible hours can interact. The gender pay gap therefore cannot be explained solely by different education levels or by one moment of career choice.",
+            "Her work traces how family formation and the organization of work shape outcomes over time. This is not a claim that every woman’s experience is the same or that workplace practices are the only cause. It is a framework for examining how institutions reward availability, how caregiving is distributed and how career paths respond to those incentives. The historical perspective helps reveal that many supposedly natural patterns are historically contingent."
+          ],
+          "sourceIds": [
+            "nobel-goldin-background",
+            "nobel-goldin-2023"
+          ]
+        },
+        {
+          "id": "what-the-data-can-say",
+          "title": "Measurement clarifies—and cannot settle—causation.",
+          "paragraphs": [
+            "Historical data can establish broad patterns and test explanations, but reconstruction decisions matter. How should researchers classify unpaid family work? Which records are comparable across decades? How should they interpret a census category created under social norms that discouraged some women from reporting their labour? Goldin’s archival methods make these measurement questions visible rather than treating data as neutral facts.",
+            "The prize recognizes a research programme that advanced understanding of labour-market outcomes. It does not settle every policy debate about wages, caregiving or discrimination. The relationship between work schedules and earnings, for example, can vary across occupations and countries. A responsible reading asks which population, time period and outcome a particular study actually measures before extending its conclusions."
+          ],
+          "sourceIds": [
+            "nobel-goldin-2023",
+            "nobel-goldin-background"
+          ]
+        },
+        {
+          "id": "hidden-work",
+          "title": "What the statistics did not count matters.",
+          "paragraphs": [
+            "Goldin’s historical reconstruction makes visible a recurring problem in economic measurement: the categories used to count employment reflect social expectations about what work looks like. Women working in family enterprises, farms, homes or short-term jobs could disappear from official measures. If researchers read those numbers literally, they may mistake a change in record-keeping for a change in economic life.",
+            "The research therefore combines quantitative analysis with knowledge of the institutions that produced the data. It asks which activities were classified as occupations, how respondents understood census questions and how definitions shifted. This is a methodological lesson beyond gender history: before interpreting a trend, ask how the underlying measure was created. What is absent from a dataset can be as consequential as the values it records."
+          ],
+          "sourceIds": [
+            "nobel-goldin-background"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "19th century onward",
+          "title": "Work is recorded unevenly",
+          "text": "Changing definitions and census practices leave gaps in the historical record.",
+          "sourceIds": [
+            "nobel-goldin-background"
+          ]
+        },
+        {
+          "date": "1990",
+          "title": "Understanding the Gender Gap is published",
+          "text": "Goldin brings long-run historical analysis of women’s work and earnings to a wider field.",
+          "sourceIds": [
+            "nobel-goldin-background"
+          ]
+        },
+        {
+          "date": "2000s–2020s",
+          "title": "Research examines family and workplace structures",
+          "text": "Further work analyzes how work organization and caregiving shape earnings and career outcomes.",
+          "sourceIds": [
+            "nobel-goldin-background"
+          ]
+        },
+        {
+          "date": "2023",
+          "title": "The Prize in Economic Sciences recognizes the research",
+          "text": "The Academy cites Goldin’s contribution to understanding women’s labour-market outcomes.",
+          "sourceIds": [
+            "nobel-goldin-2023"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Claudia Goldin",
+          "role": "Laureate · economic historian",
+          "text": "Reconstructed long-run U.S. evidence on women’s work and earnings and analyzed the changing sources of gender differences.",
+          "sourceIds": [
+            "nobel-goldin-2023",
+            "nobel-goldin-background"
+          ]
+        },
+        {
+          "name": "Historical record keepers",
+          "role": "Census and archival sources",
+          "text": "The categories and omissions in historical records shape what economists can measure about work.",
+          "sourceIds": [
+            "nobel-goldin-background"
+          ]
+        },
+        {
+          "name": "Coauthors and research collaborators",
+          "role": "Labour economics and economic history",
+          "text": "Goldin’s research developed through a wider scholarly field; the prize recognized her individual body of work.",
+          "sourceIds": [
+            "nobel-goldin-background"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "Which kinds of work disappear when official statistics count only paid employment?",
+      "uncertainty": "The award recognizes Goldin’s research on women’s labour-market outcomes, especially U.S. historical evidence. Long-run series require interpretation because definitions and data collection changed. Explanations for current gender gaps vary by country, occupation and family policy; the historical findings do not by themselves establish one universal cause or one policy solution.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
+      ]
+    },
+    {
+      "slug": "2024-institutions-prosperity",
+      "collection": "nobel",
+      "topic": "Economic Sciences · 2024",
+      "title": "A historical comparison became an argument about institutions.",
+      "name": "Institutions, colonial history and prosperity",
+      "dek": "Acemoglu, Johnson and Robinson studied how political and economic rules shape incentives and long-run development.",
+      "period": "Award year · 2024",
+      "visual": "institutions-award",
+      "question": "How can historical variation help researchers investigate why institutions and prosperity differ?",
+      "award": {
+        "year": "2024",
+        "field": "Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel",
+        "recipients": [
+          "Daron Acemoglu",
+          "Simon Johnson",
+          "James A. Robinson"
+        ],
+        "citation": "for studies of how institutions are formed and affect prosperity",
+        "sourceId": "nobel-institutions-2024"
+      },
+      "summary": "The 2024 Prize in Economic Sciences recognized Daron Acemoglu, Simon Johnson and James Robinson for studies of how institutions are formed and affect prosperity. Their influential research asks why countries developed different political and economic rules and how those rules shape incentives over time. One strand uses historical variation in colonial settlement and mortality to investigate institutional persistence. The argument has been influential and contested: measurement, historical interpretation and causal identification matter. The prize recognizes a research programme, not proof that one institutional model guarantees prosperity or that historical patterns can be copied mechanically.",
+      "summarySources": [
+        "nobel-institutions-2024",
+        "nobel-institutions-background"
+      ],
+      "lead": [
+        "The 2024 Prize in Economic Sciences recognized Daron Acemoglu, Simon Johnson and James Robinson for studies of how institutions are formed and affect prosperity. Their influential research asks why countries developed different political and economic rules and how those rules shape incentives over time. One strand uses historical variation in colonial settlement and mortality to investigate institutional persistence. The argument has been influential and contested: measurement, historical interpretation and causal identification matter. The prize recognizes a research programme, not proof that one institutional model guarantees prosperity or that historical patterns can be copied mechanically.",
+        "This study follows the achievement as a sequence of questions and decisions, rather than treating the award as a complete explanation. It reads the official motivation alongside the scientific, literary or historical record, then asks what that record can—and cannot—support."
+      ],
+      "sections": [
+        {
+          "id": "question",
+          "title": "The prize asks why prosperity diverges.",
+          "paragraphs": [
+            "Countries differ greatly in income and living conditions, and explanations often invoke geography, culture, resources or institutions. The laureates’ research focuses on institutions: the rules and constraints that shape political authority, property, participation and economic opportunity. The Nobel Committee describes the prize as recognizing studies of how institutions are formed and affect prosperity.",
+            "This question is difficult because institutions are not randomly assigned. They develop through conflict, policy, external influence and historical circumstance. Prosperity can also affect institutions, so a simple correlation between a country’s current rules and income does not establish which caused which. The research programme uses historical comparisons to seek evidence about these relationships."
+          ],
+          "sourceIds": [
+            "nobel-institutions-2024",
+            "nobel-institutions-background"
+          ]
+        },
+        {
+          "id": "historical-comparison",
+          "title": "Colonial history provides variation—but not a clean experiment.",
+          "paragraphs": [
+            "One influential line of research compares colonial settings where European settlers faced different mortality risks. The authors argue that those risks affected whether colonizers established institutions aimed at settlement and broader participation or systems designed primarily for extraction. They then study whether institutional differences persisted and shaped economic outcomes after colonial rule ended.",
+            "The approach is powerful because it makes a historical mechanism explicit and seeks variation not simply chosen by present-day income. But historical data are incomplete, and the causal story depends on assumptions about what mortality measures, how settlement decisions were made and whether other factors also shaped later development. Calling it a natural experiment can obscure those assumptions; they should be examined rather than treated as an automatic guarantee of causality."
+          ],
+          "sourceIds": [
+            "nobel-institutions-background"
+          ]
+        },
+        {
+          "id": "mechanism",
+          "title": "Institutions shape incentives through concrete rules.",
+          "paragraphs": [
+            "Institutions matter in the argument because they can affect who has political voice, whether property is protected, how economic opportunities are distributed and whether authorities face constraints. These are not abstract labels. They describe arrangements that influence investment, education, innovation and the ability of groups to challenge decisions.",
+            "The laureates’ work connects historical institutional formation with present differences in prosperity. The mechanism is not that institutions alone determine every outcome. Geography, public health, conflict, technology and international relationships also matter, and institutional categories can hide considerable variation within countries. The strength of the framework is that it asks how political rules and economic incentives interact over time."
+          ],
+          "sourceIds": [
+            "nobel-institutions-background",
+            "nobel-institutions-2024"
+          ]
+        },
+        {
+          "id": "debate-and-use",
+          "title": "A research framework is not a universal policy recipe.",
+          "paragraphs": [
+            "The institutional approach has influenced economic history and development research, while also prompting debate about how to identify causal effects and how to interpret colonial histories. Researchers have questioned whether historical measures fully capture the mechanisms proposed, whether local experience is adequately represented and how far conclusions travel beyond the cases studied. These are methodological and historical questions that should accompany any presentation of the prize.",
+            "Even if institutions matter greatly, the award does not show that one institutional design can be transplanted to every society or that all prosperity differences have the same origin. Political change involves power, conflict and local agency. The practical value of the research is to make institutional rules part of empirical inquiry and public debate—not to convert a complex history into a one-variable explanation."
+          ],
+          "sourceIds": [
+            "nobel-institutions-background",
+            "nobel-institutions-2024"
+          ]
+        },
+        {
+          "id": "causal-inference",
+          "title": "The historical design has assumptions worth examining.",
+          "paragraphs": [
+            "The laureates’ research uses settler mortality as an instrument for institutional differences in a historical setting. An instrumental-variable strategy is useful only if its assumptions are plausible: the proposed instrument must influence the outcome through the institutional channel and not through other routes that independently affect income. Historical mortality, settlement patterns and later development are complex, so evaluating the strategy requires attention to how the variable was constructed and what else it may capture.",
+            "This methodological scrutiny is part of taking the work seriously. It does not automatically invalidate the research, nor should the Nobel recognition be treated as resolving scholarly debate. Readers can distinguish the broad thesis that institutions matter from the narrower causal estimates in a particular paper. The first is a research framework; the second depends on data, design and assumptions that other scholars can assess and refine."
+          ],
+          "sourceIds": [
+            "nobel-institutions-background"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "16th century onward",
+          "title": "Colonial rule reshapes political economies",
+          "text": "European powers introduce different institutional arrangements across colonized regions.",
+          "sourceIds": [
+            "nobel-institutions-background"
+          ]
+        },
+        {
+          "date": "1990s",
+          "title": "Institutions enter comparative development research",
+          "text": "The laureates develop influential empirical work on colonial origins and institutional persistence.",
+          "sourceIds": [
+            "nobel-institutions-background"
+          ]
+        },
+        {
+          "date": "2001",
+          "title": "A key empirical paper is published",
+          "text": "Research links historical settler mortality, institutional forms and present income across former colonies.",
+          "sourceIds": [
+            "nobel-institutions-background"
+          ]
+        },
+        {
+          "date": "2024",
+          "title": "The award recognizes the research programme",
+          "text": "The Academy cites studies of how institutions are formed and affect prosperity.",
+          "sourceIds": [
+            "nobel-institutions-2024"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Daron Acemoglu",
+          "role": "Laureate · political economy",
+          "text": "Studies how political and economic institutions shape incentives, development and inequality.",
+          "sourceIds": [
+            "nobel-institutions-2024"
+          ]
+        },
+        {
+          "name": "Simon Johnson",
+          "role": "Laureate · economics and policy",
+          "text": "Co-developed research on institutional origins and their relationship to prosperity.",
+          "sourceIds": [
+            "nobel-institutions-2024"
+          ]
+        },
+        {
+          "name": "James A. Robinson",
+          "role": "Laureate · political economy and history",
+          "text": "Contributed comparative historical analysis of institutional formation and economic outcomes.",
+          "sourceIds": [
+            "nobel-institutions-2024"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official prize record documents the award year, recipients and motivation. The cited background sources describe the recognized work and its historical setting.",
+        "established": "The central achievement is supported by the primary or institutional record identified in the references. Interpretive claims are kept distinct from what those sources directly establish.",
+        "limit": "A prize citation is selective. This account does not treat the award as a complete history of all contributors, nor does it imply that a recognized method settles every later scientific or social question."
+      },
+      "reflection": "What assumptions must hold before a historical comparison can support a causal claim about institutions today?",
+      "uncertainty": "The award recognizes a research programme on institutional origins and prosperity. Its empirical claims depend on historical sources, variable construction and assumptions used for causal identification. Scholars debate how well these measures capture local history and how broadly the results generalize. Institutions are important in the laureates’ framework, but the work does not establish that they are the sole cause of prosperity or prescribe a universal institutional template.",
+      "discussionPrompts": [
+        "What specific achievement does the official motivation name?",
+        "Which people or conditions become visible when you follow the work beyond the citation?",
+        "What evidence would help you distinguish an established result from a claim about its later impact?"
       ]
     }
   ]

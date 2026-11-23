@@ -10,18 +10,14 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "aps": {
-      "title": "American Physical Society · Quantum Milestones, 1905",
-      "url": "https://physics.aps.org/articles/v18/15",
-      "status": 403,
-      "finalUrl": "https://physics.aps.org/articles/v18/15",
+    "dunn": {
+      "title": "Oxford Dunn School · The Discovery of Penicillin",
+      "url": "https://www.path.ox.ac.uk/centenary/the-discovery-of-penicillin/",
+      "status": 200,
+      "finalUrl": "https://www.path.ox.ac.uk/centenary/the-discovery-of-penicillin/",
       "ok": true,
       "needsManualReview": false,
-      "method": "manual-web",
-      "manualVerified": true,
-      "manualVerifiedAt": "2026-11-23",
-      "automatedStatus": 403,
-      "automatedMethod": "GET"
+      "method": "HEAD"
     },
     "cdc": {
       "title": "Robert Gaynes · The Discovery of Penicillin, Emerging Infectious Diseases (2017)",
@@ -32,11 +28,20 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "clinical": {
-      "title": "Abraham and colleagues · Further Observations on Penicillin (1941), James Lind Library",
-      "url": "https://www.jameslindlibrary.org/abraham-ep-chain-e-fletcher-cm-gardner-ad-heatley-ng-jennings-am-florey-hw-1941/",
+    "usda": {
+      "title": "USDA Agricultural Research Service · Penicillin: Opening the Era of Antibiotics",
+      "url": "https://www.ars.usda.gov/midwest-area/peoria-il/national-center-for-agricultural-utilization-research/docs/penicillin-opening-the-era-of-antibiotics/",
       "status": 200,
-      "finalUrl": "https://www.jameslindlibrary.org/abraham-ep-chain-e-fletcher-cm-gardner-ad-heatley-ng-jennings-am-florey-hw-1941/",
+      "finalUrl": "https://www.ars.usda.gov/midwest-area/peoria-il/national-center-for-agricultural-utilization-research/docs/penicillin-opening-the-era-of-antibiotics/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "vessel": {
+      "title": "National Museums Scotland · How a ceramic object fueled a medical breakthrough",
+      "url": "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough",
+      "status": 200,
+      "finalUrl": "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
@@ -50,56 +55,20 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "curie-facts": {
-      "title": "Nobel Prize · Chemistry 1911: Marie Curie",
-      "url": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/facts/",
+    "team": {
+      "title": "Oxford History of Science Museum · Team Penicillin",
+      "url": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/team-penicillin/",
       "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/facts/",
+      "finalUrl": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/team-penicillin/",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "curie-nobel": {
-      "title": "Nobel Prize · Marie and Pierre Curie and the discovery of polonium and radium",
-      "url": "https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/",
+    "clinical": {
+      "title": "Abraham and colleagues · Further Observations on Penicillin (1941), James Lind Library",
+      "url": "https://www.jameslindlibrary.org/abraham-ep-chain-e-fletcher-cm-gardner-ad-heatley-ng-jennings-am-florey-hw-1941/",
       "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "dunn": {
-      "title": "Oxford Dunn School · The Discovery of Penicillin",
-      "url": "https://www.path.ox.ac.uk/centenary/the-discovery-of-penicillin/",
-      "status": 200,
-      "finalUrl": "https://www.path.ox.ac.uk/centenary/the-discovery-of-penicillin/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "econ-advanced": {
-      "title": "Royal Swedish Academy of Sciences · Scientific Background: The Experimental Approach to Alleviating Global Poverty",
-      "url": "https://www.nobelprize.org/uploads/2019/10/advanced-economicsciencesprize2019.pdf",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/uploads/2019/10/advanced-economicsciencesprize2019.pdf",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "econ-popular": {
-      "title": "Royal Swedish Academy of Sciences · The Prize in Economic Sciences 2019: Popular science background",
-      "url": "https://www.nobelprize.org/uploads/2019/10/popular-economicsciencesprize2019-2.pdf",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/uploads/2019/10/popular-economicsciencesprize2019-2.pdf",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "einstein-lecture": {
-      "title": "Albert Einstein · Nobel lecture (1923)",
-      "url": "https://www.nobelprize.org/uploads/2018/06/einstein-lecture.pdf",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/uploads/2018/06/einstein-lecture.pdf",
+      "finalUrl": "https://www.jameslindlibrary.org/abraham-ep-chain-e-fletcher-cm-gardner-ad-heatley-ng-jennings-am-florey-hw-1941/",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
@@ -113,46 +82,6 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "freeth-anti": {
-      "title": "Freeth et al. · A model of the cosmos in the ancient Greek Antikythera Mechanism, Scientific Reports (2021)",
-      "url": "https://discovery.ucl.ac.uk/id/eprint/10124374/1/s41598-021-84310-w.pdf",
-      "status": 200,
-      "finalUrl": "https://discovery.ucl.ac.uk/id/eprint/10124374/1/s41598-021-84310-w.pdf",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "holton": {
-      "title": "Gerald Holton · Millikan’s Measurement of Planck’s Constant, APS (1999)",
-      "url": "https://physics.aps.org/story/v3/st23",
-      "status": 403,
-      "finalUrl": "https://physics.aps.org/story/v3/st23",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "manual-web",
-      "manualVerified": true,
-      "manualVerifiedAt": "2026-11-23",
-      "automatedStatus": 403,
-      "automatedMethod": "GET"
-    },
-    "malala-lecture": {
-      "title": "Malala Yousafzai · Nobel Lecture (2014)",
-      "url": "https://www.nobelprize.org/uploads/2018/06/yousafzai-lecture_en-2.pdf",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/uploads/2018/06/yousafzai-lecture_en-2.pdf",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "mechanism": {
-      "title": "Tipper & Strominger · Mechanism of action of penicillins (1965)",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC219812/",
-      "status": 200,
-      "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC219812/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
     "medicine": {
       "title": "Nobel Prize · Official historical list of prizes",
       "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes/all/",
@@ -162,11 +91,64 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
+    "physics": {
+      "title": "Nobel Prize · Official historical list of Physics prizes",
+      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-physics/all/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-physics/all/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nobel-history": {
+      "title": "Nobel Prize · The Nobel Prize in Physics 1901–2000",
+      "url": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nobel-facts": {
+      "title": "Nobel Prize · Nobel Prize facts",
+      "url": "https://www.nobelprize.org/prizes/facts/nobel-prize-facts/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/facts/nobel-prize-facts/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "aps": {
+      "title": "American Physical Society · Quantum Milestones, 1905",
+      "url": "https://physics.aps.org/articles/v18/15",
+      "status": 403,
+      "finalUrl": "https://physics.aps.org/articles/v18/15",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "manual-web",
+      "manualVerified": true,
+      "manualVerifiedAt": "2026-11-23",
+      "automatedStatus": 403,
+      "automatedMethod": "GET"
+    },
     "millikan": {
       "title": "R. A. Millikan · A Direct Photoelectric Determination of Planck’s h (1916)",
       "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.7.355",
       "status": 403,
       "finalUrl": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.7.355",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "manual-web",
+      "manualVerified": true,
+      "manualVerifiedAt": "2026-11-23",
+      "automatedStatus": 403,
+      "automatedMethod": "GET"
+    },
+    "holton": {
+      "title": "Gerald Holton · Millikan’s Measurement of Planck’s Constant, APS (1999)",
+      "url": "https://physics.aps.org/story/v3/st23",
+      "status": 403,
+      "finalUrl": "https://physics.aps.org/story/v3/st23",
       "ok": true,
       "needsManualReview": false,
       "method": "manual-web",
@@ -184,29 +166,20 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "morrison-bio": {
-      "title": "Nobel Prize · Toni Morrison: Biographical",
-      "url": "https://www.nobelprize.org/prizes/literature/1993/morrison/biographical/",
+    "openstax": {
+      "title": "OpenStax / Rice University · Photoelectric Effect",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect",
       "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/literature/1993/morrison/biographical/",
+      "finalUrl": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "morrison-lecture": {
-      "title": "Toni Morrison · Nobel Lecture (1993)",
-      "url": "https://www.nobelprize.org/prizes/literature/1993/morrison/lecture/",
+    "zurich": {
+      "title": "University of Zurich · Albert Einstein: A Quantum of Light",
+      "url": "https://www.uzh.ch/en/researchinnovation/excellence/nobelprize/einstein.html",
       "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/literature/1993/morrison/lecture/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "morrison-list": {
-      "title": "Nobel Prize · Literature 1993: Toni Morrison",
-      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/all/?gallery_style=page",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/all/?gallery_style=page",
+      "finalUrl": "https://www.uzh.ch/en/researchinnovation/excellence/nobelprize/einstein.html",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
@@ -220,47 +193,11 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "nasa-cmb": {
-      "title": "NASA COBE · Cosmic Background Explorer science",
-      "url": "https://science.nasa.gov/mission/cobe/science/",
+    "einstein-lecture": {
+      "title": "Albert Einstein · Nobel lecture (1923)",
+      "url": "https://www.nobelprize.org/uploads/2018/06/einstein-lecture.pdf",
       "status": 200,
-      "finalUrl": "https://science.nasa.gov/mission/cobe/science/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "nasa-cmb-discovery": {
-      "title": "NASA LAMBDA · Discovery of the cosmic microwave background",
-      "url": "https://lambda.gsfc.nasa.gov/education/lambda_graphics/cmb_discovery.html",
-      "status": 200,
-      "finalUrl": "https://lambda.gsfc.nasa.gov/education/lambda_graphics/cmb_discovery.html",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "nasa-history": {
-      "title": "NASA GSFC · History of the cosmic microwave background",
-      "url": "https://asd.gsfc.nasa.gov/archive/mather/cosmology/history.html",
-      "status": 200,
-      "finalUrl": "https://asd.gsfc.nasa.gov/archive/mather/cosmology/history.html",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "nobel-facts": {
-      "title": "Nobel Prize · Nobel Prize facts",
-      "url": "https://www.nobelprize.org/prizes/facts/nobel-prize-facts/",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/facts/nobel-prize-facts/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "nobel-history": {
-      "title": "Nobel Prize · The Nobel Prize in Physics 1901–2000",
-      "url": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "finalUrl": "https://www.nobelprize.org/uploads/2018/06/einstein-lecture.pdf",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
@@ -274,65 +211,11 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "openstax": {
-      "title": "OpenStax / Rice University · Photoelectric Effect",
-      "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect",
+    "mechanism": {
+      "title": "Tipper & Strominger · Mechanism of action of penicillins (1965)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC219812/",
       "status": 200,
-      "finalUrl": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "peace-review": {
-      "title": "Nobel Prize · The Nobel Prizes 2014 Annual Review",
-      "url": "https://www.nobelprize.org/uploads/2018/07/annual_review_14.pdf",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/uploads/2018/07/annual_review_14.pdf",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "physics": {
-      "title": "Nobel Prize · Official historical list of Physics prizes",
-      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-physics/all/",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-physics/all/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "satyarthi-bio": {
-      "title": "Kailash Satyarthi · Biographical",
-      "url": "https://www.nobelprize.org/prizes/peace/2014/satyarthi/biographical/",
-      "status": 200,
-      "finalUrl": "https://www.nobelprize.org/prizes/peace/2014/satyarthi/biographical/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "team": {
-      "title": "Oxford History of Science Museum · Team Penicillin",
-      "url": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/team-penicillin/",
-      "status": 200,
-      "finalUrl": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/team-penicillin/",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "HEAD"
-    },
-    "ucl-anti": {
-      "title": "UCL · Experts recreate mechanical cosmos of world’s first computer",
-      "url": "https://www.ucl.ac.uk/news/2021/mar/experts-recreate-mechanical-cosmos-worlds-first-computer",
-      "status": 200,
-      "finalUrl": "https://www.ucl.ac.uk/news/2021/mar/experts-recreate-mechanical-cosmos-worlds-first-computer",
-      "ok": true,
-      "needsManualReview": false,
-      "method": "GET"
-    },
-    "usda": {
-      "title": "USDA Agricultural Research Service · Penicillin: Opening the Era of Antibiotics",
-      "url": "https://www.ars.usda.gov/midwest-area/peoria-il/national-center-for-agricultural-utilization-research/docs/penicillin-opening-the-era-of-antibiotics/",
-      "status": 200,
-      "finalUrl": "https://www.ars.usda.gov/midwest-area/peoria-il/national-center-for-agricultural-utilization-research/docs/penicillin-opening-the-era-of-antibiotics/",
+      "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC219812/",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
@@ -364,23 +247,332 @@
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "vessel": {
-      "title": "National Museums Scotland · How a ceramic object fueled a medical breakthrough",
-      "url": "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough",
+    "ucl-anti": {
+      "title": "UCL · Experts recreate mechanical cosmos of world’s first computer",
+      "url": "https://www.ucl.ac.uk/news/2021/mar/experts-recreate-mechanical-cosmos-worlds-first-computer",
       "status": 200,
-      "finalUrl": "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough",
+      "finalUrl": "https://www.ucl.ac.uk/news/2021/mar/experts-recreate-mechanical-cosmos-worlds-first-computer",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "GET"
+    },
+    "freeth-anti": {
+      "title": "Freeth et al. · A model of the cosmos in the ancient Greek Antikythera Mechanism, Scientific Reports (2021)",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10124374/1/s41598-021-84310-w.pdf",
+      "status": 200,
+      "finalUrl": "https://discovery.ucl.ac.uk/id/eprint/10124374/1/s41598-021-84310-w.pdf",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
     },
-    "zurich": {
-      "title": "University of Zurich · Albert Einstein: A Quantum of Light",
-      "url": "https://www.uzh.ch/en/researchinnovation/excellence/nobelprize/einstein.html",
+    "nasa-cmb": {
+      "title": "NASA COBE · Cosmic Background Explorer science",
+      "url": "https://science.nasa.gov/mission/cobe/science/",
       "status": 200,
-      "finalUrl": "https://www.uzh.ch/en/researchinnovation/excellence/nobelprize/einstein.html",
+      "finalUrl": "https://science.nasa.gov/mission/cobe/science/",
       "ok": true,
       "needsManualReview": false,
       "method": "HEAD"
+    },
+    "nasa-history": {
+      "title": "NASA GSFC · History of the cosmic microwave background",
+      "url": "https://asd.gsfc.nasa.gov/archive/mather/cosmology/history.html",
+      "status": 200,
+      "finalUrl": "https://asd.gsfc.nasa.gov/archive/mather/cosmology/history.html",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nasa-cmb-discovery": {
+      "title": "NASA LAMBDA · Discovery of the cosmic microwave background",
+      "url": "https://lambda.gsfc.nasa.gov/education/lambda_graphics/cmb_discovery.html",
+      "status": 200,
+      "finalUrl": "https://lambda.gsfc.nasa.gov/education/lambda_graphics/cmb_discovery.html",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "curie-nobel": {
+      "title": "Nobel Prize · Marie and Pierre Curie and the discovery of polonium and radium",
+      "url": "https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "curie-facts": {
+      "title": "Nobel Prize · Chemistry 1911: Marie Curie",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/facts/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/facts/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "morrison-list": {
+      "title": "Nobel Prize · Literature 1993: Toni Morrison",
+      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/all/?gallery_style=page",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/all/?gallery_style=page",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "morrison-bio": {
+      "title": "Nobel Prize · Toni Morrison: Biographical",
+      "url": "https://www.nobelprize.org/prizes/literature/1993/morrison/biographical/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/literature/1993/morrison/biographical/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "morrison-lecture": {
+      "title": "Toni Morrison · Nobel Lecture (1993)",
+      "url": "https://www.nobelprize.org/prizes/literature/1993/morrison/lecture/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/literature/1993/morrison/lecture/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "peace-review": {
+      "title": "Nobel Prize · The Nobel Prizes 2014 Annual Review",
+      "url": "https://www.nobelprize.org/uploads/2018/07/annual_review_14.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2018/07/annual_review_14.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "malala-lecture": {
+      "title": "Malala Yousafzai · Nobel Lecture (2014)",
+      "url": "https://www.nobelprize.org/uploads/2018/06/yousafzai-lecture_en-2.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2018/06/yousafzai-lecture_en-2.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "satyarthi-bio": {
+      "title": "Kailash Satyarthi · Biographical",
+      "url": "https://www.nobelprize.org/prizes/peace/2014/satyarthi/biographical/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/peace/2014/satyarthi/biographical/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "econ-popular": {
+      "title": "Royal Swedish Academy of Sciences · The Prize in Economic Sciences 2019: Popular science background",
+      "url": "https://www.nobelprize.org/uploads/2019/10/popular-economicsciencesprize2019-2.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2019/10/popular-economicsciencesprize2019-2.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "econ-advanced": {
+      "title": "Royal Swedish Academy of Sciences · Scientific Background: The Experimental Approach to Alleviating Global Poverty",
+      "url": "https://www.nobelprize.org/uploads/2019/10/advanced-economicsciencesprize2019.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2019/10/advanced-economicsciencesprize2019.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nobel-physics-2017": {
+      "title": "Nobel Prize · Physics 2017 press release",
+      "url": "https://www.nobelprize.org/prizes/physics/2017/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-ligo-background": {
+      "title": "Royal Swedish Academy of Sciences · Physics 2017 popular science background",
+      "url": "https://www.nobelprize.org/uploads/2018/06/popular-physicsprize2017.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-physics-2022": {
+      "title": "Nobel Prize · Physics 2022 press release",
+      "url": "https://www.nobelprize.org/prizes/physics/2022/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-quantum-background": {
+      "title": "Royal Swedish Academy of Sciences · Physics 2022 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2026/05/advanced-physicsprize-2022-5.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-mrna-2023": {
+      "title": "Nobel Assembly · Medicine 2023 advanced information",
+      "url": "https://www.nobelprize.org/prizes/medicine/2023/advanced-information/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-mrna-press": {
+      "title": "Nobel Prize · Medicine 2023 press release",
+      "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-crispr-2020": {
+      "title": "Nobel Prize · Chemistry 2020 press release",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2020/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-crispr-background": {
+      "title": "Royal Swedish Academy of Sciences · Chemistry 2020 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2020/10/advanced-chemistryprize2020.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-battery-2019": {
+      "title": "Royal Swedish Academy of Sciences · Chemistry 2019 popular science background",
+      "url": "https://www.nobelprize.org/uploads/2019/10/popular-chemistryprize2019.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-battery-advanced": {
+      "title": "Royal Swedish Academy of Sciences · Chemistry 2019 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2019/10/advanced-chemistryprize2019-2.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-proteins-2024": {
+      "title": "Nobel Prize · Chemistry 2024 press release",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2024/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-protein-background": {
+      "title": "Royal Swedish Academy of Sciences · Chemistry 2024 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2024/10/advanced-chemistryprize2024.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-han-2024": {
+      "title": "Swedish Academy · Literature 2024 press release",
+      "url": "https://www.nobelprize.org/uploads/2024/10/press-literatureprize2024.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-han-lecture": {
+      "title": "Han Kang · Nobel Prize lecture",
+      "url": "https://www.nobelprize.org/prizes/literature/2024/han/lecture/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-ernaux-2022": {
+      "title": "Swedish Academy · Literature 2022 press release",
+      "url": "https://www.nobelprize.org/uploads/2022/10/press-literatureprize2022.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-ernaux-lecture": {
+      "title": "Annie Ernaux · Nobel Prize lecture",
+      "url": "https://www.nobelprize.org/uploads/2022/12/ernaux-lecture-english.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-hidankyo-2024": {
+      "title": "Norwegian Nobel Committee · Peace Prize 2024 press release",
+      "url": "https://www.nobelprize.org/prizes/peace/2024/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-ican-2017": {
+      "title": "Norwegian Nobel Committee · Peace Prize 2017 press release",
+      "url": "https://www.nobelprize.org/prizes/peace/2017/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-goldin-2023": {
+      "title": "Royal Swedish Academy of Sciences · Economic Sciences 2023 press release",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2023/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-goldin-background": {
+      "title": "Royal Swedish Academy of Sciences · Economic Sciences 2023 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2023/10/advanced-economicsciencesprize2023.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-institutions-2024": {
+      "title": "Royal Swedish Academy of Sciences · Economic Sciences 2024 press release",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2024/press-release/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-institutions-background": {
+      "title": "Royal Swedish Academy of Sciences · Economic Sciences 2024 scientific background",
+      "url": "https://www.nobelprize.org/uploads/2024/10/advanced-economicsciencesprize2024.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
+    },
+    "nobel-selection-process": {
+      "title": "Nobel Foundation · Annual Review 2022: nomination and selection",
+      "url": "https://www.nobelprize.org/uploads/2023/04/annual-review-2022-2.pdf",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "The Physics-specific citation was replaced with the Foundation's cross-category process overview. Search indexing supports the source identity and scope, but a direct live link check was unavailable; confirm availability manually."
+    },
+    "nobel-foundation-statutes": {
+      "title": "Nobel Foundation · Statutes",
+      "url": "https://www.nobelprize.org/about/statutes-of-the-nobel-foundation/",
+      "ok": false,
+      "needsManualReview": true,
+      "method": "not-yet-checked",
+      "note": "Automated network audit could not reach external sites in this environment; manual link review is still required."
     }
   }
 }
