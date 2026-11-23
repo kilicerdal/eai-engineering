@@ -10,9 +10,10 @@ import "./lab.css";
 
 const preview = "/images/engineering/agent-reliability-lab.png";
 const title = "AI Agent Reliability Lab";
-const { evaluation, approval, source, viewer } = evidence;
+const { evaluation, approval, source, viewer, blindEvaluation, modelComparison } = evidence;
 const baseline = evaluation.baseline;
 const recovery = evaluation.recovery;
+const { sol, luna } = modelComparison.models;
 const invoice = evaluation.incidentResults["invoice-window"];
 const orphan = evaluation.incidentResults["orphan-alert"];
 
@@ -99,6 +100,28 @@ export default function AgentReliabilityLab() {
               <a href={`${source.repository}/releases/tag/${source.tag}`}>V4.1 release <span aria-hidden="true">↗</span></a>
               <a href="/evidence/agent-reliability-lab.json">Evidence index <span aria-hidden="true">↗</span></a>
             </div>
+          </section>
+          <section className="lab-evidence main-replay-panel" id="blind-evaluation" aria-labelledby="lab-blind-heading">
+            <p className="atlas-eyebrow">Default cause-label contract</p>
+            <h2 id="lab-blind-heading">Blind evaluation</h2>
+            <h3>{blindEvaluation.previous.passed}/{blindEvaluation.previous.runs} → {blindEvaluation.revised.passed}/{blindEvaluation.revised.runs} correct, grounded diagnoses</h3>
+            <p>Each prompt ran twice on {blindEvaluation.incidents} fresh synthetic incidents. The model received no answer key. The revised contract corrected one SQL diagnosis and two worker diagnoses. Both prompts scored 10/10 on each of the other three cause categories.</p>
+            <p><a href={`${viewer}#blind-evaluation`}>Open the live blind scorecard <span aria-hidden="true">↗</span></a></p>
+            <div className="lab-trial-links">
+              <h4>Inspect the three corrected failures</h4>
+              <ul>
+                {blindEvaluation.corrected.map(({ id, trial, label }) => (
+                  <li key={id}><a href={`${viewer}#blind-correction-${id}-${trial}`}>{label} · Trial {trial} <span aria-hidden="true">↗</span></a></li>
+                ))}
+              </ul>
+            </div>
+          </section>
+          <section className="lab-evidence main-replay-panel" id="model-comparison" aria-labelledby="lab-model-heading">
+            <p className="atlas-eyebrow">Citation support · Live synthetic recovery</p>
+            <h2 id="lab-model-heading">Sol vs. Luna model comparison</h2>
+            <h3>Supporting citations in {sol.supported}/{sol.runs} Sol runs and {luna.supported}/{luna.runs} Luna runs</h3>
+            <p>Both models chose the right cause in all {sol.correct + luna.correct} runs across {modelComparison.incidents} synthetic incidents. The stricter grader also checked whether each quotation supported the claim it was cited for. Sol passed all eight runs with either prompt. Luna passed {luna.basic}/8 with basic citations and {luna.explicit}/8 with an explicit support check.</p>
+            <div className="lab-links"><a href={`${viewer}#model-comparison`}>Open the live model comparison <span aria-hidden="true">↗</span></a></div>
           </section>
           <ProjectOwnership projectId="agent-reliability" anchor />
         </div>
