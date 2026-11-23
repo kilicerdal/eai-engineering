@@ -112,6 +112,12 @@ test('AI Agent Reliability Lab is discoverable with grounded results and public 
   'invoice-window/recovery/3','orphan-alert/baseline/2','orphan-alert/baseline/3',
  ].map(trial=>viewer+'#failed-trial-'+trial));
  await expect(page.getByRole('link',{name:'V4.1 release'})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.1.0');
+ const blind=page.getByRole('region',{name:'Blind evaluation',exact:true});
+ await expect(blind).toContainText('47/50 → 50/50');
+ await expect(blind.getByRole('link',{name:'Open the live blind scorecard'})).toHaveAttribute('href',viewer+'#blind-evaluation');
+ for(const [title,id] of [['Read Fence · Trial 2','read-fence-2'],['Dispatch Profile · Trial 1','dispatch-profile-1'],['Maintenance Flag · Trial 1','maintenance-flag-1']]){
+  await expect(blind.getByRole('link',{name:title,exact:true})).toHaveAttribute('href',viewer+'#blind-correction-'+id);
+ }
 
  await expect(page.locator('#evidence')).toContainText('One restart. One completed order.');
  await expect(page.locator('#evidence')).toContainText('entered operator confirmations by script');
