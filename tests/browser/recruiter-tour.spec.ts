@@ -103,6 +103,10 @@ test('AI Agent Reliability Lab is discoverable with grounded results and public 
  await expect(page.getByRole('link',{name:'Open the live evidence viewer',exact:true})).toHaveAttribute('href',viewer);
  await expect(page.getByRole('link',{name:'View GitHub repository',exact:true})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab');
  await expect(page.locator('#evidence')).toContainText('19/24 → 23/24');
+ await expect(page.getByRole('link',{name:'Compare results by incident'})).toHaveAttribute('href',viewer+'#comparison');
+ await expect(page.getByRole('link',{name:'Explore all 6 failed trials'})).toHaveAttribute('href',viewer+'#failure-select');
+ await expect(page.getByRole('link',{name:'V4.1 release'})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.1.0');
+
  await expect(page.locator('#evidence')).toContainText('One restart. One completed order.');
  await expect(page.locator('#evidence')).toContainText('entered operator confirmations by script');
  const response=await request.get('/evidence/agent-reliability-lab.json');

@@ -1,10 +1,10 @@
 {
   "source": {
-    "commit": "2d66d9681e65e45fe1755bfeccb5e26ec741b948",
-    "tag": "v4.0.0",
+    "commit": "1635af6bb0031ff05deecc09624e62c68df3f757",
+    "tag": "v4.1.0",
     "repository": "https://github.com/kilicerdal/agent-reliability-lab"
   },
-  "generatedAt": "2026-11-23T01:32:10Z",
+  "generatedAt": "2026-11-23T02:19:25Z",
   "viewer": "https://kilicerdal.github.io/agent-reliability-lab/",
   "evaluation": {
     "report": "https://github.com/kilicerdal/agent-reliability-lab/blob/v2.0.0/docs/v2-evaluation.md",
@@ -21,6 +21,89 @@
       "strict_pass": 23,
       "failure_exposed": 18,
       "recovered": 17
+    },
+    "failedTrials": 6,
+    "incidentResults": {
+      "invoice-window": {
+        "baseline": {
+          "passed": 0,
+          "runs": 3
+        },
+        "recovery": {
+          "passed": 2,
+          "runs": 3
+        }
+      },
+      "quiet-consumer": {
+        "baseline": {
+          "passed": 3,
+          "runs": 3
+        },
+        "recovery": {
+          "passed": 3,
+          "runs": 3
+        }
+      },
+      "regional-cutover": {
+        "baseline": {
+          "passed": 3,
+          "runs": 3
+        },
+        "recovery": {
+          "passed": 3,
+          "runs": 3
+        }
+      },
+      "orphan-alert": {
+        "baseline": {
+          "passed": 1,
+          "runs": 3
+        },
+        "recovery": {
+          "passed": 3,
+          "runs": 3
+        }
+      },
+      "old-slow-query": {
+        "baseline": {
+          "passed": 3,
+          "runs": 3
+        },
+        "recovery": {
+          "passed": 3,
+          "runs": 3
+        }
+      },
+      "stale-dashboard": {
+        "baseline": {
+          "passed": 3,
+          "runs": 3
+        },
+        "recovery": {
+          "passed": 3,
+          "runs": 3
+        }
+      },
+      "telemetry-gap": {
+        "baseline": {
+          "passed": 3,
+          "runs": 3
+        },
+        "recovery": {
+          "passed": 3,
+          "runs": 3
+        }
+      },
+      "thin-sample": {
+        "baseline": {
+          "passed": 3,
+          "runs": 3
+        },
+        "recovery": {
+          "passed": 3,
+          "runs": 3
+        }
+      }
     }
   },
   "approval": {
