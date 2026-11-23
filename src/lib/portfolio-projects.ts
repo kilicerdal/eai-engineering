@@ -38,7 +38,7 @@ export const projects = [
     description:
       "A synthetic incident investigator with held-out evaluation, scoped MCP tools, and an operator-approved restart.",
     stack: ["Python", "PostgreSQL", "MCP", "Next.js"],
-    status: "V4.0.0 · Recorded public viewer",
+    status: "V4.1.0 · Recorded public viewer",
   },
   {
     name: "AI Engineering Lab",

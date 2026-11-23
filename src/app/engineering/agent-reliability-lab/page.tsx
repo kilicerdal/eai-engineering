@@ -13,6 +13,8 @@ const title = "AI Agent Reliability Lab";
 const { evaluation, approval, source, viewer } = evidence;
 const baseline = evaluation.baseline;
 const recovery = evaluation.recovery;
+const invoice = evaluation.incidentResults["invoice-window"];
+const orphan = evaluation.incidentResults["orphan-alert"];
 
 export const metadata = publicPageMetadata(
   "/engineering/agent-reliability-lab",
@@ -48,7 +50,7 @@ export default function AgentReliabilityLab() {
               <a href={viewer} aria-label="Open the recorded viewer shown in the screenshot">
                 <Image src={preview} width={1440} height={1050} sizes="(max-width: 760px) 90vw, 550px" alt="Agent Reliability Lab viewer showing 23 of 24 grounded diagnoses and a selector for recorded investigations" />
               </a>
-              <figcaption>Actual V4 viewer capture.</figcaption>
+              <figcaption>V4.0 viewer capture.</figcaption>
             </figure>
           </div>
           <section className="lab-evidence" id="evidence" aria-labelledby="lab-results">
@@ -58,8 +60,12 @@ export default function AgentReliabilityLab() {
                 <p className="atlas-eyebrow">V2 · Held-out evaluation</p>
                 <h3>{baseline.strict_pass}/{baseline.runs} → {recovery.strict_pass}/{recovery.runs}</h3>
                 <p>Correct, grounded diagnoses rose from {baseline.strict_pass}/{baseline.runs} with the V1 prompt to {recovery.strict_pass}/{recovery.runs} with recovery guidance. Recovery after a tool failure or stale conflict rose from {baseline.recovered}/{baseline.failure_exposed} to {recovery.recovered}/{recovery.failure_exposed}.</p>
-                <p>Both prompts used the same model and {evaluation.incidents} held-out synthetic incidents, repeated {evaluation.repeats} times per prompt. One trace explains the SQL delay correctly but returns the wrong structured cause.</p>
-                <a href={`${viewer}#comparison`}>Inspect the comparison and failed diagnosis <span aria-hidden="true">↗</span></a>
+                <p>Both prompts used the same model on {evaluation.incidents} held-out synthetic incidents with {evaluation.repeats} runs per incident and prompt. Invoice Window improved from {invoice.baseline.passed}/{invoice.baseline.runs} to {invoice.recovery.passed}/{invoice.recovery.runs}, and Orphan Alert improved from {orphan.baseline.passed}/{orphan.baseline.runs} to {orphan.recovery.passed}/{orphan.recovery.runs}. The other six incidents tied.</p>
+                <p>Open any of the {evaluation.failedTrials} failed trials to see the expected cause, the model’s answer, cited evidence, and tool trace.</p>
+                <div className="lab-links">
+                  <a href={`${viewer}#comparison`}>Compare results by incident <span aria-hidden="true">↗</span></a>
+                  <a href={`${viewer}#failure-select`}>Explore all {evaluation.failedTrials} failed trials <span aria-hidden="true">↗</span></a>
+                </div>
               </article>
               <article className="main-replay-panel">
                 <p className="atlas-eyebrow">V3 · Scoped MCP and approval</p>
@@ -74,7 +80,7 @@ export default function AgentReliabilityLab() {
               <a href={evaluation.report}>V2 report <span aria-hidden="true">↗</span></a>
               <a href={approval.report}>V3 report <span aria-hidden="true">↗</span></a>
               <a href={approval.capture}>Approval evidence <span aria-hidden="true">↗</span></a>
-              <a href={`${source.repository}/releases/tag/${source.tag}`}>V4 release <span aria-hidden="true">↗</span></a>
+              <a href={`${source.repository}/releases/tag/${source.tag}`}>V4.1 release <span aria-hidden="true">↗</span></a>
               <a href="/evidence/agent-reliability-lab.json">Evidence index <span aria-hidden="true">↗</span></a>
             </div>
           </section>
