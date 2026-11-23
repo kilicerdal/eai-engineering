@@ -260,5 +260,26 @@
         "cause": "db_latency"
       }
     ]
+  },
+  "modelComparison": {
+    "sourceCommit": "56043175ae136cf4756415f95d72828b7ee4b52d",
+    "incidents": 4,
+    "repeats": 2,
+    "models": {
+      "sol": {
+        "runs": 16,
+        "correct": 16,
+        "supported": 16,
+        "basic": 8,
+        "explicit": 8
+      },
+      "luna": {
+        "runs": 16,
+        "correct": 16,
+        "supported": 7,
+        "basic": 3,
+        "explicit": 4
+      }
+    }
   }
 }
