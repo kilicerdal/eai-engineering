@@ -12,7 +12,7 @@ test("homepage leads to the dedicated studio and keeps chat and learning distinc
   await expect(page).toHaveURL(/\/engineering$/);
   await expect(page.locator(".engineering-studio")).toHaveCount(1);
   await expect(page.locator(".studio-case")).toHaveCount(2);
-  await expect(page.locator(".studio-project")).toHaveCount(4);
+  await expect(page.locator(".studio-project")).toHaveCount(5);
 
   await expect(
     page.getByRole("heading", { name: "Intelligence in practice." }),

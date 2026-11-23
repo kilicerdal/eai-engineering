@@ -243,6 +243,7 @@ export default function EngineeringStudio({
                       Plan tests <span aria-hidden="true">→</span>
                     </a>
                   )}
+                  {project.viewer && <a href={project.viewer}>Live evidence viewer <span aria-hidden="true">↗</span></a>}
                   {!project.caseStudy && <span>Case study forthcoming</span>}
                 </div>
               </article>

@@ -87,3 +87,27 @@ test('SettlementLab V4.1 presents dated economic evidence and a playable recover
  await page.goto('/engineering/settlementlab#reuse-v26');
  await expect(page.locator('#reuse-v26')).toBeVisible();
 });
+
+test('AI Agent Reliability Lab is discoverable with grounded results and public evidence', async ({page, request}) => {
+ const route='/engineering/agent-reliability-lab';
+ const viewer='https://kilicerdal.github.io/agent-reliability-lab/';
+ await page.goto('/#engineering');
+ await expect(page.getByRole('link',{name:'Explore AI Agent Reliability Lab →'})).toHaveAttribute('href',route);
+ await page.goto('/engineering/projects');
+ await page.getByRole('button',{name:'AI Systems',exact:true}).click();
+ const lab=page.getByRole('article').filter({has:page.getByRole('heading',{name:'AI Agent Reliability Lab',exact:true})});
+ await expect(lab.getByRole('link',{name:'Live evidence viewer ↗'})).toHaveAttribute('href',viewer);
+ await lab.getByRole('link',{name:'Explore project →'}).click();
+ await expect(page).toHaveURL(new RegExp(route+'$'));
+ await expect(page.getByRole('heading',{name:'AI Agent Reliability Lab',exact:true})).toBeVisible();
+ await expect(page.getByRole('link',{name:'Open the live evidence viewer',exact:true})).toHaveAttribute('href',viewer);
+ await expect(page.getByRole('link',{name:'View GitHub repository',exact:true})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab');
+ await expect(page.locator('#evidence')).toContainText('19/24 → 23/24');
+ await expect(page.locator('#evidence')).toContainText('One restart. One completed order.');
+ await expect(page.locator('#evidence')).toContainText('entered operator confirmations by script');
+ const response=await request.get('/evidence/agent-reliability-lab.json');
+ expect(response.ok()).toBe(true);
+ expect((await response.json()).approval.completed.completion_events).toBe(1);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ expect((await new AxeBuilder({page}).include('main.threshold').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
+});

@@ -1,0 +1,58 @@
+{
+  "source": {
+    "commit": "2d66d9681e65e45fe1755bfeccb5e26ec741b948",
+    "tag": "v4.0.0",
+    "repository": "https://github.com/kilicerdal/agent-reliability-lab"
+  },
+  "generatedAt": "2026-11-23T01:32:10Z",
+  "viewer": "https://kilicerdal.github.io/agent-reliability-lab/",
+  "evaluation": {
+    "report": "https://github.com/kilicerdal/agent-reliability-lab/blob/v2.0.0/docs/v2-evaluation.md",
+    "incidents": 8,
+    "repeats": 3,
+    "baseline": {
+      "runs": 24,
+      "strict_pass": 19,
+      "failure_exposed": 18,
+      "recovered": 13
+    },
+    "recovery": {
+      "runs": 24,
+      "strict_pass": 23,
+      "failure_exposed": 18,
+      "recovered": 17
+    }
+  },
+  "approval": {
+    "report": "https://github.com/kilicerdal/agent-reliability-lab/blob/v3.0.0/docs/v3-controls.md",
+    "capture": "https://github.com/kilicerdal/agent-reliability-lab/blob/v3.0.0/evidence/v3/boundaries.json",
+    "pending": {
+      "worker_enabled": false,
+      "order_status": "queued",
+      "restart_events": 0,
+      "completion_events": 0
+    },
+    "completed": {
+      "worker_enabled": true,
+      "order_status": "completed",
+      "restart_events": 1,
+      "completion_events": 1
+    },
+    "concurrentResults": [
+      "already_applied",
+      "applied"
+    ],
+    "deniedMcpCalls": 4,
+    "deniedDatabaseUpdates": 2,
+    "trials": {
+      "injected": {
+        "passed": 3,
+        "runs": 3
+      },
+      "control": {
+        "passed": 3,
+        "runs": 3
+      }
+    }
+  }
+}

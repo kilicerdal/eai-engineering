@@ -1,0 +1,13 @@
+.lab-intro { gap: clamp(1.5rem, 5vw, 3.5rem); align-items: center; }
+.lab-preview { margin: 0; }
+.lab-preview img { display: block; width: 100%; height: auto; border: 1px solid #c5a26766; border-radius: 8px; }
+.lab-preview figcaption { margin-top: 0.5rem; color: #b9c5ce; font-size: 0.82rem; }
+.lab-links { display: flex; align-items: center; flex-wrap: wrap; gap: 0.7rem 1.35rem; margin: 1.25rem 0; }
+.lab-links a { display: inline-flex; align-items: center; gap: 0.35rem; min-height: 44px; }
+.lab-links .lab-primary { padding: 0.45rem 0.85rem; border-radius: 6px; background: #e2bb7d; color: #071522; font-weight: 650; text-decoration: none; }
+.lab-evidence { margin-block: 3.5rem 2rem; }
+.lab-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 760px) {
+  .lab-results { grid-template-columns: 1fr; }
+  .lab-evidence { margin-block: 2rem 1.5rem; }
+}

@@ -10,7 +10,7 @@ test('every category is useful, excludes other categories and All restores the d
 });
 test('public repositories expose source links while private recruiter material stays absent',()=>{
  const sources=showcaseProjects.filter(p=>p.repository);
- assert.deepEqual(sources.map(p=>p.id),['playwright','healthcare','settlement','quality-lab']);
+ assert.deepEqual(sources.map(p=>p.id),['playwright','healthcare','settlement','agent-reliability','quality-lab']);
  for(const p of sources)assert.ok(p.repository.startsWith('https://github.com/kilicerdal/'));
  const lab=showcaseProjects.find(p=>p.id==='quality-lab');
  assert.equal(lab.repository,'https://github.com/kilicerdal/healthcare-quality-lab');assert.match(lab.visibility,/Public source/);assert.match(lab.detail,/separate authored design illustration/);
