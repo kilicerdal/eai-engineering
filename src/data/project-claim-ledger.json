@@ -48,6 +48,21 @@
       "walkthroughVersion": "v3.0.0 historical recording"
     },
     {
+      "capturedAt": "2026-11-23T01:32:10Z",
+      "caseKind": "published-evidence-index",
+      "caseRoute": "/engineering/agent-reliability-lab",
+      "caseVersion": "v4.0.0",
+      "evidence": "/evidence/agent-reliability-lab.json",
+      "id": "agent-reliability",
+      "note": "The V4 viewer replays V1 captures, V2 held-out synthetic fixtures and V3 operator-control evidence. The index publication date is the V4 release date. The V3 approval harness entered confirmations by script.",
+      "previewVersion": "V4 recorded viewer screenshot",
+      "releaseObserved": "v4.0.0",
+      "releaseUrl": "https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.0.0",
+      "repository": "https://github.com/kilicerdal/agent-reliability-lab",
+      "sourceCommit": "2d66d9681e65e45fe1755bfeccb5e26ec741b948",
+      "walkthroughVersion": "V4 live viewer with recorded evidence"
+    },
+    {
       "capturedAt": null,
       "caseKind": "authored-design-illustration",
       "caseRoute": "/engineering/private-lab",

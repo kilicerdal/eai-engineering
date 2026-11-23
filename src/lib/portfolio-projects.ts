@@ -30,6 +30,17 @@ export const projects = [
     status: "V3.0 · Verified showcase release",
   },
   {
+    name: "AI Agent Reliability Lab",
+    category: "AI SYSTEMS ASSURANCE",
+    caseStudy: "/engineering/agent-reliability-lab",
+    repository: "https://github.com/kilicerdal/agent-reliability-lab",
+    viewer: "https://kilicerdal.github.io/agent-reliability-lab/",
+    description:
+      "A synthetic incident investigator with held-out evaluation, scoped MCP tools, and an operator-approved restart.",
+    stack: ["Python", "PostgreSQL", "MCP", "Next.js"],
+    status: "V4.0.0 · Recorded public viewer",
+  },
+  {
     name: "AI Engineering Lab",
     category: "GENERATIVE AI",
     description:
