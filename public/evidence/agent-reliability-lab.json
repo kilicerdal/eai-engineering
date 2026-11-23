@@ -104,7 +104,45 @@
           "runs": 3
         }
       }
-    }
+    },
+    "failedTrialGroups": [
+      {
+        "id": "invoice-window",
+        "label": "Invoice Window",
+        "trials": [
+          {
+            "arm": "baseline",
+            "number": 1
+          },
+          {
+            "arm": "baseline",
+            "number": 2
+          },
+          {
+            "arm": "baseline",
+            "number": 3
+          },
+          {
+            "arm": "recovery",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "id": "orphan-alert",
+        "label": "Orphan Alert",
+        "trials": [
+          {
+            "arm": "baseline",
+            "number": 2
+          },
+          {
+            "arm": "baseline",
+            "number": 3
+          }
+        ]
+      }
+    ]
   },
   "approval": {
     "report": "https://github.com/kilicerdal/agent-reliability-lab/blob/v3.0.0/docs/v3-controls.md",
