@@ -175,5 +175,90 @@
         "runs": 3
       }
     }
+  },
+  "blindEvaluation": {
+    "sourceCommit": "f00e507483463780fc4bb630f1e7303b2d61e0f6",
+    "incidents": 25,
+    "repeats": 2,
+    "previous": {
+      "passed": 47,
+      "runs": 50
+    },
+    "revised": {
+      "passed": 50,
+      "runs": 50
+    },
+    "byCause": {
+      "db_latency": {
+        "recovery": {
+          "passed": 9,
+          "runs": 10
+        },
+        "cause-contract": {
+          "passed": 10,
+          "runs": 10
+        }
+      },
+      "worker_stopped": {
+        "recovery": {
+          "passed": 8,
+          "runs": 10
+        },
+        "cause-contract": {
+          "passed": 10,
+          "runs": 10
+        }
+      },
+      "dependency_config": {
+        "recovery": {
+          "passed": 10,
+          "runs": 10
+        },
+        "cause-contract": {
+          "passed": 10,
+          "runs": 10
+        }
+      },
+      "healthy": {
+        "recovery": {
+          "passed": 10,
+          "runs": 10
+        },
+        "cause-contract": {
+          "passed": 10,
+          "runs": 10
+        }
+      },
+      "unknown": {
+        "recovery": {
+          "passed": 10,
+          "runs": 10
+        },
+        "cause-contract": {
+          "passed": 10,
+          "runs": 10
+        }
+      }
+    },
+    "corrected": [
+      {
+        "id": "dispatch-profile",
+        "trial": 1,
+        "label": "Dispatch Profile",
+        "cause": "worker_stopped"
+      },
+      {
+        "id": "maintenance-flag",
+        "trial": 1,
+        "label": "Maintenance Flag",
+        "cause": "worker_stopped"
+      },
+      {
+        "id": "read-fence",
+        "trial": 2,
+        "label": "Read Fence",
+        "cause": "db_latency"
+      }
+    ]
   }
 }

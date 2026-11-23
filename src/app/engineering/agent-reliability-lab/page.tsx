@@ -10,7 +10,7 @@ import "./lab.css";
 
 const preview = "/images/engineering/agent-reliability-lab.png";
 const title = "AI Agent Reliability Lab";
-const { evaluation, approval, source, viewer } = evidence;
+const { evaluation, approval, source, viewer, blindEvaluation } = evidence;
 const baseline = evaluation.baseline;
 const recovery = evaluation.recovery;
 const invoice = evaluation.incidentResults["invoice-window"];
@@ -98,6 +98,21 @@ export default function AgentReliabilityLab() {
               <a href={approval.capture}>Approval evidence <span aria-hidden="true">↗</span></a>
               <a href={`${source.repository}/releases/tag/${source.tag}`}>V4.1 release <span aria-hidden="true">↗</span></a>
               <a href="/evidence/agent-reliability-lab.json">Evidence index <span aria-hidden="true">↗</span></a>
+            </div>
+          </section>
+          <section className="lab-evidence main-replay-panel" id="blind-evaluation" aria-labelledby="lab-blind-heading">
+            <p className="atlas-eyebrow">Default cause-label contract</p>
+            <h2 id="lab-blind-heading">Blind evaluation</h2>
+            <h3>{blindEvaluation.previous.passed}/{blindEvaluation.previous.runs} → {blindEvaluation.revised.passed}/{blindEvaluation.revised.runs} correct, grounded diagnoses</h3>
+            <p>Each prompt ran twice on {blindEvaluation.incidents} fresh synthetic incidents. The model received no answer key. The revised contract corrected one SQL diagnosis and two worker diagnoses. Both prompts scored 10/10 on each of the other three cause categories.</p>
+            <p><a href={`${viewer}#blind-evaluation`}>Open the live blind scorecard <span aria-hidden="true">↗</span></a></p>
+            <div className="lab-trial-links">
+              <h4>Inspect the three corrected failures</h4>
+              <ul>
+                {blindEvaluation.corrected.map(({ id, trial, label }) => (
+                  <li key={id}><a href={`${viewer}#blind-correction-${id}-${trial}`}>{label} · Trial {trial} <span aria-hidden="true">↗</span></a></li>
+                ))}
+              </ul>
             </div>
           </section>
           <ProjectOwnership projectId="agent-reliability" anchor />
