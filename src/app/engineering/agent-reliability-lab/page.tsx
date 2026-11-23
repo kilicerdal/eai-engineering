@@ -121,7 +121,7 @@ export default function AgentReliabilityLab() {
             <h2 id="lab-model-heading">Sol vs. Luna model comparison</h2>
             <h3>Supporting citations in {sol.supported}/{sol.runs} Sol runs and {luna.supported}/{luna.runs} Luna runs</h3>
             <p>Both models chose the right cause in all {sol.correct + luna.correct} runs across {modelComparison.incidents} synthetic incidents. The stricter grader also checked whether each quotation supported the claim it was cited for. Sol passed all eight runs with either prompt. Luna passed {luna.basic}/8 with basic citations and {luna.explicit}/8 with an explicit support check.</p>
-            <p><a href={`${viewer}#model-comparison`}>Open the live model comparison <span aria-hidden="true">↗</span></a> to inspect the paired citations, latency, and estimated cost.</p>
+            <div className="lab-links"><a href={`${viewer}#model-comparison`}>Open the live model comparison <span aria-hidden="true">↗</span></a></div>
           </section>
           <ProjectOwnership projectId="agent-reliability" anchor />
         </div>
