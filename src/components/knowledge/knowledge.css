@@ -20,6 +20,8 @@
 @media(max-width:760px){.knowledge-header{padding-top:15px}.knowledge-brand .brand-descriptor{font-size:10px}.knowledge-return{font-size:12px}.knowledge-header .knowledge-navigation{font-size:12px;flex-wrap:nowrap;padding:14px 0}.knowledge-header .knowledge-navigation>div{gap:20px}.knowledge-header .knowledge-navigation>a:last-child{font-size:11px}.knowledge-entrance,.knowledge-story-hero{padding-top:32px}}
 @media print{.knowledge-header{display:none}}
 .knowledge-room .knowledge-loading{min-height:68vh;padding:clamp(48px,10vw,140px) clamp(20px,8vw,120px);max-width:1440px;margin:auto}.knowledge-room .knowledge-loading h1{margin-bottom:20px}.knowledge-room .knowledge-loading p:last-child{color:var(--knowledge-muted);font-size:17px}
+.knowledge-other-rooms{position:relative}.knowledge-other-rooms>summary{display:flex;align-items:center;min-height:44px;padding:4px 10px;border:1px solid var(--knowledge-line);cursor:pointer;list-style:none;color:var(--knowledge-teal);font-weight:700}.knowledge-other-rooms>summary::-webkit-details-marker{display:none}.knowledge-other-rooms>summary::after{content:'⌄';margin-left:12px}.knowledge-other-rooms[open]>summary::after{content:'⌃'}.knowledge-other-rooms>div{position:absolute;z-index:10;right:0;top:calc(100% + 6px);display:grid;min-width:220px;padding:8px;background:var(--knowledge-paper);border:1px solid var(--knowledge-line);box-shadow:0 10px 28px #18323822}.knowledge-other-rooms>div>a{display:flex;align-items:center;min-height:44px;padding:8px 10px;text-decoration:none}.knowledge-other-rooms>div>a:hover{background:#eeece1}.knowledge-header .knowledge-navigation .knowledge-other-rooms a{padding-block:8px}.knowledge-other-rooms :is(summary,a):focus-visible{outline:3px solid #946a2f;outline-offset:2px}
+@media(max-width:760px){.knowledge-header .knowledge-navigation{flex-wrap:wrap;justify-content:flex-start;gap:8px 16px}.knowledge-header .knowledge-navigation>div{width:100%;gap:18px}.knowledge-header .knowledge-navigation>a:last-child{margin-left:0}.knowledge-other-rooms>div{left:0;right:auto}.knowledge-header .knowledge-navigation .knowledge-other-rooms{width:100%}.knowledge-header .knowledge-navigation .knowledge-other-rooms>summary{width:fit-content;min-width:150px}}
 
 .knowledge-story-cite{margin-top:14px}
 .knowledge-copy-control{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -139,3 +141,14 @@
 @media(max-width:900px){.nobel-more-filter[open]>label{min-width:0}.nobel-more-filter{grid-column:1/-1}.nobel-more-filter>summary{width:fit-content;min-width:150px}}
 @media(max-width:600px){.knowledge-room .nobel-extra>summary{font-size:17px;min-height:54px}.nobel-more-filter{grid-column:auto}.nobel-more-filter>summary{width:100%}.nobel-more-filter[open]>label{min-width:100%}.knowledge-room .knowledge-contents nav{grid-template-columns:1fr}.knowledge-room .knowledge-next>div{gap:20px}.knowledge-room .knowledge-contents summary{font-size:13px}}
 @media(max-width:760px){.knowledge-scholarship{margin:34px 0;padding:22px}.knowledge-scholarship-grid{grid-template-columns:1fr;gap:0}.knowledge-scholarship-grid article{padding:20px 0 12px}.knowledge-scholarship-grid h3{font-size:20px}}
+.knowledge-match-reason{font-size:.86rem!important;color:#5e5238;background:#eee6d6;border-left:2px solid #9b7945;padding:8px 11px;margin:10px 0!important}
+.knowledge-passage-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:20px 0 8px;padding-top:12px;border-top:1px solid #66707850;font-size:.9rem}
+.knowledge-passage-actions>a{color:inherit;text-underline-offset:3px}
+.knowledge-passage-actions .knowledge-copy-control{display:inline-flex;align-items:center;gap:8px}
+.knowledge-passage-actions .knowledge-copy-control button{border:0;background:transparent;color:#7b5c2c;text-decoration:underline;text-underline-offset:3px;padding:6px 0;font:inherit;cursor:pointer}
+.knowledge-empty-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.knowledge-room :is(a,button,summary,input,select):focus-visible{outline:3px solid #9b7440;outline-offset:4px}
+@media(max-width:680px){.knowledge-passage-actions{align-items:flex-start;flex-direction:column;gap:8px}.knowledge-match-reason{font-size:.84rem!important}}
+@media(prefers-contrast:more){.knowledge-room :is(.knowledge-small,.knowledge-dek,.knowledge-source-meta){color:#263747}.knowledge-passage-actions{border-color:#394653}}
+
+@media(max-width:760px){.knowledge-room :is(button,summary,.knowledge-breadcrumb a,.knowledge-passage-actions a){min-height:44px}.knowledge-room .knowledge-contents nav a{display:flex;align-items:center;padding-inline:4px}}

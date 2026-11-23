@@ -1,0 +1,425 @@
+{
+  "scope": "Five cloud-practitioner extra questions reviewed against their linked AWS primary documentation. These are agent-assisted source and editorial checks, not official exam-owner validation or independent human sign-off.",
+  "records": [
+    {
+      "id": "cloud-practitioner-extra-01",
+      "edition": "extra-v1",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+      "sourceInspection": "The linked official AWS documentation snapshot in tmp/reference-review was read for the stated claim. Each option and its explanation were assessed. No official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Correct: a workload role supplies temporary credentials, while scoped permissions address the approved bucket access requirement.",
+        "Incorrect: renaming a stored administrator key changes neither its long-lived nature nor its broad permission scope.",
+        "Incorrect: sharing one administrator key across workloads increases credential exposure and prevents workload-specific access boundaries."
+      ],
+      "scope": "Reviews the stated AWS workload credential and permission direction against IAM security best practices. It does not assess bucket-policy details, deployment-specific role delivery, or independently validate an exam objective.",
+      "fingerprint": "088096e4d12f81576ba9cf5a9963561665254b622d084179a4584dcbbe194946"
+    },
+    {
+      "id": "cloud-practitioner-extra-02",
+      "edition": "extra-v1",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+      "sourceInspection": "The linked official AWS documentation snapshot in tmp/reference-review was read for the stated claim. Each option and its explanation were assessed. No official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Correct: AWS Budgets supports configured notifications for forecasted cost before the target is reached.",
+        "Incorrect: instance placement determines where compute runs and does not report forecast spending against a cost budget.",
+        "Incorrect: a recovery restore test evaluates recovery capability and is unrelated to cost forecast notifications."
+      ],
+      "scope": "Checks whether AWS Budgets supports notifications for forecasted cost against a monthly target. It does not claim alerts are immediate or that a notification prevents spending.",
+      "fingerprint": "ce21d2ebf2155d5c3eb75d6c327c917b49b1cbe717686e5b051d87ed7604cd76"
+    },
+    {
+      "id": "cloud-practitioner-extra-03",
+      "edition": "extra-v1",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html",
+      "sourceInspection": "The linked official AWS documentation snapshot in tmp/reference-review was read for the stated claim. Each option and its explanation were assessed. No official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: idempotent handling is the recommended response to possible repeat delivery, not an assumption to avoid.",
+        "Incorrect: deduplicating repeated business intent can be a relevant application safeguard, depending on the processing design.",
+        "Correct: receiving a message does not prove it is a new intent; standard queues can redeliver a previously processed message."
+      ],
+      "scope": "Checks the at-least-once delivery property documented for Amazon SQS standard queues and its application-design implication. It does not prescribe a specific deduplication store or transaction design.",
+      "fingerprint": "19ce2ca71ec5e0809c2d117c0d4150c47e97abb97f8b97b6750da1d52a7b9e14"
+    },
+    {
+      "id": "cloud-practitioner-extra-04",
+      "edition": "extra-v1",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+      "sourceInspection": "The linked official AWS documentation snapshot in tmp/reference-review was read for the stated claim. Each option and its explanation were assessed. No official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Correct: AWS recommends regularly reviewing and removing unused permissions to reduce unnecessary access.",
+        "Correct: IAM guidance recommends temporary role credentials for workloads instead of distributing long-lived credentials.",
+        "Incorrect: retaining unrelated permissions avoids the stated access review and leaves unnecessary access in place."
+      ],
+      "scope": "Checks the two selected IAM practices against AWS IAM guidance: review unused access and use temporary role credentials for supported workloads. It does not evaluate the deployment-specific migration steps.",
+      "fingerprint": "da239f5ab87ec188ba36826224dcbb267a8b588501e4c1e1592346b9e21c19bc"
+    },
+    {
+      "id": "cloud-practitioner-extra-05",
+      "edition": "extra-v1",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+      "sourceInspection": "The linked official AWS documentation snapshot in tmp/reference-review was read for the stated claim. Each option and its explanation were assessed. No official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: AWS documents data and billing delays; a budget notification can arrive after more charges accrue and is not a hard real-time spend cap.",
+        "Correct: the team must configure suitable thresholds and take appropriate action; notification alone does not eliminate cost-management responsibility.",
+        "Correct: AWS Budgets supports optional notifications for actual costs and forecasted overspend, subject to documented update and billing delays."
+      ],
+      "scope": "Checks budget alert expectations against AWS Budgets documentation, including notification delay and possible additional spend. It does not assess budget actions or guarantee a specific notification delivery time.",
+      "fingerprint": "f8cd3ee3180d550b0e38ab5ce39b4070bc3b04cbb1aa1ea8db6a69bc7178a1be"
+    },
+    {
+      "id": "ai-practitioner-01",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "sourceInspection": "AWS AIF-C01 Domain 1 guide snapshot supports this as a learning-types objective. AWS Amazon ML guide defines supervised learning as learning from examples with known labels and gives spam/not-spam as its example: https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-problems-in-amazon-machine-learning.html",
+      "choiceChecks": [
+        "Correct: labeled spam and not-spam examples provide target outputs for a supervised classification task.",
+        "Incorrect: clustering groups observations by similarity without using the supplied labels as prediction targets.",
+        "Incorrect: reinforcement learning is characterized by reward-driven interaction; this scenario supplies labeled examples instead.",
+        "Incorrect: fixed hand-authored rules may classify messages but do not learn a mapping from labeled training examples."
+      ],
+      "scope": "Checks the basic distinction between learning a classifier from labeled examples and the listed alternatives. The AWS exam guide confirms the objective coverage; AWS ML documentation supports the definition. No algorithm-specific claim is made.",
+      "fingerprint": "b3f80a2c5415d8f1264e26ee24cc16c74a735bcebdb72c30cd8524cfc041a4bd"
+    },
+    {
+      "id": "ai-practitioner-02",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "sourceInspection": "AWS AIF-C01 Domain 1 guide snapshot confirms the exam objective includes choosing techniques such as regression, classification, and clustering. AWS Amazon ML documentation describes regression as predicting a numeric value: https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-problems-in-amazon-machine-learning.html",
+      "choiceChecks": [
+        "Incorrect: clustering can group similar deliveries but does not directly produce the requested numeric delivery-time prediction.",
+        "Incorrect: image generation creates visual content and does not estimate a numeric delivery time.",
+        "Incorrect: on-time versus late is categorical classification, while the question asks for a numeric time estimate.",
+        "Correct: regression is the listed task for predicting a numeric or continuous quantity such as delivery time."
+      ],
+      "scope": "Checks whether the requested continuous numeric estimate is a regression task. The AWS AIF-C01 guide lists regression and clustering as task-selection concepts; an AWS ML source provides their task distinction.",
+      "fingerprint": "6c85b917db4874713459a99385617954db1e17fd050aec1bc2a9ea5d6fc0d957"
+    },
+    {
+      "id": "ai-practitioner-03",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "sourceInspection": "AWS AIF-C01 Domain 1 guide snapshot includes model lifecycle and evaluation objectives. AWS documentation says evaluation on training data does not establish generalization and recommends held-out evaluation data: https://docs.aws.amazon.com/machine-learning/latest/dg/splitting-the-data-into-training-and-evaluation-data.html",
+      "choiceChecks": [
+        "Incorrect: the classifier still uses labels as targets; evaluating on training examples does not remove the need for them.",
+        "Incorrect: reusing training examples for evaluation does not guarantee absence of leakage and can obscure it.",
+        "Correct: training-set results alone do not estimate performance on unseen examples; held-out data is needed for that evaluation.",
+        "Incorrect: a perfect result on seen examples does not establish perfect deployment performance on future inputs."
+      ],
+      "scope": "Checks the limitation of evaluating only on training examples. The prompt asks about evidence for performance on unseen examples; it does not imply that all training-set evaluation is useless for every diagnostic purpose.",
+      "fingerprint": "079da84fa31fe140ca954b3c054596e0745a6ebb18e0db6f2c31f2fc0acc92d6"
+    },
+    {
+      "id": "ai-practitioner-04",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "sourceInspection": "AWS AIF-C01 Domain 1 guide snapshot includes model-performance metrics. AWS SageMaker AI metrics reference defines recall as TP/(TP+FN), the fraction of actual positives correctly identified: https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-metrics.html",
+      "choiceChecks": [
+        "Incorrect: training cost is an economic measure and does not count how many actual positives the classifier finds.",
+        "Correct: recall divides true positives by all actual positives (true positives plus false negatives), matching the requested fraction.",
+        "Incorrect: precision measures the reliability of predicted positives, not the share of actual positives found.",
+        "Incorrect: inference latency measures response time and says nothing about the fraction of actual positive cases detected."
+      ],
+      "scope": "Checks the conventional recall definition for binary classification in the stated true-positive setting. The question asks which metric measures coverage of actual positives, not which metric is best for every screening decision.",
+      "fingerprint": "313a226a1889ab8708063105253d25e8bbdd1eee5d1a0ba832de04c091c9291c"
+    },
+    {
+      "id": "ai-practitioner-05",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "sourceInspection": "AWS AIF-C01 Domain 1 guide snapshot explicitly includes identifying when AI/ML is not appropriate, including when a specific outcome is required instead of a prediction. The source supports the scenario’s governing constraint: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain1.html",
+      "choiceChecks": [
+        "Correct: a deterministic implementation directly satisfies a fully specified exact calculation without introducing an unnecessary prediction step.",
+        "Incorrect: the prompt requires an exact known rule, so choosing a generative model merely because it is available adds no fit-for-purpose benefit.",
+        "Incorrect: clustering discovers groups and does not implement the exact formula the business already specified.",
+        "Incorrect: creative sampling introduces variability where the requirement is a fixed, exact result."
+      ],
+      "scope": "Checks the choice to use an exact deterministic rule when the required result is fully specified. It does not claim that AI is never useful alongside deterministic logic in a larger system.",
+      "fingerprint": "43362e8a0627253db7fd8aa114d4e7c07aa3eeec73ff577efe7d7ef488484c73"
+    },
+    {
+      "id": "ai-practitioner-06",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "sourceInspection": "AWS AIF-C01 Domain 2 guide snapshot lists generating content as a GenAI use case. AWS Bedrock documentation describes foundation models generating varied responses for use cases: https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models-reference.html",
+      "choiceChecks": [
+        "Incorrect: retrieval returns content that already exists; the scenario says the assistant creates a new draft.",
+        "Incorrect: assigning topic labels is a classification task and does not compose new text.",
+        "Incorrect: similarity ranking orders stored drafts rather than generating the requested new content.",
+        "Correct: producing a new draft from an instruction illustrates generative AI content generation."
+      ],
+      "scope": "Checks the distinction between composing new content and retrieving or organizing existing content. The scenario is about the capability illustrated, not the quality or factuality of the generated draft.",
+      "fingerprint": "1726d97ca119247f26263d5a8a34354b7f450699017a6feac3c9f960063e8501"
+    },
+    {
+      "id": "ai-practitioner-07",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "sourceInspection": "AWS AIF-C01 Domain 2 guide snapshot includes hallucinations and inaccuracy among GenAI disadvantages. AWS Prescriptive Guidance defines hallucination as confidently generated incorrect or fabricated information: https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/strategy-data-considerations-gen-ai/strategy-data-considerations-gen-ai.pdf",
+      "choiceChecks": [
+        "Incorrect: the prompt describes an invented identifier, not merely a formatting problem with a supported policy reference.",
+        "Incorrect: the fabricated identifier provides no evidence about encryption configuration or data at rest.",
+        "Correct: inventing a nonexistent factual identifier is fabricated output, which AWS describes as a hallucination.",
+        "Incorrect: because the policy number does not exist, the response cannot be considered a faithful restatement of verified information."
+      ],
+      "scope": "Checks hallucination as a limitation illustrated by a fluent but fabricated identifier. It does not assert that every unsupported answer has the same cause or that hallucinations are always fluent.",
+      "fingerprint": "ef34519230fe81bba37a6e8b9d5e4cf67afbf0980019c8409a4b293548333331"
+    },
+    {
+      "id": "ai-practitioner-08",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "sourceInspection": "AWS AIF-C01 Domain 2 guide snapshot includes token-based pricing and its effect on inference cost. Amazon Bedrock cost documentation states charges depend on token type and separately accounts for input and output tokens: https://docs.aws.amazon.com/bedrock/latest/userguide/cost-mgmt-understanding-cur-data.html",
+      "choiceChecks": [
+        "Incorrect: model storage footprint is unrelated to the stated token-based charges for long prompts and generated answers.",
+        "Correct: input and output token counts are direct billing dimensions for token-priced inference and both are large in the scenario.",
+        "Incorrect: first-token latency measures response speed, not the number of billable input and output tokens.",
+        "Incorrect: user count alone ignores request size, which the scenario identifies as long on both input and output."
+      ],
+      "scope": "Checks the stated token-priced inference cost driver. It avoids comparing exact prices, which vary by model, region, tier, and pricing arrangement.",
+      "fingerprint": "73b649bc6c6c98b31757ce9a4e64d0920b3db80657f360620b7025a7777a013e"
+    },
+    {
+      "id": "ai-practitioner-09",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "sourceInspection": "AWS AIF-C01 Domain 2 guide lists Amazon Bedrock among services for GenAI applications. The current Amazon Bedrock overview describes it as a fully managed service providing access to foundation models: https://docs.aws.amazon.com/us_en/bedrock/latest/userguide/what-is-bedrock.html",
+      "choiceChecks": [
+        "Correct: Amazon Bedrock is AWS’s managed service for accessing foundation models for generative AI applications.",
+        "Incorrect: SageMaker AI supports custom ML workflows, but the scenario specifically asks for managed foundation-model access without deploying endpoints.",
+        "Incorrect: S3 stores objects and input documents; it does not itself provide model inference.",
+        "Incorrect: OpenSearch supports search and retrieval; it is not the managed foundation-model inference service requested."
+      ],
+      "scope": "Checks the requested managed foundation-model access service among the listed AWS options. It does not imply that Bedrock is the right service for every custom machine-learning workflow.",
+      "fingerprint": "cfe4df218d2d1525ecf7c9f34fcbca8b6a585cb7cdc6eca7cfcfffbb8d8bdc20"
+    },
+    {
+      "id": "ai-practitioner-10",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain2.html",
+      "sourceInspection": "AWS AIF-C01 Domain 2 guide identifies MCP’s role in connecting agents to external systems. AWS Prescriptive Guidance describes MCP as a standardized tool-integration protocol and separately emphasizes authentication and authorization: https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/tool-integration-strategy.html",
+      "choiceChecks": [
+        "Incorrect: a connection protocol does not guarantee that each proposed tool action is authorized; permission checks remain necessary.",
+        "Incorrect: MCP integration does not replace application authentication or the tool’s authorization controls.",
+        "Incorrect: standardizing tool connections does not eliminate errors in model-generated reasoning or outputs.",
+        "Correct: Model Context Protocol is the integration concept for connecting an AI assistant to external tools and context."
+      ],
+      "scope": "Checks MCP’s role in connecting agents to external tools and context. The question asks for the integration concept, not a security guarantee; the distractors explicitly test that MCP does not itself replace authorization, application authentication, or model-quality controls.",
+      "fingerprint": "18d2990a7f2badc653761e943196c4786a949f3c897378d5e9feebad6eee577a"
+    },
+    {
+      "id": "ai-practitioner-11",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html | https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: display resolution changes presentation and supplies no relevant passages from the private manuals.",
+        "Incorrect: randomly changing weights is not a retrieval method and would make behavior less controlled.",
+        "Correct: RAG retrieves relevant source content and adds it to the model context at inference time.",
+        "Incorrect: pretraining cannot ensure access to future revisions of private documents."
+      ],
+      "scope": "Checks why RAG is suited to frequently updated private-source context at inference time. It does not imply retrieved material is always complete, current, authorized, or correct.",
+      "fingerprint": "afd927ce6a70bca6e255eb151209b11d2dea300b9371282eb588be397a409c1e"
+    },
+    {
+      "id": "ai-practitioner-12",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html | https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: the prompt explicitly includes examples, so it is not deleting all context.",
+        "Correct: several demonstrations included in a prompt are few-shot prompting (also called in-context learning).",
+        "Incorrect: examples in an inference prompt do not describe training a model from scratch.",
+        "Incorrect: the examples show a desired output pattern rather than an unsupervised grouping task."
+      ],
+      "scope": "Checks the name for examples supplied inside the prompt. It does not claim that examples guarantee better output or that prompt examples retrain model weights.",
+      "fingerprint": "063e1483c3b0bf9a7a7439b6f546e71d772554adc256537466216820e7c03a86"
+    },
+    {
+      "id": "ai-practitioner-13",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html | https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Correct: supervised fine-tuning uses training examples and adjusts model parameters for represented tasks.",
+        "Incorrect: retrieval supplies documents as context; it does not itself update model parameters.",
+        "Incorrect: a website color change has no relationship to training model parameters.",
+        "Incorrect: a hyperlink alone provides no training examples or parameter update."
+      ],
+      "scope": "Checks the defining parameter-update aspect of supervised fine-tuning against retrieval and irrelevant presentation changes. It does not claim fine-tuning is always preferable to retrieval.",
+      "fingerprint": "36f745e90684c7452422235d33cfa4133bed24c1e340ace77740adf0e051f3aa"
+    },
+    {
+      "id": "ai-practitioner-14",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html | https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: perceived confidence is not a comparable measure of whether business tasks were completed.",
+        "Incorrect: changing test questions for just one assistant confounds the comparison.",
+        "Incorrect: one easy success case cannot represent the stipulated representative workload.",
+        "Correct: applying consistent task-quality and business-constraint measures to the same representative tasks supports a useful comparison."
+      ],
+      "scope": "Checks the need for a controlled comparison using representative common tasks and criteria tied to business quality and constraints. It does not prescribe a universal metric or claim one evaluation set proves production suitability.",
+      "fingerprint": "33546e9ae9f3852ed91fff2a2756e2d2499a352160610269717cb5429537abd0"
+    },
+    {
+      "id": "ai-practitioner-15",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain3.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain5.html | https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/security-best-practices-for-tool-integration.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: record existence does not establish that the caller is authorized to modify it.",
+        "Incorrect: valid JSON checks argument syntax, not whether the requested action is permitted.",
+        "Correct: the model’s proposed action and the application’s authorization decision are separate; permission must be checked before execution.",
+        "Incorrect: an explanation or formatting detail does not establish permission to perform an action."
+      ],
+      "scope": "Checks separation of model proposal from execution authorization for a tool capable of changing records. It does not specify a particular identity provider, policy engine, or approval workflow.",
+      "fingerprint": "4192302750a8fb537282726ad731fb63bc2d0971175fa8eb7dcc7abfb56f03a7"
+    },
+    {
+      "id": "ai-practitioner-16",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html | https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: deleting failures removes evidence and can distort the evaluation.",
+        "Correct: disaggregate performance and investigate affected cases; the observed disparity warrants inquiry but does not alone prove its cause.",
+        "Incorrect: hiding subgroup outcomes prevents the team from assessing the reported risk.",
+        "Incorrect: a high aggregate can mask relevant subgroup error differences and does not by itself establish fairness."
+      ],
+      "scope": "Checks the need to examine relevant subgroup behavior when aggregate accuracy hides a disparity. The disparity is a signal to investigate; this review does not infer its cause or prescribe a fairness threshold.",
+      "fingerprint": "8ba1e74e362e6b0177ddb1f21714b7e46d79b64314088cf288af7349273b7939"
+    },
+    {
+      "id": "ai-practitioner-17",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html | https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Correct: documenting intended uses, evaluation evidence, and limitations helps communicate the model’s behavior and scope.",
+        "Incorrect: documentation cannot guarantee that every future prediction is correct.",
+        "Incorrect: publishing documentation does not eliminate the need for context-appropriate human review.",
+        "Incorrect: a model description is not automatic legal approval for every use."
+      ],
+      "scope": "Checks transparency through intended-use, evaluation, and limitation documentation. Documentation supports informed review but is not proof of correctness, safety, or legal approval.",
+      "fingerprint": "72ed92735a030516af2f16eb701e855c6779925133edf6cdac95d7836b9c8286"
+    },
+    {
+      "id": "ai-practitioner-18",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html | https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: adding guardrails does not prove that harmful outputs are impossible.",
+        "Incorrect: content filters do not substitute for data access authorization and permissions.",
+        "Incorrect: guardrails can help detect/filter some risks but do not guarantee perfect factual accuracy.",
+        "Correct: treat guardrails as controls to configure and evaluate alongside other safeguards, not as guarantees."
+      ],
+      "scope": "Checks guardrails as risk-reduction controls that require use-case evaluation. It does not claim every filter fails, nor specify an exhaustive defense design.",
+      "fingerprint": "12073cc605aa0526f3b3c25e2d17409c79a8e1825268a61ff96d29153c455ba3"
+    },
+    {
+      "id": "ai-practitioner-19",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html | https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: dataset gaps strengthen the need to evaluate; they do not justify ignoring evaluation.",
+        "Incorrect: branding has no effect on whether the population is represented in the data.",
+        "Correct: an omitted intended-use population raises a representativeness and inclusivity concern requiring investigation.",
+        "Incorrect: file-name length does not address who is or is not represented in the dataset."
+      ],
+      "scope": "Checks representativeness when an intended-use population is absent from a dataset. It does not establish a measured impact without evaluation on relevant data.",
+      "fingerprint": "0fcd23786f94dfb64aa2252d47676451f4802dbbd14fb11175558997755b9742"
+    },
+    {
+      "id": "ai-practitioner-20",
+      "edition": "quality-v14",
+      "checkedOn": "2026-11-23",
+      "reviewer": "Codex agent source-and-rationale review",
+      "status": "agent-reviewed-with-stated-scope",
+      "source": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html",
+      "sourceInspection": "Read the current AWS AIF-C01 domain guide for the objective and the directly relevant AWS primary documentation: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01-domain4.html | https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html. The sources support the concept and option distinctions described here; no official exam endorsement or independent human validation is claimed.",
+      "choiceChecks": [
+        "Incorrect: explanations can aid understanding but do not remove every model or decision risk.",
+        "Correct: an explanation should be useful for its audience and supported by the explanation method and available evidence.",
+        "Incorrect: presenting an invented narrative as the model’s exact internal process would be misleading.",
+        "Incorrect: a confidence value alone may not explain the factors or comparison relevant to the recommendation."
+      ],
+      "scope": "Checks that explanations should be meaningful and evidence-grounded rather than invented as exact internal cognition. AWS Clarify is one attribution method and, per current docs, no longer open to new customers; the concept here is general.",
+      "fingerprint": "26acd95eadfd70ecbdfe7c77058f0a1753dbb8fd3a6748a8da75fb66a1f2d2fa"
+    }
+  ]
+}

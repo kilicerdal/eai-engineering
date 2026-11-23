@@ -195,3 +195,11 @@
 .art-room :is(.art-membership-preview,.art-passage-removal) button{margin:6px 8px 6px 0;max-width:100%}
 .art-room .art-comparison-library :is(article,details,ul,li){min-width:0;overflow-wrap:anywhere}
 @media print{body.art-print-comparisons .art-comparison-library article{break-inside:auto}body.art-print-comparisons .art-comparison-library :is(p,li){orphans:3;widows:3}body.art-print-comparisons .art-comparison-library :is(h3,h4,summary){break-after:avoid}body.art-print-comparisons .art-comparison-library .art-print-url{overflow-wrap:anywhere;word-break:break-word}body.art-print-comparisons .art-comparison-library :is(details,article){overflow:visible;max-height:none}}
+.art-room :is(a,button,summary,input,select,textarea):focus-visible,.art-navigation :is(a,button,summary):focus-visible{outline:3px solid #59431f;outline-offset:4px}
+.art-room .art-main-painting figcaption{font-size:13px;line-height:1.7}
+@media(max-width:760px){.art-room .art-main-painting figcaption{font-size:13px;margin-top:10px}.art-room .art-view-trigger span{font-size:13px;max-width:calc(100% - 24px);white-space:normal}.art-room .art-detail-layout>*{min-width:0}}
+@media(prefers-contrast:more){.art-room{--art-muted:#34423c}.art-room :is(.art-small,.art-work-record>p,.art-context details>p){color:#26342f}}
+
+/* Long essay navigation stays in reach on wide screens; phone readers get a compact normal-flow index. */
+@media(min-width:1151px){.art-room .art-editorial-columns>.art-essay-toc{position:sticky;top:16px;max-height:calc(100dvh - 32px);overflow:auto}.art-room .art-painting-story .art-essay-toc{position:sticky;top:16px;max-height:calc(100dvh - 32px);overflow:auto}}
+@media(max-width:760px){.art-navigation>nav a,.art-navigation-top>details>summary,.art-room :is(button,summary){min-height:44px}.art-room .art-navigation>nav a{padding-inline:3px}.art-room .art-tool-row{align-items:stretch}}

@@ -55,6 +55,17 @@ const subjects = [
 
 ];
 
+const firstVisitOutcomes: Record<string, string> = {
+  "Reading Room": "Find one book or passage to stay with.",
+  "Art Room": "Look closely at one work and understand a choice the artist made.",
+  "Curiosity Room": "Follow one surprising claim back to its evidence.",
+  "Nobel Stories": "See what the award recognized and what its citation leaves out.",
+  "AI Tutor": "Leave with a clearer next step on your question.",
+  "Certification Studio": "Work through one question and understand the answer.",
+  "Your materials": "Connect a source to a question of your own.",
+  "Writing Studio": "Shape one idea into a clearer draft.",
+};
+
 export default function StudyPage({entrance}:{entrance:ReactNode}) {
   return (
     <main className="studio-home">
@@ -77,7 +88,7 @@ export default function StudyPage({entrance}:{entrance:ReactNode}) {
         {title:'Read, look and discover',rooms:[['Reading Room','Find a book and settle in.','/study/reading'],['Art Room','Look closely, meet the artist, follow the story.','/study/art'],['Curiosity Room','Quick discoveries and deeper investigations.','/study/curiosity'],['Nobel Stories','Meet the people and understand the achievement.','/study/nobel']]},
         {title:'Understand and practice',rooms:[['AI Tutor','Work through one question.','/study/tutor'],['Certification Studio','Practice an engineering decision.','/study/certifications']]},
         {title:'Work with your own ideas',rooms:[['Your materials','Study from your own sources.','/study/materials'],['Writing Studio','Give an idea your own words.','/study/writing']]}
-      ].map(group=><section key={group.title}><h2>{group.title}</h2><div>{group.rooms.map(([name,detail,href])=><Link key={href} href={href}><strong>{name} <span aria-hidden="true">↗</span></strong><span>{detail}</span></Link>)}</div></section>)}</nav>
+      ].map(group=><section key={group.title}><h2>{group.title}</h2><div>{group.rooms.map(([name,detail,href])=><Link key={href} href={href}><strong>{name} <span aria-hidden="true">↗</span></strong><span>{detail}</span><span className="quiet-room-outcome">A good first visit: {firstVisitOutcomes[name]}</span><span className="quiet-room-action">Start with {name} →</span></Link>)}</div></section>)}</nav>
       <QuietChapter title="Your learning and plans" description="Sessions, plans and exam preparation"><LearningHome/><GoalLearning/><ExamPreparation/></QuietChapter>
       <QuietChapter title="Ask your Tutor here" description="The full embedded workspace, including your existing sessions"><SharedAIChat/></QuietChapter>
       <QuietChapter title="More ways to learn" description="Your library, reading resources and subject shortcuts"><LearningResources/>
