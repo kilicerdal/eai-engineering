@@ -1,10 +1,10 @@
 {
   "source": {
-    "commit": "1635af6bb0031ff05deecc09624e62c68df3f757",
-    "tag": "v4.1.0",
+    "commit": "ec92fc4bbb37a4460256f9c9c9860ca0a0d3595d",
+    "tag": "v4.2.0",
     "repository": "https://github.com/kilicerdal/agent-reliability-lab"
   },
-  "generatedAt": "2026-11-23T02:19:25Z",
+  "generatedAt": "2026-11-23T16:47:13Z",
   "viewer": "https://kilicerdal.github.io/agent-reliability-lab/",
   "evaluation": {
     "report": "https://github.com/kilicerdal/agent-reliability-lab/blob/v2.0.0/docs/v2-evaluation.md",
@@ -279,6 +279,29 @@
         "supported": 7,
         "basic": 3,
         "explicit": 4
+      }
+    }
+  },
+  "evidenceHandoff": {
+    "sourceCommit": "063a2611086ccc713104a657bbed2474ef15f2c4",
+    "escalatedIncidents": 4,
+    "eligible": false,
+    "arms": {
+      "restart": {
+        "runs": 12,
+        "cause_correct": 12,
+        "supported": 11,
+        "p95_ms": 23000,
+        "estimated_usd": 0.069477,
+        "fresh_tool_reads": 16
+      },
+      "handoff": {
+        "runs": 12,
+        "cause_correct": 12,
+        "supported": 10,
+        "p95_ms": 21955,
+        "estimated_usd": 0.085667,
+        "fresh_tool_reads": 13
       }
     }
   }

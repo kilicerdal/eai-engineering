@@ -111,13 +111,21 @@ test('AI Agent Reliability Lab is discoverable with grounded results and public 
   'invoice-window/baseline/1','invoice-window/baseline/2','invoice-window/baseline/3',
   'invoice-window/recovery/3','orphan-alert/baseline/2','orphan-alert/baseline/3',
  ].map(trial=>viewer+'#failed-trial-'+trial));
- await expect(page.getByRole('link',{name:'V4.1 release'})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.1.0');
+ const demo=page.getByRole('navigation',{name:'Five-minute demo',exact:true});
+ await expect(demo.getByRole('link',{name:'Inspect a failed diagnosis'})).toHaveAttribute('href',viewer+'#failed-trial-invoice-window/recovery/3');
+ await expect(demo.getByRole('link',{name:'Compare the evidence handoff'})).toHaveAttribute('href',viewer+'#evidence-handoff');
+ await expect(demo.getByRole('link',{name:'Replay an approved restart'})).toHaveAttribute('href',viewer+'#approval');
+ await expect(page.getByRole('link',{name:'V4.2.0 release'})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.2.0');
  const blind=page.getByRole('region',{name:'Blind evaluation',exact:true});
  await expect(blind).toContainText('47/50 → 50/50');
  const modelComparison=page.getByRole('region',{name:'Sol vs. Luna model comparison',exact:true});
  await expect(modelComparison).toContainText('16/16 Sol runs and 7/16 Luna runs');
  await expect(modelComparison).toContainText('all 32 runs');
  await expect(modelComparison.getByRole('link',{name:'Open the live model comparison'})).toHaveAttribute('href',viewer+'#model-comparison');
+ const handoff=page.getByRole('region',{name:'Evidence handoff experiment',exact:true});
+ await expect(handoff).toContainText('Fresh tool reads fell from 16 to 13');
+ await expect(handoff).toContainText('citation support fell from 11/12 to 10/12');
+ await expect(handoff.getByRole('link',{name:'Open the live handoff comparison'})).toHaveAttribute('href',viewer+'#evidence-handoff');
  await expect(blind.getByRole('link',{name:'Open the live blind scorecard'})).toHaveAttribute('href',viewer+'#blind-evaluation');
  for(const [title,id] of [['Read Fence · Trial 2','read-fence-2'],['Dispatch Profile · Trial 1','dispatch-profile-1'],['Maintenance Flag · Trial 1','maintenance-flag-1']]){
   await expect(blind.getByRole('link',{name:title,exact:true})).toHaveAttribute('href',viewer+'#blind-correction-'+id);

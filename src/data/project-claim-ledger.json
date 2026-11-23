@@ -48,20 +48,20 @@
       "walkthroughVersion": "v3.0.0 historical recording"
     },
     {
-      "capturedAt": "2026-11-23T02:19:25Z",
+      "capturedAt": "2026-11-23T16:47:13Z",
       "caseKind": "published-evidence-index",
       "caseRoute": "/engineering/agent-reliability-lab",
-      "caseVersion": "v4.1.0",
+      "caseVersion": "v4.2.0",
       "evidence": "/evidence/agent-reliability-lab.json",
       "id": "agent-reliability",
-      "note": "The V4.1 viewer adds per-incident results and access to all six failed V2 trials. It replays the original V1\u2013V3 evidence. The index publication date matches the V4.1 release date. The V3 approval harness entered confirmations by script.",
+      "note": "V4.2.0 adds the evidence workbench and live escalation and handoff comparisons. The viewer retains the original recorded failures and approval replay. The V3 harness entered confirmations by script.",
       "previewVersion": "V4.0 viewer screenshot",
-      "reviewedOn": "2026-11-22",
-      "releaseObserved": "v4.1.0",
-      "releaseUrl": "https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.1.0",
+      "reviewedOn": "2026-11-23",
+      "releaseObserved": "v4.2.0",
+      "releaseUrl": "https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.2.0",
       "repository": "https://github.com/kilicerdal/agent-reliability-lab",
-      "sourceCommit": "1635af6bb0031ff05deecc09624e62c68df3f757",
-      "walkthroughVersion": "V4.1 live viewer with recorded evidence"
+      "sourceCommit": "ec92fc4bbb37a4460256f9c9c9860ca0a0d3595d",
+      "walkthroughVersion": "V4.2.0 live viewer with recorded evidence"
     },
     {
       "capturedAt": null,
