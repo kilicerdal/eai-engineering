@@ -111,7 +111,11 @@ test('AI Agent Reliability Lab is discoverable with grounded results and public 
   'invoice-window/baseline/1','invoice-window/baseline/2','invoice-window/baseline/3',
   'invoice-window/recovery/3','orphan-alert/baseline/2','orphan-alert/baseline/3',
  ].map(trial=>viewer+'#failed-trial-'+trial));
- await expect(page.getByRole('link',{name:'V4.1 release'})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.1.0');
+ const demo=page.getByRole('navigation',{name:'Five-minute demo',exact:true});
+ await expect(demo.getByRole('link',{name:'Inspect a failed diagnosis'})).toHaveAttribute('href',viewer+'#failed-trial-invoice-window/recovery/3');
+ await expect(demo.getByRole('link',{name:'Compare the evidence handoff'})).toHaveAttribute('href',viewer+'#evidence-handoff');
+ await expect(demo.getByRole('link',{name:'Replay an approved restart'})).toHaveAttribute('href',viewer+'#approval');
+ await expect(page.getByRole('link',{name:'V4.2.0 release'})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.2.0');
  const blind=page.getByRole('region',{name:'Blind evaluation',exact:true});
  await expect(blind).toContainText('47/50 → 50/50');
  const modelComparison=page.getByRole('region',{name:'Sol vs. Luna model comparison',exact:true});

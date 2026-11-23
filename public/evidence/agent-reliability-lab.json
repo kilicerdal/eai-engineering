@@ -1,7 +1,7 @@
 {
   "source": {
-    "commit": "1635af6bb0031ff05deecc09624e62c68df3f757",
-    "tag": "v4.1.0",
+    "commit": "ec92fc4bbb37a4460256f9c9c9860ca0a0d3595d",
+    "tag": "v4.2.0",
     "repository": "https://github.com/kilicerdal/agent-reliability-lab"
   },
   "generatedAt": "2026-11-23T02:19:25Z",

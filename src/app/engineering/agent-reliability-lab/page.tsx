@@ -55,6 +55,14 @@ export default function AgentReliabilityLab() {
               <figcaption>V4.0 viewer capture.</figcaption>
             </figure>
           </div>
+          <nav className="lab-evidence main-replay-panel" id="five-minute-demo" aria-labelledby="lab-demo-heading">
+            <h2 id="lab-demo-heading">Five-minute demo</h2>
+            <div className="lab-links">
+              <a href={`${viewer}#failed-trial-invoice-window/recovery/3`}>Inspect a failed diagnosis <span aria-hidden="true">↗</span></a>
+              <a href={`${viewer}#evidence-handoff`}>Compare the evidence handoff <span aria-hidden="true">↗</span></a>
+              <a href={`${viewer}#approval`}>Replay an approved restart <span aria-hidden="true">↗</span></a>
+            </div>
+          </nav>
           <section className="lab-evidence" id="evidence" aria-labelledby="lab-results">
             <h2 id="lab-results">What the recorded checks showed</h2>
             <div className="lab-results">
@@ -98,7 +106,7 @@ export default function AgentReliabilityLab() {
               <a href={evaluation.report}>V2 report <span aria-hidden="true">↗</span></a>
               <a href={approval.report}>V3 report <span aria-hidden="true">↗</span></a>
               <a href={approval.capture}>Approval evidence <span aria-hidden="true">↗</span></a>
-              <a href={`${source.repository}/releases/tag/${source.tag}`}>V4.1 release <span aria-hidden="true">↗</span></a>
+              <a href={`${source.repository}/releases/tag/${source.tag}`}>V4.2.0 release <span aria-hidden="true">↗</span></a>
               <a href="/evidence/agent-reliability-lab.json">Evidence index <span aria-hidden="true">↗</span></a>
             </div>
           </section>
