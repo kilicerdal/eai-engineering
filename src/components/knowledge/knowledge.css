@@ -106,3 +106,22 @@
 .nobel-coverage{max-width:1288px;margin:0 auto;padding:52px clamp(20px,5vw,76px);border-top:1px solid var(--knowledge-line)}.nobel-coverage>p:not(.knowledge-kicker){max-width:75ch;color:var(--knowledge-muted)}.nobel-coverage-tables{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:24px 0}.nobel-coverage-tables h3{font-size:23px;margin-bottom:12px}.nobel-coverage table{width:100%;border-collapse:collapse;font-size:13px}.nobel-coverage caption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.nobel-coverage th,.nobel-coverage td{text-align:left;padding:9px 12px;border-block:1px solid var(--knowledge-line)}.nobel-coverage thead th{font-size:11px;color:var(--knowledge-muted)}.nobel-coverage td{text-align:right;font-variant-numeric:tabular-nums}.nobel-coverage tbody tr:nth-child(even){background:#eeece1}
 @media(max-width:600px){.nobel-resume{grid-template-columns:1fr;gap:9px;padding:16px}.nobel-reading-tools{padding-block:12px}.nobel-reading-actions{gap:8px}.nobel-reading-actions button{min-height:42px}.nobel-coverage{padding-block:36px}.nobel-coverage-tables{grid-template-columns:1fr;gap:25px}.knowledge-room[data-reading-size="1"] .knowledge-reading{font-size:19px}.knowledge-room[data-reading-size="2"] .knowledge-reading{font-size:20px}}
 @media print{.nobel-reading-tools,.nobel-resume{display:none!important}.nobel-coverage{break-inside:avoid}}
+
+/* Progressive disclosure keeps the collection's first view focused. */
+.knowledge-room .nobel-extra{max-width:1440px;margin:0 auto;border-top:1px solid var(--knowledge-line)}
+.knowledge-room .nobel-extra>summary{display:flex;align-items:center;min-height:56px;padding:12px clamp(20px,5vw,76px);cursor:pointer;list-style:none;font:19px/1.45 Georgia,'Times New Roman',serif;color:var(--knowledge-ink)}
+.knowledge-room .nobel-extra>summary::-webkit-details-marker{display:none}
+.knowledge-room .nobel-extra>summary::before{content:'+';display:inline-grid;place-items:center;width:25px;height:25px;margin-right:12px;border:1px solid var(--knowledge-line);border-radius:50%;font:16px/1 Arial,sans-serif;color:var(--knowledge-gold)}
+.knowledge-room .nobel-extra[open]>summary::before{content:'−'}
+.knowledge-room .nobel-extra>summary:hover{background:#eeece1}
+.knowledge-room .nobel-extra .nobel-prize-timeline,.knowledge-room .nobel-extra .nobel-compare,.knowledge-room .nobel-extra .nobel-process,.knowledge-room .nobel-extra .nobel-coverage{border-top:0;padding-top:18px}
+.nobel-more-filter{position:relative;align-self:end}
+.nobel-more-filter>summary{min-height:48px;display:flex;align-items:center;padding:8px 12px;border:1px solid #a9aa9e;background:#fbf9f3;color:var(--knowledge-teal);font-size:13px;font-weight:700;cursor:pointer}
+.nobel-more-filter[open]>label{display:grid;gap:7px;min-width:240px;margin-top:8px;font-size:12px;font-weight:700}
+.nobel-more-filter select{width:100%;min-height:48px;border:1px solid #a9aa9e;background:#fbf9f3;color:var(--knowledge-ink);padding:10px 12px;font:14px/1.4 Arial,sans-serif}
+.knowledge-room .knowledge-contents summary{font-size:13px;color:var(--knowledge-teal)}
+.knowledge-room .knowledge-contents nav a{min-height:40px}
+.knowledge-room .knowledge-next-collection{border-top-color:var(--knowledge-gold)}
+.knowledge-approach-disclosure{margin-bottom:25px!important}
+@media(max-width:900px){.nobel-more-filter[open]>label{min-width:0}.nobel-more-filter{grid-column:1/-1}.nobel-more-filter>summary{width:fit-content;min-width:150px}}
+@media(max-width:600px){.knowledge-room .nobel-extra>summary{font-size:17px;min-height:54px}.nobel-more-filter{grid-column:auto}.nobel-more-filter>summary{width:100%}.nobel-more-filter[open]>label{min-width:100%}.knowledge-room .knowledge-contents nav{grid-template-columns:1fr}.knowledge-room .knowledge-next>div{gap:20px}.knowledge-room .knowledge-contents summary{font-size:13px}}
