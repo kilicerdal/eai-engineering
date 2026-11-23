@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-22",
+  "scope": "Ten approved pre-release recommendations; local only",
+  "items": [
+    {
+      "id": 1,
+      "title": "Storage failure behavior",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 2,
+      "title": "Interrupted tab recovery",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 3,
+      "title": "Real two-tab editing and recovery protection",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 4,
+      "title": "Supported-capacity checks",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 5,
+      "title": "Keyboard focus and conflict resolution",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 6,
+      "title": "Enlarged text and reflow",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 7,
+      "title": "Multipage printing",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 8,
+      "title": "Older backup round trips",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 9,
+      "title": "Save-status wording and backup deep link",
+      "status": "implemented and checked"
+    },
+    {
+      "id": 10,
+      "title": "Firefox verification",
+      "status": "pending: installed Firefox fails before page launch"
+    }
+  ],
+  "validation": {
+    "browser": {
+      "passed": 318,
+      "failed": 0,
+      "chromium": 261,
+      "webkit": 57,
+      "newFinishingCasesPerEngine": 32
+    },
+    "unit": {
+      "passed": 1190,
+      "failed": 0
+    },
+    "lint": "passed",
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "sizeBudgets": "passed without allowance increase",
+    "visual": "desktop, phone emulation, enlarged writing and rendered multipage print samples"
+  },
+  "publication": "none",
+  "preview": "http://127.0.0.1:3052/study/art"
+}

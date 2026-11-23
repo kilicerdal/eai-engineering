@@ -1,0 +1,11 @@
+'use client';
+import Link from 'next/link';
+import {useArtFinderUrl} from './useArtFinderUrl';
+import {artSearchMatches,artSearchText} from '@/lib/art/search';
+export type ArtVisitChoice={id:string;title:string;intro:string;href:string;kind:'short'|'question'|'exhibition';description:string};
+const formats=[{id:'short',title:'A first visit',label:'Short introductions'},{id:'question',title:'Look through a question',label:'Question-led visits'},{id:'exhibition',title:'A small exhibition',label:'Exhibitions'}] as const;
+export default function ArtVisitChooser({visits}:{visits:ArtVisitChoice[]}){
+ const {query,group:kind,change}=useArtFinderUrl('visit',['short','question','exhibition']);
+ const matches=visits.filter(v=>(kind==='all'||v.kind===kind)&&artSearchMatches(query,artSearchText(v.id,v.title,v.intro)));
+ return <><div className="art-visit-chooser"><div className="art-search-row"><label>Find a guided visit<input type="search" value={query} maxLength={100} placeholder="A subject, title or question" onChange={e=>change({query:e.target.value})}/></label>{query&&<button onClick={()=>change({query:''})}>Clear visit search</button>}</div><div className="art-visit-formats" role="group" aria-label="Visit format"><button aria-pressed={kind==='all'} onClick={()=>change({group:'all'})}>All visits · {visits.length}</button>{formats.map(f=><button key={f.id} aria-pressed={kind===f.id} onClick={()=>change({group:f.id})}>{f.label} · {visits.filter(v=>v.kind===f.id).length}</button>)}</div><p role="status">{matches.length} {matches.length===1?'visit':'visits'} available{query.trim()?' for “'+query.trim()+'”':''}</p></div>{!matches.length&&<div className="art-empty"><h2>Try another question.</h2><p>No visits match this search and format. Your saved visits are unchanged.</p><button onClick={()=>{change({query:'',group:'all'})}}>Show all guided visits</button></div>}{formats.map(f=>{const group=matches.filter(v=>v.kind===f.id);return group.length?<section key={f.id} id={'visits-'+f.id} aria-labelledby={'visits-'+f.id+'-title'}><h2 id={'visits-'+f.id+'-title'}>{f.title}</h2><div className="art-hub-cards">{group.map(v=><article key={v.id}><p className="art-kicker">{v.description}</p><h3><Link href={v.href}>{v.title} →</Link></h3><p>{v.intro}</p></article>)}</div></section>:null})}</>;
+}

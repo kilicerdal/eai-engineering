@@ -23,7 +23,7 @@ test('phone comparisons keep independent zoom and captions while swapping works'
 });
 test('paper discussion resumes without overwriting its previous place and survives backup parsing',async({page})=>{
  await page.addInitScript(state=>{if(!localStorage.getItem('dai-art-personal-v1'))localStorage.setItem('dai-art-personal-v1',JSON.stringify({...state,reading:{'leonardo-paper-4':{section:'leonardo-paper-4-materials',completed:false}}}));},personal);
- await page.goto('/study/art/on-paper');const resume=page.getByRole('link',{name:'Continue studying your saved sheet ↓'});await expect(resume).toBeVisible();await resume.click();
+ await page.goto('/study/art/on-paper');const resume=page.locator('.art-paper-resume a');await expect(resume).toBeVisible();await resume.click();
  await expect(page.locator('#leonardo-paper-4')).toHaveAttribute('open','');await expect(page.locator('#leonardo-paper-4-materials')).toHaveAttribute('open','');
  await expect(page.locator('#leonardo-paper-4-materials')).toBeInViewport();
  await page.locator('#leonardo-paper-4').getByRole('button',{name:'Back (verso)',exact:true}).click();await expect(page.locator('#leonardo-paper-4 .art-side-caption')).toContainText('Stage design');
@@ -50,7 +50,7 @@ for(const width of [390,1440])test('largest text keeps the reading column access
 test('a newly opened sheet remembers its actual discussion after reading',async({page})=>{
  await page.goto('/study/art/on-paper#leonardo-paper-4-materials');const discussion=page.locator('#leonardo-paper-4-materials');await expect(discussion).toHaveAttribute('open','');await discussion.scrollIntoViewIfNeeded();
  await expect.poll(()=>page.evaluate(()=>JSON.parse(localStorage.getItem('dai-art-personal-v1')!)?.reading?.['leonardo-paper-4']?.section)).toBe('leonardo-paper-4-materials');
- await page.goto('/study/art/on-paper');await page.getByRole('link',{name:'Continue studying your saved sheet ↓'}).click();await expect(page).toHaveURL(/#leonardo-paper-4-materials$/);
+ await page.goto('/study/art/on-paper');await page.locator('.art-paper-resume a').click();await expect(page).toHaveURL(/#leonardo-paper-4-materials$/);
 });
 
 test('whole comparison reproductions fit their reserved box without clipping',async({page})=>{

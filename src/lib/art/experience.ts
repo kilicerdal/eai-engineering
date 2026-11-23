@@ -1,0 +1,5 @@
+export function dateStart(date:string):number|null{const match=date.match(/\b(1[0-9]{3}|20[0-9]{2})\b/);return match?Number(match[1]):null;}
+export function dateOrder(a:string,b:string,direction=1){const x=dateStart(a),y=dateStart(b);return x===null?y===null?0:1:y===null?-1:(x-y)*direction;}
+export function excerptMatch(text:string,query:string,radius=85){const words=query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean),lower=text.toLocaleLowerCase(),indices=words.map(w=>lower.indexOf(w)).filter(i=>i>=0),at=indices.length?Math.min(...indices):0;const start=Math.max(0,at-radius),end=Math.min(text.length,at+radius+query.length);return (start?'…':'')+text.slice(start,end)+(end<text.length?'…':'');}
+export function moveTo<T>(values:T[],from:number,to:number):T[]{if(from<0||from>=values.length||to<0||to>=values.length)return values;const next=[...values],value=next.splice(from,1)[0];next.splice(to,0,value);return next;}
+export function sameValue(a:unknown,b:unknown){return JSON.stringify(a)===JSON.stringify(b);}

@@ -1,0 +1,236 @@
+{
+  "date": "2026-11-22",
+  "scope": "Local thirty-five-item package, separate from the preceding 34- and 45-item passes. No publication.",
+  "improvements": [
+    {
+      "id": 1,
+      "title": "Recover unfinished arguments",
+      "implementation": "Persistent bounded argument drafts store interpretation, observation, evidence, reconsideration and passage choices separately from saved backups.",
+      "status": "implemented"
+    },
+    {
+      "id": 2,
+      "title": "Protect concurrent argument edits",
+      "implementation": "Stored baseline comparison and safe reread prevent newer saves/deletions from being overwritten without review.",
+      "status": "implemented"
+    },
+    {
+      "id": 3,
+      "title": "Guard painting changes in an argument",
+      "implementation": "Painting and other-argument selection remain disabled until the active draft is saved or discarded.",
+      "status": "implemented"
+    },
+    {
+      "id": 4,
+      "title": "Undo argument deletion",
+      "implementation": "Idempotent bounded restoration preserves newer records with the same identity.",
+      "status": "implemented"
+    },
+    {
+      "id": 5,
+      "title": "Undo passage deletion",
+      "implementation": "Both study controls and the passage library support restoring removed bookmarks.",
+      "status": "implemented"
+    },
+    {
+      "id": 6,
+      "title": "Review linked passage removal",
+      "implementation": "Identifies saved arguments using a passage; retain dangling references or explicitly detach them. Undo reconnects only unchanged argument versions.",
+      "status": "implemented"
+    },
+    {
+      "id": 7,
+      "title": "Search arguments",
+      "implementation": "Queries span interpretation, visible observation, evidence and reconsideration text.",
+      "status": "implemented"
+    },
+    {
+      "id": 8,
+      "title": "Filter arguments by artwork",
+      "implementation": "An artwork selector narrows the saved argument library without changing records.",
+      "status": "implemented"
+    },
+    {
+      "id": 9,
+      "title": "Return focus after saving",
+      "implementation": "A saved/revised entry is revealed and focused; active list filters reset so the entry is present.",
+      "status": "implemented"
+    },
+    {
+      "id": 10,
+      "title": "Multiple supporting passages",
+      "implementation": "Up to five distinct passages; the legacy primary-passage field remains supported.",
+      "status": "implemented"
+    },
+    {
+      "id": 11,
+      "title": "Comparison draft recovery",
+      "implementation": "A separate validated comparison recovery store survives refresh and navigation.",
+      "status": "implemented"
+    },
+    {
+      "id": 12,
+      "title": "Comparison conflict review",
+      "implementation": "A newer saved note cannot be overwritten until the reader accepts a baseline or returns to the latest copy.",
+      "status": "implemented"
+    },
+    {
+      "id": 13,
+      "title": "Comparison library",
+      "implementation": "My Art lists saved pairs and links to their exact comparison URL.",
+      "status": "implemented"
+    },
+    {
+      "id": 14,
+      "title": "Comparison export and print",
+      "implementation": "Exports complete private text and both artworks\u2019 references without images; print isolation restores screen disclosure state.",
+      "status": "implemented"
+    },
+    {
+      "id": 15,
+      "title": "Edit detail-note text",
+      "implementation": "Revisions preserve the existing note ID and retain other annotations.",
+      "status": "implemented"
+    },
+    {
+      "id": 16,
+      "title": "Detail draft recovery",
+      "implementation": "Text, coordinates, side and edited-record baseline survive an interrupted visit.",
+      "status": "implemented"
+    },
+    {
+      "id": 17,
+      "title": "Reposition a saved detail",
+      "implementation": "Existing coordinate controls revise the selected note without recreating it.",
+      "status": "implemented"
+    },
+    {
+      "id": 18,
+      "title": "Explicit annotation sides",
+      "implementation": "New notes distinguish front, back and paired source photograph. Original coordinates remain unchanged; a missing reverse is never replaced with a front image.",
+      "status": "implemented"
+    },
+    {
+      "id": 19,
+      "title": "Bulk collection additions",
+      "implementation": "Select multiple saved works and preview destination memberships before applying.",
+      "status": "implemented"
+    },
+    {
+      "id": 20,
+      "title": "Copy or move reviewed memberships",
+      "implementation": "Reports existing/new memberships; applies against a checked collection snapshot. Saved paintings and writing remain intact.",
+      "status": "implemented"
+    },
+    {
+      "id": 21,
+      "title": "Undo collection-member removal",
+      "implementation": "Restores original placement where possible without duplicates or removal of newer memberships.",
+      "status": "implemented"
+    },
+    {
+      "id": 22,
+      "title": "Unique renamed collections",
+      "implementation": "Creation and rename use normalized name comparison with an explicit retry after validation errors.",
+      "status": "implemented"
+    },
+    {
+      "id": 23,
+      "title": "Find personal collections",
+      "implementation": "Searches personal collection names without modifying stored names or membership.",
+      "status": "implemented"
+    },
+    {
+      "id": 24,
+      "title": "Compare collection overlap",
+      "implementation": "Shows shared works and works unique to each chosen collection.",
+      "status": "implemented"
+    },
+    {
+      "id": 25,
+      "title": "Deliberate exhibition restart",
+      "implementation": "A confirmation panel restarts only the walkthrough; sequence, introduction and notes stay intact.",
+      "status": "implemented"
+    },
+    {
+      "id": 26,
+      "title": "Paragraph bookmarks",
+      "implementation": "Existing passage tool can save a specific numbered paragraph with a stable exact anchor.",
+      "status": "implemented"
+    },
+    {
+      "id": 27,
+      "title": "Identify shortened excerpts",
+      "implementation": "New bookmarks record truncation and link to full context. Older bookmarks are not falsely claimed to be complete or unchanged.",
+      "status": "implemented"
+    },
+    {
+      "id": 28,
+      "title": "Compare changed editorial passages",
+      "implementation": "Public work/paragraph IDs retrieve only current public text signatures and excerpts. Saved excerpts remain untouched when text differs.",
+      "status": "implemented"
+    },
+    {
+      "id": 29,
+      "title": "Accurate accented highlights",
+      "implementation": "Normalized matching maps to original string offsets, including distant accented words and punctuation.",
+      "status": "implemented"
+    },
+    {
+      "id": 30,
+      "title": "Specific notebook empty states",
+      "implementation": "Distinguishes no saved writing, no matching query, collection selection and writing-type absence.",
+      "status": "implemented"
+    },
+    {
+      "id": 31,
+      "title": "Specific backup validation errors",
+      "implementation": "Identifies record type/index and limits without revealing submitted private text or changing the file.",
+      "status": "implemented"
+    },
+    {
+      "id": 32,
+      "title": "Identify backup scope",
+      "implementation": "Preview distinguishes original gallery-only files from complete Art Room backups.",
+      "status": "implemented"
+    },
+    {
+      "id": 33,
+      "title": "Show capacity near actions",
+      "implementation": "Passage, argument, collection, comparison and per-artwork detail-note limits appear beside relevant tools; safe retries reread current copies.",
+      "status": "implemented"
+    },
+    {
+      "id": 34,
+      "title": "Cross-browser coverage",
+      "implementation": "Tracked Chromium/WebKit/Firefox projects. Chromium and WebKit launch and execute checks; Firefox remains blocked by its local profile-folder startup error.",
+      "status": "implemented; Firefox execution pending"
+    },
+    {
+      "id": 35,
+      "title": "Writing browser-history journeys",
+      "implementation": "Back, Forward, refresh and canceled in-app navigation across eight editor cases, plus an actual institutional new-tab handoff with a locally stubbed destination.",
+      "status": "implemented"
+    }
+  ],
+  "verification": {
+    "unit": {
+      "passed": 1190,
+      "failed": 0
+    },
+    "browser": {
+      "passed": 254,
+      "failed": 0,
+      "chromium": 229,
+      "webkit": 25,
+      "firefox": "pending: local runtime profile-folder launch failure"
+    },
+    "lint": "passed",
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "assetBudgets": "passed",
+    "visualReview": "desktop and phone emulation, including conflict, membership preview, verso annotation and comparison print states",
+    "preview": "http://127.0.0.1:3052/study/art",
+    "publication": "none"
+  }
+}

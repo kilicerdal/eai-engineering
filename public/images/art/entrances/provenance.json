@@ -1,0 +1,14 @@
+{
+  "title": "Vitruvian Man",
+  "artist": "Leonardo da Vinci",
+  "source": "https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour.jpg",
+  "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/960px-Da_Vinci_Vitruve_Luc_Viatour.jpg",
+  "checked": "2026-11-22",
+  "credit": "Luc Viatour / Wikimedia Commons",
+  "rights": "Public Domain Mark 1.0",
+  "file": "public/images/art/entrances/vitruvian-man.webp",
+  "width": 960,
+  "height": 1305,
+  "sha256": "ef8a99470f30f7358712b3cd9789edec6cb02d85c18f334572899477037c19ac",
+  "processing": "Converted to WebP quality 92. Complete sheet retained; no crop or color alteration."
+}

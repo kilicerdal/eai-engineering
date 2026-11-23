@@ -1,0 +1,3 @@
+import {defineConfig} from '@playwright/test';
+const writing=['**/art-writing35.spec.ts','**/art-writing-history35.spec.ts','**/art-finishing.spec.ts'];
+export default defineConfig({testDir:'./tests/browser',timeout:30000,workers:2,retries:0,reporter:[['list'],['json',{outputFile:'artifacts/art-writing35/cross-browser-results.json'}]],outputDir:'test-results/art-writing35',use:{baseURL:process.env.ART35_BASE_URL??'http://127.0.0.1:3052',screenshot:'only-on-failure',trace:'retain-on-failure'},projects:[{name:'chromium',testMatch:['**/art-*.spec.ts'],use:{browserName:'chromium'}},{name:'webkit',testMatch:writing,use:{browserName:'webkit'}},{name:'firefox',testMatch:writing,use:{browserName:'firefox'}}]});

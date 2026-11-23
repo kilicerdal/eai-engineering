@@ -1,0 +1,310 @@
+{
+  "date": "2026-11-22",
+  "scope": "Local only; 45 refinements of existing Art Room tools. No new artwork binaries, service, publication or saved-personal schema migration.",
+  "improvements": [
+    {
+      "id": 1,
+      "title": "Shareable drawing searches",
+      "implementation": "useArtFinderUrl + ArtPaperFinder retain sheetQuery/sheetGroup in the URL.",
+      "status": "implemented"
+    },
+    {
+      "id": 2,
+      "title": "Shareable visit selections",
+      "implementation": "ArtVisitChooser retains visitQuery/visitGroup in the URL.",
+      "status": "implemented"
+    },
+    {
+      "id": 3,
+      "title": "Return to a drawing result",
+      "implementation": "ArtPaperSelectionNav focuses the exact matching result and retains the search.",
+      "status": "implemented"
+    },
+    {
+      "id": 4,
+      "title": "Browse a drawing selection",
+      "implementation": "Previous/Next links follow the filtered paper-object sequence.",
+      "status": "implemented"
+    },
+    {
+      "id": 5,
+      "title": "Chronological gallery order",
+      "implementation": "Earliest/latest use the first recorded year; original uncertain date labels are retained and unknown dates sort last.",
+      "status": "implemented"
+    },
+    {
+      "id": 6,
+      "title": "Painter-name gallery order",
+      "implementation": "Painter A\u2013Z is an optional URL-persisted order; curated order remains default.",
+      "status": "implemented"
+    },
+    {
+      "id": 7,
+      "title": "Responsive facet counts",
+      "implementation": "Painter/era/subject/mood options count matches under the other current choices.",
+      "status": "implemented"
+    },
+    {
+      "id": 8,
+      "title": "Explain drawing matches",
+      "implementation": "Results identify matching title, maker, material or combined-record text.",
+      "status": "implemented"
+    },
+    {
+      "id": 9,
+      "title": "Whole-image overview",
+      "implementation": "The enlarged viewer includes a proportional whole-image map with a viewport rectangle.",
+      "status": "implemented"
+    },
+    {
+      "id": 10,
+      "title": "Zoom around an inspected point",
+      "implementation": "Controls preserve the view center; pinch magnification anchors at the touch midpoint.",
+      "status": "implemented"
+    },
+    {
+      "id": 11,
+      "title": "Preserve center on resize",
+      "implementation": "ResizeObserver and normalized center coordinates preserve the inspected area across viewport changes.",
+      "status": "implemented"
+    },
+    {
+      "id": 12,
+      "title": "Resolution indicator",
+      "implementation": "Shows displayed CSS dimensions against actual source pixels; explicitly distinguishes screen density and new detail.",
+      "status": "implemented"
+    },
+    {
+      "id": 13,
+      "title": "Hide fullscreen controls",
+      "implementation": "A persistent show/hide control restores the toolbar; Escape continues to close the viewer.",
+      "status": "implemented"
+    },
+    {
+      "id": 14,
+      "title": "Detail-view links",
+      "implementation": "Copy canonical work URLs with bounded magnification/position, including a separately identified verso where available.",
+      "status": "implemented"
+    },
+    {
+      "id": 15,
+      "title": "Deliberate last-detail return",
+      "implementation": "Tab-local image position offers an explicit return action; ordinary opening still fits the whole image.",
+      "status": "implemented"
+    },
+    {
+      "id": 16,
+      "title": "Swap comparison sides",
+      "implementation": "Swaps works and their independent views while respecting the existing unsaved-writing guard.",
+      "status": "implemented"
+    },
+    {
+      "id": 17,
+      "title": "Independent comparison magnifications",
+      "implementation": "Each side retains its own bounded position/scale and survives view switching.",
+      "status": "implemented"
+    },
+    {
+      "id": 18,
+      "title": "Named suggested comparisons",
+      "implementation": "Visible buttons use the actual editorial comparison question instead of numbered Pair labels.",
+      "status": "implemented"
+    },
+    {
+      "id": 19,
+      "title": "Comparison selection summary",
+      "implementation": "First/second titles appear near the viewing controls.",
+      "status": "implemented"
+    },
+    {
+      "id": 20,
+      "title": "Complete comparison-view sharing",
+      "implementation": "Explicit copy action includes pair, lens, visible sides, independent views or shared detail/physical-size mode, without writing.",
+      "status": "implemented"
+    },
+    {
+      "id": 21,
+      "title": "Search notebook writing",
+      "implementation": "Search existing saved notes, before/after reflections and detail observations, with shared normalization.",
+      "status": "implemented"
+    },
+    {
+      "id": 22,
+      "title": "Notebook writing-type filters",
+      "implementation": "Choose personal notes, reflections or detail observations, combined with the existing collection filter.",
+      "status": "implemented"
+    },
+    {
+      "id": 23,
+      "title": "Exact matching notebook text",
+      "implementation": "Contextual snippets and safe React mark elements reveal distant matches; opening a result scrolls to its first marked passage.",
+      "status": "implemented"
+    },
+    {
+      "id": 24,
+      "title": "Saved paintings by collection",
+      "implementation": "My Art can show the saved subset belonging to a collection without modifying memberships.",
+      "status": "implemented"
+    },
+    {
+      "id": 25,
+      "title": "Duplicate a collection",
+      "implementation": "Unique named copy preserves the original IDs, sequence and introduction; collection limits remain enforced.",
+      "status": "implemented"
+    },
+    {
+      "id": 26,
+      "title": "Direct exhibition positioning",
+      "implementation": "Position selector moves a work directly, retaining the existing Earlier/Later controls.",
+      "status": "implemented"
+    },
+    {
+      "id": 27,
+      "title": "Undo a sequence move",
+      "implementation": "Restores the prior sequence only if a newer order has not superseded it.",
+      "status": "implemented"
+    },
+    {
+      "id": 28,
+      "title": "Exhibition introduction recovery",
+      "implementation": "Separate bounded drafts recover after reload and detect newer saved introductions; Save remains explicit.",
+      "status": "implemented"
+    },
+    {
+      "id": 29,
+      "title": "Per-entry restore decisions",
+      "implementation": "Conflicts in notes, passages, arguments, reflection fields, detail notes, comparison notes, collection names/introductions and reading positions require choices.",
+      "status": "implemented"
+    },
+    {
+      "id": 30,
+      "title": "Restore change preview",
+      "implementation": "Lists identical, additive/new and conflicting entries; a concurrently changed browser copy invalidates the preview before writing.",
+      "status": "implemented"
+    },
+    {
+      "id": 31,
+      "title": "Search museum-guide choices",
+      "implementation": "Title/painter search shares catalog normalization and aliases.",
+      "status": "implemented"
+    },
+    {
+      "id": 32,
+      "title": "Guide from personal collection",
+      "implementation": "Explicitly select the first six works; larger collections receive a clear limit message and saved collections remain untouched.",
+      "status": "implemented"
+    },
+    {
+      "id": 33,
+      "title": "Retain an unfinished guide",
+      "implementation": "Validated tab-local stop IDs, order, grouping and print layout survive refresh and returning from a study.",
+      "status": "implemented"
+    },
+    {
+      "id": 34,
+      "title": "Two print layouts",
+      "implementation": "Compact reference layout or spacious note-taking layout, using the existing print flow.",
+      "status": "implemented"
+    },
+    {
+      "id": 35,
+      "title": "Print page breaks",
+      "implementation": "Artwork records, questions and note spaces avoid breaking apart, with dedicated print CSS.",
+      "status": "implemented"
+    },
+    {
+      "id": 36,
+      "title": "Mixed-institution guide clarity",
+      "implementation": "Identifies multi-collection selections and optionally groups printed stops by collection without promising current display.",
+      "status": "implemented"
+    },
+    {
+      "id": 37,
+      "title": "Formatted study citation",
+      "implementation": "Copy editorial title, edition, canonical URL and actual consultation date; no invented personal author.",
+      "status": "implemented"
+    },
+    {
+      "id": 38,
+      "title": "RIS / BibTeX export",
+      "implementation": "Select essay references for local exports; unknown publication/author fields remain absent.",
+      "status": "implemented"
+    },
+    {
+      "id": 39,
+      "title": "Institutional identifiers",
+      "implementation": "Three painting numbers newly checked against institutional pages; existing 24 paper accession records retained. No URL IDs are inferred as accession numbers.",
+      "status": "implemented"
+    },
+    {
+      "id": 40,
+      "title": "Catalog abbreviation help",
+      "implementation": "Existing object-literacy guide explains inventory/accession/catalog numbers and catalogue-raisonn\u00e9 edition context.",
+      "status": "implemented"
+    },
+    {
+      "id": 41,
+      "title": "Separate editorial and reference dates",
+      "implementation": "Essay sources distinguish edition, editorial-review date, object-metadata check and consultation date; unavailable first-publication date is stated as unrecorded.",
+      "status": "implemented"
+    },
+    {
+      "id": 42,
+      "title": "Corrections linked to discussion",
+      "implementation": "Current correction records link to affected existing essay sections when an identifiable passage exists; older change entries retain source and study routes.",
+      "status": "implemented"
+    },
+    {
+      "id": 43,
+      "title": "Browser-reading speed",
+      "implementation": "Five supported rate choices, with a clear stop-on-change behavior.",
+      "status": "implemented"
+    },
+    {
+      "id": 44,
+      "title": "Browser voice selection",
+      "implementation": "Available voice list reacts to voiceschanged; identifies device voices without claiming every voice is local.",
+      "status": "implemented"
+    },
+    {
+      "id": 45,
+      "title": "Section audio playback",
+      "implementation": "Readable complete transcript segmented without dropping text; section playback, previous/next and continuous introduction playback.",
+      "status": "implemented"
+    }
+  ],
+  "validation": {
+    "unit": {
+      "passed": 1181,
+      "failed": 0
+    },
+    "artRoomBrowserRegression": {
+      "passed": 204,
+      "failed": 0
+    },
+    "affectedBrowserFollowup": {
+      "passed": 30,
+      "failed": 0,
+      "note": "Reruns after presentation fixes, not 30 additional unique tests."
+    },
+    "desktopViewport": [
+      1440,
+      1000
+    ],
+    "phoneViewport": [
+      390,
+      844
+    ],
+    "physicalPhoneTest": false,
+    "sourceIdentifiersNewlyVerified": 3,
+    "publication": "local only",
+    "finalStyleFollowup": {
+      "passed": 3,
+      "failed": 0,
+      "note": "After two final CSS overrides; repeat checks, not new unique tests."
+    },
+    "productionBuild": "passed",
+    "scopedLint": "passed",
+    "diffCheck": "passed"
+  }
+}

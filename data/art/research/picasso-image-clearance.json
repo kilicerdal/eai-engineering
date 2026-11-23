@@ -1,0 +1,22 @@
+{
+  "checked": "2026-11-22",
+  "status": "not-cleared",
+  "displayPicassoReproductions": false,
+  "scope": "Ten Picasso paper-study topics and the two existing Picasso painting records. Source-page links may remain; artwork images must not be hosted, hotlinked, embedded, or used as a collection cover without a documented clearance decision.",
+  "permissionEvidence": [],
+  "reviewBasis": [
+    {"title": "Musée Picasso Paris — image rights", "url": "https://www.museepicassoparis.fr/en/image-rights/"},
+    {"title": "Picasso Administration — Les droits", "url": "https://picasso.fr/les-droits/"},
+    {"title": "National Gallery of Art — Terms and Notices", "url": "https://www.nga.gov/terms-and-notices"},
+    {"title": "Artists Rights Society — digital media licensing guide", "url": "https://arsny.com/wp-content/uploads/2024/12/LicensingGuide_DigitalMedia.pdf"}
+  ],
+  "beforeDisplay": [
+    "Identify the exact artwork, version, print state and reproduction file.",
+    "Record written artwork-rights permission or another documented, reviewed basis for the intended use.",
+    "Check the reproduction provider’s own image terms and obtain any additional required permission.",
+    "Confirm that permission covers the public website, intended audience and territories, duration, resolution, and any entrance/cover or promotional use.",
+    "Record required captions, copyright credits, cropping restrictions, fees, expiry and renewal conditions."
+  ],
+  "decision": "Keep reproductions out of the site while permission remains unresolved. Attribution, low resolution, availability on a museum site, or describing the site as educational are not recorded here as permission. Do not rely on a fair-use exception for this release without case-specific review.",
+  "limits": "This is an editorial clearance decision, not a legal opinion or guarantee against claims. No permission request has been sent and no licence has been purchased."
+}

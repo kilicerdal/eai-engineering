@@ -1,0 +1,1054 @@
+{
+  "title": "Picasso: How Much Can a Line Say?",
+  "checked": "2026-11-22",
+  "sources": {
+    "dove": {
+      "title": "Tokyo Fuji Art Museum · Dove, 1949",
+      "url": "https://www.fujibi.or.jp/en/collection/artwork/00619/",
+      "scope": "Lithographic medium, dimensions and peace-poster context.",
+      "checked": "2026-11-22"
+    },
+    "quixote": {
+      "title": "Mucem · Don Quichotte exhibition dossier, 2025, illustration 6",
+      "url": "https://mucem.org/uploads/2025/08/Dossier-de-Presse-Don-Quichotte-Mucem-Fr.pdf#page=13",
+      "scope": "Indian ink original, Saint-Denis collection and the dossier’s 11 August date.",
+      "checked": "2026-11-22"
+    },
+    "quixote-publication": {
+      "title": "A. G. Lo Ré · A Possible Source for Picasso’s Drawing of Don Quixote",
+      "url": "https://www.cervantesvirtual.com/s3/BVMC_OBRAS/027/8a6/788/2b2/11d/fac/c70/021/85c/e60/64/mimes/0278a678-82b2-11df-acc7-002185ce6064_17.html",
+      "scope": "Publication history and a proposed source, explicitly an argument rather than established intention.",
+      "checked": "2026-11-22"
+    },
+    "bull": {
+      "title": "Norton Simon Museum · States of Mind: Picasso Lithographs 1945–1960",
+      "url": "https://www.nortonsimon.org/exhibitions/2010-2019/states-of-mind",
+      "scope": "Eleven editioned states and the December 1945–January 1946 sequence.",
+      "checked": "2026-11-22"
+    },
+    "bull-object": {
+      "title": "Museu Picasso Barcelona · The Bull, final-state Sabartés proof",
+      "url": "https://museupicassobcn.cat/en/collection/artwork/bull",
+      "scope": "Medium, final-state identification, inventory and gift.",
+      "checked": "2026-11-22"
+    },
+    "stravinsky": {
+      "title": "Musée national Picasso-Paris · Portrait d’Igor Stravinsky, MP911",
+      "url": "https://cep.museepicassoparis.fr/en/node/124831",
+      "scope": "24 May 1920, graphite and charcoal, dimensions and acquisition.",
+      "checked": "2026-11-22"
+    },
+    "stravinsky-context": {
+      "title": "Museu Picasso Barcelona · Igor Stravinsky, Picasso Portraits",
+      "url": "https://museupicassobcn.cat/microsite/picasso-retrats/en/personatge/igor-stravinsky/",
+      "scope": "Relationship and a distinct December 1920 profile; not the same sheet as MP911.",
+      "checked": "2026-11-22"
+    },
+    "lump": {
+      "title": "University of Texas / Harry Ransom Center · Plate painted for Lump",
+      "url": "https://news.utexas.edu/2011/01/26/plate-painted-by-pablo-picasso-donated-to-ransom-center-by-photojournalist-duncan/",
+      "scope": "19 April 1957 plate, medium, dedication, Duncan’s account and 2011 donation.",
+      "checked": "2026-11-22"
+    },
+    "lump-photo": {
+      "title": "Musée national Picasso-Paris · Duncan photographs Picasso drawing Lump on a plate",
+      "url": "https://cep.museepicassoparis.fr/explorer/pablo-picasso-dessinant-lump-dans-une-assiette-destinee-au-teckel-la-dundav053",
+      "scope": "Photographic documentation of the 1957 event; the catalogued print dates to 2013.",
+      "checked": "2026-11-22"
+    },
+    "guernica": {
+      "title": "Museo Reina Sofía · Composition Study I, DE00053",
+      "url": "https://www.museoreinasofia.es/en/collections/artwork/estudio-de-composicion-i-dibujo-preparatorio-para-guernica-composition-study-i/",
+      "scope": "1 May 1937, graphite, sheet dimensions and bequest/entry fields.",
+      "checked": "2026-11-22"
+    },
+    "guernica-process": {
+      "title": "Museo Reina Sofía · Rethinking Guernica, technical viewer",
+      "url": "https://guernica.museoreinasofia.es/gigapixel/en/?map1=RVIS",
+      "scope": "Technical observations and Dora Maar’s photographic documentation of the painting.",
+      "checked": "2026-11-22"
+    },
+    "camel": {
+      "title": "Kunstmuseum Pablo Picasso Münster shop · Le Chameau reproduction",
+      "url": "https://picassomuseum-shop.de/en/products/siebdruck-picasso-le-chameau-kamel-60-x-50-cm",
+      "scope": "Museum-shop account of 1907 sketchbook context; dimensions and screenprint medium describe the modern product.",
+      "checked": "2026-11-22"
+    },
+    "owl": {
+      "title": "Museu Picasso Barcelona · Owl with White Background, MPB 70.156",
+      "url": "https://museupicassobcn.cat/index.php/en/collection/artwork/owl-white-background",
+      "scope": "1947 lithographic materials, dimensions and Sabartés gift.",
+      "checked": "2026-11-22"
+    },
+    "minotaur-context": {
+      "title": "Museo Reina Sofía · Picasso Minotauro",
+      "url": "https://www.museoreinasofia.es/en/exhibition/picasso-minotauro/",
+      "scope": "The motif’s development, the 1933 magazine cover and printmaking context.",
+      "checked": "2026-11-22"
+    },
+    "minotaur-arena": {
+      "title": "National Gallery of Art · In the Arena, 1933",
+      "url": "https://www.nga.gov/artworks/39120-arena-young-man-kills-minotaur-dans-larene-jeune-homme-achevant-le-minotaure",
+      "scope": "A specifically identified print from the Minotaur imagery, not a generic drawing title.",
+      "checked": "2026-11-22"
+    },
+    "minotaur-blind": {
+      "title": "Vassar · Blind Minotaur, November 1934",
+      "url": "https://emuseum.vassar.edu/objects/2703/blind-minotaur",
+      "scope": "Aquatint and drypoint, impression dimensions and inventory 1959.2.4.",
+      "checked": "2026-11-22"
+    },
+    "gilot": {
+      "title": "Musée national Picasso-Paris · Portrait de Françoise, MP1351",
+      "url": "https://cep.museepicassoparis.fr/en/node/125256",
+      "scope": "20 May 1946, graphite, three-color pencil and charcoal; dimensions and 1979 dation.",
+      "checked": "2026-11-22"
+    },
+    "gilot-career": {
+      "title": "Centre Pompidou · Françoise Gilot, une femme puissante face à Picasso",
+      "url": "https://www.centrepompidou.fr/fr/pompidou-plus/magazine/article/francoise-gilot-une-femme-puissante-face-a-picasso",
+      "scope": "Gilot’s independent artistic career and the 1946 portrait.",
+      "checked": "2026-11-22"
+    },
+    "femme-fleur": {
+      "title": "Musée Picasso Paris · Museum opening dossier",
+      "url": "https://www.museepicassoparis.fr/sites/default/files/2020-05/DP_Ouverture_FR.pdf",
+      "scope": "Identifies La Femme-fleur, 1946, among paintings; not the title of MP1351.",
+      "checked": "2026-11-22"
+    },
+    "dove-moma": {
+      "title": "MoMA · The Dove (La Colombe), 37.1979",
+      "url": "https://www.moma.org/collection/works/60633",
+      "scope": "Selected impression: lithograph, composition and sheet dimensions, printer, publisher and credit.",
+      "checked": "2026-11-22"
+    }
+  },
+  "routes": [
+    {
+      "id": "animals",
+      "title": "Animals and the expressive line",
+      "description": "Contour, texture, repeated revision and the identity of a reproduced image.",
+      "ids": [
+        "dove",
+        "bull",
+        "lump",
+        "camel",
+        "owl"
+      ]
+    },
+    {
+      "id": "portraits",
+      "title": "Portrait and imagination",
+      "description": "How proportion and selected marks construct a sitter or a literary character.",
+      "ids": [
+        "stravinsky",
+        "don-quixote",
+        "francoise"
+      ]
+    },
+    {
+      "id": "making",
+      "title": "Making and meaning",
+      "description": "Compare a documented preparatory sheet with a recurring mythological motif.",
+      "ids": [
+        "guernica",
+        "minotaur"
+      ]
+    }
+  ],
+  "bullStates": [
+    {
+      "state": 1,
+      "year": "1945",
+      "accession": "1982.12.1",
+      "url": "https://www.nga.gov/artworks/61111-bull-le-taureau",
+      "question": "Where does tone establish the animal’s weight?"
+    },
+    {
+      "state": 2,
+      "year": "1945",
+      "accession": "1982.12.2",
+      "url": "https://www.nga.gov/artworks/61112-bull-le-taureau",
+      "question": "What becomes more emphatic beside the first state?"
+    },
+    {
+      "state": 3,
+      "year": "1945",
+      "accession": "1982.12.3",
+      "url": "https://www.nga.gov/artworks/61113-bull-le-taureau",
+      "question": "How do internal marks describe the body?"
+    },
+    {
+      "state": 4,
+      "year": "1945",
+      "accession": "1982.12.4",
+      "url": "https://www.nga.gov/artworks/61114-bull-le-taureau",
+      "question": "Which divisions reorganize the animal’s interior?"
+    },
+    {
+      "state": 5,
+      "year": "1945",
+      "accession": "1982.12.5",
+      "url": "https://www.nga.gov/artworks/61115-bull-le-taureau",
+      "question": "Where do dark and pale areas exchange importance?"
+    },
+    {
+      "state": 6,
+      "year": "1945",
+      "accession": "1982.12.6",
+      "url": "https://www.nga.gov/artworks/61116-bull-le-taureau",
+      "question": "What relationship between outline and internal structure changes?"
+    },
+    {
+      "state": 7,
+      "year": "1945",
+      "accession": "1982.12.7",
+      "url": "https://www.nga.gov/artworks/61117-bull-le-taureau",
+      "question": "Which marks connect the head with the body?"
+    },
+    {
+      "state": 8,
+      "year": "1946",
+      "accession": "1982.12.8",
+      "url": "https://www.nga.gov/artworks/61118-bull-le-taureau",
+      "question": "How does open paper participate inside the figure?"
+    },
+    {
+      "state": 9,
+      "year": "1946",
+      "accession": "1982.12.9",
+      "url": "https://www.nga.gov/artworks/61119-bull-le-taureau",
+      "question": "Which curves still communicate weight?"
+    },
+    {
+      "state": 10,
+      "year": "1946",
+      "accession": "1982.12.10",
+      "url": "https://www.nga.gov/artworks/61120-bull-le-taureau",
+      "question": "What distinguishes this state from the next?"
+    },
+    {
+      "state": 11,
+      "year": "1946",
+      "accession": "1982.12.11",
+      "url": "https://www.nga.gov/artworks/61121-bull-le-taureau",
+      "question": "What has been gained, and what has been relinquished, since the first state?"
+    }
+  ],
+  "studies": [
+    {
+      "slug": "dove",
+      "title": "Dove · La Colombe",
+      "subtitle": "From a living bird to a public symbol",
+      "date": "1949",
+      "medium": "Lithograph",
+      "holder": "The Museum of Modern Art, New York · selected impression",
+      "inventory": "37.1979 · composition 54.6 × 69.1 cm; sheet 55 × 69.1 cm",
+      "lead": "The softly modeled bird of 1949 asks a different question from Picasso’s later outline doves: how can a particular animal become a widely circulating emblem? Read the feathers and tonal passages before interpreting the image as an abstract sign of peace.",
+      "sections": [
+        {
+          "id": "context",
+          "title": "A bird enters public life",
+          "paragraphs": [
+            "The Tokyo Fuji Art Museum connects this lithograph with the poster for the World Congress of Partisans for Peace in Paris. For close looking, this study links MoMA’s impression, object 37.1979, printed by Mourlot and published by Galerie Louise Leiris. Its record distinguishes the printed composition from the slightly larger sheet. The artwork and the poster that circulated its design are related objects with different functions: one is a print to examine at close range; the other brings an image into a public campaign.",
+            "The distinction matters when recognizing the work. “Picasso’s peace dove” can mean several designs. A later outline, sometimes carrying a branch, should not be substituted for the tonal bird simply because both are familiar symbols. The date, title and chosen impression must travel with the image."
+          ],
+          "sourceIds": [
+            "dove",
+            "dove-moma"
+          ]
+        },
+        {
+          "id": "material",
+          "title": "Tone is part of the argument",
+          "paragraphs": [
+            "In the museum’s account, lithographic ink produces wash-like gradations and soft feather effects. This is a useful starting point for looking, rather than evidence that the object is a watercolor. A printed surface can reproduce marks that resemble another medium; the resemblance does not change its material identity.",
+            "Open the source image and compare the edges of the body with transitions inside it. Ask where a continuous contour defines the bird, and where a change of tone does the work. The apparent gentleness of the subject can be considered alongside the labor of controlling ink and printing. A quiet image need not be technically simple."
+          ],
+          "sourceIds": [
+            "dove"
+          ]
+        },
+        {
+          "id": "meaning",
+          "title": "Recognition and interpretation",
+          "paragraphs": [
+            "An emblem works through repeated encounters, but looking closely restores differences that repetition can flatten. A viewer may associate the pale bird with vulnerability, calm or hope. Those are responses to test against the image and its public setting; they do not establish a private statement Picasso made about every feather.",
+            "Compare this study with The Bull. One work retains tonal richness while the other records repeated transformations of a motif. Together they challenge the claim that Picasso’s graphic achievement always consists of removing detail."
+          ],
+          "sourceIds": [
+            "dove"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Contour and softness",
+          "text": "Locate a firm edge and a soft tonal transition. How does each help you recognize the body?"
+        },
+        {
+          "title": "Image and emblem",
+          "text": "Describe the bird without using the word “peace,” then consider what the campaign context adds."
+        },
+        {
+          "title": "Which dove?",
+          "text": "Check the date and chosen museum impression before comparing this image with an outline dove."
+        }
+      ],
+      "evidence": {
+        "documented": "The selected museum record identifies a 1949 lithograph and explains its peace-poster connection.",
+        "interpretation": "The contrast between a particular bird and a general emblem is the organizing editorial reading here.",
+        "uncertain": "Later dove designs are separate works. This record does not identify every reproduction sold under the title Dove of Peace."
+      },
+      "sourceIds": [
+        "dove-moma",
+        "dove"
+      ],
+      "viewer": {
+        "url": "https://www.moma.org/collection/works/60633",
+        "label": "View The Dove at MoMA",
+        "note": "MoMA’s selected impression has its own dimensions and credit; the Tokyo Fuji record supplies additional historical context."
+      },
+      "related": [
+        "bull",
+        "owl"
+      ],
+      "subjectNote": "",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "don-quixote",
+      "title": "Don Quixote",
+      "subtitle": "Character, distance and the white of the page",
+      "date": "August 1955",
+      "medium": "Indian ink on paper · original drawing",
+      "holder": "Musée d’art et d’histoire Paul Éluard, Saint-Denis",
+      "inventory": "Specific original identified in the Mucem loan dossier",
+      "lead": "The knight and his companion become memorable through their relationship: height against breadth, upright lance against small distant windmills, emphatic marks against open paper. The drawing compresses a literary encounter without trying to illustrate every detail of the novel.",
+      "sections": [
+        {
+          "id": "context",
+          "title": "An illustration with a publication history",
+          "paragraphs": [
+            "The design appeared in Les Lettres françaises in August 1955 in connection with the 350th anniversary of the first part of Cervantes’s novel. A. G. Lo Ré’s study discusses its newspaper appearance and proposes a possible visual source. That proposal should be read as an attributed argument, not as a proven account of what Picasso saw.",
+            "The original loaned by Saint-Denis is identified in Mucem’s exhibition dossier as Indian ink on paper. A newspaper impression, a later poster and the original drawing are not interchangeable. A signature reproduced in printing is also different from a signature added by hand to an individual sheet."
+          ],
+          "sourceIds": [
+            "quixote",
+            "quixote-publication"
+          ]
+        },
+        {
+          "id": "looking",
+          "title": "Two figures establish a world",
+          "paragraphs": [
+            "Use the source reproduction to compare the tall rider with the smaller, broader companion. Their difference creates a rhythm before any facial expression is examined. Follow the lance upward and then return to the small windmills. Scale gives those distant forms a role without requiring an elaborate landscape.",
+            "The white paper is active. It holds the figures apart and permits sparse marks to suggest depth. Try describing the intervals between the riders, rather than only their silhouettes. This shifts attention from the apparent ease of an individual stroke to the construction of the whole composition."
+          ],
+          "sourceIds": [
+            "quixote"
+          ]
+        },
+        {
+          "id": "questions",
+          "title": "Why the exact day remains qualified",
+          "paragraphs": [
+            "The 2025 Mucem dossier dates its listed drawing to 11 August 1955; Lo Ré’s published account gives 10 August. This study therefore uses August 1955 in the headline and preserves both source statements. An apparent one-day discrepancy should be reported rather than silently reconciled.",
+            "The discrepancy does not make the design anonymous or erase its publication history. It shows why precise research distinguishes an identified work, its reproductions and the different records through which it is known."
+          ],
+          "sourceIds": [
+            "quixote",
+            "quixote-publication"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Contrasting bodies",
+          "text": "Compare the riders’ height and breadth. Which relationships establish character before detail?"
+        },
+        {
+          "title": "Far and near",
+          "text": "Find the smallest windmill and the longest vertical mark. How do their scales organize distance?"
+        },
+        {
+          "title": "Untouched paper",
+          "text": "Choose an empty interval. Imagine it narrowed: what changes in the encounter?"
+        }
+      ],
+      "evidence": {
+        "documented": "Mucem identifies a Saint-Denis ink drawing; the publication account places the design in the August 1955 newspaper.",
+        "interpretation": "The reading of scale, spacing and character is editorial visual analysis, not a quotation from Picasso.",
+        "uncertain": "The consulted sources differ between 10 and 11 August. Later reproductions need their own edition and credit records."
+      },
+      "sourceIds": [
+        "quixote",
+        "quixote-publication"
+      ],
+      "viewer": {
+        "url": "https://mucem.org/uploads/2025/08/Dossier-de-Presse-Don-Quichotte-Mucem-Fr.pdf#page=13",
+        "label": "View the drawing in Mucem’s dossier (PDF)",
+        "note": "The illustrated dossier identifies the original and its lender. Opens an external PDF."
+      },
+      "related": [
+        "stravinsky",
+        "guernica"
+      ],
+      "subjectNote": "",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "bull",
+      "title": "The Bull · Le Taureau",
+      "subtitle": "Eleven states, many ways of describing a body",
+      "date": "5 December 1945–17 January 1946",
+      "medium": "Suite of eleven lithographic states",
+      "holder": "National Gallery of Art · linked comparison impressions",
+      "inventory": "1982.12.1–1982.12.11",
+      "lead": "This sequence is more demanding than a lesson in drawing with fewer lines. Picasso repeatedly changes what carries the animal’s presence: modeled mass, internal divisions, dark shapes and contour. The eleven states preserve decisions that a single final image would conceal.",
+      "sections": [
+        {
+          "id": "context",
+          "title": "A sequence rather than eleven unrelated bulls",
+          "paragraphs": [
+            "Norton Simon Museum’s exhibition account identifies eleven editioned states made between December 1945 and January 1946. A state records a change to the printing surface; an impression is an individual print taken from it. These terms distinguish the sequence from a set of independent sketchbook drawings.",
+            "The links below identify eleven impressions at the National Gallery of Art, with accession numbers 1982.12.1 through 1982.12.11. Barcelona holds a separately catalogued Sabartés proof of the final state, received as a gift in 1962. Its record should not supply the ownership history for the Washington impressions."
+          ],
+          "sourceIds": [
+            "bull",
+            "bull-object"
+          ]
+        },
+        {
+          "id": "material",
+          "title": "Lithography makes revision visible",
+          "paragraphs": [
+            "Barcelona’s final-state record names pen and scraper on stone, with traces of lithotint and lithographic crayon. The variety of tools matters: a line may be added, a surface worked back, or a tonal passage altered. A printed trace is the outcome of a material process, not simply a pen line transferred without mediation.",
+            "Follow the states slowly. Rather than assume that every step removes detail, ask what is added, emphasized or reorganized between two neighbors. Compare three different things: the outer body, the divisions inside it and the relationship between the animal and the surrounding paper."
+          ],
+          "sourceIds": [
+            "bull-object",
+            "bull"
+          ]
+        },
+        {
+          "id": "meaning",
+          "title": "The last image is not the only destination",
+          "paragraphs": [
+            "A common reading treats the suite as a triumphant march from naturalism to essence. It is useful to test that claim rather than inherit it. What does an early state communicate about weight that a late state relinquishes? What does a late state make possible through open structure and sharply selected contours?",
+            "The comparison is richer when subtraction and invention remain equally visible. These works need not be ranked as increasingly successful. They allow a viewer to see representation as a set of choices with different gains and losses."
+          ],
+          "sourceIds": [
+            "bull"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Mass and structure",
+          "text": "Compare the first and final state. Name something the earlier image communicates that the later image changes."
+        },
+        {
+          "title": "Between neighbors",
+          "text": "Choose two adjacent states. Describe one addition as well as one reduction or alteration."
+        },
+        {
+          "title": "A surviving identity",
+          "text": "Which relationships keep the animal recognizable when its internal description changes?"
+        }
+      ],
+      "evidence": {
+        "documented": "The museum exhibition documents eleven editioned states; each linked NGA impression has an individual collection record.",
+        "interpretation": "The proposal to compare gains and losses, rather than rank the states, is the editorial approach of this study.",
+        "uncertain": "A sequence of printed states is evidence of revisions, not a complete transcript of Picasso’s thoughts or every intermediate action."
+      },
+      "sourceIds": [
+        "bull",
+        "bull-object"
+      ],
+      "viewer": {
+        "url": "https://www.nga.gov/artworks/61111-bull-le-taureau",
+        "label": "View the first state at the National Gallery",
+        "note": "Use the eleven-state guide below to open each separately catalogued museum image."
+      },
+      "related": [
+        "camel",
+        "minotaur"
+      ],
+      "subjectNote": "",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "stravinsky",
+      "title": "Portrait of Igor Stravinsky",
+      "subtitle": "A likeness carried by contour and posture",
+      "date": "24 May 1920",
+      "medium": "Graphite and charcoal on paper",
+      "holder": "Musée national Picasso-Paris",
+      "inventory": "MP911 · 62.4 × 48.5 cm",
+      "lead": "A portrait can establish presence without filling every surface with shade. This seated Stravinsky invites attention to the relationship between head, hands, clothing and pose. The drawing’s restraint makes small differences in placement consequential.",
+      "sections": [
+        {
+          "id": "context",
+          "title": "Choose the portrait before interpreting it",
+          "paragraphs": [
+            "The Paris museum identifies this particular drawing as MP911, dated 24 May 1920 and made in Paris. It records graphite and charcoal, dimensions of 62.4 × 48.5 cm, and entry through the 1979 Picasso dation. These identifiers anchor the essay to one sheet.",
+            "Picasso made more than one portrait of Stravinsky. Barcelona’s portrait exhibition discusses a profile dated 31 December 1920. That separate image can illuminate a relationship between artist and composer, but its pose, date and appearance must not be attached to the seated May portrait."
+          ],
+          "sourceIds": [
+            "stravinsky",
+            "stravinsky-context"
+          ]
+        },
+        {
+          "id": "looking",
+          "title": "The body participates in likeness",
+          "paragraphs": [
+            "Open MP911 and begin below the face. Trace the clothing, the arrangement of the hands and the changes in direction that establish the seated body. Consider how the spaces enclosed by contours contribute to the figure’s presence. A portrait’s identity is not confined to a recognizable nose or pair of eyes.",
+            "Then compare the face with the larger structure. Does its relative scale make the head feel concentrated, reserved or emphatic? Those are possible readings to argue from the drawing. They should remain distinct from a psychological diagnosis of the sitter or a claim that the artist intended a particular temperament."
+          ],
+          "sourceIds": [
+            "stravinsky"
+          ]
+        },
+        {
+          "id": "material",
+          "title": "Restraint still involves decisions",
+          "paragraphs": [
+            "Graphite and charcoal can produce overlapping effects in a digital reproduction. The medium field establishes their presence; it does not let us assign every visible mark to one tool with certainty. Look for differences in darkness and edge without inventing a complete sequence of making.",
+            "This study offers a useful counterpart to Don Quixote: both invite comparison of proportion and contour, but a portrait of an identified contemporary and an illustration of literary characters have different purposes. Similar economy of means does not make their meanings interchangeable."
+          ],
+          "sourceIds": [
+            "stravinsky"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Start with the hands",
+          "text": "Describe how the hands and clothing support the pose before examining the face."
+        },
+        {
+          "title": "Likeness and proportion",
+          "text": "Compare the head with the whole seated body. What does that relationship contribute?"
+        },
+        {
+          "title": "A separate portrait",
+          "text": "Open the December profile record and identify a difference without treating it as a corrected version."
+        }
+      ],
+      "evidence": {
+        "documented": "MP911 is a graphite-and-charcoal drawing dated 24 May 1920; the December profile is a separate work.",
+        "interpretation": "The account of posture and economy is an editorial reading of the identified sheet.",
+        "uncertain": "A restrained surface does not establish the time taken, absence of revisions or the sitter’s private state of mind."
+      },
+      "sourceIds": [
+        "stravinsky",
+        "stravinsky-context"
+      ],
+      "viewer": {
+        "url": "https://cep.museepicassoparis.fr/en/node/124831",
+        "label": "View MP911 at Musée Picasso Paris",
+        "note": "The museum record includes the portrait, materials, date and reproduction credit."
+      },
+      "related": [
+        "don-quixote",
+        "francoise"
+      ],
+      "subjectNote": "",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "lump",
+      "title": "Lump · the dachshund",
+      "subtitle": "A familiar outline and a documented encounter",
+      "date": "Documented plate: 19 April 1957",
+      "medium": "Black glaze on commercial ceramic plate · related drawing in another medium",
+      "holder": "Harry Ransom Center, University of Texas at Austin",
+      "inventory": "Plate diameter: 24 cm",
+      "lead": "The dachshund is often encountered online as a spare outline called Lump or The Dog. This study separates that circulating image from a securely documented object: the plate Picasso painted for Lump in 1957. The difference is an opportunity to understand how an appealing image acquires a story.",
+      "sections": [
+        {
+          "id": "context",
+          "title": "The encounter that can be documented",
+          "paragraphs": [
+            "The University of Texas records a commercial dinner plate painted by Picasso at Villa La Californie on 19 April 1957, with a portrait of Lump in black glaze. David Douglas Duncan donated it to the Harry Ransom Center in 2011. The university’s account describes the dedication and recounts Duncan’s memory of the lunch.",
+            "The Picasso museum also catalogues Duncan’s photograph of Picasso drawing Lump on a plate. Its subject is the 1957 event, while the particular digital print in that record dates to 2013. Plate, photographic negative and later print are different objects, each with a separate material history."
+          ],
+          "sourceIds": [
+            "lump",
+            "lump-photo"
+          ]
+        },
+        {
+          "id": "looking",
+          "title": "Drawing can leave the sheet",
+          "paragraphs": [
+            "Look at the documented plate through the university’s account. Consider how the circular support changes the placement of the animal and its inscription. A line on a domestic object is encountered through handling, distance and use as well as through its appearance in a photograph.",
+            "This moves the discussion beyond the idea that an economical animal image is only a clever exercise. Proportion and contour can carry recognition, but the object also participates in an exchange among artist, photographer and the dog to whom it is dedicated. The account supports the encounter without supplying every motive behind it."
+          ],
+          "sourceIds": [
+            "lump"
+          ]
+        },
+        {
+          "id": "identity",
+          "title": "What the familiar outline does not establish",
+          "paragraphs": [
+            "No consulted holding-collection record here identifies the original sheet behind the widely circulated single-line dachshund reproduction. Its usual “circa 1957” label must not be borrowed from the plate. A resemblance in subject does not establish shared date, medium or provenance.",
+            "The familiar outline remains the reason many visitors seek this study. It is acknowledged here without inventing a catalogue entry for it. The documented plate provides a concrete object to examine while the separate outline’s identification remains open."
+          ],
+          "sourceIds": [
+            "lump",
+            "lump-photo"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Support and placement",
+          "text": "In the documented plate, look at the relationship between the animal, the rim and the inscription."
+        },
+        {
+          "title": "Image and event",
+          "text": "Distinguish what a photograph shows from what Duncan’s later account tells you."
+        },
+        {
+          "title": "A question of identity",
+          "text": "Which evidence would be needed to identify the separate single-line dachshund as a dated original?"
+        }
+      ],
+      "evidence": {
+        "documented": "The plate, its 19 April 1957 date and the 2011 donation are documented by its receiving institution.",
+        "interpretation": "The account of recognition, support and exchange is an editorial reading of that documented encounter.",
+        "uncertain": "The familiar outline’s original sheet, date and medium remain unverified in the sources consulted. The plate is related evidence, not that sheet."
+      },
+      "sourceIds": [
+        "lump",
+        "lump-photo"
+      ],
+      "viewer": {
+        "url": "https://news.utexas.edu/2011/01/26/plate-painted-by-pablo-picasso-donated-to-ransom-center-by-photojournalist-duncan/",
+        "label": "View the documented Lump plate and photographs",
+        "note": "This source shows the related 1957 plate, not an authenticated original of the familiar single-line dachshund."
+      },
+      "related": [
+        "camel",
+        "owl"
+      ],
+      "subjectNote": "",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "guernica",
+      "title": "Composition Study I for Guernica",
+      "subtitle": "An early arrangement, not a miniature final painting",
+      "date": "1 May 1937 · Paris",
+      "medium": "Graphite on paper",
+      "holder": "Museo Nacional Centro de Arte Reina Sofía",
+      "inventory": "DE00053 · 20.9 × 26.9 cm",
+      "lead": "A preparatory drawing is valuable because it preserves possibilities. This small graphite sheet can be examined beside Guernica without treating every mark as a predetermined step toward the finished canvas. Begin with the arrangement of the whole, then consider what the later painting changes.",
+      "sections": [
+        {
+          "id": "object",
+          "title": "A specific sheet in a larger project",
+          "paragraphs": [
+            "The Reina Sofía identifies Composition Study I as graphite on paper, made in Paris on 1 May 1937. Its registration number is DE00053 and its dimensions are 20.9 × 26.9 cm. The record distinguishes the Picasso Bequest of 1981 from the year-of-entry field, 1992. Those dates describe collection history rather than the making of the drawing.",
+            "The title identifies its relationship to Guernica. It does not mean that this one sheet contains the entire development of the project. Other studies, the painting itself and photographic documentation provide different kinds of evidence."
+          ],
+          "sourceIds": [
+            "guernica"
+          ]
+        },
+        {
+          "id": "composition",
+          "title": "Read relations before naming symbols",
+          "paragraphs": [
+            "With the source image open, follow the positions of the principal figures and the spaces between them. Ask where attention gathers, where directions compete and where the arrangement remains difficult to resolve. These questions keep the study visible as a developing composition.",
+            "Then open the museum’s technical viewer of Guernica. Compare a relationship rather than hunting only for an identical outline. A figure can retain a role while changing position or shape; a recurring motif can be used differently. Comparison should make those differences legible rather than erase them in a story of inevitable progress."
+          ],
+          "sourceIds": [
+            "guernica",
+            "guernica-process"
+          ]
+        },
+        {
+          "id": "process-evidence",
+          "title": "Several kinds of process evidence",
+          "paragraphs": [
+            "The Reina Sofía’s project brings together technical examination and Dora Maar’s photographs of the painting in progress. A preparatory sheet records one set of marks; photographs record selected states of a canvas; technical imaging can reveal traces below its surface. None is an unbroken film of every decision.",
+            "Keep political context and material reconstruction in conversation without making one stand in for the other. The force of the finished painting does not authorize assigning a fixed, universally agreed meaning to every form in an early drawing."
+          ],
+          "sourceIds": [
+            "guernica-process"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "A whole arrangement",
+          "text": "Describe the balance of the sheet before identifying individual motifs."
+        },
+        {
+          "title": "A relationship that changes",
+          "text": "Compare the position of two forms with the final painting. What becomes more connected or more separated?"
+        },
+        {
+          "title": "Kinds of evidence",
+          "text": "Choose one claim that a photograph could support and another that would require technical examination."
+        }
+      ],
+      "evidence": {
+        "documented": "The museum identifies the sheet, date, medium and relationship to Guernica; its research project supplies additional process evidence.",
+        "interpretation": "The comparison of competing directions and developing relationships is editorial looking guidance.",
+        "uncertain": "This sheet does not establish the order of every mark or settle the meanings of all figures in the final painting."
+      },
+      "sourceIds": [
+        "guernica",
+        "guernica-process"
+      ],
+      "viewer": {
+        "url": "https://www.museoreinasofia.es/en/collections/artwork/estudio-de-composicion-i-dibujo-preparatorio-para-guernica-composition-study-i/",
+        "label": "View Composition Study I at Reina Sofía",
+        "note": "The museum provides the specific sheet rather than an unidentified Guernica sketch."
+      },
+      "related": [
+        "don-quixote",
+        "minotaur"
+      ],
+      "subjectNote": "War-related subject. The related finished painting depicts suffering and violence.",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "camel",
+      "title": "The Camel · Le Chameau",
+      "subtitle": "A contour, a sketchbook and a later reproduction",
+      "date": "1907 sketchbook context · original leaf not identified here",
+      "medium": "Drawing design · later screenprinted reproduction linked",
+      "holder": "Sketchbook context: Musée national Picasso-Paris, as reported by the Münster museum shop",
+      "inventory": "Original leaf inventory and dimensions not established",
+      "lead": "The familiar camel contour invites a deceptively simple question: how few marks can establish an animal? Its modern circulation also prompts a second question: what changes when one motif is isolated from the crowded sketchbook page in which it originated?",
+      "sections": [
+        {
+          "id": "context",
+          "title": "The page behind the isolated animal",
+          "paragraphs": [
+            "The Kunstmuseum Pablo Picasso Münster shop describes its Le Chameau reproduction in relation to a Picasso sketchbook used from late June to early July 1907, now in the Paris Picasso museum. Its account says that the animal drawings appear close together in the sketchbook, rather than as isolated images on separate sheets.",
+            "The same account connects them with preliminary ideas for Apollinaire’s Bestiary. This is a museum-shop account of the design’s context, not a leaf-level catalogue record. The distinction is retained because a scholarly study should identify what kind of source supports its claims."
+          ],
+          "sourceIds": [
+            "camel"
+          ]
+        },
+        {
+          "id": "looking",
+          "title": "Recognition through an uneven contour",
+          "paragraphs": [
+            "Open the linked reproduction and follow the animal’s back, neck, legs and head. Which changes of direction carry the greatest identifying force? Consider whether the line describes an external boundary throughout or asks the viewer to complete some relationships.",
+            "The reproduction makes an individual motif easy to recognize. Imagine it among neighboring marks on a sketchbook page: white space, apparent scale and the sense of completion could all change. Isolation is an editorial decision in a reproduction as well as a compositional decision in an original."
+          ],
+          "sourceIds": [
+            "camel"
+          ]
+        },
+        {
+          "id": "record",
+          "title": "A reproduction is a new physical object",
+          "paragraphs": [
+            "The screenprint medium and 60 × 50 cm format in the shop listing belong to the modern product. They must not be entered as the medium and dimensions of Picasso’s original drawing. This study therefore leaves the original leaf’s inventory, measurements and precise materials unresolved.",
+            "The limitation need not prevent attentive looking. It changes the language of the account: we can describe the linked reproduction and its stated sketchbook context while declining to invent a fully catalogued independent sheet. Compare that distinction with Lump, where a familiar outline and a documented related object also need separate identities."
+          ],
+          "sourceIds": [
+            "camel"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Points of recognition",
+          "text": "Choose three changes of direction that make the contour read as a camel."
+        },
+        {
+          "title": "The surrounding page",
+          "text": "How might your judgment of completeness change if other animals appeared alongside it?"
+        },
+        {
+          "title": "Original and product",
+          "text": "Separate the information supplied about the 1907 context from the dimensions and medium of the modern reproduction."
+        }
+      ],
+      "evidence": {
+        "documented": "The museum shop supplies the 1907 sketchbook context and identifies its own product as a screenprint.",
+        "interpretation": "The discussion of isolation, contour and recognition is an editorial reading of the linked reproduction.",
+        "uncertain": "The original leaf’s inventory, exact medium and measurements are not established here. The product is not presented as an original Picasso print."
+      },
+      "sourceIds": [
+        "camel"
+      ],
+      "viewer": {
+        "url": "https://picassomuseum-shop.de/en/products/siebdruck-picasso-le-chameau-kamel-60-x-50-cm",
+        "label": "View the museum-shop reproduction and context",
+        "note": "This is a modern reproduction listing, not the original sketchbook leaf or an acquisition recommendation."
+      },
+      "related": [
+        "bull",
+        "lump"
+      ],
+      "subjectNote": "",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "owl",
+      "title": "Owl with White Background",
+      "subtitle": "A printed surface that rewards close looking",
+      "date": "1947",
+      "medium": "Lithograph · lithotint, crayon, frottage and scraper, transferred to stone",
+      "holder": "Museu Picasso Barcelona",
+      "inventory": "MPB 70.156 · 66 × 50 cm",
+      "lead": "The Owl belongs beside Picasso’s animal contours precisely because it complicates them. Here the discussion turns toward texture and printing: how can varied marks establish the bird’s presence, and what happens when an image of an owl is encountered as a worked surface?",
+      "sections": [
+        {
+          "id": "object",
+          "title": "Choose one owl among many",
+          "paragraphs": [
+            "“The Owl” and “La Chouette” can refer to different Picasso images and objects. This study selects the Barcelona museum’s Owl with White Background, dated 1947, inventory MPB 70.156. It is a lithograph on Arches vellum paper, identified as a Sabartés proof and received through Jaume Sabartés’s gift in 1962.",
+            "Those details keep the image distinct from other owl prints, drawings and ceramics. A recurring subject does not make the works versions of one material object. The selected museum title is therefore retained rather than replaced with an ambiguous generic label."
+          ],
+          "sourceIds": [
+            "owl"
+          ]
+        },
+        {
+          "id": "material",
+          "title": "Several ways of making a printed mark",
+          "paragraphs": [
+            "The catalogue names lithotint, lithographic crayon, frottage and scraper on transfer paper, transferred to stone. That technical specificity provides a vocabulary for looking. It does not permit every texture to be assigned to a tool simply from a small reproduction.",
+            "Examine the bird’s silhouette and then the areas within it. Look for differences between a continuous edge, a granular patch and a tonal passage. Ask how the surrounding pale field affects the density of the figure. An animal’s character can emerge from texture and weight as well as from an economical outline."
+          ],
+          "sourceIds": [
+            "owl"
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "A family of different animal images",
+          "paragraphs": [
+            "Compare the Owl with the 1949 Dove and a late state of The Bull. Begin with how each image establishes a body rather than ranking the animals by apparent simplicity. Does one depend more on tone, another on internal divisions and another on a boundary?",
+            "The comparison should preserve differences of impression, date and purpose. The fact that all three depict animals does not establish a single program or a documented sequence from one to the next. They offer separate cases in the range of Picasso’s graphic practice."
+          ],
+          "sourceIds": [
+            "owl"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Edge and interior",
+          "text": "Compare the silhouette with one textured area. What kind of information does each provide?"
+        },
+        {
+          "title": "The white field",
+          "text": "Describe how the surrounding paper changes the figure’s apparent weight or isolation."
+        },
+        {
+          "title": "Different kinds of animal",
+          "text": "Compare this print with Dove or The Bull using medium and structure before discussing personality."
+        }
+      ],
+      "evidence": {
+        "documented": "The Barcelona record identifies the 1947 lithograph, its materials, dimensions, proof and acquisition.",
+        "interpretation": "The questions about character, density and the pale field are editorial interpretations to test against the source image.",
+        "uncertain": "The generic title The Owl does not identify every owl image by Picasso. A reproduction alone cannot resolve every tool used in a passage."
+      },
+      "sourceIds": [
+        "owl"
+      ],
+      "viewer": {
+        "url": "https://museupicassobcn.cat/index.php/en/collection/artwork/owl-white-background",
+        "label": "View Owl with White Background at Museu Picasso",
+        "note": "The source identifies MPB 70.156 and supplies the image’s own reproduction notice."
+      },
+      "related": [
+        "dove",
+        "lump"
+      ],
+      "subjectNote": "",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "minotaur",
+      "title": "Minotaur studies",
+      "subtitle": "Power, dependence and the changing uses of a myth",
+      "date": "Selected prints: 1933 and November 1934",
+      "medium": "Etching and other intaglio processes · thematic comparison",
+      "holder": "National Gallery of Art and Frances Lehman Loeb Art Center, Vassar",
+      "inventory": "Two identified impressions; see their individual records",
+      "lead": "The Minotaur is not one stable symbol with a single definition. Picasso’s human–animal figure appears in different situations, sometimes forceful and sometimes vulnerable. This thematic study compares two identified prints and keeps their materials and narratives separate.",
+      "sections": [
+        {
+          "id": "context",
+          "title": "A motif rather than a single artwork",
+          "paragraphs": [
+            "The Reina Sofía’s exhibition account follows the Minotaur through Picasso’s imagery, including its prominent role around the 1933 magazine Minotaure. That context supports a thematic encounter; it does not turn every Minotaur drawing or print into a preparatory study for one later work.",
+            "The selected comparisons are In the Arena. Young Man Kills the Minotaur, dated 1933 and printed in 1939 by Roger Lacourière according to the National Gallery of Art record, and Blind Minotaur, catalogued by Vassar as November 1934, aquatint and drypoint. Each has an individual institutional record. The group title “Minotaur studies” is our editorial heading, not an artist-given title for a single sheet."
+          ],
+          "sourceIds": [
+            "minotaur-context",
+            "minotaur-arena",
+            "minotaur-blind"
+          ]
+        },
+        {
+          "id": "looking",
+          "title": "An encounter can reverse a creature’s role",
+          "paragraphs": [
+            "Open the two records and compare relationships among bodies. In the arena image, examine spectatorship and physical confrontation. In the blind Minotaur, ask how dependence and guidance are organized. Consider who acts, who watches and whose movement relies on another figure.",
+            "These are ways to examine represented power, not invitations to equate every figure with one person in Picasso’s life. An autobiographical interpretation may be argued by historians, but it should not erase the troubling or vulnerable situations presented in the images themselves."
+          ],
+          "sourceIds": [
+            "minotaur-arena",
+            "minotaur-blind"
+          ]
+        },
+        {
+          "id": "material",
+          "title": "Darkness is also a printed construction",
+          "paragraphs": [
+            "Vassar identifies its Blind Minotaur as aquatint and drypoint, with an image measuring 25 × 35 cm and a larger sheet. The distinction between image and sheet matters when comparing digital reproductions. A cropped image may make two prints look equally sized even when their physical encounters differ.",
+            "Attend to the relation between line and tone before reading darkness only as an emotional metaphor. The material account and an interpretation can support one another while remaining different kinds of statement. Neither print gives access to the artist’s unrecorded thoughts, and the two objects do not exhaust the motif’s history."
+          ],
+          "sourceIds": [
+            "minotaur-blind"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Action and spectatorship",
+          "text": "In the arena print, distinguish the central encounter from the watching figures."
+        },
+        {
+          "title": "Guidance and dependence",
+          "text": "In Blind Minotaur, locate the relationships that make movement possible."
+        },
+        {
+          "title": "Line and tone",
+          "text": "Ask what the dark field does materially before proposing what it might mean psychologically."
+        }
+      ],
+      "evidence": {
+        "documented": "Two institutional records identify separate 1933 and 1934 prints; Vassar specifies aquatint and drypoint for its impression.",
+        "interpretation": "The comparison of confrontation and dependence is an editorial route through the selected works.",
+        "uncertain": "The group is selective, not a complete sequence. Biographical identifications and symbolic readings require attributed arguments."
+      },
+      "sourceIds": [
+        "minotaur-context",
+        "minotaur-arena",
+        "minotaur-blind"
+      ],
+      "viewer": {
+        "url": "https://www.nga.gov/artworks/39120-arena-young-man-kills-minotaur-dans-larene-jeune-homme-achevant-le-minotaure",
+        "label": "View the 1933 arena print at the National Gallery",
+        "note": "A second, separately credited Blind Minotaur record is linked in the comparison below."
+      },
+      "related": [
+        "bull",
+        "guernica"
+      ],
+      "subjectNote": "Mythological violence, injury and nudity in the linked works. Some other Minotaur works include sexual violence; this selection is identified individually.",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    },
+    {
+      "slug": "francoise",
+      "title": "Portrait of Françoise Gilot",
+      "subtitle": "A sitter, an artist and the limits of a metaphor",
+      "date": "20 May 1946 · Paris",
+      "medium": "Graphite, three-color pencil and charcoal on paper",
+      "holder": "Musée national Picasso-Paris",
+      "inventory": "MP1351 · 66.5 × 50.8 cm",
+      "lead": "This drawing offers a precise point of entry into Picasso’s portraits of Françoise Gilot. It also asks the viewer to keep Gilot’s own artistic identity in view. A person represented by another artist is more than the metaphor through which that artist pictures her.",
+      "sections": [
+        {
+          "id": "object",
+          "title": "A drawing distinct from La Femme-Fleur",
+          "paragraphs": [
+            "The Paris museum identifies Portrait de Françoise as a drawing dated 20 May 1946, inventory MP1351. Its catalogue lists graphite, three-color pencil and charcoal on paper, dimensions of 66.5 × 50.8 cm, and entry through the 1979 Picasso dation.",
+            "The requested La Femme-Fleur is a separate 1946 painting. The museum’s opening dossier discusses it among paintings. This study keeps the painting as a related comparison rather than attaching its title to MP1351. Shared sitter and year do not make the objects identical."
+          ],
+          "sourceIds": [
+            "gilot",
+            "femme-fleur"
+          ]
+        },
+        {
+          "id": "looking",
+          "title": "Recognizing a person through selected marks",
+          "paragraphs": [
+            "Open the drawing and compare the face, hair and surrounding space. Where does the description become concentrated, and where does the paper remain comparatively quiet? Follow the changes of line and darkness before trying to read a definitive mood.",
+            "The combination of recorded materials makes the sheet useful for a discussion of emphasis. Ask how different kinds of mark establish a hierarchy within the portrait. A digital image cannot reliably identify every tool in every passage, and a facial expression should not be treated as transparent evidence of a relationship."
+          ],
+          "sourceIds": [
+            "gilot"
+          ]
+        },
+        {
+          "id": "person",
+          "title": "Gilot’s career remains her own",
+          "paragraphs": [
+            "The Centre Pompidou’s account discusses Gilot as a painter and writer, with an artistic and intellectual life extending beyond her years with Picasso. Her memoir Life with Picasso, written with Carlton Lake and published in 1964, is a retrospective voice with its own perspective. It should be contextualized rather than mined as a caption for every earlier portrait.",
+            "When comparing the drawing with the flower metaphor associated with the painting, ask what a metaphor emphasizes and what it leaves outside the frame. This creates room to examine Picasso’s pictorial choices while recognizing that Gilot’s work and testimony have independent value."
+          ],
+          "sourceIds": [
+            "gilot-career",
+            "femme-fleur"
+          ]
+        }
+      ],
+      "looking": [
+        {
+          "title": "Concentrated attention",
+          "text": "Compare the most worked area with an open one. How is your attention directed?"
+        },
+        {
+          "title": "One sitter, distinct objects",
+          "text": "Keep the drawing’s title and materials separate from the 1946 painting La Femme-Fleur."
+        },
+        {
+          "title": "A person beyond the portrait",
+          "text": "Read the account of Gilot’s own career. What does it add that the portrait cannot establish?"
+        }
+      ],
+      "evidence": {
+        "documented": "MP1351 is the dated 1946 drawing. La Femme-Fleur is a separate painting, and Gilot had her own career as an artist and writer.",
+        "interpretation": "The discussion of emphasis and the limitations of a flower metaphor is editorial interpretation.",
+        "uncertain": "The portrait does not establish the sitter’s private feelings. Shared date and sitter are insufficient to claim a documented preparatory relationship."
+      },
+      "sourceIds": [
+        "gilot",
+        "gilot-career",
+        "femme-fleur"
+      ],
+      "viewer": {
+        "url": "https://cep.museepicassoparis.fr/en/node/125256",
+        "label": "View Portrait de Françoise, MP1351",
+        "note": "The drawing’s source record and the separately identified painting must not be conflated."
+      },
+      "related": [
+        "stravinsky",
+        "don-quixote"
+      ],
+      "subjectNote": "",
+      "imageStatus": "institutional-link",
+      "checked": "2026-11-22"
+    }
+  ]
+}

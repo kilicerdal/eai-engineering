@@ -13,6 +13,8 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
     "public/pdfjs/**",
+    // Generated local screenshots, reports and one-off capture scripts are not source.
+    "artifacts/**",
   ]),
 ]);
 

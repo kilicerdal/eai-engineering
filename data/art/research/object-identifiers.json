@@ -1,0 +1,26 @@
+{
+  "scope": "Selected painting identifiers transcribed from institutional object pages on 2026-11-22. Paper identifiers remain in the existing acquisition records. URL record IDs are not treated as accession numbers. Other painting identifiers are not inferred.",
+  "records": [
+    {
+      "id": "vermeer-02",
+      "label": "Object number",
+      "number": "SK-A-2344",
+      "source": "https://www.rijksmuseum.nl/en/collection/SK-A-2344",
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "vermeer-01",
+      "label": "Inventory number",
+      "number": "670",
+      "source": "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring",
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "pollock-02",
+      "label": "Object number",
+      "number": "57.92",
+      "source": "https://www.metmuseum.org/art/collection/search/488978",
+      "checked": "2026-11-22"
+    }
+  ]
+}

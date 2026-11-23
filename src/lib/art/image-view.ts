@@ -1,0 +1,3 @@
+export type ImageView={scale:number;x:number;y:number};
+export function parseImageView(v:unknown):ImageView|null{if(!v||typeof v!=='object')return null;const p=v as Record<string,unknown>;if(![p.scale,p.x,p.y].every(n=>typeof n==='number'&&Number.isFinite(n)))return null;return {scale:Math.max(1,Math.min(6,p.scale as number)),x:Math.max(0,Math.min(100,p.x as number)),y:Math.max(0,Math.min(100,p.y as number))};}
+export function imageViewFromUrl(search:string,id:string){const q=new URLSearchParams(search);if(q.get('artDetail')!==id)return null;return parseImageView({scale:Number(q.get('zoom')??2),x:Number(q.get('x')??50),y:Number(q.get('y')??50)});}

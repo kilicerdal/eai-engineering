@@ -1,0 +1,15 @@
+import type {ArtArgument,PassageBookmark} from './argument-tools';
+import type {ArtPersonal} from './personal';
+import {normalizeArtText} from './navigation';
+export const argumentPassages=(a:Pick<ArtArgument,'passage'|'passages'>)=>[...new Set([...(a.passages??[]),...(a.passage?[a.passage]:[])])];
+export function passageDigest(text:string){let hash=2166136261;for(const c of text){hash^=c.codePointAt(0)!;hash=Math.imul(hash,16777619);}return text.length+'-'+(hash>>>0).toString(16);}
+export function passageUsers(argumentsList:ArtArgument[],id:string){return argumentsList.filter(a=>argumentPassages(a).includes(id));}
+export function removePassage(personal:ArtPersonal,id:string,detach=false):ArtPersonal{return {...personal,bookmarks:personal.bookmarks?.filter(b=>b.id!==id),...(detach?{arguments:personal.arguments?.map(a=>{const ids=argumentPassages(a).filter(x=>x!==id),rest={...a};delete rest.passage;delete rest.passages;return {...rest,...(ids.length?{passage:ids[0],passages:ids}:{})};})}:{})};}
+export function restoreRecord<T extends {id:string}>(records:T[],record:T,index:number,limit:number){if(records.some(r=>r.id===record.id))return records;if(records.length>=limit)throw Error(`There is no room to restore this record (${limit} maximum). Your latest work was kept.`);const next=[...records];next.splice(Math.min(index,next.length),0,record);return next;}
+export function collectionNameAvailable(collections:ArtPersonal['collections'],name:string,except:string){return !collections.some(c=>c.id!==except&&normalizeArtText(c.name.trim())===normalizeArtText(name.trim()));}
+export function collectionOverlap(a:string[],b:string[]){const common=a.filter(id=>b.includes(id));return {common,onlyFirst:a.filter(id=>!b.includes(id)),onlySecond:b.filter(id=>!a.includes(id))};}
+/** Original-string ranges, so normalization never shifts highlighted characters. */
+export function writingMatchRanges(text:string,query:string){const normalized:string[]=[],offsets:number[]=[],ends:number[]=[];let offset=0;for(const char of text){const value=normalizeArtText(char);for(const letter of value){normalized.push(letter);offsets.push(offset);ends.push(offset+char.length);}offset+=char.length;}const haystack=normalized.join(''),ranges:[number,number][]=[];for(const word of normalizeArtText(query).split(/[^\p{L}\p{N}]+/u).filter(Boolean)){let at=haystack.indexOf(word);while(at>=0){const end=ends[at+word.length-1]??text.length;ranges.push([offsets[at],end]);at=haystack.indexOf(word,at+Math.max(1,word.length));}}ranges.sort((a,b)=>a[0]-b[0]);return ranges.reduce<[number,number][]>((out,r)=>{const last=out.at(-1);if(last&&r[0]<=last[1])last[1]=Math.max(last[1],r[1]);else out.push([...r]);return out;},[]);}
+export function bookmarkTarget(b:PassageBookmark){return '/study/art/painting/'+b.work+'#'+b.section;}
+
+export function writingExcerpt(text:string,query:string,radius=85){const first=writingMatchRanges(text,query)[0],at=first?.[0]??0,start=Math.max(0,at-radius),end=Math.min(text.length,(first?.[1]??0)+radius);return (start?'…':'')+text.slice(start,end)+(end<text.length?'…':'');}
