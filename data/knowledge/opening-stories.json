@@ -1,0 +1,2253 @@
+{
+  "edition": "2026-11-22",
+  "sources": {
+    "acs": {
+      "title": "American Chemical Society · Discovery and Development of Penicillin",
+      "url": "https://www.acs.org/education/whatischemistry/landmarks/flemingpenicillin.html",
+      "kind": "Institutional history",
+      "scope": "Discovery, Oxford research, early treatment and the transition to production.",
+      "checked": "2026-11-22"
+    },
+    "dunn": {
+      "title": "Oxford Dunn School · The Discovery of Penicillin",
+      "url": "https://www.path.ox.ac.uk/centenary/the-discovery-of-penicillin/",
+      "kind": "Institutional history",
+      "scope": "The research programme, biological testing and the distinction between an observation and a treatment.",
+      "checked": "2026-11-22"
+    },
+    "cdc": {
+      "title": "Robert Gaynes · The Discovery of Penicillin, Emerging Infectious Diseases (2017)",
+      "url": "https://wwwnc.cdc.gov/eid/article/23/5/16-1556_article",
+      "kind": "Historical research",
+      "scope": "Earlier antibacterial treatments, wartime development and the construction of the Fleming story.",
+      "checked": "2026-11-22"
+    },
+    "usda": {
+      "title": "USDA Agricultural Research Service · Penicillin: Opening the Era of Antibiotics",
+      "url": "https://www.ars.usda.gov/midwest-area/peoria-il/national-center-for-agricultural-utilization-research/docs/penicillin-opening-the-era-of-antibiotics/",
+      "kind": "Institutional history",
+      "scope": "Fermentation research at Peoria and the industrial production problem.",
+      "checked": "2026-11-22"
+    },
+    "vessel": {
+      "title": "National Museums Scotland · How a ceramic object fueled a medical breakthrough",
+      "url": "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough",
+      "kind": "Museum interpretation",
+      "scope": "Heatley’s culture vessels and the material work of obtaining a usable supply.",
+      "checked": "2026-11-22"
+    },
+    "culture": {
+      "title": "Oxford History of Science Museum · Original penicillin culture and specimen",
+      "url": "https://mhs.web.ox.ac.uk/original-penicillin-culture-and-specimen",
+      "kind": "Collection record",
+      "scope": "Surviving cultures and recovered samples, inventory numbers 23034 and 14439.",
+      "checked": "2026-11-22"
+    },
+    "team": {
+      "title": "Oxford History of Science Museum · Team Penicillin",
+      "url": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/team-penicillin/",
+      "kind": "Museum interpretation",
+      "scope": "The wider team, including Heatley, Abraham, Jennings, Sanders and Ethel Florey.",
+      "checked": "2026-11-22"
+    },
+    "clinical": {
+      "title": "Abraham and colleagues · Further Observations on Penicillin (1941), James Lind Library",
+      "url": "https://www.jameslindlibrary.org/abraham-ep-chain-e-fletcher-cm-gardner-ad-heatley-ng-jennings-am-florey-hw-1941/",
+      "kind": "Primary paper",
+      "scope": "The seven authors’ contemporary account of penicillin production, experimental work and early human therapy. The James Lind Library provides the full article and notes the publisher’s permission for its PDF.",
+      "checked": "2026-11-23"
+    },
+    "fleming": {
+      "title": "Alexander Fleming · Nobel lecture, Penicillin (1945)",
+      "url": "https://www.nobelprize.org/uploads/2018/06/fleming-lecture.pdf",
+      "kind": "Primary lecture",
+      "scope": "Fleming’s retrospective account and his warning about resistance. Indexed text consulted; direct access was restricted.",
+      "checked": "2026-11-22"
+    },
+    "medicine": {
+      "title": "Nobel Prize · Official historical list of prizes",
+      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes/all/",
+      "kind": "Official award record",
+      "scope": "The 1945 Medicine recipients and award motivation. Indexed record consulted.",
+      "checked": "2026-11-22"
+    },
+    "physics": {
+      "title": "Nobel Prize · Official historical list of Physics prizes",
+      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-physics/all/",
+      "kind": "Official award record",
+      "scope": "Einstein’s 1921 award, its motivation and Millikan’s separate 1923 prize. Indexed record consulted.",
+      "checked": "2026-11-22"
+    },
+    "nobel-history": {
+      "title": "Nobel Prize · The Nobel Prize in Physics 1901–2000",
+      "url": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "kind": "Institutional history",
+      "scope": "The 1921 award’s presentation in 1922 and its relation to the development of quantum theory. Indexed text consulted.",
+      "checked": "2026-11-22"
+    },
+    "nobel-facts": {
+      "title": "Nobel Prize · Nobel Prize facts",
+      "url": "https://www.nobelprize.org/prizes/facts/nobel-prize-facts/",
+      "kind": "Official context",
+      "scope": "Original prize fields and the Economic Sciences memorial prize.",
+      "checked": "2026-11-22"
+    },
+    "aps": {
+      "title": "American Physical Society · Quantum Milestones, 1905",
+      "url": "https://physics.aps.org/articles/v18/15",
+      "kind": "Scientific society history",
+      "scope": "Hertz, Einstein and the distinction between frequency and light intensity.",
+      "checked": "2026-11-23"
+    },
+    "millikan": {
+      "title": "R. A. Millikan · A Direct Photoelectric Determination of Planck’s h (1916)",
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.7.355",
+      "kind": "Primary paper record",
+      "scope": "Original paper, publication date and experimental context. The publisher’s bibliographic record was consulted.",
+      "checked": "2026-11-23"
+    },
+    "holton": {
+      "title": "Gerald Holton · Millikan’s Measurement of Planck’s Constant, APS (1999)",
+      "url": "https://physics.aps.org/story/v3/st23",
+      "kind": "History of physics",
+      "scope": "Why testing Einstein’s equation did not immediately mean accepting the light-quantum interpretation.",
+      "checked": "2026-11-23"
+    },
+    "mit": {
+      "title": "MIT Junior Lab · The Photoelectric Effect",
+      "url": "https://web.mit.edu/8.13/www/JLExperiments/JLExp005.pdf",
+      "kind": "University physics reference",
+      "scope": "Historical measurements, stopping potential, work function and the energy balance. This collection does not reproduce the lab procedure.",
+      "checked": "2026-11-22"
+    },
+    "openstax": {
+      "title": "OpenStax / Rice University · Photoelectric Effect",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect",
+      "kind": "University physics reference",
+      "scope": "The single-photon energy model, threshold frequency and limits of the elementary explanation.",
+      "checked": "2026-11-22"
+    },
+    "zurich": {
+      "title": "University of Zurich · Albert Einstein: A Quantum of Light",
+      "url": "https://www.uzh.ch/en/researchinnovation/excellence/nobelprize/einstein.html",
+      "kind": "Institutional biography",
+      "scope": "Einstein’s patent-office years, academic context and the light-quantum hypothesis.",
+      "checked": "2026-11-22"
+    },
+    "mpg": {
+      "title": "Max Planck Society · Albert Einstein and the 1921 prize",
+      "url": "https://www.mpg.de/nobel-prize",
+      "kind": "Institutional biography",
+      "scope": "The award’s scientific focus and Einstein’s Berlin affiliation. The Einstein entry was consulted.",
+      "checked": "2026-11-22"
+    },
+    "einstein-lecture": {
+      "title": "Albert Einstein · Nobel lecture (1923)",
+      "url": "https://www.nobelprize.org/uploads/2018/06/einstein-lecture.pdf",
+      "kind": "Primary lecture",
+      "scope": "The lecture’s discussion of relativity, distinguished here from the award motivation. Indexed text consulted.",
+      "checked": "2026-11-22"
+    },
+    "nobel-optics": {
+      "title": "Royal Swedish Academy of Sciences · Physics prize 2005: light and measurement",
+      "url": "https://www.nobelprize.org/uploads/2018/06/popular-physicsprize2005-2.pdf",
+      "kind": "Institutional science explanation",
+      "scope": "The historical role of Einstein’s light quanta in later optical detection. Indexed text consulted.",
+      "checked": "2026-11-22"
+    },
+    "mechanism": {
+      "title": "Tipper & Strominger · Mechanism of action of penicillins (1965)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC219812/",
+      "kind": "Primary paper",
+      "scope": "A later mechanistic proposal connecting penicillin with cell-wall peptide cross-linking; distinguished from the knowledge available in 1928.",
+      "checked": "2026-11-22"
+    },
+    "usgs-drift": {
+      "title": "USGS · Developing the Theory: This Dynamic Earth",
+      "url": "https://pubs.usgs.gov/gip/dynamic/developing.html",
+      "kind": "Geological survey history",
+      "scope": "Evidence from ocean-floor mapping, magnetic reversals, seafloor spreading and the emergence of plate tectonic theory.",
+      "checked": "2026-11-22"
+    },
+    "usgs-history": {
+      "title": "USGS · Historical perspective on plate tectonics",
+      "url": "https://pubs.usgs.gov/gip/dynamic/historical.html",
+      "kind": "Geological survey history",
+      "scope": "Historical development of continental drift and plate tectonics, its evidence and questions about driving forces.",
+      "checked": "2026-11-22"
+    },
+    "usgs-plates": {
+      "title": "USGS · Plate Tectonics",
+      "url": "https://www.usgs.gov/educational-resources/plate-tectonics?qt-science_support_page_related_con=1",
+      "kind": "Geological survey explainer",
+      "scope": "Continental drift, the evidence for moving plates and the distinction between early proposals and the later explanatory framework.",
+      "checked": "2026-11-22"
+    },
+    "ucl-anti": {
+      "title": "UCL · Experts recreate mechanical cosmos of world’s first computer",
+      "url": "https://www.ucl.ac.uk/news/2021/mar/experts-recreate-mechanical-cosmos-worlds-first-computer",
+      "kind": "University research report",
+      "scope": "A 2021 reconstruction of the Antikythera mechanism’s front display and the astronomical model behind that proposal.",
+      "checked": "2026-11-22"
+    },
+    "freeth-anti": {
+      "title": "Freeth et al. · A model of the cosmos in the ancient Greek Antikythera Mechanism, Scientific Reports (2021)",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10124374/1/s41598-021-84310-w.pdf",
+      "kind": "Peer-reviewed research",
+      "scope": "X-ray tomography, surviving fragments and a proposed front display. The authors present a reconstruction, not a complete surviving instrument.",
+      "checked": "2026-11-22"
+    },
+    "nasa-cmb": {
+      "title": "NASA COBE · Cosmic Background Explorer science",
+      "url": "https://science.nasa.gov/mission/cobe/science/",
+      "kind": "NASA mission archive",
+      "scope": "COBE’s measurements of the cosmic microwave background and its small anisotropies; distinguishes satellite mapping from the earlier discovery.",
+      "checked": "2026-11-22"
+    },
+    "nasa-history": {
+      "title": "NASA GSFC · History of the cosmic microwave background",
+      "url": "https://asd.gsfc.nasa.gov/archive/mather/cosmology/history.html",
+      "kind": "NASA historical account",
+      "scope": "Theoretical predictions before 1965, the Bell Labs detection, the Princeton interpretation and COBE’s later measurements.",
+      "checked": "2026-11-22"
+    },
+    "nasa-cmb-discovery": {
+      "title": "NASA LAMBDA · Discovery of the cosmic microwave background",
+      "url": "https://lambda.gsfc.nasa.gov/education/lambda_graphics/cmb_discovery.html",
+      "kind": "NASA education archive",
+      "scope": "Penzias and Wilson’s 1964–65 observation and its connection to the earlier prediction by cosmologists.",
+      "checked": "2026-11-22"
+    },
+    "curie-nobel": {
+      "title": "Nobel Prize · Marie and Pierre Curie and the discovery of polonium and radium",
+      "url": "https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/",
+      "kind": "Nobel historical essay",
+      "scope": "Radioactivity research, discovery and isolation of elements, collaboration, award records and historical interpretation.",
+      "checked": "2026-11-22"
+    },
+    "curie-facts": {
+      "title": "Nobel Prize · Chemistry 1911: Marie Curie",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/facts/",
+      "kind": "Official award record",
+      "scope": "Award year, recipient, official motivation and Nobel Prize facts for Marie Curie’s Chemistry award.",
+      "checked": "2026-11-22"
+    },
+    "morrison-list": {
+      "title": "Nobel Prize · Literature 1993: Toni Morrison",
+      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/all/?gallery_style=page",
+      "kind": "Official award record",
+      "scope": "The 1993 recipient and the Academy’s published motivation for the Literature Prize.",
+      "checked": "2026-11-22"
+    },
+    "morrison-bio": {
+      "title": "Nobel Prize · Toni Morrison: Biographical",
+      "url": "https://www.nobelprize.org/prizes/literature/1993/morrison/biographical/",
+      "kind": "Laureate biography",
+      "scope": "Morrison’s life, writing, editorial work and the circumstances surrounding the Literature Prize.",
+      "checked": "2026-11-22"
+    },
+    "morrison-lecture": {
+      "title": "Toni Morrison · Nobel Lecture (1993)",
+      "url": "https://www.nobelprize.org/prizes/literature/1993/morrison/lecture/",
+      "kind": "Primary lecture",
+      "scope": "Morrison’s Nobel lecture on language, power, responsibility and the work of literary imagination.",
+      "checked": "2026-11-22"
+    },
+    "peace-review": {
+      "title": "Nobel Prize · The Nobel Prizes 2014 Annual Review",
+      "url": "https://www.nobelprize.org/uploads/2018/07/annual_review_14.pdf",
+      "kind": "Official award background",
+      "scope": "The Committee’s rationale for the joint award and its account of the laureates’ child-rights and education advocacy.",
+      "checked": "2026-11-22"
+    },
+    "malala-lecture": {
+      "title": "Malala Yousafzai · Nobel Lecture (2014)",
+      "url": "https://www.nobelprize.org/uploads/2018/06/yousafzai-lecture_en-2.pdf",
+      "kind": "Primary lecture",
+      "scope": "Yousafzai’s first-person framing of her campaign for education and her joint recognition with Kailash Satyarthi.",
+      "checked": "2026-11-22"
+    },
+    "satyarthi-bio": {
+      "title": "Kailash Satyarthi · Biographical",
+      "url": "https://www.nobelprize.org/prizes/peace/2014/satyarthi/biographical/",
+      "kind": "Laureate biography",
+      "scope": "Satyarthi’s child-rights work, book banks, campaigns, partnerships and institutional advocacy.",
+      "checked": "2026-11-22"
+    },
+    "econ-popular": {
+      "title": "Royal Swedish Academy of Sciences · The Prize in Economic Sciences 2019: Popular science background",
+      "url": "https://www.nobelprize.org/uploads/2019/10/popular-economicsciencesprize2019-2.pdf",
+      "kind": "Official prize background",
+      "scope": "The prize’s recognition of field experiments and precise research questions in development economics.",
+      "checked": "2026-11-22"
+    },
+    "econ-advanced": {
+      "title": "Royal Swedish Academy of Sciences · Scientific Background: The Experimental Approach to Alleviating Global Poverty",
+      "url": "https://www.nobelprize.org/uploads/2019/10/advanced-economicsciencesprize2019.pdf",
+      "kind": "Scientific background",
+      "scope": "Laureates’ research contributions and methodological challenges, including limits to external validity and scale.",
+      "checked": "2026-11-22"
+    }
+  },
+  "stories": [
+    {
+      "slug": "penicillin",
+      "collection": "discoveries",
+      "topic": "Medicine & microbiology",
+      "title": "The gap that changed medicine.",
+      "name": "Penicillin",
+      "dek": "A clear patch on a contaminated culture was a clue. Making it into a medicine required a different kind of discovery.",
+      "period": "1928–1940s",
+      "visual": "penicillin",
+      "pair": "1945-penicillin",
+      "question": "When does an observation become a treatment?",
+      "summary": "In 1928, Alexander Fleming noticed that bacteria were not growing around an invading mould. He investigated the antibacterial substance and called it penicillin. More than a decade later, an Oxford team developed experimental and clinical evidence, while fermentation researchers and manufacturers made a usable supply possible. The surprising part is the distance between noticing an effect and being able to rely on it.",
+      "summarySources": [
+        "acs",
+        "dunn",
+        "usda"
+      ],
+      "lead": [
+        "Imagine looking for a pattern in what is missing. A bacterial culture has grown across a dish, but one region remains clear. That absence could be dismissed as a spoiled experiment. It can also become a question: what, precisely, has prevented growth here?",
+        "Penicillin’s history becomes more interesting when we follow that question beyond its famous beginning. A biological effect, a reproducible preparation, an experimental result, a clinical treatment and an industrial product are different achievements. They require different forms of evidence. This story follows the transitions between them."
+      ],
+      "sections": [
+        {
+          "id": "observation",
+          "title": "An absence worth investigating.",
+          "paragraphs": [
+            "At St Mary’s Hospital in London in 1928, Fleming examined a culture of staphylococcal bacteria contaminated by a mould. Bacterial growth was inhibited around it. He investigated material from the culture and named its active antibacterial agent penicillin; his findings appeared in 1929.",
+            "The observation mattered because it suggested an effect that could be separated from the visible mould and investigated. A clear region alone did not identify a molecule, establish a safe treatment or tell a clinician what would happen in a patient. It provided a tractable problem. The original plate belongs at the beginning of the explanation, rather than standing in for everything that followed."
+          ],
+          "sourceIds": [
+            "acs",
+            "dunn"
+          ]
+        },
+        {
+          "id": "before",
+          "title": "Medicine already had a history of searching.",
+          "paragraphs": [
+            "It is misleading to imagine a world with no antibacterial research before penicillin. Earlier work on selective chemical treatment, followed by the sulfa drugs of the 1930s, helped establish that some infections could be treated chemically. Penicillin entered an existing scientific and medical conversation.",
+            "That context changes the familiar accident story. A chance event becomes scientifically consequential when someone recognises a meaningful difference, asks a productive question and pursues it. Nor does the existence of a useful effect mean that the substance causing it can easily be isolated. Penicillin’s instability made the passage from culture to preparation particularly difficult."
+          ],
+          "sourceIds": [
+            "cdc"
+          ]
+        },
+        {
+          "id": "oxford",
+          "title": "The problem changed at Oxford.",
+          "paragraphs": [
+            "In 1939, Ernst Chain and Howard Florey began sustained work on penicillin at Oxford’s Dunn School. Norman Heatley helped develop ways to grow the mould, extract material and measure its activity. The research programme had to connect chemistry, microbiology, experimental pathology and practical apparatus.",
+            "Evidence from infected animals in 1940 established a stronger basis for investigating therapeutic use. The question was no longer simply whether something inhibited bacteria on a plate. It was whether a preparation could have a useful effect in a living organism. A successful result at one level did not remove the need to test the next."
+          ],
+          "sourceIds": [
+            "dunn",
+            "clinical"
+          ]
+        },
+        {
+          "id": "supply",
+          "title": "A medicine can fail because there is too little of it.",
+          "paragraphs": [
+            "The culture vessels preserved in museum collections make the supply problem tangible. Heatley’s specially designed vessels helped the Oxford team grow cultures and obtain material for treatment. Their unfamiliar shapes are a reminder that scientific progress can depend on the design of an object that rarely appears in the celebrated portrait.",
+            "In the Oxford clinical programme in February 1941, the severely ill Albert Alexander initially improved after receiving penicillin. The available supply could not sustain his treatment, and he died. Other cases provided encouraging evidence, but this outcome exposes the difference between showing promise and being able to deliver a dependable treatment.",
+            "The 1941 paper Further Observations on Penicillin documents work by Abraham, Chain, Fletcher, Gardner, Heatley, Jennings and Florey. Its list of authors is itself evidence against compressing the development into one person’s isolated achievement."
+          ],
+          "sourceIds": [
+            "vessel",
+            "acs",
+            "clinical"
+          ]
+        },
+        {
+          "id": "production",
+          "title": "Scaling up required new knowledge.",
+          "paragraphs": [
+            "At the USDA laboratory in Peoria, researchers investigated culture conditions and productive mould strains. Aerated, submerged growth and improvements to the growth medium helped make much larger yields possible. Manufacturers then had to turn biological production into a controlled and repeatable industrial process.",
+            "Calling this stage “just manufacturing” misses its scientific content. Increasing the volume of a vessel changes the conditions inside it. Growth, oxygen supply, extraction and consistency have to work together. A production method is a body of knowledge about how to obtain the effect reliably, not merely a larger version of the first dish."
+          ],
+          "sourceIds": [
+            "usda"
+          ]
+        },
+        {
+          "id": "mechanism",
+          "title": "What was the drug doing?",
+          "paragraphs": [
+            "The modern explanation reaches below the visible culture. Susceptible bacteria build a supporting cell wall containing peptidoglycan, a network whose components need to be linked together. Penicillins interfere with the enzymes responsible for a crucial cross-linking step. Disrupting wall construction is particularly consequential as susceptible cells grow.",
+            "The mechanistic account was developed through later biochemical research, including Tipper and Strominger’s 1965 proposal. It should not be projected backward as though Fleming could see it in his dish. Observing an effect and identifying its molecular basis are different achievements, which may be separated by decades.",
+            "This also explains why the phrase “kills germs” is too imprecise. Whether a preparation works depends on the organism, its biological machinery and its resistance mechanisms. A powerful discovery has a domain of effectiveness; it does not remove the need to establish where the effect applies."
+          ],
+          "sourceIds": [
+            "mechanism"
+          ]
+        },
+        {
+          "id": "meaning",
+          "title": "The discovery was a chain of warranted conclusions.",
+          "paragraphs": [
+            "A useful way to read the surviving objects is to ask what each could establish. The culture demonstrates a biological source; a recovered sample points to the scarcity of early preparations. Neither object, viewed alone, proves how an entire treatment programme performed. The museum’s culture and specimen records acquire meaning through their relationship to laboratory and clinical accounts.",
+            "Penicillin transformed expectations about treating bacterial infection, but its success did not make the relationship between a drug and a microorganism permanent. In his 1945 Nobel lecture, Fleming discussed resistance and warned about the consequences of ineffective exposure. The lecture records what he emphasised at that moment; it is not a substitute for present-day clinical knowledge.",
+            "The enduring intellectual surprise is that a visible absence could lead to a worldwide medical capability. The link between the two is a succession of people, materials, tests and revisions. Following that succession gives the achievement more character than the familiar story of a fortunate accident can carry."
+          ],
+          "sourceIds": [
+            "culture",
+            "fleming"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1928",
+          "title": "An antibacterial clue",
+          "text": "Fleming investigates inhibition around a contaminating mould in London.",
+          "sourceIds": [
+            "acs"
+          ]
+        },
+        {
+          "date": "1929",
+          "title": "The observation enters the literature",
+          "text": "Fleming publishes his findings, leaving substantial preparation problems unresolved.",
+          "sourceIds": [
+            "acs"
+          ]
+        },
+        {
+          "date": "1939–1940",
+          "title": "A research programme and animal evidence",
+          "text": "The Oxford team develops preparations and experimental evidence for therapeutic potential.",
+          "sourceIds": [
+            "dunn"
+          ]
+        },
+        {
+          "date": "1941",
+          "title": "Clinical work and a supply problem",
+          "text": "The Oxford programme studies treatment while researchers seek a much larger supply.",
+          "sourceIds": [
+            "clinical",
+            "usda"
+          ]
+        },
+        {
+          "date": "1945",
+          "title": "Nobel recognition",
+          "text": "Fleming, Chain and Florey share the Medicine prize.",
+          "sourceIds": [
+            "medicine"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Alexander Fleming",
+          "role": "Observation & investigation",
+          "text": "Recognised and investigated the antibacterial effect; published the initial penicillin account.",
+          "sourceIds": [
+            "acs"
+          ]
+        },
+        {
+          "name": "Ernst Chain & Howard Florey",
+          "role": "Biochemistry & experimental leadership",
+          "text": "Helped develop the programme that connected a difficult substance with evidence for treatment.",
+          "sourceIds": [
+            "dunn"
+          ]
+        },
+        {
+          "name": "Norman Heatley & colleagues",
+          "role": "Methods, preparation & testing",
+          "text": "The technical and collaborative work made a usable preparation and sustained investigation possible.",
+          "sourceIds": [
+            "team",
+            "vessel"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "Inhibition around a mould culture was an observation. Its antibacterial activity could be investigated rather than inferred from appearance alone.",
+        "established": "Laboratory, animal, clinical and production evidence answered successive questions. Each stage supported a different claim.",
+        "limit": "The schematic on this page is not Fleming’s original plate, and a simplified timeline cannot assign the whole achievement to its best-known name."
+      },
+      "reflection": "Which transition seems hardest to you: noticing an effect, explaining it, testing it in a living system, or making it reliably available? What evidence would convince you at that stage?",
+      "uncertainty": "The identity and provenance of Fleming’s original mould have been revisited as methods for classifying fungi changed. The broad chronology is well documented, but a single laboratory observation does not explain every step from early culture to later clinical use or industrial scale.",
+      "discussionPrompts": [
+        "Which transition in penicillin’s history required the biggest change in evidence?",
+        "Where does the familiar “lucky accident” account leave out skilled work?",
+        "How should credit be shared across discovery, treatment and production?"
+      ]
+    },
+    {
+      "slug": "photoelectric-effect",
+      "collection": "discoveries",
+      "topic": "Physics & the nature of light",
+      "title": "More light was not the whole answer.",
+      "name": "The photoelectric effect",
+      "dek": "To understand electrons leaving a metal, physicists had to distinguish the amount of light from the energy carried in each quantum.",
+      "period": "1887–1916",
+      "visual": "light",
+      "pair": "1921-einstein",
+      "question": "Why can brighter light fail to release an electron?",
+      "summary": "Light can eject electrons from a material. In the elementary single-photon account, the energy of each incoming quantum depends on frequency. If that energy is too low for the surface, increasing the number of such photons does not make an individual one more energetic. Einstein’s 1905 explanation connected these distinctions to a testable energy balance. Precise measurements later supported the equation, even as its interpretation remained contested.",
+      "summarySources": [
+        "aps",
+        "openstax",
+        "holton"
+      ],
+      "lead": [
+        "A brighter beam carries more energy overall. It is tempting to assume that a sufficiently bright beam must therefore release electrons from any metal surface. The photoelectric effect asks us to be more precise about how that energy is delivered.",
+        "The surprising distinction is between many opportunities to transfer energy and the energy available in one elementary interaction. To see why that mattered, we need the experimental puzzle, Einstein’s proposed accounting and the measurements that tested it."
+      ],
+      "sections": [
+        {
+          "id": "puzzle",
+          "title": "An effect appeared before its explanation.",
+          "paragraphs": [
+            "In 1887 Heinrich Hertz observed that ultraviolet illumination affected electrical discharges. Later investigations, including those associated with Philipp Lenard, developed the study of charge emitted from illuminated surfaces. The phenomenon was already an experimental subject before Einstein supplied his explanation.",
+            "The important contrast was between the frequency of the light and its intensity. In the familiar low-intensity photoelectric regime, changing frequency changes the maximum energy of emitted electrons. Increasing intensity at a fixed frequency above threshold can increase the number emitted. These are distinct measurements, and a convincing account has to explain both."
+          ],
+          "sourceIds": [
+            "aps",
+            "mit"
+          ]
+        },
+        {
+          "id": "quantum",
+          "title": "Einstein reconsidered the exchange of energy.",
+          "paragraphs": [
+            "In 1905, Einstein treated light energy as arriving in discrete quanta, with each quantum’s energy proportional to its frequency. The term photon came later. The proposal extended the significance of quantisation beyond a bookkeeping device for the emission and absorption of radiation.",
+            "For a metal surface, some of the absorbed energy is required to release an electron. Physicists call this energy requirement the work function. In the simplest account, a photon transfers its energy in an interaction with an electron. The amount left after the release requirement sets the upper limit to the electron’s kinetic energy.",
+            "The compact expression is Kₘₐₓ = hf − φ. Here h is Planck’s constant, f is the light’s frequency and φ is the surface’s work function. Kₘₐₓ is a maximum, not a promise that every electron leaves with exactly that energy. The notation matters because it states a relationship that measurements can challenge."
+          ],
+          "sourceIds": [
+            "openstax",
+            "mit"
+          ]
+        },
+        {
+          "id": "threshold",
+          "title": "A threshold changes the question.",
+          "paragraphs": [
+            "If hf is below the work function, the elementary single-photon interaction cannot supply enough energy to release the electron. Sending more photons of that same frequency does not change hf. With frequency above the threshold, increasing intensity can produce more emission events without increasing the maximum energy assigned by the equation.",
+            "This is why “more energy” is an incomplete description. More total energy may mean more incoming photons rather than more energy in each photon. The distinction is not a word game: it predicts which experimental adjustment should change a measured electron energy and which should principally change a current.",
+            "The comparison below keeps the surface fixed and uses conceptual energy units. It illustrates the logic of the elementary model, rather than simulating a real apparatus. Very intense light can involve multiphoton processes; real emission also depends on material and surface conditions. Those cases require a broader treatment."
+          ],
+          "sourceIds": [
+            "openstax"
+          ]
+        },
+        {
+          "id": "measurement",
+          "title": "An equation becomes an experimental target.",
+          "paragraphs": [
+            "Robert Millikan’s 1916 paper, A Direct Photoelectric Determination of Planck’s h, records the effort to make precise photoelectric measurements. It is a useful primary reference because the title puts the quantitative task in view: measuring a relationship closely enough to determine a fundamental constant.",
+            "The maximum electron energy can be investigated through a stopping potential: an opposing electrical potential sufficient to stop even the most energetic emitted electrons. Repeating measurements for different frequencies allows the predicted dependence to be tested. Agreement over a range is more informative than a single observation that light produces a current.",
+            "A graph is particularly revealing. In the elementary relation, increasing frequency produces a straight-line change in maximum energy above threshold. The slope is linked to h, while the intercept reflects the energy needed to release an electron. A successful fit connects the hypothesis to quantities that other investigators can measure."
+          ],
+          "sourceIds": [
+            "millikan",
+            "mit"
+          ]
+        },
+        {
+          "id": "interpretation",
+          "title": "Agreement did not instantly settle the interpretation.",
+          "paragraphs": [
+            "Historian of physics Gerald Holton emphasises a tension in Millikan’s work: the experiment strongly supported Einstein’s equation while Millikan remained resistant to its radical theoretical implications. Accepting an empirical relationship and accepting a proposed account of what light is were not identical decisions.",
+            "That distinction is a valuable correction to the familiar sequence “idea, experiment, proof”. A new measurement can constrain a theory without settling every question about its interpretation. Einstein’s light-quantum proposal became part of a much larger development of quantum physics; it did not provide the complete modern theory in a single paper."
+          ],
+          "sourceIds": [
+            "holton"
+          ]
+        },
+        {
+          "id": "consequences",
+          "title": "The conceptual change outlived the original puzzle.",
+          "paragraphs": [
+            "The Royal Swedish Academy’s account of the 2005 Physics prize looks back to Einstein’s explanation when discussing the detection of light. The ability to connect incoming radiation with discrete detection events became central to later optical measurement.",
+            "It is worth keeping related technologies distinct. External photoemission releases electrons from a surface; a photovoltaic device uses processes within a material or junction to produce an electrical response. Their relationship belongs to quantum accounts of light and matter, but a solar panel should not be imagined as a simple copy of the metal-emission experiment.",
+            "The lasting change in perspective is a more disciplined question about energy. How much reaches the system in total? How much can be transferred in one interaction? What must be spent before a new outcome becomes possible? Once these questions are separated, an apparently paradoxical result becomes something we can reason about."
+          ],
+          "sourceIds": [
+            "nobel-optics",
+            "openstax"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1887",
+          "title": "An experimental clue",
+          "text": "Hertz observes the influence of ultraviolet illumination on electrical discharge.",
+          "sourceIds": [
+            "aps"
+          ]
+        },
+        {
+          "date": "1905",
+          "title": "A light-quantum explanation",
+          "text": "Einstein connects frequency, quantised energy and the emission of electrons.",
+          "sourceIds": [
+            "aps"
+          ]
+        },
+        {
+          "date": "1916",
+          "title": "Precision measurements",
+          "text": "Millikan publishes his direct determination of Planck’s constant through photoelectric measurements.",
+          "sourceIds": [
+            "millikan"
+          ]
+        },
+        {
+          "date": "1921 / 1922",
+          "title": "Recognition follows",
+          "text": "Einstein’s 1921 Nobel prize is awarded in 1922, with the photoelectric law singled out.",
+          "sourceIds": [
+            "nobel-history"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Heinrich Hertz & Philipp Lenard",
+          "role": "Experimental predecessors",
+          "text": "Investigated the effects of illumination and the properties of emitted charge.",
+          "sourceIds": [
+            "mit"
+          ]
+        },
+        {
+          "name": "Albert Einstein",
+          "role": "Theoretical explanation",
+          "text": "Proposed light quanta and the energy relationship in 1905.",
+          "sourceIds": [
+            "aps"
+          ]
+        },
+        {
+          "name": "Robert A. Millikan",
+          "role": "Precision experiment",
+          "text": "Tested the photoelectric equation quantitatively, with continuing reservations about its interpretation.",
+          "sourceIds": [
+            "millikan",
+            "holton"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "Illumination can cause electron emission. Frequency, emitted current and maximum electron energy describe different aspects of the effect.",
+        "established": "The frequency dependence of the maximum electron energy provided a quantitative test of Einstein’s photoelectric equation.",
+        "limit": "The small comparison uses an idealised single-photon account. It does not calculate a real metal’s response or represent all light–matter interactions."
+      },
+      "reflection": "If two beams have the same frequency but different intensities, which quantity would you measure to tell their effects apart? How would your prediction change if you altered frequency instead?",
+      "uncertainty": "The threshold and frequency relationships are strongly established experimentally. The historical debate was how to interpret them: Einstein’s light-quantum proposal was not immediately accepted, and Millikan’s confirming measurements did not mean he accepted that interpretation at once.",
+      "discussionPrompts": [
+        "What did changing light intensity explain, and what did it leave unexplained?",
+        "When does a successful prediction justify a new interpretation?",
+        "How should scientists respond when their measurements support a theory they personally doubt?"
+      ]
+    },
+    {
+      "slug": "1945-penicillin",
+      "collection": "nobel",
+      "topic": "Physiology or Medicine · 1945",
+      "title": "Three laureates. A much larger achievement.",
+      "name": "The penicillin prize",
+      "dek": "The 1945 award recognised Fleming, Chain and Florey. The history behind that recognition reaches far beyond three names.",
+      "period": "Award year · 1945",
+      "visual": "penicillin-award",
+      "pair": "penicillin",
+      "question": "How do we recognise a discovery made possible by many kinds of work?",
+      "award": {
+        "year": "1945",
+        "field": "Physiology or Medicine",
+        "recipients": [
+          "Sir Alexander Fleming",
+          "Ernst B. Chain",
+          "Sir Howard Florey"
+        ],
+        "citation": "for the discovery of penicillin and its curative effect in various infectious diseases",
+        "sourceId": "medicine"
+      },
+      "summary": "The 1945 Nobel Prize in Physiology or Medicine went jointly to Fleming, Chain and Florey. Its wording joins discovery with therapeutic effect: an important clue to what the award recognised. The achievement combined an early observation with later biochemical, experimental and clinical work. Looking beyond the award record reveals the technical, medical and production contributions that helped make the recognised outcome possible.",
+      "summarySources": [
+        "medicine",
+        "team"
+      ],
+      "lead": [
+        "An award compresses a history into a citation and a small set of names. That compression gives an achievement a memorable public form, but it can also obscure how the work was actually done.",
+        "The penicillin prize is a particularly useful case. Its official motivation connects a substance with an effect in disease. Understanding that connection requires both the laureates’ different contributions and the wider network that made the transition to treatment possible."
+      ],
+      "sections": [
+        {
+          "id": "recognition",
+          "title": "Read the motivation carefully.",
+          "paragraphs": [
+            "The Nobel record identifies three recipients for the 1945 Medicine prize: Alexander Fleming, Ernst Boris Chain and Howard Florey. The citation refers to the discovery of penicillin and its curative effect in infectious diseases. It does not describe the entire achievement as a single observation on a single day.",
+            "A useful reading is therefore to keep two questions together. What was recognised in the antibacterial effect? And what work supported the claim that the effect could become a treatment? The discovery companion follows the experimental and production sequence in detail; this account concentrates on how the prize frames that history."
+          ],
+          "sourceIds": [
+            "medicine"
+          ]
+        },
+        {
+          "id": "laureates",
+          "title": "Their contributions were different.",
+          "paragraphs": [
+            "Fleming’s place in the story begins with his investigation of the contaminated culture and the published account that made penicillin available as a scientific problem. Chain’s biochemical work helped reopen that problem in a sustained Oxford research programme. Florey brought experimental leadership and the organisation needed to connect laboratory preparations with therapeutic investigation.",
+            "Treating these roles as interchangeable would flatten the history. Observation, preparation and evaluation are different forms of contribution. A shared prize can recognise their relationship without implying that each recipient performed every task or worked within one unchanging team from the beginning."
+          ],
+          "sourceIds": [
+            "dunn",
+            "acs"
+          ]
+        },
+        {
+          "id": "wider-team",
+          "title": "Look at the people outside the citation.",
+          "paragraphs": [
+            "The Oxford museum’s Team Penicillin account names people whose work is less often present in popular retellings. Norman Heatley developed practical methods and apparatus. Edward Abraham worked on the substance’s chemistry. Margaret Jennings investigated toxicity, while Arthur Gordon Sanders worked with extraction equipment. The museum also describes Ethel Florey’s supervision of clinical trials.",
+            "These details are not decorative additions to a story that was already complete. They describe the conditions under which an experimental claim could be made and tested. Preparation, care, assay and clinical observation are part of the evidence-producing process.",
+            "The contemporary 1941 clinical paper makes the collective character especially visible. Its authors include Abraham, Chain, Charles Fletcher, A. D. Gardner, Heatley, M. A. Jennings and Florey. A reader can compare that document’s author list with the award record without assuming that the two lists were designed to answer the same question."
+          ],
+          "sourceIds": [
+            "team",
+            "clinical"
+          ]
+        },
+        {
+          "id": "objects",
+          "title": "The objects preserve another account of achievement.",
+          "paragraphs": [
+            "Oxford’s surviving culture flask and recovered penicillin specimen tell a material history. The flask connects the active preparation with a biological culture; a small recovered sample points to the scarcity of supply. The collection identifies these objects with inventory numbers 23034 and 14439, allowing the account to remain connected to particular surviving things.",
+            "The objects shift attention from the moment of recognition to the work that had to continue between experiments. How was a preparation obtained? How was it kept usable? How much was available when it was needed? These are questions about the making of a medical capability, not merely its later celebration."
+          ],
+          "sourceIds": [
+            "culture"
+          ]
+        },
+        {
+          "id": "primary-voice",
+          "title": "Fleming’s lecture looks backward—and forward.",
+          "paragraphs": [
+            "In his 1945 Nobel lecture, Fleming recalled the initial contamination, the antibacterial effect and the difficulties of concentrating and stabilising the substance. He also discussed how resistance could be produced and warned about the consequences of ineffective exposure to the drug.",
+            "Read as a primary source, the lecture is more than a congratulatory account. It records which problems Fleming chose to emphasise in public after the award. It is also a retrospective narrative shaped by that occasion. Its predictions and examples should be read in their historical setting rather than converted directly into modern clinical instructions."
+          ],
+          "sourceIds": [
+            "fleming"
+          ]
+        },
+        {
+          "id": "judgment",
+          "title": "An award is a lens on history.",
+          "paragraphs": [
+            "A later historical account in Emerging Infectious Diseases examines how press coverage helped attach the achievement disproportionately to Fleming. It also describes production efforts outside the best-known British–American story. Public recognition and the geographical distribution of the work need not coincide.",
+            "This gives us a more demanding way to appreciate a prize. The recipients’ contributions can matter deeply while the citation remains an incomplete map of all the labour involved. Expanding the map does not diminish the achievement. It helps explain how such an achievement became possible.",
+            "The question worth taking away is not simply who deserves a place on a pedestal. It is how we describe an outcome that depended on different people solving different problems, and what kinds of evidence allow us to make those contributions visible."
+          ],
+          "sourceIds": [
+            "cdc"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1928–1929",
+          "title": "Observation and publication",
+          "text": "Fleming’s investigation establishes the early penicillin account.",
+          "sourceIds": [
+            "acs"
+          ]
+        },
+        {
+          "date": "1939–1941",
+          "title": "The Oxford programme",
+          "text": "Preparation, experimental testing and clinical work develop the case for treatment.",
+          "sourceIds": [
+            "dunn",
+            "clinical"
+          ]
+        },
+        {
+          "date": "Early 1940s",
+          "title": "Production becomes part of the achievement",
+          "text": "Researchers and manufacturers address the supply needed to make treatment available.",
+          "sourceIds": [
+            "usda"
+          ]
+        },
+        {
+          "date": "1945",
+          "title": "A shared Nobel prize",
+          "text": "The official record names Fleming, Chain and Florey.",
+          "sourceIds": [
+            "medicine"
+          ]
+        },
+        {
+          "date": "1945",
+          "title": "The laureate’s own account",
+          "text": "Fleming’s lecture revisits the beginning and discusses resistance.",
+          "sourceIds": [
+            "fleming"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Sir Alexander Fleming",
+          "role": "Laureate · St Mary’s, London",
+          "text": "The observation, investigation and early publication of penicillin’s antibacterial action.",
+          "sourceIds": [
+            "acs"
+          ]
+        },
+        {
+          "name": "Ernst B. Chain",
+          "role": "Laureate · Oxford",
+          "text": "Biochemical investigation within the Oxford penicillin research programme.",
+          "sourceIds": [
+            "dunn"
+          ]
+        },
+        {
+          "name": "Sir Howard Florey",
+          "role": "Laureate · Oxford",
+          "text": "Experimental and organisational leadership connecting the preparation with therapeutic investigation.",
+          "sourceIds": [
+            "dunn"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The award record documents the recipients and official motivation. It is an authoritative record of recognition.",
+        "established": "Contemporary papers, surviving objects and institutional histories document a wider network of contributions.",
+        "limit": "The recipient list is not a complete contributor list. This account does not claim access to every deliberation behind the award."
+      },
+      "reflection": "If you had to explain this achievement without using the phrase “a lucky accident”, which people, objects and transitions would your explanation need?",
+      "uncertainty": "The official prize recognized Fleming, Chain and Florey, while development involved many additional researchers and production partners. How to describe individual credit across observation, purification, clinical testing and scale-up remains a question of historical emphasis, rather than a disagreement about whether the wider team mattered.",
+      "discussionPrompts": [
+        "What does an award citation preserve, and what does it compress?",
+        "Which stages of the penicillin story required different expertise?",
+        "How might a museum exhibit show team contributions without losing narrative clarity?"
+      ]
+    },
+    {
+      "slug": "1921-einstein",
+      "collection": "nobel",
+      "topic": "Physics · 1921",
+      "title": "Einstein’s prize has a different story.",
+      "name": "Einstein’s photoelectric prize",
+      "dek": "The award year was 1921; the recognition came in 1922. Its motivation singled out a law about light, rather than the theory most associated with his name.",
+      "period": "Award year · 1921",
+      "visual": "light-award",
+      "pair": "photoelectric-effect",
+      "question": "What does a prize citation tell us about the state of a scientific argument?",
+      "award": {
+        "year": "1921",
+        "field": "Physics",
+        "recipients": [
+          "Albert Einstein"
+        ],
+        "citation": "for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect",
+        "sourceId": "physics"
+      },
+      "summary": "Albert Einstein was the sole recipient of the Nobel Prize in Physics for 1921, awarded in 1922. The official motivation recognised his services to theoretical physics and particularly the photoelectric law. His 1905 light-quantum proposal connected an experimental puzzle with a quantitative relationship. Understanding the prize means distinguishing Einstein’s broader scientific reputation, the work named in the citation and the evidence available to test it.",
+      "summarySources": [
+        "physics",
+        "nobel-history"
+      ],
+      "lead": [
+        "Einstein’s public image can make his Nobel prize seem self-explanatory. Ask what the award actually recognised, however, and a more precise scientific and historical story appears.",
+        "The citation directs our attention to the photoelectric effect. That focus invites a useful investigation: how does a theoretical proposal become a relationship that can be tested, and how does that process differ from the growth of a scientist’s wider reputation?"
+      ],
+      "sections": [
+        {
+          "id": "award",
+          "title": "The year on the prize needs a second date.",
+          "paragraphs": [
+            "The Nobel historical overview identifies Einstein’s prize as the Physics award for 1921 and notes that it was awarded in 1922. A timeline that places every part of the event under one date would therefore mislead. The work, the award year and the subsequent public occasions belong to different moments.",
+            "The official motivation is also more specific than the familiar association between Einstein and relativity. It recognises services to theoretical physics and singles out the law of the photoelectric effect. Reading the actual wording helps us resist substituting a famous scientist’s best-known image for the recorded basis of an award."
+          ],
+          "sourceIds": [
+            "physics",
+            "nobel-history"
+          ]
+        },
+        {
+          "id": "person",
+          "title": "A theoretical proposal emerged from a working life.",
+          "paragraphs": [
+            "The University of Zurich places Einstein’s 1905 research alongside his employment at the Swiss patent office in Bern. His subsequent appointment at Zurich in 1909 was his first academic position. These details give the work a setting without turning the biography into a simple legend of an isolated outsider.",
+            "His early career is compelling because the intellectual work demanded sustained attention to existing problems. A patent-office job does not itself explain the content of a theory. To understand the achievement, we still need the experiment, the argument and the quantities that could put the proposal at risk."
+          ],
+          "sourceIds": [
+            "zurich"
+          ]
+        },
+        {
+          "id": "achievement",
+          "title": "The law made the explanation answerable to measurement.",
+          "paragraphs": [
+            "The photoelectric proposal connects the frequency of incident light with the maximum energy of electrons emitted from a material. A surface’s release requirement matters as well. In the elementary relation, the energy left over after that requirement increases with frequency.",
+            "The important point for this prize story is the status of a quantitative law. It makes more demanding claims than “light affects a metal”. It tells investigators what should change when they vary a particular quantity. The discovery companion supplies the full explanation and a small comparison of frequency and intensity, so the historical discussion here does not need to repeat it."
+          ],
+          "sourceIds": [
+            "mit",
+            "openstax"
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Support for the equation could coexist with doubt.",
+          "paragraphs": [
+            "Millikan’s precise photoelectric work is a reminder that experiment and interpretation do not always advance at the same pace. The 1916 paper supplies an identifiable experimental landmark. Holton’s historical analysis explains that Millikan could find strong support for Einstein’s equation while resisting its theoretical implications.",
+            "This distinction gives the prize story its tension. A mathematical relationship may become experimentally persuasive before every commitment associated with its explanation is accepted. Looking at this episode through the later success of quantum physics can make its uncertainty disappear. Reading contemporary work and historical analysis together helps restore the difficulty of the judgment."
+          ],
+          "sourceIds": [
+            "millikan",
+            "holton"
+          ]
+        },
+        {
+          "id": "reputation",
+          "title": "The broader career and the named achievement.",
+          "paragraphs": [
+            "The Max Planck Society’s account connects the 1921 prize with Einstein’s light-quantum work and identifies his Berlin institutional context. It also distinguishes that recognition from his work on general relativity. The prize’s focus therefore should not be treated as a complete ranking of everything he achieved.",
+            "The difference between a career and a citation is easy to lose. An institution’s award statement records a particular act of recognition. A biography follows an expanding body of work. Those accounts overlap, but neither can simply be substituted for the other. The history becomes clearer when we ask which question each source was written to answer."
+          ],
+          "sourceIds": [
+            "mpg"
+          ]
+        },
+        {
+          "id": "lecture",
+          "title": "Even the lecture has its own subject.",
+          "paragraphs": [
+            "The lecture associated with Einstein’s Nobel recognition, delivered in 1923, discusses the development and problems of relativity. That is a striking final distinction: the topic of a laureate’s lecture and the wording of the award motivation need not be identical.",
+            "The lecture is valuable as a primary voice because it shows Einstein arranging a scientific argument in his own terms. It should not be used as though it were a verbatim explanation of the committee’s reasoning. We can learn from the relationship between these documents precisely because they are different documents.",
+            "The enduring surprise is not that a famous person received an honour. It is that one familiar name leads into several different histories: a problem about light, a contested interpretation, a testable law, a delayed award and a later public lecture. Keeping those histories distinct makes the achievement easier to understand and more interesting to explore."
+          ],
+          "sourceIds": [
+            "einstein-lecture"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1905",
+          "title": "The theoretical proposal",
+          "text": "Einstein develops the light-quantum explanation of the photoelectric effect.",
+          "sourceIds": [
+            "aps"
+          ]
+        },
+        {
+          "date": "1916",
+          "title": "An experimental landmark",
+          "text": "Millikan publishes precise photoelectric measurements.",
+          "sourceIds": [
+            "millikan"
+          ]
+        },
+        {
+          "date": "1921",
+          "title": "The award year",
+          "text": "The prize is designated the Nobel Prize in Physics for 1921.",
+          "sourceIds": [
+            "physics"
+          ]
+        },
+        {
+          "date": "1922",
+          "title": "The award is made",
+          "text": "The Nobel historical overview records the later award date.",
+          "sourceIds": [
+            "nobel-history"
+          ]
+        },
+        {
+          "date": "1923",
+          "title": "The lecture has its own focus",
+          "text": "Einstein’s Nobel lecture addresses relativity.",
+          "sourceIds": [
+            "einstein-lecture"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Albert Einstein",
+          "role": "Laureate · theoretical physics",
+          "text": "The 1905 light-quantum proposal and the photoelectric law singled out by the 1921 citation.",
+          "sourceIds": [
+            "physics",
+            "zurich"
+          ]
+        },
+        {
+          "name": "Max Planck",
+          "role": "Intellectual predecessor",
+          "text": "Quantisation supplied a starting point that Einstein developed in a new direction.",
+          "sourceIds": [
+            "aps"
+          ]
+        },
+        {
+          "name": "Robert A. Millikan",
+          "role": "Experimental counterpart",
+          "text": "His measurements tested the relation; his reservations reveal the difference between evidence and interpretation.",
+          "sourceIds": [
+            "holton",
+            "millikan"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official citation and historical overview identify the prize’s focus and distinguish the 1921 award year from its award in 1922.",
+        "established": "Photoelectric measurements provided a quantitative test, while contemporary reactions show that the interpretation remained difficult.",
+        "limit": "This account does not reduce the award decision to a single motive or pretend that one experiment established the entire later quantum theory."
+      },
+      "reflection": "What would you want a scientific prize to recognise: an influential idea, a precise prediction, decisive measurements, or a larger body of work? Which documents would help you judge each?",
+      "uncertainty": "The award’s official motivation is unambiguous, but its relation to Einstein’s wider scientific work is often simplified. The prize was designated for 1921 and presented in 1922; interpreting the Academy’s choice requires keeping the stated citation separate from later accounts of relativity’s reception.",
+      "discussionPrompts": [
+        "Why is an award citation useful evidence but not a complete account of a scientist’s work?",
+        "How does the 1921 award year differ from the 1922 presentation?",
+        "What evidence helps explain why a specific discovery was recognized?"
+      ]
+    },
+    {
+      "slug": "plate-tectonics",
+      "collection": "discoveries",
+      "topic": "Geology & Earth systems",
+      "title": "The continents were never still.",
+      "name": "Plate tectonics",
+      "dek": "A radical proposal met resistance until the ocean floor supplied a new kind of evidence.",
+      "period": "1912–1960s",
+      "visual": "plate-tectonics",
+      "question": "What would persuade you that a familiar map is only a snapshot?",
+      "summary": "Alfred Wegener argued that continents had once been joined, but he could not provide a convincing mechanism for their motion. Decades later, ocean-floor mapping, magnetic patterns and earthquake belts converged on a larger explanation: Earth’s outer shell is divided into moving plates. Plate tectonics did not simply vindicate one early idea; it joined distinct evidence into a testable account of a changing planet.",
+      "summarySources": [
+        "usgs-drift",
+        "usgs-history"
+      ],
+      "lead": [
+        "Continents look like fixed pieces of a map because a human lifetime is short compared with geological time. Yet coastlines, fossils, rock formations and the floor beneath the oceans record motion on a scale that is difficult to imagine and impossible to watch directly.",
+        "The story of plate tectonics is not a simple case of a visionary being ignored and later proved right. Wegener identified a real pattern, but his explanation lacked the physical account that geologists needed. A different research generation, using new instruments and ocean data, assembled a stronger framework."
+      ],
+      "sections": [
+        {
+          "id": "drift",
+          "title": "A pattern before a mechanism.",
+          "paragraphs": [
+            "In 1912, German meteorologist and geophysicist Alfred Wegener publicly advanced the idea that continents had moved. He pointed to the fit of continental margins, geological continuities across the Atlantic, and fossil distributions that seemed difficult to explain if the landmasses had always been separate. In his 1915 book, he developed the argument for continental drift and a former supercontinent, which he called Pangaea.",
+            "The observations were not all new, and Wegener was not the first person to imagine continental mobility. His contribution was to gather several lines of evidence into a broad historical proposal. But a pattern of resemblance is not yet a physical theory. Geologists asked what force could move continents through the supposedly rigid ocean floor. Wegener’s proposed forces were not persuasive. A correct intuition about motion was not enough to establish how Earth could accommodate it."
+          ],
+          "sourceIds": [
+            "usgs-plates",
+            "usgs-history"
+          ]
+        },
+        {
+          "id": "resistance",
+          "title": "Why the proposal did not settle the question.",
+          "paragraphs": [
+            "The dispute was partly about evidence and partly about the standards a geophysical explanation had to meet. Continents could appear to fit, and fossils could match across oceans, but those facts did not uniquely imply horizontal motion. Alternative explanations remained possible within the geological frameworks of the time. Wegener’s account also treated continents as plowing through oceanic crust, a picture that later evidence would replace.",
+            "This distinction matters when telling the history. Scientific resistance is not automatically evidence of closed-mindedness, just as a striking observation is not automatically a complete explanation. Researchers needed a mechanism consistent with the strength and structure of the planet. The debate remained open because the proposed movement could not yet be connected to a credible account of the seafloor and the forces operating within Earth."
+          ],
+          "sourceIds": [
+            "usgs-history"
+          ]
+        },
+        {
+          "id": "ocean",
+          "title": "The ocean floor changed the scale of the argument.",
+          "paragraphs": [
+            "During and after the Second World War, improved echo sounding and oceanographic surveys made the seafloor more legible. Researchers mapped long submarine mountain chains and deep trenches. The mid-ocean ridges were not isolated features; they formed an immense system. Marine magnetic measurements then revealed alternating bands of magnetized rock on either side of ridges. Those patterns could be related to reversals in Earth’s magnetic field recorded as lava cooled.",
+            "In the 1960s, seafloor spreading supplied a way to interpret those observations. New oceanic crust forms at ridges and moves outward; older crust is recycled at deep trenches. The age and magnetic pattern of the ocean floor supported this process. Earthquakes and volcanoes also clustered along boundaries that could be understood as zones where plates diverge, converge or slide past one another. Several data sets began to tell compatible parts of one story."
+          ],
+          "sourceIds": [
+            "usgs-drift",
+            "usgs-history"
+          ]
+        },
+        {
+          "id": "synthesis",
+          "title": "A theory of a moving surface.",
+          "paragraphs": [
+            "The emerging account shifted the central object from a drifting continent to a lithospheric plate: a region of Earth’s rigid outer shell that moves over deeper, more deformable material. Continents travel as parts of plates. This helps explain why continental outlines matter but do not themselves define all boundaries. Some plate boundaries lie beneath oceans, and many earthquakes occur far from the edges of continents.",
+            "The framework reorganized geology. It connected mountain building, ocean basins, volcanic arcs, trenches and earthquake belts through the motion and interaction of plates. In the late 1960s, these complementary ideas came together as plate tectonics. No single measurement did the work alone. Magnetic stripes, the geometry of the ocean floor, earthquake distributions and geological history mattered because they could constrain one another."
+          ],
+          "sourceIds": [
+            "usgs-drift",
+            "usgs-plates"
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "What a unifying theory does not make simple.",
+          "paragraphs": [
+            "Plate tectonics explains the large-scale organization and motion of Earth’s outer shell. It does not make every local geological history easy to reconstruct, and the detailed processes that drive plate motion remain active research questions. The USGS account notes that multiple forces may contribute and that their relative importance can vary. A powerful framework organizes questions; it does not eliminate them.",
+            "The episode also offers a useful lesson about scientific change. Wegener’s proposal was neither a finished modern theory nor a mistake that can be dismissed wholesale. Later evidence transformed it. The ocean floor was not merely a missing illustration: its age, magnetic record and structure enabled a different physical explanation. The insight became compelling when the mechanism, measurements and global pattern could be made to fit together."
+          ],
+          "sourceIds": [
+            "usgs-history",
+            "usgs-drift"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1912",
+          "title": "Continental drift proposed",
+          "text": "Wegener presents an argument that continents have shifted over geological time.",
+          "sourceIds": [
+            "usgs-history"
+          ]
+        },
+        {
+          "date": "1915",
+          "title": "A developed case in print",
+          "text": "Wegener publishes The Origin of Continents and Oceans, elaborating Pangaea and the evidence for drift.",
+          "sourceIds": [
+            "usgs-history"
+          ]
+        },
+        {
+          "date": "1950s",
+          "title": "Ocean-floor surveys expand",
+          "text": "Postwar mapping and magnetic measurements reveal structures and patterns inaccessible to earlier investigators.",
+          "sourceIds": [
+            "usgs-drift"
+          ]
+        },
+        {
+          "date": "1960s",
+          "title": "Seafloor spreading and plate tectonics",
+          "text": "Researchers integrate ocean-floor creation, crustal recycling and global boundary patterns into a wider theory.",
+          "sourceIds": [
+            "usgs-drift",
+            "usgs-plates"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Alfred Wegener",
+          "role": "Geophysicist and early continental-drift advocate",
+          "text": "Wegener brought geological, paleontological and geographic observations into a single historical proposal. His mechanism was inadequate, a limitation that shaped the response to his work.",
+          "sourceIds": [
+            "usgs-history"
+          ]
+        },
+        {
+          "name": "Marie Tharp",
+          "role": "Geologist and ocean-floor cartographer",
+          "text": "Tharp’s interpretation of oceanographic data helped reveal the continuity and structure of the mid-ocean ridge system. The maps made hidden topography available to scientific argument.",
+          "sourceIds": [
+            "usgs-drift"
+          ]
+        },
+        {
+          "name": "Harry Hess",
+          "role": "Geologist and seafloor-spreading advocate",
+          "text": "Hess advanced an account in which ocean floor forms at ridges and is consumed elsewhere. His proposal helped connect the mapped seafloor to a dynamic planetary system.",
+          "sourceIds": [
+            "usgs-drift"
+          ]
+        },
+        {
+          "name": "J. Tuzo Wilson",
+          "role": "Geophysicist",
+          "text": "Wilson helped develop the synthesis of plate tectonics and concepts such as transform faults and hotspots, clarifying how different boundary motions could fit the global model.",
+          "sourceIds": [
+            "usgs-plates"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "Matching geological and fossil patterns, magnetic stripes, seafloor ages, ridge and trench geometry, and the distribution of earthquakes and volcanoes.",
+        "established": "Earth’s lithosphere is partitioned into moving plates, whose interactions explain many large-scale features and processes of the surface.",
+        "limit": "The early drift proposal was not the modern theory. The detailed balance of forces driving plate motion and the interpretation of local histories remain more complex than a simple map."
+      },
+      "reflection": "Which evidence would you trust most if you could only see one part of the planet: a fossil match, a magnetic stripe, or a map of earthquakes—and what would you need from the other two?",
+      "uncertainty": "The global motion of plates is established by multiple independent observations. Open questions concern the relative forces that drive motion, how plate-boundary systems began, and how to reconstruct particular regions whose geological record is incomplete.",
+      "discussionPrompts": [
+        "Which evidence would most change a skeptic’s mind about continental motion?",
+        "Was Wegener wrong, right, or partly right? Defend the distinction.",
+        "How did new instruments alter what geologists could ask?"
+      ]
+    },
+    {
+      "slug": "antikythera-mechanism",
+      "collection": "discoveries",
+      "topic": "Archaeology & ancient technology",
+      "title": "The machine recovered from the sea.",
+      "name": "The Antikythera mechanism",
+      "dek": "A corroded fragment from a shipwreck revealed an ancient instrument whose surviving gears preserve only part of its design.",
+      "period": "c. 2nd–1st century BCE · recovered 1901",
+      "visual": "antikythera",
+      "question": "How much can a machine tell us when most of it is missing?",
+      "summary": "Recovered from a Roman-era shipwreck near Antikythera in 1901, the mechanism is a corroded, fragmented geared instrument. X-ray imaging and inscriptions have shown it could model cycles relevant to celestial timekeeping and prediction. Its exact original layout remains a matter of reconstruction. Calling it an ancient “computer” captures its calculating ambition, but can obscure the uncertainty in how it worked and what its makers intended.",
+      "summarySources": [
+        "ucl-anti",
+        "freeth-anti"
+      ],
+      "lead": [
+        "The Antikythera mechanism is often presented as a machine centuries ahead of its time. The phrase catches the astonishment but risks making the object sound more complete and more familiar than it is. What survives is damaged, incomplete and difficult to read.",
+        "The more careful story is still extraordinary: divers recovered fragments from a wreck, inscriptions became visible through advanced imaging, and researchers developed competing models of a compact geared device. Each reconstruction is an argument built from material traces, not a photograph of the ancient instrument in operation."
+      ],
+      "sections": [
+        {
+          "id": "wreck",
+          "title": "A discovery made by looking underwater.",
+          "paragraphs": [
+            "In 1900, Greek sponge divers sheltering from weather near the island of Antikythera encountered an ancient shipwreck. The following year, divers and the Greek archaeological service recovered statues, coins, glassware and other objects from the site. Among them were corroded bronze fragments whose mechanical character was not immediately understood.",
+            "The artifact is generally dated to the late Hellenistic period, while the shipwreck is Roman-era. The ship’s cargo contained objects from different places and periods, so the date of the wreck does not by itself settle the device’s manufacture date or workshop. The object’s historical setting has to be inferred from its material, inscriptions and archaeological context together."
+          ],
+          "sourceIds": [
+            "ucl-anti",
+            "freeth-anti"
+          ]
+        },
+        {
+          "id": "fragments",
+          "title": "An instrument survives as fragments.",
+          "paragraphs": [
+            "The mechanism is preserved in dozens of fragments, with only a fraction of the original device remaining. Gears, inscriptions and traces of lost components offer clues, but missing sections complicate any attempt to establish the whole arrangement. Corrosion also obscures the front and back surfaces where information and mechanisms once worked together.",
+            "Modern X-ray computed tomography allows researchers to inspect internal structure without dismantling the object. Inscriptions that are difficult to read externally can be examined in three dimensions. This technique revealed evidence about gear trains and calendar or astronomical cycles, but it cannot restore every missing piece. The process is a form of constrained inference: a proposed component must account for what survives and be mechanically plausible."
+          ],
+          "sourceIds": [
+            "freeth-anti",
+            "ucl-anti"
+          ]
+        },
+        {
+          "id": "function",
+          "title": "A geared model of cycles in the sky.",
+          "paragraphs": [
+            "The device used interlocking gears to represent repeating astronomical cycles. Reconstructions support a hand-operated instrument that could show or calculate positions and cycles associated with the Sun and Moon, including the lunar phase. The back includes spiral displays associated with calendar cycles and the timing of games. Such displays linked celestial regularities with social time.",
+            "A gear does not merely decorate a theory; it encodes a relationship. When one wheel drives another, their tooth counts can represent a ratio between cycles. This makes the instrument a material model of mathematical astronomy. It also complicates modern assumptions about ancient science: observational knowledge, mathematical representation, craftsmanship and public life could be integrated in one portable device."
+          ],
+          "sourceIds": [
+            "freeth-anti",
+            "ucl-anti"
+          ]
+        },
+        {
+          "id": "reconstruction",
+          "title": "What a reconstruction can—and cannot—claim.",
+          "paragraphs": [
+            "In 2021, a UCL research team published a proposed reconstruction of the mechanism’s front display, drawing on X-ray evidence, inscriptions and a model of the ancient cosmos. The paper explains how a complex display could be driven from a common input. This is a scholarly model intended to account for the evidence, not a definitive replica proven to match every original component.",
+            "Different reconstructions have proposed different layouts and functions. The disagreements are productive because they show where the surviving evidence underdetermines the result. When a gap can be filled in more than one mechanically plausible way, scholars must label the inference instead of letting a polished reconstruction appear certain. The device is both an astonishing object and an example of how archaeology reasons from partial survival."
+          ],
+          "sourceIds": [
+            "freeth-anti",
+            "ucl-anti"
+          ]
+        },
+        {
+          "id": "computer",
+          "title": "Why “the first computer” needs qualification.",
+          "paragraphs": [
+            "The Antikythera mechanism is often called the first known analog computer. The label emphasizes that it mechanized calculations and modeled astronomical cycles. Yet “computer” is a modern category, and no ancient manual survives that fully explains the device’s operation or intended audience. It is more precise to describe the features that justify the comparison, then identify what remains unknown.",
+            "The mechanism does not diminish the value of later mathematical or computational history. Instead, it expands the range of technologies we recognize in ancient Greece. Precision gearing, inscriptions and astronomical cycles point to a sophisticated craft and intellectual environment. The wreck preserved a rare object that is exceptional partly because most comparable instruments, if they existed, have not survived.",
+            "Conservation adds another layer of restraint. What an ancient user saw would have included a case, pointers and inscriptions now lost or fragmented. A modern model can test a proposed arrangement, but visual completeness should not be mistaken for archaeological completeness. The most honest reconstruction makes its assumptions visible and lets the surviving object remain partly unknowable."
+          ],
+          "sourceIds": [
+            "ucl-anti",
+            "freeth-anti"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "c. 2nd–1st c. BCE",
+          "title": "Probable manufacture period",
+          "text": "The mechanism is associated with the Hellenistic world; exact dating and production context are inferred.",
+          "sourceIds": [
+            "freeth-anti"
+          ]
+        },
+        {
+          "date": "c. 1st c. BCE",
+          "title": "Shipwreck occurs",
+          "text": "The wreck near Antikythera contains objects from multiple periods; it does not alone date the mechanism precisely.",
+          "sourceIds": [
+            "ucl-anti"
+          ]
+        },
+        {
+          "date": "1900–1901",
+          "title": "Divers recover wreck cargo",
+          "text": "Greek sponge divers and archaeologists recover the fragments that later become known as the mechanism.",
+          "sourceIds": [
+            "ucl-anti"
+          ]
+        },
+        {
+          "date": "2005",
+          "title": "Tomographic imaging reveals detail",
+          "text": "X-ray tomography supports new readings of hidden inscriptions and internal gearing.",
+          "sourceIds": [
+            "freeth-anti"
+          ]
+        },
+        {
+          "date": "2021",
+          "title": "A new front-display model published",
+          "text": "A research team proposes a reconstruction, explicitly based on incomplete evidence.",
+          "sourceIds": [
+            "freeth-anti"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Greek sponge divers",
+          "role": "Discoverers of the wreck",
+          "text": "Their encounter with the shipwreck initiated the recovery of a large archaeological assemblage, including the bronze fragments later identified as a geared instrument.",
+          "sourceIds": [
+            "ucl-anti"
+          ]
+        },
+        {
+          "name": "Derek de Solla Price",
+          "role": "Historian of science",
+          "text": "Price’s mid-twentieth-century work helped establish the mechanism as a complex astronomical calculator and stimulated later technical investigation.",
+          "sourceIds": [
+            "freeth-anti"
+          ]
+        },
+        {
+          "name": "Tony Freeth and research colleagues",
+          "role": "Mechanism researchers",
+          "text": "Freeth and collaborators used imaging, inscription analysis and gear modeling to investigate the object and publish a proposed reconstruction of its front display.",
+          "sourceIds": [
+            "freeth-anti",
+            "ucl-anti"
+          ]
+        },
+        {
+          "name": "The Greek archaeological authorities",
+          "role": "Custodians and investigators",
+          "text": "The object’s recovery and continued study depend on archaeological documentation, conservation and collections care at the National Archaeological Museum in Athens.",
+          "sourceIds": [
+            "ucl-anti"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "Surviving bronze fragments contain gears, inscriptions and structured displays; X-ray tomography reveals hidden surfaces and internal relationships.",
+        "established": "The object was a geared instrument for modeling astronomical and calendrical cycles, with a level of mechanical sophistication unusual in surviving ancient artifacts.",
+        "limit": "Only a fraction survives. Published reconstructions are proposals, and the precise original display, use context, maker and intended users are not fully known."
+      },
+      "reflection": "If a reconstruction is mechanically elegant but one inscription supports another reading, which evidence should carry more weight—and how should the uncertainty be shown?",
+      "uncertainty": "The surviving fragments establish complex gearing and support astronomical functions, but they do not preserve the whole instrument. The exact arrangement of its front display, the maker, workshop and intended users remain uncertain; published reconstructions are evidence-based proposals, not recovered originals.",
+      "discussionPrompts": [
+        "What is the difference between a surviving artifact and a scholarly reconstruction?",
+        "When is “the first computer” a useful description, and when does it mislead?",
+        "How should a museum label communicate gaps in archaeological evidence?"
+      ]
+    },
+    {
+      "slug": "cosmic-microwave-background",
+      "collection": "discoveries",
+      "topic": "Cosmology & observation",
+      "title": "The faint afterglow of a young universe.",
+      "name": "Cosmic microwave background",
+      "dek": "An unexplained radio hiss became evidence for a hot early universe—after theorists had already predicted a relic radiation.",
+      "period": "1940s prediction · observed 1964–65 · mapped by COBE",
+      "visual": "cosmic-background",
+      "question": "When does noise become evidence?",
+      "summary": "A faint microwave signal arrived from every direction, troubling radio astronomers Arno Penzias and Robert Wilson in 1964–65. Cosmologists recognized it as the relic radiation predicted by earlier hot-universe models. The discovery did not establish every detail of modern cosmology. Later satellite missions, especially COBE, measured its spectrum and tiny temperature variations, turning a uniform background into a precision probe of cosmic history.",
+      "summarySources": [
+        "nasa-history",
+        "nasa-cmb-discovery",
+        "nasa-cmb"
+      ],
+      "lead": [
+        "Some discoveries begin when an instrument refuses to behave as expected. At Bell Labs, a persistent excess signal remained after the radio antenna, receiver and observing conditions had been investigated. The puzzle seemed technical before it became cosmological.",
+        "The story has two intellectual strands: a prediction about the early universe, and an observation made by researchers not initially searching for that prediction. The convergence mattered. A background signal could be interpreted as ancient radiation only because theory had described what to look for and the measurement was carefully checked."
+      ],
+      "sections": [
+        {
+          "id": "prediction",
+          "title": "The universe left a prediction behind.",
+          "paragraphs": [
+            "In the late 1940s, George Gamow, Ralph Alpher and Robert Herman considered what a hot, dense early universe would imply for the elements and the radiation left as space expanded. Their calculations pointed toward a cooled background of radiation. This prediction was not the only cosmological model in circulation, nor did it immediately become a widely measured target.",
+            "The prediction is essential context, but it should not be retrofitted into a claim that every detail of the later observation was expected. Cosmology then lacked the instruments and data needed to measure such a faint microwave background reliably. The theoretical idea existed before the practical detection. What joined them later was a signal whose temperature and directionality matched the broad expectation."
+          ],
+          "sourceIds": [
+            "nasa-history"
+          ]
+        },
+        {
+          "id": "antenna",
+          "title": "An antenna that would not become quiet.",
+          "paragraphs": [
+            "In 1964, Arno Penzias and Robert Wilson used a sensitive horn-reflector antenna at Bell Laboratories for radio astronomy. They encountered excess noise that appeared across the sky and could not be explained by the signal sources they were studying. They investigated receiver and antenna effects, including a persistent contribution from pigeons nesting in the equipment.",
+            "Removing obvious sources of interference did not make the signal disappear. Its nearly uniform presence was the clue. The researchers contacted physicists at Princeton, where Robert Dicke’s group was independently exploring how to detect the predicted background. The two groups connected the observational result with the cosmological interpretation, leading to paired papers in 1965: one reporting the measurement, the other its significance."
+          ],
+          "sourceIds": [
+            "nasa-cmb-discovery",
+            "nasa-history"
+          ]
+        },
+        {
+          "id": "interpretation",
+          "title": "A measurement and an interpretation meet.",
+          "paragraphs": [
+            "The received radiation had the characteristics expected of a background cooled by cosmic expansion. Penzias and Wilson measured the excess; Dicke, Jim Peebles, Peter Roll and David Wilkinson supplied the link to a hot early universe. The historical episode is a good example of science distributed across people who asked different questions and brought different expertise.",
+            "The discovery strengthened the hot Big Bang model relative to alternatives, but a single observation did not settle every cosmological dispute. The signal was evidence for a specific prediction about a hot early phase. Its value increased as independent lines of evidence accumulated, and as later instruments could test the radiation in more detail than a ground-based measurement allowed."
+          ],
+          "sourceIds": [
+            "nasa-history",
+            "nasa-cmb"
+          ]
+        },
+        {
+          "id": "cobe",
+          "title": "From a faint glow to a map of early structure.",
+          "paragraphs": [
+            "The cosmic microwave background is often described as light from when the universe became transparent, roughly 380,000 years after the Big Bang. Expansion has stretched that radiation into microwaves. Its average spectrum is extraordinarily close to a thermal blackbody, a result measured with precision by NASA’s Cosmic Background Explorer satellite, COBE.",
+            "COBE also detected tiny temperature differences across the sky, at roughly one part in one hundred thousand. These anisotropies are not a photograph of galaxies as they exist today. They are minute early variations that later gravitational growth could amplify. That distinction is central: the map is a measured imprint whose interpretation connects early conditions to later structure."
+          ],
+          "sourceIds": [
+            "nasa-cmb",
+            "nasa-history"
+          ]
+        },
+        {
+          "id": "meaning",
+          "title": "A landmark result, not the end of cosmology.",
+          "paragraphs": [
+            "Penzias and Wilson received the 1978 Nobel Prize in Physics for their discovery of cosmic microwave background radiation. The recognition belongs to the observational discovery; it does not erase the earlier theoretical work or the Princeton group’s interpretive role. Nobel citations identify a particular contribution, while the historical record can show a wider chain of prediction, measurement and explanation.",
+            "Later missions, including COBE and its successors, transformed cosmology by making precise measurements of the background. Those observations constrain the age, contents and geometry of the universe within a larger model. They do not make every parameter or theoretical extension immune to revision. The robust achievement is methodological as well as cosmological: a faint, apparently inconvenient signal became a reproducible measurement tied to a predictive framework.",
+            "The background is therefore both an image and a statistical data set. Researchers compare patterns against physical models and instrumental effects, and they test those conclusions with independent observations. A beautiful map can invite wonder, but the scientific force lies in calibrated measurement, reproducibility and the way several observations constrain the same account of cosmic evolution."
+          ],
+          "sourceIds": [
+            "nasa-history",
+            "nasa-cmb"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1948",
+          "title": "A relic background is predicted",
+          "text": "Alpher and Herman, working in the context of Gamow’s hot early-universe model, estimate a cooled radiation background.",
+          "sourceIds": [
+            "nasa-history"
+          ]
+        },
+        {
+          "date": "1964",
+          "title": "Bell Labs observations begin",
+          "text": "Penzias and Wilson encounter persistent excess noise with the Holmdel horn antenna.",
+          "sourceIds": [
+            "nasa-cmb-discovery"
+          ]
+        },
+        {
+          "date": "1965",
+          "title": "The result and interpretation are published",
+          "text": "Observational and theoretical papers connect the isotropic signal to a hot early universe.",
+          "sourceIds": [
+            "nasa-history"
+          ]
+        },
+        {
+          "date": "1978",
+          "title": "Nobel Prize in Physics awarded",
+          "text": "Penzias and Wilson are recognized for their discovery of cosmic microwave background radiation.",
+          "sourceIds": [
+            "nasa-history"
+          ]
+        },
+        {
+          "date": "1989–1992",
+          "title": "COBE measures spectrum and anisotropy",
+          "text": "Satellite instruments establish the near-blackbody spectrum and detect small temperature fluctuations.",
+          "sourceIds": [
+            "nasa-cmb"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Arno Penzias and Robert Wilson",
+          "role": "Radio astronomers at Bell Laboratories",
+          "text": "Their careful investigation of an unexplained, nearly isotropic signal established the observational finding that became known as the cosmic microwave background.",
+          "sourceIds": [
+            "nasa-cmb-discovery",
+            "nasa-history"
+          ]
+        },
+        {
+          "name": "George Gamow, Ralph Alpher and Robert Herman",
+          "role": "Theorists of a hot early universe",
+          "text": "Their work generated an early prediction of a cooled background radiation, though the observational case and later interpretation developed through a separate chain of research.",
+          "sourceIds": [
+            "nasa-history"
+          ]
+        },
+        {
+          "name": "Robert Dicke, Jim Peebles, Peter Roll and David Wilkinson",
+          "role": "Princeton cosmology and instrumentation group",
+          "text": "The Princeton team recognized the cosmological significance of the signal and was preparing an experiment to detect the background when it learned of the Bell Labs measurement.",
+          "sourceIds": [
+            "nasa-history"
+          ]
+        },
+        {
+          "name": "John Mather and George Smoot",
+          "role": "COBE principal investigators",
+          "text": "Mather led the Far Infrared Absolute Spectrophotometer team, while Smoot led the Differential Microwave Radiometer team; COBE’s later results mapped key properties of the radiation.",
+          "sourceIds": [
+            "nasa-cmb"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "A nearly isotropic microwave signal was measured from the ground; COBE later measured a near-blackbody spectrum and small anisotropies.",
+        "established": "The background radiation is consistent with a hot, dense early universe and supplies a measurable record of conditions before galaxies formed.",
+        "limit": "The original signal did not by itself establish all cosmological parameters. Theoretical prediction, 1960s detection and COBE mapping were distinct achievements."
+      },
+      "reflection": "How should a scientific history distribute credit when one group detects a signal, another recognizes its meaning, and later instruments make the evidence far stronger?",
+      "uncertainty": "The background radiation and its measured properties are well established. Historical credit is distributed across earlier predictions, the Bell Labs detection, the Princeton interpretation and later satellite measurements; those are distinct contributions, not competing accounts of a single moment.",
+      "discussionPrompts": [
+        "How did theoretical prediction shape the interpretation of an unexpected signal?",
+        "How should historical credit be shared between observers, theorists and later mission teams?",
+        "Why do tiny variations matter in a nearly uniform sky?"
+      ]
+    },
+    {
+      "slug": "1911-marie-curie",
+      "collection": "nobel",
+      "topic": "Chemistry · Radioactivity",
+      "title": "A new element had to be separated.",
+      "name": "Marie Curie · Chemistry 1911",
+      "dek": "The award recognized chemistry that made radium and polonium identifiable, measurable and isolable.",
+      "period": "1898–1911 · Nobel Prize awarded 1911",
+      "visual": "radium-award",
+      "question": "What does it mean to discover an element that exists only in tiny quantities?",
+      "summary": "Marie Curie’s 1911 Chemistry Prize recognized the discovery of radium and polonium, the isolation of radium and the study of its compounds. The achievement depended on systematic measurement and painstaking chemical separation from tons of pitchblende. It also sat within a collaboration that included Pierre Curie, Gustave Bémont and later André Debierne. Curie’s second Nobel Prize marked a distinct chemical contribution, not simply a repeat of her 1903 Physics award.",
+      "summarySources": [
+        "curie-nobel",
+        "curie-facts"
+      ],
+      "lead": [
+        "A new element can announce itself indirectly. In Curie’s work, unusually strong radioactivity in mineral residues suggested that known substances could not explain what was being measured. The next step was not merely to name a candidate; it was to separate material, study its behavior and establish that a new element was present.",
+        "The Chemistry Prize of 1911 is a story about method and labor as much as recognition. The official motivation describes discovery, isolation and study. The historical record also shows why attribution must be read carefully: scientific work was collaborative, while institutions of the period often made recognition harder for women."
+      ],
+      "sections": [
+        {
+          "id": "signal",
+          "title": "A signal stronger than its known source.",
+          "paragraphs": [
+            "Marie Sklodowska Curie began investigating uranium rays, following Henri Becquerel’s discovery of spontaneous radiation. By measuring uranium compounds, she found that the strength of the radiation tracked the quantity of uranium rather than the chemical form. That pattern suggested the phenomenon belonged to atoms themselves, opening a new research question about matter.",
+            "When Curie examined pitchblende, a uranium ore, its activity exceeded what its uranium content could account for. She inferred that highly active unknown substances must be present. In 1898, Marie and Pierre Curie, working with chemist Gustave Bémont, reported polonium; later that year they announced evidence for radium. The conclusion depended on quantitative measurement, not simply the appearance of an unusual mineral."
+          ],
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        },
+        {
+          "id": "labor",
+          "title": "The scale of the separation problem.",
+          "paragraphs": [
+            "To establish a new element, the Curies needed to concentrate tiny quantities from large amounts of ore and distinguish them from substances with similar chemical behavior. The work involved processing tons of pitchblende residues, dissolving and separating compounds, and repeatedly measuring radioactivity. It was physically demanding and analytically complex, with each fraction tested as the mixture changed.",
+            "The laboratory’s improvised conditions are often emphasized, but hardship alone does not explain the achievement. The decisive discipline was a repeatable sequence linking chemical operations to measurements. A highly active fraction was a clue; producing material with consistent properties and determining atomic weight provided stronger grounds for identification. The process made invisible atomic behavior experimentally tractable through chemical work."
+          ],
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        },
+        {
+          "id": "collaboration",
+          "title": "A research programme with more than one author.",
+          "paragraphs": [
+            "Pierre Curie joined Marie in the investigation and contributed experimental and physical expertise. Gustave Bémont collaborated on the 1898 polonium work. Later, André Debierne worked with Marie to isolate metallic radium. Their distinct roles matter because “the Curies” can flatten contributions just as easily as a story centered on one celebrated name can erase collaborators.",
+            "The attribution history also exposes how scientific credit was negotiated. In 1903, Pierre wrote to a colleague that Marie should be considered alongside him for the Physics Prize. The Nobel Prize was shared by Henri Becquerel and the Curies. That record complicates any clean story of automatic recognition: nomination and award processes reflect the institutions and assumptions of their time."
+          ],
+          "sourceIds": [
+            "curie-nobel",
+            "curie-facts"
+          ]
+        },
+        {
+          "id": "award",
+          "title": "Why the 1911 award was a distinct achievement.",
+          "paragraphs": [
+            "The Swedish Academy awarded Curie the 1911 Nobel Prize in Chemistry for discovering radium and polonium, isolating radium, and studying its nature and compounds. The 1903 Physics Prize, by contrast, recognized research into radiation phenomena discovered by Becquerel. The 1911 citation focused on chemical discovery and isolation. These are connected episodes, but the stated grounds differ.",
+            "Curie became the first person to receive Nobel Prizes in two different scientific fields. The distinction should not turn into a claim that she worked alone or that the awards captured all the field’s development. Her research influenced radioactivity studies, and colleagues across Europe pursued related chemistry. Recognition identifies an important contribution; it is not an exhaustive map of the people who made a discipline."
+          ],
+          "sourceIds": [
+            "curie-facts",
+            "curie-nobel"
+          ]
+        },
+        {
+          "id": "legacy",
+          "title": "The cost of the material evidence.",
+          "paragraphs": [
+            "The materials that made this work measurable also carried dangers that were poorly understood at the time. Radioactive substances were handled before modern radiation protection existed. Later knowledge about radiation damage changed laboratory practice and public understanding. A responsible account can admire the chemical achievement while refusing to romanticize exposure or imply that the risks were fully known.",
+            "Curie’s notebooks and laboratory objects remain radioactive and require special handling. That material afterlife is a reminder that scientific evidence is not abstract: experiments leave objects, records and consequences. The 1911 award opens a window into analytical chemistry, the history of gender and credit, and the responsibilities that follow from working with powerful materials.",
+            "Later retellings often center the shed, the glow of radium or Curie’s personal endurance. Those images have emotional force, but they do not substitute for a history of analytical procedure. The chemistry is the intellectual core: infer an unknown from a discrepancy, devise separations, compare fractions and build enough evidence for other researchers to examine the claim."
+          ],
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1896",
+          "title": "Becquerel discovers spontaneous radiation",
+          "text": "His observation prompts a research field that Curie develops through systematic measurements.",
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        },
+        {
+          "date": "1898",
+          "title": "Polonium and radium announced",
+          "text": "The Curies report two new radioactive elements; Bémont collaborates on the polonium work.",
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        },
+        {
+          "date": "1903",
+          "title": "Physics Prize shared",
+          "text": "Henri Becquerel, Pierre Curie and Marie Curie are recognized for radiation research.",
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        },
+        {
+          "date": "1910",
+          "title": "Radium isolated in metallic form",
+          "text": "Marie Curie and André Debierne report the isolation of radium metal.",
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        },
+        {
+          "date": "1911",
+          "title": "Chemistry Prize awarded",
+          "text": "The award recognizes radium and polonium, radium’s isolation and its compounds.",
+          "sourceIds": [
+            "curie-facts"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Marie Curie",
+          "role": "Chemist and physicist; 1911 Chemistry laureate",
+          "text": "Curie developed a measurement-led programme, named radioactivity and pursued the chemical separation and study of radium and polonium.",
+          "sourceIds": [
+            "curie-nobel",
+            "curie-facts"
+          ]
+        },
+        {
+          "name": "Pierre Curie",
+          "role": "Physicist and research collaborator",
+          "text": "Pierre worked with Marie on radiation research and the new elements, and explicitly advocated that she be included in consideration for the 1903 prize.",
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        },
+        {
+          "name": "Gustave Bémont",
+          "role": "Chemist at the School of Industrial Physics and Chemistry",
+          "text": "Bémont collaborated with the Curies on the 1898 paper reporting polonium, a contribution often compressed in popular retellings.",
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        },
+        {
+          "name": "André Debierne",
+          "role": "Chemist and laboratory collaborator",
+          "text": "Debierne collaborated with Curie on isolating radium in metallic form and continued the laboratory’s research after her death.",
+          "sourceIds": [
+            "curie-nobel"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "Excess radioactivity in pitchblende residues and reproducible measurements of separated fractions indicated substances not explained by uranium alone.",
+        "established": "Polonium and radium were identified as elements; Curie’s chemical work isolated radium and investigated its compounds.",
+        "limit": "The award citation is specific but not a complete credit ledger. Scientific contributions involved collaborators, and the risks of radiation exposure were not understood as they are now."
+      },
+      "reflection": "When a discovery depends on repeated separation, measurement and collaboration, which part should a prize citation foreground—and what is lost when it compresses the work?",
+      "award": {
+        "year": "1911",
+        "field": "Chemistry",
+        "recipients": [
+          "Marie Curie"
+        ],
+        "citation": "for the discovery of the elements radium and polonium",
+        "sourceId": "curie-facts"
+      },
+      "uncertainty": "The award record and Curie’s chemical work are documented. Interpretive questions remain about how to describe collaborators’ roles, how institutions allocated credit, and how to tell the story without allowing later knowledge of radiation hazards to distort what researchers understood at the time.",
+      "discussionPrompts": [
+        "Which part of Curie’s work makes the 1911 award specifically a chemistry prize?",
+        "How should collaborators’ contributions appear in a concise public account?",
+        "What changes when we read historic laboratory practice with present-day safety knowledge?"
+      ]
+    },
+    {
+      "slug": "1993-toni-morrison",
+      "collection": "nobel",
+      "topic": "Literature · Memory & narrative",
+      "title": "Who is allowed to tell the story?",
+      "name": "Toni Morrison · Literature 1993",
+      "dek": "Morrison’s fiction brought formal invention and the contested memory of American history into the same literary space.",
+      "period": "1931–2019 · Nobel Prize awarded 1993",
+      "visual": "morrison-award",
+      "question": "What can a novel make visible that an official record leaves out?",
+      "summary": "Toni Morrison received the 1993 Nobel Prize in Literature for novels whose visionary force and poetic language illuminate an essential aspect of American reality. Her achievement cannot be reduced to one title: across novels such as The Bluest Eye, Song of Solomon and Beloved, she reshaped narrative voice, memory and historical imagination. Her work as an editor also helped bring Black writers into wider publishing circulation.",
+      "summarySources": [
+        "morrison-list",
+        "morrison-bio",
+        "morrison-lecture"
+      ],
+      "lead": [
+        "The Nobel citation is brief. Morrison’s novels are not. They ask readers to encounter history through language, memory, family and the interior lives of people whom public narratives have often marginalized. Their formal difficulty is part of their ethical demand: the reader must work through fragmented time, shifting voices and silences.",
+        "A professional account of Morrison’s Literature Prize should not treat the citation as a complete interpretation. Her fiction ranges across subjects and forms. The novels create an aesthetic experience while confronting slavery, racism, gender, community, desire and the limits of what can be narrated. Morrison herself, in her Nobel lecture, made language and responsibility central."
+      ],
+      "sections": [
+        {
+          "id": "voice",
+          "title": "A literary voice built from many registers.",
+          "paragraphs": [
+            "Morrison’s novels draw on Black oral traditions, biblical cadence, folklore, blues and vernacular speech while also engaging modernist experimentation. These are not decorative influences layered over a conventional plot. Voice organizes what can be known, who can be heard and how a community remembers. The reader’s understanding changes as perspective and time shift.",
+            "Her first novel, The Bluest Eye (1970), examines a child’s longing under racist standards of beauty. Sula (1973) explores friendship and community judgment; Song of Solomon (1977) follows family history and inheritance. The books do not offer a single explanatory thesis. They create characters and structures that make social forces intimate without reducing individuals to examples."
+          ],
+          "sourceIds": [
+            "morrison-bio",
+            "morrison-list"
+          ]
+        },
+        {
+          "id": "beloved",
+          "title": "Beloved and the problem of historical memory.",
+          "paragraphs": [
+            "Beloved (1987) begins from the history of slavery and the violence of its aftermath. Its central figure, Sethe, lives with memories that are neither safely past nor straightforwardly recoverable. Morrison’s use of haunting is not an escape from history. It provides a form through which historical violence can enter the present and shape a family’s ordinary life.",
+            "The novel’s fractured chronology and multiple voices resist the illusion that a traumatic past can be rendered as a stable, complete account. Readers reconstruct events from partial recollections and testimony. This form makes memory active: it affects relationships, choices and the possibility of a future. Morrison later spoke about her desire to imagine the lives of people whose interior experience the archive had often denied."
+          ],
+          "sourceIds": [
+            "morrison-bio",
+            "morrison-lecture"
+          ]
+        },
+        {
+          "id": "craft",
+          "title": "Form as a way of knowing.",
+          "paragraphs": [
+            "Morrison’s narratives often withhold information, move across generations and use communal points of view. The reader must notice the difference between what a narrator says, what a character remembers and what a community believes. Ambiguity is not always a puzzle to be solved. Sometimes it is the honest shape of partial knowledge and contested history.",
+            "Her prose can be lyrical and exact at once. Repetition, image and rhythm do intellectual work: they connect individual perception to inherited stories and social structures. This is one reason her writing travels across literary study, history and cultural criticism. It does not simply represent an already understood world; it asks what language can disclose, distort or leave unspoken."
+          ],
+          "sourceIds": [
+            "morrison-lecture",
+            "morrison-bio"
+          ]
+        },
+        {
+          "id": "editor",
+          "title": "The writer was also an influential editor.",
+          "paragraphs": [
+            "Before she became widely known as a novelist, Morrison worked in publishing. At Random House she edited books by Black authors and helped make their work available to broader audiences. This labor is less visible than a novel’s cover, but it shaped the literary ecosystem in which readers encountered Black writing and writers found institutional support.",
+            "The editorial role offers a different view of literary influence. A publishing house decides which manuscripts receive attention, how books are positioned and which voices are treated as central. Morrison’s work in that environment did not replace her fiction; it broadened the account of her contribution. The Nobel recognition focused on novels, while her career also involved cultural stewardship and a sustained engagement with public language."
+          ],
+          "sourceIds": [
+            "morrison-bio"
+          ]
+        },
+        {
+          "id": "recognition",
+          "title": "A citation opens the door; it does not close interpretation.",
+          "paragraphs": [
+            "The Swedish Academy recognized Morrison in 1993 for novels marked by visionary force and poetic significance. The phrase is an evaluative judgment, not a neutral inventory. Its reference to American reality has been read in light of her insistence that Black life belongs at the center of literary imagination, rather than appearing only at the margins of a national story.",
+            "Morrison became the first Black woman to receive the Literature Prize. That milestone belongs in the history of the institution, but it should not become the sole measure of her significance. The novels continue to invite disagreement about memory, narrative authority, beauty and history. A reader need not agree with every interpretation to see how the work changes the questions literature can ask.",
+            "This account treats award language as evidence about institutional recognition, not as an objective ranking of literary value. Morrison’s fiction has been translated, taught and debated across languages and traditions. Readers may approach the books through history, narratology, gender, race, language or ethics. None of those approaches exhausts the work, and productive disagreement belongs to its ongoing reception."
+          ],
+          "sourceIds": [
+            "morrison-list",
+            "morrison-bio"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1970",
+          "title": "The Bluest Eye published",
+          "text": "Morrison’s debut novel begins a body of work concerned with beauty, race, memory and the interior life of characters.",
+          "sourceIds": [
+            "morrison-bio"
+          ]
+        },
+        {
+          "date": "1977",
+          "title": "Song of Solomon published",
+          "text": "The novel expands her readership and receives major literary recognition in the United States.",
+          "sourceIds": [
+            "morrison-bio"
+          ]
+        },
+        {
+          "date": "1987",
+          "title": "Beloved published",
+          "text": "The novel engages slavery’s afterlife through a layered narrative of memory and haunting.",
+          "sourceIds": [
+            "morrison-bio"
+          ]
+        },
+        {
+          "date": "1993",
+          "title": "Literature Prize awarded",
+          "text": "The Swedish Academy recognizes Morrison’s novels and their poetic engagement with American reality.",
+          "sourceIds": [
+            "morrison-list"
+          ]
+        },
+        {
+          "date": "2019",
+          "title": "Morrison dies at 88",
+          "text": "Her novels, criticism and editorial work continue to shape literary study and public discussion.",
+          "sourceIds": [
+            "morrison-bio"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Toni Morrison",
+          "role": "Novelist, editor and essayist",
+          "text": "Morrison wrote across several decades, edited other writers’ work and used fiction to test the limits of memory, language and historical narration.",
+          "sourceIds": [
+            "morrison-bio",
+            "morrison-lecture"
+          ]
+        },
+        {
+          "name": "Oprah Winfrey",
+          "role": "Actor, producer and reader",
+          "text": "Winfrey’s book-club selections and screen adaptation of Beloved helped introduce Morrison’s work to a wider audience, though reception of the film differed from the novel’s critical history.",
+          "sourceIds": [
+            "morrison-bio"
+          ]
+        },
+        {
+          "name": "The Swedish Academy",
+          "role": "Awarding institution",
+          "text": "The Academy selected Morrison in 1993 and described the literary qualities it sought to recognize. The citation is a starting point for interpretation rather than a final critical verdict.",
+          "sourceIds": [
+            "morrison-list"
+          ]
+        },
+        {
+          "name": "Morrison’s editors and publishing colleagues",
+          "role": "Collaborators in literary circulation",
+          "text": "Her editorial career and literary community formed part of the conditions through which books were developed, published and read, even where a prize’s formal recipient is one author.",
+          "sourceIds": [
+            "morrison-bio"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The 1993 official award record names Morrison and publishes the Academy’s motivation. Her novels and Nobel lecture remain primary evidence for studying the work.",
+        "established": "Morrison made a major contribution to literature through formally distinctive novels and a career that included editing and public reflection on language.",
+        "limit": "A brief citation cannot settle the meaning of a novel or stand for the whole of Morrison’s career. Interpretations of memory, history and form remain open to critical debate."
+      },
+      "reflection": "When a novel makes readers inhabit an incomplete memory, is the uncertainty a limitation—or part of what the form knows?",
+      "award": {
+        "year": "1993",
+        "field": "Literature",
+        "recipients": [
+          "Toni Morrison"
+        ],
+        "citation": "who in novels characterized by visionary force and poetic import, gives life to an essential aspect of American reality",
+        "sourceId": "morrison-list"
+      },
+      "uncertainty": "The award citation is documented; its phrase about American reality is an interpretation by the Swedish Academy, not a definitive description of Morrison’s entire body of work. Readings of memory, voice and historical form remain open to critical disagreement.",
+      "discussionPrompts": [
+        "How can narrative structure make memory part of a reader’s experience?",
+        "What might fiction reveal that an official archive does not preserve?",
+        "How should a literary prize citation guide interpretation without closing debate?"
+      ]
+    },
+    {
+      "slug": "2014-children-education",
+      "collection": "nobel",
+      "topic": "Peace · Children’s rights & education",
+      "title": "A shared struggle for every child’s future.",
+      "name": "Malala Yousafzai & Kailash Satyarthi · Peace 2014",
+      "dek": "The joint award brought together different campaigns around the linked rights to childhood, safety and education.",
+      "period": "2014 Nobel Peace Prize",
+      "visual": "education-award",
+      "question": "What changes when child labour and education are treated as connected problems?",
+      "summary": "The 2014 Nobel Peace Prize was jointly awarded to Malala Yousafzai and Kailash Satyarthi for their struggle against the suppression of children and young people and for every child’s right to education. Yousafzai became a global advocate for girls’ schooling after surviving an attack; Satyarthi built campaigns against child labour and trafficking. Their work was distinct, but the Committee linked both to children’s rights and peace.",
+      "summarySources": [
+        "peace-review",
+        "malala-lecture",
+        "satyarthi-bio"
+      ],
+      "lead": [
+        "A joint prize can create a frame of comparison, but it should not flatten the people inside it. Malala Yousafzai and Kailash Satyarthi came from different countries, generations and forms of activism. The award connected their work through a shared claim: children’s freedom, protection and access to education are matters of justice and peace.",
+        "The story is about more than a ceremony or a single campaign. It involves public advocacy, grassroots organizing, legal change, international institutions and the difficult work of sustaining attention. Their biographies help explain the path to recognition; the Nobel motivation shows how the Committee interpreted that work in 2014."
+      ],
+      "sections": [
+        {
+          "id": "award-context",
+          "title": "Why the Committee paired two advocates.",
+          "paragraphs": [
+            "The Norwegian Nobel Committee awarded the 2014 Peace Prize jointly to Yousafzai and Satyarthi. Its motivation connected their struggle against the suppression of children and young people with the right of all children to education. The Committee argued that respect for children’s rights matters to the possibility of a peaceful world.",
+            "The pairing is meaningful without implying that the laureates shared one organization, one strategy or identical risks. Yousafzai’s public advocacy focused especially on girls’ education and the threat of extremist violence. Satyarthi’s decades of work confronted child labour, trafficking and exploitation through rescue, campaigning, advocacy and coalition building. The shared framework was children’s rights; the histories remained distinct."
+          ],
+          "sourceIds": [
+            "peace-review",
+            "malala-lecture",
+            "satyarthi-bio"
+          ]
+        },
+        {
+          "id": "malala",
+          "title": "Malala Yousafzai: education as a public right.",
+          "paragraphs": [
+            "Yousafzai grew up in Pakistan’s Swat Valley, where her father, Ziauddin, ran a school and publicly supported education. As Taliban control expanded in the region, she spoke and wrote about the restrictions imposed on girls’ schooling. In 2012, she survived an attack by a Taliban gunman. Her recovery and continued advocacy brought international attention, but her work began before the attack.",
+            "In her Nobel lecture, Yousafzai framed education as a right and spoke about the teachers, family and fellow advocates who made her work possible. Her first-person account matters because award histories can turn a young activist into a symbol and reduce her agency to a dramatic event. The lecture instead situates her within a continuing campaign and a broader community of young people."
+          ],
+          "sourceIds": [
+            "malala-lecture",
+            "peace-review"
+          ]
+        },
+        {
+          "id": "satyarthi",
+          "title": "Kailash Satyarthi: linking labour, rescue and schooling.",
+          "paragraphs": [
+            "Satyarthi’s activism addressed children exploited as labourers and those excluded from school. The Nobel biography recounts how a book bank developed from a local effort to collect used textbooks and circulate them among children who could not afford them. That initiative joined a practical response to a structural question: how could communities make schooling accessible and sustainable?",
+            "His later work combined direct action, public campaigns, legal advocacy and partnerships. The Global March Against Child Labour mobilized participants across countries and pressed for international action. Satyarthi’s approach treated child labour as connected to supply chains, poverty, education and public responsibility. Accounts of rescues should be read alongside the institutions and collective efforts that support long-term change."
+          ],
+          "sourceIds": [
+            "satyarthi-bio",
+            "peace-review"
+          ]
+        },
+        {
+          "id": "meaning",
+          "title": "Education and labour are connected, not interchangeable.",
+          "paragraphs": [
+            "The Committee’s joint award drew attention to a relationship between child labour and access to education. A child who is compelled to work may lose the chance to attend school; weak access to schooling can also deepen vulnerability. These patterns vary across economic settings, and no single intervention resolves them. The prize framed a moral and political problem, not a complete policy blueprint.",
+            "The official award background noted Satyarthi’s contribution to international conventions and Yousafzai’s advocacy for girls’ rights. Such institutional work complements, rather than replaces, local services and enforcement. The Nobel recognition can bring visibility and influence, but its effects should not be confused with proof that the underlying conditions have been eliminated. A global cause still depends on specific legal and community work."
+          ],
+          "sourceIds": [
+            "peace-review",
+            "satyarthi-bio"
+          ]
+        },
+        {
+          "id": "recognition-limit",
+          "title": "What the prize makes visible—and what it cannot do.",
+          "paragraphs": [
+            "The Peace Prize brought world attention to children’s rights and education through two recognizable advocates. But the history is larger than two biographies. It includes children who organize and speak for themselves, teachers, families, labor organizers, local organizations, unions, researchers and policymakers. Award narratives can make a cause legible; they can also concentrate attention on a few names.",
+            "A careful reading asks what changed because of the award and what conditions continued. The prize itself is recognition, not a measure of school quality, labour enforcement or children’s safety. Yousafzai’s lecture and Satyarthi’s biography document their own accounts and institutional histories, while current evaluation of policy outcomes requires separate and more recent evidence.",
+            "It is also important to distinguish the award’s moral argument from empirical evaluation. The Nobel Committee articulated why it considered the cause central to peace; it did not claim that all barriers to schooling had one cause. Readers who want to assess outcomes should consult current, independent evidence about education access, labour conditions and the effects of specific interventions."
+          ],
+          "sourceIds": [
+            "peace-review",
+            "malala-lecture",
+            "satyarthi-bio"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2009",
+          "title": "Yousafzai writes about life under restrictions",
+          "text": "Her public account of the threat to girls’ schooling predates the 2012 attack that later drew global attention.",
+          "sourceIds": [
+            "malala-lecture"
+          ]
+        },
+        {
+          "date": "1998",
+          "title": "Global March Against Child Labour",
+          "text": "Satyarthi’s coalition organizes an international march and advances calls for action against exploitative child labour.",
+          "sourceIds": [
+            "satyarthi-bio"
+          ]
+        },
+        {
+          "date": "2012",
+          "title": "Yousafzai survives an attack",
+          "text": "The attack intensifies international attention, while her advocacy continues through recovery and public work.",
+          "sourceIds": [
+            "malala-lecture"
+          ]
+        },
+        {
+          "date": "2014",
+          "title": "Joint Nobel Peace Prize awarded",
+          "text": "The Committee recognizes both laureates’ work for children’s rights and education.",
+          "sourceIds": [
+            "peace-review"
+          ]
+        },
+        {
+          "date": "2014",
+          "title": "Laureates deliver Nobel lectures",
+          "text": "Their first-person speeches place the award within continuing struggles and collective responsibilities.",
+          "sourceIds": [
+            "malala-lecture"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Malala Yousafzai",
+          "role": "Education activist and co-laureate",
+          "text": "Yousafzai’s advocacy for girls’ education developed in the context of restrictions in Pakistan’s Swat Valley. Her Nobel lecture frames the award as part of a continuing collective campaign.",
+          "sourceIds": [
+            "malala-lecture"
+          ]
+        },
+        {
+          "name": "Kailash Satyarthi",
+          "role": "Child-rights activist and co-laureate",
+          "text": "Satyarthi’s work connected direct action against child labour with education campaigns, legal advocacy and international cooperation.",
+          "sourceIds": [
+            "satyarthi-bio"
+          ]
+        },
+        {
+          "name": "Ziauddin Yousafzai",
+          "role": "Educator and advocate",
+          "text": "Malala’s father ran a school and supported girls’ education. In her Nobel lecture, she credits her family and teachers as part of her development and public work.",
+          "sourceIds": [
+            "malala-lecture"
+          ]
+        },
+        {
+          "name": "Children and community organizers",
+          "role": "Participants, advocates and rights holders",
+          "text": "The award foregrounded two laureates, but movements for children’s rights include young people themselves and the families, educators and organizations who work alongside them.",
+          "sourceIds": [
+            "peace-review",
+            "satyarthi-bio"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The 2014 official motivation names both laureates and links their distinct work to children’s rights and education; their Nobel lectures and biographies provide first-person and institutional context.",
+        "established": "The Prize recognized a joint public contribution to advocacy for children’s rights, girls’ education and protection from exploitative labour.",
+        "limit": "A prize does not establish that the underlying problems have been solved or quantify policy impact. The two activists’ histories are connected by the award’s frame, not identical in method or experience."
+      },
+      "reflection": "When a movement receives a visible symbol of recognition, how can its story keep the affected people and collective work in view?",
+      "award": {
+        "year": "2014",
+        "field": "Peace",
+        "recipients": [
+          "Malala Yousafzai",
+          "Kailash Satyarthi"
+        ],
+        "citation": "for their struggle against the suppression of children and young people and for the right of all children to education",
+        "sourceId": "peace-review"
+      },
+      "uncertainty": "The award’s rationale and the laureates’ advocacy are documented. The effects of particular campaigns and policies are separate empirical questions; the prize citation does not establish that child labour or barriers to schooling were eliminated.",
+      "discussionPrompts": [
+        "What connected the laureates’ campaigns, and what remained distinct?",
+        "How can public recognition keep affected communities visible?",
+        "What evidence would you need to assess whether a policy improved children’s lives?"
+      ]
+    },
+    {
+      "slug": "2019-poverty-experiments",
+      "collection": "nobel",
+      "topic": "Economic Sciences · Development research",
+      "title": "Small questions about a vast problem.",
+      "name": "Abhijit Banerjee, Esther Duflo & Michael Kremer · Economic Sciences 2019",
+      "dek": "The prize recognized a research approach that used field experiments to examine specific questions in global poverty.",
+      "period": "2019 Sveriges Riksbank Prize in Economic Sciences",
+      "visual": "field-experiment-award",
+      "question": "How can a local experiment inform a policy decision without pretending every place is the same?",
+      "summary": "The 2019 Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel recognized Abhijit Banerjee, Esther Duflo and Michael Kremer for an experimental approach that transformed development economics. Rather than treat poverty as one problem, researchers tested focused interventions in real settings. The prize acknowledged methodological influence; individual experiments still require scrutiny for ethics, scale, context and whether findings travel to other populations.",
+      "summarySources": [
+        "econ-popular",
+        "econ-advanced",
+        "nobel-facts"
+      ],
+      "lead": [
+        "“What reduces poverty?” is so broad that one answer can conceal more than it reveals. The laureates helped make a research strategy influential: break a large policy question into smaller, testable questions about decisions, incentives and constraints, then study interventions in real settings.",
+        "The Nobel recognition is not for a single poverty solution. It is for a body of research and an approach to inquiry. That distinction matters because field experiments can produce credible answers to specific questions while leaving open whether a result applies elsewhere, scales affordably or addresses the wider causes of poverty."
+      ],
+      "sections": [
+        {
+          "id": "question",
+          "title": "From one grand question to a set of precise ones.",
+          "paragraphs": [
+            "Development economics had long studied poverty through national statistics, theory and policy comparison. Banerjee, Duflo and Kremer helped popularize a different emphasis on disaggregating the problem. Why might children attend school but learn little? Which constraints prevent farmers from adopting a practice? How do health services, information and incentives shape behavior? Each question could be investigated with evidence tailored to it.",
+            "This reframing did not mean abandoning theory or large-scale explanation. It treated people’s circumstances as varied and asked which mechanisms might matter in a particular place. A policy designed for an imagined “average” household may miss the actual reasons a decision is difficult. Specific questions can reveal those mechanisms, but they do not automatically add up to one universal theory of poverty."
+          ],
+          "sourceIds": [
+            "econ-popular",
+            "econ-advanced"
+          ]
+        },
+        {
+          "id": "field",
+          "title": "Experiments outside the laboratory.",
+          "paragraphs": [
+            "In a field experiment, researchers evaluate an intervention in a real-world setting, often by comparing groups that receive different conditions. Random assignment can help estimate the effect of a defined intervention for the study population, subject to the design being implemented as planned and measured appropriately. The outcome is not a free-standing verdict on a policy in every context.",
+            "The laureates’ work examined questions in education, health, credit and agriculture, often through collaborations with local institutions. Examples included remedial education and ways to increase vaccination. The advantage is proximity to decisions and institutions as they actually function. The challenge is equally concrete: implementation differs, people respond to observation and context influences what a program can achieve."
+          ],
+          "sourceIds": [
+            "econ-popular",
+            "econ-advanced"
+          ]
+        },
+        {
+          "id": "contribution",
+          "title": "Three researchers, many research partners.",
+          "paragraphs": [
+            "Michael Kremer’s early work used randomized evaluations to study education and health interventions in Kenya. Banerjee and Duflo developed research programs around local constraints, including schooling, health behavior and access to resources. Their work helped make randomized field experiments a standard tool in development economics and trained researchers to ask narrower causal questions.",
+            "These studies depend on far more than the named economists. Teachers, health workers, public agencies, research staff and communities make experimental work possible. The Nobel citation recognizes three laureates, while the research itself is collaborative and cumulative. A professional account must keep that difference visible and resist presenting the method as an invention owned by three people alone."
+          ],
+          "sourceIds": [
+            "econ-advanced",
+            "econ-popular"
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "The question of external validity.",
+          "paragraphs": [
+            "A randomized experiment can support a causal claim about the population, intervention and setting it studied. Moving that result to another place requires additional reasoning and evidence. Prices, institutions, social norms and available services can change how people respond. The Nobel scientific background explicitly discusses external validity as a methodological challenge, not a detail to be brushed aside.",
+            "Scaling a successful program may alter its effects. A small pilot can rely on unusually committed staff, close monitoring or resources unavailable in ordinary implementation. An intervention might work in one district but not another, or produce benefits that are costly relative to alternatives. Experiments can help improve policy decisions, but results need replication, context and a theory of how effects arise."
+          ],
+          "sourceIds": [
+            "econ-advanced",
+            "econ-popular"
+          ]
+        },
+        {
+          "id": "recognition",
+          "title": "The formal prize—and its proper name.",
+          "paragraphs": [
+            "The award’s full name is the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel. It was established by Sweden’s central bank in 1968 and first awarded in 1969. It is administered by the Nobel Foundation alongside the Nobel Prizes, but it was not one of the five prize categories specified in Alfred Nobel’s 1895 will. Precision in naming is part of precision in history.",
+            "The 2019 award recognized the experimental approach that transformed development economics, rather than certifying a single intervention as the definitive answer to poverty. That framing honors methodological change while leaving room for debate about research priorities, ethics, cost and scale. Good policy requires more than an impressive result: it requires asking who benefits, what trade-offs arise and whether the evidence applies to the decision at hand."
+          ],
+          "sourceIds": [
+            "nobel-facts",
+            "econ-popular",
+            "econ-advanced"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1990s",
+          "title": "Field experiments reshape development research",
+          "text": "Kremer and other researchers conduct randomized studies in education and health; the approach expands.",
+          "sourceIds": [
+            "econ-advanced"
+          ]
+        },
+        {
+          "date": "2003",
+          "title": "J-PAL founded at MIT",
+          "text": "Banerjee, Duflo and Sendhil Mullainathan establish a research center focused on poverty and policy evaluation.",
+          "sourceIds": [
+            "econ-advanced"
+          ]
+        },
+        {
+          "date": "2000s–2010s",
+          "title": "Research programs broaden",
+          "text": "Banerjee, Duflo and Kremer study topics including schooling, health, credit and agricultural decisions with local partners.",
+          "sourceIds": [
+            "econ-popular",
+            "econ-advanced"
+          ]
+        },
+        {
+          "date": "2019",
+          "title": "Economic Sciences Prize awarded",
+          "text": "The Academy recognizes the experimental approach to alleviating global poverty.",
+          "sourceIds": [
+            "econ-popular",
+            "nobel-facts"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "Abhijit Banerjee",
+          "role": "Economist and co-laureate",
+          "text": "Banerjee helped develop an empirical approach to development economics that studies focused questions about poverty through theory-guided research and field evidence.",
+          "sourceIds": [
+            "econ-advanced"
+          ]
+        },
+        {
+          "name": "Esther Duflo",
+          "role": "Economist and co-laureate",
+          "text": "Duflo’s work has examined development policy through field experiments and close attention to the mechanisms shaping household and institutional decisions.",
+          "sourceIds": [
+            "econ-advanced",
+            "econ-popular"
+          ]
+        },
+        {
+          "name": "Michael Kremer",
+          "role": "Economist and co-laureate",
+          "text": "Kremer’s early randomized field experiments in education and health helped establish the use of such methods in development economics.",
+          "sourceIds": [
+            "econ-advanced"
+          ]
+        },
+        {
+          "name": "Local research and policy partners",
+          "role": "Collaborators in field studies",
+          "text": "Teachers, health workers, public agencies and research teams help design and carry out studies; they are essential to the evidence even when they are not named in a prize citation.",
+          "sourceIds": [
+            "econ-advanced"
+          ]
+        }
+      ],
+      "evidence": {
+        "observed": "The official scientific background documents randomized field experiments and research areas addressed by the three laureates.",
+        "established": "Field experiments became an influential tool for estimating effects of defined interventions in particular contexts and for informing development research.",
+        "limit": "A local treatment effect does not guarantee transfer to other settings or successful scale-up. Ethical feasibility, implementation quality and broader structural explanations remain important."
+      },
+      "reflection": "If a program works in one district, what evidence would you want before funding it nationally—and who should help decide?",
+      "award": {
+        "year": "2019",
+        "field": "Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel",
+        "recipients": [
+          "Abhijit Banerjee",
+          "Esther Duflo",
+          "Michael Kremer"
+        ],
+        "citation": "for their experimental approach to alleviating global poverty",
+        "sourceId": "econ-popular"
+      },
+      "uncertainty": "The prize recognized an influential research approach, not one universal remedy for poverty. Whether a particular experimental result generalizes or scales remains context-dependent, and random assignment cannot answer questions that are impractical or ethically impossible to assign.",
+      "discussionPrompts": [
+        "What can a field experiment establish about the setting it studies?",
+        "What additional evidence would you require before scaling a local result?",
+        "Which policy questions cannot be answered through random assignment?"
+      ]
+    }
+  ]
+}

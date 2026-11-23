@@ -1,0 +1,386 @@
+{
+  "checkedAt": "2026-11-23T02:43:42.724Z",
+  "sources": {
+    "acs": {
+      "title": "American Chemical Society · Discovery and Development of Penicillin",
+      "url": "https://www.acs.org/education/whatischemistry/landmarks/flemingpenicillin.html",
+      "status": 200,
+      "finalUrl": "https://www.acs.org/education/whatischemistry/landmarks/flemingpenicillin.html",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "aps": {
+      "title": "American Physical Society · Quantum Milestones, 1905",
+      "url": "https://physics.aps.org/articles/v18/15",
+      "status": 403,
+      "finalUrl": "https://physics.aps.org/articles/v18/15",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "manual-web",
+      "manualVerified": true,
+      "manualVerifiedAt": "2026-11-23",
+      "automatedStatus": 403,
+      "automatedMethod": "GET"
+    },
+    "cdc": {
+      "title": "Robert Gaynes · The Discovery of Penicillin, Emerging Infectious Diseases (2017)",
+      "url": "https://wwwnc.cdc.gov/eid/article/23/5/16-1556_article",
+      "status": 200,
+      "finalUrl": "https://wwwnc.cdc.gov/eid/article/23/5/16-1556_article",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "clinical": {
+      "title": "Abraham and colleagues · Further Observations on Penicillin (1941), James Lind Library",
+      "url": "https://www.jameslindlibrary.org/abraham-ep-chain-e-fletcher-cm-gardner-ad-heatley-ng-jennings-am-florey-hw-1941/",
+      "status": 200,
+      "finalUrl": "https://www.jameslindlibrary.org/abraham-ep-chain-e-fletcher-cm-gardner-ad-heatley-ng-jennings-am-florey-hw-1941/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "culture": {
+      "title": "Oxford History of Science Museum · Original penicillin culture and specimen",
+      "url": "https://mhs.web.ox.ac.uk/original-penicillin-culture-and-specimen",
+      "status": 200,
+      "finalUrl": "https://mhs.web.ox.ac.uk/original-penicillin-culture-and-specimen",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "curie-facts": {
+      "title": "Nobel Prize · Chemistry 1911: Marie Curie",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/facts/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/facts/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "curie-nobel": {
+      "title": "Nobel Prize · Marie and Pierre Curie and the discovery of polonium and radium",
+      "url": "https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "dunn": {
+      "title": "Oxford Dunn School · The Discovery of Penicillin",
+      "url": "https://www.path.ox.ac.uk/centenary/the-discovery-of-penicillin/",
+      "status": 200,
+      "finalUrl": "https://www.path.ox.ac.uk/centenary/the-discovery-of-penicillin/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "econ-advanced": {
+      "title": "Royal Swedish Academy of Sciences · Scientific Background: The Experimental Approach to Alleviating Global Poverty",
+      "url": "https://www.nobelprize.org/uploads/2019/10/advanced-economicsciencesprize2019.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2019/10/advanced-economicsciencesprize2019.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "econ-popular": {
+      "title": "Royal Swedish Academy of Sciences · The Prize in Economic Sciences 2019: Popular science background",
+      "url": "https://www.nobelprize.org/uploads/2019/10/popular-economicsciencesprize2019-2.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2019/10/popular-economicsciencesprize2019-2.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "einstein-lecture": {
+      "title": "Albert Einstein · Nobel lecture (1923)",
+      "url": "https://www.nobelprize.org/uploads/2018/06/einstein-lecture.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2018/06/einstein-lecture.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "fleming": {
+      "title": "Alexander Fleming · Nobel lecture, Penicillin (1945)",
+      "url": "https://www.nobelprize.org/uploads/2018/06/fleming-lecture.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2018/06/fleming-lecture.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "freeth-anti": {
+      "title": "Freeth et al. · A model of the cosmos in the ancient Greek Antikythera Mechanism, Scientific Reports (2021)",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10124374/1/s41598-021-84310-w.pdf",
+      "status": 200,
+      "finalUrl": "https://discovery.ucl.ac.uk/id/eprint/10124374/1/s41598-021-84310-w.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "holton": {
+      "title": "Gerald Holton · Millikan’s Measurement of Planck’s Constant, APS (1999)",
+      "url": "https://physics.aps.org/story/v3/st23",
+      "status": 403,
+      "finalUrl": "https://physics.aps.org/story/v3/st23",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "manual-web",
+      "manualVerified": true,
+      "manualVerifiedAt": "2026-11-23",
+      "automatedStatus": 403,
+      "automatedMethod": "GET"
+    },
+    "malala-lecture": {
+      "title": "Malala Yousafzai · Nobel Lecture (2014)",
+      "url": "https://www.nobelprize.org/uploads/2018/06/yousafzai-lecture_en-2.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2018/06/yousafzai-lecture_en-2.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "mechanism": {
+      "title": "Tipper & Strominger · Mechanism of action of penicillins (1965)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC219812/",
+      "status": 200,
+      "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC219812/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "medicine": {
+      "title": "Nobel Prize · Official historical list of prizes",
+      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes/all/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes/all/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "millikan": {
+      "title": "R. A. Millikan · A Direct Photoelectric Determination of Planck’s h (1916)",
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.7.355",
+      "status": 403,
+      "finalUrl": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.7.355",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "manual-web",
+      "manualVerified": true,
+      "manualVerifiedAt": "2026-11-23",
+      "automatedStatus": 403,
+      "automatedMethod": "GET"
+    },
+    "mit": {
+      "title": "MIT Junior Lab · The Photoelectric Effect",
+      "url": "https://web.mit.edu/8.13/www/JLExperiments/JLExp005.pdf",
+      "status": 200,
+      "finalUrl": "https://web.mit.edu/8.13/www/JLExperiments/JLExp005.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "morrison-bio": {
+      "title": "Nobel Prize · Toni Morrison: Biographical",
+      "url": "https://www.nobelprize.org/prizes/literature/1993/morrison/biographical/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/literature/1993/morrison/biographical/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "morrison-lecture": {
+      "title": "Toni Morrison · Nobel Lecture (1993)",
+      "url": "https://www.nobelprize.org/prizes/literature/1993/morrison/lecture/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/literature/1993/morrison/lecture/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "morrison-list": {
+      "title": "Nobel Prize · Literature 1993: Toni Morrison",
+      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/all/?gallery_style=page",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/all/?gallery_style=page",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "mpg": {
+      "title": "Max Planck Society · Albert Einstein and the 1921 prize",
+      "url": "https://www.mpg.de/nobel-prize",
+      "status": 200,
+      "finalUrl": "https://www.mpg.de/nobel-prize",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nasa-cmb": {
+      "title": "NASA COBE · Cosmic Background Explorer science",
+      "url": "https://science.nasa.gov/mission/cobe/science/",
+      "status": 200,
+      "finalUrl": "https://science.nasa.gov/mission/cobe/science/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nasa-cmb-discovery": {
+      "title": "NASA LAMBDA · Discovery of the cosmic microwave background",
+      "url": "https://lambda.gsfc.nasa.gov/education/lambda_graphics/cmb_discovery.html",
+      "status": 200,
+      "finalUrl": "https://lambda.gsfc.nasa.gov/education/lambda_graphics/cmb_discovery.html",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nasa-history": {
+      "title": "NASA GSFC · History of the cosmic microwave background",
+      "url": "https://asd.gsfc.nasa.gov/archive/mather/cosmology/history.html",
+      "status": 200,
+      "finalUrl": "https://asd.gsfc.nasa.gov/archive/mather/cosmology/history.html",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nobel-facts": {
+      "title": "Nobel Prize · Nobel Prize facts",
+      "url": "https://www.nobelprize.org/prizes/facts/nobel-prize-facts/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/facts/nobel-prize-facts/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nobel-history": {
+      "title": "Nobel Prize · The Nobel Prize in Physics 1901–2000",
+      "url": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "nobel-optics": {
+      "title": "Royal Swedish Academy of Sciences · Physics prize 2005: light and measurement",
+      "url": "https://www.nobelprize.org/uploads/2018/06/popular-physicsprize2005-2.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2018/06/popular-physicsprize2005-2.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "openstax": {
+      "title": "OpenStax / Rice University · Photoelectric Effect",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect",
+      "status": 200,
+      "finalUrl": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "peace-review": {
+      "title": "Nobel Prize · The Nobel Prizes 2014 Annual Review",
+      "url": "https://www.nobelprize.org/uploads/2018/07/annual_review_14.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/uploads/2018/07/annual_review_14.pdf",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "physics": {
+      "title": "Nobel Prize · Official historical list of Physics prizes",
+      "url": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-physics/all/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-physics/all/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "satyarthi-bio": {
+      "title": "Kailash Satyarthi · Biographical",
+      "url": "https://www.nobelprize.org/prizes/peace/2014/satyarthi/biographical/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/prizes/peace/2014/satyarthi/biographical/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "team": {
+      "title": "Oxford History of Science Museum · Team Penicillin",
+      "url": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/team-penicillin/",
+      "status": 200,
+      "finalUrl": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/team-penicillin/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "ucl-anti": {
+      "title": "UCL · Experts recreate mechanical cosmos of world’s first computer",
+      "url": "https://www.ucl.ac.uk/news/2021/mar/experts-recreate-mechanical-cosmos-worlds-first-computer",
+      "status": 200,
+      "finalUrl": "https://www.ucl.ac.uk/news/2021/mar/experts-recreate-mechanical-cosmos-worlds-first-computer",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "GET"
+    },
+    "usda": {
+      "title": "USDA Agricultural Research Service · Penicillin: Opening the Era of Antibiotics",
+      "url": "https://www.ars.usda.gov/midwest-area/peoria-il/national-center-for-agricultural-utilization-research/docs/penicillin-opening-the-era-of-antibiotics/",
+      "status": 200,
+      "finalUrl": "https://www.ars.usda.gov/midwest-area/peoria-il/national-center-for-agricultural-utilization-research/docs/penicillin-opening-the-era-of-antibiotics/",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "usgs-drift": {
+      "title": "USGS · Developing the Theory: This Dynamic Earth",
+      "url": "https://pubs.usgs.gov/gip/dynamic/developing.html",
+      "status": 200,
+      "finalUrl": "https://pubs.usgs.gov/gip/dynamic/developing.html",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "usgs-history": {
+      "title": "USGS · Historical perspective on plate tectonics",
+      "url": "https://pubs.usgs.gov/gip/dynamic/historical.html",
+      "status": 200,
+      "finalUrl": "https://pubs.usgs.gov/gip/dynamic/historical.html",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "usgs-plates": {
+      "title": "USGS · Plate Tectonics",
+      "url": "https://www.usgs.gov/educational-resources/plate-tectonics?qt-science_support_page_related_con=1",
+      "status": 200,
+      "finalUrl": "https://www.usgs.gov/educational-resources/plate-tectonics?qt-science_support_page_related_con=1",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "vessel": {
+      "title": "National Museums Scotland · How a ceramic object fueled a medical breakthrough",
+      "url": "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough",
+      "status": 200,
+      "finalUrl": "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    },
+    "zurich": {
+      "title": "University of Zurich · Albert Einstein: A Quantum of Light",
+      "url": "https://www.uzh.ch/en/researchinnovation/excellence/nobelprize/einstein.html",
+      "status": 200,
+      "finalUrl": "https://www.uzh.ch/en/researchinnovation/excellence/nobelprize/einstein.html",
+      "ok": true,
+      "needsManualReview": false,
+      "method": "HEAD"
+    }
+  }
+}

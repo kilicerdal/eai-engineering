@@ -28,7 +28,8 @@
     "audit:learning50": "node scripts/audit-reading50.mjs && node scripts/audit-learning-inventory.mjs",
     "audit:learning50-sources": "node scripts/audit-learning50-sources.mjs",
     "audit:homepage-performance": "node scripts/audit-homepage-performance.mjs",
-    "test:recruiter-browser": "playwright test --config=playwright.recruiter.config.ts"
+    "test:recruiter-browser": "playwright test --config=playwright.recruiter.config.ts",
+    "audit:knowledge-links": "node scripts/audit-knowledge-source-links.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

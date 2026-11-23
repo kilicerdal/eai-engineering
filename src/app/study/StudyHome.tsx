@@ -74,7 +74,7 @@ export default function StudyPage({entrance}:{entrance:ReactNode}) {
       </section>
       {entrance}
       <nav id="learning-rooms" tabIndex={-1} className="quiet-rooms" aria-label="Choose a learning room">{[
-        {title:'Read, look and discover',rooms:[['Reading Room','Find a book and settle in.','/study/reading'],['Art Room','Look closely, meet the artist, follow the story.','/study/art'],['Curiosity Room','Discover something surprising.','/study/curiosity']]},
+        {title:'Read, look and discover',rooms:[['Reading Room','Find a book and settle in.','/study/reading'],['Art Room','Look closely, meet the artist, follow the story.','/study/art'],['Curiosity Room','Quick discoveries and deeper investigations.','/study/curiosity'],['Nobel Stories','Meet the people and understand the achievement.','/study/nobel']]},
         {title:'Understand and practice',rooms:[['AI Tutor','Work through one question.','/study/tutor'],['Certification Studio','Practice an engineering decision.','/study/certifications']]},
         {title:'Work with your own ideas',rooms:[['Your materials','Study from your own sources.','/study/materials'],['Writing Studio','Give an idea your own words.','/study/writing']]}
       ].map(group=><section key={group.title}><h2>{group.title}</h2><div>{group.rooms.map(([name,detail,href])=><Link key={href} href={href}><strong>{name} <span aria-hidden="true">↗</span></strong><span>{detail}</span></Link>)}</div></section>)}</nav>
