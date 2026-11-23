@@ -1,0 +1,3 @@
+export type Collection='discoveries'|'nobel';
+export type Reference={title:string;url:string;kind:string;scope:string;checked:string};
+export type Story={slug:string;collection:Collection;topic:string;title:string;name:string;dek:string;period:string;visual:string;pair?:string;question:string;uncertainty:string;discussionPrompts:string[];summary:string;summarySources:string[];lead:string[];sections:{id:string;title:string;paragraphs:string[];sourceIds:string[]}[];timeline:{date:string;title:string;text:string;sourceIds:string[]}[];people:{name:string;role:string;text:string;sourceIds:string[]}[];evidence:{observed:string;established:string;limit:string};reflection:string;award?:{year:string;field:string;recipients:string[];citation:string;sourceId:string}};

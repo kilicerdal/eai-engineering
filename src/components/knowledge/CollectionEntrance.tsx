@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import {stories,storyHref,readingMinutes,references,type Collection,type Story} from '@/lib/knowledge/stories';
+import {stories,references,type Collection,type Story} from '@/lib/knowledge/stories';
+import {readingMinutes,storyHref,storyReferences} from '@/lib/knowledge/story-utils';
 import ScientificFigure from './ScientificFigure';
 import NobelCollectionTools from './NobelCollectionTools';
 
@@ -26,7 +27,7 @@ export default function CollectionEntrance({collection}:{collection:Collection})
       <div className="knowledge-section-heading"><div><p className="knowledge-kicker">THE COLLECTION</p><h2 id="opening-title">{discovery?'Follow the evidence across disciplines.':'Read the achievement behind the award.'}</h2></div>
         <p>{discovery?'Follow the observation, the people and the work needed to turn a promising idea into a reliable claim.':'Move across five Nobel categories and Economic Sciences, with different kinds of achievement. Each study pairs the official award record with historical context, named contributors, evidence and the questions that remain.'}</p>
       </div>
-      {discovery?<div className="knowledge-story-grid">{selected.map(card)}</div>:<NobelCollectionTools stories={selected}/>}
+      {discovery?<div className="knowledge-story-grid">{selected.map(card)}</div>:<NobelCollectionTools stories={selected.map(story=>({...story,sourceTitles:storyReferences(story).map(id=>references[id]?.title||'')}))} processLinks={{selection:references['nobel-selection-process'].url,statutes:references['nobel-foundation-statutes'].url}}/>}
     </section>
     <section className="knowledge-approach"><p className="knowledge-kicker">A WAY OF READING</p><h2>{discovery?'Begin with wonder. Stay for the explanation.':'Recognition is an entrance into the work.'}</h2>
       <div className="knowledge-approach-grid"><article><span>01</span><h3>{discovery?'The question':'The official record'}</h3><p>{discovery?'What seemed surprising, and which earlier assumptions made it difficult to explain?':'Identify the recipients, award year and motivation before interpreting their significance.'}</p></article><article><span>02</span><h3>{discovery?'The investigation':'The wider achievement'}</h3><p>{discovery?'Follow the people, methods, measurements and practical obstacles that shaped the answer.':'Trace the work across collaborators, institutions and the ideas that made the recognized advance possible.'}</p></article><article><span>03</span><h3>The evidence and its limits</h3><p>Separate what the sources establish from what historians interpret, and ask what the award citation leaves outside its frame.</p></article></div>
