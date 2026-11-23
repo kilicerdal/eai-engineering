@@ -9,8 +9,8 @@ test('shorter home keeps original artwork and reveals older section links',async
  const motion=await page.locator('#artwork img').evaluateAll(es=>es.map(e=>({position:getComputedStyle(e).position,animation:getComputedStyle(e).animationName})));
  expect(motion.every(e=>e.position!=='fixed'&&e.position!=='sticky'&&e.animation==='none')).toBe(true);
 });
-test('hub has seven clear room entrances and embedded tutor remains reachable',async({page})=>{
- await page.goto('/study');await expect(page.getByRole('navigation',{name:'Choose a learning room'}).getByRole('link')).toHaveCount(7);
+test('hub has eight clear room entrances and embedded tutor remains reachable',async({page})=>{
+ await page.goto('/study');await expect(page.getByRole('navigation',{name:'Choose a learning room'}).getByRole('link')).toHaveCount(8);
  await expect(page.locator('#ai-assistant')).toBeHidden();await page.goto('/study#ai-assistant');await expect(page.locator('#ai-assistant')).toBeVisible();
  await expect(page.getByRole('button',{name:'Send',exact:true})).toBeVisible();
 });
