@@ -118,6 +118,10 @@ test('AI Agent Reliability Lab is discoverable with grounded results and public 
  await expect(modelComparison).toContainText('16/16 Sol runs and 7/16 Luna runs');
  await expect(modelComparison).toContainText('all 32 runs');
  await expect(modelComparison.getByRole('link',{name:'Open the live model comparison'})).toHaveAttribute('href',viewer+'#model-comparison');
+ const handoff=page.getByRole('region',{name:'Evidence handoff experiment',exact:true});
+ await expect(handoff).toContainText('Fresh tool reads fell from 16 to 13');
+ await expect(handoff).toContainText('citation support fell from 11/12 to 10/12');
+ await expect(handoff.getByRole('link',{name:'Open the live handoff comparison'})).toHaveAttribute('href',viewer+'#evidence-handoff');
  await expect(blind.getByRole('link',{name:'Open the live blind scorecard'})).toHaveAttribute('href',viewer+'#blind-evaluation');
  for(const [title,id] of [['Read Fence · Trial 2','read-fence-2'],['Dispatch Profile · Trial 1','dispatch-profile-1'],['Maintenance Flag · Trial 1','maintenance-flag-1']]){
   await expect(blind.getByRole('link',{name:title,exact:true})).toHaveAttribute('href',viewer+'#blind-correction-'+id);

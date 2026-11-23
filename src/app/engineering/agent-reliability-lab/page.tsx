@@ -10,10 +10,11 @@ import "./lab.css";
 
 const preview = "/images/engineering/agent-reliability-lab.png";
 const title = "AI Agent Reliability Lab";
-const { evaluation, approval, source, viewer, blindEvaluation, modelComparison } = evidence;
+const { evaluation, approval, source, viewer, blindEvaluation, modelComparison, evidenceHandoff } = evidence;
 const baseline = evaluation.baseline;
 const recovery = evaluation.recovery;
 const { sol, luna } = modelComparison.models;
+const { restart, handoff } = evidenceHandoff.arms;
 const invoice = evaluation.incidentResults["invoice-window"];
 const orphan = evaluation.incidentResults["orphan-alert"];
 
@@ -122,6 +123,14 @@ export default function AgentReliabilityLab() {
             <h3>Supporting citations in {sol.supported}/{sol.runs} Sol runs and {luna.supported}/{luna.runs} Luna runs</h3>
             <p>Both models chose the right cause in all {sol.correct + luna.correct} runs across {modelComparison.incidents} synthetic incidents. The stricter grader also checked whether each quotation supported the claim it was cited for. Sol passed all eight runs with either prompt. Luna passed {luna.basic}/8 with basic citations and {luna.explicit}/8 with an explicit support check.</p>
             <div className="lab-links"><a href={`${viewer}#model-comparison`}>Open the live model comparison <span aria-hidden="true">↗</span></a></div>
+          </section>
+          <section className="lab-evidence main-replay-panel" id="evidence-handoff" aria-labelledby="lab-handoff-heading">
+            <p className="atlas-eyebrow">Escalation · Live experiment</p>
+            <h2 id="lab-handoff-heading">Evidence handoff experiment</h2>
+            <h3>Fresh tool reads fell from {restart.fresh_tool_reads} to {handoff.fresh_tool_reads}</h3>
+            <p>For {evidenceHandoff.escalatedIncidents} escalated synthetic incidents, both arms reused Luna’s recorded first investigation. Sol either restarted from the alert or received Luna’s original evidence. Across the {restart.runs}-incident policies, citation support fell from {restart.supported}/{restart.runs} to {handoff.supported}/{handoff.runs}. Both chose the correct cause in {handoff.cause_correct}/{handoff.runs} incidents.</p>
+            <p>Estimated policy cost increased from ${restart.estimated_usd.toFixed(4)} to ${handoff.estimated_usd.toFixed(4)}. Handoff missed the citation-support and latency gates, so I kept the default unchanged.</p>
+            <div className="lab-links"><a href={`${viewer}#evidence-handoff`}>Open the live handoff comparison <span aria-hidden="true">↗</span></a></div>
           </section>
           <ProjectOwnership projectId="agent-reliability" anchor />
         </div>

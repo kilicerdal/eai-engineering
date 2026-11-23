@@ -281,5 +281,28 @@
         "explicit": 4
       }
     }
+  },
+  "evidenceHandoff": {
+    "sourceCommit": "063a2611086ccc713104a657bbed2474ef15f2c4",
+    "escalatedIncidents": 4,
+    "eligible": false,
+    "arms": {
+      "restart": {
+        "runs": 12,
+        "cause_correct": 12,
+        "supported": 11,
+        "p95_ms": 23000,
+        "estimated_usd": 0.069477,
+        "fresh_tool_reads": 16
+      },
+      "handoff": {
+        "runs": 12,
+        "cause_correct": 12,
+        "supported": 10,
+        "p95_ms": 21955,
+        "estimated_usd": 0.085667,
+        "fresh_tool_reads": 13
+      }
+    }
   }
 }
