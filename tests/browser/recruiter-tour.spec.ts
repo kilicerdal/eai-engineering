@@ -105,6 +105,12 @@ test('AI Agent Reliability Lab is discoverable with grounded results and public 
  await expect(page.locator('#evidence')).toContainText('19/24 → 23/24');
  await expect(page.getByRole('link',{name:'Compare results by incident'})).toHaveAttribute('href',viewer+'#comparison');
  await expect(page.getByRole('link',{name:'Explore all 6 failed trials'})).toHaveAttribute('href',viewer+'#failure-select');
+ const trialLinks=page.getByRole('region',{name:'Direct links to failed trials'}).getByRole('link');
+ await expect(trialLinks).toHaveCount(6);
+ expect(await trialLinks.evaluateAll(links=>links.map(link=>link.getAttribute('href')))).toEqual([
+  'invoice-window/baseline/1','invoice-window/baseline/2','invoice-window/baseline/3',
+  'invoice-window/recovery/3','orphan-alert/baseline/2','orphan-alert/baseline/3',
+ ].map(trial=>viewer+'#failed-trial-'+trial));
  await expect(page.getByRole('link',{name:'V4.1 release'})).toHaveAttribute('href','https://github.com/kilicerdal/agent-reliability-lab/releases/tag/v4.1.0');
 
  await expect(page.locator('#evidence')).toContainText('One restart. One completed order.');

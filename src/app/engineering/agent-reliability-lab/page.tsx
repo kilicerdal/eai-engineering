@@ -66,6 +66,22 @@ export default function AgentReliabilityLab() {
                   <a href={`${viewer}#comparison`}>Compare results by incident <span aria-hidden="true">↗</span></a>
                   <a href={`${viewer}#failure-select`}>Explore all {evaluation.failedTrials} failed trials <span aria-hidden="true">↗</span></a>
                 </div>
+                <section className="lab-trial-links" aria-label="Direct links to failed trials">
+                  {evaluation.failedTrialGroups.map((group) => (
+                    <div key={group.id}>
+                      <h4>{group.label}</h4>
+                      <ul>
+                        {group.trials.map(({ arm, number }) => (
+                          <li key={`${arm}/${number}`}>
+                            <a href={`${viewer}#failed-trial-${group.id}/${arm}/${number}`}>
+                              {arm === "baseline" ? "Baseline" : "Recovery"} trial {number}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </section>
               </article>
               <article className="main-replay-panel">
                 <p className="atlas-eyebrow">V3 · Scoped MCP and approval</p>
